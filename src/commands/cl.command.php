@@ -17,11 +17,11 @@ $console
     ->setHelp('Usage: <info>./console.php cl</info>')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
       $finder = new Finder();
-      $finder->files()->in($app['config.root-dir'].'/log')->notName('.gitignore');
+      $finder->files()->in($app['config.root-dir'].'/logs')->notName('.gitkeep');
       
       $fs = new Filesystem();
       $fs->remove($finder);
 
-      $output->write('Log cleared.', true);
+      $output->write("<info>Log</info>\tcleared", true);
     })
 ;

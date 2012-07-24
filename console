@@ -9,10 +9,10 @@ require_once __DIR__.'/vendor/autoload.php';
 $app = require __DIR__.'/src/app.php';
 require __DIR__.'/config/dev.php';
 
-$console  = new Application('Cungfoo', 'n/a');
+$console  = new Application('Cungfoo', '0.1');
 $finder   = new Finder();
 
-$finder->files()->in(__DIR__.'/src/commands/')->name('*.command.php');
+$finder->files()->in(__DIR__.'/src/Commands/')->name('*.command.php');
 foreach($finder as $task) {
   require_once $task->getRealpath();
 }

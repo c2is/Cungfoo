@@ -1,9 +1,13 @@
 {
-    "hash": "cb7fe240ce6dfa8e63cd71bd7114774d",
+    "hash": "30f6da1f576c4f32aa50b419642d5568",
     "packages": [
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
+        },
+        {
+            "package": "phing/phing",
+            "version": "2.4.12"
         },
         {
             "package": "pimple/pimple",
@@ -16,6 +20,24 @@
             "version": "dev-master",
             "source-reference": "db836b8cfadc0f39dacafa2bf311a1ab603600bb",
             "commit-date": "1343051648"
+        },
+        {
+            "package": "propel/propel-service-provider",
+            "version": "dev-master",
+            "source-reference": "0.0.1",
+            "commit-date": "1339953161"
+        },
+        {
+            "package": "propel/propel1",
+            "version": "dev-master",
+            "alias-pretty-version": "1.6.x-dev",
+            "alias-version": "1.6.9999999.9999999-dev"
+        },
+        {
+            "package": "propel/propel1",
+            "version": "dev-master",
+            "source-reference": "dc5eeeaa84f57053a0f026f32ba38694f480ceb8",
+            "commit-date": "1343116682"
         },
         {
             "package": "silex/silex",
@@ -299,7 +321,7 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ]
+    "stability-flags": {
+        "propel/propel-service-provider": 20
+    }
 }

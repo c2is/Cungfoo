@@ -1,3 +1,7 @@
 /vendor/
 composer.phar
-.DS_Store
+/cache/*
+/logs/*
+/config/Propel/databases.xml
+/config/Propel/generated/*
+/data/sql/*

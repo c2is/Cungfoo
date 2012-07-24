@@ -17,11 +17,11 @@ $console
     ->setHelp('Usage: <info>./console.php cc</info>')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
       $finder = new Finder();
-      $finder->files()->in($app['config.root-dir'].'/cache')->notName('.gitignore');
+      $finder->files()->in($app['config.root-dir'].'/cache')->notName('.gitkeep');
       
       $fs = new Filesystem();
       $fs->remove($finder);
 
-      $output->write('Cache cleared.', true);
+      $output->write("<info>Cache</info>\tcleared", true);
     })
 ;
