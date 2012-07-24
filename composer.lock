@@ -1,6 +1,12 @@
 {
-    "hash": "30f6da1f576c4f32aa50b419642d5568",
+    "hash": "1b029f8da45e22fe4266d89eacf64277",
     "packages": [
+        {
+            "package": "mageekguy/atoum",
+            "version": "dev-master",
+            "source-reference": "4d4079e4e65793cfbec3c3635c5f318bef09ed96",
+            "commit-date": "1343131781"
+        },
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
@@ -322,6 +328,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "propel/propel-service-provider": 20
+        "propel/propel-service-provider": 20,
+        "mageekguy/atoum": 20
     }
 }
