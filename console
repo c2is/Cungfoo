@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Finder\Finder;
+
+require_once __DIR__.'/vendor/autoload.php';
+
+$app = require __DIR__.'/src/app.php';
+require __DIR__.'/config/dev.php';
+
+$console  = new Application('Cungfoo', 'n/a');
+$finder   = new Finder();
+
+$finder->files()->in(__DIR__.'/src/commands/')->name('*.command.php');
+foreach($finder as $task) {
+  require_once $task->getRealpath();
+}
+
+$console->run();
