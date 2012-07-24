@@ -23,7 +23,8 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 }));
 
 $app->register(new PropelServiceProvider(), array(
-  'propel.config_file' => $app['config.root-dir'].'/config/Propel/generated/Cungfoo-conf.php'
+  'propel.config_file' => $app['config.root-dir'].'/config/Propel/generated/Cungfoo-conf.php',
+  'propel.model_path' => $app['config.root-dir'].'/src'
 ));
 
 return $app;
