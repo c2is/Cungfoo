@@ -3,15 +3,6 @@
         <form action="{{ path('crud_create', {'id': form.id.get('value')}) }}" method="post">
             {{ form_widget(form) }}
 
-            <ul>
-            {% for emailField in form.author %}
-                <li>
-                    {{ form_errors(emailField) }}
-                    {{ form_widget(emailField) }}
-                </li>
-            {% endfor %}
-            </ul>
-
             <div class="form-actions">
                 <div class="btn-toolbar">
                     <button type="submit" class="btn btn-primary" style="margin-bottom: -5px">Enregistrer</button>

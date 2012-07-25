@@ -9,31 +9,31 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\Author;
-use Cungfoo\Model\AuthorPeer;
-use Cungfoo\Model\map\AuthorTableMap;
+use Cungfoo\Model\Category;
+use Cungfoo\Model\CategoryPeer;
+use Cungfoo\Model\map\CategoryTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'author' table.
+ * Base static class for performing query and update operations on the 'category' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseAuthorPeer
+abstract class BaseCategoryPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'author';
+    const TABLE_NAME = 'category';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\Author';
+    const OM_CLASS = 'Cungfoo\\Model\\Category';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'AuthorTableMap';
+    const TM_CLASS = 'CategoryTableMap';
 
     /** The total number of columns. */
     const NUM_COLUMNS = 4;
@@ -45,25 +45,25 @@ abstract class BaseAuthorPeer
     const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
-    const ID = 'author.ID';
+    const ID = 'category.ID';
 
     /** the column name for the NAME field */
-    const NAME = 'author.NAME';
+    const NAME = 'category.NAME';
 
     /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'author.CREATED_AT';
+    const CREATED_AT = 'category.CREATED_AT';
 
     /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'author.UPDATED_AT';
+    const UPDATED_AT = 'category.UPDATED_AT';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of Author objects.
+     * An identiy map to hold any loaded instances of Category objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array Author[]
+     * @var        array Category[]
      */
     public static $instances = array();
 
@@ -72,12 +72,12 @@ abstract class BaseAuthorPeer
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. AuthorPeer::$fieldNames[AuthorPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. CategoryPeer::$fieldNames[CategoryPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
         BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'CreatedAt', 'UpdatedAt', ),
         BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (AuthorPeer::ID, AuthorPeer::NAME, AuthorPeer::CREATED_AT, AuthorPeer::UPDATED_AT, ),
+        BasePeer::TYPE_COLNAME => array (CategoryPeer::ID, CategoryPeer::NAME, CategoryPeer::CREATED_AT, CategoryPeer::UPDATED_AT, ),
         BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'CREATED_AT', 'UPDATED_AT', ),
         BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'created_at', 'updated_at', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
@@ -87,12 +87,12 @@ abstract class BaseAuthorPeer
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. AuthorPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. CategoryPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
         BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
         BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (AuthorPeer::ID => 0, AuthorPeer::NAME => 1, AuthorPeer::CREATED_AT => 2, AuthorPeer::UPDATED_AT => 3, ),
+        BasePeer::TYPE_COLNAME => array (CategoryPeer::ID => 0, CategoryPeer::NAME => 1, CategoryPeer::CREATED_AT => 2, CategoryPeer::UPDATED_AT => 3, ),
         BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
         BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'created_at' => 2, 'updated_at' => 3, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
@@ -110,10 +110,10 @@ abstract class BaseAuthorPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = AuthorPeer::getFieldNames($toType);
-        $key = isset(AuthorPeer::$fieldKeys[$fromType][$name]) ? AuthorPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = CategoryPeer::getFieldNames($toType);
+        $key = isset(CategoryPeer::$fieldKeys[$fromType][$name]) ? CategoryPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(AuthorPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(CategoryPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -130,11 +130,11 @@ abstract class BaseAuthorPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, AuthorPeer::$fieldNames)) {
+        if (!array_key_exists($type, CategoryPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return AuthorPeer::$fieldNames[$type];
+        return CategoryPeer::$fieldNames[$type];
     }
 
     /**
@@ -146,12 +146,12 @@ abstract class BaseAuthorPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. AuthorPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. CategoryPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(AuthorPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(CategoryPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -169,10 +169,10 @@ abstract class BaseAuthorPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(AuthorPeer::ID);
-            $criteria->addSelectColumn(AuthorPeer::NAME);
-            $criteria->addSelectColumn(AuthorPeer::CREATED_AT);
-            $criteria->addSelectColumn(AuthorPeer::UPDATED_AT);
+            $criteria->addSelectColumn(CategoryPeer::ID);
+            $criteria->addSelectColumn(CategoryPeer::NAME);
+            $criteria->addSelectColumn(CategoryPeer::CREATED_AT);
+            $criteria->addSelectColumn(CategoryPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.NAME');
@@ -197,21 +197,21 @@ abstract class BaseAuthorPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(AuthorPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(CategoryPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            AuthorPeer::addSelectColumns($criteria);
+            CategoryPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(AuthorPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(CategoryPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -230,7 +230,7 @@ abstract class BaseAuthorPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 Author
+     * @return                 Category
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -238,7 +238,7 @@ abstract class BaseAuthorPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = AuthorPeer::doSelect($critcopy, $con);
+        $objects = CategoryPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -256,7 +256,7 @@ abstract class BaseAuthorPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return AuthorPeer::populateObjects(AuthorPeer::doSelectStmt($criteria, $con));
+        return CategoryPeer::populateObjects(CategoryPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -274,16 +274,16 @@ abstract class BaseAuthorPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            AuthorPeer::addSelectColumns($criteria);
+            CategoryPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(AuthorPeer::DATABASE_NAME);
+        $criteria->setDbName(CategoryPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -297,7 +297,7 @@ abstract class BaseAuthorPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      Author $obj A Author object.
+     * @param      Category $obj A Category object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -306,7 +306,7 @@ abstract class BaseAuthorPeer
             if ($key === null) {
                 $key = (string) $obj->getId();
             } // if key === null
-            AuthorPeer::$instances[$key] = $obj;
+            CategoryPeer::$instances[$key] = $obj;
         }
     }
 
@@ -318,7 +318,7 @@ abstract class BaseAuthorPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A Author object or a primary key value.
+     * @param      mixed $value A Category object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -326,17 +326,17 @@ abstract class BaseAuthorPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof Author) {
+            if (is_object($value) && $value instanceof Category) {
                 $key = (string) $value->getId();
             } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
                 $key = (string) $value;
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Author object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Category object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(AuthorPeer::$instances[$key]);
+            unset(CategoryPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -347,14 +347,14 @@ abstract class BaseAuthorPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   Author Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   Category Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(AuthorPeer::$instances[$key])) {
-                return AuthorPeer::$instances[$key];
+            if (isset(CategoryPeer::$instances[$key])) {
+                return CategoryPeer::$instances[$key];
             }
         }
 
@@ -368,11 +368,11 @@ abstract class BaseAuthorPeer
      */
     public static function clearInstancePool()
     {
-        AuthorPeer::$instances = array();
+        CategoryPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to author
+     * Method to invalidate the instance pool of all tables related to category
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
@@ -426,11 +426,11 @@ abstract class BaseAuthorPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = AuthorPeer::getOMClass();
+        $cls = CategoryPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = AuthorPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = AuthorPeer::getInstanceFromPool($key))) {
+            $key = CategoryPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = CategoryPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -439,7 +439,7 @@ abstract class BaseAuthorPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                AuthorPeer::addInstanceToPool($obj, $key);
+                CategoryPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -453,21 +453,21 @@ abstract class BaseAuthorPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (Author object, last column rank)
+     * @return array (Category object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = AuthorPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = AuthorPeer::getInstanceFromPool($key))) {
+        $key = CategoryPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = CategoryPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + AuthorPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + CategoryPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = AuthorPeer::OM_CLASS;
+            $cls = CategoryPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            AuthorPeer::addInstanceToPool($obj, $key);
+            CategoryPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -482,7 +482,7 @@ abstract class BaseAuthorPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(AuthorPeer::DATABASE_NAME)->getTable(AuthorPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(CategoryPeer::DATABASE_NAME)->getTable(CategoryPeer::TABLE_NAME);
     }
 
     /**
@@ -490,9 +490,9 @@ abstract class BaseAuthorPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseAuthorPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseAuthorPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new AuthorTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseCategoryPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseCategoryPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new CategoryTableMap());
       }
     }
 
@@ -504,13 +504,13 @@ abstract class BaseAuthorPeer
      */
     public static function getOMClass()
     {
-        return AuthorPeer::OM_CLASS;
+        return CategoryPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a Author or Criteria object.
+     * Performs an INSERT on the database, given a Category or Criteria object.
      *
-     * @param      mixed $values Criteria or Author object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or Category object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -519,22 +519,22 @@ abstract class BaseAuthorPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from Author object
+            $criteria = $values->buildCriteria(); // build Criteria from Category object
         }
 
-        if ($criteria->containsKey(AuthorPeer::ID) && $criteria->keyContainsValue(AuthorPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.AuthorPeer::ID.')');
+        if ($criteria->containsKey(CategoryPeer::ID) && $criteria->keyContainsValue(CategoryPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.CategoryPeer::ID.')');
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(AuthorPeer::DATABASE_NAME);
+        $criteria->setDbName(CategoryPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -551,9 +551,9 @@ abstract class BaseAuthorPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a Author or Criteria object.
+     * Performs an UPDATE on the database, given a Category or Criteria object.
      *
-     * @param      mixed $values Criteria or Author object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or Category object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -562,35 +562,35 @@ abstract class BaseAuthorPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(AuthorPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(CategoryPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(AuthorPeer::ID);
-            $value = $criteria->remove(AuthorPeer::ID);
+            $comparison = $criteria->getComparison(CategoryPeer::ID);
+            $value = $criteria->remove(CategoryPeer::ID);
             if ($value) {
-                $selectCriteria->add(AuthorPeer::ID, $value, $comparison);
+                $selectCriteria->add(CategoryPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(AuthorPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(CategoryPeer::TABLE_NAME);
             }
 
-        } else { // $values is Author object
+        } else { // $values is Category object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(AuthorPeer::DATABASE_NAME);
+        $criteria->setDbName(CategoryPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the author table.
+     * Deletes all rows from the category table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -599,19 +599,19 @@ abstract class BaseAuthorPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(AuthorPeer::TABLE_NAME, $con, AuthorPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(CategoryPeer::TABLE_NAME, $con, CategoryPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            AuthorPeer::clearInstancePool();
-            AuthorPeer::clearRelatedInstancePool();
+            CategoryPeer::clearInstancePool();
+            CategoryPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -622,9 +622,9 @@ abstract class BaseAuthorPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a Author or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a Category or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or Author object or primary key or array of primary keys
+     * @param      mixed $values Criteria or Category object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -635,32 +635,32 @@ abstract class BaseAuthorPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            AuthorPeer::clearInstancePool();
+            CategoryPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof Author) { // it's a model object
+        } elseif ($values instanceof Category) { // it's a model object
             // invalidate the cache for this single object
-            AuthorPeer::removeInstanceFromPool($values);
+            CategoryPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(AuthorPeer::DATABASE_NAME);
-            $criteria->add(AuthorPeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(CategoryPeer::DATABASE_NAME);
+            $criteria->add(CategoryPeer::ID, (array) $values, Criteria::IN);
             // invalidate the cache for this object(s)
             foreach ((array) $values as $singleval) {
-                AuthorPeer::removeInstanceFromPool($singleval);
+                CategoryPeer::removeInstanceFromPool($singleval);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(AuthorPeer::DATABASE_NAME);
+        $criteria->setDbName(CategoryPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -670,7 +670,7 @@ abstract class BaseAuthorPeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            AuthorPeer::clearRelatedInstancePool();
+            CategoryPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -681,13 +681,13 @@ abstract class BaseAuthorPeer
     }
 
     /**
-     * Validates all modified columns of given Author object.
+     * Validates all modified columns of given Category object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      Author $obj The object to validate.
+     * @param      Category $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -697,8 +697,8 @@ abstract class BaseAuthorPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(AuthorPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(AuthorPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(CategoryPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(CategoryPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -714,7 +714,7 @@ abstract class BaseAuthorPeer
 
         }
 
-        return BasePeer::doValidate(AuthorPeer::DATABASE_NAME, AuthorPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(CategoryPeer::DATABASE_NAME, CategoryPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -722,23 +722,23 @@ abstract class BaseAuthorPeer
      *
      * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
-     * @return Author
+     * @return Category
      */
     public static function retrieveByPK($pk, PropelPDO $con = null)
     {
 
-        if (null !== ($obj = AuthorPeer::getInstanceFromPool((string) $pk))) {
+        if (null !== ($obj = CategoryPeer::getInstanceFromPool((string) $pk))) {
             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria = new Criteria(AuthorPeer::DATABASE_NAME);
-        $criteria->add(AuthorPeer::ID, $pk);
+        $criteria = new Criteria(CategoryPeer::DATABASE_NAME);
+        $criteria->add(CategoryPeer::ID, $pk);
 
-        $v = AuthorPeer::doSelect($criteria, $con);
+        $v = CategoryPeer::doSelect($criteria, $con);
 
         return !empty($v) > 0 ? $v[0] : null;
     }
@@ -748,31 +748,31 @@ abstract class BaseAuthorPeer
      *
      * @param      array $pks List of primary keys
      * @param      PropelPDO $con the connection to use
-     * @return Author[]
+     * @return Category[]
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
     public static function retrieveByPKs($pks, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(AuthorPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(CategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         $objs = null;
         if (empty($pks)) {
             $objs = array();
         } else {
-            $criteria = new Criteria(AuthorPeer::DATABASE_NAME);
-            $criteria->add(AuthorPeer::ID, $pks, Criteria::IN);
-            $objs = AuthorPeer::doSelect($criteria, $con);
+            $criteria = new Criteria(CategoryPeer::DATABASE_NAME);
+            $criteria->add(CategoryPeer::ID, $pks, Criteria::IN);
+            $objs = CategoryPeer::doSelect($criteria, $con);
         }
 
         return $objs;
     }
 
-} // BaseAuthorPeer
+} // BaseCategoryPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseAuthorPeer::buildTableMap();
+BaseCategoryPeer::buildTableMap();
 

@@ -43,7 +43,7 @@ class DocumentTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('AUTHOR_ID', 'AuthorId', 'INTEGER', 'author', 'ID', true, null, null);
+        $this->addForeignKey('CATEGORY_ID', 'CategoryId', 'INTEGER', 'category', 'ID', true, null, null);
         $this->addColumn('TITLE', 'Title', 'VARCHAR', true, 255, null);
         $this->addColumn('BODY', 'Body', 'LONGVARCHAR', true, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
@@ -56,7 +56,9 @@ class DocumentTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_ONE, array('author_id' => 'id', ), null, null);
+        $this->addRelation('Category', 'Cungfoo\\Model\\Category', RelationMap::MANY_TO_ONE, array('category_id' => 'id', ), null, null);
+        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'document_id', ), null, null, 'DocumentAuthors');
+        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_MANY, array(), null, null, 'Authors');
     } // buildRelations()
 
     /**

@@ -6,7 +6,6 @@ use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
-use \DateTimeZone;
 use \Exception;
 use \PDO;
 use \Persistent;
@@ -20,18 +19,19 @@ use Cungfoo\Model\Author;
 use Cungfoo\Model\AuthorPeer;
 use Cungfoo\Model\AuthorQuery;
 use Cungfoo\Model\Document;
+use Cungfoo\Model\DocumentAuthor;
+use Cungfoo\Model\DocumentAuthorQuery;
 use Cungfoo\Model\DocumentQuery;
 
 /**
  * Base class that represents a row from the 'author' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
 abstract class BaseAuthor extends BaseObject implements Persistent
 {
-
     /**
      * Peer class name
      */
@@ -76,10 +76,15 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * @var        PropelObjectCollection|DocumentAuthor[] Collection to store aggregation of DocumentAuthor objects.
+     */
+    protected $collDocumentAuthors;
+    protected $collDocumentAuthorsPartial;
+
+    /**
      * @var        PropelObjectCollection|Document[] Collection to store aggregation of Document objects.
      */
     protected $collDocuments;
-    protected $collDocumentsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -102,45 +107,48 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     protected $documentsScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $documentAuthorsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
-     * 
-     * @return   int
+     *
+     * @return int
      */
     public function getId()
     {
-
         return $this->id;
     }
 
     /**
      * Get the [name] column value.
-     * 
-     * @return   string
+     *
+     * @return string
      */
     public function getName()
     {
-
         return $this->name;
     }
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
      *
-     * @param      string $format The date/time format string (either date()-style or strftime()-style).
-     *							If format is NULL, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL, and 0 if column value is 0000-00-00 00:00:00
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00 00:00:00
      * @throws PropelException - if unable to parse/validate the date/time value.
      */
-    public function getCreatedAt($format = NULL)
+    public function getCreatedAt($format = null)
     {
         if ($this->created_at === null) {
             return null;
         }
 
-
         if ($this->created_at === '0000-00-00 00:00:00') {
-            // while technically this is not a default value of NULL,
+            // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
         } else {
@@ -152,7 +160,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
         }
 
         if ($format === null) {
-            // Because propel.useDateTimeClass is TRUE, we return a DateTime object.
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
         } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
@@ -163,22 +171,21 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
      *
-     * @param      string $format The date/time format string (either date()-style or strftime()-style).
-     *							If format is NULL, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL, and 0 if column value is 0000-00-00 00:00:00
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00 00:00:00
      * @throws PropelException - if unable to parse/validate the date/time value.
      */
-    public function getUpdatedAt($format = NULL)
+    public function getUpdatedAt($format = null)
     {
         if ($this->updated_at === null) {
             return null;
         }
 
-
         if ($this->updated_at === '0000-00-00 00:00:00') {
-            // while technically this is not a default value of NULL,
+            // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
         } else {
@@ -190,7 +197,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
         }
 
         if ($format === null) {
-            // Because propel.useDateTimeClass is TRUE, we return a DateTime object.
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
         } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
@@ -201,9 +208,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
-     * @param      int $v new value
-     * @return   Author The current object (for fluent API support)
+     *
+     * @param int $v new value
+     * @return Author The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -222,9 +229,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     * 
-     * @param      string $v new value
-     * @return   Author The current object (for fluent API support)
+     *
+     * @param string $v new value
+     * @return Author The current object (for fluent API support)
      */
     public function setName($v)
     {
@@ -243,10 +250,10 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
-     * @param      mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as NULL.
-     * @return   Author The current object (for fluent API support)
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return Author The current object (for fluent API support)
      */
     public function setCreatedAt($v)
     {
@@ -266,10 +273,10 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
-     * @param      mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as NULL.
-     * @return   Author The current object (for fluent API support)
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return Author The current object (for fluent API support)
      */
     public function setUpdatedAt($v)
     {
@@ -297,7 +304,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-        // otherwise, everything was equal, so return TRUE
+        // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
 
@@ -309,9 +316,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * for results of JOIN queries where the resultset row includes columns from two or
      * more tables.
      *
-     * @param      array $row The row returned by PDOStatement->fetch(PDO::FETCH_NUM)
-     * @param      int $startcol 0-based offset column which indicates which restultset column to start with.
-     * @param      boolean $rehydrate Whether this object is being re-hydrated from the database.
+     * @param array $row The row returned by PDOStatement->fetch(PDO::FETCH_NUM)
+     * @param int $startcol 0-based offset column which indicates which restultset column to start with.
+     * @param boolean $rehydrate Whether this object is being re-hydrated from the database.
      * @return int             next starting column
      * @throws PropelException - Any caught Exception will be rewrapped as a PropelException.
      */
@@ -361,8 +368,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      *
      * This will only work if the object has been saved and has a valid primary key set.
      *
-     * @param      boolean $deep (optional) Whether to also de-associated any related objects.
-     * @param      PropelPDO $con (optional) The PropelPDO connection to use.
+     * @param boolean $deep (optional) Whether to also de-associated any related objects.
+     * @param PropelPDO $con (optional) The PropelPDO connection to use.
      * @return void
      * @throws PropelException - if this object is deleted, unsaved or doesn't have pk match in db
      */
@@ -393,15 +400,16 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collDocuments = null;
+            $this->collDocumentAuthors = null;
 
+            $this->collDocuments = null;
         } // if (deep)
     }
 
     /**
      * Removes this object from datastore and sets delete attribute.
      *
-     * @param      PropelPDO $con
+     * @param PropelPDO $con
      * @return void
      * @throws PropelException
      * @throws Exception
@@ -445,7 +453,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * method.  This method wraps all precipitate database operations in a
      * single transaction.
      *
-     * @param      PropelPDO $con
+     * @param PropelPDO $con
      * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
      * @throws PropelException
      * @throws Exception
@@ -467,19 +475,19 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             $ret = $this->preSave($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
-				// timestampable behavior
-				if (!$this->isColumnModified(AuthorPeer::CREATED_AT)) {
-				    $this->setCreatedAt(time());
-				}
-				if (!$this->isColumnModified(AuthorPeer::UPDATED_AT)) {
-				    $this->setUpdatedAt(time());
-				}
+                // timestampable behavior
+                if (!$this->isColumnModified(AuthorPeer::CREATED_AT)) {
+                    $this->setCreatedAt(time());
+                }
+                if (!$this->isColumnModified(AuthorPeer::UPDATED_AT)) {
+                    $this->setUpdatedAt(time());
+                }
             } else {
                 $ret = $ret && $this->preUpdate($con);
-				// timestampable behavior
-				if ($this->isModified() && !$this->isColumnModified(AuthorPeer::UPDATED_AT)) {
-				    $this->setUpdatedAt(time());
-				}
+                // timestampable behavior
+                if ($this->isModified() && !$this->isColumnModified(AuthorPeer::UPDATED_AT)) {
+                    $this->setUpdatedAt(time());
+                }
             }
             if ($ret) {
                 $affectedRows = $this->doSave($con);
@@ -508,7 +516,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * If the object is new, it inserts it; otherwise an update is performed.
      * All related objects are also updated in this method.
      *
-     * @param      PropelPDO $con
+     * @param PropelPDO $con
      * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
      * @throws PropelException
      * @see        save()
@@ -532,15 +540,35 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
             if ($this->documentsScheduledForDeletion !== null) {
                 if (!$this->documentsScheduledForDeletion->isEmpty()) {
-                    DocumentQuery::create()
-                        ->filterByPrimaryKeys($this->documentsScheduledForDeletion->getPrimaryKeys(false))
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->documentsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    DocumentAuthorQuery::create()
+                        ->filterByPrimaryKeys($pks)
                         ->delete($con);
                     $this->documentsScheduledForDeletion = null;
                 }
+
+                foreach ($this->getDocuments() as $document) {
+                    if ($document->isModified()) {
+                        $document->save($con);
+                    }
+                }
             }
 
-            if ($this->collDocuments !== null) {
-                foreach ($this->collDocuments as $referrerFK) {
+            if ($this->documentAuthorsScheduledForDeletion !== null) {
+                if (!$this->documentAuthorsScheduledForDeletion->isEmpty()) {
+                    DocumentAuthorQuery::create()
+                        ->filterByPrimaryKeys($this->documentAuthorsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->documentAuthorsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDocumentAuthors !== null) {
+                foreach ($this->collDocumentAuthors as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -557,7 +585,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     /**
      * Insert the row in the database.
      *
-     * @param      PropelPDO $con
+     * @param PropelPDO $con
      *
      * @throws PropelException
      * @see        doSave()
@@ -597,16 +625,16 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
                     case '`ID`':
-						$stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
                     case '`NAME`':
-						$stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
-						$stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
                     case '`UPDATED_AT`':
-						$stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -617,7 +645,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
         }
 
         try {
-			$pk = $con->lastInsertId();
+            $pk = $con->lastInsertId();
         } catch (Exception $e) {
             throw new PropelException('Unable to get autoincrement id.', $e);
         }
@@ -629,7 +657,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     /**
      * Update the row in the database.
      *
-     * @param      PropelPDO $con
+     * @param PropelPDO $con
      *
      * @see        doSave()
      */
@@ -664,7 +692,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * If $columns is either a column name or an array of column names
      * only those columns are validated.
      *
-     * @param      mixed $columns Column name or an array of column names.
+     * @param mixed $columns Column name or an array of column names.
      * @return boolean Whether all columns pass validation.
      * @see        doValidate()
      * @see        getValidationFailures()
@@ -690,7 +718,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * also be validated.  If all pass then <code>true</code> is returned; otherwise
      * an aggreagated array of ValidationFailed objects will be returned.
      *
-     * @param      array $columns Array of column names to validate.
+     * @param array $columns Array of column names to validate.
      * @return mixed <code>true</code> if all validations pass; array of <code>ValidationFailed</code> objets otherwise.
      */
     protected function doValidate($columns = null)
@@ -707,8 +735,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             }
 
 
-                if ($this->collDocuments !== null) {
-                    foreach ($this->collDocuments as $referrerFK) {
+                if ($this->collDocumentAuthors !== null) {
+                    foreach ($this->collDocumentAuthors as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -725,11 +753,11 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     /**
      * Retrieves a field from the object by name passed in as a string.
      *
-     * @param      string $name name
-     * @param      string $type The type of fieldname the $name is of:
-     *                     one of the class type constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME
-     *                     BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM.
-     *                     Defaults to BasePeer::TYPE_PHPNAME
+     * @param string $name name
+     * @param string $type The type of fieldname the $name is of:
+     *               one of the class type constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME
+     *               BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM.
+     *               Defaults to BasePeer::TYPE_PHPNAME
      * @return mixed Value of field.
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
@@ -744,7 +772,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * Retrieves a field from the object by Position as specified in the xml schema.
      * Zero-based.
      *
-     * @param      int $pos position in xml schema
+     * @param int $pos position in xml schema
      * @return mixed Value of field at $pos
      */
     public function getByPosition($pos)
@@ -777,7 +805,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * @param     string  $keyType (optional) One of the class type constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME,
      *                    BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM.
      *                    Defaults to BasePeer::TYPE_PHPNAME.
-     * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to TRUE.
+     * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to true.
      * @param     array $alreadyDumpedObjects List of objects to skip to avoid recursion
      * @param     boolean $includeForeignObjects (optional) Whether to include hydrated related objects. Default to FALSE.
      *
@@ -797,8 +825,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->collDocuments) {
-                $result['Documents'] = $this->collDocuments->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collDocumentAuthors) {
+                $result['DocumentAuthors'] = $this->collDocumentAuthors->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -808,9 +836,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     /**
      * Sets a field from the object by name passed in as a string.
      *
-     * @param      string $name peer name
-     * @param      mixed $value field value
-     * @param      string $type The type of fieldname the $name is of:
+     * @param string $name peer name
+     * @param mixed $value field value
+     * @param string $type The type of fieldname the $name is of:
      *                     one of the class type constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME
      *                     BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM.
      *                     Defaults to BasePeer::TYPE_PHPNAME
@@ -827,8 +855,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * Sets a field from the object by Position as specified in the xml schema.
      * Zero-based.
      *
-     * @param      int $pos position in xml schema
-     * @param      mixed $value field value
+     * @param int $pos position in xml schema
+     * @param mixed $value field value
      * @return void
      */
     public function setByPosition($pos, $value)
@@ -862,8 +890,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM.
      * The default key type is the column's BasePeer::TYPE_PHPNAME
      *
-     * @param      array  $arr     An array to populate the object from.
-     * @param      string $keyType The type of keys the array uses.
+     * @param array  $arr     An array to populate the object from.
+     * @param string $keyType The type of keys the array uses.
      * @return void
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
@@ -911,7 +939,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
 
     /**
      * Returns the primary key for this object (row).
-     * @return   int
+     * @return int
      */
     public function getPrimaryKey()
     {
@@ -921,7 +949,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     /**
      * Generic method to set the primary key (id column).
      *
-     * @param       int $key Primary key.
+     * @param  int $key Primary key.
      * @return void
      */
     public function setPrimaryKey($key)
@@ -945,9 +973,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param      object $copyObj An object of Author (or compatible) type.
-     * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @param      boolean $makeNew Whether to reset autoincrement PKs and make the object new.
+     * @param object $copyObj An object of Author (or compatible) type.
+     * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
+     * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
@@ -963,9 +991,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getDocuments() as $relObj) {
+            foreach ($this->getDocumentAuthors() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addDocument($relObj->copy($deepCopy));
+                    $copyObj->addDocumentAuthor($relObj->copy($deepCopy));
                 }
             }
 
@@ -987,8 +1015,8 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return                 Author Clone of current object.
+     * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
+     * @return Author Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1008,7 +1036,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return   AuthorPeer
+     * @return AuthorPeer
      */
     public function getPeer()
     {
@@ -1025,14 +1053,246 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * Avoids crafting an 'init[$relationName]s' method name
      * that wouldn't work when StandardEnglishPluralizer is used.
      *
-     * @param      string $relationName The name of the relation to initialize
+     * @param string $relationName The name of the relation to initialize
      * @return void
      */
     public function initRelation($relationName)
     {
-        if ('Document' == $relationName) {
-            $this->initDocuments();
+        if ('DocumentAuthor' == $relationName) {
+            $this->initDocumentAuthors();
         }
+    }
+
+    /**
+     * Clears out the collDocumentAuthors collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addDocumentAuthors()
+     */
+    public function clearDocumentAuthors()
+    {
+        $this->collDocumentAuthors = null; // important to set this to null since that means it is uninitialized
+        $this->collDocumentAuthorsPartial = null;
+    }
+
+    /**
+     * reset is the collDocumentAuthors collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDocumentAuthors($v = true)
+    {
+        $this->collDocumentAuthorsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDocumentAuthors collection.
+     *
+     * By default this just sets the collDocumentAuthors collection to an empty array (like clearcollDocumentAuthors());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDocumentAuthors($overrideExisting = true)
+    {
+        if (null !== $this->collDocumentAuthors && !$overrideExisting) {
+            return;
+        }
+        $this->collDocumentAuthors = new PropelObjectCollection();
+        $this->collDocumentAuthors->setModel('DocumentAuthor');
+    }
+
+    /**
+     * Gets an array of DocumentAuthor objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Author is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DocumentAuthor[] List of DocumentAuthor objects
+     * @throws PropelException
+     */
+    public function getDocumentAuthors($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDocumentAuthorsPartial && !$this->isNew();
+        if (null === $this->collDocumentAuthors || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDocumentAuthors) {
+                // return empty collection
+                $this->initDocumentAuthors();
+            } else {
+                $collDocumentAuthors = DocumentAuthorQuery::create(null, $criteria)
+                    ->filterByAuthor($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDocumentAuthorsPartial && count($collDocumentAuthors)) {
+                      $this->initDocumentAuthors(false);
+
+                      foreach($collDocumentAuthors as $obj) {
+                        if (false == $this->collDocumentAuthors->contains($obj)) {
+                          $this->collDocumentAuthors->append($obj);
+                        }
+                      }
+
+                      $this->collDocumentAuthorsPartial = true;
+                    }
+
+                    return $collDocumentAuthors;
+                }
+
+                if($partial && $this->collDocumentAuthors) {
+                    foreach($this->collDocumentAuthors as $obj) {
+                        if($obj->isNew()) {
+                            $collDocumentAuthors[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDocumentAuthors = $collDocumentAuthors;
+                $this->collDocumentAuthorsPartial = false;
+            }
+        }
+
+        return $this->collDocumentAuthors;
+    }
+
+    /**
+     * Sets a collection of DocumentAuthor objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $documentAuthors A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setDocumentAuthors(PropelCollection $documentAuthors, PropelPDO $con = null)
+    {
+        $this->documentAuthorsScheduledForDeletion = $this->getDocumentAuthors(new Criteria(), $con)->diff($documentAuthors);
+
+        foreach ($this->documentAuthorsScheduledForDeletion as $documentAuthorRemoved) {
+            $documentAuthorRemoved->setAuthor(null);
+        }
+
+        $this->collDocumentAuthors = null;
+        foreach ($documentAuthors as $documentAuthor) {
+            $this->addDocumentAuthor($documentAuthor);
+        }
+
+        $this->collDocumentAuthors = $documentAuthors;
+        $this->collDocumentAuthorsPartial = false;
+    }
+
+    /**
+     * Returns the number of related DocumentAuthor objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DocumentAuthor objects.
+     * @throws PropelException
+     */
+    public function countDocumentAuthors(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDocumentAuthorsPartial && !$this->isNew();
+        if (null === $this->collDocumentAuthors || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDocumentAuthors) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getDocumentAuthors());
+                }
+                $query = DocumentAuthorQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByAuthor($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collDocumentAuthors);
+        }
+    }
+
+    /**
+     * Method called to associate a DocumentAuthor object to this object
+     * through the DocumentAuthor foreign key attribute.
+     *
+     * @param    DocumentAuthor $l DocumentAuthor
+     * @return Author The current object (for fluent API support)
+     */
+    public function addDocumentAuthor(DocumentAuthor $l)
+    {
+        if ($this->collDocumentAuthors === null) {
+            $this->initDocumentAuthors();
+            $this->collDocumentAuthorsPartial = true;
+        }
+        if (!$this->collDocumentAuthors->contains($l)) { // only add it if the **same** object is not already associated
+            $this->doAddDocumentAuthor($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DocumentAuthor $documentAuthor The documentAuthor object to add.
+     */
+    protected function doAddDocumentAuthor($documentAuthor)
+    {
+        $this->collDocumentAuthors[]= $documentAuthor;
+        $documentAuthor->setAuthor($this);
+    }
+
+    /**
+     * @param	DocumentAuthor $documentAuthor The documentAuthor object to remove.
+     */
+    public function removeDocumentAuthor($documentAuthor)
+    {
+        if ($this->getDocumentAuthors()->contains($documentAuthor)) {
+            $this->collDocumentAuthors->remove($this->collDocumentAuthors->search($documentAuthor));
+            if (null === $this->documentAuthorsScheduledForDeletion) {
+                $this->documentAuthorsScheduledForDeletion = clone $this->collDocumentAuthors;
+                $this->documentAuthorsScheduledForDeletion->clear();
+            }
+            $this->documentAuthorsScheduledForDeletion[]= $documentAuthor;
+            $documentAuthor->setAuthor(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Author is new, it will return
+     * an empty collection; or if this Author has previously
+     * been saved, it will retrieve related DocumentAuthors from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Author.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|DocumentAuthor[] List of DocumentAuthor objects
+     */
+    public function getDocumentAuthorsJoinDocument($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = DocumentAuthorQuery::create(null, $criteria);
+        $query->joinWith('Document', $join_behavior);
+
+        return $this->getDocumentAuthors($query, $con);
     }
 
     /**
@@ -1046,43 +1306,28 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      */
     public function clearDocuments()
     {
-        $this->collDocuments = null; // important to set this to NULL since that means it is uninitialized
+        $this->collDocuments = null; // important to set this to null since that means it is uninitialized
         $this->collDocumentsPartial = null;
-    }
-
-    /**
-     * reset is the collDocuments collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialDocuments($v = true)
-    {
-        $this->collDocumentsPartial = $v;
     }
 
     /**
      * Initializes the collDocuments collection.
      *
-     * By default this just sets the collDocuments collection to an empty array (like clearcollDocuments());
+     * By default this just sets the collDocuments collection to an empty collection (like clearDocuments());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
-     * @param      boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
      * @return void
      */
-    public function initDocuments($overrideExisting = true)
+    public function initDocuments()
     {
-        if (null !== $this->collDocuments && !$overrideExisting) {
-            return;
-        }
         $this->collDocuments = new PropelObjectCollection();
         $this->collDocuments->setModel('Document');
     }
 
     /**
-     * Gets an array of Document objects which contain a foreign key that references this object.
+     * Gets a collection of Document objects related by a many-to-many relationship
+     * to the current object by way of the document_author cross-reference table.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
@@ -1090,15 +1335,14 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * If this Author is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
-     * @param      Criteria $criteria optional Criteria object to narrow the query
-     * @param      PropelPDO $con optional connection object
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
      * @return PropelObjectCollection|Document[] List of Document objects
-     * @throws PropelException
      */
     public function getDocuments($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collDocumentsPartial && !$this->isNew();
-        if (null === $this->collDocuments || null !== $criteria  || $partial) {
+        if (null === $this->collDocuments || null !== $criteria) {
             if ($this->isNew() && null === $this->collDocuments) {
                 // return empty collection
                 $this->initDocuments();
@@ -1107,31 +1351,9 @@ abstract class BaseAuthor extends BaseObject implements Persistent
                     ->filterByAuthor($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collDocumentsPartial && count($collDocuments)) {
-                      $this->initDocuments(false);
-
-                      foreach($collDocuments as $obj) {
-                        if (false == $this->collDocuments->contains($obj)) {
-                          $this->collDocuments->append($obj);
-                        }
-                      }
-
-                      $this->collDocumentsPartial = true;
-                    }
-
                     return $collDocuments;
                 }
-
-                if($partial && $this->collDocuments) {
-                    foreach($this->collDocuments as $obj) {
-                        if($obj->isNew()) {
-                            $collDocuments[] = $obj;
-                        }
-                    }
-                }
-
                 $this->collDocuments = $collDocuments;
-                $this->collDocumentsPartial = false;
             }
         }
 
@@ -1139,50 +1361,46 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     }
 
     /**
-     * Sets a collection of Document objects related by a one-to-many relationship
-     * to the current object.
+     * Sets a collection of Document objects related by a many-to-many relationship
+     * to the current object by way of the document_author cross-reference table.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param      PropelCollection $documents A Propel collection.
-     * @param      PropelPDO $con Optional connection object
+     * @param PropelCollection $documents A Propel collection.
+     * @param PropelPDO $con Optional connection object
      */
     public function setDocuments(PropelCollection $documents, PropelPDO $con = null)
     {
-        $this->documentsScheduledForDeletion = $this->getDocuments(new Criteria(), $con)->diff($documents);
+        $this->clearDocuments();
+        $currentDocuments = $this->getDocuments();
 
-        foreach ($this->documentsScheduledForDeletion as $documentRemoved) {
-            $documentRemoved->setAuthor(null);
-        }
+        $this->documentsScheduledForDeletion = $currentDocuments->diff($documents);
 
-        $this->collDocuments = null;
         foreach ($documents as $document) {
-            $this->addDocument($document);
+            if (!$currentDocuments->contains($document)) {
+                $this->doAddDocument($document);
+            }
         }
 
         $this->collDocuments = $documents;
-        $this->collDocumentsPartial = false;
     }
 
     /**
-     * Returns the number of related Document objects.
+     * Gets the number of Document objects related by a many-to-many relationship
+     * to the current object by way of the document_author cross-reference table.
      *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct
-     * @param      PropelPDO $con
-     * @return int             Count of related Document objects.
-     * @throws PropelException
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Document objects
      */
-    public function countDocuments(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countDocuments($criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collDocumentsPartial && !$this->isNew();
-        if (null === $this->collDocuments || null !== $criteria || $partial) {
+        if (null === $this->collDocuments || null !== $criteria) {
             if ($this->isNew() && null === $this->collDocuments) {
                 return 0;
             } else {
-                if($partial && !$criteria) {
-                    return count($this->getDocuments());
-                }
                 $query = DocumentQuery::create(null, $criteria);
                 if ($distinct) {
                     $query->distinct();
@@ -1198,23 +1416,22 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     }
 
     /**
-     * Method called to associate a Document object to this object
-     * through the Document foreign key attribute.
+     * Associate a Document object to this object
+     * through the document_author cross reference table.
      *
-     * @param    Document $l Document
-     * @return   Author The current object (for fluent API support)
+     * @param  Document $document The DocumentAuthor object to relate
+     * @return void
      */
-    public function addDocument(Document $l)
+    public function addDocument(Document $document)
     {
         if ($this->collDocuments === null) {
             $this->initDocuments();
-            $this->collDocumentsPartial = true;
         }
-        if (!$this->collDocuments->contains($l)) { // only add it if the **same** object is not already associated
-            $this->doAddDocument($l);
-        }
+        if (!$this->collDocuments->contains($document)) { // only add it if the **same** object is not already associated
+            $this->doAddDocument($document);
 
-        return $this;
+            $this->collDocuments[]= $document;
+        }
     }
 
     /**
@@ -1222,14 +1439,19 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      */
     protected function doAddDocument($document)
     {
-        $this->collDocuments[]= $document;
-        $document->setAuthor($this);
+        $documentAuthor = new DocumentAuthor();
+        $documentAuthor->setDocument($document);
+        $this->addDocumentAuthor($documentAuthor);
     }
 
     /**
-     * @param	Document $document The document object to remove.
+     * Remove a Document object to this object
+     * through the document_author cross reference table.
+     *
+     * @param Document $document The DocumentAuthor object to relate
+     * @return void
      */
-    public function removeDocument($document)
+    public function removeDocument(Document $document)
     {
         if ($this->getDocuments()->contains($document)) {
             $this->collDocuments->remove($this->collDocuments->search($document));
@@ -1238,7 +1460,6 @@ abstract class BaseAuthor extends BaseObject implements Persistent
                 $this->documentsScheduledForDeletion->clear();
             }
             $this->documentsScheduledForDeletion[]= $document;
-            $document->setAuthor(null);
         }
     }
 
@@ -1266,11 +1487,16 @@ abstract class BaseAuthor extends BaseObject implements Persistent
      * objects with circular references (even in PHP 5.3). This is currently necessary
      * when using Propel in certain daemon or large-volumne/high-memory operations.
      *
-     * @param      boolean $deep Whether to also clear the references on all referrer objects.
+     * @param boolean $deep Whether to also clear the references on all referrer objects.
      */
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collDocumentAuthors) {
+                foreach ($this->collDocumentAuthors as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collDocuments) {
                 foreach ($this->collDocuments as $o) {
                     $o->clearAllReferences($deep);
@@ -1278,6 +1504,10 @@ abstract class BaseAuthor extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        if ($this->collDocumentAuthors instanceof PropelCollection) {
+            $this->collDocumentAuthors->clearIterator();
+        }
+        $this->collDocumentAuthors = null;
         if ($this->collDocuments instanceof PropelCollection) {
             $this->collDocuments->clearIterator();
         }
@@ -1285,7 +1515,7 @@ abstract class BaseAuthor extends BaseObject implements Persistent
     }
 
     /**
-     * Return the string representation of this object
+     * return the string representation of this object
      *
      * @return string
      */
@@ -1304,18 +1534,18 @@ abstract class BaseAuthor extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
-	// timestampable behavior
-	
-	/**
-	 * Mark the current object so that the update date doesn't get updated during next save
-	 *
-	 * @return     Author The current object (for fluent API support)
-	 */
-	public function keepUpdateDateUnchanged()
-	{
-	    $this->modifiedColumns[] = AuthorPeer::UPDATED_AT;
-	
-	    return $this;
-	}
+    // timestampable behavior
 
-} // BaseAuthor
+    /**
+     * Mark the current object so that the update date doesn't get updated during next save
+     *
+     * @return     Author The current object (for fluent API support)
+     */
+    public function keepUpdateDateUnchanged()
+    {
+        $this->modifiedColumns[] = AuthorPeer::UPDATED_AT;
+
+        return $this;
+    }
+
+}

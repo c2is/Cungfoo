@@ -13,59 +13,64 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Author;
+use Cungfoo\Model\Category;
 use Cungfoo\Model\Document;
+use Cungfoo\Model\DocumentAuthor;
 use Cungfoo\Model\DocumentPeer;
 use Cungfoo\Model\DocumentQuery;
 
 /**
  * Base class that represents a query for the 'document' table.
  *
- * 
  *
- * @method     DocumentQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     DocumentQuery orderByAuthorId($order = Criteria::ASC) Order by the author_id column
- * @method     DocumentQuery orderByTitle($order = Criteria::ASC) Order by the title column
- * @method     DocumentQuery orderByBody($order = Criteria::ASC) Order by the body column
- * @method     DocumentQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
- * @method     DocumentQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
- * @method     DocumentQuery groupById() Group by the id column
- * @method     DocumentQuery groupByAuthorId() Group by the author_id column
- * @method     DocumentQuery groupByTitle() Group by the title column
- * @method     DocumentQuery groupByBody() Group by the body column
- * @method     DocumentQuery groupByCreatedAt() Group by the created_at column
- * @method     DocumentQuery groupByUpdatedAt() Group by the updated_at column
+ * @method DocumentQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method DocumentQuery orderByCategoryId($order = Criteria::ASC) Order by the category_id column
+ * @method DocumentQuery orderByTitle($order = Criteria::ASC) Order by the title column
+ * @method DocumentQuery orderByBody($order = Criteria::ASC) Order by the body column
+ * @method DocumentQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
+ * @method DocumentQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
- * @method     DocumentQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method     DocumentQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method     DocumentQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method DocumentQuery groupById() Group by the id column
+ * @method DocumentQuery groupByCategoryId() Group by the category_id column
+ * @method DocumentQuery groupByTitle() Group by the title column
+ * @method DocumentQuery groupByBody() Group by the body column
+ * @method DocumentQuery groupByCreatedAt() Group by the created_at column
+ * @method DocumentQuery groupByUpdatedAt() Group by the updated_at column
  *
- * @method     DocumentQuery leftJoinAuthor($relationAlias = null) Adds a LEFT JOIN clause to the query using the Author relation
- * @method     DocumentQuery rightJoinAuthor($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Author relation
- * @method     DocumentQuery innerJoinAuthor($relationAlias = null) Adds a INNER JOIN clause to the query using the Author relation
+ * @method DocumentQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method DocumentQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method DocumentQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     Document findOne(PropelPDO $con = null) Return the first Document matching the query
- * @method     Document findOneOrCreate(PropelPDO $con = null) Return the first Document matching the query, or a new Document object populated from the query conditions when no match is found
+ * @method DocumentQuery leftJoinCategory($relationAlias = null) Adds a LEFT JOIN clause to the query using the Category relation
+ * @method DocumentQuery rightJoinCategory($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Category relation
+ * @method DocumentQuery innerJoinCategory($relationAlias = null) Adds a INNER JOIN clause to the query using the Category relation
  *
- * @method     Document findOneById(int $id) Return the first Document filtered by the id column
- * @method     Document findOneByAuthorId(int $author_id) Return the first Document filtered by the author_id column
- * @method     Document findOneByTitle(string $title) Return the first Document filtered by the title column
- * @method     Document findOneByBody(string $body) Return the first Document filtered by the body column
- * @method     Document findOneByCreatedAt(string $created_at) Return the first Document filtered by the created_at column
- * @method     Document findOneByUpdatedAt(string $updated_at) Return the first Document filtered by the updated_at column
+ * @method DocumentQuery leftJoinDocumentAuthor($relationAlias = null) Adds a LEFT JOIN clause to the query using the DocumentAuthor relation
+ * @method DocumentQuery rightJoinDocumentAuthor($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DocumentAuthor relation
+ * @method DocumentQuery innerJoinDocumentAuthor($relationAlias = null) Adds a INNER JOIN clause to the query using the DocumentAuthor relation
  *
- * @method     array findById(int $id) Return Document objects filtered by the id column
- * @method     array findByAuthorId(int $author_id) Return Document objects filtered by the author_id column
- * @method     array findByTitle(string $title) Return Document objects filtered by the title column
- * @method     array findByBody(string $body) Return Document objects filtered by the body column
- * @method     array findByCreatedAt(string $created_at) Return Document objects filtered by the created_at column
- * @method     array findByUpdatedAt(string $updated_at) Return Document objects filtered by the updated_at column
+ * @method Document findOne(PropelPDO $con = null) Return the first Document matching the query
+ * @method Document findOneOrCreate(PropelPDO $con = null) Return the first Document matching the query, or a new Document object populated from the query conditions when no match is found
+ *
+ * @method Document findOneById(int $id) Return the first Document filtered by the id column
+ * @method Document findOneByCategoryId(int $category_id) Return the first Document filtered by the category_id column
+ * @method Document findOneByTitle(string $title) Return the first Document filtered by the title column
+ * @method Document findOneByBody(string $body) Return the first Document filtered by the body column
+ * @method Document findOneByCreatedAt(string $created_at) Return the first Document filtered by the created_at column
+ * @method Document findOneByUpdatedAt(string $updated_at) Return the first Document filtered by the updated_at column
+ *
+ * @method array findById(int $id) Return Document objects filtered by the id column
+ * @method array findByCategoryId(int $category_id) Return Document objects filtered by the category_id column
+ * @method array findByTitle(string $title) Return Document objects filtered by the title column
+ * @method array findByBody(string $body) Return Document objects filtered by the body column
+ * @method array findByCreatedAt(string $created_at) Return Document objects filtered by the created_at column
+ * @method array findByUpdatedAt(string $updated_at) Return Document objects filtered by the updated_at column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
 abstract class BaseDocumentQuery extends ModelCriteria
 {
-    
     /**
      * Initializes internal state of BaseDocumentQuery object.
      *
@@ -111,7 +116,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Document|Document[]|mixed the result, formatted by the current formatter
@@ -150,10 +155,10 @@ abstract class BaseDocumentQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `AUTHOR_ID`, `TITLE`, `BODY`, `CREATED_AT`, `UPDATED_AT` FROM `document` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CATEGORY_ID`, `TITLE`, `BODY`, `CREATED_AT`, `UPDATED_AT` FROM `document` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
-			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -267,18 +272,18 @@ abstract class BaseDocumentQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the author_id column
+     * Filter the query on the category_id column
      *
      * Example usage:
      * <code>
-     * $query->filterByAuthorId(1234); // WHERE author_id = 1234
-     * $query->filterByAuthorId(array(12, 34)); // WHERE author_id IN (12, 34)
-     * $query->filterByAuthorId(array('min' => 12)); // WHERE author_id > 12
+     * $query->filterByCategoryId(1234); // WHERE category_id = 1234
+     * $query->filterByCategoryId(array(12, 34)); // WHERE category_id IN (12, 34)
+     * $query->filterByCategoryId(array('min' => 12)); // WHERE category_id > 12
      * </code>
      *
-     * @see       filterByAuthor()
+     * @see       filterByCategory()
      *
-     * @param     mixed $authorId The value to use as filter.
+     * @param     mixed $categoryId The value to use as filter.
      *              Use scalar values for equality.
      *              Use array values for in_array() equivalent.
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
@@ -286,16 +291,16 @@ abstract class BaseDocumentQuery extends ModelCriteria
      *
      * @return DocumentQuery The current query, for fluid interface
      */
-    public function filterByAuthorId($authorId = null, $comparison = null)
+    public function filterByCategoryId($categoryId = null, $comparison = null)
     {
-        if (is_array($authorId)) {
+        if (is_array($categoryId)) {
             $useMinMax = false;
-            if (isset($authorId['min'])) {
-                $this->addUsingAlias(DocumentPeer::AUTHOR_ID, $authorId['min'], Criteria::GREATER_EQUAL);
+            if (isset($categoryId['min'])) {
+                $this->addUsingAlias(DocumentPeer::CATEGORY_ID, $categoryId['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
-            if (isset($authorId['max'])) {
-                $this->addUsingAlias(DocumentPeer::AUTHOR_ID, $authorId['max'], Criteria::LESS_EQUAL);
+            if (isset($categoryId['max'])) {
+                $this->addUsingAlias(DocumentPeer::CATEGORY_ID, $categoryId['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -306,7 +311,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(DocumentPeer::AUTHOR_ID, $authorId, $comparison);
+        return $this->addUsingAlias(DocumentPeer::CATEGORY_ID, $categoryId, $comparison);
     }
 
     /**
@@ -454,43 +459,43 @@ abstract class BaseDocumentQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Author object
+     * Filter the query by a related Category object
      *
-     * @param   Author|PropelObjectCollection $author The related object(s) to use as filter
+     * @param   Category|PropelObjectCollection $category The related object(s) to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   DocumentQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByAuthor($author, $comparison = null)
+    public function filterByCategory($category, $comparison = null)
     {
-        if ($author instanceof Author) {
+        if ($category instanceof Category) {
             return $this
-                ->addUsingAlias(DocumentPeer::AUTHOR_ID, $author->getId(), $comparison);
-        } elseif ($author instanceof PropelObjectCollection) {
+                ->addUsingAlias(DocumentPeer::CATEGORY_ID, $category->getId(), $comparison);
+        } elseif ($category instanceof PropelObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(DocumentPeer::AUTHOR_ID, $author->toKeyValue('PrimaryKey', 'Id'), $comparison);
+                ->addUsingAlias(DocumentPeer::CATEGORY_ID, $category->toKeyValue('PrimaryKey', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByAuthor() only accepts arguments of type Author or PropelCollection');
+            throw new PropelException('filterByCategory() only accepts arguments of type Category or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the Author relation
+     * Adds a JOIN clause to the query using the Category relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return DocumentQuery The current query, for fluid interface
      */
-    public function joinAuthor($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinCategory($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Author');
+        $relationMap = $tableMap->getRelation('Category');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -505,14 +510,14 @@ abstract class BaseDocumentQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'Author');
+            $this->addJoinObject($join, 'Category');
         }
 
         return $this;
     }
 
     /**
-     * Use the Author relation Author object
+     * Use the Category relation Category object
      *
      * @see       useQuery()
      *
@@ -520,13 +525,104 @@ abstract class BaseDocumentQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\AuthorQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\CategoryQuery A secondary query class using the current class as primary query
      */
-    public function useAuthorQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useCategoryQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinAuthor($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Author', '\Cungfoo\Model\AuthorQuery');
+            ->joinCategory($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Category', '\Cungfoo\Model\CategoryQuery');
+    }
+
+    /**
+     * Filter the query by a related DocumentAuthor object
+     *
+     * @param   DocumentAuthor|PropelObjectCollection $documentAuthor  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DocumentQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDocumentAuthor($documentAuthor, $comparison = null)
+    {
+        if ($documentAuthor instanceof DocumentAuthor) {
+            return $this
+                ->addUsingAlias(DocumentPeer::ID, $documentAuthor->getDocumentId(), $comparison);
+        } elseif ($documentAuthor instanceof PropelObjectCollection) {
+            return $this
+                ->useDocumentAuthorQuery()
+                ->filterByPrimaryKeys($documentAuthor->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByDocumentAuthor() only accepts arguments of type DocumentAuthor or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the DocumentAuthor relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DocumentQuery The current query, for fluid interface
+     */
+    public function joinDocumentAuthor($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('DocumentAuthor');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'DocumentAuthor');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the DocumentAuthor relation DocumentAuthor object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DocumentAuthorQuery A secondary query class using the current class as primary query
+     */
+    public function useDocumentAuthorQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinDocumentAuthor($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DocumentAuthor', '\Cungfoo\Model\DocumentAuthorQuery');
+    }
+
+    /**
+     * Filter the query by a related Author object
+     * using the document_author table as cross reference
+     *
+     * @param   Author $author the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DocumentQuery The current query, for fluid interface
+     */
+    public function filterByAuthor($author, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useDocumentAuthorQuery()
+            ->filterByAuthor($author, $comparison)
+            ->endUse();
     }
 
     /**
@@ -545,69 +641,69 @@ abstract class BaseDocumentQuery extends ModelCriteria
         return $this;
     }
 
-	// timestampable behavior
-	
-	/**
-	 * Filter by the latest updated
-	 *
-	 * @param      int $nbDays Maximum age of the latest update in days
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function recentlyUpdated($nbDays = 7)
-	{
-	    return $this->addUsingAlias(DocumentPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
-	}
-	
-	/**
-	 * Order by update date desc
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function lastUpdatedFirst()
-	{
-	    return $this->addDescendingOrderByColumn(DocumentPeer::UPDATED_AT);
-	}
-	
-	/**
-	 * Order by update date asc
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function firstUpdatedFirst()
-	{
-	    return $this->addAscendingOrderByColumn(DocumentPeer::UPDATED_AT);
-	}
-	
-	/**
-	 * Filter by the latest created
-	 *
-	 * @param      int $nbDays Maximum age of in days
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function recentlyCreated($nbDays = 7)
-	{
-	    return $this->addUsingAlias(DocumentPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
-	}
-	
-	/**
-	 * Order by create date desc
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function lastCreatedFirst()
-	{
-	    return $this->addDescendingOrderByColumn(DocumentPeer::CREATED_AT);
-	}
-	
-	/**
-	 * Order by create date asc
-	 *
-	 * @return     DocumentQuery The current query, for fluid interface
-	 */
-	public function firstCreatedFirst()
-	{
-	    return $this->addAscendingOrderByColumn(DocumentPeer::CREATED_AT);
-	}
-} // BaseDocumentQuery
+    // timestampable behavior
+
+    /**
+     * Filter by the latest updated
+     *
+     * @param      int $nbDays Maximum age of the latest update in days
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function recentlyUpdated($nbDays = 7)
+    {
+        return $this->addUsingAlias(DocumentPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+    }
+
+    /**
+     * Order by update date desc
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function lastUpdatedFirst()
+    {
+        return $this->addDescendingOrderByColumn(DocumentPeer::UPDATED_AT);
+    }
+
+    /**
+     * Order by update date asc
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function firstUpdatedFirst()
+    {
+        return $this->addAscendingOrderByColumn(DocumentPeer::UPDATED_AT);
+    }
+
+    /**
+     * Filter by the latest created
+     *
+     * @param      int $nbDays Maximum age of in days
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function recentlyCreated($nbDays = 7)
+    {
+        return $this->addUsingAlias(DocumentPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+    }
+
+    /**
+     * Order by create date desc
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function lastCreatedFirst()
+    {
+        return $this->addDescendingOrderByColumn(DocumentPeer::CREATED_AT);
+    }
+
+    /**
+     * Order by create date asc
+     *
+     * @return     DocumentQuery The current query, for fluid interface
+     */
+    public function firstCreatedFirst()
+    {
+        return $this->addAscendingOrderByColumn(DocumentPeer::CREATED_AT);
+    }
+}

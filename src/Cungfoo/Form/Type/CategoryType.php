@@ -3,16 +3,12 @@
 namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormEvents;
-use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormBuilderInterface;
-
-use Cungfoo\Model\Author;
 
 /**
  * @author Morgan Brunot <brunot.morgan@gmail.com>
  */
-class DocumentType extends AbstractType
+class CategoryType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -20,17 +16,7 @@ class DocumentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden');
-        $builder->add('title');
-        $builder->add('body');
-
-        $builder->add('category', new ModelType(), array(
-            'class' => 'Cungfoo\Model\Category',
-        ));
-
-        $builder->add('authors', new ModelType(), array(
-            'class' => 'Cungfoo\Model\Author',
-            'multiple' => true,
-        ));
+        $builder->add('name');
     }
 
     /**
@@ -39,7 +25,7 @@ class DocumentType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Cungfoo\Model\Document',
+            'data_class' => 'Cungfoo\Model\Category',
         );
     }
 
@@ -48,6 +34,6 @@ class DocumentType extends AbstractType
      */
     public function getName()
     {
-        return 'document';
+        return 'category';
     }
 }

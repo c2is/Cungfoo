@@ -9,7 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\AuthorPeer;
+use Cungfoo\Model\CategoryPeer;
 use Cungfoo\Model\Document;
 use Cungfoo\Model\DocumentPeer;
 use Cungfoo\Model\map\DocumentTableMap;
@@ -17,11 +17,12 @@ use Cungfoo\Model\map\DocumentTableMap;
 /**
  * Base static class for performing query and update operations on the 'document' table.
  *
- * 
  *
- * @package    propel.generator.Cungfoo.Model.om
+ *
+ * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseDocumentPeer {
+abstract class BaseDocumentPeer
+{
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
@@ -47,8 +48,8 @@ abstract class BaseDocumentPeer {
     /** the column name for the ID field */
     const ID = 'document.ID';
 
-    /** the column name for the AUTHOR_ID field */
-    const AUTHOR_ID = 'document.AUTHOR_ID';
+    /** the column name for the CATEGORY_ID field */
+    const CATEGORY_ID = 'document.CATEGORY_ID';
 
     /** the column name for the TITLE field */
     const TITLE = 'document.TITLE';
@@ -81,11 +82,11 @@ abstract class BaseDocumentPeer {
      * e.g. DocumentPeer::$fieldNames[DocumentPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'AuthorId', 'Title', 'Body', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'authorId', 'title', 'body', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID, DocumentPeer::AUTHOR_ID, DocumentPeer::TITLE, DocumentPeer::BODY, DocumentPeer::CREATED_AT, DocumentPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'AUTHOR_ID', 'TITLE', 'BODY', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'author_id', 'title', 'body', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'CategoryId', 'Title', 'Body', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'categoryId', 'title', 'body', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID, DocumentPeer::CATEGORY_ID, DocumentPeer::TITLE, DocumentPeer::BODY, DocumentPeer::CREATED_AT, DocumentPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CATEGORY_ID', 'TITLE', 'BODY', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'category_id', 'title', 'body', 'created_at', 'updated_at', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -96,11 +97,11 @@ abstract class BaseDocumentPeer {
      * e.g. DocumentPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'AuthorId' => 1, 'Title' => 2, 'Body' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'authorId' => 1, 'title' => 2, 'body' => 3, 'createdAt' => 4, 'updatedAt' => 5, ),
-        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID => 0, DocumentPeer::AUTHOR_ID => 1, DocumentPeer::TITLE => 2, DocumentPeer::BODY => 3, DocumentPeer::CREATED_AT => 4, DocumentPeer::UPDATED_AT => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'AUTHOR_ID' => 1, 'TITLE' => 2, 'BODY' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'author_id' => 1, 'title' => 2, 'body' => 3, 'created_at' => 4, 'updated_at' => 5, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CategoryId' => 1, 'Title' => 2, 'Body' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'categoryId' => 1, 'title' => 2, 'body' => 3, 'createdAt' => 4, 'updatedAt' => 5, ),
+        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID => 0, DocumentPeer::CATEGORY_ID => 1, DocumentPeer::TITLE => 2, DocumentPeer::BODY => 3, DocumentPeer::CREATED_AT => 4, DocumentPeer::UPDATED_AT => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CATEGORY_ID' => 1, 'TITLE' => 2, 'BODY' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'category_id' => 1, 'title' => 2, 'body' => 3, 'created_at' => 4, 'updated_at' => 5, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -176,14 +177,14 @@ abstract class BaseDocumentPeer {
     {
         if (null === $alias) {
             $criteria->addSelectColumn(DocumentPeer::ID);
-            $criteria->addSelectColumn(DocumentPeer::AUTHOR_ID);
+            $criteria->addSelectColumn(DocumentPeer::CATEGORY_ID);
             $criteria->addSelectColumn(DocumentPeer::TITLE);
             $criteria->addSelectColumn(DocumentPeer::BODY);
             $criteria->addSelectColumn(DocumentPeer::CREATED_AT);
             $criteria->addSelectColumn(DocumentPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.AUTHOR_ID');
+            $criteria->addSelectColumn($alias . '.CATEGORY_ID');
             $criteria->addSelectColumn($alias . '.TITLE');
             $criteria->addSelectColumn($alias . '.BODY');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
@@ -357,7 +358,7 @@ abstract class BaseDocumentPeer {
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   Document Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   Document Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
@@ -370,7 +371,7 @@ abstract class BaseDocumentPeer {
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -380,7 +381,7 @@ abstract class BaseDocumentPeer {
     {
         DocumentPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to document
      * by a foreign key with ON DELETE CASCADE
@@ -397,11 +398,11 @@ abstract class BaseDocumentPeer {
      *
      * @param      array $row PropelPDO resultset row.
      * @param      int $startcol The 0-based offset for reading from the resultset row.
-     * @return string A string version of PK or NULL if the components of primary key in result array are all null.
+     * @return string A string version of PK or null if the components of primary key in result array are all null.
      */
     public static function getPrimaryKeyHashFromRow($row, $startcol = 0)
     {
-        // If the PK cannot be derived from the row, return NULL.
+        // If the PK cannot be derived from the row, return null.
         if ($row[$startcol] === null) {
             return null;
         }
@@ -423,7 +424,7 @@ abstract class BaseDocumentPeer {
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -434,7 +435,7 @@ abstract class BaseDocumentPeer {
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = DocumentPeer::getOMClass();
         // populate the object(s)
@@ -485,7 +486,7 @@ abstract class BaseDocumentPeer {
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related Author table
+     * Returns the number of rows matching criteria, joining the related Category table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -493,7 +494,7 @@ abstract class BaseDocumentPeer {
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinAuthor(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinCategory(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -520,7 +521,7 @@ abstract class BaseDocumentPeer {
             $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(DocumentPeer::AUTHOR_ID, AuthorPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -536,7 +537,7 @@ abstract class BaseDocumentPeer {
 
 
     /**
-     * Selects a collection of Document objects pre-filled with their Author objects.
+     * Selects a collection of Document objects pre-filled with their Category objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
@@ -544,7 +545,7 @@ abstract class BaseDocumentPeer {
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinAuthor(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinCategory(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
@@ -555,9 +556,9 @@ abstract class BaseDocumentPeer {
 
         DocumentPeer::addSelectColumns($criteria);
         $startcol = DocumentPeer::NUM_HYDRATE_COLUMNS;
-        AuthorPeer::addSelectColumns($criteria);
+        CategoryPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(DocumentPeer::AUTHOR_ID, AuthorPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -577,19 +578,19 @@ abstract class BaseDocumentPeer {
                 DocumentPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = AuthorPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = CategoryPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = AuthorPeer::getInstanceFromPool($key2);
+                $obj2 = CategoryPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = AuthorPeer::getOMClass();
+                    $cls = CategoryPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    AuthorPeer::addInstanceToPool($obj2, $key2);
+                    CategoryPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (Document) to $obj2 (Author)
+                // Add the $obj1 (Document) to $obj2 (Category)
                 $obj2->addDocument($obj1);
 
             } // if joined row was not null
@@ -638,7 +639,7 @@ abstract class BaseDocumentPeer {
             $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(DocumentPeer::AUTHOR_ID, AuthorPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -674,10 +675,10 @@ abstract class BaseDocumentPeer {
         DocumentPeer::addSelectColumns($criteria);
         $startcol2 = DocumentPeer::NUM_HYDRATE_COLUMNS;
 
-        AuthorPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + AuthorPeer::NUM_HYDRATE_COLUMNS;
+        CategoryPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + CategoryPeer::NUM_HYDRATE_COLUMNS;
 
-        $criteria->addJoin(DocumentPeer::AUTHOR_ID, AuthorPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -696,21 +697,21 @@ abstract class BaseDocumentPeer {
                 DocumentPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined Author rows
+            // Add objects for joined Category rows
 
-            $key2 = AuthorPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = CategoryPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = AuthorPeer::getInstanceFromPool($key2);
+                $obj2 = CategoryPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = AuthorPeer::getOMClass();
+                    $cls = CategoryPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    AuthorPeer::addInstanceToPool($obj2, $key2);
+                    CategoryPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (Document) to the collection in $obj2 (Author)
+                // Add the $obj1 (Document) to the collection in $obj2 (Category)
                 $obj2->addDocument($obj1);
             } // if joined row not null
 
@@ -916,7 +917,7 @@ abstract class BaseDocumentPeer {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             DocumentPeer::clearRelatedInstancePool();
             $con->commit();

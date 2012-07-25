@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'author' table.
+ * This class defines the structure of the 'category' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class AuthorTableMap extends TableMap
+class CategoryTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.AuthorTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.CategoryTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,9 +36,9 @@ class AuthorTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('author');
-        $this->setPhpName('Author');
-        $this->setClassname('Cungfoo\\Model\\Author');
+        $this->setName('category');
+        $this->setPhpName('Category');
+        $this->setClassname('Cungfoo\\Model\\Category');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
@@ -54,8 +54,7 @@ class AuthorTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'author_id', ), null, null, 'DocumentAuthors');
-        $this->addRelation('Document', 'Cungfoo\\Model\\Document', RelationMap::MANY_TO_MANY, array(), null, null, 'Documents');
+        $this->addRelation('Document', 'Cungfoo\\Model\\Document', RelationMap::ONE_TO_MANY, array('id' => 'category_id', ), null, null, 'Documents');
     } // buildRelations()
 
     /**
@@ -71,4 +70,4 @@ class AuthorTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // AuthorTableMap
+} // CategoryTableMap

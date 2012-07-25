@@ -2,13 +2,13 @@
 
 namespace Cungfoo\Model;
 
-use Cungfoo\Model\om\BaseAuthor;
+use Cungfoo\Model\om\BaseDocumentAuthorQuery;
 
 
 /**
- * Skeleton subclass for representing a row from the 'author' table.
+ * Skeleton subclass for performing query and update operations on the 'document_author' table.
  *
- * 
+ *
  *
  * You should add additional methods to this class to meet the
  * application requirements.  This class will only be generated as
@@ -16,11 +16,6 @@ use Cungfoo\Model\om\BaseAuthor;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class Author extends BaseAuthor {
-
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
-} // Author
+class DocumentAuthorQuery extends BaseDocumentAuthorQuery
+{
+}
