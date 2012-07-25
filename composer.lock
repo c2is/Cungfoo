@@ -1,6 +1,12 @@
 {
-    "hash": "30f6da1f576c4f32aa50b419642d5568",
+    "hash": "b4d70e77212ab7194d29bbb1f8cbef7c",
     "packages": [
+        {
+            "package": "mageekguy/atoum",
+            "version": "dev-master",
+            "source-reference": "d00a6b270b885df0af2a79f5f28d0ee2f2da3d6e",
+            "commit-date": "1343213342"
+        },
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
@@ -36,8 +42,8 @@
         {
             "package": "propel/propel1",
             "version": "dev-master",
-            "source-reference": "dc5eeeaa84f57053a0f026f32ba38694f480ceb8",
-            "commit-date": "1343116682"
+            "source-reference": "88e21e68d977b54e79ba9f689d0a38645602c9a3",
+            "commit-date": "1343205629"
         },
         {
             "package": "silex/silex",
@@ -48,8 +54,8 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "3ae77d823cc30dcfe4ec342614c8f400abb26657",
-            "commit-date": "1342943573"
+            "source-reference": "337af0c031195d58a5502358ab78c4f30caa7fd0",
+            "commit-date": "1343211515"
         },
         {
             "package": "symfony/browser-kit",
@@ -180,8 +186,8 @@
         {
             "package": "symfony/http-foundation",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1343042318"
+            "source-reference": "5dfe8c39f36b47c712b310af5a3b61523b2f2b56",
+            "commit-date": "1343201916"
         },
         {
             "package": "symfony/http-kernel",
@@ -264,8 +270,8 @@
         {
             "package": "symfony/security",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1343053526"
+            "source-reference": "5a80d59ba5e77e523fe6560723cd00d0e744f57f",
+            "commit-date": "1343144220"
         },
         {
             "package": "symfony/translation",
@@ -322,6 +328,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "propel/propel-service-provider": 20
+        "propel/propel-service-provider": 20,
+        "mageekguy/atoum": 20
     }
 }

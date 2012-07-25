@@ -20,10 +20,13 @@
         "symfony/validator": "2.1.*",
         "symfony/filesystem": "2.1.*",
         "propel/propel1": "1.6.*",
-        "propel/propel-service-provider": "dev-master"
+        "propel/propel-service-provider": "dev-master",
+        "mageekguy/atoum": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { 
+            "": "src/"
+        }        
     }
 }
