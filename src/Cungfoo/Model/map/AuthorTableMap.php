@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'document' table.
+ * This class defines the structure of the 'author' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class DocumentTableMap extends TableMap
+class AuthorTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.DocumentTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.AuthorTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,16 +36,14 @@ class DocumentTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('document');
-        $this->setPhpName('Document');
-        $this->setClassname('Cungfoo\\Model\\Document');
+        $this->setName('author');
+        $this->setPhpName('Author');
+        $this->setClassname('Cungfoo\\Model\\Author');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('AUTHOR_ID', 'AuthorId', 'INTEGER', 'author', 'ID', true, null, null);
-        $this->addColumn('TITLE', 'Title', 'VARCHAR', true, 255, null);
-        $this->addColumn('BODY', 'Body', 'LONGVARCHAR', true, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -56,7 +54,7 @@ class DocumentTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_ONE, array('author_id' => 'id', ), null, null);
+        $this->addRelation('Document', 'Cungfoo\\Model\\Document', RelationMap::ONE_TO_MANY, array('id' => 'author_id', ), null, null, 'Documents');
     } // buildRelations()
 
     /**
@@ -72,4 +70,4 @@ class DocumentTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // DocumentTableMap
+} // AuthorTableMap

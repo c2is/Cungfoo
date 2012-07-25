@@ -2,8 +2,20 @@
 <database name="cungfoo" namespace="Cungfoo\Model" defaultIdMethod="native">
     <table name="document">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="author_id" type="integer" required="true" />
         <column name="title" type="varchar" required="true" />
         <column name="body" type="longvarchar" required="true" />
+
+        <foreign-key foreignTable="author">
+            <reference local="author_id" foreign="id"></reference>
+        </foreign-key>
+
+        <behavior name="timestampable" />
+    </table>
+
+    <table name="author">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
     </table>

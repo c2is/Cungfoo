@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Définition des variables utilisé
+ *
+ * @var \Silex\Application $app
+ */
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -21,3 +27,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });
+
+$app->mount('/documents', new Cungfoo\Provider\CrudController(
+    'document', '\Cungfoo\Model\Document', '\Cungfoo\Form\Type\DocumentType'
+));

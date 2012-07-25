@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+{% block content %}
+        <form action="{{ path('crud_create', {'id': form.id.get('value')}) }}" method="post">
+            {{ form_widget(form) }}
+
+            <ul>
+            {% for emailField in form.author %}
+                <li>
+                    {{ form_errors(emailField) }}
+                    {{ form_widget(emailField) }}
+                </li>
+            {% endfor %}
+            </ul>
+
+            <div class="form-actions">
+                <div class="btn-toolbar">
+                    <button type="submit" class="btn btn-primary" style="margin-bottom: -5px">Enregistrer</button>
+                    <div class="btn-group">
+                        <a class="btn" href="{{ path('crud_list') }}"><i class="icon-list"></i> Retourner sur la liste</a>
+                        <a class="btn" href="{{ path('crud_show', {'id': form.id.get('value') }) }}"><i class="icon-edit"></i> Voir</a>
+                        <a class="btn" href="{{ path('crud_delete', {'id': form.id.get('value') }) }}"><i class="icon-remove-circle"></i> Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+{% endblock %}

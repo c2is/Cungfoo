@@ -4,12 +4,16 @@ use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
+use Silex\Provider\FormServiceProvider;
+use Silex\Provider\TranslationServiceProvider;
 use Propel\Silex\PropelServiceProvider;
 
 $app = new Application();
 
 $app['config.root-dir'] = pathinfo(__DIR__)['dirname'];
 
+$app->register(new FormServiceProvider());
+$app->register(new TranslationServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ValidatorServiceProvider());
 $app->register(new TwigServiceProvider(), array(
@@ -26,5 +30,8 @@ $app->register(new PropelServiceProvider(), array(
   'propel.config_file' => $app['config.root-dir'].'/config/Propel/generated/Cungfoo-conf.php',
   'propel.model_path' => $app['config.root-dir'].'/src'
 ));
+
+$app['twig_collection_parser'] = new Cungfoo\Parser\TwigCollectionParser();
+$app['twig_object_parser'] = new Cungfoo\Parser\TwigObjectParser();
 
 return $app;
