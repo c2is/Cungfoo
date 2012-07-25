@@ -9,5 +9,5 @@ require __DIR__.'/prod.php';
 $app['debug'] = true;
 
 $app->register(new MonologServiceProvider(), array(
-    'monolog.logfile' => __DIR__.'/../log/cungfoo.log',
+    'monolog.logfile' => __DIR__.'/../logs/cungfoo.log',
 ));
