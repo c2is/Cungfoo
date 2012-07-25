@@ -13,7 +13,7 @@ $console
     ->setDefinition(array(
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
     ))
-    ->setDescription('Clear cache expect .gitignore file')
+    ->setDescription('Clears cache expect .gitignore file')
     ->setHelp('Usage: <info>./console.php cc</info>')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
       $finder = new Finder();
