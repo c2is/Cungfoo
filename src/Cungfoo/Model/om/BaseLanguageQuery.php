@@ -21,13 +21,13 @@ use Cungfoo\Model\LanguageQuery;
  *
  * @method LanguageQuery orderById($order = Criteria::ASC) Order by the id column
  * @method LanguageQuery orderByName($order = Criteria::ASC) Order by the name column
- * @method LanguageQuery orderByLocal($order = Criteria::ASC) Order by the local column
+ * @method LanguageQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method LanguageQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method LanguageQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method LanguageQuery groupById() Group by the id column
  * @method LanguageQuery groupByName() Group by the name column
- * @method LanguageQuery groupByLocal() Group by the local column
+ * @method LanguageQuery groupByLocale() Group by the locale column
  * @method LanguageQuery groupByCreatedAt() Group by the created_at column
  * @method LanguageQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -40,13 +40,13 @@ use Cungfoo\Model\LanguageQuery;
  *
  * @method Language findOneById(int $id) Return the first Language filtered by the id column
  * @method Language findOneByName(string $name) Return the first Language filtered by the name column
- * @method Language findOneByLocal(string $local) Return the first Language filtered by the local column
+ * @method Language findOneByLocale(string $locale) Return the first Language filtered by the locale column
  * @method Language findOneByCreatedAt(string $created_at) Return the first Language filtered by the created_at column
  * @method Language findOneByUpdatedAt(string $updated_at) Return the first Language filtered by the updated_at column
  *
  * @method array findById(int $id) Return Language objects filtered by the id column
  * @method array findByName(string $name) Return Language objects filtered by the name column
- * @method array findByLocal(string $local) Return Language objects filtered by the local column
+ * @method array findByLocale(string $locale) Return Language objects filtered by the locale column
  * @method array findByCreatedAt(string $created_at) Return Language objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Language objects filtered by the updated_at column
  *
@@ -138,7 +138,7 @@ abstract class BaseLanguageQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `LOCAL`, `CREATED_AT`, `UPDATED_AT` FROM `language` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `LOCALE`, `CREATED_AT`, `UPDATED_AT` FROM `language` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -284,32 +284,32 @@ abstract class BaseLanguageQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the local column
+     * Filter the query on the locale column
      *
      * Example usage:
      * <code>
-     * $query->filterByLocal('fooValue');   // WHERE local = 'fooValue'
-     * $query->filterByLocal('%fooValue%'); // WHERE local LIKE '%fooValue%'
+     * $query->filterByLocale('fooValue');   // WHERE locale = 'fooValue'
+     * $query->filterByLocale('%fooValue%'); // WHERE locale LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $local The value to use as filter.
+     * @param     string $locale The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return LanguageQuery The current query, for fluid interface
      */
-    public function filterByLocal($local = null, $comparison = null)
+    public function filterByLocale($locale = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($local)) {
+            if (is_array($locale)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $local)) {
-                $local = str_replace('*', '%', $local);
+            } elseif (preg_match('/[\%\*]/', $locale)) {
+                $locale = str_replace('*', '%', $locale);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(LanguagePeer::LOCAL, $local, $comparison);
+        return $this->addUsingAlias(LanguagePeer::LOCALE, $locale, $comparison);
     }
 
     /**

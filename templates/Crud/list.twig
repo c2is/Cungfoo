@@ -15,9 +15,9 @@
                         {% for fieldname in fieldnames %}
                             <td>{{ item[fieldname] }}</td>
                         {% endfor %}
-                        <td><a href="{{ path('crud_show', {'id': item['Id']}) }}"><i class="icon-eye-open"></i></a></td>
-                        <td><a href="{{ path('crud_edit', {'id': item['Id']}) }}"><i class="icon-edit"></i></a></td>
-                        <td><a href="{{ path('crud_delete', {'id': item['Id']}) }}"><i class="icon-remove-circle"></i></a></td>
+                        <td><a href="{{ path('%s_crud_show' | format (name), {'id': item['Id']}) }}"><i class="icon-eye-open"></i></a></td>
+                        <td><a href="{{ path('%s_crud_edit' | format (name), {'id': item['Id']}) }}"><i class="icon-edit"></i></a></td>
+                        <td><a href="{{ path('%s_crud_delete' | format (name), {'id': item['Id']}) }}"><i class="icon-remove-circle"></i></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -27,7 +27,7 @@
 
         <div class="form-actions">
             <div class="btn-group">
-                <a class="btn" href="{{ path('crud_edit') }}"><i class="icon-plus"></i> Ajouter</a>
+                <a class="btn" href="{{ path('%s_crud_edit' | format (name)) }}"><i class="icon-plus"></i> Ajouter</a>
             </div>
         </div>
 

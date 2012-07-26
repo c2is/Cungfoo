@@ -69,7 +69,7 @@ class CrudController implements ControllerProviderInterface
                 'collection' => $query->find()->exportTo($app['twig_collection_parser']),
             ));
         })
-        ->bind('crud_list')
+        ->bind(sprintf('%s_crud_list', $modelName))
         ;
 
         // Returns a specific object identified by a given id
@@ -93,7 +93,7 @@ class CrudController implements ControllerProviderInterface
                 'object'     => $object->exportTo($app['twig_object_parser']),
             ));
         })
-        ->bind('crud_show')
+        ->bind(sprintf('%s_crud_show', $modelName))
         ;
 
         //Create a new object
@@ -127,11 +127,14 @@ class CrudController implements ControllerProviderInterface
             $form = $app['form.factory']->create(new $this->formType, $model);
 
             // display the form
-            return $app['twig']->render('Crud/edit.twig', array('form' => $form->createView()));
+            return $app['twig']->render('Crud/edit.twig', array(
+                'name' => $this->modelName,
+                'form' => $form->createView(),
+            ));
 
         })
         ->value('id', null)
-        ->bind('crud_edit')
+        ->bind(sprintf('%s_crud_edit', $modelName))
         ;
 
         // Create a new object
@@ -172,7 +175,7 @@ class CrudController implements ControllerProviderInterface
                 {
                     $model->save();
 
-                    return $app->redirect($app['url_generator']->generate('crud_show', array('id' => $model->getId())));
+                    return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_show', $this->modelName), array('id' => $model->getId())));
                 }
             }
 
@@ -180,7 +183,7 @@ class CrudController implements ControllerProviderInterface
             return $app['twig']->render('Crud/edit.twig', array('form' => $form->createView()));
         })
         ->value('id', null)
-        ->bind('crud_create')
+        ->bind(sprintf('%s_crud_create', $modelName))
         ;
 
         // Delete a object identified by a given id
@@ -199,9 +202,9 @@ class CrudController implements ControllerProviderInterface
 
             $model->delete();
 
-            return $app->redirect($app['url_generator']->generate('crud_list'));
+            return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_list', $this->modelName)));
         })
-        ->bind('crud_delete')
+        ->bind(sprintf('%s_crud_delete', $modelName))
         ;
 
         return $controllers;

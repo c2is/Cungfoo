@@ -20,7 +20,7 @@ class DocumentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $languages = LanguageQuery::create()->select(array('local'))->find()->toArray();
+        $languages = LanguageQuery::create()->select(array('locale'))->find()->toArray();
 
         $builder->add('id', 'hidden');
 

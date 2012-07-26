@@ -50,8 +50,8 @@ abstract class BaseLanguagePeer
     /** the column name for the NAME field */
     const NAME = 'language.NAME';
 
-    /** the column name for the LOCAL field */
-    const LOCAL = 'language.LOCAL';
+    /** the column name for the LOCALE field */
+    const LOCALE = 'language.LOCALE';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'language.CREATED_AT';
@@ -78,11 +78,11 @@ abstract class BaseLanguagePeer
      * e.g. LanguagePeer::$fieldNames[LanguagePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Local', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'local', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (LanguagePeer::ID, LanguagePeer::NAME, LanguagePeer::LOCAL, LanguagePeer::CREATED_AT, LanguagePeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'LOCAL', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'local', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Locale', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'locale', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (LanguagePeer::ID, LanguagePeer::NAME, LanguagePeer::LOCALE, LanguagePeer::CREATED_AT, LanguagePeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'LOCALE', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'locale', 'created_at', 'updated_at', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
@@ -93,11 +93,11 @@ abstract class BaseLanguagePeer
      * e.g. LanguagePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Local' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'local' => 2, 'createdAt' => 3, 'updatedAt' => 4, ),
-        BasePeer::TYPE_COLNAME => array (LanguagePeer::ID => 0, LanguagePeer::NAME => 1, LanguagePeer::LOCAL => 2, LanguagePeer::CREATED_AT => 3, LanguagePeer::UPDATED_AT => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'LOCAL' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'local' => 2, 'created_at' => 3, 'updated_at' => 4, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Locale' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'locale' => 2, 'createdAt' => 3, 'updatedAt' => 4, ),
+        BasePeer::TYPE_COLNAME => array (LanguagePeer::ID => 0, LanguagePeer::NAME => 1, LanguagePeer::LOCALE => 2, LanguagePeer::CREATED_AT => 3, LanguagePeer::UPDATED_AT => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'LOCALE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'locale' => 2, 'created_at' => 3, 'updated_at' => 4, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
@@ -174,13 +174,13 @@ abstract class BaseLanguagePeer
         if (null === $alias) {
             $criteria->addSelectColumn(LanguagePeer::ID);
             $criteria->addSelectColumn(LanguagePeer::NAME);
-            $criteria->addSelectColumn(LanguagePeer::LOCAL);
+            $criteria->addSelectColumn(LanguagePeer::LOCALE);
             $criteria->addSelectColumn(LanguagePeer::CREATED_AT);
             $criteria->addSelectColumn(LanguagePeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.LOCAL');
+            $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
         }

@@ -28,6 +28,18 @@ $app->error(function (\Exception $e, $code) use ($app) {
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });
 
-$app->mount('/documents', new Cungfoo\Provider\CrudController(
+$app->mount('/admin/authors', new Cungfoo\Provider\CrudController(
+    'author', '\Cungfoo\Model\Author', '\Cungfoo\Form\Type\AuthorType'
+));
+
+$app->mount('/admin/documents', new Cungfoo\Provider\CrudController(
     'document', '\Cungfoo\Model\Document', '\Cungfoo\Form\Type\DocumentType'
+));
+
+$app->mount('/admin/categories', new Cungfoo\Provider\CrudController(
+    'category', '\Cungfoo\Model\Category', '\Cungfoo\Form\Type\CategoryType'
+));
+
+$app->mount('/admin/languages', new Cungfoo\Provider\CrudController(
+    'language', '\Cungfoo\Model\Language', '\Cungfoo\Form\Type\LanguageType'
 ));
