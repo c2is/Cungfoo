@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'document' table.
+ * This class defines the structure of the 'language' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class DocumentTableMap extends TableMap
+class LanguageTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.DocumentTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.LanguageTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,14 +36,15 @@ class DocumentTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('document');
-        $this->setPhpName('Document');
-        $this->setClassname('Cungfoo\\Model\\Document');
+        $this->setName('language');
+        $this->setPhpName('Language');
+        $this->setClassname('Cungfoo\\Model\\Language');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('CATEGORY_ID', 'CategoryId', 'INTEGER', 'category', 'ID', true, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('LOCAL', 'Local', 'VARCHAR', true, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -54,10 +55,6 @@ class DocumentTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Category', 'Cungfoo\\Model\\Category', RelationMap::MANY_TO_ONE, array('category_id' => 'id', ), null, null);
-        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'document_id', ), null, null, 'DocumentAuthors');
-        $this->addRelation('DocumentI18n', 'Cungfoo\\Model\\DocumentI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DocumentI18ns');
-        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_MANY, array(), null, null, 'Authors');
     } // buildRelations()
 
     /**
@@ -69,9 +66,8 @@ class DocumentTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'title, body', 'locale_column' => 'locale', 'default_locale' => '', 'locale_alias' => 'culture', ),
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
         );
     } // getBehaviors()
 
-} // DocumentTableMap
+} // LanguageTableMap

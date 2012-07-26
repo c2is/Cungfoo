@@ -1,4 +1,5 @@
 {% extends 'base.twig' %}
+
 {% block content %}
         <form action="{{ path('crud_create', {'id': form.id.get('value')}) }}" method="post">
             {{ form_widget(form) }}

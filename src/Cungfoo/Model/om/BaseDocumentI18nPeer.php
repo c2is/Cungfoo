@@ -9,33 +9,32 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\CategoryPeer;
-use Cungfoo\Model\Document;
+use Cungfoo\Model\DocumentI18n;
 use Cungfoo\Model\DocumentI18nPeer;
 use Cungfoo\Model\DocumentPeer;
-use Cungfoo\Model\map\DocumentTableMap;
+use Cungfoo\Model\map\DocumentI18nTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'document' table.
+ * Base static class for performing query and update operations on the 'document_i18n' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseDocumentPeer
+abstract class BaseDocumentI18nPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'document';
+    const TABLE_NAME = 'document_i18n';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\Document';
+    const OM_CLASS = 'Cungfoo\\Model\\DocumentI18n';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'DocumentTableMap';
+    const TM_CLASS = 'DocumentI18nTableMap';
 
     /** The total number of columns. */
     const NUM_COLUMNS = 4;
@@ -47,48 +46,41 @@ abstract class BaseDocumentPeer
     const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
-    const ID = 'document.ID';
+    const ID = 'document_i18n.ID';
 
-    /** the column name for the CATEGORY_ID field */
-    const CATEGORY_ID = 'document.CATEGORY_ID';
+    /** the column name for the LOCALE field */
+    const LOCALE = 'document_i18n.LOCALE';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'document.CREATED_AT';
+    /** the column name for the TITLE field */
+    const TITLE = 'document_i18n.TITLE';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'document.UPDATED_AT';
+    /** the column name for the BODY field */
+    const BODY = 'document_i18n.BODY';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of Document objects.
+     * An identiy map to hold any loaded instances of DocumentI18n objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array Document[]
+     * @var        array DocumentI18n[]
      */
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'en_EN';
     /**
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. DocumentPeer::$fieldNames[DocumentPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. DocumentI18nPeer::$fieldNames[DocumentI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'CategoryId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'categoryId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID, DocumentPeer::CATEGORY_ID, DocumentPeer::CREATED_AT, DocumentPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CATEGORY_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'category_id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Title', 'Body', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'title', 'body', ),
+        BasePeer::TYPE_COLNAME => array (DocumentI18nPeer::ID, DocumentI18nPeer::LOCALE, DocumentI18nPeer::TITLE, DocumentI18nPeer::BODY, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITLE', 'BODY', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'title', 'body', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -96,14 +88,14 @@ abstract class BaseDocumentPeer
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. DocumentPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. DocumentI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CategoryId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'categoryId' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (DocumentPeer::ID => 0, DocumentPeer::CATEGORY_ID => 1, DocumentPeer::CREATED_AT => 2, DocumentPeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CATEGORY_ID' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'category_id' => 1, 'created_at' => 2, 'updated_at' => 3, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Title' => 2, 'Body' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'body' => 3, ),
+        BasePeer::TYPE_COLNAME => array (DocumentI18nPeer::ID => 0, DocumentI18nPeer::LOCALE => 1, DocumentI18nPeer::TITLE => 2, DocumentI18nPeer::BODY => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITLE' => 2, 'BODY' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'body' => 3, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -119,10 +111,10 @@ abstract class BaseDocumentPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = DocumentPeer::getFieldNames($toType);
-        $key = isset(DocumentPeer::$fieldKeys[$fromType][$name]) ? DocumentPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = DocumentI18nPeer::getFieldNames($toType);
+        $key = isset(DocumentI18nPeer::$fieldKeys[$fromType][$name]) ? DocumentI18nPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(DocumentPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(DocumentI18nPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -139,11 +131,11 @@ abstract class BaseDocumentPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, DocumentPeer::$fieldNames)) {
+        if (!array_key_exists($type, DocumentI18nPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return DocumentPeer::$fieldNames[$type];
+        return DocumentI18nPeer::$fieldNames[$type];
     }
 
     /**
@@ -155,12 +147,12 @@ abstract class BaseDocumentPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. DocumentPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. DocumentI18nPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(DocumentPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(DocumentI18nPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -178,15 +170,15 @@ abstract class BaseDocumentPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(DocumentPeer::ID);
-            $criteria->addSelectColumn(DocumentPeer::CATEGORY_ID);
-            $criteria->addSelectColumn(DocumentPeer::CREATED_AT);
-            $criteria->addSelectColumn(DocumentPeer::UPDATED_AT);
+            $criteria->addSelectColumn(DocumentI18nPeer::ID);
+            $criteria->addSelectColumn(DocumentI18nPeer::LOCALE);
+            $criteria->addSelectColumn(DocumentI18nPeer::TITLE);
+            $criteria->addSelectColumn(DocumentI18nPeer::BODY);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CATEGORY_ID');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.LOCALE');
+            $criteria->addSelectColumn($alias . '.TITLE');
+            $criteria->addSelectColumn($alias . '.BODY');
         }
     }
 
@@ -206,21 +198,21 @@ abstract class BaseDocumentPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(DocumentPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(DocumentI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            DocumentPeer::addSelectColumns($criteria);
+            DocumentI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -239,7 +231,7 @@ abstract class BaseDocumentPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 Document
+     * @return                 DocumentI18n
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -247,7 +239,7 @@ abstract class BaseDocumentPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = DocumentPeer::doSelect($critcopy, $con);
+        $objects = DocumentI18nPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -265,7 +257,7 @@ abstract class BaseDocumentPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return DocumentPeer::populateObjects(DocumentPeer::doSelectStmt($criteria, $con));
+        return DocumentI18nPeer::populateObjects(DocumentI18nPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -283,16 +275,16 @@ abstract class BaseDocumentPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            DocumentPeer::addSelectColumns($criteria);
+            DocumentI18nPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -306,16 +298,16 @@ abstract class BaseDocumentPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      Document $obj A Document object.
+     * @param      DocumentI18n $obj A DocumentI18n object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
     {
         if (Propel::isInstancePoolingEnabled()) {
             if ($key === null) {
-                $key = (string) $obj->getId();
+                $key = serialize(array((string) $obj->getId(), (string) $obj->getLocale()));
             } // if key === null
-            DocumentPeer::$instances[$key] = $obj;
+            DocumentI18nPeer::$instances[$key] = $obj;
         }
     }
 
@@ -327,7 +319,7 @@ abstract class BaseDocumentPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A Document object or a primary key value.
+     * @param      mixed $value A DocumentI18n object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -335,17 +327,17 @@ abstract class BaseDocumentPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof Document) {
-                $key = (string) $value->getId();
-            } elseif (is_scalar($value)) {
+            if (is_object($value) && $value instanceof DocumentI18n) {
+                $key = serialize(array((string) $value->getId(), (string) $value->getLocale()));
+            } elseif (is_array($value) && count($value) === 2) {
                 // assume we've been passed a primary key
-                $key = (string) $value;
+                $key = serialize(array((string) $value[0], (string) $value[1]));
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Document object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or DocumentI18n object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(DocumentPeer::$instances[$key]);
+            unset(DocumentI18nPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -356,14 +348,14 @@ abstract class BaseDocumentPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   Document Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   DocumentI18n Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(DocumentPeer::$instances[$key])) {
-                return DocumentPeer::$instances[$key];
+            if (isset(DocumentI18nPeer::$instances[$key])) {
+                return DocumentI18nPeer::$instances[$key];
             }
         }
 
@@ -377,18 +369,15 @@ abstract class BaseDocumentPeer
      */
     public static function clearInstancePool()
     {
-        DocumentPeer::$instances = array();
+        DocumentI18nPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to document
+     * Method to invalidate the instance pool of all tables related to document_i18n
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in DocumentI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        DocumentI18nPeer::clearInstancePool();
     }
 
     /**
@@ -404,11 +393,11 @@ abstract class BaseDocumentPeer
     public static function getPrimaryKeyHashFromRow($row, $startcol = 0)
     {
         // If the PK cannot be derived from the row, return null.
-        if ($row[$startcol] === null) {
+        if ($row[$startcol] === null && $row[$startcol + 1] === null) {
             return null;
         }
 
-        return (string) $row[$startcol];
+        return serialize(array((string) $row[$startcol], (string) $row[$startcol + 1]));
     }
 
     /**
@@ -423,7 +412,7 @@ abstract class BaseDocumentPeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return (int) $row[$startcol];
+        return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
 
     /**
@@ -438,11 +427,11 @@ abstract class BaseDocumentPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = DocumentPeer::getOMClass();
+        $cls = DocumentI18nPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = DocumentPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = DocumentPeer::getInstanceFromPool($key))) {
+            $key = DocumentI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = DocumentI18nPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -451,7 +440,7 @@ abstract class BaseDocumentPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                DocumentPeer::addInstanceToPool($obj, $key);
+                DocumentI18nPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -465,21 +454,21 @@ abstract class BaseDocumentPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (Document object, last column rank)
+     * @return array (DocumentI18n object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = DocumentPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = DocumentPeer::getInstanceFromPool($key))) {
+        $key = DocumentI18nPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = DocumentI18nPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + DocumentPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + DocumentI18nPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = DocumentPeer::OM_CLASS;
+            $cls = DocumentI18nPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            DocumentPeer::addInstanceToPool($obj, $key);
+            DocumentI18nPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -487,7 +476,7 @@ abstract class BaseDocumentPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related Category table
+     * Returns the number of rows matching criteria, joining the related Document table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -495,7 +484,7 @@ abstract class BaseDocumentPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinCategory(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinDocument(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -503,26 +492,26 @@ abstract class BaseDocumentPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(DocumentPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(DocumentI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            DocumentPeer::addSelectColumns($criteria);
+            DocumentI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentI18nPeer::ID, DocumentPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -538,61 +527,61 @@ abstract class BaseDocumentPeer
 
 
     /**
-     * Selects a collection of Document objects pre-filled with their Category objects.
+     * Selects a collection of DocumentI18n objects pre-filled with their Document objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of Document objects.
+     * @return array           Array of DocumentI18n objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinCategory(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinDocument(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+            $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
         }
 
+        DocumentI18nPeer::addSelectColumns($criteria);
+        $startcol = DocumentI18nPeer::NUM_HYDRATE_COLUMNS;
         DocumentPeer::addSelectColumns($criteria);
-        $startcol = DocumentPeer::NUM_HYDRATE_COLUMNS;
-        CategoryPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentI18nPeer::ID, DocumentPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = DocumentPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = DocumentPeer::getInstanceFromPool($key1))) {
+            $key1 = DocumentI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = DocumentI18nPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
 
-                $cls = DocumentPeer::getOMClass();
+                $cls = DocumentI18nPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                DocumentPeer::addInstanceToPool($obj1, $key1);
+                DocumentI18nPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = CategoryPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = DocumentPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = CategoryPeer::getInstanceFromPool($key2);
+                $obj2 = DocumentPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryPeer::getOMClass();
+                    $cls = DocumentPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    CategoryPeer::addInstanceToPool($obj2, $key2);
+                    DocumentPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (Document) to $obj2 (Category)
-                $obj2->addDocument($obj1);
+                // Add the $obj1 (DocumentI18n) to $obj2 (Document)
+                $obj2->addDocumentI18n($obj1);
 
             } // if joined row was not null
 
@@ -621,26 +610,26 @@ abstract class BaseDocumentPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(DocumentPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(DocumentI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            DocumentPeer::addSelectColumns($criteria);
+            DocumentI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentI18nPeer::ID, DocumentPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -655,12 +644,12 @@ abstract class BaseDocumentPeer
     }
 
     /**
-     * Selects a collection of Document objects pre-filled with all related objects.
+     * Selects a collection of DocumentI18n objects pre-filled with all related objects.
      *
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of Document objects.
+     * @return array           Array of DocumentI18n objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -670,50 +659,50 @@ abstract class BaseDocumentPeer
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+            $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
         }
 
+        DocumentI18nPeer::addSelectColumns($criteria);
+        $startcol2 = DocumentI18nPeer::NUM_HYDRATE_COLUMNS;
+
         DocumentPeer::addSelectColumns($criteria);
-        $startcol2 = DocumentPeer::NUM_HYDRATE_COLUMNS;
+        $startcol3 = $startcol2 + DocumentPeer::NUM_HYDRATE_COLUMNS;
 
-        CategoryPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + CategoryPeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(DocumentPeer::CATEGORY_ID, CategoryPeer::ID, $join_behavior);
+        $criteria->addJoin(DocumentI18nPeer::ID, DocumentPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = DocumentPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = DocumentPeer::getInstanceFromPool($key1))) {
+            $key1 = DocumentI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = DocumentI18nPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
-                $cls = DocumentPeer::getOMClass();
+                $cls = DocumentI18nPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                DocumentPeer::addInstanceToPool($obj1, $key1);
+                DocumentI18nPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined Category rows
+            // Add objects for joined Document rows
 
-            $key2 = CategoryPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = DocumentPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = CategoryPeer::getInstanceFromPool($key2);
+                $obj2 = DocumentPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryPeer::getOMClass();
+                    $cls = DocumentPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    CategoryPeer::addInstanceToPool($obj2, $key2);
+                    DocumentPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (Document) to the collection in $obj2 (Category)
-                $obj2->addDocument($obj1);
+                // Add the $obj1 (DocumentI18n) to the collection in $obj2 (Document)
+                $obj2->addDocumentI18n($obj1);
             } // if joined row not null
 
             $results[] = $obj1;
@@ -732,7 +721,7 @@ abstract class BaseDocumentPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(DocumentPeer::DATABASE_NAME)->getTable(DocumentPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(DocumentI18nPeer::DATABASE_NAME)->getTable(DocumentI18nPeer::TABLE_NAME);
     }
 
     /**
@@ -740,9 +729,9 @@ abstract class BaseDocumentPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseDocumentPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseDocumentPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new DocumentTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseDocumentI18nPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseDocumentI18nPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new DocumentI18nTableMap());
       }
     }
 
@@ -754,13 +743,13 @@ abstract class BaseDocumentPeer
      */
     public static function getOMClass()
     {
-        return DocumentPeer::OM_CLASS;
+        return DocumentI18nPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a Document or Criteria object.
+     * Performs an INSERT on the database, given a DocumentI18n or Criteria object.
      *
-     * @param      mixed $values Criteria or Document object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or DocumentI18n object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -769,22 +758,18 @@ abstract class BaseDocumentPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from Document object
-        }
-
-        if ($criteria->containsKey(DocumentPeer::ID) && $criteria->keyContainsValue(DocumentPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.DocumentPeer::ID.')');
+            $criteria = $values->buildCriteria(); // build Criteria from DocumentI18n object
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -801,9 +786,9 @@ abstract class BaseDocumentPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a Document or Criteria object.
+     * Performs an UPDATE on the database, given a DocumentI18n or Criteria object.
      *
-     * @param      mixed $values Criteria or Document object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or DocumentI18n object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -812,35 +797,43 @@ abstract class BaseDocumentPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(DocumentPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(DocumentI18nPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(DocumentPeer::ID);
-            $value = $criteria->remove(DocumentPeer::ID);
+            $comparison = $criteria->getComparison(DocumentI18nPeer::ID);
+            $value = $criteria->remove(DocumentI18nPeer::ID);
             if ($value) {
-                $selectCriteria->add(DocumentPeer::ID, $value, $comparison);
+                $selectCriteria->add(DocumentI18nPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(DocumentPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(DocumentI18nPeer::TABLE_NAME);
             }
 
-        } else { // $values is Document object
+            $comparison = $criteria->getComparison(DocumentI18nPeer::LOCALE);
+            $value = $criteria->remove(DocumentI18nPeer::LOCALE);
+            if ($value) {
+                $selectCriteria->add(DocumentI18nPeer::LOCALE, $value, $comparison);
+            } else {
+                $selectCriteria->setPrimaryTableName(DocumentI18nPeer::TABLE_NAME);
+            }
+
+        } else { // $values is DocumentI18n object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the document table.
+     * Deletes all rows from the document_i18n table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -849,20 +842,19 @@ abstract class BaseDocumentPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += DocumentPeer::doOnDeleteCascade(new Criteria(DocumentPeer::DATABASE_NAME), $con);
-            $affectedRows += BasePeer::doDeleteAll(DocumentPeer::TABLE_NAME, $con, DocumentPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(DocumentI18nPeer::TABLE_NAME, $con, DocumentI18nPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            DocumentPeer::clearInstancePool();
-            DocumentPeer::clearRelatedInstancePool();
+            DocumentI18nPeer::clearInstancePool();
+            DocumentI18nPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -873,9 +865,9 @@ abstract class BaseDocumentPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a Document or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a DocumentI18n or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or Document object or primary key or array of primary keys
+     * @param      mixed $values Criteria or DocumentI18n object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -886,22 +878,40 @@ abstract class BaseDocumentPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
+            // invalidate the cache for all objects of this type, since we have no
+            // way of knowing (without running a query) what objects should be invalidated
+            // from the cache based on this Criteria.
+            DocumentI18nPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof Document) { // it's a model object
+        } elseif ($values instanceof DocumentI18n) { // it's a model object
+            // invalidate the cache for this single object
+            DocumentI18nPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(DocumentPeer::DATABASE_NAME);
-            $criteria->add(DocumentPeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(DocumentI18nPeer::DATABASE_NAME);
+            // primary key is composite; we therefore, expect
+            // the primary key passed to be an array of pkey values
+            if (count($values) == count($values, COUNT_RECURSIVE)) {
+                // array is not multi-dimensional
+                $values = array($values);
+            }
+            foreach ($values as $value) {
+                $criterion = $criteria->getNewCriterion(DocumentI18nPeer::ID, $value[0]);
+                $criterion->addAnd($criteria->getNewCriterion(DocumentI18nPeer::LOCALE, $value[1]));
+                $criteria->addOr($criterion);
+                // we can invalidate the cache for this single PK
+                DocumentI18nPeer::removeInstanceFromPool($value);
+            }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(DocumentPeer::DATABASE_NAME);
+        $criteria->setDbName(DocumentI18nPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -910,25 +920,8 @@ abstract class BaseDocumentPeer
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
 
-            // cloning the Criteria in case it's modified by doSelect() or doSelectStmt()
-            $c = clone $criteria;
-            $affectedRows += DocumentPeer::doOnDeleteCascade($c, $con);
-
-            // Because this db requires some delete cascade/set null emulation, we have to
-            // clear the cached instance *after* the emulation has happened (since
-            // instances get re-added by the select statement contained therein).
-            if ($values instanceof Criteria) {
-                DocumentPeer::clearInstancePool();
-            } elseif ($values instanceof Document) { // it's a model object
-                DocumentPeer::removeInstanceFromPool($values);
-            } else { // it's a primary key, or an array of pks
-                foreach ((array) $values as $singleval) {
-                    DocumentPeer::removeInstanceFromPool($singleval);
-                }
-            }
-
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            DocumentPeer::clearRelatedInstancePool();
+            DocumentI18nPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -939,46 +932,13 @@ abstract class BaseDocumentPeer
     }
 
     /**
-     * This is a method for emulating ON DELETE CASCADE for DBs that don't support this
-     * feature (like MySQL or SQLite).
-     *
-     * This method is not very speedy because it must perform a query first to get
-     * the implicated records and then perform the deletes by calling those Peer classes.
-     *
-     * This method should be used within a transaction if possible.
-     *
-     * @param      Criteria $criteria
-     * @param      PropelPDO $con
-     * @return int The number of affected rows (if supported by underlying database driver).
-     */
-    protected static function doOnDeleteCascade(Criteria $criteria, PropelPDO $con)
-    {
-        // initialize var to track total num of affected rows
-        $affectedRows = 0;
-
-        // first find the objects that are implicated by the $criteria
-        $objects = DocumentPeer::doSelect($criteria, $con);
-        foreach ($objects as $obj) {
-
-
-            // delete related DocumentI18n objects
-            $criteria = new Criteria(DocumentI18nPeer::DATABASE_NAME);
-
-            $criteria->add(DocumentI18nPeer::ID, $obj->getId());
-            $affectedRows += DocumentI18nPeer::doDelete($criteria, $con);
-        }
-
-        return $affectedRows;
-    }
-
-    /**
-     * Validates all modified columns of given Document object.
+     * Validates all modified columns of given DocumentI18n object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      Document $obj The object to validate.
+     * @param      DocumentI18n $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -988,8 +948,8 @@ abstract class BaseDocumentPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(DocumentPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(DocumentPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(DocumentI18nPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(DocumentI18nPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -1005,65 +965,35 @@ abstract class BaseDocumentPeer
 
         }
 
-        return BasePeer::doValidate(DocumentPeer::DATABASE_NAME, DocumentPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(DocumentI18nPeer::DATABASE_NAME, DocumentI18nPeer::TABLE_NAME, $columns);
     }
 
     /**
-     * Retrieve a single object by pkey.
-     *
-     * @param      int $pk the primary key.
-     * @param      PropelPDO $con the connection to use
-     * @return Document
+     * Retrieve object using using composite pkey values.
+     * @param   int $id
+     * @param   string $locale
+     * @param      PropelPDO $con
+     * @return   DocumentI18n
      */
-    public static function retrieveByPK($pk, PropelPDO $con = null)
-    {
-
-        if (null !== ($obj = DocumentPeer::getInstanceFromPool((string) $pk))) {
-            return $obj;
+    public static function retrieveByPK($id, $locale, PropelPDO $con = null) {
+        $_instancePoolKey = serialize(array((string) $id, (string) $locale));
+         if (null !== ($obj = DocumentI18nPeer::getInstanceFromPool($_instancePoolKey))) {
+             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DocumentI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
+        $criteria = new Criteria(DocumentI18nPeer::DATABASE_NAME);
+        $criteria->add(DocumentI18nPeer::ID, $id);
+        $criteria->add(DocumentI18nPeer::LOCALE, $locale);
+        $v = DocumentI18nPeer::doSelect($criteria, $con);
 
-        $criteria = new Criteria(DocumentPeer::DATABASE_NAME);
-        $criteria->add(DocumentPeer::ID, $pk);
-
-        $v = DocumentPeer::doSelect($criteria, $con);
-
-        return !empty($v) > 0 ? $v[0] : null;
+        return !empty($v) ? $v[0] : null;
     }
-
-    /**
-     * Retrieve multiple objects by pkey.
-     *
-     * @param      array $pks List of primary keys
-     * @param      PropelPDO $con the connection to use
-     * @return Document[]
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function retrieveByPKs($pks, PropelPDO $con = null)
-    {
-        if ($con === null) {
-            $con = Propel::getConnection(DocumentPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $objs = null;
-        if (empty($pks)) {
-            $objs = array();
-        } else {
-            $criteria = new Criteria(DocumentPeer::DATABASE_NAME);
-            $criteria->add(DocumentPeer::ID, $pks, Criteria::IN);
-            $objs = DocumentPeer::doSelect($criteria, $con);
-        }
-
-        return $objs;
-    }
-
-} // BaseDocumentPeer
+} // BaseDocumentI18nPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseDocumentPeer::buildTableMap();
+BaseDocumentI18nPeer::buildTableMap();
 

@@ -22,6 +22,8 @@ use Cungfoo\Model\CategoryQuery;
 use Cungfoo\Model\Document;
 use Cungfoo\Model\DocumentAuthor;
 use Cungfoo\Model\DocumentAuthorQuery;
+use Cungfoo\Model\DocumentI18n;
+use Cungfoo\Model\DocumentI18nQuery;
 use Cungfoo\Model\DocumentPeer;
 use Cungfoo\Model\DocumentQuery;
 
@@ -66,18 +68,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
     protected $category_id;
 
     /**
-     * The value for the title field.
-     * @var        string
-     */
-    protected $title;
-
-    /**
-     * The value for the body field.
-     * @var        string
-     */
-    protected $body;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -101,6 +91,12 @@ abstract class BaseDocument extends BaseObject implements Persistent
     protected $collDocumentAuthorsPartial;
 
     /**
+     * @var        PropelObjectCollection|DocumentI18n[] Collection to store aggregation of DocumentI18n objects.
+     */
+    protected $collDocumentI18ns;
+    protected $collDocumentI18nsPartial;
+
+    /**
      * @var        PropelObjectCollection|Author[] Collection to store aggregation of Author objects.
      */
     protected $collAuthors;
@@ -119,6 +115,20 @@ abstract class BaseDocument extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'en_EN';
+
+    /**
+     * Current translation objects
+     * @var        array[DocumentI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -130,6 +140,12 @@ abstract class BaseDocument extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $documentAuthorsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $documentI18nsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -149,26 +165,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
     public function getCategoryId()
     {
         return $this->category_id;
-    }
-
-    /**
-     * Get the [title] column value.
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Get the [body] column value.
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->body;
     }
 
     /**
@@ -292,48 +288,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
     } // setCategoryId()
 
     /**
-     * Set the value of [title] column.
-     *
-     * @param string $v new value
-     * @return Document The current object (for fluent API support)
-     */
-    public function setTitle($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->title !== $v) {
-            $this->title = $v;
-            $this->modifiedColumns[] = DocumentPeer::TITLE;
-        }
-
-
-        return $this;
-    } // setTitle()
-
-    /**
-     * Set the value of [body] column.
-     *
-     * @param string $v new value
-     * @return Document The current object (for fluent API support)
-     */
-    public function setBody($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->body !== $v) {
-            $this->body = $v;
-            $this->modifiedColumns[] = DocumentPeer::BODY;
-        }
-
-
-        return $this;
-    } // setBody()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -413,10 +367,8 @@ abstract class BaseDocument extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->category_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->body = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -425,7 +377,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 6; // 6 = DocumentPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = DocumentPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Document object", $e);
@@ -493,6 +445,8 @@ abstract class BaseDocument extends BaseObject implements Persistent
             $this->aCategory = null;
             $this->collDocumentAuthors = null;
 
+            $this->collDocumentI18ns = null;
+
             $this->collAuthors = null;
         } // if (deep)
     }
@@ -525,6 +479,13 @@ abstract class BaseDocument extends BaseObject implements Persistent
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
+                // i18n behavior
+
+                // emulate delete cascade
+                DocumentI18nQuery::create()
+                    ->filterByDocument($this)
+                    ->delete($con);
+
                 $con->commit();
                 $this->setDeleted(true);
             } else {
@@ -678,6 +639,23 @@ abstract class BaseDocument extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->documentI18nsScheduledForDeletion !== null) {
+                if (!$this->documentI18nsScheduledForDeletion->isEmpty()) {
+                    DocumentI18nQuery::create()
+                        ->filterByPrimaryKeys($this->documentI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->documentI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDocumentI18ns !== null) {
+                foreach ($this->collDocumentI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -710,12 +688,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
         if ($this->isColumnModified(DocumentPeer::CATEGORY_ID)) {
             $modifiedColumns[':p' . $index++]  = '`CATEGORY_ID`';
         }
-        if ($this->isColumnModified(DocumentPeer::TITLE)) {
-            $modifiedColumns[':p' . $index++]  = '`TITLE`';
-        }
-        if ($this->isColumnModified(DocumentPeer::BODY)) {
-            $modifiedColumns[':p' . $index++]  = '`BODY`';
-        }
         if ($this->isColumnModified(DocumentPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -738,12 +710,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
                         break;
                     case '`CATEGORY_ID`':
                         $stmt->bindValue($identifier, $this->category_id, PDO::PARAM_INT);
-                        break;
-                    case '`TITLE`':
-                        $stmt->bindValue($identifier, $this->title, PDO::PARAM_STR);
-                        break;
-                    case '`BODY`':
-                        $stmt->bindValue($identifier, $this->body, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -870,6 +836,14 @@ abstract class BaseDocument extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collDocumentI18ns !== null) {
+                    foreach ($this->collDocumentI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -912,15 +886,9 @@ abstract class BaseDocument extends BaseObject implements Persistent
                 return $this->getCategoryId();
                 break;
             case 2:
-                return $this->getTitle();
-                break;
-            case 3:
-                return $this->getBody();
-                break;
-            case 4:
                 return $this->getCreatedAt();
                 break;
-            case 5:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -954,10 +922,8 @@ abstract class BaseDocument extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCategoryId(),
-            $keys[2] => $this->getTitle(),
-            $keys[3] => $this->getBody(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategory) {
@@ -965,6 +931,9 @@ abstract class BaseDocument extends BaseObject implements Persistent
             }
             if (null !== $this->collDocumentAuthors) {
                 $result['DocumentAuthors'] = $this->collDocumentAuthors->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collDocumentI18ns) {
+                $result['DocumentI18ns'] = $this->collDocumentI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -1007,15 +976,9 @@ abstract class BaseDocument extends BaseObject implements Persistent
                 $this->setCategoryId($value);
                 break;
             case 2:
-                $this->setTitle($value);
-                break;
-            case 3:
-                $this->setBody($value);
-                break;
-            case 4:
                 $this->setCreatedAt($value);
                 break;
-            case 5:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1044,10 +1007,8 @@ abstract class BaseDocument extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCategoryId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setTitle($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setBody($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -1061,8 +1022,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
 
         if ($this->isColumnModified(DocumentPeer::ID)) $criteria->add(DocumentPeer::ID, $this->id);
         if ($this->isColumnModified(DocumentPeer::CATEGORY_ID)) $criteria->add(DocumentPeer::CATEGORY_ID, $this->category_id);
-        if ($this->isColumnModified(DocumentPeer::TITLE)) $criteria->add(DocumentPeer::TITLE, $this->title);
-        if ($this->isColumnModified(DocumentPeer::BODY)) $criteria->add(DocumentPeer::BODY, $this->body);
         if ($this->isColumnModified(DocumentPeer::CREATED_AT)) $criteria->add(DocumentPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DocumentPeer::UPDATED_AT)) $criteria->add(DocumentPeer::UPDATED_AT, $this->updated_at);
 
@@ -1129,8 +1088,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCategoryId($this->getCategoryId());
-        $copyObj->setTitle($this->getTitle());
-        $copyObj->setBody($this->getBody());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1144,6 +1101,12 @@ abstract class BaseDocument extends BaseObject implements Persistent
             foreach ($this->getDocumentAuthors() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addDocumentAuthor($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getDocumentI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDocumentI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1261,6 +1224,9 @@ abstract class BaseDocument extends BaseObject implements Persistent
     {
         if ('DocumentAuthor' == $relationName) {
             $this->initDocumentAuthors();
+        }
+        if ('DocumentI18n' == $relationName) {
+            $this->initDocumentI18ns();
         }
     }
 
@@ -1497,6 +1463,217 @@ abstract class BaseDocument extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collDocumentI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addDocumentI18ns()
+     */
+    public function clearDocumentI18ns()
+    {
+        $this->collDocumentI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collDocumentI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collDocumentI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDocumentI18ns($v = true)
+    {
+        $this->collDocumentI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDocumentI18ns collection.
+     *
+     * By default this just sets the collDocumentI18ns collection to an empty array (like clearcollDocumentI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDocumentI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collDocumentI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collDocumentI18ns = new PropelObjectCollection();
+        $this->collDocumentI18ns->setModel('DocumentI18n');
+    }
+
+    /**
+     * Gets an array of DocumentI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Document is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DocumentI18n[] List of DocumentI18n objects
+     * @throws PropelException
+     */
+    public function getDocumentI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDocumentI18nsPartial && !$this->isNew();
+        if (null === $this->collDocumentI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDocumentI18ns) {
+                // return empty collection
+                $this->initDocumentI18ns();
+            } else {
+                $collDocumentI18ns = DocumentI18nQuery::create(null, $criteria)
+                    ->filterByDocument($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDocumentI18nsPartial && count($collDocumentI18ns)) {
+                      $this->initDocumentI18ns(false);
+
+                      foreach($collDocumentI18ns as $obj) {
+                        if (false == $this->collDocumentI18ns->contains($obj)) {
+                          $this->collDocumentI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collDocumentI18nsPartial = true;
+                    }
+
+                    return $collDocumentI18ns;
+                }
+
+                if($partial && $this->collDocumentI18ns) {
+                    foreach($this->collDocumentI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collDocumentI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDocumentI18ns = $collDocumentI18ns;
+                $this->collDocumentI18nsPartial = false;
+            }
+        }
+
+        return $this->collDocumentI18ns;
+    }
+
+    /**
+     * Sets a collection of DocumentI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $documentI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setDocumentI18ns(PropelCollection $documentI18ns, PropelPDO $con = null)
+    {
+        $this->documentI18nsScheduledForDeletion = $this->getDocumentI18ns(new Criteria(), $con)->diff($documentI18ns);
+
+        foreach ($this->documentI18nsScheduledForDeletion as $documentI18nRemoved) {
+            $documentI18nRemoved->setDocument(null);
+        }
+
+        $this->collDocumentI18ns = null;
+        foreach ($documentI18ns as $documentI18n) {
+            $this->addDocumentI18n($documentI18n);
+        }
+
+        $this->collDocumentI18ns = $documentI18ns;
+        $this->collDocumentI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related DocumentI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DocumentI18n objects.
+     * @throws PropelException
+     */
+    public function countDocumentI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDocumentI18nsPartial && !$this->isNew();
+        if (null === $this->collDocumentI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDocumentI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getDocumentI18ns());
+                }
+                $query = DocumentI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByDocument($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collDocumentI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a DocumentI18n object to this object
+     * through the DocumentI18n foreign key attribute.
+     *
+     * @param    DocumentI18n $l DocumentI18n
+     * @return Document The current object (for fluent API support)
+     */
+    public function addDocumentI18n(DocumentI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collDocumentI18ns === null) {
+            $this->initDocumentI18ns();
+            $this->collDocumentI18nsPartial = true;
+        }
+        if (!$this->collDocumentI18ns->contains($l)) { // only add it if the **same** object is not already associated
+            $this->doAddDocumentI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DocumentI18n $documentI18n The documentI18n object to add.
+     */
+    protected function doAddDocumentI18n($documentI18n)
+    {
+        $this->collDocumentI18ns[]= $documentI18n;
+        $documentI18n->setDocument($this);
+    }
+
+    /**
+     * @param	DocumentI18n $documentI18n The documentI18n object to remove.
+     */
+    public function removeDocumentI18n($documentI18n)
+    {
+        if ($this->getDocumentI18ns()->contains($documentI18n)) {
+            $this->collDocumentI18ns->remove($this->collDocumentI18ns->search($documentI18n));
+            if (null === $this->documentI18nsScheduledForDeletion) {
+                $this->documentI18nsScheduledForDeletion = clone $this->collDocumentI18ns;
+                $this->documentI18nsScheduledForDeletion->clear();
+            }
+            $this->documentI18nsScheduledForDeletion[]= $documentI18n;
+            $documentI18n->setDocument(null);
+        }
+    }
+
+    /**
      * Clears out the collAuthors collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1671,8 +1848,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->category_id = null;
-        $this->title = null;
-        $this->body = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1700,6 +1875,11 @@ abstract class BaseDocument extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collDocumentI18ns) {
+                foreach ($this->collDocumentI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collAuthors) {
                 foreach ($this->collAuthors as $o) {
                     $o->clearAllReferences($deep);
@@ -1707,10 +1887,18 @@ abstract class BaseDocument extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'en_EN';
+        $this->currentTranslations = null;
+
         if ($this->collDocumentAuthors instanceof PropelCollection) {
             $this->collDocumentAuthors->clearIterator();
         }
         $this->collDocumentAuthors = null;
+        if ($this->collDocumentI18ns instanceof PropelCollection) {
+            $this->collDocumentI18ns->clearIterator();
+        }
+        $this->collDocumentI18ns = null;
         if ($this->collAuthors instanceof PropelCollection) {
             $this->collAuthors->clearIterator();
         }
@@ -1736,6 +1924,177 @@ abstract class BaseDocument extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Document The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'en_EN')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Gets the locale for translations.
+     * Alias for getLocale(), for BC purpose.
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getCulture()
+    {
+        return $this->getLocale();
+    }
+
+    /**
+     * Sets the locale for translations.
+     * Alias for setLocale(), for BC purpose.
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Document The current object (for fluent API support)
+     */
+    public function setCulture($locale = 'en_EN')
+    {
+        return $this->setLocale($locale);
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DocumentI18n */
+    public function getTranslation($locale = 'en_EN', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collDocumentI18ns) {
+                foreach ($this->collDocumentI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new DocumentI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = DocumentI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addDocumentI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Document The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'en_EN', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            DocumentI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collDocumentI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collDocumentI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DocumentI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [title] column value.
+         *
+         * @return string
+         */
+        public function getTitle()
+        {
+        return $this->getCurrentTranslation()->getTitle();
+    }
+
+
+        /**
+         * Set the value of [title] column.
+         *
+         * @param string $v new value
+         * @return DocumentI18n The current object (for fluent API support)
+         */
+        public function setTitle($v)
+        {    $this->getCurrentTranslation()->setTitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [body] column value.
+         *
+         * @return string
+         */
+        public function getBody()
+        {
+        return $this->getCurrentTranslation()->getBody();
+    }
+
+
+        /**
+         * Set the value of [body] column.
+         *
+         * @param string $v new value
+         * @return DocumentI18n The current object (for fluent API support)
+         */
+        public function setBody($v)
+        {    $this->getCurrentTranslation()->setBody($v);
+
+        return $this;
     }
 
     // timestampable behavior

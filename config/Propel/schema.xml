@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="cungfoo" namespace="Cungfoo\Model" defaultIdMethod="native">
+
+    <table name="author">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+    </table>
+
+    <table name="category">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+    </table>
+
     <table name="document">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="category_id" type="integer" required="true" />
         <column name="title" type="varchar" required="true" />
         <column name="body" type="longvarchar" required="true" />
 
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="title, body" />
+            <parameter name="locale_alias" value="culture"/>
+        </behavior>
+
         <foreign-key foreignTable="category">
             <reference local="category_id" foreign="id"></reference>
         </foreign-key>
-
-        <behavior name="timestampable" />
-    </table>
-
-    <table name="author">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
     </table>
@@ -33,9 +46,10 @@
         </foreign-key>
     </table>
 
-    <table name="category">
+    <table name="language">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="local" type="varchar" required="true" />
 
         <behavior name="timestampable" />
     </table>

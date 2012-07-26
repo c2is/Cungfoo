@@ -16,6 +16,7 @@ use Cungfoo\Model\Author;
 use Cungfoo\Model\Category;
 use Cungfoo\Model\Document;
 use Cungfoo\Model\DocumentAuthor;
+use Cungfoo\Model\DocumentI18n;
 use Cungfoo\Model\DocumentPeer;
 use Cungfoo\Model\DocumentQuery;
 
@@ -26,15 +27,11 @@ use Cungfoo\Model\DocumentQuery;
  *
  * @method DocumentQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DocumentQuery orderByCategoryId($order = Criteria::ASC) Order by the category_id column
- * @method DocumentQuery orderByTitle($order = Criteria::ASC) Order by the title column
- * @method DocumentQuery orderByBody($order = Criteria::ASC) Order by the body column
  * @method DocumentQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DocumentQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method DocumentQuery groupById() Group by the id column
  * @method DocumentQuery groupByCategoryId() Group by the category_id column
- * @method DocumentQuery groupByTitle() Group by the title column
- * @method DocumentQuery groupByBody() Group by the body column
  * @method DocumentQuery groupByCreatedAt() Group by the created_at column
  * @method DocumentQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -50,20 +47,20 @@ use Cungfoo\Model\DocumentQuery;
  * @method DocumentQuery rightJoinDocumentAuthor($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DocumentAuthor relation
  * @method DocumentQuery innerJoinDocumentAuthor($relationAlias = null) Adds a INNER JOIN clause to the query using the DocumentAuthor relation
  *
+ * @method DocumentQuery leftJoinDocumentI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DocumentI18n relation
+ * @method DocumentQuery rightJoinDocumentI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DocumentI18n relation
+ * @method DocumentQuery innerJoinDocumentI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the DocumentI18n relation
+ *
  * @method Document findOne(PropelPDO $con = null) Return the first Document matching the query
  * @method Document findOneOrCreate(PropelPDO $con = null) Return the first Document matching the query, or a new Document object populated from the query conditions when no match is found
  *
  * @method Document findOneById(int $id) Return the first Document filtered by the id column
  * @method Document findOneByCategoryId(int $category_id) Return the first Document filtered by the category_id column
- * @method Document findOneByTitle(string $title) Return the first Document filtered by the title column
- * @method Document findOneByBody(string $body) Return the first Document filtered by the body column
  * @method Document findOneByCreatedAt(string $created_at) Return the first Document filtered by the created_at column
  * @method Document findOneByUpdatedAt(string $updated_at) Return the first Document filtered by the updated_at column
  *
  * @method array findById(int $id) Return Document objects filtered by the id column
  * @method array findByCategoryId(int $category_id) Return Document objects filtered by the category_id column
- * @method array findByTitle(string $title) Return Document objects filtered by the title column
- * @method array findByBody(string $body) Return Document objects filtered by the body column
  * @method array findByCreatedAt(string $created_at) Return Document objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Document objects filtered by the updated_at column
  *
@@ -155,7 +152,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CATEGORY_ID`, `TITLE`, `BODY`, `CREATED_AT`, `UPDATED_AT` FROM `document` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CATEGORY_ID`, `CREATED_AT`, `UPDATED_AT` FROM `document` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -312,64 +309,6 @@ abstract class BaseDocumentQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DocumentPeer::CATEGORY_ID, $categoryId, $comparison);
-    }
-
-    /**
-     * Filter the query on the title column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByTitle('fooValue');   // WHERE title = 'fooValue'
-     * $query->filterByTitle('%fooValue%'); // WHERE title LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $title The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DocumentQuery The current query, for fluid interface
-     */
-    public function filterByTitle($title = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($title)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $title)) {
-                $title = str_replace('*', '%', $title);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DocumentPeer::TITLE, $title, $comparison);
-    }
-
-    /**
-     * Filter the query on the body column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByBody('fooValue');   // WHERE body = 'fooValue'
-     * $query->filterByBody('%fooValue%'); // WHERE body LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $body The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DocumentQuery The current query, for fluid interface
-     */
-    public function filterByBody($body = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($body)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $body)) {
-                $body = str_replace('*', '%', $body);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DocumentPeer::BODY, $body, $comparison);
     }
 
     /**
@@ -609,6 +548,80 @@ abstract class BaseDocumentQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related DocumentI18n object
+     *
+     * @param   DocumentI18n|PropelObjectCollection $documentI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DocumentQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDocumentI18n($documentI18n, $comparison = null)
+    {
+        if ($documentI18n instanceof DocumentI18n) {
+            return $this
+                ->addUsingAlias(DocumentPeer::ID, $documentI18n->getId(), $comparison);
+        } elseif ($documentI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useDocumentI18nQuery()
+                ->filterByPrimaryKeys($documentI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByDocumentI18n() only accepts arguments of type DocumentI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the DocumentI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DocumentQuery The current query, for fluid interface
+     */
+    public function joinDocumentI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('DocumentI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'DocumentI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the DocumentI18n relation DocumentI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DocumentI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useDocumentI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinDocumentI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DocumentI18n', '\Cungfoo\Model\DocumentI18nQuery');
+    }
+
+    /**
      * Filter the query by a related Author object
      * using the document_author table as cross reference
      *
@@ -639,6 +652,63 @@ abstract class BaseDocumentQuery extends ModelCriteria
         }
 
         return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DocumentQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'DocumentI18n';
+
+        return $this
+            ->joinDocumentI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DocumentQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'en_EN', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('DocumentI18n');
+        $this->with['DocumentI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DocumentI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DocumentI18n', 'Cungfoo\Model\DocumentI18nQuery');
     }
 
     // timestampable behavior
