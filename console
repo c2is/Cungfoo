@@ -1,20 +1,22 @@
 #!/usr/bin/env php
 <?php
 
-use Symfony\Component\Console\Application;
-use Symfony\Component\Finder\Finder;
+set_time_limit(0);
 
 require_once __DIR__.'/vendor/autoload.php';
 
 $app = require __DIR__.'/src/app.php';
-require __DIR__.'/config/dev.php';
+require __DIR__.'/config/prod.php';
+$app->get('/', function () use ($app) {}); // reset '/' route for making 'run' possible (route service is auto registered)
+$app->run(); // to boot registered services : Propel, etc.
 
-$console  = new Application('Cungfoo', '0.1');
-$finder   = new Finder();
+$console  = new \Cungfoo\Console\Application($app, 'Cungfoo', '0.1');
 
-$finder->files()->in(__DIR__.'/src/Commands/')->name('*.command.php');
-foreach($finder as $task) {
-  require_once $task->getRealpath();
-}
+$console->add(new \Cungfoo\Command\Propel\LoadFixturesCommand());
+$console->add(new \Cungfoo\Command\Propel\GenerateCommand());
+$console->add(new \Cungfoo\Command\Cache\ClearCacheCommand());
+$console->add(new \Cungfoo\Command\Logs\ClearLogsCommand());
+$console->add(new \Cungfoo\Command\Project\InitProjectCommand());
+$console->add(new \Cungfoo\Command\Tests\UnitsTestsCommand());
 
 $console->run();

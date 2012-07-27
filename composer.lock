@@ -1,11 +1,11 @@
 {
-    "hash": "7d910335d1a96245e6ea428b35dbbbed",
+    "hash": "dee8af308c64546f53e93781a4b977cc",
     "packages": [
         {
             "package": "mageekguy/atoum",
             "version": "dev-master",
-            "source-reference": "d00a6b270b885df0af2a79f5f28d0ee2f2da3d6e",
-            "commit-date": "1343213342"
+            "source-reference": "8ff37c48b558a33ce9cdfa252937e8ca08713364",
+            "commit-date": "1343308831"
         },
         {
             "package": "monolog/monolog",
@@ -42,8 +42,8 @@
         {
             "package": "propel/propel1",
             "version": "dev-master",
-            "source-reference": "88e21e68d977b54e79ba9f689d0a38645602c9a3",
-            "commit-date": "1343205629"
+            "source-reference": "fa209ce92a2c487f0fb07aefb86898721a44eacc",
+            "commit-date": "1343325213"
         },
         {
             "package": "silex/silex",
@@ -150,8 +150,8 @@
         {
             "package": "symfony/filesystem",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1342347231"
+            "source-reference": "e8d3ad568e54257842c190ad28c2b58e3456a1bc",
+            "commit-date": "1343235897"
         },
         {
             "package": "symfony/finder",
@@ -162,8 +162,8 @@
         {
             "package": "symfony/finder",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1342778082"
+            "source-reference": "304b90eed4b2fed6f4831b569c2a7fb68ea61a14",
+            "commit-date": "1343374503"
         },
         {
             "package": "symfony/form",
@@ -174,8 +174,8 @@
         {
             "package": "symfony/form",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1342944184"
+            "source-reference": "0abd4e562485077768b2d74ec86198e33f3e4974",
+            "commit-date": "1343292940"
         },
         {
             "package": "symfony/http-foundation",
@@ -186,8 +186,8 @@
         {
             "package": "symfony/http-foundation",
             "version": "dev-master",
-            "source-reference": "5dfe8c39f36b47c712b310af5a3b61523b2f2b56",
-            "commit-date": "1343201916"
+            "source-reference": "1a68ed3d7493a0c88e8623a378311787aa3d439e",
+            "commit-date": "1343380044"
         },
         {
             "package": "symfony/http-kernel",
@@ -234,8 +234,8 @@
         {
             "package": "symfony/options-resolver",
             "version": "dev-master",
-            "source-reference": "1b7b1c59acbe5a49bb58b8fecae86dcdf1c64999",
-            "commit-date": "1342868532"
+            "source-reference": "b1e39f86b9698704bcce80bc99a0dc8810b7b5cb",
+            "commit-date": "1343309769"
         },
         {
             "package": "symfony/process",
@@ -270,8 +270,8 @@
         {
             "package": "symfony/security",
             "version": "dev-master",
-            "source-reference": "5a80d59ba5e77e523fe6560723cd00d0e744f57f",
-            "commit-date": "1343144220"
+            "source-reference": "c923c63b1ba6dc48b2bd813c60035e3c2b5b3898",
+            "commit-date": "1343283221"
         },
         {
             "package": "symfony/translation",
@@ -294,8 +294,8 @@
         {
             "package": "symfony/twig-bridge",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1342942175"
+            "source-reference": "1e9873087f35a730d8d8d01050efbde724e76815",
+            "commit-date": "1343229695"
         },
         {
             "package": "symfony/validator",
@@ -306,8 +306,8 @@
         {
             "package": "symfony/validator",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1342762453"
+            "source-reference": "4c2daafebe1c71c2d4771547da49e4476b315be9",
+            "commit-date": "1343241038"
         },
         {
             "package": "symfony/yaml",
@@ -340,7 +340,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "symfony/yaml": 20,
         "propel/propel-service-provider": 20,
         "mageekguy/atoum": 20
     }
