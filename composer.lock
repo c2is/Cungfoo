@@ -1,5 +1,5 @@
 {
-    "hash": "b4d70e77212ab7194d29bbb1f8cbef7c",
+    "hash": "7d910335d1a96245e6ea428b35dbbbed",
     "packages": [
         {
             "package": "mageekguy/atoum",
@@ -310,6 +310,18 @@
             "commit-date": "1342762453"
         },
         {
+            "package": "symfony/yaml",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/yaml",
+            "version": "dev-master",
+            "source-reference": "v2.1.0-BETA4",
+            "commit-date": "1342347231"
+        },
+        {
             "package": "twig/twig",
             "version": "dev-master",
             "alias-pretty-version": "1.9.x-dev",
@@ -328,6 +340,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "symfony/yaml": 20,
         "propel/propel-service-provider": 20,
         "mageekguy/atoum": 20
     }

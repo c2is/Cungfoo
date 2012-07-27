@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
+
+use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html', array());
@@ -28,18 +31,13 @@ $app->error(function (\Exception $e, $code) use ($app) {
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });
 
-$app->mount('/admin/authors', new Cungfoo\Provider\CrudController(
-    'author', '\Cungfoo\Model\Author', '\Cungfoo\Model\AuthorType'
-));
+$crudRouter = new CrudRouter();
+$crudRouter->load(sprintf('%s/config/admin/crud.yml', $app['config.root-dir']));
+$crudController = $crudRouter->getController();
 
-$app->mount('/admin/documents', new Cungfoo\Provider\CrudController(
-    'document', '\Cungfoo\Model\Document', '\Cungfoo\Model\DocumentType'
-));
-
-$app->mount('/admin/categories', new Cungfoo\Provider\CrudController(
-    'category', '\Cungfoo\Model\Category', '\Cungfoo\Model\CategoryType'
-));
-
-$app->mount('/admin/languages', new Cungfoo\Provider\CrudController(
-    'language', '\Cungfoo\Model\Language', '\Cungfoo\Model\LanguageType'
-));
+foreach ($crudRouter->getRoutes() as $name => $route)
+{
+    $app->mount($route['prefix'], new $crudController(
+        $name, $route['model'], $route['form']
+    ));
+}

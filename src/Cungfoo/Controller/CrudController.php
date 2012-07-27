@@ -1,6 +1,6 @@
 <?php
 
-namespace Cungfoo\Provider;
+namespace Cungfoo\Controller;
 
 use Silex\Application;
 use Silex\ControllerCollection;
