@@ -1,22 +1,26 @@
 <?php
 
-namespace Cungfoo\Form\Type;
+namespace Cungfoo\Model;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
+use Cungfoo\Model\om\BaseDocumentType;
+
 /**
+ * Test class for Additional builder enabled on the 'document' table.
+ *
  * @author Morgan Brunot <brunot.morgan@gmail.com>
+ * @package    propel.generator.Cungfoo.Model
  */
-class AuthorType extends AbstractType
+class DocumentType extends BaseDocumentType
 {
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
-        $builder->add('name');
+        parent::buildForm($builder, $options);
     }
 
     /**
@@ -25,15 +29,8 @@ class AuthorType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Cungfoo\Model\Author',
+            'data_class' => 'Cungfoo\Model\Document',
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'author';
-    }
-}
+} // DocumentType

@@ -71,6 +71,7 @@ class DocumentTableMap extends TableMap
         return array(
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'title, body', 'locale_column' => 'locale', 'default_locale' => '', 'locale_alias' => 'culture', ),
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'crudable' => array(),
         );
     } // getBehaviors()
 

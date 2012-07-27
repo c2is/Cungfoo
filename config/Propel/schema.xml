@@ -6,6 +6,7 @@
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
+        <behavior name="crudable" />
     </table>
 
     <table name="category">
@@ -13,6 +14,7 @@
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
+        <behavior name="crudable" />
     </table>
 
     <table name="document">
@@ -27,10 +29,11 @@
         </behavior>
 
         <foreign-key foreignTable="category">
-            <reference local="category_id" foreign="id"></reference>
+            <reference local="category_id" foreign="id" />
         </foreign-key>
 
         <behavior name="timestampable" />
+        <behavior name="crudable" />
     </table>
 
     <table name="document_author" isCrossRef="true">
@@ -52,5 +55,6 @@
         <column name="locale" type="varchar" required="true" />
 
         <behavior name="timestampable" />
+        <behavior name="crudable" />
     </table>
 </database>

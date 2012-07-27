@@ -1,25 +1,26 @@
 <?php
 
-namespace Cungfoo\Form\Type;
+namespace Cungfoo\Model;
 
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormEvents;
-use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormBuilderInterface;
 
+use Cungfoo\Model\om\BaseLanguageType;
+
 /**
+ * Test class for Additional builder enabled on the 'language' table.
+ *
  * @author Morgan Brunot <brunot.morgan@gmail.com>
+ * @package    propel.generator.Cungfoo.Model
  */
-class LanguageType extends AbstractType
+class LanguageType extends BaseLanguageType
 {
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
-        $builder->add('name');
-        $builder->add('locale');
+        parent::buildForm($builder, $options);
     }
 
     /**
@@ -32,11 +33,4 @@ class LanguageType extends AbstractType
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'language';
-    }
-}
+} // LanguageType
