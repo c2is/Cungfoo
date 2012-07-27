@@ -4,12 +4,6 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
     public $overwrite = true;
 
-    public $hiddenColumns = array(
-        'id',
-        'created_at',
-        'updated_at',
-    );
-
     /**
      * Gets the package for the [base] object classes.
      * @return string
@@ -70,8 +64,12 @@ class {$this->getClassname()} extends AbstractType
 
         foreach ($this->getTable()->getColumns() as $col)
         {
-            if (in_array($col->getName(), $this->hiddenColumns)) {
+            if ('id' === $col->getName()) {
                 $builders .= "        \$builder->add('{$col->getName()}', 'hidden');\n";
+                continue;
+            }
+
+            if (in_array($col->getName(), array('created_at', 'updated_at'))) {
                 continue;
             }
 

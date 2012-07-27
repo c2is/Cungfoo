@@ -21,8 +21,6 @@ class BaseDocumentType extends AbstractType
     {
         $builder->add('id', 'hidden');
         $builder->add('category_id');
-        $builder->add('created_at', 'hidden');
-        $builder->add('updated_at', 'hidden');
 
     }
 

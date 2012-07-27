@@ -21,8 +21,6 @@ class BaseAuthorType extends AbstractType
     {
         $builder->add('id', 'hidden');
         $builder->add('name');
-        $builder->add('created_at', 'hidden');
-        $builder->add('updated_at', 'hidden');
 
     }
 

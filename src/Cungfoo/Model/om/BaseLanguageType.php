@@ -22,8 +22,6 @@ class BaseLanguageType extends AbstractType
         $builder->add('id', 'hidden');
         $builder->add('name');
         $builder->add('locale');
-        $builder->add('created_at', 'hidden');
-        $builder->add('updated_at', 'hidden');
 
     }
 
