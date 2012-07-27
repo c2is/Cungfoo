@@ -479,13 +479,6 @@ abstract class BaseDocument extends BaseObject implements Persistent
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
-                // i18n behavior
-
-                // emulate delete cascade
-                DocumentI18nQuery::create()
-                    ->filterByDocument($this)
-                    ->delete($con);
-
                 $con->commit();
                 $this->setDeleted(true);
             } else {

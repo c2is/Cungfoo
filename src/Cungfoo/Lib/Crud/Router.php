@@ -4,16 +4,25 @@ namespace Cungfoo\Lib\Crud;
 
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Load crud route with a config yaml file
+ *
+ * @author Morgan Brunot <brunot.morgan@gmail.com>
+ */
 class Router
 {
-    protected $routes = array();
+    protected $routes               = array();
 
-    protected $prefix = '/';
-    protected $controller = null;
+    protected $prefix               = '/';
+    protected $controller           = null;
 
-    protected $availableKeys = array('prefix', 'controller', 'items');
-    protected $availableItemsKeys = array('prefix', 'model', 'form');
+    protected $availableKeys        = array('prefix', 'controller', 'items');
+    protected $availableItemsKeys   = array('prefix', 'model', 'form');
 
+    /**
+     * @param string $file
+     * @throws \Exception
+     */
     public function load($file)
     {
         if (!file_exists($file))
@@ -34,16 +43,27 @@ class Router
         }
     }
 
+    /**
+     * @return array
+     */
     public function getRoutes()
     {
         return $this->routes;
     }
 
+    /**
+     * @return string|null
+     */
     public function getController()
     {
         return $this->controller;
     }
 
+    /**
+     * @param array $array
+     * @param array $availableKeys
+     * @throws \InvalidArgumentException
+     */
     protected function validateKeys($array, $availableKeys)
     {
         foreach ($array as $key => $value)
