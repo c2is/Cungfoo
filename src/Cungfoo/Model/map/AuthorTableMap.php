@@ -68,6 +68,7 @@ class AuthorTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'crudable' => array(),
         );
     } // getBehaviors()
 

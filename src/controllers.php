@@ -33,13 +33,13 @@ $app->mount('/admin/authors', new Cungfoo\Provider\CrudController(
 ));
 
 $app->mount('/admin/documents', new Cungfoo\Provider\CrudController(
-    'document', '\Cungfoo\Model\Document', '\Cungfoo\Form\Type\DocumentType'
+    'document', '\Cungfoo\Model\Document', '\Cungfoo\Model\DocumentType'
 ));
 
 $app->mount('/admin/categories', new Cungfoo\Provider\CrudController(
-    'category', '\Cungfoo\Model\Category', '\Cungfoo\Form\Type\CategoryType'
+    'category', '\Cungfoo\Model\Category', '\Cungfoo\Model\CategoryType'
 ));
 
 $app->mount('/admin/languages', new Cungfoo\Provider\CrudController(
-    'language', '\Cungfoo\Model\Language', '\Cungfoo\Form\Type\LanguageType'
+    'language', '\Cungfoo\Model\Language', '\Cungfoo\Model\LanguageType'
 ));
