@@ -2,7 +2,7 @@
 
 class CrudableFormTypeBehaviorBuilder extends OMBuilder
 {
-    public $overwrite = true;
+    public $overwrite = false;
 
     /**
      * Gets the package for the [base] object classes.
