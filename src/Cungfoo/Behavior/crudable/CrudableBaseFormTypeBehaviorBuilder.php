@@ -4,6 +4,12 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
     public $overwrite = true;
 
+    public $hiddenColumns = array(
+        'id',
+        'created_at',
+        'updated_at',
+    );
+
     /**
      * Gets the package for the [base] object classes.
      * @return string
@@ -61,9 +67,34 @@ class {$this->getClassname()} extends AbstractType
     protected function addBuildForm(&$script)
     {
         $builders = "";
+
         foreach ($this->getTable()->getColumns() as $col)
         {
-            $builders .= "        \$builder->add('{$col->getName()}');\n";
+            if (in_array($col->getName(), $this->hiddenColumns)) {
+                $builders .= "        \$builder->add('{$col->getName()}', 'hidden');\n";
+                continue;
+            }
+
+            if ($col->isLobType()) {
+                $builders .= "        \$builder->add('{$col->getName()}');\n";
+            } elseif ($col->getType() === PropelTypes::DATE) {
+                $builders .= "        \$builder->add('{$col->getName()}', 'date');\n";
+            } elseif ($col->getType() === PropelTypes::TIME || $col->getType() === PropelTypes::TIMESTAMP) {
+                $builders .= "        \$builder->add('{$col->getName()}', 'datetime');\n";
+            } elseif ($col->getType() === PropelTypes::OBJECT) {
+                $builders .= "        \$builder->add('{$col->getName()}');\n";
+            } elseif ($col->getType() === PropelTypes::PHP_ARRAY) {
+                $builders .= "        \$builder->add('{$col->getName()}');\n";
+                if ($col->isNamePlural()) {
+                    $builders .= "        \$builder->add('{$col->getName()}');\n";
+                }
+            } elseif ($col->isEnumType()) {
+                $builders .= "        \$builder->add('{$col->getName()}');\n";
+            } elseif ($col->isBooleanType()) {
+                $builders .= "        \$builder->add('{$col->getName()}', 'checkbox');\n";
+            } else {
+                $builders .= "        \$builder->add('{$col->getName()}');\n";
+            }
         }
 
         $script .= "
@@ -79,7 +110,10 @@ class {$this->getClassname()} extends AbstractType
 
     protected function addGetDefaultOptions(&$script)
     {
-        $dataClass = sprintf('%s\\Base%s', $this->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname());
+        $dataClass = sprintf('%s\\%s',
+            $this->getTable()->getNamespace(),
+            $this->getStubObjectBuilder()->getUnprefixedClassname()
+        );
 
         $script .= "
     /**

@@ -74,7 +74,10 @@ class {$this->getClassname()} extends Base{$this->getClassname()}
 
     protected function addGetDefaultOptions(&$script)
     {
-        $dataClass = sprintf('%s\\%s', $this->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname());
+        $dataClass = sprintf('%s\\%s',
+            $this->getNamespace(),
+            $this->getStubObjectBuilder()->getUnprefixedClassname()
+        );
 
         $script .= "
     /**

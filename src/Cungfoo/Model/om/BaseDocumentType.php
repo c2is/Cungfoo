@@ -19,10 +19,10 @@ class BaseDocumentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id');
+        $builder->add('id', 'hidden');
         $builder->add('category_id');
-        $builder->add('created_at');
-        $builder->add('updated_at');
+        $builder->add('created_at', 'hidden');
+        $builder->add('updated_at', 'hidden');
 
     }
 
@@ -32,7 +32,7 @@ class BaseDocumentType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Cungfoo\Model\om\BaseDocument',
+            'data_class' => 'Cungfoo\Model\Document',
         );
     }
 

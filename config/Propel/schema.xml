@@ -29,7 +29,7 @@
         </behavior>
 
         <foreign-key foreignTable="category">
-            <reference local="category_id" foreign="id"></reference>
+            <reference local="category_id" foreign="id" />
         </foreign-key>
 
         <behavior name="timestampable" />

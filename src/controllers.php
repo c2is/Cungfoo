@@ -29,7 +29,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 });
 
 $app->mount('/admin/authors', new Cungfoo\Provider\CrudController(
-    'author', '\Cungfoo\Model\Author', '\Cungfoo\Form\Type\AuthorType'
+    'author', '\Cungfoo\Model\Author', '\Cungfoo\Model\AuthorType'
 ));
 
 $app->mount('/admin/documents', new Cungfoo\Provider\CrudController(

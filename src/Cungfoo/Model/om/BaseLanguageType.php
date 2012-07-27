@@ -19,11 +19,11 @@ class BaseLanguageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id');
+        $builder->add('id', 'hidden');
         $builder->add('name');
         $builder->add('locale');
-        $builder->add('created_at');
-        $builder->add('updated_at');
+        $builder->add('created_at', 'hidden');
+        $builder->add('updated_at', 'hidden');
 
     }
 
@@ -33,7 +33,7 @@ class BaseLanguageType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Cungfoo\Model\om\BaseLanguage',
+            'data_class' => 'Cungfoo\Model\Language',
         );
     }
 
