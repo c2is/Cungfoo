@@ -1,14 +1,14 @@
 <?php
 namespace Cungfoo\Command\Tests;
 
-use Cungfoo\Command\ApplicationAwareCommand;
+use Cungfoo\Command\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface;
 
-class UnitsTestsCommand extends ApplicationAwareCommand
+class UnitCommand extends Command
 {
     protected function configure()
     {

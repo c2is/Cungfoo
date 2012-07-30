@@ -12,11 +12,11 @@ $app->run(); // to boot registered services : Propel, etc.
 
 $console  = new \Cungfoo\Console\Application($app, 'Cungfoo', '0.1');
 
-$console->add(new \Cungfoo\Command\Propel\LoadFixturesCommand());
+$console->add(new \Cungfoo\Command\Propel\Fixtures\LoadCommand());
 $console->add(new \Cungfoo\Command\Propel\GenerateCommand());
-$console->add(new \Cungfoo\Command\Cache\ClearCacheCommand());
-$console->add(new \Cungfoo\Command\Logs\ClearLogsCommand());
-$console->add(new \Cungfoo\Command\Project\InitProjectCommand());
-$console->add(new \Cungfoo\Command\Tests\UnitsTestsCommand());
+$console->add(new \Cungfoo\Command\Cache\ClearCommand());
+$console->add(new \Cungfoo\Command\Logs\ClearCommand());
+$console->add(new \Cungfoo\Command\Project\InitCommand());
+$console->add(new \Cungfoo\Command\Tests\UnitCommand());
 
 $console->run();

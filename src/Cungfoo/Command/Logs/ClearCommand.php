@@ -1,7 +1,7 @@
 <?php
 namespace Cungfoo\Command\Logs;
 
-use Cungfoo\Command\ApplicationAwareCommand;
+use Cungfoo\Command\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
@@ -11,12 +11,12 @@ use Symfony\Component\Console\Input\InputArgument,
 use Symfony\Component\Filesystem\Filesystem,
     Symfony\Component\Finder\Finder;
 
-class ClearLogsCommand extends ApplicationAwareCommand
+class ClearCommand extends Command
 {
     protected function configure()
     {
         $this
-            ->setName('log:clear')
+            ->setName('logs:clear')
             ->setDescription('Clears logs expect .gitkeep file')
         ;
     }
