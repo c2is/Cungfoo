@@ -1,14 +1,15 @@
 <?php
 namespace Cungfoo\Command\Propel;
 
-use Cungfoo\Command\ApplicationAwareCommand;
+use Cungfoo\Command\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
-    Symfony\Component\Console\Output\OutputInterface;
+    Symfony\Component\Console\Output\OutputInterface,
+    Symfony\Component\Console\Helper\FormatterHelper;
 
-class GenerateCommand extends ApplicationAwareCommand
+class GenerateCommand extends Command
 {
     protected function configure()
     {
@@ -20,6 +21,8 @@ class GenerateCommand extends ApplicationAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $formatHelper = new FormatterHelper();
+
         exec(
             'export PHP_CLASSPATH='.$this->getApplication()->getRootDir().'/vendor/phing/phing/classes &&'
             .$this->getApplication()->getRootDir().'/vendor/propel/propel1/generator/bin/propel-gen config/Propel main',
@@ -33,7 +36,7 @@ class GenerateCommand extends ApplicationAwareCommand
             {
                 $output->write($line, true);
             }
-            $this->writeSection($output, array('[Propel] Generation error', '', ''), 'fg=white;bg=red');
+            $output->writeln($this->getFormatterHelper()->formatBlock(array('[Propel] Generation error'), 'fg=white;bg=red'));
             return false;
         }
         

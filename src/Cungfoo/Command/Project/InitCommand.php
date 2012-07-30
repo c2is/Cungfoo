@@ -1,15 +1,16 @@
 <?php
 namespace Cungfoo\Command\Project;
 
-use Cungfoo\Command\ApplicationAwareCommand;
+use Cungfoo\Command\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Input\ArrayInput,
-    Symfony\Component\Console\Output\OutputInterface;
+    Symfony\Component\Console\Output\OutputInterface,
+    Symfony\Component\Console\Helper\FormatterHelper;
 
-class InitProjectCommand extends ApplicationAwareCommand
+class InitCommand extends Command
 {
     protected function configure()
     {
@@ -24,7 +25,7 @@ class InitProjectCommand extends ApplicationAwareCommand
         $commands = array();
         $commands[] = array('command' => 'propel:generate');
         $commands[] = array('command' => 'propel:fixture:load');
-        $commands[] = array('command' => 'log:clear');
+        $commands[] = array('command' => 'logs:clear');
         $commands[] = array('command' => 'cache:clear');
 
         foreach($commands as $command)

@@ -1,18 +1,18 @@
 <?php
+namespace Cungfoo\Command\Propel\Fixtures;
 
-namespace Cungfoo\Command\Propel;
-
-use Cungfoo\Command\ApplicationAwareCommand;
+use Cungfoo\Command\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
-    Symfony\Component\Console\Output\OutputInterface;
+    Symfony\Component\Console\Output\OutputInterface,
+    Symfony\Component\Console\Helper\FormatterHelper;
 
 use Cungfoo\DataFixtures\Loader\YamlDataLoader,
     Symfony\Component\Finder\Finder;
 
-class LoadFixturesCommand extends ApplicationAwareCommand
+class LoadCommand extends Command
 {
     protected $fixturesDir = 'data/fixtures';
 
@@ -58,9 +58,10 @@ EOT
             $absoluteFixturesPath .= $this->fixturesDir;   
         }
 
-        if(!$absoluteFixturesPath && !file_exists($absoluteFixturesPath))
+        if(!$absoluteFixturesPath || !file_exists($absoluteFixturesPath))
         {
-            return $this->writeSection($output, array('The fixtures directory "'.$absoluteFixturesPath.'" does not exist.'), 'fg=white;bg=red');
+            $output->writeln($this->getFormatterHelper()->formatBlock(array('The fixtures directory "'.$absoluteFixturesPath.'" does not exist.'), 'fg=white;bg=red'));
+            return false;
         }
 
         $finder = new Finder();
@@ -84,7 +85,7 @@ EOT
         }
         catch(\Exception $e)
         {
-            $this->writeSection($output, array('[Propel] Exception', '', $e->getMessage()), 'fg=white;bg=red');
+            $output->writeln($this->getFormatterHelper()->formatBlock(array('[Propel] Exception', $e->getMessage()), 'fg=white;bg=red'));
             return false;
         }
 
