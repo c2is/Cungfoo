@@ -31,7 +31,7 @@ class InitProjectCommand extends ApplicationAwareCommand
         {
             if(!$this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output))
             {
-                return fasle;
+                return false;
             }
         }
 
