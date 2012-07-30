@@ -80,7 +80,7 @@ class TranslationCollectionType extends CollectionType
      */
     public function getName()
     {
-        return 'translatable_collection';
+        return 'translation_collection';
     }
 
     /**
@@ -93,7 +93,7 @@ class TranslationCollectionType extends CollectionType
             'languages' => array(),
             'i18n_class' => '',
             'columns' => array(),
-            'type' => new TranslationType(),
+            'type' => 'translation',
             'allow_add' => false,
             'allow_delete' => false
         ));
