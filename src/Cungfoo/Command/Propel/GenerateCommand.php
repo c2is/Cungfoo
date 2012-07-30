@@ -21,8 +21,6 @@ class GenerateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $formatHelper = new FormatterHelper();
-
         exec(
             'export PHP_CLASSPATH='.$this->getApplication()->getRootDir().'/vendor/phing/phing/classes &&'
             .$this->getApplication()->getRootDir().'/vendor/propel/propel1/generator/bin/propel-gen config/Propel main',
