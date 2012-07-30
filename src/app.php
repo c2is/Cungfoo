@@ -34,4 +34,12 @@ $app->register(new PropelServiceProvider(), array(
 $app['twig_collection_parser'] = new Cungfoo\Parser\TwigCollectionParser();
 $app['twig_object_parser'] = new Cungfoo\Parser\TwigObjectParser();
 
+# ------------------------------- #
+#  F O R M  E X T E N S I O N S   #
+# ------------------------------- #
+$app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions) use ($app) {
+    $extensions[] = new \Cungfoo\Form\CustomExtension();
+    return $extensions;
+}));
+
 return $app;
