@@ -54,8 +54,8 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "5f89e59e1bd6c2f1a6b92a73c6518ae83d35378f",
-            "commit-date": "1343636587"
+            "source-reference": "7d2b1f2754aaa876688a0fd88918bb26b42b59ce",
+            "commit-date": "1343727656"
         },
         {
             "package": "symfony/browser-kit",
