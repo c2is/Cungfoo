@@ -124,32 +124,41 @@ class {$this->getClassname()} extends AbstractType
         }
 
         // Manage foreign key with multiple value
-        /** @var Table $table */
-        foreach ($this->getDatabase()->getTables() as $table) {
-            /** @var Column $column */
-            foreach ($table->getColumns() as $column) {
+        /** @var Table $otherTable */
+        foreach ($this->getDatabase()->getTables() as $otherTable) {
+            if($otherTable->getName() == $this->getTable()->getName())
+            {
+                continue;
+            }
+
+            /** @var Column $otherColumn */
+            foreach ($otherTable->getColumns() as $otherColumn) {
                 $isForeignKey = false;
-                if ($column->isForeignKey()) {
+                if ($otherColumn->isForeignKey()) {
                     /** @var Column $fColumn */
-                    foreach ($column->getForeignKeys() as $fColumn) {
-                        if ($fColumn->getForeignTable()->getName() == $this->getTable()->getName()) {
+                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK) {
+                        if ($otherColumnFK->getForeignTable()->getName() == $this->getTable()->getName()) {
                             $isForeignKey = true;
-                            contine;
+                            break 2;
                         }
                     }
+                }
+            }
 
-                    if (true === $isForeignKey) {
-                        foreach ($column->getForeignKeys() as $fColumn) {
-                            if ($fColumn->getForeignTable()->getName() != $this->getTable()->getName()) {
-                                $builders .= $this->addBuilder(
-                                    sprintf('%ss', $fColumn->getForeignTable()->getName()),
-                                    'model',
-                                    array(
-                                        'class'    => sprintf('%s\\%s', $table->getNamespace(), ucfirst($fColumn->getForeignTable()->getName())),
-                                        'multiple' => true,
-                                    )
-                                );
-                            }
+            if ($isForeignKey) {
+                foreach ($otherTable->getColumns() as $otherColumn) {
+                    /** @var Column $fColumn */
+                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK) {
+                        if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName()) {
+                            $builders .= $this->addBuilder(
+                                sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
+                                'model',
+                                array(
+                                    'class'    => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getName())),
+                                    'multiple' => true,
+                                )
+                            );
+                            break 2;
                         }
                     }
                 }

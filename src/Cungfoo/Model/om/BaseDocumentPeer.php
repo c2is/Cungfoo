@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\CategoryPeer;
 use Cungfoo\Model\Document;
+use Cungfoo\Model\DocumentAuthorPeer;
 use Cungfoo\Model\DocumentI18nPeer;
 use Cungfoo\Model\DocumentPeer;
 use Cungfoo\Model\map\DocumentTableMap;
@@ -386,6 +387,9 @@ abstract class BaseDocumentPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in DocumentAuthorPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        DocumentAuthorPeer::clearInstancePool();
         // Invalidate objects in DocumentI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         DocumentI18nPeer::clearInstancePool();

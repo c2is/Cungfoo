@@ -55,9 +55,9 @@ class DocumentTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Category', 'Cungfoo\\Model\\Category', RelationMap::MANY_TO_ONE, array('category_id' => 'id', ), null, null);
-        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'document_id', ), null, null, 'DocumentAuthors');
+        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'document_id', ), 'CASCADE', null, 'DocumentAuthors');
         $this->addRelation('DocumentI18n', 'Cungfoo\\Model\\DocumentI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DocumentI18ns');
-        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_MANY, array(), null, null, 'Authors');
+        $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Authors');
     } // buildRelations()
 
     /**

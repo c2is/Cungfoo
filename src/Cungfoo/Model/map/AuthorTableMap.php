@@ -54,8 +54,8 @@ class AuthorTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'author_id', ), null, null, 'DocumentAuthors');
-        $this->addRelation('Document', 'Cungfoo\\Model\\Document', RelationMap::MANY_TO_MANY, array(), null, null, 'Documents');
+        $this->addRelation('DocumentAuthor', 'Cungfoo\\Model\\DocumentAuthor', RelationMap::ONE_TO_MANY, array('id' => 'author_id', ), 'CASCADE', null, 'DocumentAuthors');
+        $this->addRelation('Document', 'Cungfoo\\Model\\Document', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Documents');
     } // buildRelations()
 
     /**

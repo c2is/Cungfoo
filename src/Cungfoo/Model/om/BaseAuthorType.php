@@ -21,6 +21,10 @@ class BaseAuthorType extends AbstractType
     {
         $builder->add('id', 'hidden');
         $builder->add('name', 'text');
+        $builder->add('documents', 'model', array (
+  'class' => 'Cungfoo\\Model\\Document',
+  'multiple' => true,
+));
     }
 
     /**

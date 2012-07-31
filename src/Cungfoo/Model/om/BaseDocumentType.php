@@ -23,6 +23,10 @@ class BaseDocumentType extends AbstractType
         $builder->add('category', 'model', array (
   'class' => '\\Cungfoo\\Model\\Category',
 ));
+        $builder->add('authors', 'model', array (
+  'class' => 'Cungfoo\\Model\\Author',
+  'multiple' => true,
+));
         $builder->add('documentI18ns', 'translation_collection', array (
   'i18n_class' => 'Cungfoo\\Model\\DocumentI18n',
   'languages' =>

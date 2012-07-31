@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Author;
 use Cungfoo\Model\AuthorPeer;
+use Cungfoo\Model\DocumentAuthorPeer;
 use Cungfoo\Model\map\AuthorTableMap;
 
 /**
@@ -377,6 +378,9 @@ abstract class BaseAuthorPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in DocumentAuthorPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        DocumentAuthorPeer::clearInstancePool();
     }
 
     /**
