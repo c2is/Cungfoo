@@ -32,7 +32,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 });
 
 $crudRouter = new CrudRouter();
-$crudRouter->load(sprintf('%s/config/admin/crud.yml', $app['config.root-dir']));
+$crudRouter->load(sprintf('%s/config/Cungfoo/crud.yml', $app['config.root-dir']));
 $crudController = $crudRouter->getController();
 
 foreach ($crudRouter->getRoutes() as $name => $route)

@@ -49,7 +49,9 @@ class {$this->getClassname()} extends AbstractType
     /**
      * Specifies the methods that are added as part of the basic OM class.
      * This can be overridden by subclasses that wish to add more methods.
-     * @see        ObjectBuilder::addClassBody()
+     *
+     * @param $script
+     * @see   ObjectBuilder::addClassBody()
      */
     protected function addClassBody(&$script)
     {
@@ -58,41 +60,122 @@ class {$this->getClassname()} extends AbstractType
         $this->addGetName($script);
     }
 
+    /**
+     * Adding builder
+     *
+     * @param string $columnName
+     * @param string $type
+     * @param array  $options
+     * @return string
+     */
+    private function addBuilder($columnName, $type = "text", $options = array())
+    {
+        $optionsString = empty($options) ? '' : ', ' . var_export($options, true);
+        return sprintf("\n        \$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
+    }
+
+    /**
+     * Adding a builder according to column type
+     *
+     * @param Column $column
+     * @return string
+     */
+    private function addBuilderAccordingToType(Column $column)
+    {
+        if (PropelTypes::VARCHAR === $column->getType()) {
+            return $this->addBuilder($column->getName(), 'text');
+        } elseif (PropelTypes::INTEGER === $column->getType()) {
+            return $this->addBuilder($column->getName(), 'integer');
+        } elseif (PropelTypes::FLOAT === $column->getType()) {
+            return $this->addBuilder($column->getName(), 'text');
+        } elseif (PropelTypes::DATE === $column->getType()) {
+            return $this->addBuilder($column->getName(), 'date');
+        } elseif (PropelTypes::TIMESTAMP === $column->getType()) {
+            if (in_array($column->getName(), array('created_at', 'updated_at')))
+                return '';
+
+            return $this->addBuilder($column->getName(), 'datetime');
+        } elseif (PropelTypes::LONGVARBINARY === $column->getType()) {
+            return $this->addBuilder($column->getName(), 'file');
+        }
+    }
+
     protected function addBuildForm(&$script)
     {
         $builders = "";
 
-        foreach ($this->getTable()->getColumns() as $col)
-        {
-            if ('id' === $col->getName()) {
-                $builders .= "        \$builder->add('{$col->getName()}', 'hidden');\n";
-                continue;
+        // Manage table columns
+        foreach ($this->getTable()->getColumns() as $column) {
+            // For the primary key
+            if ($column->isPrimaryKey()) {
+                $builders .= $this->addBuilder($column->getName(), 'hidden');
             }
-
-            if (in_array($col->getName(), array('created_at', 'updated_at'))) {
-                continue;
-            }
-
-            if ($col->isLobType()) {
-                $builders .= "        \$builder->add('{$col->getName()}');\n";
-            } elseif ($col->getType() === PropelTypes::DATE) {
-                $builders .= "        \$builder->add('{$col->getName()}', 'date');\n";
-            } elseif ($col->getType() === PropelTypes::TIME || $col->getType() === PropelTypes::TIMESTAMP) {
-                $builders .= "        \$builder->add('{$col->getName()}', 'datetime');\n";
-            } elseif ($col->getType() === PropelTypes::OBJECT) {
-                $builders .= "        \$builder->add('{$col->getName()}');\n";
-            } elseif ($col->getType() === PropelTypes::PHP_ARRAY) {
-                $builders .= "        \$builder->add('{$col->getName()}');\n";
-                if ($col->isNamePlural()) {
-                    $builders .= "        \$builder->add('{$col->getName()}');\n";
+            // for the foreign key
+            elseif ($column->isForeignKey()) {
+                foreach ($column->getForeignKeys() as $fColumn) {
+                    $options = array('class' => sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName()));
+                    $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
                 }
-            } elseif ($col->isEnumType()) {
-                $builders .= "        \$builder->add('{$col->getName()}');\n";
-            } elseif ($col->isBooleanType()) {
-                $builders .= "        \$builder->add('{$col->getName()}', 'checkbox');\n";
-            } else {
-                $builders .= "        \$builder->add('{$col->getName()}');\n";
             }
+            // for the other columns
+            else {
+                $builders .= $this->addBuilderAccordingToType($column);
+            }
+        }
+
+        // Manage foreign key with multiple value
+        /** @var Table $table */
+        foreach ($this->getDatabase()->getTables() as $table) {
+            /** @var Column $column */
+            foreach ($table->getColumns() as $column) {
+                $isForeignKey = false;
+                if ($column->isForeignKey()) {
+                    /** @var Column $fColumn */
+                    foreach ($column->getForeignKeys() as $fColumn) {
+                        if ($fColumn->getForeignTable()->getName() == $this->getTable()->getName()) {
+                            $isForeignKey = true;
+                            contine;
+                        }
+                    }
+
+                    if (true === $isForeignKey) {
+                        foreach ($column->getForeignKeys() as $fColumn) {
+                            if ($fColumn->getForeignTable()->getName() != $this->getTable()->getName()) {
+                                $builders .= $this->addBuilder(
+                                    sprintf('%ss', $fColumn->getForeignTable()->getName()),
+                                    'model',
+                                    array(
+                                        'class'    => sprintf('%s\\%s', $table->getNamespace(), ucfirst($fColumn->getForeignTable()->getName())),
+                                        'multiple' => true,
+                                    )
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Manage i18n behavior
+        if ($this->getTable()->hasBehavior('i18n'))
+        {
+            $id18nColumns = array();
+            foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn) {
+                $id18nColumns[$i18nColumn->getName()] = array();
+            }
+
+            $options = array(
+                'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), ucfirst($this->getTable()->getName())),
+                'languages' => array('en_EN'),
+                'label' => 'Translations',
+                'columns' => $id18nColumns
+            );
+
+            $builders .= $this->addBuilder(
+                sprintf('%sI18ns', $this->getTable()->getName()),
+                'translation_collection',
+                $options
+            );
         }
 
         $script .= "
@@ -100,8 +183,7 @@ class {$this->getClassname()} extends AbstractType
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface \$builder, array \$options)
-    {
-{$builders}
+    {{$builders}
     }
 ";
     }
