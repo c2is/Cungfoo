@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <strong>{{ app.security.token.user.username }}</strong> | <a href="{{ path('admin_logout') }}">logout</a>
+    <hr />
+    Welcome to Cungfoo admin !<br />
+{% endblock %}
+
