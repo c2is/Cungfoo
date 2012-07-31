@@ -51,6 +51,6 @@ class Application extends BaseApplication
 
     public function getRootDir()
     {
-        return isset($this->silexApplication['config.root-dir']) ? $this->silexApplication['config.root-dir'] : null;
+        return isset($this->silexApplication['config']) ? $this->silexApplication['config']->getRootDir() : null;
     }
 }
