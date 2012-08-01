@@ -4,50 +4,61 @@ namespace Cungfoo\Lib;
 
 use Symfony\Component\Yaml\Yaml;
 
+use Cungfoo\Lib;
+
 class Config
 {
-    protected $data;
+    protected $data = array();
 
-    private $rootDir;
-
-    /**
-     * Return root dir
-     * @param string $configDir
-     * @return Config
-     */
-    public function setRootDir($configDir)
+    public function __construct($appRootDir)
     {
-        $this->rootDir = rtrim($configDir, DIRECTORY_SEPARATOR);
+        $this
+            ->addParams(array('root_dir' => rtrim($appRootDir, DIRECTORY_SEPARATOR)))
+            ->generate()
+        ;
+    }
+
+    public function __get($name)
+    {
+        $utils = new Utils();
+        return $this->get($utils->underscore($name));
+    }
+
+    public function __call($method, $args)
+    {
+        if(strpos($method, 'get') === 0 && strlen($method) > 3)
+        {
+            $utils = new Utils();
+            return $this->get($utils->underscore(substr($method, 3)));
+        }
+        throw new \Exception('Config : unknown function '.$method);
+    }
+
+    public function get($param)
+    {
+        if(!isset($this->data[$param]))
+        {
+            throw new \Exception('Config : unknown param '.$param);
+        }
+
+        return $this->data[$param];
+    }
+
+    public function addParams(array $params)
+    {
+        $this->data += $params;
         return $this;
     }
 
-    /**
-     * Returns root dir
-     * @return string
-     */
-    public function getRootDir()
+    public function addParam($name, $value)
     {
-        return $this->rootDir;
+        return $this->addParams(array($name => $value));
     }
 
-    /**
-     * Returns all configuration datas
-     * @return array Config
-     */
-    public function collect()
+    protected function generate()
     {
-        $this->data = array(
-            'languages' => isset($this->rootDir) ? Yaml::parse(sprintf('%s/config/languages.yml', $this->rootDir))['languages'] : 'n/a',
-        );
-
-        return $this;
-    }
-
-    /**
-     * Returns languages     * @return array
-     */
-    public function getLanguages()
-    {
-        return $this->data['languages'];
+        return $this->addParams(array(
+            'languages' => Yaml::parse(sprintf('%s/config/languages.yml', $this->data['root_dir'])),
+        ));
     }
 }
