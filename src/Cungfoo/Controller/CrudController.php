@@ -169,7 +169,7 @@ class CrudController implements ControllerProviderInterface
 
             if ('POST' == $request->getMethod())
             {
-                $form->bindRequest($request);
+                $form->bind($app['request']->get($form->getName()));
 
                 if ($form->isValid())
                 {
