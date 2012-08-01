@@ -1,20 +1,16 @@
 crud:
-    prefix:     /admin
+    prefix: /admin
     controller: \Cungfoo\Controller\CrudController
     items:
         author:
             prefix: /authors
-            model:  \Cungfoo\Model\Author
-            form:   \Cungfoo\Model\AuthorType
+            model: \Cungfoo\Model\Author
+            form: \Cungfoo\Model\AuthorType
         category:
             prefix: /categories
-            model:  \Cungfoo\Model\Category
-            form:   \Cungfoo\Model\CategoryType
+            model: \Cungfoo\Model\Category
+            form: \Cungfoo\Model\CategoryType
         document:
             prefix: /documents
-            model:  \Cungfoo\Model\Document
-            form:   \Cungfoo\Model\DocumentType
-        language:
-            prefix: /languages
-            model:  \Cungfoo\Model\Language
-            form:   \Cungfoo\Model\LanguageType
+            model: \Cungfoo\Model\Document
+            form: \Cungfoo\Model\DocumentType

@@ -1,5 +1,8 @@
 <?php
 
+use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Filesystem\Filesystem;
+
 class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
     public $overwrite = true;
@@ -58,6 +61,8 @@ class {$this->getClassname()} extends AbstractType
         $this->addBuildForm($script);
         $this->addGetDefaultOptions($script);
         $this->addGetName($script);
+
+        $this->addRoute();
     }
 
     /**
@@ -252,5 +257,54 @@ class {$this->getClassname()} extends AbstractType
         $script .= "
 } // " . $this->getClassname() . "
 ";
+    }
+
+    protected function addRoute()
+    {
+        if (null === $this->getTable()->getBehavior('crudable')->getParameter('crud_prefix')) {
+            return;
+        }
+
+        $behaviorParameters = $this->getDatabase()->getBehavior('crudable')->getParameters();
+
+        // mandatory parameters
+        $mandatoryParameters = array(
+            'route_controller',
+            'route_prefix',
+            'routes_file',
+            'languages_file',
+        );
+
+        // validate that the parameter are set
+        foreach ($mandatoryParameters as $mandatoryParameter) {
+            if (null === $behaviorParameters[$mandatoryParameter]) {
+                return;
+            }
+        }
+
+        // validate the existence of the crud configuration file
+        $propelDirectory = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
+        $crudFilename    = sprintf('%s/%s', $propelDirectory, $behaviorParameters['routes_file']);
+
+        $crudFileIsNew = false;
+        if (!file_exists($crudFilename)) {
+            // we created
+            $fs = new Filesystem();
+            $fs->touch($crudFilename);
+            $crudFileIsNew = true;
+        }
+
+        $crudConfiguration = Yaml::parse($crudFilename);
+        $crudConfiguration['crud']['prefix'] = $behaviorParameters['route_prefix'];
+        $crudConfiguration['crud']['controller'] = $behaviorParameters['route_controller'];
+
+        $tableParameters = $this->getTable()->getBehavior('crudable')->getParameters();
+        $crudConfiguration['crud']['items'][$this->getTable()->getName()] = array(
+            'prefix'    => $tableParameters['crud_prefix'] ?: sprintf('/%s', $this->getTable()->getName()),
+            'model'     => $tableParameters['crud_model'] ?: sprintf('\\%s\\%s', $this->getTable()->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname()),
+            'form'      => $tableParameters['crud_form'] ?: sprintf('\\%s\\%sType', $this->getTable()->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname()),
+        );
+
+        file_put_contents($crudFilename, Yaml::dump($crudConfiguration, 4));
     }
 }

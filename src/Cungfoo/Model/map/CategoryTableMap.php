@@ -67,7 +67,7 @@ class CategoryTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'crudable' => array(),
+            'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/categories', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()
 
