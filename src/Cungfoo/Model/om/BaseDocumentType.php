@@ -31,7 +31,8 @@ class BaseDocumentType extends AbstractType
   'i18n_class' => 'Cungfoo\\Model\\DocumentI18n',
   'languages' =>
   array (
-    0 => 'en_EN',
+    0 => 'fr_FR',
+    1 => 'en_EN',
   ),
   'label' => 'Translations',
   'columns' =>

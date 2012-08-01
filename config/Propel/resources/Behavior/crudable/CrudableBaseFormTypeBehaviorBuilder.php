@@ -178,9 +178,22 @@ class {$this->getClassname()} extends AbstractType
                 $id18nColumns[$i18nColumn->getName()] = array();
             }
 
+            // set default languages
+            $languagesConfiguration = array(locale_get_default());
+
+            // get the configuration of the site languages
+            $languageParameter = $this->getDatabase()->getBehavior('crudable')->getParameter('languages_file');
+            if (null !== $languageParameter) {
+                $propelDirectory    = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
+                $languageFilename   = sprintf('%s/%s', $propelDirectory, $languageParameter);
+                if (file_exists($languageFilename)) {
+                    $languagesConfiguration = array_keys(Yaml::parse($languageFilename)['languages']);
+                }
+            }
+
             $options = array(
                 'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), ucfirst($this->getTable()->getName())),
-                'languages' => array('en_EN'),
+                'languages' => $languagesConfiguration,
                 'label' => 'Translations',
                 'columns' => $id18nColumns
             );
