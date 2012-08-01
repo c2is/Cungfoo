@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="cungfoo" namespace="Cungfoo\Model" defaultIdMethod="native">
 
+    <behavior name="crudable">
+        <parameter name="route_prefix" value="/admin" />
+        <parameter name="route_controller" value="\Cungfoo\Controller\CrudController" />
+        <parameter name="routes_file" value="../Cungfoo/crud.yml" />
+        <parameter name="languages_file" value="../languages.yml" />
+    </behavior>
+
     <table name="author">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
-        <behavior name="crudable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/authors" />
+        </behavior>
     </table>
 
     <table name="category">
@@ -14,7 +23,9 @@
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
-        <behavior name="crudable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/categories" />
+        </behavior>
     </table>
 
     <table name="document">
@@ -33,18 +44,20 @@
         </behavior>
 
         <behavior name="timestampable" />
-        <behavior name="crudable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/documents" />
+        </behavior>
     </table>
 
     <table name="document_author" isCrossRef="true">
-        <column name="document_id" type="INTEGER" primaryKey="true"/>
-        <column name="author_id" type="INTEGER" primaryKey="true"/>
+        <column name="document_id" type="INTEGER" primaryKey="true" required="true" />
+        <column name="author_id" type="INTEGER" primaryKey="true" required="true" />
 
-        <foreign-key foreignTable="document">
+        <foreign-key foreignTable="document" onDelete="CASCADE">
             <reference local="document_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="author">
+        <foreign-key foreignTable="author" onDelete="CASCADE">
             <reference local="author_id" foreign="id"/>
         </foreign-key>
     </table>

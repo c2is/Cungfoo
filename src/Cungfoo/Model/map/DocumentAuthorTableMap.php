@@ -57,4 +57,17 @@ class DocumentAuthorTableMap extends TableMap
         $this->addRelation('Author', 'Cungfoo\\Model\\Author', RelationMap::MANY_TO_ONE, array('author_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
+    /**
+     *
+     * Gets the list of behaviors registered for this table
+     *
+     * @return array Associative array (name => parameters) of behaviors
+     */
+    public function getBehaviors()
+    {
+        return array(
+            'crudable' => array('route_controller' => '\Cungfoo\Controller\CrudController', 'route_prefix' => '/admin', 'routes_file' => '../Cungfoo/crud.yml', 'languages_file' => '../languages.yml', 'crud_prefix' => '', 'crud_model' => '', 'crud_form' => '', ),
+        );
+    } // getBehaviors()
+
 } // DocumentAuthorTableMap
