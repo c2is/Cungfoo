@@ -26,8 +26,8 @@ $app->register(new TranslationServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ValidatorServiceProvider());
 $app->register(new TwigServiceProvider(), array(
-    'twig.path'    => array($app['config']->get['root_dir'].'/templates'),
-    'twig.options' => array('cache' => $app['config']->get['root_dir'].'/cache'),
+    'twig.path'    => array($app['config']->get('root_dir').'/templates'),
+    'twig.options' => array('cache' => $app['config']->get('root_dir').'/cache'),
 ));
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
@@ -36,8 +36,8 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 }));
 
 $app->register(new PropelServiceProvider(), array(
-    'propel.config_file' => $app['config']->get['root_dir'].'/config/Propel/generated/Cungfoo-conf.php',
-    'propel.model_path' => $app['config']->get['root_dir'].'/src'
+    'propel.config_file' => $app['config']->get('root_dir').'/config/Propel/generated/Cungfoo-conf.php',
+    'propel.model_path' => $app['config']->get('root_dir').'/src'
 ));
 
 $app['twig_collection_parser'] = new Cungfoo\Parser\TwigCollectionParser();
