@@ -14,15 +14,11 @@ use Propel\Silex\PropelServiceProvider;
 
 $app = new Application();
 
-/** @TODO supprimer cette clef qui est récupérable directement depuis $app['config']->getRootDir() */
-$app['config.root-dir'] = pathinfo(__DIR__)['dirname'];
-
 # -------------------------------------------- #
 #  C O N F I G U R A T I O N   S E R V I C E   #
 # -------------------------------------------- #
 $app['config'] = function() {
-    $config = new \Cungfoo\Lib\Config();
-    return $config->setRootDir(dirname(__DIR__))->collect();
+    return new \Cungfoo\Lib\Config(dirname(__DIR__));
 };
 
 $app->register(new FormServiceProvider());
@@ -30,8 +26,8 @@ $app->register(new TranslationServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ValidatorServiceProvider());
 $app->register(new TwigServiceProvider(), array(
-    'twig.path'    => array($app['config']->getRootDir().'/templates'),
-    'twig.options' => array('cache' => $app['config']->getRootDir().'/cache'),
+    'twig.path'    => array($app['config']->get['root_dir'].'/templates'),
+    'twig.options' => array('cache' => $app['config']->get['root_dir'].'/cache'),
 ));
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
@@ -40,8 +36,8 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 }));
 
 $app->register(new PropelServiceProvider(), array(
-    'propel.config_file' => $app['config']->getRootDir().'/config/Propel/generated/Cungfoo-conf.php',
-    'propel.model_path' => $app['config']->getRootDir().'/src'
+    'propel.config_file' => $app['config']->get['root_dir'].'/config/Propel/generated/Cungfoo-conf.php',
+    'propel.model_path' => $app['config']->get['root_dir'].'/src'
 ));
 
 $app['twig_collection_parser'] = new Cungfoo\Parser\TwigCollectionParser();
