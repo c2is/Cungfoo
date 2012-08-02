@@ -27,6 +27,7 @@ class CustomExtension extends AbstractExtension
             new Type\ModelType(),
             new Type\TranslationType(),
             new Type\TranslationCollectionType(),
+            new Type\TextrichType(),
         );
     }
 }

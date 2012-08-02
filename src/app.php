@@ -26,8 +26,9 @@ $app->register(new TranslationServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new ValidatorServiceProvider());
 $app->register(new TwigServiceProvider(), array(
-    'twig.path'    => array($app['config']->get('root_dir').'/templates'),
-    'twig.options' => array('cache' => $app['config']->get('root_dir').'/cache'),
+    'twig.path'             => array($app['config']->get('root_dir').'/templates'),
+    'twig.options'          => array('cache' => $app['config']->get('root_dir').'/cache'),
+    'twig.form.templates'   => array('/Form/form_custom_layout.html.twig'),
 ));
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
