@@ -45,7 +45,7 @@ class BaseDocumentI18nType extends AbstractType
      */
     public function getName()
     {
-        return 'documenti18n';
+        return 'DocumentI18n';
     }
 
 } // BaseDocumentI18nType

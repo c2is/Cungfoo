@@ -42,7 +42,7 @@ class BaseCategoryType extends AbstractType
      */
     public function getName()
     {
-        return 'category';
+        return 'Category';
     }
 
 } // BaseCategoryType

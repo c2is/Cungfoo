@@ -66,7 +66,7 @@ class BaseDocumentType extends AbstractType
      */
     public function getName()
     {
-        return 'document';
+        return 'Document';
     }
 
 } // BaseDocumentType

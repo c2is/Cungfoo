@@ -238,7 +238,7 @@ class {$this->getClassname()} extends AbstractType
 
     protected function addGetName(&$script)
     {
-        $name = strtolower($this->getStubObjectBuilder()->getUnprefixedClassname());
+        $name = $this->getStubObjectBuilder()->getUnprefixedClassname();
 
         $script .= "
     /**

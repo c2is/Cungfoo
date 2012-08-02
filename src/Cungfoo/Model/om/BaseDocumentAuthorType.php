@@ -42,7 +42,7 @@ class BaseDocumentAuthorType extends AbstractType
      */
     public function getName()
     {
-        return 'documentauthor';
+        return 'DocumentAuthor';
     }
 
 } // BaseDocumentAuthorType
