@@ -19,22 +19,26 @@ class BaseDocumentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
+        $builder->add('id', 'hidden', array (
+  'label' => 'document.id',
+));
         $builder->add('category', 'model', array (
   'class' => '\\Cungfoo\\Model\\Category',
+  'label' => 'document.category',
 ));
         $builder->add('authors', 'model', array (
   'class' => 'Cungfoo\\Model\\Author',
   'multiple' => true,
+  'label' => 'document.authors',
 ));
         $builder->add('documentI18ns', 'translation_collection', array (
   'i18n_class' => 'Cungfoo\\Model\\DocumentI18n',
   'languages' =>
   array (
-    0 => 'fr_FR',
-    1 => 'en_EN',
+    0 => 'fr',
+    1 => 'en',
   ),
-  'label' => 'Translations',
+  'label' => 'document.documentI18ns',
   'columns' =>
   array (
     'title' =>

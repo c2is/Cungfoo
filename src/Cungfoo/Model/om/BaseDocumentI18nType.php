@@ -19,9 +19,15 @@ class BaseDocumentI18nType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
-        $builder->add('locale', 'hidden');
-        $builder->add('title', 'text');
+        $builder->add('id', 'hidden', array (
+  'label' => 'document_i18n.id',
+));
+        $builder->add('locale', 'hidden', array (
+  'label' => 'document_i18n.locale',
+));
+        $builder->add('title', 'text', array (
+  'label' => 'document_i18n.title',
+));
     }
 
     /**

@@ -75,6 +75,7 @@ class {$this->getClassname()} extends AbstractType
      */
     private function addBuilder($columnName, $type = "text", $options = array())
     {
+        $options = array_merge($options, array('label' => sprintf('%s.%s', $this->getTable()->getName(), $columnName)));
         $optionsString = empty($options) ? '' : ', ' . var_export($options, true);
         return sprintf("\n        \$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
     }

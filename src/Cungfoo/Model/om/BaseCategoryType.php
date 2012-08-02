@@ -19,8 +19,12 @@ class BaseCategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
-        $builder->add('name', 'text');
+        $builder->add('id', 'hidden', array (
+  'label' => 'category.id',
+));
+        $builder->add('name', 'text', array (
+  'label' => 'category.name',
+));
     }
 
     /**

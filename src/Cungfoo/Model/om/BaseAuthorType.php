@@ -19,11 +19,16 @@ class BaseAuthorType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden');
-        $builder->add('name', 'text');
+        $builder->add('id', 'hidden', array (
+  'label' => 'author.id',
+));
+        $builder->add('name', 'text', array (
+  'label' => 'author.name',
+));
         $builder->add('documents', 'model', array (
   'class' => 'Cungfoo\\Model\\Document',
   'multiple' => true,
+  'label' => 'author.documents',
 ));
     }
 

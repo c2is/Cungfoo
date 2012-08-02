@@ -19,8 +19,12 @@ class BaseDocumentAuthorType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('document_id', 'hidden');
-        $builder->add('author_id', 'hidden');
+        $builder->add('document_id', 'hidden', array (
+  'label' => 'document_author.document_id',
+));
+        $builder->add('author_id', 'hidden', array (
+  'label' => 'document_author.author_id',
+));
     }
 
     /**
