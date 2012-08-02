@@ -1,16 +1,16 @@
 menu:
     route: admin
-    title: Cungfoo Administration
+    title: menu.title
     items:
         documents:
-            title:  Documents
+            title:  menu.documents
             route:  document_crud_list
         authors:
-            title:  Auteurs
+            title:  menu.authors
             route:  author_crud_list
         dico:
-            title:  Dictionnaires
+            title:  menu.dictionaries
             items:
                 categories:
-                    title:  Catégories
+                    title:  menu.categories
                     route:  category_crud_list

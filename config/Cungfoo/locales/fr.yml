@@ -1,3 +1,12 @@
+# Menu
+menu.title:         "Cungfoo"
+menu.documents:     "Documents"
+menu.authors:       "Auteurs"
+menu.dictionaries:  "Dictionnaires"
+menu.categories:    "Catégories"
+
+menu.logout:        "Se déconnecter"
+
 # Document Type
 document.category:      "Catégorie"
 document.authors:       "Auteurs"
