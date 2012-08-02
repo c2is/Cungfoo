@@ -1,8 +1,8 @@
 {% use 'form_div_layout.html.twig' %}
 
 {% block textrich_widget %}
-<link rel="stylesheet" href="{{ app.request.basepath }}/redactor/css/redactor.css">
-<script src="{{ app.request.basepath }}/redactor/redactor.js"></script>
+<link rel="stylesheet" href="{{ asset('redactor/css/redactor.css') }}">
+<script src="{{ asset('redactor/redactor.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#{{ id }}').redactor();

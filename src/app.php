@@ -33,7 +33,7 @@ $app->register(new TwigServiceProvider(), array(
 ));
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
-    // add custom globals, filters, tags, ...
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\AssetExtension($app));
     return $twig;
 }));
 
