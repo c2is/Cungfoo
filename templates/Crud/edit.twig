@@ -1,4 +1,4 @@
-{% extends 'base.twig' %}
+{% extends 'Cungfoo/base.twig' %}
 
 {% block content %}
         <form action="{{ path('%s_crud_create' | format (name), {'id': form.id.get('value')}) }}" method="post">

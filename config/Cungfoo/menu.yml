@@ -1,0 +1,16 @@
+menu:
+    route: admin
+    title: Cungfoo Administration
+    items:
+        documents:
+            title:  Documents
+            route:  document_crud_list
+        authors:
+            title:  Auteurs
+            route:  author_crud_list
+        dico:
+            title:  Dictionnaires
+            items:
+                categories:
+                    title:  Catégories
+                    route:  category_crud_list

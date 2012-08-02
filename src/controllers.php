@@ -16,19 +16,19 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html', array());
+    return $app['twig']->render('index.twig', array());
 })
 ->bind('homepage')
 ;
 
 $app->get('/admin', function () use ($app) {
-    return $app['twig']->render('admin.html', array());
+    return $app['twig']->render('Cungfoo/admin.twig', array());
 })
 ->bind('admin')
 ;
 
 $app->get('/admin/login', function(Request $request) use ($app) {
-    return $app['twig']->render('login.html', array(
+    return $app['twig']->render('Cungfoo/login.twig', array(
         'error'         => $app['security.last_error']($request),
         'last_username' => $app['session']->get('_security.last_username'),
     ));
@@ -53,7 +53,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
         return;
     }
 
-    $page = 404 == $code ? '404.html' : '500.html';
+    $page = 404 == $code ? 'Cungfoo/404.twig' : 'Cungfoo/500.twig';
 
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });
