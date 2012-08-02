@@ -1,14 +1,15 @@
 <?php
 
 use Silex\Application;
+use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\UrlGeneratorServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
+use Silex\Provider\FormServiceProvider;
+use Silex\Provider\TranslationServiceProvider;
+use Silex\Provider\SecurityServiceProvider;
+use Silex\Provider\SessionServiceProvider;
 
-use Silex\Provider\TwigServiceProvider,
-    Silex\Provider\UrlGeneratorServiceProvider,
-    Silex\Provider\ValidatorServiceProvider,
-    Silex\Provider\FormServiceProvider,
-    Silex\Provider\TranslationServiceProvider,
-    Silex\Provider\SecurityServiceProvider,
-    Silex\Provider\SessionServiceProvider;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 use Propel\Silex\PropelServiceProvider;
 
@@ -73,6 +74,18 @@ $app->register(new SessionServiceProvider(), array(
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions) use ($app) {
     $extensions[] = new \Cungfoo\Form\CustomExtension();
     return $extensions;
+}));
+
+# ------------------------------------- #
+#  T R A N S L A T O R   M A N A G E R  #
+# ------------------------------------- #
+$app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
+    $translator->addLoader('yaml', new YamlFileLoader());
+    foreach ($app['config']->get('languages')['languages'] as $locale => $language) {
+        $translator->addResource('yaml', sprintf('%s/config/Cungfoo/locales/%s.yml', $app['config']->get('root_dir'), $locale), $locale);
+    }
+
+    return $translator;
 }));
 
 return $app;

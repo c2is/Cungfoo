@@ -1,0 +1,11 @@
+# Document Type
+document.category:      "Category :"
+document.authors:       "Authors :"
+document.documentI18ns: "Translatable fields :"
+
+# Author Type
+author.name:      "Name"
+author.documents: "Documents"
+
+# Category Type
+category.name:  "Name"

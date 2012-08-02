@@ -1,0 +1,11 @@
+# Document Type
+document.category:      "Catégorie"
+document.authors:       "Auteurs"
+document.documentI18ns: "Champs traduisible"
+
+# Author Type
+author.name:      "Nom"
+author.documents: "Documents"
+
+# Category Type
+category.name:  "Nom"
