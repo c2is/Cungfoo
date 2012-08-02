@@ -10,8 +10,9 @@ use Cungfoo\Model\om\BaseCategoryType;
 /**
  * Test class for Additional builder enabled on the 'category' table.
  *
- * @author Morgan Brunot <brunot.morgan@gmail.com>
- * @package    propel.generator.Cungfoo.Model
+ * @author  Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ * @package propel.generator.Cungfoo.Model
  */
 class CategoryType extends BaseCategoryType
 {
@@ -23,9 +24,10 @@ class CategoryType extends BaseCategoryType
     {
         parent::buildForm($builder, $options);
 
-        $this->getMetadata(__NAMESPACE__)
-            ->addPropertyConstraint('name', new Assert\MinLength(5))
-        ;
+        //$this->getMetadata(__NAMESPACE__)
+        //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
+        //    ->addPropertyConstraint('field2', new Assert\NotBlank())
+        //;
     }
 
 } // CategoryType

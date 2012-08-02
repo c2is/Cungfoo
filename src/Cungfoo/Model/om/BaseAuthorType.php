@@ -2,16 +2,21 @@
 
 namespace Cungfoo\Model\om;
 
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\OptionsResolver\Options,
+    Symfony\Component\OptionsResolver\OptionsResolverInterface,
+    Symfony\Component\Validator\Constraints as Assert;
+
+use Cungfoo\Form\Type\AppAwareType;
 
 /**
  * Test class for Additional builder enabled on the 'author' table.
  *
- * @author Morgan Brunot <brunot.morgan@gmail.com>
- * @package    propel.generator.Cungfoo.Model.om
+ * @author  Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ * @package propel.generator.Cungfoo.Model.om
  */
-class BaseAuthorType extends AbstractType
+class BaseAuthorType extends AppAwareType
 {
 
     /**
@@ -35,11 +40,11 @@ class BaseAuthorType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults(array(
             'data_class' => 'Cungfoo\Model\Author',
-        );
+        ));
     }
 
     /**

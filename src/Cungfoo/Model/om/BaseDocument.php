@@ -1398,7 +1398,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
             $this->initDocumentAuthors();
             $this->collDocumentAuthorsPartial = true;
         }
-        if (!$this->collDocumentAuthors->contains($l)) { // only add it if the **same** object is not already associated
+        if (!in_array($l, $this->collDocumentAuthors->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
             $this->doAddDocumentAuthor($l);
         }
 
@@ -1634,7 +1634,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
             $this->initDocumentI18ns();
             $this->collDocumentI18nsPartial = true;
         }
-        if (!$this->collDocumentI18ns->contains($l)) { // only add it if the **same** object is not already associated
+        if (!in_array($l, $this->collDocumentI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
             $this->doAddDocumentI18n($l);
         }
 

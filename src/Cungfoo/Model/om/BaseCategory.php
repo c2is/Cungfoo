@@ -1204,7 +1204,7 @@ abstract class BaseCategory extends BaseObject implements Persistent
             $this->initDocuments();
             $this->collDocumentsPartial = true;
         }
-        if (!$this->collDocuments->contains($l)) { // only add it if the **same** object is not already associated
+        if (!in_array($l, $this->collDocuments->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
             $this->doAddDocument($l);
         }
 
