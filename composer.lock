@@ -42,8 +42,8 @@
         {
             "package": "propel/propel1",
             "version": "dev-master",
-            "source-reference": "1.6.7",
-            "commit-date": "1343635095"
+            "source-reference": "6d31fa6f7b861b3cc0d74761d90c8cb39f60f395",
+            "commit-date": "1343895780"
         },
         {
             "package": "silex/silex",
