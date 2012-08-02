@@ -2,7 +2,8 @@
 
 namespace Cungfoo\Model;
 
-use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\Validator\Constraints as Assert;
 
 use Cungfoo\Model\om\BaseCategoryType;
 
@@ -21,16 +22,10 @@ class CategoryType extends BaseCategoryType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-    }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getDefaultOptions(array $options)
-    {
-        return array(
-            'data_class' => 'Cungfoo\Model\Category',
-        );
+        $this->getMetadata(__NAMESPACE__)
+            ->addPropertyConstraint('name', new Assert\MinLength(5))
+        ;
     }
 
 } // CategoryType

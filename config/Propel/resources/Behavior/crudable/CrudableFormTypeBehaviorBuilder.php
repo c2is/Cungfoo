@@ -30,18 +30,17 @@ class CrudableFormTypeBehaviorBuilder extends OMBuilder
     {
         $table = $this->getTable();
         $tableName = $table->getName();
-        $script .= "use Symfony\\Component\\Form\\AbstractType;
-use Symfony\\Component\\Form\\FormEvents;
-use Symfony\\Component\\Form\\FormEvent;
-use Symfony\\Component\\Form\\FormBuilderInterface;
+        $script .= "use Symfony\\Component\\Form\\FormBuilderInterface,
+\tSymfony\Component\Validator\Constraints as Assert;
 
 use {$this->getNamespace()}\\om\\Base{$this->getClassname()};
 
 /**
  * Test class for Additional builder enabled on the '$tableName' table.
  *
- * @author Morgan Brunot <brunot.morgan@gmail.com>
- * @package    propel.generator.".$this->getPackage()."
+ * @author  Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ * @package propel.generator.".$this->getPackage()."
  */
 class {$this->getClassname()} extends Base{$this->getClassname()}
 {
@@ -56,7 +55,6 @@ class {$this->getClassname()} extends Base{$this->getClassname()}
     protected function addClassBody(&$script)
     {
         $this->addBuildForm($script);
-        $this->addGetDefaultOptions($script);
     }
 
     protected function addBuildForm(&$script)
@@ -68,26 +66,11 @@ class {$this->getClassname()} extends Base{$this->getClassname()}
     public function buildForm(FormBuilderInterface \$builder, array \$options)
     {
         parent::buildForm(\$builder, \$options);
-    }
-";
-    }
 
-    protected function addGetDefaultOptions(&$script)
-    {
-        $dataClass = sprintf('%s\\%s',
-            $this->getNamespace(),
-            $this->getStubObjectBuilder()->getUnprefixedClassname()
-        );
-
-        $script .= "
-    /**
-     * {@inheritdoc}
-     */
-    public function getDefaultOptions(array \$options)
-    {
-        return array(
-            'data_class' => '{$dataClass}',
-        );
+        //\$this->getMetadata(__NAMESPACE__)
+        //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
+        //    ->addPropertyConstraint('field2', new Assert\NotBlank())
+        //;
     }
 ";
     }

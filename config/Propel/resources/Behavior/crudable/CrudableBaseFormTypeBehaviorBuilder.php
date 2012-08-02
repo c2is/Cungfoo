@@ -31,20 +31,23 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
      */
     protected function addClassOpen(&$script)
     {
-        $table = $this->getTable();
+        $table     = $this->getTable();
         $tableName = $table->getName();
-        $script .= "use Symfony\\Component\\Form\\AbstractType;
-use Symfony\\Component\\Form\\FormEvents;
-use Symfony\\Component\\Form\\FormEvent;
-use Symfony\\Component\\Form\\FormBuilderInterface;
+        $script   .= "use Symfony\\Component\\Form\\FormBuilderInterface,
+\tSymfony\\Component\\OptionsResolver\\Options,
+\tSymfony\\Component\\OptionsResolver\\OptionsResolverInterface,
+\tSymfony\\Component\\Validator\\Constraints as Assert;
+
+use Cungfoo\Form\Type\AppAwareType;
 
 /**
  * Test class for Additional builder enabled on the '$tableName' table.
  *
- * @author Morgan Brunot <brunot.morgan@gmail.com>
- * @package    propel.generator.".$this->getPackage()."
+ * @author  Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ * @package propel.generator.".$this->getPackage()."
  */
-class {$this->getClassname()} extends AbstractType
+class {$this->getClassname()} extends AppAwareType
 {
 ";
     }
@@ -59,7 +62,7 @@ class {$this->getClassname()} extends AbstractType
     protected function addClassBody(&$script)
     {
         $this->addBuildForm($script);
-        $this->addGetDefaultOptions($script);
+        $this->addSetDefaultOptions($script);
         $this->addGetName($script);
 
         $this->addRoute();
@@ -77,7 +80,7 @@ class {$this->getClassname()} extends AbstractType
     {
         $options = array_merge($options, array('label' => sprintf('%s.%s', $this->getTable()->getName(), $columnName)));
         $optionsString = empty($options) ? '' : ', ' . var_export($options, true);
-        return sprintf("\n        \$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
+        return sprintf("\n\t\t\$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
     }
 
     /**
@@ -97,10 +100,10 @@ class {$this->getClassname()} extends AbstractType
         } elseif (PropelTypes::DATE === $column->getType()) {
             return $this->addBuilder($column->getName(), 'date');
         } elseif (PropelTypes::TIMESTAMP === $column->getType()) {
-            if (in_array($column->getName(), array('created_at', 'updated_at')))
-                return '';
-
-            return $this->addBuilder($column->getName(), 'datetime');
+            if (!in_array($column->getName(), array('created_at', 'updated_at')))
+            {
+                return $this->addBuilder($column->getName(), 'datetime');
+            }
         } elseif (PropelTypes::LONGVARBINARY === $column->getType()) {
             return $this->addBuilder($column->getName(), 'file');
         }
@@ -216,7 +219,7 @@ class {$this->getClassname()} extends AbstractType
 ";
     }
 
-    protected function addGetDefaultOptions(&$script)
+    protected function addSetDefaultOptions(&$script)
     {
         $dataClass = sprintf('%s\\%s',
             $this->getTable()->getNamespace(),
@@ -227,11 +230,11 @@ class {$this->getClassname()} extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getDefaultOptions(array \$options)
+    public function setDefaultOptions(OptionsResolverInterface \$resolver)
     {
-        return array(
+        \$resolver->setDefaults(array(
             'data_class' => '{$dataClass}',
-        );
+        ));
     }
 ";
     }

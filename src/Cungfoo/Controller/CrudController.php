@@ -104,7 +104,7 @@ class CrudController implements ControllerProviderInterface
 
             if (null == $id)
             {
-                $model = $model = new $this->modelClass();
+                $model = new $this->modelClass();
             }
             else
             {
@@ -124,7 +124,7 @@ class CrudController implements ControllerProviderInterface
                 throw new \Exception('Définir la classe');
             }
 
-            $form = $app['form.factory']->create(new $this->formType, $model);
+            $form = $app['form.factory']->create(new $this->formType($app), $model);
 
             // display the form
             return $app['twig']->render('Crud/edit.twig', array(
@@ -145,7 +145,7 @@ class CrudController implements ControllerProviderInterface
 
             if (null == $id)
             {
-                $model = $model = new $this->modelClass();
+                $model = new $this->modelClass();
             }
             else
             {
@@ -165,7 +165,7 @@ class CrudController implements ControllerProviderInterface
                 throw new \Exception('Définir la classe');
             }
 
-            $form = $app['form.factory']->create(new $this->formType, $model);
+            $form = $app['form.factory']->create(new $this->formType($app), $model);
 
             if ('POST' == $request->getMethod())
             {
@@ -180,7 +180,10 @@ class CrudController implements ControllerProviderInterface
             }
 
             // display the form
-            return $app['twig']->render('Crud/edit.twig', array('form' => $form->createView()));
+            return $app['twig']->render('Crud/edit.twig', array(
+                'name' => $this->modelName,
+                'form' => $form->createView()
+            ));
         })
         ->value('id', null)
         ->bind(sprintf('%s_crud_create', $modelName))
