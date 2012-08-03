@@ -24,12 +24,14 @@ class BaseCategoryType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array (
-  'label' => 'category.id',
-));
-        $builder->add('name', 'text', array (
-  'label' => 'category.name',
-));
+        $builder->add('id', 'hidden', array(
+            'label'   => 'category.id',
+            'required'   => false,
+        ));
+        $builder->add('name', 'text', array(
+            'label'   => 'category.name',
+            'required'   => false,
+        ));
     }
 
     /**

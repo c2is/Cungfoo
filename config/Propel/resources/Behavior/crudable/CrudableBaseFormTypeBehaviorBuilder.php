@@ -5,6 +5,8 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
+    const TAB_CHARACTER = "\t";
+
     public $overwrite = true;
 
     /**
@@ -82,8 +84,39 @@ class {$this->getClassname()} extends AppAwareType
             'label'    => sprintf('%s.%s', $this->getTable()->getName(), $columnName),
             'required' => false,
         ));
-        $optionsString = empty($options) ? '' : ', ' . var_export($options, true);
-        return sprintf("\n        \$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
+
+        return sprintf("\n%s\$builder->add('%s', '%s'%s);", str_repeat(self::TAB_CHARACTER, 2), $columnName, $type, $this->exportOptionsArray($options));
+    }
+
+    private function exportOptionsArray($options, $iteration = 0)
+    {
+        $iteration++;
+
+        $ouput = '';
+        if (is_array($options)) {
+            if ($iteration == 1) {
+                $ouput .= sprintf(", array(\n");
+            }
+
+            foreach ($options as $key => $value) {
+                if (is_array($value)) {
+                    $ouput .= sprintf("%s'%s' => array(\n%s", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $this->exportOptionsArray($value, $iteration));
+                } else {
+                    if (is_bool($value)) {
+                        $ouput .= sprintf("%s'%s' => %s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value ? 'true' : 'false');
+                    } else {
+                        $ouput .= sprintf("%s'%s' => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
+                    }
+                }
+            }
+
+            $ouput .= sprintf("%s)", str_repeat(self::TAB_CHARACTER, $iteration +1));
+            if ($iteration > 1) {
+                $ouput .= ",\n";
+            }
+        }
+
+        return $ouput;
     }
 
     /**

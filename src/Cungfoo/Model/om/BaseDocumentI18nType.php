@@ -24,15 +24,18 @@ class BaseDocumentI18nType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array (
-  'label' => 'document_i18n.id',
-));
-        $builder->add('locale', 'hidden', array (
-  'label' => 'document_i18n.locale',
-));
-        $builder->add('title', 'text', array (
-  'label' => 'document_i18n.title',
-));
+        $builder->add('id', 'hidden', array(
+            'label'   => 'document_i18n.id',
+            'required'   => false,
+        ));
+        $builder->add('locale', 'hidden', array(
+            'label'   => 'document_i18n.locale',
+            'required'   => false,
+        ));
+        $builder->add('title', 'text', array(
+            'label'   => 'document_i18n.title',
+            'required'   => false,
+        ));
     }
 
     /**

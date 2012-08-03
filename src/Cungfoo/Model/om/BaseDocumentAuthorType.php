@@ -24,12 +24,14 @@ class BaseDocumentAuthorType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('document_id', 'hidden', array (
-  'label' => 'document_author.document_id',
-));
-        $builder->add('author_id', 'hidden', array (
-  'label' => 'document_author.author_id',
-));
+        $builder->add('document_id', 'hidden', array(
+            'label'   => 'document_author.document_id',
+            'required'   => false,
+        ));
+        $builder->add('author_id', 'hidden', array(
+            'label'   => 'document_author.author_id',
+            'required'   => false,
+        ));
     }
 
     /**
