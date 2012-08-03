@@ -18,23 +18,22 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseDocumentI18nType extends AppAwareType
 {
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label'   => 'document_i18n.id',
-            'required'   => false,
+            'label' => 'document_i18n.id',
+            'required' => false,
         ));
         $builder->add('locale', 'hidden', array(
-            'label'   => 'document_i18n.locale',
-            'required'   => false,
+            'label' => 'document_i18n.locale',
+            'required' => false,
         ));
         $builder->add('title', 'text', array(
-            'label'   => 'document_i18n.title',
-            'required'   => false,
+            'label' => 'document_i18n.title',
+            'required' => false,
         ));
     }
 

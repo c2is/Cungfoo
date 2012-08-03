@@ -18,19 +18,18 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseDocumentAuthorType extends AppAwareType
 {
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('document_id', 'hidden', array(
-            'label'   => 'document_author.document_id',
-            'required'   => false,
+            'label' => 'document_author.document_id',
+            'required' => false,
         ));
         $builder->add('author_id', 'hidden', array(
-            'label'   => 'document_author.author_id',
-            'required'   => false,
+            'label' => 'document_author.author_id',
+            'required' => false,
         ));
     }
 

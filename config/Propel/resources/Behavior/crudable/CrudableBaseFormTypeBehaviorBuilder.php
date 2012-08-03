@@ -50,8 +50,7 @@ use Cungfoo\Form\Type\AppAwareType;
  * @package propel.generator.".$this->getPackage()."
  */
 class {$this->getClassname()} extends AppAwareType
-{
-";
+{";
     }
 
     /**
@@ -88,6 +87,13 @@ class {$this->getClassname()} extends AppAwareType
         return sprintf("\n%s\$builder->add('%s', '%s'%s);", str_repeat(self::TAB_CHARACTER, 2), $columnName, $type, $this->exportOptionsArray($options));
     }
 
+    /**
+     * Returns options array in the string format (indented)
+     *
+     * @param array $options
+     * @param int $iteration
+     * @return string
+     */
     private function exportOptionsArray($options, $iteration = 0)
     {
         $iteration++;
@@ -104,6 +110,8 @@ class {$this->getClassname()} extends AppAwareType
                 } else {
                     if (is_bool($value)) {
                         $ouput .= sprintf("%s'%s' => %s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value ? 'true' : 'false');
+                    } else if (is_int($key)) {
+                        $ouput .= sprintf("%s%s => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
                     } else {
                         $ouput .= sprintf("%s'%s' => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
                     }

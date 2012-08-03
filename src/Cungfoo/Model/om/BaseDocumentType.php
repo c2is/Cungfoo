@@ -18,41 +18,40 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseDocumentType extends AppAwareType
 {
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label'   => 'document.id',
-            'required'   => false,
+            'label' => 'document.id',
+            'required' => false,
         ));
         $builder->add('category', 'model', array(
-            'class'   => '\Cungfoo\Model\Category',
-            'label'   => 'document.category',
-            'required'   => false,
+            'class' => '\Cungfoo\Model\Category',
+            'label' => 'document.category',
+            'required' => false,
         ));
         $builder->add('authors', 'model', array(
-            'class'   => 'Cungfoo\Model\Author',
-            'multiple'   => true,
-            'label'   => 'document.authors',
-            'required'   => false,
+            'class' => 'Cungfoo\Model\Author',
+            'multiple' => true,
+            'label' => 'document.authors',
+            'required' => false,
         ));
         $builder->add('documentI18ns', 'translation_collection', array(
-            'i18n_class'   => 'Cungfoo\Model\DocumentI18n',
+            'i18n_class' => 'Cungfoo\Model\DocumentI18n',
             'languages' => array(
-                '0'   => 'fr',
-                '1'   => 'en',
+                0 => 'fr',
+                1 => 'en',
             ),
-            'label'   => 'document.documentI18ns',
+            'label' => 'document.documentI18ns',
             'columns' => array(
                 'title' => array(
                 ),
                 'body' => array(
                 ),
             ),
-            'required'   => false,
+            'required' => false,
         ));
     }
 

@@ -18,19 +18,18 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseCategoryType extends AppAwareType
 {
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label'   => 'category.id',
-            'required'   => false,
+            'label' => 'category.id',
+            'required' => false,
         ));
         $builder->add('name', 'text', array(
-            'label'   => 'category.name',
-            'required'   => false,
+            'label' => 'category.name',
+            'required' => false,
         ));
     }
 
