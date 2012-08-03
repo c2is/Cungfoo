@@ -78,9 +78,12 @@ class {$this->getClassname()} extends AppAwareType
      */
     private function addBuilder($columnName, $type = "text", $options = array())
     {
-        $options = array_merge($options, array('label' => sprintf('%s.%s', $this->getTable()->getName(), $columnName)));
+        $options = array_merge($options, array(
+            'label'    => sprintf('%s.%s', $this->getTable()->getName(), $columnName),
+            'required' => false,
+        ));
         $optionsString = empty($options) ? '' : ', ' . var_export($options, true);
-        return sprintf("\n\t\t\$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
+        return sprintf("\n        \$builder->add('%s', '%s'%s);", $columnName, $type, $optionsString);
     }
 
     /**
