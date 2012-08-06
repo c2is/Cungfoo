@@ -32,7 +32,7 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="category_id" type="integer" required="true" />
         <column name="title" type="varchar" required="true" />
-        <column name="body" type="longvarchar" required="true" />
+        <column name="body" type="longvarchar" required="true" widget="textrich" />
 
         <foreign-key foreignTable="category">
             <reference local="category_id" foreign="id"></reference>

@@ -35,6 +35,10 @@ class BaseDocumentI18nType extends AppAwareType
             'label' => 'document_i18n.title',
             'required' => false,
         ));
+        $builder->add('body', 'textrich', array(
+            'label' => 'document_i18n.body',
+            'required' => false,
+        ));
     }
 
     /**

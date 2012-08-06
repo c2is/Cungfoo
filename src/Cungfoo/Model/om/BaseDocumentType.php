@@ -47,8 +47,14 @@ class BaseDocumentType extends AppAwareType
             'label' => 'document.documentI18ns',
             'columns' => array(
                 'title' => array(
+                    'required' => false,
+                    'label' => 'document.title',
+                    'type' => 'text',
                 ),
                 'body' => array(
+                    'required' => false,
+                    'label' => 'document.body',
+                    'type' => 'textrich',
                 ),
             ),
             'required' => false,

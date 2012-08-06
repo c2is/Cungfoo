@@ -135,21 +135,30 @@ class {$this->getClassname()} extends AppAwareType
      */
     private function addBuilderAccordingToType(Column $column)
     {
-        if (PropelTypes::VARCHAR === $column->getType()) {
-            return $this->addBuilder($column->getName(), 'text');
+        if (!in_array($column->getName(), array('created_at', 'updated_at'))) {
+            return $this->addBuilder($column->getName(), $this->getColumnType($column));
+        }
+    }
+
+    /**
+     * @param Column $column
+     * @return string
+     */
+    private function getColumnType(Column $column) {
+        if ($column->getAttribute('widget', false)) {
+            return $column->getAttribute('widget');
+        } elseif (PropelTypes::VARCHAR === $column->getType()) {
+            return 'text';
         } elseif (PropelTypes::INTEGER === $column->getType()) {
-            return $this->addBuilder($column->getName(), 'integer');
+            return 'integer';
         } elseif (PropelTypes::FLOAT === $column->getType()) {
-            return $this->addBuilder($column->getName(), 'text');
+            return 'text';
         } elseif (PropelTypes::DATE === $column->getType()) {
-            return $this->addBuilder($column->getName(), 'date');
+            return 'date';
         } elseif (PropelTypes::TIMESTAMP === $column->getType()) {
-            if (!in_array($column->getName(), array('created_at', 'updated_at')))
-            {
-                return $this->addBuilder($column->getName(), 'datetime');
-            }
+            return 'datetime';
         } elseif (PropelTypes::LONGVARBINARY === $column->getType()) {
-            return $this->addBuilder($column->getName(), 'file');
+            return 'file';
         }
     }
 
@@ -221,9 +230,13 @@ class {$this->getClassname()} extends AppAwareType
         // Manage i18n behavior
         if ($this->getTable()->hasBehavior('i18n'))
         {
-            $id18nColumns = array();
+            $i18nColumns = array();
             foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn) {
-                $id18nColumns[$i18nColumn->getName()] = array();
+                $i18nColumns[$i18nColumn->getName()] = array(
+                    'required'  => false,
+                    'label'     => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
+                    'type'      => $this->getColumnType($i18nColumn),
+                );
             }
 
             // set default languages
@@ -243,7 +256,7 @@ class {$this->getClassname()} extends AppAwareType
                 'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), ucfirst($this->getTable()->getName())),
                 'languages' => $languagesConfiguration,
                 'label' => 'Translations',
-                'columns' => $id18nColumns
+                'columns' => $i18nColumns
             );
 
             $builders .= $this->addBuilder(
