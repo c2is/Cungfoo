@@ -1,7 +1,7 @@
 {% extends 'Cungfoo/base.twig' %}
 
 {% block content %}
-        <form action="{{ path('%s_crud_create' | format (name), {'id': form.id.get('value')}) }}" method="post">
+        <form action="{{ path('%s_crud_update' | format (name), {'id': form.id.get('value')}) }}" method="post">
             {{ form_widget(form) }}
 
             <div class="form-actions">
@@ -9,7 +9,7 @@
                     <button type="submit" class="btn btn-primary" style="margin-bottom: -5px">Enregistrer</button>
                     <div class="btn-group">
                         <a class="btn" href="{{ path('%s_crud_list' | format (name)) }}"><i class="icon-list"></i> Retourner sur la liste</a>
-                        <a class="btn" href="{{ path('%s_crud_show' | format (name), {'id': form.id.get('value') }) }}"><i class="icon-edit"></i> Voir</a>
+                        <a class="btn" href="{{ path('%s_crud_read' | format (name), {'id': form.id.get('value') }) }}"><i class="icon-edit"></i> Voir</a>
                         <a class="btn" href="{{ path('%s_crud_delete' | format (name), {'id': form.id.get('value') }) }}"><i class="icon-remove-circle"></i> Supprimer</a>
                     </div>
                 </div>

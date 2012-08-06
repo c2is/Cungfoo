@@ -16,7 +16,7 @@
         <div class="form-actions">
             <div class="btn-group">
                 <a class="btn" href="{{ path('%s_crud_list' | format (name)) }}"><i class="icon-list"></i> Retourner sur la liste</a>
-                <a class="btn" href="{{ path('%s_crud_edit' | format (name), {'id': object['Id']}) }}"><i class="icon-edit"></i> Editer</a>
+                <a class="btn" href="{{ path('%s_crud_update' | format (name), {'id': object['Id']}) }}"><i class="icon-edit"></i> Editer</a>
                 <a class="btn" href="{{ path('%s_crud_delete' | format (name), {'id': object['Id']}) }}"><i class="icon-remove-circle"></i> Supprimer</a>
             </div>
         </div>
