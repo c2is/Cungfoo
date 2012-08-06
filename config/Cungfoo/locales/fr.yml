@@ -11,6 +11,8 @@ menu.logout:        "Se déconnecter"
 document.category:      "Catégorie"
 document.authors:       "Auteurs"
 document.documentI18ns: "Champs traduisible"
+document.title:         "Titre"
+document.body:          "Corps"
 
 # Author Type
 author.name:      "Nom"

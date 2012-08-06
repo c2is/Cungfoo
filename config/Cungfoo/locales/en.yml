@@ -11,6 +11,8 @@ menu.logout:        "Logout"
 document.category:      "Category :"
 document.authors:       "Authors :"
 document.documentI18ns: "Translatable fields :"
+document.title:         "Title"
+document.body:          "Body"
 
 # Author Type
 author.name:      "Name"

@@ -58,7 +58,7 @@ class TranslationType extends AbstractType
                     $customOptions = $options['options'];
                 }
                 $options = array(
-                    'label' => $label.' '.strtoupper($data->getLocale())
+                    'label' => $label
                 );
 
                 $options = array_merge($options, $customOptions);
