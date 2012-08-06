@@ -45,6 +45,7 @@ class CrudController implements ControllerProviderInterface
 
         $this
             ->generateList    ($app, $controllers)
+            ->generateCreate  ($app, $controllers)
             ->generateRead    ($app, $controllers)
             ->generateUpdate  ($app, $controllers)
             ->generateDelete  ($app, $controllers)
@@ -67,6 +68,19 @@ class CrudController implements ControllerProviderInterface
                 ));
             })
             ->bind(sprintf('%s_crud_list', $this->modelName))
+        ;
+        return $this;
+    }
+
+    protected function generateCreate(Application $app, ControllerCollection $controllers)
+    {
+        $controllers
+            ->match('/create', function (Request $request) use ($app)
+            {
+                return $this->edit($request, $app);
+            })
+            ->value('id', null)
+            ->bind(sprintf('%s_crud_create', $this->modelName))
         ;
         return $this;
     }
@@ -98,49 +112,9 @@ class CrudController implements ControllerProviderInterface
     protected function generateUpdate(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->match('/{id}/update', function ($id = null, Request $request) use ($app)
+            ->match('/{id}/update', function ($id, Request $request) use ($app)
             {
-                if ($id === null)
-                {
-                    $object = new $this->modelClass();
-                }
-                else
-                {
-                    $object = call_user_func($this->queryClass.'::create')
-                        ->filterById($id)
-                        ->findOne()
-                    ;
-
-                    if ($object === null)
-                    {
-                        throw new NotFoundHttpException(sprintf('%s with id "%d" does not exist.', ucfirst($this->modelName), $id));
-                    }
-                }
-
-                if (!class_exists($this->formType))
-                {
-                    throw new \Exception(sprintf('Class %s undefined.', $this->formType));
-                }
-
-                $form = $app['form.factory']->create(new $this->formType($app), $object);
-
-                if ('POST' == $request->getMethod())
-                {
-                    $form->bind($app['request']->get($form->getName()));
-
-                    if ($form->isValid())
-                    {
-                        $object->save();
-                        return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_read', $this->modelName), array('id' => $object->getId())));
-                    }
-                }
-
-                // display the form
-                return $app['twig']->render('Crud/update.twig', array(
-                    'name' => $this->modelName,
-                    'form' => $form->createView(),
-                ));
-
+                return $this->edit($request, $app, $id);
             })
             ->value('id', null)
             ->bind(sprintf('%s_crud_update', $this->modelName))
@@ -170,5 +144,48 @@ class CrudController implements ControllerProviderInterface
             ->bind(sprintf('%s_crud_delete', $this->modelName))
         ;
         return $this;
+    }
+
+    protected function edit(Request $request, Application $app, $id = null)
+    {
+        if ($id === null)
+        {
+            $object = new $this->modelClass();
+        }
+        else
+        {
+            $object = call_user_func($this->queryClass.'::create')
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if ($object === null)
+            {
+                throw new NotFoundHttpException(sprintf('%s with id "%d" does not exist.', ucfirst($this->modelName), $id));
+            }
+        }
+
+        if (!class_exists($this->formType))
+        {
+            throw new \Exception(sprintf('Class %s undefined.', $this->formType));
+        }
+
+        $form = $app['form.factory']->create(new $this->formType($app), $object);
+
+        if ('POST' == $request->getMethod())
+        {
+            $form->bind($app['request']->get($form->getName()));
+
+            if ($form->isValid())
+            {
+                $object->save();
+                return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_read', $this->modelName), array('id' => $object->getId())));
+            }
+        }
+
+        return $app['twig']->render('Crud/update.twig', array(
+            'name' => $this->modelName,
+            'form' => $form->createView(),
+        ));
     }
 }
