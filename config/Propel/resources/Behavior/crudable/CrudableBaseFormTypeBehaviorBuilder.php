@@ -16,7 +16,7 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
      */
     public function getPackage()
     {
-        return parent::getPackage() . ".om";
+        return str_replace('Model', 'Form.Type', parent::getPackage()) . ".Base";
     }
 
     /**
@@ -133,7 +133,7 @@ class {$this->getClassname()} extends AppAwareType
     }
 
     /**
-     * Adding a builder according to column type
+     * Adding add builder method.
      *
      * @param Column $column
      * @return string
@@ -147,6 +147,12 @@ class {$this->getClassname()} extends AppAwareType
         }
     }
 
+    /**
+     * Adding a constraints.
+     *
+     * @param Column $column
+     * @return array
+     */
     private function addConstraints(Column $column)
     {
         $constraints = array();
@@ -179,6 +185,11 @@ class {$this->getClassname()} extends AppAwareType
         }
     }
 
+    /**
+     * Adding all builders.
+     *
+     * @param string $script The script will be modified in this method.
+     */
     protected function addBuildForm(&$script)
     {
         $builders = "";
@@ -296,6 +307,11 @@ class {$this->getClassname()} extends AppAwareType
 ";
     }
 
+    /**
+     * Adding set default options method.
+     *
+     * @param string $script The script will be modified in this method.
+     */
     protected function addSetDefaultOptions(&$script)
     {
         $dataClass = sprintf('%s\\%s',
@@ -316,6 +332,11 @@ class {$this->getClassname()} extends AppAwareType
 ";
     }
 
+    /**
+     *
+     *
+     * @param string $script The script will be modified in this method.
+     */
     protected function addGetName(&$script)
     {
         $name = $this->getStubObjectBuilder()->getUnprefixedClassname();
@@ -335,11 +356,26 @@ class {$this->getClassname()} extends AppAwareType
      * Return the user-defined namespace for this table,
      * or the database namespace otherwise.
      *
+     * @param null $namespace
      * @return string
      */
-    public function getNamespace()
+    public function getNamespace($namespace = null)
     {
-        return $this->getTable()->getNamespace() . '\\om';
+        return sprintf('%s\Base', $this->getChildrenNamespace($namespace));
+    }
+
+    /**
+     * Return the user-defined children namespace.
+     *
+     * @param null $namespace
+     * @return mixed
+     */
+    public function getChildrenNamespace($namespace = null)
+    {
+        if ($namespace === null) {
+            $namespace = $this->getTable()->getNamespace();
+        }
+        return str_replace('Model', 'Form\Type', $namespace);
     }
 
     /**
@@ -353,6 +389,11 @@ class {$this->getClassname()} extends AppAwareType
 ";
     }
 
+    /**
+     * Creating a crud.yml file.
+     *
+     * @return mixed
+     */
     protected function addRoute()
     {
         if (null === $this->getTable()->getBehavior('crudable')->getParameter('crud_prefix')) {
@@ -380,12 +421,10 @@ class {$this->getClassname()} extends AppAwareType
         $propelDirectory = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
         $crudFilename    = sprintf('%s/%s', $propelDirectory, $behaviorParameters['routes_file']);
 
-        $crudFileIsNew = false;
         if (!file_exists($crudFilename)) {
             // we created
             $fs = new Filesystem();
             $fs->touch($crudFilename);
-            $crudFileIsNew = true;
         }
 
         $crudConfiguration = Yaml::parse($crudFilename);
@@ -396,7 +435,7 @@ class {$this->getClassname()} extends AppAwareType
         $crudConfiguration['crud']['items'][$this->getTable()->getName()] = array(
             'prefix'    => $tableParameters['crud_prefix'] ?: sprintf('/%s', $this->getTable()->getName()),
             'model'     => $tableParameters['crud_model'] ?: sprintf('\\%s\\%s', $this->getTable()->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname()),
-            'form'      => $tableParameters['crud_form'] ?: sprintf('\\%s\\%sType', $this->getTable()->getNamespace(), $this->getStubObjectBuilder()->getUnprefixedClassname()),
+            'form'      => $tableParameters['crud_form'] ?: sprintf('\\%s\\%sType', $this->getChildrenNamespace($this->getTable()->getNamespace()), $this->getStubObjectBuilder()->getUnprefixedClassname()),
         );
 
         file_put_contents($crudFilename, Yaml::dump($crudConfiguration, 4));

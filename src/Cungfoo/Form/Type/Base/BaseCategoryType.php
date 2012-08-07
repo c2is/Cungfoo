@@ -1,6 +1,6 @@
 <?php
 
-namespace Cungfoo\Model\om;
+namespace Cungfoo\Form\Type\Base;
 
 use Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\OptionsResolver\Options,
@@ -10,25 +10,28 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'document_author' table.
+ * Test class for Additional builder enabled on the 'category' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
- * @package propel.generator.Cungfoo.Model.om
+ * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseDocumentAuthorType extends AppAwareType
+class BaseCategoryType extends AppAwareType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('document_id', 'hidden', array(
-            'label' => 'document_author.document_id',
+        $builder->add('id', 'hidden', array(
+            'label' => 'category.id',
             'required' => false,
         ));
-        $builder->add('author_id', 'hidden', array(
-            'label' => 'document_author.author_id',
+        $builder->add('name', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'category.name',
             'required' => false,
         ));
     }
@@ -39,7 +42,7 @@ class BaseDocumentAuthorType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\DocumentAuthor',
+            'data_class' => 'Cungfoo\Model\Category',
         ));
     }
 
@@ -48,7 +51,7 @@ class BaseDocumentAuthorType extends AppAwareType
      */
     public function getName()
     {
-        return 'DocumentAuthor';
+        return 'Category';
     }
 
-} // BaseDocumentAuthorType
+} // BaseCategoryType

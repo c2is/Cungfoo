@@ -1,18 +1,18 @@
 <?php
 
-namespace Cungfoo\Model;
+namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
-use Cungfoo\Model\om\BaseCategoryType;
+use Cungfoo\Form\Type\Base\BaseCategoryType;
 
 /**
  * Test class for Additional builder enabled on the 'category' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
- * @package propel.generator.Cungfoo.Model
+ * @package propel.generator.Cungfoo.Form.Type
  */
 class CategoryType extends BaseCategoryType
 {

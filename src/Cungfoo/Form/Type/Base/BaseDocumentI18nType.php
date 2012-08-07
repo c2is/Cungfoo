@@ -1,6 +1,6 @@
 <?php
 
-namespace Cungfoo\Model\om;
+namespace Cungfoo\Form\Type\Base;
 
 use Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\OptionsResolver\Options,
@@ -14,7 +14,7 @@ use Cungfoo\Form\Type\AppAwareType;
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
- * @package propel.generator.Cungfoo.Model.om
+ * @package propel.generator.Cungfoo.Form.Type.Base
  */
 class BaseDocumentI18nType extends AppAwareType
 {

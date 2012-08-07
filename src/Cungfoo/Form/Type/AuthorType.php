@@ -1,20 +1,20 @@
 <?php
 
-namespace Cungfoo\Model;
+namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
-use Cungfoo\Model\om\BaseDocumentType;
+use Cungfoo\Form\Type\Base\BaseAuthorType;
 
 /**
- * Test class for Additional builder enabled on the 'document' table.
+ * Test class for Additional builder enabled on the 'author' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
- * @package propel.generator.Cungfoo.Model
+ * @package propel.generator.Cungfoo.Form.Type
  */
-class DocumentType extends BaseDocumentType
+class AuthorType extends BaseAuthorType
 {
 
     /**
@@ -30,4 +30,4 @@ class DocumentType extends BaseDocumentType
         //;
     }
 
-} // DocumentType
+} // AuthorType

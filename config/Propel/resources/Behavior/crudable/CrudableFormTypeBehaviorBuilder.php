@@ -10,7 +10,33 @@ class CrudableFormTypeBehaviorBuilder extends OMBuilder
      */
     public function getPackage()
     {
-        return parent::getPackage();
+        return str_replace('Model', 'Form.Type', parent::getPackage());
+    }
+
+    /**
+     * Return the user-defined parent namespace.
+     *
+     * @param null $namespace
+     * @return mixed
+     */
+    public function getParentNamespace($namespace = null)
+    {
+        return sprintf('%s\Base', $this->getNamespace($namespace));
+    }
+
+    /**
+     * Return the user-defined namespace for this table,
+     * or the database namespace otherwise.
+     *
+     * @param null $namespace
+     * @return string
+     */
+    public function getNamespace($namespace = null)
+    {
+        if ($namespace === null) {
+            $namespace = $this->getTable()->getNamespace();
+        }
+        return str_replace('Model', 'Form\Type', $namespace);
     }
 
     /**
@@ -33,7 +59,7 @@ class CrudableFormTypeBehaviorBuilder extends OMBuilder
         $script .= "use Symfony\\Component\\Form\\FormBuilderInterface,
 \tSymfony\Component\Validator\Constraints as Assert;
 
-use {$this->getNamespace()}\\om\\Base{$this->getClassname()};
+use {$this->getParentNamespace()}\\Base{$this->getClassname()};
 
 /**
  * Test class for Additional builder enabled on the '$tableName' table.
@@ -51,12 +77,19 @@ class {$this->getClassname()} extends Base{$this->getClassname()}
      * Specifies the methods that are added as part of the basic OM class.
      * This can be overridden by subclasses that wish to add more methods.
      * @see        ObjectBuilder::addClassBody()
+     *
+     * @param string $script The script will be modified in this method.
      */
     protected function addClassBody(&$script)
     {
         $this->addBuildForm($script);
     }
 
+    /**
+     * Adding add builder method.
+     *
+     * @param string $script The script will be modified in this method.
+     */
     protected function addBuildForm(&$script)
     {
         $script .= "
