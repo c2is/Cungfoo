@@ -28,11 +28,17 @@ class BaseAuthorType extends AppAwareType
             'required' => false,
         ));
         $builder->add('name', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'label' => 'author.name',
             'required' => false,
         ));
         $builder->add('documents', 'model', array(
             'class' => 'Cungfoo\Model\Document',
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'multiple' => true,
             'label' => 'author.documents',
             'required' => false,

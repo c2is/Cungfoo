@@ -28,6 +28,9 @@ class BaseCategoryType extends AppAwareType
             'required' => false,
         ));
         $builder->add('name', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'label' => 'category.name',
             'required' => false,
         ));

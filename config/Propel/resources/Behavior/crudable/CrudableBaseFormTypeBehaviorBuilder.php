@@ -2,6 +2,7 @@
 
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
@@ -111,7 +112,11 @@ class {$this->getClassname()} extends AppAwareType
                     if (is_bool($value)) {
                         $ouput .= sprintf("%s'%s' => %s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value ? 'true' : 'false');
                     } else if (is_int($key)) {
-                        $ouput .= sprintf("%s%s => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
+                        if (strpos($value, 'new ') === 0) {
+                            $ouput .= sprintf("%s%s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $value);
+                        } else {
+                            $ouput .= sprintf("%s%s => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
+                        }
                     } else {
                         $ouput .= sprintf("%s'%s' => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
                     }
@@ -133,11 +138,23 @@ class {$this->getClassname()} extends AppAwareType
      * @param Column $column
      * @return string
      */
-    private function addBuilderAccordingToType(Column $column)
+    private function addBuilderAccordingToColumn(Column $column)
     {
         if (!in_array($column->getName(), array('created_at', 'updated_at'))) {
-            return $this->addBuilder($column->getName(), $this->getColumnType($column));
+            return $this->addBuilder($column->getName(), $this->getColumnType($column), array(
+                'constraints' => $this->addConstraints($column)
+            ));
         }
+    }
+
+    private function addConstraints(Column $column)
+    {
+        $constraints = array();
+        if ($column->getAttribute('required', false)) {
+            $constraints[] = 'new Assert\NotBlank()';
+        }
+
+        return $constraints;
     }
 
     /**
@@ -175,13 +192,14 @@ class {$this->getClassname()} extends AppAwareType
             // for the foreign key
             elseif ($column->isForeignKey()) {
                 foreach ($column->getForeignKeys() as $fColumn) {
-                    $options = array('class' => sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName()));
+                    $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
+                    $options['constraints'] = $this->addConstraints($column);
                     $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
                 }
             }
             // for the other columns
             else {
-                $builders .= $this->addBuilderAccordingToType($column);
+                $builders .= $this->addBuilderAccordingToColumn($column);
             }
         }
 
@@ -216,8 +234,9 @@ class {$this->getClassname()} extends AppAwareType
                                 sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
                                 'model',
                                 array(
-                                    'class'    => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getName())),
-                                    'multiple' => true,
+                                    'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getName())),
+                                    'constraints'   => $this->addConstraints($otherColumn),
+                                    'multiple'      => true,
                                 )
                             );
                             break 2;
@@ -233,9 +252,10 @@ class {$this->getClassname()} extends AppAwareType
             $i18nColumns = array();
             foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn) {
                 $i18nColumns[$i18nColumn->getName()] = array(
-                    'required'  => false,
-                    'label'     => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'      => $this->getColumnType($i18nColumn),
+                    'required'      => false,
+                    'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
+                    'type'          => $this->getColumnType($i18nColumn),
+                    'constraints'   => $this->addConstraints($i18nColumn),
                 );
             }
 

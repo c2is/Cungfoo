@@ -32,10 +32,16 @@ class BaseDocumentI18nType extends AppAwareType
             'required' => false,
         ));
         $builder->add('title', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'label' => 'document_i18n.title',
             'required' => false,
         ));
         $builder->add('body', 'textrich', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'label' => 'document_i18n.body',
             'required' => false,
         ));

@@ -29,11 +29,17 @@ class BaseDocumentType extends AppAwareType
         ));
         $builder->add('category', 'model', array(
             'class' => '\Cungfoo\Model\Category',
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'label' => 'document.category',
             'required' => false,
         ));
         $builder->add('authors', 'model', array(
             'class' => 'Cungfoo\Model\Author',
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
             'multiple' => true,
             'label' => 'document.authors',
             'required' => false,
@@ -50,11 +56,17 @@ class BaseDocumentType extends AppAwareType
                     'required' => false,
                     'label' => 'document.title',
                     'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
                 ),
                 'body' => array(
                     'required' => false,
                     'label' => 'document.body',
                     'type' => 'textrich',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
                 ),
             ),
             'required' => false,
