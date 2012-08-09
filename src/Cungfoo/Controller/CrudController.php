@@ -21,14 +21,16 @@ class CrudController implements ControllerProviderInterface
     protected $modelName;
     protected $modelClass;
     protected $formType;
+    protected $prefix;
 
-    public function __construct($modelName, $modelClass, $formType)
+    public function __construct($modelName, $modelClass, $formType, $prefix)
     {
         $this->modelName  = $modelName;
         $this->modelClass = $modelClass;
         $this->queryClass = $modelClass.'Query';
         $this->peerClass  = $modelClass.'Peer';
         $this->formType   = $formType;
+        $this->prefix     = $prefix;
     }
 
     /**
@@ -57,7 +59,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateList(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->get('/', function () use ($app)
+            ->get(sprintf('/%s', $this->prefix), function () use ($app)
             {
                 $query = new $this->queryClass();
 
@@ -75,7 +77,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateCreate(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->match('/create', function (Request $request) use ($app)
+            ->match(sprintf('/%s/create', $this->prefix), function (Request $request) use ($app)
             {
                 return $this->edit($request, $app);
             })
@@ -88,7 +90,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateRead(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->get('/{id}', function ($id) use ($app)
+            ->get(sprintf('/%s/{id}', $this->prefix), function ($id) use ($app)
             {
                 $query  = new $this->queryClass();
                 $object = $query->findPk($id);
@@ -112,7 +114,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateUpdate(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->match('/{id}/update', function ($id, Request $request) use ($app)
+            ->match(sprintf('/%s/{id}/update', $this->prefix), function ($id, Request $request) use ($app)
             {
                 return $this->edit($request, $app, $id);
             })
@@ -125,7 +127,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateDelete(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->get('/delete/{id}', function ($id) use ($app)
+            ->get(sprintf('/%s/delete/{id}', $this->prefix), function ($id) use ($app)
             {
                 $object = call_user_func($this->queryClass.'::create')
                     ->filterById($id)

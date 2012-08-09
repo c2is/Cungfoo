@@ -66,7 +66,7 @@ $crudController = $crudRouter->getController();
 
 foreach ($crudRouter->getRoutes() as $name => $route)
 {
-    $app->mount($route['prefix'], new $crudController(
-        $name, $route['model'], $route['form']
+    $app->mount($route['global_prefix'], new $crudController(
+        $name, $route['model'], $route['form'], $route['prefix']
     ));
 }

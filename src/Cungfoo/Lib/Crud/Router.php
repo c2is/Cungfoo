@@ -33,12 +33,13 @@ class Router
         $crud = Yaml::parse($file)['crud'];
         $this->validateKeys($crud, $this->availableKeys);
 
-        $this->prefix     = $crud['prefix'];
+        $this->prefix     = '/' . trim($crud['prefix'], '/');
         $this->controller = $crud['controller'];
         foreach ($crud['items'] as $name => $item)
         {
             $this->validateKeys($item, $this->availableItemsKeys);
-            $item['prefix'] = sprintf('%s/%s', rtrim($this->prefix, '/'), ltrim($item['prefix'], '/'));
+            $item['global_prefix'] = $this->prefix;
+            $item['prefix'] = ltrim($item['prefix'], '/');
             $this->routes[$name] = $item;
         }
     }
