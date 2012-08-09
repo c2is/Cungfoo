@@ -10,10 +10,9 @@ class PropelFiller extends AbstractFiller
 {
     public function extractData($lineIndex, AbstractColumn $column)
     {
-        $getter = 'get'.Utils::camelize($column->getName());
-        $cell = new CellData();
-
-        //var_dump($this->data[$lineIndex]);
+        $utils  = new Utils();
+        $cell   = new CellData();
+        $getter = 'get'.$utils->camelize($column->getName());
 
         switch($column->getType())
         {

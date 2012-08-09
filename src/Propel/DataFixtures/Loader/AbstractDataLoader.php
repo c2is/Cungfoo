@@ -16,7 +16,7 @@ use \BasePeer,
     \PropelException;
 
 use Propel\DataFixtures\AbstractDataHandler,
-    Cungfoo\Lib,
+    Cungfoo\Lib\Utils,
     Cungfoo\Model;
 
 /**
@@ -121,6 +121,8 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
             return;
         }
 
+        $utils  = new Utils();
+
         foreach ($data as $class => $datas) {
             $class = trim($class);
             if ('\\' == $class[0]) {
@@ -205,7 +207,7 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
 
                     if (false !== $pos = array_search($name, $column_names)) {
                         $obj->setByPosition($pos, $value);
-                    } elseif (is_callable(array($obj, $method = 'set'.ucfirst(Utils::camelize($name))))) {
+                    } elseif (is_callable(array($obj, $method = 'set'.$utils->camelize($name)))) {
                         $obj->$method($value);
                     } else {
                         throw new \InvalidArgumentException(sprintf('Column "%s" does not exist for class "%s".', $name, $class));
