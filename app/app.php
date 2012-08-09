@@ -20,7 +20,7 @@ $app['config'] = function() {
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path'             => array($app['config']->get('root_dir').'/app/resources/views'),
     'twig.options'          => array('cache' => $app['config']->get('root_dir').'/app/cache'),
-    'twig.form.templates'   => array('/Form/form_custom_layout.html.twig'),
+    'twig.form.templates'   => array('/Cungfoo/Form/form_custom_layout.html.twig'),
 ));
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {

@@ -61,7 +61,7 @@ class CrudController implements ControllerProviderInterface
             {
                 $query = new $this->queryClass();
 
-                return $app['twig']->render('Crud/list.twig', array(
+                return $app['twig']->render('Cungfoo/Crud/list.twig', array(
                     'name'       => $this->modelName,
                     'fieldnames' => call_user_func($this->peerClass.'::getFieldNames'),
                     'collection' => $query->find()->exportTo($app['twig_collection_parser']),
@@ -98,7 +98,7 @@ class CrudController implements ControllerProviderInterface
                     throw new NotFoundHttpException(sprintf('%s with id "%d" does not exist.', ucfirst($this->modelName), $id));
                 }
 
-                return $app['twig']->render('Crud/read.twig', array(
+                return $app['twig']->render('Cungfoo/Crud/read.twig', array(
                     'name'       => $this->modelName,
                     'fieldnames' => call_user_func($this->peerClass.'::getFieldNames'),
                     'object'     => $object->exportTo($app['twig_object_parser']),
@@ -183,7 +183,7 @@ class CrudController implements ControllerProviderInterface
             }
         }
 
-        return $app['twig']->render('Crud/update.twig', array(
+        return $app['twig']->render('Cungfoo/Crud/update.twig', array(
             'name' => $this->modelName,
             'form' => $form->createView(),
         ));
