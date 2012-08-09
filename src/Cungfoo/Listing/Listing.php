@@ -60,6 +60,15 @@ class Listing
         return $this;
     }
 
+    public function removeColumn($name)
+    {
+        if(isset($this->columns[$name]))
+        {
+            unset($this->columns[$name]);
+        }
+        return $this;
+    }
+
     public function getColumnNames()
     {
         $names = array();
@@ -71,9 +80,13 @@ class Listing
         return $names;
     }
 
+    public function configure() {}
+
     public function render()
     {
         $render = array();
+
+        $this->configure();
 
         foreach($this->filler->getData() as $lineIndex => $line)
         {
