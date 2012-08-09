@@ -8,7 +8,7 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures;
+namespace Propel\DataFixtures;
 
 use \Propel;
 use Symfony\Component\Finder\Finder;

@@ -8,7 +8,7 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures\Loader;
+namespace Propel\DataFixtures\Loader;
 
 /**
  * @author Toni Uebernickel <tuebernickel@gmail.com>

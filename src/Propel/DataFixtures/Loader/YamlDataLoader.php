@@ -8,7 +8,7 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures\Loader;
+namespace Propel\DataFixtures\Loader;
 
 use Symfony\Component\Yaml\ParseException;
 use Symfony\Component\Yaml\Yaml;

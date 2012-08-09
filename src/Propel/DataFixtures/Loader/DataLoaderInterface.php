@@ -8,7 +8,7 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures\Loader;
+namespace Propel\DataFixtures\Loader;
 
 /**
  * Interface that exposes how Propel data loaders should work.

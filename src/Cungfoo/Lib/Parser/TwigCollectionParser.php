@@ -1,6 +1,6 @@
 <?php
 
-namespace Cungfoo\Parser;
+namespace Cungfoo\Lib\Parser;
 
 /**
  * @author William Durand <william.durand1@gmail.com>

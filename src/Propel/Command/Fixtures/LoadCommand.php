@@ -1,20 +1,19 @@
 <?php
-namespace Cungfoo\Command\Propel\Fixtures;
-
-use Cungfoo\Command\Command;
+namespace Propel\Command\Fixtures;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface,
-    Symfony\Component\Console\Helper\FormatterHelper;
-
-use Cungfoo\DataFixtures\Loader\YamlDataLoader,
+    Symfony\Component\Console\Helper\FormatterHelper,
     Symfony\Component\Finder\Finder;
+
+use Cungfoo\Command\Command,
+    Propel\DataFixtures\Loader\YamlDataLoader;
 
 class LoadCommand extends Command
 {
-    protected $fixturesDir = 'data/fixtures';
+    protected $fixturesDir = 'app/resources/data/fixtures';
 
     protected function configure()
     {

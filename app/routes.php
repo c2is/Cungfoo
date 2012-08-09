@@ -1,9 +1,11 @@
 <?php
-
 /**
- * Définition des variables utilisé
+ * Configuration of our application routing
  *
- * @var \Silex\Application $app
+ * @author  Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ *
+ * @package Cungfoo by C2IS
  */
 
 use Symfony\Component\HttpFoundation\Request,
@@ -59,7 +61,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 });
 
 $crudRouter = new CrudRouter();
-$crudRouter->load(sprintf('%s/config/Cungfoo/crud.yml', $app['config']->get('root_dir')));
+$crudRouter->load(sprintf('%s/Cungfoo/crud.yml', $app['config']->get('config_dir')));
 $crudController = $crudRouter->getController();
 
 foreach ($crudRouter->getRoutes() as $name => $route)

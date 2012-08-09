@@ -8,7 +8,7 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures\Dumper;
+namespace Propel\DataFixtures\Dumper;
 
 use \PDO;
 use \Propel;

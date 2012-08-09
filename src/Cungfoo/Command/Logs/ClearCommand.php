@@ -24,7 +24,7 @@ class ClearCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $finder = new Finder();
-        $finder->in($this->getApplication()->getRootDir().DIRECTORY_SEPARATOR.'logs')->notName('.gitkeep');
+        $finder->in($this->getApplication()->getRootDir().'/app/logs')->notName('.gitkeep');
 
         $fs = new Filesystem();
         $fs->remove($finder);

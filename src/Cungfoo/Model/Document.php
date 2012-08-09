@@ -17,8 +17,4 @@ use Cungfoo\Model\om\BaseDocument;
  * @package    propel.generator.Cungfoo.Model
  */
 class Document extends BaseDocument {
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
 } // Document

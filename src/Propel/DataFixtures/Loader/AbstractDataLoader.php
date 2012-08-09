@@ -8,15 +8,16 @@
  * @license    MIT License
  */
 
-namespace Cungfoo\DataFixtures\Loader;
+namespace Propel\DataFixtures\Loader;
 
-use \BasePeer;
-use \BaseObject;
-use \Propel;
-use \PropelException;
-use Cungfoo\DataFixtures\AbstractDataHandler;
-use Cungfoo\Lib;
-use Cungfoo\Model;
+use \BasePeer,
+    \BaseObject,
+    \Propel,
+    \PropelException;
+
+use Propel\DataFixtures\AbstractDataHandler,
+    Cungfoo\Lib,
+    Cungfoo\Model;
 
 /**
  * Abstract class to manage a common logic to load datas.

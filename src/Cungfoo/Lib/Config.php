@@ -57,9 +57,12 @@ class Config
 
     protected function generate()
     {
-        return $this->addParams(array(
-            'languages'     => Yaml::parse(sprintf('%s/config/languages.yml', $this->data['root_dir'])),
-            'cungfoo_menu'  => Yaml::parse(sprintf('%s/config/Cungfoo/menu.yml', $this->data['root_dir']))['menu'],
-        ));
+        return $this
+            ->addParam('config_dir', sprintf('%s/app/config', $this->data['root_dir']))
+            ->addParams(array(
+                'languages'     => Yaml::parse(sprintf('%s/languages.yml', $this->data['config_dir'])),
+                'cungfoo_menu'  => Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $this->data['config_dir']))['menu'],
+            ))
+        ;
     }
 }

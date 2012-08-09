@@ -1,5 +1,5 @@
 <?php
-namespace Cungfoo\Command\Propel;
+namespace Propel\Command;
 
 use Cungfoo\Command\Command;
 
@@ -23,7 +23,7 @@ class GenerateCommand extends Command
     {
         exec(
             'export PHP_CLASSPATH='.$this->getApplication()->getRootDir().'/vendor/phing/phing/classes &&'
-            .$this->getApplication()->getRootDir().'/vendor/propel/propel1/generator/bin/propel-gen config/Propel main',
+            .$this->getApplication()->getRootDir().'/vendor/propel/propel1/generator/bin/propel-gen app/config/Propel main',
             $lines,
             $status
         );
