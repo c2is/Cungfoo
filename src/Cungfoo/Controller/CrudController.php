@@ -10,6 +10,10 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
+use Cungfoo\Listing\Listing,
+    Cungfoo\Listing\Filler,
+    Cungfoo\Listing\Column;
+
 /**
  * CRUD controllers provider.
  *
@@ -61,12 +65,16 @@ class CrudController implements ControllerProviderInterface
         $controllers
             ->get(sprintf('/%s', $this->prefix), function () use ($app)
             {
-                $query = new $this->queryClass();
+                $listingClass = sprintf("\Cungfoo\Model\%sListing", $this->modelName);
+                $listing      = new $listingClass($app);
+                $query        = new $this->queryClass();
+
+                $listing->setFiller(new Filler\PropelFiller($query->find()));
 
                 return $app['twig']->render('Cungfoo/Crud/list.twig', array(
-                    'name'       => $this->modelName,
-                    'fieldnames' => call_user_func($this->peerClass.'::getFieldNames'),
-                    'collection' => $query->find()->exportTo($app['twig_collection_parser']),
+                    'name'         => $this->modelName,
+                    'column_names' => $listing->getColumnNames(),
+                    'lines'        => $listing->render(),
                 ));
             })
             ->bind(sprintf('%s_crud_list', $this->modelName))
