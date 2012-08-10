@@ -10,6 +10,10 @@ interface ColumnInterface
 
     public function getType();
 
+    public function setOptions(array $options);
+
+    public function getOptions();
+
     public function setRenderer($renderer);
 
     public function getRenderer();

@@ -7,16 +7,29 @@ use Cungfoo\Listing\CellData;
 abstract class AbstractColumn implements ColumnInterface
 {
     protected   $name,
-                $renderer;
+                $renderer,
+                $options = array();
 
-    public function __construct($name)
+    public function __construct($name, $options = array())
     {
-        $this->name = $name;
+        $this->name    = $name;
+        $this->options = $options;
     }
 
     public function getName()
     {
         return $this->name;
+    }
+
+    public function setOptions(array $options)
+    {
+        $this->options = $options;
+        return $this;
+    }
+
+    public function getOptions()
+    {
+        return $this->options;
     }
 
     public function setRenderer($renderer)
