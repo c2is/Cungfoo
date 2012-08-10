@@ -6,10 +6,19 @@ use Symfony\Component\Yaml\Yaml;
 
 use Cungfoo\Lib;
 
+/**
+ * Default cungfoo configuration class
+ *
+ * @authors Morgan Brunot <brunot.morgan@gmail.com>
+ *          Denis Roussel <denis.roussel@gmail.com>
+ */
 class Config
 {
     protected $data = array();
 
+    /**
+     * @param string $appRootDir
+     */
     public function __construct($appRootDir)
     {
         $this
@@ -18,51 +27,86 @@ class Config
         ;
     }
 
+    /**
+     * Overloading __get
+     * @param string $name
+     *
+     * @return mixed
+     */
     public function __get($name)
     {
         $utils = new Utils();
+
         return $this->get($utils->underscore($name));
     }
 
+    /**
+     * Invoking inaccessible methods
+     * @param string $method
+     * @param string $args
+     *
+     * @return mixed
+     * @throws \Exception
+     */
     public function __call($method, $args)
     {
-        if(strpos($method, 'get') === 0 && strlen($method) > 3)
-        {
+        if (strpos($method, 'get') === 0 && strlen($method) > 3) {
             $utils = new Utils();
+
             return $this->get($utils->underscore(substr($method, 3)));
         }
         throw new \Exception('Config : unknown function '.$method);
     }
 
+    /**
+     * Reading data
+     * @param string $param
+     *
+     * @return mixed
+     * @throws \Exception
+     */
     public function get($param)
     {
-        if(!isset($this->data[$param]))
-        {
+        if (!isset($this->data[$param])) {
             throw new \Exception('Config : unknown param '.$param);
         }
 
         return $this->data[$param];
     }
 
+    /**
+     * Adding of several parameters
+     * @param array $params
+     *
+     * @return Config
+     */
     public function addParams(array $params)
     {
         $this->data += $params;
+
         return $this;
     }
 
+    /**
+     * Adding parameter
+     * @param string $name Tests
+     * @param mixed  $value Test
+     *
+     * @return Config
+     */
     public function addParam($name, $value)
     {
         return $this->addParams(array($name => $value));
     }
 
+    /**
+     * Generating default configuration
+     * @return Config
+     */
     protected function generate()
     {
         return $this
             ->addParam('config_dir', sprintf('%s/app/config', $this->data['root_dir']))
-            ->addParams(array(
-                'languages'     => Yaml::parse(sprintf('%s/languages.yml', $this->data['config_dir'])),
-                'cungfoo_menu'  => Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $this->data['config_dir']))['menu'],
-            ))
         ;
     }
 }

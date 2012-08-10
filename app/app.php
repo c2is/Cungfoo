@@ -10,9 +10,15 @@
 
 $app = new Silex\Application();
 
-$app['config'] = function() {
+$app['config'] = $app->share(function() {
     return new \Cungfoo\Lib\Config(dirname(__DIR__));
-};
+});
+
+$app['config']->addParams(array(
+    'languages'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir'))),
+    'cungfoo_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
+));
+
 
 # ------------------------------------ #
 #  T W I G  C O N F I G U R A T I O N  #
@@ -81,14 +87,16 @@ $app['form.extensions'] = $app->share($app->extend('form.extensions', function (
 # ------------------------------------- #
 #  T R A N S L A T O R   M A N A G E R  #
 # ------------------------------------- #
-$app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
-    $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
-    foreach ($app['config']->get('languages')['languages'] as $locale => $language) {
-        $translator->addResource('yaml', sprintf('%s/Cungfoo/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
-    }
+$app['translator'] = $app->share($app->extend('translator',
+    function($translator, $app) {
+        $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
+        foreach ($app['config']->get('languages')['languages'] as $locale => $language) {
+            $translator->addResource('yaml', sprintf('%s/Cungfoo/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
+        }
 
-    return $translator;
-}));
+        return $translator;
+    }
+));
 
 return $app;
 
