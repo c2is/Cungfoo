@@ -7,7 +7,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 $app = require __DIR__.'/app/app.php';
 require __DIR__.'/app/config/prod.php';
-$app->get('/', function () use ($app) {}); // reset '/' route for making 'run' possible (route service is auto registered)
+$app->get('/', function () use ($app) {}); // reset '/' route for making 'run' possible
 $app->run(); // to boot registered services : Propel, etc.
 
 $console  = new \Cungfoo\Console\Application($app, 'Cungfoo', '0.1');
@@ -19,5 +19,6 @@ $console->add(new \Cungfoo\Command\Cache\ClearCommand());
 $console->add(new \Cungfoo\Command\Logs\ClearCommand());
 $console->add(new \Cungfoo\Command\Project\InitCommand());
 $console->add(new \Cungfoo\Command\Tests\UnitCommand());
+$console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
 $console->run();
