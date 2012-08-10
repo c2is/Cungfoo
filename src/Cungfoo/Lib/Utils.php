@@ -9,10 +9,9 @@ class Utils
        return 'dummy';
     }
 
-    public static function camelize($word)
+    public function camelize($string)
     {
-        return lcfirst(str_replace(" ", "", ucwords(strtr($word, "_-", "  "))));
-        //return preg_replace_callback('/(^|_|\.)+(.)/', function ($match) { return ('.' === $match[1] ? '_' : '').strtoupper($match[2]); }, $string);
+        return preg_replace_callback('/(^|_|\.)+(.)/', function ($match) { return ('.' === $match[1] ? '_' : '').strtoupper($match[2]); }, $string);
     }
 
     public function underscore($string)

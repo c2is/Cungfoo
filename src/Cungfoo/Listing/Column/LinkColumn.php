@@ -1,0 +1,30 @@
+<?php
+
+namespace Cungfoo\Listing\Column;
+
+use Cungfoo\Listing\CellData;
+
+class LinkColumn extends AbstractColumn
+{
+    public function verifyData(CellData $data)
+    {
+        if(strlen($data->getText()))
+        {
+            return isset($data->getOptions()['link']) && strlen($data->getOptions()['link']);
+        }
+    }
+
+    public function renderData(CellData $data)
+    {
+        return $this->renderer->render('Cungfoo/Listing/Column/LinkColumn.twig', array(
+            'text'  => $data->getText(),
+            'link'  => $data->getOptions()['link'],
+            'title' => isset($data->getOptions()['title']) ? $data->getOptions()['title'] : $data->getText()
+        ));
+    }
+
+    public function getType()
+    {
+        return 'link';
+    }
+}
