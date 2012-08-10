@@ -6,34 +6,71 @@ use Cungfoo\Listing\Column\AbstractColumn,
     Cungfoo\Listing\CellData,
     Cungfoo\Lib\Utils;
 
-class PropelFiller extends AbstractFiller
+class PropelFiller extends AbstractDatabaseFiller
 {
-    public function extractData($lineIndex, AbstractColumn $column)
+    protected function getFieldInfo($name, $data)
+    {
+        $utils = new Utils();
+
+        $getter = 'get'.$utils->camelize($name);
+
+        return array(
+            'text' => is_object($data->$getter()) ? $data->$getter()->__toString() : $data->$getter()
+        );
+    }
+
+    protected function isSingleFK($name, $data)
+    {
+        $utils = new Utils();
+
+        $method = 'get'.$utils->camelize($name).'Id';
+
+        return method_exists($data, $method);
+    }
+
+    protected function isMultipleFK($name, $data)
+    {
+        $utils       = new Utils();
+        $plurializer = new \DefaultEnglishPluralizer();
+
+        $method = 'get'.$utils->camelize($plurializer->getPluralForm($name));
+
+        return method_exists($data, $method);
+    }
+
+    protected function getSingleFKInfo($name, $data, $textFieldName)
     {
         $utils  = new Utils();
-        $cell   = new CellData();
-        $getter = 'get'.$utils->camelize($column->getName());
+        $method = 'get'.$utils->camelize($name);
+        $object = $data->$method();
 
-        switch($column->getType())
+        return array(
+            'text' => $object->$getTextMethod(),
+            'id'   => $object->getId()
+        );
+    }
+
+    protected function getMulitpleFKInfo($name, $data, $textFieldName)
+    {
+        $utils       = new Utils();
+        $plurializer = new \DefaultEnglishPluralizer();
+        $info        = array();
+
+        $method  = 'get'.$utils->camelize($plurializer->getPluralForm($name));
+        $objects = $data->$method();
+
+        if (count($objects))
         {
-            case 'text':
-                $cell->setText($this->data[$lineIndex]->$getter());
-                break;
-
-            case 'link':
-                $cell
-                    ->setText($this->data[$lineIndex]->$getter())
-                    ->setOptions(array(
-                        'title' => 'toto',
-                        'link' => 'http://link'
-                    ))
-                ;
-                break;
-
-            default:
-                throw new \Exception(sprintf('Colmun type % is not handled by %s', $column->getType(), __CLASS__));
+            $getTextMethod = 'get'.$utils->camelize($textFieldName);
+            foreach($objects as $object)
+            {
+                $info[] = array(
+                    'text' => $object->$getTextMethod(),
+                    'id'   => $object->getId()
+                );
+            }
         }
 
-        return $cell;
+        return $info;
     }
 }
