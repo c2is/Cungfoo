@@ -14,7 +14,10 @@ class BaseAuthorListing extends Listing
     {
         $this
             ->addColumn(new Column\TextColumn('id'))
-            ->addColumn(new Column\LinkColumn('name'))
+            ->addColumn(new Column\TextColumn('name'))
+            ->addColumn(new Column\TextListColumn('document', array(
+                'text_field_name' => 'id'
+            )))
         ;
     }
 
