@@ -27,7 +27,8 @@ class ModelType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if ($options['multiple']) {
+        if ($options['multiple'])
+        {
             $builder->addViewTransformer(new CollectionToArrayTransformer(), true);
         }
     }

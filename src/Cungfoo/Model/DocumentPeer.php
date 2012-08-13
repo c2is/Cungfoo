@@ -16,6 +16,7 @@ use Cungfoo\Model\om\BaseDocumentPeer;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class DocumentPeer extends BaseDocumentPeer {
+class DocumentPeer extends BaseDocumentPeer
+{
 
 } // DocumentPeer

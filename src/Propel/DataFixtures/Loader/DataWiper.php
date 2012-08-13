@@ -28,25 +28,31 @@ class DataWiper extends AbstractDataLoader
 
         $this->con = \Propel::getConnection($connectionName);
 
-        try {
+        try
+        {
             $this->con->beginTransaction();
-            if ('mysql' === $this->con->getAttribute(\PDO::ATTR_DRIVER_NAME)) {
+            if ('mysql' === $this->con->getAttribute(\PDO::ATTR_DRIVER_NAME))
+            {
                 $this->con->exec('SET FOREIGN_KEY_CHECKS = 0;');
             }
 
             $tables = array();
-            foreach ($this->dbMap->getTables() as $eachTable) {
+            foreach ($this->dbMap->getTables() as $eachTable)
+            {
                 /* @var $eachTable \TableMap */
                 $tables[$eachTable->getClassname()] = array();
             }
 
             $this->deleteCurrentData($tables);
 
-            if ('mysql' === $this->con->getAttribute(\PDO::ATTR_DRIVER_NAME)) {
+            if ('mysql' === $this->con->getAttribute(\PDO::ATTR_DRIVER_NAME))
+            {
                 $this->con->exec('SET FOREIGN_KEY_CHECKS = 1;');
             }
             $this->con->commit();
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e)
+        {
             $this->con->rollBack();
 
             throw $e;

@@ -11,10 +11,10 @@ use Cungfoo\Listing\Filler\AbstractFiller,
 
 class Listing
 {
-    protected   $app,
-                $filler,
-                $columns = array(),
-                $options = array();
+    protected $app;
+    protected $filler;
+    protected $columns = array();
+    protected $options = array();
 
     public function __construct(Application $app)
     {
@@ -62,7 +62,7 @@ class Listing
 
     public function removeColumn($name)
     {
-        if(isset($this->columns[$name]))
+        if (isset($this->columns[$name]))
         {
             unset($this->columns[$name]);
         }
@@ -73,14 +73,17 @@ class Listing
     {
         $names = array();
 
-        foreach ($this->columns as $column) {
+        foreach ($this->columns as $column)
+        {
             $names[] = $column->getName();
         }
 
         return $names;
     }
 
-    public function configure() {}
+    public function configure()
+    {
+    }
 
     public function render()
     {
@@ -88,9 +91,9 @@ class Listing
 
         $this->configure();
 
-        foreach($this->filler->getData() as $lineIndex => $line)
+        foreach ($this->filler->getData() as $lineIndex => $line)
         {
-            foreach($this->columns as $columnIndex => $column)
+            foreach ($this->columns as $columnIndex => $column)
             {
                 $render[$lineIndex][$columnIndex] = $column->render($this->filler->extractData($lineIndex, $column));
             }

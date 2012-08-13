@@ -25,8 +25,10 @@ class YamlDataLoader extends AbstractDataLoader
      */
     protected function transformDataToArray($file)
     {
-        if (strpos($file, "\n") === false && is_file($file)) {
-            if (false === is_readable($file)) {
+        if (strpos($file, "\n") === false && is_file($file))
+        {
+            if (false === is_readable($file))
+            {
                 throw new ParseException(sprintf('Unable to parse "%s" as the file is not readable.', $file));
             }
 
@@ -42,7 +44,8 @@ class YamlDataLoader extends AbstractDataLoader
             $file = is_array($retval) ? $retval : $content;
 
             // if an array is returned by the config file assume it's in plain php form else in YAML
-            if (is_array($file)) {
+            if (is_array($file))
+            {
                 return $file;
             }
         }

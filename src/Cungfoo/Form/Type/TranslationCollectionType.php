@@ -39,7 +39,8 @@ class TranslationCollectionType extends CollectionType
             $form = $event->getForm();
             $data = $event->getData();
 
-            if ($data == null) {
+            if ($data == null)
+            {
                 return;
             }
 
@@ -50,17 +51,21 @@ class TranslationCollectionType extends CollectionType
             $rootData = $form->getRoot()->getData();
 
             //add a row for every needed language
-            foreach ($languages as $lang) {
+            foreach ($languages as $lang)
+            {
                 $found = false;
 
-                foreach ($data as $i18n) {
-                    if ($i18n->getLocale() == $lang) {
+                foreach ($data as $i18n)
+                {
+                    if ($i18n->getLocale() == $lang)
+                    {
                         $found = true;
                         break;
                     }
                 }
 
-                if (!$found) {
+                if (!$found)
+                {
                     $newTranslation = new $i18nClass();
                     $newTranslation->setLocale($lang);
 

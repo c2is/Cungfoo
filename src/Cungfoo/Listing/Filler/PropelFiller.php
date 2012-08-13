@@ -62,7 +62,7 @@ class PropelFiller extends AbstractDatabaseFiller
         if (count($objects))
         {
             $getTextMethod = 'get'.$utils->camelize($textFieldName);
-            foreach($objects as $object)
+            foreach ($objects as $object)
             {
                 $info[] = array(
                     'text' => $object->$getTextMethod(),

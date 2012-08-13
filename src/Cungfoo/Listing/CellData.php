@@ -4,8 +4,8 @@ namespace Cungfoo\Listing;
 
 class CellData
 {
-    protected   $text,
-                $options = array();
+    protected $text;
+    protected $options = array();
 
     public function __construct()
     {

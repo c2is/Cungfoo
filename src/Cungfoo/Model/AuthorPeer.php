@@ -16,6 +16,7 @@ use Cungfoo\Model\om\BaseAuthorPeer;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class AuthorPeer extends BaseAuthorPeer {
+class AuthorPeer extends BaseAuthorPeer
+{
 
 } // AuthorPeer

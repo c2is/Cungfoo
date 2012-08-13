@@ -56,23 +56,27 @@ abstract class AbstractDataHandler
      */
     protected function loadMapBuilders($connectionName = null)
     {
-        if (null !== $this->dbMap) {
+        if (null !== $this->dbMap)
+        {
             return;
         }
 
         $this->dbMap = Propel::getDatabaseMap($connectionName);
 
-        if (0 === count($this->dbMap->getTables())) {
+        if (0 === count($this->dbMap->getTables()))
+        {
             $finder = new Finder();
             $files  = $finder->files()->name('*TableMap.php')
                 ->in($this->getRootDir() . '/../')
                 ->exclude('PropelBundle')
                 ->exclude('Tests');
 
-            foreach ($files as $file) {
+            foreach ($files as $file)
+            {
                 $class = $this->guessFullClassName($file->getRelativePath(), basename($file, '.php'));
 
-                if (null !== $class) {
+                if (null !== $class)
+                {
                     $this->dbMap->addTableFromMapClass($class);
                 }
             }
@@ -92,16 +96,19 @@ abstract class AbstractDataHandler
         $path  = str_replace('/', '\\', $path);
 
         $array[] = $path;
-        while ($pos = strpos($path, '\\')) {
+        while ($pos = strpos($path, '\\'))
+        {
             $path = substr($path, $pos + 1, strlen($path));
             $array[] = $path;
         }
 
         $array = array_reverse($array);
-        while ($ns = array_pop($array)) {
+        while ($ns = array_pop($array))
+        {
 
             $class = $ns . '\\' . $shortClassName;
-            if (class_exists($class)) {
+            if (class_exists($class))
+            {
                 return $class;
             }
         }

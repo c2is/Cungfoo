@@ -16,6 +16,7 @@ use Cungfoo\Model\om\BaseAuthorQuery;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class AuthorQuery extends BaseAuthorQuery {
+class AuthorQuery extends BaseAuthorQuery
+{
 
 } // AuthorQuery

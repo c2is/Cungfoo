@@ -62,7 +62,8 @@ class ModelChoiceList extends ObjectChoiceList
         $this->query        = $queryObject ?: $query;
         $this->loaded       = is_array($choices) || $choices instanceof \Traversable;
 
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             // Make sure the constraints of the parent constructor are
             // fulfilled
             $choices = array();
@@ -90,7 +91,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getChoices()
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             $this->load();
         }
 
@@ -106,7 +108,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getValues()
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             $this->load();
         }
 
@@ -123,7 +126,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getPreferredViews()
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             $this->load();
         }
 
@@ -140,7 +144,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getRemainingViews()
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             $this->load();
         }
 
@@ -158,8 +163,10 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getChoicesForValues(array $values)
     {
-        if (!$this->loaded) {
-            if (1 === count($this->identifier)) {
+        if (!$this->loaded)
+        {
+            if (1 === count($this->identifier))
+            {
                 $filterBy = 'filterBy' . current($this->identifier)->getPhpName();
 
                 return (array) $this->query->create()
@@ -184,15 +191,19 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getValuesForChoices(array $models)
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             // Optimize performance for single-field identifiers. We already
             // know that the IDs are used as values
 
             // Attention: This optimization does not check choices for existence
-            if (1 === count($this->identifier)) {
+            if (1 === count($this->identifier))
+            {
                 $values = array();
-                foreach ($models as $model) {
-                    if ($model instanceof $this->class) {
+                foreach ($models as $model)
+                {
+                    if ($model instanceof $this->class)
+                    {
                         // Make sure to convert to the right format
                         $values[] = $this->fixValue(current($this->getIdentifierValues($model)));
                     }
@@ -218,16 +229,20 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getIndicesForChoices(array $models)
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             // Optimize performance for single-field identifiers. We already
             // know that the IDs are used as indices
 
             // Attention: This optimization does not check choices for existence
-            if (1 === count($this->identifier)) {
+            if (1 === count($this->identifier))
+            {
                 $indices = array();
 
-                foreach ($models as $model) {
-                    if ($model instanceof $this->class) {
+                foreach ($models as $model)
+                {
+                    if ($model instanceof $this->class)
+                    {
                         // Make sure to convert to the right format
                         $indices[] = $this->fixIndex(current($this->getIdentifierValues($model)));
                     }
@@ -253,12 +268,14 @@ class ModelChoiceList extends ObjectChoiceList
      */
     public function getIndicesForValues(array $values)
     {
-        if (!$this->loaded) {
+        if (!$this->loaded)
+        {
             // Optimize performance for single-field identifiers. We already
             // know that the IDs are used as indices and values
 
             // Attention: This optimization does not check values for existence
-            if (1 === count($this->identifier)) {
+            if (1 === count($this->identifier))
+            {
                 return $this->fixIndices($values);
             }
 
@@ -282,7 +299,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     protected function createIndex($model)
     {
-        if (1 === count($this->identifier)) {
+        if (1 === count($this->identifier))
+        {
             return current($this->getIdentifierValues($model));
         }
 
@@ -302,7 +320,8 @@ class ModelChoiceList extends ObjectChoiceList
      */
     protected function createValue($model)
     {
-        if (1 === count($this->identifier)) {
+        if (1 === count($this->identifier))
+        {
             return (string) current($this->getIdentifierValues($model));
         }
 
@@ -316,11 +335,14 @@ class ModelChoiceList extends ObjectChoiceList
     {
         $models = (array) $this->query->find();
 
-        try {
+        try
+        {
             // The second parameter $labels is ignored by ObjectChoiceList
             // The third parameter $preferredChoices is currently not supported
             parent::initialize($models, array(), array());
-        } catch (StringCastException $e) {
+        }
+        catch (StringCastException $e)
+        {
             throw new StringCastException(str_replace('argument $labelPath', 'option "property"', $e->getMessage()), null, $e);
         }
 
@@ -339,12 +361,14 @@ class ModelChoiceList extends ObjectChoiceList
      */
     private function getIdentifierValues($model)
     {
-        if ($model instanceof Persistent) {
+        if ($model instanceof Persistent)
+        {
             return array($model->getPrimaryKey());
         }
 
         // readonly="true" models do not implement Persistent.
-        if ($model instanceof BaseObject and method_exists($model, 'getPrimaryKey')) {
+        if ($model instanceof BaseObject and method_exists($model, 'getPrimaryKey'))
+        {
             return array($model->getPrimaryKey());
         }
 

@@ -24,11 +24,13 @@ class CollectionToArrayTransformer implements DataTransformerInterface
 {
     public function transform($collection)
     {
-        if (null === $collection) {
+        if (null === $collection)
+        {
             return array();
         }
 
-        if (!$collection instanceof PropelObjectCollection) {
+        if (!$collection instanceof PropelObjectCollection)
+        {
             throw new UnexpectedTypeException($collection, '\PropelObjectCollection');
         }
 
@@ -39,11 +41,13 @@ class CollectionToArrayTransformer implements DataTransformerInterface
     {
         $collection = new PropelObjectCollection();
 
-        if ('' === $array || null === $array) {
+        if ('' === $array || null === $array)
+        {
             return $collection;
         }
 
-        if (!is_array($array)) {
+        if (!is_array($array))
+        {
             throw new UnexpectedTypeException($array, 'array');
         }
 

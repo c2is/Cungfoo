@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Configuration of our application
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
@@ -20,9 +20,7 @@ $app['config']->addParams(array(
 ));
 
 
-# ------------------------------------ #
-#  T W I G  C O N F I G U R A T I O N  #
-# ------------------------------------ #
+/* T W I G  C O N F I G U R A T I O N  */
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path'             => array($app['config']->get('root_dir').'/app/resources/views'),
     'twig.options'          => array('cache' => $app['config']->get('root_dir').'/app/cache'),
@@ -37,17 +35,14 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 $app['twig_collection_parser'] = new Cungfoo\Lib\Parser\TwigCollectionParser();
 $app['twig_object_parser'] = new Cungfoo\Lib\Parser\TwigObjectParser();
 
-# ----------------------------------------- #
-#  P R O P E L   C O N F I G U R A T I O N  #
-# ----------------------------------------- #
+
+/* P R O P E L   C O N F I G U R A T I O N  */
 $app->register(new Propel\Silex\PropelServiceProvider(), array(
     'propel.config_file' => $app['config']->get('config_dir').'/Propel/generated/Cungfoo-conf.php',
     'propel.model_path' => $app['config']->get('root_dir').'/src'
 ));
 
-# --------------------------------- #
-#  S E C U R I T Y   M A N A G E R  #
-# --------------------------------- #
+/* S E C U R I T Y   M A N A G E R */
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
         'admin_login' => array(
@@ -68,29 +63,24 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true)
 ));
 
-# ------------------------------------------- #
-#  S O M E   S E R V I C E   P R O V I D E R  #
-# ------------------------------------------- #
+/* S O M E   S E R V I C E   P R O V I D E R */
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
-# ------------------------------- #
-#  F O R M  E X T E N S I O N S   #
-# ------------------------------- #
+/* F O R M  E X T E N S I O N S  */
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions) use ($app) {
     $extensions[] = new \Cungfoo\Form\CustomExtension();
     return $extensions;
 }));
 
-# ------------------------------------- #
-#  T R A N S L A T O R   M A N A G E R  #
-# ------------------------------------- #
+/*  T R A N S L A T O R   M A N A G E R */
 $app['translator'] = $app->share($app->extend('translator',
     function($translator, $app) {
         $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
-        foreach ($app['config']->get('languages')['languages'] as $locale => $language) {
+        foreach ($app['config']->get('languages')['languages'] as $locale => $language)
+        {
             $translator->addResource('yaml', sprintf('%s/Cungfoo/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
         }
 

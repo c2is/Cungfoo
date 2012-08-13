@@ -34,10 +34,12 @@ class SniffCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $filesToSniff = array('app', 'src');
-        if ($specificFile = $input->getArgument('file')) {
+        if ($specificFile = $input->getArgument('file'))
+        {
             $filesToSniff = array($specificFile);
         }
-        elseif ($input->getOption('modified-files')) {
+        else if ($input->getOption('modified-files'))
+        {
             ob_start();
             passthru(sprintf('git diff --name-only --cached'));
             $outputGitDiffStaged = trim(ob_get_contents(), "\n");

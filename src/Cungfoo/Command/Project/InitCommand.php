@@ -28,15 +28,16 @@ class InitCommand extends Command
         $commands[] = array('command' => 'logs:clear');
         $commands[] = array('command' => 'cache:clear');
 
-        foreach($commands as $command)
+        foreach ($commands as $command)
         {
-            if(!$this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output))
+            if (!$this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output))
             {
                 return false;
             }
         }
 
         $output->writeln('Project <comment>initialized</comment>.');
+
         return true;
     }
 }

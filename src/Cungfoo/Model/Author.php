@@ -16,7 +16,8 @@ use Cungfoo\Model\om\BaseAuthor;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class Author extends BaseAuthor {
+class Author extends BaseAuthor
+{
 
     public function __toString()
     {

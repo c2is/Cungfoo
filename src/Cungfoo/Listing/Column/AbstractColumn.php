@@ -6,9 +6,9 @@ use Cungfoo\Listing\CellData;
 
 abstract class AbstractColumn implements ColumnInterface
 {
-    protected   $name,
-                $renderer,
-                $options = array();
+    protected $name;
+    protected $renderer;
+    protected $options = array();
 
     public function __construct($name, $options = array())
     {
@@ -45,12 +45,12 @@ abstract class AbstractColumn implements ColumnInterface
 
     public function render(CellData $data)
     {
-        if(!isset($this->renderer))
+        if (!isset($this->renderer))
         {
             throw new \Exception(sprintf('Renderer is not defined for column "%s"', get_class($this)));
         }
 
-        if(!$this->verifyData($data))
+        if (!$this->verifyData($data))
         {
             throw new \Exception(sprintf('CellData is not properly customize for column "%s"', get_class($this)));
         }

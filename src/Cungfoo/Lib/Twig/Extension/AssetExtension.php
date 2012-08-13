@@ -17,13 +17,13 @@ class AssetExtension extends Twig_Extension
         $this->app = $app;
     }
 
-
     public function getFunctions()
     {
         return array('asset' => new \Twig_Function_Method($this, 'asset'));
     }
 
-    public function asset($url) {
+    public function asset($url)
+    {
         return sprintf('%s/%s', $this->app['request']->getBasePath(), $url);
     }
 

@@ -33,7 +33,8 @@ class CrudableFormTypeBehaviorBuilder extends OMBuilder
      */
     public function getNamespace($namespace = null)
     {
-        if ($namespace === null) {
+        if ($namespace === null)
+        {
             $namespace = $this->getTable()->getNamespace();
         }
         return str_replace('Model', 'Form\Type', $namespace);

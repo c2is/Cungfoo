@@ -8,7 +8,7 @@ class LinkColumn extends AbstractColumn
 {
     public function verifyData(CellData $data)
     {
-        if(strlen($data->getText()))
+        if (strlen($data->getText()))
         {
             return isset($data->getOptions()['link']) && strlen($data->getOptions()['link']);
         }

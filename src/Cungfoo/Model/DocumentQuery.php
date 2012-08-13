@@ -16,6 +16,7 @@ use Cungfoo\Model\om\BaseDocumentQuery;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class DocumentQuery extends BaseDocumentQuery {
+class DocumentQuery extends BaseDocumentQuery
+{
 
 } // DocumentQuery

@@ -50,7 +50,8 @@ class Config
      */
     public function __call($method, $args)
     {
-        if (strpos($method, 'get') === 0 && strlen($method) > 3) {
+        if (strpos($method, 'get') === 0 && strlen($method) > 3)
+        {
             $utils = new Utils();
 
             return $this->get($utils->underscore(substr($method, 3)));
@@ -67,7 +68,8 @@ class Config
      */
     public function get($param)
     {
-        if (!isset($this->data[$param])) {
+        if (!isset($this->data[$param]))
+        {
             throw new \Exception('Config : unknown param '.$param);
         }
 
@@ -89,8 +91,8 @@ class Config
 
     /**
      * Adding parameter
-     * @param string $name Tests
-     * @param mixed  $value Test
+     * @param string $name
+     * @param mixed  $value
      *
      * @return Config
      */

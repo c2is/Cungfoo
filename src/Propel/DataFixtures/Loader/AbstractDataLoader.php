@@ -34,7 +34,7 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
     /**
      * @var array
      */
-    protected $object_references = array();
+    protected $objectReferences = array();
 
     /**
      * Transforms a file containing data in an array.
@@ -55,14 +55,17 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
         $this->loadMapBuilders($connectionName);
         $this->con = Propel::getConnection($connectionName);
 
-        try {
+        try
+        {
             $this->con->beginTransaction();
 
             $datas = array();
-            foreach ($files as $file) {
+            foreach ($files as $file)
+            {
                 $content = $this->transformDataToArray($file);
 
-                if (count($content) > 0) {
+                if (count($content) > 0)
+                {
                     $datas = array_merge_recursive($datas, $content);
                     $nbFiles++;
                 }
@@ -72,7 +75,9 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
             $this->loadDataFromArray($datas);
 
             $this->con->commit();
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e)
+        {
             $this->con->rollBack();
             throw $e;
         }
@@ -87,17 +92,21 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
      */
     protected function deleteCurrentData($data = null)
     {
-        if ($data !== null) {
+        if ($data !== null)
+        {
             $classes = array_keys($data);
-            foreach (array_reverse($classes) as $class) {
+            foreach (array_reverse($classes) as $class)
+            {
                 $class = trim($class);
-                if (in_array($class, $this->deletedClasses)) {
+                if (in_array($class, $this->deletedClasses))
+                {
                     continue;
                 }
 
                 // Check that peer class exists before calling doDeleteAll()
                 $peerClass = constant($class.'::PEER');
-                if (!class_exists($peerClass)) {
+                if (!class_exists($peerClass))
+                {
                     throw new \InvalidArgumentException(sprintf('Unknown class "%sPeer".', $class));
                 }
 
@@ -117,55 +126,70 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
      */
     protected function loadDataFromArray($data = null)
     {
-        if ($data === null) {
+        if ($data === null)
+        {
             return;
         }
 
         $utils  = new Utils();
 
-        foreach ($data as $class => $datas) {
+        foreach ($data as $class => $datas)
+        {
             $class = trim($class);
-            if ('\\' == $class[0]) {
+            if ('\\' == $class[0])
+            {
                 $class = substr($class, 1);
             }
             $tableMap     = $this->dbMap->getTable(constant(constant($class.'::PEER').'::TABLE_NAME'));
-            $column_names = call_user_func_array(array(constant($class.'::PEER'), 'getFieldNames'), array(BasePeer::TYPE_FIELDNAME));
+            $columnNames = call_user_func_array(array(constant($class.'::PEER'), 'getFieldNames'), array(BasePeer::TYPE_FIELDNAME));
 
             // iterate through datas for this class
             // might have been empty just for force a table to be emptied on import
-            if (!is_array($datas)) {
+            if (!is_array($datas))
+            {
                 continue;
             }
 
-            foreach ($datas as $key => $data) {
+            foreach ($datas as $key => $data)
+            {
                 // create a new entry in the database
-                if (!class_exists($class)) {
+                if (!class_exists($class))
+                {
                     throw new \InvalidArgumentException(sprintf('Unknown class "%s".', $class));
                 }
 
                 $obj = new $class();
 
-                if (!$obj instanceof BaseObject) {
+                if (!$obj instanceof BaseObject)
+                {
                     throw new \RuntimeException(
                         sprintf('The class "%s" is not a Propel class. There is probably another class named "%s" somewhere.', $class, $class)
                     );
                 }
 
-                if (!is_array($data)) {
+                if (!is_array($data))
+                {
                     throw new \InvalidArgumentException(sprintf('You must give a name for each fixture data entry (class %s).', $class));
                 }
 
-                foreach ($data as $name => $value) {
-                    if (is_array($value) && 's' === substr($name, -1)) {
-                        try {
+                foreach ($data as $name => $value)
+                {
+                    if (is_array($value) && 's' === substr($name, -1))
+                    {
+                        try
+                        {
                             // many to many relationship
                             $this->loadManyToMany($obj, substr($name, 0, -1), $value);
 
                             continue;
-                        } catch (PropelException $e) {
+                        }
+                        catch (PropelException $e)
+                        {
                             // Check whether this is actually an array stored in the object.
-                            if ('Cannot fetch TableMap for undefined table: '.substr($name, 0, -1) === $e->getMessage()) {
-                                if ('ARRAY' !== $tableMap->getColumn($name)->getType()) {
+                            if ('Cannot fetch TableMap for undefined table: '.substr($name, 0, -1) === $e->getMessage())
+                            {
+                                if ('ARRAY' !== $tableMap->getColumn($name)->getType())
+                                {
                                     throw $e;
                                 }
                             }
@@ -173,43 +197,58 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
                     }
 
                     $isARealColumn = true;
-                    if ($tableMap->hasColumn($name)) {
+                    if ($tableMap->hasColumn($name))
+                    {
                         $column = $tableMap->getColumn($name);
-                    } elseif ($tableMap->hasColumnByPhpName($name)) {
+                    }
+                    elseif ($tableMap->hasColumnByPhpName($name))
+                    {
                         $column = $tableMap->getColumnByPhpName($name);
-                    } else {
+                    }
+                    else
+                    {
                         $isARealColumn = false;
                     }
 
                     // foreign key?
-                    if ($isARealColumn) {
+                    if ($isARealColumn)
+                    {
                         // self referencing entry
-                        if ($column->isPrimaryKey() && null !== $value) {
-                            if (isset($this->object_references[$class.'_'.$value])) {
-                                $obj = $this->object_references[$class.'_'.$value];
+                        if ($column->isPrimaryKey() && null !== $value)
+                        {
+                            if (isset($this->objectReferences[$class.'_'.$value]))
+                            {
+                                $obj = $this->objectReferences[$class.'_'.$value];
 
                                 continue;
                             }
                         }
 
-                        if ($column->isForeignKey() && null !== $value) {
+                        if ($column->isForeignKey() && null !== $value)
+                        {
                             $relatedTable = $this->dbMap->getTable($column->getRelatedTableName());
-                            if (!isset($this->object_references[$relatedTable->getClassname().'_'.$value])) {
+                            if (!isset($this->objectReferences[$relatedTable->getClassname().'_'.$value]))
+                            {
                                 throw new \InvalidArgumentException(
                                     sprintf('The object "%s" from class "%s" is not defined in your data file.', $value, $relatedTable->getClassname())
                                 );
                             }
                             $value = $this
-                                ->object_references[$relatedTable->getClassname().'_'.$value]
+                                ->objectReferences[$relatedTable->getClassname().'_'.$value]
                                 ->getByName($column->getRelatedName(), BasePeer::TYPE_COLNAME);
                         }
                     }
 
-                    if (false !== $pos = array_search($name, $column_names)) {
+                    if (false !== $pos = array_search($name, $columnNames))
+                    {
                         $obj->setByPosition($pos, $value);
-                    } elseif (is_callable(array($obj, $method = 'set'.$utils->camelize($name)))) {
+                    }
+                    elseif (is_callable(array($obj, $method = 'set'.$utils->camelize($name))))
+                    {
                         $obj->$method($value);
-                    } else {
+                    }
+                    else
+                    {
                         throw new \InvalidArgumentException(sprintf('Column "%s" does not exist for class "%s".', $name, $class));
                     }
                 }
@@ -217,8 +256,9 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
                 $obj->save($this->con);
 
                 // save the object for future reference
-                if (method_exists($obj, 'getPrimaryKey')) {
-                    $this->object_references[$class.'_'.$key] = $obj;
+                if (method_exists($obj, 'getPrimaryKey'))
+                {
+                    $this->objectReferences[$class.'_'.$key] = $obj;
                 }
             }
         }
@@ -237,23 +277,31 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
         $middleClass = $middleTable->getClassname();
         $tableName   = constant(constant(get_class($obj).'::PEER').'::TABLE_NAME');
 
-        foreach ($middleTable->getColumns() as $column) {
-            if ($column->isForeignKey()) {
-                if ($tableName !== $column->getRelatedTableName()) {
+        foreach ($middleTable->getColumns() as $column)
+        {
+            if ($column->isForeignKey())
+            {
+                if ($tableName !== $column->getRelatedTableName())
+                {
                     $relatedClass  = $this->dbMap->getTable($column->getRelatedTableName())->getClassname();
                     $relatedSetter = 'set' . $column->getRelation()->getName();
-                } else {
+                }
+                else
+                {
                     $setter = 'set' . $column->getRelation()->getName();
                 }
             }
         }
 
-        if (!isset($relatedClass)) {
+        if (!isset($relatedClass))
+        {
             throw new \InvalidArgumentException(sprintf('Unable to find the many-to-many relationship for object "%s".', get_class($obj)));
         }
 
-        foreach ($values as $value) {
-            if (!isset($this->object_references[$relatedClass.'_'.$value])) {
+        foreach ($values as $value)
+        {
+            if (!isset($this->objectReferences[$relatedClass.'_'.$value]))
+            {
                 throw new \InvalidArgumentException(
                     sprintf('The object "%s" from class "%s" is not defined in your data file.', $value, $relatedClass)
                 );
@@ -261,7 +309,7 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
 
             $middle = new $middleClass();
             $middle->$setter($obj);
-            $middle->$relatedSetter($this->object_references[$relatedClass.'_'.$value]);
+            $middle->$relatedSetter($this->objectReferences[$relatedClass.'_'.$value]);
             $middle->save($this->con);
         }
     }

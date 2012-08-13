@@ -23,7 +23,6 @@ class TwigObjectParser extends \PropelJSONParser
                     $output[$fieldname] = $value->format('\l\e d/m/Y \à H\hi');
                 }
             }
-
             else
             {
                 $output[$fieldname] = $value;

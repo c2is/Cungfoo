@@ -38,7 +38,7 @@ $app->get('/admin/login', function(Request $request) use ($app) {
 
 $app->get('/admin/generate-password', function (Request $request) use ($app) {
     $password = $request->query->get('password');
-    if(!$password)
+    if (!$password)
     {
         throw new \Exception("No 'password' parameter found.");
     }
@@ -51,7 +51,8 @@ $app->get('/admin/generate-password', function (Request $request) use ($app) {
 });
 
 $app->error(function (\Exception $e, $code) use ($app) {
-    if ($app['debug']) {
+    if ($app['debug'])
+    {
         return;
     }
 

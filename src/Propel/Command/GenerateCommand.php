@@ -9,6 +9,9 @@ use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Output\OutputInterface,
     Symfony\Component\Console\Helper\FormatterHelper;
 
+/**
+ * toto
+ */
 class GenerateCommand extends Command
 {
     protected function configure()
@@ -28,17 +31,19 @@ class GenerateCommand extends Command
             $status
         );
 
-        if($status)
+        if ($status)
         {
             foreach ($lines as $line)
             {
                 $output->write($line, true);
             }
             $output->writeln($this->getFormatterHelper()->formatBlock(array('[Propel] Generation error'), 'fg=white;bg=red'));
+
             return false;
         }
-        
+
         $output->write("Propel classes <comment>generated</comment>.", true);
+
         return true;
     }
 }

@@ -6,12 +6,12 @@ use Cungfoo\Listing\Filler\FillerInterface;
 
 abstract class AbstractFiller implements FillerInterface
 {
-    protected   $data,
-                $options = array();
+    protected $data;
+    protected $options = array();
 
     public function __construct(\ArrayObject $data = null)
     {
-        if(!is_null($data))
+        if (!is_null($data))
         {
             $this->data = $data;
         }

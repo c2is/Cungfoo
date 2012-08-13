@@ -100,31 +100,46 @@ class {$this->getClassname()} extends AppAwareType
         $iteration++;
 
         $ouput = '';
-        if (is_array($options)) {
-            if ($iteration == 1) {
+        if (is_array($options))
+        {
+            if ($iteration == 1)
+            {
                 $ouput .= sprintf(", array(\n");
             }
 
-            foreach ($options as $key => $value) {
-                if (is_array($value)) {
+            foreach ($options as $key => $value)
+            {
+                if (is_array($value))
+                {
                     $ouput .= sprintf("%s'%s' => array(\n%s", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $this->exportOptionsArray($value, $iteration));
-                } else {
-                    if (is_bool($value)) {
+                }
+                else
+                {
+                    if (is_bool($value))
+                    {
                         $ouput .= sprintf("%s'%s' => %s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value ? 'true' : 'false');
-                    } else if (is_int($key)) {
-                        if (strpos($value, 'new ') === 0) {
+                    }
+                    else if (is_int($key))
+                    {
+                        if (strpos($value, 'new ') === 0)
+                        {
                             $ouput .= sprintf("%s%s,\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $value);
-                        } else {
+                        }
+                        else
+                        {
                             $ouput .= sprintf("%s%s => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
                         }
-                    } else {
+                    }
+                    else
+                    {
                         $ouput .= sprintf("%s'%s' => '%s',\n", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $value);
                     }
                 }
             }
 
             $ouput .= sprintf("%s)", str_repeat(self::TAB_CHARACTER, $iteration +1));
-            if ($iteration > 1) {
+            if ($iteration > 1)
+            {
                 $ouput .= ",\n";
             }
         }
@@ -140,7 +155,8 @@ class {$this->getClassname()} extends AppAwareType
      */
     private function addBuilderAccordingToColumn(Column $column)
     {
-        if (!in_array($column->getName(), array('created_at', 'updated_at'))) {
+        if (!in_array($column->getName(), array('created_at', 'updated_at')))
+        {
             return $this->addBuilder($column->getName(), $this->getColumnType($column), array(
                 'constraints' => $this->addConstraints($column)
             ));
@@ -156,7 +172,8 @@ class {$this->getClassname()} extends AppAwareType
     private function addConstraints(Column $column)
     {
         $constraints = array();
-        if ($column->getAttribute('required', false)) {
+        if ($column->getAttribute('required', false))
+        {
             $constraints[] = 'new Assert\NotBlank()';
         }
 
@@ -167,20 +184,34 @@ class {$this->getClassname()} extends AppAwareType
      * @param Column $column
      * @return string
      */
-    private function getColumnType(Column $column) {
-        if ($column->getAttribute('widget', false)) {
+    private function getColumnType(Column $column)
+    {
+        if ($column->getAttribute('widget', false))
+        {
             return $column->getAttribute('widget');
-        } elseif (PropelTypes::VARCHAR === $column->getType()) {
+        }
+        elseif (PropelTypes::VARCHAR === $column->getType())
+        {
             return 'text';
-        } elseif (PropelTypes::INTEGER === $column->getType()) {
+        }
+        elseif (PropelTypes::INTEGER === $column->getType())
+        {
             return 'integer';
-        } elseif (PropelTypes::FLOAT === $column->getType()) {
+        }
+        elseif (PropelTypes::FLOAT === $column->getType())
+        {
             return 'text';
-        } elseif (PropelTypes::DATE === $column->getType()) {
+        }
+        elseif (PropelTypes::DATE === $column->getType())
+        {
             return 'date';
-        } elseif (PropelTypes::TIMESTAMP === $column->getType()) {
+        }
+        elseif (PropelTypes::TIMESTAMP === $column->getType())
+        {
             return 'datetime';
-        } elseif (PropelTypes::LONGVARBINARY === $column->getType()) {
+        }
+        elseif (PropelTypes::LONGVARBINARY === $column->getType())
+        {
             return 'file';
         }
     }
@@ -195,40 +226,50 @@ class {$this->getClassname()} extends AppAwareType
         $builders = "";
 
         // Manage table columns
-        foreach ($this->getTable()->getColumns() as $column) {
+        foreach ($this->getTable()->getColumns() as $column)
+        {
             // For the primary key
-            if ($column->isPrimaryKey()) {
+            if ($column->isPrimaryKey())
+            {
                 $builders .= $this->addBuilder($column->getName(), 'hidden');
             }
             // for the foreign key
-            elseif ($column->isForeignKey()) {
-                foreach ($column->getForeignKeys() as $fColumn) {
+            elseif ($column->isForeignKey())
+            {
+                foreach ($column->getForeignKeys() as $fColumn)
+                {
                     $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
                     $options['constraints'] = $this->addConstraints($column);
                     $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
                 }
             }
             // for the other columns
-            else {
+            else
+            {
                 $builders .= $this->addBuilderAccordingToColumn($column);
             }
         }
 
         // Manage foreign key with multiple value
         /** @var Table $otherTable */
-        foreach ($this->getDatabase()->getTables() as $otherTable) {
-            if($otherTable->getName() == $this->getTable()->getName())
+        foreach ($this->getDatabase()->getTables() as $otherTable)
+        {
+            if ($otherTable->getName() == $this->getTable()->getName())
             {
                 continue;
             }
 
             /** @var Column $otherColumn */
-            foreach ($otherTable->getColumns() as $otherColumn) {
+            foreach ($otherTable->getColumns() as $otherColumn)
+            {
                 $isForeignKey = false;
-                if ($otherColumn->isForeignKey()) {
+                if ($otherColumn->isForeignKey())
+                {
                     /** @var Column $fColumn */
-                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK) {
-                        if ($otherColumnFK->getForeignTable()->getName() == $this->getTable()->getName()) {
+                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK)
+                    {
+                        if ($otherColumnFK->getForeignTable()->getName() == $this->getTable()->getName())
+                        {
                             $isForeignKey = true;
                             break 2;
                         }
@@ -236,11 +277,15 @@ class {$this->getClassname()} extends AppAwareType
                 }
             }
 
-            if ($isForeignKey) {
-                foreach ($otherTable->getColumns() as $otherColumn) {
+            if ($isForeignKey)
+            {
+                foreach ($otherTable->getColumns() as $otherColumn)
+                {
                     /** @var Column $fColumn */
-                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK) {
-                        if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName()) {
+                    foreach ($otherColumn->getForeignKeys() as $otherColumnFK)
+                    {
+                        if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName())
+                        {
                             $builders .= $this->addBuilder(
                                 sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
                                 'model',
@@ -250,6 +295,7 @@ class {$this->getClassname()} extends AppAwareType
                                     'multiple'      => true,
                                 )
                             );
+
                             break 2;
                         }
                     }
@@ -261,7 +307,8 @@ class {$this->getClassname()} extends AppAwareType
         if ($this->getTable()->hasBehavior('i18n'))
         {
             $i18nColumns = array();
-            foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn) {
+            foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn)
+            {
                 $i18nColumns[$i18nColumn->getName()] = array(
                     'required'      => false,
                     'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
@@ -275,10 +322,13 @@ class {$this->getClassname()} extends AppAwareType
 
             // get the configuration of the site languages
             $languageParameter = $this->getDatabase()->getBehavior('crudable')->getParameter('languages_file');
-            if (null !== $languageParameter) {
+            if (null !== $languageParameter)
+            {
                 $propelDirectory    = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
                 $languageFilename   = sprintf('%s/%s', $propelDirectory, $languageParameter);
-                if (file_exists($languageFilename)) {
+
+                if (file_exists($languageFilename))
+                {
                     $languagesConfiguration = array_keys(Yaml::parse($languageFilename)['languages']);
                 }
             }
@@ -372,7 +422,8 @@ class {$this->getClassname()} extends AppAwareType
      */
     public function getChildrenNamespace($namespace = null)
     {
-        if ($namespace === null) {
+        if ($namespace === null)
+        {
             $namespace = $this->getTable()->getNamespace();
         }
         return str_replace('Model', 'Form\Type', $namespace);
@@ -396,7 +447,8 @@ class {$this->getClassname()} extends AppAwareType
      */
     protected function addRoute()
     {
-        if (null === $this->getTable()->getBehavior('crudable')->getParameter('crud_prefix')) {
+        if (null === $this->getTable()->getBehavior('crudable')->getParameter('crud_prefix'))
+        {
             return;
         }
 
@@ -411,8 +463,10 @@ class {$this->getClassname()} extends AppAwareType
         );
 
         // validate that the parameter are set
-        foreach ($mandatoryParameters as $mandatoryParameter) {
-            if (null === $behaviorParameters[$mandatoryParameter]) {
+        foreach ($mandatoryParameters as $mandatoryParameter)
+        {
+            if (null === $behaviorParameters[$mandatoryParameter])
+            {
                 return;
             }
         }
@@ -421,7 +475,8 @@ class {$this->getClassname()} extends AppAwareType
         $propelDirectory = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
         $crudFilename    = sprintf('%s/%s', $propelDirectory, $behaviorParameters['routes_file']);
 
-        if (!file_exists($crudFilename)) {
+        if (!file_exists($crudFilename))
+        {
             // we created
             $fs = new Filesystem();
             $fs->touch($crudFilename);

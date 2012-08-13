@@ -48,7 +48,7 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $absoluteFixturesPath = $this->getApplication()->getRootDir().DIRECTORY_SEPARATOR;
-        if(!is_null($input->getOption('dir')))
+        if (!is_null($input->getOption('dir')))
         {
             $absoluteFixturesPath .= $input->getOption('dir');
         }
@@ -57,7 +57,7 @@ EOT
             $absoluteFixturesPath .= $this->fixturesDir;   
         }
 
-        if(!$absoluteFixturesPath || !file_exists($absoluteFixturesPath))
+        if (!$absoluteFixturesPath || !file_exists($absoluteFixturesPath))
         {
             $output->writeln($this->getFormatterHelper()->formatBlock(array('The fixtures directory "'.$absoluteFixturesPath.'" does not exist.'), 'fg=white;bg=red'));
             return false;
@@ -70,7 +70,7 @@ EOT
             ->name('*.yml')
         ;
 
-        if(iterator_count($finder) == 0)
+        if (iterator_count($finder) == 0)
         {
             $output->writeln('No <info>YML</info> fixtures found in "'.$absoluteFixturesPath.'"');
             return true;
@@ -82,7 +82,7 @@ EOT
         {
             $nb = $loader->load($finder);
         }
-        catch(\Exception $e)
+        catch (\Exception $e)
         {
             $output->writeln($this->getFormatterHelper()->formatBlock(array('[Propel] Exception', $e->getMessage()), 'fg=white;bg=red'));
             return false;
