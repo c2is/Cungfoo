@@ -31,7 +31,7 @@ class SniffCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $filesToSniff = array('app', 'src');
+        $filesToSniff = array('app', 'src', 'tests');
         if ($specificFile = $input->getArgument('file'))
         {
             $filesToSniff = array($specificFile);
