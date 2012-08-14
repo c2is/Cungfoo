@@ -12,7 +12,7 @@ class AssetExtension extends Twig_Extension
 {
     private $app;
 
-    function __construct(\Silex\Application $app)
+    public function __construct(\Silex\Application $app)
     {
         $this->app = $app;
     }

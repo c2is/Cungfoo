@@ -50,11 +50,11 @@ class CrudController implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $this
-            ->generateList    ($app, $controllers)
-            ->generateCreate  ($app, $controllers)
-            ->generateRead    ($app, $controllers)
-            ->generateUpdate  ($app, $controllers)
-            ->generateDelete  ($app, $controllers)
+            ->generateList($app, $controllers)
+            ->generateCreate($app, $controllers)
+            ->generateRead($app, $controllers)
+            ->generateUpdate($app, $controllers)
+            ->generateDelete($app, $controllers)
         ;
 
         return $controllers;
@@ -79,6 +79,7 @@ class CrudController implements ControllerProviderInterface
             })
             ->bind(sprintf('%s_crud_list', $this->modelName))
         ;
+
         return $this;
     }
 
@@ -92,6 +93,7 @@ class CrudController implements ControllerProviderInterface
             ->value('id', null)
             ->bind(sprintf('%s_crud_create', $this->modelName))
         ;
+
         return $this;
     }
 
@@ -116,6 +118,7 @@ class CrudController implements ControllerProviderInterface
             })
             ->bind(sprintf('%s_crud_read', $this->modelName))
         ;
+
         return $this;
     }
 
@@ -129,6 +132,7 @@ class CrudController implements ControllerProviderInterface
             ->value('id', null)
             ->bind(sprintf('%s_crud_update', $this->modelName))
         ;
+
         return $this;
     }
 
@@ -153,6 +157,7 @@ class CrudController implements ControllerProviderInterface
             })
             ->bind(sprintf('%s_crud_delete', $this->modelName))
         ;
+
         return $this;
     }
 
@@ -189,6 +194,7 @@ class CrudController implements ControllerProviderInterface
             if ($form->isValid())
             {
                 $object->save();
+
                 return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_read', $this->modelName), array('id' => $object->getId())));
             }
         }

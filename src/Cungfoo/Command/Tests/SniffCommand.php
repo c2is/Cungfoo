@@ -24,10 +24,8 @@ class SniffCommand extends Command
         $this
             ->setName('tests:sniff')
             ->setDescription('Launches PHP_CodeSniffer tests')
-            ->addOption('modified-files', null, InputOption::VALUE_NONE,
-                'Launches PHP_CodeSniffer only for recently changed files.')
-            ->addArgument('file', InputArgument::OPTIONAL,
-                'Give a specific file to run PHP_CodeSniffer.')
+            ->addOption('modified-files', null, InputOption::VALUE_NONE, 'Launches PHP_CodeSniffer only for recently changed files.')
+            ->addArgument('file', InputArgument::OPTIONAL, 'Give a specific file to run PHP_CodeSniffer.')
         ;
     }
 

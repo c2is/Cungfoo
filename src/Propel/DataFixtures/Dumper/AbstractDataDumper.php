@@ -247,7 +247,8 @@ abstract class AbstractDataDumper extends AbstractDataHandler implements DataDum
         $sql = sprintf('SELECT * FROM %s WHERE %s %s',
             constant(constant($tableName.'::PEER').'::TABLE_NAME'),
             strtolower($column->getName()),
-            null === $in ? 'IS NULL' : 'IN ('.$in.')');
+            null === $in ? 'IS NULL' : 'IN ('.$in.')'
+        );
 
         $stmt = $this->con->prepare($sql);
         $stmt->execute();

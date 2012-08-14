@@ -30,6 +30,7 @@ class ClearCommand extends Command
         $fs->remove($finder);
 
         $output->writeln('Cache <comment>cleared</comment>.');
+
         return true;
     }
 }

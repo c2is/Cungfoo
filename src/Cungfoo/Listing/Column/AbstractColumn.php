@@ -24,6 +24,7 @@ abstract class AbstractColumn implements ColumnInterface
     public function setOptions(array $options)
     {
         $this->options = $options;
+
         return $this;
     }
 
@@ -35,6 +36,7 @@ abstract class AbstractColumn implements ColumnInterface
     public function setRenderer($renderer)
     {
         $this->renderer = $renderer;
+
         return $this;
     }
 

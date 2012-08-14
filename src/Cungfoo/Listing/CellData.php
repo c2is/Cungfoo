@@ -15,6 +15,7 @@ class CellData
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
@@ -26,6 +27,7 @@ class CellData
     public function setOptions(array $options)
     {
         $this->options = $options;
+
         return $this;
     }
 

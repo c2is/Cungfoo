@@ -426,6 +426,7 @@ class {$this->getClassname()} extends AppAwareType
         {
             $namespace = $this->getTable()->getNamespace();
         }
+
         return str_replace('Model', 'Form\Type', $namespace);
     }
 

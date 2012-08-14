@@ -29,6 +29,7 @@ class Listing
     public function setApplication(Application $app)
     {
         $this->app = $app;
+
         return $this;
     }
 
@@ -40,6 +41,7 @@ class Listing
     public function setOptions(array $options)
     {
         $this->options = $options;
+
         return $this;
     }
 
@@ -51,12 +53,14 @@ class Listing
     public function setFiller(AbstractFiller $filler)
     {
         $this->filler = $filler;
+
         return $this;
     }
 
     public function addColumn(AbstractColumn $column)
     {
         $this->columns[$column->getName()] = $column->setRenderer($this->app['twig']);
+
         return $this;
     }
 
@@ -66,6 +70,7 @@ class Listing
         {
             unset($this->columns[$name]);
         }
+
         return $this;
     }
 

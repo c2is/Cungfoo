@@ -41,7 +41,7 @@ YAML fixtures are:
             Description: Hello world !
 </comment>
 EOT
-        )
+            )
         ;
     }
 
@@ -60,6 +60,7 @@ EOT
         if (!$absoluteFixturesPath || !file_exists($absoluteFixturesPath))
         {
             $output->writeln($this->getFormatterHelper()->formatBlock(array('The fixtures directory "'.$absoluteFixturesPath.'" does not exist.'), 'fg=white;bg=red'));
+
             return false;
         }
 
@@ -73,6 +74,7 @@ EOT
         if (iterator_count($finder) == 0)
         {
             $output->writeln('No <info>YML</info> fixtures found in "'.$absoluteFixturesPath.'"');
+
             return true;
         }
 
@@ -85,10 +87,12 @@ EOT
         catch (\Exception $e)
         {
             $output->writeln($this->getFormatterHelper()->formatBlock(array('[Propel] Exception', $e->getMessage()), 'fg=white;bg=red'));
+
             return false;
         }
 
         $output->writeln(sprintf('<comment>%s</comment> YML fixtures file%s loaded.', $nb, $nb > 1 ? 's' : ''));
+
         return true;
     }
 }

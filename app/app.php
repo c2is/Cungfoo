@@ -29,6 +29,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\AssetExtension($app));
+
     return $twig;
 }));
 
@@ -72,6 +73,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 /* F O R M  E X T E N S I O N S  */
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions) use ($app) {
     $extensions[] = new \Cungfoo\Form\CustomExtension();
+
     return $extensions;
 }));
 
