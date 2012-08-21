@@ -1,13 +1,7 @@
 context:
-    saison:
-        saison_ete:
-            title: Été
-        saison_hiver:
-            title: Hiver
-        default: saison_ete
-    locale:
-        locale_fr:
-            title:  Français
-        locale_en:
-            title:  Anglais
-        default: locale_en
+  site:
+    class: Cungfoo\Model\Site
+    title: Site
+  saison:
+    class: Cungfoo\Model\Saison
+    title: Saison

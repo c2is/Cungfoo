@@ -1,0 +1,7 @@
+Cungfoo\Model\Site:
+  1:
+    name: Individuel
+    order: 1
+  2:
+    name: Partenaire
+    order: 2

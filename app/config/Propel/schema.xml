@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="cungfoo" namespace="Cungfoo\Model" defaultIdMethod="native">
 
+    <!-- ====================
+                BEHAVIOR
+         ==================== -->
     <behavior name="crudable">
         <parameter name="route_prefix" value="/admin" />
         <parameter name="route_controller" value="\Cungfoo\Controller\CrudController" />
@@ -8,6 +11,24 @@
         <parameter name="languages_file" value="../languages.yml" />
     </behavior>
 
+    <!-- ====================
+                CONTEXTS
+         ==================== -->
+    <table name="site">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" />
+        <column name="order" type="integer" />
+    </table>
+
+    <table name="saison">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" />
+        <column name="order" type="integer" />
+    </table>
+
+    <!-- ====================
+                SCHEMA
+         ==================== -->
     <table name="author">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="name" type="varchar" required="true" />
@@ -15,6 +36,31 @@
         <behavior name="timestampable" />
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/authors" />
+        </behavior>
+    </table>
+
+    <table name="camping">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" required="true" />
+        <column name="adress" type="varchar" required="true" />
+        <column name="phone" type="varchar" required="true" />
+        <column name="site_id" type="integer" />
+        <column name="saison_id" type="integer" />
+        <foreign-key foreignTable="site">
+            <reference local="site_id" foreign="id"></reference>
+        </foreign-key>
+        <foreign-key foreignTable="saison">
+            <reference local="saison_id" foreign="id"></reference>
+        </foreign-key>
+
+        <behavior name="timestampable" />
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, description" />
+            <parameter name="locale_alias" value="culture"/>
+        </behavior>
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/camping" />
         </behavior>
     </table>
 
@@ -33,7 +79,6 @@
         <column name="category_id" type="integer" required="true" />
         <column name="title" type="varchar" required="true" />
         <column name="body" type="longvarchar" required="true" widget="textrich" />
-
         <foreign-key foreignTable="category">
             <reference local="category_id" foreign="id"></reference>
         </foreign-key>
@@ -52,11 +97,9 @@
     <table name="document_author" isCrossRef="true">
         <column name="document_id" type="INTEGER" primaryKey="true" required="true" />
         <column name="author_id" type="INTEGER" primaryKey="true" required="true" />
-
         <foreign-key foreignTable="document" onDelete="CASCADE">
             <reference local="document_id" foreign="id"/>
         </foreign-key>
-
         <foreign-key foreignTable="author" onDelete="CASCADE">
             <reference local="author_id" foreign="id"/>
         </foreign-key>

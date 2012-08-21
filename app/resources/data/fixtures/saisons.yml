@@ -1,0 +1,7 @@
+Cungfoo\Model\Saison:
+  1:
+    name: Eté
+    order: 1
+  2:
+    name: Hiver
+    order: 2

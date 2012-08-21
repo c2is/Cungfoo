@@ -14,3 +14,7 @@ crud:
             prefix: /documents
             model: \Cungfoo\Model\Document
             form: \Cungfoo\Form\Type\DocumentType
+        camping:
+            prefix: /camping
+            model: \Cungfoo\Model\Camping
+            form: \Cungfoo\Form\Type\CampingType
