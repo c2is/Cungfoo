@@ -16,6 +16,9 @@ require_once __DIR__.'/../vendor/autoload.php';
 // created the application
 $app = require __DIR__ . '/../app/app.php';
 
+// created the context
+require __DIR__ . '/../app/context.php';
+
 // load routes code
 require __DIR__.'/../app/routes.php';
 

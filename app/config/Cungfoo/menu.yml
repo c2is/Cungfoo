@@ -8,6 +8,9 @@ menu:
         authors:
             title:  menu.authors
             route:  author_crud_list
+        campings:
+            title:  menu.campings
+            route:  camping_crud_list
         dico:
             title:  menu.dictionaries
             items:

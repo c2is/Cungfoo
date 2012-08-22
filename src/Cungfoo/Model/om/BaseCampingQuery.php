@@ -25,7 +25,7 @@ use Cungfoo\Model\Site;
  *
  *
  * @method CampingQuery orderById($order = Criteria::ASC) Order by the id column
- * @method CampingQuery orderByAdress($order = Criteria::ASC) Order by the adress column
+ * @method CampingQuery orderByAddress($order = Criteria::ASC) Order by the address column
  * @method CampingQuery orderByPhone($order = Criteria::ASC) Order by the phone column
  * @method CampingQuery orderBySiteId($order = Criteria::ASC) Order by the site_id column
  * @method CampingQuery orderBySaisonId($order = Criteria::ASC) Order by the saison_id column
@@ -33,7 +33,7 @@ use Cungfoo\Model\Site;
  * @method CampingQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method CampingQuery groupById() Group by the id column
- * @method CampingQuery groupByAdress() Group by the adress column
+ * @method CampingQuery groupByAddress() Group by the address column
  * @method CampingQuery groupByPhone() Group by the phone column
  * @method CampingQuery groupBySiteId() Group by the site_id column
  * @method CampingQuery groupBySaisonId() Group by the saison_id column
@@ -60,7 +60,7 @@ use Cungfoo\Model\Site;
  * @method Camping findOneOrCreate(PropelPDO $con = null) Return the first Camping matching the query, or a new Camping object populated from the query conditions when no match is found
  *
  * @method Camping findOneById(int $id) Return the first Camping filtered by the id column
- * @method Camping findOneByAdress(string $adress) Return the first Camping filtered by the adress column
+ * @method Camping findOneByAddress(string $address) Return the first Camping filtered by the address column
  * @method Camping findOneByPhone(string $phone) Return the first Camping filtered by the phone column
  * @method Camping findOneBySiteId(int $site_id) Return the first Camping filtered by the site_id column
  * @method Camping findOneBySaisonId(int $saison_id) Return the first Camping filtered by the saison_id column
@@ -68,7 +68,7 @@ use Cungfoo\Model\Site;
  * @method Camping findOneByUpdatedAt(string $updated_at) Return the first Camping filtered by the updated_at column
  *
  * @method array findById(int $id) Return Camping objects filtered by the id column
- * @method array findByAdress(string $adress) Return Camping objects filtered by the adress column
+ * @method array findByAddress(string $address) Return Camping objects filtered by the address column
  * @method array findByPhone(string $phone) Return Camping objects filtered by the phone column
  * @method array findBySiteId(int $site_id) Return Camping objects filtered by the site_id column
  * @method array findBySaisonId(int $saison_id) Return Camping objects filtered by the saison_id column
@@ -163,7 +163,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ADRESS`, `PHONE`, `SITE_ID`, `SAISON_ID`, `CREATED_AT`, `UPDATED_AT` FROM `camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ADDRESS`, `PHONE`, `SITE_ID`, `SAISON_ID`, `CREATED_AT`, `UPDATED_AT` FROM `camping` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -280,32 +280,32 @@ abstract class BaseCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the adress column
+     * Filter the query on the address column
      *
      * Example usage:
      * <code>
-     * $query->filterByAdress('fooValue');   // WHERE adress = 'fooValue'
-     * $query->filterByAdress('%fooValue%'); // WHERE adress LIKE '%fooValue%'
+     * $query->filterByAddress('fooValue');   // WHERE address = 'fooValue'
+     * $query->filterByAddress('%fooValue%'); // WHERE address LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $adress The value to use as filter.
+     * @param     string $address The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterByAdress($adress = null, $comparison = null)
+    public function filterByAddress($address = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($adress)) {
+            if (is_array($address)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $adress)) {
-                $adress = str_replace('*', '%', $adress);
+            } elseif (preg_match('/[\%\*]/', $address)) {
+                $address = str_replace('*', '%', $address);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::ADRESS, $adress, $comparison);
+        return $this->addUsingAlias(CampingPeer::ADDRESS, $address, $comparison);
     }
 
     /**

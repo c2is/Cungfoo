@@ -43,7 +43,7 @@ class CampingTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('ADRESS', 'Adress', 'VARCHAR', true, 255, null);
+        $this->addColumn('ADDRESS', 'Address', 'VARCHAR', true, 255, null);
         $this->addColumn('PHONE', 'Phone', 'VARCHAR', true, 255, null);
         $this->addForeignKey('SITE_ID', 'SiteId', 'INTEGER', 'site', 'ID', false, null, null);
         $this->addForeignKey('SAISON_ID', 'SaisonId', 'INTEGER', 'saison', 'ID', false, null, null);

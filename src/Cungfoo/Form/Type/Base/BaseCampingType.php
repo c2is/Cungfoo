@@ -27,11 +27,11 @@ class BaseCampingType extends AppAwareType
             'label' => 'camping.id',
             'required' => false,
         ));
-        $builder->add('adress', 'text', array(
+        $builder->add('address', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),
             ),
-            'label' => 'camping.adress',
+            'label' => 'camping.address',
             'required' => false,
         ));
         $builder->add('phone', 'text', array(
