@@ -20,7 +20,7 @@ class BaseCampingListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('adress'));
+        $this->addColumn(new Column\TextColumn('address'));
         $this->addColumn(new Column\TextColumn('phone'));
     }
 

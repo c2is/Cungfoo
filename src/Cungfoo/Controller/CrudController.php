@@ -73,7 +73,7 @@ class CrudController implements ControllerProviderInterface
                 ));
 
                 // Listing
-                $listingClass = sprintf("\Cungfoo\Listing\Crud\%sListing", $this->modelName);
+                $listingClass = sprintf("\Cungfoo\Listing\Crud\%sListing", ucfirst($this->modelName));
                 $listing      = new $listingClass($app);
                 $query        = new $this->queryClass();
 
