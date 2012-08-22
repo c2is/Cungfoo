@@ -2,6 +2,8 @@
 
 require_once dirname(__FILE__) . '/CrudableBaseFormTypeBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableFormTypeBehaviorBuilder.php';
+require_once dirname(__FILE__) . '/CrudableListingBehaviorBuilder.php';
+require_once dirname(__FILE__) . '/CrudableBaseListingBehaviorBuilder.php';
 
 class CrudableBehavior extends Behavior
 {
@@ -19,5 +21,7 @@ class CrudableBehavior extends Behavior
     protected $additionalBuilders = array(
         'CrudableBaseFormTypeBehaviorBuilder',
         'CrudableFormTypeBehaviorBuilder',
+        'CrudableListingBehaviorBuilder',
+        'CrudableBaseListingBehaviorBuilder',
     );
 }
