@@ -66,18 +66,20 @@ class CrudController implements ControllerProviderInterface
         $controllers
             ->get(sprintf('/%s', $this->prefix), function () use ($app)
             {
+                $queryContextualized    = $app['context']->contextualizeQuery(new $this->queryClass());
+
                 // Context form
                 $contextForm    = $app['form.factory']->create(new ContextType($app));
                 $contextRender  = $app['twig']->render('Cungfoo/context.twig', array(
-                    'form'   => $contextForm->createView()
+                    'form'          => $contextForm->createView(),
+                    'allowedFields' => $app['context']->getAllowedContextByQuery($queryContextualized),
                 ));
 
                 // Listing
-                $listingClass = sprintf("\Cungfoo\Listing\Crud\%sListing", ucfirst($this->modelName));
-                $listing      = new $listingClass($app);
-                $query        = new $this->queryClass();
+                $listingClass           = sprintf("\Cungfoo\Listing\Crud\%sListing", ucfirst($this->modelName));
+                $listing                = new $listingClass($app);
 
-                $listing->setFiller(new Filler\PropelFiller($query->find()));
+                $listing->setFiller(new Filler\PropelFiller($queryContextualized->find()));
 
                 return $app['twig']->render('Cungfoo/Crud/list.twig', array(
                     'name'         => $this->modelName,
