@@ -67,7 +67,7 @@ class Context
      * Adding of several parameters
      * @param array $params
      *
-     * @return Config
+     * @return Context
      */
     public function addParams(array $params)
     {
@@ -81,10 +81,30 @@ class Context
      * @param string $name
      * @param mixed  $value
      *
-     * @return Config
+     * @return Context
      */
     public function addParam($name, $value)
     {
         return $this->addParams(array($name => $value));
+    }
+
+    /**
+     * Adding context informations to a query
+     * @param \ModelCriteria $query
+     *
+     * @return \ModelCriteria
+     */
+    public function contextualizeQuery(\ModelCriteria $query)
+    {
+        $queryContextualized = clone($query);
+        foreach ($this->data as $name => $value)
+        {
+            if ($value && method_exists($queryContextualized, $filterMethod = sprintf('filterBy%sId', ucfirst($name))))
+            {
+                $queryContextualized->$filterMethod($value);
+            }
+        }
+
+        return $queryContextualized;
     }
 }
