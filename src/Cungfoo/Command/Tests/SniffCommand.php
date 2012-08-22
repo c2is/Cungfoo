@@ -43,7 +43,14 @@ class SniffCommand extends Command
             $outputGitDiffStaged = trim(ob_get_contents(), "\n");
             ob_end_clean();
 
-            $filesToSniff   = explode("\n", $outputGitDiffStaged);
+            if ($outputGitDiffStaged)
+            {
+                $filesToSniff = explode("\n", $outputGitDiffStaged);
+            }
+            else
+            {
+                return true;
+            }
         }
 
         passthru(sprintf('phpcs %s --warning-severity=0', implode(' ', $filesToSniff)), $status);
