@@ -60,10 +60,10 @@ abstract class BaseCamping extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the adress field.
+     * The value for the address field.
      * @var        string
      */
-    protected $adress;
+    protected $address;
 
     /**
      * The value for the phone field.
@@ -156,13 +156,13 @@ abstract class BaseCamping extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [adress] column value.
+     * Get the [address] column value.
      *
      * @return string
      */
-    public function getAdress()
+    public function getAddress()
     {
-        return $this->adress;
+        return $this->address;
     }
 
     /**
@@ -291,25 +291,25 @@ abstract class BaseCamping extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [adress] column.
+     * Set the value of [address] column.
      *
      * @param string $v new value
      * @return Camping The current object (for fluent API support)
      */
-    public function setAdress($v)
+    public function setAddress($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->adress !== $v) {
-            $this->adress = $v;
-            $this->modifiedColumns[] = CampingPeer::ADRESS;
+        if ($this->address !== $v) {
+            $this->address = $v;
+            $this->modifiedColumns[] = CampingPeer::ADDRESS;
         }
 
 
         return $this;
-    } // setAdress()
+    } // setAddress()
 
     /**
      * Set the value of [phone] column.
@@ -461,7 +461,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->adress = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->address = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->phone = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->site_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
             $this->saison_id = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
@@ -747,8 +747,8 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(CampingPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(CampingPeer::ADRESS)) {
-            $modifiedColumns[':p' . $index++]  = '`ADRESS`';
+        if ($this->isColumnModified(CampingPeer::ADDRESS)) {
+            $modifiedColumns[':p' . $index++]  = '`ADDRESS`';
         }
         if ($this->isColumnModified(CampingPeer::PHONE)) {
             $modifiedColumns[':p' . $index++]  = '`PHONE`';
@@ -779,8 +779,8 @@ abstract class BaseCamping extends BaseObject implements Persistent
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`ADRESS`':
-                        $stmt->bindValue($identifier, $this->adress, PDO::PARAM_STR);
+                    case '`ADDRESS`':
+                        $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
                     case '`PHONE`':
                         $stmt->bindValue($identifier, $this->phone, PDO::PARAM_STR);
@@ -961,7 +961,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getAdress();
+                return $this->getAddress();
                 break;
             case 2:
                 return $this->getPhone();
@@ -1008,7 +1008,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         $keys = CampingPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getAdress(),
+            $keys[1] => $this->getAddress(),
             $keys[2] => $this->getPhone(),
             $keys[3] => $this->getSiteId(),
             $keys[4] => $this->getSaisonId(),
@@ -1063,7 +1063,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setAdress($value);
+                $this->setAddress($value);
                 break;
             case 2:
                 $this->setPhone($value);
@@ -1105,7 +1105,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         $keys = CampingPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setAdress($arr[$keys[1]]);
+        if (array_key_exists($keys[1], $arr)) $this->setAddress($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setPhone($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setSiteId($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setSaisonId($arr[$keys[4]]);
@@ -1123,7 +1123,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         $criteria = new Criteria(CampingPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(CampingPeer::ID)) $criteria->add(CampingPeer::ID, $this->id);
-        if ($this->isColumnModified(CampingPeer::ADRESS)) $criteria->add(CampingPeer::ADRESS, $this->adress);
+        if ($this->isColumnModified(CampingPeer::ADDRESS)) $criteria->add(CampingPeer::ADDRESS, $this->address);
         if ($this->isColumnModified(CampingPeer::PHONE)) $criteria->add(CampingPeer::PHONE, $this->phone);
         if ($this->isColumnModified(CampingPeer::SITE_ID)) $criteria->add(CampingPeer::SITE_ID, $this->site_id);
         if ($this->isColumnModified(CampingPeer::SAISON_ID)) $criteria->add(CampingPeer::SAISON_ID, $this->saison_id);
@@ -1192,7 +1192,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setAdress($this->getAdress());
+        $copyObj->setAddress($this->getAddress());
         $copyObj->setPhone($this->getPhone());
         $copyObj->setSiteId($this->getSiteId());
         $copyObj->setSaisonId($this->getSaisonId());
@@ -1597,7 +1597,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->adress = null;
+        $this->address = null;
         $this->phone = null;
         $this->site_id = null;
         $this->saison_id = null;

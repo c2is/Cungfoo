@@ -5,25 +5,14 @@ namespace Cungfoo\Lib;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Default cungfoo configuration class
+ * Default cungfoo context class
  *
  * @authors Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  */
-class Config
+class Context
 {
     protected $data = array();
-
-    /**
-     * @param string $appRootDir
-     */
-    public function __construct($appRootDir)
-    {
-        $this
-            ->addParams(array('root_dir' => rtrim($appRootDir, DIRECTORY_SEPARATOR)))
-            ->generate()
-        ;
-    }
 
     /**
      * Overloading __get
@@ -54,7 +43,7 @@ class Config
 
             return $this->get($utils->underscore(substr($method, 3)));
         }
-        throw new \Exception('Config : unknown function '.$method);
+        throw new \Exception('Context : unknown function '.$method);
     }
 
     /**
@@ -68,7 +57,7 @@ class Config
     {
         if (!isset($this->data[$param]))
         {
-            throw new \Exception('Config : unknown param '.$param);
+            throw new \Exception('Context : unknown param '.$param);
         }
 
         return $this->data[$param];
@@ -97,16 +86,5 @@ class Config
     public function addParam($name, $value)
     {
         return $this->addParams(array($name => $value));
-    }
-
-    /**
-     * Generating default configuration
-     * @return Config
-     */
-    protected function generate()
-    {
-        return $this
-            ->addParam('config_dir', sprintf('%s/app/config', $this->data['root_dir']))
-        ;
     }
 }

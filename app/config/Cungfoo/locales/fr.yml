@@ -4,8 +4,13 @@ menu.documents:     "Documents"
 menu.authors:       "Auteurs"
 menu.dictionaries:  "Dictionnaires"
 menu.categories:    "Catégories"
-
+menu.campings:      "Campings"
 menu.logout:        "Se déconnecter"
+
+# Context
+context.saison:   "Saison"
+context.site:     "Site"
+context.validate: "Valider"
 
 # Document Type
 document.category:      "Catégorie"
@@ -20,3 +25,12 @@ author.documents: "Documents"
 
 # Category Type
 category.name:  "Nom"
+
+# Camping Type
+camping.address:      "Adresse"
+camping.phone:        "Téléphone"
+camping.site:         "Site"
+camping.saison:       "Saison"
+camping.campingI18ns: "Champs traduisible :"
+camping.name:         "Nom"
+camping.description:  "Déscription"

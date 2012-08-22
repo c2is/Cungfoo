@@ -1,7 +1,5 @@
-context:
+dimensions:
   site:
     class: Cungfoo\Model\Site
-    title: Site
   saison:
     class: Cungfoo\Model\Saison
-    title: Saison

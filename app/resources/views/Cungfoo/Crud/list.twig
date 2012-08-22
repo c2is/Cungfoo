@@ -1,5 +1,6 @@
 {% extends 'Cungfoo/base.twig' %}
 {% block content %}
+    {{ context | raw }}
     <h2>{{ name | title }}</h2>
     <table class="table">
         <thead>

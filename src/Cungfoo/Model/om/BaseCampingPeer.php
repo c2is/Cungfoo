@@ -50,8 +50,8 @@ abstract class BaseCampingPeer
     /** the column name for the ID field */
     const ID = 'camping.ID';
 
-    /** the column name for the ADRESS field */
-    const ADRESS = 'camping.ADRESS';
+    /** the column name for the ADDRESS field */
+    const ADDRESS = 'camping.ADDRESS';
 
     /** the column name for the PHONE field */
     const PHONE = 'camping.PHONE';
@@ -94,11 +94,11 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[CampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Adress', 'Phone', 'SiteId', 'SaisonId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'adress', 'phone', 'siteId', 'saisonId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::ADRESS, CampingPeer::PHONE, CampingPeer::SITE_ID, CampingPeer::SAISON_ID, CampingPeer::CREATED_AT, CampingPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ADRESS', 'PHONE', 'SITE_ID', 'SAISON_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'adress', 'phone', 'site_id', 'saison_id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Address', 'Phone', 'SiteId', 'SaisonId', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'address', 'phone', 'siteId', 'saisonId', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::ADDRESS, CampingPeer::PHONE, CampingPeer::SITE_ID, CampingPeer::SAISON_ID, CampingPeer::CREATED_AT, CampingPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ADDRESS', 'PHONE', 'SITE_ID', 'SAISON_ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'address', 'phone', 'site_id', 'saison_id', 'created_at', 'updated_at', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -109,11 +109,11 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Adress' => 1, 'Phone' => 2, 'SiteId' => 3, 'SaisonId' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'adress' => 1, 'phone' => 2, 'siteId' => 3, 'saisonId' => 4, 'createdAt' => 5, 'updatedAt' => 6, ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::ADRESS => 1, CampingPeer::PHONE => 2, CampingPeer::SITE_ID => 3, CampingPeer::SAISON_ID => 4, CampingPeer::CREATED_AT => 5, CampingPeer::UPDATED_AT => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ADRESS' => 1, 'PHONE' => 2, 'SITE_ID' => 3, 'SAISON_ID' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'adress' => 1, 'phone' => 2, 'site_id' => 3, 'saison_id' => 4, 'created_at' => 5, 'updated_at' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Address' => 1, 'Phone' => 2, 'SiteId' => 3, 'SaisonId' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'address' => 1, 'phone' => 2, 'siteId' => 3, 'saisonId' => 4, 'createdAt' => 5, 'updatedAt' => 6, ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::ADDRESS => 1, CampingPeer::PHONE => 2, CampingPeer::SITE_ID => 3, CampingPeer::SAISON_ID => 4, CampingPeer::CREATED_AT => 5, CampingPeer::UPDATED_AT => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ADDRESS' => 1, 'PHONE' => 2, 'SITE_ID' => 3, 'SAISON_ID' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'address' => 1, 'phone' => 2, 'site_id' => 3, 'saison_id' => 4, 'created_at' => 5, 'updated_at' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -189,7 +189,7 @@ abstract class BaseCampingPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(CampingPeer::ID);
-            $criteria->addSelectColumn(CampingPeer::ADRESS);
+            $criteria->addSelectColumn(CampingPeer::ADDRESS);
             $criteria->addSelectColumn(CampingPeer::PHONE);
             $criteria->addSelectColumn(CampingPeer::SITE_ID);
             $criteria->addSelectColumn(CampingPeer::SAISON_ID);
@@ -197,7 +197,7 @@ abstract class BaseCampingPeer
             $criteria->addSelectColumn(CampingPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ADRESS');
+            $criteria->addSelectColumn($alias . '.ADDRESS');
             $criteria->addSelectColumn($alias . '.PHONE');
             $criteria->addSelectColumn($alias . '.SITE_ID');
             $criteria->addSelectColumn($alias . '.SAISON_ID');

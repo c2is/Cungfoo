@@ -1,0 +1,12 @@
+#context-selector {
+    padding: 7px;
+}
+#context-selector span {
+    margin-right: 7px;
+}
+#context-selector select {
+    margin: 0 14px 0 0;
+}
+#context-selector input.btn {
+    margin: 0;
+}

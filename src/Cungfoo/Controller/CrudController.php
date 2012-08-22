@@ -12,7 +12,8 @@ use Symfony\Component\HttpFoundation\Request,
 
 use Cungfoo\Listing\Listing,
     Cungfoo\Listing\Filler,
-    Cungfoo\Listing\Column;
+    Cungfoo\Listing\Column,
+    Cungfoo\Form\Type\ContextType;
 
 /**
  * CRUD controllers provider.
@@ -65,6 +66,13 @@ class CrudController implements ControllerProviderInterface
         $controllers
             ->get(sprintf('/%s', $this->prefix), function () use ($app)
             {
+                // Context form
+                $contextForm    = $app['form.factory']->create(new ContextType($app));
+                $contextRender  = $app['twig']->render('Cungfoo/context.twig', array(
+                    'form'   => $contextForm->createView()
+                ));
+
+                // Listing
                 $listingClass = sprintf("\Cungfoo\Listing\Crud\%sListing", $this->modelName);
                 $listing      = new $listingClass($app);
                 $query        = new $this->queryClass();
@@ -75,6 +83,7 @@ class CrudController implements ControllerProviderInterface
                     'name'         => $this->modelName,
                     'column_names' => $listing->getColumnNames(),
                     'lines'        => $listing->render(),
+                    'context'      => $contextRender,
                 ));
             })
             ->bind(sprintf('%s_crud_list', $this->modelName))
