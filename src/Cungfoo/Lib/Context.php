@@ -101,7 +101,11 @@ class Context
         {
             if ($value && method_exists($queryContextualized, $filterMethod = sprintf('filterBy%sId', ucfirst($name))))
             {
-                $queryContextualized->$filterMethod($value);
+                $queryContextualized
+                    ->$filterMethod($value)
+                    ->_or()
+                    ->$filterMethod(null)
+                ;
             }
         }
 
