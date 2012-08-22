@@ -107,4 +107,24 @@ class Context
 
         return $queryContextualized;
     }
+
+    /**
+     * Returns allowed context
+     * @param \ModelCriteria $query
+     *
+     * @return array
+     */
+    public function getAllowedContextByQuery(\ModelCriteria $query)
+    {
+        $allowedContext = array();
+        foreach (array_keys($this->data) as $name)
+        {
+            if (method_exists($query, $filterMethod = sprintf('filterBy%sId', ucfirst($name))))
+            {
+                $allowedContext[] = $name;
+            }
+        }
+
+        return $allowedContext;
+    }
 }
