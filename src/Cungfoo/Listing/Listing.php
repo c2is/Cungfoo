@@ -19,6 +19,7 @@ class Listing
     public function __construct(Application $app)
     {
         $this->app = $app;
+        $this->configure();
     }
 
     public function getApplication()
@@ -93,8 +94,6 @@ class Listing
     public function render()
     {
         $render = array();
-
-        $this->configure();
 
         foreach ($this->filler->getData() as $lineIndex => $line)
         {
