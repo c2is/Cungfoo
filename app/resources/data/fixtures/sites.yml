@@ -1,7 +1,7 @@
 Cungfoo\Model\Site:
   1:
-    name: Individuel
+    name: site.individual
     order: 1
   2:
-    name: Partenaire
+    name: site.business
     order: 2

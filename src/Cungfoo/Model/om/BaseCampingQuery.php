@@ -59,7 +59,6 @@ use Cungfoo\Model\Site;
  * @method Camping findOne(PropelPDO $con = null) Return the first Camping matching the query
  * @method Camping findOneOrCreate(PropelPDO $con = null) Return the first Camping matching the query, or a new Camping object populated from the query conditions when no match is found
  *
- * @method Camping findOneById(int $id) Return the first Camping filtered by the id column
  * @method Camping findOneByAddress(string $address) Return the first Camping filtered by the address column
  * @method Camping findOneByPhone(string $phone) Return the first Camping filtered by the phone column
  * @method Camping findOneBySiteId(int $site_id) Return the first Camping filtered by the site_id column
@@ -150,6 +149,20 @@ abstract class BaseCampingQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Camping A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.
@@ -827,7 +840,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      *
      * @return    CampingQuery The current query, for fluid interface
      */
-    public function joinI18n($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinI18n($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'CampingI18n';
 
@@ -845,7 +858,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      *
      * @return    CampingQuery The current query, for fluid interface
      */
-    public function joinWithI18n($locale = 'en_EN', $joinType = Criteria::LEFT_JOIN)
+    public function joinWithI18n($locale = 'en', $joinType = Criteria::LEFT_JOIN)
     {
         $this
             ->joinI18n($locale, null, $joinType)
@@ -866,7 +879,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      *
      * @return    CampingI18nQuery A secondary query class using the current class as primary query
      */
-    public function useI18nQuery($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useI18nQuery($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinI18n($locale, $relationAlias, $joinType)

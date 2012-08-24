@@ -15,7 +15,7 @@ $app['config'] = $app->share(function() {
 });
 
 $app['config']->addParams(array(
-    'languages'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir'))),
+    'languages'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
     'cungfoo_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
     'dimensions'    => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/dimensions.yml', $app['config']->get('config_dir')))['dimensions'],
 ));
@@ -82,7 +82,7 @@ $app['form.extensions'] = $app->share($app->extend('form.extensions', function (
 $app['translator'] = $app->share($app->extend('translator',
     function($translator, $app) {
         $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
-        foreach ($app['config']->get('languages')['languages'] as $locale => $language)
+        foreach ($app['config']->get('languages') as $locale => $language)
         {
             $translator->addResource('yaml', sprintf('%s/Cungfoo/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
         }

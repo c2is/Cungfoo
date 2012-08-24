@@ -1,36 +1,60 @@
 # Menu
-menu.title:         "Cungfoo"
-menu.documents:     "Documents"
-menu.authors:       "Authors"
-menu.dictionaries:  "Dictionaries"
-menu.categories:    "Categories"
-menu.campings:      "Campings"
-menu.logout:        "Logout"
+menu:
+  title:         "Cungfoo"
+  documents:     "Documents"
+  authors:       "Authors"
+  dictionaries:  "Dictionaries"
+  categories:    "Categories"
+  campings:      "Campings"
+  logout:        "Logout"
 
 # Context
-context.saison:   "Season"
-context.site:     "Site"
-context.validate: "Validate"
+context:
+  saison:   "Season"
+  site:     "Site"
+  language: "Language"
+  validate: "Validate"
+
+# Saison Type
+saison:
+  all:    "All"
+  summer: "Summer"
+  winter: "Winter"
+
+# Site Type
+site:
+  all:        "All"
+  individual: "Individual"
+  business:   "Business"
+
+# Locale
+locale:
+  english: "English"
+  french:  "French"
 
 # Document Type
-document.category:      "Category :"
-document.authors:       "Authors :"
-document.documentI18ns: "Translatable fields :"
-document.title:         "Title"
-document.body:          "Body"
+document:
+  category:      "Category :"
+  authors:       "Authors :"
+  documentI18ns: "Translatable fields :"
+  title:         "Title"
+  body:          "Body"
 
 # Author Type
-author.name:      "Name"
-author.documents: "Documents"
+author:
+  name:      "Name"
+  documents: "Documents"
 
 # Category Type
-category.name:  "Name"
+category:
+  name:  "Name"
 
 # Camping Type
-camping.address:      "Address"
-camping.phone:        "Phone"
-camping.site:         "Site"
-camping.saison:       "Season"
-camping.campingI18ns: "Translatable fields :"
-camping.name:         "Name"
-camping.description:  "Description"
+camping:
+  address:      "Address"
+  phone:        "Phone"
+  site:         "Site"
+  saison:       "Season"
+  campingI18ns: "Translatable fields :"
+  name:         "Name"
+  description:  "Description"

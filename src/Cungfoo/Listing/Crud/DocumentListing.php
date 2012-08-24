@@ -23,6 +23,9 @@ class DocumentListing extends BaseDocumentListing
     public function configure()
     {
         parent::configure();
+
+        $this->addColumn(new Column\TextColumn('title'));
+        $this->addColumn(new Column\TextColumn('body'));
     }
 
 } // DocumentListing

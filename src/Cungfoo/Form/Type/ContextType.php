@@ -13,20 +13,10 @@ class ContextType extends AppAwareType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $dimensions = $this->app['config']->get('dimensions');
-        $context    = $this->app['context'];
-        foreach ($dimensions as $dimensionName => $dimensionInformation)
-        {
-            $dimensionQuery = $dimensionInformation['class'] . 'Query';
-            $builder->add($dimensionName, 'model', array(
-                'class'         => $dimensionInformation['class'],
-                'label'         => sprintf('context.%s', $dimensionName),
-                'required'      => false,
-                'data_class'    => null,
-                'data'          => $dimensionQuery::create()->filterById($context->get($dimensionName))->findOne(),
-                'empty_value'   => 'Tous'
-            ));
-        }
+        $this
+            ->addDimensions($builder)
+            ->addLocale($builder)
+        ;
     }
 
     /**
@@ -35,6 +25,45 @@ class ContextType extends AppAwareType
     public function getName()
     {
         return 'Context';
+    }
+
+    protected function addDimensions($builder)
+    {
+        $dimensions = $this->app['config']->get('dimensions');
+        foreach ($dimensions as $dimensionName => $dimensionInformation)
+        {
+            $dimensionQuery = $dimensionInformation['class'] . 'Query';
+            $builder->add($dimensionName, 'model', array(
+                'class'         => $dimensionInformation['class'],
+                'label'         => sprintf('context.%s', $dimensionName),
+                'required'      => false,
+                'data_class'    => null,
+                'data'          => $dimensionQuery::create()->filterById($this->app['context']->get($dimensionName))->findOne(),
+                'empty_value'   => sprintf('%s.all', $dimensionName)
+            ));
+        }
+
+        return $this;
+    }
+
+    protected function addLocale($builder)
+    {
+        $localeChoices = array();
+        foreach ($this->app['config']->get('languages') as $locale => $language)
+        {
+            $localeChoices[$locale] = $language['title'];
+        }
+
+        $builder->add('language', 'choice', array(
+            'choices'       => $localeChoices,
+            'label'         => sprintf('context.languages'),
+            'required'      => false,
+            'data_class'    => null,
+            'data'          => $this->app['context']->get('language'),
+            'empty_value'   => null
+        ));
+
+        return $this;
     }
 
 } // ContextType

@@ -18,10 +18,8 @@ use Cungfoo\Model\om\BaseAuthor;
  */
 class Author extends BaseAuthor
 {
-
     public function __toString()
     {
         return $this->getName();
     }
-
 } // Author

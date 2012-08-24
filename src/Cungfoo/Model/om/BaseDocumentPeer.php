@@ -77,7 +77,7 @@ abstract class BaseDocumentPeer
      * The default locale to use for translations
      * @var        string
      */
-    const DEFAULT_LOCALE = 'en_EN';
+    const DEFAULT_LOCALE = 'en';
     /**
      * holds an array of fieldnames
      *

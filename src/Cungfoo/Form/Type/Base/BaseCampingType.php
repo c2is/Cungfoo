@@ -58,8 +58,8 @@ class BaseCampingType extends AppAwareType
         $builder->add('campingI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\CampingI18n',
             'languages' => array(
-                0 => 'fr',
-                1 => 'en',
+                0 => 'en',
+                1 => 'fr',
             ),
             'label' => 'camping.campingI18ns',
             'columns' => array(

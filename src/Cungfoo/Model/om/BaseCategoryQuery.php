@@ -43,7 +43,6 @@ use Cungfoo\Model\Document;
  * @method Category findOne(PropelPDO $con = null) Return the first Category matching the query
  * @method Category findOneOrCreate(PropelPDO $con = null) Return the first Category matching the query, or a new Category object populated from the query conditions when no match is found
  *
- * @method Category findOneById(int $id) Return the first Category filtered by the id column
  * @method Category findOneByName(string $name) Return the first Category filtered by the name column
  * @method Category findOneByCreatedAt(string $created_at) Return the first Category filtered by the created_at column
  * @method Category findOneByUpdatedAt(string $updated_at) Return the first Category filtered by the updated_at column
@@ -128,6 +127,20 @@ abstract class BaseCategoryQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Category A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.

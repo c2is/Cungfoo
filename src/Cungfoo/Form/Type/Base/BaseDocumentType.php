@@ -47,8 +47,8 @@ class BaseDocumentType extends AppAwareType
         $builder->add('documentI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\DocumentI18n',
             'languages' => array(
-                0 => 'fr',
-                1 => 'en',
+                0 => 'en',
+                1 => 'fr',
             ),
             'label' => 'document.documentI18ns',
             'columns' => array(

@@ -41,7 +41,6 @@ use Cungfoo\Model\SaisonQuery;
  * @method Saison findOne(PropelPDO $con = null) Return the first Saison matching the query
  * @method Saison findOneOrCreate(PropelPDO $con = null) Return the first Saison matching the query, or a new Saison object populated from the query conditions when no match is found
  *
- * @method Saison findOneById(int $id) Return the first Saison filtered by the id column
  * @method Saison findOneByName(string $name) Return the first Saison filtered by the name column
  * @method Saison findOneByOrder(int $order) Return the first Saison filtered by the order column
  *
@@ -124,6 +123,20 @@ abstract class BaseSaisonQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Saison A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.

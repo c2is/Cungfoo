@@ -107,6 +107,12 @@ class Context
                     ->$filterMethod(null)
                 ;
             }
+            else if ($name == 'language' && $value && method_exists($query, $useMethod = 'useI18nQuery'))
+            {
+                $queryContextualized
+                    ->joinWithI18n($value)
+                ;
+            }
         }
 
         return $queryContextualized;
@@ -123,9 +129,13 @@ class Context
         $allowedContext = array();
         foreach (array_keys($this->data) as $name)
         {
-            if (method_exists($query, $filterMethod = sprintf('filterBy%sId', ucfirst($name))))
+            if (method_exists($query, sprintf('filterBy%sId', ucfirst($name))))
             {
                 $allowedContext[] = $name;
+            }
+            else if (method_exists($query, 'useI18nQuery'))
+            {
+                $allowedContext[] = 'language';
             }
         }
 

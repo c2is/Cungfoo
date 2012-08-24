@@ -121,7 +121,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
      * Current locale
      * @var        string
      */
-    protected $currentLocale = 'en_EN';
+    protected $currentLocale = 'en';
 
     /**
      * Current translation objects
@@ -1881,7 +1881,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
         } // if ($deep)
 
         // i18n behavior
-        $this->currentLocale = 'en_EN';
+        $this->currentLocale = 'en';
         $this->currentTranslations = null;
 
         if ($this->collDocumentAuthors instanceof PropelCollection) {
@@ -1928,7 +1928,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
      *
      * @return    Document The current object (for fluent API support)
      */
-    public function setLocale($locale = 'en_EN')
+    public function setLocale($locale = 'en')
     {
         $this->currentLocale = $locale;
 
@@ -1964,7 +1964,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
      *
      * @return    Document The current object (for fluent API support)
      */
-    public function setCulture($locale = 'en_EN')
+    public function setCulture($locale = 'en')
     {
         return $this->setLocale($locale);
     }
@@ -1976,7 +1976,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
      * @param     PropelPDO $con an optional connection object
      *
      * @return DocumentI18n */
-    public function getTranslation($locale = 'en_EN', PropelPDO $con = null)
+    public function getTranslation($locale = 'en', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
             if (null !== $this->collDocumentI18ns) {
@@ -2011,7 +2011,7 @@ abstract class BaseDocument extends BaseObject implements Persistent
      *
      * @return    Document The current object (for fluent API support)
      */
-    public function removeTranslation($locale = 'en_EN', PropelPDO $con = null)
+    public function removeTranslation($locale = 'en', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
             DocumentI18nQuery::create()

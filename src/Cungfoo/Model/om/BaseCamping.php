@@ -131,7 +131,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      * Current locale
      * @var        string
      */
-    protected $currentLocale = 'en_EN';
+    protected $currentLocale = 'en';
 
     /**
      * Current translation objects
@@ -1631,7 +1631,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         } // if ($deep)
 
         // i18n behavior
-        $this->currentLocale = 'en_EN';
+        $this->currentLocale = 'en';
         $this->currentTranslations = null;
 
         if ($this->collCampingI18ns instanceof PropelCollection) {
@@ -1685,7 +1685,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      *
      * @return    Camping The current object (for fluent API support)
      */
-    public function setLocale($locale = 'en_EN')
+    public function setLocale($locale = 'en')
     {
         $this->currentLocale = $locale;
 
@@ -1721,7 +1721,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      *
      * @return    Camping The current object (for fluent API support)
      */
-    public function setCulture($locale = 'en_EN')
+    public function setCulture($locale = 'en')
     {
         return $this->setLocale($locale);
     }
@@ -1733,7 +1733,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      * @param     PropelPDO $con an optional connection object
      *
      * @return CampingI18n */
-    public function getTranslation($locale = 'en_EN', PropelPDO $con = null)
+    public function getTranslation($locale = 'en', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
             if (null !== $this->collCampingI18ns) {
@@ -1768,7 +1768,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
      *
      * @return    Camping The current object (for fluent API support)
      */
-    public function removeTranslation($locale = 'en_EN', PropelPDO $con = null)
+    public function removeTranslation($locale = 'en', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
             CampingI18nQuery::create()

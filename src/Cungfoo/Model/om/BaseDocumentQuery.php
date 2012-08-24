@@ -54,7 +54,6 @@ use Cungfoo\Model\DocumentQuery;
  * @method Document findOne(PropelPDO $con = null) Return the first Document matching the query
  * @method Document findOneOrCreate(PropelPDO $con = null) Return the first Document matching the query, or a new Document object populated from the query conditions when no match is found
  *
- * @method Document findOneById(int $id) Return the first Document filtered by the id column
  * @method Document findOneByCategoryId(int $category_id) Return the first Document filtered by the category_id column
  * @method Document findOneByCreatedAt(string $created_at) Return the first Document filtered by the created_at column
  * @method Document findOneByUpdatedAt(string $updated_at) Return the first Document filtered by the updated_at column
@@ -139,6 +138,20 @@ abstract class BaseDocumentQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Document A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.
@@ -665,7 +678,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
      *
      * @return    DocumentQuery The current query, for fluid interface
      */
-    public function joinI18n($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinI18n($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'DocumentI18n';
 
@@ -683,7 +696,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
      *
      * @return    DocumentQuery The current query, for fluid interface
      */
-    public function joinWithI18n($locale = 'en_EN', $joinType = Criteria::LEFT_JOIN)
+    public function joinWithI18n($locale = 'en', $joinType = Criteria::LEFT_JOIN)
     {
         $this
             ->joinI18n($locale, null, $joinType)
@@ -704,7 +717,7 @@ abstract class BaseDocumentQuery extends ModelCriteria
      *
      * @return    DocumentI18nQuery A secondary query class using the current class as primary query
      */
-    public function useI18nQuery($locale = 'en_EN', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useI18nQuery($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinI18n($locale, $relationAlias, $joinType)

@@ -41,7 +41,6 @@ use Cungfoo\Model\SiteQuery;
  * @method Site findOne(PropelPDO $con = null) Return the first Site matching the query
  * @method Site findOneOrCreate(PropelPDO $con = null) Return the first Site matching the query, or a new Site object populated from the query conditions when no match is found
  *
- * @method Site findOneById(int $id) Return the first Site filtered by the id column
  * @method Site findOneByName(string $name) Return the first Site filtered by the name column
  * @method Site findOneByOrder(int $order) Return the first Site filtered by the order column
  *
@@ -124,6 +123,20 @@ abstract class BaseSiteQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Site A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.

@@ -44,7 +44,6 @@ use Cungfoo\Model\DocumentAuthor;
  * @method Author findOne(PropelPDO $con = null) Return the first Author matching the query
  * @method Author findOneOrCreate(PropelPDO $con = null) Return the first Author matching the query, or a new Author object populated from the query conditions when no match is found
  *
- * @method Author findOneById(int $id) Return the first Author filtered by the id column
  * @method Author findOneByName(string $name) Return the first Author filtered by the name column
  * @method Author findOneByCreatedAt(string $created_at) Return the first Author filtered by the created_at column
  * @method Author findOneByUpdatedAt(string $updated_at) Return the first Author filtered by the updated_at column
@@ -129,6 +128,20 @@ abstract class BaseAuthorQuery extends ModelCriteria
             return $this->findPkSimple($key, $con);
         }
     }
+
+    /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   Author A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
 
     /**
      * Find object by primary key using raw SQL to go fast.

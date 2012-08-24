@@ -69,7 +69,7 @@ class DocumentTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'title, body', 'locale_column' => 'locale', 'default_locale' => '', 'locale_alias' => 'culture', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'title, body', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'en', 'locale_alias' => 'culture', ),
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/documents', 'crud_model' => '', 'crud_form' => '', ),
         );

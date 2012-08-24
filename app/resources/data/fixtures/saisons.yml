@@ -1,7 +1,7 @@
 Cungfoo\Model\Saison:
   1:
-    name: Eté
+    name: saison.summer
     order: 1
   2:
-    name: Hiver
+    name: saison.winter
     order: 2
