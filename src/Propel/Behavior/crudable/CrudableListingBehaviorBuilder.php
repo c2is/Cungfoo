@@ -10,7 +10,7 @@ class CrudableListingBehaviorBuilder extends OMBuilder
      */
     public function getPackage()
     {
-        return str_replace('Model', 'Listing.Crud', parent::getPackage());
+        return str_replace('Model', 'Listing', parent::getPackage());
     }
 
     /**
@@ -38,7 +38,7 @@ class CrudableListingBehaviorBuilder extends OMBuilder
             $namespace = $this->getTable()->getNamespace();
         }
 
-        return str_replace('Model', 'Listing\Crud', $namespace);
+        return str_replace('Model', 'Listing', $namespace);
     }
 
     /**
@@ -58,8 +58,8 @@ class CrudableListingBehaviorBuilder extends OMBuilder
     {
         $table = $this->getTable();
         $tableName = $table->getName();
-        $script .= "use Cungfoo\\Listing\\Listing,
-\tCungfoo\\Listing\\Column;
+        $script .= "use Cungfoo\\Lib\\Listing\\Listing,
+\tCungfoo\\Lib\\Listing\\Column;
 
 use {$this->getParentNamespace()}\\Base{$this->getClassname()};
 

@@ -10,9 +10,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-use Cungfoo\Listing\Listing,
-    Cungfoo\Listing\Filler,
-    Cungfoo\Listing\Column,
+use Cungfoo\Lib\Listing\Listing,
+    Cungfoo\Lib\Listing\Filler,
+    Cungfoo\Lib\Listing\Column,
     Cungfoo\Form\Type\ContextType;
 
 /**
@@ -76,7 +76,7 @@ class CrudController implements ControllerProviderInterface
                 ));
 
                 // Listing
-                $listingClass           = sprintf("\Cungfoo\Listing\Crud\%sListing", ucfirst($this->modelName));
+                $listingClass           = sprintf("\Cungfoo\Listing\%sListing", ucfirst($this->modelName));
                 $listing                = new $listingClass($app);
 
                 $listing->setFiller(new Filler\PropelFiller($queryContextualized->find()));
