@@ -11,3 +11,12 @@
 #context-selector input.btn {
     margin: 0;
 }
+
+.table th.actions-item {
+    text-align: right;
+}
+
+.table td.actions-item {
+    width: 14px;
+    text-align: right;
+}

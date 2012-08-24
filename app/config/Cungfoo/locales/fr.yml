@@ -32,25 +32,53 @@ locale:
   english: "Anglais"
   french:  "Français"
 
+# List default
+list:
+  actions: "Actions"
+
 # Document Type
 document:
-  category:      "Catégorie"
-  authors:       "Auteurs"
-  documentI18ns: "Champs traduisible"
-  title:         "Titre"
-  body:          "Corps"
+  crud:
+    list:         "Liste des documents"
+    view:         "Vue du document"
+    update:       "Mise à jour du document"
+    create:       "Création d'un document"
+  id:             "Id"
+  category:       "Catégorie"
+  authors:        "Auteurs"
+  documentI18ns:  "Champs traduisible"
+  title:          "Titre"
+  body:           "Corps"
 
 # Author Type
 author:
-  name:      "Nom"
-  documents: "Documents"
+  crud:
+    list:     "Liste des auteurs"
+    view:     "Vue de l'auteur"
+    update:   "Mise à jour de l'auteur"
+    create:   "Création d'un auteur"
+  id:         "Id"
+  name:       "Nom"
+  documents:  "Documents"
 
 # Category Type
 category:
-  name:  "Nom"
+  crud:
+    list:   "Liste des catégories"
+    view:   "Vue de la catégorie"
+    update: "Mise à jour de la catégorie"
+    create: "Création d'une catégorie"
+  id:     "Id"
+  name:   "Nom"
 
 # Camping Type
 camping:
+  crud:
+    list:       "Liste des campings"
+    view:       "Vue du camping"
+    update:     "Mise à jour du camping"
+    create:     "Création d'un camping"
+  id:           "Id"
   address:      "Adresse"
   phone:        "Téléphone"
   site:         "Site"

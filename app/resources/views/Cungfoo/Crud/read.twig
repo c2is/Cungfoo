@@ -1,23 +1,24 @@
 {% extends 'Cungfoo/base.twig' %}
 {% block content %}
-        <table class="table">
-            <tbody>
-                {% for fieldname in fieldnames %}
-                    <tr>
-                       <th>{{ fieldname }}</th>
-                        <td>{{ object[fieldname] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <h2>{{ (name ~ ".crud.view") | trans }}</h2>
+    <table class="table">
+        <tbody>
+            {% for fieldname in fieldnames %}
+                <tr>
+                   <th>{{ fieldname }}</th>
+                    <td>{{ object[fieldname] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-        <hr/>
+    <hr/>
 
-        <div class="form-actions">
-            <div class="btn-group">
-                <a class="btn" href="{{ path('%s_crud_list' | format (name)) }}"><i class="icon-list"></i> Retourner sur la liste</a>
-                <a class="btn" href="{{ path('%s_crud_update' | format (name), {'id': object['Id']}) }}"><i class="icon-edit"></i> Editer</a>
-                <a class="btn" href="{{ path('%s_crud_delete' | format (name), {'id': object['Id']}) }}"><i class="icon-remove-circle"></i> Supprimer</a>
-            </div>
+    <div class="form-actions">
+        <div class="btn-group">
+            <a class="btn" href="{{ path('%s_crud_list' | format (name)) }}"><i class="icon-list"></i> Retourner sur la liste</a>
+            <a class="btn" href="{{ path('%s_crud_update' | format (name), {'id': object['Id']}) }}"><i class="icon-edit"></i> Editer</a>
+            <a class="btn" href="{{ path('%s_crud_delete' | format (name), {'id': object['Id']}) }}"><i class="icon-remove-circle"></i> Supprimer</a>
         </div>
+    </div>
 {% endblock %}

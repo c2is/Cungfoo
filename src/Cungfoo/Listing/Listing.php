@@ -81,7 +81,7 @@ class Listing
 
         foreach ($this->columns as $column)
         {
-            $names[] = $column->getName();
+            $names[] = sprintf('%s.%s', strtolower($this->getName()), $column->getName());
         }
 
         return $names;

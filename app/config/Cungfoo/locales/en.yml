@@ -32,25 +32,53 @@ locale:
   english: "English"
   french:  "French"
 
+# List default
+list:
+  actions: "Actions"
+
 # Document Type
 document:
-  category:      "Category :"
-  authors:       "Authors :"
-  documentI18ns: "Translatable fields :"
-  title:         "Title"
-  body:          "Body"
+  crud:
+    list:    "List of documents"
+    view:    "Viewed of the author"
+    update:  "Update the document"
+    create:  "Create a new document"
+  id:             "Id"
+  category:       "Category :"
+  authors:        "Authors :"
+  documentI18ns:  "Translatable fields :"
+  title:          "Title"
+  body:           "Body"
 
 # Author Type
 author:
-  name:      "Name"
-  documents: "Documents"
+  crud:
+    list:     "List of authors"
+    view:     "Viewed of the author"
+    update:   "Update the author"
+    create:   "Create a new author"
+  id:         "Id"
+  name:       "Name"
+  documents:  "Documents"
 
 # Category Type
 category:
-  name:  "Name"
+  crud:
+    list:         "List of categories"
+    view:         "Viewed of the category"
+    update:       "Update the category"
+    create:       "Create a new category"
+  id:   "Id"
+  name: "Name"
 
 # Camping Type
 camping:
+  crud:
+    list:       "List of campings"
+    view:       "Viewed of the camping"
+    update:     "Update the camping"
+    create:     "Create a new camping"
+  id:           "Id"
   address:      "Address"
   phone:        "Phone"
   site:         "Site"
