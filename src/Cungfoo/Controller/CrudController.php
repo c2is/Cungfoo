@@ -206,7 +206,7 @@ class CrudController implements ControllerProviderInterface
             {
                 $object->save();
 
-                return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_read', $this->modelName), array('id' => $object->getId())));
+                return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_list', $this->modelName), array('id' => $object->getId())));
             }
         }
 
