@@ -284,19 +284,22 @@ class {$this->getClassname()} extends AppAwareType
                     /** @var Column $fColumn */
                     foreach ($otherColumn->getForeignKeys() as $otherColumnFK)
                     {
-                        if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName())
+                        if ($otherColumnFK->getTable()->getAttribute('isCrossRef'))
                         {
-                            $builders .= $this->addBuilder(
-                                sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
-                                'model',
-                                array(
-                                    'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getPhpName())),
-                                    'constraints'   => $this->addConstraints($otherColumn),
-                                    'multiple'      => true,
-                                )
-                            );
+                            if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName())
+                            {
+                                $builders .= $this->addBuilder(
+                                    sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
+                                    'model',
+                                    array(
+                                        'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getPhpName())),
+                                        'constraints'   => $this->addConstraints($otherColumn),
+                                        'multiple'      => true,
+                                    )
+                                );
 
-                            break 2;
+                                break 2;
+                            }
                         }
                     }
                 }
