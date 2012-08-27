@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseCamping;
  */
 class Camping extends BaseCamping
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

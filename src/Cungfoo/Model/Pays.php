@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BasePays;
  */
 class Pays extends BasePays
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
