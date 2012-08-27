@@ -290,7 +290,7 @@ class {$this->getClassname()} extends AppAwareType
                                 sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
                                 'model',
                                 array(
-                                    'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getName())),
+                                    'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getPhpName())),
                                     'constraints'   => $this->addConstraints($otherColumn),
                                     'multiple'      => true,
                                 )
@@ -334,7 +334,7 @@ class {$this->getClassname()} extends AppAwareType
             }
 
             $options = array(
-                'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), ucfirst($this->getTable()->getName())),
+                'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), $this->getTable()->getPhpName()),
                 'languages' => $languagesConfiguration,
                 'label' => 'Translations',
                 'columns' => $i18nColumns
