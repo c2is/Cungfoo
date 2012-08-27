@@ -2,18 +2,36 @@ menu:
     route: admin
     title: menu.title
     items:
-        documents:
-            title:  menu.documents
-            route:  document_crud_list
-        authors:
-            title:  menu.authors
-            route:  author_crud_list
-        campings:
+        camping:
             title:  menu.campings
             route:  camping_crud_list
-        dico:
-            title:  menu.dictionaries
+        type_hebergement:
+            title: menu.type_hebergement
             items:
-                categories:
-                    title:  menu.categories
-                    route:  category_crud_list
+              type_hebergement:
+                  title:  menu.type_hebergement
+                  route:  type_hebergement_crud_list
+              category_type_hebergement:
+                  title:  menu.category_type_hebergement
+                  route:  category_type_hebergement_crud_list
+        theme:
+            title: menu.themes
+            items:
+              ville:
+                  title:  menu.ville
+                  route:  ville_crud_list
+              region:
+                  title:  menu.region
+                  route:  region_crud_list
+              pays:
+                  title:  menu.pays
+                  route:  pays_crud_list
+              destination:
+                  title:  menu.destination
+                  route:  destination_crud_list
+              activite:
+                  title:  menu.activite
+                  route:  activite_crud_list
+              equipement:
+                  title:  menu.equipement
+                  route:  equipement_crud_list

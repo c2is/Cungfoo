@@ -2,19 +2,43 @@ crud:
     prefix: /admin
     controller: \Cungfoo\Controller\CrudController
     items:
-        author:
-            prefix: /authors
-            model: \Cungfoo\Model\Author
-            form: \Cungfoo\Form\Type\AuthorType
-        category:
-            prefix: /categories
-            model: \Cungfoo\Model\Category
-            form: \Cungfoo\Form\Type\CategoryType
-        document:
-            prefix: /documents
-            model: \Cungfoo\Model\Document
-            form: \Cungfoo\Form\Type\DocumentType
         camping:
             prefix: /camping
             model: \Cungfoo\Model\Camping
             form: \Cungfoo\Form\Type\CampingType
+        type_hebergement:
+            prefix: /type-hebergement
+            model: \Cungfoo\Model\TypeHebergement
+            form: \Cungfoo\Form\Type\TypeHebergementType
+        category_type_hebergement:
+            prefix: /category-type-hebergement
+            model: \Cungfoo\Model\CategoryTypeHebergement
+            form: \Cungfoo\Form\Type\CategoryTypeHebergementType
+        ville:
+            prefix: /villes
+            model: \Cungfoo\Model\Ville
+            form: \Cungfoo\Form\Type\VilleType
+        region:
+            prefix: /regions
+            model: \Cungfoo\Model\Region
+            form: \Cungfoo\Form\Type\RegionType
+        pays:
+            prefix: /pays
+            model: \Cungfoo\Model\Pays
+            form: \Cungfoo\Form\Type\PaysType
+        destination:
+            prefix: /destinations
+            model: \Cungfoo\Model\Destination
+            form: \Cungfoo\Form\Type\DestinationType
+        activite:
+            prefix: /activites
+            model: \Cungfoo\Model\Activite
+            form: \Cungfoo\Form\Type\ActiviteType
+        equipement:
+            prefix: /equipements
+            model: \Cungfoo\Model\Equipement
+            form: \Cungfoo\Form\Type\EquipementType
+        service_complementaire:
+            prefix: /services-complementaires
+            model: \Cungfoo\Model\ServiceComplementaire
+            form: \Cungfoo\Form\Type\ServiceComplementaireType

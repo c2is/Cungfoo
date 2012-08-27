@@ -46,16 +46,26 @@
         <column name="phone1" type="varchar" />
         <column name="phone2" type="varchar" />
         <column name="fax" type="varchar" />
-        <column name="type_hebergement_id" type="varchar" />
         <column name="ville_id" type="varchar" />
 
-        <foreign-key foreignTable="type_hebergement">
-            <reference local="type_hebergement_id" foreign="id"></reference>
+        <foreign-key foreignTable="ville">
+            <reference local="ville_id" foreign="id"></reference>
         </foreign-key>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/camping" />
         </behavior>
+    </table>
+
+    <table name="camping_type_hebergement" isCrossRef="true">
+        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="type_hebergement_id" type="varchar" primaryKey="true"/>
+        <foreign-key foreignTable="camping">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="type_hebergement">
+            <reference local="type_hebergement_id" foreign="id"/>
+        </foreign-key>
     </table>
 
     <table name="camping_destination" isCrossRef="true">

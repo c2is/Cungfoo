@@ -1,10 +1,17 @@
 # Menu
 menu:
   title:         "Cungfoo"
-  documents:     "Documents"
-  authors:       "Authors"
-  dictionaries:  "Dictionaries"
-  categories:    "Categories"
+  themes:                    "Themes"
+  ville:                     "Cities"
+  region:                    "Regions"
+  pays:                      "Countries"
+  situation_geographique:    "Location"
+  divers:                    "Various"
+  activite_equipement:       "Activities and equipments"
+  thematique:                "Thematic"
+  type_hebergement:          "Type of accommodation"
+  category_type_hebergement: "Categories of type of accommodation"
+
   campings:      "Campings"
   logout:        "Logout"
 
@@ -35,41 +42,6 @@ locale:
 # List default
 list:
   actions: "Actions"
-
-# Document Type
-document:
-  crud:
-    list:    "List of documents"
-    view:    "Viewed of the author"
-    update:  "Update the document"
-    create:  "Create a new document"
-  id:             "Id"
-  category:       "Category :"
-  authors:        "Authors :"
-  documentI18ns:  "Translatable fields :"
-  title:          "Title"
-  body:           "Body"
-
-# Author Type
-author:
-  crud:
-    list:     "List of authors"
-    view:     "Viewed of the author"
-    update:   "Update the author"
-    create:   "Create a new author"
-  id:         "Id"
-  name:       "Name"
-  documents:  "Documents"
-
-# Category Type
-category:
-  crud:
-    list:         "List of categories"
-    view:         "Viewed of the category"
-    update:       "Update the category"
-    create:       "Create a new category"
-  id:   "Id"
-  name: "Name"
 
 # Camping Type
 camping:
