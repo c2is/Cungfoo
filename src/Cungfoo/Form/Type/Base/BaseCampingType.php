@@ -27,59 +27,116 @@ class BaseCampingType extends AppAwareType
             'label' => 'camping.id',
             'required' => false,
         ));
-        $builder->add('address', 'text', array(
+        $builder->add('name', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),
             ),
-            'label' => 'camping.address',
+            'label' => 'camping.name',
             'required' => false,
         ));
-        $builder->add('phone', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'camping.phone',
-            'required' => false,
-        ));
-        $builder->add('site', 'model', array(
-            'class' => '\Cungfoo\Model\Site',
+        $builder->add('address1', 'text', array(
             'constraints' => array(
             ),
-            'label' => 'camping.site',
+            'label' => 'camping.address1',
             'required' => false,
         ));
-        $builder->add('saison', 'model', array(
-            'class' => '\Cungfoo\Model\Saison',
+        $builder->add('address2', 'text', array(
             'constraints' => array(
             ),
-            'label' => 'camping.saison',
+            'label' => 'camping.address2',
             'required' => false,
         ));
-        $builder->add('campingI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\CampingI18n',
-            'languages' => array(
-                0 => 'en',
-                1 => 'fr',
+        $builder->add('zip', 'text', array(
+            'constraints' => array(
             ),
-            'label' => 'camping.campingI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'camping.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'camping.description',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
+            'label' => 'camping.zip',
+            'required' => false,
+        ));
+        $builder->add('city', 'text', array(
+            'constraints' => array(
             ),
+            'label' => 'camping.city',
+            'required' => false,
+        ));
+        $builder->add('mail', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.mail',
+            'required' => false,
+        ));
+        $builder->add('country', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.country',
+            'required' => false,
+        ));
+        $builder->add('country_code', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.country_code',
+            'required' => false,
+        ));
+        $builder->add('phone1', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.phone1',
+            'required' => false,
+        ));
+        $builder->add('phone2', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.phone2',
+            'required' => false,
+        ));
+        $builder->add('fax', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.fax',
+            'required' => false,
+        ));
+        $builder->add('type_hebergement', 'model', array(
+            'class' => '\Cungfoo\Model\TypeHebergement',
+            'constraints' => array(
+            ),
+            'label' => 'camping.type_hebergement',
+            'required' => false,
+        ));
+        $builder->add('ville_id', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'camping.ville_id',
+            'required' => false,
+        ));
+        $builder->add('destinations', 'model', array(
+            'class' => 'Cungfoo\Model\Destination',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'camping.destinations',
+            'required' => false,
+        ));
+        $builder->add('activites', 'model', array(
+            'class' => 'Cungfoo\Model\Activite',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'camping.activites',
+            'required' => false,
+        ));
+        $builder->add('equipements', 'model', array(
+            'class' => 'Cungfoo\Model\Equipement',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'camping.equipements',
+            'required' => false,
+        ));
+        $builder->add('service_complementaires', 'model', array(
+            'class' => 'Cungfoo\Model\ServiceComplementaire',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'camping.service_complementaires',
             'required' => false,
         ));
     }

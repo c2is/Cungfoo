@@ -23,9 +23,6 @@ class CampingListing extends BaseCampingListing
     public function configure()
     {
         parent::configure();
-
-        $this->addColumn(new Column\TextColumn('name'));
-        $this->addColumn(new Column\TextColumn('description'));
     }
 
 } // CampingListing

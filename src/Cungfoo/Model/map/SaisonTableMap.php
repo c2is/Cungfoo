@@ -53,7 +53,6 @@ class SaisonTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::ONE_TO_MANY, array('id' => 'saison_id', ), null, null, 'Campings');
     } // buildRelations()
 
     /**

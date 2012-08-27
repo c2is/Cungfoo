@@ -40,15 +40,22 @@ class CampingTableMap extends TableMap
         $this->setPhpName('Camping');
         $this->setClassname('Cungfoo\\Model\\Camping');
         $this->setPackage('Cungfoo.Model');
-        $this->setUseIdGenerator(true);
+        $this->setUseIdGenerator(false);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('ADDRESS', 'Address', 'VARCHAR', true, 255, null);
-        $this->addColumn('PHONE', 'Phone', 'VARCHAR', true, 255, null);
-        $this->addForeignKey('SITE_ID', 'SiteId', 'INTEGER', 'site', 'ID', false, null, null);
-        $this->addForeignKey('SAISON_ID', 'SaisonId', 'INTEGER', 'saison', 'ID', false, null, null);
-        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('ADDRESS1', 'Address1', 'VARCHAR', false, 255, null);
+        $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', false, 255, null);
+        $this->addColumn('ZIP', 'Zip', 'VARCHAR', false, 255, null);
+        $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
+        $this->addColumn('MAIL', 'Mail', 'VARCHAR', false, 255, null);
+        $this->addColumn('COUNTRY', 'Country', 'VARCHAR', false, 255, null);
+        $this->addColumn('COUNTRY_CODE', 'CountryCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('PHONE1', 'Phone1', 'VARCHAR', false, 255, null);
+        $this->addColumn('PHONE2', 'Phone2', 'VARCHAR', false, 255, null);
+        $this->addColumn('FAX', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addForeignKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'VARCHAR', 'type_hebergement', 'ID', false, 255, null);
+        $this->addColumn('VILLE_ID', 'VilleId', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 
@@ -57,9 +64,15 @@ class CampingTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Site', 'Cungfoo\\Model\\Site', RelationMap::MANY_TO_ONE, array('site_id' => 'id', ), null, null);
-        $this->addRelation('Saison', 'Cungfoo\\Model\\Saison', RelationMap::MANY_TO_ONE, array('saison_id' => 'id', ), null, null);
-        $this->addRelation('CampingI18n', 'Cungfoo\\Model\\CampingI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'CampingI18ns');
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), null, null);
+        $this->addRelation('CampingDestination', 'Cungfoo\\Model\\CampingDestination', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingDestinations');
+        $this->addRelation('CampingActivite', 'Cungfoo\\Model\\CampingActivite', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingActivites');
+        $this->addRelation('CampingEquipement', 'Cungfoo\\Model\\CampingEquipement', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingEquipements');
+        $this->addRelation('CampingServiceComplementaire', 'Cungfoo\\Model\\CampingServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingServiceComplementaires');
+        $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), null, null, 'Destinations');
+        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), null, null, 'Activites');
+        $this->addRelation('Equipement', 'Cungfoo\\Model\\Equipement', RelationMap::MANY_TO_MANY, array(), null, null, 'Equipements');
+        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), null, null, 'ServiceComplementaires');
     } // buildRelations()
 
     /**
@@ -71,8 +84,6 @@ class CampingTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name, description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'en', 'locale_alias' => 'culture', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/camping', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()

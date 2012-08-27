@@ -10,10 +10,8 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingI18nPeer;
 use Cungfoo\Model\CampingPeer;
-use Cungfoo\Model\SaisonPeer;
-use Cungfoo\Model\SitePeer;
+use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\map\CampingTableMap;
 
 /**
@@ -39,34 +37,55 @@ abstract class BaseCampingPeer
     const TM_CLASS = 'CampingTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 14;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 14;
 
     /** the column name for the ID field */
     const ID = 'camping.ID';
 
-    /** the column name for the ADDRESS field */
-    const ADDRESS = 'camping.ADDRESS';
+    /** the column name for the NAME field */
+    const NAME = 'camping.NAME';
 
-    /** the column name for the PHONE field */
-    const PHONE = 'camping.PHONE';
+    /** the column name for the ADDRESS1 field */
+    const ADDRESS1 = 'camping.ADDRESS1';
 
-    /** the column name for the SITE_ID field */
-    const SITE_ID = 'camping.SITE_ID';
+    /** the column name for the ADDRESS2 field */
+    const ADDRESS2 = 'camping.ADDRESS2';
 
-    /** the column name for the SAISON_ID field */
-    const SAISON_ID = 'camping.SAISON_ID';
+    /** the column name for the ZIP field */
+    const ZIP = 'camping.ZIP';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'camping.CREATED_AT';
+    /** the column name for the CITY field */
+    const CITY = 'camping.CITY';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'camping.UPDATED_AT';
+    /** the column name for the MAIL field */
+    const MAIL = 'camping.MAIL';
+
+    /** the column name for the COUNTRY field */
+    const COUNTRY = 'camping.COUNTRY';
+
+    /** the column name for the COUNTRY_CODE field */
+    const COUNTRY_CODE = 'camping.COUNTRY_CODE';
+
+    /** the column name for the PHONE1 field */
+    const PHONE1 = 'camping.PHONE1';
+
+    /** the column name for the PHONE2 field */
+    const PHONE2 = 'camping.PHONE2';
+
+    /** the column name for the FAX field */
+    const FAX = 'camping.FAX';
+
+    /** the column name for the TYPE_HEBERGEMENT_ID field */
+    const TYPE_HEBERGEMENT_ID = 'camping.TYPE_HEBERGEMENT_ID';
+
+    /** the column name for the VILLE_ID field */
+    const VILLE_ID = 'camping.VILLE_ID';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -80,13 +99,6 @@ abstract class BaseCampingPeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'en';
     /**
      * holds an array of fieldnames
      *
@@ -94,12 +106,12 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[CampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Address', 'Phone', 'SiteId', 'SaisonId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'address', 'phone', 'siteId', 'saisonId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::ADDRESS, CampingPeer::PHONE, CampingPeer::SITE_ID, CampingPeer::SAISON_ID, CampingPeer::CREATED_AT, CampingPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ADDRESS', 'PHONE', 'SITE_ID', 'SAISON_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'address', 'phone', 'site_id', 'saison_id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'Country', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'TypeHebergementId', 'VilleId', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'countryCode', 'phone1', 'phone2', 'fax', 'typeHebergementId', 'villeId', ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::NAME, CampingPeer::ADDRESS1, CampingPeer::ADDRESS2, CampingPeer::ZIP, CampingPeer::CITY, CampingPeer::MAIL, CampingPeer::COUNTRY, CampingPeer::COUNTRY_CODE, CampingPeer::PHONE1, CampingPeer::PHONE2, CampingPeer::FAX, CampingPeer::TYPE_HEBERGEMENT_ID, CampingPeer::VILLE_ID, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'TYPE_HEBERGEMENT_ID', 'VILLE_ID', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'country_code', 'phone1', 'phone2', 'fax', 'type_hebergement_id', 'ville_id', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
     );
 
     /**
@@ -109,12 +121,12 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Address' => 1, 'Phone' => 2, 'SiteId' => 3, 'SaisonId' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'address' => 1, 'phone' => 2, 'siteId' => 3, 'saisonId' => 4, 'createdAt' => 5, 'updatedAt' => 6, ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::ADDRESS => 1, CampingPeer::PHONE => 2, CampingPeer::SITE_ID => 3, CampingPeer::SAISON_ID => 4, CampingPeer::CREATED_AT => 5, CampingPeer::UPDATED_AT => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ADDRESS' => 1, 'PHONE' => 2, 'SITE_ID' => 3, 'SAISON_ID' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'address' => 1, 'phone' => 2, 'site_id' => 3, 'saison_id' => 4, 'created_at' => 5, 'updated_at' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Address1' => 2, 'Address2' => 3, 'Zip' => 4, 'City' => 5, 'Mail' => 6, 'Country' => 7, 'CountryCode' => 8, 'Phone1' => 9, 'Phone2' => 10, 'Fax' => 11, 'TypeHebergementId' => 12, 'VilleId' => 13, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'countryCode' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'typeHebergementId' => 12, 'villeId' => 13, ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::NAME => 1, CampingPeer::ADDRESS1 => 2, CampingPeer::ADDRESS2 => 3, CampingPeer::ZIP => 4, CampingPeer::CITY => 5, CampingPeer::MAIL => 6, CampingPeer::COUNTRY => 7, CampingPeer::COUNTRY_CODE => 8, CampingPeer::PHONE1 => 9, CampingPeer::PHONE2 => 10, CampingPeer::FAX => 11, CampingPeer::TYPE_HEBERGEMENT_ID => 12, CampingPeer::VILLE_ID => 13, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ADDRESS1' => 2, 'ADDRESS2' => 3, 'ZIP' => 4, 'CITY' => 5, 'MAIL' => 6, 'COUNTRY' => 7, 'COUNTRY_CODE' => 8, 'PHONE1' => 9, 'PHONE2' => 10, 'FAX' => 11, 'TYPE_HEBERGEMENT_ID' => 12, 'VILLE_ID' => 13, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'country_code' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'type_hebergement_id' => 12, 'ville_id' => 13, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
     );
 
     /**
@@ -189,20 +201,34 @@ abstract class BaseCampingPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(CampingPeer::ID);
-            $criteria->addSelectColumn(CampingPeer::ADDRESS);
-            $criteria->addSelectColumn(CampingPeer::PHONE);
-            $criteria->addSelectColumn(CampingPeer::SITE_ID);
-            $criteria->addSelectColumn(CampingPeer::SAISON_ID);
-            $criteria->addSelectColumn(CampingPeer::CREATED_AT);
-            $criteria->addSelectColumn(CampingPeer::UPDATED_AT);
+            $criteria->addSelectColumn(CampingPeer::NAME);
+            $criteria->addSelectColumn(CampingPeer::ADDRESS1);
+            $criteria->addSelectColumn(CampingPeer::ADDRESS2);
+            $criteria->addSelectColumn(CampingPeer::ZIP);
+            $criteria->addSelectColumn(CampingPeer::CITY);
+            $criteria->addSelectColumn(CampingPeer::MAIL);
+            $criteria->addSelectColumn(CampingPeer::COUNTRY);
+            $criteria->addSelectColumn(CampingPeer::COUNTRY_CODE);
+            $criteria->addSelectColumn(CampingPeer::PHONE1);
+            $criteria->addSelectColumn(CampingPeer::PHONE2);
+            $criteria->addSelectColumn(CampingPeer::FAX);
+            $criteria->addSelectColumn(CampingPeer::TYPE_HEBERGEMENT_ID);
+            $criteria->addSelectColumn(CampingPeer::VILLE_ID);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ADDRESS');
-            $criteria->addSelectColumn($alias . '.PHONE');
-            $criteria->addSelectColumn($alias . '.SITE_ID');
-            $criteria->addSelectColumn($alias . '.SAISON_ID');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.ADDRESS1');
+            $criteria->addSelectColumn($alias . '.ADDRESS2');
+            $criteria->addSelectColumn($alias . '.ZIP');
+            $criteria->addSelectColumn($alias . '.CITY');
+            $criteria->addSelectColumn($alias . '.MAIL');
+            $criteria->addSelectColumn($alias . '.COUNTRY');
+            $criteria->addSelectColumn($alias . '.COUNTRY_CODE');
+            $criteria->addSelectColumn($alias . '.PHONE1');
+            $criteria->addSelectColumn($alias . '.PHONE2');
+            $criteria->addSelectColumn($alias . '.FAX');
+            $criteria->addSelectColumn($alias . '.TYPE_HEBERGEMENT_ID');
+            $criteria->addSelectColumn($alias . '.VILLE_ID');
         }
     }
 
@@ -402,9 +428,6 @@ abstract class BaseCampingPeer
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in CampingI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        CampingI18nPeer::clearInstancePool();
     }
 
     /**
@@ -503,7 +526,7 @@ abstract class BaseCampingPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related Site table
+     * Returns the number of rows matching criteria, joining the related TypeHebergement table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -511,7 +534,7 @@ abstract class BaseCampingPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinSite(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinTypeHebergement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -538,7 +561,7 @@ abstract class BaseCampingPeer
             $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -554,58 +577,7 @@ abstract class BaseCampingPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related Saison table
-     *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return int Number of matching rows.
-     */
-    public static function doCountJoinSaison(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        // we're going to modify criteria, so copy it first
-        $criteria = clone $criteria;
-
-        // We need to set the primary table name, since in the case that there are no WHERE columns
-        // it will be impossible for the BasePeer::createSelectSql() method to determine which
-        // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(CampingPeer::TABLE_NAME);
-
-        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-            $criteria->setDistinct();
-        }
-
-        if (!$criteria->hasSelectClause()) {
-            CampingPeer::addSelectColumns($criteria);
-        }
-
-        $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-
-        // Set the correct dbName
-        $criteria->setDbName(CampingPeer::DATABASE_NAME);
-
-        if ($con === null) {
-            $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doCount($criteria, $con);
-
-        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $count = (int) $row[0];
-        } else {
-            $count = 0; // no rows returned; we infer that means 0 matches.
-        }
-        $stmt->closeCursor();
-
-        return $count;
-    }
-
-
-    /**
-     * Selects a collection of Camping objects pre-filled with their Site objects.
+     * Selects a collection of Camping objects pre-filled with their TypeHebergement objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
@@ -613,7 +585,7 @@ abstract class BaseCampingPeer
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinSite(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinTypeHebergement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
@@ -624,9 +596,9 @@ abstract class BaseCampingPeer
 
         CampingPeer::addSelectColumns($criteria);
         $startcol = CampingPeer::NUM_HYDRATE_COLUMNS;
-        SitePeer::addSelectColumns($criteria);
+        TypeHebergementPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -646,86 +618,19 @@ abstract class BaseCampingPeer
                 CampingPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = SitePeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = SitePeer::getInstanceFromPool($key2);
+                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = SitePeer::getOMClass();
+                    $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    SitePeer::addInstanceToPool($obj2, $key2);
+                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (Camping) to $obj2 (Site)
-                $obj2->addCamping($obj1);
-
-            } // if joined row was not null
-
-            $results[] = $obj1;
-        }
-        $stmt->closeCursor();
-
-        return $results;
-    }
-
-
-    /**
-     * Selects a collection of Camping objects pre-filled with their Saison objects.
-     * @param      Criteria  $criteria
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of Camping objects.
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function doSelectJoinSaison(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $criteria = clone $criteria;
-
-        // Set the correct dbName if it has not been overridden
-        if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(CampingPeer::DATABASE_NAME);
-        }
-
-        CampingPeer::addSelectColumns($criteria);
-        $startcol = CampingPeer::NUM_HYDRATE_COLUMNS;
-        SaisonPeer::addSelectColumns($criteria);
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doSelect($criteria, $con);
-        $results = array();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = CampingPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = CampingPeer::getInstanceFromPool($key1))) {
-                // We no longer rehydrate the object, since this can cause data loss.
-                // See http://www.propelorm.org/ticket/509
-                // $obj1->hydrate($row, 0, true); // rehydrate
-            } else {
-
-                $cls = CampingPeer::getOMClass();
-
-                $obj1 = new $cls();
-                $obj1->hydrate($row);
-                CampingPeer::addInstanceToPool($obj1, $key1);
-            } // if $obj1 already loaded
-
-            $key2 = SaisonPeer::getPrimaryKeyHashFromRow($row, $startcol);
-            if ($key2 !== null) {
-                $obj2 = SaisonPeer::getInstanceFromPool($key2);
-                if (!$obj2) {
-
-                    $cls = SaisonPeer::getOMClass();
-
-                    $obj2 = new $cls();
-                    $obj2->hydrate($row, $startcol);
-                    SaisonPeer::addInstanceToPool($obj2, $key2);
-                } // if obj2 already loaded
-
-                // Add the $obj1 (Camping) to $obj2 (Saison)
+                // Add the $obj1 (Camping) to $obj2 (TypeHebergement)
                 $obj2->addCamping($obj1);
 
             } // if joined row was not null
@@ -774,9 +679,7 @@ abstract class BaseCampingPeer
             $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -812,15 +715,10 @@ abstract class BaseCampingPeer
         CampingPeer::addSelectColumns($criteria);
         $startcol2 = CampingPeer::NUM_HYDRATE_COLUMNS;
 
-        SitePeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + SitePeer::NUM_HYDRATE_COLUMNS;
+        TypeHebergementPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
 
-        SaisonPeer::addSelectColumns($criteria);
-        $startcol4 = $startcol3 + SaisonPeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -839,291 +737,23 @@ abstract class BaseCampingPeer
                 CampingPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined Site rows
+            // Add objects for joined TypeHebergement rows
 
-            $key2 = SitePeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = SitePeer::getInstanceFromPool($key2);
+                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = SitePeer::getOMClass();
+                    $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    SitePeer::addInstanceToPool($obj2, $key2);
+                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (Camping) to the collection in $obj2 (Site)
+                // Add the $obj1 (Camping) to the collection in $obj2 (TypeHebergement)
                 $obj2->addCamping($obj1);
             } // if joined row not null
-
-            // Add objects for joined Saison rows
-
-            $key3 = SaisonPeer::getPrimaryKeyHashFromRow($row, $startcol3);
-            if ($key3 !== null) {
-                $obj3 = SaisonPeer::getInstanceFromPool($key3);
-                if (!$obj3) {
-
-                    $cls = SaisonPeer::getOMClass();
-
-                    $obj3 = new $cls();
-                    $obj3->hydrate($row, $startcol3);
-                    SaisonPeer::addInstanceToPool($obj3, $key3);
-                } // if obj3 loaded
-
-                // Add the $obj1 (Camping) to the collection in $obj3 (Saison)
-                $obj3->addCamping($obj1);
-            } // if joined row not null
-
-            $results[] = $obj1;
-        }
-        $stmt->closeCursor();
-
-        return $results;
-    }
-
-
-    /**
-     * Returns the number of rows matching criteria, joining the related Site table
-     *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return int Number of matching rows.
-     */
-    public static function doCountJoinAllExceptSite(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        // we're going to modify criteria, so copy it first
-        $criteria = clone $criteria;
-
-        // We need to set the primary table name, since in the case that there are no WHERE columns
-        // it will be impossible for the BasePeer::createSelectSql() method to determine which
-        // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(CampingPeer::TABLE_NAME);
-
-        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-            $criteria->setDistinct();
-        }
-
-        if (!$criteria->hasSelectClause()) {
-            CampingPeer::addSelectColumns($criteria);
-        }
-
-        $criteria->clearOrderByColumns(); // ORDER BY should not affect count
-
-        // Set the correct dbName
-        $criteria->setDbName(CampingPeer::DATABASE_NAME);
-
-        if ($con === null) {
-            $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doCount($criteria, $con);
-
-        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $count = (int) $row[0];
-        } else {
-            $count = 0; // no rows returned; we infer that means 0 matches.
-        }
-        $stmt->closeCursor();
-
-        return $count;
-    }
-
-
-    /**
-     * Returns the number of rows matching criteria, joining the related Saison table
-     *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return int Number of matching rows.
-     */
-    public static function doCountJoinAllExceptSaison(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        // we're going to modify criteria, so copy it first
-        $criteria = clone $criteria;
-
-        // We need to set the primary table name, since in the case that there are no WHERE columns
-        // it will be impossible for the BasePeer::createSelectSql() method to determine which
-        // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(CampingPeer::TABLE_NAME);
-
-        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-            $criteria->setDistinct();
-        }
-
-        if (!$criteria->hasSelectClause()) {
-            CampingPeer::addSelectColumns($criteria);
-        }
-
-        $criteria->clearOrderByColumns(); // ORDER BY should not affect count
-
-        // Set the correct dbName
-        $criteria->setDbName(CampingPeer::DATABASE_NAME);
-
-        if ($con === null) {
-            $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doCount($criteria, $con);
-
-        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $count = (int) $row[0];
-        } else {
-            $count = 0; // no rows returned; we infer that means 0 matches.
-        }
-        $stmt->closeCursor();
-
-        return $count;
-    }
-
-
-    /**
-     * Selects a collection of Camping objects pre-filled with all related objects except Site.
-     *
-     * @param      Criteria  $criteria
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of Camping objects.
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function doSelectJoinAllExceptSite(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $criteria = clone $criteria;
-
-        // Set the correct dbName if it has not been overridden
-        // $criteria->getDbName() will return the same object if not set to another value
-        // so == check is okay and faster
-        if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(CampingPeer::DATABASE_NAME);
-        }
-
-        CampingPeer::addSelectColumns($criteria);
-        $startcol2 = CampingPeer::NUM_HYDRATE_COLUMNS;
-
-        SaisonPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + SaisonPeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(CampingPeer::SAISON_ID, SaisonPeer::ID, $join_behavior);
-
-
-        $stmt = BasePeer::doSelect($criteria, $con);
-        $results = array();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = CampingPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = CampingPeer::getInstanceFromPool($key1))) {
-                // We no longer rehydrate the object, since this can cause data loss.
-                // See http://www.propelorm.org/ticket/509
-                // $obj1->hydrate($row, 0, true); // rehydrate
-            } else {
-                $cls = CampingPeer::getOMClass();
-
-                $obj1 = new $cls();
-                $obj1->hydrate($row);
-                CampingPeer::addInstanceToPool($obj1, $key1);
-            } // if obj1 already loaded
-
-                // Add objects for joined Saison rows
-
-                $key2 = SaisonPeer::getPrimaryKeyHashFromRow($row, $startcol2);
-                if ($key2 !== null) {
-                    $obj2 = SaisonPeer::getInstanceFromPool($key2);
-                    if (!$obj2) {
-
-                        $cls = SaisonPeer::getOMClass();
-
-                    $obj2 = new $cls();
-                    $obj2->hydrate($row, $startcol2);
-                    SaisonPeer::addInstanceToPool($obj2, $key2);
-                } // if $obj2 already loaded
-
-                // Add the $obj1 (Camping) to the collection in $obj2 (Saison)
-                $obj2->addCamping($obj1);
-
-            } // if joined row is not null
-
-            $results[] = $obj1;
-        }
-        $stmt->closeCursor();
-
-        return $results;
-    }
-
-
-    /**
-     * Selects a collection of Camping objects pre-filled with all related objects except Saison.
-     *
-     * @param      Criteria  $criteria
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of Camping objects.
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function doSelectJoinAllExceptSaison(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $criteria = clone $criteria;
-
-        // Set the correct dbName if it has not been overridden
-        // $criteria->getDbName() will return the same object if not set to another value
-        // so == check is okay and faster
-        if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(CampingPeer::DATABASE_NAME);
-        }
-
-        CampingPeer::addSelectColumns($criteria);
-        $startcol2 = CampingPeer::NUM_HYDRATE_COLUMNS;
-
-        SitePeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + SitePeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(CampingPeer::SITE_ID, SitePeer::ID, $join_behavior);
-
-
-        $stmt = BasePeer::doSelect($criteria, $con);
-        $results = array();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = CampingPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = CampingPeer::getInstanceFromPool($key1))) {
-                // We no longer rehydrate the object, since this can cause data loss.
-                // See http://www.propelorm.org/ticket/509
-                // $obj1->hydrate($row, 0, true); // rehydrate
-            } else {
-                $cls = CampingPeer::getOMClass();
-
-                $obj1 = new $cls();
-                $obj1->hydrate($row);
-                CampingPeer::addInstanceToPool($obj1, $key1);
-            } // if obj1 already loaded
-
-                // Add objects for joined Site rows
-
-                $key2 = SitePeer::getPrimaryKeyHashFromRow($row, $startcol2);
-                if ($key2 !== null) {
-                    $obj2 = SitePeer::getInstanceFromPool($key2);
-                    if (!$obj2) {
-
-                        $cls = SitePeer::getOMClass();
-
-                    $obj2 = new $cls();
-                    $obj2->hydrate($row, $startcol2);
-                    SitePeer::addInstanceToPool($obj2, $key2);
-                } // if $obj2 already loaded
-
-                // Add the $obj1 (Camping) to the collection in $obj2 (Site)
-                $obj2->addCamping($obj1);
-
-            } // if joined row is not null
 
             $results[] = $obj1;
         }
@@ -1185,10 +815,6 @@ abstract class BaseCampingPeer
             $criteria = clone $values; // rename for clarity
         } else {
             $criteria = $values->buildCriteria(); // build Criteria from Camping object
-        }
-
-        if ($criteria->containsKey(CampingPeer::ID) && $criteria->keyContainsValue(CampingPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.CampingPeer::ID.')');
         }
 
 

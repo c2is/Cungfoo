@@ -33,79 +33,177 @@
     <!-- ====================
                 SCHEMA
          ==================== -->
-    <table name="author">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="name" type="varchar" required="true" />
-
-        <behavior name="timestampable" />
-        <behavior name="crudable">
-            <parameter name="crud_prefix" value="/authors" />
-        </behavior>
-    </table>
-
     <table name="camping">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" />
         <column name="name" type="varchar" required="true" />
-        <column name="description" type="varchar" required="true" />
-        <column name="address" type="varchar" required="true" />
-        <column name="phone" type="varchar" required="true" />
-        <column name="site_id" type="integer" />
-        <column name="saison_id" type="integer" />
-        <foreign-key foreignTable="site">
-            <reference local="site_id" foreign="id"></reference>
-        </foreign-key>
-        <foreign-key foreignTable="saison">
-            <reference local="saison_id" foreign="id"></reference>
+        <column name="address1" type="varchar" />
+        <column name="address2" type="varchar" />
+        <column name="zip" type="varchar" />
+        <column name="city" type="varchar" />
+        <column name="mail" type="varchar" />
+        <column name="country" type="varchar" />
+        <column name="country_code" type="varchar" />
+        <column name="phone1" type="varchar" />
+        <column name="phone2" type="varchar" />
+        <column name="fax" type="varchar" />
+        <column name="type_hebergement_id" type="varchar" />
+        <column name="ville_id" type="varchar" />
+
+        <foreign-key foreignTable="type_hebergement">
+            <reference local="type_hebergement_id" foreign="id"></reference>
         </foreign-key>
 
-        <behavior name="timestampable" />
-        <behavior name="i18n">
-            <parameter name="i18n_columns" value="name, description" />
-            <parameter name="locale_alias" value="culture"/>
-        </behavior>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/camping" />
         </behavior>
     </table>
 
-    <table name="category">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <table name="camping_destination" isCrossRef="true">
+        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="varchar" primaryKey="true"/>
+        <foreign-key foreignTable="camping">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="camping_activite" isCrossRef="true">
+        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="activite_id" type="varchar" primaryKey="true"/>
+        <foreign-key foreignTable="camping">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="activite">
+            <reference local="activite_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="camping_equipement" isCrossRef="true">
+        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="equipement_id" type="varchar" primaryKey="true"/>
+        <foreign-key foreignTable="camping">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="equipement">
+            <reference local="equipement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="camping_service_complementaire" isCrossRef="true">
+        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="service_complementaire_id" type="varchar" primaryKey="true"/>
+        <foreign-key foreignTable="camping">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="service_complementaire">
+            <reference local="service_complementaire_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="type_hebergement">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="category_type_hebergement_id" type="varchar" />
+
+        <foreign-key foreignTable="category_type_hebergement">
+            <reference local="category_type_hebergement_id" foreign="id"></reference>
+        </foreign-key>
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/type-hebergement" />
+        </behavior>
+    </table>
+
+    <table name="category_type_hebergement">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/categories" />
+            <parameter name="crud_prefix" value="/category-type-hebergement" />
         </behavior>
     </table>
 
-    <table name="document">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="category_id" type="integer" required="true" />
-        <column name="title" type="varchar" required="true" />
-        <column name="body" type="longvarchar" required="true" widget="textrich" />
-        <foreign-key foreignTable="category">
-            <reference local="category_id" foreign="id"></reference>
-        </foreign-key>
+    <table name="ville">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="region_id" type="varchar" />
 
-        <behavior name="i18n">
-            <parameter name="i18n_columns" value="title, body" />
-            <parameter name="locale_alias" value="culture"/>
-        </behavior>
+        <foreign-key foreignTable="region">
+            <reference local="region_id" foreign="id"></reference>
+        </foreign-key>
 
         <behavior name="timestampable" />
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/documents" />
+            <parameter name="crud_prefix" value="/villes" />
         </behavior>
     </table>
 
-    <table name="document_author" isCrossRef="true">
-        <column name="document_id" type="INTEGER" primaryKey="true" required="true" />
-        <column name="author_id" type="INTEGER" primaryKey="true" required="true" />
-        <foreign-key foreignTable="document" onDelete="CASCADE">
-            <reference local="document_id" foreign="id"/>
+    <table name="region">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="pays_id" type="varchar" />
+
+        <foreign-key foreignTable="pays">
+            <reference local="pays_id" foreign="id"></reference>
         </foreign-key>
-        <foreign-key foreignTable="author" onDelete="CASCADE">
-            <reference local="author_id" foreign="id"/>
-        </foreign-key>
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/regions" />
+        </behavior>
+    </table>
+
+    <table name="pays">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/pays" />
+        </behavior>
+    </table>
+
+    <table name="destination">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/destinations" />
+        </behavior>
+    </table>
+
+    <table name="activite">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/activites" />
+        </behavior>
+    </table>
+
+    <table name="equipement">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/equipements" />
+        </behavior>
+    </table>
+
+    <table name="service_complementaire">
+        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="name" type="varchar" required="true" />
+
+        <behavior name="timestampable" />
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/services-complementaires" />
+        </behavior>
     </table>
 </database>

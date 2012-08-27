@@ -20,8 +20,19 @@ class BaseCampingListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('address'));
-        $this->addColumn(new Column\TextColumn('phone'));
+        $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('address1'));
+        $this->addColumn(new Column\TextColumn('address2'));
+        $this->addColumn(new Column\TextColumn('zip'));
+        $this->addColumn(new Column\TextColumn('city'));
+        $this->addColumn(new Column\TextColumn('mail'));
+        $this->addColumn(new Column\TextColumn('country'));
+        $this->addColumn(new Column\TextColumn('country_code'));
+        $this->addColumn(new Column\TextColumn('phone1'));
+        $this->addColumn(new Column\TextColumn('phone2'));
+        $this->addColumn(new Column\TextColumn('fax'));
+        $this->addColumn(new Column\TextColumn('type_hebergement_id'));
+        $this->addColumn(new Column\TextColumn('ville_id'));
     }
 
     /**

@@ -9,12 +9,8 @@ use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
-use \PropelCollection;
 use \PropelException;
-use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\Site;
 use Cungfoo\Model\SitePeer;
 use Cungfoo\Model\SiteQuery;
@@ -66,12 +62,6 @@ abstract class BaseSite extends BaseObject implements Persistent
     protected $order;
 
     /**
-     * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
-     */
-    protected $collCampings;
-    protected $collCampingsPartial;
-
-    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -84,12 +74,6 @@ abstract class BaseSite extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
-    protected $campingsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -289,8 +273,6 @@ abstract class BaseSite extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collCampings = null;
-
         } // if (deep)
     }
 
@@ -413,24 +395,6 @@ abstract class BaseSite extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
-            }
-
-            if ($this->campingsScheduledForDeletion !== null) {
-                if (!$this->campingsScheduledForDeletion->isEmpty()) {
-                    foreach ($this->campingsScheduledForDeletion as $camping) {
-                        // need to save related object because we set the relation to null
-                        $camping->save($con);
-                    }
-                    $this->campingsScheduledForDeletion = null;
-                }
-            }
-
-            if ($this->collCampings !== null) {
-                foreach ($this->collCampings as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
-                        $affectedRows += $referrerFK->save($con);
-                    }
-                }
             }
 
             $this->alreadyInSave = false;
@@ -587,14 +551,6 @@ abstract class BaseSite extends BaseObject implements Persistent
             }
 
 
-                if ($this->collCampings !== null) {
-                    foreach ($this->collCampings as $referrerFK) {
-                        if (!$referrerFK->validate($columns)) {
-                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
-                        }
-                    }
-                }
-
 
             $this->alreadyInValidation = false;
         }
@@ -656,11 +612,10 @@ abstract class BaseSite extends BaseObject implements Persistent
      *                    Defaults to BasePeer::TYPE_PHPNAME.
      * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to true.
      * @param     array $alreadyDumpedObjects List of objects to skip to avoid recursion
-     * @param     boolean $includeForeignObjects (optional) Whether to include hydrated related objects. Default to FALSE.
      *
      * @return array an associative array containing the field names (as keys) and field values
      */
-    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
+    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array())
     {
         if (isset($alreadyDumpedObjects['Site'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
@@ -672,11 +627,6 @@ abstract class BaseSite extends BaseObject implements Persistent
             $keys[1] => $this->getName(),
             $keys[2] => $this->getOrder(),
         );
-        if ($includeForeignObjects) {
-            if (null !== $this->collCampings) {
-                $result['Campings'] = $this->collCampings->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
-            }
-        }
 
         return $result;
     }
@@ -825,24 +775,6 @@ abstract class BaseSite extends BaseObject implements Persistent
     {
         $copyObj->setName($this->getName());
         $copyObj->setOrder($this->getOrder());
-
-        if ($deepCopy && !$this->startCopy) {
-            // important: temporarily setNew(false) because this affects the behavior of
-            // the getter/setter methods for fkey referrer objects.
-            $copyObj->setNew(false);
-            // store object hash to prevent cycle
-            $this->startCopy = true;
-
-            foreach ($this->getCampings() as $relObj) {
-                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addCamping($relObj->copy($deepCopy));
-                }
-            }
-
-            //unflag object copy
-            $this->startCopy = false;
-        } // if ($deepCopy)
-
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -889,254 +821,6 @@ abstract class BaseSite extends BaseObject implements Persistent
         return self::$peer;
     }
 
-
-    /**
-     * Initializes a collection based on the name of a relation.
-     * Avoids crafting an 'init[$relationName]s' method name
-     * that wouldn't work when StandardEnglishPluralizer is used.
-     *
-     * @param string $relationName The name of the relation to initialize
-     * @return void
-     */
-    public function initRelation($relationName)
-    {
-        if ('Camping' == $relationName) {
-            $this->initCampings();
-        }
-    }
-
-    /**
-     * Clears out the collCampings collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return void
-     * @see        addCampings()
-     */
-    public function clearCampings()
-    {
-        $this->collCampings = null; // important to set this to null since that means it is uninitialized
-        $this->collCampingsPartial = null;
-    }
-
-    /**
-     * reset is the collCampings collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialCampings($v = true)
-    {
-        $this->collCampingsPartial = $v;
-    }
-
-    /**
-     * Initializes the collCampings collection.
-     *
-     * By default this just sets the collCampings collection to an empty array (like clearcollCampings());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @param boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
-     * @return void
-     */
-    public function initCampings($overrideExisting = true)
-    {
-        if (null !== $this->collCampings && !$overrideExisting) {
-            return;
-        }
-        $this->collCampings = new PropelObjectCollection();
-        $this->collCampings->setModel('Camping');
-    }
-
-    /**
-     * Gets an array of Camping objects which contain a foreign key that references this object.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Site is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|Camping[] List of Camping objects
-     * @throws PropelException
-     */
-    public function getCampings($criteria = null, PropelPDO $con = null)
-    {
-        $partial = $this->collCampingsPartial && !$this->isNew();
-        if (null === $this->collCampings || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collCampings) {
-                // return empty collection
-                $this->initCampings();
-            } else {
-                $collCampings = CampingQuery::create(null, $criteria)
-                    ->filterBySite($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    if (false !== $this->collCampingsPartial && count($collCampings)) {
-                      $this->initCampings(false);
-
-                      foreach($collCampings as $obj) {
-                        if (false == $this->collCampings->contains($obj)) {
-                          $this->collCampings->append($obj);
-                        }
-                      }
-
-                      $this->collCampingsPartial = true;
-                    }
-
-                    return $collCampings;
-                }
-
-                if($partial && $this->collCampings) {
-                    foreach($this->collCampings as $obj) {
-                        if($obj->isNew()) {
-                            $collCampings[] = $obj;
-                        }
-                    }
-                }
-
-                $this->collCampings = $collCampings;
-                $this->collCampingsPartial = false;
-            }
-        }
-
-        return $this->collCampings;
-    }
-
-    /**
-     * Sets a collection of Camping objects related by a one-to-many relationship
-     * to the current object.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $campings A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     */
-    public function setCampings(PropelCollection $campings, PropelPDO $con = null)
-    {
-        $this->campingsScheduledForDeletion = $this->getCampings(new Criteria(), $con)->diff($campings);
-
-        foreach ($this->campingsScheduledForDeletion as $campingRemoved) {
-            $campingRemoved->setSite(null);
-        }
-
-        $this->collCampings = null;
-        foreach ($campings as $camping) {
-            $this->addCamping($camping);
-        }
-
-        $this->collCampings = $campings;
-        $this->collCampingsPartial = false;
-    }
-
-    /**
-     * Returns the number of related Camping objects.
-     *
-     * @param Criteria $criteria
-     * @param boolean $distinct
-     * @param PropelPDO $con
-     * @return int             Count of related Camping objects.
-     * @throws PropelException
-     */
-    public function countCampings(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        $partial = $this->collCampingsPartial && !$this->isNew();
-        if (null === $this->collCampings || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collCampings) {
-                return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getCampings());
-                }
-                $query = CampingQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterBySite($this)
-                    ->count($con);
-            }
-        } else {
-            return count($this->collCampings);
-        }
-    }
-
-    /**
-     * Method called to associate a Camping object to this object
-     * through the Camping foreign key attribute.
-     *
-     * @param    Camping $l Camping
-     * @return Site The current object (for fluent API support)
-     */
-    public function addCamping(Camping $l)
-    {
-        if ($this->collCampings === null) {
-            $this->initCampings();
-            $this->collCampingsPartial = true;
-        }
-        if (!in_array($l, $this->collCampings->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddCamping($l);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	Camping $camping The camping object to add.
-     */
-    protected function doAddCamping($camping)
-    {
-        $this->collCampings[]= $camping;
-        $camping->setSite($this);
-    }
-
-    /**
-     * @param	Camping $camping The camping object to remove.
-     */
-    public function removeCamping($camping)
-    {
-        if ($this->getCampings()->contains($camping)) {
-            $this->collCampings->remove($this->collCampings->search($camping));
-            if (null === $this->campingsScheduledForDeletion) {
-                $this->campingsScheduledForDeletion = clone $this->collCampings;
-                $this->campingsScheduledForDeletion->clear();
-            }
-            $this->campingsScheduledForDeletion[]= $camping;
-            $camping->setSite(null);
-        }
-    }
-
-
-    /**
-     * If this collection has already been initialized with
-     * an identical criteria, it returns the collection.
-     * Otherwise if this Site is new, it will return
-     * an empty collection; or if this Site has previously
-     * been saved, it will retrieve related Campings from storage.
-     *
-     * This method is protected by default in order to keep the public
-     * api reasonable.  You can provide public methods for those you
-     * actually need in Site.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
-     * @return PropelObjectCollection|Camping[] List of Camping objects
-     */
-    public function getCampingsJoinSaison($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $query = CampingQuery::create(null, $criteria);
-        $query->joinWith('Saison', $join_behavior);
-
-        return $this->getCampings($query, $con);
-    }
-
     /**
      * Clears the current object and sets all attributes to their default values
      */
@@ -1165,17 +849,8 @@ abstract class BaseSite extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collCampings) {
-                foreach ($this->collCampings as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
         } // if ($deep)
 
-        if ($this->collCampings instanceof PropelCollection) {
-            $this->collCampings->clearIterator();
-        }
-        $this->collCampings = null;
     }
 
     /**

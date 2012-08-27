@@ -12,12 +12,18 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Activite;
 use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingI18n;
+use Cungfoo\Model\CampingActivite;
+use Cungfoo\Model\CampingDestination;
+use Cungfoo\Model\CampingEquipement;
 use Cungfoo\Model\CampingPeer;
 use Cungfoo\Model\CampingQuery;
-use Cungfoo\Model\Saison;
-use Cungfoo\Model\Site;
+use Cungfoo\Model\CampingServiceComplementaire;
+use Cungfoo\Model\Destination;
+use Cungfoo\Model\Equipement;
+use Cungfoo\Model\ServiceComplementaire;
+use Cungfoo\Model\TypeHebergement;
 
 /**
  * Base class that represents a query for the 'camping' table.
@@ -25,54 +31,90 @@ use Cungfoo\Model\Site;
  *
  *
  * @method CampingQuery orderById($order = Criteria::ASC) Order by the id column
- * @method CampingQuery orderByAddress($order = Criteria::ASC) Order by the address column
- * @method CampingQuery orderByPhone($order = Criteria::ASC) Order by the phone column
- * @method CampingQuery orderBySiteId($order = Criteria::ASC) Order by the site_id column
- * @method CampingQuery orderBySaisonId($order = Criteria::ASC) Order by the saison_id column
- * @method CampingQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
- * @method CampingQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method CampingQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method CampingQuery orderByAddress1($order = Criteria::ASC) Order by the address1 column
+ * @method CampingQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
+ * @method CampingQuery orderByZip($order = Criteria::ASC) Order by the zip column
+ * @method CampingQuery orderByCity($order = Criteria::ASC) Order by the city column
+ * @method CampingQuery orderByMail($order = Criteria::ASC) Order by the mail column
+ * @method CampingQuery orderByCountry($order = Criteria::ASC) Order by the country column
+ * @method CampingQuery orderByCountryCode($order = Criteria::ASC) Order by the country_code column
+ * @method CampingQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
+ * @method CampingQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
+ * @method CampingQuery orderByFax($order = Criteria::ASC) Order by the fax column
+ * @method CampingQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
+ * @method CampingQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
  *
  * @method CampingQuery groupById() Group by the id column
- * @method CampingQuery groupByAddress() Group by the address column
- * @method CampingQuery groupByPhone() Group by the phone column
- * @method CampingQuery groupBySiteId() Group by the site_id column
- * @method CampingQuery groupBySaisonId() Group by the saison_id column
- * @method CampingQuery groupByCreatedAt() Group by the created_at column
- * @method CampingQuery groupByUpdatedAt() Group by the updated_at column
+ * @method CampingQuery groupByName() Group by the name column
+ * @method CampingQuery groupByAddress1() Group by the address1 column
+ * @method CampingQuery groupByAddress2() Group by the address2 column
+ * @method CampingQuery groupByZip() Group by the zip column
+ * @method CampingQuery groupByCity() Group by the city column
+ * @method CampingQuery groupByMail() Group by the mail column
+ * @method CampingQuery groupByCountry() Group by the country column
+ * @method CampingQuery groupByCountryCode() Group by the country_code column
+ * @method CampingQuery groupByPhone1() Group by the phone1 column
+ * @method CampingQuery groupByPhone2() Group by the phone2 column
+ * @method CampingQuery groupByFax() Group by the fax column
+ * @method CampingQuery groupByTypeHebergementId() Group by the type_hebergement_id column
+ * @method CampingQuery groupByVilleId() Group by the ville_id column
  *
  * @method CampingQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method CampingQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method CampingQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method CampingQuery leftJoinSite($relationAlias = null) Adds a LEFT JOIN clause to the query using the Site relation
- * @method CampingQuery rightJoinSite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Site relation
- * @method CampingQuery innerJoinSite($relationAlias = null) Adds a INNER JOIN clause to the query using the Site relation
+ * @method CampingQuery leftJoinTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergement relation
+ * @method CampingQuery rightJoinTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergement relation
+ * @method CampingQuery innerJoinTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergement relation
  *
- * @method CampingQuery leftJoinSaison($relationAlias = null) Adds a LEFT JOIN clause to the query using the Saison relation
- * @method CampingQuery rightJoinSaison($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Saison relation
- * @method CampingQuery innerJoinSaison($relationAlias = null) Adds a INNER JOIN clause to the query using the Saison relation
+ * @method CampingQuery leftJoinCampingDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingDestination relation
+ * @method CampingQuery rightJoinCampingDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingDestination relation
+ * @method CampingQuery innerJoinCampingDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingDestination relation
  *
- * @method CampingQuery leftJoinCampingI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingI18n relation
- * @method CampingQuery rightJoinCampingI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingI18n relation
- * @method CampingQuery innerJoinCampingI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingI18n relation
+ * @method CampingQuery leftJoinCampingActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingActivite relation
+ * @method CampingQuery rightJoinCampingActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingActivite relation
+ * @method CampingQuery innerJoinCampingActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingActivite relation
+ *
+ * @method CampingQuery leftJoinCampingEquipement($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingEquipement relation
+ * @method CampingQuery rightJoinCampingEquipement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingEquipement relation
+ * @method CampingQuery innerJoinCampingEquipement($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingEquipement relation
+ *
+ * @method CampingQuery leftJoinCampingServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingServiceComplementaire relation
+ * @method CampingQuery rightJoinCampingServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingServiceComplementaire relation
+ * @method CampingQuery innerJoinCampingServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingServiceComplementaire relation
  *
  * @method Camping findOne(PropelPDO $con = null) Return the first Camping matching the query
  * @method Camping findOneOrCreate(PropelPDO $con = null) Return the first Camping matching the query, or a new Camping object populated from the query conditions when no match is found
  *
- * @method Camping findOneByAddress(string $address) Return the first Camping filtered by the address column
- * @method Camping findOneByPhone(string $phone) Return the first Camping filtered by the phone column
- * @method Camping findOneBySiteId(int $site_id) Return the first Camping filtered by the site_id column
- * @method Camping findOneBySaisonId(int $saison_id) Return the first Camping filtered by the saison_id column
- * @method Camping findOneByCreatedAt(string $created_at) Return the first Camping filtered by the created_at column
- * @method Camping findOneByUpdatedAt(string $updated_at) Return the first Camping filtered by the updated_at column
+ * @method Camping findOneByName(string $name) Return the first Camping filtered by the name column
+ * @method Camping findOneByAddress1(string $address1) Return the first Camping filtered by the address1 column
+ * @method Camping findOneByAddress2(string $address2) Return the first Camping filtered by the address2 column
+ * @method Camping findOneByZip(string $zip) Return the first Camping filtered by the zip column
+ * @method Camping findOneByCity(string $city) Return the first Camping filtered by the city column
+ * @method Camping findOneByMail(string $mail) Return the first Camping filtered by the mail column
+ * @method Camping findOneByCountry(string $country) Return the first Camping filtered by the country column
+ * @method Camping findOneByCountryCode(string $country_code) Return the first Camping filtered by the country_code column
+ * @method Camping findOneByPhone1(string $phone1) Return the first Camping filtered by the phone1 column
+ * @method Camping findOneByPhone2(string $phone2) Return the first Camping filtered by the phone2 column
+ * @method Camping findOneByFax(string $fax) Return the first Camping filtered by the fax column
+ * @method Camping findOneByTypeHebergementId(string $type_hebergement_id) Return the first Camping filtered by the type_hebergement_id column
+ * @method Camping findOneByVilleId(string $ville_id) Return the first Camping filtered by the ville_id column
  *
  * @method array findById(int $id) Return Camping objects filtered by the id column
- * @method array findByAddress(string $address) Return Camping objects filtered by the address column
- * @method array findByPhone(string $phone) Return Camping objects filtered by the phone column
- * @method array findBySiteId(int $site_id) Return Camping objects filtered by the site_id column
- * @method array findBySaisonId(int $saison_id) Return Camping objects filtered by the saison_id column
- * @method array findByCreatedAt(string $created_at) Return Camping objects filtered by the created_at column
- * @method array findByUpdatedAt(string $updated_at) Return Camping objects filtered by the updated_at column
+ * @method array findByName(string $name) Return Camping objects filtered by the name column
+ * @method array findByAddress1(string $address1) Return Camping objects filtered by the address1 column
+ * @method array findByAddress2(string $address2) Return Camping objects filtered by the address2 column
+ * @method array findByZip(string $zip) Return Camping objects filtered by the zip column
+ * @method array findByCity(string $city) Return Camping objects filtered by the city column
+ * @method array findByMail(string $mail) Return Camping objects filtered by the mail column
+ * @method array findByCountry(string $country) Return Camping objects filtered by the country column
+ * @method array findByCountryCode(string $country_code) Return Camping objects filtered by the country_code column
+ * @method array findByPhone1(string $phone1) Return Camping objects filtered by the phone1 column
+ * @method array findByPhone2(string $phone2) Return Camping objects filtered by the phone2 column
+ * @method array findByFax(string $fax) Return Camping objects filtered by the fax column
+ * @method array findByTypeHebergementId(string $type_hebergement_id) Return Camping objects filtered by the type_hebergement_id column
+ * @method array findByVilleId(string $ville_id) Return Camping objects filtered by the ville_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -176,7 +218,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ADDRESS`, `PHONE`, `SITE_ID`, `SAISON_ID`, `CREATED_AT`, `UPDATED_AT` FROM `camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `TYPE_HEBERGEMENT_ID`, `VILLE_ID` FROM `camping` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -293,273 +335,420 @@ abstract class BaseCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the address column
+     * Filter the query on the name column
      *
      * Example usage:
      * <code>
-     * $query->filterByAddress('fooValue');   // WHERE address = 'fooValue'
-     * $query->filterByAddress('%fooValue%'); // WHERE address LIKE '%fooValue%'
+     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
+     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $address The value to use as filter.
+     * @param     string $name The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterByAddress($address = null, $comparison = null)
+    public function filterByName($name = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($address)) {
+            if (is_array($name)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $address)) {
-                $address = str_replace('*', '%', $address);
+            } elseif (preg_match('/[\%\*]/', $name)) {
+                $name = str_replace('*', '%', $name);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::ADDRESS, $address, $comparison);
+        return $this->addUsingAlias(CampingPeer::NAME, $name, $comparison);
     }
 
     /**
-     * Filter the query on the phone column
+     * Filter the query on the address1 column
      *
      * Example usage:
      * <code>
-     * $query->filterByPhone('fooValue');   // WHERE phone = 'fooValue'
-     * $query->filterByPhone('%fooValue%'); // WHERE phone LIKE '%fooValue%'
+     * $query->filterByAddress1('fooValue');   // WHERE address1 = 'fooValue'
+     * $query->filterByAddress1('%fooValue%'); // WHERE address1 LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $phone The value to use as filter.
+     * @param     string $address1 The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterByPhone($phone = null, $comparison = null)
+    public function filterByAddress1($address1 = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($phone)) {
+            if (is_array($address1)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $phone)) {
-                $phone = str_replace('*', '%', $phone);
+            } elseif (preg_match('/[\%\*]/', $address1)) {
+                $address1 = str_replace('*', '%', $address1);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::PHONE, $phone, $comparison);
+        return $this->addUsingAlias(CampingPeer::ADDRESS1, $address1, $comparison);
     }
 
     /**
-     * Filter the query on the site_id column
+     * Filter the query on the address2 column
      *
      * Example usage:
      * <code>
-     * $query->filterBySiteId(1234); // WHERE site_id = 1234
-     * $query->filterBySiteId(array(12, 34)); // WHERE site_id IN (12, 34)
-     * $query->filterBySiteId(array('min' => 12)); // WHERE site_id > 12
+     * $query->filterByAddress2('fooValue');   // WHERE address2 = 'fooValue'
+     * $query->filterByAddress2('%fooValue%'); // WHERE address2 LIKE '%fooValue%'
      * </code>
      *
-     * @see       filterBySite()
-     *
-     * @param     mixed $siteId The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $address2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterBySiteId($siteId = null, $comparison = null)
+    public function filterByAddress2($address2 = null, $comparison = null)
     {
-        if (is_array($siteId)) {
-            $useMinMax = false;
-            if (isset($siteId['min'])) {
-                $this->addUsingAlias(CampingPeer::SITE_ID, $siteId['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($siteId['max'])) {
-                $this->addUsingAlias(CampingPeer::SITE_ID, $siteId['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($address2)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $address2)) {
+                $address2 = str_replace('*', '%', $address2);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::SITE_ID, $siteId, $comparison);
+        return $this->addUsingAlias(CampingPeer::ADDRESS2, $address2, $comparison);
     }
 
     /**
-     * Filter the query on the saison_id column
+     * Filter the query on the zip column
      *
      * Example usage:
      * <code>
-     * $query->filterBySaisonId(1234); // WHERE saison_id = 1234
-     * $query->filterBySaisonId(array(12, 34)); // WHERE saison_id IN (12, 34)
-     * $query->filterBySaisonId(array('min' => 12)); // WHERE saison_id > 12
+     * $query->filterByZip('fooValue');   // WHERE zip = 'fooValue'
+     * $query->filterByZip('%fooValue%'); // WHERE zip LIKE '%fooValue%'
      * </code>
      *
-     * @see       filterBySaison()
-     *
-     * @param     mixed $saisonId The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $zip The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterBySaisonId($saisonId = null, $comparison = null)
+    public function filterByZip($zip = null, $comparison = null)
     {
-        if (is_array($saisonId)) {
-            $useMinMax = false;
-            if (isset($saisonId['min'])) {
-                $this->addUsingAlias(CampingPeer::SAISON_ID, $saisonId['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($saisonId['max'])) {
-                $this->addUsingAlias(CampingPeer::SAISON_ID, $saisonId['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($zip)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $zip)) {
+                $zip = str_replace('*', '%', $zip);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::SAISON_ID, $saisonId, $comparison);
+        return $this->addUsingAlias(CampingPeer::ZIP, $zip, $comparison);
     }
 
     /**
-     * Filter the query on the created_at column
+     * Filter the query on the city column
      *
      * Example usage:
      * <code>
-     * $query->filterByCreatedAt('2011-03-14'); // WHERE created_at = '2011-03-14'
-     * $query->filterByCreatedAt('now'); // WHERE created_at = '2011-03-14'
-     * $query->filterByCreatedAt(array('max' => 'yesterday')); // WHERE created_at > '2011-03-13'
+     * $query->filterByCity('fooValue');   // WHERE city = 'fooValue'
+     * $query->filterByCity('%fooValue%'); // WHERE city LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $createdAt The value to use as filter.
-     *              Values can be integers (unix timestamps), DateTime objects, or strings.
-     *              Empty strings are treated as NULL.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $city The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterByCreatedAt($createdAt = null, $comparison = null)
+    public function filterByCity($city = null, $comparison = null)
     {
-        if (is_array($createdAt)) {
-            $useMinMax = false;
-            if (isset($createdAt['min'])) {
-                $this->addUsingAlias(CampingPeer::CREATED_AT, $createdAt['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($createdAt['max'])) {
-                $this->addUsingAlias(CampingPeer::CREATED_AT, $createdAt['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($city)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $city)) {
+                $city = str_replace('*', '%', $city);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::CREATED_AT, $createdAt, $comparison);
+        return $this->addUsingAlias(CampingPeer::CITY, $city, $comparison);
     }
 
     /**
-     * Filter the query on the updated_at column
+     * Filter the query on the mail column
      *
      * Example usage:
      * <code>
-     * $query->filterByUpdatedAt('2011-03-14'); // WHERE updated_at = '2011-03-14'
-     * $query->filterByUpdatedAt('now'); // WHERE updated_at = '2011-03-14'
-     * $query->filterByUpdatedAt(array('max' => 'yesterday')); // WHERE updated_at > '2011-03-13'
+     * $query->filterByMail('fooValue');   // WHERE mail = 'fooValue'
+     * $query->filterByMail('%fooValue%'); // WHERE mail LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $updatedAt The value to use as filter.
-     *              Values can be integers (unix timestamps), DateTime objects, or strings.
-     *              Empty strings are treated as NULL.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $mail The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function filterByUpdatedAt($updatedAt = null, $comparison = null)
+    public function filterByMail($mail = null, $comparison = null)
     {
-        if (is_array($updatedAt)) {
-            $useMinMax = false;
-            if (isset($updatedAt['min'])) {
-                $this->addUsingAlias(CampingPeer::UPDATED_AT, $updatedAt['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($updatedAt['max'])) {
-                $this->addUsingAlias(CampingPeer::UPDATED_AT, $updatedAt['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($mail)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $mail)) {
+                $mail = str_replace('*', '%', $mail);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CampingPeer::UPDATED_AT, $updatedAt, $comparison);
+        return $this->addUsingAlias(CampingPeer::MAIL, $mail, $comparison);
     }
 
     /**
-     * Filter the query by a related Site object
+     * Filter the query on the country column
      *
-     * @param   Site|PropelObjectCollection $site The related object(s) to use as filter
+     * Example usage:
+     * <code>
+     * $query->filterByCountry('fooValue');   // WHERE country = 'fooValue'
+     * $query->filterByCountry('%fooValue%'); // WHERE country LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $country The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByCountry($country = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($country)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $country)) {
+                $country = str_replace('*', '%', $country);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::COUNTRY, $country, $comparison);
+    }
+
+    /**
+     * Filter the query on the country_code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCountryCode('fooValue');   // WHERE country_code = 'fooValue'
+     * $query->filterByCountryCode('%fooValue%'); // WHERE country_code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $countryCode The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByCountryCode($countryCode = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($countryCode)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $countryCode)) {
+                $countryCode = str_replace('*', '%', $countryCode);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::COUNTRY_CODE, $countryCode, $comparison);
+    }
+
+    /**
+     * Filter the query on the phone1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPhone1('fooValue');   // WHERE phone1 = 'fooValue'
+     * $query->filterByPhone1('%fooValue%'); // WHERE phone1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $phone1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByPhone1($phone1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($phone1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone1)) {
+                $phone1 = str_replace('*', '%', $phone1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::PHONE1, $phone1, $comparison);
+    }
+
+    /**
+     * Filter the query on the phone2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPhone2('fooValue');   // WHERE phone2 = 'fooValue'
+     * $query->filterByPhone2('%fooValue%'); // WHERE phone2 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $phone2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByPhone2($phone2 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($phone2)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone2)) {
+                $phone2 = str_replace('*', '%', $phone2);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::PHONE2, $phone2, $comparison);
+    }
+
+    /**
+     * Filter the query on the fax column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByFax('fooValue');   // WHERE fax = 'fooValue'
+     * $query->filterByFax('%fooValue%'); // WHERE fax LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $fax The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByFax($fax = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($fax)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $fax)) {
+                $fax = str_replace('*', '%', $fax);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::FAX, $fax, $comparison);
+    }
+
+    /**
+     * Filter the query on the type_hebergement_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTypeHebergementId('fooValue');   // WHERE type_hebergement_id = 'fooValue'
+     * $query->filterByTypeHebergementId('%fooValue%'); // WHERE type_hebergement_id LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $typeHebergementId The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByTypeHebergementId($typeHebergementId = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($typeHebergementId)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $typeHebergementId)) {
+                $typeHebergementId = str_replace('*', '%', $typeHebergementId);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId, $comparison);
+    }
+
+    /**
+     * Filter the query on the ville_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByVilleId('fooValue');   // WHERE ville_id = 'fooValue'
+     * $query->filterByVilleId('%fooValue%'); // WHERE ville_id LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $villeId The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function filterByVilleId($villeId = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($villeId)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $villeId)) {
+                $villeId = str_replace('*', '%', $villeId);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CampingPeer::VILLE_ID, $villeId, $comparison);
+    }
+
+    /**
+     * Filter the query by a related TypeHebergement object
+     *
+     * @param   TypeHebergement|PropelObjectCollection $typeHebergement The related object(s) to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   CampingQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterBySite($site, $comparison = null)
+    public function filterByTypeHebergement($typeHebergement, $comparison = null)
     {
-        if ($site instanceof Site) {
+        if ($typeHebergement instanceof TypeHebergement) {
             return $this
-                ->addUsingAlias(CampingPeer::SITE_ID, $site->getId(), $comparison);
-        } elseif ($site instanceof PropelObjectCollection) {
+                ->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergement->getId(), $comparison);
+        } elseif ($typeHebergement instanceof PropelObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(CampingPeer::SITE_ID, $site->toKeyValue('PrimaryKey', 'Id'), $comparison);
+                ->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergement->toKeyValue('PrimaryKey', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterBySite() only accepts arguments of type Site or PropelCollection');
+            throw new PropelException('filterByTypeHebergement() only accepts arguments of type TypeHebergement or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the Site relation
+     * Adds a JOIN clause to the query using the TypeHebergement relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function joinSite($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Site');
+        $relationMap = $tableMap->getRelation('TypeHebergement');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -574,14 +763,14 @@ abstract class BaseCampingQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'Site');
+            $this->addJoinObject($join, 'TypeHebergement');
         }
 
         return $this;
     }
 
     /**
-     * Use the Site relation Site object
+     * Use the TypeHebergement relation TypeHebergement object
      *
      * @see       useQuery()
      *
@@ -589,127 +778,51 @@ abstract class BaseCampingQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\SiteQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\TypeHebergementQuery A secondary query class using the current class as primary query
      */
-    public function useSiteQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
-            ->joinSite($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Site', '\Cungfoo\Model\SiteQuery');
+            ->joinTypeHebergement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergement', '\Cungfoo\Model\TypeHebergementQuery');
     }
 
     /**
-     * Filter the query by a related Saison object
+     * Filter the query by a related CampingDestination object
      *
-     * @param   Saison|PropelObjectCollection $saison The related object(s) to use as filter
+     * @param   CampingDestination|PropelObjectCollection $campingDestination  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   CampingQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterBySaison($saison, $comparison = null)
+    public function filterByCampingDestination($campingDestination, $comparison = null)
     {
-        if ($saison instanceof Saison) {
+        if ($campingDestination instanceof CampingDestination) {
             return $this
-                ->addUsingAlias(CampingPeer::SAISON_ID, $saison->getId(), $comparison);
-        } elseif ($saison instanceof PropelObjectCollection) {
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-
+                ->addUsingAlias(CampingPeer::ID, $campingDestination->getCampingId(), $comparison);
+        } elseif ($campingDestination instanceof PropelObjectCollection) {
             return $this
-                ->addUsingAlias(CampingPeer::SAISON_ID, $saison->toKeyValue('PrimaryKey', 'Id'), $comparison);
-        } else {
-            throw new PropelException('filterBySaison() only accepts arguments of type Saison or PropelCollection');
-        }
-    }
-
-    /**
-     * Adds a JOIN clause to the query using the Saison relation
-     *
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return CampingQuery The current query, for fluid interface
-     */
-    public function joinSaison($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Saison');
-
-        // create a ModelJoin object for this join
-        $join = new ModelJoin();
-        $join->setJoinType($joinType);
-        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
-        if ($previousJoin = $this->getPreviousJoin()) {
-            $join->setPreviousJoin($previousJoin);
-        }
-
-        // add the ModelJoin to the current object
-        if ($relationAlias) {
-            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
-            $this->addJoinObject($join, $relationAlias);
-        } else {
-            $this->addJoinObject($join, 'Saison');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Use the Saison relation Saison object
-     *
-     * @see       useQuery()
-     *
-     * @param     string $relationAlias optional alias for the relation,
-     *                                   to be used as main alias in the secondary query
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return   \Cungfoo\Model\SaisonQuery A secondary query class using the current class as primary query
-     */
-    public function useSaisonQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        return $this
-            ->joinSaison($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Saison', '\Cungfoo\Model\SaisonQuery');
-    }
-
-    /**
-     * Filter the query by a related CampingI18n object
-     *
-     * @param   CampingI18n|PropelObjectCollection $campingI18n  the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   CampingQuery The current query, for fluid interface
-     * @throws   PropelException - if the provided filter is invalid.
-     */
-    public function filterByCampingI18n($campingI18n, $comparison = null)
-    {
-        if ($campingI18n instanceof CampingI18n) {
-            return $this
-                ->addUsingAlias(CampingPeer::ID, $campingI18n->getId(), $comparison);
-        } elseif ($campingI18n instanceof PropelObjectCollection) {
-            return $this
-                ->useCampingI18nQuery()
-                ->filterByPrimaryKeys($campingI18n->getPrimaryKeys())
+                ->useCampingDestinationQuery()
+                ->filterByPrimaryKeys($campingDestination->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCampingI18n() only accepts arguments of type CampingI18n or PropelCollection');
+            throw new PropelException('filterByCampingDestination() only accepts arguments of type CampingDestination or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the CampingI18n relation
+     * Adds a JOIN clause to the query using the CampingDestination relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function joinCampingI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function joinCampingDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('CampingI18n');
+        $relationMap = $tableMap->getRelation('CampingDestination');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -724,14 +837,14 @@ abstract class BaseCampingQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'CampingI18n');
+            $this->addJoinObject($join, 'CampingDestination');
         }
 
         return $this;
     }
 
     /**
-     * Use the CampingI18n relation CampingI18n object
+     * Use the CampingDestination relation CampingDestination object
      *
      * @see       useQuery()
      *
@@ -739,13 +852,303 @@ abstract class BaseCampingQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingI18nQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\CampingDestinationQuery A secondary query class using the current class as primary query
      */
-    public function useCampingI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function useCampingDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinCampingI18n($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingI18n', '\Cungfoo\Model\CampingI18nQuery');
+            ->joinCampingDestination($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'CampingDestination', '\Cungfoo\Model\CampingDestinationQuery');
+    }
+
+    /**
+     * Filter the query by a related CampingActivite object
+     *
+     * @param   CampingActivite|PropelObjectCollection $campingActivite  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByCampingActivite($campingActivite, $comparison = null)
+    {
+        if ($campingActivite instanceof CampingActivite) {
+            return $this
+                ->addUsingAlias(CampingPeer::ID, $campingActivite->getCampingId(), $comparison);
+        } elseif ($campingActivite instanceof PropelObjectCollection) {
+            return $this
+                ->useCampingActiviteQuery()
+                ->filterByPrimaryKeys($campingActivite->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByCampingActivite() only accepts arguments of type CampingActivite or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the CampingActivite relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function joinCampingActivite($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('CampingActivite');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'CampingActivite');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the CampingActivite relation CampingActivite object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\CampingActiviteQuery A secondary query class using the current class as primary query
+     */
+    public function useCampingActiviteQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinCampingActivite($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'CampingActivite', '\Cungfoo\Model\CampingActiviteQuery');
+    }
+
+    /**
+     * Filter the query by a related CampingEquipement object
+     *
+     * @param   CampingEquipement|PropelObjectCollection $campingEquipement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByCampingEquipement($campingEquipement, $comparison = null)
+    {
+        if ($campingEquipement instanceof CampingEquipement) {
+            return $this
+                ->addUsingAlias(CampingPeer::ID, $campingEquipement->getCampingId(), $comparison);
+        } elseif ($campingEquipement instanceof PropelObjectCollection) {
+            return $this
+                ->useCampingEquipementQuery()
+                ->filterByPrimaryKeys($campingEquipement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByCampingEquipement() only accepts arguments of type CampingEquipement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the CampingEquipement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function joinCampingEquipement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('CampingEquipement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'CampingEquipement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the CampingEquipement relation CampingEquipement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\CampingEquipementQuery A secondary query class using the current class as primary query
+     */
+    public function useCampingEquipementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinCampingEquipement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'CampingEquipement', '\Cungfoo\Model\CampingEquipementQuery');
+    }
+
+    /**
+     * Filter the query by a related CampingServiceComplementaire object
+     *
+     * @param   CampingServiceComplementaire|PropelObjectCollection $campingServiceComplementaire  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByCampingServiceComplementaire($campingServiceComplementaire, $comparison = null)
+    {
+        if ($campingServiceComplementaire instanceof CampingServiceComplementaire) {
+            return $this
+                ->addUsingAlias(CampingPeer::ID, $campingServiceComplementaire->getCampingId(), $comparison);
+        } elseif ($campingServiceComplementaire instanceof PropelObjectCollection) {
+            return $this
+                ->useCampingServiceComplementaireQuery()
+                ->filterByPrimaryKeys($campingServiceComplementaire->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByCampingServiceComplementaire() only accepts arguments of type CampingServiceComplementaire or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the CampingServiceComplementaire relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function joinCampingServiceComplementaire($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('CampingServiceComplementaire');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'CampingServiceComplementaire');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the CampingServiceComplementaire relation CampingServiceComplementaire object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\CampingServiceComplementaireQuery A secondary query class using the current class as primary query
+     */
+    public function useCampingServiceComplementaireQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinCampingServiceComplementaire($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'CampingServiceComplementaire', '\Cungfoo\Model\CampingServiceComplementaireQuery');
+    }
+
+    /**
+     * Filter the query by a related Destination object
+     * using the camping_destination table as cross reference
+     *
+     * @param   Destination $destination the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     */
+    public function filterByDestination($destination, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useCampingDestinationQuery()
+            ->filterByDestination($destination, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Activite object
+     * using the camping_activite table as cross reference
+     *
+     * @param   Activite $activite the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     */
+    public function filterByActivite($activite, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useCampingActiviteQuery()
+            ->filterByActivite($activite, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Equipement object
+     * using the camping_equipement table as cross reference
+     *
+     * @param   Equipement $equipement the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     */
+    public function filterByEquipement($equipement, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useCampingEquipementQuery()
+            ->filterByEquipement($equipement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related ServiceComplementaire object
+     * using the camping_service_complementaire table as cross reference
+     *
+     * @param   ServiceComplementaire $serviceComplementaire the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     */
+    public function filterByServiceComplementaire($serviceComplementaire, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useCampingServiceComplementaireQuery()
+            ->filterByServiceComplementaire($serviceComplementaire, $comparison)
+            ->endUse();
     }
 
     /**
@@ -762,128 +1165,6 @@ abstract class BaseCampingQuery extends ModelCriteria
         }
 
         return $this;
-    }
-
-    // timestampable behavior
-
-    /**
-     * Filter by the latest updated
-     *
-     * @param      int $nbDays Maximum age of the latest update in days
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function recentlyUpdated($nbDays = 7)
-    {
-        return $this->addUsingAlias(CampingPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
-    }
-
-    /**
-     * Order by update date desc
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function lastUpdatedFirst()
-    {
-        return $this->addDescendingOrderByColumn(CampingPeer::UPDATED_AT);
-    }
-
-    /**
-     * Order by update date asc
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function firstUpdatedFirst()
-    {
-        return $this->addAscendingOrderByColumn(CampingPeer::UPDATED_AT);
-    }
-
-    /**
-     * Filter by the latest created
-     *
-     * @param      int $nbDays Maximum age of in days
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function recentlyCreated($nbDays = 7)
-    {
-        return $this->addUsingAlias(CampingPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
-    }
-
-    /**
-     * Order by create date desc
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function lastCreatedFirst()
-    {
-        return $this->addDescendingOrderByColumn(CampingPeer::CREATED_AT);
-    }
-
-    /**
-     * Order by create date asc
-     *
-     * @return     CampingQuery The current query, for fluid interface
-     */
-    public function firstCreatedFirst()
-    {
-        return $this->addAscendingOrderByColumn(CampingPeer::CREATED_AT);
-    }
-    // i18n behavior
-
-    /**
-     * Adds a JOIN clause to the query using the i18n relation
-     *
-     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
-     *
-     * @return    CampingQuery The current query, for fluid interface
-     */
-    public function joinI18n($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        $relationName = $relationAlias ? $relationAlias : 'CampingI18n';
-
-        return $this
-            ->joinCampingI18n($relationAlias, $joinType)
-            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
-    }
-
-    /**
-     * Adds a JOIN clause to the query and hydrates the related I18n object.
-     * Shortcut for $c->joinI18n($locale)->with()
-     *
-     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
-     *
-     * @return    CampingQuery The current query, for fluid interface
-     */
-    public function joinWithI18n($locale = 'en', $joinType = Criteria::LEFT_JOIN)
-    {
-        $this
-            ->joinI18n($locale, null, $joinType)
-            ->with('CampingI18n');
-        $this->with['CampingI18n']->setIsWithOneToMany(false);
-
-        return $this;
-    }
-
-    /**
-     * Use the I18n relation query object
-     *
-     * @see       useQuery()
-     *
-     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
-     *
-     * @return    CampingI18nQuery A secondary query class using the current class as primary query
-     */
-    public function useI18nQuery($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        return $this
-            ->joinI18n($locale, $relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingI18n', 'Cungfoo\Model\CampingI18nQuery');
     }
 
 }

@@ -53,7 +53,6 @@ class SiteTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::ONE_TO_MANY, array('id' => 'site_id', ), null, null, 'Campings');
     } // buildRelations()
 
     /**

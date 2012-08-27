@@ -39,14 +39,6 @@ class BaseSiteType extends AppAwareType
             'label' => 'site.order',
             'required' => false,
         ));
-        $builder->add('saisons', 'model', array(
-            'class' => 'Cungfoo\Model\Saison',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'site.saisons',
-            'required' => false,
-        ));
     }
 
     /**
