@@ -66,6 +66,8 @@ class CrudController implements ControllerProviderInterface
         $controllers
             ->get(sprintf('/%s', $this->prefix), function () use ($app)
             {
+
+                $utils = new \Cungfoo\Lib\Utils();
                 $queryContextualized    = $app['context']->contextualizeQuery(new $this->queryClass());
 
                 // Context form
@@ -76,7 +78,7 @@ class CrudController implements ControllerProviderInterface
                 ));
 
                 // Listing
-                $listingClass           = sprintf("\Cungfoo\Listing\%sListing", ucfirst($this->modelName));
+                $listingClass           = sprintf("\Cungfoo\Listing\%sListing", $utils->camelize($this->modelName));
                 $listing                = new $listingClass($app);
 
                 $listing->setFiller(new Filler\PropelFiller($queryContextualized->find()));
