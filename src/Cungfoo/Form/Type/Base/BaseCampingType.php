@@ -94,17 +94,19 @@ class BaseCampingType extends AppAwareType
             'label' => 'camping.fax',
             'required' => false,
         ));
-        $builder->add('type_hebergement', 'model', array(
-            'class' => '\Cungfoo\Model\TypeHebergement',
+        $builder->add('ville', 'model', array(
+            'class' => '\Cungfoo\Model\Ville',
             'constraints' => array(
             ),
-            'label' => 'camping.type_hebergement',
+            'label' => 'camping.ville',
             'required' => false,
         ));
-        $builder->add('ville_id', 'text', array(
+        $builder->add('type_hebergements', 'model', array(
+            'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(
             ),
-            'label' => 'camping.ville_id',
+            'multiple' => true,
+            'label' => 'camping.type_hebergements',
             'required' => false,
         ));
         $builder->add('destinations', 'model', array(

@@ -26,6 +26,8 @@ use Cungfoo\Model\CampingPeer;
 use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\CampingServiceComplementaire;
 use Cungfoo\Model\CampingServiceComplementaireQuery;
+use Cungfoo\Model\CampingTypeHebergement;
+use Cungfoo\Model\CampingTypeHebergementQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Equipement;
@@ -34,6 +36,8 @@ use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
+use Cungfoo\Model\Ville;
+use Cungfoo\Model\VilleQuery;
 
 /**
  * Base class that represents a row from the 'camping' table.
@@ -136,21 +140,21 @@ abstract class BaseCamping extends BaseObject implements Persistent
     protected $fax;
 
     /**
-     * The value for the type_hebergement_id field.
-     * @var        string
-     */
-    protected $type_hebergement_id;
-
-    /**
      * The value for the ville_id field.
      * @var        string
      */
     protected $ville_id;
 
     /**
-     * @var        TypeHebergement
+     * @var        Ville
      */
-    protected $aTypeHebergement;
+    protected $aVille;
+
+    /**
+     * @var        PropelObjectCollection|CampingTypeHebergement[] Collection to store aggregation of CampingTypeHebergement objects.
+     */
+    protected $collCampingTypeHebergements;
+    protected $collCampingTypeHebergementsPartial;
 
     /**
      * @var        PropelObjectCollection|CampingDestination[] Collection to store aggregation of CampingDestination objects.
@@ -175,6 +179,11 @@ abstract class BaseCamping extends BaseObject implements Persistent
      */
     protected $collCampingServiceComplementaires;
     protected $collCampingServiceComplementairesPartial;
+
+    /**
+     * @var        PropelObjectCollection|TypeHebergement[] Collection to store aggregation of TypeHebergement objects.
+     */
+    protected $collTypeHebergements;
 
     /**
      * @var        PropelObjectCollection|Destination[] Collection to store aggregation of Destination objects.
@@ -214,6 +223,12 @@ abstract class BaseCamping extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $typeHebergementsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $destinationsScheduledForDeletion = null;
 
     /**
@@ -233,6 +248,12 @@ abstract class BaseCamping extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $serviceComplementairesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $campingTypeHebergementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -376,16 +397,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
     public function getFax()
     {
         return $this->fax;
-    }
-
-    /**
-     * Get the [type_hebergement_id] column value.
-     *
-     * @return string
-     */
-    public function getTypeHebergementId()
-    {
-        return $this->type_hebergement_id;
     }
 
     /**
@@ -651,31 +662,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
     } // setFax()
 
     /**
-     * Set the value of [type_hebergement_id] column.
-     *
-     * @param string $v new value
-     * @return Camping The current object (for fluent API support)
-     */
-    public function setTypeHebergementId($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->type_hebergement_id !== $v) {
-            $this->type_hebergement_id = $v;
-            $this->modifiedColumns[] = CampingPeer::TYPE_HEBERGEMENT_ID;
-        }
-
-        if ($this->aTypeHebergement !== null && $this->aTypeHebergement->getId() !== $v) {
-            $this->aTypeHebergement = null;
-        }
-
-
-        return $this;
-    } // setTypeHebergementId()
-
-    /**
      * Set the value of [ville_id] column.
      *
      * @param string $v new value
@@ -690,6 +676,10 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if ($this->ville_id !== $v) {
             $this->ville_id = $v;
             $this->modifiedColumns[] = CampingPeer::VILLE_ID;
+        }
+
+        if ($this->aVille !== null && $this->aVille->getId() !== $v) {
+            $this->aVille = null;
         }
 
 
@@ -740,8 +730,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
             $this->phone1 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->phone2 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
             $this->fax = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->type_hebergement_id = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->ville_id = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->ville_id = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -750,7 +739,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 14; // 14 = CampingPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 13; // 13 = CampingPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Camping object", $e);
@@ -773,8 +762,8 @@ abstract class BaseCamping extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
-        if ($this->aTypeHebergement !== null && $this->type_hebergement_id !== $this->aTypeHebergement->getId()) {
-            $this->aTypeHebergement = null;
+        if ($this->aVille !== null && $this->ville_id !== $this->aVille->getId()) {
+            $this->aVille = null;
         }
     } // ensureConsistency
 
@@ -815,7 +804,9 @@ abstract class BaseCamping extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aTypeHebergement = null;
+            $this->aVille = null;
+            $this->collCampingTypeHebergements = null;
+
             $this->collCampingDestinations = null;
 
             $this->collCampingActivites = null;
@@ -824,6 +815,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
 
             $this->collCampingServiceComplementaires = null;
 
+            $this->collTypeHebergements = null;
             $this->collDestinations = null;
             $this->collActivites = null;
             $this->collEquipements = null;
@@ -946,11 +938,11 @@ abstract class BaseCamping extends BaseObject implements Persistent
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aTypeHebergement !== null) {
-                if ($this->aTypeHebergement->isModified() || $this->aTypeHebergement->isNew()) {
-                    $affectedRows += $this->aTypeHebergement->save($con);
+            if ($this->aVille !== null) {
+                if ($this->aVille->isModified() || $this->aVille->isNew()) {
+                    $affectedRows += $this->aVille->save($con);
                 }
-                $this->setTypeHebergement($this->aTypeHebergement);
+                $this->setVille($this->aVille);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -962,6 +954,26 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->typeHebergementsScheduledForDeletion !== null) {
+                if (!$this->typeHebergementsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->typeHebergementsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    CampingTypeHebergementQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->typeHebergementsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getTypeHebergements() as $typeHebergement) {
+                    if ($typeHebergement->isModified()) {
+                        $typeHebergement->save($con);
+                    }
+                }
             }
 
             if ($this->destinationsScheduledForDeletion !== null) {
@@ -1040,6 +1052,23 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 foreach ($this->getServiceComplementaires() as $serviceComplementaire) {
                     if ($serviceComplementaire->isModified()) {
                         $serviceComplementaire->save($con);
+                    }
+                }
+            }
+
+            if ($this->campingTypeHebergementsScheduledForDeletion !== null) {
+                if (!$this->campingTypeHebergementsScheduledForDeletion->isEmpty()) {
+                    CampingTypeHebergementQuery::create()
+                        ->filterByPrimaryKeys($this->campingTypeHebergementsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->campingTypeHebergementsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collCampingTypeHebergements !== null) {
+                foreach ($this->collCampingTypeHebergements as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
                     }
                 }
             }
@@ -1170,9 +1199,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(CampingPeer::FAX)) {
             $modifiedColumns[':p' . $index++]  = '`FAX`';
         }
-        if ($this->isColumnModified(CampingPeer::TYPE_HEBERGEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`TYPE_HEBERGEMENT_ID`';
-        }
         if ($this->isColumnModified(CampingPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`VILLE_ID`';
         }
@@ -1222,9 +1248,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
                         break;
                     case '`FAX`':
                         $stmt->bindValue($identifier, $this->fax, PDO::PARAM_STR);
-                        break;
-                    case '`TYPE_HEBERGEMENT_ID`':
-                        $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_STR);
                         break;
                     case '`VILLE_ID`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_STR);
@@ -1321,9 +1344,9 @@ abstract class BaseCamping extends BaseObject implements Persistent
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aTypeHebergement !== null) {
-                if (!$this->aTypeHebergement->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aTypeHebergement->getValidationFailures());
+            if ($this->aVille !== null) {
+                if (!$this->aVille->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aVille->getValidationFailures());
                 }
             }
 
@@ -1332,6 +1355,14 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 $failureMap = array_merge($failureMap, $retval);
             }
 
+
+                if ($this->collCampingTypeHebergements !== null) {
+                    foreach ($this->collCampingTypeHebergements as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
 
                 if ($this->collCampingDestinations !== null) {
                     foreach ($this->collCampingDestinations as $referrerFK) {
@@ -1437,9 +1468,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 return $this->getFax();
                 break;
             case 12:
-                return $this->getTypeHebergementId();
-                break;
-            case 13:
                 return $this->getVilleId();
                 break;
             default:
@@ -1483,12 +1511,14 @@ abstract class BaseCamping extends BaseObject implements Persistent
             $keys[9] => $this->getPhone1(),
             $keys[10] => $this->getPhone2(),
             $keys[11] => $this->getFax(),
-            $keys[12] => $this->getTypeHebergementId(),
-            $keys[13] => $this->getVilleId(),
+            $keys[12] => $this->getVilleId(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->aTypeHebergement) {
-                $result['TypeHebergement'] = $this->aTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            if (null !== $this->aVille) {
+                $result['Ville'] = $this->aVille->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collCampingTypeHebergements) {
+                $result['CampingTypeHebergements'] = $this->collCampingTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collCampingDestinations) {
                 $result['CampingDestinations'] = $this->collCampingDestinations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1573,9 +1603,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
                 $this->setFax($value);
                 break;
             case 12:
-                $this->setTypeHebergementId($value);
-                break;
-            case 13:
                 $this->setVilleId($value);
                 break;
         } // switch()
@@ -1614,8 +1641,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if (array_key_exists($keys[9], $arr)) $this->setPhone1($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setPhone2($arr[$keys[10]]);
         if (array_key_exists($keys[11], $arr)) $this->setFax($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setTypeHebergementId($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setVilleId($arr[$keys[13]]);
+        if (array_key_exists($keys[12], $arr)) $this->setVilleId($arr[$keys[12]]);
     }
 
     /**
@@ -1639,7 +1665,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(CampingPeer::PHONE1)) $criteria->add(CampingPeer::PHONE1, $this->phone1);
         if ($this->isColumnModified(CampingPeer::PHONE2)) $criteria->add(CampingPeer::PHONE2, $this->phone2);
         if ($this->isColumnModified(CampingPeer::FAX)) $criteria->add(CampingPeer::FAX, $this->fax);
-        if ($this->isColumnModified(CampingPeer::TYPE_HEBERGEMENT_ID)) $criteria->add(CampingPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
         if ($this->isColumnModified(CampingPeer::VILLE_ID)) $criteria->add(CampingPeer::VILLE_ID, $this->ville_id);
 
         return $criteria;
@@ -1715,7 +1740,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
         $copyObj->setPhone1($this->getPhone1());
         $copyObj->setPhone2($this->getPhone2());
         $copyObj->setFax($this->getFax());
-        $copyObj->setTypeHebergementId($this->getTypeHebergementId());
         $copyObj->setVilleId($this->getVilleId());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1724,6 +1748,12 @@ abstract class BaseCamping extends BaseObject implements Persistent
             $copyObj->setNew(false);
             // store object hash to prevent cycle
             $this->startCopy = true;
+
+            foreach ($this->getCampingTypeHebergements() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addCampingTypeHebergement($relObj->copy($deepCopy));
+                }
+            }
 
             foreach ($this->getCampingDestinations() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
@@ -1800,24 +1830,24 @@ abstract class BaseCamping extends BaseObject implements Persistent
     }
 
     /**
-     * Declares an association between this object and a TypeHebergement object.
+     * Declares an association between this object and a Ville object.
      *
-     * @param             TypeHebergement $v
+     * @param             Ville $v
      * @return Camping The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setTypeHebergement(TypeHebergement $v = null)
+    public function setVille(Ville $v = null)
     {
         if ($v === null) {
-            $this->setTypeHebergementId(NULL);
+            $this->setVilleId(NULL);
         } else {
-            $this->setTypeHebergementId($v->getId());
+            $this->setVilleId($v->getId());
         }
 
-        $this->aTypeHebergement = $v;
+        $this->aVille = $v;
 
         // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the TypeHebergement object, it will not be re-added.
+        // If this object has already been added to the Ville object, it will not be re-added.
         if ($v !== null) {
             $v->addCamping($this);
         }
@@ -1828,26 +1858,26 @@ abstract class BaseCamping extends BaseObject implements Persistent
 
 
     /**
-     * Get the associated TypeHebergement object
+     * Get the associated Ville object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @return TypeHebergement The associated TypeHebergement object.
+     * @return Ville The associated Ville object.
      * @throws PropelException
      */
-    public function getTypeHebergement(PropelPDO $con = null)
+    public function getVille(PropelPDO $con = null)
     {
-        if ($this->aTypeHebergement === null && (($this->type_hebergement_id !== "" && $this->type_hebergement_id !== null))) {
-            $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->type_hebergement_id, $con);
+        if ($this->aVille === null && (($this->ville_id !== "" && $this->ville_id !== null))) {
+            $this->aVille = VilleQuery::create()->findPk($this->ville_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aTypeHebergement->addCampings($this);
+                $this->aVille->addCampings($this);
              */
         }
 
-        return $this->aTypeHebergement;
+        return $this->aVille;
     }
 
 
@@ -1861,6 +1891,9 @@ abstract class BaseCamping extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
+        if ('CampingTypeHebergement' == $relationName) {
+            $this->initCampingTypeHebergements();
+        }
         if ('CampingDestination' == $relationName) {
             $this->initCampingDestinations();
         }
@@ -1873,6 +1906,238 @@ abstract class BaseCamping extends BaseObject implements Persistent
         if ('CampingServiceComplementaire' == $relationName) {
             $this->initCampingServiceComplementaires();
         }
+    }
+
+    /**
+     * Clears out the collCampingTypeHebergements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addCampingTypeHebergements()
+     */
+    public function clearCampingTypeHebergements()
+    {
+        $this->collCampingTypeHebergements = null; // important to set this to null since that means it is uninitialized
+        $this->collCampingTypeHebergementsPartial = null;
+    }
+
+    /**
+     * reset is the collCampingTypeHebergements collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialCampingTypeHebergements($v = true)
+    {
+        $this->collCampingTypeHebergementsPartial = $v;
+    }
+
+    /**
+     * Initializes the collCampingTypeHebergements collection.
+     *
+     * By default this just sets the collCampingTypeHebergements collection to an empty array (like clearcollCampingTypeHebergements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initCampingTypeHebergements($overrideExisting = true)
+    {
+        if (null !== $this->collCampingTypeHebergements && !$overrideExisting) {
+            return;
+        }
+        $this->collCampingTypeHebergements = new PropelObjectCollection();
+        $this->collCampingTypeHebergements->setModel('CampingTypeHebergement');
+    }
+
+    /**
+     * Gets an array of CampingTypeHebergement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Camping is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|CampingTypeHebergement[] List of CampingTypeHebergement objects
+     * @throws PropelException
+     */
+    public function getCampingTypeHebergements($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collCampingTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collCampingTypeHebergements || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collCampingTypeHebergements) {
+                // return empty collection
+                $this->initCampingTypeHebergements();
+            } else {
+                $collCampingTypeHebergements = CampingTypeHebergementQuery::create(null, $criteria)
+                    ->filterByCamping($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collCampingTypeHebergementsPartial && count($collCampingTypeHebergements)) {
+                      $this->initCampingTypeHebergements(false);
+
+                      foreach($collCampingTypeHebergements as $obj) {
+                        if (false == $this->collCampingTypeHebergements->contains($obj)) {
+                          $this->collCampingTypeHebergements->append($obj);
+                        }
+                      }
+
+                      $this->collCampingTypeHebergementsPartial = true;
+                    }
+
+                    return $collCampingTypeHebergements;
+                }
+
+                if($partial && $this->collCampingTypeHebergements) {
+                    foreach($this->collCampingTypeHebergements as $obj) {
+                        if($obj->isNew()) {
+                            $collCampingTypeHebergements[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collCampingTypeHebergements = $collCampingTypeHebergements;
+                $this->collCampingTypeHebergementsPartial = false;
+            }
+        }
+
+        return $this->collCampingTypeHebergements;
+    }
+
+    /**
+     * Sets a collection of CampingTypeHebergement objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $campingTypeHebergements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setCampingTypeHebergements(PropelCollection $campingTypeHebergements, PropelPDO $con = null)
+    {
+        $this->campingTypeHebergementsScheduledForDeletion = $this->getCampingTypeHebergements(new Criteria(), $con)->diff($campingTypeHebergements);
+
+        foreach ($this->campingTypeHebergementsScheduledForDeletion as $campingTypeHebergementRemoved) {
+            $campingTypeHebergementRemoved->setCamping(null);
+        }
+
+        $this->collCampingTypeHebergements = null;
+        foreach ($campingTypeHebergements as $campingTypeHebergement) {
+            $this->addCampingTypeHebergement($campingTypeHebergement);
+        }
+
+        $this->collCampingTypeHebergements = $campingTypeHebergements;
+        $this->collCampingTypeHebergementsPartial = false;
+    }
+
+    /**
+     * Returns the number of related CampingTypeHebergement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related CampingTypeHebergement objects.
+     * @throws PropelException
+     */
+    public function countCampingTypeHebergements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collCampingTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collCampingTypeHebergements || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collCampingTypeHebergements) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getCampingTypeHebergements());
+                }
+                $query = CampingTypeHebergementQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByCamping($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collCampingTypeHebergements);
+        }
+    }
+
+    /**
+     * Method called to associate a CampingTypeHebergement object to this object
+     * through the CampingTypeHebergement foreign key attribute.
+     *
+     * @param    CampingTypeHebergement $l CampingTypeHebergement
+     * @return Camping The current object (for fluent API support)
+     */
+    public function addCampingTypeHebergement(CampingTypeHebergement $l)
+    {
+        if ($this->collCampingTypeHebergements === null) {
+            $this->initCampingTypeHebergements();
+            $this->collCampingTypeHebergementsPartial = true;
+        }
+        if (!in_array($l, $this->collCampingTypeHebergements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddCampingTypeHebergement($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	CampingTypeHebergement $campingTypeHebergement The campingTypeHebergement object to add.
+     */
+    protected function doAddCampingTypeHebergement($campingTypeHebergement)
+    {
+        $this->collCampingTypeHebergements[]= $campingTypeHebergement;
+        $campingTypeHebergement->setCamping($this);
+    }
+
+    /**
+     * @param	CampingTypeHebergement $campingTypeHebergement The campingTypeHebergement object to remove.
+     */
+    public function removeCampingTypeHebergement($campingTypeHebergement)
+    {
+        if ($this->getCampingTypeHebergements()->contains($campingTypeHebergement)) {
+            $this->collCampingTypeHebergements->remove($this->collCampingTypeHebergements->search($campingTypeHebergement));
+            if (null === $this->campingTypeHebergementsScheduledForDeletion) {
+                $this->campingTypeHebergementsScheduledForDeletion = clone $this->collCampingTypeHebergements;
+                $this->campingTypeHebergementsScheduledForDeletion->clear();
+            }
+            $this->campingTypeHebergementsScheduledForDeletion[]= $campingTypeHebergement;
+            $campingTypeHebergement->setCamping(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Camping is new, it will return
+     * an empty collection; or if this Camping has previously
+     * been saved, it will retrieve related CampingTypeHebergements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Camping.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|CampingTypeHebergement[] List of CampingTypeHebergement objects
+     */
+    public function getCampingTypeHebergementsJoinTypeHebergement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = CampingTypeHebergementQuery::create(null, $criteria);
+        $query->joinWith('TypeHebergement', $join_behavior);
+
+        return $this->getCampingTypeHebergements($query, $con);
     }
 
     /**
@@ -2804,6 +3069,174 @@ abstract class BaseCamping extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collTypeHebergements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addTypeHebergements()
+     */
+    public function clearTypeHebergements()
+    {
+        $this->collTypeHebergements = null; // important to set this to null since that means it is uninitialized
+        $this->collTypeHebergementsPartial = null;
+    }
+
+    /**
+     * Initializes the collTypeHebergements collection.
+     *
+     * By default this just sets the collTypeHebergements collection to an empty collection (like clearTypeHebergements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initTypeHebergements()
+    {
+        $this->collTypeHebergements = new PropelObjectCollection();
+        $this->collTypeHebergements->setModel('TypeHebergement');
+    }
+
+    /**
+     * Gets a collection of TypeHebergement objects related by a many-to-many relationship
+     * to the current object by way of the camping_type_hebergement cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Camping is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|TypeHebergement[] List of TypeHebergement objects
+     */
+    public function getTypeHebergements($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collTypeHebergements || null !== $criteria) {
+            if ($this->isNew() && null === $this->collTypeHebergements) {
+                // return empty collection
+                $this->initTypeHebergements();
+            } else {
+                $collTypeHebergements = TypeHebergementQuery::create(null, $criteria)
+                    ->filterByCamping($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collTypeHebergements;
+                }
+                $this->collTypeHebergements = $collTypeHebergements;
+            }
+        }
+
+        return $this->collTypeHebergements;
+    }
+
+    /**
+     * Sets a collection of TypeHebergement objects related by a many-to-many relationship
+     * to the current object by way of the camping_type_hebergement cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $typeHebergements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setTypeHebergements(PropelCollection $typeHebergements, PropelPDO $con = null)
+    {
+        $this->clearTypeHebergements();
+        $currentTypeHebergements = $this->getTypeHebergements();
+
+        $this->typeHebergementsScheduledForDeletion = $currentTypeHebergements->diff($typeHebergements);
+
+        foreach ($typeHebergements as $typeHebergement) {
+            if (!$currentTypeHebergements->contains($typeHebergement)) {
+                $this->doAddTypeHebergement($typeHebergement);
+            }
+        }
+
+        $this->collTypeHebergements = $typeHebergements;
+    }
+
+    /**
+     * Gets the number of TypeHebergement objects related by a many-to-many relationship
+     * to the current object by way of the camping_type_hebergement cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related TypeHebergement objects
+     */
+    public function countTypeHebergements($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collTypeHebergements || null !== $criteria) {
+            if ($this->isNew() && null === $this->collTypeHebergements) {
+                return 0;
+            } else {
+                $query = TypeHebergementQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByCamping($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collTypeHebergements);
+        }
+    }
+
+    /**
+     * Associate a TypeHebergement object to this object
+     * through the camping_type_hebergement cross reference table.
+     *
+     * @param  TypeHebergement $typeHebergement The CampingTypeHebergement object to relate
+     * @return void
+     */
+    public function addTypeHebergement(TypeHebergement $typeHebergement)
+    {
+        if ($this->collTypeHebergements === null) {
+            $this->initTypeHebergements();
+        }
+        if (!$this->collTypeHebergements->contains($typeHebergement)) { // only add it if the **same** object is not already associated
+            $this->doAddTypeHebergement($typeHebergement);
+
+            $this->collTypeHebergements[]= $typeHebergement;
+        }
+    }
+
+    /**
+     * @param	TypeHebergement $typeHebergement The typeHebergement object to add.
+     */
+    protected function doAddTypeHebergement($typeHebergement)
+    {
+        $campingTypeHebergement = new CampingTypeHebergement();
+        $campingTypeHebergement->setTypeHebergement($typeHebergement);
+        $this->addCampingTypeHebergement($campingTypeHebergement);
+    }
+
+    /**
+     * Remove a TypeHebergement object to this object
+     * through the camping_type_hebergement cross reference table.
+     *
+     * @param TypeHebergement $typeHebergement The CampingTypeHebergement object to relate
+     * @return void
+     */
+    public function removeTypeHebergement(TypeHebergement $typeHebergement)
+    {
+        if ($this->getTypeHebergements()->contains($typeHebergement)) {
+            $this->collTypeHebergements->remove($this->collTypeHebergements->search($typeHebergement));
+            if (null === $this->typeHebergementsScheduledForDeletion) {
+                $this->typeHebergementsScheduledForDeletion = clone $this->collTypeHebergements;
+                $this->typeHebergementsScheduledForDeletion->clear();
+            }
+            $this->typeHebergementsScheduledForDeletion[]= $typeHebergement;
+        }
+    }
+
+    /**
      * Clears out the collDestinations collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -3492,7 +3925,6 @@ abstract class BaseCamping extends BaseObject implements Persistent
         $this->phone1 = null;
         $this->phone2 = null;
         $this->fax = null;
-        $this->type_hebergement_id = null;
         $this->ville_id = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -3514,6 +3946,11 @@ abstract class BaseCamping extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collCampingTypeHebergements) {
+                foreach ($this->collCampingTypeHebergements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampingDestinations) {
                 foreach ($this->collCampingDestinations as $o) {
                     $o->clearAllReferences($deep);
@@ -3531,6 +3968,11 @@ abstract class BaseCamping extends BaseObject implements Persistent
             }
             if ($this->collCampingServiceComplementaires) {
                 foreach ($this->collCampingServiceComplementaires as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collTypeHebergements) {
+                foreach ($this->collTypeHebergements as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -3556,6 +3998,10 @@ abstract class BaseCamping extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        if ($this->collCampingTypeHebergements instanceof PropelCollection) {
+            $this->collCampingTypeHebergements->clearIterator();
+        }
+        $this->collCampingTypeHebergements = null;
         if ($this->collCampingDestinations instanceof PropelCollection) {
             $this->collCampingDestinations->clearIterator();
         }
@@ -3572,6 +4018,10 @@ abstract class BaseCamping extends BaseObject implements Persistent
             $this->collCampingServiceComplementaires->clearIterator();
         }
         $this->collCampingServiceComplementaires = null;
+        if ($this->collTypeHebergements instanceof PropelCollection) {
+            $this->collTypeHebergements->clearIterator();
+        }
+        $this->collTypeHebergements = null;
         if ($this->collDestinations instanceof PropelCollection) {
             $this->collDestinations->clearIterator();
         }
@@ -3588,7 +4038,7 @@ abstract class BaseCamping extends BaseObject implements Persistent
             $this->collServiceComplementaires->clearIterator();
         }
         $this->collServiceComplementaires = null;
-        $this->aTypeHebergement = null;
+        $this->aVille = null;
     }
 
     /**

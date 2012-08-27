@@ -2,11 +2,11 @@
 
 namespace Cungfoo\Model;
 
-use Cungfoo\Model\om\BaseCategoryTypeHebergement;
+use Cungfoo\Model\om\BaseCampingTypeHebergement;
 
 
 /**
- * Skeleton subclass for representing a row from the 'category_type_hebergement' table.
+ * Skeleton subclass for representing a row from the 'camping_type_hebergement' table.
  *
  *
  *
@@ -16,10 +16,6 @@ use Cungfoo\Model\om\BaseCategoryTypeHebergement;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class CategoryTypeHebergement extends BaseCategoryTypeHebergement
+class CampingTypeHebergement extends BaseCampingTypeHebergement
 {
-    public function __toString()
-    {
-        return $this->getName();
-    }
 }

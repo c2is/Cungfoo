@@ -31,7 +31,6 @@ class BaseCampingListing extends Listing
         $this->addColumn(new Column\TextColumn('phone1'));
         $this->addColumn(new Column\TextColumn('phone2'));
         $this->addColumn(new Column\TextColumn('fax'));
-        $this->addColumn(new Column\TextColumn('type_hebergement_id'));
         $this->addColumn(new Column\TextColumn('ville_id'));
     }
 

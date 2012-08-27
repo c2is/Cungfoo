@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseVille;
  */
 class Ville extends BaseVille
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

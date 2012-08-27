@@ -20,10 +20,12 @@ use Cungfoo\Model\CampingEquipement;
 use Cungfoo\Model\CampingPeer;
 use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\CampingServiceComplementaire;
+use Cungfoo\Model\CampingTypeHebergement;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\Equipement;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\TypeHebergement;
+use Cungfoo\Model\Ville;
 
 /**
  * Base class that represents a query for the 'camping' table.
@@ -42,7 +44,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method CampingQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
  * @method CampingQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
  * @method CampingQuery orderByFax($order = Criteria::ASC) Order by the fax column
- * @method CampingQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
  * @method CampingQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
  *
  * @method CampingQuery groupById() Group by the id column
@@ -57,16 +58,19 @@ use Cungfoo\Model\TypeHebergement;
  * @method CampingQuery groupByPhone1() Group by the phone1 column
  * @method CampingQuery groupByPhone2() Group by the phone2 column
  * @method CampingQuery groupByFax() Group by the fax column
- * @method CampingQuery groupByTypeHebergementId() Group by the type_hebergement_id column
  * @method CampingQuery groupByVilleId() Group by the ville_id column
  *
  * @method CampingQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method CampingQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method CampingQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method CampingQuery leftJoinTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergement relation
- * @method CampingQuery rightJoinTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergement relation
- * @method CampingQuery innerJoinTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergement relation
+ * @method CampingQuery leftJoinVille($relationAlias = null) Adds a LEFT JOIN clause to the query using the Ville relation
+ * @method CampingQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
+ * @method CampingQuery innerJoinVille($relationAlias = null) Adds a INNER JOIN clause to the query using the Ville relation
+ *
+ * @method CampingQuery leftJoinCampingTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingTypeHebergement relation
+ * @method CampingQuery rightJoinCampingTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingTypeHebergement relation
+ * @method CampingQuery innerJoinCampingTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingTypeHebergement relation
  *
  * @method CampingQuery leftJoinCampingDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingDestination relation
  * @method CampingQuery rightJoinCampingDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingDestination relation
@@ -98,7 +102,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method Camping findOneByPhone1(string $phone1) Return the first Camping filtered by the phone1 column
  * @method Camping findOneByPhone2(string $phone2) Return the first Camping filtered by the phone2 column
  * @method Camping findOneByFax(string $fax) Return the first Camping filtered by the fax column
- * @method Camping findOneByTypeHebergementId(string $type_hebergement_id) Return the first Camping filtered by the type_hebergement_id column
  * @method Camping findOneByVilleId(string $ville_id) Return the first Camping filtered by the ville_id column
  *
  * @method array findById(int $id) Return Camping objects filtered by the id column
@@ -113,7 +116,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method array findByPhone1(string $phone1) Return Camping objects filtered by the phone1 column
  * @method array findByPhone2(string $phone2) Return Camping objects filtered by the phone2 column
  * @method array findByFax(string $fax) Return Camping objects filtered by the fax column
- * @method array findByTypeHebergementId(string $type_hebergement_id) Return Camping objects filtered by the type_hebergement_id column
  * @method array findByVilleId(string $ville_id) Return Camping objects filtered by the ville_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -218,7 +220,7 @@ abstract class BaseCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `TYPE_HEBERGEMENT_ID`, `VILLE_ID` FROM `camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `VILLE_ID` FROM `camping` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -654,35 +656,6 @@ abstract class BaseCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the type_hebergement_id column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByTypeHebergementId('fooValue');   // WHERE type_hebergement_id = 'fooValue'
-     * $query->filterByTypeHebergementId('%fooValue%'); // WHERE type_hebergement_id LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $typeHebergementId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return CampingQuery The current query, for fluid interface
-     */
-    public function filterByTypeHebergementId($typeHebergementId = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($typeHebergementId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $typeHebergementId)) {
-                $typeHebergementId = str_replace('*', '%', $typeHebergementId);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId, $comparison);
-    }
-
-    /**
      * Filter the query on the ville_id column
      *
      * Example usage:
@@ -712,43 +685,43 @@ abstract class BaseCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related TypeHebergement object
+     * Filter the query by a related Ville object
      *
-     * @param   TypeHebergement|PropelObjectCollection $typeHebergement The related object(s) to use as filter
+     * @param   Ville|PropelObjectCollection $ville The related object(s) to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   CampingQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByTypeHebergement($typeHebergement, $comparison = null)
+    public function filterByVille($ville, $comparison = null)
     {
-        if ($typeHebergement instanceof TypeHebergement) {
+        if ($ville instanceof Ville) {
             return $this
-                ->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergement->getId(), $comparison);
-        } elseif ($typeHebergement instanceof PropelObjectCollection) {
+                ->addUsingAlias(CampingPeer::VILLE_ID, $ville->getId(), $comparison);
+        } elseif ($ville instanceof PropelObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(CampingPeer::TYPE_HEBERGEMENT_ID, $typeHebergement->toKeyValue('PrimaryKey', 'Id'), $comparison);
+                ->addUsingAlias(CampingPeer::VILLE_ID, $ville->toKeyValue('PrimaryKey', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByTypeHebergement() only accepts arguments of type TypeHebergement or PropelCollection');
+            throw new PropelException('filterByVille() only accepts arguments of type Ville or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the TypeHebergement relation
+     * Adds a JOIN clause to the query using the Ville relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return CampingQuery The current query, for fluid interface
      */
-    public function joinTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinVille($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('TypeHebergement');
+        $relationMap = $tableMap->getRelation('Ville');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -763,14 +736,14 @@ abstract class BaseCampingQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'TypeHebergement');
+            $this->addJoinObject($join, 'Ville');
         }
 
         return $this;
     }
 
     /**
-     * Use the TypeHebergement relation TypeHebergement object
+     * Use the Ville relation Ville object
      *
      * @see       useQuery()
      *
@@ -778,13 +751,87 @@ abstract class BaseCampingQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\TypeHebergementQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\VilleQuery A secondary query class using the current class as primary query
      */
-    public function useTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useVilleQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
-            ->joinTypeHebergement($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergement', '\Cungfoo\Model\TypeHebergementQuery');
+            ->joinVille($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Ville', '\Cungfoo\Model\VilleQuery');
+    }
+
+    /**
+     * Filter the query by a related CampingTypeHebergement object
+     *
+     * @param   CampingTypeHebergement|PropelObjectCollection $campingTypeHebergement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByCampingTypeHebergement($campingTypeHebergement, $comparison = null)
+    {
+        if ($campingTypeHebergement instanceof CampingTypeHebergement) {
+            return $this
+                ->addUsingAlias(CampingPeer::ID, $campingTypeHebergement->getCampingId(), $comparison);
+        } elseif ($campingTypeHebergement instanceof PropelObjectCollection) {
+            return $this
+                ->useCampingTypeHebergementQuery()
+                ->filterByPrimaryKeys($campingTypeHebergement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByCampingTypeHebergement() only accepts arguments of type CampingTypeHebergement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the CampingTypeHebergement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return CampingQuery The current query, for fluid interface
+     */
+    public function joinCampingTypeHebergement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('CampingTypeHebergement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'CampingTypeHebergement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the CampingTypeHebergement relation CampingTypeHebergement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\CampingTypeHebergementQuery A secondary query class using the current class as primary query
+     */
+    public function useCampingTypeHebergementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinCampingTypeHebergement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'CampingTypeHebergement', '\Cungfoo\Model\CampingTypeHebergementQuery');
     }
 
     /**
@@ -1081,6 +1128,23 @@ abstract class BaseCampingQuery extends ModelCriteria
         return $this
             ->joinCampingServiceComplementaire($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'CampingServiceComplementaire', '\Cungfoo\Model\CampingServiceComplementaireQuery');
+    }
+
+    /**
+     * Filter the query by a related TypeHebergement object
+     * using the camping_type_hebergement table as cross reference
+     *
+     * @param   TypeHebergement $typeHebergement the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   CampingQuery The current query, for fluid interface
+     */
+    public function filterByTypeHebergement($typeHebergement, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useCampingTypeHebergementQuery()
+            ->filterByTypeHebergement($typeHebergement, $comparison)
+            ->endUse();
     }
 
     /**

@@ -41,6 +41,14 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.category_type_hebergement',
             'required' => false,
         ));
+        $builder->add('campings', 'model', array(
+            'class' => 'Cungfoo\Model\Camping',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'type_hebergement.campings',
+            'required' => false,
+        ));
     }
 
     /**

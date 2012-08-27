@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'ville' table.
+ * This class defines the structure of the 'camping_type_hebergement' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class VilleTableMap extends TableMap
+class CampingTypeHebergementTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.VilleTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.CampingTypeHebergementTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,17 +36,15 @@ class VilleTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('ville');
-        $this->setPhpName('Ville');
-        $this->setClassname('Cungfoo\\Model\\Ville');
+        $this->setName('camping_type_hebergement');
+        $this->setPhpName('CampingTypeHebergement');
+        $this->setClassname('Cungfoo\\Model\\CampingTypeHebergement');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
+        $this->setIsCrossRef(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'VARCHAR', true, 255, null);
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
-        $this->addForeignKey('REGION_ID', 'RegionId', 'VARCHAR', 'region', 'ID', false, 255, null);
-        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addForeignPrimaryKey('CAMPING_ID', 'CampingId', 'INTEGER' , 'camping', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'VARCHAR' , 'type_hebergement', 'ID', true, 255, null);
         // validators
     } // initialize()
 
@@ -55,8 +53,8 @@ class VilleTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_ONE, array('region_id' => 'id', ), null, null);
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::ONE_TO_MANY, array('id' => 'ville_id', ), null, null, 'Campings');
+        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_ONE, array('camping_id' => 'id', ), null, null);
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), null, null);
     } // buildRelations()
 
     /**
@@ -68,9 +66,8 @@ class VilleTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/villes', 'crud_model' => '', 'crud_form' => '', ),
+            'crudable' => array('route_controller' => '\Cungfoo\Controller\CrudController', 'route_prefix' => '/admin', 'routes_file' => '../Cungfoo/crud.yml', 'languages_file' => '../languages.yml', 'crud_prefix' => '', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()
 
-} // VilleTableMap
+} // CampingTypeHebergementTableMap

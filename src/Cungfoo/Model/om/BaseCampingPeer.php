@@ -11,7 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Camping;
 use Cungfoo\Model\CampingPeer;
-use Cungfoo\Model\TypeHebergementPeer;
+use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\CampingTableMap;
 
 /**
@@ -37,13 +37,13 @@ abstract class BaseCampingPeer
     const TM_CLASS = 'CampingTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 14;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 14;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the ID field */
     const ID = 'camping.ID';
@@ -81,9 +81,6 @@ abstract class BaseCampingPeer
     /** the column name for the FAX field */
     const FAX = 'camping.FAX';
 
-    /** the column name for the TYPE_HEBERGEMENT_ID field */
-    const TYPE_HEBERGEMENT_ID = 'camping.TYPE_HEBERGEMENT_ID';
-
     /** the column name for the VILLE_ID field */
     const VILLE_ID = 'camping.VILLE_ID';
 
@@ -106,12 +103,12 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[CampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'Country', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'TypeHebergementId', 'VilleId', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'countryCode', 'phone1', 'phone2', 'fax', 'typeHebergementId', 'villeId', ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::NAME, CampingPeer::ADDRESS1, CampingPeer::ADDRESS2, CampingPeer::ZIP, CampingPeer::CITY, CampingPeer::MAIL, CampingPeer::COUNTRY, CampingPeer::COUNTRY_CODE, CampingPeer::PHONE1, CampingPeer::PHONE2, CampingPeer::FAX, CampingPeer::TYPE_HEBERGEMENT_ID, CampingPeer::VILLE_ID, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'TYPE_HEBERGEMENT_ID', 'VILLE_ID', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'country_code', 'phone1', 'phone2', 'fax', 'type_hebergement_id', 'ville_id', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'Country', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'VilleId', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'countryCode', 'phone1', 'phone2', 'fax', 'villeId', ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID, CampingPeer::NAME, CampingPeer::ADDRESS1, CampingPeer::ADDRESS2, CampingPeer::ZIP, CampingPeer::CITY, CampingPeer::MAIL, CampingPeer::COUNTRY, CampingPeer::COUNTRY_CODE, CampingPeer::PHONE1, CampingPeer::PHONE2, CampingPeer::FAX, CampingPeer::VILLE_ID, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'VILLE_ID', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country', 'country_code', 'phone1', 'phone2', 'fax', 'ville_id', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -121,12 +118,12 @@ abstract class BaseCampingPeer
      * e.g. CampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Address1' => 2, 'Address2' => 3, 'Zip' => 4, 'City' => 5, 'Mail' => 6, 'Country' => 7, 'CountryCode' => 8, 'Phone1' => 9, 'Phone2' => 10, 'Fax' => 11, 'TypeHebergementId' => 12, 'VilleId' => 13, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'countryCode' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'typeHebergementId' => 12, 'villeId' => 13, ),
-        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::NAME => 1, CampingPeer::ADDRESS1 => 2, CampingPeer::ADDRESS2 => 3, CampingPeer::ZIP => 4, CampingPeer::CITY => 5, CampingPeer::MAIL => 6, CampingPeer::COUNTRY => 7, CampingPeer::COUNTRY_CODE => 8, CampingPeer::PHONE1 => 9, CampingPeer::PHONE2 => 10, CampingPeer::FAX => 11, CampingPeer::TYPE_HEBERGEMENT_ID => 12, CampingPeer::VILLE_ID => 13, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ADDRESS1' => 2, 'ADDRESS2' => 3, 'ZIP' => 4, 'CITY' => 5, 'MAIL' => 6, 'COUNTRY' => 7, 'COUNTRY_CODE' => 8, 'PHONE1' => 9, 'PHONE2' => 10, 'FAX' => 11, 'TYPE_HEBERGEMENT_ID' => 12, 'VILLE_ID' => 13, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'country_code' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'type_hebergement_id' => 12, 'ville_id' => 13, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Address1' => 2, 'Address2' => 3, 'Zip' => 4, 'City' => 5, 'Mail' => 6, 'Country' => 7, 'CountryCode' => 8, 'Phone1' => 9, 'Phone2' => 10, 'Fax' => 11, 'VilleId' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'countryCode' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'villeId' => 12, ),
+        BasePeer::TYPE_COLNAME => array (CampingPeer::ID => 0, CampingPeer::NAME => 1, CampingPeer::ADDRESS1 => 2, CampingPeer::ADDRESS2 => 3, CampingPeer::ZIP => 4, CampingPeer::CITY => 5, CampingPeer::MAIL => 6, CampingPeer::COUNTRY => 7, CampingPeer::COUNTRY_CODE => 8, CampingPeer::PHONE1 => 9, CampingPeer::PHONE2 => 10, CampingPeer::FAX => 11, CampingPeer::VILLE_ID => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ADDRESS1' => 2, 'ADDRESS2' => 3, 'ZIP' => 4, 'CITY' => 5, 'MAIL' => 6, 'COUNTRY' => 7, 'COUNTRY_CODE' => 8, 'PHONE1' => 9, 'PHONE2' => 10, 'FAX' => 11, 'VILLE_ID' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country' => 7, 'country_code' => 8, 'phone1' => 9, 'phone2' => 10, 'fax' => 11, 'ville_id' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -212,7 +209,6 @@ abstract class BaseCampingPeer
             $criteria->addSelectColumn(CampingPeer::PHONE1);
             $criteria->addSelectColumn(CampingPeer::PHONE2);
             $criteria->addSelectColumn(CampingPeer::FAX);
-            $criteria->addSelectColumn(CampingPeer::TYPE_HEBERGEMENT_ID);
             $criteria->addSelectColumn(CampingPeer::VILLE_ID);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
@@ -227,7 +223,6 @@ abstract class BaseCampingPeer
             $criteria->addSelectColumn($alias . '.PHONE1');
             $criteria->addSelectColumn($alias . '.PHONE2');
             $criteria->addSelectColumn($alias . '.FAX');
-            $criteria->addSelectColumn($alias . '.TYPE_HEBERGEMENT_ID');
             $criteria->addSelectColumn($alias . '.VILLE_ID');
         }
     }
@@ -526,7 +521,7 @@ abstract class BaseCampingPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related TypeHebergement table
+     * Returns the number of rows matching criteria, joining the related Ville table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -534,7 +529,7 @@ abstract class BaseCampingPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinTypeHebergement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinVille(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -561,7 +556,7 @@ abstract class BaseCampingPeer
             $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -577,7 +572,7 @@ abstract class BaseCampingPeer
 
 
     /**
-     * Selects a collection of Camping objects pre-filled with their TypeHebergement objects.
+     * Selects a collection of Camping objects pre-filled with their Ville objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
@@ -585,7 +580,7 @@ abstract class BaseCampingPeer
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinTypeHebergement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinVille(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
@@ -596,9 +591,9 @@ abstract class BaseCampingPeer
 
         CampingPeer::addSelectColumns($criteria);
         $startcol = CampingPeer::NUM_HYDRATE_COLUMNS;
-        TypeHebergementPeer::addSelectColumns($criteria);
+        VillePeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -618,19 +613,19 @@ abstract class BaseCampingPeer
                 CampingPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = VillePeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = VillePeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = TypeHebergementPeer::getOMClass();
+                    $cls = VillePeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    VillePeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (Camping) to $obj2 (TypeHebergement)
+                // Add the $obj1 (Camping) to $obj2 (Ville)
                 $obj2->addCamping($obj1);
 
             } // if joined row was not null
@@ -679,7 +674,7 @@ abstract class BaseCampingPeer
             $con = Propel::getConnection(CampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -715,10 +710,10 @@ abstract class BaseCampingPeer
         CampingPeer::addSelectColumns($criteria);
         $startcol2 = CampingPeer::NUM_HYDRATE_COLUMNS;
 
-        TypeHebergementPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+        VillePeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
 
-        $criteria->addJoin(CampingPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(CampingPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -737,21 +732,21 @@ abstract class BaseCampingPeer
                 CampingPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined TypeHebergement rows
+            // Add objects for joined Ville rows
 
-            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = VillePeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = VillePeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = TypeHebergementPeer::getOMClass();
+                    $cls = VillePeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    VillePeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (Camping) to the collection in $obj2 (TypeHebergement)
+                // Add the $obj1 (Camping) to the collection in $obj2 (Ville)
                 $obj2->addCamping($obj1);
             } // if joined row not null
 

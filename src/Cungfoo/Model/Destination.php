@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseDestination;
  */
 class Destination extends BaseDestination
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
