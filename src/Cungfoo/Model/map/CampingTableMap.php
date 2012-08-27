@@ -64,11 +64,11 @@ class CampingTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), null, null);
-        $this->addRelation('CampingTypeHebergement', 'Cungfoo\\Model\\CampingTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingTypeHebergements');
-        $this->addRelation('CampingDestination', 'Cungfoo\\Model\\CampingDestination', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingDestinations');
-        $this->addRelation('CampingActivite', 'Cungfoo\\Model\\CampingActivite', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingActivites');
-        $this->addRelation('CampingEquipement', 'Cungfoo\\Model\\CampingEquipement', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingEquipements');
-        $this->addRelation('CampingServiceComplementaire', 'Cungfoo\\Model\\CampingServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'CampingServiceComplementaires');
+        $this->addRelation('CampingTypeHebergement', 'Cungfoo\\Model\\CampingTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), 'CASCADE', null, 'CampingTypeHebergements');
+        $this->addRelation('CampingDestination', 'Cungfoo\\Model\\CampingDestination', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), 'CASCADE', null, 'CampingDestinations');
+        $this->addRelation('CampingActivite', 'Cungfoo\\Model\\CampingActivite', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), 'CASCADE', null, 'CampingActivites');
+        $this->addRelation('CampingEquipement', 'Cungfoo\\Model\\CampingEquipement', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), 'CASCADE', null, 'CampingEquipements');
+        $this->addRelation('CampingServiceComplementaire', 'Cungfoo\\Model\\CampingServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), 'CASCADE', null, 'CampingServiceComplementaires');
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), null, null, 'TypeHebergements');
         $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), null, null, 'Destinations');
         $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), null, null, 'Activites');

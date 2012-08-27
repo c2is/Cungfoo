@@ -10,7 +10,12 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Camping;
+use Cungfoo\Model\CampingActivitePeer;
+use Cungfoo\Model\CampingDestinationPeer;
+use Cungfoo\Model\CampingEquipementPeer;
 use Cungfoo\Model\CampingPeer;
+use Cungfoo\Model\CampingServiceComplementairePeer;
+use Cungfoo\Model\CampingTypeHebergementPeer;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\CampingTableMap;
 
@@ -423,6 +428,21 @@ abstract class BaseCampingPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in CampingTypeHebergementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        CampingTypeHebergementPeer::clearInstancePool();
+        // Invalidate objects in CampingDestinationPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        CampingDestinationPeer::clearInstancePool();
+        // Invalidate objects in CampingActivitePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        CampingActivitePeer::clearInstancePool();
+        // Invalidate objects in CampingEquipementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        CampingEquipementPeer::clearInstancePool();
+        // Invalidate objects in CampingServiceComplementairePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        CampingServiceComplementairePeer::clearInstancePool();
     }
 
     /**

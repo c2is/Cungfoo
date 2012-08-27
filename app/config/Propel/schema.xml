@@ -58,9 +58,9 @@
     </table>
 
     <table name="camping_type_hebergement" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true"/>
+        <column name="camping_id" type="integer" primaryKey="true" />
         <column name="type_hebergement_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping">
+        <foreign-key foreignTable="camping" onDelete="CASCADE">
             <reference local="camping_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="type_hebergement">
@@ -71,7 +71,7 @@
     <table name="camping_destination" isCrossRef="true">
         <column name="camping_id" type="integer" primaryKey="true"/>
         <column name="destination_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping">
+        <foreign-key foreignTable="camping" onDelete="CASCADE">
             <reference local="camping_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="destination">
@@ -82,7 +82,7 @@
     <table name="camping_activite" isCrossRef="true">
         <column name="camping_id" type="integer" primaryKey="true"/>
         <column name="activite_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping">
+        <foreign-key foreignTable="camping" onDelete="CASCADE">
             <reference local="camping_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="activite">
@@ -93,7 +93,7 @@
     <table name="camping_equipement" isCrossRef="true">
         <column name="camping_id" type="integer" primaryKey="true"/>
         <column name="equipement_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping">
+        <foreign-key foreignTable="camping" onDelete="CASCADE">
             <reference local="camping_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="equipement">
@@ -104,7 +104,7 @@
     <table name="camping_service_complementaire" isCrossRef="true">
         <column name="camping_id" type="integer" primaryKey="true"/>
         <column name="service_complementaire_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping">
+        <foreign-key foreignTable="camping" onDelete="CASCADE">
             <reference local="camping_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="service_complementaire">

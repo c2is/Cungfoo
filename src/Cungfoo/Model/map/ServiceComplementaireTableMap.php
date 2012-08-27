@@ -55,7 +55,7 @@ class ServiceComplementaireTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('CampingServiceComplementaire', 'Cungfoo\\Model\\CampingServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'service_complementaire_id', ), null, null, 'CampingServiceComplementaires');
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_MANY, array(), null, null, 'Campings');
+        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Campings');
     } // buildRelations()
 
     /**

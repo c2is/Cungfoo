@@ -53,7 +53,7 @@ class CampingTypeHebergementTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_ONE, array('camping_id' => 'id', ), null, null);
+        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_ONE, array('camping_id' => 'id', ), 'CASCADE', null);
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), null, null);
     } // buildRelations()
 
