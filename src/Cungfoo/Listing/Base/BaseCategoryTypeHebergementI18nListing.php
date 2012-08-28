@@ -6,13 +6,13 @@ use Cungfoo\Lib\Listing\Listing,
     Cungfoo\Lib\Listing\Column;
 
 /**
- * Generated listing class for 'category_type_hebergement' table.
+ * Generated listing class for 'category_type_hebergement_i18n' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Listing.Base
  */
-class BaseCategoryTypeHebergementListing extends Listing
+class BaseCategoryTypeHebergementI18nListing extends Listing
 {
     /**
      * {@inheritdoc}
@@ -21,6 +21,9 @@ class BaseCategoryTypeHebergementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('locale'));
+        $this->addColumn(new Column\TextColumn('locale'));
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
     /**
@@ -28,7 +31,7 @@ class BaseCategoryTypeHebergementListing extends Listing
      */
     public function getName()
     {
-        return 'CategoryTypeHebergement';
+        return 'CategoryTypeHebergementI18n';
     }
 
-} // BaseCategoryTypeHebergementListing
+} // BaseCategoryTypeHebergementI18nListing

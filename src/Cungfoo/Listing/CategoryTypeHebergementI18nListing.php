@@ -5,16 +5,16 @@ namespace Cungfoo\Listing;
 use Cungfoo\Lib\Listing\Listing,
     Cungfoo\Lib\Listing\Column;
 
-use Cungfoo\Listing\Base\BaseCategoryTypeHebergementListing;
+use Cungfoo\Listing\Base\BaseCategoryTypeHebergementI18nListing;
 
 /**
- * Listing class for 'category_type_hebergement' table.
+ * Listing class for 'category_type_hebergement_i18n' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Listing
  */
-class CategoryTypeHebergementListing extends BaseCategoryTypeHebergementListing
+class CategoryTypeHebergementI18nListing extends BaseCategoryTypeHebergementI18nListing
 {
 
     /**
@@ -23,8 +23,6 @@ class CategoryTypeHebergementListing extends BaseCategoryTypeHebergementListing
     public function configure()
     {
         parent::configure();
-
-        $this->addColumn(new Column\TextColumn('name'));
     }
 
-} // CategoryTypeHebergementListing
+} // CategoryTypeHebergementI18nListing
