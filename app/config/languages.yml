@@ -1,5 +1,7 @@
 languages:
-    en:
+    EN:
         title:  locale.english
-    fr:
+    FR:
         title:  locale.french
+    DE:
+        title:  locale.german
