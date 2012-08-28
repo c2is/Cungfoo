@@ -1,0 +1,6 @@
+client:
+  location: http://vacancesdirectes.resalys.com/rsl/wsdl_distrib
+  base_id:  vacancesdirectes
+  language_codes:
+    - FR
+    - DE
