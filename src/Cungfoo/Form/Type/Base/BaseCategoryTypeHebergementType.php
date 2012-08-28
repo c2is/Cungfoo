@@ -30,9 +30,9 @@ class BaseCategoryTypeHebergementType extends AppAwareType
         $builder->add('category_type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\CategoryTypeHebergementI18n',
             'languages' => array(
-                0 => 'EN',
-                1 => 'FR',
-                2 => 'DE',
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
             ),
             'label' => 'category_type_hebergement.category_type_hebergementI18ns',
             'columns' => array(

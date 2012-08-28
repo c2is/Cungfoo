@@ -12,7 +12,7 @@
     </behavior>
 
     <behavior name="i18n">
-        <parameter name="default_locale" value="en" />
+        <parameter name="default_locale" value="fr" />
     </behavior>
 
     <!-- ====================
@@ -122,6 +122,10 @@
         </foreign-key>
 
         <behavior name="timestampable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name" />
+        </behavior>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
         </behavior>

@@ -27,13 +27,6 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'type_hebergement.name',
-            'required' => false,
-        ));
         $builder->add('category_type_hebergement', 'model', array(
             'class' => '\Cungfoo\Model\CategoryTypeHebergement',
             'constraints' => array(
@@ -47,6 +40,26 @@ class BaseTypeHebergementType extends AppAwareType
             ),
             'multiple' => true,
             'label' => 'type_hebergement.campings',
+            'required' => false,
+        ));
+        $builder->add('type_hebergementI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\TypeHebergementI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'type_hebergement.type_hebergementI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

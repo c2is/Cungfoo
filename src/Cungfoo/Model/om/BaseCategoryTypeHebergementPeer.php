@@ -72,7 +72,7 @@ abstract class BaseCategoryTypeHebergementPeer
      * The default locale to use for translations
      * @var        string
      */
-    const DEFAULT_LOCALE = 'en';
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *

@@ -22,6 +22,8 @@ use Cungfoo\Model\CampingTypeHebergementQuery;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
+use Cungfoo\Model\TypeHebergementI18n;
+use Cungfoo\Model\TypeHebergementI18nQuery;
 use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\TypeHebergementQuery;
 
@@ -60,12 +62,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the category_type_hebergement_id field.
      * @var        string
      */
@@ -95,6 +91,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $collCampingTypeHebergementsPartial;
 
     /**
+     * @var        PropelObjectCollection|TypeHebergementI18n[] Collection to store aggregation of TypeHebergementI18n objects.
+     */
+    protected $collTypeHebergementI18ns;
+    protected $collTypeHebergementI18nsPartial;
+
+    /**
      * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
      */
     protected $collCampings;
@@ -113,6 +115,20 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[TypeHebergementI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -126,6 +142,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $campingTypeHebergementsScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $typeHebergementI18nsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
      *
      * @return string
@@ -133,16 +155,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -251,27 +263,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return TypeHebergement The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = TypeHebergementPeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Set the value of [category_type_hebergement_id] column.
      *
      * @param string $v new value
@@ -375,10 +366,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->category_type_hebergement_id = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->category_type_hebergement_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -387,7 +377,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergement object", $e);
@@ -454,6 +444,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             $this->aCategoryTypeHebergement = null;
             $this->collCampingTypeHebergements = null;
+
+            $this->collTypeHebergementI18ns = null;
 
             $this->collCampings = null;
         } // if (deep)
@@ -640,6 +632,23 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->typeHebergementI18nsScheduledForDeletion !== null) {
+                if (!$this->typeHebergementI18nsScheduledForDeletion->isEmpty()) {
+                    TypeHebergementI18nQuery::create()
+                        ->filterByPrimaryKeys($this->typeHebergementI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->typeHebergementI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collTypeHebergementI18ns !== null) {
+                foreach ($this->collTypeHebergementI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -665,9 +674,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(TypeHebergementPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`CATEGORY_TYPE_HEBERGEMENT_ID`';
         }
@@ -690,9 +696,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CATEGORY_TYPE_HEBERGEMENT_ID`':
                         $stmt->bindValue($identifier, $this->category_type_hebergement_id, PDO::PARAM_STR);
@@ -815,6 +818,14 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collTypeHebergementI18ns !== null) {
+                    foreach ($this->collTypeHebergementI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -854,15 +865,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCategoryTypeHebergementId();
                 break;
-            case 3:
+            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 4:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -895,10 +903,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $keys = TypeHebergementPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCategoryTypeHebergementId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCategoryTypeHebergementId(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -906,6 +913,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             if (null !== $this->collCampingTypeHebergements) {
                 $result['CampingTypeHebergements'] = $this->collCampingTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collTypeHebergementI18ns) {
+                $result['TypeHebergementI18ns'] = $this->collTypeHebergementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -945,15 +955,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCategoryTypeHebergementId($value);
                 break;
-            case 3:
+            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 4:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -981,10 +988,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $keys = TypeHebergementPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -997,7 +1003,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(TypeHebergementPeer::ID)) $criteria->add(TypeHebergementPeer::ID, $this->id);
-        if ($this->isColumnModified(TypeHebergementPeer::NAME)) $criteria->add(TypeHebergementPeer::NAME, $this->name);
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) $criteria->add(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $this->category_type_hebergement_id);
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) $criteria->add(TypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TypeHebergementPeer::UPDATED_AT)) $criteria->add(TypeHebergementPeer::UPDATED_AT, $this->updated_at);
@@ -1064,7 +1069,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCategoryTypeHebergementId($this->getCategoryTypeHebergementId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1079,6 +1083,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             foreach ($this->getCampingTypeHebergements() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCampingTypeHebergement($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getTypeHebergementI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addTypeHebergementI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1196,6 +1206,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         if ('CampingTypeHebergement' == $relationName) {
             $this->initCampingTypeHebergements();
+        }
+        if ('TypeHebergementI18n' == $relationName) {
+            $this->initTypeHebergementI18ns();
         }
     }
 
@@ -1432,6 +1445,217 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collTypeHebergementI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addTypeHebergementI18ns()
+     */
+    public function clearTypeHebergementI18ns()
+    {
+        $this->collTypeHebergementI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collTypeHebergementI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collTypeHebergementI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialTypeHebergementI18ns($v = true)
+    {
+        $this->collTypeHebergementI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collTypeHebergementI18ns collection.
+     *
+     * By default this just sets the collTypeHebergementI18ns collection to an empty array (like clearcollTypeHebergementI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initTypeHebergementI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collTypeHebergementI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collTypeHebergementI18ns = new PropelObjectCollection();
+        $this->collTypeHebergementI18ns->setModel('TypeHebergementI18n');
+    }
+
+    /**
+     * Gets an array of TypeHebergementI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this TypeHebergement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|TypeHebergementI18n[] List of TypeHebergementI18n objects
+     * @throws PropelException
+     */
+    public function getTypeHebergementI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collTypeHebergementI18nsPartial && !$this->isNew();
+        if (null === $this->collTypeHebergementI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collTypeHebergementI18ns) {
+                // return empty collection
+                $this->initTypeHebergementI18ns();
+            } else {
+                $collTypeHebergementI18ns = TypeHebergementI18nQuery::create(null, $criteria)
+                    ->filterByTypeHebergement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collTypeHebergementI18nsPartial && count($collTypeHebergementI18ns)) {
+                      $this->initTypeHebergementI18ns(false);
+
+                      foreach($collTypeHebergementI18ns as $obj) {
+                        if (false == $this->collTypeHebergementI18ns->contains($obj)) {
+                          $this->collTypeHebergementI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collTypeHebergementI18nsPartial = true;
+                    }
+
+                    return $collTypeHebergementI18ns;
+                }
+
+                if($partial && $this->collTypeHebergementI18ns) {
+                    foreach($this->collTypeHebergementI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collTypeHebergementI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collTypeHebergementI18ns = $collTypeHebergementI18ns;
+                $this->collTypeHebergementI18nsPartial = false;
+            }
+        }
+
+        return $this->collTypeHebergementI18ns;
+    }
+
+    /**
+     * Sets a collection of TypeHebergementI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $typeHebergementI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setTypeHebergementI18ns(PropelCollection $typeHebergementI18ns, PropelPDO $con = null)
+    {
+        $this->typeHebergementI18nsScheduledForDeletion = $this->getTypeHebergementI18ns(new Criteria(), $con)->diff($typeHebergementI18ns);
+
+        foreach ($this->typeHebergementI18nsScheduledForDeletion as $typeHebergementI18nRemoved) {
+            $typeHebergementI18nRemoved->setTypeHebergement(null);
+        }
+
+        $this->collTypeHebergementI18ns = null;
+        foreach ($typeHebergementI18ns as $typeHebergementI18n) {
+            $this->addTypeHebergementI18n($typeHebergementI18n);
+        }
+
+        $this->collTypeHebergementI18ns = $typeHebergementI18ns;
+        $this->collTypeHebergementI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related TypeHebergementI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related TypeHebergementI18n objects.
+     * @throws PropelException
+     */
+    public function countTypeHebergementI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collTypeHebergementI18nsPartial && !$this->isNew();
+        if (null === $this->collTypeHebergementI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collTypeHebergementI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getTypeHebergementI18ns());
+                }
+                $query = TypeHebergementI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByTypeHebergement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collTypeHebergementI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a TypeHebergementI18n object to this object
+     * through the TypeHebergementI18n foreign key attribute.
+     *
+     * @param    TypeHebergementI18n $l TypeHebergementI18n
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function addTypeHebergementI18n(TypeHebergementI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collTypeHebergementI18ns === null) {
+            $this->initTypeHebergementI18ns();
+            $this->collTypeHebergementI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collTypeHebergementI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddTypeHebergementI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	TypeHebergementI18n $typeHebergementI18n The typeHebergementI18n object to add.
+     */
+    protected function doAddTypeHebergementI18n($typeHebergementI18n)
+    {
+        $this->collTypeHebergementI18ns[]= $typeHebergementI18n;
+        $typeHebergementI18n->setTypeHebergement($this);
+    }
+
+    /**
+     * @param	TypeHebergementI18n $typeHebergementI18n The typeHebergementI18n object to remove.
+     */
+    public function removeTypeHebergementI18n($typeHebergementI18n)
+    {
+        if ($this->getTypeHebergementI18ns()->contains($typeHebergementI18n)) {
+            $this->collTypeHebergementI18ns->remove($this->collTypeHebergementI18ns->search($typeHebergementI18n));
+            if (null === $this->typeHebergementI18nsScheduledForDeletion) {
+                $this->typeHebergementI18nsScheduledForDeletion = clone $this->collTypeHebergementI18ns;
+                $this->typeHebergementI18nsScheduledForDeletion->clear();
+            }
+            $this->typeHebergementI18nsScheduledForDeletion[]= $typeHebergementI18n;
+            $typeHebergementI18n->setTypeHebergement(null);
+        }
+    }
+
+    /**
      * Clears out the collCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1605,7 +1829,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->category_type_hebergement_id = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -1634,6 +1857,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collTypeHebergementI18ns) {
+                foreach ($this->collTypeHebergementI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampings) {
                 foreach ($this->collCampings as $o) {
                     $o->clearAllReferences($deep);
@@ -1641,10 +1869,18 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collCampingTypeHebergements instanceof PropelCollection) {
             $this->collCampingTypeHebergements->clearIterator();
         }
         $this->collCampingTypeHebergements = null;
+        if ($this->collTypeHebergementI18ns instanceof PropelCollection) {
+            $this->collTypeHebergementI18ns->clearIterator();
+        }
+        $this->collTypeHebergementI18ns = null;
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
@@ -1682,6 +1918,129 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = TypeHebergementPeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    TypeHebergement The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return TypeHebergementI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collTypeHebergementI18ns) {
+                foreach ($this->collTypeHebergementI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new TypeHebergementI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = TypeHebergementI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addTypeHebergementI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    TypeHebergement The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            TypeHebergementI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collTypeHebergementI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collTypeHebergementI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return TypeHebergementI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

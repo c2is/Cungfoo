@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'category_type_hebergement_i18n' table.
+ * This class defines the structure of the 'type_hebergement_i18n' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class CategoryTypeHebergementI18nTableMap extends TableMap
+class TypeHebergementI18nTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.CategoryTypeHebergementI18nTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.TypeHebergementI18nTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,13 +36,13 @@ class CategoryTypeHebergementI18nTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('category_type_hebergement_i18n');
-        $this->setPhpName('CategoryTypeHebergementI18n');
-        $this->setClassname('Cungfoo\\Model\\CategoryTypeHebergementI18n');
+        $this->setName('type_hebergement_i18n');
+        $this->setPhpName('TypeHebergementI18n');
+        $this->setClassname('Cungfoo\\Model\\TypeHebergementI18n');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'VARCHAR' , 'category_type_hebergement', 'ID', true, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'VARCHAR' , 'type_hebergement', 'ID', true, 255, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         // validators
@@ -53,7 +53,7 @@ class CategoryTypeHebergementI18nTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('CategoryTypeHebergement', 'Cungfoo\\Model\\CategoryTypeHebergement', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
     /**
@@ -69,4 +69,4 @@ class CategoryTypeHebergementI18nTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // CategoryTypeHebergementI18nTableMap
+} // TypeHebergementI18nTableMap

@@ -599,7 +599,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      *
      * @return    CategoryTypeHebergementQuery The current query, for fluid interface
      */
-    public function joinI18n($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'CategoryTypeHebergementI18n';
 
@@ -617,7 +617,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      *
      * @return    CategoryTypeHebergementQuery The current query, for fluid interface
      */
-    public function joinWithI18n($locale = 'en', $joinType = Criteria::LEFT_JOIN)
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
     {
         $this
             ->joinI18n($locale, null, $joinType)
@@ -638,7 +638,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      *
      * @return    CategoryTypeHebergementI18nQuery A secondary query class using the current class as primary query
      */
-    public function useI18nQuery($locale = 'en', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinI18n($locale, $relationAlias, $joinType)

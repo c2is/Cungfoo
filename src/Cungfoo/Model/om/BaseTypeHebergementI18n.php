@@ -11,31 +11,31 @@ use \Persistent;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\CategoryTypeHebergement;
-use Cungfoo\Model\CategoryTypeHebergementI18n;
-use Cungfoo\Model\CategoryTypeHebergementI18nPeer;
-use Cungfoo\Model\CategoryTypeHebergementI18nQuery;
-use Cungfoo\Model\CategoryTypeHebergementQuery;
+use Cungfoo\Model\TypeHebergement;
+use Cungfoo\Model\TypeHebergementI18n;
+use Cungfoo\Model\TypeHebergementI18nPeer;
+use Cungfoo\Model\TypeHebergementI18nQuery;
+use Cungfoo\Model\TypeHebergementQuery;
 
 /**
- * Base class that represents a row from the 'category_type_hebergement_i18n' table.
+ * Base class that represents a row from the 'type_hebergement_i18n' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Persistent
+abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\CategoryTypeHebergementI18nPeer';
+    const PEER = 'Cungfoo\\Model\\TypeHebergementI18nPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        CategoryTypeHebergementI18nPeer
+     * @var        TypeHebergementI18nPeer
      */
     protected static $peer;
 
@@ -65,9 +65,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     protected $name;
 
     /**
-     * @var        CategoryTypeHebergement
+     * @var        TypeHebergement
      */
-    protected $aCategoryTypeHebergement;
+    protected $aTypeHebergement;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -95,7 +95,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     }
 
     /**
-     * Initializes internal state of BaseCategoryTypeHebergementI18n object.
+     * Initializes internal state of BaseTypeHebergementI18n object.
      * @see        applyDefaults()
      */
     public function __construct()
@@ -138,7 +138,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * Set the value of [id] column.
      *
      * @param string $v new value
-     * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+     * @return TypeHebergementI18n The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -148,11 +148,11 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = CategoryTypeHebergementI18nPeer::ID;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::ID;
         }
 
-        if ($this->aCategoryTypeHebergement !== null && $this->aCategoryTypeHebergement->getId() !== $v) {
-            $this->aCategoryTypeHebergement = null;
+        if ($this->aTypeHebergement !== null && $this->aTypeHebergement->getId() !== $v) {
+            $this->aTypeHebergement = null;
         }
 
 
@@ -163,7 +163,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * Set the value of [locale] column.
      *
      * @param string $v new value
-     * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+     * @return TypeHebergementI18n The current object (for fluent API support)
      */
     public function setLocale($v)
     {
@@ -173,7 +173,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
         if ($this->locale !== $v) {
             $this->locale = $v;
-            $this->modifiedColumns[] = CategoryTypeHebergementI18nPeer::LOCALE;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::LOCALE;
         }
 
 
@@ -184,7 +184,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * Set the value of [name] column.
      *
      * @param string $v new value
-     * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+     * @return TypeHebergementI18n The current object (for fluent API support)
      */
     public function setName($v)
     {
@@ -194,7 +194,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
         if ($this->name !== $v) {
             $this->name = $v;
-            $this->modifiedColumns[] = CategoryTypeHebergementI18nPeer::NAME;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::NAME;
         }
 
 
@@ -248,10 +248,10 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = CategoryTypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating CategoryTypeHebergementI18n object", $e);
+            throw new PropelException("Error populating TypeHebergementI18n object", $e);
         }
     }
 
@@ -271,8 +271,8 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     public function ensureConsistency()
     {
 
-        if ($this->aCategoryTypeHebergement !== null && $this->id !== $this->aCategoryTypeHebergement->getId()) {
-            $this->aCategoryTypeHebergement = null;
+        if ($this->aTypeHebergement !== null && $this->id !== $this->aTypeHebergement->getId()) {
+            $this->aTypeHebergement = null;
         }
     } // ensureConsistency
 
@@ -297,13 +297,13 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(CategoryTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = CategoryTypeHebergementI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = TypeHebergementI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -313,7 +313,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aCategoryTypeHebergement = null;
+            $this->aTypeHebergement = null;
         } // if (deep)
     }
 
@@ -334,12 +334,12 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(CategoryTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = CategoryTypeHebergementI18nQuery::create()
+            $deleteQuery = TypeHebergementI18nQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -377,7 +377,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(CategoryTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -397,7 +397,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                CategoryTypeHebergementI18nPeer::addInstanceToPool($this);
+                TypeHebergementI18nPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -432,11 +432,11 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aCategoryTypeHebergement !== null) {
-                if ($this->aCategoryTypeHebergement->isModified() || $this->aCategoryTypeHebergement->isNew()) {
-                    $affectedRows += $this->aCategoryTypeHebergement->save($con);
+            if ($this->aTypeHebergement !== null) {
+                if ($this->aTypeHebergement->isModified() || $this->aTypeHebergement->isNew()) {
+                    $affectedRows += $this->aTypeHebergement->save($con);
                 }
-                $this->setCategoryTypeHebergement($this->aCategoryTypeHebergement);
+                $this->setTypeHebergement($this->aTypeHebergement);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -472,18 +472,18 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::ID)) {
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::LOCALE)) {
+        if ($this->isColumnModified(TypeHebergementI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::NAME)) {
+        if ($this->isColumnModified(TypeHebergementI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `category_type_hebergement_i18n` (%s) VALUES (%s)',
+            'INSERT INTO `type_hebergement_i18n` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -593,14 +593,14 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aCategoryTypeHebergement !== null) {
-                if (!$this->aCategoryTypeHebergement->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aCategoryTypeHebergement->getValidationFailures());
+            if ($this->aTypeHebergement !== null) {
+                if (!$this->aTypeHebergement->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aTypeHebergement->getValidationFailures());
                 }
             }
 
 
-            if (($retval = CategoryTypeHebergementI18nPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = TypeHebergementI18nPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
@@ -624,7 +624,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = CategoryTypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = TypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -672,19 +672,19 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['CategoryTypeHebergementI18n'][serialize($this->getPrimaryKey())])) {
+        if (isset($alreadyDumpedObjects['TypeHebergementI18n'][serialize($this->getPrimaryKey())])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['CategoryTypeHebergementI18n'][serialize($this->getPrimaryKey())] = true;
-        $keys = CategoryTypeHebergementI18nPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['TypeHebergementI18n'][serialize($this->getPrimaryKey())] = true;
+        $keys = TypeHebergementI18nPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->aCategoryTypeHebergement) {
-                $result['CategoryTypeHebergement'] = $this->aCategoryTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            if (null !== $this->aTypeHebergement) {
+                $result['TypeHebergement'] = $this->aTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
         }
 
@@ -704,7 +704,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = CategoryTypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = TypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -751,7 +751,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = CategoryTypeHebergementI18nPeer::getFieldNames($keyType);
+        $keys = TypeHebergementI18nPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
@@ -765,11 +765,11 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(CategoryTypeHebergementI18nPeer::DATABASE_NAME);
+        $criteria = new Criteria(TypeHebergementI18nPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::ID)) $criteria->add(CategoryTypeHebergementI18nPeer::ID, $this->id);
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::LOCALE)) $criteria->add(CategoryTypeHebergementI18nPeer::LOCALE, $this->locale);
-        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::NAME)) $criteria->add(CategoryTypeHebergementI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ID)) $criteria->add(TypeHebergementI18nPeer::ID, $this->id);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::LOCALE)) $criteria->add(TypeHebergementI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::NAME)) $criteria->add(TypeHebergementI18nPeer::NAME, $this->name);
 
         return $criteria;
     }
@@ -784,9 +784,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(CategoryTypeHebergementI18nPeer::DATABASE_NAME);
-        $criteria->add(CategoryTypeHebergementI18nPeer::ID, $this->id);
-        $criteria->add(CategoryTypeHebergementI18nPeer::LOCALE, $this->locale);
+        $criteria = new Criteria(TypeHebergementI18nPeer::DATABASE_NAME);
+        $criteria->add(TypeHebergementI18nPeer::ID, $this->id);
+        $criteria->add(TypeHebergementI18nPeer::LOCALE, $this->locale);
 
         return $criteria;
     }
@@ -833,7 +833,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of CategoryTypeHebergementI18n (or compatible) type.
+     * @param object $copyObj An object of TypeHebergementI18n (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -869,7 +869,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return CategoryTypeHebergementI18n Clone of current object.
+     * @return TypeHebergementI18n Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -889,25 +889,25 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return CategoryTypeHebergementI18nPeer
+     * @return TypeHebergementI18nPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new CategoryTypeHebergementI18nPeer();
+            self::$peer = new TypeHebergementI18nPeer();
         }
 
         return self::$peer;
     }
 
     /**
-     * Declares an association between this object and a CategoryTypeHebergement object.
+     * Declares an association between this object and a TypeHebergement object.
      *
-     * @param             CategoryTypeHebergement $v
-     * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+     * @param             TypeHebergement $v
+     * @return TypeHebergementI18n The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setCategoryTypeHebergement(CategoryTypeHebergement $v = null)
+    public function setTypeHebergement(TypeHebergement $v = null)
     {
         if ($v === null) {
             $this->setId(NULL);
@@ -915,12 +915,12 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             $this->setId($v->getId());
         }
 
-        $this->aCategoryTypeHebergement = $v;
+        $this->aTypeHebergement = $v;
 
         // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the CategoryTypeHebergement object, it will not be re-added.
+        // If this object has already been added to the TypeHebergement object, it will not be re-added.
         if ($v !== null) {
-            $v->addCategoryTypeHebergementI18n($this);
+            $v->addTypeHebergementI18n($this);
         }
 
 
@@ -929,26 +929,26 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
 
 
     /**
-     * Get the associated CategoryTypeHebergement object
+     * Get the associated TypeHebergement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @return CategoryTypeHebergement The associated CategoryTypeHebergement object.
+     * @return TypeHebergement The associated TypeHebergement object.
      * @throws PropelException
      */
-    public function getCategoryTypeHebergement(PropelPDO $con = null)
+    public function getTypeHebergement(PropelPDO $con = null)
     {
-        if ($this->aCategoryTypeHebergement === null && (($this->id !== "" && $this->id !== null))) {
-            $this->aCategoryTypeHebergement = CategoryTypeHebergementQuery::create()->findPk($this->id, $con);
+        if ($this->aTypeHebergement === null && (($this->id !== "" && $this->id !== null))) {
+            $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aCategoryTypeHebergement->addCategoryTypeHebergementI18ns($this);
+                $this->aTypeHebergement->addTypeHebergementI18ns($this);
              */
         }
 
-        return $this->aCategoryTypeHebergement;
+        return $this->aTypeHebergement;
     }
 
     /**
@@ -982,7 +982,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         if ($deep) {
         } // if ($deep)
 
-        $this->aCategoryTypeHebergement = null;
+        $this->aTypeHebergement = null;
     }
 
     /**
@@ -992,7 +992,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
      */
     public function __toString()
     {
-        return (string) $this->exportTo(CategoryTypeHebergementI18nPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(TypeHebergementI18nPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**

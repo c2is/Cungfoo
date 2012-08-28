@@ -16,6 +16,7 @@ use Cungfoo\Model\Camping;
 use Cungfoo\Model\CampingTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\TypeHebergement;
+use Cungfoo\Model\TypeHebergementI18n;
 use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\TypeHebergementQuery;
 
@@ -25,13 +26,11 @@ use Cungfoo\Model\TypeHebergementQuery;
  *
  *
  * @method TypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
- * @method TypeHebergementQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method TypeHebergementQuery orderByCategoryTypeHebergementId($order = Criteria::ASC) Order by the category_type_hebergement_id column
  * @method TypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TypeHebergementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method TypeHebergementQuery groupById() Group by the id column
- * @method TypeHebergementQuery groupByName() Group by the name column
  * @method TypeHebergementQuery groupByCategoryTypeHebergementId() Group by the category_type_hebergement_id column
  * @method TypeHebergementQuery groupByCreatedAt() Group by the created_at column
  * @method TypeHebergementQuery groupByUpdatedAt() Group by the updated_at column
@@ -48,16 +47,18 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery rightJoinCampingTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingTypeHebergement relation
  * @method TypeHebergementQuery innerJoinCampingTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingTypeHebergement relation
  *
+ * @method TypeHebergementQuery leftJoinTypeHebergementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementI18n relation
+ * @method TypeHebergementQuery rightJoinTypeHebergementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementI18n relation
+ * @method TypeHebergementQuery innerJoinTypeHebergementI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergementI18n relation
+ *
  * @method TypeHebergement findOne(PropelPDO $con = null) Return the first TypeHebergement matching the query
  * @method TypeHebergement findOneOrCreate(PropelPDO $con = null) Return the first TypeHebergement matching the query, or a new TypeHebergement object populated from the query conditions when no match is found
  *
- * @method TypeHebergement findOneByName(string $name) Return the first TypeHebergement filtered by the name column
  * @method TypeHebergement findOneByCategoryTypeHebergementId(string $category_type_hebergement_id) Return the first TypeHebergement filtered by the category_type_hebergement_id column
  * @method TypeHebergement findOneByCreatedAt(string $created_at) Return the first TypeHebergement filtered by the created_at column
  * @method TypeHebergement findOneByUpdatedAt(string $updated_at) Return the first TypeHebergement filtered by the updated_at column
  *
  * @method array findById(string $id) Return TypeHebergement objects filtered by the id column
- * @method array findByName(string $name) Return TypeHebergement objects filtered by the name column
  * @method array findByCategoryTypeHebergementId(string $category_type_hebergement_id) Return TypeHebergement objects filtered by the category_type_hebergement_id column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return TypeHebergement objects filtered by the updated_at column
@@ -164,7 +165,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -280,35 +281,6 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TypeHebergementPeer::NAME, $name, $comparison);
     }
 
     /**
@@ -577,6 +549,80 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related TypeHebergementI18n object
+     *
+     * @param   TypeHebergementI18n|PropelObjectCollection $typeHebergementI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TypeHebergementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByTypeHebergementI18n($typeHebergementI18n, $comparison = null)
+    {
+        if ($typeHebergementI18n instanceof TypeHebergementI18n) {
+            return $this
+                ->addUsingAlias(TypeHebergementPeer::ID, $typeHebergementI18n->getId(), $comparison);
+        } elseif ($typeHebergementI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useTypeHebergementI18nQuery()
+                ->filterByPrimaryKeys($typeHebergementI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByTypeHebergementI18n() only accepts arguments of type TypeHebergementI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the TypeHebergementI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinTypeHebergementI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('TypeHebergementI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'TypeHebergementI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the TypeHebergementI18n relation TypeHebergementI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\TypeHebergementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useTypeHebergementI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinTypeHebergementI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergementI18n', '\Cungfoo\Model\TypeHebergementI18nQuery');
+    }
+
+    /**
      * Filter the query by a related Camping object
      * using the camping_type_hebergement table as cross reference
      *
@@ -674,4 +720,61 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(TypeHebergementPeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'TypeHebergementI18n';
+
+        return $this
+            ->joinTypeHebergementI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('TypeHebergementI18n');
+        $this->with['TypeHebergementI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TypeHebergementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergementI18n', 'Cungfoo\Model\TypeHebergementI18nQuery');
+    }
+
 }

@@ -101,7 +101,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      * Current locale
      * @var        string
      */
-    protected $currentLocale = 'en';
+    protected $currentLocale = 'fr';
 
     /**
      * Current translation objects
@@ -1491,7 +1491,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         } // if ($deep)
 
         // i18n behavior
-        $this->currentLocale = 'en';
+        $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
         if ($this->collTypeHebergements instanceof PropelCollection) {
@@ -1547,7 +1547,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      *
      * @return    CategoryTypeHebergement The current object (for fluent API support)
      */
-    public function setLocale($locale = 'en')
+    public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
 
@@ -1571,7 +1571,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      * @param     PropelPDO $con an optional connection object
      *
      * @return CategoryTypeHebergementI18n */
-    public function getTranslation($locale = 'en', PropelPDO $con = null)
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
             if (null !== $this->collCategoryTypeHebergementI18ns) {
@@ -1606,7 +1606,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      *
      * @return    CategoryTypeHebergement The current object (for fluent API support)
      */
-    public function removeTranslation($locale = 'en', PropelPDO $con = null)
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
             CategoryTypeHebergementI18nQuery::create()
