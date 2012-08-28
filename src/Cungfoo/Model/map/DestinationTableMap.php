@@ -43,7 +43,6 @@ class DestinationTableMap extends TableMap
         $this->setUseIdGenerator(false);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'VARCHAR', true, 255, null);
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -55,6 +54,7 @@ class DestinationTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('CampingDestination', 'Cungfoo\\Model\\CampingDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'CampingDestinations');
+        $this->addRelation('DestinationI18n', 'Cungfoo\\Model\\DestinationI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DestinationI18ns');
         $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Campings');
     } // buildRelations()
 
@@ -68,6 +68,7 @@ class DestinationTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/destinations', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()

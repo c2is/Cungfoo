@@ -27,18 +27,31 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'region.name',
-            'required' => false,
-        ));
         $builder->add('pays', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(
             ),
             'label' => 'region.pays',
+            'required' => false,
+        ));
+        $builder->add('regionI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\RegionI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'region.regionI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'region.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

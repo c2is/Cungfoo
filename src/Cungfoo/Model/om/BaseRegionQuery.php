@@ -14,6 +14,7 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionI18n;
 use Cungfoo\Model\RegionPeer;
 use Cungfoo\Model\RegionQuery;
 use Cungfoo\Model\Ville;
@@ -24,13 +25,11 @@ use Cungfoo\Model\Ville;
  *
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
- * @method RegionQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method RegionQuery groupById() Group by the id column
- * @method RegionQuery groupByName() Group by the name column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
@@ -47,16 +46,18 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
  * @method RegionQuery innerJoinVille($relationAlias = null) Adds a INNER JOIN clause to the query using the Ville relation
  *
+ * @method RegionQuery leftJoinRegionI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionI18n relation
+ * @method RegionQuery rightJoinRegionI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionI18n relation
+ * @method RegionQuery innerJoinRegionI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionI18n relation
+ *
  * @method Region findOne(PropelPDO $con = null) Return the first Region matching the query
  * @method Region findOneOrCreate(PropelPDO $con = null) Return the first Region matching the query, or a new Region object populated from the query conditions when no match is found
  *
- * @method Region findOneByName(string $name) Return the first Region filtered by the name column
  * @method Region findOneByPaysId(string $pays_id) Return the first Region filtered by the pays_id column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  *
  * @method array findById(string $id) Return Region objects filtered by the id column
- * @method array findByName(string $name) Return Region objects filtered by the name column
  * @method array findByPaysId(string $pays_id) Return Region objects filtered by the pays_id column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
@@ -163,7 +164,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -279,35 +280,6 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::NAME, $name, $comparison);
     }
 
     /**
@@ -576,6 +548,80 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related RegionI18n object
+     *
+     * @param   RegionI18n|PropelObjectCollection $regionI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegionI18n($regionI18n, $comparison = null)
+    {
+        if ($regionI18n instanceof RegionI18n) {
+            return $this
+                ->addUsingAlias(RegionPeer::ID, $regionI18n->getId(), $comparison);
+        } elseif ($regionI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionI18nQuery()
+                ->filterByPrimaryKeys($regionI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegionI18n() only accepts arguments of type RegionI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the RegionI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function joinRegionI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('RegionI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'RegionI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the RegionI18n relation RegionI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinRegionI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionI18n', '\Cungfoo\Model\RegionI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   Region $region Object to remove from the list of results
@@ -656,4 +702,61 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    RegionQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'RegionI18n';
+
+        return $this
+            ->joinRegionI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    RegionQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('RegionI18n');
+        $this->with['RegionI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    RegionI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionI18n', 'Cungfoo\Model\RegionI18nQuery');
+    }
+
 }

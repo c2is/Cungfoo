@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Destination;
+use Cungfoo\Model\DestinationI18nPeer;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\map\DestinationTableMap;
 
@@ -36,19 +37,16 @@ abstract class BaseDestinationPeer
     const TM_CLASS = 'DestinationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the ID field */
     const ID = 'destination.ID';
-
-    /** the column name for the NAME field */
-    const NAME = 'destination.NAME';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'destination.CREATED_AT';
@@ -68,6 +66,13 @@ abstract class BaseDestinationPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -75,12 +80,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[DestinationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::NAME, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -90,12 +95,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::NAME => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CREATED_AT => 1, DestinationPeer::UPDATED_AT => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -170,12 +175,10 @@ abstract class BaseDestinationPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(DestinationPeer::ID);
-            $criteria->addSelectColumn(DestinationPeer::NAME);
             $criteria->addSelectColumn(DestinationPeer::CREATED_AT);
             $criteria->addSelectColumn(DestinationPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
         }
@@ -377,6 +380,9 @@ abstract class BaseDestinationPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in DestinationI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        DestinationI18nPeer::clearInstancePool();
     }
 
     /**

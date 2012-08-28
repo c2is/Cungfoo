@@ -21,7 +21,6 @@ class BasePaysListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('name'));
     }
 
     /**

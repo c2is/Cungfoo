@@ -27,19 +27,32 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'activite.name',
-            'required' => false,
-        ));
         $builder->add('campings', 'model', array(
             'class' => 'Cungfoo\Model\Camping',
             'constraints' => array(
             ),
             'multiple' => true,
             'label' => 'activite.campings',
+            'required' => false,
+        ));
+        $builder->add('activiteI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'activite.activiteI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'activite.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

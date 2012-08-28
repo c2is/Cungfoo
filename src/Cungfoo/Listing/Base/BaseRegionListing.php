@@ -21,7 +21,6 @@ class BaseRegionListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('pays_id'));
     }
 

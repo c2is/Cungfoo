@@ -21,7 +21,6 @@ class BaseVilleListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('region_id'));
     }
 

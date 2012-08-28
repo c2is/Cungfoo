@@ -13,6 +13,7 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Pays;
+use Cungfoo\Model\PaysI18n;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\PaysQuery;
 use Cungfoo\Model\Region;
@@ -23,12 +24,10 @@ use Cungfoo\Model\Region;
  *
  *
  * @method PaysQuery orderById($order = Criteria::ASC) Order by the id column
- * @method PaysQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method PaysQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PaysQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method PaysQuery groupById() Group by the id column
- * @method PaysQuery groupByName() Group by the name column
  * @method PaysQuery groupByCreatedAt() Group by the created_at column
  * @method PaysQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -40,15 +39,17 @@ use Cungfoo\Model\Region;
  * @method PaysQuery rightJoinRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Region relation
  * @method PaysQuery innerJoinRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the Region relation
  *
+ * @method PaysQuery leftJoinPaysI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PaysI18n relation
+ * @method PaysQuery rightJoinPaysI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PaysI18n relation
+ * @method PaysQuery innerJoinPaysI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the PaysI18n relation
+ *
  * @method Pays findOne(PropelPDO $con = null) Return the first Pays matching the query
  * @method Pays findOneOrCreate(PropelPDO $con = null) Return the first Pays matching the query, or a new Pays object populated from the query conditions when no match is found
  *
- * @method Pays findOneByName(string $name) Return the first Pays filtered by the name column
  * @method Pays findOneByCreatedAt(string $created_at) Return the first Pays filtered by the created_at column
  * @method Pays findOneByUpdatedAt(string $updated_at) Return the first Pays filtered by the updated_at column
  *
  * @method array findById(string $id) Return Pays objects filtered by the id column
- * @method array findByName(string $name) Return Pays objects filtered by the name column
  * @method array findByCreatedAt(string $created_at) Return Pays objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Pays objects filtered by the updated_at column
  *
@@ -154,7 +155,7 @@ abstract class BasePaysQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `CREATED_AT`, `UPDATED_AT` FROM `pays` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `pays` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -270,35 +271,6 @@ abstract class BasePaysQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PaysPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PaysQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PaysPeer::NAME, $name, $comparison);
     }
 
     /**
@@ -462,6 +434,80 @@ abstract class BasePaysQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related PaysI18n object
+     *
+     * @param   PaysI18n|PropelObjectCollection $paysI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PaysQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByPaysI18n($paysI18n, $comparison = null)
+    {
+        if ($paysI18n instanceof PaysI18n) {
+            return $this
+                ->addUsingAlias(PaysPeer::ID, $paysI18n->getId(), $comparison);
+        } elseif ($paysI18n instanceof PropelObjectCollection) {
+            return $this
+                ->usePaysI18nQuery()
+                ->filterByPrimaryKeys($paysI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPaysI18n() only accepts arguments of type PaysI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the PaysI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PaysQuery The current query, for fluid interface
+     */
+    public function joinPaysI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('PaysI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'PaysI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the PaysI18n relation PaysI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\PaysI18nQuery A secondary query class using the current class as primary query
+     */
+    public function usePaysI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinPaysI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PaysI18n', '\Cungfoo\Model\PaysI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   Pays $pays Object to remove from the list of results
@@ -542,4 +588,61 @@ abstract class BasePaysQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(PaysPeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PaysQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'PaysI18n';
+
+        return $this
+            ->joinPaysI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PaysQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('PaysI18n');
+        $this->with['PaysI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PaysI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PaysI18n', 'Cungfoo\Model\PaysI18nQuery');
+    }
+
 }

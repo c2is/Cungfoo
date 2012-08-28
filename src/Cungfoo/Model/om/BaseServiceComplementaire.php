@@ -20,6 +20,8 @@ use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\CampingServiceComplementaire;
 use Cungfoo\Model\CampingServiceComplementaireQuery;
 use Cungfoo\Model\ServiceComplementaire;
+use Cungfoo\Model\ServiceComplementaireI18n;
+use Cungfoo\Model\ServiceComplementaireI18nQuery;
 use Cungfoo\Model\ServiceComplementairePeer;
 use Cungfoo\Model\ServiceComplementaireQuery;
 
@@ -58,12 +60,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -80,6 +76,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     protected $collCampingServiceComplementaires;
     protected $collCampingServiceComplementairesPartial;
+
+    /**
+     * @var        PropelObjectCollection|ServiceComplementaireI18n[] Collection to store aggregation of ServiceComplementaireI18n objects.
+     */
+    protected $collServiceComplementaireI18ns;
+    protected $collServiceComplementaireI18nsPartial;
 
     /**
      * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
@@ -100,6 +102,20 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[ServiceComplementaireI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -113,6 +129,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $campingServiceComplementairesScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $serviceComplementaireI18nsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
      *
      * @return string
@@ -120,16 +142,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -228,27 +240,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return ServiceComplementaire The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = ServiceComplementairePeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -327,9 +318,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -338,7 +328,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating ServiceComplementaire object", $e);
@@ -401,6 +391,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($deep) {  // also de-associate any related objects?
 
             $this->collCampingServiceComplementaires = null;
+
+            $this->collServiceComplementaireI18ns = null;
 
             $this->collCampings = null;
         } // if (deep)
@@ -575,6 +567,23 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 }
             }
 
+            if ($this->serviceComplementaireI18nsScheduledForDeletion !== null) {
+                if (!$this->serviceComplementaireI18nsScheduledForDeletion->isEmpty()) {
+                    ServiceComplementaireI18nQuery::create()
+                        ->filterByPrimaryKeys($this->serviceComplementaireI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->serviceComplementaireI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collServiceComplementaireI18ns !== null) {
+                foreach ($this->collServiceComplementaireI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -600,9 +609,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($this->isColumnModified(ServiceComplementairePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(ServiceComplementairePeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(ServiceComplementairePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -622,9 +628,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -732,6 +735,14 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                     }
                 }
 
+                if ($this->collServiceComplementaireI18ns !== null) {
+                    foreach ($this->collServiceComplementaireI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -771,12 +782,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 3:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -809,13 +817,15 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $keys = ServiceComplementairePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCampingServiceComplementaires) {
                 $result['CampingServiceComplementaires'] = $this->collCampingServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collServiceComplementaireI18ns) {
+                $result['ServiceComplementaireI18ns'] = $this->collServiceComplementaireI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -855,12 +865,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 3:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -888,9 +895,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $keys = ServiceComplementairePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
     }
 
     /**
@@ -903,7 +909,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $criteria = new Criteria(ServiceComplementairePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(ServiceComplementairePeer::ID)) $criteria->add(ServiceComplementairePeer::ID, $this->id);
-        if ($this->isColumnModified(ServiceComplementairePeer::NAME)) $criteria->add(ServiceComplementairePeer::NAME, $this->name);
         if ($this->isColumnModified(ServiceComplementairePeer::CREATED_AT)) $criteria->add(ServiceComplementairePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ServiceComplementairePeer::UPDATED_AT)) $criteria->add(ServiceComplementairePeer::UPDATED_AT, $this->updated_at);
 
@@ -969,7 +974,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -983,6 +987,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             foreach ($this->getCampingServiceComplementaires() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCampingServiceComplementaire($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getServiceComplementaireI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addServiceComplementaireI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1049,6 +1059,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         if ('CampingServiceComplementaire' == $relationName) {
             $this->initCampingServiceComplementaires();
+        }
+        if ('ServiceComplementaireI18n' == $relationName) {
+            $this->initServiceComplementaireI18ns();
         }
     }
 
@@ -1285,6 +1298,217 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     /**
+     * Clears out the collServiceComplementaireI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addServiceComplementaireI18ns()
+     */
+    public function clearServiceComplementaireI18ns()
+    {
+        $this->collServiceComplementaireI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collServiceComplementaireI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collServiceComplementaireI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialServiceComplementaireI18ns($v = true)
+    {
+        $this->collServiceComplementaireI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collServiceComplementaireI18ns collection.
+     *
+     * By default this just sets the collServiceComplementaireI18ns collection to an empty array (like clearcollServiceComplementaireI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initServiceComplementaireI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collServiceComplementaireI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collServiceComplementaireI18ns = new PropelObjectCollection();
+        $this->collServiceComplementaireI18ns->setModel('ServiceComplementaireI18n');
+    }
+
+    /**
+     * Gets an array of ServiceComplementaireI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ServiceComplementaire is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ServiceComplementaireI18n[] List of ServiceComplementaireI18n objects
+     * @throws PropelException
+     */
+    public function getServiceComplementaireI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collServiceComplementaireI18nsPartial && !$this->isNew();
+        if (null === $this->collServiceComplementaireI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collServiceComplementaireI18ns) {
+                // return empty collection
+                $this->initServiceComplementaireI18ns();
+            } else {
+                $collServiceComplementaireI18ns = ServiceComplementaireI18nQuery::create(null, $criteria)
+                    ->filterByServiceComplementaire($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collServiceComplementaireI18nsPartial && count($collServiceComplementaireI18ns)) {
+                      $this->initServiceComplementaireI18ns(false);
+
+                      foreach($collServiceComplementaireI18ns as $obj) {
+                        if (false == $this->collServiceComplementaireI18ns->contains($obj)) {
+                          $this->collServiceComplementaireI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collServiceComplementaireI18nsPartial = true;
+                    }
+
+                    return $collServiceComplementaireI18ns;
+                }
+
+                if($partial && $this->collServiceComplementaireI18ns) {
+                    foreach($this->collServiceComplementaireI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collServiceComplementaireI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collServiceComplementaireI18ns = $collServiceComplementaireI18ns;
+                $this->collServiceComplementaireI18nsPartial = false;
+            }
+        }
+
+        return $this->collServiceComplementaireI18ns;
+    }
+
+    /**
+     * Sets a collection of ServiceComplementaireI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $serviceComplementaireI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setServiceComplementaireI18ns(PropelCollection $serviceComplementaireI18ns, PropelPDO $con = null)
+    {
+        $this->serviceComplementaireI18nsScheduledForDeletion = $this->getServiceComplementaireI18ns(new Criteria(), $con)->diff($serviceComplementaireI18ns);
+
+        foreach ($this->serviceComplementaireI18nsScheduledForDeletion as $serviceComplementaireI18nRemoved) {
+            $serviceComplementaireI18nRemoved->setServiceComplementaire(null);
+        }
+
+        $this->collServiceComplementaireI18ns = null;
+        foreach ($serviceComplementaireI18ns as $serviceComplementaireI18n) {
+            $this->addServiceComplementaireI18n($serviceComplementaireI18n);
+        }
+
+        $this->collServiceComplementaireI18ns = $serviceComplementaireI18ns;
+        $this->collServiceComplementaireI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related ServiceComplementaireI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ServiceComplementaireI18n objects.
+     * @throws PropelException
+     */
+    public function countServiceComplementaireI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collServiceComplementaireI18nsPartial && !$this->isNew();
+        if (null === $this->collServiceComplementaireI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collServiceComplementaireI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getServiceComplementaireI18ns());
+                }
+                $query = ServiceComplementaireI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByServiceComplementaire($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collServiceComplementaireI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a ServiceComplementaireI18n object to this object
+     * through the ServiceComplementaireI18n foreign key attribute.
+     *
+     * @param    ServiceComplementaireI18n $l ServiceComplementaireI18n
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function addServiceComplementaireI18n(ServiceComplementaireI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collServiceComplementaireI18ns === null) {
+            $this->initServiceComplementaireI18ns();
+            $this->collServiceComplementaireI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collServiceComplementaireI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddServiceComplementaireI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ServiceComplementaireI18n $serviceComplementaireI18n The serviceComplementaireI18n object to add.
+     */
+    protected function doAddServiceComplementaireI18n($serviceComplementaireI18n)
+    {
+        $this->collServiceComplementaireI18ns[]= $serviceComplementaireI18n;
+        $serviceComplementaireI18n->setServiceComplementaire($this);
+    }
+
+    /**
+     * @param	ServiceComplementaireI18n $serviceComplementaireI18n The serviceComplementaireI18n object to remove.
+     */
+    public function removeServiceComplementaireI18n($serviceComplementaireI18n)
+    {
+        if ($this->getServiceComplementaireI18ns()->contains($serviceComplementaireI18n)) {
+            $this->collServiceComplementaireI18ns->remove($this->collServiceComplementaireI18ns->search($serviceComplementaireI18n));
+            if (null === $this->serviceComplementaireI18nsScheduledForDeletion) {
+                $this->serviceComplementaireI18nsScheduledForDeletion = clone $this->collServiceComplementaireI18ns;
+                $this->serviceComplementaireI18nsScheduledForDeletion->clear();
+            }
+            $this->serviceComplementaireI18nsScheduledForDeletion[]= $serviceComplementaireI18n;
+            $serviceComplementaireI18n->setServiceComplementaire(null);
+        }
+    }
+
+    /**
      * Clears out the collCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1458,7 +1682,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1486,6 +1709,11 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collServiceComplementaireI18ns) {
+                foreach ($this->collServiceComplementaireI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampings) {
                 foreach ($this->collCampings as $o) {
                     $o->clearAllReferences($deep);
@@ -1493,10 +1721,18 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collCampingServiceComplementaires instanceof PropelCollection) {
             $this->collCampingServiceComplementaires->clearIterator();
         }
         $this->collCampingServiceComplementaires = null;
+        if ($this->collServiceComplementaireI18ns instanceof PropelCollection) {
+            $this->collServiceComplementaireI18ns->clearIterator();
+        }
+        $this->collServiceComplementaireI18ns = null;
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
@@ -1533,6 +1769,129 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = ServiceComplementairePeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    ServiceComplementaire The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return ServiceComplementaireI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collServiceComplementaireI18ns) {
+                foreach ($this->collServiceComplementaireI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new ServiceComplementaireI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = ServiceComplementaireI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addServiceComplementaireI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    ServiceComplementaire The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            ServiceComplementaireI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collServiceComplementaireI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collServiceComplementaireI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return ServiceComplementaireI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return ServiceComplementaireI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

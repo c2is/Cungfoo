@@ -43,7 +43,6 @@ class PaysTableMap extends TableMap
         $this->setUseIdGenerator(false);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'VARCHAR', true, 255, null);
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -55,6 +54,7 @@ class PaysTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), null, null, 'Regions');
+        $this->addRelation('PaysI18n', 'Cungfoo\\Model\\PaysI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PaysI18ns');
     } // buildRelations()
 
     /**
@@ -67,6 +67,7 @@ class PaysTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/pays', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()

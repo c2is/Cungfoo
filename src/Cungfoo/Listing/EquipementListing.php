@@ -23,6 +23,7 @@ class EquipementListing extends BaseEquipementListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // EquipementListing

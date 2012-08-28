@@ -27,19 +27,32 @@ class BaseEquipementType extends AppAwareType
             'label' => 'equipement.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'equipement.name',
-            'required' => false,
-        ));
         $builder->add('campings', 'model', array(
             'class' => 'Cungfoo\Model\Camping',
             'constraints' => array(
             ),
             'multiple' => true,
             'label' => 'equipement.campings',
+            'required' => false,
+        ));
+        $builder->add('equipementI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\EquipementI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'equipement.equipementI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'equipement.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

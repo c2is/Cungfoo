@@ -16,6 +16,8 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Activite;
+use Cungfoo\Model\ActiviteI18n;
+use Cungfoo\Model\ActiviteI18nQuery;
 use Cungfoo\Model\ActivitePeer;
 use Cungfoo\Model\ActiviteQuery;
 use Cungfoo\Model\Camping;
@@ -58,12 +60,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -80,6 +76,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
      */
     protected $collCampingActivites;
     protected $collCampingActivitesPartial;
+
+    /**
+     * @var        PropelObjectCollection|ActiviteI18n[] Collection to store aggregation of ActiviteI18n objects.
+     */
+    protected $collActiviteI18ns;
+    protected $collActiviteI18nsPartial;
 
     /**
      * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
@@ -100,6 +102,20 @@ abstract class BaseActivite extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[ActiviteI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -113,6 +129,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
     protected $campingActivitesScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $activiteI18nsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
      *
      * @return string
@@ -120,16 +142,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -228,27 +240,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return Activite The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = ActivitePeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -327,9 +318,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -338,7 +328,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = ActivitePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = ActivitePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Activite object", $e);
@@ -401,6 +391,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->collCampingActivites = null;
+
+            $this->collActiviteI18ns = null;
 
             $this->collCampings = null;
         } // if (deep)
@@ -575,6 +567,23 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->activiteI18nsScheduledForDeletion !== null) {
+                if (!$this->activiteI18nsScheduledForDeletion->isEmpty()) {
+                    ActiviteI18nQuery::create()
+                        ->filterByPrimaryKeys($this->activiteI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->activiteI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collActiviteI18ns !== null) {
+                foreach ($this->collActiviteI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -600,9 +609,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if ($this->isColumnModified(ActivitePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(ActivitePeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(ActivitePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -622,9 +628,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -732,6 +735,14 @@ abstract class BaseActivite extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collActiviteI18ns !== null) {
+                    foreach ($this->collActiviteI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -771,12 +782,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 3:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -809,13 +817,15 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $keys = ActivitePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCampingActivites) {
                 $result['CampingActivites'] = $this->collCampingActivites->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collActiviteI18ns) {
+                $result['ActiviteI18ns'] = $this->collActiviteI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -855,12 +865,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 3:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -888,9 +895,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $keys = ActivitePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
     }
 
     /**
@@ -903,7 +909,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $criteria = new Criteria(ActivitePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(ActivitePeer::ID)) $criteria->add(ActivitePeer::ID, $this->id);
-        if ($this->isColumnModified(ActivitePeer::NAME)) $criteria->add(ActivitePeer::NAME, $this->name);
         if ($this->isColumnModified(ActivitePeer::CREATED_AT)) $criteria->add(ActivitePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ActivitePeer::UPDATED_AT)) $criteria->add(ActivitePeer::UPDATED_AT, $this->updated_at);
 
@@ -969,7 +974,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -983,6 +987,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
             foreach ($this->getCampingActivites() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCampingActivite($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getActiviteI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addActiviteI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1049,6 +1059,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
     {
         if ('CampingActivite' == $relationName) {
             $this->initCampingActivites();
+        }
+        if ('ActiviteI18n' == $relationName) {
+            $this->initActiviteI18ns();
         }
     }
 
@@ -1285,6 +1298,217 @@ abstract class BaseActivite extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collActiviteI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addActiviteI18ns()
+     */
+    public function clearActiviteI18ns()
+    {
+        $this->collActiviteI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collActiviteI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collActiviteI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialActiviteI18ns($v = true)
+    {
+        $this->collActiviteI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collActiviteI18ns collection.
+     *
+     * By default this just sets the collActiviteI18ns collection to an empty array (like clearcollActiviteI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initActiviteI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collActiviteI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collActiviteI18ns = new PropelObjectCollection();
+        $this->collActiviteI18ns->setModel('ActiviteI18n');
+    }
+
+    /**
+     * Gets an array of ActiviteI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Activite is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ActiviteI18n[] List of ActiviteI18n objects
+     * @throws PropelException
+     */
+    public function getActiviteI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collActiviteI18nsPartial && !$this->isNew();
+        if (null === $this->collActiviteI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collActiviteI18ns) {
+                // return empty collection
+                $this->initActiviteI18ns();
+            } else {
+                $collActiviteI18ns = ActiviteI18nQuery::create(null, $criteria)
+                    ->filterByActivite($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collActiviteI18nsPartial && count($collActiviteI18ns)) {
+                      $this->initActiviteI18ns(false);
+
+                      foreach($collActiviteI18ns as $obj) {
+                        if (false == $this->collActiviteI18ns->contains($obj)) {
+                          $this->collActiviteI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collActiviteI18nsPartial = true;
+                    }
+
+                    return $collActiviteI18ns;
+                }
+
+                if($partial && $this->collActiviteI18ns) {
+                    foreach($this->collActiviteI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collActiviteI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collActiviteI18ns = $collActiviteI18ns;
+                $this->collActiviteI18nsPartial = false;
+            }
+        }
+
+        return $this->collActiviteI18ns;
+    }
+
+    /**
+     * Sets a collection of ActiviteI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $activiteI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setActiviteI18ns(PropelCollection $activiteI18ns, PropelPDO $con = null)
+    {
+        $this->activiteI18nsScheduledForDeletion = $this->getActiviteI18ns(new Criteria(), $con)->diff($activiteI18ns);
+
+        foreach ($this->activiteI18nsScheduledForDeletion as $activiteI18nRemoved) {
+            $activiteI18nRemoved->setActivite(null);
+        }
+
+        $this->collActiviteI18ns = null;
+        foreach ($activiteI18ns as $activiteI18n) {
+            $this->addActiviteI18n($activiteI18n);
+        }
+
+        $this->collActiviteI18ns = $activiteI18ns;
+        $this->collActiviteI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related ActiviteI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ActiviteI18n objects.
+     * @throws PropelException
+     */
+    public function countActiviteI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collActiviteI18nsPartial && !$this->isNew();
+        if (null === $this->collActiviteI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collActiviteI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getActiviteI18ns());
+                }
+                $query = ActiviteI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByActivite($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collActiviteI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a ActiviteI18n object to this object
+     * through the ActiviteI18n foreign key attribute.
+     *
+     * @param    ActiviteI18n $l ActiviteI18n
+     * @return Activite The current object (for fluent API support)
+     */
+    public function addActiviteI18n(ActiviteI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collActiviteI18ns === null) {
+            $this->initActiviteI18ns();
+            $this->collActiviteI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collActiviteI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddActiviteI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ActiviteI18n $activiteI18n The activiteI18n object to add.
+     */
+    protected function doAddActiviteI18n($activiteI18n)
+    {
+        $this->collActiviteI18ns[]= $activiteI18n;
+        $activiteI18n->setActivite($this);
+    }
+
+    /**
+     * @param	ActiviteI18n $activiteI18n The activiteI18n object to remove.
+     */
+    public function removeActiviteI18n($activiteI18n)
+    {
+        if ($this->getActiviteI18ns()->contains($activiteI18n)) {
+            $this->collActiviteI18ns->remove($this->collActiviteI18ns->search($activiteI18n));
+            if (null === $this->activiteI18nsScheduledForDeletion) {
+                $this->activiteI18nsScheduledForDeletion = clone $this->collActiviteI18ns;
+                $this->activiteI18nsScheduledForDeletion->clear();
+            }
+            $this->activiteI18nsScheduledForDeletion[]= $activiteI18n;
+            $activiteI18n->setActivite(null);
+        }
+    }
+
+    /**
      * Clears out the collCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1458,7 +1682,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1486,6 +1709,11 @@ abstract class BaseActivite extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collActiviteI18ns) {
+                foreach ($this->collActiviteI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampings) {
                 foreach ($this->collCampings as $o) {
                     $o->clearAllReferences($deep);
@@ -1493,10 +1721,18 @@ abstract class BaseActivite extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collCampingActivites instanceof PropelCollection) {
             $this->collCampingActivites->clearIterator();
         }
         $this->collCampingActivites = null;
+        if ($this->collActiviteI18ns instanceof PropelCollection) {
+            $this->collActiviteI18ns->clearIterator();
+        }
+        $this->collActiviteI18ns = null;
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
@@ -1533,6 +1769,129 @@ abstract class BaseActivite extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = ActivitePeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Activite The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return ActiviteI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collActiviteI18ns) {
+                foreach ($this->collActiviteI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new ActiviteI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = ActiviteI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addActiviteI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Activite The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            ActiviteI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collActiviteI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collActiviteI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return ActiviteI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return ActiviteI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

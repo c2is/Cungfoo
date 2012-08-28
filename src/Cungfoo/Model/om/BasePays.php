@@ -16,6 +16,8 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Pays;
+use Cungfoo\Model\PaysI18n;
+use Cungfoo\Model\PaysI18nQuery;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\PaysQuery;
 use Cungfoo\Model\Region;
@@ -56,12 +58,6 @@ abstract class BasePays extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -80,6 +76,12 @@ abstract class BasePays extends BaseObject implements Persistent
     protected $collRegionsPartial;
 
     /**
+     * @var        PropelObjectCollection|PaysI18n[] Collection to store aggregation of PaysI18n objects.
+     */
+    protected $collPaysI18ns;
+    protected $collPaysI18nsPartial;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -93,11 +95,31 @@ abstract class BasePays extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[PaysI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
     protected $regionsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $paysI18nsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -107,16 +129,6 @@ abstract class BasePays extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -215,27 +227,6 @@ abstract class BasePays extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return Pays The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = PaysPeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -314,9 +305,8 @@ abstract class BasePays extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -325,7 +315,7 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = PaysPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = PaysPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Pays object", $e);
@@ -388,6 +378,8 @@ abstract class BasePays extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->collRegions = null;
+
+            $this->collPaysI18ns = null;
 
         } // if (deep)
     }
@@ -542,6 +534,23 @@ abstract class BasePays extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->paysI18nsScheduledForDeletion !== null) {
+                if (!$this->paysI18nsScheduledForDeletion->isEmpty()) {
+                    PaysI18nQuery::create()
+                        ->filterByPrimaryKeys($this->paysI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->paysI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPaysI18ns !== null) {
+                foreach ($this->collPaysI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -567,9 +576,6 @@ abstract class BasePays extends BaseObject implements Persistent
         if ($this->isColumnModified(PaysPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(PaysPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(PaysPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -589,9 +595,6 @@ abstract class BasePays extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -699,6 +702,14 @@ abstract class BasePays extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collPaysI18ns !== null) {
+                    foreach ($this->collPaysI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -738,12 +749,9 @@ abstract class BasePays extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 3:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -776,13 +784,15 @@ abstract class BasePays extends BaseObject implements Persistent
         $keys = PaysPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collRegions) {
                 $result['Regions'] = $this->collRegions->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collPaysI18ns) {
+                $result['PaysI18ns'] = $this->collPaysI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -822,12 +832,9 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 3:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -855,9 +862,8 @@ abstract class BasePays extends BaseObject implements Persistent
         $keys = PaysPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
     }
 
     /**
@@ -870,7 +876,6 @@ abstract class BasePays extends BaseObject implements Persistent
         $criteria = new Criteria(PaysPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(PaysPeer::ID)) $criteria->add(PaysPeer::ID, $this->id);
-        if ($this->isColumnModified(PaysPeer::NAME)) $criteria->add(PaysPeer::NAME, $this->name);
         if ($this->isColumnModified(PaysPeer::CREATED_AT)) $criteria->add(PaysPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PaysPeer::UPDATED_AT)) $criteria->add(PaysPeer::UPDATED_AT, $this->updated_at);
 
@@ -936,7 +941,6 @@ abstract class BasePays extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -950,6 +954,12 @@ abstract class BasePays extends BaseObject implements Persistent
             foreach ($this->getRegions() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addRegion($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getPaysI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPaysI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1016,6 +1026,9 @@ abstract class BasePays extends BaseObject implements Persistent
     {
         if ('Region' == $relationName) {
             $this->initRegions();
+        }
+        if ('PaysI18n' == $relationName) {
+            $this->initPaysI18ns();
         }
     }
 
@@ -1227,12 +1240,222 @@ abstract class BasePays extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collPaysI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPaysI18ns()
+     */
+    public function clearPaysI18ns()
+    {
+        $this->collPaysI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collPaysI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collPaysI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialPaysI18ns($v = true)
+    {
+        $this->collPaysI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collPaysI18ns collection.
+     *
+     * By default this just sets the collPaysI18ns collection to an empty array (like clearcollPaysI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPaysI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collPaysI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collPaysI18ns = new PropelObjectCollection();
+        $this->collPaysI18ns->setModel('PaysI18n');
+    }
+
+    /**
+     * Gets an array of PaysI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Pays is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|PaysI18n[] List of PaysI18n objects
+     * @throws PropelException
+     */
+    public function getPaysI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collPaysI18nsPartial && !$this->isNew();
+        if (null === $this->collPaysI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPaysI18ns) {
+                // return empty collection
+                $this->initPaysI18ns();
+            } else {
+                $collPaysI18ns = PaysI18nQuery::create(null, $criteria)
+                    ->filterByPays($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collPaysI18nsPartial && count($collPaysI18ns)) {
+                      $this->initPaysI18ns(false);
+
+                      foreach($collPaysI18ns as $obj) {
+                        if (false == $this->collPaysI18ns->contains($obj)) {
+                          $this->collPaysI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collPaysI18nsPartial = true;
+                    }
+
+                    return $collPaysI18ns;
+                }
+
+                if($partial && $this->collPaysI18ns) {
+                    foreach($this->collPaysI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collPaysI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collPaysI18ns = $collPaysI18ns;
+                $this->collPaysI18nsPartial = false;
+            }
+        }
+
+        return $this->collPaysI18ns;
+    }
+
+    /**
+     * Sets a collection of PaysI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $paysI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setPaysI18ns(PropelCollection $paysI18ns, PropelPDO $con = null)
+    {
+        $this->paysI18nsScheduledForDeletion = $this->getPaysI18ns(new Criteria(), $con)->diff($paysI18ns);
+
+        foreach ($this->paysI18nsScheduledForDeletion as $paysI18nRemoved) {
+            $paysI18nRemoved->setPays(null);
+        }
+
+        $this->collPaysI18ns = null;
+        foreach ($paysI18ns as $paysI18n) {
+            $this->addPaysI18n($paysI18n);
+        }
+
+        $this->collPaysI18ns = $paysI18ns;
+        $this->collPaysI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related PaysI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related PaysI18n objects.
+     * @throws PropelException
+     */
+    public function countPaysI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collPaysI18nsPartial && !$this->isNew();
+        if (null === $this->collPaysI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPaysI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getPaysI18ns());
+                }
+                $query = PaysI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPays($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPaysI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a PaysI18n object to this object
+     * through the PaysI18n foreign key attribute.
+     *
+     * @param    PaysI18n $l PaysI18n
+     * @return Pays The current object (for fluent API support)
+     */
+    public function addPaysI18n(PaysI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collPaysI18ns === null) {
+            $this->initPaysI18ns();
+            $this->collPaysI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collPaysI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddPaysI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	PaysI18n $paysI18n The paysI18n object to add.
+     */
+    protected function doAddPaysI18n($paysI18n)
+    {
+        $this->collPaysI18ns[]= $paysI18n;
+        $paysI18n->setPays($this);
+    }
+
+    /**
+     * @param	PaysI18n $paysI18n The paysI18n object to remove.
+     */
+    public function removePaysI18n($paysI18n)
+    {
+        if ($this->getPaysI18ns()->contains($paysI18n)) {
+            $this->collPaysI18ns->remove($this->collPaysI18ns->search($paysI18n));
+            if (null === $this->paysI18nsScheduledForDeletion) {
+                $this->paysI18nsScheduledForDeletion = clone $this->collPaysI18ns;
+                $this->paysI18nsScheduledForDeletion->clear();
+            }
+            $this->paysI18nsScheduledForDeletion[]= $paysI18n;
+            $paysI18n->setPays(null);
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1260,12 +1483,25 @@ abstract class BasePays extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPaysI18ns) {
+                foreach ($this->collPaysI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
+
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
 
         if ($this->collRegions instanceof PropelCollection) {
             $this->collRegions->clearIterator();
         }
         $this->collRegions = null;
+        if ($this->collPaysI18ns instanceof PropelCollection) {
+            $this->collPaysI18ns->clearIterator();
+        }
+        $this->collPaysI18ns = null;
     }
 
     /**
@@ -1298,6 +1534,129 @@ abstract class BasePays extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = PaysPeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Pays The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return PaysI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collPaysI18ns) {
+                foreach ($this->collPaysI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new PaysI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = PaysI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addPaysI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Pays The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            PaysI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collPaysI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collPaysI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return PaysI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return PaysI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

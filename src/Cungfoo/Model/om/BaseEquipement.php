@@ -20,6 +20,8 @@ use Cungfoo\Model\CampingEquipement;
 use Cungfoo\Model\CampingEquipementQuery;
 use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\Equipement;
+use Cungfoo\Model\EquipementI18n;
+use Cungfoo\Model\EquipementI18nQuery;
 use Cungfoo\Model\EquipementPeer;
 use Cungfoo\Model\EquipementQuery;
 
@@ -58,12 +60,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -80,6 +76,12 @@ abstract class BaseEquipement extends BaseObject implements Persistent
      */
     protected $collCampingEquipements;
     protected $collCampingEquipementsPartial;
+
+    /**
+     * @var        PropelObjectCollection|EquipementI18n[] Collection to store aggregation of EquipementI18n objects.
+     */
+    protected $collEquipementI18ns;
+    protected $collEquipementI18nsPartial;
 
     /**
      * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
@@ -100,6 +102,20 @@ abstract class BaseEquipement extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[EquipementI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -113,6 +129,12 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     protected $campingEquipementsScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $equipementI18nsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
      *
      * @return string
@@ -120,16 +142,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -228,27 +240,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return Equipement The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = EquipementPeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -327,9 +318,8 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -338,7 +328,7 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = EquipementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = EquipementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Equipement object", $e);
@@ -401,6 +391,8 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->collCampingEquipements = null;
+
+            $this->collEquipementI18ns = null;
 
             $this->collCampings = null;
         } // if (deep)
@@ -575,6 +567,23 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->equipementI18nsScheduledForDeletion !== null) {
+                if (!$this->equipementI18nsScheduledForDeletion->isEmpty()) {
+                    EquipementI18nQuery::create()
+                        ->filterByPrimaryKeys($this->equipementI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->equipementI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEquipementI18ns !== null) {
+                foreach ($this->collEquipementI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -600,9 +609,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         if ($this->isColumnModified(EquipementPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(EquipementPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(EquipementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -622,9 +628,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -732,6 +735,14 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEquipementI18ns !== null) {
+                    foreach ($this->collEquipementI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -771,12 +782,9 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 3:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -809,13 +817,15 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         $keys = EquipementPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCampingEquipements) {
                 $result['CampingEquipements'] = $this->collCampingEquipements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEquipementI18ns) {
+                $result['EquipementI18ns'] = $this->collEquipementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -855,12 +865,9 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 3:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -888,9 +895,8 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         $keys = EquipementPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
     }
 
     /**
@@ -903,7 +909,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
         $criteria = new Criteria(EquipementPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(EquipementPeer::ID)) $criteria->add(EquipementPeer::ID, $this->id);
-        if ($this->isColumnModified(EquipementPeer::NAME)) $criteria->add(EquipementPeer::NAME, $this->name);
         if ($this->isColumnModified(EquipementPeer::CREATED_AT)) $criteria->add(EquipementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EquipementPeer::UPDATED_AT)) $criteria->add(EquipementPeer::UPDATED_AT, $this->updated_at);
 
@@ -969,7 +974,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -983,6 +987,12 @@ abstract class BaseEquipement extends BaseObject implements Persistent
             foreach ($this->getCampingEquipements() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCampingEquipement($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getEquipementI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEquipementI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1049,6 +1059,9 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     {
         if ('CampingEquipement' == $relationName) {
             $this->initCampingEquipements();
+        }
+        if ('EquipementI18n' == $relationName) {
+            $this->initEquipementI18ns();
         }
     }
 
@@ -1285,6 +1298,217 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEquipementI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEquipementI18ns()
+     */
+    public function clearEquipementI18ns()
+    {
+        $this->collEquipementI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collEquipementI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collEquipementI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEquipementI18ns($v = true)
+    {
+        $this->collEquipementI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEquipementI18ns collection.
+     *
+     * By default this just sets the collEquipementI18ns collection to an empty array (like clearcollEquipementI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEquipementI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collEquipementI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collEquipementI18ns = new PropelObjectCollection();
+        $this->collEquipementI18ns->setModel('EquipementI18n');
+    }
+
+    /**
+     * Gets an array of EquipementI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Equipement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EquipementI18n[] List of EquipementI18n objects
+     * @throws PropelException
+     */
+    public function getEquipementI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEquipementI18nsPartial && !$this->isNew();
+        if (null === $this->collEquipementI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEquipementI18ns) {
+                // return empty collection
+                $this->initEquipementI18ns();
+            } else {
+                $collEquipementI18ns = EquipementI18nQuery::create(null, $criteria)
+                    ->filterByEquipement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEquipementI18nsPartial && count($collEquipementI18ns)) {
+                      $this->initEquipementI18ns(false);
+
+                      foreach($collEquipementI18ns as $obj) {
+                        if (false == $this->collEquipementI18ns->contains($obj)) {
+                          $this->collEquipementI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collEquipementI18nsPartial = true;
+                    }
+
+                    return $collEquipementI18ns;
+                }
+
+                if($partial && $this->collEquipementI18ns) {
+                    foreach($this->collEquipementI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collEquipementI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEquipementI18ns = $collEquipementI18ns;
+                $this->collEquipementI18nsPartial = false;
+            }
+        }
+
+        return $this->collEquipementI18ns;
+    }
+
+    /**
+     * Sets a collection of EquipementI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $equipementI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEquipementI18ns(PropelCollection $equipementI18ns, PropelPDO $con = null)
+    {
+        $this->equipementI18nsScheduledForDeletion = $this->getEquipementI18ns(new Criteria(), $con)->diff($equipementI18ns);
+
+        foreach ($this->equipementI18nsScheduledForDeletion as $equipementI18nRemoved) {
+            $equipementI18nRemoved->setEquipement(null);
+        }
+
+        $this->collEquipementI18ns = null;
+        foreach ($equipementI18ns as $equipementI18n) {
+            $this->addEquipementI18n($equipementI18n);
+        }
+
+        $this->collEquipementI18ns = $equipementI18ns;
+        $this->collEquipementI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related EquipementI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EquipementI18n objects.
+     * @throws PropelException
+     */
+    public function countEquipementI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEquipementI18nsPartial && !$this->isNew();
+        if (null === $this->collEquipementI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEquipementI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEquipementI18ns());
+                }
+                $query = EquipementI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEquipement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEquipementI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a EquipementI18n object to this object
+     * through the EquipementI18n foreign key attribute.
+     *
+     * @param    EquipementI18n $l EquipementI18n
+     * @return Equipement The current object (for fluent API support)
+     */
+    public function addEquipementI18n(EquipementI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collEquipementI18ns === null) {
+            $this->initEquipementI18ns();
+            $this->collEquipementI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collEquipementI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEquipementI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EquipementI18n $equipementI18n The equipementI18n object to add.
+     */
+    protected function doAddEquipementI18n($equipementI18n)
+    {
+        $this->collEquipementI18ns[]= $equipementI18n;
+        $equipementI18n->setEquipement($this);
+    }
+
+    /**
+     * @param	EquipementI18n $equipementI18n The equipementI18n object to remove.
+     */
+    public function removeEquipementI18n($equipementI18n)
+    {
+        if ($this->getEquipementI18ns()->contains($equipementI18n)) {
+            $this->collEquipementI18ns->remove($this->collEquipementI18ns->search($equipementI18n));
+            if (null === $this->equipementI18nsScheduledForDeletion) {
+                $this->equipementI18nsScheduledForDeletion = clone $this->collEquipementI18ns;
+                $this->equipementI18nsScheduledForDeletion->clear();
+            }
+            $this->equipementI18nsScheduledForDeletion[]= $equipementI18n;
+            $equipementI18n->setEquipement(null);
+        }
+    }
+
+    /**
      * Clears out the collCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1458,7 +1682,6 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1486,6 +1709,11 @@ abstract class BaseEquipement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEquipementI18ns) {
+                foreach ($this->collEquipementI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampings) {
                 foreach ($this->collCampings as $o) {
                     $o->clearAllReferences($deep);
@@ -1493,10 +1721,18 @@ abstract class BaseEquipement extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collCampingEquipements instanceof PropelCollection) {
             $this->collCampingEquipements->clearIterator();
         }
         $this->collCampingEquipements = null;
+        if ($this->collEquipementI18ns instanceof PropelCollection) {
+            $this->collEquipementI18ns->clearIterator();
+        }
+        $this->collEquipementI18ns = null;
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
@@ -1533,6 +1769,129 @@ abstract class BaseEquipement extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = EquipementPeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Equipement The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EquipementI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collEquipementI18ns) {
+                foreach ($this->collEquipementI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new EquipementI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = EquipementI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addEquipementI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Equipement The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            EquipementI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collEquipementI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collEquipementI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EquipementI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return EquipementI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

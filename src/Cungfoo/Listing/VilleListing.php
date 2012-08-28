@@ -23,6 +23,7 @@ class VilleListing extends BaseVilleListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // VilleListing

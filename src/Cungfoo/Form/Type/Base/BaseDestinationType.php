@@ -27,19 +27,32 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'destination.name',
-            'required' => false,
-        ));
         $builder->add('campings', 'model', array(
             'class' => 'Cungfoo\Model\Camping',
             'constraints' => array(
             ),
             'multiple' => true,
             'label' => 'destination.campings',
+            'required' => false,
+        ));
+        $builder->add('destinationI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\DestinationI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'destination.destinationI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'destination.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

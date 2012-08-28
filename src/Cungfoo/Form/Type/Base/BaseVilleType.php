@@ -27,18 +27,31 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'ville.name',
-            'required' => false,
-        ));
         $builder->add('region', 'model', array(
             'class' => '\Cungfoo\Model\Region',
             'constraints' => array(
             ),
             'label' => 'ville.region',
+            'required' => false,
+        ));
+        $builder->add('villeI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\VilleI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
+            ),
+            'label' => 'ville.villeI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'ville.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

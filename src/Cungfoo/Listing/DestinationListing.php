@@ -23,6 +23,7 @@ class DestinationListing extends BaseDestinationListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // DestinationListing

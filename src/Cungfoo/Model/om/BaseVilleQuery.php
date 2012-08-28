@@ -15,6 +15,7 @@ use \PropelPDO;
 use Cungfoo\Model\Camping;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\Ville;
+use Cungfoo\Model\VilleI18n;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\VilleQuery;
 
@@ -24,13 +25,11 @@ use Cungfoo\Model\VilleQuery;
  *
  *
  * @method VilleQuery orderById($order = Criteria::ASC) Order by the id column
- * @method VilleQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method VilleQuery orderByRegionId($order = Criteria::ASC) Order by the region_id column
  * @method VilleQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method VilleQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method VilleQuery groupById() Group by the id column
- * @method VilleQuery groupByName() Group by the name column
  * @method VilleQuery groupByRegionId() Group by the region_id column
  * @method VilleQuery groupByCreatedAt() Group by the created_at column
  * @method VilleQuery groupByUpdatedAt() Group by the updated_at column
@@ -47,16 +46,18 @@ use Cungfoo\Model\VilleQuery;
  * @method VilleQuery rightJoinCamping($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Camping relation
  * @method VilleQuery innerJoinCamping($relationAlias = null) Adds a INNER JOIN clause to the query using the Camping relation
  *
+ * @method VilleQuery leftJoinVilleI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the VilleI18n relation
+ * @method VilleQuery rightJoinVilleI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the VilleI18n relation
+ * @method VilleQuery innerJoinVilleI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the VilleI18n relation
+ *
  * @method Ville findOne(PropelPDO $con = null) Return the first Ville matching the query
  * @method Ville findOneOrCreate(PropelPDO $con = null) Return the first Ville matching the query, or a new Ville object populated from the query conditions when no match is found
  *
- * @method Ville findOneByName(string $name) Return the first Ville filtered by the name column
  * @method Ville findOneByRegionId(string $region_id) Return the first Ville filtered by the region_id column
  * @method Ville findOneByCreatedAt(string $created_at) Return the first Ville filtered by the created_at column
  * @method Ville findOneByUpdatedAt(string $updated_at) Return the first Ville filtered by the updated_at column
  *
  * @method array findById(string $id) Return Ville objects filtered by the id column
- * @method array findByName(string $name) Return Ville objects filtered by the name column
  * @method array findByRegionId(string $region_id) Return Ville objects filtered by the region_id column
  * @method array findByCreatedAt(string $created_at) Return Ville objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Ville objects filtered by the updated_at column
@@ -163,7 +164,7 @@ abstract class BaseVilleQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `REGION_ID`, `CREATED_AT`, `UPDATED_AT` FROM `ville` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `REGION_ID`, `CREATED_AT`, `UPDATED_AT` FROM `ville` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -279,35 +280,6 @@ abstract class BaseVilleQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(VillePeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return VilleQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(VillePeer::NAME, $name, $comparison);
     }
 
     /**
@@ -576,6 +548,80 @@ abstract class BaseVilleQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related VilleI18n object
+     *
+     * @param   VilleI18n|PropelObjectCollection $villeI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   VilleQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByVilleI18n($villeI18n, $comparison = null)
+    {
+        if ($villeI18n instanceof VilleI18n) {
+            return $this
+                ->addUsingAlias(VillePeer::ID, $villeI18n->getId(), $comparison);
+        } elseif ($villeI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useVilleI18nQuery()
+                ->filterByPrimaryKeys($villeI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByVilleI18n() only accepts arguments of type VilleI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the VilleI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return VilleQuery The current query, for fluid interface
+     */
+    public function joinVilleI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('VilleI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'VilleI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the VilleI18n relation VilleI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\VilleI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useVilleI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinVilleI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'VilleI18n', '\Cungfoo\Model\VilleI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   Ville $ville Object to remove from the list of results
@@ -656,4 +702,61 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(VillePeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    VilleQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'VilleI18n';
+
+        return $this
+            ->joinVilleI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    VilleQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('VilleI18n');
+        $this->with['VilleI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    VilleI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'VilleI18n', 'Cungfoo\Model\VilleI18nQuery');
+    }
+
 }

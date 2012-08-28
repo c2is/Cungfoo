@@ -13,6 +13,7 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Activite;
+use Cungfoo\Model\ActiviteI18n;
 use Cungfoo\Model\ActivitePeer;
 use Cungfoo\Model\ActiviteQuery;
 use Cungfoo\Model\Camping;
@@ -24,12 +25,10 @@ use Cungfoo\Model\CampingActivite;
  *
  *
  * @method ActiviteQuery orderById($order = Criteria::ASC) Order by the id column
- * @method ActiviteQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method ActiviteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ActiviteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method ActiviteQuery groupById() Group by the id column
- * @method ActiviteQuery groupByName() Group by the name column
  * @method ActiviteQuery groupByCreatedAt() Group by the created_at column
  * @method ActiviteQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -41,15 +40,17 @@ use Cungfoo\Model\CampingActivite;
  * @method ActiviteQuery rightJoinCampingActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingActivite relation
  * @method ActiviteQuery innerJoinCampingActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingActivite relation
  *
+ * @method ActiviteQuery leftJoinActiviteI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the ActiviteI18n relation
+ * @method ActiviteQuery rightJoinActiviteI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ActiviteI18n relation
+ * @method ActiviteQuery innerJoinActiviteI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the ActiviteI18n relation
+ *
  * @method Activite findOne(PropelPDO $con = null) Return the first Activite matching the query
  * @method Activite findOneOrCreate(PropelPDO $con = null) Return the first Activite matching the query, or a new Activite object populated from the query conditions when no match is found
  *
- * @method Activite findOneByName(string $name) Return the first Activite filtered by the name column
  * @method Activite findOneByCreatedAt(string $created_at) Return the first Activite filtered by the created_at column
  * @method Activite findOneByUpdatedAt(string $updated_at) Return the first Activite filtered by the updated_at column
  *
  * @method array findById(string $id) Return Activite objects filtered by the id column
- * @method array findByName(string $name) Return Activite objects filtered by the name column
  * @method array findByCreatedAt(string $created_at) Return Activite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Activite objects filtered by the updated_at column
  *
@@ -155,7 +156,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `CREATED_AT`, `UPDATED_AT` FROM `activite` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `activite` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -271,35 +272,6 @@ abstract class BaseActiviteQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ActivitePeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return ActiviteQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(ActivitePeer::NAME, $name, $comparison);
     }
 
     /**
@@ -463,6 +435,80 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related ActiviteI18n object
+     *
+     * @param   ActiviteI18n|PropelObjectCollection $activiteI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   ActiviteQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByActiviteI18n($activiteI18n, $comparison = null)
+    {
+        if ($activiteI18n instanceof ActiviteI18n) {
+            return $this
+                ->addUsingAlias(ActivitePeer::ID, $activiteI18n->getId(), $comparison);
+        } elseif ($activiteI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useActiviteI18nQuery()
+                ->filterByPrimaryKeys($activiteI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByActiviteI18n() only accepts arguments of type ActiviteI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the ActiviteI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return ActiviteQuery The current query, for fluid interface
+     */
+    public function joinActiviteI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('ActiviteI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'ActiviteI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the ActiviteI18n relation ActiviteI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\ActiviteI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useActiviteI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinActiviteI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ActiviteI18n', '\Cungfoo\Model\ActiviteI18nQuery');
+    }
+
+    /**
      * Filter the query by a related Camping object
      * using the camping_activite table as cross reference
      *
@@ -560,4 +606,61 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ActivitePeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    ActiviteQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'ActiviteI18n';
+
+        return $this
+            ->joinActiviteI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    ActiviteQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('ActiviteI18n');
+        $this->with['ActiviteI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    ActiviteI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ActiviteI18n', 'Cungfoo\Model\ActiviteI18nQuery');
+    }
+
 }

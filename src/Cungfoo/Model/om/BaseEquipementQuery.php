@@ -15,6 +15,7 @@ use \PropelPDO;
 use Cungfoo\Model\Camping;
 use Cungfoo\Model\CampingEquipement;
 use Cungfoo\Model\Equipement;
+use Cungfoo\Model\EquipementI18n;
 use Cungfoo\Model\EquipementPeer;
 use Cungfoo\Model\EquipementQuery;
 
@@ -24,12 +25,10 @@ use Cungfoo\Model\EquipementQuery;
  *
  *
  * @method EquipementQuery orderById($order = Criteria::ASC) Order by the id column
- * @method EquipementQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EquipementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EquipementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method EquipementQuery groupById() Group by the id column
- * @method EquipementQuery groupByName() Group by the name column
  * @method EquipementQuery groupByCreatedAt() Group by the created_at column
  * @method EquipementQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -41,15 +40,17 @@ use Cungfoo\Model\EquipementQuery;
  * @method EquipementQuery rightJoinCampingEquipement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingEquipement relation
  * @method EquipementQuery innerJoinCampingEquipement($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingEquipement relation
  *
+ * @method EquipementQuery leftJoinEquipementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EquipementI18n relation
+ * @method EquipementQuery rightJoinEquipementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EquipementI18n relation
+ * @method EquipementQuery innerJoinEquipementI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the EquipementI18n relation
+ *
  * @method Equipement findOne(PropelPDO $con = null) Return the first Equipement matching the query
  * @method Equipement findOneOrCreate(PropelPDO $con = null) Return the first Equipement matching the query, or a new Equipement object populated from the query conditions when no match is found
  *
- * @method Equipement findOneByName(string $name) Return the first Equipement filtered by the name column
  * @method Equipement findOneByCreatedAt(string $created_at) Return the first Equipement filtered by the created_at column
  * @method Equipement findOneByUpdatedAt(string $updated_at) Return the first Equipement filtered by the updated_at column
  *
  * @method array findById(string $id) Return Equipement objects filtered by the id column
- * @method array findByName(string $name) Return Equipement objects filtered by the name column
  * @method array findByCreatedAt(string $created_at) Return Equipement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Equipement objects filtered by the updated_at column
  *
@@ -155,7 +156,7 @@ abstract class BaseEquipementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `CREATED_AT`, `UPDATED_AT` FROM `equipement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `equipement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -271,35 +272,6 @@ abstract class BaseEquipementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EquipementPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EquipementQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EquipementPeer::NAME, $name, $comparison);
     }
 
     /**
@@ -463,6 +435,80 @@ abstract class BaseEquipementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EquipementI18n object
+     *
+     * @param   EquipementI18n|PropelObjectCollection $equipementI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EquipementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEquipementI18n($equipementI18n, $comparison = null)
+    {
+        if ($equipementI18n instanceof EquipementI18n) {
+            return $this
+                ->addUsingAlias(EquipementPeer::ID, $equipementI18n->getId(), $comparison);
+        } elseif ($equipementI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useEquipementI18nQuery()
+                ->filterByPrimaryKeys($equipementI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEquipementI18n() only accepts arguments of type EquipementI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EquipementI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EquipementQuery The current query, for fluid interface
+     */
+    public function joinEquipementI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EquipementI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EquipementI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EquipementI18n relation EquipementI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EquipementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useEquipementI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinEquipementI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EquipementI18n', '\Cungfoo\Model\EquipementI18nQuery');
+    }
+
+    /**
      * Filter the query by a related Camping object
      * using the camping_equipement table as cross reference
      *
@@ -560,4 +606,61 @@ abstract class BaseEquipementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(EquipementPeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EquipementQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'EquipementI18n';
+
+        return $this
+            ->joinEquipementI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EquipementQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('EquipementI18n');
+        $this->with['EquipementI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EquipementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EquipementI18n', 'Cungfoo\Model\EquipementI18nQuery');
+    }
+
 }

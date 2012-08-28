@@ -20,6 +20,8 @@ use Cungfoo\Model\CampingDestination;
 use Cungfoo\Model\CampingDestinationQuery;
 use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\Destination;
+use Cungfoo\Model\DestinationI18n;
+use Cungfoo\Model\DestinationI18nQuery;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
 
@@ -58,12 +60,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -80,6 +76,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
      */
     protected $collCampingDestinations;
     protected $collCampingDestinationsPartial;
+
+    /**
+     * @var        PropelObjectCollection|DestinationI18n[] Collection to store aggregation of DestinationI18n objects.
+     */
+    protected $collDestinationI18ns;
+    protected $collDestinationI18nsPartial;
 
     /**
      * @var        PropelObjectCollection|Camping[] Collection to store aggregation of Camping objects.
@@ -100,6 +102,20 @@ abstract class BaseDestination extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[DestinationI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
@@ -113,6 +129,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
     protected $campingDestinationsScheduledForDeletion = null;
 
     /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $destinationI18nsScheduledForDeletion = null;
+
+    /**
      * Get the [id] column value.
      *
      * @return string
@@ -120,16 +142,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -228,27 +240,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return Destination The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = DestinationPeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -327,9 +318,8 @@ abstract class BaseDestination extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -338,7 +328,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = DestinationPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = DestinationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Destination object", $e);
@@ -401,6 +391,8 @@ abstract class BaseDestination extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->collCampingDestinations = null;
+
+            $this->collDestinationI18ns = null;
 
             $this->collCampings = null;
         } // if (deep)
@@ -575,6 +567,23 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->destinationI18nsScheduledForDeletion !== null) {
+                if (!$this->destinationI18nsScheduledForDeletion->isEmpty()) {
+                    DestinationI18nQuery::create()
+                        ->filterByPrimaryKeys($this->destinationI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->destinationI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDestinationI18ns !== null) {
+                foreach ($this->collDestinationI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -600,9 +609,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
         if ($this->isColumnModified(DestinationPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(DestinationPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(DestinationPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -622,9 +628,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -732,6 +735,14 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collDestinationI18ns !== null) {
+                    foreach ($this->collDestinationI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -771,12 +782,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 3:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -809,13 +817,15 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $keys = DestinationPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCampingDestinations) {
                 $result['CampingDestinations'] = $this->collCampingDestinations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collDestinationI18ns) {
+                $result['DestinationI18ns'] = $this->collDestinationI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -855,12 +865,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 3:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -888,9 +895,8 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $keys = DestinationPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
     }
 
     /**
@@ -903,7 +909,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $criteria = new Criteria(DestinationPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(DestinationPeer::ID)) $criteria->add(DestinationPeer::ID, $this->id);
-        if ($this->isColumnModified(DestinationPeer::NAME)) $criteria->add(DestinationPeer::NAME, $this->name);
         if ($this->isColumnModified(DestinationPeer::CREATED_AT)) $criteria->add(DestinationPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DestinationPeer::UPDATED_AT)) $criteria->add(DestinationPeer::UPDATED_AT, $this->updated_at);
 
@@ -969,7 +974,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -983,6 +987,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
             foreach ($this->getCampingDestinations() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCampingDestination($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getDestinationI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDestinationI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1049,6 +1059,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         if ('CampingDestination' == $relationName) {
             $this->initCampingDestinations();
+        }
+        if ('DestinationI18n' == $relationName) {
+            $this->initDestinationI18ns();
         }
     }
 
@@ -1285,6 +1298,217 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collDestinationI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addDestinationI18ns()
+     */
+    public function clearDestinationI18ns()
+    {
+        $this->collDestinationI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collDestinationI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collDestinationI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDestinationI18ns($v = true)
+    {
+        $this->collDestinationI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDestinationI18ns collection.
+     *
+     * By default this just sets the collDestinationI18ns collection to an empty array (like clearcollDestinationI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDestinationI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collDestinationI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collDestinationI18ns = new PropelObjectCollection();
+        $this->collDestinationI18ns->setModel('DestinationI18n');
+    }
+
+    /**
+     * Gets an array of DestinationI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Destination is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DestinationI18n[] List of DestinationI18n objects
+     * @throws PropelException
+     */
+    public function getDestinationI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDestinationI18nsPartial && !$this->isNew();
+        if (null === $this->collDestinationI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDestinationI18ns) {
+                // return empty collection
+                $this->initDestinationI18ns();
+            } else {
+                $collDestinationI18ns = DestinationI18nQuery::create(null, $criteria)
+                    ->filterByDestination($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDestinationI18nsPartial && count($collDestinationI18ns)) {
+                      $this->initDestinationI18ns(false);
+
+                      foreach($collDestinationI18ns as $obj) {
+                        if (false == $this->collDestinationI18ns->contains($obj)) {
+                          $this->collDestinationI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collDestinationI18nsPartial = true;
+                    }
+
+                    return $collDestinationI18ns;
+                }
+
+                if($partial && $this->collDestinationI18ns) {
+                    foreach($this->collDestinationI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collDestinationI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDestinationI18ns = $collDestinationI18ns;
+                $this->collDestinationI18nsPartial = false;
+            }
+        }
+
+        return $this->collDestinationI18ns;
+    }
+
+    /**
+     * Sets a collection of DestinationI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $destinationI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setDestinationI18ns(PropelCollection $destinationI18ns, PropelPDO $con = null)
+    {
+        $this->destinationI18nsScheduledForDeletion = $this->getDestinationI18ns(new Criteria(), $con)->diff($destinationI18ns);
+
+        foreach ($this->destinationI18nsScheduledForDeletion as $destinationI18nRemoved) {
+            $destinationI18nRemoved->setDestination(null);
+        }
+
+        $this->collDestinationI18ns = null;
+        foreach ($destinationI18ns as $destinationI18n) {
+            $this->addDestinationI18n($destinationI18n);
+        }
+
+        $this->collDestinationI18ns = $destinationI18ns;
+        $this->collDestinationI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related DestinationI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DestinationI18n objects.
+     * @throws PropelException
+     */
+    public function countDestinationI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDestinationI18nsPartial && !$this->isNew();
+        if (null === $this->collDestinationI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDestinationI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getDestinationI18ns());
+                }
+                $query = DestinationI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByDestination($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collDestinationI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a DestinationI18n object to this object
+     * through the DestinationI18n foreign key attribute.
+     *
+     * @param    DestinationI18n $l DestinationI18n
+     * @return Destination The current object (for fluent API support)
+     */
+    public function addDestinationI18n(DestinationI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collDestinationI18ns === null) {
+            $this->initDestinationI18ns();
+            $this->collDestinationI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collDestinationI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddDestinationI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DestinationI18n $destinationI18n The destinationI18n object to add.
+     */
+    protected function doAddDestinationI18n($destinationI18n)
+    {
+        $this->collDestinationI18ns[]= $destinationI18n;
+        $destinationI18n->setDestination($this);
+    }
+
+    /**
+     * @param	DestinationI18n $destinationI18n The destinationI18n object to remove.
+     */
+    public function removeDestinationI18n($destinationI18n)
+    {
+        if ($this->getDestinationI18ns()->contains($destinationI18n)) {
+            $this->collDestinationI18ns->remove($this->collDestinationI18ns->search($destinationI18n));
+            if (null === $this->destinationI18nsScheduledForDeletion) {
+                $this->destinationI18nsScheduledForDeletion = clone $this->collDestinationI18ns;
+                $this->destinationI18nsScheduledForDeletion->clear();
+            }
+            $this->destinationI18nsScheduledForDeletion[]= $destinationI18n;
+            $destinationI18n->setDestination(null);
+        }
+    }
+
+    /**
      * Clears out the collCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1458,7 +1682,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1486,6 +1709,11 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collDestinationI18ns) {
+                foreach ($this->collDestinationI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collCampings) {
                 foreach ($this->collCampings as $o) {
                     $o->clearAllReferences($deep);
@@ -1493,10 +1721,18 @@ abstract class BaseDestination extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collCampingDestinations instanceof PropelCollection) {
             $this->collCampingDestinations->clearIterator();
         }
         $this->collCampingDestinations = null;
+        if ($this->collDestinationI18ns instanceof PropelCollection) {
+            $this->collDestinationI18ns->clearIterator();
+        }
+        $this->collDestinationI18ns = null;
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
@@ -1533,6 +1769,129 @@ abstract class BaseDestination extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = DestinationPeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Destination The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DestinationI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collDestinationI18ns) {
+                foreach ($this->collDestinationI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new DestinationI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = DestinationI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addDestinationI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Destination The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            DestinationI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collDestinationI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collDestinationI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DestinationI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

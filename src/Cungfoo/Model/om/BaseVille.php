@@ -20,6 +20,8 @@ use Cungfoo\Model\CampingQuery;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionQuery;
 use Cungfoo\Model\Ville;
+use Cungfoo\Model\VilleI18n;
+use Cungfoo\Model\VilleI18nQuery;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\VilleQuery;
 
@@ -58,12 +60,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
      * The value for the region_id field.
      * @var        string
      */
@@ -93,6 +89,12 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $collCampingsPartial;
 
     /**
+     * @var        PropelObjectCollection|VilleI18n[] Collection to store aggregation of VilleI18n objects.
+     */
+    protected $collVilleI18ns;
+    protected $collVilleI18nsPartial;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -106,11 +108,31 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[VilleI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
     protected $campingsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $villeI18nsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -120,16 +142,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 
     /**
@@ -238,27 +250,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return Ville The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = VillePeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
      * Set the value of [region_id] column.
      *
      * @param string $v new value
@@ -362,10 +353,9 @@ abstract class BaseVille extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->region_id = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->region_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -374,7 +364,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = VillePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Ville object", $e);
@@ -441,6 +431,8 @@ abstract class BaseVille extends BaseObject implements Persistent
 
             $this->aRegion = null;
             $this->collCampings = null;
+
+            $this->collVilleI18ns = null;
 
         } // if (deep)
     }
@@ -607,6 +599,23 @@ abstract class BaseVille extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->villeI18nsScheduledForDeletion !== null) {
+                if (!$this->villeI18nsScheduledForDeletion->isEmpty()) {
+                    VilleI18nQuery::create()
+                        ->filterByPrimaryKeys($this->villeI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->villeI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collVilleI18ns !== null) {
+                foreach ($this->collVilleI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -632,9 +641,6 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ($this->isColumnModified(VillePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(VillePeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
-        }
         if ($this->isColumnModified(VillePeer::REGION_ID)) {
             $modifiedColumns[':p' . $index++]  = '`REGION_ID`';
         }
@@ -657,9 +663,6 @@ abstract class BaseVille extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
-                        break;
-                    case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`REGION_ID`':
                         $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_STR);
@@ -782,6 +785,14 @@ abstract class BaseVille extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collVilleI18ns !== null) {
+                    foreach ($this->collVilleI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -821,15 +832,12 @@ abstract class BaseVille extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
                 return $this->getRegionId();
                 break;
-            case 3:
+            case 2:
                 return $this->getCreatedAt();
                 break;
-            case 4:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -862,10 +870,9 @@ abstract class BaseVille extends BaseObject implements Persistent
         $keys = VillePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getRegionId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[1] => $this->getRegionId(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -873,6 +880,9 @@ abstract class BaseVille extends BaseObject implements Persistent
             }
             if (null !== $this->collCampings) {
                 $result['Campings'] = $this->collCampings->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collVilleI18ns) {
+                $result['VilleI18ns'] = $this->collVilleI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -912,15 +922,12 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
                 $this->setRegionId($value);
                 break;
-            case 3:
+            case 2:
                 $this->setCreatedAt($value);
                 break;
-            case 4:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -948,10 +955,9 @@ abstract class BaseVille extends BaseObject implements Persistent
         $keys = VillePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setRegionId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[1], $arr)) $this->setRegionId($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -964,7 +970,6 @@ abstract class BaseVille extends BaseObject implements Persistent
         $criteria = new Criteria(VillePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(VillePeer::ID)) $criteria->add(VillePeer::ID, $this->id);
-        if ($this->isColumnModified(VillePeer::NAME)) $criteria->add(VillePeer::NAME, $this->name);
         if ($this->isColumnModified(VillePeer::REGION_ID)) $criteria->add(VillePeer::REGION_ID, $this->region_id);
         if ($this->isColumnModified(VillePeer::CREATED_AT)) $criteria->add(VillePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(VillePeer::UPDATED_AT)) $criteria->add(VillePeer::UPDATED_AT, $this->updated_at);
@@ -1031,7 +1036,6 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
         $copyObj->setRegionId($this->getRegionId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1046,6 +1050,12 @@ abstract class BaseVille extends BaseObject implements Persistent
             foreach ($this->getCampings() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addCamping($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getVilleI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addVilleI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1163,6 +1173,9 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         if ('Camping' == $relationName) {
             $this->initCampings();
+        }
+        if ('VilleI18n' == $relationName) {
+            $this->initVilleI18ns();
         }
     }
 
@@ -1374,12 +1387,222 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collVilleI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addVilleI18ns()
+     */
+    public function clearVilleI18ns()
+    {
+        $this->collVilleI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collVilleI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collVilleI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialVilleI18ns($v = true)
+    {
+        $this->collVilleI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collVilleI18ns collection.
+     *
+     * By default this just sets the collVilleI18ns collection to an empty array (like clearcollVilleI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initVilleI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collVilleI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collVilleI18ns = new PropelObjectCollection();
+        $this->collVilleI18ns->setModel('VilleI18n');
+    }
+
+    /**
+     * Gets an array of VilleI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Ville is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|VilleI18n[] List of VilleI18n objects
+     * @throws PropelException
+     */
+    public function getVilleI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collVilleI18nsPartial && !$this->isNew();
+        if (null === $this->collVilleI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collVilleI18ns) {
+                // return empty collection
+                $this->initVilleI18ns();
+            } else {
+                $collVilleI18ns = VilleI18nQuery::create(null, $criteria)
+                    ->filterByVille($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collVilleI18nsPartial && count($collVilleI18ns)) {
+                      $this->initVilleI18ns(false);
+
+                      foreach($collVilleI18ns as $obj) {
+                        if (false == $this->collVilleI18ns->contains($obj)) {
+                          $this->collVilleI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collVilleI18nsPartial = true;
+                    }
+
+                    return $collVilleI18ns;
+                }
+
+                if($partial && $this->collVilleI18ns) {
+                    foreach($this->collVilleI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collVilleI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collVilleI18ns = $collVilleI18ns;
+                $this->collVilleI18nsPartial = false;
+            }
+        }
+
+        return $this->collVilleI18ns;
+    }
+
+    /**
+     * Sets a collection of VilleI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $villeI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setVilleI18ns(PropelCollection $villeI18ns, PropelPDO $con = null)
+    {
+        $this->villeI18nsScheduledForDeletion = $this->getVilleI18ns(new Criteria(), $con)->diff($villeI18ns);
+
+        foreach ($this->villeI18nsScheduledForDeletion as $villeI18nRemoved) {
+            $villeI18nRemoved->setVille(null);
+        }
+
+        $this->collVilleI18ns = null;
+        foreach ($villeI18ns as $villeI18n) {
+            $this->addVilleI18n($villeI18n);
+        }
+
+        $this->collVilleI18ns = $villeI18ns;
+        $this->collVilleI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related VilleI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related VilleI18n objects.
+     * @throws PropelException
+     */
+    public function countVilleI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collVilleI18nsPartial && !$this->isNew();
+        if (null === $this->collVilleI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collVilleI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getVilleI18ns());
+                }
+                $query = VilleI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByVille($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collVilleI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a VilleI18n object to this object
+     * through the VilleI18n foreign key attribute.
+     *
+     * @param    VilleI18n $l VilleI18n
+     * @return Ville The current object (for fluent API support)
+     */
+    public function addVilleI18n(VilleI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collVilleI18ns === null) {
+            $this->initVilleI18ns();
+            $this->collVilleI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collVilleI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddVilleI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	VilleI18n $villeI18n The villeI18n object to add.
+     */
+    protected function doAddVilleI18n($villeI18n)
+    {
+        $this->collVilleI18ns[]= $villeI18n;
+        $villeI18n->setVille($this);
+    }
+
+    /**
+     * @param	VilleI18n $villeI18n The villeI18n object to remove.
+     */
+    public function removeVilleI18n($villeI18n)
+    {
+        if ($this->getVilleI18ns()->contains($villeI18n)) {
+            $this->collVilleI18ns->remove($this->collVilleI18ns->search($villeI18n));
+            if (null === $this->villeI18nsScheduledForDeletion) {
+                $this->villeI18nsScheduledForDeletion = clone $this->collVilleI18ns;
+                $this->villeI18nsScheduledForDeletion->clear();
+            }
+            $this->villeI18nsScheduledForDeletion[]= $villeI18n;
+            $villeI18n->setVille(null);
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
         $this->region_id = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -1408,12 +1631,25 @@ abstract class BaseVille extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collVilleI18ns) {
+                foreach ($this->collVilleI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
+
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
 
         if ($this->collCampings instanceof PropelCollection) {
             $this->collCampings->clearIterator();
         }
         $this->collCampings = null;
+        if ($this->collVilleI18ns instanceof PropelCollection) {
+            $this->collVilleI18ns->clearIterator();
+        }
+        $this->collVilleI18ns = null;
         $this->aRegion = null;
     }
 
@@ -1447,6 +1683,129 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = VillePeer::UPDATED_AT;
+
+        return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Ville The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return VilleI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collVilleI18ns) {
+                foreach ($this->collVilleI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new VilleI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = VilleI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addVilleI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Ville The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            VilleI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collVilleI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collVilleI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return VilleI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
     }

@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\ServiceComplementaire;
+use Cungfoo\Model\ServiceComplementaireI18nPeer;
 use Cungfoo\Model\ServiceComplementairePeer;
 use Cungfoo\Model\map\ServiceComplementaireTableMap;
 
@@ -36,19 +37,16 @@ abstract class BaseServiceComplementairePeer
     const TM_CLASS = 'ServiceComplementaireTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the ID field */
     const ID = 'service_complementaire.ID';
-
-    /** the column name for the NAME field */
-    const NAME = 'service_complementaire.NAME';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'service_complementaire.CREATED_AT';
@@ -68,6 +66,13 @@ abstract class BaseServiceComplementairePeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -75,12 +80,12 @@ abstract class BaseServiceComplementairePeer
      * e.g. ServiceComplementairePeer::$fieldNames[ServiceComplementairePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID, ServiceComplementairePeer::NAME, ServiceComplementairePeer::CREATED_AT, ServiceComplementairePeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID, ServiceComplementairePeer::CREATED_AT, ServiceComplementairePeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -90,12 +95,12 @@ abstract class BaseServiceComplementairePeer
      * e.g. ServiceComplementairePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID => 0, ServiceComplementairePeer::NAME => 1, ServiceComplementairePeer::CREATED_AT => 2, ServiceComplementairePeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID => 0, ServiceComplementairePeer::CREATED_AT => 1, ServiceComplementairePeer::UPDATED_AT => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -170,12 +175,10 @@ abstract class BaseServiceComplementairePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(ServiceComplementairePeer::ID);
-            $criteria->addSelectColumn(ServiceComplementairePeer::NAME);
             $criteria->addSelectColumn(ServiceComplementairePeer::CREATED_AT);
             $criteria->addSelectColumn(ServiceComplementairePeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
         }
@@ -377,6 +380,9 @@ abstract class BaseServiceComplementairePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in ServiceComplementaireI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ServiceComplementaireI18nPeer::clearInstancePool();
     }
 
     /**

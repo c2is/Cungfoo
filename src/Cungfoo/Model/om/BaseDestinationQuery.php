@@ -15,6 +15,7 @@ use \PropelPDO;
 use Cungfoo\Model\Camping;
 use Cungfoo\Model\CampingDestination;
 use Cungfoo\Model\Destination;
+use Cungfoo\Model\DestinationI18n;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
 
@@ -24,12 +25,10 @@ use Cungfoo\Model\DestinationQuery;
  *
  *
  * @method DestinationQuery orderById($order = Criteria::ASC) Order by the id column
- * @method DestinationQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method DestinationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DestinationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method DestinationQuery groupById() Group by the id column
- * @method DestinationQuery groupByName() Group by the name column
  * @method DestinationQuery groupByCreatedAt() Group by the created_at column
  * @method DestinationQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -41,15 +40,17 @@ use Cungfoo\Model\DestinationQuery;
  * @method DestinationQuery rightJoinCampingDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingDestination relation
  * @method DestinationQuery innerJoinCampingDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingDestination relation
  *
+ * @method DestinationQuery leftJoinDestinationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DestinationI18n relation
+ * @method DestinationQuery rightJoinDestinationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DestinationI18n relation
+ * @method DestinationQuery innerJoinDestinationI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the DestinationI18n relation
+ *
  * @method Destination findOne(PropelPDO $con = null) Return the first Destination matching the query
  * @method Destination findOneOrCreate(PropelPDO $con = null) Return the first Destination matching the query, or a new Destination object populated from the query conditions when no match is found
  *
- * @method Destination findOneByName(string $name) Return the first Destination filtered by the name column
  * @method Destination findOneByCreatedAt(string $created_at) Return the first Destination filtered by the created_at column
  * @method Destination findOneByUpdatedAt(string $updated_at) Return the first Destination filtered by the updated_at column
  *
  * @method array findById(string $id) Return Destination objects filtered by the id column
- * @method array findByName(string $name) Return Destination objects filtered by the name column
  * @method array findByCreatedAt(string $created_at) Return Destination objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Destination objects filtered by the updated_at column
  *
@@ -155,7 +156,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `CREATED_AT`, `UPDATED_AT` FROM `destination` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `destination` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
@@ -271,35 +272,6 @@ abstract class BaseDestinationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DestinationQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DestinationPeer::NAME, $name, $comparison);
     }
 
     /**
@@ -463,6 +435,80 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related DestinationI18n object
+     *
+     * @param   DestinationI18n|PropelObjectCollection $destinationI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DestinationQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDestinationI18n($destinationI18n, $comparison = null)
+    {
+        if ($destinationI18n instanceof DestinationI18n) {
+            return $this
+                ->addUsingAlias(DestinationPeer::ID, $destinationI18n->getId(), $comparison);
+        } elseif ($destinationI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useDestinationI18nQuery()
+                ->filterByPrimaryKeys($destinationI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByDestinationI18n() only accepts arguments of type DestinationI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the DestinationI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function joinDestinationI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('DestinationI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'DestinationI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the DestinationI18n relation DestinationI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DestinationI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useDestinationI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinDestinationI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DestinationI18n', '\Cungfoo\Model\DestinationI18nQuery');
+    }
+
+    /**
      * Filter the query by a related Camping object
      * using the camping_destination table as cross reference
      *
@@ -560,4 +606,61 @@ abstract class BaseDestinationQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'DestinationI18n';
+
+        return $this
+            ->joinDestinationI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('DestinationI18n');
+        $this->with['DestinationI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DestinationI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DestinationI18n', 'Cungfoo\Model\DestinationI18nQuery');
+    }
+
 }

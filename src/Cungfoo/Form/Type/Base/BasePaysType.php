@@ -27,11 +27,24 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.id',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
+        $builder->add('paysI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\PaysI18n',
+            'languages' => array(
+                0 => 'en',
+                1 => 'fr',
+                2 => 'de',
             ),
-            'label' => 'pays.name',
+            'label' => 'pays.paysI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'pays.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

@@ -23,6 +23,7 @@ class PaysListing extends BasePaysListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // PaysListing
