@@ -34,7 +34,7 @@ class ThemeLoader extends BaseLoader
 
                     if (!$objectTheme)
                     {
-                        $modelClass = $this->config['ThemeLoader']['themes'][$theme->category];
+                        $modelClass = $this->config['ThemeLoader']['themes'][$theme->category]['model'];
                         $objectTheme = new $modelClass();
                         $objectTheme->setId($theme->id);
                     }
