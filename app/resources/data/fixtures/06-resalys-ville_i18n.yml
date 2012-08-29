@@ -1,0 +1,61 @@
+\Cungfoo\Model\VilleI18n:
+    CARN_de:
+        Id: CARN
+        Locale: de
+        Name: 'Carnac (56)'
+    CARN_en:
+        Id: CARN
+        Locale: en
+        Name: 'Carnac (56)'
+    CARN_fr:
+        Id: CARN
+        Locale: fr
+        Name: 'Carnac (56)'
+    EYZ_de:
+        Id: EYZ
+        Locale: de
+        Name: 'Les Eyzies (24)'
+    EYZ_en:
+        Id: EYZ
+        Locale: en
+        Name: 'Les Eyzies (24)'
+    EYZ_fr:
+        Id: EYZ
+        Locale: fr
+        Name: 'Les Eyzies (24)'
+    GRAU_de:
+        Id: GRAU
+        Locale: de
+        Name: 'Le Grau du Roi (30)'
+    GRAU_en:
+        Id: GRAU
+        Locale: en
+        Name: 'Le Grau du Roi (30)'
+    GRAU_fr:
+        Id: GRAU
+        Locale: fr
+        Name: 'Le Grau du Roi (30)'
+    PALA_de:
+        Id: PALA
+        Locale: de
+        Name: 'Palavas-les-Flots (34)'
+    PALA_en:
+        Id: PALA
+        Locale: en
+        Name: 'Palavas-les-Flots (34)'
+    PALA_fr:
+        Id: PALA
+        Locale: fr
+        Name: 'Palavas-les-Flots (34)'
+    VIAS_de:
+        Id: VIAS
+        Locale: de
+        Name: 'Vias Plage (34)'
+    VIAS_en:
+        Id: VIAS
+        Locale: en
+        Name: 'Vias Plage (34)'
+    VIAS_fr:
+        Id: VIAS
+        Locale: fr
+        Name: 'Vias Plage (34)'

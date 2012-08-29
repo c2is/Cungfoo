@@ -1,0 +1,49 @@
+\Cungfoo\Model\ActiviteI18n:
+    CENF_de:
+        Id: CENF
+        Locale: de
+        Name: Kinderclub
+    CENF_en:
+        Id: CENF
+        Locale: en
+        Name: 'Kids Club'
+    CENF_fr:
+        Id: CENF
+        Locale: fr
+        Name: 'Club enfants'
+    LOVP_de:
+        Id: LOVP
+        Locale: de
+        Name: 'Location de vélos (Payant)'
+    LOVP_en:
+        Id: LOVP
+        Locale: en
+        Name: 'Location de vélos (Payant)'
+    LOVP_fr:
+        Id: LOVP
+        Locale: fr
+        Name: 'Location de vélos (Payant)'
+    PETG_de:
+        Id: PETG
+        Locale: de
+        Name: 'Pétanque (Gratuit)'
+    PETG_en:
+        Id: PETG
+        Locale: en
+        Name: 'Pétanque (Gratuit)'
+    PETG_fr:
+        Id: PETG
+        Locale: fr
+        Name: 'Pétanque (Gratuit)'
+    PING_de:
+        Id: PING
+        Locale: de
+        Name: 'Ping-pong (Gratuit)'
+    PING_en:
+        Id: PING
+        Locale: en
+        Name: 'Ping-pong (Gratuit)'
+    PING_fr:
+        Id: PING
+        Locale: fr
+        Name: 'Ping-pong (Gratuit)'

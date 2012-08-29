@@ -1,0 +1,124 @@
+\Cungfoo\Model\TypeHebergement:
+    100M:
+        Id: 100M
+        CategoryTypeHebergementId: null
+    110M:
+        Id: 110M
+        CategoryTypeHebergementId: null
+    130M:
+        Id: 130M
+        CategoryTypeHebergementId: null
+    140M:
+        Id: 140M
+        CategoryTypeHebergementId: null
+    150M:
+        Id: 150M
+        CategoryTypeHebergementId: null
+    160M:
+        Id: 160M
+        CategoryTypeHebergementId: null
+    170M:
+        Id: 170M
+        CategoryTypeHebergementId: null
+    180M:
+        Id: 180M
+        CategoryTypeHebergementId: null
+    AMI4:
+        Id: AMI4
+        CategoryTypeHebergementId: null
+    BT2L:
+        Id: BT2L
+        CategoryTypeHebergementId: null
+    BT3:
+        Id: BT3
+        CategoryTypeHebergementId: null
+    CHA5:
+        Id: CHA5
+        CategoryTypeHebergementId: null
+    CON5:
+        Id: CON5
+        CategoryTypeHebergementId: null
+    COR6:
+        Id: COR6
+        CategoryTypeHebergementId: null
+    DOM5:
+        Id: DOM5
+        CategoryTypeHebergementId: null
+    DOM6:
+        Id: DOM6
+        CategoryTypeHebergementId: null
+    DOML:
+        Id: DOML
+        CategoryTypeHebergementId: null
+    EMPF:
+        Id: EMPF
+        CategoryTypeHebergementId: null
+    EMPL:
+        Id: EMPL
+        CategoryTypeHebergementId: null
+    EST5:
+        Id: EST5
+        CategoryTypeHebergementId: null
+    FAM6:
+        Id: FAM6
+        CategoryTypeHebergementId: null
+    HEL6:
+        Id: HEL6
+        CategoryTypeHebergementId: null
+    LOG5:
+        Id: LOG5
+        CategoryTypeHebergementId: null
+    OCE4:
+        Id: OCE4
+        CategoryTypeHebergementId: null
+    OHA6:
+        Id: OHA6
+        CategoryTypeHebergementId: null
+    RES4:
+        Id: RES4
+        CategoryTypeHebergementId: null
+    RES5:
+        Id: RES5
+        CategoryTypeHebergementId: null
+    SALL:
+        Id: SALL
+        CategoryTypeHebergementId: null
+    SPA6:
+        Id: SPA6
+        CategoryTypeHebergementId: null
+    SPA8:
+        Id: SPA8
+        CategoryTypeHebergementId: null
+    TBIH:
+        Id: TBIH
+        CategoryTypeHebergementId: null
+    TBRA:
+        Id: TBRA
+        CategoryTypeHebergementId: null
+    TCOZ:
+        Id: TCOZ
+        CategoryTypeHebergementId: null
+    TDA1:
+        Id: TDA1
+        CategoryTypeHebergementId: null
+    TDA2:
+        Id: TDA2
+        CategoryTypeHebergementId: null
+    TDIV:
+        Id: TDIV
+        CategoryTypeHebergementId: null
+    TGOU:
+        Id: TGOU
+        CategoryTypeHebergementId: null
+    TGWE:
+        Id: TGWE
+        CategoryTypeHebergementId: null
+    TTOM:
+        Id: TTOM
+        CategoryTypeHebergementId: null
+    VAC5:
+        Id: VAC5
+        CategoryTypeHebergementId: null
+    VAM5:
+        Id: VAM5
+        CategoryTypeHebergementId: null

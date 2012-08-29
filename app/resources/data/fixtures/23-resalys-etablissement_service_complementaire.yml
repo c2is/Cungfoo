@@ -1,0 +1,16 @@
+\Cungfoo\Model\EtablissementServiceComplementaire:
+    2_DEPA:
+        EtablissementId: 2
+        ServiceComplementaireId: DEPA
+    45_DEPA:
+        EtablissementId: 45
+        ServiceComplementaireId: DEPA
+    2_TVBA:
+        EtablissementId: 2
+        ServiceComplementaireId: TVBA
+    4_TVBA:
+        EtablissementId: 4
+        ServiceComplementaireId: TVBA
+    45_TVBA:
+        EtablissementId: 45
+        ServiceComplementaireId: TVBA

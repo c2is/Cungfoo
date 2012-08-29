@@ -1,0 +1,3165 @@
+\Cungfoo\Model\Etablissement:
+    2:
+        Id: 2
+        Name: 'Le Mas'
+        Address1: Sireuil
+        Address2: ''
+        Zip: '24620'
+        City: 'LES EYZIES DE TAYAC '
+        Mail: 0553311273@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 53 29 68 06'
+        Phone2: '05 53 29 68 06'
+        Fax: '05 53 31 12 73'
+        VilleId: EYZ
+    3:
+        Id: 3
+        Name: 'Le Cala Gogo'
+        Address1: 'Avenue Armand Lanoux'
+        Address2: ''
+        Zip: '66750'
+        City: 'ST CYPRIEN'
+        Mail: camping.calagogo@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 21 07 12'
+        Phone2: '06 70 67 66 11'
+        Fax: '04 68 21 02 19'
+        VilleId: null
+    4:
+        Id: 4
+        Name: 'Le Petit Mousse'
+        Address1: 'Impasse des Espargouls'
+        Address2: 'La Grande Cosse - Côte Ouest'
+        Zip: '34450'
+        City: VIAS
+        Mail: 0467909795@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 90 99 04'
+        Phone2: '04 67 90 80 48'
+        Fax: '04 67 90 97 95'
+        VilleId: VIAS
+    5:
+        Id: 5
+        Name: 'Airotel Oléron'
+        Address1: 'Domaine de Montravail'
+        Address2: '19 rue de la Libération - BP 31'
+        Zip: '17480'
+        City: 'LE CHÂTEAU D''OLÉRON'
+        Mail: info@camping-airotel-oleron.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 47 61 82'
+        Phone2: '06 70 47 89 48 '
+        Fax: '05 46 47 79 67'
+        VilleId: null
+    6:
+        Id: 6
+        Name: 'Aluna Vacances '
+        Address1: 'Route de Lagorce'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: alunavacances@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 93 93 15'
+        Phone2: '06 70 53 71 93 '
+        Fax: '04 75 93 90 90'
+        VilleId: null
+    7:
+        Id: 7
+        Name: 'Les Amandiers'
+        Address1: 'Rue du Stade'
+        Address2: ''
+        Zip: '30660'
+        City: GALLARGUES-LE-MONTUEUX
+        Mail: camping-lesamandiers@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 66 35 28 02'
+        Phone2: '06 70 85 80 57'
+        Fax: '04 66 51 48 57'
+        VilleId: null
+    8:
+        Id: 8
+        Name: 'Sandaya Soulac Plage'
+        Address1: 'L''Amélie'
+        Address2: ''
+        Zip: '33780'
+        City: SOULAC-SUR-MER
+        Mail: bernard.doreillac@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 56 09 87 27'
+        Phone2: '06 71 97 27 38'
+        Fax: '05 56 73 64 26'
+        VilleId: null
+    9:
+        Id: 9
+        Name: Ametlla
+        Address1: 'Apartat de Correus N°240'
+        Address2: ''
+        Zip: '43860'
+        City: 'AMETLLA DE MAR - TARRAGONE'
+        Mail: info@campingametlla.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 977 26 77 84'
+        Phone2: '06 70 91 01 83'
+        Fax: '0034 977 26 78 68'
+        VilleId: null
+    10:
+        Id: 10
+        Name: 'Les Amiaux'
+        Address1: '223 Route de N.D. de Monts'
+        Address2: ''
+        Zip: '85169'
+        City: 'ST JEAN DE MONTS'
+        Mail: danielchantal.tarantola@laposte.net
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 58 22 22'
+        Phone2: '06 70 38 06 56'
+        Fax: '02 51 58 26 09'
+        VilleId: null
+    11:
+        Id: 11
+        Name: 'Azu''Rivage'
+        Address1: '720 Route des Campings'
+        Address2: ''
+        Zip: '40140'
+        City: AZUR
+        Mail: info@campingazurivage.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 48 30 72'
+        Phone2: '06 70 36 68 64'
+        Fax: '05 58 48 25 56'
+        VilleId: null
+    12:
+        Id: 12
+        Name: 'Le Bahia Club'
+        Address1: 'Chemin de l''Hourtou'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: camping.bahiaclub@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 80 90 16'
+        Phone2: '06 71 21 54 71'
+        Fax: '04 68 28 24 76'
+        VilleId: null
+    14:
+        Id: 14
+        Name: 'Beau Rivage '
+        Address1: 'Avenue de Montpellier'
+        Address2: 'RD 613'
+        Zip: '34140'
+        City: MÈZE
+        Mail: reception@camping-beaurivage.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 43 81 48'
+        Phone2: '06 89 50 29 78'
+        Fax: '04 67 43 66 70'
+        VilleId: null
+    15:
+        Id: 15
+        Name: 'Beaulieu '
+        Address1: '3 Rue du Treuil Gras'
+        Address2: ''
+        Zip: '17138'
+        City: PUILBOREAU
+        Mail: contact@camping-la-rochelle.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 68 04 38'
+        Phone2: '06 08 05 65 48'
+        Fax: '05 46 35 85 95'
+        VilleId: null
+    16:
+        Id: 16
+        Name: 'Bois Soleil'
+        Address1: '94 Chemin des Barres'
+        Address2: ''
+        Zip: '85340'
+        City: 'OLONNE SUR MER'
+        Mail: camping.boissoleil@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 33 11 97'
+        Phone2: '06 70 35 10 91'
+        Fax: '02 51 33 14 85'
+        VilleId: null
+    17:
+        Id: 17
+        Name: 'Bordenéo '
+        Address1: 'Belle Ile en Mer'
+        Address2: ''
+        Zip: '56360'
+        City: 'LE PALAIS'
+        Mail: camping.bordeneo@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 97 31 88 96'
+        Phone2: '06 70 79 49 91'
+        Fax: '02 97 31 87 77'
+        VilleId: null
+    18:
+        Id: 18
+        Name: 'La Bretonnière'
+        Address1: ''
+        Address2: ''
+        Zip: '85150'
+        City: 'ST JULIEN DES LANDES'
+        Mail: camp.la-bretonniere@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 46 62 44'
+        Phone2: '06 88 71 58 15'
+        Fax: '02 51 46 61 36'
+        VilleId: null
+    19:
+        Id: 19
+        Name: 'Le California'
+        Address1: Orouet
+        Address2: 'Chemin de la Parée Verte'
+        Zip: '85160'
+        City: 'ST JEAN DE MONTS'
+        Mail: camping.california@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 58 17 51'
+        Phone2: '06 70 74 90 74'
+        Fax: '02 51 58 12 28'
+        VilleId: null
+    20:
+        Id: 20
+        Name: 'Le Calypso'
+        Address1: 'Boulevard de la Plage'
+        Address2: ''
+        Zip: '66440'
+        City: TORREILLES
+        Mail: 0468282476@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 28 09 47'
+        Phone2: '06 31 36 81 43'
+        Fax: '04 68 28 24 76'
+        VilleId: null
+    21:
+        Id: 21
+        Name: 'Camping du Lac '
+        Address1: 'Le Fangeas Soulier'
+        Address2: ''
+        Zip: '05110'
+        City: CURBANS
+        Mail: info@au-camping-du-lac.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 92 54 23 10'
+        Phone2: '06 89 79 87 57'
+        Fax: '04 92 54 23 11'
+        VilleId: null
+    22:
+        Id: 22
+        Name: 'Cap Agathois '
+        Address1: 'Route de Sète'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: info@campingcapagathois.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 94 02 21'
+        Phone2: '06 70 87 37 69'
+        Fax: '04 67 94 02 21'
+        VilleId: null
+    23:
+        Id: 23
+        Name: 'Le Carbonnier'
+        Address1: ''
+        Address2: ''
+        Zip: '24250'
+        City: 'ST MARTIAL DE NABIRAT'
+        Mail: lecarbonnier@aol.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 53 28 42 53'
+        Phone2: '06 70 86 74 52'
+        Fax: '05 53 28 51 31'
+        VilleId: null
+    24:
+        Id: 24
+        Name: 'Castell Mar'
+        Address1: 'Platja de la Rubina'
+        Address2: 'Badia de Roses'
+        Zip: '17486'
+        City: 'CASTELLO D''EMPURIES'
+        Mail: mtravers@orange.fr
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 972 45 08 22'
+        Phone2: '06 70 48 40 97'
+        Fax: '0034 972 45 23 30'
+        VilleId: null
+    25:
+        Id: 25
+        Name: 'Castell Montgri '
+        Address1: 'Ctra. Torroella-Estartit Km 4,700'
+        Address2: ''
+        Zip: '17258'
+        City: 'L''ESTARTIT'
+        Mail: +34972750906@fax.contact-everyone.fr
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 972 75 16 30'
+        Phone2: '06 07 84 26 20'
+        Fax: '0034 972750906'
+        VilleId: null
+    26:
+        Id: 26
+        Name: 'Caussanel '
+        Address1: Pareloup
+        Address2: ''
+        Zip: '12290'
+        City: 'CANET DE SALARS'
+        Mail: info@lecaussanel.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 65 46 85 19'
+        Phone2: '06 70 78 90 05'
+        Fax: '05 65 46 89 85'
+        VilleId: null
+    27:
+        Id: 27
+        Name: 'Cayola '
+        Address1: 'Côte Ouest'
+        Address2: ''
+        Zip: '34450'
+        City: VIAS
+        Mail: campingcayola@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 90 01 85'
+        Phone2: '06 81 93 15 46'
+        Fax: '04 67 90 03 06'
+        VilleId: null
+    28:
+        Id: 28
+        Name: 'Le Chaponnet'
+        Address1: '16 Rue du Chaponnet'
+        Address2: ''
+        Zip: '85470'
+        City: 'BREM SUR MER'
+        Mail: 0251909167@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 90 55 56'
+        Phone2: '06 70 82 07 74'
+        Fax: '02 51 90 91 67'
+        VilleId: null
+    29:
+        Id: 29
+        Name: 'Domaine des Charmilles'
+        Address1: '1541 Route de l''Océan'
+        Address2: ''
+        Zip: '17450'
+        City: 'ST LAURENT DE LA PRÉE'
+        Mail: charmilles17@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 84 00 05'
+        Phone2: '06 71 05 51 54'
+        Fax: '05 46 84 02 84'
+        VilleId: null
+    30:
+        Id: 30
+        Name: 'Le Château de Galinée '
+        Address1: 'Galinée Le Guildo'
+        Address2: ''
+        Zip: '22380'
+        City: 'ST CAST LE GUILDO'
+        Mail: contact@chateaudegalinee.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 96 41 10 56'
+        Phone2: '06 70 30 54 83'
+        Fax: '02 96 41 03 72'
+        VilleId: null
+    31:
+        Id: 31
+        Name: 'La Chênaie '
+        Address1: '36 Rue du Pâtisseau'
+        Address2: ''
+        Zip: '44210'
+        City: PORNIC
+        Mail: la.chenaie44@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 40 82 07 31'
+        Phone2: '06 89 07 87 55'
+        Fax: '02 40 27 95 67'
+        VilleId: null
+    32:
+        Id: 32
+        Name: 'Les Chênes Verts '
+        Address1: 'Route de Sarlat'
+        Address2: Souillac
+        Zip: '24370'
+        City: 'CALVIAC EN PÉRIGORD'
+        Mail: jfg@sky.lu
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 53 59 21 07'
+        Phone2: '06 31 53 93 18'
+        Fax: '05 53 31 05 51'
+        VilleId: null
+    33:
+        Id: 33
+        Name: 'Le Col Vert '
+        Address1: '1548 Route de l''Etang'
+        Address2: ''
+        Zip: '40560'
+        City: VIELLE-ST-GIRONS
+        Mail: 0558429188@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 42 94 06'
+        Phone2: '06 72 69 45 20'
+        Fax: '05 58 42 91 88'
+        VilleId: null
+    34:
+        Id: 34
+        Name: 'Le Conguel '
+        Address1: 'Boulevard de la Teignouse'
+        Address2: ''
+        Zip: '56175'
+        City: QUIBERON
+        Mail: info@campingduconguel.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 97 50 19 11'
+        Phone2: '06 70 50 23 63'
+        Fax: '02 97 30 46 66'
+        VilleId: null
+    35:
+        Id: 35
+        Name: 'La Coste Rouge '
+        Address1: 'Route de Collioure'
+        Address2: ''
+        Zip: '66700'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468959417@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 08 94'
+        Phone2: '06 89 13 14 12'
+        Fax: '04 68 95 94 17'
+        VilleId: null
+    36:
+        Id: 36
+        Name: 'La Côte d''Argent '
+        Address1: '134 Route Contaut'
+        Address2: ''
+        Zip: '33990'
+        City: HOURTIN
+        Mail: 0556092496@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 56 09 10 25'
+        Phone2: '06 31 18 78 31'
+        Fax: '05 56 09 24 96'
+        VilleId: null
+    37:
+        Id: 37
+        Name: 'Crin Blanc '
+        Address1: 'Hameau de Saliers'
+        Address2: ''
+        Zip: '13123'
+        City: 'L''ALBARON'
+        Mail: camping-crin.blanc@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 66 87 48 78'
+        Phone2: '06 07 59 92 01'
+        Fax: '04 66 87 18 66'
+        VilleId: null
+    38:
+        Id: 38
+        Name: 'Cupulatta '
+        Address1: 'Hameau de Cupulatta'
+        Address2: ''
+        Zip: '20137'
+        City: 'PORTO VECCHIO'
+        Mail: gerald.deboffle@yahoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '06 12 81 50 89'
+        Phone2: '06 19 17 93 60'
+        Fax: '04 95 21 45 66'
+        VilleId: null
+    39:
+        Id: 39
+        Name: 'Les Cyprès '
+        Address1: 'Rue du Pont Jaunay'
+        Address2: ''
+        Zip: '85806'
+        City: ST-GILLES-CROIX-DE-VIE
+        Mail: camping-lescypres85@voila.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 55 38 98'
+        Phone2: '06 71 89 95 41'
+        Fax: '02 51 54 98 94'
+        VilleId: null
+    40:
+        Id: 40
+        Name: 'Les Deux Fontaines '
+        Address1: Raguenes
+        Address2: 'Feunteun Vihan'
+        Zip: '29920'
+        City: NEVEZ
+        Mail: 0298067180@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 98 06 81 91'
+        Phone2: '06 71 35 50 80'
+        Fax: '02 98 06 71 80'
+        VilleId: null
+    41:
+        Id: 41
+        Name: 'Les Deux Plages '
+        Address1: 'Avenue d''Angoulins'
+        Address2: ''
+        Zip: '17340'
+        City: 'CHATELAILLON PLAGE'
+        Mail: 0546435118@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 56 27 53'
+        Phone2: '06 70 99 85 48'
+        Fax: '05 46 43 51 18'
+        VilleId: null
+    42:
+        Id: 42
+        Name: 'Domaine d''Inly '
+        Address1: 'Route de Couarne'
+        Address2: ''
+        Zip: '56760'
+        City: PÉNESTIN
+        Mail: 0299904093@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 99 90 35 09'
+        Phone2: '06 71 10 56 26'
+        Fax: '02 99 90 40 93'
+        VilleId: null
+    43:
+        Id: 43
+        Name: 'Domaine d''Oléron '
+        Address1: 'Route de la Jousselinière'
+        Address2: ''
+        Zip: '17190'
+        City: 'ST GEORGES D''OLÉRON'
+        Mail: domainedoleron@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 76 54 97'
+        Phone2: '06 70 97 10 41'
+        Fax: '05 46 76 54 97'
+        VilleId: null
+    44:
+        Id: 44
+        Name: 'Domaine de Chaussy '
+        Address1: 'Quartier Le Petit Chaussy'
+        Address2: ''
+        Zip: '07150'
+        City: LAGORCE
+        Mail: chantal.gardet@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 93 99 66'
+        Phone2: '06 71 47 65 41'
+        Fax: '04 75 93 90 56'
+        VilleId: null
+    45:
+        Id: 45
+        Name: 'Domaine de Kermario'
+        Address1: '1 Chemin de Kerluir'
+        Address2: ''
+        Zip: '56340'
+        City: CARNAC
+        Mail: 0297526566@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 97 52 65 65'
+        Phone2: '06 82 63 94 46'
+        Fax: '02 97 52 65 66'
+        VilleId: CARN
+    46:
+        Id: 46
+        Name: 'Domaine de la Rive'
+        Address1: 'Route de Bordeaux'
+        Address2: ''
+        Zip: '40600'
+        City: BISCARROSSE
+        Mail: info@larive.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 78 12 33'
+        Phone2: '06 89 72 55 80'
+        Fax: '05 58 78 12 92'
+        VilleId: null
+    47:
+        Id: 47
+        Name: 'Domaine de Léveno '
+        Address1: 'Route de l''Etang de Sandun'
+        Address2: ''
+        Zip: '44350'
+        City: GUÉRANDE
+        Mail: info@camping-leveno.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 40 24 79 30'
+        Phone2: '06 30 24 68 57'
+        Fax: '02 40 62 01 23'
+        VilleId: null
+    48:
+        Id: 48
+        Name: 'Domaine des Naïades'
+        Address1: 'St Pons les Mûres'
+        Address2: 'S T A C F'
+        Zip: '83310'
+        City: GRIMAUD
+        Mail: info@lesnaiades.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 55 67 80'
+        Phone2: '04 94 55 67 80'
+        Fax: '04 94 55 67 81'
+        VilleId: null
+    49:
+        Id: 49
+        Name: 'Domaine du Cros d''Auzon '
+        Address1: 'Quartier de la Gare'
+        Address2: 'St Maurice d''Ardèche'
+        Zip: '07200'
+        City: VOGÜÉ
+        Mail: 0475370102@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 37 75 86'
+        Phone2: '06 30 82 84 31'
+        Fax: '04 75 37 01 02'
+        VilleId: null
+    50:
+        Id: 50
+        Name: 'Domaine du Verdon '
+        Address1: 'La Salaou'
+        Address2: ''
+        Zip: '04120'
+        City: CASTELLANE
+        Mail: 0492836937@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 92 83 61 29'
+        Phone2: '06 07 27 84 72'
+        Fax: '04 92 83 69 37'
+        VilleId: null
+    51:
+        Id: 51
+        Name: 'Les Dunes '
+        Address1: 'Voie de Barcelone'
+        Address2: ''
+        Zip: '66440'
+        City: TORREILLES
+        Mail: 0468283257@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 28 38 29'
+        Phone2: '06 70 93 31 47'
+        Fax: '04 68 28 32 57'
+        VilleId: null
+    52:
+        Id: 52
+        Name: 'Eden '
+        Address1: 'Allée de Tournefort'
+        Address2: 'Route de Palavas'
+        Zip: '34970'
+        City: LATTES
+        Mail: latradition@sfr.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 15 11 05'
+        Phone2: '06 76 60 51 67'
+        Fax: '04 67 15 11 31'
+        VilleId: null
+    53:
+        Id: 53
+        Name: 'Les Embruns '
+        Address1: 'Avenue Edouard Branly'
+        Address2: Claouey
+        Zip: '33950'
+        City: LÈGE-CAP-FERRET
+        Mail: 0556600479@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 56 60 70 76'
+        Phone2: '06 30 86 18 05'
+        Fax: '05 56 60 04 79'
+        VilleId: null
+    54:
+        Id: 54
+        Name: 'Eurolac '
+        Address1: 'Promenade de l''Etang'
+        Address2: ''
+        Zip: '40200'
+        City: AUREILHAN
+        Mail: jeandaniel44@gmail.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 09 02 87'
+        Phone2: '06 89 43 10 93'
+        Fax: '05 58 09 41 89'
+        VilleId: null
+    55:
+        Id: 55
+        Name: 'Le Fanal '
+        Address1: 'Rue du Fanal'
+        Address2: ''
+        Zip: '14230'
+        City: ISIGNY-SUR-MER
+        Mail: info@camping-lefanal.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 31 21 33 20'
+        Phone2: '06 89 79 37 64'
+        Fax: '02 31 22 12 00'
+        VilleId: null
+    56:
+        Id: 56
+        Name: 'La Farigoulette '
+        Address1: 'Lac de St Laurent'
+        Address2: ''
+        Zip: '04500'
+        City: 'ST LAURENT DU VERDON'
+        Mail: info@camping-la-farigoulette.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 92 74 41 62'
+        Phone2: '06 40 21 14 23'
+        Fax: '09 70 06 76 78'
+        VilleId: null
+    57:
+        Id: 57
+        Name: 'Les Fontaines '
+        Address1: 'Route de St Nazaire'
+        Address2: ''
+        Zip: '66140'
+        City: CANET-EN-ROUSSILLON
+        Mail: campinglesfontaines@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 80 22 57'
+        Phone2: '06 31 25 40 69'
+        Fax: '04 68 80 22 57'
+        VilleId: null
+    58:
+        Id: 58
+        Name: 'Les Frênes '
+        Address1: 'Avenue du Pylone'
+        Address2: 'La Brague'
+        Zip: '06600'
+        City: ANTIBES
+        Mail: contact@camping-lesfrenes.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 93 33 36 52'
+        Phone2: '06 07 59 79 02'
+        Fax: '04 93 74 66 00'
+        VilleId: null
+    59:
+        Id: 59
+        Name: 'Front de Mer'
+        Address1: 'Avenue du Grau'
+        Address2: ''
+        Zip: '66700'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468818721@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 08 70'
+        Phone2: '06 71 32 03 35'
+        Fax: '04 68 81 87 21'
+        VilleId: null
+    60:
+        Id: 60
+        Name: 'Grand''Terre '
+        Address1: 'La Grande Terre'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: grandterre@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 39 64 94'
+        Phone2: '06 89 07 71 22'
+        Fax: '04 75 39 78 62'
+        VilleId: null
+    61:
+        Id: 61
+        Name: 'Château de la Grenouillère '
+        Address1: 'La Grenouillère'
+        Address2: 'RN 152'
+        Zip: '41500'
+        City: SUÈVRES
+        Mail: la.grenouillere@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 54 87 80 37'
+        Phone2: '06 70 92 14 76'
+        Fax: '02 54 87 84 21'
+        VilleId: null
+    63:
+        Id: 63
+        Name: 'Les Huttes '
+        Address1: 'Les Huttes'
+        Address2: ''
+        Zip: '17650'
+        City: 'ST DENIS D''OLÉRON'
+        Mail: info@camping-les-huttes.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 47 86 93'
+        Phone2: '06 89 79 45 04'
+        Fax: '05 46 75 91 10'
+        VilleId: null
+    64:
+        Id: 64
+        Name: 'L''Idéal '
+        Address1: '715 Route de Chaparon'
+        Address2: ''
+        Zip: '74210'
+        City: LATHUILE
+        Mail: 0450443659@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 50 44 32 97'
+        Phone2: '06 71 86 52 92'
+        Fax: '04 50 44 36 59'
+        VilleId: null
+    65:
+        Id: 65
+        Name: 'Les Ilates'
+        Address1: 'Route du Grouin'
+        Address2: ''
+        Zip: '17111'
+        City: LOIX
+        Mail: camping.les.ilates@flowercampings.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 29 05 43'
+        Phone2: '06 89 72 58 96'
+        Fax: '05 46 29 06 79'
+        VilleId: null
+    66:
+        Id: 66
+        Name: 'Ilbarritz '
+        Address1: 'Avenue de Biarritz'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: 0559412459@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 59 23 00 29'
+        Phone2: '06 31 80 31 54'
+        Fax: '05 59 41 24 59'
+        VilleId: null
+    67:
+        Id: 67
+        Name: 'Internacional de Calonge '
+        Address1: 'Ctra Palamos A St Feliu Km 7.6'
+        Address2: ''
+        Zip: '17251'
+        City: CALONGE
+        Mail: info@intercalonge.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 972 651 233'
+        Phone2: '06 72 05 07 05 '
+        Fax: '0034 972 652 507'
+        VilleId: null
+    68:
+        Id: 68
+        Name: 'Internacional Palamos '
+        Address1: 'Cami Cap de Planes'
+        Address2: ''
+        Zip: '17230'
+        City: PALAMOS
+        Mail: info@internacionalpalamos.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 972 31 47 36'
+        Phone2: '06 30 87 60 57'
+        Fax: '0034 972 31 76 26'
+        VilleId: null
+    69:
+        Id: 69
+        Name: 'Le Jard '
+        Address1: '123 Bld Maréchal de Lattre de Tassigny'
+        Address2: ''
+        Zip: '85360'
+        City: 'LA TRANCHE SUR MER'
+        Mail: 0251274292@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 27 43 79'
+        Phone2: '06 89 72 62 08'
+        Fax: '02 51 27 42 92'
+        VilleId: null
+    70:
+        Id: 70
+        Name: 'Lac Bleu '
+        Address1: 'Quartier La Touche'
+        Address2: ''
+        Zip: '26410'
+        City: 'CHATILLON EN DIOIS'
+        Mail: info@lacbleu-diois.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 21 85 30'
+        Phone2: '04 75 21 85 30'
+        Fax: '04 75 21 82 05'
+        VilleId: null
+    71:
+        Id: 71
+        Name: 'Lac de Miel '
+        Address1: ''
+        Address2: ''
+        Zip: '19190'
+        City: BEYNAT
+        Mail: info@camping-miel.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 55 85 50 66'
+        Phone2: '06 08 31 87 93'
+        Fax: '05 55 85 57 96'
+        VilleId: null
+    72:
+        Id: 72
+        Name: 'Lac de Thoux St Cricq'
+        Address1: 'St Cricq'
+        Address2: ''
+        Zip: '32430'
+        City: THOUX
+        Mail: contact@camping-lacdethoux.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 62 65 71 29'
+        Phone2: '06 45 61 81 52'
+        Fax: '05 62 65 74 81'
+        VilleId: null
+    73:
+        Id: 73
+        Name: 'Land''s Hause '
+        Address1: 'Rua José Maria Custodio  '
+        Address2: 'Burinhosa Pataias'
+        Zip: '2446 '
+        City: NAZARÉ
+        Mail: geral@albitur.pt
+        Country: Portugal
+        CountryCode: PT
+        Phone1: '00351 244 586 765'
+        Phone2: '00351 244 586 765'
+        Fax: '00351 244 586 062'
+        VilleId: null
+    74:
+        Id: 74
+        Name: 'Lou Broustaricq '
+        Address1: '2315 Route de Langeot'
+        Address2: ''
+        Zip: '40460'
+        City: SANGUINET
+        Mail: loubrousta@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 82 74 82'
+        Phone2: '06 89 73 93 08'
+        Fax: '05 58 82 10 74'
+        VilleId: null
+    75:
+        Id: 75
+        Name: 'Lou Pignada '
+        Address1: 'Route d''Azur'
+        Address2: ''
+        Zip: '40660'
+        City: MESSANGES
+        Mail: gm.duplais@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '0825 70 40 40'
+        Phone2: '06 08 94 63 04'
+        Fax: '05 58 48 26 53'
+        VilleId: null
+    76:
+        Id: 76
+        Name: 'La Loubine '
+        Address1: '1 Route de la Mer'
+        Address2: ''
+        Zip: '85340'
+        City: OLONNE-SUR-MER
+        Mail: info@la-loubine.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 33 12 92'
+        Phone2: '06 30 89 43 67'
+        Fax: '02 51 33 12 71'
+        VilleId: null
+    77:
+        Id: 77
+        Name: 'Loyada '
+        Address1: '111 Rue de la Source'
+        Address2: 'Avenue de l''Atlantique'
+        Zip: '85440'
+        City: TALMONT-ST-HILAIRE
+        Mail: 0251203758@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 21 28 10'
+        Phone2: '06 08 82 07 93'
+        Fax: '02 51 20 37 58'
+        VilleId: null
+    78:
+        Id: 78
+        Name: 'Malazéou '
+        Address1: 'RN 20'
+        Address2: ''
+        Zip: '09110'
+        City: AX-LES-THERMES
+        Mail: camping.malazeou@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 61 64 69 14'
+        Phone2: '05 61 64 69 14'
+        Fax: '05 61 64 05 60'
+        VilleId: null
+    79:
+        Id: 79
+        Name: 'Mare e Pineta '
+        Address1: 'Viale delle Acacie, 67'
+        Address2: ''
+        Zip: '44029'
+        City: 'LIDO DI SPINA'
+        Mail: rosesteban@hotmail.fr
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0039 0533 330 110'
+        Phone2: '06 88 98 66 38'
+        Fax: '0039 0533 330 052'
+        VilleId: null
+    80:
+        Id: 80
+        Name: 'La Marine '
+        Address1: '2196 Route de l''Espiguette'
+        Address2: ''
+        Zip: '30240'
+        City: 'LE GRAU-DU-ROI'
+        Mail: 0466515045@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 66 53 36 90'
+        Phone2: '04 66 53 20 31'
+        Fax: '04 66 51 50 45'
+        VilleId: null
+    81:
+        Id: 81
+        Name: 'Les Marsouins'
+        Address1: 'Avenue de la Retirada 1939'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: marsouins@gmail.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 14 81'
+        Phone2: '06 08 70 01 85'
+        Fax: '04 68 95 93 58'
+        VilleId: null
+    82:
+        Id: 82
+        Name: 'Marze '
+        Address1: 'Str. Prov. N 158 Km 30.200'
+        Address2: ''
+        Zip: '58046'
+        City: 'MARINA DI GROSSETTO'
+        Mail: lemarze@boschettoholiday.it
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0039 0564 35501'
+        Phone2: '06 70 83 80 92'
+        Fax: '0039 564744503'
+        VilleId: null
+    83:
+        Id: 83
+        Name: 'La Maïre '
+        Address1: ''
+        Address2: ''
+        Zip: '34410'
+        City: SÉRIGNAN
+        Mail: 0467325616@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 39 72 00'
+        Phone2: '06 32 29 48 31'
+        Fax: '04 67 32 56 16'
+        VilleId: null
+    84:
+        Id: 84
+        Name: 'Le Moulin'
+        Address1: ''
+        Address2: ''
+        Zip: '39130'
+        City: PATORNAY
+        Mail: jacques.noelle@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '03 84 48 31 21'
+        Phone2: '06 31 43 97 04'
+        Fax: '03 84 44 71 21'
+        VilleId: null
+    85:
+        Id: 85
+        Name: 'Camping Neptuno '
+        Address1: 'Rodors 23'
+        Address2: ''
+        Zip: '17256'
+        City: PALS
+        Mail: hartmann.guy@orange.fr
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 972 63 67 31'
+        Phone2: '06 08 35 15 52'
+        Fax: '0034 972 66 79 51'
+        VilleId: null
+    86:
+        Id: 86
+        Name: 'L''Oasis'
+        Address1: 'Route de St Laurent'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: camping.loasis@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 86 12 43'
+        Phone2: '06 08 32 31 70'
+        Fax: '04 68 86 46 83'
+        VilleId: null
+    87:
+        Id: 87
+        Name: 'L''Océano d''Or'
+        Address1: 'Rue Georges Clémenceau'
+        Address2: ''
+        Zip: '85520'
+        City: JARD-SUR-MER
+        Mail: bruno.chauvin0983@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 33 05 05'
+        Phone2: '06 08 90 03 54'
+        Fax: '02 51 33 94 04 '
+        VilleId: null
+    88:
+        Id: 88
+        Name: 'Oyam '
+        Address1: 'Rue Oyamburua'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: accueil@camping-oyam.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 59 54 91 61'
+        Phone2: '06 70 07 68 20'
+        Fax: '05 59 54 76 87'
+        VilleId: null
+    89:
+        Id: 89
+        Name: 'Les Oyats '
+        Address1: 'Route de la Plage des Casernes'
+        Address2: ''
+        Zip: '40510'
+        City: SEIGNOSSE
+        Mail: beatrice.cournee@gmail.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 73 53 96'
+        Phone2: '06 31 69 93 92'
+        Fax: '05 58 73 58 47'
+        VilleId: null
+    90:
+        Id: 90
+        Name: Pachacaïd
+        Address1: 'Route de Canadel'
+        Address2: ''
+        Zip: '83310'
+        City: 'LA MÔLE'
+        Mail: pacha@pachacaid.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 55 70 80'
+        Phone2: '06 70 58 02 09'
+        Fax: '04 94 55 70 95'
+        VilleId: null
+    91:
+        Id: 91
+        Name: 'Domaine de la Paille Basse'
+        Address1: ''
+        Address2: ''
+        Zip: '46200'
+        City: SOUILLAC
+        Mail: info@lapaillebasse.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 65 37 85 48'
+        Phone2: '06 08 23 78 03'
+        Fax: '05 65 37 09 58'
+        VilleId: null
+    92:
+        Id: 92
+        Name: 'Le Palace '
+        Address1: '65 Boulevard Marsan de Montbrun'
+        Address2: ''
+        Zip: '33780'
+        City: 'SOULAC SUR MER'
+        Mail: info@camping-palace.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 56 09 80 22'
+        Phone2: '06 08 28 61 70'
+        Fax: '05 56 09 84 23'
+        VilleId: null
+    93:
+        Id: 93
+        Name: 'Palavas Camping'
+        Address1: 'Route de Maguelone'
+        Address2: ''
+        Zip: '34250'
+        City: 'PALAVAS LES FLOTS'
+        Mail: 0467508245@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 67 68 01 28'
+        Phone2: '04 67 68 01 28'
+        Fax: '04 67 50 82 45'
+        VilleId: null
+    94:
+        Id: 94
+        Name: 'Le Parc '
+        Address1: '408 Quartier Trestaure'
+        Address2: ''
+        Zip: '83440'
+        City: 'ST PAUL EN FORÊT'
+        Mail: m.rene637@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 76 15 35'
+        Phone2: '06 31 79 25 52'
+        Fax: '04 94 76 15 35'
+        VilleId: null
+    95:
+        Id: 95
+        Name: 'Park Albatros '
+        Address1: 'Loc. Pineta di T. Nuova'
+        Address2: ''
+        Zip: '57027'
+        City: 'SAN VINCENZO'
+        Mail: alain.fuss@gmail.com
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0039 0565 701018'
+        Phone2: '06 88 94 43 84'
+        Fax: '0039 0565 701400'
+        VilleId: null
+    96:
+        Id: 96
+        Name: 'Petit Bois (Ardèche)'
+        Address1: '87 rue du Petit Bois'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: resapb@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 39 60 72'
+        Phone2: '06 88 71 27 19'
+        Fax: '04 75 93 95 50'
+        VilleId: null
+    97:
+        Id: 97
+        Name: 'Petit Bois (Cantal)'
+        Address1: 'Le bourg'
+        Address2: ''
+        Zip: '15320'
+        City: 'RUYNES EN MARGERIDE'
+        Mail: lepetitbois0639@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 71 23 42 26'
+        Phone2: '06 70 08 54 21'
+        Fax: '04 71 23 42 26'
+        VilleId: null
+    98:
+        Id: 98
+        Name: 'Le Pinada '
+        Address1: ''
+        Address2: ''
+        Zip: '11200'
+        City: 'VILLEROUGE LA CREMADE'
+        Mail: nadinety@msn.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 43 32 29'
+        Phone2: '06 88 71 93 49'
+        Fax: ''
+        VilleId: null
+    99:
+        Id: 99
+        Name: 'Les Pins '
+        Address1: 'Lieu dit Le Guen'
+        Address2: ''
+        Zip: '22430'
+        City: ERQUY
+        Mail: 0296636794@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 96 72 31 12'
+        Phone2: '06 08 83 65 13'
+        Fax: '02 96 63 67 94'
+        VilleId: null
+    100:
+        Id: 100
+        Name: 'Pins Parasols '
+        Address1: '3360 Rue des Combattants d''Afrique du Nord'
+        Address2: ''
+        Zip: '83600'
+        City: FRÉJUS
+        Mail: 0494408199@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 40 88 43'
+        Phone2: '06 88 71 90 61'
+        Fax: '04 94 40 81 99'
+        VilleId: null
+    101:
+        Id: 101
+        Name: 'Plage Fleurie '
+        Address1: 'Les Mazes'
+        Address2: ''
+        Zip: '07150'
+        City: 'VALLON-PONT-D''ARC'
+        Mail: info@laplagefleurie.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 75 88 01 15'
+        Phone2: '06 31 87 03 88'
+        Fax: '04 75 88 11 31'
+        VilleId: null
+    102:
+        Id: 102
+        Name: 'Playa Montroig'
+        Address1: 'Apartado de Correos 3'
+        Address2: ''
+        Zip: '43300'
+        City: 'MONT ROIG DEL CAMP'
+        Mail: reservas@playamontroig.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 977 810 637'
+        Phone2: '06 40 21 14 25'
+        Fax: '0034 977 811 411'
+        VilleId: null
+    103:
+        Id: 103
+        Name: 'Playa Tropicana '
+        Address1: 'camino de l''attall s/n'
+        Address2: ''
+        Zip: '12579'
+        City: 'ALCOSSEBRE CASTELLON'
+        Mail: info@playatropicana.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 964 412 463'
+        Phone2: '06 82 63 48 69'
+        Fax: '0034 964 412 805'
+        VilleId: null
+    104:
+        Id: 104
+        Name: 'Port de plaisance'
+        Address1: 'Prad Poullou'
+        Address2: 'Clohars Fouesnant'
+        Zip: '29950'
+        City: BENODET
+        Mail: info@campingbenodet.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 98 57 02 38'
+        Phone2: '06 07 85 05 84'
+        Fax: '02 98 57 25 25'
+        VilleId: null
+    106:
+        Id: 106
+        Name: 'La Ribeyre'
+        Address1: ''
+        Address2: ''
+        Zip: '63790'
+        City: MUROL
+        Mail: info@laribeyre.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 73 88 64 29'
+        Phone2: '06 31 86 12 87'
+        Fax: '04 73 88 68 41'
+        VilleId: null
+    108:
+        Id: 108
+        Name: 'Le Roussillonnais '
+        Address1: 'Boulevard de la Mer'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468959611@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 10 42'
+        Phone2: '06 31 96 76 12'
+        Fax: '04 68 95 96 11'
+        VilleId: null
+    109:
+        Id: 109
+        Name: 'Les Sables de Cordouan '
+        Address1: 'Route de la Fouasse'
+        Address2: ''
+        Zip: '17570'
+        City: 'LES MATHES'
+        Mail: michel.etriche@orange.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 22 47 32'
+        Phone2: '06 89 50 18 13'
+        Fax: '05 46 22 51 46'
+        VilleId: null
+    110:
+        Id: 110
+        Name: 'Saint Aygulf Plage'
+        Address1: '270 Avenue Salvarelli'
+        Address2: ''
+        Zip: '83370'
+        City: 'ST AYGULF'
+        Mail: 0494810316@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 17 62 49'
+        Phone2: '06 30 43 80 74'
+        Fax: '04 94 81 03 16'
+        VilleId: null
+    111:
+        Id: 111
+        Name: 'Saint Louis'
+        Address1: '2160 Avenue de la République'
+        Address2: ''
+        Zip: '06550'
+        City: 'LA ROQUETTE SUR SIAGNE'
+        Mail: pascal.chantal.chevallier@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 92 19 23 13'
+        Phone2: '06 31 90 29 44'
+        Fax: ''
+        VilleId: null
+    112:
+        Id: 112
+        Name: 'Sainte Baume'
+        Address1: 'Quartier Delvieux Sud'
+        Address2: ''
+        Zip: '83860'
+        City: NANS-LES-PINS
+        Mail: saintebaume@yahoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 78 92 68'
+        Phone2: '06 89 79 83 64'
+        Fax: '04 94 78 67 37'
+        VilleId: null
+    113:
+        Id: 113
+        Name: 'Le Sainte-Marie '
+        Address1: 'Chemin des Clauses'
+        Address2: ''
+        Zip: '66470'
+        City: 'STE MARIE-LA-MER'
+        Mail: camping@lesaintemarie.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 80 48 10'
+        Phone2: '06 08 09 37 54'
+        Fax: '04 68 73 42 22'
+        VilleId: null
+    114:
+        Id: 114
+        Name: 'Le Sen Yan '
+        Address1: 'La Gare'
+        Address2: ''
+        Zip: '40170'
+        City: Mézos
+        Mail: reception@sen-yan.com
+        Country: ''
+        CountryCode: ''
+        Phone1: '05 58 42 60 05'
+        Phone2: '06 85 15 03 72'
+        Fax: '05 58 42 64 56'
+        VilleId: null
+    116:
+        Id: 116
+        Name: 'La Ferme de la Serraz '
+        Address1: 'Rue de la Poste'
+        Address2: ''
+        Zip: '74210'
+        City: DOUSSARD
+        Mail: info@campinglaserraz.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 50 44 30 68'
+        Phone2: '06 88 71 85 65'
+        Fax: '04 50 44 81 07'
+        VilleId: null
+    117:
+        Id: 117
+        Name: 'Signol '
+        Address1: Boyardville
+        Address2: ''
+        Zip: '17190'
+        City: 'ST-GEORGES-D''OLÉRON'
+        Mail: galardchristian20@gmail.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 46 47 01 22'
+        Phone2: '06 31 88 70 26'
+        Fax: '05 46 47 23 46'
+        VilleId: null
+    118:
+        Id: 118
+        Name: 'Le Soleil '
+        Address1: 'Route du Littoral'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: camping.lesoleil@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 14 48'
+        Phone2: '06 31 32 11 40'
+        Fax: '04 68 81 44 34'
+        VilleId: null
+    119:
+        Id: 119
+        Name: 'Le Soleil de la Méditerranée'
+        Address1: '2 rue Ste Beuve'
+        Address2: ''
+        Zip: '66750'
+        City: 'ST CYPRIEN'
+        Mail: 0468825004@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 21 07 97'
+        Phone2: '06 89 73 55 25'
+        Fax: '04 68 82 50 04'
+        VilleId: null
+    120:
+        Id: 120
+        Name: 'Les Sources '
+        Address1: 'Route des Crêtes'
+        Address2: ''
+        Zip: '68700'
+        City: WATTWILLER
+        Mail: camping.les.sources@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '03 89 75 44 94'
+        Phone2: '06 85 06 13 61'
+        Fax: '03 89 75 71 98'
+        VilleId: null
+    121:
+        Id: 121
+        Name: 'Le Talaris '
+        Address1: 'Route de l''Océan'
+        Address2: 'Lacanau Océan'
+        Zip: '33680'
+        City: LACANAU
+        Mail: camping@talaris-vacances.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 56 03 04 15'
+        Phone2: '06 31 37 10 44'
+        Fax: '05 56 26 21 56'
+        VilleId: null
+    122:
+        Id: 122
+        Name: 'Le Tamerici '
+        Address1: 'Via della Cecinella 5'
+        Address2: ''
+        Zip: '57023'
+        City: 'CECINA MARE'
+        Mail: info@letamerici.it
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0039 0586 620 629'
+        Phone2: '06 07 50 68 24'
+        Fax: '0039 0586 687 811'
+        VilleId: null
+    123:
+        Id: 123
+        Name: 'Tenuta Primero '
+        Address1: 'Via Monfalcone 14'
+        Address2: ''
+        Zip: '34073'
+        City: GRADO
+        Mail: philetlolo@gmail.com
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0039 0431 896 900'
+        Phone2: '06 88 71 65 39'
+        Fax: '0039 0431 896 901'
+        VilleId: null
+    125:
+        Id: 125
+        Name: 'Ur Onea '
+        Address1: 'Rue de la Chapelle'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: contact@uronea.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 59 26 53 61'
+        Phone2: '06 31 95 41 42'
+        Fax: '05 59 26 53 94'
+        VilleId: null
+    126:
+        Id: 126
+        Name: 'Via Romana '
+        Address1: 'Casamozza di Fium''Orbu'
+        Address2: ''
+        Zip: '20243'
+        City: 'PRUNELLI DI FIUMORBU'
+        Mail: coraline.leandri@gmail.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 95 56 14 73'
+        Phone2: '06 88 71 58 98'
+        Fax: '04 95 57 07 02'
+        VilleId: null
+    127:
+        Id: 127
+        Name: 'Le Vieux Port '
+        Address1: 'Route Plage Sud'
+        Address2: ''
+        Zip: '40660'
+        City: MESSANGES
+        Mail: sergemombert@free.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '0 825 70 40 40'
+        Phone2: '06 89 79 80 11'
+        Fax: '05 58 48 01 69'
+        VilleId: null
+    128:
+        Id: 128
+        Name: 'Les Vignes '
+        Address1: 'Route du Cap de l''Homy'
+        Address2: 'Route de la Plage'
+        Zip: '40170'
+        City: LIT-ET-MIXE
+        Mail: accvignes@village-center.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 58 42 85 60'
+        Phone2: '06 31 03 26 53'
+        Fax: '05 58 42 74 36'
+        VilleId: null
+    129:
+        Id: 129
+        Name: 'Vilanova Park '
+        Address1: 'Ctra Arboc Km 2.5'
+        Address2: ''
+        Zip: '08800'
+        City: 'VILANOVA I LA GELTRÚ'
+        Mail: info@vilanovapark.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 938 933 402'
+        Phone2: '06 40 21 14 24'
+        Fax: '0034 93 893 55 28'
+        VilleId: null
+    130:
+        Id: 130
+        Name: Zagarella
+        Address1: 'Rue des Sables'
+        Address2: ''
+        Zip: '85160'
+        City: 'ST JEAN-DE-MONTS'
+        Mail: zagarella@zagarella.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 58 19 82'
+        Phone2: '06 89 73 60 39'
+        Fax: '02 51 59 35 28'
+        VilleId: null
+    131:
+        Id: 131
+        Name: 'Le Ruisseau des Pyrénées'
+        Address1: 'Rue Burruntz'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: francoise.dumont3@wanadoo.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '05 59 41 94 50'
+        Phone2: '06 32 12 91 82'
+        Fax: '05 59 41 95 73'
+        VilleId: null
+    133:
+        Id: 133
+        Name: 'La Masia'
+        Address1: 'C/Colon,44'
+        Address2: ''
+        Zip: '17300'
+        City: BLANES
+        Mail: fontclaude@orange.fr
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0039 72 33 10 13'
+        Phone2: '06 07 78 00 16'
+        Fax: '0039 72 33 31 28'
+        VilleId: null
+    134:
+        Id: 134
+        Name: 'Les Tamaris'
+        Address1: 'Rte de St Laurent'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: 0468862309@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 86 08 18'
+        Phone2: '06 07 84 61 31'
+        Fax: '04 68 86 23 09'
+        VilleId: null
+    135:
+        Id: 135
+        Name: 'Playa Joyel'
+        Address1: 'Playa De Ris'
+        Address2: ''
+        Zip: '39180'
+        City: NOJA
+        Mail: jean.straniero@gmail.com
+        Country: Spanien
+        CountryCode: ES
+        Phone1: '0034 942630081 '
+        Phone2: '06 31 35 46 23'
+        Fax: '0034 942631294'
+        VilleId: null
+    136:
+        Id: 136
+        Name: 'Grande Italia'
+        Address1: 'Zona Demaniale 10/I'
+        Address2: ''
+        Zip: 'i 30015'
+        City: 'SOTTOMARINA DI CHIOGGIA '
+        Mail: info@campinggrandeitalia.com
+        Country: Italien
+        CountryCode: IT
+        Phone1: '0 41 40 46 64'
+        Phone2: '06 32 12 95 69'
+        Fax: '04 15 50 68 77'
+        VilleId: null
+    137:
+        Id: 137
+        Name: 'Le Pearl Village Club'
+        Address1: 'Chemin de Taxo à la Mer'
+        Address2: ''
+        Zip: '66701'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468815529@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 68 81 26 49'
+        Phone2: '06 89 79 60 43'
+        Fax: '04 68 81 55 29'
+        VilleId: null
+    138:
+        Id: 138
+        Name: 'Les Pins Maritimes'
+        Address1: '1633 boulevard de la Marine'
+        Address2: ''
+        Zip: '83400'
+        City: HYÈRES
+        Mail: bieber.jean-claude@neuf.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '04 94 66 34 07'
+        Phone2: '06 71 59 02 51'
+        Fax: '04 94 66 33 57'
+        VilleId: null
+    139:
+        Id: 139
+        Name: '*Le Barralet'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    140:
+        Id: 140
+        Name: '*Village Cavallino'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    141:
+        Id: 141
+        Name: '*Aux Hamacs'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    142:
+        Id: 142
+        Name: '*Prat Dou Rey'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    143:
+        Id: 143
+        Name: '*Rouffiac'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    144:
+        Id: 144
+        Name: '*Séquoia Parc'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    145:
+        Id: 145
+        Name: '*Trémolat'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    146:
+        Id: 146
+        Name: '*L''Atlantique'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    147:
+        Id: 147
+        Name: '*Le Bahamas Beach'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    148:
+        Id: 148
+        Name: '*La Barque'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    149:
+        Id: 149
+        Name: '*Chanset'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    150:
+        Id: 150
+        Name: '*Le Chêne Gris'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    151:
+        Id: 151
+        Name: '*Les Dauphins Bleus'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    152:
+        Id: 152
+        Name: '*Domaine de Beaulieu'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    153:
+        Id: 153
+        Name: '*Le Lamparo'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    154:
+        Id: 154
+        Name: '*Marmotel'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    155:
+        Id: 155
+        Name: '*Les Ondines'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    156:
+        Id: 156
+        Name: '*Pyla Camping'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    157:
+        Id: 157
+        Name: '*La Rotonde'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    158:
+        Id: 158
+        Name: '*Village Stoja'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    159:
+        Id: 159
+        Name: '*Le Tamarit Park'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    160:
+        Id: 160
+        Name: '*Le Trivoly'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    161:
+        Id: 161
+        Name: '*Almadies'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    162:
+        Id: 162
+        Name: '*Bois de Pleuven'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    163:
+        Id: 163
+        Name: '*Domaine de la Forêt'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    164:
+        Id: 164
+        Name: '*Le Lac'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    165:
+        Id: 165
+        Name: '*Rieu Montagné'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    166:
+        Id: 166
+        Name: '*Domaine des Bans'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    167:
+        Id: 167
+        Name: '*Douce Quiétude'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    168:
+        Id: 168
+        Name: '*Fleutron'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    169:
+        Id: 169
+        Name: '*Palmeraie'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    170:
+        Id: 170
+        Name: '*Les Tours'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    171:
+        Id: 171
+        Name: '*Abri de Camargue'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    172:
+        Id: 172
+        Name: '*Domaine des Iscles'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    173:
+        Id: 173
+        Name: '*Lacs du Verdon'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    174:
+        Id: 174
+        Name: '*Les Pins Payrac'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    175:
+        Id: 175
+        Name: 'Domaine des Pins'
+        Address1: '151 Avenue de la Faye'
+        Address2: ''
+        Zip: '85270'
+        City: 'ST HILAIRE DE RIEZ'
+        Mail: info@ledomainedespins.com
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 58 23 33'
+        Phone2: '06 32 12 37 65'
+        Fax: '02 51 58 29 93'
+        VilleId: null
+    176:
+        Id: 176
+        Name: 'Atlantic Club Montalivet'
+        Address1: '47 Avenue de l''Europe'
+        Address2: ''
+        Zip: '33930'
+        City: 'VENDAYS MONTALIVET'
+        Mail: vautrin.christian@sfr.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: '06 32 12 14 52'
+        Fax: ''
+        VilleId: null
+    177:
+        Id: 177
+        Name: 'Les Ajoncs d''Or'
+        Address1: 'Chemin du Rocher'
+        Address2: ''
+        Zip: '44500'
+        City: 'LA BAULE'
+        Mail: 0240244437@fax.contact-everyone.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 40 60 33 29'
+        Phone2: '06 31 28 72 24'
+        Fax: '02 40 24 44 37'
+        VilleId: null
+    178:
+        Id: 178
+        Name: 'Camping Les Biches'
+        Address1: 'Route de Notre Dame de Riez'
+        Address2: 'Chemin de la petite Baisse'
+        Zip: '85270'
+        City: 'ST HILAIRE DE RIEZ'
+        Mail: rf.forest@sfr.fr
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: '02 51 54 38 82'
+        Phone2: '06 32 29 64 91'
+        Fax: '02 51 54 30 74'
+        VilleId: null
+    179:
+        Id: 179
+        Name: 'Aqua Viva'
+        Address1: 'Route de Souillac'
+        Address2: ''
+        Zip: '24200'
+        City: 'CARSAC AILLAC'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    180:
+        Id: 180
+        Name: 'Les Arbousiers'
+        Address1: 'Chemin des Arbousiers'
+        Address2: 'Le Cabenas'
+        Zip: '83320'
+        City: CARQUEIRANNE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    181:
+        Id: 181
+        Name: Aurilandes
+        Address1: '1001 Promenade de l’Etang'
+        Address2: ''
+        Zip: '40200'
+        City: AUREILHAN
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    182:
+        Id: 182
+        Name: 'La Baie du Kernic'
+        Address1: 'Route de Pen An Théven'
+        Address2: ''
+        Zip: '29430'
+        City: PLOUESCAT
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    183:
+        Id: 183
+        Name: 'Le Bois d’Amour'
+        Address1: '10 allée Diane'
+        Address2: ''
+        Zip: '44500'
+        City: 'LA BAULE'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    184:
+        Id: 184
+        Name: Ca’Savio
+        Address1: 'Via di Ca’Savio, 77'
+        Address2: ''
+        Zip: '30013'
+        City: CAVALLINO-TREPORTI
+        Mail: ''
+        Country: Italien
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    185:
+        Id: 185
+        Name: 'Les Catalpas'
+        Address1: '45 chemin d’Enlias'
+        Address2: ''
+        Zip: '17110'
+        City: 'ST GEORGES DE DIDONNE'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    186:
+        Id: 186
+        Name: 'Les Chalets de l’Isard (Résidence)'
+        Address1: ''
+        Address2: ''
+        Zip: '66210'
+        City: 'LES ANGLES'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    187:
+        Id: 187
+        Name: 'Le Clos du Rocher (Résidence)'
+        Address1: 'Avenue du Cingle'
+        Address2: ''
+        Zip: '24620'
+        City: 'LES EYZIES DE TAYAC SIREUIL'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    188:
+        Id: 188
+        Name: 'Club del Sole Spina'
+        Address1: 'Via Del Campeggio, 99'
+        Address2: ''
+        Zip: '44024'
+        City: 'LIDO DI SPINA'
+        Mail: ''
+        Country: Italien
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    189:
+        Id: 189
+        Name: 'Côté Green (Résidence)'
+        Address1: '1213 Allée des Thermes'
+        Address2: ''
+        Zip: '34990'
+        City: JUVIGNAC
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    190:
+        Id: 190
+        Name: 'La Côte des Roses'
+        Address1: 'Route de Gruissan'
+        Address2: ''
+        Zip: '11100'
+        City: NARBONNE-PLAGE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    191:
+        Id: 191
+        Name: 'La Côte Sauvage'
+        Address1: '336 rue de la Forêt'
+        Address2: ''
+        Zip: '17590'
+        City: 'ST CLEMENT DES BALEINES'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    192:
+        Id: 192
+        Name: 'Le Coteau de la Marine'
+        Address1: 'Coteau de la Marine'
+        Address2: ''
+        Zip: '04500'
+        City: 'MONTAGNAC MONTPEZAT'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    193:
+        Id: 193
+        Name: Cypsela
+        Address1: 'C/ Rodors 7'
+        Address2: ''
+        Zip: '17256'
+        City: 'PALS GIRONA'
+        Mail: ''
+        Country: Spanien
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    194:
+        Id: 194
+        Name: 'Les Demeures Torrellanes (Résidence)'
+        Address1: 'Route départementale 40'
+        Address2: ''
+        Zip: '66200'
+        City: 'LATOUR BAS ELNE'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    195:
+        Id: 195
+        Name: 'Les Demeures de la Massane (Résidence)'
+        Address1: 'Impasse Edmond Brazes'
+        Address2: ''
+        Zip: '66700'
+        City: 'ARGELES SUR MER'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    196:
+        Id: 196
+        Name: 'Les Demeures du Ventoux'
+        Address1: '2015 avenue Majoral Jouve'
+        Address2: ''
+        Zip: '84810'
+        City: AUBIGNAN
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    197:
+        Id: 197
+        Name: 'Le Domaine de Bacchus (Résidence)'
+        Address1: ''
+        Address2: ''
+        Zip: '34400'
+        City: 'ST CHRISTOL'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    198:
+        Id: 198
+        Name: 'Le Domaine de Manon (Résidence)'
+        Address1: 'Zone d’activité de Signes'
+        Address2: 'Avenue de Paris'
+        Zip: '83870'
+        City: SIGNES
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    199:
+        Id: 199
+        Name: 'Le Domaine de la Corniche (Résidence)'
+        Address1: 'Route de la Corniche'
+        Address2: ''
+        Zip: '14640'
+        City: AUBERVILLE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    200:
+        Id: 200
+        Name: 'Le Domaine des Iscles'
+        Address1: 'Route du Plan d’Eau'
+        Address2: ''
+        Zip: '13640'
+        City: 'LA ROQUE D ANTHERON'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    201:
+        Id: 201
+        Name: 'Le Domaine du Bosquet (Résidence)'
+        Address1: 'Lieu dit Lafont'
+        Address2: 'Rue de la Vedrenne'
+        Zip: '19300'
+        City: EGLETONS
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    202:
+        Id: 202
+        Name: 'Le Domaine du Golf (Résidence)'
+        Address1: 'Lieu-dit Launac Le Vieux'
+        Address2: '1 chemin de l’Aire'
+        Zip: '34690'
+        City: FABREGUES
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    203:
+        Id: 203
+        Name: 'La Dune Blanche'
+        Address1: 'Route d’Etaples'
+        Address2: ''
+        Zip: '62176'
+        City: CAMIERS
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    204:
+        Id: 204
+        Name: 'Le Domaine d’Ensérune (Résidence)'
+        Address1: 'Promenade de l’ancien stade'
+        Address2: ''
+        Zip: '34440'
+        City: COLOMBIERS
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    205:
+        Id: 205
+        Name: Ensoya
+        Address1: '54 rue de Perpignan'
+        Address2: ''
+        Zip: '11130'
+        City: SIGEAN
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    206:
+        Id: 206
+        Name: L’Europe
+        Address1: '31 route de Frontignan'
+        Address2: ''
+        Zip: '34110'
+        City: 'VIC LA GARDIOLE'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    207:
+        Id: 207
+        Name: 'Le Fonserane (Résidence)'
+        Address1: '190 Rue des Christols'
+        Address2: ''
+        Zip: '34500'
+        City: BEZIERS
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    208:
+        Id: 208
+        Name: 'Le Fontainebleau (Résidence)'
+        Address1: '196 Avenue de Stalingrad'
+        Address2: ''
+        Zip: '94550'
+        City: 'CHEVILLY LARUE'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    209:
+        Id: 209
+        Name: 'Free Time'
+        Address1: 'Via dei Cipressi'
+        Address2: ''
+        Zip: '57020'
+        City: 'MARINA DI BIBBONA'
+        Mail: ''
+        Country: Italien
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    210:
+        Id: 210
+        Name: 'L’Hôtel du Golf (Hôtel)'
+        Address1: '38 Avenue des Hameaux du Golf'
+        Address2: ''
+        Zip: '34990'
+        City: JUVIGNAC
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    211:
+        Id: 211
+        Name: 'L’Île du Rhin'
+        Address1: 'Zone touristique Île du Rhin'
+        Address2: ''
+        Zip: '68600'
+        City: BIESHEIM
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    212:
+        Id: 212
+        Name: Interpals
+        Address1: 'Avenue Mediterranania km 4,5'
+        Address2: ''
+        Zip: '17256'
+        City: 'PLADJA DE PALS'
+        Mail: ''
+        Country: Spanien
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    213:
+        Id: 213
+        Name: 'Les Isles de Sola (Résidence)'
+        Address1: '8 rue du Joncal'
+        Address2: ''
+        Zip: '14450'
+        City: 'GRANDCAMP MAISY'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    214:
+        Id: 214
+        Name: 'Ker Goh Lenn (Résidence)'
+        Address1: 'Espace tertiaire Atlanparc'
+        Address2: 'Rond-point Kerluhern'
+        Zip: '56890'
+        City: PLESCOP
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    215:
+        Id: 215
+        Name: 'La Forêt'
+        Address1: 'Route de Biscarrosse'
+        Address2: ''
+        Zip: '33115'
+        City: 'PYLA SUR MER'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    216:
+        Id: 216
+        Name: 'Le Bois de Pleuven'
+        Address1: 'Bois de Pleuven'
+        Address2: ''
+        Zip: '29140'
+        City: 'ST YVI'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    217:
+        Id: 217
+        Name: 'Le Castellas'
+        Address1: 'RN 112'
+        Address2: ''
+        Zip: '34200'
+        City: SETE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    218:
+        Id: 218
+        Name: 'Le Neptune'
+        Address1: 'Avenue de la Retirada plage Nord'
+        Address2: ''
+        Zip: '66702'
+        City: 'ARGELES SUR MER CEDEX'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    219:
+        Id: 219
+        Name: 'Le Domaine d’Anghione'
+        Address1: 'Route de la plage'
+        Address2: ''
+        Zip: '20213'
+        City: 'CASTELLARE DI CASINCA'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    220:
+        Id: 220
+        Name: 'Le Phare'
+        Address1: '2 rue de la Mer'
+        Address2: ''
+        Zip: '62480'
+        City: 'LE PORTEL'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    221:
+        Id: 221
+        Name: 'Les 7 Fonts'
+        Address1: 'RN 112'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    222:
+        Id: 222
+        Name: 'Les Almadies'
+        Address1: 'Route de la Roche sur Yon'
+        Address2: 'La Charrière des Bandes'
+        Zip: '85360'
+        City: 'LA TRANCHE SUR MER'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    223:
+        Id: 223
+        Name: 'Les Iles'
+        Address1: '245 route des Lacs'
+        Address2: ''
+        Zip: '74190'
+        City: PASSY
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    224:
+        Id: 224
+        Name: 'Les Lupins'
+        Address1: '1 rue de la gare'
+        Address2: ''
+        Zip: '68580'
+        City: 'SEPPOIS LE BAS'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    225:
+        Id: 225
+        Name: 'Le Mas des Cigales (Résidence)'
+        Address1: '384 rue des Romarins'
+        Address2: ''
+        Zip: '34160'
+        City: CASTRIES
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    226:
+        Id: 226
+        Name: 'Le Parc de la Fecht'
+        Address1: 'Route de Gunsbach'
+        Address2: ''
+        Zip: '68140'
+        City: MUNSTER
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    227:
+        Id: 227
+        Name: 'Le Parc des Allais'
+        Address1: 'Les Allais'
+        Address2: ''
+        Zip: '37220'
+        City: TROGUES
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    228:
+        Id: 228
+        Name: 'Les Prés du Verdon'
+        Address1: 'Les Prés du Verdon'
+        Address2: ''
+        Zip: '04500'
+        City: QUINSON
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    229:
+        Id: 229
+        Name: Rieumontagné
+        Address1: 'Lac du Laouzas'
+        Address2: ''
+        Zip: '81320'
+        City: NAGES
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    230:
+        Id: 230
+        Name: 'Le Saint Clair (Résidence)'
+        Address1: '4 impasse de la Misaine'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    231:
+        Id: 231
+        Name: 'Les Tours'
+        Address1: 'Les Tours'
+        Address2: ''
+        Zip: '12460'
+        City: 'ST AMANS DES COTS'
+        Mail: ''
+        Country: Frankreich
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    997:
+        Id: 997
+        Name: 'zzz Fictif enregistrement Linéaire Liberté'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    998:
+        Id: 998
+        Name: 'zzz Fictif enregistrement package'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null
+    999:
+        Id: 999
+        Name: 'zzz Fictif pour copie paramétrage'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        Country: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        VilleId: null

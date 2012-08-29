@@ -26,20 +26,29 @@ class DumpCommand extends BaseCommand
      */
     protected $models = array(
         "\\Cungfoo\\Model\\Pays",
+        "\\Cungfoo\\Model\\PaysI18n",
         "\\Cungfoo\\Model\\Region",
+        "\\Cungfoo\\Model\\RegionI18n",
         "\\Cungfoo\\Model\\Ville",
+        "\\Cungfoo\\Model\\VilleI18n",
         "\\Cungfoo\\Model\\Activite",
+        "\\Cungfoo\\Model\\ActiviteI18n",
         "\\Cungfoo\\Model\\Destination",
+        "\\Cungfoo\\Model\\DestinationI18n",
         "\\Cungfoo\\Model\\Equipement",
+        "\\Cungfoo\\Model\\EquipementI18n",
         "\\Cungfoo\\Model\\ServiceComplementaire",
+        "\\Cungfoo\\Model\\ServiceComplementaireI18n",
         "\\Cungfoo\\Model\\CategoryTypeHebergement",
+        "\\Cungfoo\\Model\\CategoryTypeHebergementI18n",
         "\\Cungfoo\\Model\\TypeHebergement",
-        "\\Cungfoo\\Model\\Camping",
-        "\\Cungfoo\\Model\\CampingActivite",
-        "\\Cungfoo\\Model\\CampingDestination",
-        "\\Cungfoo\\Model\\CampingEquipement",
-        "\\Cungfoo\\Model\\CampingServiceComplementaire",
-        "\\Cungfoo\\Model\\CampingTypeHebergement",
+        "\\Cungfoo\\Model\\TypeHebergementI18n",
+        "\\Cungfoo\\Model\\Etablissement",
+        "\\Cungfoo\\Model\\EtablissementActivite",
+        "\\Cungfoo\\Model\\EtablissementDestination",
+        "\\Cungfoo\\Model\\EtablissementEquipement",
+        "\\Cungfoo\\Model\\EtablissementServiceComplementaire",
+        "\\Cungfoo\\Model\\EtablissementTypeHebergement",
     );
 
     protected function configure()
@@ -47,7 +56,7 @@ class DumpCommand extends BaseCommand
         $this
             ->setName('resalys:dump')
             ->setDescription('Dump static resalys data to a yaml fixtures')
-            ->addOption('directory', 'dir', InputOption::VALUE_OPTIONAL, 'Give a output directory.', '/app/resources/data/fixtures/resalys')
+            ->addOption('directory', 'dir', InputOption::VALUE_OPTIONAL, 'Give a output directory.', '/app/resources/data/fixtures')
         ;
     }
 
@@ -81,8 +90,22 @@ class DumpCommand extends BaseCommand
 
                 // format for yaml
                 $objectsArrayForYaml = array();
-                array_walk($objectsArray, function($value, $key) use (&$objectsArrayForYaml) {
-                    if (isset($value['Id']))
+                array_walk($objectsArray, function($value, $key) use (&$objectsArrayForYaml, $model) {
+                    if (isset($value['CreatedAt']))
+                    {
+                        unset($value['CreatedAt']);
+                    }
+                    if (isset($value['UpdatedAt']))
+                    {
+                        unset($value['UpdatedAt']);
+                    }
+
+
+                    if (strpos($model, 'I18n'))
+                    {
+                        $objectsArrayForYaml[sprintf('%s_%s', $value['Id'], $value['Locale'])] = $value;
+                    }
+                    else if (isset($value['Id']))
                     {
                         $objectsArrayForYaml[$value['Id']] = $value;
                     }
@@ -98,7 +121,7 @@ class DumpCommand extends BaseCommand
                 // compute utils informations
                 $tableName   = $utils->underscore(end(explode('\\', $model)));
                 $prefix      = str_pad($order, 2, '0', STR_PAD_LEFT);
-                $fixtureName = sprintf('%s/%s-%s.yml', $fixturesDirectory, $prefix, $tableName);
+                $fixtureName = sprintf('%s/%s-resalys-%s.yml', $fixturesDirectory, $prefix, $tableName);
 
                 // dump fixtures files
                 file_put_contents($fixtureName, $objectsYaml);

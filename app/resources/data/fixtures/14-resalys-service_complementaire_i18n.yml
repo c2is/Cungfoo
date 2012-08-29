@@ -1,0 +1,25 @@
+\Cungfoo\Model\ServiceComplementaireI18n:
+    DEPA_de:
+        Id: DEPA
+        Locale: de
+        Name: 'Dépannage alimentation'
+    DEPA_en:
+        Id: DEPA
+        Locale: en
+        Name: 'Dépannage alimentation'
+    DEPA_fr:
+        Id: DEPA
+        Locale: fr
+        Name: 'Dépannage alimentation'
+    TVBA_de:
+        Id: TVBA
+        Locale: de
+        Name: 'TV au bar'
+    TVBA_en:
+        Id: TVBA
+        Locale: en
+        Name: 'TV au bar'
+    TVBA_fr:
+        Id: TVBA
+        Locale: fr
+        Name: 'TV au bar'

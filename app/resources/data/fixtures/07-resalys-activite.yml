@@ -1,0 +1,9 @@
+\Cungfoo\Model\Activite:
+    CENF:
+        Id: CENF
+    LOVP:
+        Id: LOVP
+    PETG:
+        Id: PETG
+    PING:
+        Id: PING

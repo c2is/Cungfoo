@@ -1,0 +1,73 @@
+\Cungfoo\Model\CategoryTypeHebergementI18n:
+    CAR_de:
+        Id: CAR
+        Locale: de
+        Name: Caravans
+    CAR_en:
+        Id: CAR
+        Locale: en
+        Name: ''
+    CAR_fr:
+        Id: CAR
+        Locale: fr
+        Name: Caravanes
+    CHA_de:
+        Id: CHA
+        Locale: de
+        Name: Chalets
+    CHA_en:
+        Id: CHA
+        Locale: en
+        Name: ''
+    CHA_fr:
+        Id: CHA
+        Locale: fr
+        Name: Chalets
+    EMP_de:
+        Id: EMP
+        Locale: de
+        Name: 'Stellplatz für Zelt, Wohnwagen oder Wohnmobil'
+    EMP_en:
+        Id: EMP
+        Locale: en
+        Name: ''
+    EMP_fr:
+        Id: EMP
+        Locale: fr
+        Name: Emplacements
+    GITE_de:
+        Id: GITE
+        Locale: de
+        Name: Ferienhäuser
+    GITE_en:
+        Id: GITE
+        Locale: en
+        Name: ''
+    GITE_fr:
+        Id: GITE
+        Locale: fr
+        Name: Gîtes
+    MH_de:
+        Id: MH
+        Locale: de
+        Name: Mobilhomes
+    MH_en:
+        Id: MH
+        Locale: en
+        Name: ''
+    MH_fr:
+        Id: MH
+        Locale: fr
+        Name: Mobil-homes
+    SALL_de:
+        Id: SALL
+        Locale: de
+        Name: Empfangssaal
+    SALL_en:
+        Id: SALL
+        Locale: en
+        Name: ''
+    SALL_fr:
+        Id: SALL
+        Locale: fr
+        Name: 'Salles de réception'

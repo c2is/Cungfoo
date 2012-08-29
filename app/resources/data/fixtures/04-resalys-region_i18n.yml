@@ -1,0 +1,349 @@
+\Cungfoo\Model\RegionI18n:
+    ALJU_de:
+        Id: ALJU
+        Locale: de
+        Name: 'Elsass/Jura '
+    ALJU_en:
+        Id: ALJU
+        Locale: en
+        Name: 'Alsace/Jura '
+    ALJU_fr:
+        Id: ALJU
+        Locale: fr
+        Name: Alsace/Jura
+    ALP_de:
+        Id: ALP
+        Locale: de
+        Name: Alpes
+    ALP_en:
+        Id: ALP
+        Locale: en
+        Name: Alpen
+    ALP_fr:
+        Id: ALP
+        Locale: fr
+        Name: Alpes
+    ARDE_de:
+        Id: ARDE
+        Locale: de
+        Name: Ardèche
+    ARDE_en:
+        Id: ARDE
+        Locale: en
+        Name: Ardèche
+    ARDE_fr:
+        Id: ARDE
+        Locale: fr
+        Name: Ardèche
+    ARPY_de:
+        Id: ARPY
+        Locale: de
+        Name: Ariège/Pyrenäen
+    ARPY_en:
+        Id: ARPY
+        Locale: en
+        Name: Ariège/Pyrénées
+    ARPY_fr:
+        Id: ARPY
+        Locale: fr
+        Name: Ariège/Pyrénées
+    AUVE_de:
+        Id: AUVE
+        Locale: de
+        Name: Auvergne
+    AUVE_en:
+        Id: AUVE
+        Locale: en
+        Name: Auvergne
+    AUVE_fr:
+        Id: AUVE
+        Locale: fr
+        Name: Auvergne
+    AVEY_de:
+        Id: AVEY
+        Locale: de
+        Name: Aveyron
+    AVEY_en:
+        Id: AVEY
+        Locale: en
+        Name: Aveyron
+    AVEY_fr:
+        Id: AVEY
+        Locale: fr
+        Name: Aveyron
+    BRET_de:
+        Id: BRET
+        Locale: de
+        Name: Bretagne
+    BRET_en:
+        Id: BRET
+        Locale: en
+        Name: Brittany
+    BRET_fr:
+        Id: BRET
+        Locale: fr
+        Name: Bretagne
+    CAZA_de:
+        Id: CAZA
+        Locale: de
+        Name: 'Costa del Azahar'
+    CAZA_en:
+        Id: CAZA
+        Locale: en
+        Name: 'Costa del Azahar'
+    CAZA_fr:
+        Id: CAZA
+        Locale: fr
+        Name: 'Costa del Azahar'
+    CBRA_de:
+        Id: CBRA
+        Locale: de
+        Name: 'Costa Brava'
+    CBRA_en:
+        Id: CBRA
+        Locale: en
+        Name: 'Costa Brava'
+    CBRA_fr:
+        Id: CBRA
+        Locale: fr
+        Name: 'Costa Brava'
+    CDOR_de:
+        Id: CDOR
+        Locale: de
+        Name: 'Costa Dorada'
+    CDOR_en:
+        Id: CDOR
+        Locale: en
+        Name: 'Costa Dorada'
+    CDOR_fr:
+        Id: CDOR
+        Locale: fr
+        Name: 'Costa Dorada'
+    CHMA_de:
+        Id: CHMA
+        Locale: de
+        Name: 'Charente Maritime'
+    CHMA_en:
+        Id: CHMA
+        Locale: en
+        Name: Charente-Maritime
+    CHMA_fr:
+        Id: CHMA
+        Locale: fr
+        Name: Charente-Maritime
+    CORS_de:
+        Id: CORS
+        Locale: de
+        Name: Korsika
+    CORS_en:
+        Id: CORS
+        Locale: en
+        Name: Corsica
+    CORS_fr:
+        Id: CORS
+        Locale: fr
+        Name: Corse
+    CTBR_de:
+        Id: CTBR
+        Locale: de
+        Name: Kantabrien
+    CTBR_en:
+        Id: CTBR
+        Locale: en
+        Name: Cantabria
+    CTBR_fr:
+        Id: CTBR
+        Locale: fr
+        Name: Cantabria
+    CTRO_de:
+        Id: CTRO
+        Locale: de
+        Name: Centro
+    CTRO_en:
+        Id: CTRO
+        Locale: en
+        Name: Centro
+    CTRO_fr:
+        Id: CTRO
+        Locale: fr
+        Name: Centro
+    DRHP_de:
+        Id: DRHP
+        Locale: de
+        Name: Drôme/Haute-Provence
+    DRHP_en:
+        Id: DRHP
+        Locale: en
+        Name: Drôme/Haute-Provence
+    DRHP_fr:
+        Id: DRHP
+        Locale: fr
+        Name: Drôme/Haute-Provence
+    GERS_de:
+        Id: GERS
+        Locale: de
+        Name: Gers
+    GERS_en:
+        Id: GERS
+        Locale: en
+        Name: Gers
+    GERS_fr:
+        Id: GERS
+        Locale: fr
+        Name: Gers
+    GIRO_de:
+        Id: GIRO
+        Locale: de
+        Name: Gironde
+    GIRO_en:
+        Id: GIRO
+        Locale: en
+        Name: Gironde
+    GIRO_fr:
+        Id: GIRO
+        Locale: fr
+        Name: Gironde
+    IADR_de:
+        Id: IADR
+        Locale: de
+        Name: Adria
+    IADR_en:
+        Id: IADR
+        Locale: en
+        Name: 'Italy Adriatic'
+    IADR_fr:
+        Id: IADR
+        Locale: fr
+        Name: 'Italie adriatique'
+    IMED_de:
+        Id: IMED
+        Locale: de
+        Name: Toskana
+    IMED_en:
+        Id: IMED
+        Locale: en
+        Name: 'Italy Mediterranean'
+    IMED_fr:
+        Id: IMED
+        Locale: fr
+        Name: 'Italie méditerranéenne'
+    LAND_de:
+        Id: LAND
+        Locale: de
+        Name: Landes
+    LAND_en:
+        Id: LAND
+        Locale: en
+        Name: Landes
+    LAND_fr:
+        Id: LAND
+        Locale: fr
+        Name: Landes
+    LARO_de:
+        Id: LARO
+        Locale: de
+        Name: Languedoc-Roussillon
+    LARO_en:
+        Id: LARO
+        Locale: en
+        Name: Languedoc-Roussillon
+    LARO_fr:
+        Id: LARO
+        Locale: fr
+        Name: 'Languedoc-Roussillon '
+    LOCH_de:
+        Id: LOCH
+        Locale: de
+        Name: Loir-et-Cher
+    LOCH_en:
+        Id: LOCH
+        Locale: en
+        Name: Loir-et-Cher
+    LOCH_fr:
+        Id: LOCH
+        Locale: fr
+        Name: Loir-et-Cher
+    NORM_de:
+        Id: NORM
+        Locale: de
+        Name: Normandie
+    NORM_en:
+        Id: NORM
+        Locale: en
+        Name: Normandy
+    NORM_fr:
+        Id: NORM
+        Locale: fr
+        Name: Normandie
+    PBAS_de:
+        Id: PBAS
+        Locale: de
+        Name: Baskenland
+    PBAS_en:
+        Id: PBAS
+        Locale: en
+        Name: 'Basque Country'
+    PBAS_fr:
+        Id: PBAS
+        Locale: fr
+        Name: 'Pays basque'
+    PCA_de:
+        Id: PCA
+        Locale: de
+        Name: 'Provence-Côte d''Azur '
+    PCA_en:
+        Id: PCA
+        Locale: en
+        Name: 'Provence-Côte d''Azur '
+    PCA_fr:
+        Id: PCA
+        Locale: fr
+        Name: 'Provence-Côte d''Azur '
+    PEDO_de:
+        Id: PEDO
+        Locale: de
+        Name: Périgord/Dordogne
+    PEDO_en:
+        Id: PEDO
+        Locale: en
+        Name: Périgord/Dordogne
+    PEDO_fr:
+        Id: PEDO
+        Locale: fr
+        Name: Périgord/Dordogne
+    PLOI_de:
+        Id: PLOI
+        Locale: de
+        Name: 'Pays de Loire'
+    PLOI_en:
+        Id: PLOI
+        Locale: en
+        Name: 'Pays de Loire'
+    PLOI_fr:
+        Id: PLOI
+        Locale: fr
+        Name: 'Pays de Loire'
+    VEND_de:
+        Id: VEND
+        Locale: de
+        Name: Vendée
+    VEND_en:
+        Id: VEND
+        Locale: en
+        Name: Vendée
+    VEND_fr:
+        Id: VEND
+        Locale: fr
+        Name: Vendée
+    VERD_de:
+        Id: VERD
+        Locale: de
+        Name: Verdon
+    VERD_en:
+        Id: VERD
+        Locale: en
+        Name: Verdon
+    VERD_fr:
+        Id: VERD
+        Locale: fr
+        Name: Verdon

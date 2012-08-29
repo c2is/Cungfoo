@@ -1,0 +1,88 @@
+\Cungfoo\Model\Region:
+    ALJU:
+        Id: ALJU
+        PaysId: FRA
+    ALP:
+        Id: ALP
+        PaysId: FRA
+    ARDE:
+        Id: ARDE
+        PaysId: FRA
+    ARPY:
+        Id: ARPY
+        PaysId: FRA
+    AUVE:
+        Id: AUVE
+        PaysId: FRA
+    AVEY:
+        Id: AVEY
+        PaysId: FRA
+    BRET:
+        Id: BRET
+        PaysId: FRA
+    CAZA:
+        Id: CAZA
+        PaysId: ESP
+    CBRA:
+        Id: CBRA
+        PaysId: ESP
+    CDOR:
+        Id: CDOR
+        PaysId: ESP
+    CHMA:
+        Id: CHMA
+        PaysId: FRA
+    CORS:
+        Id: CORS
+        PaysId: FRA
+    CTBR:
+        Id: CTBR
+        PaysId: ESP
+    CTRO:
+        Id: CTRO
+        PaysId: PRT
+    DRHP:
+        Id: DRHP
+        PaysId: FRA
+    GERS:
+        Id: GERS
+        PaysId: FRA
+    GIRO:
+        Id: GIRO
+        PaysId: FRA
+    IADR:
+        Id: IADR
+        PaysId: ITA
+    IMED:
+        Id: IMED
+        PaysId: ITA
+    LAND:
+        Id: LAND
+        PaysId: FRA
+    LARO:
+        Id: LARO
+        PaysId: FRA
+    LOCH:
+        Id: LOCH
+        PaysId: FRA
+    NORM:
+        Id: NORM
+        PaysId: FRA
+    PBAS:
+        Id: PBAS
+        PaysId: FRA
+    PCA:
+        Id: PCA
+        PaysId: FRA
+    PEDO:
+        Id: PEDO
+        PaysId: FRA
+    PLOI:
+        Id: PLOI
+        PaysId: FRA
+    VEND:
+        Id: VEND
+        PaysId: FRA
+    VERD:
+        Id: VERD
+        PaysId: FRA

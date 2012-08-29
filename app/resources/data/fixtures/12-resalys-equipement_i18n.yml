@@ -1,0 +1,37 @@
+\Cungfoo\Model\EquipementI18n:
+    PCOU_de:
+        Id: PCOU
+        Locale: de
+        Name: 'Überdachtes Schwimmbecken '
+    PCOU_en:
+        Id: PCOU
+        Locale: en
+        Name: 'Indoor swimming pool '
+    PCOU_fr:
+        Id: PCOU
+        Locale: fr
+        Name: 'Piscine couverte'
+    PISC_de:
+        Id: PISC
+        Locale: de
+        Name: Schwimmbad
+    PISC_en:
+        Id: PISC
+        Locale: en
+        Name: 'Swimming pool'
+    PISC_fr:
+        Id: PISC
+        Locale: fr
+        Name: Piscine
+    TOBO_de:
+        Id: TOBO
+        Locale: de
+        Name: Wasserrutsche
+    TOBO_en:
+        Id: TOBO
+        Locale: en
+        Name: Waterslide
+    TOBO_fr:
+        Id: TOBO
+        Locale: fr
+        Name: 'Toboggan aquatique'

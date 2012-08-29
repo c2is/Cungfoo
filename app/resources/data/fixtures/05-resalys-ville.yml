@@ -1,0 +1,16 @@
+\Cungfoo\Model\Ville:
+    CARN:
+        Id: CARN
+        RegionId: null
+    EYZ:
+        Id: EYZ
+        RegionId: null
+    GRAU:
+        Id: GRAU
+        RegionId: null
+    PALA:
+        Id: PALA
+        RegionId: null
+    VIAS:
+        Id: VIAS
+        RegionId: null

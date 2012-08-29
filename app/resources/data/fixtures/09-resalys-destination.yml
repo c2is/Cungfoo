@@ -1,0 +1,9 @@
+\Cungfoo\Model\Destination:
+    ATL:
+        Id: ATL
+    CAM:
+        Id: CAM
+    MED:
+        Id: MED
+    MONT:
+        Id: MONT

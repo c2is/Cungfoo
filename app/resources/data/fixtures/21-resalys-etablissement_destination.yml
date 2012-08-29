@@ -1,0 +1,10 @@
+\Cungfoo\Model\EtablissementDestination:
+    45_ATL:
+        EtablissementId: 45
+        DestinationId: ATL
+    2_CAM:
+        EtablissementId: 2
+        DestinationId: CAM
+    4_MED:
+        EtablissementId: 4
+        DestinationId: MED

@@ -1,0 +1,49 @@
+\Cungfoo\Model\PaysI18n:
+    ESP_de:
+        Id: ESP
+        Locale: de
+        Name: Spanien
+    ESP_en:
+        Id: ESP
+        Locale: en
+        Name: Spain
+    ESP_fr:
+        Id: ESP
+        Locale: fr
+        Name: Espagne
+    FRA_de:
+        Id: FRA
+        Locale: de
+        Name: Frankreich
+    FRA_en:
+        Id: FRA
+        Locale: en
+        Name: France
+    FRA_fr:
+        Id: FRA
+        Locale: fr
+        Name: France
+    ITA_de:
+        Id: ITA
+        Locale: de
+        Name: Italien
+    ITA_en:
+        Id: ITA
+        Locale: en
+        Name: Italy
+    ITA_fr:
+        Id: ITA
+        Locale: fr
+        Name: Italie
+    PRT_de:
+        Id: PRT
+        Locale: de
+        Name: Portugal
+    PRT_en:
+        Id: PRT
+        Locale: en
+        Name: Portugal
+    PRT_fr:
+        Id: PRT
+        Locale: fr
+        Name: Portugal
