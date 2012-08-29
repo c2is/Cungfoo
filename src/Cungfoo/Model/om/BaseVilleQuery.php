@@ -12,7 +12,7 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Camping;
+use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\Ville;
 use Cungfoo\Model\VilleI18n;
@@ -42,9 +42,9 @@ use Cungfoo\Model\VilleQuery;
  * @method VilleQuery rightJoinRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Region relation
  * @method VilleQuery innerJoinRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the Region relation
  *
- * @method VilleQuery leftJoinCamping($relationAlias = null) Adds a LEFT JOIN clause to the query using the Camping relation
- * @method VilleQuery rightJoinCamping($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Camping relation
- * @method VilleQuery innerJoinCamping($relationAlias = null) Adds a INNER JOIN clause to the query using the Camping relation
+ * @method VilleQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
+ * @method VilleQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
+ * @method VilleQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
  *
  * @method VilleQuery leftJoinVilleI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the VilleI18n relation
  * @method VilleQuery rightJoinVilleI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the VilleI18n relation
@@ -474,41 +474,41 @@ abstract class BaseVilleQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Camping object
+     * Filter the query by a related Etablissement object
      *
-     * @param   Camping|PropelObjectCollection $camping  the related object to use as filter
+     * @param   Etablissement|PropelObjectCollection $etablissement  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   VilleQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByCamping($camping, $comparison = null)
+    public function filterByEtablissement($etablissement, $comparison = null)
     {
-        if ($camping instanceof Camping) {
+        if ($etablissement instanceof Etablissement) {
             return $this
-                ->addUsingAlias(VillePeer::ID, $camping->getVilleId(), $comparison);
-        } elseif ($camping instanceof PropelObjectCollection) {
+                ->addUsingAlias(VillePeer::ID, $etablissement->getVilleId(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
             return $this
-                ->useCampingQuery()
-                ->filterByPrimaryKeys($camping->getPrimaryKeys())
+                ->useEtablissementQuery()
+                ->filterByPrimaryKeys($etablissement->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCamping() only accepts arguments of type Camping or PropelCollection');
+            throw new PropelException('filterByEtablissement() only accepts arguments of type Etablissement or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the Camping relation
+     * Adds a JOIN clause to the query using the Etablissement relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return VilleQuery The current query, for fluid interface
      */
-    public function joinCamping($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinEtablissement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Camping');
+        $relationMap = $tableMap->getRelation('Etablissement');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -523,14 +523,14 @@ abstract class BaseVilleQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'Camping');
+            $this->addJoinObject($join, 'Etablissement');
         }
 
         return $this;
     }
 
     /**
-     * Use the Camping relation Camping object
+     * Use the Etablissement relation Etablissement object
      *
      * @see       useQuery()
      *
@@ -538,13 +538,13 @@ abstract class BaseVilleQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
      */
-    public function useCampingQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useEtablissementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
-            ->joinCamping($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Camping', '\Cungfoo\Model\CampingQuery');
+            ->joinEtablissement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Etablissement', '\Cungfoo\Model\EtablissementQuery');
     }
 
     /**

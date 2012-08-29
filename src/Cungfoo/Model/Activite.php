@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseActivite;
  */
 class Activite extends BaseActivite
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

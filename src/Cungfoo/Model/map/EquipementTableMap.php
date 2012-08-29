@@ -53,9 +53,9 @@ class EquipementTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('CampingEquipement', 'Cungfoo\\Model\\CampingEquipement', RelationMap::ONE_TO_MANY, array('id' => 'equipement_id', ), null, null, 'CampingEquipements');
+        $this->addRelation('EtablissementEquipement', 'Cungfoo\\Model\\EtablissementEquipement', RelationMap::ONE_TO_MANY, array('id' => 'equipement_id', ), null, null, 'EtablissementEquipements');
         $this->addRelation('EquipementI18n', 'Cungfoo\\Model\\EquipementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EquipementI18ns');
-        $this->addRelation('Camping', 'Cungfoo\\Model\\Camping', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Campings');
+        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()
 
     /**

@@ -27,12 +27,12 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.id',
             'required' => false,
         ));
-        $builder->add('campings', 'model', array(
-            'class' => 'Cungfoo\Model\Camping',
+        $builder->add('etablissements', 'model', array(
+            'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'activite.campings',
+            'label' => 'activite.etablissements',
             'required' => false,
         ));
         $builder->add('activiteI18ns', 'translation_collection', array(

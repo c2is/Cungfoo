@@ -12,12 +12,12 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingDestination;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationI18n;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementDestination;
 
 /**
  * Base class that represents a query for the 'destination' table.
@@ -36,9 +36,9 @@ use Cungfoo\Model\DestinationQuery;
  * @method DestinationQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method DestinationQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method DestinationQuery leftJoinCampingDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingDestination relation
- * @method DestinationQuery rightJoinCampingDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingDestination relation
- * @method DestinationQuery innerJoinCampingDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingDestination relation
+ * @method DestinationQuery leftJoinEtablissementDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementDestination relation
+ * @method DestinationQuery rightJoinEtablissementDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementDestination relation
+ * @method DestinationQuery innerJoinEtablissementDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementDestination relation
  *
  * @method DestinationQuery leftJoinDestinationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DestinationI18n relation
  * @method DestinationQuery rightJoinDestinationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DestinationI18n relation
@@ -361,41 +361,41 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related CampingDestination object
+     * Filter the query by a related EtablissementDestination object
      *
-     * @param   CampingDestination|PropelObjectCollection $campingDestination  the related object to use as filter
+     * @param   EtablissementDestination|PropelObjectCollection $etablissementDestination  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   DestinationQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByCampingDestination($campingDestination, $comparison = null)
+    public function filterByEtablissementDestination($etablissementDestination, $comparison = null)
     {
-        if ($campingDestination instanceof CampingDestination) {
+        if ($etablissementDestination instanceof EtablissementDestination) {
             return $this
-                ->addUsingAlias(DestinationPeer::ID, $campingDestination->getDestinationId(), $comparison);
-        } elseif ($campingDestination instanceof PropelObjectCollection) {
+                ->addUsingAlias(DestinationPeer::ID, $etablissementDestination->getDestinationId(), $comparison);
+        } elseif ($etablissementDestination instanceof PropelObjectCollection) {
             return $this
-                ->useCampingDestinationQuery()
-                ->filterByPrimaryKeys($campingDestination->getPrimaryKeys())
+                ->useEtablissementDestinationQuery()
+                ->filterByPrimaryKeys($etablissementDestination->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCampingDestination() only accepts arguments of type CampingDestination or PropelCollection');
+            throw new PropelException('filterByEtablissementDestination() only accepts arguments of type EtablissementDestination or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the CampingDestination relation
+     * Adds a JOIN clause to the query using the EtablissementDestination relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return DestinationQuery The current query, for fluid interface
      */
-    public function joinCampingDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('CampingDestination');
+        $relationMap = $tableMap->getRelation('EtablissementDestination');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -410,14 +410,14 @@ abstract class BaseDestinationQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'CampingDestination');
+            $this->addJoinObject($join, 'EtablissementDestination');
         }
 
         return $this;
     }
 
     /**
-     * Use the CampingDestination relation CampingDestination object
+     * Use the EtablissementDestination relation EtablissementDestination object
      *
      * @see       useQuery()
      *
@@ -425,13 +425,13 @@ abstract class BaseDestinationQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingDestinationQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\EtablissementDestinationQuery A secondary query class using the current class as primary query
      */
-    public function useCampingDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinCampingDestination($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingDestination', '\Cungfoo\Model\CampingDestinationQuery');
+            ->joinEtablissementDestination($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementDestination', '\Cungfoo\Model\EtablissementDestinationQuery');
     }
 
     /**
@@ -509,19 +509,19 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Camping object
-     * using the camping_destination table as cross reference
+     * Filter the query by a related Etablissement object
+     * using the etablissement_destination table as cross reference
      *
-     * @param   Camping $camping the related object to use as filter
+     * @param   Etablissement $etablissement the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   DestinationQuery The current query, for fluid interface
      */
-    public function filterByCamping($camping, $comparison = Criteria::EQUAL)
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
     {
         return $this
-            ->useCampingDestinationQuery()
-            ->filterByCamping($camping, $comparison)
+            ->useEtablissementDestinationQuery()
+            ->filterByEtablissement($etablissement, $comparison)
             ->endUse();
     }
 

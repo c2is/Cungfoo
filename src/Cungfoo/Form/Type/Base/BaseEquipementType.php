@@ -27,12 +27,12 @@ class BaseEquipementType extends AppAwareType
             'label' => 'equipement.id',
             'required' => false,
         ));
-        $builder->add('campings', 'model', array(
-            'class' => 'Cungfoo\Model\Camping',
+        $builder->add('etablissements', 'model', array(
+            'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'equipement.campings',
+            'label' => 'equipement.etablissements',
             'required' => false,
         ));
         $builder->add('equipementI18ns', 'translation_collection', array(

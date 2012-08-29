@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseEquipement;
  */
 class Equipement extends BaseEquipement
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

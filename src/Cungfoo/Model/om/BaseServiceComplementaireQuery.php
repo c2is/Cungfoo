@@ -12,8 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingServiceComplementaire;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireI18n;
 use Cungfoo\Model\ServiceComplementairePeer;
@@ -36,9 +36,9 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  * @method ServiceComplementaireQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method ServiceComplementaireQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method ServiceComplementaireQuery leftJoinCampingServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingServiceComplementaire relation
- * @method ServiceComplementaireQuery rightJoinCampingServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingServiceComplementaire relation
- * @method ServiceComplementaireQuery innerJoinCampingServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingServiceComplementaire relation
+ * @method ServiceComplementaireQuery leftJoinEtablissementServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementServiceComplementaire relation
+ * @method ServiceComplementaireQuery rightJoinEtablissementServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementServiceComplementaire relation
+ * @method ServiceComplementaireQuery innerJoinEtablissementServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementServiceComplementaire relation
  *
  * @method ServiceComplementaireQuery leftJoinServiceComplementaireI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the ServiceComplementaireI18n relation
  * @method ServiceComplementaireQuery rightJoinServiceComplementaireI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ServiceComplementaireI18n relation
@@ -361,41 +361,41 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related CampingServiceComplementaire object
+     * Filter the query by a related EtablissementServiceComplementaire object
      *
-     * @param   CampingServiceComplementaire|PropelObjectCollection $campingServiceComplementaire  the related object to use as filter
+     * @param   EtablissementServiceComplementaire|PropelObjectCollection $etablissementServiceComplementaire  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   ServiceComplementaireQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByCampingServiceComplementaire($campingServiceComplementaire, $comparison = null)
+    public function filterByEtablissementServiceComplementaire($etablissementServiceComplementaire, $comparison = null)
     {
-        if ($campingServiceComplementaire instanceof CampingServiceComplementaire) {
+        if ($etablissementServiceComplementaire instanceof EtablissementServiceComplementaire) {
             return $this
-                ->addUsingAlias(ServiceComplementairePeer::ID, $campingServiceComplementaire->getServiceComplementaireId(), $comparison);
-        } elseif ($campingServiceComplementaire instanceof PropelObjectCollection) {
+                ->addUsingAlias(ServiceComplementairePeer::ID, $etablissementServiceComplementaire->getServiceComplementaireId(), $comparison);
+        } elseif ($etablissementServiceComplementaire instanceof PropelObjectCollection) {
             return $this
-                ->useCampingServiceComplementaireQuery()
-                ->filterByPrimaryKeys($campingServiceComplementaire->getPrimaryKeys())
+                ->useEtablissementServiceComplementaireQuery()
+                ->filterByPrimaryKeys($etablissementServiceComplementaire->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCampingServiceComplementaire() only accepts arguments of type CampingServiceComplementaire or PropelCollection');
+            throw new PropelException('filterByEtablissementServiceComplementaire() only accepts arguments of type EtablissementServiceComplementaire or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the CampingServiceComplementaire relation
+     * Adds a JOIN clause to the query using the EtablissementServiceComplementaire relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return ServiceComplementaireQuery The current query, for fluid interface
      */
-    public function joinCampingServiceComplementaire($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementServiceComplementaire($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('CampingServiceComplementaire');
+        $relationMap = $tableMap->getRelation('EtablissementServiceComplementaire');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -410,14 +410,14 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'CampingServiceComplementaire');
+            $this->addJoinObject($join, 'EtablissementServiceComplementaire');
         }
 
         return $this;
     }
 
     /**
-     * Use the CampingServiceComplementaire relation CampingServiceComplementaire object
+     * Use the EtablissementServiceComplementaire relation EtablissementServiceComplementaire object
      *
      * @see       useQuery()
      *
@@ -425,13 +425,13 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingServiceComplementaireQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\EtablissementServiceComplementaireQuery A secondary query class using the current class as primary query
      */
-    public function useCampingServiceComplementaireQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementServiceComplementaireQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinCampingServiceComplementaire($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingServiceComplementaire', '\Cungfoo\Model\CampingServiceComplementaireQuery');
+            ->joinEtablissementServiceComplementaire($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementServiceComplementaire', '\Cungfoo\Model\EtablissementServiceComplementaireQuery');
     }
 
     /**
@@ -509,19 +509,19 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Camping object
-     * using the camping_service_complementaire table as cross reference
+     * Filter the query by a related Etablissement object
+     * using the etablissement_service_complementaire table as cross reference
      *
-     * @param   Camping $camping the related object to use as filter
+     * @param   Etablissement $etablissement the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   ServiceComplementaireQuery The current query, for fluid interface
      */
-    public function filterByCamping($camping, $comparison = Criteria::EQUAL)
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
     {
         return $this
-            ->useCampingServiceComplementaireQuery()
-            ->filterByCamping($camping, $comparison)
+            ->useEtablissementServiceComplementaireQuery()
+            ->filterByEtablissement($etablissement, $comparison)
             ->endUse();
     }
 

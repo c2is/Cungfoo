@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseServiceComplementaire;
  */
 class ServiceComplementaire extends BaseServiceComplementaire
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

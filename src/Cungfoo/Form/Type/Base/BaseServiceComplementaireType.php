@@ -27,12 +27,12 @@ class BaseServiceComplementaireType extends AppAwareType
             'label' => 'service_complementaire.id',
             'required' => false,
         ));
-        $builder->add('campings', 'model', array(
-            'class' => 'Cungfoo\Model\Camping',
+        $builder->add('etablissements', 'model', array(
+            'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'service_complementaire.campings',
+            'label' => 'service_complementaire.etablissements',
             'required' => false,
         ));
         $builder->add('service_complementaireI18ns', 'translation_collection', array(

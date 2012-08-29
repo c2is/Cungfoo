@@ -12,12 +12,12 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingEquipement;
 use Cungfoo\Model\Equipement;
 use Cungfoo\Model\EquipementI18n;
 use Cungfoo\Model\EquipementPeer;
 use Cungfoo\Model\EquipementQuery;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementEquipement;
 
 /**
  * Base class that represents a query for the 'equipement' table.
@@ -36,9 +36,9 @@ use Cungfoo\Model\EquipementQuery;
  * @method EquipementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method EquipementQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method EquipementQuery leftJoinCampingEquipement($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingEquipement relation
- * @method EquipementQuery rightJoinCampingEquipement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingEquipement relation
- * @method EquipementQuery innerJoinCampingEquipement($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingEquipement relation
+ * @method EquipementQuery leftJoinEtablissementEquipement($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementEquipement relation
+ * @method EquipementQuery rightJoinEtablissementEquipement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementEquipement relation
+ * @method EquipementQuery innerJoinEtablissementEquipement($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementEquipement relation
  *
  * @method EquipementQuery leftJoinEquipementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EquipementI18n relation
  * @method EquipementQuery rightJoinEquipementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EquipementI18n relation
@@ -361,41 +361,41 @@ abstract class BaseEquipementQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related CampingEquipement object
+     * Filter the query by a related EtablissementEquipement object
      *
-     * @param   CampingEquipement|PropelObjectCollection $campingEquipement  the related object to use as filter
+     * @param   EtablissementEquipement|PropelObjectCollection $etablissementEquipement  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   EquipementQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByCampingEquipement($campingEquipement, $comparison = null)
+    public function filterByEtablissementEquipement($etablissementEquipement, $comparison = null)
     {
-        if ($campingEquipement instanceof CampingEquipement) {
+        if ($etablissementEquipement instanceof EtablissementEquipement) {
             return $this
-                ->addUsingAlias(EquipementPeer::ID, $campingEquipement->getEquipementId(), $comparison);
-        } elseif ($campingEquipement instanceof PropelObjectCollection) {
+                ->addUsingAlias(EquipementPeer::ID, $etablissementEquipement->getEquipementId(), $comparison);
+        } elseif ($etablissementEquipement instanceof PropelObjectCollection) {
             return $this
-                ->useCampingEquipementQuery()
-                ->filterByPrimaryKeys($campingEquipement->getPrimaryKeys())
+                ->useEtablissementEquipementQuery()
+                ->filterByPrimaryKeys($etablissementEquipement->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCampingEquipement() only accepts arguments of type CampingEquipement or PropelCollection');
+            throw new PropelException('filterByEtablissementEquipement() only accepts arguments of type EtablissementEquipement or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the CampingEquipement relation
+     * Adds a JOIN clause to the query using the EtablissementEquipement relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return EquipementQuery The current query, for fluid interface
      */
-    public function joinCampingEquipement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementEquipement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('CampingEquipement');
+        $relationMap = $tableMap->getRelation('EtablissementEquipement');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -410,14 +410,14 @@ abstract class BaseEquipementQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'CampingEquipement');
+            $this->addJoinObject($join, 'EtablissementEquipement');
         }
 
         return $this;
     }
 
     /**
-     * Use the CampingEquipement relation CampingEquipement object
+     * Use the EtablissementEquipement relation EtablissementEquipement object
      *
      * @see       useQuery()
      *
@@ -425,13 +425,13 @@ abstract class BaseEquipementQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingEquipementQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\EtablissementEquipementQuery A secondary query class using the current class as primary query
      */
-    public function useCampingEquipementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementEquipementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinCampingEquipement($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingEquipement', '\Cungfoo\Model\CampingEquipementQuery');
+            ->joinEtablissementEquipement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementEquipement', '\Cungfoo\Model\EtablissementEquipementQuery');
     }
 
     /**
@@ -509,19 +509,19 @@ abstract class BaseEquipementQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Camping object
-     * using the camping_equipement table as cross reference
+     * Filter the query by a related Etablissement object
+     * using the etablissement_equipement table as cross reference
      *
-     * @param   Camping $camping the related object to use as filter
+     * @param   Etablissement $etablissement the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   EquipementQuery The current query, for fluid interface
      */
-    public function filterByCamping($camping, $comparison = Criteria::EQUAL)
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
     {
         return $this
-            ->useCampingEquipementQuery()
-            ->filterByCamping($camping, $comparison)
+            ->useEtablissementEquipementQuery()
+            ->filterByEtablissement($etablissement, $comparison)
             ->endUse();
     }
 

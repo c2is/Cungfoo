@@ -16,8 +16,8 @@ use Cungfoo\Model\Activite;
 use Cungfoo\Model\ActiviteI18n;
 use Cungfoo\Model\ActivitePeer;
 use Cungfoo\Model\ActiviteQuery;
-use Cungfoo\Model\Camping;
-use Cungfoo\Model\CampingActivite;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementActivite;
 
 /**
  * Base class that represents a query for the 'activite' table.
@@ -36,9 +36,9 @@ use Cungfoo\Model\CampingActivite;
  * @method ActiviteQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method ActiviteQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method ActiviteQuery leftJoinCampingActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the CampingActivite relation
- * @method ActiviteQuery rightJoinCampingActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the CampingActivite relation
- * @method ActiviteQuery innerJoinCampingActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the CampingActivite relation
+ * @method ActiviteQuery leftJoinEtablissementActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementActivite relation
+ * @method ActiviteQuery rightJoinEtablissementActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementActivite relation
+ * @method ActiviteQuery innerJoinEtablissementActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementActivite relation
  *
  * @method ActiviteQuery leftJoinActiviteI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the ActiviteI18n relation
  * @method ActiviteQuery rightJoinActiviteI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ActiviteI18n relation
@@ -361,41 +361,41 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related CampingActivite object
+     * Filter the query by a related EtablissementActivite object
      *
-     * @param   CampingActivite|PropelObjectCollection $campingActivite  the related object to use as filter
+     * @param   EtablissementActivite|PropelObjectCollection $etablissementActivite  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   ActiviteQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByCampingActivite($campingActivite, $comparison = null)
+    public function filterByEtablissementActivite($etablissementActivite, $comparison = null)
     {
-        if ($campingActivite instanceof CampingActivite) {
+        if ($etablissementActivite instanceof EtablissementActivite) {
             return $this
-                ->addUsingAlias(ActivitePeer::ID, $campingActivite->getActiviteId(), $comparison);
-        } elseif ($campingActivite instanceof PropelObjectCollection) {
+                ->addUsingAlias(ActivitePeer::ID, $etablissementActivite->getActiviteId(), $comparison);
+        } elseif ($etablissementActivite instanceof PropelObjectCollection) {
             return $this
-                ->useCampingActiviteQuery()
-                ->filterByPrimaryKeys($campingActivite->getPrimaryKeys())
+                ->useEtablissementActiviteQuery()
+                ->filterByPrimaryKeys($etablissementActivite->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByCampingActivite() only accepts arguments of type CampingActivite or PropelCollection');
+            throw new PropelException('filterByEtablissementActivite() only accepts arguments of type EtablissementActivite or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the CampingActivite relation
+     * Adds a JOIN clause to the query using the EtablissementActivite relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return ActiviteQuery The current query, for fluid interface
      */
-    public function joinCampingActivite($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementActivite($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('CampingActivite');
+        $relationMap = $tableMap->getRelation('EtablissementActivite');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -410,14 +410,14 @@ abstract class BaseActiviteQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'CampingActivite');
+            $this->addJoinObject($join, 'EtablissementActivite');
         }
 
         return $this;
     }
 
     /**
-     * Use the CampingActivite relation CampingActivite object
+     * Use the EtablissementActivite relation EtablissementActivite object
      *
      * @see       useQuery()
      *
@@ -425,13 +425,13 @@ abstract class BaseActiviteQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\CampingActiviteQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\EtablissementActiviteQuery A secondary query class using the current class as primary query
      */
-    public function useCampingActiviteQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementActiviteQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinCampingActivite($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'CampingActivite', '\Cungfoo\Model\CampingActiviteQuery');
+            ->joinEtablissementActivite($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementActivite', '\Cungfoo\Model\EtablissementActiviteQuery');
     }
 
     /**
@@ -509,19 +509,19 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Camping object
-     * using the camping_activite table as cross reference
+     * Filter the query by a related Etablissement object
+     * using the etablissement_activite table as cross reference
      *
-     * @param   Camping $camping the related object to use as filter
+     * @param   Etablissement $etablissement the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   ActiviteQuery The current query, for fluid interface
      */
-    public function filterByCamping($camping, $comparison = Criteria::EQUAL)
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
     {
         return $this
-            ->useCampingActiviteQuery()
-            ->filterByCamping($camping, $comparison)
+            ->useEtablissementActiviteQuery()
+            ->filterByEtablissement($etablissement, $comparison)
             ->endUse();
     }
 
