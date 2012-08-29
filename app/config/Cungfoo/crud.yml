@@ -2,10 +2,10 @@ crud:
     prefix: /admin
     controller: \Cungfoo\Controller\CrudController
     items:
-        camping:
-            prefix: /camping
-            model: \Cungfoo\Model\Camping
-            form: \Cungfoo\Form\Type\CampingType
+        etablissement:
+            prefix: /etablissement
+            model: \Cungfoo\Model\Etablissement
+            form: \Cungfoo\Form\Type\EtablissementType
         type_hebergement:
             prefix: /type-hebergement
             model: \Cungfoo\Model\TypeHebergement

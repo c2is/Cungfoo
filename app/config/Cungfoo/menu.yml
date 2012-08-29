@@ -2,9 +2,9 @@ menu:
     route: admin
     title: menu.title
     items:
-        camping:
-            title:  menu.campings
-            route:  camping_crud_list
+        etablissement:
+            title:  menu.etablissement
+            route:  etablissement_crud_list
         type_hebergement:
             title: menu.type_hebergement
             items:
@@ -35,3 +35,6 @@ menu:
               equipement:
                   title:  menu.equipement
                   route:  equipement_crud_list
+              service_complementaire:
+                  title:  menu.service_complementaire
+                  route:  service_complementaire_crud_list
