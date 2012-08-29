@@ -33,7 +33,7 @@
     <!-- ====================
                 SCHEMA
          ==================== -->
-    <table name="camping">
+    <table name="etablissement">
         <column name="id" type="integer" required="true" primaryKey="true" />
         <column name="name" type="varchar" required="true" />
         <column name="address1" type="varchar" />
@@ -53,59 +53,59 @@
         </foreign-key>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/camping" />
+            <parameter name="crud_prefix" value="/etablissement" />
         </behavior>
     </table>
 
-    <table name="camping_type_hebergement" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true" />
+    <table name="etablissement_type_hebergement" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true" />
         <column name="type_hebergement_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping" onDelete="CASCADE">
-            <reference local="camping_id" foreign="id"/>
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="type_hebergement">
             <reference local="type_hebergement_id" foreign="id"/>
         </foreign-key>
     </table>
 
-    <table name="camping_destination" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true"/>
+    <table name="etablissement_destination" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="destination_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping" onDelete="CASCADE">
-            <reference local="camping_id" foreign="id"/>
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="destination">
             <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
 
-    <table name="camping_activite" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true"/>
+    <table name="etablissement_activite" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="activite_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping" onDelete="CASCADE">
-            <reference local="camping_id" foreign="id"/>
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="activite">
             <reference local="activite_id" foreign="id"/>
         </foreign-key>
     </table>
 
-    <table name="camping_equipement" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true"/>
+    <table name="etablissement_equipement" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="equipement_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping" onDelete="CASCADE">
-            <reference local="camping_id" foreign="id"/>
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="equipement">
             <reference local="equipement_id" foreign="id"/>
         </foreign-key>
     </table>
 
-    <table name="camping_service_complementaire" isCrossRef="true">
-        <column name="camping_id" type="integer" primaryKey="true"/>
+    <table name="etablissement_service_complementaire" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="service_complementaire_id" type="varchar" primaryKey="true"/>
-        <foreign-key foreignTable="camping" onDelete="CASCADE">
-            <reference local="camping_id" foreign="id"/>
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="service_complementaire">
             <reference local="service_complementaire_id" foreign="id"/>
