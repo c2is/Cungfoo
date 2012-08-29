@@ -1,0 +1,32 @@
+{% extends "Cungfoo/base.twig" %}
+
+{% block content %}
+  <h3>{{ title }}</h3>
+  <div class="box">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Type</th>
+          <th>Message</th>
+          <th>Date de création</th>
+          <th>Terminé à</th>
+          <th>Logs</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for job in jobs %}
+        <tr>
+          <td class="center">{{ job.name }}</td>
+          <td class="center">{{ job.type }}</td>
+          <td class="center">{{ job.message }}</td>
+          <td class="center">{{ job.createdAt | date }}</td>
+          <td class="center">{{ job.completedAt | date }}</td>
+          <td class="center"><a href="{{ path('job_log_list', {'id':job.id}) }}"> Voir les logs</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "Cungfoo/base.twig" %}
+
+{% block content %}
+  <h3>{{ title }}</h3>
+  <div class="box">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Niveau</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for jobLog in jobLogs %}
+        <tr{% if jobLog.level == "error" %} class="error" {% endif %}>
+          <td class="center">{{ jobLog.level }}</td>
+          <td>{{ jobLog.message | raw }}</td>
+          <td class="center">{{ jobLog.createdAt | date}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+
