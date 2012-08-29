@@ -1,8 +1,10 @@
 <?php
 
-namespace Resalys\Lib;
+namespace Resalys\Loader;
 
-abstract class Client
+use Symfony\Component\Yaml\Yaml;
+
+abstract class BaseLoader
 {
     protected $client;
     protected $baseId;
@@ -10,9 +12,10 @@ abstract class Client
     protected $password;
     protected $languageCode;
 
+    protected $config = array();
     protected $data = null;
 
-    abstract public function load();
+    abstract public function load($locale = 'fr', \PropelPDO $con = null);
 
     public function __construct($location, $baseId, $username = null, $password = null, $languageCode = 'FR')
     {
@@ -22,6 +25,18 @@ abstract class Client
         $this->username     = $username;
         $this->password     = $password;
         $this->languageCode = $languageCode;
+    }
+
+    public function parseConfigFile($configFile)
+    {
+        if (!is_file($configFile))
+        {
+            throw new \Exception(sprintf('the configuration file `%s` does not exist', $configFile));
+        }
+
+        $this->config = Yaml::parse($configFile)['loader'];
+
+        return $this;
     }
 
     public function setBaseId($baseId)
