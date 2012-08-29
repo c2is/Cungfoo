@@ -31,6 +31,32 @@
     </table>
 
     <!-- ====================
+                JOB
+         ==================== -->
+    <table name="job">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar" required="false"/>
+        <column name="type" type="varchar" size="50" required="true"/>
+        <column name="params" type="clob"/>
+        <column name="message" type="longvarchar"/>
+        <column name="completed_at" type="timestamp"/>
+        <column name="status" type="integer" defaultValue="2"/>
+        <behavior name="timestampable" />
+    </table>
+
+    <table name="job_log">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="job_id" type="integer" required="true"/>
+        <column name="level" type="enum" valueSet="error, info" required="true"/>
+        <column name="message" type="clob"/>
+        <behavior name="timestampable" />
+
+        <foreign-key foreignTable="job" onDelete="cascade">
+            <reference local="job_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <!-- ====================
                 SCHEMA
          ==================== -->
     <table name="etablissement">
