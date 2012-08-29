@@ -27,4 +27,6 @@ $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 $console->add(new \Resalys\Command\LoadCommand());
 $console->add(new \Resalys\Command\DumpCommand());
 
+$console->add(new \Cungfoo\Command\Job\DaemonCommand());
+
 $console->run();

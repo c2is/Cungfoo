@@ -71,3 +71,6 @@ foreach ($crudRouter->getRoutes() as $name => $route)
         $name, $route['model'], $route['form'], $route['prefix']
     ));
 }
+
+$app->mount('/admin/resalys', new \Resalys\Controller\ResalysController());
+$app->mount('/admin/jobs', new \Cungfoo\Controller\JobController());

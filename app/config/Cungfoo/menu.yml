@@ -38,3 +38,12 @@ menu:
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list
+        parameter:
+            title: menu.parameters
+            items:
+              resalys:
+                  title:  menu.resalys
+                  route:  resalys_actions
+              job:
+                  title:  menu.job
+                  route:  job_list
