@@ -95,6 +95,7 @@ class CrudController implements ControllerProviderInterface
             })
             ->assert('page', '\d+')
             ->value('page', 1)
+            ->assert('slug', 'page')
             ->value('slug', 'page')
             ->bind(sprintf('%s_crud_list', $this->modelName))
         ;
