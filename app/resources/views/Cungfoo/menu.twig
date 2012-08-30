@@ -13,6 +13,9 @@
             <ul class="dropdown-menu">
                 {% for level2 in level1.items %}
                     <li><a href="{{ path( level2.route ) }}">{{ level2.title|trans }}</a></li>
+                    {% if level2.divider is defined %}
+                        <li class="divider"></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </li>

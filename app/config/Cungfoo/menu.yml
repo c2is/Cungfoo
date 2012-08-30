@@ -5,15 +5,6 @@ menu:
         etablissement:
             title:  menu.etablissement
             route:  etablissement_crud_list
-        type_hebergement:
-            title: menu.type_hebergement
-            items:
-              type_hebergement:
-                  title:  menu.type_hebergement
-                  route:  type_hebergement_crud_list
-              category_type_hebergement:
-                  title:  menu.category_type_hebergement
-                  route:  category_type_hebergement_crud_list
         theme:
             title: menu.themes
             items:
@@ -26,6 +17,7 @@ menu:
               pays:
                   title:  menu.pays
                   route:  pays_crud_list
+                  divider: ~
               destination:
                   title:  menu.destination
                   route:  destination_crud_list
@@ -38,6 +30,13 @@ menu:
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list
+                  divider: ~
+              type_hebergement:
+                  title:  menu.type_hebergement
+                  route:  type_hebergement_crud_list
+              category_type_hebergement:
+                  title:  menu.category_type_hebergement
+                  route:  category_type_hebergement_crud_list
         parameter:
             title: menu.parameters
             items:

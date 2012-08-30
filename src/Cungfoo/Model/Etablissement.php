@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseEtablissement;
  */
 class Etablissement extends BaseEtablissement
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
