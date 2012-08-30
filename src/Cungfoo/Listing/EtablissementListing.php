@@ -23,6 +23,15 @@ class EtablissementListing extends BaseEtablissementListing
     public function configure()
     {
         parent::configure();
+
+        $this->removeColumn('address1');
+        $this->removeColumn('address2');
+        $this->removeColumn('zip');
+        $this->removeColumn('country_code');
+        $this->removeColumn('ville_id');
+        $this->removeColumn('phone2');
+        $this->removeColumn('fax');
+        $this->removeColumn('mail');
     }
 
 } // EtablissementListing

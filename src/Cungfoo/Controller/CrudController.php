@@ -64,7 +64,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateList(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->get(sprintf('/%s/{page}', $this->prefix), function ($page) use ($app)
+            ->get(sprintf('/%s/{slug}/{page}', $this->prefix), function ($page) use ($app)
             {
 
                 $utils = new \Cungfoo\Lib\Utils();
@@ -95,6 +95,7 @@ class CrudController implements ControllerProviderInterface
             })
             ->assert('page', '\d+')
             ->value('page', 1)
+            ->value('slug', 'page')
             ->bind(sprintf('%s_crud_list', $this->modelName))
         ;
 
