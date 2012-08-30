@@ -81,7 +81,7 @@ class CrudController implements ControllerProviderInterface
                 $listingClass           = sprintf("\Cungfoo\Listing\%sListing", $utils->camelize($this->modelName));
                 $listing                = new $listingClass($app);
 
-                $paginator = $queryContextualized->paginate($page);
+                $paginator = $queryContextualized->paginate($page, 50);
 
                 $listing->setFiller(new Filler\PropelFiller($paginator->getResults()));
 
