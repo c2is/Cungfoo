@@ -67,11 +67,12 @@ class DaemonCommand extends BaseCommand
                 {
                     $message = sprintf('{job} An error has occurred on job execution : %s', $e->getMessage());
                     $output->writeln(sprintf('<error>%s</error>', $message));
+                    exit (0);
                 }
 
                 sleep($input->getOption('polling-delay'));
-                exit (0);
             }
+
             sleep($input->getOption('polling-delay'));
             if ((time() - $startedAt) > $input->getOption('max-execution-time'))
             {
