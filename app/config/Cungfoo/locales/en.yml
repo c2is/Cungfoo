@@ -132,6 +132,9 @@ security.username: Username
 security.password: Password
 security.submit: Login
 
+paginator.previous: Previous
+paginator.next: Next
+
 type_hebergement.category.type.hebergement.id: Category
 type_hebergement.crud.create: Creating a type accommodation
 type_hebergement.crud.list: List type accommodation

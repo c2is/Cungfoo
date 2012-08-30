@@ -64,7 +64,7 @@ class CrudController implements ControllerProviderInterface
     protected function generateList(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->get(sprintf('/%s', $this->prefix), function () use ($app)
+            ->get(sprintf('/%s/{page}', $this->prefix), function ($page) use ($app)
             {
 
                 $utils = new \Cungfoo\Lib\Utils();
@@ -81,15 +81,20 @@ class CrudController implements ControllerProviderInterface
                 $listingClass           = sprintf("\Cungfoo\Listing\%sListing", $utils->camelize($this->modelName));
                 $listing                = new $listingClass($app);
 
-                $listing->setFiller(new Filler\PropelFiller($queryContextualized->find()));
+                $paginator = $queryContextualized->paginate($page);
+
+                $listing->setFiller(new Filler\PropelFiller($paginator->getResults()));
 
                 return $app['twig']->render('Cungfoo/Crud/list.twig', array(
                     'name'         => $this->modelName,
                     'column_names' => $listing->getColumnNames(),
                     'lines'        => $listing->render(),
                     'context'      => $contextRender,
+                    'paginator'    => $paginator,
                 ));
             })
+            ->assert('page', '\d+')
+            ->value('page', 1)
             ->bind(sprintf('%s_crud_list', $this->modelName))
         ;
 

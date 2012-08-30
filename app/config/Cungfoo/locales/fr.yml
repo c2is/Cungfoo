@@ -105,6 +105,9 @@ security.username: Nom d'utilisateur
 security.password: Mot de passe
 security.submit: Connexion
 
+paginator.previous: Précédent
+paginator.next: Suivant
+
 pays.crud.create: Création d'un pays
 pays.crud.list: Liste pays
 pays.crud.update: Mettre à jour le pays %name%
