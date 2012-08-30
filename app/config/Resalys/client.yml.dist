@@ -1,0 +1,3 @@
+client:
+  location: wsdl_service_location
+  base_id:  base_id_resalys

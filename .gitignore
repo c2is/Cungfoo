@@ -4,4 +4,5 @@
 /app/logs/*
 /app/config/Propel/databases.xml
 /app/config/Propel/generated/*
+/app/config/Resalys/client.yml
 /app/resources/data/sql/*
