@@ -85,12 +85,19 @@ class {$this->getClassname()} extends Listing
                 $columnsRender .= $this->generateColumn($column->getName(), 'Text');
             }
 
-            if ($column->getType() != PropelTypes::VARCHAR)
+            if ($column->getType() == PropelTypes::VARCHAR)
             {
-                continue;
+                $columnsRender .= $this->generateColumn($column->getName(), 'Text');
             }
 
-            $columnsRender .= $this->generateColumn($column->getName(), 'Text');
+            if ($column->getType() == PropelTypes::TIMESTAMP)
+            {
+                if (!in_array($column->getName(), array('created_at', 'updated_at')))
+                {
+                    $columnsRender .= $this->generateColumn($column->getName(), 'Date');
+                }
+            }
+
         }
 
         $script .= "

@@ -72,6 +72,8 @@
         <column name="phone1" type="varchar" />
         <column name="phone2" type="varchar" />
         <column name="fax" type="varchar" />
+        <column name="opening_date" type="timestamp" />
+        <column name="closing_date" type="timestamp" />
         <column name="ville_id" type="varchar" />
 
         <foreign-key foreignTable="ville">

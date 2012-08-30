@@ -88,6 +88,18 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.fax',
             'required' => false,
         ));
+        $builder->add('opening_date', 'datetime', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.opening_date',
+            'required' => false,
+        ));
+        $builder->add('closing_date', 'datetime', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.closing_date',
+            'required' => false,
+        ));
         $builder->add('ville', 'model', array(
             'class' => '\Cungfoo\Model\Ville',
             'constraints' => array(

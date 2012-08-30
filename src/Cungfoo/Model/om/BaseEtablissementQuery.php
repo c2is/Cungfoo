@@ -44,6 +44,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
  * @method EtablissementQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
  * @method EtablissementQuery orderByFax($order = Criteria::ASC) Order by the fax column
+ * @method EtablissementQuery orderByOpeningDate($order = Criteria::ASC) Order by the opening_date column
+ * @method EtablissementQuery orderByClosingDate($order = Criteria::ASC) Order by the closing_date column
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
  *
  * @method EtablissementQuery groupById() Group by the id column
@@ -57,6 +59,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByPhone1() Group by the phone1 column
  * @method EtablissementQuery groupByPhone2() Group by the phone2 column
  * @method EtablissementQuery groupByFax() Group by the fax column
+ * @method EtablissementQuery groupByOpeningDate() Group by the opening_date column
+ * @method EtablissementQuery groupByClosingDate() Group by the closing_date column
  * @method EtablissementQuery groupByVilleId() Group by the ville_id column
  *
  * @method EtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -104,6 +108,8 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByPhone1(string $phone1) Return the first Etablissement filtered by the phone1 column
  * @method Etablissement findOneByPhone2(string $phone2) Return the first Etablissement filtered by the phone2 column
  * @method Etablissement findOneByFax(string $fax) Return the first Etablissement filtered by the fax column
+ * @method Etablissement findOneByOpeningDate(string $opening_date) Return the first Etablissement filtered by the opening_date column
+ * @method Etablissement findOneByClosingDate(string $closing_date) Return the first Etablissement filtered by the closing_date column
  * @method Etablissement findOneByVilleId(string $ville_id) Return the first Etablissement filtered by the ville_id column
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
@@ -117,6 +123,8 @@ use Cungfoo\Model\Ville;
  * @method array findByPhone1(string $phone1) Return Etablissement objects filtered by the phone1 column
  * @method array findByPhone2(string $phone2) Return Etablissement objects filtered by the phone2 column
  * @method array findByFax(string $fax) Return Etablissement objects filtered by the fax column
+ * @method array findByOpeningDate(string $opening_date) Return Etablissement objects filtered by the opening_date column
+ * @method array findByClosingDate(string $closing_date) Return Etablissement objects filtered by the closing_date column
  * @method array findByVilleId(string $ville_id) Return Etablissement objects filtered by the ville_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -221,7 +229,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -625,6 +633,92 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::FAX, $fax, $comparison);
+    }
+
+    /**
+     * Filter the query on the opening_date column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByOpeningDate('2011-03-14'); // WHERE opening_date = '2011-03-14'
+     * $query->filterByOpeningDate('now'); // WHERE opening_date = '2011-03-14'
+     * $query->filterByOpeningDate(array('max' => 'yesterday')); // WHERE opening_date > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $openingDate The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByOpeningDate($openingDate = null, $comparison = null)
+    {
+        if (is_array($openingDate)) {
+            $useMinMax = false;
+            if (isset($openingDate['min'])) {
+                $this->addUsingAlias(EtablissementPeer::OPENING_DATE, $openingDate['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($openingDate['max'])) {
+                $this->addUsingAlias(EtablissementPeer::OPENING_DATE, $openingDate['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::OPENING_DATE, $openingDate, $comparison);
+    }
+
+    /**
+     * Filter the query on the closing_date column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByClosingDate('2011-03-14'); // WHERE closing_date = '2011-03-14'
+     * $query->filterByClosingDate('now'); // WHERE closing_date = '2011-03-14'
+     * $query->filterByClosingDate(array('max' => 'yesterday')); // WHERE closing_date > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $closingDate The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByClosingDate($closingDate = null, $comparison = null)
+    {
+        if (is_array($closingDate)) {
+            $useMinMax = false;
+            if (isset($closingDate['min'])) {
+                $this->addUsingAlias(EtablissementPeer::CLOSING_DATE, $closingDate['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($closingDate['max'])) {
+                $this->addUsingAlias(EtablissementPeer::CLOSING_DATE, $closingDate['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::CLOSING_DATE, $closingDate, $comparison);
     }
 
     /**

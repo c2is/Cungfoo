@@ -86,6 +86,9 @@
     SPA6:
         Id: SPA6
         CategoryTypeHebergementId: null
+    SPA7:
+        Id: SPA7
+        CategoryTypeHebergementId: null
     SPA8:
         Id: SPA8
         CategoryTypeHebergementId: null

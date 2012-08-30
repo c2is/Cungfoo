@@ -35,7 +35,6 @@ class InitCommand extends Command
                 return false;
             }
         }
-
         $output->writeln('Project <comment>initialized</comment>.');
 
         return true;

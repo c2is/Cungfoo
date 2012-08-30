@@ -347,6 +347,18 @@
         Id: SPA6
         Locale: fr
         Name: 'Spacial (6 places, max. 6 adultes)'
+    SPA7_de:
+        Id: SPA7
+        Locale: de
+        Name: 'Spacial (7 places, max. 6 adultes)'
+    SPA7_en:
+        Id: SPA7
+        Locale: en
+        Name: 'Spacial (7 places, max. 6 adultes)'
+    SPA7_fr:
+        Id: SPA7
+        Locale: fr
+        Name: 'Spacial (7 places, max. 6 adultes)'
     SPA8_de:
         Id: SPA8
         Locale: de

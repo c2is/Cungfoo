@@ -53,6 +53,8 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('PHONE1', 'Phone1', 'VARCHAR', false, 255, null);
         $this->addColumn('PHONE2', 'Phone2', 'VARCHAR', false, 255, null);
         $this->addColumn('FAX', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addColumn('OPENING_DATE', 'OpeningDate', 'TIMESTAMP', false, null, null);
+        $this->addColumn('CLOSING_DATE', 'ClosingDate', 'TIMESTAMP', false, null, null);
         $this->addForeignKey('VILLE_ID', 'VilleId', 'VARCHAR', 'ville', 'ID', false, 255, null);
         // validators
     } // initialize()

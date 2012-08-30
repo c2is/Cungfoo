@@ -22,6 +22,7 @@ class BaseJobListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('type'));
+        $this->addColumn(new Column\DateColumn('completed_at'));
     }
 
     /**

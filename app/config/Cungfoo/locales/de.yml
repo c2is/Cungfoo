@@ -62,6 +62,10 @@ etablissement.ville.id: City Code
 etablissement.zip: PLZ
 etablissement.phone1: Telefon 1
 etablissement.phone2: Telefon 2
+etablissement.opening.date: Öffnen
+etablissement.closing.date: Schließen
+etablissement.opening_date: Öffnen
+etablissement.closing_date: Schließen
 
 list.actions: Aktionen
 

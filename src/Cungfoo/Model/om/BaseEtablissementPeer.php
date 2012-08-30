@@ -43,13 +43,13 @@ abstract class BaseEtablissementPeer
     const TM_CLASS = 'EtablissementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 12;
+    const NUM_COLUMNS = 14;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 12;
+    const NUM_HYDRATE_COLUMNS = 14;
 
     /** the column name for the ID field */
     const ID = 'etablissement.ID';
@@ -84,6 +84,12 @@ abstract class BaseEtablissementPeer
     /** the column name for the FAX field */
     const FAX = 'etablissement.FAX';
 
+    /** the column name for the OPENING_DATE field */
+    const OPENING_DATE = 'etablissement.OPENING_DATE';
+
+    /** the column name for the CLOSING_DATE field */
+    const CLOSING_DATE = 'etablissement.CLOSING_DATE';
+
     /** the column name for the VILLE_ID field */
     const VILLE_ID = 'etablissement.VILLE_ID';
 
@@ -113,12 +119,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[EtablissementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'VilleId', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'villeId', ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::NAME, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::VILLE_ID, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'VILLE_ID', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'ville_id', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'OpeningDate', 'ClosingDate', 'VilleId', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'openingDate', 'closingDate', 'villeId', ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::NAME, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::OPENING_DATE, EtablissementPeer::CLOSING_DATE, EtablissementPeer::VILLE_ID, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'OPENING_DATE', 'CLOSING_DATE', 'VILLE_ID', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'opening_date', 'closing_date', 'ville_id', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
     );
 
     /**
@@ -128,12 +134,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Address1' => 2, 'Address2' => 3, 'Zip' => 4, 'City' => 5, 'Mail' => 6, 'CountryCode' => 7, 'Phone1' => 8, 'Phone2' => 9, 'Fax' => 10, 'VilleId' => 11, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'countryCode' => 7, 'phone1' => 8, 'phone2' => 9, 'fax' => 10, 'villeId' => 11, ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::NAME => 1, EtablissementPeer::ADDRESS1 => 2, EtablissementPeer::ADDRESS2 => 3, EtablissementPeer::ZIP => 4, EtablissementPeer::CITY => 5, EtablissementPeer::MAIL => 6, EtablissementPeer::COUNTRY_CODE => 7, EtablissementPeer::PHONE1 => 8, EtablissementPeer::PHONE2 => 9, EtablissementPeer::FAX => 10, EtablissementPeer::VILLE_ID => 11, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ADDRESS1' => 2, 'ADDRESS2' => 3, 'ZIP' => 4, 'CITY' => 5, 'MAIL' => 6, 'COUNTRY_CODE' => 7, 'PHONE1' => 8, 'PHONE2' => 9, 'FAX' => 10, 'VILLE_ID' => 11, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country_code' => 7, 'phone1' => 8, 'phone2' => 9, 'fax' => 10, 'ville_id' => 11, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Address1' => 2, 'Address2' => 3, 'Zip' => 4, 'City' => 5, 'Mail' => 6, 'CountryCode' => 7, 'Phone1' => 8, 'Phone2' => 9, 'Fax' => 10, 'OpeningDate' => 11, 'ClosingDate' => 12, 'VilleId' => 13, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'countryCode' => 7, 'phone1' => 8, 'phone2' => 9, 'fax' => 10, 'openingDate' => 11, 'closingDate' => 12, 'villeId' => 13, ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::NAME => 1, EtablissementPeer::ADDRESS1 => 2, EtablissementPeer::ADDRESS2 => 3, EtablissementPeer::ZIP => 4, EtablissementPeer::CITY => 5, EtablissementPeer::MAIL => 6, EtablissementPeer::COUNTRY_CODE => 7, EtablissementPeer::PHONE1 => 8, EtablissementPeer::PHONE2 => 9, EtablissementPeer::FAX => 10, EtablissementPeer::OPENING_DATE => 11, EtablissementPeer::CLOSING_DATE => 12, EtablissementPeer::VILLE_ID => 13, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ADDRESS1' => 2, 'ADDRESS2' => 3, 'ZIP' => 4, 'CITY' => 5, 'MAIL' => 6, 'COUNTRY_CODE' => 7, 'PHONE1' => 8, 'PHONE2' => 9, 'FAX' => 10, 'OPENING_DATE' => 11, 'CLOSING_DATE' => 12, 'VILLE_ID' => 13, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'address1' => 2, 'address2' => 3, 'zip' => 4, 'city' => 5, 'mail' => 6, 'country_code' => 7, 'phone1' => 8, 'phone2' => 9, 'fax' => 10, 'opening_date' => 11, 'closing_date' => 12, 'ville_id' => 13, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
     );
 
     /**
@@ -218,6 +224,8 @@ abstract class BaseEtablissementPeer
             $criteria->addSelectColumn(EtablissementPeer::PHONE1);
             $criteria->addSelectColumn(EtablissementPeer::PHONE2);
             $criteria->addSelectColumn(EtablissementPeer::FAX);
+            $criteria->addSelectColumn(EtablissementPeer::OPENING_DATE);
+            $criteria->addSelectColumn(EtablissementPeer::CLOSING_DATE);
             $criteria->addSelectColumn(EtablissementPeer::VILLE_ID);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
@@ -231,6 +239,8 @@ abstract class BaseEtablissementPeer
             $criteria->addSelectColumn($alias . '.PHONE1');
             $criteria->addSelectColumn($alias . '.PHONE2');
             $criteria->addSelectColumn($alias . '.FAX');
+            $criteria->addSelectColumn($alias . '.OPENING_DATE');
+            $criteria->addSelectColumn($alias . '.CLOSING_DATE');
             $criteria->addSelectColumn($alias . '.VILLE_ID');
         }
     }

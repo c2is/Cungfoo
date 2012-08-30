@@ -7,11 +7,12 @@
         Zip: '24620'
         City: 'LES EYZIES DE TAYAC '
         Mail: 0553311273@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 53 29 68 06'
         Phone2: '05 53 29 68 06'
         Fax: '05 53 31 12 73'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: EYZ
     3:
         Id: 3
@@ -21,11 +22,12 @@
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: camping.calagogo@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 21 07 12'
         Phone2: '06 70 67 66 11'
         Fax: '04 68 21 02 19'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     4:
         Id: 4
@@ -35,11 +37,12 @@
         Zip: '34450'
         City: VIAS
         Mail: 0467909795@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 90 99 04'
         Phone2: '04 67 90 80 48'
         Fax: '04 67 90 97 95'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: VIAS
     5:
         Id: 5
@@ -49,11 +52,12 @@
         Zip: '17480'
         City: 'LE CHÂTEAU D''OLÉRON'
         Mail: info@camping-airotel-oleron.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 47 61 82'
         Phone2: '06 70 47 89 48 '
         Fax: '05 46 47 79 67'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     6:
         Id: 6
@@ -63,11 +67,12 @@
         Zip: '07120'
         City: RUOMS
         Mail: alunavacances@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 93 93 15'
         Phone2: '06 70 53 71 93 '
         Fax: '04 75 93 90 90'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     7:
         Id: 7
@@ -77,11 +82,12 @@
         Zip: '30660'
         City: GALLARGUES-LE-MONTUEUX
         Mail: camping-lesamandiers@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 66 35 28 02'
         Phone2: '06 70 85 80 57'
         Fax: '04 66 51 48 57'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     8:
         Id: 8
@@ -91,11 +97,12 @@
         Zip: '33780'
         City: SOULAC-SUR-MER
         Mail: bernard.doreillac@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 56 09 87 27'
         Phone2: '06 71 97 27 38'
         Fax: '05 56 73 64 26'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     9:
         Id: 9
@@ -105,11 +112,12 @@
         Zip: '43860'
         City: 'AMETLLA DE MAR - TARRAGONE'
         Mail: info@campingametlla.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 977 26 77 84'
         Phone2: '06 70 91 01 83'
         Fax: '0034 977 26 78 68'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     10:
         Id: 10
@@ -119,11 +127,12 @@
         Zip: '85169'
         City: 'ST JEAN DE MONTS'
         Mail: danielchantal.tarantola@laposte.net
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 58 22 22'
         Phone2: '06 70 38 06 56'
         Fax: '02 51 58 26 09'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     11:
         Id: 11
@@ -133,11 +142,12 @@
         Zip: '40140'
         City: AZUR
         Mail: info@campingazurivage.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 48 30 72'
         Phone2: '06 70 36 68 64'
         Fax: '05 58 48 25 56'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     12:
         Id: 12
@@ -147,11 +157,12 @@
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: camping.bahiaclub@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 80 90 16'
         Phone2: '06 71 21 54 71'
         Fax: '04 68 28 24 76'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     14:
         Id: 14
@@ -161,11 +172,12 @@
         Zip: '34140'
         City: MÈZE
         Mail: reception@camping-beaurivage.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 43 81 48'
         Phone2: '06 89 50 29 78'
         Fax: '04 67 43 66 70'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     15:
         Id: 15
@@ -175,11 +187,12 @@
         Zip: '17138'
         City: PUILBOREAU
         Mail: contact@camping-la-rochelle.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 68 04 38'
         Phone2: '06 08 05 65 48'
         Fax: '05 46 35 85 95'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     16:
         Id: 16
@@ -189,11 +202,12 @@
         Zip: '85340'
         City: 'OLONNE SUR MER'
         Mail: camping.boissoleil@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 33 11 97'
         Phone2: '06 70 35 10 91'
         Fax: '02 51 33 14 85'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     17:
         Id: 17
@@ -203,11 +217,12 @@
         Zip: '56360'
         City: 'LE PALAIS'
         Mail: camping.bordeneo@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 97 31 88 96'
         Phone2: '06 70 79 49 91'
         Fax: '02 97 31 87 77'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     18:
         Id: 18
@@ -217,11 +232,12 @@
         Zip: '85150'
         City: 'ST JULIEN DES LANDES'
         Mail: camp.la-bretonniere@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 46 62 44'
         Phone2: '06 88 71 58 15'
         Fax: '02 51 46 61 36'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     19:
         Id: 19
@@ -231,11 +247,12 @@
         Zip: '85160'
         City: 'ST JEAN DE MONTS'
         Mail: camping.california@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 58 17 51'
         Phone2: '06 70 74 90 74'
         Fax: '02 51 58 12 28'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     20:
         Id: 20
@@ -245,11 +262,12 @@
         Zip: '66440'
         City: TORREILLES
         Mail: 0468282476@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 28 09 47'
         Phone2: '06 31 36 81 43'
         Fax: '04 68 28 24 76'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     21:
         Id: 21
@@ -259,11 +277,12 @@
         Zip: '05110'
         City: CURBANS
         Mail: info@au-camping-du-lac.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 92 54 23 10'
         Phone2: '06 89 79 87 57'
         Fax: '04 92 54 23 11'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     22:
         Id: 22
@@ -273,11 +292,12 @@
         Zip: '34300'
         City: AGDE
         Mail: info@campingcapagathois.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 94 02 21'
         Phone2: '06 70 87 37 69'
         Fax: '04 67 94 02 21'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     23:
         Id: 23
@@ -287,11 +307,12 @@
         Zip: '24250'
         City: 'ST MARTIAL DE NABIRAT'
         Mail: lecarbonnier@aol.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 53 28 42 53'
         Phone2: '06 70 86 74 52'
         Fax: '05 53 28 51 31'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     24:
         Id: 24
@@ -301,11 +322,12 @@
         Zip: '17486'
         City: 'CASTELLO D''EMPURIES'
         Mail: mtravers@orange.fr
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 972 45 08 22'
         Phone2: '06 70 48 40 97'
         Fax: '0034 972 45 23 30'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     25:
         Id: 25
@@ -315,11 +337,12 @@
         Zip: '17258'
         City: 'L''ESTARTIT'
         Mail: +34972750906@fax.contact-everyone.fr
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 972 75 16 30'
         Phone2: '06 07 84 26 20'
         Fax: '0034 972750906'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     26:
         Id: 26
@@ -329,11 +352,12 @@
         Zip: '12290'
         City: 'CANET DE SALARS'
         Mail: info@lecaussanel.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 65 46 85 19'
         Phone2: '06 70 78 90 05'
         Fax: '05 65 46 89 85'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     27:
         Id: 27
@@ -343,11 +367,12 @@
         Zip: '34450'
         City: VIAS
         Mail: campingcayola@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 90 01 85'
         Phone2: '06 81 93 15 46'
         Fax: '04 67 90 03 06'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     28:
         Id: 28
@@ -357,11 +382,12 @@
         Zip: '85470'
         City: 'BREM SUR MER'
         Mail: 0251909167@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 90 55 56'
         Phone2: '06 70 82 07 74'
         Fax: '02 51 90 91 67'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     29:
         Id: 29
@@ -371,11 +397,12 @@
         Zip: '17450'
         City: 'ST LAURENT DE LA PRÉE'
         Mail: charmilles17@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 84 00 05'
         Phone2: '06 71 05 51 54'
         Fax: '05 46 84 02 84'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     30:
         Id: 30
@@ -385,11 +412,12 @@
         Zip: '22380'
         City: 'ST CAST LE GUILDO'
         Mail: contact@chateaudegalinee.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 96 41 10 56'
         Phone2: '06 70 30 54 83'
         Fax: '02 96 41 03 72'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     31:
         Id: 31
@@ -399,11 +427,12 @@
         Zip: '44210'
         City: PORNIC
         Mail: la.chenaie44@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 40 82 07 31'
         Phone2: '06 89 07 87 55'
         Fax: '02 40 27 95 67'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     32:
         Id: 32
@@ -413,11 +442,12 @@
         Zip: '24370'
         City: 'CALVIAC EN PÉRIGORD'
         Mail: jfg@sky.lu
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 53 59 21 07'
         Phone2: '06 31 53 93 18'
         Fax: '05 53 31 05 51'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     33:
         Id: 33
@@ -427,11 +457,12 @@
         Zip: '40560'
         City: VIELLE-ST-GIRONS
         Mail: 0558429188@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 42 94 06'
         Phone2: '06 72 69 45 20'
         Fax: '05 58 42 91 88'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     34:
         Id: 34
@@ -441,11 +472,12 @@
         Zip: '56175'
         City: QUIBERON
         Mail: info@campingduconguel.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 97 50 19 11'
         Phone2: '06 70 50 23 63'
         Fax: '02 97 30 46 66'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     35:
         Id: 35
@@ -455,11 +487,12 @@
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: 0468959417@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 08 94'
         Phone2: '06 89 13 14 12'
         Fax: '04 68 95 94 17'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     36:
         Id: 36
@@ -469,11 +502,12 @@
         Zip: '33990'
         City: HOURTIN
         Mail: 0556092496@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 56 09 10 25'
         Phone2: '06 31 18 78 31'
         Fax: '05 56 09 24 96'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     37:
         Id: 37
@@ -483,11 +517,12 @@
         Zip: '13123'
         City: 'L''ALBARON'
         Mail: camping-crin.blanc@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 66 87 48 78'
         Phone2: '06 07 59 92 01'
         Fax: '04 66 87 18 66'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     38:
         Id: 38
@@ -497,11 +532,12 @@
         Zip: '20137'
         City: 'PORTO VECCHIO'
         Mail: gerald.deboffle@yahoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '06 12 81 50 89'
         Phone2: '06 19 17 93 60'
         Fax: '04 95 21 45 66'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     39:
         Id: 39
@@ -511,11 +547,12 @@
         Zip: '85806'
         City: ST-GILLES-CROIX-DE-VIE
         Mail: camping-lescypres85@voila.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 55 38 98'
         Phone2: '06 71 89 95 41'
         Fax: '02 51 54 98 94'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     40:
         Id: 40
@@ -525,11 +562,12 @@
         Zip: '29920'
         City: NEVEZ
         Mail: 0298067180@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 98 06 81 91'
         Phone2: '06 71 35 50 80'
         Fax: '02 98 06 71 80'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     41:
         Id: 41
@@ -539,11 +577,12 @@
         Zip: '17340'
         City: 'CHATELAILLON PLAGE'
         Mail: 0546435118@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 56 27 53'
         Phone2: '06 70 99 85 48'
         Fax: '05 46 43 51 18'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     42:
         Id: 42
@@ -553,11 +592,12 @@
         Zip: '56760'
         City: PÉNESTIN
         Mail: 0299904093@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 99 90 35 09'
         Phone2: '06 71 10 56 26'
         Fax: '02 99 90 40 93'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     43:
         Id: 43
@@ -567,11 +607,12 @@
         Zip: '17190'
         City: 'ST GEORGES D''OLÉRON'
         Mail: domainedoleron@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 76 54 97'
         Phone2: '06 70 97 10 41'
         Fax: '05 46 76 54 97'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     44:
         Id: 44
@@ -581,11 +622,12 @@
         Zip: '07150'
         City: LAGORCE
         Mail: chantal.gardet@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 93 99 66'
         Phone2: '06 71 47 65 41'
         Fax: '04 75 93 90 56'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     45:
         Id: 45
@@ -595,11 +637,12 @@
         Zip: '56340'
         City: CARNAC
         Mail: 0297526566@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 97 52 65 65'
         Phone2: '06 82 63 94 46'
         Fax: '02 97 52 65 66'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: CARN
     46:
         Id: 46
@@ -609,11 +652,12 @@
         Zip: '40600'
         City: BISCARROSSE
         Mail: info@larive.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 78 12 33'
         Phone2: '06 89 72 55 80'
         Fax: '05 58 78 12 92'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     47:
         Id: 47
@@ -623,11 +667,12 @@
         Zip: '44350'
         City: GUÉRANDE
         Mail: info@camping-leveno.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 40 24 79 30'
         Phone2: '06 30 24 68 57'
         Fax: '02 40 62 01 23'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     48:
         Id: 48
@@ -637,11 +682,12 @@
         Zip: '83310'
         City: GRIMAUD
         Mail: info@lesnaiades.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 55 67 80'
         Phone2: '04 94 55 67 80'
         Fax: '04 94 55 67 81'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     49:
         Id: 49
@@ -651,11 +697,12 @@
         Zip: '07200'
         City: VOGÜÉ
         Mail: 0475370102@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 37 75 86'
         Phone2: '06 30 82 84 31'
         Fax: '04 75 37 01 02'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     50:
         Id: 50
@@ -665,11 +712,12 @@
         Zip: '04120'
         City: CASTELLANE
         Mail: 0492836937@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 92 83 61 29'
         Phone2: '06 07 27 84 72'
         Fax: '04 92 83 69 37'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     51:
         Id: 51
@@ -679,11 +727,12 @@
         Zip: '66440'
         City: TORREILLES
         Mail: 0468283257@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 28 38 29'
         Phone2: '06 70 93 31 47'
         Fax: '04 68 28 32 57'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     52:
         Id: 52
@@ -693,11 +742,12 @@
         Zip: '34970'
         City: LATTES
         Mail: latradition@sfr.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 15 11 05'
         Phone2: '06 76 60 51 67'
         Fax: '04 67 15 11 31'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     53:
         Id: 53
@@ -707,11 +757,12 @@
         Zip: '33950'
         City: LÈGE-CAP-FERRET
         Mail: 0556600479@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 56 60 70 76'
         Phone2: '06 30 86 18 05'
         Fax: '05 56 60 04 79'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     54:
         Id: 54
@@ -721,11 +772,12 @@
         Zip: '40200'
         City: AUREILHAN
         Mail: jeandaniel44@gmail.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 09 02 87'
         Phone2: '06 89 43 10 93'
         Fax: '05 58 09 41 89'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     55:
         Id: 55
@@ -735,11 +787,12 @@
         Zip: '14230'
         City: ISIGNY-SUR-MER
         Mail: info@camping-lefanal.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 31 21 33 20'
         Phone2: '06 89 79 37 64'
         Fax: '02 31 22 12 00'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     56:
         Id: 56
@@ -749,11 +802,12 @@
         Zip: '04500'
         City: 'ST LAURENT DU VERDON'
         Mail: info@camping-la-farigoulette.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 92 74 41 62'
         Phone2: '06 40 21 14 23'
         Fax: '09 70 06 76 78'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     57:
         Id: 57
@@ -763,11 +817,12 @@
         Zip: '66140'
         City: CANET-EN-ROUSSILLON
         Mail: campinglesfontaines@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 80 22 57'
         Phone2: '06 31 25 40 69'
         Fax: '04 68 80 22 57'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     58:
         Id: 58
@@ -777,11 +832,12 @@
         Zip: '06600'
         City: ANTIBES
         Mail: contact@camping-lesfrenes.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 93 33 36 52'
         Phone2: '06 07 59 79 02'
         Fax: '04 93 74 66 00'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     59:
         Id: 59
@@ -791,11 +847,12 @@
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: 0468818721@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 08 70'
         Phone2: '06 71 32 03 35'
         Fax: '04 68 81 87 21'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     60:
         Id: 60
@@ -805,11 +862,12 @@
         Zip: '07120'
         City: RUOMS
         Mail: grandterre@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 39 64 94'
         Phone2: '06 89 07 71 22'
         Fax: '04 75 39 78 62'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     61:
         Id: 61
@@ -819,11 +877,12 @@
         Zip: '41500'
         City: SUÈVRES
         Mail: la.grenouillere@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 54 87 80 37'
         Phone2: '06 70 92 14 76'
         Fax: '02 54 87 84 21'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     63:
         Id: 63
@@ -833,11 +892,12 @@
         Zip: '17650'
         City: 'ST DENIS D''OLÉRON'
         Mail: info@camping-les-huttes.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 47 86 93'
         Phone2: '06 89 79 45 04'
         Fax: '05 46 75 91 10'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     64:
         Id: 64
@@ -847,11 +907,12 @@
         Zip: '74210'
         City: LATHUILE
         Mail: 0450443659@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 50 44 32 97'
         Phone2: '06 71 86 52 92'
         Fax: '04 50 44 36 59'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     65:
         Id: 65
@@ -861,11 +922,12 @@
         Zip: '17111'
         City: LOIX
         Mail: camping.les.ilates@flowercampings.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 29 05 43'
         Phone2: '06 89 72 58 96'
         Fax: '05 46 29 06 79'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     66:
         Id: 66
@@ -875,11 +937,12 @@
         Zip: '64210'
         City: BIDART
         Mail: 0559412459@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 59 23 00 29'
         Phone2: '06 31 80 31 54'
         Fax: '05 59 41 24 59'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     67:
         Id: 67
@@ -889,11 +952,12 @@
         Zip: '17251'
         City: CALONGE
         Mail: info@intercalonge.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 972 651 233'
         Phone2: '06 72 05 07 05 '
         Fax: '0034 972 652 507'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     68:
         Id: 68
@@ -903,11 +967,12 @@
         Zip: '17230'
         City: PALAMOS
         Mail: info@internacionalpalamos.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 972 31 47 36'
         Phone2: '06 30 87 60 57'
         Fax: '0034 972 31 76 26'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     69:
         Id: 69
@@ -917,11 +982,12 @@
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
         Mail: 0251274292@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 27 43 79'
         Phone2: '06 89 72 62 08'
         Fax: '02 51 27 42 92'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     70:
         Id: 70
@@ -931,11 +997,12 @@
         Zip: '26410'
         City: 'CHATILLON EN DIOIS'
         Mail: info@lacbleu-diois.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 21 85 30'
         Phone2: '04 75 21 85 30'
         Fax: '04 75 21 82 05'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     71:
         Id: 71
@@ -945,11 +1012,12 @@
         Zip: '19190'
         City: BEYNAT
         Mail: info@camping-miel.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 55 85 50 66'
         Phone2: '06 08 31 87 93'
         Fax: '05 55 85 57 96'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     72:
         Id: 72
@@ -959,11 +1027,12 @@
         Zip: '32430'
         City: THOUX
         Mail: contact@camping-lacdethoux.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 62 65 71 29'
         Phone2: '06 45 61 81 52'
         Fax: '05 62 65 74 81'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     73:
         Id: 73
@@ -973,11 +1042,12 @@
         Zip: '2446 '
         City: NAZARÉ
         Mail: geral@albitur.pt
-        Country: Portugal
         CountryCode: PT
         Phone1: '00351 244 586 765'
         Phone2: '00351 244 586 765'
         Fax: '00351 244 586 062'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     74:
         Id: 74
@@ -987,11 +1057,12 @@
         Zip: '40460'
         City: SANGUINET
         Mail: loubrousta@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 82 74 82'
         Phone2: '06 89 73 93 08'
         Fax: '05 58 82 10 74'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     75:
         Id: 75
@@ -1001,11 +1072,12 @@
         Zip: '40660'
         City: MESSANGES
         Mail: gm.duplais@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '0825 70 40 40'
         Phone2: '06 08 94 63 04'
         Fax: '05 58 48 26 53'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     76:
         Id: 76
@@ -1015,11 +1087,12 @@
         Zip: '85340'
         City: OLONNE-SUR-MER
         Mail: info@la-loubine.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 33 12 92'
         Phone2: '06 30 89 43 67'
         Fax: '02 51 33 12 71'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     77:
         Id: 77
@@ -1029,11 +1102,12 @@
         Zip: '85440'
         City: TALMONT-ST-HILAIRE
         Mail: 0251203758@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 21 28 10'
         Phone2: '06 08 82 07 93'
         Fax: '02 51 20 37 58'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     78:
         Id: 78
@@ -1043,11 +1117,12 @@
         Zip: '09110'
         City: AX-LES-THERMES
         Mail: camping.malazeou@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 61 64 69 14'
         Phone2: '05 61 64 69 14'
         Fax: '05 61 64 05 60'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     79:
         Id: 79
@@ -1057,11 +1132,12 @@
         Zip: '44029'
         City: 'LIDO DI SPINA'
         Mail: rosesteban@hotmail.fr
-        Country: Italien
         CountryCode: IT
         Phone1: '0039 0533 330 110'
         Phone2: '06 88 98 66 38'
         Fax: '0039 0533 330 052'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     80:
         Id: 80
@@ -1071,11 +1147,12 @@
         Zip: '30240'
         City: 'LE GRAU-DU-ROI'
         Mail: 0466515045@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 66 53 36 90'
         Phone2: '04 66 53 20 31'
         Fax: '04 66 51 50 45'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     81:
         Id: 81
@@ -1085,11 +1162,12 @@
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: marsouins@gmail.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 14 81'
         Phone2: '06 08 70 01 85'
         Fax: '04 68 95 93 58'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     82:
         Id: 82
@@ -1099,11 +1177,12 @@
         Zip: '58046'
         City: 'MARINA DI GROSSETTO'
         Mail: lemarze@boschettoholiday.it
-        Country: Italien
         CountryCode: IT
         Phone1: '0039 0564 35501'
         Phone2: '06 70 83 80 92'
         Fax: '0039 564744503'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     83:
         Id: 83
@@ -1113,11 +1192,12 @@
         Zip: '34410'
         City: SÉRIGNAN
         Mail: 0467325616@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 39 72 00'
         Phone2: '06 32 29 48 31'
         Fax: '04 67 32 56 16'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     84:
         Id: 84
@@ -1127,11 +1207,12 @@
         Zip: '39130'
         City: PATORNAY
         Mail: jacques.noelle@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '03 84 48 31 21'
         Phone2: '06 31 43 97 04'
         Fax: '03 84 44 71 21'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     85:
         Id: 85
@@ -1141,11 +1222,12 @@
         Zip: '17256'
         City: PALS
         Mail: hartmann.guy@orange.fr
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 972 63 67 31'
         Phone2: '06 08 35 15 52'
         Fax: '0034 972 66 79 51'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     86:
         Id: 86
@@ -1155,11 +1237,12 @@
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: camping.loasis@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 86 12 43'
         Phone2: '06 08 32 31 70'
         Fax: '04 68 86 46 83'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     87:
         Id: 87
@@ -1169,11 +1252,12 @@
         Zip: '85520'
         City: JARD-SUR-MER
         Mail: bruno.chauvin0983@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 33 05 05'
         Phone2: '06 08 90 03 54'
         Fax: '02 51 33 94 04 '
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     88:
         Id: 88
@@ -1183,11 +1267,12 @@
         Zip: '64210'
         City: BIDART
         Mail: accueil@camping-oyam.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 59 54 91 61'
         Phone2: '06 70 07 68 20'
         Fax: '05 59 54 76 87'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     89:
         Id: 89
@@ -1197,11 +1282,12 @@
         Zip: '40510'
         City: SEIGNOSSE
         Mail: beatrice.cournee@gmail.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 73 53 96'
         Phone2: '06 31 69 93 92'
         Fax: '05 58 73 58 47'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     90:
         Id: 90
@@ -1211,11 +1297,12 @@
         Zip: '83310'
         City: 'LA MÔLE'
         Mail: pacha@pachacaid.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 55 70 80'
         Phone2: '06 70 58 02 09'
         Fax: '04 94 55 70 95'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     91:
         Id: 91
@@ -1225,11 +1312,12 @@
         Zip: '46200'
         City: SOUILLAC
         Mail: info@lapaillebasse.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 65 37 85 48'
         Phone2: '06 08 23 78 03'
         Fax: '05 65 37 09 58'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     92:
         Id: 92
@@ -1239,11 +1327,12 @@
         Zip: '33780'
         City: 'SOULAC SUR MER'
         Mail: info@camping-palace.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 56 09 80 22'
         Phone2: '06 08 28 61 70'
         Fax: '05 56 09 84 23'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     93:
         Id: 93
@@ -1253,11 +1342,12 @@
         Zip: '34250'
         City: 'PALAVAS LES FLOTS'
         Mail: 0467508245@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 67 68 01 28'
         Phone2: '04 67 68 01 28'
         Fax: '04 67 50 82 45'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     94:
         Id: 94
@@ -1267,11 +1357,12 @@
         Zip: '83440'
         City: 'ST PAUL EN FORÊT'
         Mail: m.rene637@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 76 15 35'
         Phone2: '06 31 79 25 52'
         Fax: '04 94 76 15 35'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     95:
         Id: 95
@@ -1281,11 +1372,12 @@
         Zip: '57027'
         City: 'SAN VINCENZO'
         Mail: alain.fuss@gmail.com
-        Country: Italien
         CountryCode: IT
         Phone1: '0039 0565 701018'
         Phone2: '06 88 94 43 84'
         Fax: '0039 0565 701400'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     96:
         Id: 96
@@ -1295,11 +1387,12 @@
         Zip: '07120'
         City: RUOMS
         Mail: resapb@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 39 60 72'
         Phone2: '06 88 71 27 19'
         Fax: '04 75 93 95 50'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     97:
         Id: 97
@@ -1309,11 +1402,12 @@
         Zip: '15320'
         City: 'RUYNES EN MARGERIDE'
         Mail: lepetitbois0639@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 71 23 42 26'
         Phone2: '06 70 08 54 21'
         Fax: '04 71 23 42 26'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     98:
         Id: 98
@@ -1323,11 +1417,12 @@
         Zip: '11200'
         City: 'VILLEROUGE LA CREMADE'
         Mail: nadinety@msn.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 43 32 29'
         Phone2: '06 88 71 93 49'
         Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     99:
         Id: 99
@@ -1337,11 +1432,12 @@
         Zip: '22430'
         City: ERQUY
         Mail: 0296636794@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 96 72 31 12'
         Phone2: '06 08 83 65 13'
         Fax: '02 96 63 67 94'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     100:
         Id: 100
@@ -1351,11 +1447,12 @@
         Zip: '83600'
         City: FRÉJUS
         Mail: 0494408199@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 40 88 43'
         Phone2: '06 88 71 90 61'
         Fax: '04 94 40 81 99'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     101:
         Id: 101
@@ -1365,11 +1462,12 @@
         Zip: '07150'
         City: 'VALLON-PONT-D''ARC'
         Mail: info@laplagefleurie.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 75 88 01 15'
         Phone2: '06 31 87 03 88'
         Fax: '04 75 88 11 31'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     102:
         Id: 102
@@ -1379,11 +1477,12 @@
         Zip: '43300'
         City: 'MONT ROIG DEL CAMP'
         Mail: reservas@playamontroig.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 977 810 637'
         Phone2: '06 40 21 14 25'
         Fax: '0034 977 811 411'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     103:
         Id: 103
@@ -1393,11 +1492,12 @@
         Zip: '12579'
         City: 'ALCOSSEBRE CASTELLON'
         Mail: info@playatropicana.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 964 412 463'
         Phone2: '06 82 63 48 69'
         Fax: '0034 964 412 805'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     104:
         Id: 104
@@ -1407,11 +1507,12 @@
         Zip: '29950'
         City: BENODET
         Mail: info@campingbenodet.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 98 57 02 38'
         Phone2: '06 07 85 05 84'
         Fax: '02 98 57 25 25'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     106:
         Id: 106
@@ -1421,11 +1522,12 @@
         Zip: '63790'
         City: MUROL
         Mail: info@laribeyre.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 73 88 64 29'
         Phone2: '06 31 86 12 87'
         Fax: '04 73 88 68 41'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     108:
         Id: 108
@@ -1435,11 +1537,12 @@
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: 0468959611@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 10 42'
         Phone2: '06 31 96 76 12'
         Fax: '04 68 95 96 11'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     109:
         Id: 109
@@ -1449,11 +1552,12 @@
         Zip: '17570'
         City: 'LES MATHES'
         Mail: michel.etriche@orange.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 22 47 32'
         Phone2: '06 89 50 18 13'
         Fax: '05 46 22 51 46'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     110:
         Id: 110
@@ -1463,11 +1567,12 @@
         Zip: '83370'
         City: 'ST AYGULF'
         Mail: 0494810316@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 17 62 49'
         Phone2: '06 30 43 80 74'
         Fax: '04 94 81 03 16'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     111:
         Id: 111
@@ -1477,11 +1582,12 @@
         Zip: '06550'
         City: 'LA ROQUETTE SUR SIAGNE'
         Mail: pascal.chantal.chevallier@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 92 19 23 13'
         Phone2: '06 31 90 29 44'
         Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     112:
         Id: 112
@@ -1491,11 +1597,12 @@
         Zip: '83860'
         City: NANS-LES-PINS
         Mail: saintebaume@yahoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 78 92 68'
         Phone2: '06 89 79 83 64'
         Fax: '04 94 78 67 37'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     113:
         Id: 113
@@ -1505,11 +1612,12 @@
         Zip: '66470'
         City: 'STE MARIE-LA-MER'
         Mail: camping@lesaintemarie.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 80 48 10'
         Phone2: '06 08 09 37 54'
         Fax: '04 68 73 42 22'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     114:
         Id: 114
@@ -1519,11 +1627,12 @@
         Zip: '40170'
         City: Mézos
         Mail: reception@sen-yan.com
-        Country: ''
         CountryCode: ''
         Phone1: '05 58 42 60 05'
         Phone2: '06 85 15 03 72'
         Fax: '05 58 42 64 56'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     116:
         Id: 116
@@ -1533,11 +1642,12 @@
         Zip: '74210'
         City: DOUSSARD
         Mail: info@campinglaserraz.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 50 44 30 68'
         Phone2: '06 88 71 85 65'
         Fax: '04 50 44 81 07'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     117:
         Id: 117
@@ -1547,11 +1657,12 @@
         Zip: '17190'
         City: 'ST-GEORGES-D''OLÉRON'
         Mail: galardchristian20@gmail.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 46 47 01 22'
         Phone2: '06 31 88 70 26'
         Fax: '05 46 47 23 46'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     118:
         Id: 118
@@ -1561,11 +1672,12 @@
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: camping.lesoleil@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 14 48'
         Phone2: '06 31 32 11 40'
         Fax: '04 68 81 44 34'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     119:
         Id: 119
@@ -1575,11 +1687,12 @@
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: 0468825004@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 21 07 97'
         Phone2: '06 89 73 55 25'
         Fax: '04 68 82 50 04'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     120:
         Id: 120
@@ -1589,11 +1702,12 @@
         Zip: '68700'
         City: WATTWILLER
         Mail: camping.les.sources@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '03 89 75 44 94'
         Phone2: '06 85 06 13 61'
         Fax: '03 89 75 71 98'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     121:
         Id: 121
@@ -1603,11 +1717,12 @@
         Zip: '33680'
         City: LACANAU
         Mail: camping@talaris-vacances.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 56 03 04 15'
         Phone2: '06 31 37 10 44'
         Fax: '05 56 26 21 56'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     122:
         Id: 122
@@ -1617,11 +1732,12 @@
         Zip: '57023'
         City: 'CECINA MARE'
         Mail: info@letamerici.it
-        Country: Italien
         CountryCode: IT
         Phone1: '0039 0586 620 629'
         Phone2: '06 07 50 68 24'
         Fax: '0039 0586 687 811'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     123:
         Id: 123
@@ -1631,11 +1747,12 @@
         Zip: '34073'
         City: GRADO
         Mail: philetlolo@gmail.com
-        Country: Italien
         CountryCode: IT
         Phone1: '0039 0431 896 900'
         Phone2: '06 88 71 65 39'
         Fax: '0039 0431 896 901'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     125:
         Id: 125
@@ -1645,11 +1762,12 @@
         Zip: '64210'
         City: BIDART
         Mail: contact@uronea.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 59 26 53 61'
         Phone2: '06 31 95 41 42'
         Fax: '05 59 26 53 94'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     126:
         Id: 126
@@ -1659,11 +1777,12 @@
         Zip: '20243'
         City: 'PRUNELLI DI FIUMORBU'
         Mail: coraline.leandri@gmail.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 95 56 14 73'
         Phone2: '06 88 71 58 98'
         Fax: '04 95 57 07 02'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     127:
         Id: 127
@@ -1673,11 +1792,12 @@
         Zip: '40660'
         City: MESSANGES
         Mail: sergemombert@free.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '0 825 70 40 40'
         Phone2: '06 89 79 80 11'
         Fax: '05 58 48 01 69'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     128:
         Id: 128
@@ -1687,11 +1807,12 @@
         Zip: '40170'
         City: LIT-ET-MIXE
         Mail: accvignes@village-center.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 58 42 85 60'
         Phone2: '06 31 03 26 53'
         Fax: '05 58 42 74 36'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     129:
         Id: 129
@@ -1701,11 +1822,12 @@
         Zip: '08800'
         City: 'VILANOVA I LA GELTRÚ'
         Mail: info@vilanovapark.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 938 933 402'
         Phone2: '06 40 21 14 24'
         Fax: '0034 93 893 55 28'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     130:
         Id: 130
@@ -1715,11 +1837,12 @@
         Zip: '85160'
         City: 'ST JEAN-DE-MONTS'
         Mail: zagarella@zagarella.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 58 19 82'
         Phone2: '06 89 73 60 39'
         Fax: '02 51 59 35 28'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     131:
         Id: 131
@@ -1729,11 +1852,12 @@
         Zip: '64210'
         City: BIDART
         Mail: francoise.dumont3@wanadoo.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '05 59 41 94 50'
         Phone2: '06 32 12 91 82'
         Fax: '05 59 41 95 73'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     133:
         Id: 133
@@ -1743,11 +1867,12 @@
         Zip: '17300'
         City: BLANES
         Mail: fontclaude@orange.fr
-        Country: Spanien
         CountryCode: ES
         Phone1: '0039 72 33 10 13'
         Phone2: '06 07 78 00 16'
         Fax: '0039 72 33 31 28'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     134:
         Id: 134
@@ -1757,11 +1882,12 @@
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: 0468862309@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 86 08 18'
         Phone2: '06 07 84 61 31'
         Fax: '04 68 86 23 09'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     135:
         Id: 135
@@ -1771,11 +1897,12 @@
         Zip: '39180'
         City: NOJA
         Mail: jean.straniero@gmail.com
-        Country: Spanien
         CountryCode: ES
         Phone1: '0034 942630081 '
         Phone2: '06 31 35 46 23'
         Fax: '0034 942631294'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     136:
         Id: 136
@@ -1785,11 +1912,12 @@
         Zip: 'i 30015'
         City: 'SOTTOMARINA DI CHIOGGIA '
         Mail: info@campinggrandeitalia.com
-        Country: Italien
         CountryCode: IT
         Phone1: '0 41 40 46 64'
         Phone2: '06 32 12 95 69'
         Fax: '04 15 50 68 77'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     137:
         Id: 137
@@ -1799,11 +1927,12 @@
         Zip: '66701'
         City: ARGELÈS-SUR-MER
         Mail: 0468815529@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 68 81 26 49'
         Phone2: '06 89 79 60 43'
         Fax: '04 68 81 55 29'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     138:
         Id: 138
@@ -1813,11 +1942,12 @@
         Zip: '83400'
         City: HYÈRES
         Mail: bieber.jean-claude@neuf.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '04 94 66 34 07'
         Phone2: '06 71 59 02 51'
         Fax: '04 94 66 33 57'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     139:
         Id: 139
@@ -1827,11 +1957,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     140:
         Id: 140
@@ -1841,11 +1972,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     141:
         Id: 141
@@ -1855,11 +1987,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     142:
         Id: 142
@@ -1869,11 +2002,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     143:
         Id: 143
@@ -1883,11 +2017,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     144:
         Id: 144
@@ -1897,11 +2032,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     145:
         Id: 145
@@ -1911,11 +2047,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     146:
         Id: 146
@@ -1925,11 +2062,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     147:
         Id: 147
@@ -1939,11 +2077,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     148:
         Id: 148
@@ -1953,11 +2092,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     149:
         Id: 149
@@ -1967,11 +2107,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     150:
         Id: 150
@@ -1981,11 +2122,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     151:
         Id: 151
@@ -1995,11 +2137,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     152:
         Id: 152
@@ -2009,11 +2152,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     153:
         Id: 153
@@ -2023,11 +2167,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     154:
         Id: 154
@@ -2037,11 +2182,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     155:
         Id: 155
@@ -2051,11 +2197,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     156:
         Id: 156
@@ -2065,11 +2212,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     157:
         Id: 157
@@ -2079,11 +2227,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     158:
         Id: 158
@@ -2093,11 +2242,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     159:
         Id: 159
@@ -2107,11 +2257,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     160:
         Id: 160
@@ -2121,11 +2272,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     161:
         Id: 161
@@ -2135,11 +2287,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     162:
         Id: 162
@@ -2149,11 +2302,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     163:
         Id: 163
@@ -2163,11 +2317,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     164:
         Id: 164
@@ -2177,11 +2332,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     165:
         Id: 165
@@ -2191,11 +2347,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     166:
         Id: 166
@@ -2205,11 +2362,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     167:
         Id: 167
@@ -2219,11 +2377,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     168:
         Id: 168
@@ -2233,11 +2392,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     169:
         Id: 169
@@ -2247,11 +2407,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     170:
         Id: 170
@@ -2261,11 +2422,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     171:
         Id: 171
@@ -2275,11 +2437,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     172:
         Id: 172
@@ -2289,11 +2452,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     173:
         Id: 173
@@ -2303,11 +2467,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     174:
         Id: 174
@@ -2317,11 +2482,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     175:
         Id: 175
@@ -2331,11 +2497,12 @@
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
         Mail: info@ledomainedespins.com
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 58 23 33'
         Phone2: '06 32 12 37 65'
         Fax: '02 51 58 29 93'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     176:
         Id: 176
@@ -2345,11 +2512,12 @@
         Zip: '33930'
         City: 'VENDAYS MONTALIVET'
         Mail: vautrin.christian@sfr.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: '06 32 12 14 52'
         Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     177:
         Id: 177
@@ -2359,11 +2527,12 @@
         Zip: '44500'
         City: 'LA BAULE'
         Mail: 0240244437@fax.contact-everyone.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 40 60 33 29'
         Phone2: '06 31 28 72 24'
         Fax: '02 40 24 44 37'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     178:
         Id: 178
@@ -2373,11 +2542,12 @@
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
         Mail: rf.forest@sfr.fr
-        Country: Frankreich
         CountryCode: FR
         Phone1: '02 51 54 38 82'
         Phone2: '06 32 29 64 91'
         Fax: '02 51 54 30 74'
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
     179:
         Id: 179
@@ -2387,11 +2557,12 @@
         Zip: '24200'
         City: 'CARSAC AILLAC'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     180:
         Id: 180
@@ -2401,11 +2572,12 @@
         Zip: '83320'
         City: CARQUEIRANNE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     181:
         Id: 181
@@ -2415,11 +2587,12 @@
         Zip: '40200'
         City: AUREILHAN
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     182:
         Id: 182
@@ -2429,11 +2602,12 @@
         Zip: '29430'
         City: PLOUESCAT
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     183:
         Id: 183
@@ -2443,11 +2617,12 @@
         Zip: '44500'
         City: 'LA BAULE'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     184:
         Id: 184
@@ -2457,11 +2632,12 @@
         Zip: '30013'
         City: CAVALLINO-TREPORTI
         Mail: ''
-        Country: Italien
         CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     185:
         Id: 185
@@ -2471,11 +2647,12 @@
         Zip: '17110'
         City: 'ST GEORGES DE DIDONNE'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     186:
         Id: 186
@@ -2485,11 +2662,12 @@
         Zip: '66210'
         City: 'LES ANGLES'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     187:
         Id: 187
@@ -2499,11 +2677,12 @@
         Zip: '24620'
         City: 'LES EYZIES DE TAYAC SIREUIL'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     188:
         Id: 188
@@ -2513,11 +2692,12 @@
         Zip: '44024'
         City: 'LIDO DI SPINA'
         Mail: ''
-        Country: Italien
         CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     189:
         Id: 189
@@ -2527,11 +2707,12 @@
         Zip: '34990'
         City: JUVIGNAC
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     190:
         Id: 190
@@ -2541,11 +2722,12 @@
         Zip: '11100'
         City: NARBONNE-PLAGE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     191:
         Id: 191
@@ -2555,11 +2737,12 @@
         Zip: '17590'
         City: 'ST CLEMENT DES BALEINES'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     192:
         Id: 192
@@ -2569,11 +2752,12 @@
         Zip: '04500'
         City: 'MONTAGNAC MONTPEZAT'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     193:
         Id: 193
@@ -2583,11 +2767,12 @@
         Zip: '17256'
         City: 'PALS GIRONA'
         Mail: ''
-        Country: Spanien
         CountryCode: ES
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     194:
         Id: 194
@@ -2597,11 +2782,12 @@
         Zip: '66200'
         City: 'LATOUR BAS ELNE'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     195:
         Id: 195
@@ -2611,11 +2797,12 @@
         Zip: '66700'
         City: 'ARGELES SUR MER'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     196:
         Id: 196
@@ -2625,11 +2812,12 @@
         Zip: '84810'
         City: AUBIGNAN
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     197:
         Id: 197
@@ -2639,11 +2827,12 @@
         Zip: '34400'
         City: 'ST CHRISTOL'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     198:
         Id: 198
@@ -2653,11 +2842,12 @@
         Zip: '83870'
         City: SIGNES
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     199:
         Id: 199
@@ -2667,11 +2857,12 @@
         Zip: '14640'
         City: AUBERVILLE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     200:
         Id: 200
@@ -2681,11 +2872,12 @@
         Zip: '13640'
         City: 'LA ROQUE D ANTHERON'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     201:
         Id: 201
@@ -2695,11 +2887,12 @@
         Zip: '19300'
         City: EGLETONS
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     202:
         Id: 202
@@ -2709,11 +2902,12 @@
         Zip: '34690'
         City: FABREGUES
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     203:
         Id: 203
@@ -2723,11 +2917,12 @@
         Zip: '62176'
         City: CAMIERS
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     204:
         Id: 204
@@ -2737,11 +2932,12 @@
         Zip: '34440'
         City: COLOMBIERS
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     205:
         Id: 205
@@ -2751,11 +2947,12 @@
         Zip: '11130'
         City: SIGEAN
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     206:
         Id: 206
@@ -2765,11 +2962,12 @@
         Zip: '34110'
         City: 'VIC LA GARDIOLE'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     207:
         Id: 207
@@ -2779,11 +2977,12 @@
         Zip: '34500'
         City: BEZIERS
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     208:
         Id: 208
@@ -2793,11 +2992,12 @@
         Zip: '94550'
         City: 'CHEVILLY LARUE'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     209:
         Id: 209
@@ -2807,11 +3007,12 @@
         Zip: '57020'
         City: 'MARINA DI BIBBONA'
         Mail: ''
-        Country: Italien
         CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     210:
         Id: 210
@@ -2821,11 +3022,12 @@
         Zip: '34990'
         City: JUVIGNAC
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     211:
         Id: 211
@@ -2835,11 +3037,12 @@
         Zip: '68600'
         City: BIESHEIM
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     212:
         Id: 212
@@ -2849,11 +3052,12 @@
         Zip: '17256'
         City: 'PLADJA DE PALS'
         Mail: ''
-        Country: Spanien
         CountryCode: ES
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     213:
         Id: 213
@@ -2863,11 +3067,12 @@
         Zip: '14450'
         City: 'GRANDCAMP MAISY'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     214:
         Id: 214
@@ -2877,11 +3082,12 @@
         Zip: '56890'
         City: PLESCOP
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     215:
         Id: 215
@@ -2891,11 +3097,12 @@
         Zip: '33115'
         City: 'PYLA SUR MER'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     216:
         Id: 216
@@ -2905,11 +3112,12 @@
         Zip: '29140'
         City: 'ST YVI'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     217:
         Id: 217
@@ -2919,11 +3127,12 @@
         Zip: '34200'
         City: SETE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     218:
         Id: 218
@@ -2933,11 +3142,12 @@
         Zip: '66702'
         City: 'ARGELES SUR MER CEDEX'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     219:
         Id: 219
@@ -2947,11 +3157,12 @@
         Zip: '20213'
         City: 'CASTELLARE DI CASINCA'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     220:
         Id: 220
@@ -2961,11 +3172,12 @@
         Zip: '62480'
         City: 'LE PORTEL'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     221:
         Id: 221
@@ -2975,11 +3187,12 @@
         Zip: '34300'
         City: AGDE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     222:
         Id: 222
@@ -2989,11 +3202,12 @@
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     223:
         Id: 223
@@ -3003,11 +3217,12 @@
         Zip: '74190'
         City: PASSY
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     224:
         Id: 224
@@ -3017,11 +3232,12 @@
         Zip: '68580'
         City: 'SEPPOIS LE BAS'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     225:
         Id: 225
@@ -3031,11 +3247,12 @@
         Zip: '34160'
         City: CASTRIES
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     226:
         Id: 226
@@ -3045,11 +3262,12 @@
         Zip: '68140'
         City: MUNSTER
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     227:
         Id: 227
@@ -3059,11 +3277,12 @@
         Zip: '37220'
         City: TROGUES
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     228:
         Id: 228
@@ -3073,11 +3292,12 @@
         Zip: '04500'
         City: QUINSON
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     229:
         Id: 229
@@ -3087,11 +3307,12 @@
         Zip: '81320'
         City: NAGES
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     230:
         Id: 230
@@ -3101,11 +3322,12 @@
         Zip: '34300'
         City: AGDE
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     231:
         Id: 231
@@ -3115,11 +3337,12 @@
         Zip: '12460'
         City: 'ST AMANS DES COTS'
         Mail: ''
-        Country: Frankreich
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     997:
         Id: 997
@@ -3129,11 +3352,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     998:
         Id: 998
@@ -3143,11 +3367,12 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
     999:
         Id: 999
@@ -3157,9 +3382,10 @@
         Zip: ''
         City: ''
         Mail: ''
-        Country: ''
         CountryCode: ''
         Phone1: ''
         Phone2: ''
         Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null

@@ -15,7 +15,7 @@ class PropelFiller extends AbstractDatabaseFiller
         $getter = 'get'.$utils->camelize($name);
 
         return array(
-            'text' => is_object($data->$getter()) ? $data->$getter()->__toString() : $data->$getter()
+            'text' => $data->$getter()
         );
     }
 

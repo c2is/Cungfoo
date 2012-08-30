@@ -62,6 +62,10 @@ etablissement.ville.id: City Code
 etablissement.zip: Postcode
 etablissement.phone1: Phone 1
 etablissement.phone2: Phone 2
+etablissement.opening.date: Opening
+etablissement.closing.date: Closing
+etablissement.opening_date: Opening
+etablissement.closing_date: Closing
 
 list.actions: Actions
 

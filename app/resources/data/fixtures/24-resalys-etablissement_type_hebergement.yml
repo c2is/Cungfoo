@@ -593,6 +593,9 @@
     178_FAM6:
         EtablissementId: 178
         TypeHebergementId: FAM6
+    231_FAM6:
+        EtablissementId: 231
+        TypeHebergementId: FAM6
     999_FAM6:
         EtablissementId: 999
         TypeHebergementId: FAM6
@@ -872,9 +875,15 @@
     110_SPA6:
         EtablissementId: 110
         TypeHebergementId: SPA6
+    231_SPA6:
+        EtablissementId: 231
+        TypeHebergementId: SPA6
     999_SPA6:
         EtablissementId: 999
         TypeHebergementId: SPA6
+    999_SPA7:
+        EtablissementId: 999
+        TypeHebergementId: SPA7
     2_SPA8:
         EtablissementId: 2
         TypeHebergementId: SPA8

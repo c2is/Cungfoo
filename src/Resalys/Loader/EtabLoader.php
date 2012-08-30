@@ -58,6 +58,8 @@ class EtabLoader extends BaseLoader
         $objectEtab->setPhone1($etab->address->phone1);
         $objectEtab->setPhone2($etab->address->phone2);
         $objectEtab->setFax($etab->address->fax);
+        $objectEtab->setOpeningDate($etab->opening_date);
+        $objectEtab->setClosingDate($etab->closing_date);
 
         // update type hebergement
         $this->updateTypeHebergement($objectEtab, $etab->roomtypes, $con);

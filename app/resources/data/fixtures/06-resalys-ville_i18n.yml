@@ -1,4 +1,256 @@
 \Cungfoo\Model\VilleI18n:
+    AGDE_de:
+        Id: AGDE
+        Locale: de
+        Name: 'Agde (34)'
+    AGDE_en:
+        Id: AGDE
+        Locale: en
+        Name: 'Agde (34)'
+    AGDE_fr:
+        Id: AGDE
+        Locale: fr
+        Name: 'Agde (34)'
+    ALCO_de:
+        Id: ALCO
+        Locale: de
+        Name: Alcossebre
+    ALCO_en:
+        Id: ALCO
+        Locale: en
+        Name: Alcossebre
+    ALCO_fr:
+        Id: ALCO
+        Locale: fr
+        Name: Alcossebre
+    ALSA_de:
+        Id: ALSA
+        Locale: de
+        Name: 'Albaron/Arles (30)'
+    ALSA_en:
+        Id: ALSA
+        Locale: en
+        Name: 'Albaron/Arles (30)'
+    ALSA_fr:
+        Id: ALSA
+        Locale: fr
+        Name: 'Albaron/Arles (30)'
+    AMDM_de:
+        Id: AMDM
+        Locale: de
+        Name: 'Amettla De Mar'
+    AMDM_en:
+        Id: AMDM
+        Locale: en
+        Name: 'Amettla De Mar'
+    AMDM_fr:
+        Id: AMDM
+        Locale: fr
+        Name: 'Amettla De Mar'
+    ANTI_de:
+        Id: ANTI
+        Locale: de
+        Name: 'Antibes (06)'
+    ANTI_en:
+        Id: ANTI
+        Locale: en
+        Name: 'Antibes (06)'
+    ANTI_fr:
+        Id: ANTI
+        Locale: fr
+        Name: 'Antibes (06)'
+    ARGE_de:
+        Id: ARGE
+        Locale: de
+        Name: 'Argelès/Mer (66)'
+    ARGE_en:
+        Id: ARGE
+        Locale: en
+        Name: 'Argelès/Mer (66)'
+    ARGE_fr:
+        Id: ARGE
+        Locale: fr
+        Name: 'Argelès/Mer (66)'
+    AURE_de:
+        Id: AURE
+        Locale: de
+        Name: 'Aureilhan (40)'
+    AURE_en:
+        Id: AURE
+        Locale: en
+        Name: 'Aureilhan (40)'
+    AURE_fr:
+        Id: AURE
+        Locale: fr
+        Name: 'Aureilhan (40)'
+    AXLT_de:
+        Id: AXLT
+        Locale: de
+        Name: 'Ax les Thermes (09)'
+    AXLT_en:
+        Id: AXLT
+        Locale: en
+        Name: 'Ax les Thermes (09)'
+    AXLT_fr:
+        Id: AXLT
+        Locale: fr
+        Name: 'Ax les Thermes (09)'
+    AZUR_de:
+        Id: AZUR
+        Locale: de
+        Name: 'Azur (40)'
+    AZUR_en:
+        Id: AZUR
+        Locale: en
+        Name: 'Azur (40)'
+    AZUR_fr:
+        Id: AZUR
+        Locale: fr
+        Name: 'Azur (40)'
+    BENO_de:
+        Id: BENO
+        Locale: de
+        Name: 'Bénodet (29)'
+    BENO_en:
+        Id: BENO
+        Locale: en
+        Name: 'Bénodet (29)'
+    BENO_fr:
+        Id: BENO
+        Locale: fr
+        Name: 'Bénodet (29)'
+    BEYN_de:
+        Id: BEYN
+        Locale: de
+        Name: 'Beynat (19)'
+    BEYN_en:
+        Id: BEYN
+        Locale: en
+        Name: 'Beynat (19)'
+    BEYN_fr:
+        Id: BEYN
+        Locale: fr
+        Name: 'Beynat (19)'
+    BIDA_de:
+        Id: BIDA
+        Locale: de
+        Name: 'Bidart (64)'
+    BIDA_en:
+        Id: BIDA
+        Locale: en
+        Name: 'Bidart (64)'
+    BIDA_fr:
+        Id: BIDA
+        Locale: fr
+        Name: 'Bidart (64)'
+    BISC_de:
+        Id: BISC
+        Locale: de
+        Name: 'Biscarrosse (40)'
+    BISC_en:
+        Id: BISC
+        Locale: en
+        Name: 'Biscarrosse (40)'
+    BISC_fr:
+        Id: BISC
+        Locale: fr
+        Name: 'Biscarrosse (40)'
+    BLAN_de:
+        Id: BLAN
+        Locale: de
+        Name: Blanes
+    BLAN_en:
+        Id: BLAN
+        Locale: en
+        Name: Blanes
+    BLAN_fr:
+        Id: BLAN
+        Locale: fr
+        Name: Blanes
+    BOYA_de:
+        Id: BOYA
+        Locale: de
+        Name: 'Boyardville (17)'
+    BOYA_en:
+        Id: BOYA
+        Locale: en
+        Name: 'Boyardville (17)'
+    BOYA_fr:
+        Id: BOYA
+        Locale: fr
+        Name: 'Boyardville (17)'
+    BREM_de:
+        Id: BREM
+        Locale: de
+        Name: 'Brem sur Mer (85)'
+    BREM_en:
+        Id: BREM
+        Locale: en
+        Name: 'Brem sur Mer (85)'
+    BREM_fr:
+        Id: BREM
+        Locale: fr
+        Name: 'Brem sur Mer (85)'
+    CADE_de:
+        Id: CADE
+        Locale: de
+        Name: 'Castiglione della Pescaia'
+    CADE_en:
+        Id: CADE
+        Locale: en
+        Name: 'Castiglione della Pescaia'
+    CADE_fr:
+        Id: CADE
+        Locale: fr
+        Name: 'Castiglione della Pescaia'
+    CADS_de:
+        Id: CADS
+        Locale: de
+        Name: 'Canet de Salars (12)'
+    CADS_en:
+        Id: CADS
+        Locale: en
+        Name: 'Canet de Salars (12)'
+    CADS_fr:
+        Id: CADS
+        Locale: fr
+        Name: 'Canet de Salars (12)'
+    CAEM_de:
+        Id: CAEM
+        Locale: de
+        Name: 'Castello d''Empuries'
+    CAEM_en:
+        Id: CAEM
+        Locale: en
+        Name: 'Castello d''Empuries'
+    CAEM_fr:
+        Id: CAEM
+        Locale: fr
+        Name: 'Castello d''Empuries'
+    CALO_de:
+        Id: CALO
+        Locale: de
+        Name: Calonge
+    CALO_en:
+        Id: CALO
+        Locale: en
+        Name: Calonge
+    CALO_fr:
+        Id: CALO
+        Locale: fr
+        Name: Calonge
+    CALP_de:
+        Id: CALP
+        Locale: de
+        Name: 'Calviac en Périgord (24)'
+    CALP_en:
+        Id: CALP
+        Locale: en
+        Name: 'Calviac en Périgord (24)'
+    CALP_fr:
+        Id: CALP
+        Locale: fr
+        Name: 'Calviac en Périgord (24)'
     CARN_de:
         Id: CARN
         Locale: de
@@ -11,6 +263,126 @@
         Id: CARN
         Locale: fr
         Name: 'Carnac (56)'
+    CAST_de:
+        Id: CAST
+        Locale: de
+        Name: 'Castellane (04)'
+    CAST_en:
+        Id: CAST
+        Locale: en
+        Name: 'Castellane (04)'
+    CAST_fr:
+        Id: CAST
+        Locale: fr
+        Name: 'Castellane (04)'
+    CECI_de:
+        Id: CECI
+        Locale: de
+        Name: Cecina
+    CECI_en:
+        Id: CECI
+        Locale: en
+        Name: Cecina
+    CECI_fr:
+        Id: CECI
+        Locale: fr
+        Name: Cecina
+    CHAT_de:
+        Id: CHAT
+        Locale: de
+        Name: 'Chatillon en Diois (26)'
+    CHAT_en:
+        Id: CHAT
+        Locale: en
+        Name: 'Chatillon en Diois (26)'
+    CHAT_fr:
+        Id: CHAT
+        Locale: fr
+        Name: 'Chatillon en Diois (26)'
+    CHOL_de:
+        Id: CHOL
+        Locale: de
+        Name: 'Chateau d''Oléron (17)'
+    CHOL_en:
+        Id: CHOL
+        Locale: en
+        Name: 'Chateau d''Oléron (17)'
+    CHOL_fr:
+        Id: CHOL
+        Locale: fr
+        Name: 'Chateau d''Oléron (17)'
+    CHPL_de:
+        Id: CHPL
+        Locale: de
+        Name: 'Chatelaillon Plage (17)'
+    CHPL_en:
+        Id: CHPL
+        Locale: en
+        Name: 'Chatelaillon Plage (17)'
+    CHPL_fr:
+        Id: CHPL
+        Locale: fr
+        Name: 'Chatelaillon Plage (17)'
+    CROU_de:
+        Id: CROU
+        Locale: de
+        Name: 'Canet en Roussillon (66)'
+    CROU_en:
+        Id: CROU
+        Locale: en
+        Name: 'Canet en Roussillon (66)'
+    CROU_fr:
+        Id: CROU
+        Locale: fr
+        Name: 'Canet en Roussillon (66)'
+    CURB_de:
+        Id: CURB
+        Locale: de
+        Name: 'Curbans (05)'
+    CURB_en:
+        Id: CURB
+        Locale: en
+        Name: 'Curbans (05)'
+    CURB_fr:
+        Id: CURB
+        Locale: fr
+        Name: 'Curbans (05)'
+    DOUS_de:
+        Id: DOUS
+        Locale: de
+        Name: 'Doussard (74)'
+    DOUS_en:
+        Id: DOUS
+        Locale: en
+        Name: 'Doussard (74)'
+    DOUS_fr:
+        Id: DOUS
+        Locale: fr
+        Name: 'Doussard (74)'
+    ERQU_de:
+        Id: ERQU
+        Locale: de
+        Name: 'Erquy (22)'
+    ERQU_en:
+        Id: ERQU
+        Locale: en
+        Name: 'Erquy (22)'
+    ERQU_fr:
+        Id: ERQU
+        Locale: fr
+        Name: 'Erquy (22)'
+    ESTA_de:
+        Id: ESTA
+        Locale: de
+        Name: 'L''Estartit'
+    ESTA_en:
+        Id: ESTA
+        Locale: en
+        Name: 'L''Estartit'
+    ESTA_fr:
+        Id: ESTA
+        Locale: fr
+        Name: 'L''Estartit'
     EYZ_de:
         Id: EYZ
         Locale: de
@@ -23,6 +395,66 @@
         Id: EYZ
         Locale: fr
         Name: 'Les Eyzies (24)'
+    FABR_de:
+        Id: FABR
+        Locale: de
+        Name: 'Fabrezan (11)'
+    FABR_en:
+        Id: FABR
+        Locale: en
+        Name: 'Fabrezan (11)'
+    FABR_fr:
+        Id: FABR
+        Locale: fr
+        Name: 'Fabrezan (11)'
+    FREJ_de:
+        Id: FREJ
+        Locale: de
+        Name: 'Fréjus (83)'
+    FREJ_en:
+        Id: FREJ
+        Locale: en
+        Name: 'Fréjus (83)'
+    FREJ_fr:
+        Id: FREJ
+        Locale: fr
+        Name: 'Fréjus (83)'
+    GHIS_de:
+        Id: GHIS
+        Locale: de
+        Name: 'Ghisonaccia (20)'
+    GHIS_en:
+        Id: GHIS
+        Locale: en
+        Name: 'Ghisonaccia (20)'
+    GHIS_fr:
+        Id: GHIS
+        Locale: fr
+        Name: 'Ghisonaccia (20)'
+    GLMO_de:
+        Id: GLMO
+        Locale: de
+        Name: 'Gallargues le Montueux (30)'
+    GLMO_en:
+        Id: GLMO
+        Locale: en
+        Name: 'Gallargues le Montueux (30)'
+    GLMO_fr:
+        Id: GLMO
+        Locale: fr
+        Name: 'Gallargues le Montueux (30)'
+    GRAD_de:
+        Id: GRAD
+        Locale: de
+        Name: Grado
+    GRAD_en:
+        Id: GRAD
+        Locale: en
+        Name: Grado
+    GRAD_fr:
+        Id: GRAD
+        Locale: fr
+        Name: Grado
     GRAU_de:
         Id: GRAU
         Locale: de
@@ -35,6 +467,378 @@
         Id: GRAU
         Locale: fr
         Name: 'Le Grau du Roi (30)'
+    GRIM_de:
+        Id: GRIM
+        Locale: de
+        Name: 'Grimaud (83)'
+    GRIM_en:
+        Id: GRIM
+        Locale: en
+        Name: 'Grimaud (83)'
+    GRIM_fr:
+        Id: GRIM
+        Locale: fr
+        Name: 'Grimaud (83)'
+    GUER_de:
+        Id: GUER
+        Locale: de
+        Name: 'Guérande (44)'
+    GUER_en:
+        Id: GUER
+        Locale: en
+        Name: 'Guérande (44)'
+    GUER_fr:
+        Id: GUER
+        Locale: fr
+        Name: 'Guérande (44)'
+    HOUR_de:
+        Id: HOUR
+        Locale: de
+        Name: 'Hourtin Plage (33)'
+    HOUR_en:
+        Id: HOUR
+        Locale: en
+        Name: 'Hourtin Plage (33)'
+    HOUR_fr:
+        Id: HOUR
+        Locale: fr
+        Name: 'Hourtin Plage (33)'
+    HYER_de:
+        Id: HYER
+        Locale: de
+        Name: 'Hyères (83)'
+    HYER_en:
+        Id: HYER
+        Locale: en
+        Name: 'Hyères (83)'
+    HYER_fr:
+        Id: HYER
+        Locale: fr
+        Name: 'Hyères (83)'
+    ISI_de:
+        Id: ISI
+        Locale: de
+        Name: 'Isigny sur Mer (14)'
+    ISI_en:
+        Id: ISI
+        Locale: en
+        Name: 'Isigny sur Mer (14)'
+    ISI_fr:
+        Id: ISI
+        Locale: fr
+        Name: 'Isigny sur Mer (14)'
+    JARD_de:
+        Id: JARD
+        Locale: de
+        Name: 'Jard sur Mer (85)'
+    JARD_en:
+        Id: JARD
+        Locale: en
+        Name: 'Jard sur Mer (85)'
+    JARD_fr:
+        Id: JARD
+        Locale: fr
+        Name: 'Jard sur Mer (85)'
+    LABA_de:
+        Id: LABA
+        Locale: de
+        Name: 'La Baule (44)'
+    LABA_en:
+        Id: LABA
+        Locale: en
+        Name: 'La Baule (44)'
+    LABA_fr:
+        Id: LABA
+        Locale: fr
+        Name: 'La Baule (44)'
+    LACA_de:
+        Id: LACA
+        Locale: de
+        Name: 'Lacanau (33)'
+    LACA_en:
+        Id: LACA
+        Locale: en
+        Name: 'Lacanau (33)'
+    LACA_fr:
+        Id: LACA
+        Locale: fr
+        Name: 'Lacanau (33)'
+    LAGO_de:
+        Id: LAGO
+        Locale: de
+        Name: 'Lagorce-Vallon Pont d''Arc (07)'
+    LAGO_en:
+        Id: LAGO
+        Locale: en
+        Name: 'Lagorce-Vallon Pont d''Arc (07)'
+    LAGO_fr:
+        Id: LAGO
+        Locale: fr
+        Name: 'Lagorce-Vallon Pont d''Arc (07)'
+    LAMO_de:
+        Id: LAMO
+        Locale: de
+        Name: 'La Môle (83)'
+    LAMO_en:
+        Id: LAMO
+        Locale: en
+        Name: 'La Môle (83)'
+    LAMO_fr:
+        Id: LAMO
+        Locale: fr
+        Name: 'La Môle (83)'
+    LANO_de:
+        Id: LANO
+        Locale: de
+        Name: 'La Noja'
+    LANO_en:
+        Id: LANO
+        Locale: en
+        Name: 'La Noja'
+    LANO_fr:
+        Id: LANO
+        Locale: fr
+        Name: 'La Noja'
+    LATH_de:
+        Id: LATH
+        Locale: de
+        Name: 'Lathuile (74)'
+    LATH_en:
+        Id: LATH
+        Locale: en
+        Name: 'Lathuile (74)'
+    LATH_fr:
+        Id: LATH
+        Locale: fr
+        Name: 'Lathuile (74)'
+    LATR_de:
+        Id: LATR
+        Locale: de
+        Name: 'La Tranche sur Mer (85)'
+    LATR_en:
+        Id: LATR
+        Locale: en
+        Name: 'La Tranche sur Mer (85)'
+    LATR_fr:
+        Id: LATR
+        Locale: fr
+        Name: 'La Tranche sur Mer (85)'
+    LATT_de:
+        Id: LATT
+        Locale: de
+        Name: 'Lattes (34)'
+    LATT_en:
+        Id: LATT
+        Locale: en
+        Name: 'Lattes (34)'
+    LATT_fr:
+        Id: LATT
+        Locale: fr
+        Name: 'Lattes (34)'
+    LBAR_de:
+        Id: LBAR
+        Locale: de
+        Name: 'Le Barcarès (66)'
+    LBAR_en:
+        Id: LBAR
+        Locale: en
+        Name: 'Le Barcarès (66)'
+    LBAR_fr:
+        Id: LBAR
+        Locale: fr
+        Name: 'Le Barcarès (66)'
+    LEGE_de:
+        Id: LEGE
+        Locale: de
+        Name: 'Lège Cap Ferret (33)'
+    LEGE_en:
+        Id: LEGE
+        Locale: en
+        Name: 'Lège Cap Ferret (33)'
+    LEGE_fr:
+        Id: LEGE
+        Locale: fr
+        Name: 'Lège Cap Ferret (33)'
+    LEPA_de:
+        Id: LEPA
+        Locale: de
+        Name: 'Le Palais (56)'
+    LEPA_en:
+        Id: LEPA
+        Locale: en
+        Name: 'Le Palais (56)'
+    LEPA_fr:
+        Id: LEPA
+        Locale: fr
+        Name: 'Le Palais (56)'
+    LESM_de:
+        Id: LESM
+        Locale: de
+        Name: 'Les Mathes (17)'
+    LESM_en:
+        Id: LESM
+        Locale: en
+        Name: 'Les Mathes (17)'
+    LESM_fr:
+        Id: LESM
+        Locale: fr
+        Name: 'Les Mathes (17)'
+    LIDO_de:
+        Id: LIDO
+        Locale: de
+        Name: 'Lido Di Spina'
+    LIDO_en:
+        Id: LIDO
+        Locale: en
+        Name: 'Lido Di Spina'
+    LIDO_fr:
+        Id: LIDO
+        Locale: fr
+        Name: 'Lido Di Spina'
+    LIMI_de:
+        Id: LIMI
+        Locale: de
+        Name: 'Lit et Mixe (40)'
+    LIMI_en:
+        Id: LIMI
+        Locale: en
+        Name: 'Lit et Mixe (40)'
+    LIMI_fr:
+        Id: LIMI
+        Locale: fr
+        Name: 'Lit et Mixe (40)'
+    LOIX_de:
+        Id: LOIX
+        Locale: de
+        Name: 'Loix en Ré (17)'
+    LOIX_en:
+        Id: LOIX
+        Locale: en
+        Name: 'Loix en Ré (17)'
+    LOIX_fr:
+        Id: LOIX
+        Locale: fr
+        Name: 'Loix en Ré (17)'
+    LRSS_de:
+        Id: LRSS
+        Locale: de
+        Name: 'La Roquette Sur Siagne (06)'
+    LRSS_en:
+        Id: LRSS
+        Locale: en
+        Name: 'La Roquette Sur Siagne (06)'
+    LRSS_fr:
+        Id: LRSS
+        Locale: fr
+        Name: 'La Roquette Sur Siagne (06)'
+    MESS_de:
+        Id: MESS
+        Locale: de
+        Name: 'Messanges (40)'
+    MESS_en:
+        Id: MESS
+        Locale: en
+        Name: 'Messanges (40)'
+    MESS_fr:
+        Id: MESS
+        Locale: fr
+        Name: 'Messanges (40)'
+    MEZE_de:
+        Id: MEZE
+        Locale: de
+        Name: 'Mèze (34)'
+    MEZE_en:
+        Id: MEZE
+        Locale: en
+        Name: 'Mèze (34)'
+    MEZE_fr:
+        Id: MEZE
+        Locale: fr
+        Name: 'Mèze (34)'
+    MEZO_de:
+        Id: MEZO
+        Locale: de
+        Name: 'Mézos (40)'
+    MEZO_en:
+        Id: MEZO
+        Locale: en
+        Name: 'Mézos (40)'
+    MEZO_fr:
+        Id: MEZO
+        Locale: fr
+        Name: 'Mézos (40)'
+    MTLV_de:
+        Id: MTLV
+        Locale: de
+        Name: 'Montalivet (33)'
+    MTLV_en:
+        Id: MTLV
+        Locale: en
+        Name: 'Montalivet (33)'
+    MTLV_fr:
+        Id: MTLV
+        Locale: fr
+        Name: 'Montalivet (33)'
+    MTRO_de:
+        Id: MTRO
+        Locale: de
+        Name: Mont-Roig
+    MTRO_en:
+        Id: MTRO
+        Locale: en
+        Name: Mont-Roig
+    MTRO_fr:
+        Id: MTRO
+        Locale: fr
+        Name: Mont-Roig
+    MURO_de:
+        Id: MURO
+        Locale: de
+        Name: 'Murol (63)'
+    MURO_en:
+        Id: MURO
+        Locale: en
+        Name: 'Murol (63)'
+    MURO_fr:
+        Id: MURO
+        Locale: fr
+        Name: 'Murol (63)'
+    NALP_de:
+        Id: NALP
+        Locale: de
+        Name: 'Nans les Pins (83)'
+    NALP_en:
+        Id: NALP
+        Locale: en
+        Name: 'Nans les Pins (83)'
+    NALP_fr:
+        Id: NALP
+        Locale: fr
+        Name: 'Nans les Pins (83)'
+    NEVE_de:
+        Id: NEVE
+        Locale: de
+        Name: 'Nevez (29)'
+    NEVE_en:
+        Id: NEVE
+        Locale: en
+        Name: 'Nevez (29)'
+    NEVE_fr:
+        Id: NEVE
+        Locale: fr
+        Name: 'Nevez (29)'
+    OLON_de:
+        Id: OLON
+        Locale: de
+        Name: 'Olonne sur Mer (85)'
+    OLON_en:
+        Id: OLON
+        Locale: en
+        Name: 'Olonne sur Mer (85)'
+    OLON_fr:
+        Id: OLON
+        Locale: fr
+        Name: 'Olonne sur Mer (85)'
     PALA_de:
         Id: PALA
         Locale: de
@@ -47,6 +851,450 @@
         Id: PALA
         Locale: fr
         Name: 'Palavas-les-Flots (34)'
+    PALM_de:
+        Id: PALM
+        Locale: de
+        Name: Palamos
+    PALM_en:
+        Id: PALM
+        Locale: en
+        Name: Palamos
+    PALM_fr:
+        Id: PALM
+        Locale: fr
+        Name: Palamos
+    PALS_de:
+        Id: PALS
+        Locale: de
+        Name: Pals
+    PALS_en:
+        Id: PALS
+        Locale: en
+        Name: Pals
+    PALS_fr:
+        Id: PALS
+        Locale: fr
+        Name: Pals
+    PATA_de:
+        Id: PATA
+        Locale: de
+        Name: Pataias
+    PATA_en:
+        Id: PATA
+        Locale: en
+        Name: Pataias
+    PATA_fr:
+        Id: PATA
+        Locale: fr
+        Name: Pataias
+    PATO_de:
+        Id: PATO
+        Locale: de
+        Name: 'Patornay (39)'
+    PATO_en:
+        Id: PATO
+        Locale: en
+        Name: 'Patornay (39)'
+    PATO_fr:
+        Id: PATO
+        Locale: fr
+        Name: 'Patornay (39)'
+    PENE_de:
+        Id: PENE
+        Locale: de
+        Name: 'Pénestin (56)'
+    PENE_en:
+        Id: PENE
+        Locale: en
+        Name: 'Pénestin (56)'
+    PENE_fr:
+        Id: PENE
+        Locale: fr
+        Name: 'Pénestin (56)'
+    PORN_de:
+        Id: PORN
+        Locale: de
+        Name: 'Pornic (44)'
+    PORN_en:
+        Id: PORN
+        Locale: en
+        Name: 'Pornic (44)'
+    PORN_fr:
+        Id: PORN
+        Locale: fr
+        Name: 'Pornic (44)'
+    PORV_de:
+        Id: PORV
+        Locale: de
+        Name: 'Porto Vecchio (20)'
+    PORV_en:
+        Id: PORV
+        Locale: en
+        Name: 'Porto Vecchio (20)'
+    PORV_fr:
+        Id: PORV
+        Locale: fr
+        Name: 'Porto Vecchio (20)'
+    PUIL_de:
+        Id: PUIL
+        Locale: de
+        Name: 'Puilboreau (17)'
+    PUIL_en:
+        Id: PUIL
+        Locale: en
+        Name: 'Puilboreau (17)'
+    PUIL_fr:
+        Id: PUIL
+        Locale: fr
+        Name: 'Puilboreau (17)'
+    QUIB_de:
+        Id: QUIB
+        Locale: de
+        Name: 'Quiberon (56)'
+    QUIB_en:
+        Id: QUIB
+        Locale: en
+        Name: 'Quiberon (56)'
+    QUIB_fr:
+        Id: QUIB
+        Locale: fr
+        Name: 'Quiberon (56)'
+    RUOM_de:
+        Id: RUOM
+        Locale: de
+        Name: 'Ruoms (07)'
+    RUOM_en:
+        Id: RUOM
+        Locale: en
+        Name: 'Ruoms (07)'
+    RUOM_fr:
+        Id: RUOM
+        Locale: fr
+        Name: 'Ruoms (07)'
+    RUYN_de:
+        Id: RUYN
+        Locale: de
+        Name: 'Ruynes en Margeride (15)'
+    RUYN_en:
+        Id: RUYN
+        Locale: en
+        Name: 'Ruynes en Margeride (15)'
+    RUYN_fr:
+        Id: RUYN
+        Locale: fr
+        Name: 'Ruynes en Margeride (15)'
+    SANG_de:
+        Id: SANG
+        Locale: de
+        Name: 'Sanguinet (40)'
+    SANG_en:
+        Id: SANG
+        Locale: en
+        Name: 'Sanguinet (40)'
+    SANG_fr:
+        Id: SANG
+        Locale: fr
+        Name: 'Sanguinet (40)'
+    SANV_de:
+        Id: SANV
+        Locale: de
+        Name: 'San Vincenzo'
+    SANV_en:
+        Id: SANV
+        Locale: en
+        Name: 'San Vincenzo'
+    SANV_fr:
+        Id: SANV
+        Locale: fr
+        Name: 'San Vincenzo'
+    SEIG_de:
+        Id: SEIG
+        Locale: de
+        Name: 'Seignosse (40)'
+    SEIG_en:
+        Id: SEIG
+        Locale: en
+        Name: 'Seignosse (40)'
+    SEIG_fr:
+        Id: SEIG
+        Locale: fr
+        Name: 'Seignosse (40)'
+    SERI_de:
+        Id: SERI
+        Locale: de
+        Name: 'Sérignan (34)'
+    SERI_en:
+        Id: SERI
+        Locale: en
+        Name: 'Sérignan (34)'
+    SERI_fr:
+        Id: SERI
+        Locale: fr
+        Name: 'Sérignan (34)'
+    SOTO_de:
+        Id: SOTO
+        Locale: de
+        Name: 'Sottomarina di Chioggoa'
+    SOTO_en:
+        Id: SOTO
+        Locale: en
+        Name: 'Sottomarina di Chioggoa'
+    SOTO_fr:
+        Id: SOTO
+        Locale: fr
+        Name: 'Sottomarina di Chioggoa'
+    SOUI_de:
+        Id: SOUI
+        Locale: de
+        Name: 'Souillac (46)'
+    SOUI_en:
+        Id: SOUI
+        Locale: en
+        Name: 'Souillac (46)'
+    SOUI_fr:
+        Id: SOUI
+        Locale: fr
+        Name: 'Souillac (46)'
+    SOUL_de:
+        Id: SOUL
+        Locale: de
+        Name: 'Soulac (33)'
+    SOUL_en:
+        Id: SOUL
+        Locale: en
+        Name: 'Soulac (33)'
+    SOUL_fr:
+        Id: SOUL
+        Locale: fr
+        Name: 'Soulac (33)'
+    STAY_de:
+        Id: STAY
+        Locale: de
+        Name: 'St Aygulf (83)'
+    STAY_en:
+        Id: STAY
+        Locale: en
+        Name: 'St Aygulf (83)'
+    STAY_fr:
+        Id: STAY
+        Locale: fr
+        Name: 'St Aygulf (83)'
+    STCA_de:
+        Id: STCA
+        Locale: de
+        Name: 'Saint Cast (22)'
+    STCA_en:
+        Id: STCA
+        Locale: en
+        Name: 'Saint Cast (22)'
+    STCA_fr:
+        Id: STCA
+        Locale: fr
+        Name: 'Saint Cast (22)'
+    STCY_de:
+        Id: STCY
+        Locale: de
+        Name: 'St Cyprien (66)'
+    STCY_en:
+        Id: STCY
+        Locale: en
+        Name: 'St Cyprien (66)'
+    STCY_fr:
+        Id: STCY
+        Locale: fr
+        Name: 'St Cyprien (66)'
+    STDE_de:
+        Id: STDE
+        Locale: de
+        Name: 'Saint Denis d''Oléron (17)'
+    STDE_en:
+        Id: STDE
+        Locale: en
+        Name: 'Saint Denis d''Oléron (17)'
+    STDE_fr:
+        Id: STDE
+        Locale: fr
+        Name: 'Saint Denis d''Oléron (17)'
+    STGE_de:
+        Id: STGE
+        Locale: de
+        Name: 'Saint Georges d''Oléron (17)'
+    STGE_en:
+        Id: STGE
+        Locale: en
+        Name: 'Saint Georges d''Oléron (17)'
+    STGE_fr:
+        Id: STGE
+        Locale: fr
+        Name: 'Saint Georges d''Oléron (17)'
+    STGI_de:
+        Id: STGI
+        Locale: de
+        Name: 'Saint Gilles Croix de Vie (85)'
+    STGI_en:
+        Id: STGI
+        Locale: en
+        Name: 'Saint Gilles Croix de Vie (85)'
+    STGI_fr:
+        Id: STGI
+        Locale: fr
+        Name: 'Saint Gilles Croix de Vie (85)'
+    STHI_de:
+        Id: STHI
+        Locale: de
+        Name: 'Saint Hilaire de Riez (85)'
+    STHI_en:
+        Id: STHI
+        Locale: en
+        Name: 'Saint Hilaire de Riez (85)'
+    STHI_fr:
+        Id: STHI
+        Locale: fr
+        Name: 'Saint Hilaire de Riez (85)'
+    STJE_de:
+        Id: STJE
+        Locale: de
+        Name: 'Saint Jean de Monts (85)'
+    STJE_en:
+        Id: STJE
+        Locale: en
+        Name: 'Saint Jean de Monts (85)'
+    STJE_fr:
+        Id: STJE
+        Locale: fr
+        Name: 'Saint Jean de Monts (85)'
+    STJU_de:
+        Id: STJU
+        Locale: de
+        Name: 'Saint Julien des Landes (85)'
+    STJU_en:
+        Id: STJU
+        Locale: en
+        Name: 'Saint Julien des Landes (85)'
+    STJU_fr:
+        Id: STJU
+        Locale: fr
+        Name: 'Saint Julien des Landes (85)'
+    STLA_de:
+        Id: STLA
+        Locale: de
+        Name: 'Saint Laurent de la Prée (17)'
+    STLA_en:
+        Id: STLA
+        Locale: en
+        Name: 'Saint Laurent de la Prée (17)'
+    STLA_fr:
+        Id: STLA
+        Locale: fr
+        Name: 'Saint Laurent de la Prée (17)'
+    STLV_de:
+        Id: STLV
+        Locale: de
+        Name: 'St Laurent du Verdon (04)'
+    STLV_en:
+        Id: STLV
+        Locale: en
+        Name: 'St Laurent du Verdon (04)'
+    STLV_fr:
+        Id: STLV
+        Locale: fr
+        Name: 'St Laurent du Verdon (04)'
+    STMA_de:
+        Id: STMA
+        Locale: de
+        Name: 'Ste Marie La Mer (66)'
+    STMA_en:
+        Id: STMA
+        Locale: en
+        Name: 'Ste Marie La Mer (66)'
+    STMA_fr:
+        Id: STMA
+        Locale: fr
+        Name: 'Ste Marie La Mer (66)'
+    STMN_de:
+        Id: STMN
+        Locale: de
+        Name: 'St Martial de Nabirat (24)'
+    STMN_en:
+        Id: STMN
+        Locale: en
+        Name: 'St Martial de Nabirat (24)'
+    STMN_fr:
+        Id: STMN
+        Locale: fr
+        Name: 'St Martial de Nabirat (24)'
+    STPF_de:
+        Id: STPF
+        Locale: de
+        Name: 'St Paul en Forêt (83)'
+    STPF_en:
+        Id: STPF
+        Locale: en
+        Name: 'St Paul en Forêt (83)'
+    STPF_fr:
+        Id: STPF
+        Locale: fr
+        Name: 'St Paul en Forêt (83)'
+    SUEV_de:
+        Id: SUEV
+        Locale: de
+        Name: 'Suèvres (41)'
+    SUEV_en:
+        Id: SUEV
+        Locale: en
+        Name: 'Suèvres (41)'
+    SUEV_fr:
+        Id: SUEV
+        Locale: fr
+        Name: 'Suèvres (41)'
+    TALM_de:
+        Id: TALM
+        Locale: de
+        Name: 'Talmont Saint Hilaire (85)'
+    TALM_en:
+        Id: TALM
+        Locale: en
+        Name: 'Talmont Saint Hilaire (85)'
+    TALM_fr:
+        Id: TALM
+        Locale: fr
+        Name: 'Talmont Saint Hilaire (85)'
+    THOU_de:
+        Id: THOU
+        Locale: de
+        Name: 'Thoux (32)'
+    THOU_en:
+        Id: THOU
+        Locale: en
+        Name: 'Thoux (32)'
+    THOU_fr:
+        Id: THOU
+        Locale: fr
+        Name: 'Thoux (32)'
+    TORP_de:
+        Id: TORP
+        Locale: de
+        Name: 'Torreilles Plage (66)'
+    TORP_en:
+        Id: TORP
+        Locale: en
+        Name: 'Torreilles Plage (66)'
+    TORP_fr:
+        Id: TORP
+        Locale: fr
+        Name: 'Torreilles Plage (66)'
+    VALP_de:
+        Id: VALP
+        Locale: de
+        Name: 'Vallon Pont d''Arc (07)'
+    VALP_en:
+        Id: VALP
+        Locale: en
+        Name: 'Vallon Pont d''Arc (07)'
+    VALP_fr:
+        Id: VALP
+        Locale: fr
+        Name: 'Vallon Pont d''Arc (07)'
     VIAS_de:
         Id: VIAS
         Locale: de
@@ -59,3 +1307,51 @@
         Id: VIAS
         Locale: fr
         Name: 'Vias Plage (34)'
+    VIEL_de:
+        Id: VIEL
+        Locale: de
+        Name: 'Vielle Saint Girons (40)'
+    VIEL_en:
+        Id: VIEL
+        Locale: en
+        Name: 'Vielle Saint Girons (40)'
+    VIEL_fr:
+        Id: VIEL
+        Locale: fr
+        Name: 'Vielle Saint Girons (40)'
+    VILA_de:
+        Id: VILA
+        Locale: de
+        Name: Vilanova
+    VILA_en:
+        Id: VILA
+        Locale: en
+        Name: Vilanova
+    VILA_fr:
+        Id: VILA
+        Locale: fr
+        Name: Vilanova
+    VOGU_de:
+        Id: VOGU
+        Locale: de
+        Name: 'Vögue Gare (07)'
+    VOGU_en:
+        Id: VOGU
+        Locale: en
+        Name: 'Vögue Gare (07)'
+    VOGU_fr:
+        Id: VOGU
+        Locale: fr
+        Name: 'Vögue Gare (07)'
+    WATT_de:
+        Id: WATT
+        Locale: de
+        Name: 'Wattwiller (68)'
+    WATT_en:
+        Id: WATT
+        Locale: en
+        Name: 'Wattwiller (68)'
+    WATT_fr:
+        Id: WATT
+        Locale: fr
+        Name: 'Wattwiller (68)'

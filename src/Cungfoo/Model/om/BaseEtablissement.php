@@ -5,11 +5,13 @@ namespace Cungfoo\Model\om;
 use \BaseObject;
 use \BasePeer;
 use \Criteria;
+use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
 use \PropelCollection;
+use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
@@ -134,6 +136,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        string
      */
     protected $fax;
+
+    /**
+     * The value for the opening_date field.
+     * @var        string
+     */
+    protected $opening_date;
+
+    /**
+     * The value for the closing_date field.
+     * @var        string
+     */
+    protected $closing_date;
 
     /**
      * The value for the ville_id field.
@@ -412,6 +426,80 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [optionally formatted] temporal [opening_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00 00:00:00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getOpeningDate($format = null)
+    {
+        if ($this->opening_date === null) {
+            return null;
+        }
+
+        if ($this->opening_date === '0000-00-00 00:00:00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        } else {
+            try {
+                $dt = new DateTime($this->opening_date);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->opening_date, true), $x);
+            }
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        } elseif (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
+        }
+    }
+
+    /**
+     * Get the [optionally formatted] temporal [closing_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00 00:00:00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getClosingDate($format = null)
+    {
+        if ($this->closing_date === null) {
+            return null;
+        }
+
+        if ($this->closing_date === '0000-00-00 00:00:00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        } else {
+            try {
+                $dt = new DateTime($this->closing_date);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->closing_date, true), $x);
+            }
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        } elseif (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
+        }
+    }
+
+    /**
      * Get the [ville_id] column value.
      *
      * @return string
@@ -653,6 +741,52 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setFax()
 
     /**
+     * Sets the value of [opening_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setOpeningDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->opening_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->opening_date !== null && $tmpDt = new DateTime($this->opening_date)) ? $tmpDt->format('Y-m-d H:i:s') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->opening_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementPeer::OPENING_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setOpeningDate()
+
+    /**
+     * Sets the value of [closing_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setClosingDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->closing_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->closing_date !== null && $tmpDt = new DateTime($this->closing_date)) ? $tmpDt->format('Y-m-d H:i:s') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->closing_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementPeer::CLOSING_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setClosingDate()
+
+    /**
      * Set the value of [ville_id] column.
      *
      * @param string $v new value
@@ -720,7 +854,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->phone1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->phone2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->fax = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->ville_id = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->opening_date = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->closing_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->ville_id = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -729,7 +865,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 12; // 12 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 14; // 14 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1205,6 +1341,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::FAX)) {
             $modifiedColumns[':p' . $index++]  = '`FAX`';
         }
+        if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`OPENING_DATE`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`CLOSING_DATE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`VILLE_ID`';
         }
@@ -1251,6 +1393,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`FAX`':
                         $stmt->bindValue($identifier, $this->fax, PDO::PARAM_STR);
+                        break;
+                    case '`OPENING_DATE`':
+                        $stmt->bindValue($identifier, $this->opening_date, PDO::PARAM_STR);
+                        break;
+                    case '`CLOSING_DATE`':
+                        $stmt->bindValue($identifier, $this->closing_date, PDO::PARAM_STR);
                         break;
                     case '`VILLE_ID`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_STR);
@@ -1476,6 +1624,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getFax();
                 break;
             case 11:
+                return $this->getOpeningDate();
+                break;
+            case 12:
+                return $this->getClosingDate();
+                break;
+            case 13:
                 return $this->getVilleId();
                 break;
             default:
@@ -1518,7 +1672,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[8] => $this->getPhone1(),
             $keys[9] => $this->getPhone2(),
             $keys[10] => $this->getFax(),
-            $keys[11] => $this->getVilleId(),
+            $keys[11] => $this->getOpeningDate(),
+            $keys[12] => $this->getClosingDate(),
+            $keys[13] => $this->getVilleId(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -1610,6 +1766,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setFax($value);
                 break;
             case 11:
+                $this->setOpeningDate($value);
+                break;
+            case 12:
+                $this->setClosingDate($value);
+                break;
+            case 13:
                 $this->setVilleId($value);
                 break;
         } // switch()
@@ -1647,7 +1809,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[8], $arr)) $this->setPhone1($arr[$keys[8]]);
         if (array_key_exists($keys[9], $arr)) $this->setPhone2($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setFax($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setVilleId($arr[$keys[11]]);
+        if (array_key_exists($keys[11], $arr)) $this->setOpeningDate($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setClosingDate($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setVilleId($arr[$keys[13]]);
     }
 
     /**
@@ -1670,6 +1834,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::PHONE1)) $criteria->add(EtablissementPeer::PHONE1, $this->phone1);
         if ($this->isColumnModified(EtablissementPeer::PHONE2)) $criteria->add(EtablissementPeer::PHONE2, $this->phone2);
         if ($this->isColumnModified(EtablissementPeer::FAX)) $criteria->add(EtablissementPeer::FAX, $this->fax);
+        if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
+        if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
 
         return $criteria;
@@ -1744,6 +1910,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setPhone1($this->getPhone1());
         $copyObj->setPhone2($this->getPhone2());
         $copyObj->setFax($this->getFax());
+        $copyObj->setOpeningDate($this->getOpeningDate());
+        $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
 
         if ($deepCopy && !$this->startCopy) {
@@ -4148,6 +4316,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->phone1 = null;
         $this->phone2 = null;
         $this->fax = null;
+        $this->opening_date = null;
+        $this->closing_date = null;
         $this->ville_id = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;

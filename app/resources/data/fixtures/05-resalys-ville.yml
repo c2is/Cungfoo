@@ -1,16 +1,340 @@
 \Cungfoo\Model\Ville:
+    AGDE:
+        Id: AGDE
+        RegionId: null
+    ALCO:
+        Id: ALCO
+        RegionId: null
+    ALSA:
+        Id: ALSA
+        RegionId: null
+    AMDM:
+        Id: AMDM
+        RegionId: null
+    ANTI:
+        Id: ANTI
+        RegionId: null
+    ARGE:
+        Id: ARGE
+        RegionId: null
+    AURE:
+        Id: AURE
+        RegionId: null
+    AXLT:
+        Id: AXLT
+        RegionId: null
+    AZUR:
+        Id: AZUR
+        RegionId: null
+    BENO:
+        Id: BENO
+        RegionId: null
+    BEYN:
+        Id: BEYN
+        RegionId: null
+    BIDA:
+        Id: BIDA
+        RegionId: null
+    BISC:
+        Id: BISC
+        RegionId: null
+    BLAN:
+        Id: BLAN
+        RegionId: null
+    BOYA:
+        Id: BOYA
+        RegionId: null
+    BREM:
+        Id: BREM
+        RegionId: null
+    CADE:
+        Id: CADE
+        RegionId: null
+    CADS:
+        Id: CADS
+        RegionId: null
+    CAEM:
+        Id: CAEM
+        RegionId: null
+    CALO:
+        Id: CALO
+        RegionId: null
+    CALP:
+        Id: CALP
+        RegionId: null
     CARN:
         Id: CARN
+        RegionId: null
+    CAST:
+        Id: CAST
+        RegionId: null
+    CECI:
+        Id: CECI
+        RegionId: null
+    CHAT:
+        Id: CHAT
+        RegionId: null
+    CHOL:
+        Id: CHOL
+        RegionId: null
+    CHPL:
+        Id: CHPL
+        RegionId: null
+    CROU:
+        Id: CROU
+        RegionId: null
+    CURB:
+        Id: CURB
+        RegionId: null
+    DOUS:
+        Id: DOUS
+        RegionId: null
+    ERQU:
+        Id: ERQU
+        RegionId: null
+    ESTA:
+        Id: ESTA
         RegionId: null
     EYZ:
         Id: EYZ
         RegionId: null
+    FABR:
+        Id: FABR
+        RegionId: null
+    FREJ:
+        Id: FREJ
+        RegionId: null
+    GHIS:
+        Id: GHIS
+        RegionId: null
+    GLMO:
+        Id: GLMO
+        RegionId: null
+    GRAD:
+        Id: GRAD
+        RegionId: null
     GRAU:
         Id: GRAU
+        RegionId: null
+    GRIM:
+        Id: GRIM
+        RegionId: null
+    GUER:
+        Id: GUER
+        RegionId: null
+    HOUR:
+        Id: HOUR
+        RegionId: null
+    HYER:
+        Id: HYER
+        RegionId: null
+    ISI:
+        Id: ISI
+        RegionId: null
+    JARD:
+        Id: JARD
+        RegionId: null
+    LABA:
+        Id: LABA
+        RegionId: null
+    LACA:
+        Id: LACA
+        RegionId: null
+    LAGO:
+        Id: LAGO
+        RegionId: null
+    LAMO:
+        Id: LAMO
+        RegionId: null
+    LANO:
+        Id: LANO
+        RegionId: null
+    LATH:
+        Id: LATH
+        RegionId: null
+    LATR:
+        Id: LATR
+        RegionId: null
+    LATT:
+        Id: LATT
+        RegionId: null
+    LBAR:
+        Id: LBAR
+        RegionId: null
+    LEGE:
+        Id: LEGE
+        RegionId: null
+    LEPA:
+        Id: LEPA
+        RegionId: null
+    LESM:
+        Id: LESM
+        RegionId: null
+    LIDO:
+        Id: LIDO
+        RegionId: null
+    LIMI:
+        Id: LIMI
+        RegionId: null
+    LOIX:
+        Id: LOIX
+        RegionId: null
+    LRSS:
+        Id: LRSS
+        RegionId: null
+    MESS:
+        Id: MESS
+        RegionId: null
+    MEZE:
+        Id: MEZE
+        RegionId: null
+    MEZO:
+        Id: MEZO
+        RegionId: null
+    MTLV:
+        Id: MTLV
+        RegionId: null
+    MTRO:
+        Id: MTRO
+        RegionId: null
+    MURO:
+        Id: MURO
+        RegionId: null
+    NALP:
+        Id: NALP
+        RegionId: null
+    NEVE:
+        Id: NEVE
+        RegionId: null
+    OLON:
+        Id: OLON
         RegionId: null
     PALA:
         Id: PALA
         RegionId: null
+    PALM:
+        Id: PALM
+        RegionId: null
+    PALS:
+        Id: PALS
+        RegionId: null
+    PATA:
+        Id: PATA
+        RegionId: null
+    PATO:
+        Id: PATO
+        RegionId: null
+    PENE:
+        Id: PENE
+        RegionId: null
+    PORN:
+        Id: PORN
+        RegionId: null
+    PORV:
+        Id: PORV
+        RegionId: null
+    PUIL:
+        Id: PUIL
+        RegionId: null
+    QUIB:
+        Id: QUIB
+        RegionId: null
+    RUOM:
+        Id: RUOM
+        RegionId: null
+    RUYN:
+        Id: RUYN
+        RegionId: null
+    SANG:
+        Id: SANG
+        RegionId: null
+    SANV:
+        Id: SANV
+        RegionId: null
+    SEIG:
+        Id: SEIG
+        RegionId: null
+    SERI:
+        Id: SERI
+        RegionId: null
+    SOTO:
+        Id: SOTO
+        RegionId: null
+    SOUI:
+        Id: SOUI
+        RegionId: null
+    SOUL:
+        Id: SOUL
+        RegionId: null
+    STAY:
+        Id: STAY
+        RegionId: null
+    STCA:
+        Id: STCA
+        RegionId: null
+    STCY:
+        Id: STCY
+        RegionId: null
+    STDE:
+        Id: STDE
+        RegionId: null
+    STGE:
+        Id: STGE
+        RegionId: null
+    STGI:
+        Id: STGI
+        RegionId: null
+    STHI:
+        Id: STHI
+        RegionId: null
+    STJE:
+        Id: STJE
+        RegionId: null
+    STJU:
+        Id: STJU
+        RegionId: null
+    STLA:
+        Id: STLA
+        RegionId: null
+    STLV:
+        Id: STLV
+        RegionId: null
+    STMA:
+        Id: STMA
+        RegionId: null
+    STMN:
+        Id: STMN
+        RegionId: null
+    STPF:
+        Id: STPF
+        RegionId: null
+    SUEV:
+        Id: SUEV
+        RegionId: null
+    TALM:
+        Id: TALM
+        RegionId: null
+    THOU:
+        Id: THOU
+        RegionId: null
+    TORP:
+        Id: TORP
+        RegionId: null
+    VALP:
+        Id: VALP
+        RegionId: null
     VIAS:
         Id: VIAS
+        RegionId: null
+    VIEL:
+        Id: VIEL
+        RegionId: null
+    VILA:
+        Id: VILA
+        RegionId: null
+    VOGU:
+        Id: VOGU
+        RegionId: null
+    WATT:
+        Id: WATT
         RegionId: null
