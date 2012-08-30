@@ -1,147 +1,147 @@
-activite.crud.create: Création d'une activité
-activite.crud.list: Liste activités
-activite.crud.update: Mettre à jour l'activité %name%
-activite.crud.view: Détails de l'activité %name%
-activite.etablissements: Établissements ayant cette activité
+activite.crud.create: Erstellen einer Aktivität
+activite.crud.list: Liste Tätigkeiten
+activite.crud.update: Update Aktivität% name%
+activite.crud.view: Tätigkeits-Details% name%
+activite.etablissements: Betriebe mit dieser Tätigkeit
 activite.id: Code
-activite.name: Nom
+activite.name: Name
 
-category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
-category_type_hebergement.crud.list: Liste catégories de types d'hébergements
-category_type_hebergement.crud.update: Mettre à jour la catégorie de types d'hébergements %name%
-category_type_hebergement.crud.view: Détails de la catégorie de types d'hébergements
+category_type_hebergement.crud.create: Erstellen einer Kategorie von Unterkünften
+category_type_hebergement.crud.list: Liste der Kategorien an Unterkünften
+category_type_hebergement.crud.update: Aktualisieren Sie die Kategorie der Unterkunft Typen% name%
+category_type_hebergement.crud.view: Details der Kategorie der Unterkunft Arten
 category_type_hebergement.id: Code
-category_type_hebergement.name: Nom
+category_type_hebergement.name: Name
 
-context.language: Langue
-context.validate: Valider
+context.language: Sprache
+context.validate: Senden
 
-crud.button.add: Ajouter
-crud.button.delete: Supprimer
-crud.button.edit: Éditer
-crud.button.list: Liste
-crud.button.read: Détails
-crud.button.save: Enregistrer
+crud.button.add: In
+crud.button.delete: Delete
+crud.button.edit: Edit
+crud.button.list: List
+crud.button.read: Details
+crud.button.save: Register
 
-destination.crud.create: Création d'une destination
-destination.crud.list: Liste destinations
-destination.crud.update: Mettre à jour la destination %name%
-destination.crud.view: Détails de la destination %name%
-destination.etablissements: Établissements ayant cette destination
+destination.crud.create: Erstellen Sie ein Ziel
+destination.crud.list: List Destinationen
+destination.crud.update: Aktualisieren Sie den Zielort% name%
+destination.crud.view: Details des Ziels% name%
+destination.etablissements: Betriebe mit diesem Ziel
 destination.id: Code
-destination.name: Nom
+destination.name: Name
 
-equipement.crud.create: Création d'un équipement
-equipement.crud.list: Liste équipements
-equipement.crud.update: Mettre à jour l'équipement %name%
-equipement.crud.view: Détails de l'équipement %name%
-equipement.etablissements: Établissement ayant cet équipement
+equipement.crud.create: Erstellen eines Geräte
+equipement.crud.list: Liste Geräte
+equipement.crud.update: Update Gerät% name%
+equipement.crud.view: Details der Ausrüstung% name%
+equipement.etablissements: Gründung mit diesem Gerät
 equipement.id: Code
-equipement.name: Nom
+equipement.name: Name
 
-etablissement.activites: Liste des activités
-etablissement.city: Ville
-etablissement.country: Pays
+etablissement.activites: Liste der Aktivitäten
+etablissement.city: Stadt
+etablissement.country: Land
 etablissement.address1: Adresse 1
 etablissement.address2: Adresse 2
-etablissement.country_code: Code Pays
-etablissement.crud.create: Création d'un établissement
-etablissement.crud.list: Liste établissements
-etablissement.crud.update: Mettre à jour l'établissement %name%
-etablissement.crud.view: Détails de l'établissement %name%
-etablissement.destinations: Liste des destinations
-etablissement.equipements: Liste des équipements
-etablissement.service_complementaires: Liste des services complementaires
-etablissement.type_hebergements: Liste des types d'hébergements
+etablissement.country_code: Country Code
+etablissement.crud.create: Erstellen einer Niederlassung
+etablissement.crud.list: List Institutionen
+etablissement.crud.update: Aktualisieren Sie die Einrichtung% name%
+etablissement.crud.view: Details% name%
+etablissement.destinations: Liste der Reiseziele
+etablissement.equipements: Liste der Geräte
+etablissement.service_complementaires: Liste von ergänzenden Dienstleistungen
+etablissement.type_hebergements: Liste der Arten von Unterkünften
 etablissement.fax: Fax
 etablissement.id: Code
-etablissement.mail: Adresse électronique
-etablissement.name: Nom
-etablissement.ville: Ville
-etablissement.ville.id: Code ville
-etablissement.zip: Code postal
-etablissement.phone1: Télephone 1
-etablissement.phone2: Télephone 2
+etablissement.mail: E-Mail
+etablissement.name: Name
+etablissement.ville: Stadt
+etablissement.ville.id: City Code
+etablissement.zip: PLZ
+etablissement.phone1: Telefon 1
+etablissement.phone2: Telefon 2
 
-list.actions: Actions
+list.actions: Aktionen
 
-locale.english: Anglais
-locale.french: Français
-locale.german: Allemand
+locale.english: English
+locale.french: Französisch
+locale.german: Deutsch
 
-menu.activite: Activités
-menu.destination: Destinations
-menu.equipement: Équipement
-menu.etablissement: Établissement
-menu.job: Gestion des jobs
-menu.logout: Se déconnecter
-menu.parameters: Paramètres
-menu.pays: Pays
-menu.region: Régions
-menu.resalys: Gestion de Resalys
-menu.themes: Themes
+menu.activite: Aktivitäten
+menu.destination: Standorte
+menu.equipement: Equipment
+menu.etablissement: Gründung
+menu.job: Management Jobs
+menu.logout: Logout
+menu.parameters: Einstellungen
+menu.pays: Land
+menu.region: Regionen
+menu.resalys: Geschäftsführer Resalys
+menu.themes: Themen
 menu.title: Cungfoo
-menu.ville: Villes
-menu.type_hebergement: Types hébergements
-menu.category_type_hebergement: Catégories des types hébergements
-menu.service_complementaire: Services complémentaires
+menu.ville: Städte
+menu.type_hebergement: Typen Unterkünfte
+menu.category_type_hebergement: Kategorie Unterkunftsarten
+menu.service_complementaire: Zusätzliche Services
 
-category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
-category_type_hebergement.crud.list: Liste catégories de types hébergements
-category_type_hebergement.crud.update: Mettre à jour la catégorie de types hébergements %name%
-category_type_hebergement.crud.view: Détails de la catégorie de types hébergements %name%
+category_type_hebergement.crud.create: Erstellen einer Klasse Unterkunftsarten
+category_type_hebergement.crud.list: List type Kategorien Unterkunft
+category_type_hebergement.crud.update: Update-Typ Unterkunftskategorie name%%
+category_type_hebergement.crud.view: Details der Unterkunft Kategorie Typ% name%
 category_type_hebergement.id: Code
-category_type_hebergement.name: Nom
+category_type_hebergement.name: Name
 
-service_complementaire.crud.create: Création d'un service complémentaire
-service_complementaire.crud.list: Liste services complémentaires
-service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
-service_complementaire.crud.view: Détails du service complémentaire %name%
-service_complementaire.etablissements: Établissements ayant ce service complémentaire
+service_complementaire.crud.create: Erstellen einer ergänzenden Service
+service_complementaire.crud.list: Liste zusätzlicher Dienstleistungen
+service_complementaire.crud.update: Update ergänzenden Service% name%
+service_complementaire.crud.view: Details der zusätzlichen Service% name%
+service_complementaire.etablissements: Betriebe mit diesen zusätzlichen Service
 service_complementaire.id: Code
-service_complementaire.name: Nom
+service_complementaire.name: Name
 
-pays.crud.create: Création d'un pays
-pays.crud.list: Liste pays
-pays.crud.update: Mettre à jour le pays %name%
-pays.crud.view: Détails du pays %name%
+pays.crud.create: Erstellen eines Landes
+pays.crud.list: List Länder
+pays.crud.update: Update Ländern% name%
+pays.crud.view: Land Einzelheiten% name%
 pays.id: Code
-pays.name: Nom
+pays.name: Name
 
-region.crud.create: Création d'une région
-region.crud.list: Liste régions
-region.crud.update: Mettre à jour la région %name%
-region.crud.view: Détails de la région %name%
+region.crud.create: Erstellen Sie eine Region
+region.crud.list: Liste Bereichen
+region.crud.update: Aktualisieren Sie die Region% name%
+region.crud.view: Details der Fläche% name%
 region.id: Code
-region.name: Nom
-region.pays: Pays
-region.pays.id: Code pays
+region.name: Name
+region.pays: Land
+region.pays.id: Landesvorwahl
 
-resalys.actions.import: Importer les données de Resalys
+resalys.actions.import: Import von Daten Resalys
 resalys.title.import: Import Resalys
 
-service_complementaire.crud.create: Création d'un service complémentaire
-service_complementaire.crud.list: Liste services complémentaires
-service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
-service_complementaire.crud.view: Détails du service complémentaire %name%
-service_complementaire.etablissements: Établissements ayant ce service complémentaire
+service_complementaire.crud.create: Erstellen einer ergänzenden Service
+service_complementaire.crud.list: Liste zusätzlicher Dienstleistungen
+service_complementaire.crud.update: Update ergänzenden Service% name%
+service_complementaire.crud.view: Details der zusätzlichen Service% name%
+service_complementaire.etablissements: Betriebe mit diesen zusätzlichen Service
 service_complementaire.id: Code
-service_complementaire.name: Nom
+service_complementaire.name: Name
 
-type_hebergement.category.type.hebergement.id: Catégorie
-type_hebergement.crud.create: Création d'un type hébergement
-type_hebergement.crud.list: Liste types hébergements
-type_hebergement.crud.update: Mettre à jour le type hébergement %name%
-type_hebergement.crud.view: Détails du type hébergement %name%
-type_hebergement.etablissements: Établissements ayant ce type hébergement
+type_hebergement.category.type.hebergement.id: Kategorie
+type_hebergement.crud.create: Erstellen einer Art Unterkunft
+type_hebergement.crud.list: List Art Unterkunft
+type_hebergement.crud.update: Update Art Unterkunft% name%
+type_hebergement.crud.view: Unterkunft Details Typ% name%
+type_hebergement.etablissements: Betriebe mit solchen Hosting
 type_hebergement.id: Code
-type_hebergement.name: Nom
+type_hebergement.name: Name
 
-ville.crud.create: Création d'une ville
-ville.crud.list: Liste villes
-ville.crud.update: Mettre à jour la ville %name%
-ville.crud.view: Détails de la ville %name%
+ville.crud.create: Erstellen einer Stadt
+ville.crud.list: Städte-Liste
+ville.crud.update: Aktualisieren Sie die Stadt% name%
+ville.crud.view: Details Stadt% name%
 ville.id: Code
-ville.name: Nom
-ville.region: Région
-ville.region.id: Code région
+ville.name: Name
+ville.region: Region
+ville.region.id: Ländercode
