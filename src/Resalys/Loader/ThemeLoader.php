@@ -6,6 +6,8 @@ use \Resalys\Loader\BaseLoader;
 
 class ThemeLoader extends BaseLoader
 {
+    protected $themeCategories = array();
+
     public function load($locale = 'fr', \PropelPDO $con = null)
     {
         if ($con === null)
@@ -54,8 +56,11 @@ class ThemeLoader extends BaseLoader
                     }
 
                     $objectTheme->save($con);
+                    $this->themeCategories[$theme->category][$objectTheme->getId()] = $objectTheme;
                 }
             }
+
+            $this->removeObsoleteThemes($con);
 
             $con->commit();
         }
@@ -76,5 +81,24 @@ class ThemeLoader extends BaseLoader
         }
 
         return $sortedData;
+    }
+
+    protected function removeObsoleteThemes(\PropelPDO $con)
+    {
+        foreach ($this->themeCategories as $category => $themes)
+        {
+            if (count($themes) > 0)
+            {
+                $queryClass = sprintf('%sQuery', $this->config['ThemeLoader']['themes'][$category]['model']);
+                $themeQuery = $queryClass::create();
+
+                foreach ($themes as $theme)
+                {
+                    $themeQuery->prune($theme);
+                }
+
+                $themeQuery->delete($con);
+            }
+        }
     }
 }
