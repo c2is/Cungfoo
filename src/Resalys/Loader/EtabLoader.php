@@ -6,6 +6,8 @@ use \Resalys\Loader\BaseLoader;
 
 class EtabLoader extends BaseLoader
 {
+    protected $etabs = array();
+
     public function load($locale = 'fr', \PropelPDO $con = null)
     {
         if ($con === null)
@@ -21,6 +23,8 @@ class EtabLoader extends BaseLoader
             {
                 $this->updateEtab($etab, $locale, $con);
             }
+
+            $this->removeObsoleteEtabs($con);
 
             $con->commit();
         }
@@ -71,6 +75,7 @@ class EtabLoader extends BaseLoader
         }
 
         $objectEtab->save($con);
+        $this->etabs[$objectEtab->getId()] = $objectEtab;
     }
 
     protected function updateTypeHebergement($objectEtab, $roomtypesGroup, \PropelPDO $con)
@@ -144,6 +149,20 @@ class EtabLoader extends BaseLoader
                     }
                 }
             }
+        }
+    }
+
+    protected function removeObsoleteEtabs(\PropelPDO $con)
+    {
+        if (count($this->etabs) > 0)
+        {
+            $etabQuery = \Cungfoo\Model\EtablissementQuery::create();
+            foreach ($this->etabs as $etab)
+            {
+                $etabQuery->prune($etab);
+            }
+
+            $etabQuery->delete($con);
         }
     }
 }
