@@ -49,7 +49,6 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('ZIP', 'Zip', 'VARCHAR', false, 255, null);
         $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
         $this->addColumn('MAIL', 'Mail', 'VARCHAR', false, 255, null);
-        $this->addColumn('COUNTRY', 'Country', 'VARCHAR', false, 255, null);
         $this->addColumn('COUNTRY_CODE', 'CountryCode', 'VARCHAR', false, 255, null);
         $this->addColumn('PHONE1', 'Phone1', 'VARCHAR', false, 255, null);
         $this->addColumn('PHONE2', 'Phone2', 'VARCHAR', false, 255, null);
@@ -69,6 +68,7 @@ class EtablissementTableMap extends TableMap
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementActivites');
         $this->addRelation('EtablissementEquipement', 'Cungfoo\\Model\\EtablissementEquipement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementEquipements');
         $this->addRelation('EtablissementServiceComplementaire', 'Cungfoo\\Model\\EtablissementServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementServiceComplementaires');
+        $this->addRelation('EtablissementI18n', 'Cungfoo\\Model\\EtablissementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EtablissementI18ns');
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), null, null, 'TypeHebergements');
         $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), null, null, 'Destinations');
         $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), null, null, 'Activites');
@@ -85,6 +85,7 @@ class EtablissementTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()

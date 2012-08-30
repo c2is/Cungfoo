@@ -38,8 +38,8 @@ class BaseActiviteType extends AppAwareType
         $builder->add('activiteI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
             'languages' => array(
-                0 => 'en',
-                1 => 'fr',
+                0 => 'fr',
+                1 => 'en',
                 2 => 'de',
             ),
             'label' => 'activite.activiteI18ns',

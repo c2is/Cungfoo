@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'pays' table.
+ * Test class for Additional builder enabled on the 'etablissement_i18n' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BasePaysType extends AppAwareType
+class BaseEtablissementI18nType extends AppAwareType
 {
     /**
      * {@inheritdoc}
@@ -24,27 +24,17 @@ class BasePaysType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label' => 'pays.id',
+            'label' => 'etablissement_i18n.id',
             'required' => false,
         ));
-        $builder->add('paysI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\PaysI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'en',
-                2 => 'de',
+        $builder->add('locale', 'hidden', array(
+            'label' => 'etablissement_i18n.locale',
+            'required' => false,
+        ));
+        $builder->add('country', 'text', array(
+            'constraints' => array(
             ),
-            'label' => 'pays.paysI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'pays.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-            ),
+            'label' => 'etablissement_i18n.country',
             'required' => false,
         ));
     }
@@ -55,7 +45,7 @@ class BasePaysType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Pays',
+            'data_class' => 'Cungfoo\Model\EtablissementI18n',
         ));
     }
 
@@ -64,7 +54,7 @@ class BasePaysType extends AppAwareType
      */
     public function getName()
     {
-        return 'Pays';
+        return 'EtablissementI18n';
     }
 
-} // BasePaysType
+} // BaseEtablissementI18nType

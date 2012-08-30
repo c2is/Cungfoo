@@ -37,8 +37,8 @@ class BaseVilleType extends AppAwareType
         $builder->add('villeI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\VilleI18n',
             'languages' => array(
-                0 => 'en',
-                1 => 'fr',
+                0 => 'fr',
+                1 => 'en',
                 2 => 'de',
             ),
             'label' => 'ville.villeI18ns',

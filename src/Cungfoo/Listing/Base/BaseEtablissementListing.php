@@ -26,7 +26,6 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('zip'));
         $this->addColumn(new Column\TextColumn('city'));
         $this->addColumn(new Column\TextColumn('mail'));
-        $this->addColumn(new Column\TextColumn('country'));
         $this->addColumn(new Column\TextColumn('country_code'));
         $this->addColumn(new Column\TextColumn('phone1'));
         $this->addColumn(new Column\TextColumn('phone2'));

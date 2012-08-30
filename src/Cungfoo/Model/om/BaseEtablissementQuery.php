@@ -19,6 +19,7 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
 use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementEquipement;
+use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementServiceComplementaire;
@@ -39,7 +40,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByZip($order = Criteria::ASC) Order by the zip column
  * @method EtablissementQuery orderByCity($order = Criteria::ASC) Order by the city column
  * @method EtablissementQuery orderByMail($order = Criteria::ASC) Order by the mail column
- * @method EtablissementQuery orderByCountry($order = Criteria::ASC) Order by the country column
  * @method EtablissementQuery orderByCountryCode($order = Criteria::ASC) Order by the country_code column
  * @method EtablissementQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
  * @method EtablissementQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
@@ -53,7 +53,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByZip() Group by the zip column
  * @method EtablissementQuery groupByCity() Group by the city column
  * @method EtablissementQuery groupByMail() Group by the mail column
- * @method EtablissementQuery groupByCountry() Group by the country column
  * @method EtablissementQuery groupByCountryCode() Group by the country_code column
  * @method EtablissementQuery groupByPhone1() Group by the phone1 column
  * @method EtablissementQuery groupByPhone2() Group by the phone2 column
@@ -88,6 +87,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery rightJoinEtablissementServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method EtablissementQuery innerJoinEtablissementServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementServiceComplementaire relation
  *
+ * @method EtablissementQuery leftJoinEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementI18n relation
+ * @method EtablissementQuery rightJoinEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementI18n relation
+ * @method EtablissementQuery innerJoinEtablissementI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementI18n relation
+ *
  * @method Etablissement findOne(PropelPDO $con = null) Return the first Etablissement matching the query
  * @method Etablissement findOneOrCreate(PropelPDO $con = null) Return the first Etablissement matching the query, or a new Etablissement object populated from the query conditions when no match is found
  *
@@ -97,7 +100,6 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByZip(string $zip) Return the first Etablissement filtered by the zip column
  * @method Etablissement findOneByCity(string $city) Return the first Etablissement filtered by the city column
  * @method Etablissement findOneByMail(string $mail) Return the first Etablissement filtered by the mail column
- * @method Etablissement findOneByCountry(string $country) Return the first Etablissement filtered by the country column
  * @method Etablissement findOneByCountryCode(string $country_code) Return the first Etablissement filtered by the country_code column
  * @method Etablissement findOneByPhone1(string $phone1) Return the first Etablissement filtered by the phone1 column
  * @method Etablissement findOneByPhone2(string $phone2) Return the first Etablissement filtered by the phone2 column
@@ -111,7 +113,6 @@ use Cungfoo\Model\Ville;
  * @method array findByZip(string $zip) Return Etablissement objects filtered by the zip column
  * @method array findByCity(string $city) Return Etablissement objects filtered by the city column
  * @method array findByMail(string $mail) Return Etablissement objects filtered by the mail column
- * @method array findByCountry(string $country) Return Etablissement objects filtered by the country column
  * @method array findByCountryCode(string $country_code) Return Etablissement objects filtered by the country_code column
  * @method array findByPhone1(string $phone1) Return Etablissement objects filtered by the phone1 column
  * @method array findByPhone2(string $phone2) Return Etablissement objects filtered by the phone2 column
@@ -220,7 +221,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -508,35 +509,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::MAIL, $mail, $comparison);
-    }
-
-    /**
-     * Filter the query on the country column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByCountry('fooValue');   // WHERE country = 'fooValue'
-     * $query->filterByCountry('%fooValue%'); // WHERE country LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $country The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByCountry($country = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($country)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $country)) {
-                $country = str_replace('*', '%', $country);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::COUNTRY, $country, $comparison);
     }
 
     /**
@@ -1131,6 +1103,80 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EtablissementI18n object
+     *
+     * @param   EtablissementI18n|PropelObjectCollection $etablissementI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementI18n($etablissementI18n, $comparison = null)
+    {
+        if ($etablissementI18n instanceof EtablissementI18n) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $etablissementI18n->getId(), $comparison);
+        } elseif ($etablissementI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementI18nQuery()
+                ->filterByPrimaryKeys($etablissementI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementI18n() only accepts arguments of type EtablissementI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementI18n relation EtablissementI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinEtablissementI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementI18n', '\Cungfoo\Model\EtablissementI18nQuery');
+    }
+
+    /**
      * Filter the query by a related TypeHebergement object
      * using the etablissement_type_hebergement table as cross reference
      *
@@ -1229,6 +1275,63 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'EtablissementI18n';
+
+        return $this
+            ->joinEtablissementI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('EtablissementI18n');
+        $this->with['EtablissementI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementI18n', 'Cungfoo\Model\EtablissementI18nQuery');
     }
 
 }

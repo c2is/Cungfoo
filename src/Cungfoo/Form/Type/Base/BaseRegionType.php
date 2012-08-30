@@ -37,8 +37,8 @@ class BaseRegionType extends AppAwareType
         $builder->add('regionI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\RegionI18n',
             'languages' => array(
-                0 => 'en',
-                1 => 'fr',
+                0 => 'fr',
+                1 => 'en',
                 2 => 'de',
             ),
             'label' => 'region.regionI18ns',

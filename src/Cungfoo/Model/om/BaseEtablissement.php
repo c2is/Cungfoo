@@ -26,6 +26,8 @@ use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementDestinationQuery;
 use Cungfoo\Model\EtablissementEquipement;
 use Cungfoo\Model\EtablissementEquipementQuery;
+use Cungfoo\Model\EtablissementI18n;
+use Cungfoo\Model\EtablissementI18nQuery;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementServiceComplementaire;
@@ -110,12 +112,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $mail;
 
     /**
-     * The value for the country field.
-     * @var        string
-     */
-    protected $country;
-
-    /**
      * The value for the country_code field.
      * @var        string
      */
@@ -181,6 +177,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementServiceComplementairesPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
+     */
+    protected $collEtablissementI18ns;
+    protected $collEtablissementI18nsPartial;
+
+    /**
      * @var        PropelObjectCollection|TypeHebergement[] Collection to store aggregation of TypeHebergement objects.
      */
     protected $collTypeHebergements;
@@ -218,6 +220,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[EtablissementI18n]
+     */
+    protected $currentTranslations;
 
     /**
      * An array of objects scheduled for deletion.
@@ -278,6 +294,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementServiceComplementairesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementI18nsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -347,16 +369,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getMail()
     {
         return $this->mail;
-    }
-
-    /**
-     * Get the [country] column value.
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
     }
 
     /**
@@ -557,27 +569,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setMail()
 
     /**
-     * Set the value of [country] column.
-     *
-     * @param string $v new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setCountry($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->country !== $v) {
-            $this->country = $v;
-            $this->modifiedColumns[] = EtablissementPeer::COUNTRY;
-        }
-
-
-        return $this;
-    } // setCountry()
-
-    /**
      * Set the value of [country_code] column.
      *
      * @param string $v new value
@@ -725,12 +716,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->zip = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->city = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->mail = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->country = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->country_code = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->phone1 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->phone2 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->fax = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->ville_id = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->country_code = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->phone1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->phone2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->fax = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->ville_id = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -739,7 +729,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 13; // 13 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -814,6 +804,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementEquipements = null;
 
             $this->collEtablissementServiceComplementaires = null;
+
+            $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
             $this->collDestinations = null;
@@ -1141,6 +1133,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->etablissementI18nsScheduledForDeletion !== null) {
+                if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
+                    EtablissementI18nQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementI18ns !== null) {
+                foreach ($this->collEtablissementI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -1183,9 +1192,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(EtablissementPeer::MAIL)) {
             $modifiedColumns[':p' . $index++]  = '`MAIL`';
-        }
-        if ($this->isColumnModified(EtablissementPeer::COUNTRY)) {
-            $modifiedColumns[':p' . $index++]  = '`COUNTRY`';
         }
         if ($this->isColumnModified(EtablissementPeer::COUNTRY_CODE)) {
             $modifiedColumns[':p' . $index++]  = '`COUNTRY_CODE`';
@@ -1233,9 +1239,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`MAIL`':
                         $stmt->bindValue($identifier, $this->mail, PDO::PARAM_STR);
-                        break;
-                    case '`COUNTRY`':
-                        $stmt->bindValue($identifier, $this->country, PDO::PARAM_STR);
                         break;
                     case '`COUNTRY_CODE`':
                         $stmt->bindValue($identifier, $this->country_code, PDO::PARAM_STR);
@@ -1396,6 +1399,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementI18ns !== null) {
+                    foreach ($this->collEtablissementI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -1453,21 +1464,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getMail();
                 break;
             case 7:
-                return $this->getCountry();
-                break;
-            case 8:
                 return $this->getCountryCode();
                 break;
-            case 9:
+            case 8:
                 return $this->getPhone1();
                 break;
-            case 10:
+            case 9:
                 return $this->getPhone2();
                 break;
-            case 11:
+            case 10:
                 return $this->getFax();
                 break;
-            case 12:
+            case 11:
                 return $this->getVilleId();
                 break;
             default:
@@ -1506,12 +1514,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[4] => $this->getZip(),
             $keys[5] => $this->getCity(),
             $keys[6] => $this->getMail(),
-            $keys[7] => $this->getCountry(),
-            $keys[8] => $this->getCountryCode(),
-            $keys[9] => $this->getPhone1(),
-            $keys[10] => $this->getPhone2(),
-            $keys[11] => $this->getFax(),
-            $keys[12] => $this->getVilleId(),
+            $keys[7] => $this->getCountryCode(),
+            $keys[8] => $this->getPhone1(),
+            $keys[9] => $this->getPhone2(),
+            $keys[10] => $this->getFax(),
+            $keys[11] => $this->getVilleId(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -1531,6 +1538,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementServiceComplementaires) {
                 $result['EtablissementServiceComplementaires'] = $this->collEtablissementServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementI18ns) {
+                $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -1588,21 +1598,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setMail($value);
                 break;
             case 7:
-                $this->setCountry($value);
-                break;
-            case 8:
                 $this->setCountryCode($value);
                 break;
-            case 9:
+            case 8:
                 $this->setPhone1($value);
                 break;
-            case 10:
+            case 9:
                 $this->setPhone2($value);
                 break;
-            case 11:
+            case 10:
                 $this->setFax($value);
                 break;
-            case 12:
+            case 11:
                 $this->setVilleId($value);
                 break;
         } // switch()
@@ -1636,12 +1643,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setZip($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setCity($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setMail($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setCountry($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setCountryCode($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setPhone1($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setPhone2($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setFax($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setVilleId($arr[$keys[12]]);
+        if (array_key_exists($keys[7], $arr)) $this->setCountryCode($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setPhone1($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setPhone2($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setFax($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setVilleId($arr[$keys[11]]);
     }
 
     /**
@@ -1660,7 +1666,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::ZIP)) $criteria->add(EtablissementPeer::ZIP, $this->zip);
         if ($this->isColumnModified(EtablissementPeer::CITY)) $criteria->add(EtablissementPeer::CITY, $this->city);
         if ($this->isColumnModified(EtablissementPeer::MAIL)) $criteria->add(EtablissementPeer::MAIL, $this->mail);
-        if ($this->isColumnModified(EtablissementPeer::COUNTRY)) $criteria->add(EtablissementPeer::COUNTRY, $this->country);
         if ($this->isColumnModified(EtablissementPeer::COUNTRY_CODE)) $criteria->add(EtablissementPeer::COUNTRY_CODE, $this->country_code);
         if ($this->isColumnModified(EtablissementPeer::PHONE1)) $criteria->add(EtablissementPeer::PHONE1, $this->phone1);
         if ($this->isColumnModified(EtablissementPeer::PHONE2)) $criteria->add(EtablissementPeer::PHONE2, $this->phone2);
@@ -1735,7 +1740,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setZip($this->getZip());
         $copyObj->setCity($this->getCity());
         $copyObj->setMail($this->getMail());
-        $copyObj->setCountry($this->getCountry());
         $copyObj->setCountryCode($this->getCountryCode());
         $copyObj->setPhone1($this->getPhone1());
         $copyObj->setPhone2($this->getPhone2());
@@ -1776,6 +1780,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             foreach ($this->getEtablissementServiceComplementaires() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementServiceComplementaire($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getEtablissementI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1905,6 +1915,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementServiceComplementaire' == $relationName) {
             $this->initEtablissementServiceComplementaires();
+        }
+        if ('EtablissementI18n' == $relationName) {
+            $this->initEtablissementI18ns();
         }
     }
 
@@ -3069,6 +3082,217 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementI18ns()
+     */
+    public function clearEtablissementI18ns()
+    {
+        $this->collEtablissementI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementI18nsPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementI18ns($v = true)
+    {
+        $this->collEtablissementI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementI18ns collection.
+     *
+     * By default this just sets the collEtablissementI18ns collection to an empty array (like clearcollEtablissementI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementI18ns = new PropelObjectCollection();
+        $this->collEtablissementI18ns->setModel('EtablissementI18n');
+    }
+
+    /**
+     * Gets an array of EtablissementI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementI18n[] List of EtablissementI18n objects
+     * @throws PropelException
+     */
+    public function getEtablissementI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementI18nsPartial && !$this->isNew();
+        if (null === $this->collEtablissementI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementI18ns) {
+                // return empty collection
+                $this->initEtablissementI18ns();
+            } else {
+                $collEtablissementI18ns = EtablissementI18nQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementI18nsPartial && count($collEtablissementI18ns)) {
+                      $this->initEtablissementI18ns(false);
+
+                      foreach($collEtablissementI18ns as $obj) {
+                        if (false == $this->collEtablissementI18ns->contains($obj)) {
+                          $this->collEtablissementI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementI18nsPartial = true;
+                    }
+
+                    return $collEtablissementI18ns;
+                }
+
+                if($partial && $this->collEtablissementI18ns) {
+                    foreach($this->collEtablissementI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementI18ns = $collEtablissementI18ns;
+                $this->collEtablissementI18nsPartial = false;
+            }
+        }
+
+        return $this->collEtablissementI18ns;
+    }
+
+    /**
+     * Sets a collection of EtablissementI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementI18ns(PropelCollection $etablissementI18ns, PropelPDO $con = null)
+    {
+        $this->etablissementI18nsScheduledForDeletion = $this->getEtablissementI18ns(new Criteria(), $con)->diff($etablissementI18ns);
+
+        foreach ($this->etablissementI18nsScheduledForDeletion as $etablissementI18nRemoved) {
+            $etablissementI18nRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementI18ns = null;
+        foreach ($etablissementI18ns as $etablissementI18n) {
+            $this->addEtablissementI18n($etablissementI18n);
+        }
+
+        $this->collEtablissementI18ns = $etablissementI18ns;
+        $this->collEtablissementI18nsPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementI18n objects.
+     * @throws PropelException
+     */
+    public function countEtablissementI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementI18nsPartial && !$this->isNew();
+        if (null === $this->collEtablissementI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementI18ns) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementI18ns());
+                }
+                $query = EtablissementI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementI18ns);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementI18n object to this object
+     * through the EtablissementI18n foreign key attribute.
+     *
+     * @param    EtablissementI18n $l EtablissementI18n
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementI18n(EtablissementI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collEtablissementI18ns === null) {
+            $this->initEtablissementI18ns();
+            $this->collEtablissementI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementI18n $etablissementI18n The etablissementI18n object to add.
+     */
+    protected function doAddEtablissementI18n($etablissementI18n)
+    {
+        $this->collEtablissementI18ns[]= $etablissementI18n;
+        $etablissementI18n->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementI18n $etablissementI18n The etablissementI18n object to remove.
+     */
+    public function removeEtablissementI18n($etablissementI18n)
+    {
+        if ($this->getEtablissementI18ns()->contains($etablissementI18n)) {
+            $this->collEtablissementI18ns->remove($this->collEtablissementI18ns->search($etablissementI18n));
+            if (null === $this->etablissementI18nsScheduledForDeletion) {
+                $this->etablissementI18nsScheduledForDeletion = clone $this->collEtablissementI18ns;
+                $this->etablissementI18nsScheduledForDeletion->clear();
+            }
+            $this->etablissementI18nsScheduledForDeletion[]= $etablissementI18n;
+            $etablissementI18n->setEtablissement(null);
+        }
+    }
+
+    /**
      * Clears out the collTypeHebergements collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -3920,7 +4144,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->zip = null;
         $this->city = null;
         $this->mail = null;
-        $this->country = null;
         $this->country_code = null;
         $this->phone1 = null;
         $this->phone2 = null;
@@ -3971,6 +4194,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementI18ns) {
+                foreach ($this->collEtablissementI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collTypeHebergements) {
                 foreach ($this->collTypeHebergements as $o) {
                     $o->clearAllReferences($deep);
@@ -3998,6 +4226,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
         if ($this->collEtablissementTypeHebergements instanceof PropelCollection) {
             $this->collEtablissementTypeHebergements->clearIterator();
         }
@@ -4018,6 +4250,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementServiceComplementaires->clearIterator();
         }
         $this->collEtablissementServiceComplementaires = null;
+        if ($this->collEtablissementI18ns instanceof PropelCollection) {
+            $this->collEtablissementI18ns->clearIterator();
+        }
+        $this->collEtablissementI18ns = null;
         if ($this->collTypeHebergements instanceof PropelCollection) {
             $this->collTypeHebergements->clearIterator();
         }
@@ -4059,6 +4295,129 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    Etablissement The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EtablissementI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collEtablissementI18ns) {
+                foreach ($this->collEtablissementI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new EtablissementI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = EtablissementI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addEtablissementI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    Etablissement The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            EtablissementI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collEtablissementI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collEtablissementI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EtablissementI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [country] column value.
+         *
+         * @return string
+         */
+        public function getCountry()
+        {
+        return $this->getCurrentTranslation()->getCountry();
+    }
+
+
+        /**
+         * Set the value of [country] column.
+         *
+         * @param string $v new value
+         * @return EtablissementI18n The current object (for fluent API support)
+         */
+        public function setCountry($v)
+        {    $this->getCurrentTranslation()->setCountry($v);
+
+        return $this;
     }
 
 }

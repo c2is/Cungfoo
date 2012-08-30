@@ -64,12 +64,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.mail',
             'required' => false,
         ));
-        $builder->add('country', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.country',
-            'required' => false,
-        ));
         $builder->add('country_code', 'text', array(
             'constraints' => array(
             ),
@@ -139,6 +133,25 @@ class BaseEtablissementType extends AppAwareType
             ),
             'multiple' => true,
             'label' => 'etablissement.service_complementaires',
+            'required' => false,
+        ));
+        $builder->add('etablissementI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
+            'languages' => array(
+                0 => 'fr',
+                1 => 'en',
+                2 => 'de',
+            ),
+            'label' => 'etablissement.etablissementI18ns',
+            'columns' => array(
+                'country' => array(
+                    'required' => false,
+                    'label' => 'etablissement.country',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

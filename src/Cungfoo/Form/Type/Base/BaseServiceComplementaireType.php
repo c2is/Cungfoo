@@ -38,8 +38,8 @@ class BaseServiceComplementaireType extends AppAwareType
         $builder->add('service_complementaireI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ServiceComplementaireI18n',
             'languages' => array(
-                0 => 'en',
-                1 => 'fr',
+                0 => 'fr',
+                1 => 'en',
                 2 => 'de',
             ),
             'label' => 'service_complementaire.service_complementaireI18ns',

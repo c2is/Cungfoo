@@ -78,6 +78,10 @@
             <reference local="ville_id" foreign="id"></reference>
         </foreign-key>
 
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="country" />
+        </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
         </behavior>

@@ -19,7 +19,7 @@ class EtabLoader extends BaseLoader
         {
             foreach ($this->data->etab as $etab)
             {
-                $this->updateEtab($etab, $con);
+                $this->updateEtab($etab, $locale, $con);
             }
 
             $con->commit();
@@ -31,7 +31,7 @@ class EtabLoader extends BaseLoader
         }
     }
 
-    protected function updateEtab($etab, \PropelPDO $con)
+    protected function updateEtab($etab, $locale, \PropelPDO $con)
     {
 
         $objectEtab = \Cungfoo\Model\EtablissementQuery::create()
@@ -45,13 +45,15 @@ class EtabLoader extends BaseLoader
             $objectEtab->setId($etab->id);
         }
 
+        $objectEtab->setLocale($locale);
+
         $objectEtab->setName($etab->name);
         $objectEtab->setAddress1($etab->address->address1);
         $objectEtab->setAddress2($etab->address->address2);
         $objectEtab->setZip($etab->address->zip);
         $objectEtab->setCity($etab->address->city);
-        $objectEtab->setMail($etab->address->mail);
         $objectEtab->setCountry($etab->address->country);
+        $objectEtab->setMail($etab->address->mail);
         $objectEtab->setCountryCode($etab->address->country_code);
         $objectEtab->setPhone1($etab->address->phone1);
         $objectEtab->setPhone2($etab->address->phone2);
