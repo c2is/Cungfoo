@@ -25,9 +25,10 @@
         </tbody>
     </table>
 
-    <hr/>
-
-    {% include 'Cungfoo/Crud/paginator.twig'%}
+    {% if lines %}
+        <hr/>
+        {% include 'Cungfoo/Crud/paginator.twig'%}
+    {% endif %}
 
     <hr/>
 
