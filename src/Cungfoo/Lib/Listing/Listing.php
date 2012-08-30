@@ -77,11 +77,12 @@ class Listing
 
     public function getColumnNames()
     {
+        $utils = new \Cungfoo\Lib\Utils();
         $names = array();
 
         foreach ($this->columns as $column)
         {
-            $names[] = sprintf('%s.%s', strtolower($this->getName()), $column->getName());
+            $names[] = sprintf('%s.%s', strtolower($utils->underscore($this->getName())), $utils->underscore($column->getName()));
         }
 
         return $names;
