@@ -128,6 +128,10 @@ service_complementaire.etablissements: Institutions having this additional servi
 service_complementaire.id: Code
 service_complementaire.name: Name
 
+security.username: Username
+security.password: Password
+security.submit: Login
+
 type_hebergement.category.type.hebergement.id: Category
 type_hebergement.crud.create: Creating a type accommodation
 type_hebergement.crud.list: List type accommodation

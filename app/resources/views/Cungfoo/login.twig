@@ -6,14 +6,14 @@
     {% endif %}
 
     <form action="{{ path('admin_login_check') }}" method="post">
-        <label for="username">Username:</label>
+        <label for="username">{{ "security.username" | trans }} :</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-        <label for="password">Password:</label>
+        <label for="password">{{ "security.password" | trans }}:</label>
         <input type="password" id="password" name="_password" />
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">{{ "security.submit" | trans }}</button>
         </div>
     </form>
 {% endblock %}

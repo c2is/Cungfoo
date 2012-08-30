@@ -128,6 +128,10 @@ service_complementaire.etablissements: Betriebe mit diesen zusätzlichen Service
 service_complementaire.id: Code
 service_complementaire.name: Name
 
+security.username: Username
+security.password: Passwort
+security.submit: Login
+
 type_hebergement.category.type.hebergement.id: Kategorie
 type_hebergement.crud.create: Erstellen einer Art Unterkunft
 type_hebergement.crud.list: List Art Unterkunft

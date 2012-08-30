@@ -101,6 +101,10 @@ service_complementaire.etablissements: Établissements ayant ce service complém
 service_complementaire.id: Code
 service_complementaire.name: Nom
 
+security.username: Nom d'utilisateur
+security.password: Mot de passe
+security.submit: Connexion
+
 pays.crud.create: Création d'un pays
 pays.crud.list: Liste pays
 pays.crud.update: Mettre à jour le pays %name%
