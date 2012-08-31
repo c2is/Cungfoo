@@ -90,7 +90,7 @@ class {$this->getClassname()} extends Listing
                 $columnsRender .= $this->generateColumn($column->getName(), 'Text');
             }
 
-            if ($column->getType() == PropelTypes::TIMESTAMP)
+            if ($column->getType() == PropelTypes::TIMESTAMP || $column->getType() == PropelTypes::DATE)
             {
                 if (!in_array($column->getName(), array('created_at', 'updated_at')))
                 {

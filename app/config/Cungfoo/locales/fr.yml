@@ -13,6 +13,17 @@ category_type_hebergement.crud.view: Détails de la catégorie de types d'héber
 category_type_hebergement.id: Code
 category_type_hebergement.name: Nom
 
+job.crud.list: Liste jobs
+job.name: Nom
+job.type: Type
+job.message: Message
+job.created_at: Date de création
+job.completed_at: Date de fin
+job.logs.crud.list: Liste des logs pour le job name
+job.logs.level: Niveau
+job.logs.message: Message
+job.logs.date: Date
+
 context.language: Langue
 context.validate: Valider
 

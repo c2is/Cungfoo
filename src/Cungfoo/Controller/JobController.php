@@ -27,7 +27,6 @@ class JobController implements ControllerProviderInterface
                 ->find();
 
             return $app['twig']->render('Cungfoo/Job/list.twig', array(
-                'title' => 'Liste des jobs',
                 'jobs' => $jobs
             ));
         })
@@ -51,7 +50,7 @@ class JobController implements ControllerProviderInterface
                 ->find();
 
             return $app['twig']->render('Cungfoo/Job/list_log.twig', array(
-                'title' => sprintf('Liste des logs du job %s [%s]', $job->getName(), $job->getType()),
+                'name' => $job->getType(),
                 'jobLogs' => $jobLogs
             ));
         })

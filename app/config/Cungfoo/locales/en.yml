@@ -13,6 +13,17 @@ category_type_hebergement.crud.view: Details of the category of accommodation ty
 category_type_hebergement.id: Code
 category_type_hebergement.name: Name
 
+job.crud.list: List jobs
+job.name: Name
+job.type: Type
+job.message: Message
+job.created_at: Created at
+job.completed_at: Ended at
+job.logs.crud.list: logs list name job
+job.logs.level: Level
+job.logs.message: Message
+job.logs.date: Date
+
 context.language: Language
 context.validate: Submit
 
