@@ -5,7 +5,6 @@
                 BEHAVIOR
          ==================== -->
     <behavior name="crudable">
-        <parameter name="route_prefix" value="/admin" />
         <parameter name="route_controller" value="\Cungfoo\Controller\CrudController" />
         <parameter name="routes_file" value="../Cungfoo/crud.yml" />
         <parameter name="languages_file" value="../languages.yml" />

@@ -1,4 +1,5 @@
 menu:
+    route: admin
     title: menu.title
     items:
         etablissement:

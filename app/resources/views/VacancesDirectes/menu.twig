@@ -1,7 +1,7 @@
-{% set menu = app.config.get('cungfoo_menu') %}
+{% set menu = app.config.get('vacancesdirectes_menu') %}
 {% set current_route = app.request.get('_route') %}
 
-<a class="brand" href="{{ path( 'admin' ) }}">{{ menu.title|trans }}</a>
+<a class="brand" href="{{ path( menu.route ) }}">{{ menu.title|trans }}</a>
 
 {% if app.security.getToken().getUser() is defined %}
 <div class="nav-collapse">
@@ -27,7 +27,7 @@
     <ul class="nav pull-right">
         <li><a><strong>{{ app.security.token.user.username }}</strong></a></li>
         <li class="divider-vertical"></li>
-        <li><a href="{{ path('logout') }}">{{ "menu.logout" | trans }}</a></li>
+        <li><a href="{{ path('admin_logout') }}">{% trans %}menu.logout{% endtrans %}</a></li>
     </ul>
 </div>
 {% endif %}

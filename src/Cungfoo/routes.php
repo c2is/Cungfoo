@@ -18,25 +18,19 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.twig', array());
-})
-->bind('homepage')
-;
-
-$app->get('/admin', function () use ($app) {
     return $app['twig']->render('Cungfoo/admin.twig', array());
 })
 ->bind('admin')
 ;
 
-$app->get('/admin/login', function(Request $request) use ($app) {
+$app->get('/login', function(Request $request) use ($app) {
     return $app['twig']->render('Cungfoo/login.twig', array(
         'error'         => $app['security.last_error']($request),
         'last_username' => $app['session']->get('_security.last_username'),
     ));
 });
 
-$app->get('/admin/generate-password', function (Request $request) use ($app) {
+$app->get('/generate-password', function (Request $request) use ($app) {
     $password = $request->query->get('password');
     if (!$password)
     {
@@ -72,5 +66,5 @@ foreach ($crudRouter->getRoutes() as $name => $route)
     ));
 }
 
-$app->mount('/admin/resalys', new \Resalys\Controller\ResalysController());
-$app->mount('/admin/jobs', new \Cungfoo\Controller\JobController());
+$app->mount('/resalys', new \Resalys\Controller\ResalysController());
+$app->mount('/jobs', new \Cungfoo\Controller\JobController());

@@ -1,5 +1,5 @@
 crud:
-    prefix: /admin
+    prefix: /
     controller: \Cungfoo\Controller\CrudController
     items:
         etablissement:

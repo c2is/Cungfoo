@@ -88,7 +88,7 @@ class EtablissementTableMap extends TableMap
     {
         return array(
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_controller' => '', 'route_prefix' => '', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', ),
+            'crudable' => array('route_controller' => '', 'route_prefix' => '/', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', ),
         );
     } // getBehaviors()
 

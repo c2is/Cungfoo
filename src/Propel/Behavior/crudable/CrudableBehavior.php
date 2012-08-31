@@ -10,7 +10,7 @@ class CrudableBehavior extends Behavior
     // default parameters value
     protected $parameters = array(
         'route_controller'  => null,
-        'route_prefix'      => null,
+        'route_prefix'      => '/',
         'routes_file'       => null,
         'languages_file'    => null,
         'crud_prefix'       => null,

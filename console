@@ -5,7 +5,7 @@ set_time_limit(0);
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$app = require __DIR__.'/app/app.php';
+$app = require __DIR__ . '/app/bootstrap.php';
 require __DIR__.'/app/config/prod.php';
 $app->get('/', function () use ($app) {
     // reset '/' route for making 'run' possible

@@ -1,0 +1,61 @@
+{% extends "VacancesDirectes/base.twig" %}
+
+{% block content %}
+        <h1>{{ etablissement.name }}</h1>
+        <p>{{ etablissement.address1 }}, {{ etablissement.getVille }}, {{ etablissement.country }}</p>
+
+        <hr/>
+
+        <fieldset>
+            <legend>Activités</legend>
+            <ul>
+                {% for activite in etablissement.getActivites %}
+                <li>{{ activite.setLocale(locale) }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+
+        <hr/>
+
+        <fieldset>
+            <legend>Type hébergement</legend>
+            <ul>
+                {% for typeHebergement in etablissement.getTypeHebergements %}
+                <li>{{ typeHebergement.setLocale(locale) }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+
+        <hr/>
+
+        <fieldset>
+            <legend>Équipement</legend>
+            <ul>
+                {% for equipement in etablissement.getEquipements %}
+                <li>{{ equipement.setLocale(locale) }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+
+        <hr/>
+
+        <fieldset>
+            <legend>Destinations</legend>
+            <ul>
+                {% for destination in etablissement.getDestinations %}
+                <li>{{ destination.setLocale(locale) }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+
+        <hr/>
+
+        <fieldset>
+            <legend>Services complémentaires</legend>
+            <ul>
+                {% for service in etablissement.getServiceComplementaires %}
+                <li>{{ service.setLocale(locale) }}</li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+{% endblock %}

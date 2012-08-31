@@ -1,0 +1,173 @@
+activite.crud.create: Erstellen einer Aktivität
+activite.crud.list: Liste Tätigkeiten
+activite.crud.update: Update Aktivität% name%
+activite.crud.view: Tätigkeits-Details% name%
+activite.etablissements: Betriebe mit dieser Tätigkeit
+activite.id: Code
+activite.name: Name
+
+category_type_hebergement.crud.create: Erstellen einer Kategorie von Unterkünften
+category_type_hebergement.crud.list: Liste der Kategorien an Unterkünften
+category_type_hebergement.crud.update: Aktualisieren Sie die Kategorie der Unterkunft Typen% name%
+category_type_hebergement.crud.view: Details der Kategorie der Unterkunft Arten
+category_type_hebergement.id: Code
+category_type_hebergement.name: Name
+
+job.crud.list: List jobs
+job.name: Name
+job.type: Type
+job.message: Message
+job.created_at: Created at
+job.completed_at: Ended at
+job.logs.crud.list: logs list name job
+job.logs.level: Level
+job.logs.message: Message
+job.logs.date: Date
+
+context.language: Sprache
+context.validate: Senden
+
+crud.button.add: In
+crud.button.delete: Delete
+crud.button.edit: Edit
+crud.button.list: List
+crud.button.read: Details
+crud.button.save: Register
+crud.modal.delete.title: Löschen Bestätigung
+crud.modal.delete.message: Sind Sie sicher, dass Sie das Element löschen <strong>%code%</ ​​strong> ?
+crud.modal.delete.ok: Senden
+crud.modal.delete.cancel: Abbrechen
+
+destination.crud.create: Erstellen Sie ein Ziel
+destination.crud.list: List Destinationen
+destination.crud.update: Aktualisieren Sie den Zielort% name%
+destination.crud.view: Details des Ziels% name%
+destination.etablissements: Betriebe mit diesem Ziel
+destination.id: Code
+destination.name: Name
+
+equipement.crud.create: Erstellen eines Geräte
+equipement.crud.list: Liste Geräte
+equipement.crud.update: Update Gerät% name%
+equipement.crud.view: Details der Ausrüstung% name%
+equipement.etablissements: Gründung mit diesem Gerät
+equipement.id: Code
+equipement.name: Name
+
+etablissement.activites: Liste der Aktivitäten
+etablissement.city: Stadt
+etablissement.country: Land
+etablissement.address1: Adresse 1
+etablissement.address2: Adresse 2
+etablissement.country_code: Country Code
+etablissement.crud.create: Erstellen einer Niederlassung
+etablissement.crud.list: List Institutionen
+etablissement.crud.update: Aktualisieren Sie die Einrichtung% name%
+etablissement.crud.view: Details% name%
+etablissement.destinations: Liste der Reiseziele
+etablissement.equipements: Liste der Geräte
+etablissement.service_complementaires: Liste von ergänzenden Dienstleistungen
+etablissement.type_hebergements: Liste der Arten von Unterkünften
+etablissement.fax: Fax
+etablissement.id: Code
+etablissement.mail: E-Mail
+etablissement.name: Name
+etablissement.ville: Stadt
+etablissement.ville.id: City Code
+etablissement.zip: PLZ
+etablissement.phone1: Telefon 1
+etablissement.phone2: Telefon 2
+etablissement.opening.date: Öffnen
+etablissement.closing.date: Schließen
+etablissement.opening_date: Öffnen
+etablissement.closing_date: Schließen
+
+list.actions: Aktionen
+
+locale.english: English
+locale.french: Französisch
+locale.german: Deutsch
+
+menu.activite: Aktivitäten
+menu.destination: Standorte
+menu.equipement: Equipment
+menu.etablissement: Gründung
+menu.job: Management Jobs
+menu.logout: Logout
+menu.parameters: Einstellungen
+menu.pays: Land
+menu.region: Regionen
+menu.resalys: Geschäftsführer Resalys
+menu.themes: Themen
+menu.title: Cungfoo
+menu.ville: Städte
+menu.type_hebergement: Typen Unterkünfte
+menu.category_type_hebergement: Kategorie Unterkunftsarten
+menu.service_complementaire: Zusätzliche Services
+
+category_type_hebergement.crud.create: Erstellen einer Klasse Unterkunftsarten
+category_type_hebergement.crud.list: List type Kategorien Unterkunft
+category_type_hebergement.crud.update: Update-Typ Unterkunftskategorie name%%
+category_type_hebergement.crud.view: Details der Unterkunft Kategorie Typ% name%
+category_type_hebergement.id: Code
+category_type_hebergement.name: Name
+
+service_complementaire.crud.create: Erstellen einer ergänzenden Service
+service_complementaire.crud.list: Liste zusätzlicher Dienstleistungen
+service_complementaire.crud.update: Update ergänzenden Service% name%
+service_complementaire.crud.view: Details der zusätzlichen Service% name%
+service_complementaire.etablissements: Betriebe mit diesen zusätzlichen Service
+service_complementaire.id: Code
+service_complementaire.name: Name
+
+pays.crud.create: Erstellen eines Landes
+pays.crud.list: List Länder
+pays.crud.update: Update Ländern% name%
+pays.crud.view: Land Einzelheiten% name%
+pays.id: Code
+pays.name: Name
+
+region.crud.create: Erstellen Sie eine Region
+region.crud.list: Liste Bereichen
+region.crud.update: Aktualisieren Sie die Region% name%
+region.crud.view: Details der Fläche% name%
+region.id: Code
+region.name: Name
+region.pays: Land
+region.pays.id: Landesvorwahl
+
+resalys.actions.import: Import von Daten Resalys
+resalys.title.import: Import Resalys
+
+service_complementaire.crud.create: Erstellen einer ergänzenden Service
+service_complementaire.crud.list: Liste zusätzlicher Dienstleistungen
+service_complementaire.crud.update: Update ergänzenden Service% name%
+service_complementaire.crud.view: Details der zusätzlichen Service% name%
+service_complementaire.etablissements: Betriebe mit diesen zusätzlichen Service
+service_complementaire.id: Code
+service_complementaire.name: Name
+
+security.username: Benutzername
+security.password: Kennwort
+security.submit: Verbindung
+
+paginator.previous: Zurück
+paginator.next: Folgende
+
+type_hebergement.category.type.hebergement.id: Kategorie
+type_hebergement.crud.create: Erstellen einer Art Unterkunft
+type_hebergement.crud.list: List Art Unterkunft
+type_hebergement.crud.update: Update Art Unterkunft% name%
+type_hebergement.crud.view: Unterkunft Details Typ% name%
+type_hebergement.etablissements: Betriebe mit solchen Hosting
+type_hebergement.id: Code
+type_hebergement.name: Name
+
+ville.crud.create: Erstellen einer Stadt
+ville.crud.list: Städte-Liste
+ville.crud.update: Aktualisieren Sie die Stadt% name%
+ville.crud.view: Details Stadt% name%
+ville.id: Code
+ville.name: Name
+ville.region: Region
+ville.region.id: Ländercode
