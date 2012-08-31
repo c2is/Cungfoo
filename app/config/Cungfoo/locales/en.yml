@@ -22,6 +22,10 @@ crud.button.edit: Edit
 crud.button.list: List
 crud.button.read: Details
 crud.button.save: Register
+crud.modal.delete.title: Delete Confirmation
+crud.modal.delete.message: Are you sure you want to delete the <strong>%code%</ ​​strong> item ?
+crud.modal.delete.ok: Ok
+crud.modal.delete.cancel: Cancel
 
 destination.crud.create: Creating a destination
 destination.crud.list: List destinations
