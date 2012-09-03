@@ -7,13 +7,13 @@ use Symfony\Component\Yaml\Yaml;
 
 class Loader
 {
-    protected $rootDir          = null;
     protected $requests         = array();
     protected $location         = null;
     protected $baseId           = null;
     protected $username         = null;
     protected $password         = null;
     protected $languageCodes    = array();
+    protected $params           = array();
 
     protected $requestToLoader = array(
         'getAllThemes'              => '\Resalys\Loader\ThemeLoader',
@@ -22,15 +22,21 @@ class Loader
         'getAllEtabs'               => '\Resalys\Loader\EtabLoader',
     );
 
-    public function __construct($rootdir)
+    public function __construct($params = array())
     {
-        if (!is_dir($rootdir))
+        foreach (array('client_configuration', 'loader_configuration', 'languages_configuration') as $file)
         {
-            throw new \Exception(sprintf('the `%s` root directory does not exist', $rootdir));
+            if (!array_key_exists($file, $params))
+            {
+                throw new \Exception("the $file parameter does not exist");
+            }
+            else if (!file_exists($params[$file]))
+            {
+                throw new \Exception(sprintf("the $file file `%s` does not exist", $params[$file]));
+            }
         }
 
-        $this->rootDir = $rootdir;
-
+        $this->params = $params;
         $this->parseConfiguration();
     }
 
@@ -125,20 +131,14 @@ class Loader
     protected function executeLoader($loaderClass, $request, $languageCode, \PropelPDO $con)
     {
         $client = new $loaderClass($this->location, $this->baseId, $this->username, $this->password, strtoupper($languageCode));
-        $client->parseConfigFile(sprintf('%s/app/config/Resalys/loader.yml', $this->rootDir));
+        $client->parseConfigFile($this->params['loader_configuration']);
         $client->getData($request);
         $client->load($languageCode, $con);
     }
 
     protected function parseConfiguration()
     {
-        $clientConfigFile = sprintf('%s/app/config/Resalys/client.yml', $this->rootDir);
-        if (!is_file($clientConfigFile))
-        {
-            throw new \Exception(sprintf('the configuration file `%s` does not exist', $clientConfigFile));
-        }
-
-        $configuration = Yaml::parse($clientConfigFile)['client'];
+        $configuration = Yaml::parse($this->params['client_configuration'])['client'];
 
         $this->addRequests(array_keys($this->requestToLoader));
 
@@ -147,14 +147,7 @@ class Loader
 
         if (empty($this->languageCodes))
         {
-
-            $languageConfigFile = sprintf('%s/app/config/languages.yml', $this->rootDir);
-            if (!is_file($languageConfigFile))
-            {
-                throw new \Exception(sprintf('the languages configuration file `%s` does not exist', $languageConfigFile));
-            }
-
-            $this->addLanguageCodes(array_keys(Yaml::parse($languageConfigFile)['languages']));
+            $this->addLanguageCodes(array_keys(Yaml::parse($this->params['languages_configuration'])['languages']));
         }
     }
 

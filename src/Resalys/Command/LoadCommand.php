@@ -39,7 +39,11 @@ class LoadCommand extends BaseCommand
     {
         try
         {
-            $loader = new \Resalys\Lib\Loader($this->getApplication()->getRootDir());
+            $loader = new \Resalys\Lib\Loader(array(
+                'client_configuration'      => $this->getApplication()->getRootDir().'/app/config/Resalys/client.yml',
+                'loader_configuration'      => $this->getApplication()->getRootDir().'/app/config/Resalys/loader.yml',
+                'languages_configuration'   => $this->getApplication()->getRootDir().'/app/config/languages.yml',
+            ));
 
             // set task informations
             if ($request = $input->getArgument('request'))
