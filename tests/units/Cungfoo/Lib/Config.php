@@ -33,6 +33,13 @@ class Config extends atoum\test
         $this->string($config->paramTest)->isEqualTo('content with spaces');
         $this->string($config->getParamTest())->isEqualTo('content with spaces');
         $this->string($config->get('param_test'))->isEqualTo('content with spaces');
+
+        $config->addParam('param_test', 'content that overrides the initial value');
+
+        $this->string($config->paramTest)->isEqualTo('content that overrides the initial value');
+        $this->string($config->getParamTest())->isEqualTo('content that overrides the initial value');
+        $this->string($config->get('param_test'))->isEqualTo('content that overrides the initial value');
+
     }
 
     public function testAddParams()
