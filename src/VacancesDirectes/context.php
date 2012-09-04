@@ -14,7 +14,7 @@ $app['context']->addParam('language', isset($_GET['domaine']) ? $_GET['domaine']
 // check if domain is allow for this site
 if (!in_array($app['context']->get('domaine'), $app['config']->get('dimensions')['site'][$app['context']->get('site')]['domaines']))
 {
-    throw new \Exception(sprintf("`%s` domain is not allow for `%s` domain.", $app['context']->get('domaine'), $app['context']->get('site')));
+    throw new \Exception(sprintf("`%s` domain is not available for `%s` site.", $app['context']->get('domaine'), $app['context']->get('site')));
 }
 
 // set current language
