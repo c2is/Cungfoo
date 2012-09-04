@@ -1,0 +1,8 @@
+{% set current_route = app.request.get('_route') %}
+<ul>
+    {% for domaine in app.config.getDimensions['site'][app.context.getSite].domaines %}
+        <li>
+            <a href="{{ path (current_route, {'domaine': domaine}) }}"><img src="{{ asset ( "famfamfam/%s.gif"|format (domaine) ) }}"/></a>
+        </li>
+    {% endfor %}
+</ul>

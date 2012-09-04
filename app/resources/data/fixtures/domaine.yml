@@ -3,5 +3,8 @@ Cungfoo\Model\Domaine:
     name: fr
     order: 1
   2:
-    name: co_uk
+    name: en
     order: 2
+  3:
+    name: de
+    order: 3

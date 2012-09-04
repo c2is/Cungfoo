@@ -1,5 +1,10 @@
+# site and domain is a model object. Check value on datas fixtures
 dimensions:
   site:
     class: "\Cungfoo\Model\Site"
+    site.individual:
+      domaines: [fr, en, de]
+    site.business:
+      domaines: [fr]
   domaine:
     class: "\Cungfoo\Model\Domaine"

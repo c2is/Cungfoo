@@ -11,6 +11,9 @@
 <body>
     <div class="container">
         <img src="{{ asset( "vacancesdirectes/img/logo_%s.jpg" | format ( app.context.getLanguage ) ) }}"/>
+
+        {% include "language_switcher.twig" %}
+
         {% block content %}
 
         {% endblock %}
