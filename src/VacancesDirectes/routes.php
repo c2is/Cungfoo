@@ -26,7 +26,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
         return;
     }
 
-    $page = 404 == $code ? 'VacancesDirectes/404.twig' : 'VacancesDirectes/500.twig';
+    $page = 404 == $code ? '404.twig' : '500.twig';
 
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });

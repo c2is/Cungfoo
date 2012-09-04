@@ -1,0 +1,49 @@
+{% extends 'base.twig' %}
+
+{% block javascripts %}{{ parent() }}
+    <script type="text/javascript" src="{{ asset('cungfoo/js/confirm-bootstrap.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ context | raw }}
+    <h2>{{ (name ~ ".crud.list") | trans }}</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            {% for column_name in column_names %}
+            <th>{{ column_name | trans }}</th>
+            {% endfor %}
+            <th class="actions-item" colspan="3">{{ 'list.actions' | trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for line in lines %}
+        <tr>
+            {% for column in line %}
+            <td>{{ column | raw }}</td>
+            {% endfor %}
+            <td class="actions-item"><a href="{{ path('%s_crud_read' | format (name), {'id': line.id}) }}"><i class="icon-eye-open"></i></a></td>
+            <td class="actions-item"><a href="{{ path('%s_crud_update' | format (name), {'id': line.id}) }}"><i class="icon-edit"></i></a></td>
+            <td class="actions-item"><a class="delete" href="{{ path('%s_crud_delete' | format (name), {'id': line.id}) }}"><i data-confirm-ok="{{ "crud.modal.delete.ok" | trans }}" data-confirm-cancel="{{ "crud.modal.delete.cancel" | trans }}" data-confirm-title="{{ "crud.modal.delete.title" | trans }}" data-confirm-message="{{ "crud.modal.delete.message" | trans  ({'%code%': line.id }) }}"  class="icon-remove-circle"></i></a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        $('.actions-item .delete').confirmModal();
+    </script>
+
+    {% if lines %}
+        <hr/>
+        {% include 'Crud/paginator.twig'%}
+    {% endif %}
+
+    <hr/>
+
+    <div class="form-actions">
+        <div class="btn-group">
+            <a class="btn" href="{{ path('%s_crud_create' | format (name)) }}"><i class="icon-plus"></i> {{ "crud.button.add" | trans }}</a>
+        </div>
+    </div>
+{% endblock %}

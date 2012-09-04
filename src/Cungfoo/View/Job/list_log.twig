@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <h3>{{ "job.logs.crud.list" | trans ({"name": name}) }}</h3>
+  <div class="box">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{{ "job.logs.level" | trans }}</th>
+          <th>{{ "job.logs.message" | trans }}</th>
+          <th>{{ "job.logs.date" | trans }}</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for jobLog in jobLogs %}
+        <tr{% if jobLog.level == "error" %} class="error" {% endif %}>
+          <td class="center">{{ jobLog.level }}</td>
+          <td>{{ jobLog.message | raw }}</td>
+          <td class="center">{{ jobLog.createdAt | date("m/d/Y H:i:s")}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+

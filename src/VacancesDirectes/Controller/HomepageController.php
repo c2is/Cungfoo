@@ -30,7 +30,7 @@ class HomepageController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            return $app['twig']->render('VacancesDirectes/etablissement.twig', array(
+            return $app['twig']->render('etablissement.twig', array(
                 'etablissement' => $etablissement,
                 'locale'        => $locale
             ));

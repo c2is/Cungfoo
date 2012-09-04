@@ -24,8 +24,8 @@ $console->add(new \Cungfoo\Command\Project\InitCommand());
 $console->add(new \Cungfoo\Command\Tests\UnitCommand());
 $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
-$console->add(new \Resalys\Command\LoadCommand());
-$console->add(new \Resalys\Command\DumpCommand());
+$console->add(new \Cungfoo\Command\Resalys\LoadCommand());
+$console->add(new \Cungfoo\Command\Resalys\DumpCommand());
 
 $console->add(new \Cungfoo\Command\Job\DaemonCommand());
 

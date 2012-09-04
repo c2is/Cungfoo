@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+
+    <form action="{{ path('login_check') }}" method="post">
+        <label for="username">{{ "security.username" | trans }} :</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+        <label for="password">{{ "security.password" | trans }}:</label>
+        <input type="password" id="password" name="_password" />
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ "security.submit" | trans }}</button>
+        </div>
+    </form>
+{% endblock %}

@@ -15,6 +15,10 @@ $app['config']->addParams(array(
     'cungfoo_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
 ));
 
+/* T W I G  C O N F I G U R A T I O N  */
+$app['twig.path'] = array(__DIR__.'/View');
+$app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');
+
 /* S E C U R I T Y   M A N A G E R */
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(

@@ -16,7 +16,7 @@ class LinkColumn extends AbstractColumn
 
     public function renderData(CellData $data)
     {
-        return $this->renderer->render('Cungfoo/Listing/Column/LinkColumn.twig', array(
+        return $this->renderer->render('Listing/Column/LinkColumn.twig', array(
             'text'  => $data->getText(),
             'link'  => $data->getOptions()['link'],
             'title' => isset($data->getOptions()['title']) ? $data->getOptions()['title'] : $data->getText()

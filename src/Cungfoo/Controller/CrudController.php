@@ -72,7 +72,7 @@ class CrudController implements ControllerProviderInterface
 
                 // Context form
                 $contextForm    = $app['form.factory']->create(new ContextType($app));
-                $contextRender  = $app['twig']->render('Cungfoo/context.twig', array(
+                $contextRender  = $app['twig']->render('context.twig', array(
                     'form'          => $contextForm->createView(),
                     'allowedFields' => $app['context']->getAllowedContextByQuery($queryContextualized),
                 ));
@@ -85,7 +85,7 @@ class CrudController implements ControllerProviderInterface
 
                 $listing->setFiller(new Filler\PropelFiller($paginator->getResults()));
 
-                return $app['twig']->render('Cungfoo/Crud/list.twig', array(
+                return $app['twig']->render('Crud/list.twig', array(
                     'name'         => $this->modelName,
                     'column_names' => $listing->getColumnNames(),
                     'lines'        => $listing->render(),
@@ -130,7 +130,7 @@ class CrudController implements ControllerProviderInterface
                     throw new NotFoundHttpException(sprintf('%s with id "%d" does not exist.', ucfirst($this->modelName), $id));
                 }
 
-                return $app['twig']->render('Cungfoo/Crud/read.twig', array(
+                return $app['twig']->render('Crud/read.twig', array(
                     'name'       => $this->modelName,
                     'fieldnames' => call_user_func($this->peerClass.'::getFieldNames'),
                     'object'     => $object->exportTo($app['twig_object_parser']),
@@ -219,7 +219,7 @@ class CrudController implements ControllerProviderInterface
             }
         }
 
-        return $app['twig']->render('Cungfoo/Crud/update.twig', array(
+        return $app['twig']->render('Crud/update.twig', array(
             'name' => $this->modelName,
             'form' => $form->createView(),
         ));

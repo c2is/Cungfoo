@@ -23,7 +23,7 @@ class ResalysLoadJobHandler extends Interfaces\JobHandler
 
         try
         {
-            $loader = new \Resalys\Lib\Loader(array(
+            $loader = new \Cungfoo\Lib\Resalys\Loader(array(
                 'client_configuration'      => $params['rootDir'].'/app/config/Resalys/client.yml',
                 'loader_configuration'      => $params['rootDir'].'/app/config/Resalys/loader.yml',
                 'languages_configuration'   => $params['rootDir'].'/app/config/languages.yml',

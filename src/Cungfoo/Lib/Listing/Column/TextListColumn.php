@@ -13,7 +13,7 @@ class TextListColumn extends AbstractColumn
 
     public function renderData(CellData $data)
     {
-        return $this->renderer->render('Cungfoo/Listing/Column/TextListColumn.twig', array(
+        return $this->renderer->render('Listing/Column/TextListColumn.twig', array(
             'items'  => $data->getOptions()['list_items']
         ));
     }

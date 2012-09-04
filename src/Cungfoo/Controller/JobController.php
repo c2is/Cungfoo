@@ -26,7 +26,7 @@ class JobController implements ControllerProviderInterface
                 ->orderByCreatedAt(\Criteria::ASC)
                 ->find();
 
-            return $app['twig']->render('Cungfoo/Job/list.twig', array(
+            return $app['twig']->render('Job/list.twig', array(
                 'jobs' => $jobs
             ));
         })
@@ -49,7 +49,7 @@ class JobController implements ControllerProviderInterface
                 ->orderById()
                 ->find();
 
-            return $app['twig']->render('Cungfoo/Job/list_log.twig', array(
+            return $app['twig']->render('Job/list_log.twig', array(
                 'name' => $job->getType(),
                 'jobLogs' => $jobLogs
             ));
