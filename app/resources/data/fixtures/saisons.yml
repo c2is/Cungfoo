@@ -1,7 +1,0 @@
-Cungfoo\Model\Saison:
-  1:
-    name: saison.summer
-    order: 1
-  2:
-    name: saison.winter
-    order: 2

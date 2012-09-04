@@ -2,11 +2,11 @@
 
 namespace Cungfoo\Model;
 
-use Cungfoo\Model\om\BaseSaisonQuery;
+use Cungfoo\Model\om\BaseDomaine;
 
 
 /**
- * Skeleton subclass for performing query and update operations on the 'saison' table.
+ * Skeleton subclass for representing a row from the 'domaine' table.
  *
  *
  *
@@ -16,6 +16,6 @@ use Cungfoo\Model\om\BaseSaisonQuery;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class SaisonQuery extends BaseSaisonQuery
+class Domaine extends BaseDomaine
 {
 }

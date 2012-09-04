@@ -5,16 +5,16 @@ namespace Cungfoo\Form\Type;
 use Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
-use Cungfoo\Form\Type\Base\BaseSaisonType;
+use Cungfoo\Form\Type\Base\BaseDomaineType;
 
 /**
- * Test class for Additional builder enabled on the 'saison' table.
+ * Test class for Additional builder enabled on the 'domaine' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type
  */
-class SaisonType extends BaseSaisonType
+class DomaineType extends BaseDomaineType
 {
 
     /**
@@ -30,4 +30,4 @@ class SaisonType extends BaseSaisonType
         //;
     }
 
-} // SaisonType
+} // DomaineType

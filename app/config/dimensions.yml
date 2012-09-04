@@ -1,5 +1,5 @@
 dimensions:
   site:
-    class: Cungfoo\Model\Site
-  saison:
-    class: Cungfoo\Model\Saison
+    class: "\Cungfoo\Model\Site"
+  domaine:
+    class: "\Cungfoo\Model\Domaine"

@@ -10,67 +10,67 @@ use \Propel;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Saison;
-use Cungfoo\Model\SaisonPeer;
-use Cungfoo\Model\SaisonQuery;
+use Cungfoo\Model\Domaine;
+use Cungfoo\Model\DomainePeer;
+use Cungfoo\Model\DomaineQuery;
 
 /**
- * Base class that represents a query for the 'saison' table.
+ * Base class that represents a query for the 'domaine' table.
  *
  *
  *
- * @method SaisonQuery orderById($order = Criteria::ASC) Order by the id column
- * @method SaisonQuery orderByName($order = Criteria::ASC) Order by the name column
- * @method SaisonQuery orderByOrder($order = Criteria::ASC) Order by the order column
+ * @method DomaineQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method DomaineQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method DomaineQuery orderByOrder($order = Criteria::ASC) Order by the order column
  *
- * @method SaisonQuery groupById() Group by the id column
- * @method SaisonQuery groupByName() Group by the name column
- * @method SaisonQuery groupByOrder() Group by the order column
+ * @method DomaineQuery groupById() Group by the id column
+ * @method DomaineQuery groupByName() Group by the name column
+ * @method DomaineQuery groupByOrder() Group by the order column
  *
- * @method SaisonQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method SaisonQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method SaisonQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method DomaineQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method DomaineQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method DomaineQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method Saison findOne(PropelPDO $con = null) Return the first Saison matching the query
- * @method Saison findOneOrCreate(PropelPDO $con = null) Return the first Saison matching the query, or a new Saison object populated from the query conditions when no match is found
+ * @method Domaine findOne(PropelPDO $con = null) Return the first Domaine matching the query
+ * @method Domaine findOneOrCreate(PropelPDO $con = null) Return the first Domaine matching the query, or a new Domaine object populated from the query conditions when no match is found
  *
- * @method Saison findOneByName(string $name) Return the first Saison filtered by the name column
- * @method Saison findOneByOrder(int $order) Return the first Saison filtered by the order column
+ * @method Domaine findOneByName(string $name) Return the first Domaine filtered by the name column
+ * @method Domaine findOneByOrder(int $order) Return the first Domaine filtered by the order column
  *
- * @method array findById(int $id) Return Saison objects filtered by the id column
- * @method array findByName(string $name) Return Saison objects filtered by the name column
- * @method array findByOrder(int $order) Return Saison objects filtered by the order column
+ * @method array findById(int $id) Return Domaine objects filtered by the id column
+ * @method array findByName(string $name) Return Domaine objects filtered by the name column
+ * @method array findByOrder(int $order) Return Domaine objects filtered by the order column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseSaisonQuery extends ModelCriteria
+abstract class BaseDomaineQuery extends ModelCriteria
 {
     /**
-     * Initializes internal state of BaseSaisonQuery object.
+     * Initializes internal state of BaseDomaineQuery object.
      *
      * @param     string $dbName The dabase name
      * @param     string $modelName The phpName of a model, e.g. 'Book'
      * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
      */
-    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\Saison', $modelAlias = null)
+    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\Domaine', $modelAlias = null)
     {
         parent::__construct($dbName, $modelName, $modelAlias);
     }
 
     /**
-     * Returns a new SaisonQuery object.
+     * Returns a new DomaineQuery object.
      *
      * @param     string $modelAlias The alias of a model in the query
-     * @param     SaisonQuery|Criteria $criteria Optional Criteria to build the query from
+     * @param     DomaineQuery|Criteria $criteria Optional Criteria to build the query from
      *
-     * @return SaisonQuery
+     * @return DomaineQuery
      */
     public static function create($modelAlias = null, $criteria = null)
     {
-        if ($criteria instanceof SaisonQuery) {
+        if ($criteria instanceof DomaineQuery) {
             return $criteria;
         }
-        $query = new SaisonQuery();
+        $query = new DomaineQuery();
         if (null !== $modelAlias) {
             $query->setModelAlias($modelAlias);
         }
@@ -93,19 +93,19 @@ abstract class BaseSaisonQuery extends ModelCriteria
      * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
-     * @return   Saison|Saison[]|mixed the result, formatted by the current formatter
+     * @return   Domaine|Domaine[]|mixed the result, formatted by the current formatter
      */
     public function findPk($key, $con = null)
     {
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = SaisonPeer::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = DomainePeer::getInstanceFromPool((string) $key))) && !$this->formatter) {
             // the object is alredy in the instance pool
             return $obj;
         }
         if ($con === null) {
-            $con = Propel::getConnection(SaisonPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DomainePeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         $this->basePreSelect($con);
         if ($this->formatter || $this->modelAlias || $this->with || $this->select
@@ -123,7 +123,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return   Saison A model object, or null if the key is not found
+     * @return   Domaine A model object, or null if the key is not found
      * @throws   PropelException
      */
      public function findOneById($key, $con = null)
@@ -138,12 +138,12 @@ abstract class BaseSaisonQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return   Saison A model object, or null if the key is not found
+     * @return   Domaine A model object, or null if the key is not found
      * @throws   PropelException
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `ORDER` FROM `saison` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ORDER` FROM `domaine` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -154,9 +154,9 @@ abstract class BaseSaisonQuery extends ModelCriteria
         }
         $obj = null;
         if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $obj = new Saison();
+            $obj = new Domaine();
             $obj->hydrate($row);
-            SaisonPeer::addInstanceToPool($obj, (string) $key);
+            DomainePeer::addInstanceToPool($obj, (string) $key);
         }
         $stmt->closeCursor();
 
@@ -169,7 +169,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return Saison|Saison[]|mixed the result, formatted by the current formatter
+     * @return Domaine|Domaine[]|mixed the result, formatted by the current formatter
      */
     protected function findPkComplex($key, $con)
     {
@@ -190,7 +190,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
      * @param     array $keys Primary keys to use for the query
      * @param     PropelPDO $con an optional connection object
      *
-     * @return PropelObjectCollection|Saison[]|mixed the list of results, formatted by the current formatter
+     * @return PropelObjectCollection|Domaine[]|mixed the list of results, formatted by the current formatter
      */
     public function findPks($keys, $con = null)
     {
@@ -211,12 +211,12 @@ abstract class BaseSaisonQuery extends ModelCriteria
      *
      * @param     mixed $key Primary key to use for the query
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
     public function filterByPrimaryKey($key)
     {
 
-        return $this->addUsingAlias(SaisonPeer::ID, $key, Criteria::EQUAL);
+        return $this->addUsingAlias(DomainePeer::ID, $key, Criteria::EQUAL);
     }
 
     /**
@@ -224,12 +224,12 @@ abstract class BaseSaisonQuery extends ModelCriteria
      *
      * @param     array $keys The list of primary key to use for the query
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
     public function filterByPrimaryKeys($keys)
     {
 
-        return $this->addUsingAlias(SaisonPeer::ID, $keys, Criteria::IN);
+        return $this->addUsingAlias(DomainePeer::ID, $keys, Criteria::IN);
     }
 
     /**
@@ -248,7 +248,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
@@ -256,7 +256,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
             $comparison = Criteria::IN;
         }
 
-        return $this->addUsingAlias(SaisonPeer::ID, $id, $comparison);
+        return $this->addUsingAlias(DomainePeer::ID, $id, $comparison);
     }
 
     /**
@@ -272,7 +272,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
     public function filterByName($name = null, $comparison = null)
     {
@@ -285,7 +285,7 @@ abstract class BaseSaisonQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(SaisonPeer::NAME, $name, $comparison);
+        return $this->addUsingAlias(DomainePeer::NAME, $name, $comparison);
     }
 
     /**
@@ -304,18 +304,18 @@ abstract class BaseSaisonQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
     public function filterByOrder($order = null, $comparison = null)
     {
         if (is_array($order)) {
             $useMinMax = false;
             if (isset($order['min'])) {
-                $this->addUsingAlias(SaisonPeer::ORDER, $order['min'], Criteria::GREATER_EQUAL);
+                $this->addUsingAlias(DomainePeer::ORDER, $order['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
             if (isset($order['max'])) {
-                $this->addUsingAlias(SaisonPeer::ORDER, $order['max'], Criteria::LESS_EQUAL);
+                $this->addUsingAlias(DomainePeer::ORDER, $order['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -326,20 +326,20 @@ abstract class BaseSaisonQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(SaisonPeer::ORDER, $order, $comparison);
+        return $this->addUsingAlias(DomainePeer::ORDER, $order, $comparison);
     }
 
     /**
      * Exclude object from result
      *
-     * @param   Saison $saison Object to remove from the list of results
+     * @param   Domaine $domaine Object to remove from the list of results
      *
-     * @return SaisonQuery The current query, for fluid interface
+     * @return DomaineQuery The current query, for fluid interface
      */
-    public function prune($saison = null)
+    public function prune($domaine = null)
     {
-        if ($saison) {
-            $this->addUsingAlias(SaisonPeer::ID, $saison->getId(), Criteria::NOT_EQUAL);
+        if ($domaine) {
+            $this->addUsingAlias(DomainePeer::ID, $domaine->getId(), Criteria::NOT_EQUAL);
         }
 
         return $this;

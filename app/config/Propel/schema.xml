@@ -23,7 +23,7 @@
         <column name="order" type="integer" />
     </table>
 
-    <table name="saison">
+    <table name="domaine">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="name" type="varchar" />
         <column name="order" type="integer" />

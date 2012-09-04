@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'saison' table.
+ * Test class for Additional builder enabled on the 'domaine' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseSaisonType extends AppAwareType
+class BaseDomaineType extends AppAwareType
 {
     /**
      * {@inheritdoc}
@@ -24,19 +24,19 @@ class BaseSaisonType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label' => 'saison.id',
+            'label' => 'domaine.id',
             'required' => false,
         ));
         $builder->add('name', 'text', array(
             'constraints' => array(
             ),
-            'label' => 'saison.name',
+            'label' => 'domaine.name',
             'required' => false,
         ));
         $builder->add('order', 'integer', array(
             'constraints' => array(
             ),
-            'label' => 'saison.order',
+            'label' => 'domaine.order',
             'required' => false,
         ));
     }
@@ -47,7 +47,7 @@ class BaseSaisonType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Saison',
+            'data_class' => 'Cungfoo\Model\Domaine',
         ));
     }
 
@@ -56,7 +56,7 @@ class BaseSaisonType extends AppAwareType
      */
     public function getName()
     {
-        return 'Saison';
+        return 'Domaine';
     }
 
-} // BaseSaisonType
+} // BaseDomaineType

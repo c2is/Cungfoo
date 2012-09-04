@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'saison' table.
+ * This class defines the structure of the 'domaine' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class SaisonTableMap extends TableMap
+class DomaineTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.SaisonTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.DomaineTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,9 +36,9 @@ class SaisonTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('saison');
-        $this->setPhpName('Saison');
-        $this->setClassname('Cungfoo\\Model\\Saison');
+        $this->setName('domaine');
+        $this->setPhpName('Domaine');
+        $this->setClassname('Cungfoo\\Model\\Domaine');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
@@ -68,4 +68,4 @@ class SaisonTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // SaisonTableMap
+} // DomaineTableMap

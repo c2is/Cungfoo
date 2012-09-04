@@ -11,29 +11,29 @@ use \Persistent;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\Saison;
-use Cungfoo\Model\SaisonPeer;
-use Cungfoo\Model\SaisonQuery;
+use Cungfoo\Model\Domaine;
+use Cungfoo\Model\DomainePeer;
+use Cungfoo\Model\DomaineQuery;
 
 /**
- * Base class that represents a row from the 'saison' table.
+ * Base class that represents a row from the 'domaine' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseSaison extends BaseObject implements Persistent
+abstract class BaseDomaine extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\SaisonPeer';
+    const PEER = 'Cungfoo\\Model\\DomainePeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        SaisonPeer
+     * @var        DomainePeer
      */
     protected static $peer;
 
@@ -109,7 +109,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return Saison The current object (for fluent API support)
+     * @return Domaine The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -119,7 +119,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = SaisonPeer::ID;
+            $this->modifiedColumns[] = DomainePeer::ID;
         }
 
 
@@ -130,7 +130,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * Set the value of [name] column.
      *
      * @param string $v new value
-     * @return Saison The current object (for fluent API support)
+     * @return Domaine The current object (for fluent API support)
      */
     public function setName($v)
     {
@@ -140,7 +140,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
 
         if ($this->name !== $v) {
             $this->name = $v;
-            $this->modifiedColumns[] = SaisonPeer::NAME;
+            $this->modifiedColumns[] = DomainePeer::NAME;
         }
 
 
@@ -151,7 +151,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * Set the value of [order] column.
      *
      * @param int $v new value
-     * @return Saison The current object (for fluent API support)
+     * @return Domaine The current object (for fluent API support)
      */
     public function setOrder($v)
     {
@@ -161,7 +161,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
 
         if ($this->order !== $v) {
             $this->order = $v;
-            $this->modifiedColumns[] = SaisonPeer::ORDER;
+            $this->modifiedColumns[] = DomainePeer::ORDER;
         }
 
 
@@ -211,10 +211,10 @@ abstract class BaseSaison extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = SaisonPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = DomainePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating Saison object", $e);
+            throw new PropelException("Error populating Domaine object", $e);
         }
     }
 
@@ -257,13 +257,13 @@ abstract class BaseSaison extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SaisonPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(DomainePeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = SaisonPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = DomainePeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -293,12 +293,12 @@ abstract class BaseSaison extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SaisonPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DomainePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = SaisonQuery::create()
+            $deleteQuery = DomaineQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -336,7 +336,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SaisonPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(DomainePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -356,7 +356,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                SaisonPeer::addInstanceToPool($this);
+                DomainePeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -417,24 +417,24 @@ abstract class BaseSaison extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = SaisonPeer::ID;
+        $this->modifiedColumns[] = DomainePeer::ID;
         if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . SaisonPeer::ID . ')');
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . DomainePeer::ID . ')');
         }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(SaisonPeer::ID)) {
+        if ($this->isColumnModified(DomainePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(SaisonPeer::NAME)) {
+        if ($this->isColumnModified(DomainePeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
-        if ($this->isColumnModified(SaisonPeer::ORDER)) {
+        if ($this->isColumnModified(DomainePeer::ORDER)) {
             $modifiedColumns[':p' . $index++]  = '`ORDER`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `saison` (%s) VALUES (%s)',
+            'INSERT INTO `domaine` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -546,7 +546,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            if (($retval = SaisonPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = DomainePeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
@@ -570,7 +570,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SaisonPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = DomainePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -617,11 +617,11 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array())
     {
-        if (isset($alreadyDumpedObjects['Saison'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['Domaine'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['Saison'][$this->getPrimaryKey()] = true;
-        $keys = SaisonPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['Domaine'][$this->getPrimaryKey()] = true;
+        $keys = DomainePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getName(),
@@ -644,7 +644,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SaisonPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = DomainePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -691,7 +691,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = SaisonPeer::getFieldNames($keyType);
+        $keys = DomainePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
@@ -705,11 +705,11 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(SaisonPeer::DATABASE_NAME);
+        $criteria = new Criteria(DomainePeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(SaisonPeer::ID)) $criteria->add(SaisonPeer::ID, $this->id);
-        if ($this->isColumnModified(SaisonPeer::NAME)) $criteria->add(SaisonPeer::NAME, $this->name);
-        if ($this->isColumnModified(SaisonPeer::ORDER)) $criteria->add(SaisonPeer::ORDER, $this->order);
+        if ($this->isColumnModified(DomainePeer::ID)) $criteria->add(DomainePeer::ID, $this->id);
+        if ($this->isColumnModified(DomainePeer::NAME)) $criteria->add(DomainePeer::NAME, $this->name);
+        if ($this->isColumnModified(DomainePeer::ORDER)) $criteria->add(DomainePeer::ORDER, $this->order);
 
         return $criteria;
     }
@@ -724,8 +724,8 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(SaisonPeer::DATABASE_NAME);
-        $criteria->add(SaisonPeer::ID, $this->id);
+        $criteria = new Criteria(DomainePeer::DATABASE_NAME);
+        $criteria->add(DomainePeer::ID, $this->id);
 
         return $criteria;
     }
@@ -766,7 +766,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of Saison (or compatible) type.
+     * @param object $copyObj An object of Domaine (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -790,7 +790,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return Saison Clone of current object.
+     * @return Domaine Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -810,12 +810,12 @@ abstract class BaseSaison extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return SaisonPeer
+     * @return DomainePeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new SaisonPeer();
+            self::$peer = new DomainePeer();
         }
 
         return self::$peer;
@@ -860,7 +860,7 @@ abstract class BaseSaison extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(SaisonPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(DomainePeer::DEFAULT_STRING_FORMAT);
     }
 
     /**

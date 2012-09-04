@@ -6,13 +6,13 @@ use Cungfoo\Lib\Listing\Listing,
     Cungfoo\Lib\Listing\Column;
 
 /**
- * Generated listing class for 'saison' table.
+ * Generated listing class for 'domaine' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Listing.Base
  */
-class BaseSaisonListing extends Listing
+class BaseDomaineListing extends Listing
 {
     /**
      * {@inheritdoc}
@@ -28,7 +28,7 @@ class BaseSaisonListing extends Listing
      */
     public function getName()
     {
-        return 'Saison';
+        return 'Domaine';
     }
 
-} // BaseSaisonListing
+} // BaseDomaineListing

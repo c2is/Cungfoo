@@ -58,4 +58,9 @@ $app['form.extensions'] = $app->share($app->extend('form.extensions', function (
     return $extensions;
 }));
 
+/* C O N T E X T */
+$app['context'] = $app->share(function() {
+    return new \Cungfoo\Lib\Context();
+});
+
 return $app;

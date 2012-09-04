@@ -82,7 +82,7 @@ class Config
      */
     public function addParams(array $params)
     {
-        $this->data += $params;
+        $this->data = $params + $this->data;
 
         return $this;
     }

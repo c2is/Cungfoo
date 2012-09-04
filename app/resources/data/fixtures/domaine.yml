@@ -1,0 +1,7 @@
+Cungfoo\Model\Domaine:
+  1:
+    name: fr
+    order: 1
+  2:
+    name: co_uk
+    order: 2
