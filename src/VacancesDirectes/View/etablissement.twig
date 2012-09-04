@@ -7,7 +7,7 @@
         <hr/>
 
         <fieldset>
-            <legend>Activités</legend>
+            <legend>{{ ("etablissement.activites") | trans }}</legend>
             <ul>
                 {% for activite in etablissement.getActivites %}
                 <li>{{ activite.setLocale(locale) }}</li>
@@ -18,7 +18,7 @@
         <hr/>
 
         <fieldset>
-            <legend>Type hébergement</legend>
+            <legend>{{ ("etablissement.type_hebergements") | trans }}</legend>
             <ul>
                 {% for typeHebergement in etablissement.getTypeHebergements %}
                 <li>{{ typeHebergement.setLocale(locale) }}</li>
@@ -29,7 +29,7 @@
         <hr/>
 
         <fieldset>
-            <legend>Équipement</legend>
+            <legend>{{ ("etablissement.equipements") | trans }}</legend>
             <ul>
                 {% for equipement in etablissement.getEquipements %}
                 <li>{{ equipement.setLocale(locale) }}</li>
@@ -40,7 +40,7 @@
         <hr/>
 
         <fieldset>
-            <legend>Destinations</legend>
+            <legend>{{ ("etablissement.destinations") | trans }}</legend>
             <ul>
                 {% for destination in etablissement.getDestinations %}
                 <li>{{ destination.setLocale(locale) }}</li>
@@ -51,7 +51,7 @@
         <hr/>
 
         <fieldset>
-            <legend>Services complémentaires</legend>
+            <legend>{{ ("etablissement.service_complementaires") | trans }}</legend>
             <ul>
                 {% for service in etablissement.getServiceComplementaires %}
                 <li>{{ service.setLocale(locale) }}</li>

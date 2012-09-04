@@ -21,7 +21,7 @@ $app['translator'] = $app->share($app->extend('translator',
         $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
         foreach ($app['config']->get('languages') as $locale => $language)
         {
-            $translator->addResource('yaml', sprintf('%s/Resalys/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
+            $translator->addResource('yaml', sprintf('%s/VacancesDirectes/locales/%s.yml', $app['config']->get('config_dir'), $locale), $locale);
         }
 
         return $translator;
