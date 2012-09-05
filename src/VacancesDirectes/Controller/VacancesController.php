@@ -22,7 +22,7 @@ class VacancesController implements ControllerProviderInterface
 
         $controllers->get('/submenu', function () use ($app)
         {
-            return $app['twig']->render('Vacances/submenu.twig');
+            return $app['twig']->render('Submenu/vacances.twig');
         })
         ->bind('vacances_submenu');
 

@@ -22,7 +22,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->get('/submenu', function () use ($app)
         {
-            return $app['twig']->render('BonsPlans/submenu.twig');
+            return $app['twig']->render('Submenu/bonsPlans.twig');
         })
         ->bind('bons_plans_submenu');
 

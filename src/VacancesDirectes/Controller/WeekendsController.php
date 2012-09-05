@@ -22,7 +22,7 @@ class WeekendsController implements ControllerProviderInterface
 
         $controllers->get('/submenu', function () use ($app)
         {
-            return $app['twig']->render('Weekends/submenu.twig');
+            return $app['twig']->render('Submenu/weekends.twig');
         })
         ->bind('weekends_submenu');
 

@@ -22,7 +22,7 @@ class DestinationsController implements ControllerProviderInterface
 
         $controllers->get('/submenu', function () use ($app)
         {
-            return $app['twig']->render('Destinations/submenu.twig');
+            return $app['twig']->render('Submenu/destinations.twig');
         })
         ->bind('destinations_submenu');
 
