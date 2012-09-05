@@ -1,9 +1,9 @@
 \Cungfoo\Model\Pays:
-    ESP:
-        Id: ESP
-    FRA:
-        Id: FRA
-    ITA:
-        Id: ITA
-    PRT:
-        Id: PRT
+    1:
+        Code: FRA
+    2:
+        Code: ITA
+    3:
+        Code: ESP
+    4:
+        Code: PRT

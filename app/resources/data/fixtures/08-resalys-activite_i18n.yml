@@ -1,49 +1,145 @@
 \Cungfoo\Model\ActiviteI18n:
-    CENF_de:
-        Id: CENF
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Ping-pong (Gratuit)'
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Ping-pong (Gratuit)'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Ping-pong (Gratuit)'
+    2_de:
+        Id: 2
         Locale: de
         Name: Kinderclub
-    CENF_en:
-        Id: CENF
+    2_en:
+        Id: 2
         Locale: en
         Name: 'Kids Club'
-    CENF_fr:
-        Id: CENF
+    2_fr:
+        Id: 2
         Locale: fr
         Name: 'Club enfants'
-    LOVP_de:
-        Id: LOVP
-        Locale: de
-        Name: 'Location de vélos (Payant)'
-    LOVP_en:
-        Id: LOVP
-        Locale: en
-        Name: 'Location de vélos (Payant)'
-    LOVP_fr:
-        Id: LOVP
-        Locale: fr
-        Name: 'Location de vélos (Payant)'
-    PETG_de:
-        Id: PETG
+    3_de:
+        Id: 3
         Locale: de
         Name: 'Pétanque (Gratuit)'
-    PETG_en:
-        Id: PETG
+    3_en:
+        Id: 3
         Locale: en
         Name: 'Pétanque (Gratuit)'
-    PETG_fr:
-        Id: PETG
+    3_fr:
+        Id: 3
         Locale: fr
         Name: 'Pétanque (Gratuit)'
-    PING_de:
-        Id: PING
+    4_de:
+        Id: 4
         Locale: de
-        Name: 'Ping-pong (Gratuit)'
-    PING_en:
-        Id: PING
+        Name: 'Club ados'
+    4_en:
+        Id: 4
         Locale: en
-        Name: 'Ping-pong (Gratuit)'
-    PING_fr:
-        Id: PING
+        Name: 'Club ados'
+    4_fr:
+        Id: 4
         Locale: fr
-        Name: 'Ping-pong (Gratuit)'
+        Name: 'Club ados'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: Discothèque
+    5_en:
+        Id: 5
+        Locale: en
+        Name: Discothèque
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: Discothèque
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'Terrain multisports'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'Terrain multisports'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'Terrain multisports'
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'Mini golf'
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'Mini golf'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Mini golf'
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'Salle de musculation et fitness'
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'Salle de musculation et fitness'
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Salle de musculation et fitness'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: Tennis
+    9_en:
+        Id: 9
+        Locale: en
+        Name: Tennis
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: Tennis
+    10_de:
+        Id: 10
+        Locale: de
+        Name: Golf
+    10_en:
+        Id: 10
+        Locale: en
+        Name: Golf
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: Golf
+    11_de:
+        Id: 11
+        Locale: de
+        Name: Equitation
+    11_en:
+        Id: 11
+        Locale: en
+        Name: Equitation
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: Equitation
+    12_de:
+        Id: 12
+        Locale: de
+        Name: Pêche
+    12_en:
+        Id: 12
+        Locale: en
+        Name: Pêche
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: Pêche

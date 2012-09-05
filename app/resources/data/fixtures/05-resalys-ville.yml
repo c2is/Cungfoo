@@ -1,340 +1,343 @@
 \Cungfoo\Model\Ville:
-    AGDE:
-        Id: AGDE
+    1:
+        Code: CARN
         RegionId: null
-    ALCO:
-        Id: ALCO
+    2:
+        Code: EYZ
         RegionId: null
-    ALSA:
-        Id: ALSA
+    3:
+        Code: GRAU
         RegionId: null
-    AMDM:
-        Id: AMDM
+    4:
+        Code: VIAS
         RegionId: null
-    ANTI:
-        Id: ANTI
+    5:
+        Code: PALA
         RegionId: null
-    ARGE:
-        Id: ARGE
+    6:
+        Code: ARGE
         RegionId: null
-    AURE:
-        Id: AURE
+    7:
+        Code: STCY
         RegionId: null
-    AXLT:
-        Id: AXLT
+    8:
+        Code: CROU
         RegionId: null
-    AZUR:
-        Id: AZUR
+    9:
+        Code: STMA
         RegionId: null
-    BENO:
-        Id: BENO
+    10:
+        Code: LBAR
         RegionId: null
-    BEYN:
-        Id: BEYN
+    11:
+        Code: TORP
         RegionId: null
-    BIDA:
-        Id: BIDA
+    12:
+        Code: FABR
         RegionId: null
-    BISC:
-        Id: BISC
+    13:
+        Code: SERI
         RegionId: null
-    BLAN:
-        Id: BLAN
+    14:
+        Code: AGDE
         RegionId: null
-    BOYA:
-        Id: BOYA
+    15:
+        Code: MEZE
         RegionId: null
-    BREM:
-        Id: BREM
+    16:
+        Code: LATT
         RegionId: null
-    CADE:
-        Id: CADE
+    17:
+        Code: GLMO
         RegionId: null
-    CADS:
-        Id: CADS
+    18:
+        Code: ALSA
         RegionId: null
-    CAEM:
-        Id: CAEM
+    19:
+        Code: CURB
         RegionId: null
-    CALO:
-        Id: CALO
+    20:
+        Code: STLV
         RegionId: null
-    CALP:
-        Id: CALP
+    21:
+        Code: CAST
         RegionId: null
-    CARN:
-        Id: CARN
+    22:
+        Code: NALP
         RegionId: null
-    CAST:
-        Id: CAST
+    23:
+        Code: HYER
         RegionId: null
-    CECI:
-        Id: CECI
+    24:
+        Code: LAMO
         RegionId: null
-    CHAT:
-        Id: CHAT
+    25:
+        Code: GRIM
         RegionId: null
-    CHOL:
-        Id: CHOL
+    26:
+        Code: STAY
         RegionId: null
-    CHPL:
-        Id: CHPL
+    27:
+        Code: ANTI
         RegionId: null
-    CROU:
-        Id: CROU
+    28:
+        Code: PORV
         RegionId: null
-    CURB:
-        Id: CURB
+    29:
+        Code: PATA
         RegionId: null
-    DOUS:
-        Id: DOUS
+    30:
+        Code: ESTA
         RegionId: null
-    ERQU:
-        Id: ERQU
+    31:
+        Code: PALS
         RegionId: null
-    ESTA:
-        Id: ESTA
+    32:
+        Code: CALO
         RegionId: null
-    EYZ:
-        Id: EYZ
+    33:
+        Code: FREJ
         RegionId: null
-    FABR:
-        Id: FABR
+    34:
+        Code: STPF
         RegionId: null
-    FREJ:
-        Id: FREJ
+    35:
+        Code: LRSS
         RegionId: null
-    GHIS:
-        Id: GHIS
+    36:
+        Code: GHIS
         RegionId: null
-    GLMO:
-        Id: GLMO
+    37:
+        Code: LANO
         RegionId: null
-    GRAD:
-        Id: GRAD
+    38:
+        Code: CAEM
         RegionId: null
-    GRAU:
-        Id: GRAU
+    39:
+        Code: PALM
         RegionId: null
-    GRIM:
-        Id: GRIM
+    40:
+        Code: BLAN
         RegionId: null
-    GUER:
-        Id: GUER
+    41:
+        Code: VILA
         RegionId: null
-    HOUR:
-        Id: HOUR
+    42:
+        Code: MTRO
         RegionId: null
-    HYER:
-        Id: HYER
+    43:
+        Code: AMDM
         RegionId: null
-    ISI:
-        Id: ISI
+    44:
+        Code: ALCO
         RegionId: null
-    JARD:
-        Id: JARD
+    45:
+        Code: GRAD
         RegionId: null
-    LABA:
-        Id: LABA
+    46:
+        Code: SOTO
         RegionId: null
-    LACA:
-        Id: LACA
+    47:
+        Code: LIDO
         RegionId: null
-    LAGO:
-        Id: LAGO
+    48:
+        Code: CECI
         RegionId: null
-    LAMO:
-        Id: LAMO
+    49:
+        Code: SANV
         RegionId: null
-    LANO:
-        Id: LANO
+    50:
+        Code: CADE
         RegionId: null
-    LATH:
-        Id: LATH
+    51:
+        Code: STCA
         RegionId: null
-    LATR:
-        Id: LATR
+    52:
+        Code: ERQU
         RegionId: null
-    LATT:
-        Id: LATT
+    53:
+        Code: CALP
         RegionId: null
-    LBAR:
-        Id: LBAR
+    54:
+        Code: BENO
         RegionId: null
-    LEGE:
-        Id: LEGE
+    55:
+        Code: NEVE
         RegionId: null
-    LEPA:
-        Id: LEPA
+    56:
+        Code: BEYN
         RegionId: null
-    LESM:
-        Id: LESM
+    57:
+        Code: MURO
         RegionId: null
-    LIDO:
-        Id: LIDO
+    58:
+        Code: QUIB
         RegionId: null
-    LIMI:
-        Id: LIMI
+    59:
+        Code: STMN
         RegionId: null
-    LOIX:
-        Id: LOIX
+    60:
+        Code: LEPA
         RegionId: null
-    LRSS:
-        Id: LRSS
+    61:
+        Code: SOUI
         RegionId: null
-    MESS:
-        Id: MESS
+    62:
+        Code: RUYN
         RegionId: null
-    MEZE:
-        Id: MEZE
+    63:
+        Code: PENE
         RegionId: null
-    MEZO:
-        Id: MEZO
+    64:
+        Code: CADS
         RegionId: null
-    MTLV:
-        Id: MTLV
+    65:
+        Code: LABA
         RegionId: null
-    MTRO:
-        Id: MTRO
+    66:
+        Code: GUER
         RegionId: null
-    MURO:
-        Id: MURO
+    67:
+        Code: PORN
         RegionId: null
-    NALP:
-        Id: NALP
+    68:
+        Code: STJE
         RegionId: null
-    NEVE:
-        Id: NEVE
+    69:
+        Code: STHI
         RegionId: null
-    OLON:
-        Id: OLON
+    70:
+        Code: STGI
         RegionId: null
-    PALA:
-        Id: PALA
+    71:
+        Code: STJU
         RegionId: null
-    PALM:
-        Id: PALM
+    72:
+        Code: BREM
         RegionId: null
-    PALS:
-        Id: PALS
+    73:
+        Code: AXLT
         RegionId: null
-    PATA:
-        Id: PATA
+    74:
+        Code: ISI
         RegionId: null
-    PATO:
-        Id: PATO
+    75:
+        Code: THOU
         RegionId: null
-    PENE:
-        Id: PENE
+    76:
+        Code: CHAT
         RegionId: null
-    PORN:
-        Id: PORN
+    77:
+        Code: VOGU
         RegionId: null
-    PORV:
-        Id: PORV
+    78:
+        Code: OLON
         RegionId: null
-    PUIL:
-        Id: PUIL
+    79:
+        Code: RUOM
         RegionId: null
-    QUIB:
-        Id: QUIB
+    80:
+        Code: LAGO
         RegionId: null
-    RUOM:
-        Id: RUOM
+    81:
+        Code: TALM
         RegionId: null
-    RUYN:
-        Id: RUYN
+    82:
+        Code: VALP
         RegionId: null
-    SANG:
-        Id: SANG
+    83:
+        Code: LATH
         RegionId: null
-    SANV:
-        Id: SANV
+    84:
+        Code: JARD
         RegionId: null
-    SEIG:
-        Id: SEIG
+    85:
+        Code: DOUS
         RegionId: null
-    SERI:
-        Id: SERI
+    86:
+        Code: LATR
         RegionId: null
-    SOTO:
-        Id: SOTO
+    87:
+        Code: PATO
         RegionId: null
-    SOUI:
-        Id: SOUI
+    88:
+        Code: WATT
         RegionId: null
-    SOUL:
-        Id: SOUL
+    89:
+        Code: PUIL
         RegionId: null
-    STAY:
-        Id: STAY
+    90:
+        Code: SUEV
         RegionId: null
-    STCA:
-        Id: STCA
+    91:
+        Code: CHOL
         RegionId: null
-    STCY:
-        Id: STCY
+    92:
+        Code: STDE
         RegionId: null
-    STDE:
-        Id: STDE
+    93:
+        Code: LOIX
         RegionId: null
-    STGE:
-        Id: STGE
+    94:
+        Code: STGE
         RegionId: null
-    STGI:
-        Id: STGI
+    95:
+        Code: BOYA
         RegionId: null
-    STHI:
-        Id: STHI
+    96:
+        Code: CHPL
         RegionId: null
-    STJE:
-        Id: STJE
+    97:
+        Code: STLA
         RegionId: null
-    STJU:
-        Id: STJU
+    98:
+        Code: LESM
         RegionId: null
-    STLA:
-        Id: STLA
+    99:
+        Code: SOUL
         RegionId: null
-    STLV:
-        Id: STLV
+    100:
+        Code: HOUR
         RegionId: null
-    STMA:
-        Id: STMA
+    101:
+        Code: LACA
         RegionId: null
-    STMN:
-        Id: STMN
+    102:
+        Code: LEGE
         RegionId: null
-    STPF:
-        Id: STPF
+    103:
+        Code: SANG
         RegionId: null
-    SUEV:
-        Id: SUEV
+    104:
+        Code: BISC
         RegionId: null
-    TALM:
-        Id: TALM
+    105:
+        Code: MEZO
         RegionId: null
-    THOU:
-        Id: THOU
+    106:
+        Code: AURE
         RegionId: null
-    TORP:
-        Id: TORP
+    107:
+        Code: LIMI
         RegionId: null
-    VALP:
-        Id: VALP
+    108:
+        Code: VIEL
         RegionId: null
-    VIAS:
-        Id: VIAS
+    109:
+        Code: MESS
         RegionId: null
-    VIEL:
-        Id: VIEL
+    110:
+        Code: AZUR
         RegionId: null
-    VILA:
-        Id: VILA
+    111:
+        Code: SEIG
         RegionId: null
-    VOGU:
-        Id: VOGU
+    112:
+        Code: BIDA
         RegionId: null
-    WATT:
-        Id: WATT
+    113:
+        Code: MTLV
+        RegionId: null
+    114:
+        Code: CARS
         RegionId: null

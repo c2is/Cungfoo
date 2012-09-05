@@ -1,88 +1,88 @@
 \Cungfoo\Model\Region:
-    ALJU:
-        Id: ALJU
-        PaysId: FRA
-    ALP:
-        Id: ALP
-        PaysId: FRA
-    ARDE:
-        Id: ARDE
-        PaysId: FRA
-    ARPY:
-        Id: ARPY
-        PaysId: FRA
-    AUVE:
-        Id: AUVE
-        PaysId: FRA
-    AVEY:
-        Id: AVEY
-        PaysId: FRA
-    BRET:
-        Id: BRET
-        PaysId: FRA
-    CAZA:
-        Id: CAZA
-        PaysId: ESP
-    CBRA:
-        Id: CBRA
-        PaysId: ESP
-    CDOR:
-        Id: CDOR
-        PaysId: ESP
-    CHMA:
-        Id: CHMA
-        PaysId: FRA
-    CORS:
-        Id: CORS
-        PaysId: FRA
-    CTBR:
-        Id: CTBR
-        PaysId: ESP
-    CTRO:
-        Id: CTRO
-        PaysId: PRT
-    DRHP:
-        Id: DRHP
-        PaysId: FRA
-    GERS:
-        Id: GERS
-        PaysId: FRA
-    GIRO:
-        Id: GIRO
-        PaysId: FRA
-    IADR:
-        Id: IADR
-        PaysId: ITA
-    IMED:
-        Id: IMED
-        PaysId: ITA
-    LAND:
-        Id: LAND
-        PaysId: FRA
-    LARO:
-        Id: LARO
-        PaysId: FRA
-    LOCH:
-        Id: LOCH
-        PaysId: FRA
-    NORM:
-        Id: NORM
-        PaysId: FRA
-    PBAS:
-        Id: PBAS
-        PaysId: FRA
-    PCA:
-        Id: PCA
-        PaysId: FRA
-    PEDO:
-        Id: PEDO
-        PaysId: FRA
-    PLOI:
-        Id: PLOI
-        PaysId: FRA
-    VEND:
-        Id: VEND
-        PaysId: FRA
-    VERD:
-        Id: VERD
-        PaysId: FRA
+    1:
+        Code: LOCH
+        PaysId: 1
+    2:
+        Code: PEDO
+        PaysId: 1
+    3:
+        Code: CBRA
+        PaysId: 3
+    4:
+        Code: GIRO
+        PaysId: 1
+    5:
+        Code: ALJU
+        PaysId: 1
+    6:
+        Code: LAND
+        PaysId: 1
+    7:
+        Code: CDOR
+        PaysId: 3
+    8:
+        Code: NORM
+        PaysId: 1
+    9:
+        Code: BRET
+        PaysId: 1
+    10:
+        Code: CHMA
+        PaysId: 1
+    11:
+        Code: PBAS
+        PaysId: 1
+    12:
+        Code: PLOI
+        PaysId: 1
+    13:
+        Code: VEND
+        PaysId: 1
+    14:
+        Code: LARO
+        PaysId: 1
+    15:
+        Code: GERS
+        PaysId: 1
+    16:
+        Code: AUVE
+        PaysId: 1
+    17:
+        Code: AVEY
+        PaysId: 1
+    18:
+        Code: ARDE
+        PaysId: 1
+    19:
+        Code: ARPY
+        PaysId: 1
+    20:
+        Code: CTRO
+        PaysId: 4
+    21:
+        Code: CORS
+        PaysId: 1
+    22:
+        Code: DRHP
+        PaysId: 1
+    23:
+        Code: IADR
+        PaysId: 2
+    24:
+        Code: CAZA
+        PaysId: 3
+    25:
+        Code: IMED
+        PaysId: 2
+    26:
+        Code: ALP
+        PaysId: 1
+    27:
+        Code: PCA
+        PaysId: 1
+    28:
+        Code: VERD
+        PaysId: 1
+    29:
+        Code: CTBR
+        PaysId: 3

@@ -1,505 +1,505 @@
 \Cungfoo\Model\TypeHebergementI18n:
-    100M_de:
-        Id: 100M
+    1_de:
+        Id: 1
         Locale: de
         Name: 'Parcelle jusqu''à 100 m²'
-    100M_en:
-        Id: 100M
+    1_en:
+        Id: 1
         Locale: en
         Name: 'Parcelle jusqu''à 100 m²'
-    100M_fr:
-        Id: 100M
+    1_fr:
+        Id: 1
         Locale: fr
         Name: 'Parcelle jusqu''à 100 m²'
-    110M_de:
-        Id: 110M
+    2_de:
+        Id: 2
         Locale: de
         Name: 'Parcelle de 101 à 110 m²'
-    110M_en:
-        Id: 110M
+    2_en:
+        Id: 2
         Locale: en
         Name: 'Parcelle de 101 à 110 m²'
-    110M_fr:
-        Id: 110M
+    2_fr:
+        Id: 2
         Locale: fr
         Name: 'Parcelle de 101 à 110 m²'
-    130M_de:
-        Id: 130M
+    3_de:
+        Id: 3
         Locale: de
         Name: 'Parcelle de 121 à 130 m²'
-    130M_en:
-        Id: 130M
+    3_en:
+        Id: 3
         Locale: en
         Name: 'Parcelle de 121 à 130 m²'
-    130M_fr:
-        Id: 130M
+    3_fr:
+        Id: 3
         Locale: fr
         Name: 'Parcelle de 121 à 130 m²'
-    140M_de:
-        Id: 140M
+    4_de:
+        Id: 4
         Locale: de
         Name: 'Parcelle de 131 à 140 m²'
-    140M_en:
-        Id: 140M
+    4_en:
+        Id: 4
         Locale: en
         Name: 'Parcelle de 131 à 140 m²'
-    140M_fr:
-        Id: 140M
+    4_fr:
+        Id: 4
         Locale: fr
         Name: 'Parcelle de 131 à 140 m²'
-    150M_de:
-        Id: 150M
+    5_de:
+        Id: 5
         Locale: de
         Name: 'Parcelle de 141 à 150 m²'
-    150M_en:
-        Id: 150M
+    5_en:
+        Id: 5
         Locale: en
         Name: 'Parcelle de 141 à 150 m²'
-    150M_fr:
-        Id: 150M
+    5_fr:
+        Id: 5
         Locale: fr
         Name: 'Parcelle de 141 à 150 m²'
-    160M_de:
-        Id: 160M
+    6_de:
+        Id: 6
         Locale: de
         Name: 'Parcelle de 151 à 160 m²'
-    160M_en:
-        Id: 160M
+    6_en:
+        Id: 6
         Locale: en
         Name: 'Parcelle de 151 à 160 m²'
-    160M_fr:
-        Id: 160M
+    6_fr:
+        Id: 6
         Locale: fr
         Name: 'Parcelle de 151 à 160 m²'
-    170M_de:
-        Id: 170M
+    7_de:
+        Id: 7
         Locale: de
         Name: 'Parcelle de 161 à 170 m²'
-    170M_en:
-        Id: 170M
+    7_en:
+        Id: 7
         Locale: en
         Name: 'Parcelle de 161 à 170 m²'
-    170M_fr:
-        Id: 170M
+    7_fr:
+        Id: 7
         Locale: fr
         Name: 'Parcelle de 161 à 170 m²'
-    180M_de:
-        Id: 180M
+    8_de:
+        Id: 8
         Locale: de
         Name: 'Parcelle de 171 à 180 m²'
-    180M_en:
-        Id: 180M
+    8_en:
+        Id: 8
         Locale: en
         Name: 'Parcelle de 171 à 180 m²'
-    180M_fr:
-        Id: 180M
+    8_fr:
+        Id: 8
         Locale: fr
         Name: 'Parcelle de 171 à 180 m²'
-    AMI4_de:
-        Id: AMI4
+    9_de:
+        Id: 9
         Locale: de
         Name: 'Amical (4 Personen, max. 3 Erwachsene)'
-    AMI4_en:
-        Id: AMI4
+    9_en:
+        Id: 9
         Locale: en
         Name: 'Amical (4 places, 3 adults top)'
-    AMI4_fr:
-        Id: AMI4
+    9_fr:
+        Id: 9
         Locale: fr
         Name: 'Amical (4 places, max. 3 adultes)'
-    BT2L_de:
-        Id: BT2L
+    10_de:
+        Id: 10
         Locale: de
         Name: 'Bungalow T2 Luxe (4 Personen, max. 4 Erwachsene)'
-    BT2L_en:
-        Id: BT2L
+    10_en:
+        Id: 10
         Locale: en
         Name: 'Bungalow T2 Luxe (4 places, 4 adults top)'
-    BT2L_fr:
-        Id: BT2L
+    10_fr:
+        Id: 10
         Locale: fr
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
-    BT3_de:
-        Id: BT3
+    11_de:
+        Id: 11
         Locale: de
         Name: 'Bungalow T3 (6 Personen, max. 6 Erwachsene)'
-    BT3_en:
-        Id: BT3
+    11_en:
+        Id: 11
         Locale: en
         Name: 'Bungalow T3 (6 places, 6 adults top)'
-    BT3_fr:
-        Id: BT3
+    11_fr:
+        Id: 11
         Locale: fr
         Name: 'Bungalow T3 (6 places, max. 6 adultes)'
-    CHA5_de:
-        Id: CHA5
+    12_de:
+        Id: 12
         Locale: de
         Name: 'Chalet (5 Personen, max. 4 Erwachsene)'
-    CHA5_en:
-        Id: CHA5
+    12_en:
+        Id: 12
         Locale: en
         Name: 'Chalet (5 places, 4 adults top)'
-    CHA5_fr:
-        Id: CHA5
+    12_fr:
+        Id: 12
         Locale: fr
         Name: 'Chalet (5 places, max. 4 adultes)'
-    CON5_de:
-        Id: CON5
+    13_de:
+        Id: 13
         Locale: de
         Name: 'Conviviale (5 Personen, max. 4 Erwachsene)'
-    CON5_en:
-        Id: CON5
+    13_en:
+        Id: 13
         Locale: en
         Name: 'Conviviale (5 places, 4 adults top)'
-    CON5_fr:
-        Id: CON5
+    13_fr:
+        Id: 13
         Locale: fr
         Name: 'Conviviale (5 places, max. 4 adultes)'
-    COR6_de:
-        Id: COR6
+    14_de:
+        Id: 14
         Locale: de
         Name: 'Cordial (6 Personen, max. 5 Erwachsene)'
-    COR6_en:
-        Id: COR6
+    14_en:
+        Id: 14
         Locale: en
         Name: 'Cordial (6 places, 5 adults top)'
-    COR6_fr:
-        Id: COR6
+    14_fr:
+        Id: 14
         Locale: fr
         Name: 'Cordial (6 places, max. 5 adultes)'
-    DOM5_de:
-        Id: DOM5
+    15_de:
+        Id: 15
         Locale: de
         Name: 'Domanial (5 Personen, max. 5 Erwachsene)'
-    DOM5_en:
-        Id: DOM5
+    15_en:
+        Id: 15
         Locale: en
         Name: 'Domanial (5 places, 5 adults top)'
-    DOM5_fr:
-        Id: DOM5
+    15_fr:
+        Id: 15
         Locale: fr
         Name: 'Domanial (5 places, max. 5 adultes)'
-    DOM6_de:
-        Id: DOM6
+    16_de:
+        Id: 16
         Locale: de
         Name: 'Domanial (6 Personen, max. 5 Erwachsene)'
-    DOM6_en:
-        Id: DOM6
+    16_en:
+        Id: 16
         Locale: en
         Name: 'Domanial (6 places, 5 adults top)'
-    DOM6_fr:
-        Id: DOM6
+    16_fr:
+        Id: 16
         Locale: fr
         Name: 'Domanial (6 places, max. 5 adultes)'
-    DOML_de:
-        Id: DOML
+    17_de:
+        Id: 17
         Locale: de
         Name: 'Domanial Luxe (6 Personen, max. 5 Erwachsene)'
-    DOML_en:
-        Id: DOML
+    17_en:
+        Id: 17
         Locale: en
         Name: 'Domanial Luxe (6 places, 5 adults top)'
-    DOML_fr:
-        Id: DOML
+    17_fr:
+        Id: 17
         Locale: fr
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
-    EMPF_de:
-        Id: EMPF
+    18_de:
+        Id: 18
         Locale: de
         Name: 'Stellplatz mit Meerblick'
-    EMPF_en:
-        Id: EMPF
+    18_en:
+        Id: 18
         Locale: en
         Name: 'Pitch with sea view'
-    EMPF_fr:
-        Id: EMPF
+    18_fr:
+        Id: 18
         Locale: fr
         Name: 'Emplacement nu face mer'
-    EMPL_de:
-        Id: EMPL
+    19_de:
+        Id: 19
         Locale: de
         Name: Stellplatz
-    EMPL_en:
-        Id: EMPL
+    19_en:
+        Id: 19
         Locale: en
         Name: Pitch
-    EMPL_fr:
-        Id: EMPL
+    19_fr:
+        Id: 19
         Locale: fr
         Name: 'Emplacement nu'
-    EST5_de:
-        Id: EST5
+    20_de:
+        Id: 20
         Locale: de
         Name: 'Estivale (5 Personen, max. 4 Erwachsene)'
-    EST5_en:
-        Id: EST5
+    20_en:
+        Id: 20
         Locale: en
         Name: 'Estivale (5 places, 4 adults top)'
-    EST5_fr:
-        Id: EST5
+    20_fr:
+        Id: 20
         Locale: fr
         Name: 'Estivale (5 places, max. 4 adultes)'
-    FAM6_de:
-        Id: FAM6
+    21_de:
+        Id: 21
         Locale: de
         Name: 'Familial (6 Personen, max. 5 Erwachsene)'
-    FAM6_en:
-        Id: FAM6
+    21_en:
+        Id: 21
         Locale: en
         Name: 'Familial (6 places, 5 adults top)'
-    FAM6_fr:
-        Id: FAM6
+    21_fr:
+        Id: 21
         Locale: fr
         Name: 'Familial (6 places, max. 5 adultes)'
-    HEL6_de:
-        Id: HEL6
+    22_de:
+        Id: 22
         Locale: de
         Name: 'Hélios (6 Personen, max. 5 Erwachsene)'
-    HEL6_en:
-        Id: HEL6
+    22_en:
+        Id: 22
         Locale: en
         Name: 'Hélios (6 places, 5 adults top)'
-    HEL6_fr:
-        Id: HEL6
+    22_fr:
+        Id: 22
         Locale: fr
         Name: 'Hélios (6 places, max. 5 adultes)'
-    LOG5_de:
-        Id: LOG5
+    23_de:
+        Id: 23
         Locale: de
         Name: 'Logial (5 Personen, max. 4 Erwachsene)'
-    LOG5_en:
-        Id: LOG5
+    23_en:
+        Id: 23
         Locale: en
         Name: 'Logial (5 places, 4 adults top)'
-    LOG5_fr:
-        Id: LOG5
+    23_fr:
+        Id: 23
         Locale: fr
         Name: 'Logial (5 places, max. 4 adultes)'
-    OCE4_de:
-        Id: OCE4
+    24_de:
+        Id: 24
         Locale: de
         Name: 'Océane (4 Personen, max. 4 Erwachsene)'
-    OCE4_en:
-        Id: OCE4
+    24_en:
+        Id: 24
         Locale: en
         Name: 'Océane (4 places, 4 adults top)'
-    OCE4_fr:
-        Id: OCE4
+    24_fr:
+        Id: 24
         Locale: fr
         Name: 'Océane (4 places, max. 4 adultes)'
-    OHA6_de:
-        Id: OHA6
+    25_de:
+        Id: 25
         Locale: de
         Name: 'O''Hara (6 Personen, max. 5 Erwachsene)'
-    OHA6_en:
-        Id: OHA6
+    25_en:
+        Id: 25
         Locale: en
         Name: 'O''Hara (6 places, 5 adults top)'
-    OHA6_fr:
-        Id: OHA6
+    25_fr:
+        Id: 25
         Locale: fr
         Name: 'O''Hara (6 places, max. 5 adultes)'
-    RES4_de:
-        Id: RES4
+    26_de:
+        Id: 26
         Locale: de
         Name: 'Résidential (4 Places, max. 4 adultes)'
-    RES4_en:
-        Id: RES4
+    26_en:
+        Id: 26
         Locale: en
         Name: 'Résidential (4 Places, max. 4 adultes)'
-    RES4_fr:
-        Id: RES4
+    26_fr:
+        Id: 26
         Locale: fr
         Name: 'Résidential (4 Places, max. 4 adultes)'
-    RES5_de:
-        Id: RES5
+    27_de:
+        Id: 27
         Locale: de
         Name: 'Résidential (5 Personen, max. 4 Erwachsene)'
-    RES5_en:
-        Id: RES5
+    27_en:
+        Id: 27
         Locale: en
         Name: 'Résidential (5 places, 4 adults top)'
-    RES5_fr:
-        Id: RES5
+    27_fr:
+        Id: 27
         Locale: fr
         Name: 'Résidential (5 places, max. 4 adultes)'
-    SALL_de:
-        Id: SALL
+    28_de:
+        Id: 28
         Locale: de
         Name: Empfangssaal
-    SALL_en:
-        Id: SALL
+    28_en:
+        Id: 28
         Locale: en
         Name: 'Reception hall'
-    SALL_fr:
-        Id: SALL
+    28_fr:
+        Id: 28
         Locale: fr
         Name: 'Salle de réception'
-    SPA6_de:
-        Id: SPA6
+    29_de:
+        Id: 29
         Locale: de
         Name: 'Spacial (6 Personen, max. 6 Erwachsene)'
-    SPA6_en:
-        Id: SPA6
+    29_en:
+        Id: 29
         Locale: en
         Name: 'Spacial (6 places, 6 adults top)'
-    SPA6_fr:
-        Id: SPA6
+    29_fr:
+        Id: 29
         Locale: fr
         Name: 'Spacial (6 places, max. 6 adultes)'
-    SPA7_de:
-        Id: SPA7
+    30_de:
+        Id: 30
         Locale: de
         Name: 'Spacial (7 places, max. 6 adultes)'
-    SPA7_en:
-        Id: SPA7
+    30_en:
+        Id: 30
         Locale: en
         Name: 'Spacial (7 places, max. 6 adultes)'
-    SPA7_fr:
-        Id: SPA7
+    30_fr:
+        Id: 30
         Locale: fr
         Name: 'Spacial (7 places, max. 6 adultes)'
-    SPA8_de:
-        Id: SPA8
+    31_de:
+        Id: 31
         Locale: de
         Name: 'Spacial (8 Personen, max. 6 Erwachsene)'
-    SPA8_en:
-        Id: SPA8
+    31_en:
+        Id: 31
         Locale: en
         Name: 'Spacial (8 places, 6 adults top)'
-    SPA8_fr:
-        Id: SPA8
+    31_fr:
+        Id: 31
         Locale: fr
         Name: 'Spacial (8 places, max. 6 adultes)'
-    TBIH_de:
-        Id: TBIH
+    32_de:
+        Id: 32
         Locale: de
         Name: 'Ty Bihan (6 Personen, max. 6 Erwachsene)'
-    TBIH_en:
-        Id: TBIH
+    32_en:
+        Id: 32
         Locale: en
         Name: 'Ty Bihan (6 places, 6 adults top)'
-    TBIH_fr:
-        Id: TBIH
+    32_fr:
+        Id: 32
         Locale: fr
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
-    TBRA_de:
-        Id: TBRA
+    33_de:
+        Id: 33
         Locale: de
         Name: 'Ty Bras (7 Personen, max. 7 Erwachsene)'
-    TBRA_en:
-        Id: TBRA
+    33_en:
+        Id: 33
         Locale: en
         Name: 'Ty Bras (7 places, 7 adults top)'
-    TBRA_fr:
-        Id: TBRA
+    33_fr:
+        Id: 33
         Locale: fr
         Name: 'Ty Bras (7 places, max. 7 adultes)'
-    TCOZ_de:
-        Id: TCOZ
+    34_de:
+        Id: 34
         Locale: de
         Name: 'Ty Coz (7 Personen, max. 6 Erwachsene)'
-    TCOZ_en:
-        Id: TCOZ
+    34_en:
+        Id: 34
         Locale: en
         Name: 'Ty Coz (7 places, 6 adults top)'
-    TCOZ_fr:
-        Id: TCOZ
+    34_fr:
+        Id: 34
         Locale: fr
         Name: 'Ty Coz (7 places, max. 6 adultes)'
-    TDA1_de:
-        Id: TDA1
+    35_de:
+        Id: 35
         Locale: de
         Name: 'Ty Daou 1 (5 Personen, max. 5 Erwachsene)'
-    TDA1_en:
-        Id: TDA1
+    35_en:
+        Id: 35
         Locale: en
         Name: 'Ty Daou 1 (5 places, 5 adults top)'
-    TDA1_fr:
-        Id: TDA1
+    35_fr:
+        Id: 35
         Locale: fr
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
-    TDA2_de:
-        Id: TDA2
+    36_de:
+        Id: 36
         Locale: de
         Name: 'Ty Daou 2 (6 Personen, max. 6 Erwachsene)'
-    TDA2_en:
-        Id: TDA2
+    36_en:
+        Id: 36
         Locale: en
         Name: 'Ty Daou 2 (6 places, 6 adults top)'
-    TDA2_fr:
-        Id: TDA2
+    36_fr:
+        Id: 36
         Locale: fr
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
-    TDIV_de:
-        Id: TDIV
+    37_de:
+        Id: 37
         Locale: de
         Name: 'Ty Divent (7 Personen, max. 7 Erwachsene)'
-    TDIV_en:
-        Id: TDIV
+    37_en:
+        Id: 37
         Locale: en
         Name: 'Ty Divent (7 places, 7 adults top)'
-    TDIV_fr:
-        Id: TDIV
+    37_fr:
+        Id: 37
         Locale: fr
         Name: 'Ty Divent (7 places, max. 7 adultes)'
-    TGOU_de:
-        Id: TGOU
+    38_de:
+        Id: 38
         Locale: de
         Name: 'Ty Gouzik (7 Personen, max. 7 Erwachsene)'
-    TGOU_en:
-        Id: TGOU
+    38_en:
+        Id: 38
         Locale: en
         Name: 'Ty Gouzik (7 places, 7 adults top)'
-    TGOU_fr:
-        Id: TGOU
+    38_fr:
+        Id: 38
         Locale: fr
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
-    TGWE_de:
-        Id: TGWE
+    39_de:
+        Id: 39
         Locale: de
         Name: 'Ty Gwenn (9 Personen, max. 9 Erwachsene)'
-    TGWE_en:
-        Id: TGWE
+    39_en:
+        Id: 39
         Locale: en
         Name: 'Ty Gwenn (9 places, 9 adults top)'
-    TGWE_fr:
-        Id: TGWE
+    39_fr:
+        Id: 39
         Locale: fr
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
-    TTOM_de:
-        Id: TTOM
+    40_de:
+        Id: 40
         Locale: de
         Name: 'Ty Tomm (4 Personen, max. 2 Erwachsene)'
-    TTOM_en:
-        Id: TTOM
+    40_en:
+        Id: 40
         Locale: en
         Name: 'Ty Tomm (4 places, 2 adults top)'
-    TTOM_fr:
-        Id: TTOM
+    40_fr:
+        Id: 40
         Locale: fr
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
-    VAC5_de:
-        Id: VAC5
+    41_de:
+        Id: 41
         Locale: de
         Name: 'Vacanciale (5 Personen, max. 4 Erwachsene)'
-    VAC5_en:
-        Id: VAC5
+    41_en:
+        Id: 41
         Locale: en
         Name: 'Vacanciale (5 places, 4 adults top)'
-    VAC5_fr:
-        Id: VAC5
+    41_fr:
+        Id: 41
         Locale: fr
         Name: 'Vacanciale (5 places, max. 4 adultes)'
-    VAM5_de:
-        Id: VAM5
+    42_de:
+        Id: 42
         Locale: de
         Name: 'Vacanciale mit Meerblick (5 Personen, max. 4 Erwachsene)'
-    VAM5_en:
-        Id: VAM5
+    42_en:
+        Id: 42
         Locale: en
         Name: 'Vacanciale with sea view (5 places, 4 adults top)'
-    VAM5_fr:
-        Id: VAM5
+    42_fr:
+        Id: 42
         Locale: fr
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'

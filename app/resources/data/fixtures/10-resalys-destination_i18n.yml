@@ -1,49 +1,49 @@
 \Cungfoo\Model\DestinationI18n:
-    ATL_de:
-        Id: ATL
-        Locale: de
-        Name: Atlantique
-    ATL_en:
-        Id: ATL
-        Locale: en
-        Name: Atlantique
-    ATL_fr:
-        Id: ATL
-        Locale: fr
-        Name: Atlantique
-    CAM_de:
-        Id: CAM
-        Locale: de
-        Name: Campagne
-    CAM_en:
-        Id: CAM
-        Locale: en
-        Name: Campagne
-    CAM_fr:
-        Id: CAM
-        Locale: fr
-        Name: Campagne
-    MED_de:
-        Id: MED
-        Locale: de
-        Name: Méditerranée
-    MED_en:
-        Id: MED
-        Locale: en
-        Name: Méditerranée
-    MED_fr:
-        Id: MED
-        Locale: fr
-        Name: Méditerranée
-    MONT_de:
-        Id: MONT
+    1_de:
+        Id: 1
         Locale: de
         Name: Montagne
-    MONT_en:
-        Id: MONT
+    1_en:
+        Id: 1
         Locale: en
         Name: Montagne
-    MONT_fr:
-        Id: MONT
+    1_fr:
+        Id: 1
         Locale: fr
         Name: Montagne
+    2_de:
+        Id: 2
+        Locale: de
+        Name: Campagne
+    2_en:
+        Id: 2
+        Locale: en
+        Name: Campagne
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: Campagne
+    3_de:
+        Id: 3
+        Locale: de
+        Name: Atlantique
+    3_en:
+        Id: 3
+        Locale: en
+        Name: Atlantique
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: Atlantique
+    4_de:
+        Id: 4
+        Locale: de
+        Name: Méditerranée
+    4_en:
+        Id: 4
+        Locale: en
+        Name: Méditerranée
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: Méditerranée

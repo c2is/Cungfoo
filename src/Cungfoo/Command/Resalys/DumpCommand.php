@@ -107,7 +107,10 @@ class DumpCommand extends BaseCommand
                     }
                     else if (isset($value['Id']))
                     {
-                        $objectsArrayForYaml[$value['Id']] = $value;
+                        $valueId        = $value['Id'];
+                        unset($value['Id']);
+
+                        $objectsArrayForYaml[$valueId] = $value;
                     }
                     else
                     {

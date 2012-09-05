@@ -1,127 +1,127 @@
 \Cungfoo\Model\TypeHebergement:
-    100M:
-        Id: 100M
+    1:
+        Code: 100M
         CategoryTypeHebergementId: null
-    110M:
-        Id: 110M
+    2:
+        Code: 110M
         CategoryTypeHebergementId: null
-    130M:
-        Id: 130M
+    3:
+        Code: 130M
         CategoryTypeHebergementId: null
-    140M:
-        Id: 140M
+    4:
+        Code: 140M
         CategoryTypeHebergementId: null
-    150M:
-        Id: 150M
+    5:
+        Code: 150M
         CategoryTypeHebergementId: null
-    160M:
-        Id: 160M
+    6:
+        Code: 160M
         CategoryTypeHebergementId: null
-    170M:
-        Id: 170M
+    7:
+        Code: 170M
         CategoryTypeHebergementId: null
-    180M:
-        Id: 180M
+    8:
+        Code: 180M
         CategoryTypeHebergementId: null
-    AMI4:
-        Id: AMI4
+    9:
+        Code: AMI4
         CategoryTypeHebergementId: null
-    BT2L:
-        Id: BT2L
+    10:
+        Code: BT2L
         CategoryTypeHebergementId: null
-    BT3:
-        Id: BT3
+    11:
+        Code: BT3
         CategoryTypeHebergementId: null
-    CHA5:
-        Id: CHA5
+    12:
+        Code: CHA5
         CategoryTypeHebergementId: null
-    CON5:
-        Id: CON5
+    13:
+        Code: CON5
         CategoryTypeHebergementId: null
-    COR6:
-        Id: COR6
+    14:
+        Code: COR6
         CategoryTypeHebergementId: null
-    DOM5:
-        Id: DOM5
+    15:
+        Code: DOM5
         CategoryTypeHebergementId: null
-    DOM6:
-        Id: DOM6
+    16:
+        Code: DOM6
         CategoryTypeHebergementId: null
-    DOML:
-        Id: DOML
+    17:
+        Code: DOML
         CategoryTypeHebergementId: null
-    EMPF:
-        Id: EMPF
+    18:
+        Code: EMPF
         CategoryTypeHebergementId: null
-    EMPL:
-        Id: EMPL
+    19:
+        Code: EMPL
         CategoryTypeHebergementId: null
-    EST5:
-        Id: EST5
+    20:
+        Code: EST5
         CategoryTypeHebergementId: null
-    FAM6:
-        Id: FAM6
+    21:
+        Code: FAM6
         CategoryTypeHebergementId: null
-    HEL6:
-        Id: HEL6
+    22:
+        Code: HEL6
         CategoryTypeHebergementId: null
-    LOG5:
-        Id: LOG5
+    23:
+        Code: LOG5
         CategoryTypeHebergementId: null
-    OCE4:
-        Id: OCE4
+    24:
+        Code: OCE4
         CategoryTypeHebergementId: null
-    OHA6:
-        Id: OHA6
+    25:
+        Code: OHA6
         CategoryTypeHebergementId: null
-    RES4:
-        Id: RES4
+    26:
+        Code: RES4
         CategoryTypeHebergementId: null
-    RES5:
-        Id: RES5
+    27:
+        Code: RES5
         CategoryTypeHebergementId: null
-    SALL:
-        Id: SALL
+    28:
+        Code: SALL
         CategoryTypeHebergementId: null
-    SPA6:
-        Id: SPA6
+    29:
+        Code: SPA6
         CategoryTypeHebergementId: null
-    SPA7:
-        Id: SPA7
+    30:
+        Code: SPA7
         CategoryTypeHebergementId: null
-    SPA8:
-        Id: SPA8
+    31:
+        Code: SPA8
         CategoryTypeHebergementId: null
-    TBIH:
-        Id: TBIH
+    32:
+        Code: TBIH
         CategoryTypeHebergementId: null
-    TBRA:
-        Id: TBRA
+    33:
+        Code: TBRA
         CategoryTypeHebergementId: null
-    TCOZ:
-        Id: TCOZ
+    34:
+        Code: TCOZ
         CategoryTypeHebergementId: null
-    TDA1:
-        Id: TDA1
+    35:
+        Code: TDA1
         CategoryTypeHebergementId: null
-    TDA2:
-        Id: TDA2
+    36:
+        Code: TDA2
         CategoryTypeHebergementId: null
-    TDIV:
-        Id: TDIV
+    37:
+        Code: TDIV
         CategoryTypeHebergementId: null
-    TGOU:
-        Id: TGOU
+    38:
+        Code: TGOU
         CategoryTypeHebergementId: null
-    TGWE:
-        Id: TGWE
+    39:
+        Code: TGWE
         CategoryTypeHebergementId: null
-    TTOM:
-        Id: TTOM
+    40:
+        Code: TTOM
         CategoryTypeHebergementId: null
-    VAC5:
-        Id: VAC5
+    41:
+        Code: VAC5
         CategoryTypeHebergementId: null
-    VAM5:
-        Id: VAM5
+    42:
+        Code: VAM5
         CategoryTypeHebergementId: null

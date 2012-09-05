@@ -54,8 +54,8 @@ equipement.crud.list: Liste équipements
 equipement.crud.update: Mettre à jour l'équipement %name%
 equipement.crud.view: Détails de l'équipement %name%
 equipement.etablissements: Établissement ayant cet équipement
-equipement.id: Code
-equipement.code: Id
+equipement.id: Id
+equipement.code: Code
 equipement.name: Nom
 
 etablissement.activites: Liste des activités

@@ -1,9 +1,25 @@
 \Cungfoo\Model\Activite:
-    CENF:
-        Id: CENF
-    LOVP:
-        Id: LOVP
-    PETG:
-        Id: PETG
-    PING:
-        Id: PING
+    1:
+        Code: PING
+    2:
+        Code: CENF
+    3:
+        Code: PETG
+    4:
+        Code: CADO
+    5:
+        Code: DISC
+    6:
+        Code: TEMU
+    7:
+        Code: MIGO
+    8:
+        Code: SAMU
+    9:
+        Code: TENN
+    10:
+        Code: GOLF
+    11:
+        Code: EQUI
+    12:
+        Code: PECH
