@@ -1,0 +1,15 @@
+{% set menu = app.config.get('vacancesdirectes_menu') %}
+
+<div>
+    <a href="{{ path( 'homepage' ) }}">{{ menu.title|trans }}</a>
+    <ul>
+        {% for item in menu.items %}
+            <li>{{ item.title|trans }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for item in menu.items %}
+            <li>{{ render ( path ( item.route ) ) }}</li>
+        {% endfor %}
+    </ul>
+</div>

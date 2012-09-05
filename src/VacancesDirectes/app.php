@@ -11,6 +11,10 @@
 // require default application configuration
 $app = require_once __DIR__ . '/../../app/bootstrap.php';
 
+$app['config']->addParams(array(
+    'vacancesdirectes_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectes/menu.yml', $app['config']->get('config_dir')))['menu'],
+));
+
 /* T W I G  C O N F I G U R A T I O N  */
 $app['twig.path'] = array(__DIR__.'/View');
 $app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');

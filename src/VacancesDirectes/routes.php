@@ -19,6 +19,11 @@ use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 
 $app->mount('/', new \VacancesDirectes\Controller\HomepageController());
+$app->mount('/nos-destinations', new \VacancesDirectes\Controller\DestinationsController());
+$app->mount('/les-locations', new \VacancesDirectes\Controller\LocationsController());
+$app->mount('/les-bons-plans', new \VacancesDirectes\Controller\BonsPlansController());
+$app->mount('/vos-vacances', new \VacancesDirectes\Controller\VacancesController());
+$app->mount('/vos-week-ends', new \VacancesDirectes\Controller\WeekendsController());
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])

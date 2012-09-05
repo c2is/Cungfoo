@@ -1,48 +1,18 @@
 menu:
-    route: admin
     title: menu.title
     items:
-        etablissement:
-            title:  menu.etablissement
-            route:  etablissement_crud_list
-        theme:
-            title: menu.themes
-            items:
-              ville:
-                  title:  menu.ville
-                  route:  ville_crud_list
-              region:
-                  title:  menu.region
-                  route:  region_crud_list
-              pays:
-                  title:  menu.pays
-                  route:  pays_crud_list
-                  divider: ~
-              destination:
-                  title:  menu.destination
-                  route:  destination_crud_list
-              activite:
-                  title:  menu.activite
-                  route:  activite_crud_list
-              equipement:
-                  title:  menu.equipement
-                  route:  equipement_crud_list
-              service_complementaire:
-                  title:  menu.service_complementaire
-                  route:  service_complementaire_crud_list
-                  divider: ~
-              type_hebergement:
-                  title:  menu.type_hebergement
-                  route:  type_hebergement_crud_list
-              category_type_hebergement:
-                  title:  menu.category_type_hebergement
-                  route:  category_type_hebergement_crud_list
-        parameter:
-            title: menu.parameters
-            items:
-              resalys:
-                  title:  menu.resalys
-                  route:  resalys_actions
-              job:
-                  title:  menu.job
-                  route:  job_list
+        destinations:
+            title:    menu.destinations
+            route:    destinations_submenu
+        locations:
+            title:    menu.locations
+            route:    locations_submenu
+        bons_plans:
+            title:    menu.bons_plans
+            route:    bons_plans_submenu
+        vacances:
+            title:    menu.vacances
+            route:    vacances_submenu
+        weekends:
+            title:    menu.weekends
+            route:    weekends_submenu
