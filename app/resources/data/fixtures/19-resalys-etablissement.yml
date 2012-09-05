@@ -1228,7 +1228,7 @@
         Fax: ''
         OpeningDate: null
         ClosingDate: null
-        VilleId: 5
+        VilleId: 114
     83:
         Code: 18
         Name: 'La Bretonnière'
@@ -1573,7 +1573,7 @@
         Fax: '05 53 31 12 73'
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 2
     106:
         Code: 20
         Name: 'Le Calypso'
@@ -2398,7 +2398,7 @@
         Fax: '04 67 90 97 95'
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 4
     161:
         Code: 40
         Name: 'Les Deux Fontaines '
@@ -2488,7 +2488,7 @@
         Fax: '02 97 52 65 66'
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 1
     167:
         Code: 46
         Name: 'Domaine de la Rive'

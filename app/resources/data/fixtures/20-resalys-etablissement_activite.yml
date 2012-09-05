@@ -1,1 +1,343 @@
-\Cungfoo\Model\EtablissementActivite: {  }
+\Cungfoo\Model\EtablissementActivite:
+    82_1:
+        EtablissementId: 82
+        ActiviteId: 1
+    105_1:
+        EtablissementId: 105
+        ActiviteId: 1
+    160_1:
+        EtablissementId: 160
+        ActiviteId: 1
+    166_1:
+        EtablissementId: 166
+        ActiviteId: 1
+    1_2:
+        EtablissementId: 1
+        ActiviteId: 2
+    3_2:
+        EtablissementId: 3
+        ActiviteId: 2
+    4_2:
+        EtablissementId: 4
+        ActiviteId: 2
+    5_2:
+        EtablissementId: 5
+        ActiviteId: 2
+    6_2:
+        EtablissementId: 6
+        ActiviteId: 2
+    7_2:
+        EtablissementId: 7
+        ActiviteId: 2
+    10_2:
+        EtablissementId: 10
+        ActiviteId: 2
+    11_2:
+        EtablissementId: 11
+        ActiviteId: 2
+    13_2:
+        EtablissementId: 13
+        ActiviteId: 2
+    14_2:
+        EtablissementId: 14
+        ActiviteId: 2
+    15_2:
+        EtablissementId: 15
+        ActiviteId: 2
+    16_2:
+        EtablissementId: 16
+        ActiviteId: 2
+    17_2:
+        EtablissementId: 17
+        ActiviteId: 2
+    19_2:
+        EtablissementId: 19
+        ActiviteId: 2
+    20_2:
+        EtablissementId: 20
+        ActiviteId: 2
+    21_2:
+        EtablissementId: 21
+        ActiviteId: 2
+    22_2:
+        EtablissementId: 22
+        ActiviteId: 2
+    23_2:
+        EtablissementId: 23
+        ActiviteId: 2
+    27_2:
+        EtablissementId: 27
+        ActiviteId: 2
+    28_2:
+        EtablissementId: 28
+        ActiviteId: 2
+    29_2:
+        EtablissementId: 29
+        ActiviteId: 2
+    30_2:
+        EtablissementId: 30
+        ActiviteId: 2
+    31_2:
+        EtablissementId: 31
+        ActiviteId: 2
+    33_2:
+        EtablissementId: 33
+        ActiviteId: 2
+    34_2:
+        EtablissementId: 34
+        ActiviteId: 2
+    35_2:
+        EtablissementId: 35
+        ActiviteId: 2
+    36_2:
+        EtablissementId: 36
+        ActiviteId: 2
+    37_2:
+        EtablissementId: 37
+        ActiviteId: 2
+    39_2:
+        EtablissementId: 39
+        ActiviteId: 2
+    50_2:
+        EtablissementId: 50
+        ActiviteId: 2
+    61_2:
+        EtablissementId: 61
+        ActiviteId: 2
+    78_2:
+        EtablissementId: 78
+        ActiviteId: 2
+    79_2:
+        EtablissementId: 79
+        ActiviteId: 2
+    80_2:
+        EtablissementId: 80
+        ActiviteId: 2
+    82_2:
+        EtablissementId: 82
+        ActiviteId: 2
+    83_2:
+        EtablissementId: 83
+        ActiviteId: 2
+    94_2:
+        EtablissementId: 94
+        ActiviteId: 2
+    105_2:
+        EtablissementId: 105
+        ActiviteId: 2
+    139_2:
+        EtablissementId: 139
+        ActiviteId: 2
+    143_2:
+        EtablissementId: 143
+        ActiviteId: 2
+    145_2:
+        EtablissementId: 145
+        ActiviteId: 2
+    146_2:
+        EtablissementId: 146
+        ActiviteId: 2
+    147_2:
+        EtablissementId: 147
+        ActiviteId: 2
+    148_2:
+        EtablissementId: 148
+        ActiviteId: 2
+    150_2:
+        EtablissementId: 150
+        ActiviteId: 2
+    152_2:
+        EtablissementId: 152
+        ActiviteId: 2
+    153_2:
+        EtablissementId: 153
+        ActiviteId: 2
+    154_2:
+        EtablissementId: 154
+        ActiviteId: 2
+    156_2:
+        EtablissementId: 156
+        ActiviteId: 2
+    157_2:
+        EtablissementId: 157
+        ActiviteId: 2
+    159_2:
+        EtablissementId: 159
+        ActiviteId: 2
+    160_2:
+        EtablissementId: 160
+        ActiviteId: 2
+    161_2:
+        EtablissementId: 161
+        ActiviteId: 2
+    163_2:
+        EtablissementId: 163
+        ActiviteId: 2
+    165_2:
+        EtablissementId: 165
+        ActiviteId: 2
+    166_2:
+        EtablissementId: 166
+        ActiviteId: 2
+    167_2:
+        EtablissementId: 167
+        ActiviteId: 2
+    168_2:
+        EtablissementId: 168
+        ActiviteId: 2
+    169_2:
+        EtablissementId: 169
+        ActiviteId: 2
+    170_2:
+        EtablissementId: 170
+        ActiviteId: 2
+    171_2:
+        EtablissementId: 171
+        ActiviteId: 2
+    172_2:
+        EtablissementId: 172
+        ActiviteId: 2
+    173_2:
+        EtablissementId: 173
+        ActiviteId: 2
+    174_2:
+        EtablissementId: 174
+        ActiviteId: 2
+    175_2:
+        EtablissementId: 175
+        ActiviteId: 2
+    176_2:
+        EtablissementId: 176
+        ActiviteId: 2
+    177_2:
+        EtablissementId: 177
+        ActiviteId: 2
+    181_2:
+        EtablissementId: 181
+        ActiviteId: 2
+    182_2:
+        EtablissementId: 182
+        ActiviteId: 2
+    183_2:
+        EtablissementId: 183
+        ActiviteId: 2
+    184_2:
+        EtablissementId: 184
+        ActiviteId: 2
+    185_2:
+        EtablissementId: 185
+        ActiviteId: 2
+    186_2:
+        EtablissementId: 186
+        ActiviteId: 2
+    187_2:
+        EtablissementId: 187
+        ActiviteId: 2
+    188_2:
+        EtablissementId: 188
+        ActiviteId: 2
+    189_2:
+        EtablissementId: 189
+        ActiviteId: 2
+    190_2:
+        EtablissementId: 190
+        ActiviteId: 2
+    191_2:
+        EtablissementId: 191
+        ActiviteId: 2
+    192_2:
+        EtablissementId: 192
+        ActiviteId: 2
+    193_2:
+        EtablissementId: 193
+        ActiviteId: 2
+    194_2:
+        EtablissementId: 194
+        ActiviteId: 2
+    195_2:
+        EtablissementId: 195
+        ActiviteId: 2
+    196_2:
+        EtablissementId: 196
+        ActiviteId: 2
+    197_2:
+        EtablissementId: 197
+        ActiviteId: 2
+    198_2:
+        EtablissementId: 198
+        ActiviteId: 2
+    199_2:
+        EtablissementId: 199
+        ActiviteId: 2
+    201_2:
+        EtablissementId: 201
+        ActiviteId: 2
+    202_2:
+        EtablissementId: 202
+        ActiviteId: 2
+    203_2:
+        EtablissementId: 203
+        ActiviteId: 2
+    204_2:
+        EtablissementId: 204
+        ActiviteId: 2
+    205_2:
+        EtablissementId: 205
+        ActiviteId: 2
+    206_2:
+        EtablissementId: 206
+        ActiviteId: 2
+    208_2:
+        EtablissementId: 208
+        ActiviteId: 2
+    209_2:
+        EtablissementId: 209
+        ActiviteId: 2
+    210_2:
+        EtablissementId: 210
+        ActiviteId: 2
+    212_2:
+        EtablissementId: 212
+        ActiviteId: 2
+    213_2:
+        EtablissementId: 213
+        ActiviteId: 2
+    214_2:
+        EtablissementId: 214
+        ActiviteId: 2
+    217_2:
+        EtablissementId: 217
+        ActiviteId: 2
+    218_2:
+        EtablissementId: 218
+        ActiviteId: 2
+    219_2:
+        EtablissementId: 219
+        ActiviteId: 2
+    220_2:
+        EtablissementId: 220
+        ActiviteId: 2
+    221_2:
+        EtablissementId: 221
+        ActiviteId: 2
+    222_2:
+        EtablissementId: 222
+        ActiviteId: 2
+    224_2:
+        EtablissementId: 224
+        ActiviteId: 2
+    105_3:
+        EtablissementId: 105
+        ActiviteId: 3
+    160_3:
+        EtablissementId: 160
+        ActiviteId: 3
+    166_3:
+        EtablissementId: 166
+        ActiviteId: 3
+    82_4:
+        EtablissementId: 82
+        ActiviteId: 4
+    82_7:
+        EtablissementId: 82
+        ActiviteId: 7

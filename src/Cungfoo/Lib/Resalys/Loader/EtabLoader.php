@@ -117,7 +117,7 @@ class EtabLoader extends BaseLoader
             {
                 $modelQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['model']);
                 $objectTheme = $modelQuery::create()
-                    ->filterById($themecode)
+                    ->filterByCode($themecode)
                     ->findOne()
                 ;
 

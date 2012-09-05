@@ -1,1 +1,10 @@
-\Cungfoo\Model\EtablissementDestination: {  }
+\Cungfoo\Model\EtablissementDestination:
+    105_2:
+        EtablissementId: 105
+        DestinationId: 2
+    166_3:
+        EtablissementId: 166
+        DestinationId: 3
+    160_4:
+        EtablissementId: 160
+        DestinationId: 4
