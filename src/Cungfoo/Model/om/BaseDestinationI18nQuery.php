@@ -41,11 +41,11 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18n findOne(PropelPDO $con = null) Return the first DestinationI18n matching the query
  * @method DestinationI18n findOneOrCreate(PropelPDO $con = null) Return the first DestinationI18n matching the query, or a new DestinationI18n object populated from the query conditions when no match is found
  *
- * @method DestinationI18n findOneById(string $id) Return the first DestinationI18n filtered by the id column
+ * @method DestinationI18n findOneById(int $id) Return the first DestinationI18n filtered by the id column
  * @method DestinationI18n findOneByLocale(string $locale) Return the first DestinationI18n filtered by the locale column
  * @method DestinationI18n findOneByName(string $name) Return the first DestinationI18n filtered by the name column
  *
- * @method array findById(string $id) Return DestinationI18n objects filtered by the id column
+ * @method array findById(int $id) Return DestinationI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return DestinationI18n objects filtered by the locale column
  * @method array findByName(string $name) Return DestinationI18n objects filtered by the name column
  *
@@ -141,7 +141,7 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
         $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `destination_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_STR);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {
@@ -244,25 +244,25 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterById('fooValue');   // WHERE id = 'fooValue'
-     * $query->filterById('%fooValue%'); // WHERE id LIKE '%fooValue%'
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @param     string $id The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByDestination()
+     *
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return DestinationI18nQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($id)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $id)) {
-                $id = str_replace('*', '%', $id);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(DestinationI18nPeer::ID, $id, $comparison);

@@ -47,7 +47,7 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
 
     /**
      * The value for the id field.
-     * @var        string
+     * @var        int
      */
     protected $id;
 
@@ -107,7 +107,7 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
     /**
      * Get the [id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -137,13 +137,13 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
     /**
      * Set the value of [id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return VilleI18n The current object (for fluent API support)
      */
     public function setId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->id !== $v) {
@@ -237,7 +237,7 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
     {
         try {
 
-            $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
+            $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
@@ -493,7 +493,7 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
                     case '`ID`':
-                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
                     case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
@@ -937,7 +937,7 @@ abstract class BaseVilleI18n extends BaseObject implements Persistent
      */
     public function getVille(PropelPDO $con = null)
     {
-        if ($this->aVille === null && (($this->id !== "" && $this->id !== null))) {
+        if ($this->aVille === null && ($this->id !== null)) {
             $this->aVille = VilleQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

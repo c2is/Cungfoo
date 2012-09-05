@@ -53,9 +53,15 @@ abstract class BasePays extends BaseObject implements Persistent
 
     /**
      * The value for the id field.
-     * @var        string
+     * @var        int
      */
     protected $id;
+
+    /**
+     * The value for the code field.
+     * @var        string
+     */
+    protected $code;
 
     /**
      * The value for the created_at field.
@@ -124,11 +130,21 @@ abstract class BasePays extends BaseObject implements Persistent
     /**
      * Get the [id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get the [code] column value.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -208,13 +224,13 @@ abstract class BasePays extends BaseObject implements Persistent
     /**
      * Set the value of [id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return Pays The current object (for fluent API support)
      */
     public function setId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->id !== $v) {
@@ -225,6 +241,27 @@ abstract class BasePays extends BaseObject implements Persistent
 
         return $this;
     } // setId()
+
+    /**
+     * Set the value of [code] column.
+     *
+     * @param string $v new value
+     * @return Pays The current object (for fluent API support)
+     */
+    public function setCode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->code !== $v) {
+            $this->code = $v;
+            $this->modifiedColumns[] = PaysPeer::CODE;
+        }
+
+
+        return $this;
+    } // setCode()
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
@@ -304,9 +341,10 @@ abstract class BasePays extends BaseObject implements Persistent
     {
         try {
 
-            $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+            $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -315,7 +353,7 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = PaysPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = PaysPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Pays object", $e);
@@ -571,10 +609,17 @@ abstract class BasePays extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[] = PaysPeer::ID;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . PaysPeer::ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(PaysPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
+        }
+        if ($this->isColumnModified(PaysPeer::CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
         if ($this->isColumnModified(PaysPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
@@ -594,7 +639,10 @@ abstract class BasePays extends BaseObject implements Persistent
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
                     case '`ID`':
-                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case '`CODE`':
+                        $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -609,6 +657,13 @@ abstract class BasePays extends BaseObject implements Persistent
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -749,9 +804,12 @@ abstract class BasePays extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getCreatedAt();
+                return $this->getCode();
                 break;
             case 2:
+                return $this->getCreatedAt();
+                break;
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -784,8 +842,9 @@ abstract class BasePays extends BaseObject implements Persistent
         $keys = PaysPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getCreatedAt(),
-            $keys[2] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCode(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collRegions) {
@@ -832,9 +891,12 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setCreatedAt($value);
+                $this->setCode($value);
                 break;
             case 2:
+                $this->setCreatedAt($value);
+                break;
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -862,8 +924,9 @@ abstract class BasePays extends BaseObject implements Persistent
         $keys = PaysPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -876,6 +939,7 @@ abstract class BasePays extends BaseObject implements Persistent
         $criteria = new Criteria(PaysPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(PaysPeer::ID)) $criteria->add(PaysPeer::ID, $this->id);
+        if ($this->isColumnModified(PaysPeer::CODE)) $criteria->add(PaysPeer::CODE, $this->code);
         if ($this->isColumnModified(PaysPeer::CREATED_AT)) $criteria->add(PaysPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PaysPeer::UPDATED_AT)) $criteria->add(PaysPeer::UPDATED_AT, $this->updated_at);
 
@@ -900,7 +964,7 @@ abstract class BasePays extends BaseObject implements Persistent
 
     /**
      * Returns the primary key for this object (row).
-     * @return string
+     * @return int
      */
     public function getPrimaryKey()
     {
@@ -910,7 +974,7 @@ abstract class BasePays extends BaseObject implements Persistent
     /**
      * Generic method to set the primary key (id column).
      *
-     * @param  string $key Primary key.
+     * @param  int $key Primary key.
      * @return void
      */
     public function setPrimaryKey($key)
@@ -941,6 +1005,7 @@ abstract class BasePays extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setCode($this->getCode());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1456,6 +1521,7 @@ abstract class BasePays extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->code = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;

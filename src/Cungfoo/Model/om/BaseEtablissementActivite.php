@@ -55,7 +55,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
 
     /**
      * The value for the activite_id field.
-     * @var        string
+     * @var        int
      */
     protected $activite_id;
 
@@ -96,7 +96,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
     /**
      * Get the [activite_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getActiviteId()
     {
@@ -131,13 +131,13 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
     /**
      * Set the value of [activite_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return EtablissementActivite The current object (for fluent API support)
      */
     public function setActiviteId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->activite_id !== $v) {
@@ -186,7 +186,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
         try {
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->activite_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->activite_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -451,7 +451,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`ACTIVITE_ID`':
-                        $stmt->bindValue($identifier, $this->activite_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->activite_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -939,7 +939,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
      */
     public function getActivite(PropelPDO $con = null)
     {
-        if ($this->aActivite === null && (($this->activite_id !== "" && $this->activite_id !== null))) {
+        if ($this->aActivite === null && ($this->activite_id !== null)) {
             $this->aActivite = ActiviteQuery::create()->findPk($this->activite_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -25,11 +25,13 @@ use Cungfoo\Model\Ville;
  *
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method RegionQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method RegionQuery groupById() Group by the id column
+ * @method RegionQuery groupByCode() Group by the code column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
@@ -53,12 +55,14 @@ use Cungfoo\Model\Ville;
  * @method Region findOne(PropelPDO $con = null) Return the first Region matching the query
  * @method Region findOneOrCreate(PropelPDO $con = null) Return the first Region matching the query, or a new Region object populated from the query conditions when no match is found
  *
- * @method Region findOneByPaysId(string $pays_id) Return the first Region filtered by the pays_id column
+ * @method Region findOneByCode(string $code) Return the first Region filtered by the code column
+ * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  *
- * @method array findById(string $id) Return Region objects filtered by the id column
- * @method array findByPaysId(string $pays_id) Return Region objects filtered by the pays_id column
+ * @method array findById(int $id) Return Region objects filtered by the id column
+ * @method array findByCode(string $code) Return Region objects filtered by the code column
+ * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
  *
@@ -164,10 +168,10 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -258,28 +262,55 @@ abstract class BaseRegionQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterById('fooValue');   // WHERE id = 'fooValue'
-     * $query->filterById('%fooValue%'); // WHERE id LIKE '%fooValue%'
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @param     string $id The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return RegionQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
+        }
+
+        return $this->addUsingAlias(RegionPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode('fooValue');   // WHERE code = 'fooValue'
+     * $query->filterByCode('%fooValue%'); // WHERE code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $code The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
         if (null === $comparison) {
-            if (is_array($id)) {
+            if (is_array($code)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $id)) {
-                $id = str_replace('*', '%', $id);
+            } elseif (preg_match('/[\%\*]/', $code)) {
+                $code = str_replace('*', '%', $code);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(RegionPeer::ID, $id, $comparison);
+        return $this->addUsingAlias(RegionPeer::CODE, $code, $comparison);
     }
 
     /**
@@ -287,24 +318,38 @@ abstract class BaseRegionQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByPaysId('fooValue');   // WHERE pays_id = 'fooValue'
-     * $query->filterByPaysId('%fooValue%'); // WHERE pays_id LIKE '%fooValue%'
+     * $query->filterByPaysId(1234); // WHERE pays_id = 1234
+     * $query->filterByPaysId(array(12, 34)); // WHERE pays_id IN (12, 34)
+     * $query->filterByPaysId(array('min' => 12)); // WHERE pays_id > 12
      * </code>
      *
-     * @param     string $paysId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByPays()
+     *
+     * @param     mixed $paysId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return RegionQuery The current query, for fluid interface
      */
     public function filterByPaysId($paysId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($paysId)) {
+        if (is_array($paysId)) {
+            $useMinMax = false;
+            if (isset($paysId['min'])) {
+                $this->addUsingAlias(RegionPeer::PAYS_ID, $paysId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($paysId['max'])) {
+                $this->addUsingAlias(RegionPeer::PAYS_ID, $paysId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $paysId)) {
-                $paysId = str_replace('*', '%', $paysId);
-                $comparison = Criteria::LIKE;
             }
         }
 

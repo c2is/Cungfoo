@@ -27,6 +27,13 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'pays.code',
+            'required' => false,
+        ));
         $builder->add('paysI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PaysI18n',
             'languages' => array(

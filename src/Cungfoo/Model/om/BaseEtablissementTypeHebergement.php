@@ -55,7 +55,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * The value for the type_hebergement_id field.
-     * @var        string
+     * @var        int
      */
     protected $type_hebergement_id;
 
@@ -96,7 +96,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     /**
      * Get the [type_hebergement_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getTypeHebergementId()
     {
@@ -131,13 +131,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     /**
      * Set the value of [type_hebergement_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
     public function setTypeHebergementId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->type_hebergement_id !== $v) {
@@ -186,7 +186,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         try {
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -451,7 +451,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`TYPE_HEBERGEMENT_ID`':
-                        $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -939,7 +939,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function getTypeHebergement(PropelPDO $con = null)
     {
-        if ($this->aTypeHebergement === null && (($this->type_hebergement_id !== "" && $this->type_hebergement_id !== null))) {
+        if ($this->aTypeHebergement === null && ($this->type_hebergement_id !== null)) {
             $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->type_hebergement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -27,6 +27,13 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'activite.code',
+            'required' => false,
+        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(

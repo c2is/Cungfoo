@@ -40,10 +40,11 @@ class TypeHebergementTableMap extends TableMap
         $this->setPhpName('TypeHebergement');
         $this->setClassname('Cungfoo\\Model\\TypeHebergement');
         $this->setPackage('Cungfoo.Model');
-        $this->setUseIdGenerator(false);
+        $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'VARCHAR', true, 255, null);
-        $this->addForeignKey('CATEGORY_TYPE_HEBERGEMENT_ID', 'CategoryTypeHebergementId', 'VARCHAR', 'category_type_hebergement', 'ID', false, 255, null);
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
+        $this->addForeignKey('CATEGORY_TYPE_HEBERGEMENT_ID', 'CategoryTypeHebergementId', 'INTEGER', 'category_type_hebergement', 'ID', false, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators

@@ -55,13 +55,19 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * The value for the id field.
-     * @var        string
+     * @var        int
      */
     protected $id;
 
     /**
-     * The value for the region_id field.
+     * The value for the code field.
      * @var        string
+     */
+    protected $code;
+
+    /**
+     * The value for the region_id field.
+     * @var        int
      */
     protected $region_id;
 
@@ -137,7 +143,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     /**
      * Get the [id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -145,9 +151,19 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [region_id] column value.
+     * Get the [code] column value.
      *
      * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Get the [region_id] column value.
+     *
+     * @return int
      */
     public function getRegionId()
     {
@@ -231,13 +247,13 @@ abstract class BaseVille extends BaseObject implements Persistent
     /**
      * Set the value of [id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
     public function setId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->id !== $v) {
@@ -250,15 +266,36 @@ abstract class BaseVille extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [region_id] column.
+     * Set the value of [code] column.
      *
      * @param string $v new value
+     * @return Ville The current object (for fluent API support)
+     */
+    public function setCode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->code !== $v) {
+            $this->code = $v;
+            $this->modifiedColumns[] = VillePeer::CODE;
+        }
+
+
+        return $this;
+    } // setCode()
+
+    /**
+     * Set the value of [region_id] column.
+     *
+     * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
     public function setRegionId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->region_id !== $v) {
@@ -352,10 +389,11 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         try {
 
-            $this->id = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
-            $this->region_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+            $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->region_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -364,7 +402,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 4; // 4 = VillePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Ville object", $e);
@@ -636,10 +674,17 @@ abstract class BaseVille extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[] = VillePeer::ID;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . VillePeer::ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(VillePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
+        }
+        if ($this->isColumnModified(VillePeer::CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
         if ($this->isColumnModified(VillePeer::REGION_ID)) {
             $modifiedColumns[':p' . $index++]  = '`REGION_ID`';
@@ -662,10 +707,13 @@ abstract class BaseVille extends BaseObject implements Persistent
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
                     case '`ID`':
-                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case '`CODE`':
+                        $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
                     case '`REGION_ID`':
-                        $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_INT);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -680,6 +728,13 @@ abstract class BaseVille extends BaseObject implements Persistent
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -832,12 +887,15 @@ abstract class BaseVille extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getRegionId();
+                return $this->getCode();
                 break;
             case 2:
-                return $this->getCreatedAt();
+                return $this->getRegionId();
                 break;
             case 3:
+                return $this->getCreatedAt();
+                break;
+            case 4:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -870,9 +928,10 @@ abstract class BaseVille extends BaseObject implements Persistent
         $keys = VillePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getRegionId(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCode(),
+            $keys[2] => $this->getRegionId(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -922,12 +981,15 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setRegionId($value);
+                $this->setCode($value);
                 break;
             case 2:
-                $this->setCreatedAt($value);
+                $this->setRegionId($value);
                 break;
             case 3:
+                $this->setCreatedAt($value);
+                break;
+            case 4:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -955,9 +1017,10 @@ abstract class BaseVille extends BaseObject implements Persistent
         $keys = VillePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setRegionId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setRegionId($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
     }
 
     /**
@@ -970,6 +1033,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         $criteria = new Criteria(VillePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(VillePeer::ID)) $criteria->add(VillePeer::ID, $this->id);
+        if ($this->isColumnModified(VillePeer::CODE)) $criteria->add(VillePeer::CODE, $this->code);
         if ($this->isColumnModified(VillePeer::REGION_ID)) $criteria->add(VillePeer::REGION_ID, $this->region_id);
         if ($this->isColumnModified(VillePeer::CREATED_AT)) $criteria->add(VillePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(VillePeer::UPDATED_AT)) $criteria->add(VillePeer::UPDATED_AT, $this->updated_at);
@@ -995,7 +1059,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Returns the primary key for this object (row).
-     * @return string
+     * @return int
      */
     public function getPrimaryKey()
     {
@@ -1005,7 +1069,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     /**
      * Generic method to set the primary key (id column).
      *
-     * @param  string $key Primary key.
+     * @param  int $key Primary key.
      * @return void
      */
     public function setPrimaryKey($key)
@@ -1036,6 +1100,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setCode($this->getCode());
         $copyObj->setRegionId($this->getRegionId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1146,7 +1211,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function getRegion(PropelPDO $con = null)
     {
-        if ($this->aRegion === null && (($this->region_id !== "" && $this->region_id !== null))) {
+        if ($this->aRegion === null && ($this->region_id !== null)) {
             $this->aRegion = RegionQuery::create()->findPk($this->region_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1603,6 +1668,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->code = null;
         $this->region_id = null;
         $this->created_at = null;
         $this->updated_at = null;

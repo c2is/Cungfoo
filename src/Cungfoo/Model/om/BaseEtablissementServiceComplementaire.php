@@ -55,7 +55,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * The value for the service_complementaire_id field.
-     * @var        string
+     * @var        int
      */
     protected $service_complementaire_id;
 
@@ -96,7 +96,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
     /**
      * Get the [service_complementaire_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getServiceComplementaireId()
     {
@@ -131,13 +131,13 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
     /**
      * Set the value of [service_complementaire_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return EtablissementServiceComplementaire The current object (for fluent API support)
      */
     public function setServiceComplementaireId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->service_complementaire_id !== $v) {
@@ -186,7 +186,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
         try {
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->service_complementaire_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->service_complementaire_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -451,7 +451,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`SERVICE_COMPLEMENTAIRE_ID`':
-                        $stmt->bindValue($identifier, $this->service_complementaire_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->service_complementaire_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -939,7 +939,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
      */
     public function getServiceComplementaire(PropelPDO $con = null)
     {
-        if ($this->aServiceComplementaire === null && (($this->service_complementaire_id !== "" && $this->service_complementaire_id !== null))) {
+        if ($this->aServiceComplementaire === null && ($this->service_complementaire_id !== null)) {
             $this->aServiceComplementaire = ServiceComplementaireQuery::create()->findPk($this->service_complementaire_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

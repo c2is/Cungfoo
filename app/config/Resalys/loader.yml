@@ -7,10 +7,14 @@ loader:
         model:  \Cungfoo\Model\Pays
       REGIONS:
         model:  \Cungfoo\Model\Region
-        parent: PAYS
+        parent:
+          name:   PAYS
+          setter: setPaysId
       VILLE:
         model:  \Cungfoo\Model\Ville
-        parent: REGIONS
+        parent:
+          name:   REGIONS
+          setter: setRegionId
       SERVCOMP:
         model:  \Cungfoo\Model\ServiceComplementaire
       ACTIVITES:

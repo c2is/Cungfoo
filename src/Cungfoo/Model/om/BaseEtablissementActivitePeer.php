@@ -403,7 +403,7 @@ abstract class BaseEtablissementActivitePeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return array((int) $row[$startcol], (string) $row[$startcol + 1]);
+        return array((int) $row[$startcol], (int) $row[$startcol + 1]);
     }
 
     /**
@@ -1355,7 +1355,7 @@ abstract class BaseEtablissementActivitePeer
     /**
      * Retrieve object using using composite pkey values.
      * @param   int $etablissement_id
-     * @param   string $activite_id
+     * @param   int $activite_id
      * @param      PropelPDO $con
      * @return   EtablissementActivite
      */

@@ -34,6 +34,7 @@ use Cungfoo\Model\Ville;
  *
  *
  * @method EtablissementQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method EtablissementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method EtablissementQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EtablissementQuery orderByAddress1($order = Criteria::ASC) Order by the address1 column
  * @method EtablissementQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
@@ -49,6 +50,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
  *
  * @method EtablissementQuery groupById() Group by the id column
+ * @method EtablissementQuery groupByCode() Group by the code column
  * @method EtablissementQuery groupByName() Group by the name column
  * @method EtablissementQuery groupByAddress1() Group by the address1 column
  * @method EtablissementQuery groupByAddress2() Group by the address2 column
@@ -98,6 +100,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOne(PropelPDO $con = null) Return the first Etablissement matching the query
  * @method Etablissement findOneOrCreate(PropelPDO $con = null) Return the first Etablissement matching the query, or a new Etablissement object populated from the query conditions when no match is found
  *
+ * @method Etablissement findOneByCode(int $code) Return the first Etablissement filtered by the code column
  * @method Etablissement findOneByName(string $name) Return the first Etablissement filtered by the name column
  * @method Etablissement findOneByAddress1(string $address1) Return the first Etablissement filtered by the address1 column
  * @method Etablissement findOneByAddress2(string $address2) Return the first Etablissement filtered by the address2 column
@@ -110,9 +113,10 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByFax(string $fax) Return the first Etablissement filtered by the fax column
  * @method Etablissement findOneByOpeningDate(string $opening_date) Return the first Etablissement filtered by the opening_date column
  * @method Etablissement findOneByClosingDate(string $closing_date) Return the first Etablissement filtered by the closing_date column
- * @method Etablissement findOneByVilleId(string $ville_id) Return the first Etablissement filtered by the ville_id column
+ * @method Etablissement findOneByVilleId(int $ville_id) Return the first Etablissement filtered by the ville_id column
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
+ * @method array findByCode(int $code) Return Etablissement objects filtered by the code column
  * @method array findByName(string $name) Return Etablissement objects filtered by the name column
  * @method array findByAddress1(string $address1) Return Etablissement objects filtered by the address1 column
  * @method array findByAddress2(string $address2) Return Etablissement objects filtered by the address2 column
@@ -125,7 +129,7 @@ use Cungfoo\Model\Ville;
  * @method array findByFax(string $fax) Return Etablissement objects filtered by the fax column
  * @method array findByOpeningDate(string $opening_date) Return Etablissement objects filtered by the opening_date column
  * @method array findByClosingDate(string $closing_date) Return Etablissement objects filtered by the closing_date column
- * @method array findByVilleId(string $ville_id) Return Etablissement objects filtered by the ville_id column
+ * @method array findByVilleId(int $ville_id) Return Etablissement objects filtered by the ville_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -229,7 +233,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -343,6 +347,47 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode(1234); // WHERE code = 1234
+     * $query->filterByCode(array(12, 34)); // WHERE code IN (12, 34)
+     * $query->filterByCode(array('min' => 12)); // WHERE code > 12
+     * </code>
+     *
+     * @param     mixed $code The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
+        if (is_array($code)) {
+            $useMinMax = false;
+            if (isset($code['min'])) {
+                $this->addUsingAlias(EtablissementPeer::CODE, $code['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($code['max'])) {
+                $this->addUsingAlias(EtablissementPeer::CODE, $code['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::CODE, $code, $comparison);
     }
 
     /**
@@ -726,24 +771,38 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByVilleId('fooValue');   // WHERE ville_id = 'fooValue'
-     * $query->filterByVilleId('%fooValue%'); // WHERE ville_id LIKE '%fooValue%'
+     * $query->filterByVilleId(1234); // WHERE ville_id = 1234
+     * $query->filterByVilleId(array(12, 34)); // WHERE ville_id IN (12, 34)
+     * $query->filterByVilleId(array('min' => 12)); // WHERE ville_id > 12
      * </code>
      *
-     * @param     string $villeId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByVille()
+     *
+     * @param     mixed $villeId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementQuery The current query, for fluid interface
      */
     public function filterByVilleId($villeId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($villeId)) {
+        if (is_array($villeId)) {
+            $useMinMax = false;
+            if (isset($villeId['min'])) {
+                $this->addUsingAlias(EtablissementPeer::VILLE_ID, $villeId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($villeId['max'])) {
+                $this->addUsingAlias(EtablissementPeer::VILLE_ID, $villeId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $villeId)) {
-                $villeId = str_replace('*', '%', $villeId);
-                $comparison = Criteria::LIKE;
             }
         }
 

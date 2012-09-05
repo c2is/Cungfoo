@@ -44,7 +44,7 @@ class EtablissementTypeHebergementTableMap extends TableMap
         $this->setIsCrossRef(true);
         // columns
         $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'VARCHAR' , 'type_hebergement', 'ID', true, 255, null);
+        $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'ID', true, null, null);
         // validators
     } // initialize()
 

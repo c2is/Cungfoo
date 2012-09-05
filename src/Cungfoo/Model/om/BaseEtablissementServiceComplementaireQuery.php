@@ -45,10 +45,10 @@ use Cungfoo\Model\ServiceComplementaire;
  * @method EtablissementServiceComplementaire findOneOrCreate(PropelPDO $con = null) Return the first EtablissementServiceComplementaire matching the query, or a new EtablissementServiceComplementaire object populated from the query conditions when no match is found
  *
  * @method EtablissementServiceComplementaire findOneByEtablissementId(int $etablissement_id) Return the first EtablissementServiceComplementaire filtered by the etablissement_id column
- * @method EtablissementServiceComplementaire findOneByServiceComplementaireId(string $service_complementaire_id) Return the first EtablissementServiceComplementaire filtered by the service_complementaire_id column
+ * @method EtablissementServiceComplementaire findOneByServiceComplementaireId(int $service_complementaire_id) Return the first EtablissementServiceComplementaire filtered by the service_complementaire_id column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementServiceComplementaire objects filtered by the etablissement_id column
- * @method array findByServiceComplementaireId(string $service_complementaire_id) Return EtablissementServiceComplementaire objects filtered by the service_complementaire_id column
+ * @method array findByServiceComplementaireId(int $service_complementaire_id) Return EtablissementServiceComplementaire objects filtered by the service_complementaire_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseEtablissementServiceComplementaireQuery extends ModelCriteria
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
+            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -274,25 +274,25 @@ abstract class BaseEtablissementServiceComplementaireQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByServiceComplementaireId('fooValue');   // WHERE service_complementaire_id = 'fooValue'
-     * $query->filterByServiceComplementaireId('%fooValue%'); // WHERE service_complementaire_id LIKE '%fooValue%'
+     * $query->filterByServiceComplementaireId(1234); // WHERE service_complementaire_id = 1234
+     * $query->filterByServiceComplementaireId(array(12, 34)); // WHERE service_complementaire_id IN (12, 34)
+     * $query->filterByServiceComplementaireId(array('min' => 12)); // WHERE service_complementaire_id > 12
      * </code>
      *
-     * @param     string $serviceComplementaireId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByServiceComplementaire()
+     *
+     * @param     mixed $serviceComplementaireId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementServiceComplementaireQuery The current query, for fluid interface
      */
     public function filterByServiceComplementaireId($serviceComplementaireId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($serviceComplementaireId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $serviceComplementaireId)) {
-                $serviceComplementaireId = str_replace('*', '%', $serviceComplementaireId);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($serviceComplementaireId) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(EtablissementServiceComplementairePeer::SERVICE_COMPLEMENTAIRE_ID, $serviceComplementaireId, $comparison);

@@ -30,7 +30,7 @@ class ThemeLoader extends BaseLoader
 
                     $queryClass = sprintf('%sQuery', $this->config['ThemeLoader']['themes'][$theme->{'category'}]['model']);
                     $objectTheme = $queryClass::create()
-                        ->filterById($theme->{'id'})
+                        ->filterByCode($theme->{'id'})
                         ->findOne($con)
                     ;
 
@@ -38,7 +38,7 @@ class ThemeLoader extends BaseLoader
                     {
                         $modelClass = $this->config['ThemeLoader']['themes'][$theme->{'category'}]['model'];
                         $objectTheme = new $modelClass();
-                        $objectTheme->setId($theme->{'id'});
+                        $objectTheme->setCode($theme->{'id'});
                     }
 
                     $objectTheme->setLocale($locale);
@@ -46,17 +46,36 @@ class ThemeLoader extends BaseLoader
 
                     if ($theme->{'parent'})
                     {
-                        if (empty($this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']))
+                        if (empty($this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']['name']))
                         {
-                            throw new \Exception(sprintf('Please set the parent to the %s theme.', $theme->{'category'}));
+                            throw new \Exception(sprintf('Please set the parent name to the %s theme.', $theme->{'category'}));
                         }
 
-                        $setParent = sprintf('set%sId', $this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']);
-                        $objectTheme->$setParent($theme->{'parent'});
+                        $parentCategory = $this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']['name'];
+                        if (empty($this->config['ThemeLoader']['themes'][$parentCategory]['model']))
+                        {
+                            throw new \Exception(sprintf('Please set the %s theme.', $parentCategory));
+                        }
+
+                        if (empty($this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']['setter']))
+                        {
+                            throw new \Exception(sprintf('Please set the parent setter to the %s theme.', $theme->{'category'}));
+                        }
+
+                        $setParent = $this->config['ThemeLoader']['themes'][$theme->{'category'}]['parent']['setter'];
+
+                        $parentQuery = sprintf('%sQuery', $this->config['ThemeLoader']['themes'][$parentCategory]['model']);
+                        $objectThemeParent = $parentQuery::create()
+                            ->select(array('id'))
+                            ->filterByCode($theme->{'parent'})
+                            ->findOne($con)
+                        ;
+
+                        $objectTheme->$setParent($objectThemeParent);
                     }
 
                     $objectTheme->save($con);
-                    $this->themeCategories[$theme->{'category'}][$objectTheme->getId()] = $objectTheme;
+                    $this->themeCategories[$theme->{'category'}][] = $objectTheme;
                 }
             }
 

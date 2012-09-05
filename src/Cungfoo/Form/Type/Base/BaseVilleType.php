@@ -27,6 +27,13 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'ville.code',
+            'required' => false,
+        ));
         $builder->add('region', 'model', array(
             'class' => '\Cungfoo\Model\Region',
             'constraints' => array(

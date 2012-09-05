@@ -55,7 +55,7 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
 
     /**
      * The value for the equipement_id field.
-     * @var        string
+     * @var        int
      */
     protected $equipement_id;
 
@@ -96,7 +96,7 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
     /**
      * Get the [equipement_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getEquipementId()
     {
@@ -131,13 +131,13 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
     /**
      * Set the value of [equipement_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return EtablissementEquipement The current object (for fluent API support)
      */
     public function setEquipementId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->equipement_id !== $v) {
@@ -186,7 +186,7 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
         try {
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->equipement_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->equipement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -451,7 +451,7 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`EQUIPEMENT_ID`':
-                        $stmt->bindValue($identifier, $this->equipement_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->equipement_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -939,7 +939,7 @@ abstract class BaseEtablissementEquipement extends BaseObject implements Persist
      */
     public function getEquipement(PropelPDO $con = null)
     {
-        if ($this->aEquipement === null && (($this->equipement_id !== "" && $this->equipement_id !== null))) {
+        if ($this->aEquipement === null && ($this->equipement_id !== null)) {
             $this->aEquipement = EquipementQuery::create()->findPk($this->equipement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

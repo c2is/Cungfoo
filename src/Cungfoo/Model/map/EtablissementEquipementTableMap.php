@@ -44,7 +44,7 @@ class EtablissementEquipementTableMap extends TableMap
         $this->setIsCrossRef(true);
         // columns
         $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('EQUIPEMENT_ID', 'EquipementId', 'VARCHAR' , 'equipement', 'ID', true, 255, null);
+        $this->addForeignPrimaryKey('EQUIPEMENT_ID', 'EquipementId', 'INTEGER' , 'equipement', 'ID', true, null, null);
         // validators
     } // initialize()
 

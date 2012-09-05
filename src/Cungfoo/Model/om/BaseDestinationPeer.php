@@ -37,16 +37,19 @@ abstract class BaseDestinationPeer
     const TM_CLASS = 'DestinationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
     const ID = 'destination.ID';
+
+    /** the column name for the CODE field */
+    const CODE = 'destination.CODE';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'destination.CREATED_AT';
@@ -80,12 +83,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[DestinationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -95,12 +98,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CREATED_AT => 1, DestinationPeer::UPDATED_AT => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -175,10 +178,12 @@ abstract class BaseDestinationPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(DestinationPeer::ID);
+            $criteria->addSelectColumn(DestinationPeer::CODE);
             $criteria->addSelectColumn(DestinationPeer::CREATED_AT);
             $criteria->addSelectColumn(DestinationPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
         }
@@ -417,7 +422,7 @@ abstract class BaseDestinationPeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return (string) $row[$startcol];
+        return (int) $row[$startcol];
     }
 
     /**
@@ -532,6 +537,10 @@ abstract class BaseDestinationPeer
             $criteria = clone $values; // rename for clarity
         } else {
             $criteria = $values->buildCriteria(); // build Criteria from Destination object
+        }
+
+        if ($criteria->containsKey(DestinationPeer::ID) && $criteria->keyContainsValue(DestinationPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.DestinationPeer::ID.')');
         }
 
 
@@ -722,7 +731,7 @@ abstract class BaseDestinationPeer
     /**
      * Retrieve a single object by pkey.
      *
-     * @param      string $pk the primary key.
+     * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
      * @return Destination
      */

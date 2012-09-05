@@ -38,16 +38,19 @@ abstract class BaseTypeHebergementPeer
     const TM_CLASS = 'TypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'type_hebergement.ID';
+
+    /** the column name for the CODE field */
+    const CODE = 'type_hebergement.CODE';
 
     /** the column name for the CATEGORY_TYPE_HEBERGEMENT_ID field */
     const CATEGORY_TYPE_HEBERGEMENT_ID = 'type_hebergement.CATEGORY_TYPE_HEBERGEMENT_ID';
@@ -84,12 +87,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[TypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'CategoryTypeHebergementId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'categoryTypeHebergementId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'category_type_hebergement_id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CategoryTypeHebergementId', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'categoryTypeHebergementId', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category_type_hebergement_id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -99,12 +102,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CategoryTypeHebergementId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'categoryTypeHebergementId' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 1, TypeHebergementPeer::CREATED_AT => 2, TypeHebergementPeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'category_type_hebergement_id' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CategoryTypeHebergementId' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'categoryTypeHebergementId' => 2, 'createdAt' => 3, 'updatedAt' => 4, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 2, TypeHebergementPeer::CREATED_AT => 3, TypeHebergementPeer::UPDATED_AT => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category_type_hebergement_id' => 2, 'created_at' => 3, 'updated_at' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -179,11 +182,13 @@ abstract class BaseTypeHebergementPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(TypeHebergementPeer::ID);
+            $criteria->addSelectColumn(TypeHebergementPeer::CODE);
             $criteria->addSelectColumn(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID);
             $criteria->addSelectColumn(TypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CATEGORY_TYPE_HEBERGEMENT_ID');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
@@ -423,7 +428,7 @@ abstract class BaseTypeHebergementPeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return (string) $row[$startcol];
+        return (int) $row[$startcol];
     }
 
     /**
@@ -778,6 +783,10 @@ abstract class BaseTypeHebergementPeer
             $criteria = $values->buildCriteria(); // build Criteria from TypeHebergement object
         }
 
+        if ($criteria->containsKey(TypeHebergementPeer::ID) && $criteria->keyContainsValue(TypeHebergementPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.TypeHebergementPeer::ID.')');
+        }
+
 
         // Set the correct dbName
         $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
@@ -966,7 +975,7 @@ abstract class BaseTypeHebergementPeer
     /**
      * Retrieve a single object by pkey.
      *
-     * @param      string $pk the primary key.
+     * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
      * @return TypeHebergement
      */

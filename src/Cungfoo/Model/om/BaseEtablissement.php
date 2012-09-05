@@ -78,6 +78,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $id;
 
     /**
+     * The value for the code field.
+     * @var        int
+     */
+    protected $code;
+
+    /**
      * The value for the name field.
      * @var        string
      */
@@ -151,7 +157,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * The value for the ville_id field.
-     * @var        string
+     * @var        int
      */
     protected $ville_id;
 
@@ -323,6 +329,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get the [code] column value.
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -502,7 +518,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     /**
      * Get the [ville_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getVilleId()
     {
@@ -529,6 +545,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         return $this;
     } // setId()
+
+    /**
+     * Set the value of [code] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setCode($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->code !== $v) {
+            $this->code = $v;
+            $this->modifiedColumns[] = EtablissementPeer::CODE;
+        }
+
+
+        return $this;
+    } // setCode()
 
     /**
      * Set the value of [name] column.
@@ -789,13 +826,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     /**
      * Set the value of [ville_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return Etablissement The current object (for fluent API support)
      */
     public function setVilleId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->ville_id !== $v) {
@@ -844,19 +881,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->address1 = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->address2 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->zip = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->city = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->mail = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->country_code = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->phone1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->phone2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->fax = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->opening_date = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->closing_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->ville_id = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->code = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
+            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->address1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->address2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->zip = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->city = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->mail = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->country_code = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->phone1 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->phone2 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->fax = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->opening_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->closing_date = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->ville_id = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -865,7 +903,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 14; // 14 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 15; // 15 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1306,10 +1344,17 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[] = EtablissementPeer::ID;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . EtablissementPeer::ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
         if ($this->isColumnModified(EtablissementPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
@@ -1364,6 +1409,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
+                    case '`CODE`':
+                        $stmt->bindValue($identifier, $this->code, PDO::PARAM_INT);
+                        break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
@@ -1401,7 +1449,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         $stmt->bindValue($identifier, $this->closing_date, PDO::PARAM_STR);
                         break;
                     case '`VILLE_ID`':
-                        $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1410,6 +1458,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -1594,42 +1649,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
+                return $this->getCode();
                 break;
             case 2:
-                return $this->getAddress1();
+                return $this->getName();
                 break;
             case 3:
-                return $this->getAddress2();
+                return $this->getAddress1();
                 break;
             case 4:
-                return $this->getZip();
+                return $this->getAddress2();
                 break;
             case 5:
-                return $this->getCity();
+                return $this->getZip();
                 break;
             case 6:
-                return $this->getMail();
+                return $this->getCity();
                 break;
             case 7:
-                return $this->getCountryCode();
+                return $this->getMail();
                 break;
             case 8:
-                return $this->getPhone1();
+                return $this->getCountryCode();
                 break;
             case 9:
-                return $this->getPhone2();
+                return $this->getPhone1();
                 break;
             case 10:
-                return $this->getFax();
+                return $this->getPhone2();
                 break;
             case 11:
-                return $this->getOpeningDate();
+                return $this->getFax();
                 break;
             case 12:
-                return $this->getClosingDate();
+                return $this->getOpeningDate();
                 break;
             case 13:
+                return $this->getClosingDate();
+                break;
+            case 14:
                 return $this->getVilleId();
                 break;
             default:
@@ -1662,19 +1720,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $keys = EtablissementPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getAddress1(),
-            $keys[3] => $this->getAddress2(),
-            $keys[4] => $this->getZip(),
-            $keys[5] => $this->getCity(),
-            $keys[6] => $this->getMail(),
-            $keys[7] => $this->getCountryCode(),
-            $keys[8] => $this->getPhone1(),
-            $keys[9] => $this->getPhone2(),
-            $keys[10] => $this->getFax(),
-            $keys[11] => $this->getOpeningDate(),
-            $keys[12] => $this->getClosingDate(),
-            $keys[13] => $this->getVilleId(),
+            $keys[1] => $this->getCode(),
+            $keys[2] => $this->getName(),
+            $keys[3] => $this->getAddress1(),
+            $keys[4] => $this->getAddress2(),
+            $keys[5] => $this->getZip(),
+            $keys[6] => $this->getCity(),
+            $keys[7] => $this->getMail(),
+            $keys[8] => $this->getCountryCode(),
+            $keys[9] => $this->getPhone1(),
+            $keys[10] => $this->getPhone2(),
+            $keys[11] => $this->getFax(),
+            $keys[12] => $this->getOpeningDate(),
+            $keys[13] => $this->getClosingDate(),
+            $keys[14] => $this->getVilleId(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -1736,42 +1795,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
+                $this->setCode($value);
                 break;
             case 2:
-                $this->setAddress1($value);
+                $this->setName($value);
                 break;
             case 3:
-                $this->setAddress2($value);
+                $this->setAddress1($value);
                 break;
             case 4:
-                $this->setZip($value);
+                $this->setAddress2($value);
                 break;
             case 5:
-                $this->setCity($value);
+                $this->setZip($value);
                 break;
             case 6:
-                $this->setMail($value);
+                $this->setCity($value);
                 break;
             case 7:
-                $this->setCountryCode($value);
+                $this->setMail($value);
                 break;
             case 8:
-                $this->setPhone1($value);
+                $this->setCountryCode($value);
                 break;
             case 9:
-                $this->setPhone2($value);
+                $this->setPhone1($value);
                 break;
             case 10:
-                $this->setFax($value);
+                $this->setPhone2($value);
                 break;
             case 11:
-                $this->setOpeningDate($value);
+                $this->setFax($value);
                 break;
             case 12:
-                $this->setClosingDate($value);
+                $this->setOpeningDate($value);
                 break;
             case 13:
+                $this->setClosingDate($value);
+                break;
+            case 14:
                 $this->setVilleId($value);
                 break;
         } // switch()
@@ -1799,19 +1861,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $keys = EtablissementPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setAddress1($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setAddress2($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setZip($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setCity($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setMail($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setCountryCode($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setPhone1($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setPhone2($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setFax($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setOpeningDate($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setClosingDate($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setVilleId($arr[$keys[13]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setAddress1($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setAddress2($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setZip($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setCity($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setMail($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setCountryCode($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setPhone1($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setPhone2($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setFax($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setOpeningDate($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setClosingDate($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setVilleId($arr[$keys[14]]);
     }
 
     /**
@@ -1824,6 +1887,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $criteria = new Criteria(EtablissementPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(EtablissementPeer::ID)) $criteria->add(EtablissementPeer::ID, $this->id);
+        if ($this->isColumnModified(EtablissementPeer::CODE)) $criteria->add(EtablissementPeer::CODE, $this->code);
         if ($this->isColumnModified(EtablissementPeer::NAME)) $criteria->add(EtablissementPeer::NAME, $this->name);
         if ($this->isColumnModified(EtablissementPeer::ADDRESS1)) $criteria->add(EtablissementPeer::ADDRESS1, $this->address1);
         if ($this->isColumnModified(EtablissementPeer::ADDRESS2)) $criteria->add(EtablissementPeer::ADDRESS2, $this->address2);
@@ -1900,6 +1964,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setCode($this->getCode());
         $copyObj->setName($this->getName());
         $copyObj->setAddress1($this->getAddress1());
         $copyObj->setAddress2($this->getAddress2());
@@ -2044,7 +2109,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function getVille(PropelPDO $con = null)
     {
-        if ($this->aVille === null && (($this->ville_id !== "" && $this->ville_id !== null))) {
+        if ($this->aVille === null && ($this->ville_id !== null)) {
             $this->aVille = VilleQuery::create()->findPk($this->ville_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -4306,6 +4371,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->code = null;
         $this->name = null;
         $this->address1 = null;
         $this->address2 = null;

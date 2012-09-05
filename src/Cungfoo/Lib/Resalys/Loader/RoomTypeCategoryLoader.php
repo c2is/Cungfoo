@@ -38,21 +38,21 @@ class RoomTypeCategoryLoader extends BaseLoader
     protected function updateRoomTypeCategory($category, $locale, $con)
     {
         $objectRoomTypeCategory = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
-            ->filterById($category->{'category_code'})
+            ->filterByCode($category->{'category_code'})
             ->findOne($con)
         ;
 
         if (!$objectRoomTypeCategory)
         {
             $objectRoomTypeCategory = new \Cungfoo\Model\CategoryTypeHebergement();
-            $objectRoomTypeCategory->setId($category->{'category_code'});
+            $objectRoomTypeCategory->setCode($category->{'category_code'});
         }
 
         $objectRoomTypeCategory->setLocale($locale);
         $objectRoomTypeCategory->setName($category->{'category_label'});
 
         $objectRoomTypeCategory->save($con);
-        $this->roomtypes[$objectRoomTypeCategory->getId()] = $objectRoomTypeCategory;
+        $this->roomtypes[] = $objectRoomTypeCategory;
     }
 
     protected function removeObsoleteRoomTypeCategories(\PropelPDO $con)

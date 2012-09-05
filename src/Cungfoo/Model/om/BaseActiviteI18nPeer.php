@@ -407,7 +407,7 @@ abstract class BaseActiviteI18nPeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return array((string) $row[$startcol], (string) $row[$startcol + 1]);
+        return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
 
     /**
@@ -965,7 +965,7 @@ abstract class BaseActiviteI18nPeer
 
     /**
      * Retrieve object using using composite pkey values.
-     * @param   string $id
+     * @param   int $id
      * @param   string $locale
      * @param      PropelPDO $con
      * @return   ActiviteI18n

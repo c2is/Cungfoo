@@ -21,7 +21,6 @@ class BaseEtablissementDestinationListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('etablissement_id'));
         $this->addColumn(new Column\TextColumn('destination_id'));
-        $this->addColumn(new Column\TextColumn('destination_id'));
     }
 
     /**

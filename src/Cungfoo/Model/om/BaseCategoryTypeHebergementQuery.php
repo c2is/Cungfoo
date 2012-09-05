@@ -24,10 +24,12 @@ use Cungfoo\Model\TypeHebergement;
  *
  *
  * @method CategoryTypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method CategoryTypeHebergementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method CategoryTypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method CategoryTypeHebergementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method CategoryTypeHebergementQuery groupById() Group by the id column
+ * @method CategoryTypeHebergementQuery groupByCode() Group by the code column
  * @method CategoryTypeHebergementQuery groupByCreatedAt() Group by the created_at column
  * @method CategoryTypeHebergementQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -46,10 +48,12 @@ use Cungfoo\Model\TypeHebergement;
  * @method CategoryTypeHebergement findOne(PropelPDO $con = null) Return the first CategoryTypeHebergement matching the query
  * @method CategoryTypeHebergement findOneOrCreate(PropelPDO $con = null) Return the first CategoryTypeHebergement matching the query, or a new CategoryTypeHebergement object populated from the query conditions when no match is found
  *
+ * @method CategoryTypeHebergement findOneByCode(string $code) Return the first CategoryTypeHebergement filtered by the code column
  * @method CategoryTypeHebergement findOneByCreatedAt(string $created_at) Return the first CategoryTypeHebergement filtered by the created_at column
  * @method CategoryTypeHebergement findOneByUpdatedAt(string $updated_at) Return the first CategoryTypeHebergement filtered by the updated_at column
  *
- * @method array findById(string $id) Return CategoryTypeHebergement objects filtered by the id column
+ * @method array findById(int $id) Return CategoryTypeHebergement objects filtered by the id column
+ * @method array findByCode(string $code) Return CategoryTypeHebergement objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return CategoryTypeHebergement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return CategoryTypeHebergement objects filtered by the updated_at column
  *
@@ -155,10 +159,10 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `category_type_hebergement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT` FROM `category_type_hebergement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -249,28 +253,55 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterById('fooValue');   // WHERE id = 'fooValue'
-     * $query->filterById('%fooValue%'); // WHERE id LIKE '%fooValue%'
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @param     string $id The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CategoryTypeHebergementQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
+        }
+
+        return $this->addUsingAlias(CategoryTypeHebergementPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode('fooValue');   // WHERE code = 'fooValue'
+     * $query->filterByCode('%fooValue%'); // WHERE code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $code The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CategoryTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
         if (null === $comparison) {
-            if (is_array($id)) {
+            if (is_array($code)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $id)) {
-                $id = str_replace('*', '%', $id);
+            } elseif (preg_match('/[\%\*]/', $code)) {
+                $code = str_replace('*', '%', $code);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(CategoryTypeHebergementPeer::ID, $id, $comparison);
+        return $this->addUsingAlias(CategoryTypeHebergementPeer::CODE, $code, $comparison);
     }
 
     /**

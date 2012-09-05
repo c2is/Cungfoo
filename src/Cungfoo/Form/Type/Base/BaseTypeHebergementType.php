@@ -27,6 +27,13 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'type_hebergement.code',
+            'required' => false,
+        ));
         $builder->add('category_type_hebergement', 'model', array(
             'class' => '\Cungfoo\Model\CategoryTypeHebergement',
             'constraints' => array(

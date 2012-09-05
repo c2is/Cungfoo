@@ -40,9 +40,10 @@ class EtablissementTableMap extends TableMap
         $this->setPhpName('Etablissement');
         $this->setClassname('Cungfoo\\Model\\Etablissement');
         $this->setPackage('Cungfoo.Model');
-        $this->setUseIdGenerator(false);
+        $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('CODE', 'Code', 'INTEGER', true, null, null);
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('ADDRESS1', 'Address1', 'VARCHAR', false, 255, null);
         $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', false, 255, null);
@@ -55,7 +56,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('FAX', 'Fax', 'VARCHAR', false, 255, null);
         $this->addColumn('OPENING_DATE', 'OpeningDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('CLOSING_DATE', 'ClosingDate', 'TIMESTAMP', false, null, null);
-        $this->addForeignKey('VILLE_ID', 'VilleId', 'VARCHAR', 'ville', 'ID', false, 255, null);
+        $this->addForeignKey('VILLE_ID', 'VilleId', 'INTEGER', 'ville', 'ID', false, null, null);
         // validators
     } // initialize()
 

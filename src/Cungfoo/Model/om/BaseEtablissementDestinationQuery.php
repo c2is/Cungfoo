@@ -45,10 +45,10 @@ use Cungfoo\Model\EtablissementDestinationQuery;
  * @method EtablissementDestination findOneOrCreate(PropelPDO $con = null) Return the first EtablissementDestination matching the query, or a new EtablissementDestination object populated from the query conditions when no match is found
  *
  * @method EtablissementDestination findOneByEtablissementId(int $etablissement_id) Return the first EtablissementDestination filtered by the etablissement_id column
- * @method EtablissementDestination findOneByDestinationId(string $destination_id) Return the first EtablissementDestination filtered by the destination_id column
+ * @method EtablissementDestination findOneByDestinationId(int $destination_id) Return the first EtablissementDestination filtered by the destination_id column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementDestination objects filtered by the etablissement_id column
- * @method array findByDestinationId(string $destination_id) Return EtablissementDestination objects filtered by the destination_id column
+ * @method array findByDestinationId(int $destination_id) Return EtablissementDestination objects filtered by the destination_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseEtablissementDestinationQuery extends ModelCriteria
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
+            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -274,25 +274,25 @@ abstract class BaseEtablissementDestinationQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByDestinationId('fooValue');   // WHERE destination_id = 'fooValue'
-     * $query->filterByDestinationId('%fooValue%'); // WHERE destination_id LIKE '%fooValue%'
+     * $query->filterByDestinationId(1234); // WHERE destination_id = 1234
+     * $query->filterByDestinationId(array(12, 34)); // WHERE destination_id IN (12, 34)
+     * $query->filterByDestinationId(array('min' => 12)); // WHERE destination_id > 12
      * </code>
      *
-     * @param     string $destinationId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByDestination()
+     *
+     * @param     mixed $destinationId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementDestinationQuery The current query, for fluid interface
      */
     public function filterByDestinationId($destinationId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($destinationId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $destinationId)) {
-                $destinationId = str_replace('*', '%', $destinationId);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($destinationId) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(EtablissementDestinationPeer::DESTINATION_ID, $destinationId, $comparison);

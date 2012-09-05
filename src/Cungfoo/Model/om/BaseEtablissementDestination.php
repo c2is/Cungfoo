@@ -55,7 +55,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * The value for the destination_id field.
-     * @var        string
+     * @var        int
      */
     protected $destination_id;
 
@@ -96,7 +96,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
     /**
      * Get the [destination_id] column value.
      *
-     * @return string
+     * @return int
      */
     public function getDestinationId()
     {
@@ -131,13 +131,13 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
     /**
      * Set the value of [destination_id] column.
      *
-     * @param string $v new value
+     * @param int $v new value
      * @return EtablissementDestination The current object (for fluent API support)
      */
     public function setDestinationId($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            $v = (int) $v;
         }
 
         if ($this->destination_id !== $v) {
@@ -186,7 +186,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
         try {
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->destination_id = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->destination_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -451,7 +451,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`DESTINATION_ID`':
-                        $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -939,7 +939,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
      */
     public function getDestination(PropelPDO $con = null)
     {
-        if ($this->aDestination === null && (($this->destination_id !== "" && $this->destination_id !== null))) {
+        if ($this->aDestination === null && ($this->destination_id !== null)) {
             $this->aDestination = DestinationQuery::create()->findPk($this->destination_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

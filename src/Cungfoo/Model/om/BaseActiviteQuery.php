@@ -25,10 +25,12 @@ use Cungfoo\Model\EtablissementActivite;
  *
  *
  * @method ActiviteQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method ActiviteQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method ActiviteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ActiviteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method ActiviteQuery groupById() Group by the id column
+ * @method ActiviteQuery groupByCode() Group by the code column
  * @method ActiviteQuery groupByCreatedAt() Group by the created_at column
  * @method ActiviteQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -47,10 +49,12 @@ use Cungfoo\Model\EtablissementActivite;
  * @method Activite findOne(PropelPDO $con = null) Return the first Activite matching the query
  * @method Activite findOneOrCreate(PropelPDO $con = null) Return the first Activite matching the query, or a new Activite object populated from the query conditions when no match is found
  *
+ * @method Activite findOneByCode(string $code) Return the first Activite filtered by the code column
  * @method Activite findOneByCreatedAt(string $created_at) Return the first Activite filtered by the created_at column
  * @method Activite findOneByUpdatedAt(string $updated_at) Return the first Activite filtered by the updated_at column
  *
- * @method array findById(string $id) Return Activite objects filtered by the id column
+ * @method array findById(int $id) Return Activite objects filtered by the id column
+ * @method array findByCode(string $code) Return Activite objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return Activite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Activite objects filtered by the updated_at column
  *
@@ -156,10 +160,10 @@ abstract class BaseActiviteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `activite` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT` FROM `activite` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key, PDO::PARAM_STR);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -250,28 +254,55 @@ abstract class BaseActiviteQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterById('fooValue');   // WHERE id = 'fooValue'
-     * $query->filterById('%fooValue%'); // WHERE id LIKE '%fooValue%'
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @param     string $id The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return ActiviteQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
+        }
+
+        return $this->addUsingAlias(ActivitePeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode('fooValue');   // WHERE code = 'fooValue'
+     * $query->filterByCode('%fooValue%'); // WHERE code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $code The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ActiviteQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
         if (null === $comparison) {
-            if (is_array($id)) {
+            if (is_array($code)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $id)) {
-                $id = str_replace('*', '%', $id);
+            } elseif (preg_match('/[\%\*]/', $code)) {
+                $code = str_replace('*', '%', $code);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(ActivitePeer::ID, $id, $comparison);
+        return $this->addUsingAlias(ActivitePeer::CODE, $code, $comparison);
     }
 
     /**

@@ -3,14 +3,16 @@ activite.crud.list: Liste activités
 activite.crud.update: Mettre à jour l'activité %name%
 activite.crud.view: Détails de l'activité %name%
 activite.etablissements: Établissements ayant cette activité
-activite.id: Code
+activite.id: Id
+activite.code: Code
 activite.name: Nom
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
 category_type_hebergement.crud.update: Mettre à jour la catégorie de types d'hébergements %name%
 category_type_hebergement.crud.view: Détails de la catégorie de types d'hébergements
-category_type_hebergement.id: Code
+category_type_hebergement.id: Id
+category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 
 job.crud.list: Liste jobs
@@ -43,7 +45,8 @@ destination.crud.list: Liste destinations
 destination.crud.update: Mettre à jour la destination %name%
 destination.crud.view: Détails de la destination %name%
 destination.etablissements: Établissements ayant cette destination
-destination.id: Code
+destination.id: Id
+destination.code: Code
 destination.name: Nom
 
 equipement.crud.create: Création d'un équipement
@@ -52,6 +55,7 @@ equipement.crud.update: Mettre à jour l'équipement %name%
 equipement.crud.view: Détails de l'équipement %name%
 equipement.etablissements: Établissement ayant cet équipement
 equipement.id: Code
+equipement.code: Id
 equipement.name: Nom
 
 etablissement.activites: Liste des activités
@@ -69,7 +73,8 @@ etablissement.equipements: Liste des équipements
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
 etablissement.fax: Fax
-etablissement.id: Code
+etablissement.id: Id
+etablissement.code: Code
 etablissement.mail: Adresse électronique
 etablissement.name: Nom
 etablissement.ville: Ville
@@ -109,7 +114,8 @@ category_type_hebergement.crud.create: Création d'une catégorie de types hébe
 category_type_hebergement.crud.list: Liste catégories de types hébergements
 category_type_hebergement.crud.update: Mettre à jour la catégorie de types hébergements %name%
 category_type_hebergement.crud.view: Détails de la catégorie de types hébergements %name%
-category_type_hebergement.id: Code
+category_type_hebergement.id: Id
+category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 
 service_complementaire.crud.create: Création d'un service complémentaire
@@ -117,7 +123,8 @@ service_complementaire.crud.list: Liste services complémentaires
 service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
 service_complementaire.crud.view: Détails du service complémentaire %name%
 service_complementaire.etablissements: Établissements ayant ce service complémentaire
-service_complementaire.id: Code
+service_complementaire.id: Id
+service_complementaire.code: Code
 service_complementaire.name: Nom
 
 security.username: Nom d'utilisateur
@@ -131,14 +138,16 @@ pays.crud.create: Création d'un pays
 pays.crud.list: Liste pays
 pays.crud.update: Mettre à jour le pays %name%
 pays.crud.view: Détails du pays %name%
-pays.id: Code
+pays.id: Id
+pays.code: Code
 pays.name: Nom
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions
 region.crud.update: Mettre à jour la région %name%
 region.crud.view: Détails de la région %name%
-region.id: Code
+region.id: Id
+region.code: Code
 region.name: Nom
 region.pays: Pays
 region.pays.id: Code pays
@@ -151,23 +160,26 @@ service_complementaire.crud.list: Liste services complémentaires
 service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
 service_complementaire.crud.view: Détails du service complémentaire %name%
 service_complementaire.etablissements: Établissements ayant ce service complémentaire
-service_complementaire.id: Code
+service_complementaire.id: Id
+service_complementaire.code: Code
 service_complementaire.name: Nom
 
-type_hebergement.category.type.hebergement.id: Catégorie
+type_hebergement.category_type_hebergement: Catégorie
 type_hebergement.crud.create: Création d'un type hébergement
 type_hebergement.crud.list: Liste types hébergements
 type_hebergement.crud.update: Mettre à jour le type hébergement %name%
 type_hebergement.crud.view: Détails du type hébergement %name%
 type_hebergement.etablissements: Établissements ayant ce type hébergement
-type_hebergement.id: Code
+type_hebergement.id: Id
+type_hebergement.code: Code
 type_hebergement.name: Nom
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes
 ville.crud.update: Mettre à jour la ville %name%
 ville.crud.view: Détails de la ville %name%
-ville.id: Code
+ville.id: Id
+ville.code: Code
 ville.name: Nom
 ville.region: Région
 ville.region.id: Code région

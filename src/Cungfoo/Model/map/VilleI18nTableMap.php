@@ -42,7 +42,7 @@ class VilleI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'VARCHAR' , 'ville', 'ID', true, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'ville', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         // validators

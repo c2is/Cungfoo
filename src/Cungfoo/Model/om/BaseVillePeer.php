@@ -38,16 +38,19 @@ abstract class BaseVillePeer
     const TM_CLASS = 'VilleTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'ville.ID';
+
+    /** the column name for the CODE field */
+    const CODE = 'ville.CODE';
 
     /** the column name for the REGION_ID field */
     const REGION_ID = 'ville.REGION_ID';
@@ -84,12 +87,12 @@ abstract class BaseVillePeer
      * e.g. VillePeer::$fieldNames[VillePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'RegionId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'regionId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (VillePeer::ID, VillePeer::REGION_ID, VillePeer::CREATED_AT, VillePeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'REGION_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'region_id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'RegionId', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'regionId', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (VillePeer::ID, VillePeer::CODE, VillePeer::REGION_ID, VillePeer::CREATED_AT, VillePeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'REGION_ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'region_id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -99,12 +102,12 @@ abstract class BaseVillePeer
      * e.g. VillePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'RegionId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'regionId' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (VillePeer::ID => 0, VillePeer::REGION_ID => 1, VillePeer::CREATED_AT => 2, VillePeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'REGION_ID' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'region_id' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'RegionId' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'regionId' => 2, 'createdAt' => 3, 'updatedAt' => 4, ),
+        BasePeer::TYPE_COLNAME => array (VillePeer::ID => 0, VillePeer::CODE => 1, VillePeer::REGION_ID => 2, VillePeer::CREATED_AT => 3, VillePeer::UPDATED_AT => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'REGION_ID' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'region_id' => 2, 'created_at' => 3, 'updated_at' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -179,11 +182,13 @@ abstract class BaseVillePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(VillePeer::ID);
+            $criteria->addSelectColumn(VillePeer::CODE);
             $criteria->addSelectColumn(VillePeer::REGION_ID);
             $criteria->addSelectColumn(VillePeer::CREATED_AT);
             $criteria->addSelectColumn(VillePeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.REGION_ID');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
@@ -423,7 +428,7 @@ abstract class BaseVillePeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return (string) $row[$startcol];
+        return (int) $row[$startcol];
     }
 
     /**
@@ -778,6 +783,10 @@ abstract class BaseVillePeer
             $criteria = $values->buildCriteria(); // build Criteria from Ville object
         }
 
+        if ($criteria->containsKey(VillePeer::ID) && $criteria->keyContainsValue(VillePeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.VillePeer::ID.')');
+        }
+
 
         // Set the correct dbName
         $criteria->setDbName(VillePeer::DATABASE_NAME);
@@ -966,7 +975,7 @@ abstract class BaseVillePeer
     /**
      * Retrieve a single object by pkey.
      *
-     * @param      string $pk the primary key.
+     * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
      * @return Ville
      */

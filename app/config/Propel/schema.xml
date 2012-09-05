@@ -59,7 +59,8 @@
                 SCHEMA
          ==================== -->
     <table name="etablissement">
-        <column name="id" type="integer" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="integer" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="address1" type="varchar" />
         <column name="address2" type="varchar" />
@@ -73,7 +74,7 @@
         <column name="fax" type="varchar" />
         <column name="opening_date" type="timestamp" />
         <column name="closing_date" type="timestamp" />
-        <column name="ville_id" type="varchar" />
+        <column name="ville_id" type="integer" />
 
         <foreign-key foreignTable="ville">
             <reference local="ville_id" foreign="id"></reference>
@@ -90,7 +91,7 @@
 
     <table name="etablissement_type_hebergement" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true" />
-        <column name="type_hebergement_id" type="varchar" primaryKey="true"/>
+        <column name="type_hebergement_id" type="integer" primaryKey="true"/>
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
@@ -101,7 +102,7 @@
 
     <table name="etablissement_destination" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
-        <column name="destination_id" type="varchar" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
@@ -112,7 +113,7 @@
 
     <table name="etablissement_activite" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
-        <column name="activite_id" type="varchar" primaryKey="true"/>
+        <column name="activite_id" type="integer" primaryKey="true"/>
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
@@ -123,7 +124,7 @@
 
     <table name="etablissement_equipement" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
-        <column name="equipement_id" type="varchar" primaryKey="true"/>
+        <column name="equipement_id" type="integer" primaryKey="true"/>
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
@@ -134,7 +135,7 @@
 
     <table name="etablissement_service_complementaire" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
-        <column name="service_complementaire_id" type="varchar" primaryKey="true"/>
+        <column name="service_complementaire_id" type="integer" primaryKey="true"/>
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
@@ -144,9 +145,10 @@
     </table>
 
     <table name="type_hebergement">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-        <column name="category_type_hebergement_id" type="varchar" />
+        <column name="category_type_hebergement_id" type="integer" />
 
         <foreign-key foreignTable="category_type_hebergement">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
@@ -163,7 +165,8 @@
     </table>
 
     <table name="category_type_hebergement">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
@@ -177,9 +180,10 @@
     </table>
 
     <table name="ville">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-        <column name="region_id" type="varchar" />
+        <column name="region_id" type="integer" />
 
         <foreign-key foreignTable="region">
             <reference local="region_id" foreign="id"></reference>
@@ -196,9 +200,10 @@
     </table>
 
     <table name="region">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-        <column name="pays_id" type="varchar" />
+        <column name="pays_id" type="integer" />
 
         <foreign-key foreignTable="pays">
             <reference local="pays_id" foreign="id"></reference>
@@ -215,7 +220,8 @@
     </table>
 
     <table name="pays">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
@@ -229,7 +235,8 @@
     </table>
 
     <table name="destination">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
@@ -243,7 +250,8 @@
     </table>
 
     <table name="activite">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
@@ -257,7 +265,8 @@
     </table>
 
     <table name="equipement">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />
@@ -271,7 +280,8 @@
     </table>
 
     <table name="service_complementaire">
-        <column name="id" type="varchar" required="true" primaryKey="true" />
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
 
         <behavior name="timestampable" />

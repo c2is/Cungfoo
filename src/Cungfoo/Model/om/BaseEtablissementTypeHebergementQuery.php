@@ -45,10 +45,10 @@ use Cungfoo\Model\TypeHebergement;
  * @method EtablissementTypeHebergement findOneOrCreate(PropelPDO $con = null) Return the first EtablissementTypeHebergement matching the query, or a new EtablissementTypeHebergement object populated from the query conditions when no match is found
  *
  * @method EtablissementTypeHebergement findOneByEtablissementId(int $etablissement_id) Return the first EtablissementTypeHebergement filtered by the etablissement_id column
- * @method EtablissementTypeHebergement findOneByTypeHebergementId(string $type_hebergement_id) Return the first EtablissementTypeHebergement filtered by the type_hebergement_id column
+ * @method EtablissementTypeHebergement findOneByTypeHebergementId(int $type_hebergement_id) Return the first EtablissementTypeHebergement filtered by the type_hebergement_id column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementTypeHebergement objects filtered by the etablissement_id column
- * @method array findByTypeHebergementId(string $type_hebergement_id) Return EtablissementTypeHebergement objects filtered by the type_hebergement_id column
+ * @method array findByTypeHebergementId(int $type_hebergement_id) Return EtablissementTypeHebergement objects filtered by the type_hebergement_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
+            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -274,25 +274,25 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByTypeHebergementId('fooValue');   // WHERE type_hebergement_id = 'fooValue'
-     * $query->filterByTypeHebergementId('%fooValue%'); // WHERE type_hebergement_id LIKE '%fooValue%'
+     * $query->filterByTypeHebergementId(1234); // WHERE type_hebergement_id = 1234
+     * $query->filterByTypeHebergementId(array(12, 34)); // WHERE type_hebergement_id IN (12, 34)
+     * $query->filterByTypeHebergementId(array('min' => 12)); // WHERE type_hebergement_id > 12
      * </code>
      *
-     * @param     string $typeHebergementId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByTypeHebergement()
+     *
+     * @param     mixed $typeHebergementId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementTypeHebergementQuery The current query, for fluid interface
      */
     public function filterByTypeHebergementId($typeHebergementId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($typeHebergementId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $typeHebergementId)) {
-                $typeHebergementId = str_replace('*', '%', $typeHebergementId);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($typeHebergementId) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId, $comparison);

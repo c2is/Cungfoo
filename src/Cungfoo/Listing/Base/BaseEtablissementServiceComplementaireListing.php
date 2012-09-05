@@ -21,7 +21,6 @@ class BaseEtablissementServiceComplementaireListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('etablissement_id'));
         $this->addColumn(new Column\TextColumn('service_complementaire_id'));
-        $this->addColumn(new Column\TextColumn('service_complementaire_id'));
     }
 
     /**

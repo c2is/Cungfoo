@@ -20,7 +20,6 @@ class BaseServiceComplementaireI18nListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('locale'));
         $this->addColumn(new Column\TextColumn('locale'));
         $this->addColumn(new Column\TextColumn('name'));

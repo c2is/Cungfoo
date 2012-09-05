@@ -27,6 +27,13 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'region.code',
+            'required' => false,
+        ));
         $builder->add('pays', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(

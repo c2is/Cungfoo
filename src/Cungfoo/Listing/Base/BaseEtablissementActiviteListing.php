@@ -21,7 +21,6 @@ class BaseEtablissementActiviteListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('etablissement_id'));
         $this->addColumn(new Column\TextColumn('activite_id'));
-        $this->addColumn(new Column\TextColumn('activite_id'));
     }
 
     /**

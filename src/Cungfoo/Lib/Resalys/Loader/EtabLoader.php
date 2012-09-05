@@ -39,14 +39,14 @@ class EtabLoader extends BaseLoader
     {
 
         $objectEtab = \Cungfoo\Model\EtablissementQuery::create()
-            ->filterById($etab->{'id'})
+            ->filterByCode($etab->{'id'})
             ->findOne($con)
         ;
 
         if (!$objectEtab)
         {
             $objectEtab = new \Cungfoo\Model\Etablissement();
-            $objectEtab->setId($etab->{'id'});
+            $objectEtab->setCode($etab->{'id'});
         }
 
         $objectEtab->setLocale($locale);
@@ -75,7 +75,7 @@ class EtabLoader extends BaseLoader
         }
 
         $objectEtab->save($con);
-        $this->etabs[$objectEtab->getId()] = $objectEtab;
+        $this->etabs[] = $objectEtab;
     }
 
     protected function updateTypeHebergement($objectEtab, $roomtypesGroup, \PropelPDO $con)

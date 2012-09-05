@@ -45,10 +45,10 @@ use Cungfoo\Model\EtablissementActiviteQuery;
  * @method EtablissementActivite findOneOrCreate(PropelPDO $con = null) Return the first EtablissementActivite matching the query, or a new EtablissementActivite object populated from the query conditions when no match is found
  *
  * @method EtablissementActivite findOneByEtablissementId(int $etablissement_id) Return the first EtablissementActivite filtered by the etablissement_id column
- * @method EtablissementActivite findOneByActiviteId(string $activite_id) Return the first EtablissementActivite filtered by the activite_id column
+ * @method EtablissementActivite findOneByActiviteId(int $activite_id) Return the first EtablissementActivite filtered by the activite_id column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementActivite objects filtered by the etablissement_id column
- * @method array findByActiviteId(string $activite_id) Return EtablissementActivite objects filtered by the activite_id column
+ * @method array findByActiviteId(int $activite_id) Return EtablissementActivite objects filtered by the activite_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseEtablissementActiviteQuery extends ModelCriteria
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
+            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -274,25 +274,25 @@ abstract class BaseEtablissementActiviteQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByActiviteId('fooValue');   // WHERE activite_id = 'fooValue'
-     * $query->filterByActiviteId('%fooValue%'); // WHERE activite_id LIKE '%fooValue%'
+     * $query->filterByActiviteId(1234); // WHERE activite_id = 1234
+     * $query->filterByActiviteId(array(12, 34)); // WHERE activite_id IN (12, 34)
+     * $query->filterByActiviteId(array('min' => 12)); // WHERE activite_id > 12
      * </code>
      *
-     * @param     string $activiteId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByActivite()
+     *
+     * @param     mixed $activiteId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementActiviteQuery The current query, for fluid interface
      */
     public function filterByActiviteId($activiteId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($activiteId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $activiteId)) {
-                $activiteId = str_replace('*', '%', $activiteId);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($activiteId) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(EtablissementActivitePeer::ACTIVITE_ID, $activiteId, $comparison);

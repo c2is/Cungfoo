@@ -21,7 +21,6 @@ class BaseEtablissementEquipementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('etablissement_id'));
         $this->addColumn(new Column\TextColumn('equipement_id'));
-        $this->addColumn(new Column\TextColumn('equipement_id'));
     }
 
     /**

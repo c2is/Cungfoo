@@ -20,8 +20,7 @@ class BaseTypeHebergementListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('category_type_hebergement_id'));
+        $this->addColumn(new Column\TextColumn('code'));
     }
 
     /**

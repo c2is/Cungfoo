@@ -45,10 +45,10 @@ use Cungfoo\Model\EtablissementEquipementQuery;
  * @method EtablissementEquipement findOneOrCreate(PropelPDO $con = null) Return the first EtablissementEquipement matching the query, or a new EtablissementEquipement object populated from the query conditions when no match is found
  *
  * @method EtablissementEquipement findOneByEtablissementId(int $etablissement_id) Return the first EtablissementEquipement filtered by the etablissement_id column
- * @method EtablissementEquipement findOneByEquipementId(string $equipement_id) Return the first EtablissementEquipement filtered by the equipement_id column
+ * @method EtablissementEquipement findOneByEquipementId(int $equipement_id) Return the first EtablissementEquipement filtered by the equipement_id column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementEquipement objects filtered by the etablissement_id column
- * @method array findByEquipementId(string $equipement_id) Return EtablissementEquipement objects filtered by the equipement_id column
+ * @method array findByEquipementId(int $equipement_id) Return EtablissementEquipement objects filtered by the equipement_id column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseEtablissementEquipementQuery extends ModelCriteria
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
+            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -274,25 +274,25 @@ abstract class BaseEtablissementEquipementQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByEquipementId('fooValue');   // WHERE equipement_id = 'fooValue'
-     * $query->filterByEquipementId('%fooValue%'); // WHERE equipement_id LIKE '%fooValue%'
+     * $query->filterByEquipementId(1234); // WHERE equipement_id = 1234
+     * $query->filterByEquipementId(array(12, 34)); // WHERE equipement_id IN (12, 34)
+     * $query->filterByEquipementId(array('min' => 12)); // WHERE equipement_id > 12
      * </code>
      *
-     * @param     string $equipementId The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByEquipement()
+     *
+     * @param     mixed $equipementId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EtablissementEquipementQuery The current query, for fluid interface
      */
     public function filterByEquipementId($equipementId = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($equipementId)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $equipementId)) {
-                $equipementId = str_replace('*', '%', $equipementId);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($equipementId) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(EtablissementEquipementPeer::EQUIPEMENT_ID, $equipementId, $comparison);

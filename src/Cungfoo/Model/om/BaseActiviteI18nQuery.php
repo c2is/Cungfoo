@@ -41,11 +41,11 @@ use Cungfoo\Model\ActiviteI18nQuery;
  * @method ActiviteI18n findOne(PropelPDO $con = null) Return the first ActiviteI18n matching the query
  * @method ActiviteI18n findOneOrCreate(PropelPDO $con = null) Return the first ActiviteI18n matching the query, or a new ActiviteI18n object populated from the query conditions when no match is found
  *
- * @method ActiviteI18n findOneById(string $id) Return the first ActiviteI18n filtered by the id column
+ * @method ActiviteI18n findOneById(int $id) Return the first ActiviteI18n filtered by the id column
  * @method ActiviteI18n findOneByLocale(string $locale) Return the first ActiviteI18n filtered by the locale column
  * @method ActiviteI18n findOneByName(string $name) Return the first ActiviteI18n filtered by the name column
  *
- * @method array findById(string $id) Return ActiviteI18n objects filtered by the id column
+ * @method array findById(int $id) Return ActiviteI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return ActiviteI18n objects filtered by the locale column
  * @method array findByName(string $name) Return ActiviteI18n objects filtered by the name column
  *
@@ -141,7 +141,7 @@ abstract class BaseActiviteI18nQuery extends ModelCriteria
         $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `activite_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_STR);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {
@@ -244,25 +244,25 @@ abstract class BaseActiviteI18nQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterById('fooValue');   // WHERE id = 'fooValue'
-     * $query->filterById('%fooValue%'); // WHERE id LIKE '%fooValue%'
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @param     string $id The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @see       filterByActivite()
+     *
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return ActiviteI18nQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($id)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $id)) {
-                $id = str_replace('*', '%', $id);
-                $comparison = Criteria::LIKE;
-            }
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
         return $this->addUsingAlias(ActiviteI18nPeer::ID, $id, $comparison);

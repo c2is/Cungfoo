@@ -20,8 +20,7 @@ class BaseVilleListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('region_id'));
+        $this->addColumn(new Column\TextColumn('code'));
     }
 
     /**

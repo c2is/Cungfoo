@@ -38,14 +38,14 @@ class RoomTypeLoader extends BaseLoader
     protected function updateRoomType($roomtype, $locale, \PropelPDO $con)
     {
         $objectRoomType = \Cungfoo\Model\TypeHebergementQuery::create()
-            ->filterById($roomtype->{'code'})
+            ->filterByCode($roomtype->{'code'})
             ->findOne($con)
         ;
 
         if (!$objectRoomType)
         {
             $objectRoomType = new \Cungfoo\Model\TypeHebergement();
-            $objectRoomType->setId($roomtype->{'code'});
+            $objectRoomType->setCode($roomtype->{'code'});
         }
 
         $objectRoomType->setLocale($locale);
@@ -53,11 +53,17 @@ class RoomTypeLoader extends BaseLoader
 
         if (property_exists($roomtype, 'category_code'))
         {
-            $objectRoomType->setCategoryTypeHebergementId($roomtype->{'category_code'});
+            $roomTypeCategoryId = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->select(array('id'))
+                ->filterByCode($roomtype->{'category_code'})
+                ->findOne($con)
+            ;
+
+            $objectRoomType->setCategoryTypeHebergementId($roomTypeCategoryId);
         }
 
         $objectRoomType->save($con);
-        $this->roomtypes[$objectRoomType->getId()] = $objectRoomType;
+        $this->roomtypes[] = $objectRoomType;
     }
 
     protected function removeObsoleteRoomTypes(\PropelPDO $con)
