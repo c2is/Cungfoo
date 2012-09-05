@@ -37,7 +37,9 @@ class Loader
         }
 
         $this->params = $params;
-        $this->parseConfiguration();
+        $this->addRequests(array_keys($this->requestToLoader));
+        $this->loadClientConfig($this->params['client_configuration']);
+        $this->loadLanguagesConfig($this->params['languages_configuration']);
     }
 
     public function setLocation($location)
@@ -136,19 +138,33 @@ class Loader
         $client->load($languageCode, $con);
     }
 
-    protected function parseConfiguration()
+    public function loadClientConfig($clientConfigFile)
     {
-        $configuration = Yaml::parse($this->params['client_configuration'])['client'];
-
-        $this->addRequests(array_keys($this->requestToLoader));
-
-        $this->location       = $configuration['location'];
-        $this->baseId         = $configuration['base_id'];
-
-        if (empty($this->languageCodes))
+        $clientConfig = Yaml::parse($clientConfigFile);
+        if (!array_key_exists('client', $clientConfig))
         {
-            $this->addLanguageCodes(array_keys(Yaml::parse($this->params['languages_configuration'])['languages']));
+            throw new \Exception("No 'client' key in client configuration file : ".$clientConfigFile);
         }
+
+        $this->location = $clientConfig['client']['location'];
+        $this->baseId = $clientConfig['client']['base_id'];
+    }
+
+    public function loadLanguagesConfig($languagesConfigFile)
+    {
+        $languagesConfig = Yaml::parse($languagesConfigFile);
+        if (!array_key_exists('languages', $languagesConfig))
+        {
+            throw new \Exception("No 'languages' key in languages configuration file : ".$languagesConfigFile);
+        }
+
+        $languagesConfig = array_keys($languagesConfig['languages']);
+        if (!count($languagesConfig))
+        {
+            throw new \Exception("No language in languages configuration file : ".$languagesConfigFile);
+        }
+
+        $this->addLanguageCodes($languagesConfig, true);
     }
 
     public function run()

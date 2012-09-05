@@ -1,0 +1,7 @@
+languages-bad:
+    fr:
+        title:  locale.french
+    en:
+        title:  locale.english
+    de:
+        title:  locale.german
