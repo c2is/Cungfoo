@@ -18,4 +18,28 @@ use Cungfoo\Model\om\BaseEtablissementPeer;
  */
 class EtablissementPeer extends BaseEtablissementPeer
 {
+    public static function getNameOrderByName(\PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\EtablissementQuery::create()
+            ->orderByName()
+            ->select(array('Id', 'Name'))
+            ->find($con)
+        ;
+    }
+
+    public static function getNameOrderByVille(\PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\EtablissementQuery::create()
+            ->leftJoinVille()
+            ->useVilleQuery()
+                ->leftJoinVilleI18n()
+                ->useVilleI18nQuery()
+                    ->filterByLocale('de')
+                    ->orderByName()
+                ->endUse()
+            ->endUse()
+            ->select(array('Id', 'VilleI18n.Name', 'Name'))
+            ->find($con)
+        ;
+    }
 }

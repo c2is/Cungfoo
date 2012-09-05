@@ -1,1 +1,32 @@
-Destinations submenu
+<ul>
+    <li>
+        <span>Libellé</span>
+        <ul>
+            {% for letter, etabs in etabByAlphabeticalOrder %}
+            <li>
+                <strong>{{ letter }}</strong>
+                <ul>
+                    {% for etab in etabs %}
+                    <li><a href="{{ etab.Id }}">{{ etab.Name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li>
+        <span>Localisation</span>
+        <ul>
+            {% for ville, etabs in etabByVilleOrder %}
+            <li>
+                <strong>{{ ville }}</strong>
+                <ul>
+                    {% for etab in etabs %}
+                    <li><a href="{{ etab.Id }}">{{ etab.Name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>

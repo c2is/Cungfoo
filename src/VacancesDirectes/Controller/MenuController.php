@@ -22,7 +22,10 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/destinations', function () use ($app)
         {
-            return $app['twig']->render('Menu/destinations.twig');
+            return $app['twig']->render('Menu/destinations.twig', array(
+                'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
+                'etabByVilleOrder'          => $this->getEtablissementByVilleOrder(),
+            ));
         })
         ->bind('menu_destinations');
 
@@ -51,5 +54,31 @@ class MenuController implements ControllerProviderInterface
         ->bind('menu_weekends');
 
         return $controllers;
+    }
+
+    protected function getEtablissementByAlphabeticalOrder()
+    {
+        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByName();
+
+        $etabByAlphabeticalOrder = array();
+        foreach ($etabs as $etab)
+        {
+            $etabByAlphabeticalOrder[strtoupper(substr($etab['Name'], 0, 1))][] = $etab;
+        }
+
+        return $etabByAlphabeticalOrder;
+    }
+
+    protected function getEtablissementByVilleOrder()
+    {
+        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByVille();
+
+        $etabByAlphabeticalOrder = array();
+        foreach ($etabs as $etab)
+        {
+            $etabByAlphabeticalOrder[$etab['VilleI18n.Name']][] = $etab;
+        }
+
+        return $etabByAlphabeticalOrder;
     }
 }
