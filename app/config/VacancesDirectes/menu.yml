@@ -3,16 +3,16 @@ menu:
     items:
         destinations:
             title:    menu.destinations
-            route:    destinations_submenu
+            route:    menu_destinations
         locations:
             title:    menu.locations
-            route:    locations_submenu
+            route:    menu_locations
         bons_plans:
             title:    menu.bons_plans
-            route:    bons_plans_submenu
+            route:    menu_bons_plans
         vacances:
             title:    menu.vacances
-            route:    vacances_submenu
+            route:    menu_vacances
         weekends:
             title:    menu.weekends
-            route:    weekends_submenu
+            route:    menu_weekends
