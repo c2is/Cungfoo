@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
+use VacancesDirectes\Form\Type\Destination\AutocompleteType;
+
 class MenuController implements ControllerProviderInterface
 {
     /**
@@ -22,7 +24,10 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/destinations', function () use ($app)
         {
+            $searchForm = $app['form.factory']->create(new AutocompleteType($app));
+
             return $app['twig']->render('Menu/destinations.twig', array(
+                'searchForm'                => $searchForm->createView(),
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
                 'etabByVilleOrder'          => $this->getEtablissementByVilleOrder($app['context']->get('language')),
             ));
@@ -85,7 +90,7 @@ class MenuController implements ControllerProviderInterface
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
         {
-            $etabByAlphabeticalOrder[$etab['VilleI18n.Name']][] = $etab;
+            $etabByAlphabeticalOrder[$etab['RegionI18n.Name']][$etab['VilleI18n.Name']][] = $etab;
         }
 
         return $etabByAlphabeticalOrder;

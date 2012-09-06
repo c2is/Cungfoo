@@ -20,3 +20,36 @@
     width: 14px;
     text-align: right;
 }
+
+.cungfoo-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 218px;
+    padding: 4px 0;
+    margin: -9px 0 0;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #CCC;
+}
+
+.cungfoo-autocomplete li {
+    line-height: 20px;
+}
+
+.cungfoo-autocomplete li a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.cungfoo-autocomplete li a:hover {
+    color: white;
+    background-color: #08C;
+    text-decoration: none;
+}
