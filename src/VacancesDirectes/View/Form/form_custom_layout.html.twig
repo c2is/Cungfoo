@@ -1,0 +1,10 @@
+{% use 'form_div_layout.html.twig' %}
+
+{% block AutocompleteDestionation_widget %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#AutocompleteDestionation").cungfoo_domAutocomplete({datas: '.region, .ville, .camping'});
+        });
+    </script>
+    {{ block('form_widget_simple') }}
+{% endblock %}

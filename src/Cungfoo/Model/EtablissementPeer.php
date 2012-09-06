@@ -37,8 +37,15 @@ class EtablissementPeer extends BaseEtablissementPeer
                     ->filterByLocale($locale)
                     ->orderByName()
                 ->endUse()
+                ->leftJoinRegion()
+                ->useRegionQuery()
+                    ->useRegionI18nQuery()
+                        ->filterByLocale($locale)
+                        ->orderByName()
+                    ->endUse()
+                ->endUse()
             ->endUse()
-            ->select(array('Id', 'VilleI18n.Name', 'Name'))
+            ->select(array('Id', 'RegionI18n.Name', 'VilleI18n.Name', 'Name'))
             ->find($con)
         ;
     }

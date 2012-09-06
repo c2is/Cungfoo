@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Cungfoo</title>
-    <link rel="stylesheet" href="{{ app.request.basepath }}/bootstrap/css/bootstrap.min.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="{{ app.request.basepath }}/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('cungfoo/css/main.css') }}">
+    <script type="text/javascript" src="{{ asset('/cungfoo/js/jquery/jquery-1.7.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/bootstrap/js/bootstrap.min.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -20,5 +21,6 @@
 
         {% endblock %}
     </div>
+    <script type="text/javascript" src="{{ asset('cungfoo/js/domAutocomplete.jquery.js') }}"></script>
 </body>
 </html>
