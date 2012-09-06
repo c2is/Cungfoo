@@ -16,6 +16,8 @@ menu.vacances: Your vacation
 menu.weekends: Your weekends
 
 menu.plus_de_regions: Plus de régions
+menu.libelle: Label
+menu.localisation: Localisation
 
 etablissement.activites: List of activities
 etablissement.destinations: List of destinations

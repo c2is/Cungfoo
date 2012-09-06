@@ -19,7 +19,7 @@
 
 <ul>
     <li>
-        <span>Libellé</span>
+        <span>{{ "menu.libelle" | trans }}</span>
         <ul>
             {% for letter, etabs in etabByAlphabeticalOrder %}
             <li>
@@ -34,7 +34,7 @@
         </ul>
     </li>
     <li>
-        <span>Localisation</span>
+        <span>{{ "menu.localisation" | trans }}</span>
         <ul>
             {% for region, villes in etabByVilleOrder %}
             <li>
