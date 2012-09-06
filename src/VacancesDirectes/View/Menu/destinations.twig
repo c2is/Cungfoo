@@ -1,3 +1,20 @@
+<div>
+    <div>{{ "pays.france" | trans }}</div>
+    <ul>
+    {% for destinationId, destination in regionsByDestinations %}
+        <li>
+            <div>{{ destination.label | trans }}</div>
+            <ul>
+            {% for region in destination.regions %}
+                <li>{{ region.Id }} {{ region.Name }}</li>
+            {% endfor %}
+            </ul>
+            <div><a href="{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a></div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
 <ul>
     <li>
         <span>Libellé</span>

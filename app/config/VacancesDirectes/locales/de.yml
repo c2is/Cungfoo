@@ -1,3 +1,13 @@
+pays.france: France
+pays.espagne: Espagne
+pays.italie: Italie
+pays.portugal: Portugal
+
+destination.mediterranee: Méditerannée
+destination.atlantique: Atlantique
+destination.montagne: Montagne
+destination.campagne: Campagne
+
 menu.title: Vacances Directes
 menu.destinations: Unsere Ziele
 menu.locations: Vermietung
@@ -5,9 +15,10 @@ menu.bons_plans: Tipps und Tricks
 menu.vacances: Ihr Urlaub
 menu.weekends: Ihre Wochenenden
 
+menu.plus_de_regions: Plus de régions
+
 etablissement.activites: Liste der Aktivitäten
 etablissement.destinations: Liste der Reiseziele
 etablissement.equipements: Liste der Geräte
 etablissement.service_complementaires: Liste von ergänzenden Dienstleistungen
 etablissement.type_hebergements: Liste der Arten von Unterkünften
-

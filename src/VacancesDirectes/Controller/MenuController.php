@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
+use Cungfoo\Model\EtablissementPeer;
+
 class MenuController implements ControllerProviderInterface
 {
     /**
@@ -25,6 +27,8 @@ class MenuController implements ControllerProviderInterface
             return $app['twig']->render('Menu/destinations.twig', array(
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
                 'etabByVilleOrder'          => $this->getEtablissementByVilleOrder($app['context']->get('language')),
+                'regionsByDestinations'     => $this->getRegionsByDestinations($app['context']->get('language')),
+                'regionsByForeignCountries' => $this->getRegionsByForeignCountries($app['context']->get('language')),
             ));
         })
         ->bind('menu_destinations');
@@ -62,7 +66,7 @@ class MenuController implements ControllerProviderInterface
      */
     protected function getEtablissementByAlphabeticalOrder(\PropelPDO $con = null)
     {
-        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByName($con);
+        $etabs = EtablissementPeer::getNameOrderByName($con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
@@ -80,7 +84,7 @@ class MenuController implements ControllerProviderInterface
      */
     protected function getEtablissementByVilleOrder($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
     {
-        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByVille($locale, $con);
+        $etabs = EtablissementPeer::getNameOrderByVille($locale, $con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
@@ -89,5 +93,55 @@ class MenuController implements ControllerProviderInterface
         }
 
         return $etabByAlphabeticalOrder;
+    }
+
+    public function getRegionsByDestinations($locale = BaseRegionPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
+    {
+        $results = array();
+
+        $destinations = array(
+            '4' => array(
+                'label' => 'destination.mediterranee',
+                'regions' => array('LOCH', 'CBRA', 'NORM'),
+            ),
+            '3' => array(
+                'label' => 'destination.atlantique',
+                'regions' => array('ARDE'),
+            ),
+            '1' => array(
+                'label' => 'destination.montagne',
+                'regions' => array('NORM', 'CBRA'),
+            ),
+            '2' => array(
+                'label' => 'destination.campagne',
+                'regions' => array('VEND', 'BRET'),
+            ),
+        );
+
+        foreach ($destinations as $destinationId => $destination)
+        {
+            $results[$destinationId] = array(
+                'label' => $destination['label'],
+                'regions' => array(),
+            );
+
+            foreach ($destination['regions'] as $region)
+            {
+                $results[$destinationId]['regions'][] = \Cungfoo\Model\RegionQuery::create()
+                    ->filterByCode($region)
+                    ->joinWithI18n($locale)
+                    ->findOne()
+                ;
+            }
+        }
+
+        return $results;
+    }
+
+    public function getRegionsByForeignCountries($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
+    {
+        $results = array();
+
+        return $results;
     }
 }

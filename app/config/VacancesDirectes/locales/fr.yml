@@ -1,9 +1,21 @@
+pays.france: France
+pays.espagne: Espagne
+pays.italie: Italie
+pays.portugal: Portugal
+
+destination.mediterranee: Méditerannée
+destination.atlantique: Atlantique
+destination.montagne: Montagne
+destination.campagne: Campagne
+
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
 menu.locations: Les locations
 menu.bons_plans: Les bons plans
 menu.vacances: Vos vacances
 menu.weekends: Vos week-ends
+
+menu.plus_de_regions: Plus de régions
 
 etablissement.activites: Liste des activités
 etablissement.destinations: Liste des destinations
