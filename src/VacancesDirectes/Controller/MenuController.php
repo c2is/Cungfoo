@@ -24,7 +24,7 @@ class MenuController implements ControllerProviderInterface
         {
             return $app['twig']->render('Menu/destinations.twig', array(
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
-                'etabByVilleOrder'          => $this->getEtablissementByVilleOrder(),
+                'etabByVilleOrder'          => $this->getEtablissementByVilleOrder($app['context']->get('language')),
             ));
         })
         ->bind('menu_destinations');
@@ -56,9 +56,13 @@ class MenuController implements ControllerProviderInterface
         return $controllers;
     }
 
-    protected function getEtablissementByAlphabeticalOrder()
+    /**
+     * @param null|\PropelPDO $con
+     * @return array
+     */
+    protected function getEtablissementByAlphabeticalOrder(\PropelPDO $con = null)
     {
-        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByName();
+        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByName($con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
@@ -69,9 +73,14 @@ class MenuController implements ControllerProviderInterface
         return $etabByAlphabeticalOrder;
     }
 
-    protected function getEtablissementByVilleOrder()
+    /**
+     * @param string $locale
+     * @param null|\PropelPDO $con
+     * @return array
+     */
+    protected function getEtablissementByVilleOrder($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
     {
-        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByVille();
+        $etabs = \Cungfoo\Model\EtablissementPeer::getNameOrderByVille($locale, $con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)

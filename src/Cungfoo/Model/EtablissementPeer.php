@@ -27,14 +27,14 @@ class EtablissementPeer extends BaseEtablissementPeer
         ;
     }
 
-    public static function getNameOrderByVille(\PropelPDO $con = null)
+    public static function getNameOrderByVille($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
     {
         return \Cungfoo\Model\EtablissementQuery::create()
             ->leftJoinVille()
             ->useVilleQuery()
                 ->leftJoinVilleI18n()
                 ->useVilleI18nQuery()
-                    ->filterByLocale('de')
+                    ->filterByLocale($locale)
                     ->orderByName()
                 ->endUse()
             ->endUse()
