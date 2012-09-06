@@ -6,7 +6,7 @@
             <div>{{ destination.label | trans }}</div>
             <ul>
             {% for region in destination.regions %}
-                <li>{{ region.Id }} {{ region.Name }}</li>
+                <li><a href="{{ region.Id }}">{{ region.Name }}</a></li>
             {% endfor %}
             </ul>
             <div><a href="{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a></div>
@@ -14,6 +14,18 @@
     {% endfor %}
     </ul>
 </div>
+
+
+{% for pays, regions in regionsByForeignCountries %}
+<div class="{{ regions[0].PaysId }}">
+    <div>{{ pays | trans }}</div>
+    <ul>
+    {% for region in regions %}
+        <li><a href="{{ region.Id }}">{{ region.Name }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endfor %}
 
 {{ form_widget (searchForm) }}
 

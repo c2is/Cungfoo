@@ -147,6 +147,24 @@ class MenuController implements ControllerProviderInterface
     {
         $results = array();
 
+        $pays = array(
+            'pays.espagne' => array('CTBR', 'CBRA', 'CAZA', 'CDOR'),
+            'pays.italie' => array('IADR', 'IMED'),
+            'pays.portugal' => array('CTRO'),
+        );
+
+        foreach ($pays as $label => $regions)
+        {
+            foreach ($regions as $region)
+            {
+                $results[$label][] = \Cungfoo\Model\RegionQuery::create()
+                    ->filterByCode($region)
+                    ->joinWithI18n($locale)
+                    ->findOne()
+                ;
+            }
+        }
+
         return $results;
     }
 }
