@@ -94,7 +94,9 @@ class MenuController implements ControllerProviderInterface
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
         {
-            $etabByAlphabeticalOrder[$etab['RegionI18n.Name']][$etab['VilleI18n.Name']][] = $etab;
+            $etabByAlphabeticalOrder[$etab['Region.Id']]['Name'] = $etab['RegionI18n.Name'];
+            $etabByAlphabeticalOrder[$etab['Region.Id']]['Villes'][$etab['Ville.Id']]['Name'] = $etab['VilleI18n.Name'];
+            $etabByAlphabeticalOrder[$etab['Region.Id']]['Villes'][$etab['Ville.Id']]['Etabs'][] = $etab;
         }
 
         return $etabByAlphabeticalOrder;
@@ -103,31 +105,30 @@ class MenuController implements ControllerProviderInterface
     public function getRegionsByDestinations($locale = BaseRegionPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
     {
         $results = array();
-
         $destinations = array(
             '4' => array(
-                'label' => 'destination.mediterranee',
-                'regions' => array('LOCH', 'CBRA', 'NORM'),
+                'label'     => 'destination.mediterranee',
+                'regions'   => array('LOCH', 'CBRA', 'NORM'),
             ),
             '3' => array(
-                'label' => 'destination.atlantique',
-                'regions' => array('ARDE'),
+                'label'     => 'destination.atlantique',
+                'regions'   => array('ARDE'),
             ),
             '1' => array(
-                'label' => 'destination.montagne',
-                'regions' => array('NORM', 'CBRA'),
+                'label'     => 'destination.montagne',
+                'regions'   => array('NORM', 'CBRA'),
             ),
             '2' => array(
-                'label' => 'destination.campagne',
-                'regions' => array('VEND', 'BRET'),
+                'label'     => 'destination.campagne',
+                'regions'   => array('VEND', 'BRET'),
             ),
         );
 
         foreach ($destinations as $destinationId => $destination)
         {
             $results[$destinationId] = array(
-                'label' => $destination['label'],
-                'regions' => array(),
+                'label'     => $destination['label'],
+                'regions'   => array(),
             );
 
             foreach ($destination['regions'] as $region)
@@ -148,8 +149,8 @@ class MenuController implements ControllerProviderInterface
         $results = array();
 
         $pays = array(
-            'pays.espagne' => array('CTBR', 'CBRA', 'CAZA', 'CDOR'),
-            'pays.italie' => array('IADR', 'IMED'),
+            'pays.espagne'  => array('CTBR', 'CBRA', 'CAZA', 'CDOR'),
+            'pays.italie'   => array('IADR', 'IMED'),
             'pays.portugal' => array('CTRO'),
         );
 

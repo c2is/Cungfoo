@@ -1,15 +1,15 @@
 <div>
-    <div><a href="1">{{ "pays.france" | trans }}</a></div>
+    <div><a href="pays/1">{{ "pays.france" | trans }}</a></div>
     <ul>
     {% for destinationId, destination in regionsByDestinations %}
         <li>
-            <div><a href="{{ destinationId }}">{{ destination.label | trans }}</a></div>
+            <div><a href="destination/{{ destinationId }}">{{ destination.label | trans }}</a></div>
             <ul>
             {% for region in destination.regions %}
-                <li><a href="{{ region.Id }}">{{ region.Name }}</a></li>
+                <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
             {% endfor %}
             </ul>
-            <div><a href="{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a></div>
+            <div><a href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a></div>
         </li>
     {% endfor %}
     </ul>
@@ -18,10 +18,10 @@
 
 {% for pays, regions in regionsByForeignCountries %}
 <div class="{{ regions[0].PaysId }}">
-    <div><a href="{{ regions[0].PaysId }}">{{ pays | trans }}</a></div>
+    <div><a href="pays/{{ regions[0].PaysId }}">{{ pays | trans }}</a></div>
     <ul>
     {% for region in regions %}
-        <li><a href="{{ region.Id }}">{{ region.Name }}</a></li>
+        <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
     {% endfor %}
     </ul>
 </div>
@@ -38,7 +38,7 @@
                 <strong>{{ letter }}</strong>
                 <ul>
                     {% for etab in etabs %}
-                    <li><a class="camping" href="{{ etab.Id }}">{{ etab.Name }}</a></li>
+                    <li><a class="camping" href="camping/{{ etab.Id }}">{{ etab.Name }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
@@ -48,16 +48,16 @@
     <li>
         <span>{{ "menu.localisation" | trans }}</span>
         <ul>
-            {% for region, villes in etabByVilleOrder %}
+            {% for regionId, region in etabByVilleOrder %}
             <li>
-                <a class="region">{{ region }}</a>
+                <a class="region" href="region/{{ regionId }}">{{ region.Name }}</a>
                 <ul>
-                    {% for ville, etabs in villes %}
+                    {% for villeId, ville in region.Villes %}
                     <li>
-                        <a class="ville">{{ ville }}</a>
+                        <a class="ville" href="ville/{{ villeId }}">{{ ville.Name }}</a>
                         <ul>
-                            {% for etab in etabs %}
-                            <li><a href="{{ etab.Id }}">{{ etab.Name }}</a></li>
+                            {% for etab in ville.Etabs %}
+                            <li><a href="camping/{{ etab.Id }}">{{ etab.Name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>

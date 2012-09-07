@@ -1,22 +1,22 @@
 \Cungfoo\Model\Ville:
     1:
         Code: CARN
-        RegionId: null
+        RegionId: 7
     2:
         Code: EYZ
-        RegionId: null
+        RegionId: 1
     3:
         Code: GRAU
         RegionId: null
     4:
         Code: VIAS
-        RegionId: null
+        RegionId: 10
     5:
         Code: PALA
         RegionId: null
     6:
         Code: ARGE
-        RegionId: null
+        RegionId: 25
     7:
         Code: STCY
         RegionId: null
@@ -34,10 +34,10 @@
         RegionId: null
     12:
         Code: FABR
-        RegionId: null
+        RegionId: 9
     13:
         Code: SERI
-        RegionId: null
+        RegionId: 1
     14:
         Code: AGDE
         RegionId: null
@@ -340,4 +340,4 @@
         RegionId: null
     114:
         Code: CARS
-        RegionId: null
+        RegionId: 7

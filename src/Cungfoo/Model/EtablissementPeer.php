@@ -45,7 +45,7 @@ class EtablissementPeer extends BaseEtablissementPeer
                     ->endUse()
                 ->endUse()
             ->endUse()
-            ->select(array('Id', 'RegionI18n.Name', 'VilleI18n.Name', 'Name'))
+            ->select(array('Id', 'Region.Id', 'RegionI18n.Name', 'Ville.Id', 'VilleI18n.Name', 'Name'))
             ->find($con)
         ;
     }
