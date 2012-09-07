@@ -1,5 +1,5 @@
 <div>
-    <div>{{ "pays.france" | trans }}</div>
+    <div><a href="1">{{ "pays.france" | trans }}</a></div>
     <ul>
     {% for destinationId, destination in regionsByDestinations %}
         <li>
@@ -18,7 +18,7 @@
 
 {% for pays, regions in regionsByForeignCountries %}
 <div class="{{ regions[0].PaysId }}">
-    <div>{{ pays | trans }}</div>
+    <div><a href="{{ regions[0].PaysId }}">{{ pays | trans }}</a></div>
     <ul>
     {% for region in regions %}
         <li><a href="{{ region.Id }}">{{ region.Name }}</a></li>
