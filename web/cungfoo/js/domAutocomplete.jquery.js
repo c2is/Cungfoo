@@ -12,7 +12,7 @@
         $this.el = el;
 
         // List autocomplete
-        $this.list = $('<ul class="cungfoo-autocomplete"><li>TEST</li></ul>')
+        $this.list = $('<ul class="cungfoo-autocomplete"></ul>');
 
         // Add a reverse reference to the DOM object
         $this.$el.data("cungfoo.domAutocomplete", $this);
@@ -21,12 +21,37 @@
         {
             $this.options = $.extend($.cungfoo.domAutocomplete.defaultOptions, options);
 
-            // Override contains selecor for insensitive case
-            if ($this.options.case == false)
+            // Override contains selecor for insensitive
+            if ($this.options.insensitive == false)
             {
                 jQuery.expr[':'].contains = function(a, i, m) {
-                    return jQuery(a).text().toUpperCase()
-                        .indexOf(m[3].toUpperCase()) >= 0;
+                    // Expression to replace accented characters with regular characters
+                    var rExps=[
+                        {re: /[\xC0-\xC6]/g, ch: "A"},
+                        {re: /[\xE0-\xE6]/g, ch: "a"},
+                        {re: /[\xC8-\xCB]/g, ch: "E"},
+                        {re: /[\xE8-\xEB]/g, ch: "e"},
+                        {re: /[\xCC-\xCF]/g, ch: "I"},
+                        {re: /[\xEC-\xEF]/g, ch: "i"},
+                        {re: /[\xD2-\xD6]/g, ch: "O"},
+                        {re: /[\xF2-\xF6]/g, ch: "o"},
+                        {re: /[\xD9-\xDC]/g, ch: "U"},
+                        {re: /[\xF9-\xFC]/g, ch: "u"},
+                        {re: /[\xC7-\xE7]/g, ch: "c"},
+                        {re: /[\xD1]/g, ch: "N"},
+                        {re: /[\xF1]/g, ch: "n"}
+                    ];
+
+                    var element = $(a).text();
+                    var search  = m[3];
+
+                    $.each(rExps, function() {
+                         element    = element.replace(this.re, this.ch);
+                         search     = search.replace(this.re, this.ch);
+                    });
+
+                    return element.toUpperCase()
+                        .indexOf(search.toUpperCase()) >= 0;
                 };
             }
 
@@ -96,9 +121,9 @@
 
     // Default options
     $.cungfoo.domAutocomplete.defaultOptions = {
-        case:   false,
-        limit:  10,
-        datas:  'a'
+        datas:          'a',
+        limit:          10,
+        insensitive:    false
     };
 
     $.fn.cungfoo_domAutocomplete = function(options){
