@@ -25,4 +25,4 @@ require __DIR__ . '/../src/Cungfoo/routes.php';
 // set environnement
 require __DIR__ . '/../app/config/prod.php';
 
-$app->run();
+$app['http_cache']->run();

@@ -45,6 +45,23 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true)
 ));
 
+/* H T T P   C A C H E */
+$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+    'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache',
+    'http_cache.options'    => array(
+        'allow_reload'      => true,
+        'allow_revalidate'  => true
+    )
+));
+
+$app['cache.max_age'] = 3600 * 24 * 90;
+$app['cache.expires'] = 3600 * 24 * 90;
+$app['cache.defaults'] = array(
+    'Cache-Control' => sprintf('public, max-age=%d, s-maxage=%d, must-revalidate, proxy-revalidate', $app['cache.max_age'], $app['cache.max_age']),
+    'Expires'       => date('r', time() + $app['cache.expires'])
+);
+
+
 /* S O M E   S E R V I C E   P R O V I D E R */
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
