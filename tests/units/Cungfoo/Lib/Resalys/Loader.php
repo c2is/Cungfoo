@@ -152,16 +152,7 @@ class Loader extends atoum\test
 
         $this->string($loader->getLocation())->isEqualTo('wsdl_service_location');
         $this->string($loader->getBaseId())->isEqualTo('base_id_resalys');
-     }
-
-    public function test_loadClientConfig_NoClientKey()
-    {
-        $loader = $this->getLoaderTestInstance();
-
-        $this->exception(function() use ($loader) {
-            $loader->loadClientConfig(__DIR__.'/config/client-bad.yml');
-        })->hasMessage("No 'client' key in client configuration file : ".__DIR__.'/config/client-bad.yml');
-     }
+    }
 
     public function test_loadLanguagesConfig_NoLanguagesKey()
     {
@@ -178,5 +169,5 @@ class Loader extends atoum\test
         $loader->loadLanguagesConfig(__DIR__.'/config/languages.yml');
 
         $this->array($loader->getLanguageCodes())->isIdenticalTo(array('fr', 'en', 'de'));
-     }
+    }
 }
