@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
+        {% include 'Form/search_engine.twig'%}
         <h1>{{ etablissement.name }}</h1>
         <p>{{ etablissement.address1 }}, {{ etablissement.getVille }}, {{ etablissement.country }}</p>
 

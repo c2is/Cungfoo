@@ -12,7 +12,8 @@
 $app = require_once __DIR__ . '/../../app/bootstrap.php';
 
 $app['config']->addParams(array(
-    'vacancesdirectes_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectes/menu.yml', $app['config']->get('config_dir')))['menu'],
+    'vd_menu'   => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectes/menu.yml', $app['config']->get('config_dir'))),
+    'vd_config' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectes/config.yml', $app['config']->get('config_dir'))),
 ));
 
 /* T W I G  C O N F I G U R A T I O N  */

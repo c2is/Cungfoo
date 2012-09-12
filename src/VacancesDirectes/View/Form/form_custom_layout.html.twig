@@ -8,3 +8,18 @@
     </script>
     {{ block('form_widget_simple') }}
 {% endblock %}
+
+{% block SearchDate_widget %}
+    {{ block('form_widget') }}
+    <script type="text/javascript" src="{{ asset('/vacancesdirectes/js/search/date.js') }}"></script>
+    <script type="text/javascript">
+        var urlVilleFormat   = "{{ url('search_engine_date_villes_by_destination', {'id': 'id_destination'}) }}";
+        var urlCampingFormat = "{{ url('search_engine_date_campings_by_destination', {'id': 'id_destination'}) }}";
+        var searchDateObject = new searchDate($("#SearchDate_destination :selected").val(), urlVilleFormat, urlCampingFormat);
+    </script>
+{% endblock %}
+
+{% block _SearchDate_date_widget %}
+    <div id="SearchDate_date_interval" data-debut-saison="{{ app.config.get('vd_config')['date']['debut_saison'] | date('Y-m-d') }}" data-fin-saison="{{ app.config.get('vd_config')['date']['fin_saison'] | date('Y-m-d') }}"></div>
+    {{ block('date_widget') }}
+{% endblock %}

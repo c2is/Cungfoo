@@ -1,0 +1,9 @@
+{# Require dateSearchForm form element#}
+<form action="{{ path(app.request.get('_route')) }}" method="post">
+    {{ form_widget(dateSearchForm) }}
+    <div class="form-actions">
+        <div class="btn-toolbar">
+            <button type="submit" class="btn btn-primary" style="margin-bottom: -5px">{{ "label.search" }}</button>
+        </div>
+    </div>
+</form>

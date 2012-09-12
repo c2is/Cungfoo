@@ -1,18 +1,17 @@
-menu:
-    title: menu.title
-    items:
-        destinations:
-            title:    menu.destinations
-            route:    menu_destinations
-        locations:
-            title:    menu.locations
-            route:    menu_locations
-        bons_plans:
-            title:    menu.bons_plans
-            route:    menu_bons_plans
-        vacances:
-            title:    menu.vacances
-            route:    menu_vacances
-        weekends:
-            title:    menu.weekends
-            route:    menu_weekends
+title: menu.title
+items:
+    destinations:
+        title:    menu.destinations
+        route:    menu_destinations
+    locations:
+        title:    menu.locations
+        route:    menu_locations
+    bons_plans:
+        title:    menu.bons_plans
+        route:    menu_bons_plans
+    vacances:
+        title:    menu.vacances
+        route:    menu_vacances
+    weekends:
+        title:    menu.weekends
+        route:    menu_weekends
