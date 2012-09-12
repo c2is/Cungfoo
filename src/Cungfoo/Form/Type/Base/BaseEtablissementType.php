@@ -114,6 +114,18 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.ville',
             'required' => false,
         ));
+        $builder->add('geo_coordinate_x', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.geo_coordinate_x',
+            'required' => false,
+        ));
+        $builder->add('geo_coordinate_y', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.geo_coordinate_y',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(

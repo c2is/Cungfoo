@@ -162,6 +162,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $ville_id;
 
     /**
+     * The value for the geo_coordinate_x field.
+     * @var        string
+     */
+    protected $geo_coordinate_x;
+
+    /**
+     * The value for the geo_coordinate_y field.
+     * @var        string
+     */
+    protected $geo_coordinate_y;
+
+    /**
      * @var        Ville
      */
     protected $aVille;
@@ -526,6 +538,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [geo_coordinate_x] column value.
+     *
+     * @return string
+     */
+    public function getGeoCoordinateX()
+    {
+        return $this->geo_coordinate_x;
+    }
+
+    /**
+     * Get the [geo_coordinate_y] column value.
+     *
+     * @return string
+     */
+    public function getGeoCoordinateY()
+    {
+        return $this->geo_coordinate_y;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -849,6 +881,48 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVilleId()
 
     /**
+     * Set the value of [geo_coordinate_x] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setGeoCoordinateX($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->geo_coordinate_x !== $v) {
+            $this->geo_coordinate_x = $v;
+            $this->modifiedColumns[] = EtablissementPeer::GEO_COORDINATE_X;
+        }
+
+
+        return $this;
+    } // setGeoCoordinateX()
+
+    /**
+     * Set the value of [geo_coordinate_y] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setGeoCoordinateY($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->geo_coordinate_y !== $v) {
+            $this->geo_coordinate_y = $v;
+            $this->modifiedColumns[] = EtablissementPeer::GEO_COORDINATE_Y;
+        }
+
+
+        return $this;
+    } // setGeoCoordinateY()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -895,6 +969,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->opening_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
             $this->closing_date = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
             $this->ville_id = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -903,7 +979,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 15; // 15 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 17; // 17 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1395,6 +1471,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`VILLE_ID`';
         }
+        if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) {
+            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_X`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) {
+            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `etablissement` (%s) VALUES (%s)',
@@ -1450,6 +1532,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`VILLE_ID`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
+                        break;
+                    case '`GEO_COORDINATE_X`':
+                        $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
+                        break;
+                    case '`GEO_COORDINATE_Y`':
+                        $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -1690,6 +1778,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             case 14:
                 return $this->getVilleId();
                 break;
+            case 15:
+                return $this->getGeoCoordinateX();
+                break;
+            case 16:
+                return $this->getGeoCoordinateY();
+                break;
             default:
                 return null;
                 break;
@@ -1734,6 +1828,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[12] => $this->getOpeningDate(),
             $keys[13] => $this->getClosingDate(),
             $keys[14] => $this->getVilleId(),
+            $keys[15] => $this->getGeoCoordinateX(),
+            $keys[16] => $this->getGeoCoordinateY(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -1836,6 +1932,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             case 14:
                 $this->setVilleId($value);
                 break;
+            case 15:
+                $this->setGeoCoordinateX($value);
+                break;
+            case 16:
+                $this->setGeoCoordinateY($value);
+                break;
         } // switch()
     }
 
@@ -1875,6 +1977,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[12], $arr)) $this->setOpeningDate($arr[$keys[12]]);
         if (array_key_exists($keys[13], $arr)) $this->setClosingDate($arr[$keys[13]]);
         if (array_key_exists($keys[14], $arr)) $this->setVilleId($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setGeoCoordinateX($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateY($arr[$keys[16]]);
     }
 
     /**
@@ -1901,6 +2005,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
         if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
+        if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
+        if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
 
         return $criteria;
     }
@@ -1978,6 +2084,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setOpeningDate($this->getOpeningDate());
         $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
+        $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
+        $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -4385,6 +4493,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->opening_date = null;
         $this->closing_date = null;
         $this->ville_id = null;
+        $this->geo_coordinate_x = null;
+        $this->geo_coordinate_y = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

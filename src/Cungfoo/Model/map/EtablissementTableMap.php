@@ -57,6 +57,8 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('OPENING_DATE', 'OpeningDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('CLOSING_DATE', 'ClosingDate', 'TIMESTAMP', false, null, null);
         $this->addForeignKey('VILLE_ID', 'VilleId', 'INTEGER', 'ville', 'ID', false, null, null);
+        $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
+        $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 
