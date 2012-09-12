@@ -69,6 +69,7 @@ class DumpCommand extends BaseCommand
         if (!is_dir($fixturesDirectory))
         {
             $output->writeln(sprintf('<info>Resalys:dump</info> <error>error : directory %s does not exist</error>.', $fixturesDirectory));
+
             return false;
         }
 
@@ -122,23 +123,26 @@ class DumpCommand extends BaseCommand
                 $objectsYaml = Yaml::dump(array($model => $objectsArrayForYaml), 3);
 
                 // compute utils informations
-                $tableName   = $utils->underscore(end(explode('\\', $model)));
+                $modelPath   = explode('\\', $model);
+                $tableName   = $utils->underscore(end($modelPath));
                 $prefix      = str_pad($order, 2, '0', STR_PAD_LEFT);
                 $fixtureName = sprintf('%s/%s-resalys-%s.yml', $fixturesDirectory, $prefix, $tableName);
 
                 // dump fixtures files
                 file_put_contents($fixtureName, $objectsYaml);
-                $output->writeln(sprintf('<info>Resalys:dump</info> table <comment>%s</comment> is dump.', $tableName));
+                $output->writeln(sprintf('<info>Resalys:dump</info> table <comment>%s</comment> is dumped.', $tableName));
             }
         }
         catch (\Exception $exception)
         {
             $output->writeln(sprintf('<info>Resalys:dump</info> <error>error %s:</error>.', $exception));
+
             return false;
         }
 
 
         $output->writeln(sprintf('<info>Resalys:dump</info> <info>success</info>.'));
+
         return true;
     }
 }

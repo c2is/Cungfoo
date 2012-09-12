@@ -48,6 +48,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByOpeningDate($order = Criteria::ASC) Order by the opening_date column
  * @method EtablissementQuery orderByClosingDate($order = Criteria::ASC) Order by the closing_date column
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
+ * @method EtablissementQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
+ * @method EtablissementQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
  *
  * @method EtablissementQuery groupById() Group by the id column
  * @method EtablissementQuery groupByCode() Group by the code column
@@ -64,6 +66,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByOpeningDate() Group by the opening_date column
  * @method EtablissementQuery groupByClosingDate() Group by the closing_date column
  * @method EtablissementQuery groupByVilleId() Group by the ville_id column
+ * @method EtablissementQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
+ * @method EtablissementQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
  *
  * @method EtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -114,6 +118,8 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByOpeningDate(string $opening_date) Return the first Etablissement filtered by the opening_date column
  * @method Etablissement findOneByClosingDate(string $closing_date) Return the first Etablissement filtered by the closing_date column
  * @method Etablissement findOneByVilleId(int $ville_id) Return the first Etablissement filtered by the ville_id column
+ * @method Etablissement findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Etablissement filtered by the geo_coordinate_x column
+ * @method Etablissement findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Etablissement filtered by the geo_coordinate_y column
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
  * @method array findByCode(int $code) Return Etablissement objects filtered by the code column
@@ -130,6 +136,8 @@ use Cungfoo\Model\Ville;
  * @method array findByOpeningDate(string $opening_date) Return Etablissement objects filtered by the opening_date column
  * @method array findByClosingDate(string $closing_date) Return Etablissement objects filtered by the closing_date column
  * @method array findByVilleId(int $ville_id) Return Etablissement objects filtered by the ville_id column
+ * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Etablissement objects filtered by the geo_coordinate_x column
+ * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Etablissement objects filtered by the geo_coordinate_y column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -233,7 +241,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -807,6 +815,64 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::VILLE_ID, $villeId, $comparison);
+    }
+
+    /**
+     * Filter the query on the geo_coordinate_x column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByGeoCoordinateX('fooValue');   // WHERE geo_coordinate_x = 'fooValue'
+     * $query->filterByGeoCoordinateX('%fooValue%'); // WHERE geo_coordinate_x LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $geoCoordinateX The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByGeoCoordinateX($geoCoordinateX = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($geoCoordinateX)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $geoCoordinateX)) {
+                $geoCoordinateX = str_replace('*', '%', $geoCoordinateX);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::GEO_COORDINATE_X, $geoCoordinateX, $comparison);
+    }
+
+    /**
+     * Filter the query on the geo_coordinate_y column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByGeoCoordinateY('fooValue');   // WHERE geo_coordinate_y = 'fooValue'
+     * $query->filterByGeoCoordinateY('%fooValue%'); // WHERE geo_coordinate_y LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $geoCoordinateY The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByGeoCoordinateY($geoCoordinateY = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($geoCoordinateY)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $geoCoordinateY)) {
+                $geoCoordinateY = str_replace('*', '%', $geoCoordinateY);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::GEO_COORDINATE_Y, $geoCoordinateY, $comparison);
     }
 
     /**

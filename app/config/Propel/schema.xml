@@ -75,6 +75,8 @@
         <column name="opening_date" type="timestamp" />
         <column name="closing_date" type="timestamp" />
         <column name="ville_id" type="integer" />
+        <column name="geo_coordinate_x" type="varchar" />
+        <column name="geo_coordinate_y" type="varchar" />
 
         <foreign-key foreignTable="ville">
             <reference local="ville_id" foreign="id"></reference>

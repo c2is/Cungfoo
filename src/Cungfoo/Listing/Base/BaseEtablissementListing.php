@@ -32,6 +32,8 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('fax'));
         $this->addColumn(new Column\DateColumn('opening_date'));
         $this->addColumn(new Column\DateColumn('closing_date'));
+        $this->addColumn(new Column\TextColumn('geo_coordinate_x'));
+        $this->addColumn(new Column\TextColumn('geo_coordinate_y'));
     }
 
     /**
