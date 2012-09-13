@@ -31,7 +31,7 @@
     </script>
 {% endblock %}
 
-{% block _SearchDate_date_widget %}
+{% block _SearchDate_dateDebut_widget %}
     <div id="SearchDate_date_interval" data-debut-saison="{{ app.config.get('vd_config')['date']['debut_saison'] | date('Y-m-d') }}" data-fin-saison="{{ app.config.get('vd_config')['date']['fin_saison'] | date('Y-m-d') }}"></div>
     {{ block('date_widget') }}
 {% endblock %}
