@@ -7,7 +7,8 @@ use Symfony\Component\Validator\ExecutionContext;
 
 class DateData
 {
-    public $date;
+    public $dateDebut;
+    public $dateFin;
     public $destination;
     public $ville;
     public $camping;
@@ -18,22 +19,30 @@ class DateData
     {
         if (!$this->destination)
         {
-            $context->addViolation('destination is required', array (), null);
+            $context->addViolation('date_search.destination.required', array (), null);
         }
         else
         {
             $pays = get_class($this->destination) == "Cungfoo\Model\Pays" ?: $this->destination->getPays();
             if ($pays->getName() == "France" && !($this->ville || $this->camping))
             {
-                $context->addViolation('ville or camping is required', array (), null);
+                $context->addViolation('date_search.ville.required', array (), null);
             }
         }
 
-        if ($this->date)
+        if ($this->dateDebut || $this->dateFin)
         {
+            if (!$this->dateFin)
+            {
+                $context->addViolation('date_search.date_fin.required', array (), null);
+            }
+            if (!$this->dateDebut)
+            {
+                $context->addViolation('date_search.date_debut.required', array (), null);
+            }
             if ($this->nbAdultes < 1)
             {
-                $context->addViolation('adultes is required', array (), null);
+                $context->addViolation('date_search.nb_adultes.required', array (), null);
             }
         }
     }

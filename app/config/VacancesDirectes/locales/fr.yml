@@ -24,3 +24,17 @@ etablissement.destinations: Liste des destinations
 etablissement.equipements: Liste des équipements
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
+
+date_search.date_debut:   Date début séjour
+date_search.date_fin:     Date fin de séjour
+date_search.destination:  Destination
+date_search.ville:        Ville
+date_search.camping:      Camping
+date_search.nb_adultes:   Adultes
+date_search.nb_enfants:   Enfants
+date_search.date_debut.required:  La date de début de séjour est requise
+date_search.date_fin.required:    La dete de fin de séjour est requise
+date_search.destination.required: La destination est requise
+date_search.ville.required: La ville ou le camping est requis
+date_search.nb_adultes.required:  Le nombre d'adultes est requis
+date_search.button.submit: Rechercher

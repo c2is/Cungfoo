@@ -24,3 +24,17 @@ etablissement.destinations: List of destinations
 etablissement.equipements: List of equipment
 etablissement.service_complementaires: List of complementary services
 etablissement.type_hebergements: List of types of accommodation
+
+date_search.date_debut: Date start of visit
+date_search.date_fin: End date of visit
+date_search.destination: Destination
+date_search.ville: City
+date_search.camping: Camping
+date_search.nb_adultes: Adults
+date_search.nb_enfants: Children
+date_search.date_debut.required: Start date of stay is required
+date_search.date_fin.required: The dete end of stay is required
+date_search.destination.required: The destination is required
+date_search.nb_adultes.required: The number of adults is required
+date_search.ville.required: The city or camping is required
+date_search.button.submit: Search
