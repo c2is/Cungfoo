@@ -1,3 +1,14 @@
-client:
-  location: wsdl_service_location
-  base_id:  base_id_resalys
+services:
+    catalogue:
+        location: wsdl_service_location
+        base_id:  base_id_resalys
+        requests:
+            getAllThemes:              \Cungfoo\Lib\Resalys\Loader\ThemeLoader
+            getAllRoomTypeCategories:  \Cungfoo\Lib\Resalys\Loader\RoomTypeCategoryLoader
+            getAllRoomTypes:           \Cungfoo\Lib\Resalys\Loader\RoomTypeLoader
+            getAllEtabs:               \Cungfoo\Lib\Resalys\Loader\EtabLoader
+    dispo:
+        location: wsdl_service_location?namespace=search_engine
+        base_id:  base_id_resalys
+        username: username
+        password: password

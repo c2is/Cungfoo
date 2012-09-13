@@ -14,13 +14,7 @@ class Loader
     protected $password         = null;
     protected $languageCodes    = array();
     protected $params           = array();
-
-    protected $requestToLoader = array(
-        'getAllThemes'              => '\Cungfoo\Lib\Resalys\Loader\ThemeLoader',
-        'getAllRoomTypeCategories'  => '\Cungfoo\Lib\Resalys\Loader\RoomTypeCategoryLoader',
-        'getAllRoomTypes'           => '\Cungfoo\Lib\Resalys\Loader\RoomTypeLoader',
-        'getAllEtabs'               => '\Cungfoo\Lib\Resalys\Loader\EtabLoader',
-    );
+    protected $requestToLoader  = array();
 
     public function __construct($params = array())
     {
@@ -37,7 +31,6 @@ class Loader
         }
 
         $this->params = $params;
-        $this->addRequests(array_keys($this->requestToLoader));
         $this->loadClientConfig($this->params['client_configuration']);
         $this->loadLanguagesConfig($this->params['languages_configuration']);
     }
@@ -141,13 +134,11 @@ class Loader
     public function loadClientConfig($clientConfigFile)
     {
         $clientConfig = Yaml::parse($clientConfigFile);
-        if (!array_key_exists('client', $clientConfig))
-        {
-            throw new \Exception("No 'client' key in client configuration file : ".$clientConfigFile);
-        }
 
-        $this->location = $clientConfig['client']['location'];
-        $this->baseId = $clientConfig['client']['base_id'];
+        $this->location         = $clientConfig['services']['catalogue']['location'];
+        $this->baseId           = $clientConfig['services']['catalogue']['base_id'];
+        $this->requestToLoader  = $clientConfig['services']['catalogue']['requests'];
+        $this->addRequests(array_keys($this->requestToLoader));
     }
 
     public function loadLanguagesConfig($languagesConfigFile)
