@@ -22,6 +22,21 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->get('/', function () use ($app)
         {
+            var_dump($app['memcache']->get('data1', function() use($app) { 
+                return "toto";
+            }));
+            var_dump($app['memcache']->get('data1'));
+            var_dump($app['memcache']->set('data1', 256));
+            var_dump($app['memcache']->get('data1'));
+            //$app['memcache']->delete('data1');
+            var_dump($app['memcache']->get('data1'));
+
+            // $app['memcache']->set('data1', array('some' => 'data')));
+            // $app['memcache']->delete('some.data');
+
+
+            die('in');
+
             $locale = $app['context']->get('language');
 
             /** @var \Cungfoo\Model\Etablissement $etablissement  */

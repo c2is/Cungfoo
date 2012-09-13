@@ -1,11 +1,17 @@
 {
-    "hash": "dee8af308c64546f53e93781a4b977cc",
+    "hash": "e5a853a87a98fff98bafdc6fedb61395",
     "packages": [
+        {
+            "package": "kuikui/memcache-service-provider",
+            "version": "dev-master",
+            "source-reference": "8cf840095a1f34d52f05014f6daa9c6d2707f2c9",
+            "commit-date": "1347514984"
+        },
         {
             "package": "mageekguy/atoum",
             "version": "dev-master",
-            "source-reference": "36f9ec41fa70f70df2754caa4262deaa883068b8",
-            "commit-date": "1347013532"
+            "source-reference": "88aa173af62536a535b331595b11da39c046cec3",
+            "commit-date": "1347475362"
         },
         {
             "package": "monolog/monolog",
@@ -24,8 +30,8 @@
         {
             "package": "pimple/pimple",
             "version": "dev-master",
-            "source-reference": "db836b8cfadc0f39dacafa2bf311a1ab603600bb",
-            "commit-date": "1343051648"
+            "source-reference": "b9f27b8dc18c08f00627dec02359b46a24791dc3",
+            "commit-date": "1347278988"
         },
         {
             "package": "propel/propel-service-provider",
@@ -42,8 +48,8 @@
         {
             "package": "propel/propel1",
             "version": "dev-master",
-            "source-reference": "6234fec72db2ad8fc0fe6e1ea6c1cd76abeeef5a",
-            "commit-date": "1346182727"
+            "source-reference": "bfb8055fbcc430cc84d5d4cfbe35dd2a4c4745d1",
+            "commit-date": "1347274942"
         },
         {
             "package": "silex/silex",
@@ -54,96 +60,140 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "73b18ef69f74d878465dba0836ad96affc6c820c",
-            "commit-date": "1346766167"
+            "source-reference": "a9e34f08ab00c4cc6c97e7ae8fdf7d0fc367e5f5",
+            "commit-date": "1347298149"
         },
         {
             "package": "symfony/browser-kit",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/class-loader",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1346482956"
         },
         {
             "package": "symfony/config",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/console",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/css-selector",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/dom-crawler",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/event-dispatcher",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/filesystem",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/finder",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/form",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/http-foundation",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1346761482"
         },
         {
             "package": "symfony/http-kernel",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "584499e64026f41c4be938ed35d8f0a9a9eebd38",
+            "commit-date": "1347354770"
         },
         {
             "package": "symfony/locale",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/monolog-bridge",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/options-resolver",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "symfony/process",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1346330945"
         },
         {
             "package": "symfony/routing",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/security",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/translation",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/twig-bridge",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/validator",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.1",
+            "commit-date": "1347274422"
         },
         {
             "package": "symfony/yaml",
-            "version": "v2.1.0"
+            "version": "2.1.x-dev",
+            "source-reference": "v2.1.0-RC2",
+            "commit-date": "1345643321"
         },
         {
             "package": "twig/twig",
@@ -165,6 +215,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "propel/propel-service-provider": 20,
-        "mageekguy/atoum": 20
+        "mageekguy/atoum": 20,
+        "kuikui/memcache-service-provider": 20
     }
 }

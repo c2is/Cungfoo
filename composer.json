@@ -1,5 +1,11 @@
 {
     "name": "fabpot/silex-skeleton",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/KuiKui/MemcacheServiceProvider"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "1.0.*",
@@ -22,7 +28,8 @@
         "symfony/yaml": "2.1.*",
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
-        "mageekguy/atoum": "dev-master"
+        "mageekguy/atoum": "dev-master",
+        "kuikui/memcache-service-provider": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
