@@ -69,8 +69,9 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
 /* Memcache Provider */
-$app->register(new KuiKui\MemcacheServiceProvider\ServiceProvider());
-$app['memcache.default_duration'] = 60;
+$app->register(new KuiKui\MemcacheServiceProvider\ServiceProvider(), array(
+    'memcache.default_duration' => 60
+));
 
 /* F O R M  E X T E N S I O N S  */
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions) use ($app) {
