@@ -1,11 +1,5 @@
 {
     "name": "fabpot/silex-skeleton",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/KuiKui/MemcacheServiceProvider"
-        }
-    ],
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "1.0.*",
