@@ -1,17 +1,17 @@
 {
-    "hash": "e5a853a87a98fff98bafdc6fedb61395",
+    "hash": "73cf7bbee3aa8aade75ed3ffd731dbab",
     "packages": [
         {
             "package": "kuikui/memcache-service-provider",
             "version": "dev-master",
-            "source-reference": "8cf840095a1f34d52f05014f6daa9c6d2707f2c9",
-            "commit-date": "1347514984"
+            "source-reference": "3d45f603853b9ff4b991fe943ec06d13cde89f70",
+            "commit-date": "1347607671"
         },
         {
             "package": "mageekguy/atoum",
             "version": "dev-master",
-            "source-reference": "88aa173af62536a535b331595b11da39c046cec3",
-            "commit-date": "1347475362"
+            "source-reference": "cc6bf02b21bd0f590ddbe5f54604029ee418af21",
+            "commit-date": "1347606706"
         },
         {
             "package": "monolog/monolog",
@@ -204,8 +204,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "68b8c4619c5bbe82bd345fe56070dec8c356610a",
-            "commit-date": "1347025342"
+            "source-reference": "956a66e6da304ead2aa2632acc01118b360d19d3",
+            "commit-date": "1347542132"
         }
     ],
     "packages-dev": null,
