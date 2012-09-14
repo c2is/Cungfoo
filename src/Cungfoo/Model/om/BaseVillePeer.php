@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\RegionPeer;
 use Cungfoo\Model\Ville;
 use Cungfoo\Model\VilleI18nPeer;
@@ -391,6 +392,9 @@ abstract class BaseVillePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementPeer::clearInstancePool();
         // Invalidate objects in VilleI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         VilleI18nPeer::clearInstancePool();

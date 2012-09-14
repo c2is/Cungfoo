@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\PaysI18nPeer;
 use Cungfoo\Model\PaysPeer;
+use Cungfoo\Model\RegionPeer;
 use Cungfoo\Model\map\PaysTableMap;
 
 /**
@@ -385,6 +386,9 @@ abstract class BasePaysPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in RegionPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        RegionPeer::clearInstancePool();
         // Invalidate objects in PaysI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PaysI18nPeer::clearInstancePool();

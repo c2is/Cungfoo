@@ -55,8 +55,8 @@ class RegionTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Pays', 'Cungfoo\\Model\\Pays', RelationMap::MANY_TO_ONE, array('pays_id' => 'id', ), null, null);
-        $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), null, null, 'Villes');
+        $this->addRelation('Pays', 'Cungfoo\\Model\\Pays', RelationMap::MANY_TO_ONE, array('pays_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'SET NULL', null, 'Villes');
         $this->addRelation('RegionI18n', 'Cungfoo\\Model\\RegionI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'RegionI18ns');
     } // buildRelations()
 

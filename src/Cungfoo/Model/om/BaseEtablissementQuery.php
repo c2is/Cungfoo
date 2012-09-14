@@ -50,6 +50,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
  * @method EtablissementQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EtablissementQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
+ * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
+ * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method EtablissementQuery groupById() Group by the id column
  * @method EtablissementQuery groupByCode() Group by the code column
@@ -68,6 +70,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByVilleId() Group by the ville_id column
  * @method EtablissementQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EtablissementQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
+ * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
+ * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
  *
  * @method EtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -120,6 +124,8 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByVilleId(int $ville_id) Return the first Etablissement filtered by the ville_id column
  * @method Etablissement findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Etablissement filtered by the geo_coordinate_x column
  * @method Etablissement findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Etablissement filtered by the geo_coordinate_y column
+ * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
+ * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
  * @method array findByCode(int $code) Return Etablissement objects filtered by the code column
@@ -138,6 +144,8 @@ use Cungfoo\Model\Ville;
  * @method array findByVilleId(int $ville_id) Return Etablissement objects filtered by the ville_id column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Etablissement objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Etablissement objects filtered by the geo_coordinate_y column
+ * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
+ * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -241,7 +249,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -876,6 +884,92 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the created_at column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCreatedAt('2011-03-14'); // WHERE created_at = '2011-03-14'
+     * $query->filterByCreatedAt('now'); // WHERE created_at = '2011-03-14'
+     * $query->filterByCreatedAt(array('max' => 'yesterday')); // WHERE created_at > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $createdAt The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByCreatedAt($createdAt = null, $comparison = null)
+    {
+        if (is_array($createdAt)) {
+            $useMinMax = false;
+            if (isset($createdAt['min'])) {
+                $this->addUsingAlias(EtablissementPeer::CREATED_AT, $createdAt['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($createdAt['max'])) {
+                $this->addUsingAlias(EtablissementPeer::CREATED_AT, $createdAt['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::CREATED_AT, $createdAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the updated_at column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByUpdatedAt('2011-03-14'); // WHERE updated_at = '2011-03-14'
+     * $query->filterByUpdatedAt('now'); // WHERE updated_at = '2011-03-14'
+     * $query->filterByUpdatedAt(array('max' => 'yesterday')); // WHERE updated_at > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $updatedAt The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByUpdatedAt($updatedAt = null, $comparison = null)
+    {
+        if (is_array($updatedAt)) {
+            $useMinMax = false;
+            if (isset($updatedAt['min'])) {
+                $this->addUsingAlias(EtablissementPeer::UPDATED_AT, $updatedAt['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($updatedAt['max'])) {
+                $this->addUsingAlias(EtablissementPeer::UPDATED_AT, $updatedAt['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
      * Filter the query by a related Ville object
      *
      * @param   Ville|PropelObjectCollection $ville The related object(s) to use as filter
@@ -1496,6 +1590,71 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this;
     }
 
+    // timestampable behavior
+
+    /**
+     * Filter by the latest updated
+     *
+     * @param      int $nbDays Maximum age of the latest update in days
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function recentlyUpdated($nbDays = 7)
+    {
+        return $this->addUsingAlias(EtablissementPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+    }
+
+    /**
+     * Order by update date desc
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function lastUpdatedFirst()
+    {
+        return $this->addDescendingOrderByColumn(EtablissementPeer::UPDATED_AT);
+    }
+
+    /**
+     * Order by update date asc
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function firstUpdatedFirst()
+    {
+        return $this->addAscendingOrderByColumn(EtablissementPeer::UPDATED_AT);
+    }
+
+    /**
+     * Filter by the latest created
+     *
+     * @param      int $nbDays Maximum age of in days
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function recentlyCreated($nbDays = 7)
+    {
+        return $this->addUsingAlias(EtablissementPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+    }
+
+    /**
+     * Order by create date desc
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function lastCreatedFirst()
+    {
+        return $this->addDescendingOrderByColumn(EtablissementPeer::CREATED_AT);
+    }
+
+    /**
+     * Order by create date asc
+     *
+     * @return     EtablissementQuery The current query, for fluid interface
+     */
+    public function firstCreatedFirst()
+    {
+        return $this->addAscendingOrderByColumn(EtablissementPeer::CREATED_AT);
+    }
     // i18n behavior
 
     /**

@@ -59,6 +59,8 @@ class EtablissementTableMap extends TableMap
         $this->addForeignKey('VILLE_ID', 'VilleId', 'INTEGER', 'ville', 'ID', false, null, null);
         $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
+        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
     } // initialize()
 
@@ -67,7 +69,7 @@ class EtablissementTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), null, null);
+        $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementDestinations');
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementActivites');
@@ -90,6 +92,7 @@ class EtablissementTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '/', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', ),
         );

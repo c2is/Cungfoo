@@ -55,8 +55,8 @@ class VilleTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_ONE, array('region_id' => 'id', ), null, null);
-        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'ville_id', ), null, null, 'Etablissements');
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_ONE, array('region_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'ville_id', ), 'SET NULL', null, 'Etablissements');
         $this->addRelation('VilleI18n', 'Cungfoo\\Model\\VilleI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'VilleI18ns');
     } // buildRelations()
 

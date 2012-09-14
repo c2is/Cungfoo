@@ -13,6 +13,7 @@ use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionI18nPeer;
 use Cungfoo\Model\RegionPeer;
+use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\RegionTableMap;
 
 /**
@@ -391,6 +392,9 @@ abstract class BaseRegionPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in VillePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        VillePeer::clearInstancePool();
         // Invalidate objects in RegionI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         RegionI18nPeer::clearInstancePool();

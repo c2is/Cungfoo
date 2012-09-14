@@ -74,11 +74,12 @@
         <column name="fax" type="varchar" />
         <column name="opening_date" type="timestamp" />
         <column name="closing_date" type="timestamp" />
-        <column name="ville_id" type="integer" />
+        <column name="ville_id" type="integer"/>
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
+        <behavior name="timestampable" />
 
-        <foreign-key foreignTable="ville">
+        <foreign-key foreignTable="ville" onDelete="SETNULL">
             <reference local="ville_id" foreign="id"></reference>
         </foreign-key>
 
@@ -94,9 +95,11 @@
     <table name="etablissement_type_hebergement" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true" />
         <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+
         <foreign-key foreignTable="type_hebergement">
             <reference local="type_hebergement_id" foreign="id"/>
         </foreign-key>
@@ -105,9 +108,11 @@
     <table name="etablissement_destination" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="destination_id" type="integer" primaryKey="true"/>
+
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+
         <foreign-key foreignTable="destination">
             <reference local="destination_id" foreign="id"/>
         </foreign-key>
@@ -116,9 +121,11 @@
     <table name="etablissement_activite" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="activite_id" type="integer" primaryKey="true"/>
+
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+
         <foreign-key foreignTable="activite">
             <reference local="activite_id" foreign="id"/>
         </foreign-key>
@@ -127,9 +134,11 @@
     <table name="etablissement_equipement" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="equipement_id" type="integer" primaryKey="true"/>
+
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+
         <foreign-key foreignTable="equipement">
             <reference local="equipement_id" foreign="id"/>
         </foreign-key>
@@ -138,9 +147,11 @@
     <table name="etablissement_service_complementaire" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true"/>
         <column name="service_complementaire_id" type="integer" primaryKey="true"/>
+
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+
         <foreign-key foreignTable="service_complementaire">
             <reference local="service_complementaire_id" foreign="id"/>
         </foreign-key>
@@ -151,16 +162,16 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="category_type_hebergement_id" type="integer" />
+        <behavior name="timestampable" />
 
         <foreign-key foreignTable="category_type_hebergement">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
         </foreign-key>
 
-        <behavior name="timestampable" />
-
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
         </behavior>
@@ -170,12 +181,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/category-type-hebergement" />
         </behavior>
@@ -186,16 +197,16 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="region_id" type="integer" />
+        <behavior name="timestampable" />
 
-        <foreign-key foreignTable="region">
+        <foreign-key foreignTable="region" onDelete="SETNULL">
             <reference local="region_id" foreign="id"></reference>
         </foreign-key>
-
-        <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/villes" />
         </behavior>
@@ -206,16 +217,16 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="pays_id" type="integer" />
+        <behavior name="timestampable" />
 
-        <foreign-key foreignTable="pays">
+        <foreign-key foreignTable="pays" onDelete="SETNULL">
             <reference local="pays_id" foreign="id"></reference>
         </foreign-key>
-
-        <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
         </behavior>
@@ -225,12 +236,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/pays" />
         </behavior>
@@ -240,12 +251,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/destinations" />
         </behavior>
@@ -255,12 +266,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/activites" />
         </behavior>
@@ -270,12 +281,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/equipements" />
         </behavior>
@@ -285,12 +296,12 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
-
         <behavior name="timestampable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/services-complementaires" />
         </behavior>
