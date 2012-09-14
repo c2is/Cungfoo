@@ -10,12 +10,13 @@
 
 namespace Cungfoo\Command\Resalys;
 
-use Cungfoo\Command\Command as BaseCommand;
-
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface;
+
+use Cungfoo\Command\Command as BaseCommand,
+    Cungfoo\Lib\Resalys\Client\CatalogueClient;
 
 class LoadCommand extends BaseCommand
 {
@@ -24,10 +25,6 @@ class LoadCommand extends BaseCommand
         $this
             ->setName('resalys:load')
             ->setDescription('Execute resalys soap request')
-
-            ->addArgument('location', InputArgument::OPTIONAL, 'Give a specific location.')
-            ->addArgument('request', InputArgument::OPTIONAL, 'Give a specific request.')
-
             ->addOption('base_id', 'b', InputOption::VALUE_OPTIONAL, 'Give a specific base_id.', null)
             ->addOption('username', 'u', InputOption::VALUE_OPTIONAL, 'Give a specific base_id.', null)
             ->addOption('password', 'p', InputOption::VALUE_OPTIONAL, 'Give a specific base_id.', null)
@@ -39,49 +36,29 @@ class LoadCommand extends BaseCommand
     {
         try
         {
-            $loader = new \Cungfoo\Lib\Resalys\Loader(array(
-                'client_configuration'      => $this->getApplication()->getRootDir().'/app/config/Resalys/client.yml',
-                'loader_configuration'      => $this->getApplication()->getRootDir().'/app/config/Resalys/loader.yml',
-                'languages_configuration'   => $this->getApplication()->getRootDir().'/app/config/languages.yml',
-            ));
-
-            // set task informations
-            if ($request = $input->getArgument('request'))
-            {
-                $loader->addRequest($request, true);
-            }
-
-            if ($location = $input->getArgument('location'))
-            {
-                $loader->setLocation($location);
-            }
+            $client = new CatalogueClient($this->getApplication()->getRootDir());
 
             if ($baseId = $input->getOption('base_id'))
             {
-                $loader->setBaseId($baseId);
+                $client->addOption('base_id', $baseId);
             }
 
             if ($username = $input->getOption('username'))
             {
-                $loader->setUsername($username);
+                $client->addOption('username', $username);
             }
 
             if ($password = $input->getOption('password'))
             {
-                $loader->setPassword($password);
+                $client->addOption('password', $password);
             }
 
             if ($languageCode = $input->getOption('language_code'))
             {
-                $loader->addLanguageCode($languageCode, true);
+                $client->addOption('languages', array($languageCode));
             }
 
-            $output->writeln(sprintf('<info>Resalys:load</info> location:      <comment>%s</comment>', $loader->getLocation()));
-            $output->writeln(sprintf('<info>Resalys:load</info> base_id:       <comment>%s</comment>', $loader->getBaseId()));
-            $output->writeln(sprintf('<info>Resalys:load</info> request:       <comment>%s</comment>', implode(', ', $loader->getRequests())));
-            $output->writeln(sprintf('<info>Resalys:load</info> language_code: <comment>%s</comment>', implode(', ', $loader->getLanguageCodes())));
-
-            $loader->run();
+            $client->loadData();
         }
         catch (\Exception $exception)
         {

@@ -2,50 +2,46 @@
 
 namespace Cungfoo\Lib\Resalys\Loader;
 
-use \Cungfoo\Lib\Resalys\Loader\BaseLoader;
+use Cungfoo\Lib\Resalys\Loader\BaseLoader,
+    Cungfoo\Model\EtablissementQuery,
+    Cungfoo\Model\Etablissement,
+    Cungfoo\Model\TypeHebergementQuery,
+    Cungfoo\Model\EtablissementTypeHebergementQuery;
 
-class EtabLoader extends BaseLoader
+class getAllEtabsLoader extends BaseLoader
 {
-    protected $etabs = array();
-
-    public function load($locale = 'fr', \PropelPDO $con = null)
+    public function load($data, $locale, \PropelPDO $con)
     {
-        if ($con === null)
-        {
-            $con = \Propel::getConnection();
-        }
-
-        $con->beginTransaction();
-
         try
         {
-            foreach ($this->data->etab as $etab)
+            $removeObsoleteEtabs = EtablissementQuery::create();
+            foreach ($data->etab as $etab)
             {
-                $this->updateEtab($etab, $locale, $con);
+                $objectEtab = $this->updateEtab($etab, $locale, $con);
+                if ($objectEtab)
+                {
+                    $removeObsoleteEtabs->prune($objectEtab);
+                }
             }
 
-            $this->removeObsoleteEtabs($con);
-
-            $con->commit();
+            $removeObsoleteEtabs->delete($con);
         }
         catch (\Exception $exception)
         {
-            $con->rollBack();
             throw new \Exception($exception);
         }
     }
 
     protected function updateEtab($etab, $locale, \PropelPDO $con)
     {
-
-        $objectEtab = \Cungfoo\Model\EtablissementQuery::create()
+        $objectEtab = EtablissementQuery::create()
             ->filterByCode($etab->{'id'})
             ->findOne($con)
         ;
 
         if (!$objectEtab)
         {
-            $objectEtab = new \Cungfoo\Model\Etablissement();
+            $objectEtab = new Etablissement();
             $objectEtab->setCode($etab->{'id'});
         }
 
@@ -75,7 +71,8 @@ class EtabLoader extends BaseLoader
         }
 
         $objectEtab->save($con);
-        $this->etabs[] = $objectEtab;
+
+        return $objectEtab;
     }
 
     protected function updateTypeHebergement($objectEtab, $roomtypesGroup, \PropelPDO $con)
@@ -86,14 +83,14 @@ class EtabLoader extends BaseLoader
             {
                 if (is_object($roomtype) && property_exists($roomtype, 'code'))
                 {
-                    $objectTypeHebergement = \Cungfoo\Model\TypeHebergementQuery::create()
+                    $objectTypeHebergement = TypeHebergementQuery::create()
                         ->filterById($roomtype->code)
                         ->findOne($con)
                     ;
 
                     if ($objectTypeHebergement)
                     {
-                        $objectEtabHasTypeHebergement = \Cungfoo\Model\EtablissementTypeHebergementQuery::create()
+                        $objectEtabHasTypeHebergement = EtablissementTypeHebergementQuery::create()
                             ->filterByEtablissementId($objectEtab->getId())
                             ->filterByTypeHebergementId($objectTypeHebergement->getId())
                             ->findOne()
@@ -118,7 +115,7 @@ class EtabLoader extends BaseLoader
                 $modelQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['model']);
                 $objectTheme = $modelQuery::create()
                     ->filterByCode($themecode)
-                    ->findOne()
+                    ->findOne($con)
                 ;
 
                 if ($objectTheme)
@@ -137,7 +134,7 @@ class EtabLoader extends BaseLoader
                         $objectEtabHasTheme = $modelAssociatedQuery::create()
                             ->filterByEtablissementId($objectEtab->getId())
                             ->$filterAssociated($objectTheme->getId())
-                            ->findOne()
+                            ->findOne($con)
                         ;
 
                         if (!$objectEtabHasTheme)
@@ -149,20 +146,6 @@ class EtabLoader extends BaseLoader
                     }
                 }
             }
-        }
-    }
-
-    protected function removeObsoleteEtabs(\PropelPDO $con)
-    {
-        if (count($this->etabs) > 0)
-        {
-            $etabQuery = \Cungfoo\Model\EtablissementQuery::create();
-            foreach ($this->etabs as $etab)
-            {
-                $etabQuery->prune($etab);
-            }
-
-            $etabQuery->delete($con);
         }
     }
 }

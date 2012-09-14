@@ -43,6 +43,11 @@ abstract class JobHandler
      */
     public function addLog($message, $level = JobLogPeer::LEVEL_ERROR)
     {
+        $this->job
+            ->setMessage($message)
+            ->save()
+        ;
+
         $entry = new JobLog();
         $entry
             ->setMessage($message)

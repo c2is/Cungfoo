@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
+use Cungfoo\Lib\Job\CatalogueClientJobHandler,
+    Cungfoo\Model\Job;
+
 /**
  * Resalys controllers provider.
  *
@@ -29,9 +32,9 @@ class ResalysController implements ControllerProviderInterface
 
         $controllers->get('/import', function (Application $app) {
             // ajout du job d'import des données Resalys
-            $jobImport = new \Cungfoo\Model\Job();
+            $jobImport = new Job();
             $jobImport
-                ->setType('ResalysLoad')
+                ->setType(CatalogueClientJobHandler::getName())
                 ->save()
             ;
 

@@ -1,0 +1,5 @@
+services:
+    catalogue:
+        location: location_value
+        default_envelope:
+            base_id:  base_id_value
