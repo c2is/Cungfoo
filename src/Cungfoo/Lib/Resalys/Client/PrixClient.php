@@ -7,6 +7,11 @@ use Symfony\Component\Yaml\Yaml;
 
 class PrixClient extends BaseClient
 {
+    protected function getName()
+    {
+        return 'prix';
+    }
+
     protected function getRequests()
     {
         return array(

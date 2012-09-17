@@ -1,14 +1,18 @@
 services:
     catalogue:
-        location: wsdl_service_location
-        base_id:  base_id_resalys
-        requests:
-            getAllThemes:              \Cungfoo\Lib\Resalys\Loader\ThemeLoader
-            getAllRoomTypeCategories:  \Cungfoo\Lib\Resalys\Loader\RoomTypeCategoryLoader
-            getAllRoomTypes:           \Cungfoo\Lib\Resalys\Loader\RoomTypeLoader
-            getAllEtabs:               \Cungfoo\Lib\Resalys\Loader\EtabLoader
-    dispo:
-        location: wsdl_service_location
-        base_id:  base_id_resalys
-        username: ~
-        password: ~
+        location: http://www.preprod.vacancesdirectes.resalys.com/rsl/wsdl_distrib
+        default_envelope:
+            base_id:  vacancesdirectes_preprod_v6_6
+    disponibilite:
+        location: http://www.preprod.vacancesdirectes.resalys.com/rsl/dwsdl?namespace=search_engine
+        default_envelope:
+            base_id:  vacancesdirectes_preprod_v6_6
+            username: web_fr
+            password: DInan22101
+    prix:
+        location: http://www.preprod.vacancesdirectes.resalys.com/rsl/wsdl_flow
+        default_envelope:
+            base_id:  vacancesdirectes_preprod_v6_6
+            username: web_fr
+            password: web_fr
+            flow_name: prix_min

@@ -17,6 +17,8 @@ abstract class BaseClient
     protected $location         = null;
     protected $options          = array();
 
+    abstract protected function getName();
+
     abstract protected function getRequests();
 
     abstract protected function getEnvelopeFormat();
@@ -56,8 +58,16 @@ abstract class BaseClient
     {
         $clientConfig = Yaml::parse($clientConfigFile);
 
-        $this->location = $clientConfig['services']['catalogue']['location'];
-        $this->addOption('base_id', $clientConfig['services']['catalogue']['default_envelope']['base_id']);
+        if (empty($clientConfig['services'][$this->getName()]))
+        {
+            throw new \Exception(sprintf("No configuration found for '%s' client", $this->getName()));
+        }
+
+        $this->location = $clientConfig['services'][$this->getName()]['location'];
+        foreach ($clientConfig['services'][$this->getName()]['default_envelope'] as $optionName => $optionValue)
+        {
+            $this->addOption($optionName, $optionValue);
+        }
     }
 
     public function loadLanguagesConfig($languagesConfigFile)

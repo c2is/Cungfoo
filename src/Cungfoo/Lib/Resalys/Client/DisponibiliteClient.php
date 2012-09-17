@@ -7,6 +7,11 @@ use Symfony\Component\Yaml\Yaml;
 
 class DisponibiliteClient extends BaseClient
 {
+    protected function getName()
+    {
+        return 'disponibilite';
+    }
+
     protected function getRequests()
     {
         return array(

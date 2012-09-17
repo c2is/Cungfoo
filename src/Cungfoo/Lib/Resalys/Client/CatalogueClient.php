@@ -10,6 +10,11 @@ class CatalogueClient extends BaseClient
     const DEFAULT_LOADER_FILE   = '/app/config/Resalys/loader.yml';
     const LOADER_PATTERN        = '\\Cungfoo\\Lib\\Resalys\\Loader\\%sLoader';
 
+    protected function getName()
+    {
+        return 'catalogue';
+    }
+
     protected function getRequests()
     {
         return array(
@@ -23,10 +28,10 @@ class CatalogueClient extends BaseClient
     protected function getEnvelopeFormat()
     {
         return array(
-            $this->getOption('base_id', ''),
-            $this->getOption('username', ''),
-            $this->getOption('password', ''),
-            $this->getOption('language', ''),
+            'base_id'       => $this->getOption('base_id', ''),
+            'username'      => $this->getOption('username', ''),
+            'password'      => $this->getOption('password', ''),
+            'language_code' => $this->getOption('language', ''),
         );
     }
 
