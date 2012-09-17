@@ -84,7 +84,7 @@ class getAllEtabsLoader extends BaseLoader
                 if (is_object($roomtype) && property_exists($roomtype, 'code'))
                 {
                     $objectTypeHebergement = TypeHebergementQuery::create()
-                        ->filterById($roomtype->code)
+                        ->filterByCode($roomtype->code)
                         ->findOne($con)
                     ;
 
