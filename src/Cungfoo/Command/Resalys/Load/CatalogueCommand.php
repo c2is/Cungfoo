@@ -8,7 +8,7 @@
  * @package Cungfoo by C2IS
  */
 
-namespace Cungfoo\Command\Resalys;
+namespace Cungfoo\Command\Resalys\Load;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
@@ -18,12 +18,12 @@ use Symfony\Component\Console\Input\InputArgument,
 use Cungfoo\Command\Command as BaseCommand,
     Cungfoo\Lib\Resalys\Client\CatalogueClient;
 
-class LoadCommand extends BaseCommand
+class CatalogueCommand extends BaseCommand
 {
     protected function configure()
     {
         $this
-            ->setName('resalys:load')
+            ->setName('resalys:load:catalogue')
             ->setDescription('Execute resalys soap request')
             ->addOption('base_id', 'b', InputOption::VALUE_OPTIONAL, 'Give a specific base_id.', null)
             ->addOption('username', 'u', InputOption::VALUE_OPTIONAL, 'Give a specific base_id.', null)
@@ -59,14 +59,15 @@ class LoadCommand extends BaseCommand
             }
 
             $client->loadData();
+
         }
         catch (\Exception $exception)
         {
-            $output->writeln(sprintf('<info>Resalys:load</info> <error>error %s:</error>.', $exception->getMessage()));
+            $output->writeln(sprintf('<info>resalys:load:catalogue</info> <error>error %s:</error>.', $exception->getMessage()));
             return false;
         }
 
-        $output->writeln(sprintf('<info>Resalys:load</info> <info>data is loaded :D</info>.'));
+        $output->writeln(sprintf('<info>resalys:load:catalogue</info> <info>data is loaded :D</info>.'));
         return true;
     }
 }
