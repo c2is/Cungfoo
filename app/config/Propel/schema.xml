@@ -78,6 +78,7 @@
         <column name="categorie_id" type="integer"/>
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
+        <column name="minimum_price" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">

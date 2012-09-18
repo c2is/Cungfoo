@@ -190,6 +190,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $geo_coordinate_y;
 
     /**
+     * The value for the minimum_price field.
+     * @var        string
+     */
+    protected $minimum_price;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -644,6 +650,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getGeoCoordinateY()
     {
         return $this->geo_coordinate_y;
+    }
+
+    /**
+     * Get the [minimum_price] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPrice()
+    {
+        return $this->minimum_price;
     }
 
     /**
@@ -1111,6 +1127,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setGeoCoordinateY()
 
     /**
+     * Set the value of [minimum_price] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setMinimumPrice($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price !== $v) {
+            $this->minimum_price = $v;
+            $this->modifiedColumns[] = EtablissementPeer::MINIMUM_PRICE;
+        }
+
+
+        return $this;
+    } // setMinimumPrice()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1206,8 +1243,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->categorie_id = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
             $this->geo_coordinate_x = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->geo_coordinate_y = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->created_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->updated_at = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->minimum_price = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->created_at = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->updated_at = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1216,7 +1254,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 20; // 20 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 21; // 21 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1819,6 +1857,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) {
             $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
         }
+        if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) {
+            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -1889,6 +1930,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`GEO_COORDINATE_Y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
+                        break;
+                    case '`MINIMUM_PRICE`':
+                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2167,9 +2211,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getGeoCoordinateY();
                 break;
             case 18:
-                return $this->getCreatedAt();
+                return $this->getMinimumPrice();
                 break;
             case 19:
+                return $this->getCreatedAt();
+                break;
+            case 20:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -2219,8 +2266,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[15] => $this->getCategorieId(),
             $keys[16] => $this->getGeoCoordinateX(),
             $keys[17] => $this->getGeoCoordinateY(),
-            $keys[18] => $this->getCreatedAt(),
-            $keys[19] => $this->getUpdatedAt(),
+            $keys[18] => $this->getMinimumPrice(),
+            $keys[19] => $this->getCreatedAt(),
+            $keys[20] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -2342,9 +2390,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setGeoCoordinateY($value);
                 break;
             case 18:
-                $this->setCreatedAt($value);
+                $this->setMinimumPrice($value);
                 break;
             case 19:
+                $this->setCreatedAt($value);
+                break;
+            case 20:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2389,8 +2440,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[15], $arr)) $this->setCategorieId($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateX($arr[$keys[16]]);
         if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateY($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setCreatedAt($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setUpdatedAt($arr[$keys[19]]);
+        if (array_key_exists($keys[18], $arr)) $this->setMinimumPrice($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setCreatedAt($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setUpdatedAt($arr[$keys[20]]);
     }
 
     /**
@@ -2420,6 +2472,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
+        if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementPeer::MINIMUM_PRICE, $this->minimum_price);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
 
@@ -2502,6 +2555,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
+        $copyObj->setMinimumPrice($this->getMinimumPrice());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -5783,6 +5837,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
+        $this->minimum_price = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;

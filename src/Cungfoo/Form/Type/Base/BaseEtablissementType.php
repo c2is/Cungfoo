@@ -133,6 +133,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.geo_coordinate_y',
             'required' => false,
         ));
+        $builder->add('minimum_price', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.minimum_price',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(
