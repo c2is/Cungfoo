@@ -50,3 +50,7 @@ crud:
             prefix: /baignades
             model: \Cungfoo\Model\Baignade
             form: \Cungfoo\Form\Type\BaignadeType
+        thematique:
+            prefix: /thematiques
+            model: \Cungfoo\Model\Thematique
+            form: \Cungfoo\Form\Type\ThematiqueType

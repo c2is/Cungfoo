@@ -38,12 +38,16 @@ use Cungfoo\Model\EtablissementServiceComplementaire;
 use Cungfoo\Model\EtablissementServiceComplementaireQuery;
 use Cungfoo\Model\EtablissementSituationGeographique;
 use Cungfoo\Model\EtablissementSituationGeographiqueQuery;
+use Cungfoo\Model\EtablissementThematique;
+use Cungfoo\Model\EtablissementThematiqueQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireQuery;
 use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\SituationGeographiqueQuery;
+use Cungfoo\Model\Thematique;
+use Cungfoo\Model\ThematiqueQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
 use Cungfoo\Model\Ville;
@@ -244,6 +248,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementBaignadesPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementThematique[] Collection to store aggregation of EtablissementThematique objects.
+     */
+    protected $collEtablissementThematiques;
+    protected $collEtablissementThematiquesPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -278,6 +288,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Baignade[] Collection to store aggregation of Baignade objects.
      */
     protected $collBaignades;
+
+    /**
+     * @var        PropelObjectCollection|Thematique[] Collection to store aggregation of Thematique objects.
+     */
+    protected $collThematiques;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -347,6 +362,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $thematiquesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -378,6 +399,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementBaignadesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementThematiquesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1271,6 +1298,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementBaignades = null;
 
+            $this->collEtablissementThematiques = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1279,6 +1308,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collServiceComplementaires = null;
             $this->collSituationGeographiques = null;
             $this->collBaignades = null;
+            $this->collThematiques = null;
         } // if (deep)
     }
 
@@ -1553,6 +1583,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->thematiquesScheduledForDeletion !== null) {
+                if (!$this->thematiquesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->thematiquesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    EtablissementThematiqueQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->thematiquesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getThematiques() as $thematique) {
+                    if ($thematique->isModified()) {
+                        $thematique->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -1649,6 +1699,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementBaignades !== null) {
                 foreach ($this->collEtablissementBaignades as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementThematiquesScheduledForDeletion !== null) {
+                if (!$this->etablissementThematiquesScheduledForDeletion->isEmpty()) {
+                    EtablissementThematiqueQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementThematiquesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementThematiquesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementThematiques !== null) {
+                foreach ($this->collEtablissementThematiques as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1994,6 +2061,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementThematiques !== null) {
+                    foreach ($this->collEtablissementThematiques as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2171,6 +2246,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementBaignades) {
                 $result['EtablissementBaignades'] = $this->collEtablissementBaignades->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementThematiques) {
+                $result['EtablissementThematiques'] = $this->collEtablissementThematiques->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2470,6 +2548,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getEtablissementThematiques() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementThematique($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2656,6 +2740,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementBaignade' == $relationName) {
             $this->initEtablissementBaignades();
+        }
+        if ('EtablissementThematique' == $relationName) {
+            $this->initEtablissementThematiques();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -4055,6 +4142,238 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementThematiques collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementThematiques()
+     */
+    public function clearEtablissementThematiques()
+    {
+        $this->collEtablissementThematiques = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementThematiquesPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementThematiques collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementThematiques($v = true)
+    {
+        $this->collEtablissementThematiquesPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementThematiques collection.
+     *
+     * By default this just sets the collEtablissementThematiques collection to an empty array (like clearcollEtablissementThematiques());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementThematiques($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementThematiques && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementThematiques = new PropelObjectCollection();
+        $this->collEtablissementThematiques->setModel('EtablissementThematique');
+    }
+
+    /**
+     * Gets an array of EtablissementThematique objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementThematique[] List of EtablissementThematique objects
+     * @throws PropelException
+     */
+    public function getEtablissementThematiques($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementThematiquesPartial && !$this->isNew();
+        if (null === $this->collEtablissementThematiques || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementThematiques) {
+                // return empty collection
+                $this->initEtablissementThematiques();
+            } else {
+                $collEtablissementThematiques = EtablissementThematiqueQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementThematiquesPartial && count($collEtablissementThematiques)) {
+                      $this->initEtablissementThematiques(false);
+
+                      foreach($collEtablissementThematiques as $obj) {
+                        if (false == $this->collEtablissementThematiques->contains($obj)) {
+                          $this->collEtablissementThematiques->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementThematiquesPartial = true;
+                    }
+
+                    return $collEtablissementThematiques;
+                }
+
+                if($partial && $this->collEtablissementThematiques) {
+                    foreach($this->collEtablissementThematiques as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementThematiques[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementThematiques = $collEtablissementThematiques;
+                $this->collEtablissementThematiquesPartial = false;
+            }
+        }
+
+        return $this->collEtablissementThematiques;
+    }
+
+    /**
+     * Sets a collection of EtablissementThematique objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementThematiques A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementThematiques(PropelCollection $etablissementThematiques, PropelPDO $con = null)
+    {
+        $this->etablissementThematiquesScheduledForDeletion = $this->getEtablissementThematiques(new Criteria(), $con)->diff($etablissementThematiques);
+
+        foreach ($this->etablissementThematiquesScheduledForDeletion as $etablissementThematiqueRemoved) {
+            $etablissementThematiqueRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementThematiques = null;
+        foreach ($etablissementThematiques as $etablissementThematique) {
+            $this->addEtablissementThematique($etablissementThematique);
+        }
+
+        $this->collEtablissementThematiques = $etablissementThematiques;
+        $this->collEtablissementThematiquesPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementThematique objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementThematique objects.
+     * @throws PropelException
+     */
+    public function countEtablissementThematiques(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementThematiquesPartial && !$this->isNew();
+        if (null === $this->collEtablissementThematiques || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementThematiques) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementThematiques());
+                }
+                $query = EtablissementThematiqueQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementThematiques);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementThematique object to this object
+     * through the EtablissementThematique foreign key attribute.
+     *
+     * @param    EtablissementThematique $l EtablissementThematique
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementThematique(EtablissementThematique $l)
+    {
+        if ($this->collEtablissementThematiques === null) {
+            $this->initEtablissementThematiques();
+            $this->collEtablissementThematiquesPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementThematiques->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementThematique($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementThematique $etablissementThematique The etablissementThematique object to add.
+     */
+    protected function doAddEtablissementThematique($etablissementThematique)
+    {
+        $this->collEtablissementThematiques[]= $etablissementThematique;
+        $etablissementThematique->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementThematique $etablissementThematique The etablissementThematique object to remove.
+     */
+    public function removeEtablissementThematique($etablissementThematique)
+    {
+        if ($this->getEtablissementThematiques()->contains($etablissementThematique)) {
+            $this->collEtablissementThematiques->remove($this->collEtablissementThematiques->search($etablissementThematique));
+            if (null === $this->etablissementThematiquesScheduledForDeletion) {
+                $this->etablissementThematiquesScheduledForDeletion = clone $this->collEtablissementThematiques;
+                $this->etablissementThematiquesScheduledForDeletion->clear();
+            }
+            $this->etablissementThematiquesScheduledForDeletion[]= $etablissementThematique;
+            $etablissementThematique->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementThematiques from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|EtablissementThematique[] List of EtablissementThematique objects
+     */
+    public function getEtablissementThematiquesJoinThematique($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementThematiqueQuery::create(null, $criteria);
+        $query->joinWith('Thematique', $join_behavior);
+
+        return $this->getEtablissementThematiques($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -5274,6 +5593,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collThematiques collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addThematiques()
+     */
+    public function clearThematiques()
+    {
+        $this->collThematiques = null; // important to set this to null since that means it is uninitialized
+        $this->collThematiquesPartial = null;
+    }
+
+    /**
+     * Initializes the collThematiques collection.
+     *
+     * By default this just sets the collThematiques collection to an empty collection (like clearThematiques());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initThematiques()
+    {
+        $this->collThematiques = new PropelObjectCollection();
+        $this->collThematiques->setModel('Thematique');
+    }
+
+    /**
+     * Gets a collection of Thematique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_thematique cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Thematique[] List of Thematique objects
+     */
+    public function getThematiques($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collThematiques || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThematiques) {
+                // return empty collection
+                $this->initThematiques();
+            } else {
+                $collThematiques = ThematiqueQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collThematiques;
+                }
+                $this->collThematiques = $collThematiques;
+            }
+        }
+
+        return $this->collThematiques;
+    }
+
+    /**
+     * Sets a collection of Thematique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_thematique cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $thematiques A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setThematiques(PropelCollection $thematiques, PropelPDO $con = null)
+    {
+        $this->clearThematiques();
+        $currentThematiques = $this->getThematiques();
+
+        $this->thematiquesScheduledForDeletion = $currentThematiques->diff($thematiques);
+
+        foreach ($thematiques as $thematique) {
+            if (!$currentThematiques->contains($thematique)) {
+                $this->doAddThematique($thematique);
+            }
+        }
+
+        $this->collThematiques = $thematiques;
+    }
+
+    /**
+     * Gets the number of Thematique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_thematique cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Thematique objects
+     */
+    public function countThematiques($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collThematiques || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThematiques) {
+                return 0;
+            } else {
+                $query = ThematiqueQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collThematiques);
+        }
+    }
+
+    /**
+     * Associate a Thematique object to this object
+     * through the etablissement_thematique cross reference table.
+     *
+     * @param  Thematique $thematique The EtablissementThematique object to relate
+     * @return void
+     */
+    public function addThematique(Thematique $thematique)
+    {
+        if ($this->collThematiques === null) {
+            $this->initThematiques();
+        }
+        if (!$this->collThematiques->contains($thematique)) { // only add it if the **same** object is not already associated
+            $this->doAddThematique($thematique);
+
+            $this->collThematiques[]= $thematique;
+        }
+    }
+
+    /**
+     * @param	Thematique $thematique The thematique object to add.
+     */
+    protected function doAddThematique($thematique)
+    {
+        $etablissementThematique = new EtablissementThematique();
+        $etablissementThematique->setThematique($thematique);
+        $this->addEtablissementThematique($etablissementThematique);
+    }
+
+    /**
+     * Remove a Thematique object to this object
+     * through the etablissement_thematique cross reference table.
+     *
+     * @param Thematique $thematique The EtablissementThematique object to relate
+     * @return void
+     */
+    public function removeThematique(Thematique $thematique)
+    {
+        if ($this->getThematiques()->contains($thematique)) {
+            $this->collThematiques->remove($this->collThematiques->search($thematique));
+            if (null === $this->thematiquesScheduledForDeletion) {
+                $this->thematiquesScheduledForDeletion = clone $this->collThematiques;
+                $this->thematiquesScheduledForDeletion->clear();
+            }
+            $this->thematiquesScheduledForDeletion[]= $thematique;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -5348,6 +5835,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementThematiques) {
+                foreach ($this->collEtablissementThematiques as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -5383,6 +5875,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collThematiques) {
+                foreach ($this->collThematiques as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
         // i18n behavior
@@ -5413,6 +5910,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementBaignades->clearIterator();
         }
         $this->collEtablissementBaignades = null;
+        if ($this->collEtablissementThematiques instanceof PropelCollection) {
+            $this->collEtablissementThematiques->clearIterator();
+        }
+        $this->collEtablissementThematiques = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -5441,6 +5942,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collBaignades->clearIterator();
         }
         $this->collBaignades = null;
+        if ($this->collThematiques instanceof PropelCollection) {
+            $this->collThematiques->clearIterator();
+        }
+        $this->collThematiques = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }

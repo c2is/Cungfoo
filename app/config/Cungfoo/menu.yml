@@ -32,6 +32,9 @@ menu:
               baignade:
                   title:  menu.baignade
                   route:  baignade_crud_list
+              thematique:
+                  title:  menu.thematique
+                  route:  thematique_crud_list
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list

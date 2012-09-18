@@ -175,6 +175,19 @@
         </foreign-key>
     </table>
 
+    <table name="etablissement_thematique" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+        <column name="thematique_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="thematique">
+            <reference local="thematique_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
     <table name="type_hebergement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
@@ -337,6 +350,21 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/baignades" />
+        </behavior>
+    </table>
+
+    <table name="thematique">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
+        <column name="name" type="varchar" required="true" />
+        <behavior name="timestampable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/thematiques" />
         </behavior>
     </table>
 

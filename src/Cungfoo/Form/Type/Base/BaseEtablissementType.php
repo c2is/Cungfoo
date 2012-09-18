@@ -181,6 +181,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.baignades',
             'required' => false,
         ));
+        $builder->add('thematiques', 'model', array(
+            'class' => 'Cungfoo\Model\Thematique',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.thematiques',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(
