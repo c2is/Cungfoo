@@ -19,6 +19,8 @@ loader:
         model:  \Cungfoo\Model\Categorie
       SITUGEO:
         model:  \Cungfoo\Model\SituationGeographique
+      BAIGNADE:
+        model:  \Cungfoo\Model\Baignade
       SERVCOMP:
         model:  \Cungfoo\Model\ServiceComplementaire
       ACTIVITES:
@@ -43,6 +45,11 @@ loader:
         associated: \Cungfoo\Model\EtablissementSituationGeographique
         setter:     addSituationGeographique
         filter:     filterBySituationGeographiqueId
+      BAIGNADE:
+        model:      \Cungfoo\Model\Baignade
+        associated: \Cungfoo\Model\EtablissementBaignade
+        setter:     addBaignade
+        filter:     filterByBaignadeId
       ACTIVITES:
         model:      \Cungfoo\Model\Activite
         associated: \Cungfoo\Model\EtablissementActivite

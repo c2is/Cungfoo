@@ -29,6 +29,9 @@ menu:
               situation_geographique:
                   title:  menu.situation_geographique
                   route:  situation_geographique_crud_list
+              baignade:
+                  title:  menu.baignade
+                  route:  baignade_crud_list
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list

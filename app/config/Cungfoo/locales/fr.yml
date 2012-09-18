@@ -66,6 +66,15 @@ situation_geographique.code: Code
 situation_geographique.name: Nom
 situation_geographique.etablissements: Établissements ayant cette situation géographique
 
+baignade.crud.create: Création d'une baignade
+baignade.crud.list: Liste baignades
+baignade.crud.update: Mettre à jour la baignade %name%
+baignade.crud.view: Détails de la baignade %name%
+baignade.id: Id
+baignade.code: Code
+baignade.name: Nom
+baignade.etablissements: Établissements ayant cette baignade
+
 etablissement.activites: Liste des activités
 etablissement.city: Ville
 etablissement.country: Pays
@@ -89,6 +98,7 @@ etablissement.ville: Ville
 etablissement.ville.id: Code ville
 etablissement.categorie: Catégorie
 etablissement.situation_geographiques: Liste des situations géographiques
+etablissement.baignades: Liste des baignades
 etablissement.zip: Code postal
 etablissement.phone1: Télephone 1
 etablissement.phone2: Télephone 2
@@ -107,7 +117,6 @@ menu.activite: Activités
 menu.destination: Destinations
 menu.categorie: Catégories
 menu.etablissement: Établissement
-menu.situation_geographique: Situations géographiques
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter
 menu.parameters: Paramètres
@@ -120,6 +129,8 @@ menu.ville: Villes
 menu.type_hebergement: Types hébergements
 menu.category_type_hebergement: Catégories des types hébergements
 menu.service_complementaire: Services complémentaires
+menu.situation_geographique: Situations géographiques
+menu.baignade: Baignades
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements

@@ -17,6 +17,8 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Activite;
 use Cungfoo\Model\ActiviteQuery;
+use Cungfoo\Model\Baignade;
+use Cungfoo\Model\BaignadeQuery;
 use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\Destination;
@@ -24,6 +26,8 @@ use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
 use Cungfoo\Model\EtablissementActiviteQuery;
+use Cungfoo\Model\EtablissementBaignade;
+use Cungfoo\Model\EtablissementBaignadeQuery;
 use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementDestinationQuery;
 use Cungfoo\Model\EtablissementI18n;
@@ -234,6 +238,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementSituationGeographiquesPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementBaignade[] Collection to store aggregation of EtablissementBaignade objects.
+     */
+    protected $collEtablissementBaignades;
+    protected $collEtablissementBaignadesPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -263,6 +273,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|SituationGeographique[] Collection to store aggregation of SituationGeographique objects.
      */
     protected $collSituationGeographiques;
+
+    /**
+     * @var        PropelObjectCollection|Baignade[] Collection to store aggregation of Baignade objects.
+     */
+    protected $collBaignades;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -326,6 +341,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $baignadesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -351,6 +372,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementSituationGeographiquesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementBaignadesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1242,6 +1269,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementSituationGeographiques = null;
 
+            $this->collEtablissementBaignades = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1249,6 +1278,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collActivites = null;
             $this->collServiceComplementaires = null;
             $this->collSituationGeographiques = null;
+            $this->collBaignades = null;
         } // if (deep)
     }
 
@@ -1503,6 +1533,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->baignadesScheduledForDeletion !== null) {
+                if (!$this->baignadesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->baignadesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    EtablissementBaignadeQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->baignadesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getBaignades() as $baignade) {
+                    if ($baignade->isModified()) {
+                        $baignade->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -1582,6 +1632,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementSituationGeographiques !== null) {
                 foreach ($this->collEtablissementSituationGeographiques as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementBaignadesScheduledForDeletion !== null) {
+                if (!$this->etablissementBaignadesScheduledForDeletion->isEmpty()) {
+                    EtablissementBaignadeQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementBaignadesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementBaignadesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementBaignades !== null) {
+                foreach ($this->collEtablissementBaignades as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1919,6 +1986,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementBaignades !== null) {
+                    foreach ($this->collEtablissementBaignades as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2093,6 +2168,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementSituationGeographiques) {
                 $result['EtablissementSituationGeographiques'] = $this->collEtablissementSituationGeographiques->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementBaignades) {
+                $result['EtablissementBaignades'] = $this->collEtablissementBaignades->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2386,6 +2464,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getEtablissementBaignades() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementBaignade($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2569,6 +2653,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementSituationGeographique' == $relationName) {
             $this->initEtablissementSituationGeographiques();
+        }
+        if ('EtablissementBaignade' == $relationName) {
+            $this->initEtablissementBaignades();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -3736,6 +3823,238 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementBaignades collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementBaignades()
+     */
+    public function clearEtablissementBaignades()
+    {
+        $this->collEtablissementBaignades = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementBaignadesPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementBaignades collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementBaignades($v = true)
+    {
+        $this->collEtablissementBaignadesPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementBaignades collection.
+     *
+     * By default this just sets the collEtablissementBaignades collection to an empty array (like clearcollEtablissementBaignades());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementBaignades($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementBaignades && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementBaignades = new PropelObjectCollection();
+        $this->collEtablissementBaignades->setModel('EtablissementBaignade');
+    }
+
+    /**
+     * Gets an array of EtablissementBaignade objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementBaignade[] List of EtablissementBaignade objects
+     * @throws PropelException
+     */
+    public function getEtablissementBaignades($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementBaignadesPartial && !$this->isNew();
+        if (null === $this->collEtablissementBaignades || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementBaignades) {
+                // return empty collection
+                $this->initEtablissementBaignades();
+            } else {
+                $collEtablissementBaignades = EtablissementBaignadeQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementBaignadesPartial && count($collEtablissementBaignades)) {
+                      $this->initEtablissementBaignades(false);
+
+                      foreach($collEtablissementBaignades as $obj) {
+                        if (false == $this->collEtablissementBaignades->contains($obj)) {
+                          $this->collEtablissementBaignades->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementBaignadesPartial = true;
+                    }
+
+                    return $collEtablissementBaignades;
+                }
+
+                if($partial && $this->collEtablissementBaignades) {
+                    foreach($this->collEtablissementBaignades as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementBaignades[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementBaignades = $collEtablissementBaignades;
+                $this->collEtablissementBaignadesPartial = false;
+            }
+        }
+
+        return $this->collEtablissementBaignades;
+    }
+
+    /**
+     * Sets a collection of EtablissementBaignade objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementBaignades A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementBaignades(PropelCollection $etablissementBaignades, PropelPDO $con = null)
+    {
+        $this->etablissementBaignadesScheduledForDeletion = $this->getEtablissementBaignades(new Criteria(), $con)->diff($etablissementBaignades);
+
+        foreach ($this->etablissementBaignadesScheduledForDeletion as $etablissementBaignadeRemoved) {
+            $etablissementBaignadeRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementBaignades = null;
+        foreach ($etablissementBaignades as $etablissementBaignade) {
+            $this->addEtablissementBaignade($etablissementBaignade);
+        }
+
+        $this->collEtablissementBaignades = $etablissementBaignades;
+        $this->collEtablissementBaignadesPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementBaignade objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementBaignade objects.
+     * @throws PropelException
+     */
+    public function countEtablissementBaignades(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementBaignadesPartial && !$this->isNew();
+        if (null === $this->collEtablissementBaignades || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementBaignades) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementBaignades());
+                }
+                $query = EtablissementBaignadeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementBaignades);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementBaignade object to this object
+     * through the EtablissementBaignade foreign key attribute.
+     *
+     * @param    EtablissementBaignade $l EtablissementBaignade
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementBaignade(EtablissementBaignade $l)
+    {
+        if ($this->collEtablissementBaignades === null) {
+            $this->initEtablissementBaignades();
+            $this->collEtablissementBaignadesPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementBaignades->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementBaignade($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementBaignade $etablissementBaignade The etablissementBaignade object to add.
+     */
+    protected function doAddEtablissementBaignade($etablissementBaignade)
+    {
+        $this->collEtablissementBaignades[]= $etablissementBaignade;
+        $etablissementBaignade->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementBaignade $etablissementBaignade The etablissementBaignade object to remove.
+     */
+    public function removeEtablissementBaignade($etablissementBaignade)
+    {
+        if ($this->getEtablissementBaignades()->contains($etablissementBaignade)) {
+            $this->collEtablissementBaignades->remove($this->collEtablissementBaignades->search($etablissementBaignade));
+            if (null === $this->etablissementBaignadesScheduledForDeletion) {
+                $this->etablissementBaignadesScheduledForDeletion = clone $this->collEtablissementBaignades;
+                $this->etablissementBaignadesScheduledForDeletion->clear();
+            }
+            $this->etablissementBaignadesScheduledForDeletion[]= $etablissementBaignade;
+            $etablissementBaignade->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementBaignades from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|EtablissementBaignade[] List of EtablissementBaignade objects
+     */
+    public function getEtablissementBaignadesJoinBaignade($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementBaignadeQuery::create(null, $criteria);
+        $query->joinWith('Baignade', $join_behavior);
+
+        return $this->getEtablissementBaignades($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -4787,6 +5106,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collBaignades collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addBaignades()
+     */
+    public function clearBaignades()
+    {
+        $this->collBaignades = null; // important to set this to null since that means it is uninitialized
+        $this->collBaignadesPartial = null;
+    }
+
+    /**
+     * Initializes the collBaignades collection.
+     *
+     * By default this just sets the collBaignades collection to an empty collection (like clearBaignades());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initBaignades()
+    {
+        $this->collBaignades = new PropelObjectCollection();
+        $this->collBaignades->setModel('Baignade');
+    }
+
+    /**
+     * Gets a collection of Baignade objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_baignade cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Baignade[] List of Baignade objects
+     */
+    public function getBaignades($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collBaignades || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBaignades) {
+                // return empty collection
+                $this->initBaignades();
+            } else {
+                $collBaignades = BaignadeQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collBaignades;
+                }
+                $this->collBaignades = $collBaignades;
+            }
+        }
+
+        return $this->collBaignades;
+    }
+
+    /**
+     * Sets a collection of Baignade objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_baignade cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $baignades A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setBaignades(PropelCollection $baignades, PropelPDO $con = null)
+    {
+        $this->clearBaignades();
+        $currentBaignades = $this->getBaignades();
+
+        $this->baignadesScheduledForDeletion = $currentBaignades->diff($baignades);
+
+        foreach ($baignades as $baignade) {
+            if (!$currentBaignades->contains($baignade)) {
+                $this->doAddBaignade($baignade);
+            }
+        }
+
+        $this->collBaignades = $baignades;
+    }
+
+    /**
+     * Gets the number of Baignade objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_baignade cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Baignade objects
+     */
+    public function countBaignades($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collBaignades || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBaignades) {
+                return 0;
+            } else {
+                $query = BaignadeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collBaignades);
+        }
+    }
+
+    /**
+     * Associate a Baignade object to this object
+     * through the etablissement_baignade cross reference table.
+     *
+     * @param  Baignade $baignade The EtablissementBaignade object to relate
+     * @return void
+     */
+    public function addBaignade(Baignade $baignade)
+    {
+        if ($this->collBaignades === null) {
+            $this->initBaignades();
+        }
+        if (!$this->collBaignades->contains($baignade)) { // only add it if the **same** object is not already associated
+            $this->doAddBaignade($baignade);
+
+            $this->collBaignades[]= $baignade;
+        }
+    }
+
+    /**
+     * @param	Baignade $baignade The baignade object to add.
+     */
+    protected function doAddBaignade($baignade)
+    {
+        $etablissementBaignade = new EtablissementBaignade();
+        $etablissementBaignade->setBaignade($baignade);
+        $this->addEtablissementBaignade($etablissementBaignade);
+    }
+
+    /**
+     * Remove a Baignade object to this object
+     * through the etablissement_baignade cross reference table.
+     *
+     * @param Baignade $baignade The EtablissementBaignade object to relate
+     * @return void
+     */
+    public function removeBaignade(Baignade $baignade)
+    {
+        if ($this->getBaignades()->contains($baignade)) {
+            $this->collBaignades->remove($this->collBaignades->search($baignade));
+            if (null === $this->baignadesScheduledForDeletion) {
+                $this->baignadesScheduledForDeletion = clone $this->collBaignades;
+                $this->baignadesScheduledForDeletion->clear();
+            }
+            $this->baignadesScheduledForDeletion[]= $baignade;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -4856,6 +5343,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementBaignades) {
+                foreach ($this->collEtablissementBaignades as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -4886,6 +5378,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collBaignades) {
+                foreach ($this->collBaignades as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
         // i18n behavior
@@ -4912,6 +5409,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementSituationGeographiques->clearIterator();
         }
         $this->collEtablissementSituationGeographiques = null;
+        if ($this->collEtablissementBaignades instanceof PropelCollection) {
+            $this->collEtablissementBaignades->clearIterator();
+        }
+        $this->collEtablissementBaignades = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -4936,6 +5437,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collSituationGeographiques->clearIterator();
         }
         $this->collSituationGeographiques = null;
+        if ($this->collBaignades instanceof PropelCollection) {
+            $this->collBaignades->clearIterator();
+        }
+        $this->collBaignades = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }

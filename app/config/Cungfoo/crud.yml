@@ -46,3 +46,7 @@ crud:
             prefix: /situation-geographiques
             model: \Cungfoo\Model\SituationGeographique
             form: \Cungfoo\Form\Type\SituationGeographiqueType
+        baignade:
+            prefix: /baignades
+            model: \Cungfoo\Model\Baignade
+            form: \Cungfoo\Form\Type\BaignadeType

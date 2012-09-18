@@ -173,6 +173,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.situation_geographiques',
             'required' => false,
         ));
+        $builder->add('baignades', 'model', array(
+            'class' => 'Cungfoo\Model\Baignade',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.baignades',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(
