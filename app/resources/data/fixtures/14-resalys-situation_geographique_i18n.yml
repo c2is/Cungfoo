@@ -1,0 +1,37 @@
+\Cungfoo\Model\SituationGeographiqueI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Accès direct à la plage'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'Lac, rivière ou plan d''eau à proximité'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'A la campagne'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'En rétro littoral <10km'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Accès mer <5km'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'En bord de mer <2km'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'A la montagne'
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Au bord d''un lac'
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'Au bord d''une rivière'

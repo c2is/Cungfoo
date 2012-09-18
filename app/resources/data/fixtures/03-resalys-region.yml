@@ -86,3 +86,15 @@
     29:
         Code: CTBR
         PaysId: 3
+    30:
+        Code: HERA
+        PaysId: 1
+    31:
+        Code: AUDE
+        PaysId: 1
+    32:
+        Code: TOSC
+        PaysId: null
+    33:
+        Code: PASD
+        PaysId: 1

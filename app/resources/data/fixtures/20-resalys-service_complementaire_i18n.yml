@@ -1,49 +1,53 @@
-\Cungfoo\Model\ActiviteI18n:
+\Cungfoo\Model\ServiceComplementaireI18n:
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Ping-pong (Gratuit)'
+        Name: 'Séjour 3/4 nuits possible en haute saison'
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Club enfants'
+        Name: Wifi
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'Pétanque (Gratuit)'
+        Name: 'Chiens autorisés'
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'Club ados'
+        Name: 'Dépannage alimentation'
     5_fr:
         Id: 5
         Locale: fr
-        Name: 'Terrain multisports'
+        Name: 'Location de vélos'
     6_fr:
         Id: 6
         Locale: fr
-        Name: 'Salle de musculation et fitness'
+        Name: 'TV au bar'
     7_fr:
         Id: 7
         Locale: fr
-        Name: 'Discothèque à proximité'
+        Name: 'Navette plage (gratuite)'
     8_fr:
         Id: 8
         Locale: fr
-        Name: 'Mini golf à proximité'
+        Name: 'Navette plage (payante)'
     9_fr:
         Id: 9
         Locale: fr
-        Name: 'Tennis à proximité'
+        Name: Bar
     10_fr:
         Id: 10
         Locale: fr
-        Name: 'Golf à proximité'
+        Name: Snack
     11_fr:
         Id: 11
         Locale: fr
-        Name: 'Equitation à proximité'
+        Name: .
     12_fr:
         Id: 12
         Locale: fr
-        Name: 'Pêche à proximité'
+        Name: 'Restauration à emporter'
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: Restaurant

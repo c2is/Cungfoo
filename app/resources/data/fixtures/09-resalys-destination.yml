@@ -1,9 +1,7 @@
 \Cungfoo\Model\Destination:
     1:
-        Code: MONT
-    2:
-        Code: CAM
-    3:
-        Code: ATL
-    4:
         Code: MED
+    2:
+        Code: ATL
+    3:
+        Code: CAM

@@ -1,0 +1,25 @@
+\Cungfoo\Model\CategoryTypeHebergementI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Salles de réception'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: Mobil-homes
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: Chalets
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: Caravanes
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: Gîtes
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: Emplacements

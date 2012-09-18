@@ -1,0 +1,29 @@
+\Cungfoo\Model\ThematiqueI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Nouveautés 2012'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'Parcs aquatiques'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Pieds dans l''eau'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Vacances farniente'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Vacances club'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'Vacances sensations'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Vacances découverte'

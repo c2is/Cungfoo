@@ -1,0 +1,13 @@
+\Cungfoo\Model\CategoryTypeHebergement:
+    1:
+        Code: SALL
+    2:
+        Code: MH
+    3:
+        Code: CHA
+    4:
+        Code: CAR
+    5:
+        Code: GITE
+    6:
+        Code: EMP

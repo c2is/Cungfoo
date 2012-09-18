@@ -1,49 +1,13 @@
 \Cungfoo\Model\DestinationI18n:
-    1_de:
-        Id: 1
-        Locale: de
-        Name: Montagne
-    1_en:
-        Id: 1
-        Locale: en
-        Name: Montagne
     1_fr:
         Id: 1
         Locale: fr
-        Name: Montagne
-    2_de:
-        Id: 2
-        Locale: de
-        Name: Campagne
-    2_en:
-        Id: 2
-        Locale: en
-        Name: Campagne
+        Name: Méditerranée
     2_fr:
         Id: 2
         Locale: fr
-        Name: Campagne
-    3_de:
-        Id: 3
-        Locale: de
-        Name: Atlantique
-    3_en:
-        Id: 3
-        Locale: en
-        Name: Atlantique
+        Name: 'Manche et Côte Atlantique'
     3_fr:
         Id: 3
         Locale: fr
-        Name: Atlantique
-    4_de:
-        Id: 4
-        Locale: de
-        Name: Méditerranée
-    4_en:
-        Id: 4
-        Locale: en
-        Name: Méditerranée
-    4_fr:
-        Id: 4
-        Locale: fr
-        Name: Méditerranée
+        Name: 'Campagne et Montagne'

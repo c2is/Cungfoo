@@ -1,0 +1,21 @@
+\Cungfoo\Model\CategorieI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: '5 Etoiles'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: '4 Etoiles'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: '3 Etoiles'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: '2 Etoiles'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: '1 Etoile'

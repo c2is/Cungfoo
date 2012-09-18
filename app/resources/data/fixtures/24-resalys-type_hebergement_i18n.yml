@@ -1,0 +1,165 @@
+\Cungfoo\Model\TypeHebergementI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Parcelle jusqu''à 100 m²'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'Parcelle de 101 à 110 m²'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Parcelle de 121 à 130 m²'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Parcelle de 131 à 140 m²'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Parcelle de 141 à 150 m²'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'Parcelle de 151 à 160 m²'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Parcelle de 161 à 170 m²'
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Parcelle de 171 à 180 m²'
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'Amical (4 places, max. 3 adultes)'
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: 'Bungalow T3 (6 places, max. 6 adultes)'
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: 'Chalet (5 places, max. 4 adultes)'
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: 'Conviviale (5 places, max. 4 adultes)'
+    14_fr:
+        Id: 14
+        Locale: fr
+        Name: 'Cordial (6 places, max. 5 adultes)'
+    15_fr:
+        Id: 15
+        Locale: fr
+        Name: 'Domanial (5 places, max. 5 adultes)'
+    16_fr:
+        Id: 16
+        Locale: fr
+        Name: 'Domanial (6 places, max. 5 adultes)'
+    17_fr:
+        Id: 17
+        Locale: fr
+        Name: 'Domanial Luxe (6 places, max. 5 adultes)'
+    18_fr:
+        Id: 18
+        Locale: fr
+        Name: 'Emplacement nu face mer'
+    19_fr:
+        Id: 19
+        Locale: fr
+        Name: 'Emplacement nu'
+    20_fr:
+        Id: 20
+        Locale: fr
+        Name: 'Estivale (5 places, max. 4 adultes)'
+    21_fr:
+        Id: 21
+        Locale: fr
+        Name: 'Familial (6 places, max. 5 adultes)'
+    22_fr:
+        Id: 22
+        Locale: fr
+        Name: 'Hélios (6 places, max. 5 adultes)'
+    23_fr:
+        Id: 23
+        Locale: fr
+        Name: 'Logial (5 places, max. 4 adultes)'
+    24_fr:
+        Id: 24
+        Locale: fr
+        Name: 'Océane (4 places, max. 4 adultes)'
+    25_fr:
+        Id: 25
+        Locale: fr
+        Name: 'O''Hara (6 places, max. 5 adultes)'
+    26_fr:
+        Id: 26
+        Locale: fr
+        Name: 'Résidential (5 places, max. 4 adultes)'
+    27_fr:
+        Id: 27
+        Locale: fr
+        Name: 'Salle de réception'
+    28_fr:
+        Id: 28
+        Locale: fr
+        Name: 'Spacial (6 places, max. 6 adultes)'
+    29_fr:
+        Id: 29
+        Locale: fr
+        Name: 'Spacial (7 places, max. 6 adultes'
+    30_fr:
+        Id: 30
+        Locale: fr
+        Name: 'Spacial (8 places, max. 6 adultes)'
+    31_fr:
+        Id: 31
+        Locale: fr
+        Name: 'Ty Bihan (6 places, max. 6 adultes)'
+    32_fr:
+        Id: 32
+        Locale: fr
+        Name: 'Ty Bras (7 places, max. 7 adultes)'
+    33_fr:
+        Id: 33
+        Locale: fr
+        Name: 'Ty Coz (7 places, max. 6 adultes)'
+    34_fr:
+        Id: 34
+        Locale: fr
+        Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
+    35_fr:
+        Id: 35
+        Locale: fr
+        Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
+    36_fr:
+        Id: 36
+        Locale: fr
+        Name: 'Ty Divent (7 places, max. 7 adultes)'
+    37_fr:
+        Id: 37
+        Locale: fr
+        Name: 'Ty Gouzik (7 places, max. 7 adultes)'
+    38_fr:
+        Id: 38
+        Locale: fr
+        Name: 'Ty Gwenn (9 places, max. 9 adultes)'
+    39_fr:
+        Id: 39
+        Locale: fr
+        Name: 'Ty Tomm (4 places, max. 2 adultes)'
+    40_fr:
+        Id: 40
+        Locale: fr
+        Name: 'Vacanciale (5 places, max. 4 adultes)'
+    41_fr:
+        Id: 41
+        Locale: fr
+        Name: 'Vacanciale mer (5 places, max. 4 adultes)'

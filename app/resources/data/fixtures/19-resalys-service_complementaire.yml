@@ -1,0 +1,27 @@
+\Cungfoo\Model\ServiceComplementaire:
+    1:
+        Code: S34N
+    2:
+        Code: WIFI
+    3:
+        Code: ANIM
+    4:
+        Code: DEPA
+    5:
+        Code: LOVP
+    6:
+        Code: TVBA
+    7:
+        Code: NAVG
+    8:
+        Code: NAVP
+    9:
+        Code: BAR
+    10:
+        Code: SNAC
+    11:
+        Code: WIFP
+    12:
+        Code: RAE
+    13:
+        Code: REST

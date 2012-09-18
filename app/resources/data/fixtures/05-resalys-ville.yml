@@ -1,343 +1,379 @@
 \Cungfoo\Model\Ville:
     1:
-        Code: CARN
-        RegionId: 7
-    2:
         Code: EYZ
-        RegionId: 1
+        RegionId: null
+    2:
+        Code: VIAS
+        RegionId: null
     3:
         Code: GRAU
-        RegionId: null
+        RegionId: 14
     4:
-        Code: VIAS
-        RegionId: 10
-    5:
-        Code: PALA
-        RegionId: null
-    6:
         Code: ARGE
-        RegionId: 25
-    7:
-        Code: STCY
         RegionId: null
-    8:
+    5:
         Code: CROU
         RegionId: null
-    9:
-        Code: STMA
-        RegionId: null
-    10:
+    6:
         Code: LBAR
         RegionId: null
-    11:
-        Code: TORP
-        RegionId: null
-    12:
+    7:
         Code: FABR
-        RegionId: 9
-    13:
+        RegionId: null
+    8:
         Code: SERI
-        RegionId: 1
-    14:
+        RegionId: null
+    9:
         Code: AGDE
         RegionId: null
-    15:
-        Code: MEZE
-        RegionId: null
-    16:
+    10:
         Code: LATT
         RegionId: null
-    17:
+    11:
         Code: GLMO
         RegionId: null
-    18:
+    12:
         Code: ALSA
         RegionId: null
-    19:
+    13:
+        Code: STCY
+        RegionId: 14
+    14:
+        Code: STMA
+        RegionId: 14
+    15:
+        Code: MEZE
+        RegionId: 14
+    16:
         Code: CURB
-        RegionId: null
-    20:
+        RegionId: 22
+    17:
         Code: STLV
         RegionId: null
-    21:
+    18:
         Code: CAST
         RegionId: null
-    22:
+    19:
         Code: NALP
         RegionId: null
-    23:
+    20:
         Code: HYER
         RegionId: null
-    24:
+    21:
         Code: LAMO
         RegionId: null
-    25:
+    22:
         Code: GRIM
         RegionId: null
-    26:
+    23:
         Code: STAY
         RegionId: null
-    27:
+    24:
         Code: ANTI
         RegionId: null
-    28:
+    25:
         Code: PORV
         RegionId: null
-    29:
+    26:
         Code: PATA
         RegionId: null
-    30:
+    27:
         Code: ESTA
         RegionId: null
-    31:
+    28:
         Code: PALS
         RegionId: null
-    32:
+    29:
         Code: CALO
         RegionId: null
-    33:
+    30:
         Code: FREJ
         RegionId: null
-    34:
+    31:
         Code: STPF
         RegionId: null
-    35:
+    32:
         Code: LRSS
         RegionId: null
-    36:
+    33:
         Code: GHIS
         RegionId: null
-    37:
+    34:
         Code: LANO
         RegionId: null
-    38:
+    35:
         Code: CAEM
         RegionId: null
-    39:
+    36:
         Code: PALM
         RegionId: null
-    40:
+    37:
         Code: BLAN
         RegionId: null
-    41:
+    38:
         Code: VILA
         RegionId: null
-    42:
+    39:
         Code: MTRO
         RegionId: null
-    43:
-        Code: AMDM
-        RegionId: null
-    44:
+    40:
         Code: ALCO
         RegionId: null
-    45:
+    41:
         Code: GRAD
         RegionId: null
-    46:
+    42:
         Code: SOTO
         RegionId: null
-    47:
+    43:
         Code: LIDO
         RegionId: null
-    48:
+    44:
         Code: CECI
         RegionId: null
-    49:
+    45:
         Code: SANV
         RegionId: null
-    50:
+    46:
         Code: CADE
         RegionId: null
-    51:
+    47:
         Code: STCA
         RegionId: null
-    52:
+    48:
         Code: ERQU
         RegionId: null
-    53:
+    49:
         Code: CALP
         RegionId: null
-    54:
+    50:
         Code: BENO
         RegionId: null
-    55:
+    51:
         Code: NEVE
         RegionId: null
-    56:
+    52:
         Code: BEYN
         RegionId: null
-    57:
+    53:
         Code: MURO
         RegionId: null
-    58:
+    54:
         Code: QUIB
         RegionId: null
-    59:
+    55:
         Code: STMN
         RegionId: null
-    60:
-        Code: LEPA
-        RegionId: null
-    61:
+    56:
         Code: SOUI
         RegionId: null
-    62:
+    57:
+        Code: LEPA
+        RegionId: 9
+    58:
         Code: RUYN
         RegionId: null
-    63:
+    59:
         Code: PENE
         RegionId: null
-    64:
+    60:
         Code: CADS
         RegionId: null
-    65:
+    61:
         Code: LABA
         RegionId: null
-    66:
+    62:
         Code: GUER
         RegionId: null
-    67:
+    63:
         Code: PORN
         RegionId: null
-    68:
+    64:
         Code: STJE
         RegionId: null
-    69:
+    65:
         Code: STHI
         RegionId: null
-    70:
+    66:
         Code: STGI
         RegionId: null
-    71:
+    67:
         Code: STJU
         RegionId: null
-    72:
+    68:
         Code: BREM
         RegionId: null
-    73:
+    69:
         Code: AXLT
         RegionId: null
-    74:
+    70:
         Code: ISI
         RegionId: null
-    75:
+    71:
         Code: THOU
         RegionId: null
-    76:
+    72:
         Code: CHAT
         RegionId: null
-    77:
+    73:
         Code: VOGU
         RegionId: null
-    78:
-        Code: OLON
-        RegionId: null
-    79:
-        Code: RUOM
-        RegionId: null
-    80:
+    74:
         Code: LAGO
         RegionId: null
-    81:
+    75:
         Code: TALM
         RegionId: null
-    82:
+    76:
         Code: VALP
         RegionId: null
-    83:
+    77:
+        Code: OLON
+        RegionId: 13
+    78:
         Code: LATH
         RegionId: null
-    84:
+    79:
         Code: JARD
         RegionId: null
-    85:
+    80:
         Code: DOUS
         RegionId: null
-    86:
+    81:
         Code: LATR
         RegionId: null
-    87:
+    82:
         Code: PATO
         RegionId: null
-    88:
+    83:
         Code: WATT
         RegionId: null
-    89:
+    84:
         Code: PUIL
         RegionId: null
-    90:
+    85:
         Code: SUEV
         RegionId: null
-    91:
-        Code: CHOL
-        RegionId: null
-    92:
+    86:
         Code: STDE
         RegionId: null
-    93:
+    87:
         Code: LOIX
         RegionId: null
-    94:
+    88:
         Code: STGE
         RegionId: null
-    95:
+    89:
         Code: BOYA
         RegionId: null
-    96:
+    90:
         Code: CHPL
         RegionId: null
-    97:
+    91:
         Code: STLA
         RegionId: null
-    98:
+    92:
         Code: LESM
         RegionId: null
-    99:
+    93:
         Code: SOUL
         RegionId: null
-    100:
+    94:
         Code: HOUR
         RegionId: null
-    101:
+    95:
         Code: LACA
         RegionId: null
-    102:
+    96:
         Code: LEGE
         RegionId: null
-    103:
+    97:
         Code: SANG
         RegionId: null
-    104:
+    98:
         Code: BISC
         RegionId: null
-    105:
+    99:
         Code: MEZO
         RegionId: null
-    106:
+    100:
         Code: AURE
         RegionId: null
-    107:
+    101:
         Code: LIMI
         RegionId: null
-    108:
+    102:
         Code: VIEL
         RegionId: null
-    109:
+    103:
         Code: MESS
         RegionId: null
-    110:
-        Code: AZUR
-        RegionId: null
-    111:
+    104:
         Code: SEIG
         RegionId: null
-    112:
+    105:
         Code: BIDA
         RegionId: null
+    106:
+        Code: AZUR
+        RegionId: 6
+    107:
+        Code: CARS
+        RegionId: null
+    108:
+        Code: JUVI
+        RegionId: null
+    109:
+        Code: SIGE
+        RegionId: null
+    110:
+        Code: MARI
+        RegionId: null
+    111:
+        Code: PLAT
+        RegionId: null
+    112:
+        Code: PLES
+        RegionId: null
     113:
-        Code: MTLV
+        Code: PLOU
         RegionId: null
     114:
-        Code: CARS
+        Code: NARB
+        RegionId: null
+    115:
+        Code: STCL
+        RegionId: null
+    116:
+        Code: CAMI
+        RegionId: null
+    117:
+        Code: PYLA
+        RegionId: null
+    118:
+        Code: STYV
+        RegionId: null
+    119:
+        Code: SETE
+        RegionId: null
+    120:
+        Code: CARN
+        RegionId: 9
+    121:
+        Code: PALA
+        RegionId: 14
+    122:
+        Code: TORP
+        RegionId: 14
+    123:
+        Code: CHOL
+        RegionId: 10
+    124:
+        Code: RUOM
+        RegionId: 18
+    125:
+        Code: AMDM
         RegionId: 7
+    126:
+        Code: MTLV
+        RegionId: 4
