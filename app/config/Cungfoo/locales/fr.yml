@@ -49,14 +49,13 @@ destination.id: Id
 destination.code: Code
 destination.name: Nom
 
-equipement.crud.create: Création d'un équipement
-equipement.crud.list: Liste équipements
-equipement.crud.update: Mettre à jour l'équipement %name%
-equipement.crud.view: Détails de l'équipement %name%
-equipement.etablissements: Établissement ayant cet équipement
-equipement.id: Id
-equipement.code: Code
-equipement.name: Nom
+categorie.crud.create: Création d'une catégorie
+categorie.crud.list: Liste catégories
+categorie.crud.update: Mettre à jour la catégorie %name%
+categorie.crud.view: Détails de la catégorie %name%
+categorie.id: Id
+categorie.code: Code
+categorie.name: Nom
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
@@ -95,7 +94,7 @@ locale.german: Allemand
 
 menu.activite: Activités
 menu.destination: Destinations
-menu.equipement: Équipement
+menu.categorie: Catégories
 menu.etablissement: Établissement
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter

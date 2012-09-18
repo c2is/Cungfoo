@@ -17,6 +17,8 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Activite;
 use Cungfoo\Model\ActiviteQuery;
+use Cungfoo\Model\Categorie;
+use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
@@ -158,6 +160,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $ville_id;
 
     /**
+     * The value for the categorie_id field.
+     * @var        int
+     */
+    protected $categorie_id;
+
+    /**
      * The value for the geo_coordinate_x field.
      * @var        string
      */
@@ -185,6 +193,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        Ville
      */
     protected $aVille;
+
+    /**
+     * @var        Categorie
+     */
+    protected $aCategorie;
 
     /**
      * @var        PropelObjectCollection|EtablissementTypeHebergement[] Collection to store aggregation of EtablissementTypeHebergement objects.
@@ -520,6 +533,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getVilleId()
     {
         return $this->ville_id;
+    }
+
+    /**
+     * Get the [categorie_id] column value.
+     *
+     * @return int
+     */
+    public function getCategorieId()
+    {
+        return $this->categorie_id;
     }
 
     /**
@@ -940,6 +963,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVilleId()
 
     /**
+     * Set the value of [categorie_id] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setCategorieId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->categorie_id !== $v) {
+            $this->categorie_id = $v;
+            $this->modifiedColumns[] = EtablissementPeer::CATEGORIE_ID;
+        }
+
+        if ($this->aCategorie !== null && $this->aCategorie->getId() !== $v) {
+            $this->aCategorie = null;
+        }
+
+
+        return $this;
+    } // setCategorieId()
+
+    /**
      * Set the value of [geo_coordinate_x] column.
      *
      * @param string $v new value
@@ -1074,10 +1122,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->opening_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
             $this->closing_date = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
             $this->ville_id = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
-            $this->geo_coordinate_x = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
-            $this->geo_coordinate_y = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->created_at = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->updated_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->categorie_id = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+            $this->created_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->updated_at = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1086,7 +1135,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 19; // 19 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 20; // 20 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1111,6 +1160,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         if ($this->aVille !== null && $this->ville_id !== $this->aVille->getId()) {
             $this->aVille = null;
+        }
+        if ($this->aCategorie !== null && $this->categorie_id !== $this->aCategorie->getId()) {
+            $this->aCategorie = null;
         }
     } // ensureConsistency
 
@@ -1152,6 +1204,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aVille = null;
+            $this->aCategorie = null;
             $this->collEtablissementTypeHebergements = null;
 
             $this->collEtablissementDestinations = null;
@@ -1300,6 +1353,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $affectedRows += $this->aVille->save($con);
                 }
                 $this->setVille($this->aVille);
+            }
+
+            if ($this->aCategorie !== null) {
+                if ($this->aCategorie->isModified() || $this->aCategorie->isNew()) {
+                    $affectedRows += $this->aCategorie->save($con);
+                }
+                $this->setCategorie($this->aCategorie);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -1549,6 +1609,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`VILLE_ID`';
         }
+        if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`CATEGORIE_ID`';
+        }
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) {
             $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_X`';
         }
@@ -1616,6 +1679,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`VILLE_ID`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
+                        break;
+                    case '`CATEGORIE_ID`':
+                        $stmt->bindValue($identifier, $this->categorie_id, PDO::PARAM_INT);
                         break;
                     case '`GEO_COORDINATE_X`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
@@ -1731,6 +1797,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             if ($this->aVille !== null) {
                 if (!$this->aVille->validate($columns)) {
                     $failureMap = array_merge($failureMap, $this->aVille->getValidationFailures());
+                }
+            }
+
+            if ($this->aCategorie !== null) {
+                if (!$this->aCategorie->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aCategorie->getValidationFailures());
                 }
             }
 
@@ -1861,15 +1933,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getVilleId();
                 break;
             case 15:
-                return $this->getGeoCoordinateX();
+                return $this->getCategorieId();
                 break;
             case 16:
-                return $this->getGeoCoordinateY();
+                return $this->getGeoCoordinateX();
                 break;
             case 17:
-                return $this->getCreatedAt();
+                return $this->getGeoCoordinateY();
                 break;
             case 18:
+                return $this->getCreatedAt();
+                break;
+            case 19:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1916,14 +1991,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[12] => $this->getOpeningDate(),
             $keys[13] => $this->getClosingDate(),
             $keys[14] => $this->getVilleId(),
-            $keys[15] => $this->getGeoCoordinateX(),
-            $keys[16] => $this->getGeoCoordinateY(),
-            $keys[17] => $this->getCreatedAt(),
-            $keys[18] => $this->getUpdatedAt(),
+            $keys[15] => $this->getCategorieId(),
+            $keys[16] => $this->getGeoCoordinateX(),
+            $keys[17] => $this->getGeoCoordinateY(),
+            $keys[18] => $this->getCreatedAt(),
+            $keys[19] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
                 $result['Ville'] = $this->aVille->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aCategorie) {
+                $result['Categorie'] = $this->aCategorie->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->collEtablissementTypeHebergements) {
                 $result['EtablissementTypeHebergements'] = $this->collEtablissementTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2020,15 +2099,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVilleId($value);
                 break;
             case 15:
-                $this->setGeoCoordinateX($value);
+                $this->setCategorieId($value);
                 break;
             case 16:
-                $this->setGeoCoordinateY($value);
+                $this->setGeoCoordinateX($value);
                 break;
             case 17:
-                $this->setCreatedAt($value);
+                $this->setGeoCoordinateY($value);
                 break;
             case 18:
+                $this->setCreatedAt($value);
+                break;
+            case 19:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2070,10 +2152,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[12], $arr)) $this->setOpeningDate($arr[$keys[12]]);
         if (array_key_exists($keys[13], $arr)) $this->setClosingDate($arr[$keys[13]]);
         if (array_key_exists($keys[14], $arr)) $this->setVilleId($arr[$keys[14]]);
-        if (array_key_exists($keys[15], $arr)) $this->setGeoCoordinateX($arr[$keys[15]]);
-        if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateY($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCreatedAt($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setUpdatedAt($arr[$keys[18]]);
+        if (array_key_exists($keys[15], $arr)) $this->setCategorieId($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateX($arr[$keys[16]]);
+        if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateY($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setCreatedAt($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setUpdatedAt($arr[$keys[19]]);
     }
 
     /**
@@ -2100,6 +2183,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
         if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
+        if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
@@ -2181,6 +2265,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setOpeningDate($this->getOpeningDate());
         $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
+        $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2322,6 +2407,57 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
 
         return $this->aVille;
+    }
+
+    /**
+     * Declares an association between this object and a Categorie object.
+     *
+     * @param             Categorie $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setCategorie(Categorie $v = null)
+    {
+        if ($v === null) {
+            $this->setCategorieId(NULL);
+        } else {
+            $this->setCategorieId($v->getId());
+        }
+
+        $this->aCategorie = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Categorie object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissement($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Categorie object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @return Categorie The associated Categorie object.
+     * @throws PropelException
+     */
+    public function getCategorie(PropelPDO $con = null)
+    {
+        if ($this->aCategorie === null && ($this->categorie_id !== null)) {
+            $this->aCategorie = CategorieQuery::create()->findPk($this->categorie_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aCategorie->addEtablissements($this);
+             */
+        }
+
+        return $this->aCategorie;
     }
 
 
@@ -4183,6 +4319,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->opening_date = null;
         $this->closing_date = null;
         $this->ville_id = null;
+        $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
         $this->created_at = null;
@@ -4295,6 +4432,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         $this->collServiceComplementaires = null;
         $this->aVille = null;
+        $this->aCategorie = null;
     }
 
     /**

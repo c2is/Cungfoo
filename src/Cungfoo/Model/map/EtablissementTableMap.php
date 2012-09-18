@@ -57,6 +57,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('OPENING_DATE', 'OpeningDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('CLOSING_DATE', 'ClosingDate', 'TIMESTAMP', false, null, null);
         $this->addForeignKey('VILLE_ID', 'VilleId', 'INTEGER', 'ville', 'ID', false, null, null);
+        $this->addForeignKey('CATEGORIE_ID', 'CategorieId', 'INTEGER', 'categorie', 'ID', false, null, null);
         $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
@@ -70,6 +71,7 @@ class EtablissementTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Categorie', 'Cungfoo\\Model\\Categorie', RelationMap::MANY_TO_ONE, array('categorie_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementDestinations');
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementActivites');

@@ -15,35 +15,33 @@ use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Categorie;
+use Cungfoo\Model\CategorieI18n;
+use Cungfoo\Model\CategorieI18nQuery;
+use Cungfoo\Model\CategoriePeer;
+use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
-use Cungfoo\Model\Region;
-use Cungfoo\Model\RegionQuery;
-use Cungfoo\Model\Ville;
-use Cungfoo\Model\VilleI18n;
-use Cungfoo\Model\VilleI18nQuery;
-use Cungfoo\Model\VillePeer;
-use Cungfoo\Model\VilleQuery;
 
 /**
- * Base class that represents a row from the 'ville' table.
+ * Base class that represents a row from the 'categorie' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseVille extends BaseObject implements Persistent
+abstract class BaseCategorie extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\VillePeer';
+    const PEER = 'Cungfoo\\Model\\CategoriePeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        VillePeer
+     * @var        CategoriePeer
      */
     protected static $peer;
 
@@ -66,12 +64,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $code;
 
     /**
-     * The value for the region_id field.
-     * @var        int
-     */
-    protected $region_id;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -84,21 +76,16 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * @var        Region
-     */
-    protected $aRegion;
-
-    /**
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
     protected $collEtablissementsPartial;
 
     /**
-     * @var        PropelObjectCollection|VilleI18n[] Collection to store aggregation of VilleI18n objects.
+     * @var        PropelObjectCollection|CategorieI18n[] Collection to store aggregation of CategorieI18n objects.
      */
-    protected $collVilleI18ns;
-    protected $collVilleI18nsPartial;
+    protected $collCategorieI18ns;
+    protected $collCategorieI18nsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -124,7 +111,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Current translation objects
-     * @var        array[VilleI18n]
+     * @var        array[CategorieI18n]
      */
     protected $currentTranslations;
 
@@ -138,7 +125,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $villeI18nsScheduledForDeletion = null;
+    protected $categorieI18nsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -158,16 +145,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function getCode()
     {
         return $this->code;
-    }
-
-    /**
-     * Get the [region_id] column value.
-     *
-     * @return int
-     */
-    public function getRegionId()
-    {
-        return $this->region_id;
     }
 
     /**
@@ -248,7 +225,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return Ville The current object (for fluent API support)
+     * @return Categorie The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -258,7 +235,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = VillePeer::ID;
+            $this->modifiedColumns[] = CategoriePeer::ID;
         }
 
 
@@ -269,7 +246,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * Set the value of [code] column.
      *
      * @param string $v new value
-     * @return Ville The current object (for fluent API support)
+     * @return Categorie The current object (for fluent API support)
      */
     public function setCode($v)
     {
@@ -279,7 +256,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
         if ($this->code !== $v) {
             $this->code = $v;
-            $this->modifiedColumns[] = VillePeer::CODE;
+            $this->modifiedColumns[] = CategoriePeer::CODE;
         }
 
 
@@ -287,36 +264,11 @@ abstract class BaseVille extends BaseObject implements Persistent
     } // setCode()
 
     /**
-     * Set the value of [region_id] column.
-     *
-     * @param int $v new value
-     * @return Ville The current object (for fluent API support)
-     */
-    public function setRegionId($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->region_id !== $v) {
-            $this->region_id = $v;
-            $this->modifiedColumns[] = VillePeer::REGION_ID;
-        }
-
-        if ($this->aRegion !== null && $this->aRegion->getId() !== $v) {
-            $this->aRegion = null;
-        }
-
-
-        return $this;
-    } // setRegionId()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
-     * @return Ville The current object (for fluent API support)
+     * @return Categorie The current object (for fluent API support)
      */
     public function setCreatedAt($v)
     {
@@ -326,7 +278,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
             if ($currentDateAsString !== $newDateAsString) {
                 $this->created_at = $newDateAsString;
-                $this->modifiedColumns[] = VillePeer::CREATED_AT;
+                $this->modifiedColumns[] = CategoriePeer::CREATED_AT;
             }
         } // if either are not null
 
@@ -339,7 +291,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
-     * @return Ville The current object (for fluent API support)
+     * @return Categorie The current object (for fluent API support)
      */
     public function setUpdatedAt($v)
     {
@@ -349,7 +301,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
             if ($currentDateAsString !== $newDateAsString) {
                 $this->updated_at = $newDateAsString;
-                $this->modifiedColumns[] = VillePeer::UPDATED_AT;
+                $this->modifiedColumns[] = CategoriePeer::UPDATED_AT;
             }
         } // if either are not null
 
@@ -391,9 +343,8 @@ abstract class BaseVille extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->region_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -402,10 +353,10 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = VillePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = CategoriePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating Ville object", $e);
+            throw new PropelException("Error populating Categorie object", $e);
         }
     }
 
@@ -425,9 +376,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
-        if ($this->aRegion !== null && $this->region_id !== $this->aRegion->getId()) {
-            $this->aRegion = null;
-        }
     } // ensureConsistency
 
     /**
@@ -451,13 +399,13 @@ abstract class BaseVille extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(VillePeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(CategoriePeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = VillePeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = CategoriePeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -467,10 +415,9 @@ abstract class BaseVille extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aRegion = null;
             $this->collEtablissements = null;
 
-            $this->collVilleI18ns = null;
+            $this->collCategorieI18ns = null;
 
         } // if (deep)
     }
@@ -492,12 +439,12 @@ abstract class BaseVille extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(VillePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoriePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = VilleQuery::create()
+            $deleteQuery = CategorieQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -535,7 +482,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(VillePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(CategoriePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -545,16 +492,16 @@ abstract class BaseVille extends BaseObject implements Persistent
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
                 // timestampable behavior
-                if (!$this->isColumnModified(VillePeer::CREATED_AT)) {
+                if (!$this->isColumnModified(CategoriePeer::CREATED_AT)) {
                     $this->setCreatedAt(time());
                 }
-                if (!$this->isColumnModified(VillePeer::UPDATED_AT)) {
+                if (!$this->isColumnModified(CategoriePeer::UPDATED_AT)) {
                     $this->setUpdatedAt(time());
                 }
             } else {
                 $ret = $ret && $this->preUpdate($con);
                 // timestampable behavior
-                if ($this->isModified() && !$this->isColumnModified(VillePeer::UPDATED_AT)) {
+                if ($this->isModified() && !$this->isColumnModified(CategoriePeer::UPDATED_AT)) {
                     $this->setUpdatedAt(time());
                 }
             }
@@ -566,7 +513,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                VillePeer::addInstanceToPool($this);
+                CategoriePeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -595,18 +542,6 @@ abstract class BaseVille extends BaseObject implements Persistent
         $affectedRows = 0; // initialize var to track total num of affected rows
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
-
-            // We call the save method on the following object(s) if they
-            // were passed to this object by their coresponding set
-            // method.  This object relates to these object(s) by a
-            // foreign key reference.
-
-            if ($this->aRegion !== null) {
-                if ($this->aRegion->isModified() || $this->aRegion->isNew()) {
-                    $affectedRows += $this->aRegion->save($con);
-                }
-                $this->setRegion($this->aRegion);
-            }
 
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
@@ -637,17 +572,17 @@ abstract class BaseVille extends BaseObject implements Persistent
                 }
             }
 
-            if ($this->villeI18nsScheduledForDeletion !== null) {
-                if (!$this->villeI18nsScheduledForDeletion->isEmpty()) {
-                    VilleI18nQuery::create()
-                        ->filterByPrimaryKeys($this->villeI18nsScheduledForDeletion->getPrimaryKeys(false))
+            if ($this->categorieI18nsScheduledForDeletion !== null) {
+                if (!$this->categorieI18nsScheduledForDeletion->isEmpty()) {
+                    CategorieI18nQuery::create()
+                        ->filterByPrimaryKeys($this->categorieI18nsScheduledForDeletion->getPrimaryKeys(false))
                         ->delete($con);
-                    $this->villeI18nsScheduledForDeletion = null;
+                    $this->categorieI18nsScheduledForDeletion = null;
                 }
             }
 
-            if ($this->collVilleI18ns !== null) {
-                foreach ($this->collVilleI18ns as $referrerFK) {
+            if ($this->collCategorieI18ns !== null) {
+                foreach ($this->collCategorieI18ns as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -674,30 +609,27 @@ abstract class BaseVille extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = VillePeer::ID;
+        $this->modifiedColumns[] = CategoriePeer::ID;
         if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . VillePeer::ID . ')');
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . CategoriePeer::ID . ')');
         }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(VillePeer::ID)) {
+        if ($this->isColumnModified(CategoriePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(VillePeer::CODE)) {
+        if ($this->isColumnModified(CategoriePeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
-        if ($this->isColumnModified(VillePeer::REGION_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`REGION_ID`';
-        }
-        if ($this->isColumnModified(VillePeer::CREATED_AT)) {
+        if ($this->isColumnModified(CategoriePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
-        if ($this->isColumnModified(VillePeer::UPDATED_AT)) {
+        if ($this->isColumnModified(CategoriePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `ville` (%s) VALUES (%s)',
+            'INSERT INTO `categorie` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -711,9 +643,6 @@ abstract class BaseVille extends BaseObject implements Persistent
                         break;
                     case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
-                        break;
-                    case '`REGION_ID`':
-                        $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_INT);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -815,19 +744,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            // We call the validate method on the following object(s) if they
-            // were passed to this object by their coresponding set
-            // method.  This object relates to these object(s) by a
-            // foreign key reference.
-
-            if ($this->aRegion !== null) {
-                if (!$this->aRegion->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aRegion->getValidationFailures());
-                }
-            }
-
-
-            if (($retval = VillePeer::doValidate($this, $columns)) !== true) {
+            if (($retval = CategoriePeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
@@ -840,8 +757,8 @@ abstract class BaseVille extends BaseObject implements Persistent
                     }
                 }
 
-                if ($this->collVilleI18ns !== null) {
-                    foreach ($this->collVilleI18ns as $referrerFK) {
+                if ($this->collCategorieI18ns !== null) {
+                    foreach ($this->collCategorieI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -867,7 +784,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = VillePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = CategoriePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -890,12 +807,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getRegionId();
-                break;
-            case 3:
                 return $this->getCreatedAt();
                 break;
-            case 4:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -921,27 +835,23 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['Ville'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['Categorie'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['Ville'][$this->getPrimaryKey()] = true;
-        $keys = VillePeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['Categorie'][$this->getPrimaryKey()] = true;
+        $keys = CategoriePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getRegionId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->aRegion) {
-                $result['Region'] = $this->aRegion->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
-            }
             if (null !== $this->collEtablissements) {
                 $result['Etablissements'] = $this->collEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
-            if (null !== $this->collVilleI18ns) {
-                $result['VilleI18ns'] = $this->collVilleI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collCategorieI18ns) {
+                $result['CategorieI18ns'] = $this->collCategorieI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -961,7 +871,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = VillePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = CategoriePeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -984,12 +894,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setRegionId($value);
-                break;
-            case 3:
                 $this->setCreatedAt($value);
                 break;
-            case 4:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1014,13 +921,12 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = VillePeer::getFieldNames($keyType);
+        $keys = CategoriePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setRegionId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -1030,13 +936,12 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(VillePeer::DATABASE_NAME);
+        $criteria = new Criteria(CategoriePeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(VillePeer::ID)) $criteria->add(VillePeer::ID, $this->id);
-        if ($this->isColumnModified(VillePeer::CODE)) $criteria->add(VillePeer::CODE, $this->code);
-        if ($this->isColumnModified(VillePeer::REGION_ID)) $criteria->add(VillePeer::REGION_ID, $this->region_id);
-        if ($this->isColumnModified(VillePeer::CREATED_AT)) $criteria->add(VillePeer::CREATED_AT, $this->created_at);
-        if ($this->isColumnModified(VillePeer::UPDATED_AT)) $criteria->add(VillePeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(CategoriePeer::ID)) $criteria->add(CategoriePeer::ID, $this->id);
+        if ($this->isColumnModified(CategoriePeer::CODE)) $criteria->add(CategoriePeer::CODE, $this->code);
+        if ($this->isColumnModified(CategoriePeer::CREATED_AT)) $criteria->add(CategoriePeer::CREATED_AT, $this->created_at);
+        if ($this->isColumnModified(CategoriePeer::UPDATED_AT)) $criteria->add(CategoriePeer::UPDATED_AT, $this->updated_at);
 
         return $criteria;
     }
@@ -1051,8 +956,8 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(VillePeer::DATABASE_NAME);
-        $criteria->add(VillePeer::ID, $this->id);
+        $criteria = new Criteria(CategoriePeer::DATABASE_NAME);
+        $criteria->add(CategoriePeer::ID, $this->id);
 
         return $criteria;
     }
@@ -1093,7 +998,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of Ville (or compatible) type.
+     * @param object $copyObj An object of Categorie (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -1101,7 +1006,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
-        $copyObj->setRegionId($this->getRegionId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1118,9 +1022,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                 }
             }
 
-            foreach ($this->getVilleI18ns() as $relObj) {
+            foreach ($this->getCategorieI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addVilleI18n($relObj->copy($deepCopy));
+                    $copyObj->addCategorieI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1143,7 +1047,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return Ville Clone of current object.
+     * @return Categorie Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1163,66 +1067,15 @@ abstract class BaseVille extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return VillePeer
+     * @return CategoriePeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new VillePeer();
+            self::$peer = new CategoriePeer();
         }
 
         return self::$peer;
-    }
-
-    /**
-     * Declares an association between this object and a Region object.
-     *
-     * @param             Region $v
-     * @return Ville The current object (for fluent API support)
-     * @throws PropelException
-     */
-    public function setRegion(Region $v = null)
-    {
-        if ($v === null) {
-            $this->setRegionId(NULL);
-        } else {
-            $this->setRegionId($v->getId());
-        }
-
-        $this->aRegion = $v;
-
-        // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the Region object, it will not be re-added.
-        if ($v !== null) {
-            $v->addVille($this);
-        }
-
-
-        return $this;
-    }
-
-
-    /**
-     * Get the associated Region object
-     *
-     * @param PropelPDO $con Optional Connection object.
-     * @return Region The associated Region object.
-     * @throws PropelException
-     */
-    public function getRegion(PropelPDO $con = null)
-    {
-        if ($this->aRegion === null && ($this->region_id !== null)) {
-            $this->aRegion = RegionQuery::create()->findPk($this->region_id, $con);
-            /* The following can be used additionally to
-                guarantee the related object contains a reference
-                to this object.  This level of coupling may, however, be
-                undesirable since it could result in an only partially populated collection
-                in the referenced object.
-                $this->aRegion->addVilles($this);
-             */
-        }
-
-        return $this->aRegion;
     }
 
 
@@ -1239,8 +1092,8 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ('Etablissement' == $relationName) {
             $this->initEtablissements();
         }
-        if ('VilleI18n' == $relationName) {
-            $this->initVilleI18ns();
+        if ('CategorieI18n' == $relationName) {
+            $this->initCategorieI18ns();
         }
     }
 
@@ -1296,7 +1149,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
      * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Ville is new, it will return
+     * If this Categorie is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
@@ -1313,7 +1166,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->initEtablissements();
             } else {
                 $collEtablissements = EtablissementQuery::create(null, $criteria)
-                    ->filterByVille($this)
+                    ->filterByCategorie($this)
                     ->find($con);
                 if (null !== $criteria) {
                     if (false !== $this->collEtablissementsPartial && count($collEtablissements)) {
@@ -1361,7 +1214,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         $this->etablissementsScheduledForDeletion = $this->getEtablissements(new Criteria(), $con)->diff($etablissements);
 
         foreach ($this->etablissementsScheduledForDeletion as $etablissementRemoved) {
-            $etablissementRemoved->setVille(null);
+            $etablissementRemoved->setCategorie(null);
         }
 
         $this->collEtablissements = null;
@@ -1398,7 +1251,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 }
 
                 return $query
-                    ->filterByVille($this)
+                    ->filterByCategorie($this)
                     ->count($con);
             }
         } else {
@@ -1411,7 +1264,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      * through the Etablissement foreign key attribute.
      *
      * @param    Etablissement $l Etablissement
-     * @return Ville The current object (for fluent API support)
+     * @return Categorie The current object (for fluent API support)
      */
     public function addEtablissement(Etablissement $l)
     {
@@ -1432,7 +1285,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected function doAddEtablissement($etablissement)
     {
         $this->collEtablissements[]= $etablissement;
-        $etablissement->setVille($this);
+        $etablissement->setCategorie($this);
     }
 
     /**
@@ -1447,7 +1300,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->etablissementsScheduledForDeletion->clear();
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
-            $etablissement->setVille(null);
+            $etablissement->setCategorie(null);
         }
     }
 
@@ -1455,56 +1308,56 @@ abstract class BaseVille extends BaseObject implements Persistent
     /**
      * If this collection has already been initialized with
      * an identical criteria, it returns the collection.
-     * Otherwise if this Ville is new, it will return
-     * an empty collection; or if this Ville has previously
+     * Otherwise if this Categorie is new, it will return
+     * an empty collection; or if this Categorie has previously
      * been saved, it will retrieve related Etablissements from storage.
      *
      * This method is protected by default in order to keep the public
      * api reasonable.  You can provide public methods for those you
-     * actually need in Ville.
+     * actually need in Categorie.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
      * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
      * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
      */
-    public function getEtablissementsJoinCategorie($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public function getEtablissementsJoinVille($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $query = EtablissementQuery::create(null, $criteria);
-        $query->joinWith('Categorie', $join_behavior);
+        $query->joinWith('Ville', $join_behavior);
 
         return $this->getEtablissements($query, $con);
     }
 
     /**
-     * Clears out the collVilleI18ns collection
+     * Clears out the collCategorieI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return void
-     * @see        addVilleI18ns()
+     * @see        addCategorieI18ns()
      */
-    public function clearVilleI18ns()
+    public function clearCategorieI18ns()
     {
-        $this->collVilleI18ns = null; // important to set this to null since that means it is uninitialized
-        $this->collVilleI18nsPartial = null;
+        $this->collCategorieI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collCategorieI18nsPartial = null;
     }
 
     /**
-     * reset is the collVilleI18ns collection loaded partially
+     * reset is the collCategorieI18ns collection loaded partially
      *
      * @return void
      */
-    public function resetPartialVilleI18ns($v = true)
+    public function resetPartialCategorieI18ns($v = true)
     {
-        $this->collVilleI18nsPartial = $v;
+        $this->collCategorieI18nsPartial = $v;
     }
 
     /**
-     * Initializes the collVilleI18ns collection.
+     * Initializes the collCategorieI18ns collection.
      *
-     * By default this just sets the collVilleI18ns collection to an empty array (like clearcollVilleI18ns());
+     * By default this just sets the collCategorieI18ns collection to an empty array (like clearcollCategorieI18ns());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -1513,177 +1366,177 @@ abstract class BaseVille extends BaseObject implements Persistent
      *
      * @return void
      */
-    public function initVilleI18ns($overrideExisting = true)
+    public function initCategorieI18ns($overrideExisting = true)
     {
-        if (null !== $this->collVilleI18ns && !$overrideExisting) {
+        if (null !== $this->collCategorieI18ns && !$overrideExisting) {
             return;
         }
-        $this->collVilleI18ns = new PropelObjectCollection();
-        $this->collVilleI18ns->setModel('VilleI18n');
+        $this->collCategorieI18ns = new PropelObjectCollection();
+        $this->collCategorieI18ns->setModel('CategorieI18n');
     }
 
     /**
-     * Gets an array of VilleI18n objects which contain a foreign key that references this object.
+     * Gets an array of CategorieI18n objects which contain a foreign key that references this object.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
      * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Ville is new, it will return
+     * If this Categorie is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|VilleI18n[] List of VilleI18n objects
+     * @return PropelObjectCollection|CategorieI18n[] List of CategorieI18n objects
      * @throws PropelException
      */
-    public function getVilleI18ns($criteria = null, PropelPDO $con = null)
+    public function getCategorieI18ns($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collVilleI18nsPartial && !$this->isNew();
-        if (null === $this->collVilleI18ns || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collVilleI18ns) {
+        $partial = $this->collCategorieI18nsPartial && !$this->isNew();
+        if (null === $this->collCategorieI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collCategorieI18ns) {
                 // return empty collection
-                $this->initVilleI18ns();
+                $this->initCategorieI18ns();
             } else {
-                $collVilleI18ns = VilleI18nQuery::create(null, $criteria)
-                    ->filterByVille($this)
+                $collCategorieI18ns = CategorieI18nQuery::create(null, $criteria)
+                    ->filterByCategorie($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collVilleI18nsPartial && count($collVilleI18ns)) {
-                      $this->initVilleI18ns(false);
+                    if (false !== $this->collCategorieI18nsPartial && count($collCategorieI18ns)) {
+                      $this->initCategorieI18ns(false);
 
-                      foreach($collVilleI18ns as $obj) {
-                        if (false == $this->collVilleI18ns->contains($obj)) {
-                          $this->collVilleI18ns->append($obj);
+                      foreach($collCategorieI18ns as $obj) {
+                        if (false == $this->collCategorieI18ns->contains($obj)) {
+                          $this->collCategorieI18ns->append($obj);
                         }
                       }
 
-                      $this->collVilleI18nsPartial = true;
+                      $this->collCategorieI18nsPartial = true;
                     }
 
-                    return $collVilleI18ns;
+                    return $collCategorieI18ns;
                 }
 
-                if($partial && $this->collVilleI18ns) {
-                    foreach($this->collVilleI18ns as $obj) {
+                if($partial && $this->collCategorieI18ns) {
+                    foreach($this->collCategorieI18ns as $obj) {
                         if($obj->isNew()) {
-                            $collVilleI18ns[] = $obj;
+                            $collCategorieI18ns[] = $obj;
                         }
                     }
                 }
 
-                $this->collVilleI18ns = $collVilleI18ns;
-                $this->collVilleI18nsPartial = false;
+                $this->collCategorieI18ns = $collCategorieI18ns;
+                $this->collCategorieI18nsPartial = false;
             }
         }
 
-        return $this->collVilleI18ns;
+        return $this->collCategorieI18ns;
     }
 
     /**
-     * Sets a collection of VilleI18n objects related by a one-to-many relationship
+     * Sets a collection of CategorieI18n objects related by a one-to-many relationship
      * to the current object.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param PropelCollection $villeI18ns A Propel collection.
+     * @param PropelCollection $categorieI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
      */
-    public function setVilleI18ns(PropelCollection $villeI18ns, PropelPDO $con = null)
+    public function setCategorieI18ns(PropelCollection $categorieI18ns, PropelPDO $con = null)
     {
-        $this->villeI18nsScheduledForDeletion = $this->getVilleI18ns(new Criteria(), $con)->diff($villeI18ns);
+        $this->categorieI18nsScheduledForDeletion = $this->getCategorieI18ns(new Criteria(), $con)->diff($categorieI18ns);
 
-        foreach ($this->villeI18nsScheduledForDeletion as $villeI18nRemoved) {
-            $villeI18nRemoved->setVille(null);
+        foreach ($this->categorieI18nsScheduledForDeletion as $categorieI18nRemoved) {
+            $categorieI18nRemoved->setCategorie(null);
         }
 
-        $this->collVilleI18ns = null;
-        foreach ($villeI18ns as $villeI18n) {
-            $this->addVilleI18n($villeI18n);
+        $this->collCategorieI18ns = null;
+        foreach ($categorieI18ns as $categorieI18n) {
+            $this->addCategorieI18n($categorieI18n);
         }
 
-        $this->collVilleI18ns = $villeI18ns;
-        $this->collVilleI18nsPartial = false;
+        $this->collCategorieI18ns = $categorieI18ns;
+        $this->collCategorieI18nsPartial = false;
     }
 
     /**
-     * Returns the number of related VilleI18n objects.
+     * Returns the number of related CategorieI18n objects.
      *
      * @param Criteria $criteria
      * @param boolean $distinct
      * @param PropelPDO $con
-     * @return int             Count of related VilleI18n objects.
+     * @return int             Count of related CategorieI18n objects.
      * @throws PropelException
      */
-    public function countVilleI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countCategorieI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collVilleI18nsPartial && !$this->isNew();
-        if (null === $this->collVilleI18ns || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collVilleI18ns) {
+        $partial = $this->collCategorieI18nsPartial && !$this->isNew();
+        if (null === $this->collCategorieI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collCategorieI18ns) {
                 return 0;
             } else {
                 if($partial && !$criteria) {
-                    return count($this->getVilleI18ns());
+                    return count($this->getCategorieI18ns());
                 }
-                $query = VilleI18nQuery::create(null, $criteria);
+                $query = CategorieI18nQuery::create(null, $criteria);
                 if ($distinct) {
                     $query->distinct();
                 }
 
                 return $query
-                    ->filterByVille($this)
+                    ->filterByCategorie($this)
                     ->count($con);
             }
         } else {
-            return count($this->collVilleI18ns);
+            return count($this->collCategorieI18ns);
         }
     }
 
     /**
-     * Method called to associate a VilleI18n object to this object
-     * through the VilleI18n foreign key attribute.
+     * Method called to associate a CategorieI18n object to this object
+     * through the CategorieI18n foreign key attribute.
      *
-     * @param    VilleI18n $l VilleI18n
-     * @return Ville The current object (for fluent API support)
+     * @param    CategorieI18n $l CategorieI18n
+     * @return Categorie The current object (for fluent API support)
      */
-    public function addVilleI18n(VilleI18n $l)
+    public function addCategorieI18n(CategorieI18n $l)
     {
         if ($l && $locale = $l->getLocale()) {
             $this->setLocale($locale);
             $this->currentTranslations[$locale] = $l;
         }
-        if ($this->collVilleI18ns === null) {
-            $this->initVilleI18ns();
-            $this->collVilleI18nsPartial = true;
+        if ($this->collCategorieI18ns === null) {
+            $this->initCategorieI18ns();
+            $this->collCategorieI18nsPartial = true;
         }
-        if (!in_array($l, $this->collVilleI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddVilleI18n($l);
+        if (!in_array($l, $this->collCategorieI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddCategorieI18n($l);
         }
 
         return $this;
     }
 
     /**
-     * @param	VilleI18n $villeI18n The villeI18n object to add.
+     * @param	CategorieI18n $categorieI18n The categorieI18n object to add.
      */
-    protected function doAddVilleI18n($villeI18n)
+    protected function doAddCategorieI18n($categorieI18n)
     {
-        $this->collVilleI18ns[]= $villeI18n;
-        $villeI18n->setVille($this);
+        $this->collCategorieI18ns[]= $categorieI18n;
+        $categorieI18n->setCategorie($this);
     }
 
     /**
-     * @param	VilleI18n $villeI18n The villeI18n object to remove.
+     * @param	CategorieI18n $categorieI18n The categorieI18n object to remove.
      */
-    public function removeVilleI18n($villeI18n)
+    public function removeCategorieI18n($categorieI18n)
     {
-        if ($this->getVilleI18ns()->contains($villeI18n)) {
-            $this->collVilleI18ns->remove($this->collVilleI18ns->search($villeI18n));
-            if (null === $this->villeI18nsScheduledForDeletion) {
-                $this->villeI18nsScheduledForDeletion = clone $this->collVilleI18ns;
-                $this->villeI18nsScheduledForDeletion->clear();
+        if ($this->getCategorieI18ns()->contains($categorieI18n)) {
+            $this->collCategorieI18ns->remove($this->collCategorieI18ns->search($categorieI18n));
+            if (null === $this->categorieI18nsScheduledForDeletion) {
+                $this->categorieI18nsScheduledForDeletion = clone $this->collCategorieI18ns;
+                $this->categorieI18nsScheduledForDeletion->clear();
             }
-            $this->villeI18nsScheduledForDeletion[]= $villeI18n;
-            $villeI18n->setVille(null);
+            $this->categorieI18nsScheduledForDeletion[]= $categorieI18n;
+            $categorieI18n->setCategorie(null);
         }
     }
 
@@ -1694,7 +1547,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
-        $this->region_id = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1722,8 +1574,8 @@ abstract class BaseVille extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
-            if ($this->collVilleI18ns) {
-                foreach ($this->collVilleI18ns as $o) {
+            if ($this->collCategorieI18ns) {
+                foreach ($this->collCategorieI18ns as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1737,11 +1589,10 @@ abstract class BaseVille extends BaseObject implements Persistent
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
-        if ($this->collVilleI18ns instanceof PropelCollection) {
-            $this->collVilleI18ns->clearIterator();
+        if ($this->collCategorieI18ns instanceof PropelCollection) {
+            $this->collCategorieI18ns->clearIterator();
         }
-        $this->collVilleI18ns = null;
-        $this->aRegion = null;
+        $this->collCategorieI18ns = null;
     }
 
     /**
@@ -1751,7 +1602,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(VillePeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(CategoriePeer::DEFAULT_STRING_FORMAT);
     }
 
     /**
@@ -1769,11 +1620,11 @@ abstract class BaseVille extends BaseObject implements Persistent
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
-     * @return     Ville The current object (for fluent API support)
+     * @return     Categorie The current object (for fluent API support)
      */
     public function keepUpdateDateUnchanged()
     {
-        $this->modifiedColumns[] = VillePeer::UPDATED_AT;
+        $this->modifiedColumns[] = CategoriePeer::UPDATED_AT;
 
         return $this;
     }
@@ -1785,7 +1636,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      *
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      *
-     * @return    Ville The current object (for fluent API support)
+     * @return    Categorie The current object (for fluent API support)
      */
     public function setLocale($locale = 'fr')
     {
@@ -1810,12 +1661,12 @@ abstract class BaseVille extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return VilleI18n */
+     * @return CategorieI18n */
     public function getTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
-            if (null !== $this->collVilleI18ns) {
-                foreach ($this->collVilleI18ns as $translation) {
+            if (null !== $this->collCategorieI18ns) {
+                foreach ($this->collCategorieI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
 
@@ -1824,15 +1675,15 @@ abstract class BaseVille extends BaseObject implements Persistent
                 }
             }
             if ($this->isNew()) {
-                $translation = new VilleI18n();
+                $translation = new CategorieI18n();
                 $translation->setLocale($locale);
             } else {
-                $translation = VilleI18nQuery::create()
+                $translation = CategorieI18nQuery::create()
                     ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                     ->findOneOrCreate($con);
                 $this->currentTranslations[$locale] = $translation;
             }
-            $this->addVilleI18n($translation);
+            $this->addCategorieI18n($translation);
         }
 
         return $this->currentTranslations[$locale];
@@ -1844,21 +1695,21 @@ abstract class BaseVille extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return    Ville The current object (for fluent API support)
+     * @return    Categorie The current object (for fluent API support)
      */
     public function removeTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
-            VilleI18nQuery::create()
+            CategorieI18nQuery::create()
                 ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                 ->delete($con);
         }
         if (isset($this->currentTranslations[$locale])) {
             unset($this->currentTranslations[$locale]);
         }
-        foreach ($this->collVilleI18ns as $key => $translation) {
+        foreach ($this->collCategorieI18ns as $key => $translation) {
             if ($translation->getLocale() == $locale) {
-                unset($this->collVilleI18ns[$key]);
+                unset($this->collCategorieI18ns[$key]);
                 break;
             }
         }
@@ -1871,7 +1722,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      *
      * @param     PropelPDO $con an optional connection object
      *
-     * @return VilleI18n */
+     * @return CategorieI18n */
     public function getCurrentTranslation(PropelPDO $con = null)
     {
         return $this->getTranslation($this->getLocale(), $con);
@@ -1893,7 +1744,7 @@ abstract class BaseVille extends BaseObject implements Persistent
          * Set the value of [name] column.
          *
          * @param string $v new value
-         * @return VilleI18n The current object (for fluent API support)
+         * @return CategorieI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);

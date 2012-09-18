@@ -75,12 +75,17 @@
         <column name="opening_date" type="timestamp" />
         <column name="closing_date" type="timestamp" />
         <column name="ville_id" type="integer"/>
+        <column name="categorie_id" type="integer"/>
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
             <reference local="ville_id" foreign="id"></reference>
+        </foreign-key>
+
+        <foreign-key foreignTable="categorie" onDelete="SETNULL">
+            <reference local="categorie_id" foreign="id"></reference>
         </foreign-key>
 
         <behavior name="i18n">
@@ -261,6 +266,21 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/activites" />
+        </behavior>
+    </table>
+
+    <table name="categorie">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
+        <column name="name" type="varchar" required="true" />
+        <behavior name="timestampable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/categories" />
         </behavior>
     </table>
 

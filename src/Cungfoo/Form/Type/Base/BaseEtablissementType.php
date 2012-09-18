@@ -114,6 +114,13 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.ville',
             'required' => false,
         ));
+        $builder->add('categorie', 'model', array(
+            'class' => '\Cungfoo\Model\Categorie',
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.categorie',
+            'required' => false,
+        ));
         $builder->add('geo_coordinate_x', 'text', array(
             'constraints' => array(
             ),

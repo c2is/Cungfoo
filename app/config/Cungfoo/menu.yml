@@ -23,6 +23,9 @@ menu:
               activite:
                   title:  menu.activite
                   route:  activite_crud_list
+              categorie:
+                  title:  menu.categorie
+                  route:  categorie_crud_list
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list

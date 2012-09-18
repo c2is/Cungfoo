@@ -38,3 +38,7 @@ crud:
             prefix: /activites
             model: \Cungfoo\Model\Activite
             form: \Cungfoo\Form\Type\ActiviteType
+        categorie:
+            prefix: /categories
+            model: \Cungfoo\Model\Categorie
+            form: \Cungfoo\Form\Type\CategorieType
