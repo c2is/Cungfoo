@@ -1,36 +1,108 @@
 \Cungfoo\Model\SituationGeographiqueI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Accès direct à la plage'
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Accès direct à la plage'
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Accès direct à la plage'
+    2_de:
+        Id: 2
+        Locale: de
+        Name: 'Lac, rivière ou plan d''eau à proximité'
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'Lac, rivière ou plan d''eau à proximité'
     2_fr:
         Id: 2
         Locale: fr
         Name: 'Lac, rivière ou plan d''eau à proximité'
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'A la campagne'
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'A la campagne'
     3_fr:
         Id: 3
         Locale: fr
         Name: 'A la campagne'
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'En rétro littoral <10km'
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'En rétro littoral <10km'
     4_fr:
         Id: 4
         Locale: fr
         Name: 'En rétro littoral <10km'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Accès mer <5km'
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Accès mer <5km'
     5_fr:
         Id: 5
         Locale: fr
         Name: 'Accès mer <5km'
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'En bord de mer <2km'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'En bord de mer <2km'
     6_fr:
         Id: 6
         Locale: fr
         Name: 'En bord de mer <2km'
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'A la montagne'
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'A la montagne'
     7_fr:
         Id: 7
         Locale: fr
         Name: 'A la montagne'
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'Au bord d''un lac'
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'Au bord d''un lac'
     8_fr:
         Id: 8
         Locale: fr
         Name: 'Au bord d''un lac'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'Au bord d''une rivière'
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'Au bord d''une rivière'
     9_fr:
         Id: 9
         Locale: fr

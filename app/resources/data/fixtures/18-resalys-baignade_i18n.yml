@@ -1,20 +1,60 @@
 \Cungfoo\Model\BaignadeI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Toboggan aquatique'
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Toboggan aquatique'
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Toboggan aquatique'
+    2_de:
+        Id: 2
+        Locale: de
+        Name: Piscine
+    2_en:
+        Id: 2
+        Locale: en
+        Name: Piscine
     2_fr:
         Id: 2
         Locale: fr
         Name: Piscine
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'Piscine couverte'
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'Piscine couverte'
     3_fr:
         Id: 3
         Locale: fr
         Name: 'Piscine couverte'
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'Parc aquatique'
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'Parc aquatique'
     4_fr:
         Id: 4
         Locale: fr
         Name: 'Parc aquatique'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Spa, Espace bien-être'
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Spa, Espace bien-être'
     5_fr:
         Id: 5
         Locale: fr
