@@ -187,6 +187,8 @@ region.pays.id: Code pays
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
+resalys.actions.import.prix: Import des prix Resalys
+resalys.title.import.prix: Import des prix Resalys
 
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires

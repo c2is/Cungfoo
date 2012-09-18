@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Lib\Job\CatalogueClientJobHandler,
+    Cungfoo\Lib\Job\PrixJobHandler,
     Cungfoo\Model\Job;
 
 /**
@@ -41,6 +42,17 @@ class ResalysController implements ControllerProviderInterface
             return $app->redirect($app['url_generator']->generate('resalys_actions'));
         })
         ->bind('resalys_actions_import');
+
+        $controllers->get('/import/prix', function (Application $app) {
+            $jobImport = new Job();
+            $jobImport
+                ->setType(PrixJobHandler::getName())
+                ->save()
+            ;
+
+            return $app->redirect($app['url_generator']->generate('resalys_actions'));
+        })
+        ->bind('resalys_actions_import_prix');
 
         return $controllers;
     }
