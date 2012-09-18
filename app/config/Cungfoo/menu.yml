@@ -26,6 +26,9 @@ menu:
               categorie:
                   title:  menu.categorie
                   route:  categorie_crud_list
+              situation_geographique:
+                  title:  menu.situation_geographique
+                  route:  situation_geographique_crud_list
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list

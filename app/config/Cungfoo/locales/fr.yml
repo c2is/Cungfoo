@@ -57,6 +57,15 @@ categorie.id: Id
 categorie.code: Code
 categorie.name: Nom
 
+situation_geographique.crud.create: Création d'une situation géographique
+situation_geographique.crud.list: Liste situations géographiques
+situation_geographique.crud.update: Mettre à jour la situation géographique %name%
+situation_geographique.crud.view: Détails de la situation géographique %name%
+situation_geographique.id: Id
+situation_geographique.code: Code
+situation_geographique.name: Nom
+situation_geographique.etablissements: Établissements ayant cette situation géographique
+
 etablissement.activites: Liste des activités
 etablissement.city: Ville
 etablissement.country: Pays
@@ -78,6 +87,8 @@ etablissement.mail: Adresse électronique
 etablissement.name: Nom
 etablissement.ville: Ville
 etablissement.ville.id: Code ville
+etablissement.categorie: Catégorie
+etablissement.situation_geographiques: Liste des situations géographiques
 etablissement.zip: Code postal
 etablissement.phone1: Télephone 1
 etablissement.phone2: Télephone 2
@@ -96,6 +107,7 @@ menu.activite: Activités
 menu.destination: Destinations
 menu.categorie: Catégories
 menu.etablissement: Établissement
+menu.situation_geographique: Situations géographiques
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter
 menu.parameters: Paramètres

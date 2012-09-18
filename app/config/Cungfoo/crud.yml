@@ -42,3 +42,7 @@ crud:
             prefix: /categories
             model: \Cungfoo\Model\Categorie
             form: \Cungfoo\Form\Type\CategorieType
+        situation_geographique:
+            prefix: /situation-geographiques
+            model: \Cungfoo\Model\SituationGeographique
+            form: \Cungfoo\Form\Type\SituationGeographiqueType

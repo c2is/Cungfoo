@@ -32,10 +32,14 @@ use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementServiceComplementaire;
 use Cungfoo\Model\EtablissementServiceComplementaireQuery;
+use Cungfoo\Model\EtablissementSituationGeographique;
+use Cungfoo\Model\EtablissementSituationGeographiqueQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireQuery;
+use Cungfoo\Model\SituationGeographique;
+use Cungfoo\Model\SituationGeographiqueQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
 use Cungfoo\Model\Ville;
@@ -224,6 +228,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementServiceComplementairesPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementSituationGeographique[] Collection to store aggregation of EtablissementSituationGeographique objects.
+     */
+    protected $collEtablissementSituationGeographiques;
+    protected $collEtablissementSituationGeographiquesPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -248,6 +258,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|ServiceComplementaire[] Collection to store aggregation of ServiceComplementaire objects.
      */
     protected $collServiceComplementaires;
+
+    /**
+     * @var        PropelObjectCollection|SituationGeographique[] Collection to store aggregation of SituationGeographique objects.
+     */
+    protected $collSituationGeographiques;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -305,6 +320,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $situationGeographiquesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -324,6 +345,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementServiceComplementairesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementSituationGeographiquesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1213,12 +1240,15 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementServiceComplementaires = null;
 
+            $this->collEtablissementSituationGeographiques = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
             $this->collDestinations = null;
             $this->collActivites = null;
             $this->collServiceComplementaires = null;
+            $this->collSituationGeographiques = null;
         } // if (deep)
     }
 
@@ -1453,6 +1483,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->situationGeographiquesScheduledForDeletion !== null) {
+                if (!$this->situationGeographiquesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->situationGeographiquesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    EtablissementSituationGeographiqueQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->situationGeographiquesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getSituationGeographiques() as $situationGeographique) {
+                    if ($situationGeographique->isModified()) {
+                        $situationGeographique->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -1515,6 +1565,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementServiceComplementaires !== null) {
                 foreach ($this->collEtablissementServiceComplementaires as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementSituationGeographiquesScheduledForDeletion !== null) {
+                if (!$this->etablissementSituationGeographiquesScheduledForDeletion->isEmpty()) {
+                    EtablissementSituationGeographiqueQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementSituationGeographiquesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementSituationGeographiquesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementSituationGeographiques !== null) {
+                foreach ($this->collEtablissementSituationGeographiques as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1844,6 +1911,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementSituationGeographiques !== null) {
+                    foreach ($this->collEtablissementSituationGeographiques as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2015,6 +2090,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementServiceComplementaires) {
                 $result['EtablissementServiceComplementaires'] = $this->collEtablissementServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementSituationGeographiques) {
+                $result['EtablissementSituationGeographiques'] = $this->collEtablissementSituationGeographiques->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2302,6 +2380,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getEtablissementSituationGeographiques() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementSituationGeographique($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2482,6 +2566,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementServiceComplementaire' == $relationName) {
             $this->initEtablissementServiceComplementaires();
+        }
+        if ('EtablissementSituationGeographique' == $relationName) {
+            $this->initEtablissementSituationGeographiques();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -3417,6 +3504,238 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementSituationGeographiques collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementSituationGeographiques()
+     */
+    public function clearEtablissementSituationGeographiques()
+    {
+        $this->collEtablissementSituationGeographiques = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementSituationGeographiquesPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementSituationGeographiques collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementSituationGeographiques($v = true)
+    {
+        $this->collEtablissementSituationGeographiquesPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementSituationGeographiques collection.
+     *
+     * By default this just sets the collEtablissementSituationGeographiques collection to an empty array (like clearcollEtablissementSituationGeographiques());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementSituationGeographiques($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementSituationGeographiques && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementSituationGeographiques = new PropelObjectCollection();
+        $this->collEtablissementSituationGeographiques->setModel('EtablissementSituationGeographique');
+    }
+
+    /**
+     * Gets an array of EtablissementSituationGeographique objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementSituationGeographique[] List of EtablissementSituationGeographique objects
+     * @throws PropelException
+     */
+    public function getEtablissementSituationGeographiques($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementSituationGeographiquesPartial && !$this->isNew();
+        if (null === $this->collEtablissementSituationGeographiques || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementSituationGeographiques) {
+                // return empty collection
+                $this->initEtablissementSituationGeographiques();
+            } else {
+                $collEtablissementSituationGeographiques = EtablissementSituationGeographiqueQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementSituationGeographiquesPartial && count($collEtablissementSituationGeographiques)) {
+                      $this->initEtablissementSituationGeographiques(false);
+
+                      foreach($collEtablissementSituationGeographiques as $obj) {
+                        if (false == $this->collEtablissementSituationGeographiques->contains($obj)) {
+                          $this->collEtablissementSituationGeographiques->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementSituationGeographiquesPartial = true;
+                    }
+
+                    return $collEtablissementSituationGeographiques;
+                }
+
+                if($partial && $this->collEtablissementSituationGeographiques) {
+                    foreach($this->collEtablissementSituationGeographiques as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementSituationGeographiques[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementSituationGeographiques = $collEtablissementSituationGeographiques;
+                $this->collEtablissementSituationGeographiquesPartial = false;
+            }
+        }
+
+        return $this->collEtablissementSituationGeographiques;
+    }
+
+    /**
+     * Sets a collection of EtablissementSituationGeographique objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementSituationGeographiques A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementSituationGeographiques(PropelCollection $etablissementSituationGeographiques, PropelPDO $con = null)
+    {
+        $this->etablissementSituationGeographiquesScheduledForDeletion = $this->getEtablissementSituationGeographiques(new Criteria(), $con)->diff($etablissementSituationGeographiques);
+
+        foreach ($this->etablissementSituationGeographiquesScheduledForDeletion as $etablissementSituationGeographiqueRemoved) {
+            $etablissementSituationGeographiqueRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementSituationGeographiques = null;
+        foreach ($etablissementSituationGeographiques as $etablissementSituationGeographique) {
+            $this->addEtablissementSituationGeographique($etablissementSituationGeographique);
+        }
+
+        $this->collEtablissementSituationGeographiques = $etablissementSituationGeographiques;
+        $this->collEtablissementSituationGeographiquesPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementSituationGeographique objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementSituationGeographique objects.
+     * @throws PropelException
+     */
+    public function countEtablissementSituationGeographiques(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementSituationGeographiquesPartial && !$this->isNew();
+        if (null === $this->collEtablissementSituationGeographiques || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementSituationGeographiques) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementSituationGeographiques());
+                }
+                $query = EtablissementSituationGeographiqueQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementSituationGeographiques);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementSituationGeographique object to this object
+     * through the EtablissementSituationGeographique foreign key attribute.
+     *
+     * @param    EtablissementSituationGeographique $l EtablissementSituationGeographique
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementSituationGeographique(EtablissementSituationGeographique $l)
+    {
+        if ($this->collEtablissementSituationGeographiques === null) {
+            $this->initEtablissementSituationGeographiques();
+            $this->collEtablissementSituationGeographiquesPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementSituationGeographiques->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementSituationGeographique($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementSituationGeographique $etablissementSituationGeographique The etablissementSituationGeographique object to add.
+     */
+    protected function doAddEtablissementSituationGeographique($etablissementSituationGeographique)
+    {
+        $this->collEtablissementSituationGeographiques[]= $etablissementSituationGeographique;
+        $etablissementSituationGeographique->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementSituationGeographique $etablissementSituationGeographique The etablissementSituationGeographique object to remove.
+     */
+    public function removeEtablissementSituationGeographique($etablissementSituationGeographique)
+    {
+        if ($this->getEtablissementSituationGeographiques()->contains($etablissementSituationGeographique)) {
+            $this->collEtablissementSituationGeographiques->remove($this->collEtablissementSituationGeographiques->search($etablissementSituationGeographique));
+            if (null === $this->etablissementSituationGeographiquesScheduledForDeletion) {
+                $this->etablissementSituationGeographiquesScheduledForDeletion = clone $this->collEtablissementSituationGeographiques;
+                $this->etablissementSituationGeographiquesScheduledForDeletion->clear();
+            }
+            $this->etablissementSituationGeographiquesScheduledForDeletion[]= $etablissementSituationGeographique;
+            $etablissementSituationGeographique->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementSituationGeographiques from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|EtablissementSituationGeographique[] List of EtablissementSituationGeographique objects
+     */
+    public function getEtablissementSituationGeographiquesJoinSituationGeographique($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementSituationGeographiqueQuery::create(null, $criteria);
+        $query->joinWith('SituationGeographique', $join_behavior);
+
+        return $this->getEtablissementSituationGeographiques($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -4300,6 +4619,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collSituationGeographiques collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addSituationGeographiques()
+     */
+    public function clearSituationGeographiques()
+    {
+        $this->collSituationGeographiques = null; // important to set this to null since that means it is uninitialized
+        $this->collSituationGeographiquesPartial = null;
+    }
+
+    /**
+     * Initializes the collSituationGeographiques collection.
+     *
+     * By default this just sets the collSituationGeographiques collection to an empty collection (like clearSituationGeographiques());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initSituationGeographiques()
+    {
+        $this->collSituationGeographiques = new PropelObjectCollection();
+        $this->collSituationGeographiques->setModel('SituationGeographique');
+    }
+
+    /**
+     * Gets a collection of SituationGeographique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_situation_geographique cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|SituationGeographique[] List of SituationGeographique objects
+     */
+    public function getSituationGeographiques($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collSituationGeographiques || null !== $criteria) {
+            if ($this->isNew() && null === $this->collSituationGeographiques) {
+                // return empty collection
+                $this->initSituationGeographiques();
+            } else {
+                $collSituationGeographiques = SituationGeographiqueQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collSituationGeographiques;
+                }
+                $this->collSituationGeographiques = $collSituationGeographiques;
+            }
+        }
+
+        return $this->collSituationGeographiques;
+    }
+
+    /**
+     * Sets a collection of SituationGeographique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_situation_geographique cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $situationGeographiques A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setSituationGeographiques(PropelCollection $situationGeographiques, PropelPDO $con = null)
+    {
+        $this->clearSituationGeographiques();
+        $currentSituationGeographiques = $this->getSituationGeographiques();
+
+        $this->situationGeographiquesScheduledForDeletion = $currentSituationGeographiques->diff($situationGeographiques);
+
+        foreach ($situationGeographiques as $situationGeographique) {
+            if (!$currentSituationGeographiques->contains($situationGeographique)) {
+                $this->doAddSituationGeographique($situationGeographique);
+            }
+        }
+
+        $this->collSituationGeographiques = $situationGeographiques;
+    }
+
+    /**
+     * Gets the number of SituationGeographique objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_situation_geographique cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related SituationGeographique objects
+     */
+    public function countSituationGeographiques($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collSituationGeographiques || null !== $criteria) {
+            if ($this->isNew() && null === $this->collSituationGeographiques) {
+                return 0;
+            } else {
+                $query = SituationGeographiqueQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collSituationGeographiques);
+        }
+    }
+
+    /**
+     * Associate a SituationGeographique object to this object
+     * through the etablissement_situation_geographique cross reference table.
+     *
+     * @param  SituationGeographique $situationGeographique The EtablissementSituationGeographique object to relate
+     * @return void
+     */
+    public function addSituationGeographique(SituationGeographique $situationGeographique)
+    {
+        if ($this->collSituationGeographiques === null) {
+            $this->initSituationGeographiques();
+        }
+        if (!$this->collSituationGeographiques->contains($situationGeographique)) { // only add it if the **same** object is not already associated
+            $this->doAddSituationGeographique($situationGeographique);
+
+            $this->collSituationGeographiques[]= $situationGeographique;
+        }
+    }
+
+    /**
+     * @param	SituationGeographique $situationGeographique The situationGeographique object to add.
+     */
+    protected function doAddSituationGeographique($situationGeographique)
+    {
+        $etablissementSituationGeographique = new EtablissementSituationGeographique();
+        $etablissementSituationGeographique->setSituationGeographique($situationGeographique);
+        $this->addEtablissementSituationGeographique($etablissementSituationGeographique);
+    }
+
+    /**
+     * Remove a SituationGeographique object to this object
+     * through the etablissement_situation_geographique cross reference table.
+     *
+     * @param SituationGeographique $situationGeographique The EtablissementSituationGeographique object to relate
+     * @return void
+     */
+    public function removeSituationGeographique(SituationGeographique $situationGeographique)
+    {
+        if ($this->getSituationGeographiques()->contains($situationGeographique)) {
+            $this->collSituationGeographiques->remove($this->collSituationGeographiques->search($situationGeographique));
+            if (null === $this->situationGeographiquesScheduledForDeletion) {
+                $this->situationGeographiquesScheduledForDeletion = clone $this->collSituationGeographiques;
+                $this->situationGeographiquesScheduledForDeletion->clear();
+            }
+            $this->situationGeographiquesScheduledForDeletion[]= $situationGeographique;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -4364,6 +4851,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementSituationGeographiques) {
+                foreach ($this->collEtablissementSituationGeographiques as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -4389,6 +4881,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collSituationGeographiques) {
+                foreach ($this->collSituationGeographiques as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
         // i18n behavior
@@ -4411,6 +4908,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementServiceComplementaires->clearIterator();
         }
         $this->collEtablissementServiceComplementaires = null;
+        if ($this->collEtablissementSituationGeographiques instanceof PropelCollection) {
+            $this->collEtablissementSituationGeographiques->clearIterator();
+        }
+        $this->collEtablissementSituationGeographiques = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -4431,6 +4932,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collServiceComplementaires->clearIterator();
         }
         $this->collServiceComplementaires = null;
+        if ($this->collSituationGeographiques instanceof PropelCollection) {
+            $this->collSituationGeographiques->clearIterator();
+        }
+        $this->collSituationGeographiques = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }

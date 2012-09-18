@@ -165,6 +165,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.service_complementaires',
             'required' => false,
         ));
+        $builder->add('situation_geographiques', 'model', array(
+            'class' => 'Cungfoo\Model\SituationGeographique',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.situation_geographiques',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(

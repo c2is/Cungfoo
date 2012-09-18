@@ -17,6 +17,8 @@ loader:
           setter: setRegionId
       CATEG:
         model:  \Cungfoo\Model\Categorie
+      SITUGEO:
+        model:  \Cungfoo\Model\SituationGeographique
       SERVCOMP:
         model:  \Cungfoo\Model\ServiceComplementaire
       ACTIVITES:
@@ -36,6 +38,11 @@ loader:
         associated: \Cungfoo\Model\EtablissementServiceComplementaire
         setter:     addServiceComplementaire
         filter:     filterByServiceComplementaireId
+      SITUGEO:
+        model:      \Cungfoo\Model\SituationGeographique
+        associated: \Cungfoo\Model\EtablissementSituationGeographique
+        setter:     addSituationGeographique
+        filter:     filterBySituationGeographiqueId
       ACTIVITES:
         model:      \Cungfoo\Model\Activite
         associated: \Cungfoo\Model\EtablissementActivite

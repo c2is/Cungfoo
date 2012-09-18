@@ -22,8 +22,10 @@ use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementServiceComplementaire;
+use Cungfoo\Model\EtablissementSituationGeographique;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\ServiceComplementaire;
+use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\Ville;
 
@@ -101,6 +103,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinEtablissementServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method EtablissementQuery rightJoinEtablissementServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method EtablissementQuery innerJoinEtablissementServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementServiceComplementaire relation
+ *
+ * @method EtablissementQuery leftJoinEtablissementSituationGeographique($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementSituationGeographique relation
+ * @method EtablissementQuery rightJoinEtablissementSituationGeographique($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementSituationGeographique relation
+ * @method EtablissementQuery innerJoinEtablissementSituationGeographique($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementSituationGeographique relation
  *
  * @method EtablissementQuery leftJoinEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementI18n relation
  * @method EtablissementQuery rightJoinEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementI18n relation
@@ -1464,6 +1470,80 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EtablissementSituationGeographique object
+     *
+     * @param   EtablissementSituationGeographique|PropelObjectCollection $etablissementSituationGeographique  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementSituationGeographique($etablissementSituationGeographique, $comparison = null)
+    {
+        if ($etablissementSituationGeographique instanceof EtablissementSituationGeographique) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $etablissementSituationGeographique->getEtablissementId(), $comparison);
+        } elseif ($etablissementSituationGeographique instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementSituationGeographiqueQuery()
+                ->filterByPrimaryKeys($etablissementSituationGeographique->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementSituationGeographique() only accepts arguments of type EtablissementSituationGeographique or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementSituationGeographique relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementSituationGeographique($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementSituationGeographique');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementSituationGeographique');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementSituationGeographique relation EtablissementSituationGeographique object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementSituationGeographiqueQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementSituationGeographiqueQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinEtablissementSituationGeographique($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementSituationGeographique', '\Cungfoo\Model\EtablissementSituationGeographiqueQuery');
+    }
+
+    /**
      * Filter the query by a related EtablissementI18n object
      *
      * @param   EtablissementI18n|PropelObjectCollection $etablissementI18n  the related object to use as filter
@@ -1602,6 +1682,23 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->useEtablissementServiceComplementaireQuery()
             ->filterByServiceComplementaire($serviceComplementaire, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related SituationGeographique object
+     * using the etablissement_situation_geographique table as cross reference
+     *
+     * @param   SituationGeographique $situationGeographique the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     */
+    public function filterBySituationGeographique($situationGeographique, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useEtablissementSituationGeographiqueQuery()
+            ->filterBySituationGeographique($situationGeographique, $comparison)
             ->endUse();
     }
 
