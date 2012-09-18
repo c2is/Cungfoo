@@ -2,6 +2,10 @@ crud:
     prefix: /
     controller: \Cungfoo\Controller\CrudController
     items:
+        service_complementaire:
+            prefix: /services-complementaires
+            model: \Cungfoo\Model\ServiceComplementaire
+            form: \Cungfoo\Form\Type\ServiceComplementaireType
         etablissement:
             prefix: /etablissement
             model: \Cungfoo\Model\Etablissement
@@ -34,11 +38,3 @@ crud:
             prefix: /activites
             model: \Cungfoo\Model\Activite
             form: \Cungfoo\Form\Type\ActiviteType
-        equipement:
-            prefix: /equipements
-            model: \Cungfoo\Model\Equipement
-            form: \Cungfoo\Form\Type\EquipementType
-        service_complementaire:
-            prefix: /services-complementaires
-            model: \Cungfoo\Model\ServiceComplementaire
-            form: \Cungfoo\Form\Type\ServiceComplementaireType

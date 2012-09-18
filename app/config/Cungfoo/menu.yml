@@ -23,9 +23,6 @@ menu:
               activite:
                   title:  menu.activite
                   route:  activite_crud_list
-              equipement:
-                  title:  menu.equipement
-                  route:  equipement_crud_list
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list

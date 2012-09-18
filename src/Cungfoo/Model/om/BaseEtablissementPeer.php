@@ -12,7 +12,6 @@ use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivitePeer;
 use Cungfoo\Model\EtablissementDestinationPeer;
-use Cungfoo\Model\EtablissementEquipementPeer;
 use Cungfoo\Model\EtablissementI18nPeer;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementServiceComplementairePeer;
@@ -475,9 +474,6 @@ abstract class BaseEtablissementPeer
         // Invalidate objects in EtablissementActivitePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementActivitePeer::clearInstancePool();
-        // Invalidate objects in EtablissementEquipementPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        EtablissementEquipementPeer::clearInstancePool();
         // Invalidate objects in EtablissementServiceComplementairePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementServiceComplementairePeer::clearInstancePool();

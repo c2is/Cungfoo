@@ -150,14 +150,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.activites',
             'required' => false,
         ));
-        $builder->add('equipements', 'model', array(
-            'class' => 'Cungfoo\Model\Equipement',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.equipements',
-            'required' => false,
-        ));
         $builder->add('service_complementaires', 'model', array(
             'class' => 'Cungfoo\Model\ServiceComplementaire',
             'constraints' => array(

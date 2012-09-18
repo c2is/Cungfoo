@@ -19,8 +19,6 @@ loader:
         model:  \Cungfoo\Model\ServiceComplementaire
       ACTIVITES:
         model:  \Cungfoo\Model\Activite
-      EQUIP:
-        model:  \Cungfoo\Model\Equipement
       DESTI:
         model:  \Cungfoo\Model\Destination
   EtabLoader:
@@ -38,11 +36,6 @@ loader:
         associated: \Cungfoo\Model\EtablissementActivite
         setter:     addActivite
         filter:     filterByActiviteId
-      EQUIP:
-        model:      \Cungfoo\Model\Equipement
-        associated: \Cungfoo\Model\EtablissementEquipement
-        setter:     addEquipement
-        filter:     filterByEquipementId
       DESTI:
         model:      \Cungfoo\Model\Destination
         associated: \Cungfoo\Model\EtablissementDestination

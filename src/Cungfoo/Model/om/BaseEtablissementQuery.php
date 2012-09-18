@@ -14,11 +14,9 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Activite;
 use Cungfoo\Model\Destination;
-use Cungfoo\Model\Equipement;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
 use Cungfoo\Model\EtablissementDestination;
-use Cungfoo\Model\EtablissementEquipement;
 use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementQuery;
@@ -92,10 +90,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinEtablissementActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementActivite relation
  * @method EtablissementQuery rightJoinEtablissementActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementActivite relation
  * @method EtablissementQuery innerJoinEtablissementActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementActivite relation
- *
- * @method EtablissementQuery leftJoinEtablissementEquipement($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementEquipement relation
- * @method EtablissementQuery rightJoinEtablissementEquipement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementEquipement relation
- * @method EtablissementQuery innerJoinEtablissementEquipement($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementEquipement relation
  *
  * @method EtablissementQuery leftJoinEtablissementServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method EtablissementQuery rightJoinEtablissementServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementServiceComplementaire relation
@@ -1268,80 +1262,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related EtablissementEquipement object
-     *
-     * @param   EtablissementEquipement|PropelObjectCollection $etablissementEquipement  the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   EtablissementQuery The current query, for fluid interface
-     * @throws   PropelException - if the provided filter is invalid.
-     */
-    public function filterByEtablissementEquipement($etablissementEquipement, $comparison = null)
-    {
-        if ($etablissementEquipement instanceof EtablissementEquipement) {
-            return $this
-                ->addUsingAlias(EtablissementPeer::ID, $etablissementEquipement->getEtablissementId(), $comparison);
-        } elseif ($etablissementEquipement instanceof PropelObjectCollection) {
-            return $this
-                ->useEtablissementEquipementQuery()
-                ->filterByPrimaryKeys($etablissementEquipement->getPrimaryKeys())
-                ->endUse();
-        } else {
-            throw new PropelException('filterByEtablissementEquipement() only accepts arguments of type EtablissementEquipement or PropelCollection');
-        }
-    }
-
-    /**
-     * Adds a JOIN clause to the query using the EtablissementEquipement relation
-     *
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function joinEtablissementEquipement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
-    {
-        $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('EtablissementEquipement');
-
-        // create a ModelJoin object for this join
-        $join = new ModelJoin();
-        $join->setJoinType($joinType);
-        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
-        if ($previousJoin = $this->getPreviousJoin()) {
-            $join->setPreviousJoin($previousJoin);
-        }
-
-        // add the ModelJoin to the current object
-        if ($relationAlias) {
-            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
-            $this->addJoinObject($join, $relationAlias);
-        } else {
-            $this->addJoinObject($join, 'EtablissementEquipement');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Use the EtablissementEquipement relation EtablissementEquipement object
-     *
-     * @see       useQuery()
-     *
-     * @param     string $relationAlias optional alias for the relation,
-     *                                   to be used as main alias in the secondary query
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return   \Cungfoo\Model\EtablissementEquipementQuery A secondary query class using the current class as primary query
-     */
-    public function useEtablissementEquipementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
-    {
-        return $this
-            ->joinEtablissementEquipement($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'EtablissementEquipement', '\Cungfoo\Model\EtablissementEquipementQuery');
-    }
-
-    /**
      * Filter the query by a related EtablissementServiceComplementaire object
      *
      * @param   EtablissementServiceComplementaire|PropelObjectCollection $etablissementServiceComplementaire  the related object to use as filter
@@ -1537,23 +1457,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->useEtablissementActiviteQuery()
             ->filterByActivite($activite, $comparison)
-            ->endUse();
-    }
-
-    /**
-     * Filter the query by a related Equipement object
-     * using the etablissement_equipement table as cross reference
-     *
-     * @param   Equipement $equipement the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByEquipement($equipement, $comparison = Criteria::EQUAL)
-    {
-        return $this
-            ->useEtablissementEquipementQuery()
-            ->filterByEquipement($equipement, $comparison)
             ->endUse();
     }
 

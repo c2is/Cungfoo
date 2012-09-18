@@ -19,15 +19,11 @@ use Cungfoo\Model\Activite;
 use Cungfoo\Model\ActiviteQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
-use Cungfoo\Model\Equipement;
-use Cungfoo\Model\EquipementQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
 use Cungfoo\Model\EtablissementActiviteQuery;
 use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementDestinationQuery;
-use Cungfoo\Model\EtablissementEquipement;
-use Cungfoo\Model\EtablissementEquipementQuery;
 use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementI18nQuery;
 use Cungfoo\Model\EtablissementPeer;
@@ -209,12 +205,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementActivitesPartial;
 
     /**
-     * @var        PropelObjectCollection|EtablissementEquipement[] Collection to store aggregation of EtablissementEquipement objects.
-     */
-    protected $collEtablissementEquipements;
-    protected $collEtablissementEquipementsPartial;
-
-    /**
      * @var        PropelObjectCollection|EtablissementServiceComplementaire[] Collection to store aggregation of EtablissementServiceComplementaire objects.
      */
     protected $collEtablissementServiceComplementaires;
@@ -240,11 +230,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Activite[] Collection to store aggregation of Activite objects.
      */
     protected $collActivites;
-
-    /**
-     * @var        PropelObjectCollection|Equipement[] Collection to store aggregation of Equipement objects.
-     */
-    protected $collEquipements;
 
     /**
      * @var        PropelObjectCollection|ServiceComplementaire[] Collection to store aggregation of ServiceComplementaire objects.
@@ -301,12 +286,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $equipementsScheduledForDeletion = null;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
     protected $serviceComplementairesScheduledForDeletion = null;
 
     /**
@@ -326,12 +305,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementActivitesScheduledForDeletion = null;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
-    protected $etablissementEquipementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1185,8 +1158,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementActivites = null;
 
-            $this->collEtablissementEquipements = null;
-
             $this->collEtablissementServiceComplementaires = null;
 
             $this->collEtablissementI18ns = null;
@@ -1194,7 +1165,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collTypeHebergements = null;
             $this->collDestinations = null;
             $this->collActivites = null;
-            $this->collEquipements = null;
             $this->collServiceComplementaires = null;
         } // if (deep)
     }
@@ -1403,26 +1373,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
-            if ($this->equipementsScheduledForDeletion !== null) {
-                if (!$this->equipementsScheduledForDeletion->isEmpty()) {
-                    $pks = array();
-                    $pk = $this->getPrimaryKey();
-                    foreach ($this->equipementsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
-                        $pks[] = array($pk, $remotePk);
-                    }
-                    EtablissementEquipementQuery::create()
-                        ->filterByPrimaryKeys($pks)
-                        ->delete($con);
-                    $this->equipementsScheduledForDeletion = null;
-                }
-
-                foreach ($this->getEquipements() as $equipement) {
-                    if ($equipement->isModified()) {
-                        $equipement->save($con);
-                    }
-                }
-            }
-
             if ($this->serviceComplementairesScheduledForDeletion !== null) {
                 if (!$this->serviceComplementairesScheduledForDeletion->isEmpty()) {
                     $pks = array();
@@ -1488,23 +1438,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementActivites !== null) {
                 foreach ($this->collEtablissementActivites as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
-                        $affectedRows += $referrerFK->save($con);
-                    }
-                }
-            }
-
-            if ($this->etablissementEquipementsScheduledForDeletion !== null) {
-                if (!$this->etablissementEquipementsScheduledForDeletion->isEmpty()) {
-                    EtablissementEquipementQuery::create()
-                        ->filterByPrimaryKeys($this->etablissementEquipementsScheduledForDeletion->getPrimaryKeys(false))
-                        ->delete($con);
-                    $this->etablissementEquipementsScheduledForDeletion = null;
-                }
-            }
-
-            if ($this->collEtablissementEquipements !== null) {
-                foreach ($this->collEtablissementEquipements as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1831,14 +1764,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
-                if ($this->collEtablissementEquipements !== null) {
-                    foreach ($this->collEtablissementEquipements as $referrerFK) {
-                        if (!$referrerFK->validate($columns)) {
-                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
-                        }
-                    }
-                }
-
                 if ($this->collEtablissementServiceComplementaires !== null) {
                     foreach ($this->collEtablissementServiceComplementaires as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2008,9 +1933,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementActivites) {
                 $result['EtablissementActivites'] = $this->collEtablissementActivites->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
-            }
-            if (null !== $this->collEtablissementEquipements) {
-                $result['EtablissementEquipements'] = $this->collEtablissementEquipements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementServiceComplementaires) {
                 $result['EtablissementServiceComplementaires'] = $this->collEtablissementServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2289,12 +2211,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
-            foreach ($this->getEtablissementEquipements() as $relObj) {
-                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addEtablissementEquipement($relObj->copy($deepCopy));
-                }
-            }
-
             foreach ($this->getEtablissementServiceComplementaires() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementServiceComplementaire($relObj->copy($deepCopy));
@@ -2427,9 +2343,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementActivite' == $relationName) {
             $this->initEtablissementActivites();
-        }
-        if ('EtablissementEquipement' == $relationName) {
-            $this->initEtablissementEquipements();
         }
         if ('EtablissementServiceComplementaire' == $relationName) {
             $this->initEtablissementServiceComplementaires();
@@ -3133,238 +3046,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $query->joinWith('Activite', $join_behavior);
 
         return $this->getEtablissementActivites($query, $con);
-    }
-
-    /**
-     * Clears out the collEtablissementEquipements collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return void
-     * @see        addEtablissementEquipements()
-     */
-    public function clearEtablissementEquipements()
-    {
-        $this->collEtablissementEquipements = null; // important to set this to null since that means it is uninitialized
-        $this->collEtablissementEquipementsPartial = null;
-    }
-
-    /**
-     * reset is the collEtablissementEquipements collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialEtablissementEquipements($v = true)
-    {
-        $this->collEtablissementEquipementsPartial = $v;
-    }
-
-    /**
-     * Initializes the collEtablissementEquipements collection.
-     *
-     * By default this just sets the collEtablissementEquipements collection to an empty array (like clearcollEtablissementEquipements());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @param boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
-     * @return void
-     */
-    public function initEtablissementEquipements($overrideExisting = true)
-    {
-        if (null !== $this->collEtablissementEquipements && !$overrideExisting) {
-            return;
-        }
-        $this->collEtablissementEquipements = new PropelObjectCollection();
-        $this->collEtablissementEquipements->setModel('EtablissementEquipement');
-    }
-
-    /**
-     * Gets an array of EtablissementEquipement objects which contain a foreign key that references this object.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Etablissement is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|EtablissementEquipement[] List of EtablissementEquipement objects
-     * @throws PropelException
-     */
-    public function getEtablissementEquipements($criteria = null, PropelPDO $con = null)
-    {
-        $partial = $this->collEtablissementEquipementsPartial && !$this->isNew();
-        if (null === $this->collEtablissementEquipements || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collEtablissementEquipements) {
-                // return empty collection
-                $this->initEtablissementEquipements();
-            } else {
-                $collEtablissementEquipements = EtablissementEquipementQuery::create(null, $criteria)
-                    ->filterByEtablissement($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    if (false !== $this->collEtablissementEquipementsPartial && count($collEtablissementEquipements)) {
-                      $this->initEtablissementEquipements(false);
-
-                      foreach($collEtablissementEquipements as $obj) {
-                        if (false == $this->collEtablissementEquipements->contains($obj)) {
-                          $this->collEtablissementEquipements->append($obj);
-                        }
-                      }
-
-                      $this->collEtablissementEquipementsPartial = true;
-                    }
-
-                    return $collEtablissementEquipements;
-                }
-
-                if($partial && $this->collEtablissementEquipements) {
-                    foreach($this->collEtablissementEquipements as $obj) {
-                        if($obj->isNew()) {
-                            $collEtablissementEquipements[] = $obj;
-                        }
-                    }
-                }
-
-                $this->collEtablissementEquipements = $collEtablissementEquipements;
-                $this->collEtablissementEquipementsPartial = false;
-            }
-        }
-
-        return $this->collEtablissementEquipements;
-    }
-
-    /**
-     * Sets a collection of EtablissementEquipement objects related by a one-to-many relationship
-     * to the current object.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $etablissementEquipements A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     */
-    public function setEtablissementEquipements(PropelCollection $etablissementEquipements, PropelPDO $con = null)
-    {
-        $this->etablissementEquipementsScheduledForDeletion = $this->getEtablissementEquipements(new Criteria(), $con)->diff($etablissementEquipements);
-
-        foreach ($this->etablissementEquipementsScheduledForDeletion as $etablissementEquipementRemoved) {
-            $etablissementEquipementRemoved->setEtablissement(null);
-        }
-
-        $this->collEtablissementEquipements = null;
-        foreach ($etablissementEquipements as $etablissementEquipement) {
-            $this->addEtablissementEquipement($etablissementEquipement);
-        }
-
-        $this->collEtablissementEquipements = $etablissementEquipements;
-        $this->collEtablissementEquipementsPartial = false;
-    }
-
-    /**
-     * Returns the number of related EtablissementEquipement objects.
-     *
-     * @param Criteria $criteria
-     * @param boolean $distinct
-     * @param PropelPDO $con
-     * @return int             Count of related EtablissementEquipement objects.
-     * @throws PropelException
-     */
-    public function countEtablissementEquipements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        $partial = $this->collEtablissementEquipementsPartial && !$this->isNew();
-        if (null === $this->collEtablissementEquipements || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collEtablissementEquipements) {
-                return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getEtablissementEquipements());
-                }
-                $query = EtablissementEquipementQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByEtablissement($this)
-                    ->count($con);
-            }
-        } else {
-            return count($this->collEtablissementEquipements);
-        }
-    }
-
-    /**
-     * Method called to associate a EtablissementEquipement object to this object
-     * through the EtablissementEquipement foreign key attribute.
-     *
-     * @param    EtablissementEquipement $l EtablissementEquipement
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function addEtablissementEquipement(EtablissementEquipement $l)
-    {
-        if ($this->collEtablissementEquipements === null) {
-            $this->initEtablissementEquipements();
-            $this->collEtablissementEquipementsPartial = true;
-        }
-        if (!in_array($l, $this->collEtablissementEquipements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddEtablissementEquipement($l);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	EtablissementEquipement $etablissementEquipement The etablissementEquipement object to add.
-     */
-    protected function doAddEtablissementEquipement($etablissementEquipement)
-    {
-        $this->collEtablissementEquipements[]= $etablissementEquipement;
-        $etablissementEquipement->setEtablissement($this);
-    }
-
-    /**
-     * @param	EtablissementEquipement $etablissementEquipement The etablissementEquipement object to remove.
-     */
-    public function removeEtablissementEquipement($etablissementEquipement)
-    {
-        if ($this->getEtablissementEquipements()->contains($etablissementEquipement)) {
-            $this->collEtablissementEquipements->remove($this->collEtablissementEquipements->search($etablissementEquipement));
-            if (null === $this->etablissementEquipementsScheduledForDeletion) {
-                $this->etablissementEquipementsScheduledForDeletion = clone $this->collEtablissementEquipements;
-                $this->etablissementEquipementsScheduledForDeletion->clear();
-            }
-            $this->etablissementEquipementsScheduledForDeletion[]= $etablissementEquipement;
-            $etablissementEquipement->setEtablissement(null);
-        }
-    }
-
-
-    /**
-     * If this collection has already been initialized with
-     * an identical criteria, it returns the collection.
-     * Otherwise if this Etablissement is new, it will return
-     * an empty collection; or if this Etablissement has previously
-     * been saved, it will retrieve related EtablissementEquipements from storage.
-     *
-     * This method is protected by default in order to keep the public
-     * api reasonable.  You can provide public methods for those you
-     * actually need in Etablissement.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
-     * @return PropelObjectCollection|EtablissementEquipement[] List of EtablissementEquipement objects
-     */
-    public function getEtablissementEquipementsJoinEquipement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $query = EtablissementEquipementQuery::create(null, $criteria);
-        $query->joinWith('Equipement', $join_behavior);
-
-        return $this->getEtablissementEquipements($query, $con);
     }
 
     /**
@@ -4315,174 +3996,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Clears out the collEquipements collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return void
-     * @see        addEquipements()
-     */
-    public function clearEquipements()
-    {
-        $this->collEquipements = null; // important to set this to null since that means it is uninitialized
-        $this->collEquipementsPartial = null;
-    }
-
-    /**
-     * Initializes the collEquipements collection.
-     *
-     * By default this just sets the collEquipements collection to an empty collection (like clearEquipements());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @return void
-     */
-    public function initEquipements()
-    {
-        $this->collEquipements = new PropelObjectCollection();
-        $this->collEquipements->setModel('Equipement');
-    }
-
-    /**
-     * Gets a collection of Equipement objects related by a many-to-many relationship
-     * to the current object by way of the etablissement_equipement cross-reference table.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Etablissement is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria Optional query object to filter the query
-     * @param PropelPDO $con Optional connection object
-     *
-     * @return PropelObjectCollection|Equipement[] List of Equipement objects
-     */
-    public function getEquipements($criteria = null, PropelPDO $con = null)
-    {
-        if (null === $this->collEquipements || null !== $criteria) {
-            if ($this->isNew() && null === $this->collEquipements) {
-                // return empty collection
-                $this->initEquipements();
-            } else {
-                $collEquipements = EquipementQuery::create(null, $criteria)
-                    ->filterByEtablissement($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    return $collEquipements;
-                }
-                $this->collEquipements = $collEquipements;
-            }
-        }
-
-        return $this->collEquipements;
-    }
-
-    /**
-     * Sets a collection of Equipement objects related by a many-to-many relationship
-     * to the current object by way of the etablissement_equipement cross-reference table.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $equipements A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     */
-    public function setEquipements(PropelCollection $equipements, PropelPDO $con = null)
-    {
-        $this->clearEquipements();
-        $currentEquipements = $this->getEquipements();
-
-        $this->equipementsScheduledForDeletion = $currentEquipements->diff($equipements);
-
-        foreach ($equipements as $equipement) {
-            if (!$currentEquipements->contains($equipement)) {
-                $this->doAddEquipement($equipement);
-            }
-        }
-
-        $this->collEquipements = $equipements;
-    }
-
-    /**
-     * Gets the number of Equipement objects related by a many-to-many relationship
-     * to the current object by way of the etablissement_equipement cross-reference table.
-     *
-     * @param Criteria $criteria Optional query object to filter the query
-     * @param boolean $distinct Set to true to force count distinct
-     * @param PropelPDO $con Optional connection object
-     *
-     * @return int the number of related Equipement objects
-     */
-    public function countEquipements($criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        if (null === $this->collEquipements || null !== $criteria) {
-            if ($this->isNew() && null === $this->collEquipements) {
-                return 0;
-            } else {
-                $query = EquipementQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByEtablissement($this)
-                    ->count($con);
-            }
-        } else {
-            return count($this->collEquipements);
-        }
-    }
-
-    /**
-     * Associate a Equipement object to this object
-     * through the etablissement_equipement cross reference table.
-     *
-     * @param  Equipement $equipement The EtablissementEquipement object to relate
-     * @return void
-     */
-    public function addEquipement(Equipement $equipement)
-    {
-        if ($this->collEquipements === null) {
-            $this->initEquipements();
-        }
-        if (!$this->collEquipements->contains($equipement)) { // only add it if the **same** object is not already associated
-            $this->doAddEquipement($equipement);
-
-            $this->collEquipements[]= $equipement;
-        }
-    }
-
-    /**
-     * @param	Equipement $equipement The equipement object to add.
-     */
-    protected function doAddEquipement($equipement)
-    {
-        $etablissementEquipement = new EtablissementEquipement();
-        $etablissementEquipement->setEquipement($equipement);
-        $this->addEtablissementEquipement($etablissementEquipement);
-    }
-
-    /**
-     * Remove a Equipement object to this object
-     * through the etablissement_equipement cross reference table.
-     *
-     * @param Equipement $equipement The EtablissementEquipement object to relate
-     * @return void
-     */
-    public function removeEquipement(Equipement $equipement)
-    {
-        if ($this->getEquipements()->contains($equipement)) {
-            $this->collEquipements->remove($this->collEquipements->search($equipement));
-            if (null === $this->equipementsScheduledForDeletion) {
-                $this->equipementsScheduledForDeletion = clone $this->collEquipements;
-                $this->equipementsScheduledForDeletion->clear();
-            }
-            $this->equipementsScheduledForDeletion[]= $equipement;
-        }
-    }
-
-    /**
      * Clears out the collServiceComplementaires collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -4709,11 +4222,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
-            if ($this->collEtablissementEquipements) {
-                foreach ($this->collEtablissementEquipements as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
             if ($this->collEtablissementServiceComplementaires) {
                 foreach ($this->collEtablissementServiceComplementaires as $o) {
                     $o->clearAllReferences($deep);
@@ -4736,11 +4244,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if ($this->collActivites) {
                 foreach ($this->collActivites as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
-            if ($this->collEquipements) {
-                foreach ($this->collEquipements as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -4767,10 +4270,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementActivites->clearIterator();
         }
         $this->collEtablissementActivites = null;
-        if ($this->collEtablissementEquipements instanceof PropelCollection) {
-            $this->collEtablissementEquipements->clearIterator();
-        }
-        $this->collEtablissementEquipements = null;
         if ($this->collEtablissementServiceComplementaires instanceof PropelCollection) {
             $this->collEtablissementServiceComplementaires->clearIterator();
         }
@@ -4791,10 +4290,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collActivites->clearIterator();
         }
         $this->collActivites = null;
-        if ($this->collEquipements instanceof PropelCollection) {
-            $this->collEquipements->clearIterator();
-        }
-        $this->collEquipements = null;
         if ($this->collServiceComplementaires instanceof PropelCollection) {
             $this->collServiceComplementaires->clearIterator();
         }
