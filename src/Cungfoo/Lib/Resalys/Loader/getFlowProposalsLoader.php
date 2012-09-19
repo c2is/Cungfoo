@@ -10,19 +10,19 @@ class getFlowProposalsLoader extends BaseLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {
-        foreach ($data as $etablissement)
+        foreach ($data->etabListFlowProposals as $items)
         {
-            foreach ($etablissement as $minimalPrice)
+            foreach ($items as $etablissement)
             {
                 $objectEtab = EtablissementQuery::create()
-                    ->filterByCode($minimalPrice->{'etab_id'})
+                    ->filterByCode($etablissement->{'etab_id'})
                     ->findOne($con)
                 ;
 
                 if ($objectEtab)
                 {
                     $objectEtab
-                        ->setMinimumPrice($minimalPrice->{'minimum_net_price'})
+                        ->setMinimumPrice($etablissement->{'minimum_net_price'})
                         ->save($con)
                     ;
                 }

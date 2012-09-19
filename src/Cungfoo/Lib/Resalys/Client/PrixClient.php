@@ -25,12 +25,13 @@ class PrixClient extends BaseClient
     protected function getEnvelopeFormat()
     {
         return array(
-            'base_id' => $this->getOption('base_id', ''),
-            'username' => $this->getOption('username', ''),
-            'password' => $this->getOption('password', ''),
+            'base_id'       => $this->getOption('base_id', ''),
+            'username'      => $this->getOption('username', ''),
+            'password'      => $this->getOption('password', ''),
             'language_code' => $this->getOption('language_code', ''),
-            'object_type' => $this->getOption('object_type', ''),
-            'flow_name' => $this->getOption('flow_name', ''),
+            'object_type'   => $this->getOption('object_type', ''),
+            'flow_name'     => $this->getOption('flow_name', ''),
+            'nb_products'   => $this->getOption('nb_products', ''),
         );
     }
 
