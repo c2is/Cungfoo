@@ -30,10 +30,10 @@
         <hr/>
 
         <fieldset>
-            <legend>{{ ("etablissement.equipements") | trans }}</legend>
+            <legend>{{ ("etablissement.situation_geographiques") | trans }}</legend>
             <ul>
-                {% for equipement in etablissement.getEquipements %}
-                <li>{{ equipement.setLocale(locale) }}</li>
+                {% for situationGeographiques in etablissement.getSituationGeographiques %}
+                <li>{{ situationGeographiques.setLocale(locale) }}</li>
                 {% endfor %}
             </ul>
         </fieldset>

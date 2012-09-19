@@ -46,14 +46,6 @@ destination.etablissements: Betriebe mit diesem Ziel
 destination.id: Code
 destination.name: Name
 
-equipement.crud.create: Erstellen eines Geräte
-equipement.crud.list: Liste Geräte
-equipement.crud.update: Update Gerät% name%
-equipement.crud.view: Details der Ausrüstung% name%
-equipement.etablissements: Gründung mit diesem Gerät
-equipement.id: Code
-equipement.name: Name
-
 etablissement.activites: Liste der Aktivitäten
 etablissement.city: Stadt
 etablissement.country: Land

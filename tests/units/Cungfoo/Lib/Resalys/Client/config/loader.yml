@@ -7,16 +7,26 @@ loader:
         model:  \Cungfoo\Model\Pays
       REGIONS:
         model:  \Cungfoo\Model\Region
-        parent: PAYS
+        parent:
+          name:   PAYS
+          setter: setPaysId
       VILLE:
         model:  \Cungfoo\Model\Ville
-        parent: REGIONS
+        parent:
+          name:   REGIONS
+          setter: setRegionId
+      CATEG:
+        model:  \Cungfoo\Model\Categorie
+      SITUGEO:
+        model:  \Cungfoo\Model\SituationGeographique
+      BAIGNADE:
+        model:  \Cungfoo\Model\Baignade
+      THEMA:
+        model:  \Cungfoo\Model\Thematique
       SERVCOMP:
         model:  \Cungfoo\Model\ServiceComplementaire
       ACTIVITES:
         model:  \Cungfoo\Model\Activite
-      EQUIP:
-        model:  \Cungfoo\Model\Equipement
       DESTI:
         model:  \Cungfoo\Model\Destination
   EtabLoader:
@@ -24,21 +34,34 @@ loader:
       VILLE:
         model:      \Cungfoo\Model\Ville
         setter:     setVille
+      CATEG:
+        model:      \Cungfoo\Model\Categorie
+        setter:     setCategorie
       SERVCOMP:
         model:      \Cungfoo\Model\ServiceComplementaire
         associated: \Cungfoo\Model\EtablissementServiceComplementaire
         setter:     addServiceComplementaire
         filter:     filterByServiceComplementaireId
+      SITUGEO:
+        model:      \Cungfoo\Model\SituationGeographique
+        associated: \Cungfoo\Model\EtablissementSituationGeographique
+        setter:     addSituationGeographique
+        filter:     filterBySituationGeographiqueId
+      BAIGNADE:
+        model:      \Cungfoo\Model\Baignade
+        associated: \Cungfoo\Model\EtablissementBaignade
+        setter:     addBaignade
+        filter:     filterByBaignadeId
+      THEMA:
+        model:      \Cungfoo\Model\Thematique
+        associated: \Cungfoo\Model\EtablissementThematique
+        setter:     addThematique
+        filter:     filterByThematiqueId
       ACTIVITES:
         model:      \Cungfoo\Model\Activite
         associated: \Cungfoo\Model\EtablissementActivite
         setter:     addActivite
         filter:     filterByActiviteId
-      EQUIP:
-        model:      \Cungfoo\Model\Equipement
-        associated: \Cungfoo\Model\EtablissementEquipement
-        setter:     addEquipement
-        filter:     filterByEquipementId
       DESTI:
         model:      \Cungfoo\Model\Destination
         associated: \Cungfoo\Model\EtablissementDestination

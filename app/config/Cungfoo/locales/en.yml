@@ -46,14 +46,6 @@ destination.etablissements: Institutions with this destination
 destination.id: Code
 destination.name: Name
 
-equipement.crud.create: Creating an equipment
-equipement.crud.list: List equipment
-equipement.crud.update: Update device %name%
-equipement.crud.view: Details of equipment %name%
-equipement.etablissements: Institution with this equipment
-equipement.id: Code
-equipement.name: Name
-
 etablissement.activites: List of activities
 etablissement.city: City
 etablissement.country: Country
@@ -65,7 +57,6 @@ etablissement.crud.list: List institutions
 etablissement.crud.update: Update the institutions %name%
 etablissement.crud.view: Property Details %name%
 etablissement.destinations: List of destinations
-etablissement.equipements: List of equipment
 etablissement.service_complementaires: List of complementary services
 etablissement.type_hebergements: List of types of accommodation
 etablissement.fax: Fax
@@ -90,7 +81,6 @@ locale.german: German
 
 menu.activite: Activities
 menu.destination: Locations
-menu.equipement: Equipment
 menu.etablissement: Institution
 menu.job: Management jobs
 menu.logout: Logout

@@ -95,7 +95,6 @@ etablissement.crud.list: Liste établissements
 etablissement.crud.update: Mettre à jour l'établissement %name%
 etablissement.crud.view: Détails de l'établissement %name%
 etablissement.destinations: Liste des destinations
-etablissement.equipements: Liste des équipements
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
 etablissement.fax: Fax
