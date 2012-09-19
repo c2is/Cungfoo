@@ -13,10 +13,10 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 4
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.805653'
+        GeoCoordinateY: '-2.096414'
         MinimumPrice: '240.00'
     2:
         Code: 100
@@ -32,10 +32,10 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 12
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.463907'
+        GeoCoordinateY: '6.726558'
         MinimumPrice: '252.00'
     3:
         Code: 101
@@ -51,10 +51,10 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 13
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.40647'
+        GeoCoordinateY: '4.353547'
         MinimumPrice: '252.00'
     4:
         Code: 102
@@ -72,8 +72,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.045006'
+        GeoCoordinateY: '0.99029'
         MinimumPrice: '360.00'
     5:
         Code: 103
@@ -91,8 +91,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '40.220534'
+        GeoCoordinateY: '0.268092'
         MinimumPrice: '174.00'
     6:
         Code: 104
@@ -108,10 +108,10 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 6
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.882584'
+        GeoCoordinateY: '-4.102153'
         MinimumPrice: '246.00'
     7:
         Code: 106
@@ -129,8 +129,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.563703'
+        GeoCoordinateY: '2.942963'
         MinimumPrice: '264.00'
     8:
         Code: 108
@@ -148,8 +148,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.568791'
+        GeoCoordinateY: '3.043366'
         MinimumPrice: '168.00'
     9:
         Code: 109
@@ -167,8 +167,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.729985'
+        GeoCoordinateY: '-1.175533'
         MinimumPrice: '240.00'
     10:
         Code: 11
@@ -186,8 +186,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 106
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.787028'
+        GeoCoordinateY: '-1.307944'
         MinimumPrice: '246.00'
     11:
         Code: 110
@@ -205,8 +205,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.393593'
+        GeoCoordinateY: '6.724905'
         MinimumPrice: '258.00'
     12:
         Code: 111
@@ -224,8 +224,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.589312'
+        GeoCoordinateY: '6.93908'
         MinimumPrice: '198.00'
     13:
         Code: 112
@@ -243,8 +243,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.324145'
+        GeoCoordinateY: '5.76286'
         MinimumPrice: '270.00'
     14:
         Code: 113
@@ -1538,7 +1538,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    82:
+    83:
         Code: 18
         Name: 'La Bretonnière'
         Address1: ''
@@ -1557,7 +1557,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    83:
+    94:
         Code: 19
         Name: 'Le California'
         Address1: Orouet
@@ -1576,7 +1576,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    84:
+    105:
         Code: 2
         Name: 'Le Mas'
         Address1: Sireuil
@@ -1595,7 +1595,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '126.00'
-    85:
+    106:
         Code: 20
         Name: 'Le Calypso'
         Address1: 'Boulevard de la Plage'
@@ -1614,7 +1614,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    86:
+    117:
         Code: 21
         Name: 'Camping du Lac '
         Address1: 'Le Fangeas Soulier'
@@ -1633,7 +1633,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '162.00'
-    87:
+    128:
         Code: 22
         Name: 'Cap Agathois '
         Address1: 'Route de Sète'
@@ -1652,7 +1652,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    88:
+    139:
         Code: 23
         Name: 'Le Carbonnier'
         Address1: ''
@@ -1671,7 +1671,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '198.00'
-    89:
+    143:
         Code: 24
         Name: 'Castell Mar'
         Address1: 'Platja de la Rubina'
@@ -1690,7 +1690,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    90:
+    144:
         Code: 25
         Name: 'Castell Montgri '
         Address1: 'Ctra. Torroella-Estartit Km 4,700'
@@ -1709,7 +1709,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '330.00'
-    91:
+    145:
         Code: 26
         Name: 'Caussanel '
         Address1: Pareloup
@@ -1728,7 +1728,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    92:
+    146:
         Code: 27
         Name: 'Cayola '
         Address1: 'Côte Ouest'
@@ -1747,7 +1747,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    93:
+    147:
         Code: 28
         Name: 'Le Chaponnet'
         Address1: '16 Rue du Chaponnet'
@@ -1766,7 +1766,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    94:
+    148:
         Code: 29
         Name: 'Domaine des Charmilles'
         Address1: '1541 Route de l''Océan'
@@ -1785,7 +1785,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    95:
+    149:
         Code: 3
         Name: 'Le Cala Gogo'
         Address1: 'Avenue Armand Lanoux'
@@ -1804,7 +1804,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '294.00'
-    96:
+    150:
         Code: 30
         Name: 'Le Château de Galinée '
         Address1: 'Galinée Le Guildo'
@@ -1823,7 +1823,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '266.00'
-    97:
+    151:
         Code: 31
         Name: 'La Chênaie '
         Address1: '36 Rue du Pâtisseau'
@@ -1842,7 +1842,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '210.00'
-    98:
+    152:
         Code: 32
         Name: 'Les Chênes Verts '
         Address1: 'Route de Sarlat'
@@ -1861,7 +1861,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '192.00'
-    99:
+    153:
         Code: 33
         Name: 'Le Col Vert '
         Address1: '1548 Route de l''Etang'
@@ -1880,7 +1880,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '162.00'
-    100:
+    154:
         Code: 34
         Name: 'Le Conguel '
         Address1: 'Boulevard de la Teignouse'
@@ -1899,7 +1899,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '228.00'
-    101:
+    155:
         Code: 35
         Name: 'La Coste Rouge '
         Address1: 'Route de Collioure'
@@ -1918,7 +1918,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    102:
+    156:
         Code: 36
         Name: 'La Côte d''Argent '
         Address1: '134 Route Contaut'
@@ -1937,7 +1937,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '294.00'
-    103:
+    157:
         Code: 37
         Name: 'Crin Blanc '
         Address1: 'Hameau de Saliers'
@@ -1956,7 +1956,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '204.00'
-    104:
+    158:
         Code: 38
         Name: 'Cupulatta '
         Address1: 'Hameau de Cupulatta'
@@ -1975,7 +1975,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '315.00'
-    105:
+    159:
         Code: 39
         Name: 'Les Cyprès '
         Address1: 'Rue du Pont Jaunay'
@@ -1994,7 +1994,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '210.00'
-    106:
+    160:
         Code: 4
         Name: 'Le Petit Mousse'
         Address1: 'Impasse des Espargouls'
@@ -2013,7 +2013,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '198.00'
-    107:
+    161:
         Code: 40
         Name: 'Les Deux Fontaines '
         Address1: Raguenes
@@ -2032,7 +2032,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '228.00'
-    108:
+    162:
         Code: 41
         Name: 'Les Deux Plages '
         Address1: 'Avenue d''Angoulins'
@@ -2051,7 +2051,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '222.00'
-    109:
+    163:
         Code: 42
         Name: 'Domaine d''Inly '
         Address1: 'Route de Couarne'
@@ -2070,7 +2070,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '273.00'
-    110:
+    164:
         Code: 43
         Name: 'Domaine d''Oléron '
         Address1: 'Route de la Jousselinière'
@@ -2089,7 +2089,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '234.00'
-    111:
+    165:
         Code: 44
         Name: 'Domaine de Chaussy '
         Address1: 'Quartier Le Petit Chaussy'
@@ -2108,7 +2108,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    112:
+    166:
         Code: 45
         Name: 'Domaine de Kermario'
         Address1: '1 Chemin de Kerluir'
@@ -2127,7 +2127,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    113:
+    167:
         Code: 46
         Name: 'Domaine de la Rive'
         Address1: 'Route de Bordeaux'
@@ -2146,7 +2146,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '318.00'
-    114:
+    168:
         Code: 47
         Name: 'Domaine de Léveno '
         Address1: 'Route de l''Etang de Sandun'
@@ -2165,7 +2165,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '222.00'
-    115:
+    169:
         Code: 48
         Name: 'Domaine des Naïades'
         Address1: 'St Pons les Mûres'
@@ -2184,7 +2184,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '385.00'
-    116:
+    170:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
         Address1: 'Quartier de la Gare'
@@ -2203,7 +2203,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    117:
+    171:
         Code: 5
         Name: 'Airotel Oléron'
         Address1: 'Domaine de Montravail'
@@ -2222,7 +2222,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '222.00'
-    118:
+    172:
         Code: 50
         Name: 'Domaine du Verdon '
         Address1: 'La Salaou'
@@ -2241,7 +2241,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    119:
+    173:
         Code: 51
         Name: 'Les Dunes '
         Address1: 'Voie de Barcelone'
@@ -2260,7 +2260,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '246.00'
-    120:
+    174:
         Code: 52
         Name: 'Eden '
         Address1: 'Allée de Tournefort'
@@ -2279,7 +2279,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '168.00'
-    121:
+    175:
         Code: 53
         Name: 'Les Embruns '
         Address1: 'Avenue Edouard Branly'
@@ -2298,7 +2298,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '222.00'
-    122:
+    176:
         Code: 54
         Name: 'Eurolac '
         Address1: 'Promenade de l''Etang'
@@ -2317,7 +2317,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '234.00'
-    123:
+    177:
         Code: 55
         Name: 'Le Fanal '
         Address1: 'Rue du Fanal'
@@ -2336,7 +2336,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '204.00'
-    124:
+    178:
         Code: 56
         Name: 'La Farigoulette '
         Address1: 'Lac de St Laurent'
@@ -2355,7 +2355,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '234.00'
-    125:
+    179:
         Code: 57
         Name: 'Les Fontaines '
         Address1: 'Route de St Nazaire'
@@ -2374,7 +2374,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    126:
+    180:
         Code: 58
         Name: 'Les Frênes '
         Address1: 'Avenue du Pylone'
@@ -2393,7 +2393,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    127:
+    181:
         Code: 59
         Name: 'Front de Mer'
         Address1: 'Avenue du Grau'
@@ -2412,7 +2412,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '270.00'
-    128:
+    182:
         Code: 6
         Name: 'Aluna Vacances '
         Address1: 'Route de Lagorce'
@@ -2431,7 +2431,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '270.00'
-    129:
+    183:
         Code: 60
         Name: 'Grand''Terre '
         Address1: 'La Grande Terre'
@@ -2450,7 +2450,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    130:
+    184:
         Code: 61
         Name: 'Château de la Grenouillère '
         Address1: 'La Grenouillère'
@@ -2469,7 +2469,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '210.00'
-    131:
+    185:
         Code: 63
         Name: 'Les Huttes '
         Address1: 'Les Huttes'
@@ -2488,7 +2488,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    132:
+    186:
         Code: 64
         Name: 'L''Idéal '
         Address1: '715 Route de Chaparon'
@@ -2507,7 +2507,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    133:
+    187:
         Code: 65
         Name: 'Les Ilates'
         Address1: 'Route du Grouin'
@@ -2526,7 +2526,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    134:
+    188:
         Code: 66
         Name: 'Ilbarritz '
         Address1: 'Avenue de Biarritz'
@@ -2545,7 +2545,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    135:
+    189:
         Code: 67
         Name: 'Internacional de Calonge '
         Address1: 'Ctra Palamos A St Feliu Km 7.6'
@@ -2564,7 +2564,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '282.00'
-    136:
+    190:
         Code: 68
         Name: 'Internacional Palamos '
         Address1: 'Cami Cap de Planes'
@@ -2583,7 +2583,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '270.00'
-    137:
+    191:
         Code: 69
         Name: 'Le Jard '
         Address1: '123 Bld Maréchal de Lattre de Tassigny'
@@ -2602,7 +2602,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '210.00'
-    138:
+    192:
         Code: 7
         Name: 'Les Amandiers'
         Address1: 'Rue du Stade'
@@ -2621,7 +2621,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '138.00'
-    139:
+    193:
         Code: 70
         Name: 'Lac Bleu '
         Address1: 'Quartier La Touche'
@@ -2640,7 +2640,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    140:
+    194:
         Code: 71
         Name: 'Lac de Miel '
         Address1: ''
@@ -2659,7 +2659,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '198.00'
-    141:
+    195:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
         Address1: 'St Cricq'
@@ -2678,7 +2678,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    142:
+    196:
         Code: 73
         Name: 'Land''s Hause '
         Address1: 'Rua José Maria Custodio  '
@@ -2697,7 +2697,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '336.00'
-    143:
+    197:
         Code: 74
         Name: 'Lou Broustaricq '
         Address1: '2315 Route de Langeot'
@@ -2716,7 +2716,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '162.00'
-    144:
+    198:
         Code: 75
         Name: 'Lou Pignada '
         Address1: 'Route d''Azur'
@@ -2735,7 +2735,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    145:
+    199:
         Code: 76
         Name: 'La Loubine '
         Address1: '1 Route de la Mer'
@@ -2754,7 +2754,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    146:
+    200:
         Code: 77
         Name: 'Loyada '
         Address1: '111 Rue de la Source'
@@ -2773,7 +2773,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '198.00'
-    147:
+    201:
         Code: 78
         Name: 'Malazéou '
         Address1: 'RN 20'
@@ -2792,7 +2792,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '198.00'
-    148:
+    202:
         Code: 79
         Name: 'Mare e Pineta '
         Address1: 'Viale delle Acacie, 67'
@@ -2811,7 +2811,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
-    149:
+    203:
         Code: 8
         Name: 'Sandaya Soulac Plage'
         Address1: 'L''Amélie'
@@ -2830,7 +2830,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '246.00'
-    150:
+    204:
         Code: 80
         Name: 'La Marine '
         Address1: '2196 Route de l''Espiguette'
@@ -2849,7 +2849,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    151:
+    205:
         Code: 81
         Name: 'Les Marsouins'
         Address1: 'Avenue de la Retirada 1939'
@@ -2868,7 +2868,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    152:
+    206:
         Code: 82
         Name: 'Marze '
         Address1: 'Str. Prov. N 158 Km 30.200'
@@ -2887,7 +2887,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
-    153:
+    207:
         Code: 83
         Name: 'La Maïre '
         Address1: ''
@@ -2906,7 +2906,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '228.00'
-    154:
+    208:
         Code: 84
         Name: 'Le Moulin'
         Address1: ''
@@ -2925,7 +2925,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    155:
+    209:
         Code: 85
         Name: 'Camping Neptuno '
         Address1: 'Rodors 23'
@@ -2944,7 +2944,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '276.00'
-    156:
+    210:
         Code: 86
         Name: 'L''Oasis'
         Address1: 'Route de St Laurent'
@@ -2963,7 +2963,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    157:
+    211:
         Code: 87
         Name: 'L''Océano d''Or'
         Address1: 'Rue Georges Clémenceau'
@@ -2982,7 +2982,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '222.00'
-    158:
+    212:
         Code: 88
         Name: 'Oyam '
         Address1: 'Rue Oyamburua'
@@ -3001,7 +3001,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '174.00'
-    159:
+    213:
         Code: 89
         Name: 'Les Oyats '
         Address1: 'Route de la Plage des Casernes'
@@ -3020,7 +3020,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '228.00'
-    160:
+    214:
         Code: 9
         Name: Ametlla
         Address1: 'Apartat de Correus N°240'
@@ -3039,7 +3039,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '306.00'
-    161:
+    215:
         Code: 90
         Name: Pachacaïd
         Address1: 'Route de Canadel'
@@ -3058,7 +3058,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '324.00'
-    162:
+    216:
         Code: 91
         Name: 'Domaine de la Paille Basse'
         Address1: ''
@@ -3077,7 +3077,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '240.00'
-    163:
+    217:
         Code: 92
         Name: 'Le Palace '
         Address1: '65 Boulevard Marsan de Montbrun'
@@ -3096,7 +3096,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '246.00'
-    164:
+    218:
         Code: 93
         Name: 'Palavas Camping'
         Address1: 'Route de Maguelone'
@@ -3115,7 +3115,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '252.00'
-    165:
+    219:
         Code: 94
         Name: 'Le Parc '
         Address1: '408 Quartier Trestaure'
@@ -3134,7 +3134,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '162.00'
-    166:
+    220:
         Code: 95
         Name: 'Park Albatros '
         Address1: 'Loc. Pineta di T. Nuova'
@@ -3153,7 +3153,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '276.00'
-    167:
+    221:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
         Address1: '87 rue du Petit Bois'
@@ -3172,7 +3172,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '246.00'
-    168:
+    222:
         Code: 97
         Name: 'Petit Bois (Cantal)'
         Address1: 'Le bourg'
@@ -3191,7 +3191,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '138.00'
-    169:
+    223:
         Code: 98
         Name: 'Le Pinada '
         Address1: ''
@@ -3210,7 +3210,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '186.00'
-    170:
+    224:
         Code: 99
         Name: 'Les Pins '
         Address1: 'Lieu dit Le Guen'
@@ -3229,7 +3229,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '228.00'
-    171:
+    225:
         Code: 997
         Name: 'zzz Fictif enregistrement Linéaire Liberté'
         Address1: ''
@@ -3248,7 +3248,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: null
-    172:
+    226:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
         Address1: ''
@@ -3267,7 +3267,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: null
-    173:
+    227:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
         Address1: ''
