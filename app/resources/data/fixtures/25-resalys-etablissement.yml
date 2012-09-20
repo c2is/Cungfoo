@@ -15,8 +15,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 4
         CategorieId: null
-        GeoCoordinateX: '46.805653'
-        GeoCoordinateY: '-2.096414'
+        GeoCoordinateX: '46.791528'
+        GeoCoordinateY: '-2.064456'
         MinimumPrice: '240.00'
     2:
         Code: 100
@@ -34,8 +34,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 12
         CategorieId: null
-        GeoCoordinateX: '43.463907'
-        GeoCoordinateY: '6.726558'
+        GeoCoordinateX: '43.433152'
+        GeoCoordinateY: '6.737034'
         MinimumPrice: '252.00'
     3:
         Code: 101
@@ -53,8 +53,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 13
         CategorieId: null
-        GeoCoordinateX: '44.40647'
-        GeoCoordinateY: '4.353547'
+        GeoCoordinateX: '44.407452'
+        GeoCoordinateY: '4.395401'
         MinimumPrice: '252.00'
     4:
         Code: 102
@@ -72,8 +72,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '41.045006'
-        GeoCoordinateY: '0.99029'
+        GeoCoordinateX: '41.9409043'
+        GeoCoordinateY: '2.8651246'
         MinimumPrice: '360.00'
     5:
         Code: 103
@@ -91,8 +91,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '40.220534'
-        GeoCoordinateY: '0.268092'
+        GeoCoordinateX: '40.2457632'
+        GeoCoordinateY: '0.2761488'
         MinimumPrice: '174.00'
     6:
         Code: 104
@@ -110,8 +110,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 6
         CategorieId: null
-        GeoCoordinateX: '47.882584'
-        GeoCoordinateY: '-4.102153'
+        GeoCoordinateX: '47.875568'
+        GeoCoordinateY: '-4.1063729'
         MinimumPrice: '246.00'
     7:
         Code: 106
@@ -129,8 +129,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.563703'
-        GeoCoordinateY: '2.942963'
+        GeoCoordinateX: '45.573436'
+        GeoCoordinateY: '2.943472'
         MinimumPrice: '264.00'
     8:
         Code: 108
@@ -148,8 +148,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '42.568791'
-        GeoCoordinateY: '3.043366'
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '168.00'
     9:
         Code: 109
@@ -167,8 +167,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.729985'
-        GeoCoordinateY: '-1.175533'
+        GeoCoordinateX: '45.716275'
+        GeoCoordinateY: '-1.143904'
         MinimumPrice: '240.00'
     10:
         Code: 11
@@ -186,8 +186,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 106
         CategorieId: 3
-        GeoCoordinateX: '43.787028'
-        GeoCoordinateY: '-1.307944'
+        GeoCoordinateX: '43.798959'
+        GeoCoordinateY: '-1.303089'
         MinimumPrice: '246.00'
     11:
         Code: 110
@@ -205,8 +205,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.393593'
-        GeoCoordinateY: '6.724905'
+        GeoCoordinateX: '43.433152'
+        GeoCoordinateY: '6.737034'
         MinimumPrice: '258.00'
     12:
         Code: 111
@@ -224,8 +224,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.589312'
-        GeoCoordinateY: '6.93908'
+        GeoCoordinateX: '43.597772'
+        GeoCoordinateY: '6.95671'
         MinimumPrice: '198.00'
     13:
         Code: 112
@@ -243,8 +243,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.324145'
-        GeoCoordinateY: '5.76286'
+        GeoCoordinateX: '43.37055'
+        GeoCoordinateY: '5.782809'
         MinimumPrice: '270.00'
     14:
         Code: 113
@@ -262,8 +262,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.72835'
+        GeoCoordinateY: '3.014642'
         MinimumPrice: '168.00'
     15:
         Code: 114
@@ -281,8 +281,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.0756609'
+        GeoCoordinateY: '-1.1661729'
         MinimumPrice: '174.00'
     16:
         Code: 116
@@ -300,8 +300,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.776496'
+        GeoCoordinateY: '6.220515'
         MinimumPrice: '222.00'
     17:
         Code: 117
@@ -319,8 +319,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.978418'
+        GeoCoordinateY: '-1.332125'
         MinimumPrice: '162.00'
     18:
         Code: 118
@@ -338,8 +338,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '294.00'
     19:
         Code: 119
@@ -357,8 +357,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.61783'
+        GeoCoordinateY: '3.004182'
         MinimumPrice: '240.00'
     20:
         Code: 12
@@ -376,8 +376,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.78773'
+        GeoCoordinateY: '3.036565'
         MinimumPrice: '222.00'
     21:
         Code: 120
@@ -395,8 +395,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.835925'
+        GeoCoordinateY: '7.176868'
         MinimumPrice: '126.00'
     22:
         Code: 121
@@ -414,8 +414,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.978459'
+        GeoCoordinateY: '-1.075745'
         MinimumPrice: '234.00'
     23:
         Code: 122
@@ -452,8 +452,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.490557'
+        GeoCoordinateY: '9.116462'
         MinimumPrice: '258.00'
     25:
         Code: 125
@@ -471,8 +471,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.439236'
+        GeoCoordinateY: '-1.590062'
         MinimumPrice: '174.00'
     26:
         Code: 126
@@ -490,8 +490,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.010314'
+        GeoCoordinateY: '9.325429'
         MinimumPrice: '203.00'
     27:
         Code: 127
@@ -509,8 +509,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.81466'
+        GeoCoordinateY: '-1.37825'
         MinimumPrice: '192.00'
     28:
         Code: 128
@@ -528,8 +528,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.033876'
+        GeoCoordinateY: '-1.258325'
         MinimumPrice: '258.00'
     29:
         Code: 129
@@ -547,8 +547,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.8467181'
+        GeoCoordinateY: '-2.6716351'
         MinimumPrice: '306.00'
     30:
         Code: 130
@@ -566,8 +566,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.791528'
+        GeoCoordinateY: '-2.064456'
         MinimumPrice: '222.00'
     31:
         Code: 131
@@ -585,8 +585,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.439236'
+        GeoCoordinateY: '-1.590062'
         MinimumPrice: '276.00'
     32:
         Code: 133
@@ -604,8 +604,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 4
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.6742739'
+        GeoCoordinateY: '2.7921031'
         MinimumPrice: '294.00'
     33:
         Code: 134
@@ -623,8 +623,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.78773'
+        GeoCoordinateY: '3.036565'
         MinimumPrice: '252.00'
     34:
         Code: 135
@@ -642,8 +642,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.4799637'
+        GeoCoordinateY: '-3.52139'
         MinimumPrice: '282.00'
     35:
         Code: 136
@@ -661,8 +661,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.216488'
+        GeoCoordinateY: '12.294207'
         MinimumPrice: '294.00'
     36:
         Code: 137
@@ -680,8 +680,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '252.00'
     37:
         Code: 138
@@ -699,8 +699,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.120541'
+        GeoCoordinateY: '6.128639'
         MinimumPrice: '258.00'
     38:
         Code: 139
@@ -718,8 +718,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     39:
         Code: 14
@@ -737,8 +737,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 15
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.4255939'
+        GeoCoordinateY: '3.606834'
         MinimumPrice: '252.00'
     40:
         Code: 140
@@ -756,8 +756,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     41:
         Code: 141
@@ -775,8 +775,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     42:
         Code: 142
@@ -794,8 +794,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     43:
         Code: 143
@@ -813,8 +813,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     44:
         Code: 144
@@ -832,8 +832,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     45:
         Code: 145
@@ -851,8 +851,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     46:
         Code: 146
@@ -870,8 +870,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     47:
         Code: 147
@@ -889,8 +889,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     48:
         Code: 148
@@ -908,8 +908,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     49:
         Code: 149
@@ -927,8 +927,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     50:
         Code: 15
@@ -946,8 +946,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.186048'
+        GeoCoordinateY: '-1.1180349'
         MinimumPrice: '240.00'
     51:
         Code: 150
@@ -965,8 +965,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     52:
         Code: 151
@@ -984,8 +984,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     53:
         Code: 152
@@ -1003,8 +1003,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     54:
         Code: 153
@@ -1022,8 +1022,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     55:
         Code: 154
@@ -1041,8 +1041,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     56:
         Code: 155
@@ -1060,8 +1060,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     57:
         Code: 156
@@ -1079,8 +1079,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     58:
         Code: 157
@@ -1098,8 +1098,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     59:
         Code: 158
@@ -1117,8 +1117,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     60:
         Code: 159
@@ -1136,8 +1136,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     61:
         Code: 16
@@ -1155,8 +1155,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 77
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.536402'
+        GeoCoordinateY: '-1.772826'
         MinimumPrice: '210.00'
     62:
         Code: 160
@@ -1174,8 +1174,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     63:
         Code: 161
@@ -1193,8 +1193,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     64:
         Code: 162
@@ -1212,8 +1212,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     65:
         Code: 163
@@ -1231,8 +1231,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     66:
         Code: 164
@@ -1250,8 +1250,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     67:
         Code: 165
@@ -1269,8 +1269,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     68:
         Code: 166
@@ -1288,8 +1288,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     69:
         Code: 167
@@ -1307,8 +1307,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     70:
         Code: 168
@@ -1326,8 +1326,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     71:
         Code: 169
@@ -1345,8 +1345,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     72:
         Code: 17
@@ -1364,8 +1364,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 57
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.347009'
+        GeoCoordinateY: '-3.156406'
         MinimumPrice: '228.00'
     73:
         Code: 170
@@ -1383,8 +1383,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     74:
         Code: 171
@@ -1402,8 +1402,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     75:
         Code: 172
@@ -1421,8 +1421,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     76:
         Code: 173
@@ -1440,8 +1440,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     77:
         Code: 174
@@ -1459,8 +1459,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
     78:
         Code: 175
@@ -1478,8 +1478,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 4
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.720204'
+        GeoCoordinateY: '-1.945917'
         MinimumPrice: '234.00'
     79:
         Code: 176
@@ -1497,8 +1497,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 126
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.3569389'
+        GeoCoordinateY: '-1.061774'
         MinimumPrice: '246.00'
     80:
         Code: 177
@@ -1516,8 +1516,8 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.285448'
+        GeoCoordinateY: '-2.393236'
         MinimumPrice: '198.00'
     81:
         Code: 178
@@ -1535,10 +1535,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.720204'
+        GeoCoordinateY: '-1.945917'
         MinimumPrice: '240.00'
-    83:
+    82:
         Code: 18
         Name: 'La Bretonnière'
         Address1: ''
@@ -1554,10 +1554,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.6400409'
+        GeoCoordinateY: '-1.712725'
         MinimumPrice: '186.00'
-    94:
+    83:
         Code: 19
         Name: 'Le California'
         Address1: Orouet
@@ -1573,10 +1573,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.791528'
+        GeoCoordinateY: '-2.064456'
         MinimumPrice: '186.00'
-    105:
+    84:
         Code: 2
         Name: 'Le Mas'
         Address1: Sireuil
@@ -1592,10 +1592,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 1
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.936'
+        GeoCoordinateY: '1.018'
         MinimumPrice: '126.00'
-    106:
+    85:
         Code: 20
         Name: 'Le Calypso'
         Address1: 'Boulevard de la Plage'
@@ -1611,10 +1611,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.75444'
+        GeoCoordinateY: '2.993641'
         MinimumPrice: '240.00'
-    117:
+    86:
         Code: 21
         Name: 'Camping du Lac '
         Address1: 'Le Fangeas Soulier'
@@ -1630,10 +1630,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 16
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.427565'
+        GeoCoordinateY: '6.035874'
         MinimumPrice: '162.00'
-    128:
+    87:
         Code: 22
         Name: 'Cap Agathois '
         Address1: 'Route de Sète'
@@ -1649,10 +1649,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.312455'
+        GeoCoordinateY: '3.47083'
         MinimumPrice: '240.00'
-    139:
+    88:
         Code: 23
         Name: 'Le Carbonnier'
         Address1: ''
@@ -1668,10 +1668,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.744816'
+        GeoCoordinateY: '1.258582'
         MinimumPrice: '198.00'
-    143:
+    89:
         Code: 24
         Name: 'Castell Mar'
         Address1: 'Platja de la Rubina'
@@ -1687,10 +1687,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.2582587'
+        GeoCoordinateY: '3.0744421'
         MinimumPrice: '174.00'
-    144:
+    90:
         Code: 25
         Name: 'Castell Montgri '
         Address1: 'Ctra. Torroella-Estartit Km 4,700'
@@ -1706,10 +1706,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.0519544'
+        GeoCoordinateY: '3.1962936'
         MinimumPrice: '330.00'
-    145:
+    91:
         Code: 26
         Name: 'Caussanel '
         Address1: Pareloup
@@ -1725,10 +1725,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.235174'
+        GeoCoordinateY: '2.752384'
         MinimumPrice: '240.00'
-    146:
+    92:
         Code: 27
         Name: 'Cayola '
         Address1: 'Côte Ouest'
@@ -1744,10 +1744,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.312489'
+        GeoCoordinateY: '3.418564'
         MinimumPrice: '252.00'
-    147:
+    93:
         Code: 28
         Name: 'Le Chaponnet'
         Address1: '16 Rue du Chaponnet'
@@ -1763,10 +1763,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.6057'
+        GeoCoordinateY: '-1.82988'
         MinimumPrice: '240.00'
-    148:
+    94:
         Code: 29
         Name: 'Domaine des Charmilles'
         Address1: '1541 Route de l''Océan'
@@ -1782,10 +1782,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.981425'
+        GeoCoordinateY: '-1.041028'
         MinimumPrice: '240.00'
-    149:
+    95:
         Code: 3
         Name: 'Le Cala Gogo'
         Address1: 'Avenue Armand Lanoux'
@@ -1801,10 +1801,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.61783'
+        GeoCoordinateY: '3.004182'
         MinimumPrice: '294.00'
-    150:
+    96:
         Code: 30
         Name: 'Le Château de Galinée '
         Address1: 'Galinée Le Guildo'
@@ -1820,10 +1820,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '48.632091'
+        GeoCoordinateY: '-2.259804'
         MinimumPrice: '266.00'
-    151:
+    97:
         Code: 31
         Name: 'La Chênaie '
         Address1: '36 Rue du Pâtisseau'
@@ -1839,10 +1839,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.115491'
+        GeoCoordinateY: '-2.104444'
         MinimumPrice: '210.00'
-    152:
+    98:
         Code: 32
         Name: 'Les Chênes Verts '
         Address1: 'Route de Sarlat'
@@ -1858,10 +1858,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.855269'
+        GeoCoordinateY: '1.333955'
         MinimumPrice: '192.00'
-    153:
+    99:
         Code: 33
         Name: 'Le Col Vert '
         Address1: '1548 Route de l''Etang'
@@ -1877,10 +1877,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.95512'
+        GeoCoordinateY: '-1.305229'
         MinimumPrice: '162.00'
-    154:
+    100:
         Code: 34
         Name: 'Le Conguel '
         Address1: 'Boulevard de la Teignouse'
@@ -1896,10 +1896,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.482133'
+        GeoCoordinateY: '-3.121053'
         MinimumPrice: '228.00'
-    155:
+    101:
         Code: 35
         Name: 'La Coste Rouge '
         Address1: 'Route de Collioure'
@@ -1915,10 +1915,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '240.00'
-    156:
+    102:
         Code: 36
         Name: 'La Côte d''Argent '
         Address1: '134 Route Contaut'
@@ -1934,10 +1934,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.186089'
+        GeoCoordinateY: '-1.057202'
         MinimumPrice: '294.00'
-    157:
+    103:
         Code: 37
         Name: 'Crin Blanc '
         Address1: 'Hameau de Saliers'
@@ -1953,10 +1953,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.333533'
+        GeoCoordinateY: '7.101924'
         MinimumPrice: '204.00'
-    158:
+    104:
         Code: 38
         Name: 'Cupulatta '
         Address1: 'Hameau de Cupulatta'
@@ -1972,10 +1972,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 5
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.591369'
+        GeoCoordinateY: '9.278311'
         MinimumPrice: '315.00'
-    159:
+    105:
         Code: 39
         Name: 'Les Cyprès '
         Address1: 'Rue du Pont Jaunay'
@@ -1991,10 +1991,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.697777'
+        GeoCoordinateY: '-1.944529'
         MinimumPrice: '210.00'
-    160:
+    106:
         Code: 4
         Name: 'Le Petit Mousse'
         Address1: 'Impasse des Espargouls'
@@ -2010,10 +2010,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 2
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.312489'
+        GeoCoordinateY: '3.418564'
         MinimumPrice: '198.00'
-    161:
+    107:
         Code: 40
         Name: 'Les Deux Fontaines '
         Address1: Raguenes
@@ -2029,10 +2029,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.819167'
+        GeoCoordinateY: '-3.79258'
         MinimumPrice: '228.00'
-    162:
+    108:
         Code: 41
         Name: 'Les Deux Plages '
         Address1: 'Avenue d''Angoulins'
@@ -2048,10 +2048,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.069676'
+        GeoCoordinateY: '-1.088543'
         MinimumPrice: '222.00'
-    163:
+    109:
         Code: 42
         Name: 'Domaine d''Inly '
         Address1: 'Route de Couarne'
@@ -2067,10 +2067,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.4805375'
+        GeoCoordinateY: '-2.4738651'
         MinimumPrice: '273.00'
-    164:
+    110:
         Code: 43
         Name: 'Domaine d''Oléron '
         Address1: 'Route de la Jousselinière'
@@ -2086,10 +2086,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.978418'
+        GeoCoordinateY: '-1.332125'
         MinimumPrice: '234.00'
-    165:
+    111:
         Code: 44
         Name: 'Domaine de Chaussy '
         Address1: 'Quartier Le Petit Chaussy'
@@ -2105,10 +2105,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.446962'
+        GeoCoordinateY: '4.41779'
         MinimumPrice: '252.00'
-    166:
+    112:
         Code: 45
         Name: 'Domaine de Kermario'
         Address1: '1 Chemin de Kerluir'
@@ -2124,10 +2124,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 120
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.584693'
+        GeoCoordinateY: '-3.077786'
         MinimumPrice: '186.00'
-    167:
+    113:
         Code: 46
         Name: 'Domaine de la Rive'
         Address1: 'Route de Bordeaux'
@@ -2143,10 +2143,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.395943'
+        GeoCoordinateY: '-1.166917'
         MinimumPrice: '318.00'
-    168:
+    114:
         Code: 47
         Name: 'Domaine de Léveno '
         Address1: 'Route de l''Etang de Sandun'
@@ -2162,10 +2162,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.328003'
+        GeoCoordinateY: '-2.4297589'
         MinimumPrice: '222.00'
-    169:
+    115:
         Code: 48
         Name: 'Domaine des Naïades'
         Address1: 'St Pons les Mûres'
@@ -2181,10 +2181,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.274308'
+        GeoCoordinateY: '6.521865'
         MinimumPrice: '385.00'
-    170:
+    116:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
         Address1: 'Quartier de la Gare'
@@ -2200,10 +2200,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.551115'
+        GeoCoordinateY: '4.413293'
         MinimumPrice: '252.00'
-    171:
+    117:
         Code: 5
         Name: 'Airotel Oléron'
         Address1: 'Domaine de Montravail'
@@ -2219,10 +2219,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 123
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.885588'
+        GeoCoordinateY: '-1.19505'
         MinimumPrice: '222.00'
-    172:
+    118:
         Code: 50
         Name: 'Domaine du Verdon '
         Address1: 'La Salaou'
@@ -2238,10 +2238,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.8462419'
+        GeoCoordinateY: '6.5137'
         MinimumPrice: '174.00'
-    173:
+    119:
         Code: 51
         Name: 'Les Dunes '
         Address1: 'Voie de Barcelone'
@@ -2257,10 +2257,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.75444'
+        GeoCoordinateY: '2.993641'
         MinimumPrice: '246.00'
-    174:
+    120:
         Code: 52
         Name: 'Eden '
         Address1: 'Allée de Tournefort'
@@ -2276,10 +2276,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.567296'
+        GeoCoordinateY: '3.896473'
         MinimumPrice: '168.00'
-    175:
+    121:
         Code: 53
         Name: 'Les Embruns '
         Address1: 'Avenue Edouard Branly'
@@ -2295,10 +2295,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.795454'
+        GeoCoordinateY: '-1.147783'
         MinimumPrice: '222.00'
-    176:
+    122:
         Code: 54
         Name: 'Eurolac '
         Address1: 'Promenade de l''Etang'
@@ -2314,10 +2314,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.242573'
+        GeoCoordinateY: '0.096065'
         MinimumPrice: '234.00'
-    177:
+    123:
         Code: 55
         Name: 'Le Fanal '
         Address1: 'Rue du Fanal'
@@ -2333,10 +2333,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '49.320257'
+        GeoCoordinateY: '-1.102929'
         MinimumPrice: '204.00'
-    178:
+    124:
         Code: 56
         Name: 'La Farigoulette '
         Address1: 'Lac de St Laurent'
@@ -2352,10 +2352,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.724391'
+        GeoCoordinateY: '6.069215'
         MinimumPrice: '234.00'
-    179:
+    125:
         Code: 57
         Name: 'Les Fontaines '
         Address1: 'Route de St Nazaire'
@@ -2371,10 +2371,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.706091'
+        GeoCoordinateY: '3.009898'
         MinimumPrice: '186.00'
-    180:
+    126:
         Code: 58
         Name: 'Les Frênes '
         Address1: 'Avenue du Pylone'
@@ -2390,10 +2390,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.580418'
+        GeoCoordinateY: '7.125102'
         MinimumPrice: '252.00'
-    181:
+    127:
         Code: 59
         Name: 'Front de Mer'
         Address1: 'Avenue du Grau'
@@ -2409,10 +2409,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '270.00'
-    182:
+    128:
         Code: 6
         Name: 'Aluna Vacances '
         Address1: 'Route de Lagorce'
@@ -2428,10 +2428,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 124
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.452912'
+        GeoCoordinateY: '4.341765'
         MinimumPrice: '270.00'
-    183:
+    129:
         Code: 60
         Name: 'Grand''Terre '
         Address1: 'La Grande Terre'
@@ -2447,10 +2447,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.452912'
+        GeoCoordinateY: '4.341765'
         MinimumPrice: '252.00'
-    184:
+    130:
         Code: 61
         Name: 'Château de la Grenouillère '
         Address1: 'La Grenouillère'
@@ -2466,10 +2466,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '47.667176'
+        GeoCoordinateY: '1.460599'
         MinimumPrice: '210.00'
-    185:
+    131:
         Code: 63
         Name: 'Les Huttes '
         Address1: 'Les Huttes'
@@ -2485,10 +2485,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.033306'
+        GeoCoordinateY: '-1.379923'
         MinimumPrice: '186.00'
-    186:
+    132:
         Code: 64
         Name: 'L''Idéal '
         Address1: '715 Route de Chaparon'
@@ -2504,10 +2504,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.781593'
+        GeoCoordinateY: '6.203303'
         MinimumPrice: '240.00'
-    187:
+    133:
         Code: 65
         Name: 'Les Ilates'
         Address1: 'Route du Grouin'
@@ -2523,10 +2523,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.223107'
+        GeoCoordinateY: '-1.439882'
         MinimumPrice: '252.00'
-    188:
+    134:
         Code: 66
         Name: 'Ilbarritz '
         Address1: 'Avenue de Biarritz'
@@ -2542,10 +2542,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.439236'
+        GeoCoordinateY: '-1.590062'
         MinimumPrice: '240.00'
-    189:
+    135:
         Code: 67
         Name: 'Internacional de Calonge '
         Address1: 'Ctra Palamos A St Feliu Km 7.6'
@@ -2561,10 +2561,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.372609'
+        GeoCoordinateY: '0.239981'
         MinimumPrice: '282.00'
-    190:
+    136:
         Code: 68
         Name: 'Internacional Palamos '
         Address1: 'Cami Cap de Planes'
@@ -2580,10 +2580,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.8467643'
+        GeoCoordinateY: '3.1286356'
         MinimumPrice: '270.00'
-    191:
+    137:
         Code: 69
         Name: 'Le Jard '
         Address1: '123 Bld Maréchal de Lattre de Tassigny'
@@ -2599,10 +2599,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.344059'
+        GeoCoordinateY: '-1.4387859'
         MinimumPrice: '210.00'
-    192:
+    138:
         Code: 7
         Name: 'Les Amandiers'
         Address1: 'Rue du Stade'
@@ -2618,10 +2618,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.721683'
+        GeoCoordinateY: '4.173218'
         MinimumPrice: '138.00'
-    193:
+    139:
         Code: 70
         Name: 'Lac Bleu '
         Address1: 'Quartier La Touche'
@@ -2637,10 +2637,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.6953419'
+        GeoCoordinateY: '5.485029'
         MinimumPrice: '186.00'
-    194:
+    140:
         Code: 71
         Name: 'Lac de Miel '
         Address1: ''
@@ -2656,10 +2656,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.123826'
+        GeoCoordinateY: '1.723226'
         MinimumPrice: '198.00'
-    195:
+    141:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
         Address1: 'St Cricq'
@@ -2675,10 +2675,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.68218'
+        GeoCoordinateY: '0.993749'
         MinimumPrice: '186.00'
-    196:
+    142:
         Code: 73
         Name: 'Land''s Hause '
         Address1: 'Rua José Maria Custodio  '
@@ -2694,10 +2694,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.3836559'
+        GeoCoordinateY: '1.5360347'
         MinimumPrice: '336.00'
-    197:
+    143:
         Code: 74
         Name: 'Lou Broustaricq '
         Address1: '2315 Route de Langeot'
@@ -2713,10 +2713,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.483615'
+        GeoCoordinateY: '-1.075989'
         MinimumPrice: '162.00'
-    198:
+    144:
         Code: 75
         Name: 'Lou Pignada '
         Address1: 'Route d''Azur'
@@ -2732,10 +2732,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.81466'
+        GeoCoordinateY: '-1.37825'
         MinimumPrice: '174.00'
-    199:
+    145:
         Code: 76
         Name: 'La Loubine '
         Address1: '1 Route de la Mer'
@@ -2751,10 +2751,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.536402'
+        GeoCoordinateY: '-1.772826'
         MinimumPrice: '240.00'
-    200:
+    146:
         Code: 77
         Name: 'Loyada '
         Address1: '111 Rue de la Source'
@@ -2770,10 +2770,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.466102'
+        GeoCoordinateY: '-1.618261'
         MinimumPrice: '198.00'
-    201:
+    147:
         Code: 78
         Name: 'Malazéou '
         Address1: 'RN 20'
@@ -2789,10 +2789,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.720254'
+        GeoCoordinateY: '1.837545'
         MinimumPrice: '198.00'
-    202:
+    148:
         Code: 79
         Name: 'Mare e Pineta '
         Address1: 'Viale delle Acacie, 67'
@@ -2811,7 +2811,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
-    203:
+    149:
         Code: 8
         Name: 'Sandaya Soulac Plage'
         Address1: 'L''Amélie'
@@ -2827,10 +2827,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.515125'
+        GeoCoordinateY: '-1.123258'
         MinimumPrice: '246.00'
-    204:
+    150:
         Code: 80
         Name: 'La Marine '
         Address1: '2196 Route de l''Espiguette'
@@ -2846,10 +2846,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.537476'
+        GeoCoordinateY: '4.137918'
         MinimumPrice: '174.00'
-    205:
+    151:
         Code: 81
         Name: 'Les Marsouins'
         Address1: 'Avenue de la Retirada 1939'
@@ -2865,10 +2865,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.546214'
+        GeoCoordinateY: '3.022911'
         MinimumPrice: '252.00'
-    206:
+    152:
         Code: 82
         Name: 'Marze '
         Address1: 'Str. Prov. N 158 Km 30.200'
@@ -2887,7 +2887,7 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
-    207:
+    153:
         Code: 83
         Name: 'La Maïre '
         Address1: ''
@@ -2903,10 +2903,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.282801'
+        GeoCoordinateY: '3.279651'
         MinimumPrice: '228.00'
-    208:
+    154:
         Code: 84
         Name: 'Le Moulin'
         Address1: ''
@@ -2922,10 +2922,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.586323'
+        GeoCoordinateY: '5.7030839'
         MinimumPrice: '174.00'
-    209:
+    155:
         Code: 85
         Name: 'Camping Neptuno '
         Address1: 'Rodors 23'
@@ -2941,10 +2941,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.9712149'
+        GeoCoordinateY: '3.1488764'
         MinimumPrice: '276.00'
-    210:
+    156:
         Code: 86
         Name: 'L''Oasis'
         Address1: 'Route de St Laurent'
@@ -2960,10 +2960,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.78773'
+        GeoCoordinateY: '3.036565'
         MinimumPrice: '240.00'
-    211:
+    157:
         Code: 87
         Name: 'L''Océano d''Or'
         Address1: 'Rue Georges Clémenceau'
@@ -2979,10 +2979,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.408889'
+        GeoCoordinateY: '-1.576171'
         MinimumPrice: '222.00'
-    212:
+    158:
         Code: 88
         Name: 'Oyam '
         Address1: 'Rue Oyamburua'
@@ -2998,10 +2998,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.439236'
+        GeoCoordinateY: '-1.590062'
         MinimumPrice: '174.00'
-    213:
+    159:
         Code: 89
         Name: 'Les Oyats '
         Address1: 'Route de la Plage des Casernes'
@@ -3017,10 +3017,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.692694'
+        GeoCoordinateY: '-1.384908'
         MinimumPrice: '228.00'
-    214:
+    160:
         Code: 9
         Name: Ametlla
         Address1: 'Apartat de Correus N°240'
@@ -3036,10 +3036,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 125
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '40.8850733'
+        GeoCoordinateY: '0.8033742'
         MinimumPrice: '306.00'
-    215:
+    161:
         Code: 90
         Name: Pachacaïd
         Address1: 'Route de Canadel'
@@ -3055,10 +3055,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.2071759'
+        GeoCoordinateY: '6.465117'
         MinimumPrice: '324.00'
-    216:
+    162:
         Code: 91
         Name: 'Domaine de la Paille Basse'
         Address1: ''
@@ -3074,10 +3074,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.893626'
+        GeoCoordinateY: '1.478613'
         MinimumPrice: '240.00'
-    217:
+    163:
         Code: 92
         Name: 'Le Palace '
         Address1: '65 Boulevard Marsan de Montbrun'
@@ -3093,10 +3093,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.515125'
+        GeoCoordinateY: '-1.123258'
         MinimumPrice: '246.00'
-    218:
+    164:
         Code: 93
         Name: 'Palavas Camping'
         Address1: 'Route de Maguelone'
@@ -3112,10 +3112,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.528906'
+        GeoCoordinateY: '3.933493'
         MinimumPrice: '252.00'
-    219:
+    165:
         Code: 94
         Name: 'Le Parc '
         Address1: '408 Quartier Trestaure'
@@ -3131,10 +3131,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.567595'
+        GeoCoordinateY: '6.691291'
         MinimumPrice: '162.00'
-    220:
+    166:
         Code: 95
         Name: 'Park Albatros '
         Address1: 'Loc. Pineta di T. Nuova'
@@ -3150,10 +3150,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.767088'
+        GeoCoordinateY: '7.9539789'
         MinimumPrice: '276.00'
-    221:
+    167:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
         Address1: '87 rue du Petit Bois'
@@ -3169,10 +3169,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.452912'
+        GeoCoordinateY: '4.341765'
         MinimumPrice: '246.00'
-    222:
+    168:
         Code: 97
         Name: 'Petit Bois (Cantal)'
         Address1: 'Le bourg'
@@ -3188,10 +3188,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '45.001378'
+        GeoCoordinateY: '3.223658'
         MinimumPrice: '138.00'
-    223:
+    169:
         Code: 98
         Name: 'Le Pinada '
         Address1: ''
@@ -3207,10 +3207,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.112328'
+        GeoCoordinateY: '2.739141'
         MinimumPrice: '186.00'
-    224:
+    170:
         Code: 99
         Name: 'Les Pins '
         Address1: 'Lieu dit Le Guen'
@@ -3226,10 +3226,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '48.629668'
+        GeoCoordinateY: '-2.464789'
         MinimumPrice: '228.00'
-    225:
+    171:
         Code: 997
         Name: 'zzz Fictif enregistrement Linéaire Liberté'
         Address1: ''
@@ -3245,10 +3245,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
-    226:
+    172:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
         Address1: ''
@@ -3264,10 +3264,10 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null
-    227:
+    173:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
         Address1: ''
@@ -3283,6 +3283,6 @@
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '46.227638'
+        GeoCoordinateY: '2.213749'
         MinimumPrice: null

@@ -30,4 +30,6 @@ $console->add(new \Cungfoo\Command\Resalys\DumpCommand());
 
 $console->add(new \Cungfoo\Command\Job\DaemonCommand());
 
+$console->add(new \VacancesDirectes\Command\Load\Etablissement\CoordinatesCommand());
+
 $console->run();
