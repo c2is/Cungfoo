@@ -10,9 +10,11 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
+use Cungfoo\Lib\GeographicCoordinates;
 
 use VacancesDirectes\Form\Type\Search\DateType,
-    VacancesDirectes\Form\Data\Search\DateData;
+    VacancesDirectes\Form\Data\Search\DateData,
+    VacancesDirectes\Form\Type\Search\GeoPositionType;
 
 class HomepageController implements ControllerProviderInterface
 {
@@ -35,8 +37,8 @@ class HomepageController implements ControllerProviderInterface
             ;
 
             /** Search form date */
-            $formData = new DateData();
-            $dateSearchForm = $app['form.factory']->create(new DateType($app), $formData);
+            $formDateData = new DateData();
+            $dateSearchForm = $app['form.factory']->create(new DateType($app), $formDateData);
             if ('POST' == $request->getMethod())
             {
                 /** Manage search form date validation */
@@ -47,10 +49,23 @@ class HomepageController implements ControllerProviderInterface
                 }
             }
 
+            /** Search form temps trajet */
+            $tempsTrajetSearchForm = $app['form.factory']->create(new GeoPositionType($app));
+            if ('POST' == $request->getMethod())
+            {
+                /** Manage search form date validation */
+                $tempsTrajetSearchForm->bind($request->get($tempsTrajetSearchForm->getName()));
+                if ($tempsTrajetSearchForm->isValid())
+                {
+                    return $app->redirect($app['url_generator']->generate('search_engine_by_temps_trajet', $tempsTrajetSearchForm->getData()));
+                }
+            }
+
             return $app['twig']->render('etablissement.twig', array(
-                'dateSearchForm'    => $dateSearchForm->createView(),
-                'etablissement'     => $etablissement,
-                'locale'            => $locale
+                'dateSearchForm'        => $dateSearchForm->createView(),
+                'tempsTrajetSearchForm' => $tempsTrajetSearchForm->createView(),
+                'etablissement'         => $etablissement,
+                'locale'                => $locale,
             ));
         })
         ->bind('homepage');

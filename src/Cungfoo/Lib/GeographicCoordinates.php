@@ -42,7 +42,14 @@ class GeographicCoordinates
     {
         if (!array_key_exists($ip, $this->records))
         {
-            $this->records[$ip] = $this->getAdapter()->geoip_record_by_name($ip);
+            try
+            {
+                $this->records[$ip] = $this->getAdapter()->geoip_record_by_name($ip);
+            }
+            catch (\Exception $exception)
+            {
+                $this->records[$ip] = array();
+            }
         }
 
         return $this->records[$ip];

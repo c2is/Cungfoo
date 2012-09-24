@@ -7,3 +7,13 @@
         </div>
     </div>
 </form>
+
+{# Require tempsTrajetSearchForm form element#}
+<form action="{{ path(app.request.get('_route')) }}" method="post">
+    {{ form_widget(tempsTrajetSearchForm) }}
+    <div class="form-actions">
+        <div class="btn-toolbar">
+            <button type="submit" class="btn btn-primary" style="margin-bottom: -5px">{{ "date_search.button.submit" | trans }}</button>
+        </div>
+    </div>
+</form>
