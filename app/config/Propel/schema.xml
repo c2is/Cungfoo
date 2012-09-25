@@ -416,4 +416,27 @@
             <parameter name="crud_prefix" value="/points-interet" />
         </behavior>
     </table>
+
+    <table name="event">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="category" type="varchar" required="true" />
+        <column name="title" type="varchar" required="true" />
+        <column name="str_date" type="varchar" required="true" />
+        <column name="address" type="varchar" required="true" />
+        <column name="address2" type="varchar" required="true" />
+        <column name="zipcode" type="varchar" required="true" />
+        <column name="city" type="varchar" required="true" />
+        <column name="image" type="varchar" required="true" />
+        <column name="priority" type="varchar" required="true" />
+        <behavior name="timestampable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="title" />
+            <parameter name="i18n_columns" value="str_date" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/events" />
+        </behavior>
+    </table>
 </database>

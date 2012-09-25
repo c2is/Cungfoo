@@ -58,3 +58,7 @@ crud:
             prefix: /points-interet
             model: \Cungfoo\Model\PointInteret
             form: \Cungfoo\Form\Type\PointInteretType
+        event:
+            prefix: /events
+            model: \Cungfoo\Model\Event
+            form: \Cungfoo\Form\Type\EventType
