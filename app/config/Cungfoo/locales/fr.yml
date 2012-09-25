@@ -220,3 +220,15 @@ ville.code: Code
 ville.name: Nom
 ville.region: Région
 ville.region.id: Code région
+
+point_interet.crud.create: Création d'un POI
+point_interet.crud.list: Liste des POI
+point_interet.crud.update: Mettre à jour le POI %name%
+point_interet.crud.view: Détails du POI %name%
+point_interet.id: Id
+point_interet.address: Adresse
+point_interet.address2: Adresse 2
+point_interet.zipcode: Code Postal
+point_interet.city: Ville
+point_interet.name: Nom
+point_interet.image: Image

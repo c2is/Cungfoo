@@ -54,3 +54,7 @@ crud:
             prefix: /thematiques
             model: \Cungfoo\Model\Thematique
             form: \Cungfoo\Form\Type\ThematiqueType
+        point_interet:
+            prefix: /points-interet
+            model: \Cungfoo\Model\PointInteret
+            form: \Cungfoo\Form\Type\PointInteretType
