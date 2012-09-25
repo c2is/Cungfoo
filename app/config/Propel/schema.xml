@@ -189,6 +189,20 @@
         </foreign-key>
     </table>
 
+    <table name="etablissement_point_interet" isCrossRef="true">
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+        <column name="point_interet_id" type="integer" primaryKey="true"/>
+        <column name="distance" type="varchar"/>
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="point_interet">
+            <reference local="point_interet_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
     <table name="type_hebergement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />

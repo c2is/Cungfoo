@@ -195,6 +195,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.thematiques',
             'required' => false,
         ));
+        $builder->add('point_interets', 'model', array(
+            'class' => 'Cungfoo\Model\PointInteret',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.point_interets',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(

@@ -12,6 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementPointInteret;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretI18n;
 use Cungfoo\Model\PointInteretPeer;
@@ -43,6 +45,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PointInteretQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method PointInteretQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ *
+ * @method PointInteretQuery leftJoinEtablissementPointInteret($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementPointInteret relation
+ * @method PointInteretQuery rightJoinEtablissementPointInteret($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementPointInteret relation
+ * @method PointInteretQuery innerJoinEtablissementPointInteret($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementPointInteret relation
  *
  * @method PointInteretQuery leftJoinPointInteretI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PointInteretI18n relation
  * @method PointInteretQuery rightJoinPointInteretI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PointInteretI18n relation
@@ -518,6 +524,80 @@ abstract class BasePointInteretQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EtablissementPointInteret object
+     *
+     * @param   EtablissementPointInteret|PropelObjectCollection $etablissementPointInteret  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PointInteretQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementPointInteret($etablissementPointInteret, $comparison = null)
+    {
+        if ($etablissementPointInteret instanceof EtablissementPointInteret) {
+            return $this
+                ->addUsingAlias(PointInteretPeer::ID, $etablissementPointInteret->getPointInteretId(), $comparison);
+        } elseif ($etablissementPointInteret instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementPointInteretQuery()
+                ->filterByPrimaryKeys($etablissementPointInteret->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementPointInteret() only accepts arguments of type EtablissementPointInteret or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementPointInteret relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function joinEtablissementPointInteret($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementPointInteret');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementPointInteret');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementPointInteret relation EtablissementPointInteret object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementPointInteretQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementPointInteretQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinEtablissementPointInteret($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementPointInteret', '\Cungfoo\Model\EtablissementPointInteretQuery');
+    }
+
+    /**
      * Filter the query by a related PointInteretI18n object
      *
      * @param   PointInteretI18n|PropelObjectCollection $pointInteretI18n  the related object to use as filter
@@ -589,6 +669,23 @@ abstract class BasePointInteretQuery extends ModelCriteria
         return $this
             ->joinPointInteretI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'PointInteretI18n', '\Cungfoo\Model\PointInteretI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     * using the etablissement_point_interet table as cross reference
+     *
+     * @param   Etablissement $etablissement the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useEtablissementPointInteretQuery()
+            ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
     }
 
     /**

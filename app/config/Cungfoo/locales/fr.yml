@@ -97,6 +97,7 @@ etablissement.crud.view: Détails de l'établissement %name%
 etablissement.destinations: Liste des destinations
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
+etablissement.point_interets: Liste des POI
 etablissement.fax: Fax
 etablissement.id: Id
 etablissement.code: Code

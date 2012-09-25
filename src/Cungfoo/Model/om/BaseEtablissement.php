@@ -33,6 +33,8 @@ use Cungfoo\Model\EtablissementDestinationQuery;
 use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementI18nQuery;
 use Cungfoo\Model\EtablissementPeer;
+use Cungfoo\Model\EtablissementPointInteret;
+use Cungfoo\Model\EtablissementPointInteretQuery;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementServiceComplementaire;
 use Cungfoo\Model\EtablissementServiceComplementaireQuery;
@@ -42,6 +44,8 @@ use Cungfoo\Model\EtablissementThematique;
 use Cungfoo\Model\EtablissementThematiqueQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
+use Cungfoo\Model\PointInteret;
+use Cungfoo\Model\PointInteretQuery;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireQuery;
 use Cungfoo\Model\SituationGeographique;
@@ -260,6 +264,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementThematiquesPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementPointInteret[] Collection to store aggregation of EtablissementPointInteret objects.
+     */
+    protected $collEtablissementPointInterets;
+    protected $collEtablissementPointInteretsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -299,6 +309,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Thematique[] Collection to store aggregation of Thematique objects.
      */
     protected $collThematiques;
+
+    /**
+     * @var        PropelObjectCollection|PointInteret[] Collection to store aggregation of PointInteret objects.
+     */
+    protected $collPointInterets;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -374,6 +389,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $pointInteretsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -411,6 +432,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementThematiquesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementPointInteretsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1338,6 +1365,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementThematiques = null;
 
+            $this->collEtablissementPointInterets = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1347,6 +1376,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collSituationGeographiques = null;
             $this->collBaignades = null;
             $this->collThematiques = null;
+            $this->collPointInterets = null;
         } // if (deep)
     }
 
@@ -1641,6 +1671,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->pointInteretsScheduledForDeletion !== null) {
+                if (!$this->pointInteretsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->pointInteretsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    EtablissementPointInteretQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->pointInteretsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getPointInterets() as $pointInteret) {
+                    if ($pointInteret->isModified()) {
+                        $pointInteret->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -1754,6 +1804,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementThematiques !== null) {
                 foreach ($this->collEtablissementThematiques as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementPointInteretsScheduledForDeletion !== null) {
+                if (!$this->etablissementPointInteretsScheduledForDeletion->isEmpty()) {
+                    EtablissementPointInteretQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementPointInteretsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementPointInteretsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementPointInterets !== null) {
+                foreach ($this->collEtablissementPointInterets as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -2113,6 +2180,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementPointInterets !== null) {
+                    foreach ($this->collEtablissementPointInterets as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2297,6 +2372,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementThematiques) {
                 $result['EtablissementThematiques'] = $this->collEtablissementThematiques->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementPointInterets) {
+                $result['EtablissementPointInterets'] = $this->collEtablissementPointInterets->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2608,6 +2686,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getEtablissementPointInterets() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementPointInteret($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2797,6 +2881,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementThematique' == $relationName) {
             $this->initEtablissementThematiques();
+        }
+        if ('EtablissementPointInteret' == $relationName) {
+            $this->initEtablissementPointInterets();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -4428,6 +4515,238 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementPointInterets collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementPointInterets()
+     */
+    public function clearEtablissementPointInterets()
+    {
+        $this->collEtablissementPointInterets = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementPointInteretsPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementPointInterets collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementPointInterets($v = true)
+    {
+        $this->collEtablissementPointInteretsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementPointInterets collection.
+     *
+     * By default this just sets the collEtablissementPointInterets collection to an empty array (like clearcollEtablissementPointInterets());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementPointInterets($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementPointInterets && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementPointInterets = new PropelObjectCollection();
+        $this->collEtablissementPointInterets->setModel('EtablissementPointInteret');
+    }
+
+    /**
+     * Gets an array of EtablissementPointInteret objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementPointInteret[] List of EtablissementPointInteret objects
+     * @throws PropelException
+     */
+    public function getEtablissementPointInterets($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementPointInteretsPartial && !$this->isNew();
+        if (null === $this->collEtablissementPointInterets || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementPointInterets) {
+                // return empty collection
+                $this->initEtablissementPointInterets();
+            } else {
+                $collEtablissementPointInterets = EtablissementPointInteretQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementPointInteretsPartial && count($collEtablissementPointInterets)) {
+                      $this->initEtablissementPointInterets(false);
+
+                      foreach($collEtablissementPointInterets as $obj) {
+                        if (false == $this->collEtablissementPointInterets->contains($obj)) {
+                          $this->collEtablissementPointInterets->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementPointInteretsPartial = true;
+                    }
+
+                    return $collEtablissementPointInterets;
+                }
+
+                if($partial && $this->collEtablissementPointInterets) {
+                    foreach($this->collEtablissementPointInterets as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementPointInterets[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementPointInterets = $collEtablissementPointInterets;
+                $this->collEtablissementPointInteretsPartial = false;
+            }
+        }
+
+        return $this->collEtablissementPointInterets;
+    }
+
+    /**
+     * Sets a collection of EtablissementPointInteret objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementPointInterets A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementPointInterets(PropelCollection $etablissementPointInterets, PropelPDO $con = null)
+    {
+        $this->etablissementPointInteretsScheduledForDeletion = $this->getEtablissementPointInterets(new Criteria(), $con)->diff($etablissementPointInterets);
+
+        foreach ($this->etablissementPointInteretsScheduledForDeletion as $etablissementPointInteretRemoved) {
+            $etablissementPointInteretRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementPointInterets = null;
+        foreach ($etablissementPointInterets as $etablissementPointInteret) {
+            $this->addEtablissementPointInteret($etablissementPointInteret);
+        }
+
+        $this->collEtablissementPointInterets = $etablissementPointInterets;
+        $this->collEtablissementPointInteretsPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementPointInteret objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementPointInteret objects.
+     * @throws PropelException
+     */
+    public function countEtablissementPointInterets(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementPointInteretsPartial && !$this->isNew();
+        if (null === $this->collEtablissementPointInterets || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementPointInterets) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementPointInterets());
+                }
+                $query = EtablissementPointInteretQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementPointInterets);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementPointInteret object to this object
+     * through the EtablissementPointInteret foreign key attribute.
+     *
+     * @param    EtablissementPointInteret $l EtablissementPointInteret
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementPointInteret(EtablissementPointInteret $l)
+    {
+        if ($this->collEtablissementPointInterets === null) {
+            $this->initEtablissementPointInterets();
+            $this->collEtablissementPointInteretsPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementPointInterets->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementPointInteret($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementPointInteret $etablissementPointInteret The etablissementPointInteret object to add.
+     */
+    protected function doAddEtablissementPointInteret($etablissementPointInteret)
+    {
+        $this->collEtablissementPointInterets[]= $etablissementPointInteret;
+        $etablissementPointInteret->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementPointInteret $etablissementPointInteret The etablissementPointInteret object to remove.
+     */
+    public function removeEtablissementPointInteret($etablissementPointInteret)
+    {
+        if ($this->getEtablissementPointInterets()->contains($etablissementPointInteret)) {
+            $this->collEtablissementPointInterets->remove($this->collEtablissementPointInterets->search($etablissementPointInteret));
+            if (null === $this->etablissementPointInteretsScheduledForDeletion) {
+                $this->etablissementPointInteretsScheduledForDeletion = clone $this->collEtablissementPointInterets;
+                $this->etablissementPointInteretsScheduledForDeletion->clear();
+            }
+            $this->etablissementPointInteretsScheduledForDeletion[]= $etablissementPointInteret;
+            $etablissementPointInteret->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementPointInterets from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|EtablissementPointInteret[] List of EtablissementPointInteret objects
+     */
+    public function getEtablissementPointInteretsJoinPointInteret($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementPointInteretQuery::create(null, $criteria);
+        $query->joinWith('PointInteret', $join_behavior);
+
+        return $this->getEtablissementPointInterets($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -5815,6 +6134,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collPointInterets collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPointInterets()
+     */
+    public function clearPointInterets()
+    {
+        $this->collPointInterets = null; // important to set this to null since that means it is uninitialized
+        $this->collPointInteretsPartial = null;
+    }
+
+    /**
+     * Initializes the collPointInterets collection.
+     *
+     * By default this just sets the collPointInterets collection to an empty collection (like clearPointInterets());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initPointInterets()
+    {
+        $this->collPointInterets = new PropelObjectCollection();
+        $this->collPointInterets->setModel('PointInteret');
+    }
+
+    /**
+     * Gets a collection of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_point_interet cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|PointInteret[] List of PointInteret objects
+     */
+    public function getPointInterets($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collPointInterets || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPointInterets) {
+                // return empty collection
+                $this->initPointInterets();
+            } else {
+                $collPointInterets = PointInteretQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collPointInterets;
+                }
+                $this->collPointInterets = $collPointInterets;
+            }
+        }
+
+        return $this->collPointInterets;
+    }
+
+    /**
+     * Sets a collection of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_point_interet cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $pointInterets A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setPointInterets(PropelCollection $pointInterets, PropelPDO $con = null)
+    {
+        $this->clearPointInterets();
+        $currentPointInterets = $this->getPointInterets();
+
+        $this->pointInteretsScheduledForDeletion = $currentPointInterets->diff($pointInterets);
+
+        foreach ($pointInterets as $pointInteret) {
+            if (!$currentPointInterets->contains($pointInteret)) {
+                $this->doAddPointInteret($pointInteret);
+            }
+        }
+
+        $this->collPointInterets = $pointInterets;
+    }
+
+    /**
+     * Gets the number of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_point_interet cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related PointInteret objects
+     */
+    public function countPointInterets($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collPointInterets || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPointInterets) {
+                return 0;
+            } else {
+                $query = PointInteretQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPointInterets);
+        }
+    }
+
+    /**
+     * Associate a PointInteret object to this object
+     * through the etablissement_point_interet cross reference table.
+     *
+     * @param  PointInteret $pointInteret The EtablissementPointInteret object to relate
+     * @return void
+     */
+    public function addPointInteret(PointInteret $pointInteret)
+    {
+        if ($this->collPointInterets === null) {
+            $this->initPointInterets();
+        }
+        if (!$this->collPointInterets->contains($pointInteret)) { // only add it if the **same** object is not already associated
+            $this->doAddPointInteret($pointInteret);
+
+            $this->collPointInterets[]= $pointInteret;
+        }
+    }
+
+    /**
+     * @param	PointInteret $pointInteret The pointInteret object to add.
+     */
+    protected function doAddPointInteret($pointInteret)
+    {
+        $etablissementPointInteret = new EtablissementPointInteret();
+        $etablissementPointInteret->setPointInteret($pointInteret);
+        $this->addEtablissementPointInteret($etablissementPointInteret);
+    }
+
+    /**
+     * Remove a PointInteret object to this object
+     * through the etablissement_point_interet cross reference table.
+     *
+     * @param PointInteret $pointInteret The EtablissementPointInteret object to relate
+     * @return void
+     */
+    public function removePointInteret(PointInteret $pointInteret)
+    {
+        if ($this->getPointInterets()->contains($pointInteret)) {
+            $this->collPointInterets->remove($this->collPointInterets->search($pointInteret));
+            if (null === $this->pointInteretsScheduledForDeletion) {
+                $this->pointInteretsScheduledForDeletion = clone $this->collPointInterets;
+                $this->pointInteretsScheduledForDeletion->clear();
+            }
+            $this->pointInteretsScheduledForDeletion[]= $pointInteret;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -5895,6 +6382,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementPointInterets) {
+                foreach ($this->collEtablissementPointInterets as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -5935,6 +6427,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPointInterets) {
+                foreach ($this->collPointInterets as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
         // i18n behavior
@@ -5969,6 +6466,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementThematiques->clearIterator();
         }
         $this->collEtablissementThematiques = null;
+        if ($this->collEtablissementPointInterets instanceof PropelCollection) {
+            $this->collEtablissementPointInterets->clearIterator();
+        }
+        $this->collEtablissementPointInterets = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -6001,6 +6502,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collThematiques->clearIterator();
         }
         $this->collThematiques = null;
+        if ($this->collPointInterets instanceof PropelCollection) {
+            $this->collPointInterets->clearIterator();
+        }
+        $this->collPointInterets = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }

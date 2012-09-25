@@ -62,6 +62,14 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.image',
             'required' => false,
         ));
+        $builder->add('etablissements', 'model', array(
+            'class' => 'Cungfoo\Model\Etablissement',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'point_interet.etablissements',
+            'required' => false,
+        ));
         $builder->add('point_interetI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PointInteretI18n',
             'languages' => array(
