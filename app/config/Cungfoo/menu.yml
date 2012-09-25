@@ -51,6 +51,9 @@ menu:
               poi:
                   title:  menu.poi
                   route:  point_interet_crud_list
+              event:
+                  title:  menu.event
+                  route:  event_crud_list
         parameter:
             title: menu.parameters
             items:

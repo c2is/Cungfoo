@@ -235,3 +235,18 @@ point_interet.zipcode: Code Postal
 point_interet.city: Ville
 point_interet.name: Nom
 point_interet.image: Image
+
+event.crud.create: Création d'un évènement
+event.crud.list: Liste des évènements
+event.crud.update: Mettre à jour l'évènement %name%
+event.crud.view: Détails de l'évènement %name%
+event.id: Id
+event.category: Catégorie
+event.title: Titre
+event.address: Adresse
+event.address2: Adresse 2
+event.zipcode: Code Postal
+event.city: Ville
+event.image: Image
+event.priority: Priorité
+event.str_date: Date
