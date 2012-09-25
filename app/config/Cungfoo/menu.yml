@@ -45,6 +45,12 @@ menu:
               category_type_hebergement:
                   title:  menu.category_type_hebergement
                   route:  category_type_hebergement_crud_list
+        viafrance:
+            title: menu.viafrance
+            items:
+              poi:
+                  title:  menu.poi
+                  route:  point_interet_crud_list
         parameter:
             title: menu.parameters
             items:

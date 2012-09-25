@@ -145,6 +145,8 @@ menu.service_complementaire: Services complémentaires
 menu.situation_geographique: Situations géographiques
 menu.baignade: Baignades
 menu.thematique: Thématiques
+menu.viafrance: Via France
+menu.poi: POI
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
