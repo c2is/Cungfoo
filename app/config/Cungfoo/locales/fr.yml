@@ -249,4 +249,4 @@ event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
-event.str_date: Date
+event.str.date: Date
