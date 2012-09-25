@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseEvent;
  */
 class Event extends BaseEvent
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }
