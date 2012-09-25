@@ -98,6 +98,7 @@ etablissement.destinations: Liste des destinations
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
 etablissement.point_interets: Liste des POI
+etablissement.events: Liste des évènements
 etablissement.fax: Fax
 etablissement.id: Id
 etablissement.code: Code
@@ -147,6 +148,7 @@ menu.baignade: Baignades
 menu.thematique: Thématiques
 menu.viafrance: Via France
 menu.poi: POI
+menu.event: Evènement
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -249,4 +251,5 @@ event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
-event.str.date: Date
+event.str.date: DateD
+event.str_date: DateD
