@@ -23,6 +23,8 @@ class EventListing extends BaseEventListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('str_date'));
+        $this->removeColumn('image');
     }
 
 } // EventListing
