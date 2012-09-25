@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BasePointInteret;
  */
 class PointInteret extends BasePointInteret
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
