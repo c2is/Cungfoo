@@ -30,6 +30,8 @@ use Cungfoo\Model\EtablissementBaignade;
 use Cungfoo\Model\EtablissementBaignadeQuery;
 use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementDestinationQuery;
+use Cungfoo\Model\EtablissementEvent;
+use Cungfoo\Model\EtablissementEventQuery;
 use Cungfoo\Model\EtablissementI18n;
 use Cungfoo\Model\EtablissementI18nQuery;
 use Cungfoo\Model\EtablissementPeer;
@@ -44,6 +46,8 @@ use Cungfoo\Model\EtablissementThematique;
 use Cungfoo\Model\EtablissementThematiqueQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
+use Cungfoo\Model\Event;
+use Cungfoo\Model\EventQuery;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretQuery;
 use Cungfoo\Model\ServiceComplementaire;
@@ -270,6 +274,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementPointInteretsPartial;
 
     /**
+     * @var        PropelObjectCollection|EtablissementEvent[] Collection to store aggregation of EtablissementEvent objects.
+     */
+    protected $collEtablissementEvents;
+    protected $collEtablissementEventsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -314,6 +324,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|PointInteret[] Collection to store aggregation of PointInteret objects.
      */
     protected $collPointInterets;
+
+    /**
+     * @var        PropelObjectCollection|Event[] Collection to store aggregation of Event objects.
+     */
+    protected $collEvents;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -395,6 +410,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $eventsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -438,6 +459,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementPointInteretsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementEventsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1367,6 +1394,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementPointInterets = null;
 
+            $this->collEtablissementEvents = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1377,6 +1406,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collBaignades = null;
             $this->collThematiques = null;
             $this->collPointInterets = null;
+            $this->collEvents = null;
         } // if (deep)
     }
 
@@ -1691,6 +1721,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->eventsScheduledForDeletion !== null) {
+                if (!$this->eventsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->eventsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    EtablissementEventQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->eventsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getEvents() as $event) {
+                    if ($event->isModified()) {
+                        $event->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -1821,6 +1871,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             if ($this->collEtablissementPointInterets !== null) {
                 foreach ($this->collEtablissementPointInterets as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementEventsScheduledForDeletion !== null) {
+                if (!$this->etablissementEventsScheduledForDeletion->isEmpty()) {
+                    EtablissementEventQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementEventsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementEventsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementEvents !== null) {
+                foreach ($this->collEtablissementEvents as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -2188,6 +2255,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collEtablissementEvents !== null) {
+                    foreach ($this->collEtablissementEvents as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2375,6 +2450,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementPointInterets) {
                 $result['EtablissementPointInterets'] = $this->collEtablissementPointInterets->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementEvents) {
+                $result['EtablissementEvents'] = $this->collEtablissementEvents->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2692,6 +2770,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getEtablissementEvents() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementEvent($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2884,6 +2968,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementPointInteret' == $relationName) {
             $this->initEtablissementPointInterets();
+        }
+        if ('EtablissementEvent' == $relationName) {
+            $this->initEtablissementEvents();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -4747,6 +4834,238 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEtablissementEvents collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEtablissementEvents()
+     */
+    public function clearEtablissementEvents()
+    {
+        $this->collEtablissementEvents = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementEventsPartial = null;
+    }
+
+    /**
+     * reset is the collEtablissementEvents collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementEvents($v = true)
+    {
+        $this->collEtablissementEventsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementEvents collection.
+     *
+     * By default this just sets the collEtablissementEvents collection to an empty array (like clearcollEtablissementEvents());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementEvents($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementEvents && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementEvents = new PropelObjectCollection();
+        $this->collEtablissementEvents->setModel('EtablissementEvent');
+    }
+
+    /**
+     * Gets an array of EtablissementEvent objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementEvent[] List of EtablissementEvent objects
+     * @throws PropelException
+     */
+    public function getEtablissementEvents($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementEventsPartial && !$this->isNew();
+        if (null === $this->collEtablissementEvents || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementEvents) {
+                // return empty collection
+                $this->initEtablissementEvents();
+            } else {
+                $collEtablissementEvents = EtablissementEventQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementEventsPartial && count($collEtablissementEvents)) {
+                      $this->initEtablissementEvents(false);
+
+                      foreach($collEtablissementEvents as $obj) {
+                        if (false == $this->collEtablissementEvents->contains($obj)) {
+                          $this->collEtablissementEvents->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementEventsPartial = true;
+                    }
+
+                    return $collEtablissementEvents;
+                }
+
+                if($partial && $this->collEtablissementEvents) {
+                    foreach($this->collEtablissementEvents as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementEvents[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementEvents = $collEtablissementEvents;
+                $this->collEtablissementEventsPartial = false;
+            }
+        }
+
+        return $this->collEtablissementEvents;
+    }
+
+    /**
+     * Sets a collection of EtablissementEvent objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementEvents A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEtablissementEvents(PropelCollection $etablissementEvents, PropelPDO $con = null)
+    {
+        $this->etablissementEventsScheduledForDeletion = $this->getEtablissementEvents(new Criteria(), $con)->diff($etablissementEvents);
+
+        foreach ($this->etablissementEventsScheduledForDeletion as $etablissementEventRemoved) {
+            $etablissementEventRemoved->setEtablissement(null);
+        }
+
+        $this->collEtablissementEvents = null;
+        foreach ($etablissementEvents as $etablissementEvent) {
+            $this->addEtablissementEvent($etablissementEvent);
+        }
+
+        $this->collEtablissementEvents = $etablissementEvents;
+        $this->collEtablissementEventsPartial = false;
+    }
+
+    /**
+     * Returns the number of related EtablissementEvent objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementEvent objects.
+     * @throws PropelException
+     */
+    public function countEtablissementEvents(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementEventsPartial && !$this->isNew();
+        if (null === $this->collEtablissementEvents || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementEvents) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementEvents());
+                }
+                $query = EtablissementEventQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEtablissementEvents);
+        }
+    }
+
+    /**
+     * Method called to associate a EtablissementEvent object to this object
+     * through the EtablissementEvent foreign key attribute.
+     *
+     * @param    EtablissementEvent $l EtablissementEvent
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementEvent(EtablissementEvent $l)
+    {
+        if ($this->collEtablissementEvents === null) {
+            $this->initEtablissementEvents();
+            $this->collEtablissementEventsPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementEvents->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementEvent($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementEvent $etablissementEvent The etablissementEvent object to add.
+     */
+    protected function doAddEtablissementEvent($etablissementEvent)
+    {
+        $this->collEtablissementEvents[]= $etablissementEvent;
+        $etablissementEvent->setEtablissement($this);
+    }
+
+    /**
+     * @param	EtablissementEvent $etablissementEvent The etablissementEvent object to remove.
+     */
+    public function removeEtablissementEvent($etablissementEvent)
+    {
+        if ($this->getEtablissementEvents()->contains($etablissementEvent)) {
+            $this->collEtablissementEvents->remove($this->collEtablissementEvents->search($etablissementEvent));
+            if (null === $this->etablissementEventsScheduledForDeletion) {
+                $this->etablissementEventsScheduledForDeletion = clone $this->collEtablissementEvents;
+                $this->etablissementEventsScheduledForDeletion->clear();
+            }
+            $this->etablissementEventsScheduledForDeletion[]= $etablissementEvent;
+            $etablissementEvent->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementEvents from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|EtablissementEvent[] List of EtablissementEvent objects
+     */
+    public function getEtablissementEventsJoinEvent($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementEventQuery::create(null, $criteria);
+        $query->joinWith('Event', $join_behavior);
+
+        return $this->getEtablissementEvents($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -6302,6 +6621,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collEvents collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addEvents()
+     */
+    public function clearEvents()
+    {
+        $this->collEvents = null; // important to set this to null since that means it is uninitialized
+        $this->collEventsPartial = null;
+    }
+
+    /**
+     * Initializes the collEvents collection.
+     *
+     * By default this just sets the collEvents collection to an empty collection (like clearEvents());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initEvents()
+    {
+        $this->collEvents = new PropelObjectCollection();
+        $this->collEvents->setModel('Event');
+    }
+
+    /**
+     * Gets a collection of Event objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_event cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Event[] List of Event objects
+     */
+    public function getEvents($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collEvents || null !== $criteria) {
+            if ($this->isNew() && null === $this->collEvents) {
+                // return empty collection
+                $this->initEvents();
+            } else {
+                $collEvents = EventQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collEvents;
+                }
+                $this->collEvents = $collEvents;
+            }
+        }
+
+        return $this->collEvents;
+    }
+
+    /**
+     * Sets a collection of Event objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_event cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $events A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setEvents(PropelCollection $events, PropelPDO $con = null)
+    {
+        $this->clearEvents();
+        $currentEvents = $this->getEvents();
+
+        $this->eventsScheduledForDeletion = $currentEvents->diff($events);
+
+        foreach ($events as $event) {
+            if (!$currentEvents->contains($event)) {
+                $this->doAddEvent($event);
+            }
+        }
+
+        $this->collEvents = $events;
+    }
+
+    /**
+     * Gets the number of Event objects related by a many-to-many relationship
+     * to the current object by way of the etablissement_event cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Event objects
+     */
+    public function countEvents($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collEvents || null !== $criteria) {
+            if ($this->isNew() && null === $this->collEvents) {
+                return 0;
+            } else {
+                $query = EventQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEvents);
+        }
+    }
+
+    /**
+     * Associate a Event object to this object
+     * through the etablissement_event cross reference table.
+     *
+     * @param  Event $event The EtablissementEvent object to relate
+     * @return void
+     */
+    public function addEvent(Event $event)
+    {
+        if ($this->collEvents === null) {
+            $this->initEvents();
+        }
+        if (!$this->collEvents->contains($event)) { // only add it if the **same** object is not already associated
+            $this->doAddEvent($event);
+
+            $this->collEvents[]= $event;
+        }
+    }
+
+    /**
+     * @param	Event $event The event object to add.
+     */
+    protected function doAddEvent($event)
+    {
+        $etablissementEvent = new EtablissementEvent();
+        $etablissementEvent->setEvent($event);
+        $this->addEtablissementEvent($etablissementEvent);
+    }
+
+    /**
+     * Remove a Event object to this object
+     * through the etablissement_event cross reference table.
+     *
+     * @param Event $event The EtablissementEvent object to relate
+     * @return void
+     */
+    public function removeEvent(Event $event)
+    {
+        if ($this->getEvents()->contains($event)) {
+            $this->collEvents->remove($this->collEvents->search($event));
+            if (null === $this->eventsScheduledForDeletion) {
+                $this->eventsScheduledForDeletion = clone $this->collEvents;
+                $this->eventsScheduledForDeletion->clear();
+            }
+            $this->eventsScheduledForDeletion[]= $event;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -6387,6 +6874,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEtablissementEvents) {
+                foreach ($this->collEtablissementEvents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -6432,6 +6924,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collEvents) {
+                foreach ($this->collEvents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
         // i18n behavior
@@ -6470,6 +6967,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementPointInterets->clearIterator();
         }
         $this->collEtablissementPointInterets = null;
+        if ($this->collEtablissementEvents instanceof PropelCollection) {
+            $this->collEtablissementEvents->clearIterator();
+        }
+        $this->collEtablissementEvents = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -6506,6 +7007,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collPointInterets->clearIterator();
         }
         $this->collPointInterets = null;
+        if ($this->collEvents instanceof PropelCollection) {
+            $this->collEvents->clearIterator();
+        }
+        $this->collEvents = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }

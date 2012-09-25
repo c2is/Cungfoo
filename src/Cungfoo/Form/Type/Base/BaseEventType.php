@@ -83,6 +83,14 @@ class BaseEventType extends AppAwareType
             'label' => 'event.priority',
             'required' => false,
         ));
+        $builder->add('etablissements', 'model', array(
+            'class' => 'Cungfoo\Model\Etablissement',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'event.etablissements',
+            'required' => false,
+        ));
         $builder->add('eventI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EventI18n',
             'languages' => array(

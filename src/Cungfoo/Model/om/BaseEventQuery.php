@@ -12,6 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementEvent;
 use Cungfoo\Model\Event;
 use Cungfoo\Model\EventI18n;
 use Cungfoo\Model\EventPeer;
@@ -49,6 +51,10 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EventQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method EventQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ *
+ * @method EventQuery leftJoinEtablissementEvent($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementEvent relation
+ * @method EventQuery rightJoinEtablissementEvent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementEvent relation
+ * @method EventQuery innerJoinEtablissementEvent($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementEvent relation
  *
  * @method EventQuery leftJoinEventI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EventI18n relation
  * @method EventQuery rightJoinEventI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EventI18n relation
@@ -617,6 +623,80 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EtablissementEvent object
+     *
+     * @param   EtablissementEvent|PropelObjectCollection $etablissementEvent  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EventQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementEvent($etablissementEvent, $comparison = null)
+    {
+        if ($etablissementEvent instanceof EtablissementEvent) {
+            return $this
+                ->addUsingAlias(EventPeer::ID, $etablissementEvent->getEventId(), $comparison);
+        } elseif ($etablissementEvent instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementEventQuery()
+                ->filterByPrimaryKeys($etablissementEvent->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementEvent() only accepts arguments of type EtablissementEvent or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementEvent relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function joinEtablissementEvent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementEvent');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementEvent');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementEvent relation EtablissementEvent object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementEventQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementEventQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinEtablissementEvent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementEvent', '\Cungfoo\Model\EtablissementEventQuery');
+    }
+
+    /**
      * Filter the query by a related EventI18n object
      *
      * @param   EventI18n|PropelObjectCollection $eventI18n  the related object to use as filter
@@ -688,6 +768,23 @@ abstract class BaseEventQuery extends ModelCriteria
         return $this
             ->joinEventI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'EventI18n', '\Cungfoo\Model\EventI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     * using the etablissement_event table as cross reference
+     *
+     * @param   Etablissement $etablissement the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EventQuery The current query, for fluid interface
+     */
+    public function filterByEtablissement($etablissement, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useEtablissementEventQuery()
+            ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
     }
 
     /**

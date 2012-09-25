@@ -203,6 +203,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.point_interets',
             'required' => false,
         ));
+        $builder->add('events', 'model', array(
+            'class' => 'Cungfoo\Model\Event',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.events',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(
