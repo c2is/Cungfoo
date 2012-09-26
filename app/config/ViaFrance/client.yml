@@ -1,0 +1,38 @@
+services:
+    event:
+        base: http://webservices.viafrance.com
+        resource: /geteventlist.aspx
+        parameters:
+            ckid: 00194DA106
+            html: no
+            showcountmax: yes
+            fromrownum: 1
+            torownum: 4
+            sort: evtpermanent;evtpriorite;evtenddate
+            desc: yes
+            desclen: 150
+            separatestick: yes
+            place: yes
+            showdeptreg: yes
+            showqualifiers: yes
+            showpublic: yes
+            xyf: 1
+            r: 30000
+            showdistancexy: yes
+    poi:
+        base: http://webservices.viafrance.com
+        resource: /getplacelist.aspx
+        parameters:
+            ckid: 00194DA106
+            category: 1;2;3;4;5;7;8;9;10;11;12;13
+            html: no
+            fromrownum: 1
+            torownum: 4
+            random: no
+            stickflag: yes
+            withsubcategory: yes
+            withleadingpointview: yes
+            withxy: yes
+            showdeptreg: yes
+            xyf: 1
+            r: 30000
