@@ -11,8 +11,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 38 06 56'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 4
         CategorieId: null
         GeoCoordinateX: '46.791528'
@@ -30,8 +30,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 90 61'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 12
         CategorieId: null
         GeoCoordinateX: '43.433152'
@@ -49,8 +49,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 87 03 88'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 13
         CategorieId: null
         GeoCoordinateX: '44.407452'
@@ -68,8 +68,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 25'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '41.9409043'
@@ -87,8 +87,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 82 63 48 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '40.2457632'
@@ -106,8 +106,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 85 05 84'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 6
         CategorieId: null
         GeoCoordinateX: '47.875568'
@@ -125,8 +125,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 86 12 87'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '45.573436'
@@ -144,8 +144,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 96 76 12'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '42.546214'
@@ -163,8 +163,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 50 18 13'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.716275'
@@ -182,8 +182,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 36 68 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 106
         CategorieId: 3
         GeoCoordinateX: '43.798959'
@@ -201,8 +201,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 43 80 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.433152'
@@ -220,8 +220,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 90 29 44'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.597772'
@@ -239,8 +239,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 83 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.37055'
@@ -258,8 +258,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 09 37 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.72835'
@@ -277,8 +277,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 15 03 72'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.0756609'
@@ -296,8 +296,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 85 65'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '45.776496'
@@ -315,8 +315,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 88 70 26'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.978418'
@@ -334,8 +334,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 32 11 40'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.546214'
@@ -353,8 +353,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 55 25'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.61783'
@@ -372,8 +372,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 21 54 71'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '42.78773'
@@ -391,8 +391,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 06 13 61'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '47.835925'
@@ -410,8 +410,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 37 10 44'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.978459'
@@ -429,8 +429,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 50 68 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: null
@@ -448,8 +448,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 65 39'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.490557'
@@ -467,8 +467,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 95 41 42'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.439236'
@@ -486,8 +486,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 58 98'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.010314'
@@ -505,8 +505,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 80 11'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.81466'
@@ -524,8 +524,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 03 26 53'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.033876'
@@ -543,8 +543,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.8467181'
@@ -562,8 +562,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 60 39'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.791528'
@@ -581,8 +581,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 91 82'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.439236'
@@ -600,8 +600,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 78 00 16'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 4
         GeoCoordinateX: '41.6742739'
@@ -619,8 +619,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 84 61 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.78773'
@@ -638,8 +638,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 35 46 23'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.4799637'
@@ -657,8 +657,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 95 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.216488'
@@ -676,8 +676,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 60 43'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.546214'
@@ -695,8 +695,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 59 02 51'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.120541'
@@ -714,8 +714,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -733,8 +733,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 50 29 78'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 15
         CategorieId: 3
         GeoCoordinateX: '43.4255939'
@@ -752,8 +752,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -771,8 +771,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -790,8 +790,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -809,8 +809,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -828,8 +828,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -847,8 +847,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -866,8 +866,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -885,8 +885,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -904,8 +904,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -923,8 +923,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -942,8 +942,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 05 65 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.186048'
@@ -961,8 +961,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -980,8 +980,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -999,8 +999,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1018,8 +1018,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1037,8 +1037,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1056,8 +1056,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1075,8 +1075,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1094,8 +1094,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1113,8 +1113,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1132,8 +1132,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1151,8 +1151,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 35 10 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 77
         CategorieId: 1
         GeoCoordinateX: '46.536402'
@@ -1170,8 +1170,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1189,8 +1189,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1208,8 +1208,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1227,8 +1227,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1246,8 +1246,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1265,8 +1265,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1284,8 +1284,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1303,8 +1303,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1322,8 +1322,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1341,8 +1341,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1360,8 +1360,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 79 49 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 57
         CategorieId: 2
         GeoCoordinateX: '47.347009'
@@ -1379,8 +1379,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1398,8 +1398,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1417,8 +1417,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1436,8 +1436,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1455,8 +1455,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -1474,8 +1474,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 37 65'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 4
         GeoCoordinateX: '46.720204'
@@ -1493,8 +1493,8 @@
         Phone1: ''
         Phone2: '06 32 12 14 52'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 126
         CategorieId: 1
         GeoCoordinateX: '45.3569389'
@@ -1512,8 +1512,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 28 72 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '47.285448'
@@ -1531,8 +1531,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 29 64 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '46.720204'
@@ -1550,8 +1550,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 58 15'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.6400409'
@@ -1569,8 +1569,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 74 90 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '46.791528'
@@ -1588,8 +1588,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '05 53 29 68 06'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 1
         CategorieId: null
         GeoCoordinateX: '44.936'
@@ -1607,8 +1607,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 36 81 43'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.75444'
@@ -1626,8 +1626,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 87 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 16
         CategorieId: 3
         GeoCoordinateX: '44.427565'
@@ -1645,8 +1645,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 87 37 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '43.312455'
@@ -1664,8 +1664,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 86 74 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '44.744816'
@@ -1683,8 +1683,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 48 40 97'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.2582587'
@@ -1702,8 +1702,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 84 26 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.0519544'
@@ -1721,8 +1721,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 78 90 05'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '44.235174'
@@ -1740,8 +1740,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 81 93 15 46'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.312489'
@@ -1759,8 +1759,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 82 07 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '46.6057'
@@ -1778,8 +1778,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 05 51 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '45.981425'
@@ -1797,8 +1797,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 67 66 11'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.61783'
@@ -1816,8 +1816,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 30 54 83'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '48.632091'
@@ -1835,8 +1835,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 07 87 55'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '47.115491'
@@ -1854,8 +1854,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 53 93 18'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.855269'
@@ -1873,8 +1873,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 72 69 45 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.95512'
@@ -1892,8 +1892,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 50 23 63'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '47.482133'
@@ -1911,8 +1911,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 13 14 12'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '42.546214'
@@ -1930,8 +1930,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 18 78 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '45.186089'
@@ -1949,8 +1949,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 59 92 01'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '45.333533'
@@ -1968,8 +1968,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 19 17 93 60'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 5
         GeoCoordinateX: '41.591369'
@@ -1987,8 +1987,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 89 95 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.697777'
@@ -2006,8 +2006,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 90 80 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 2
         CategorieId: 3
         GeoCoordinateX: '43.312489'
@@ -2025,8 +2025,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 35 50 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '47.819167'
@@ -2044,8 +2044,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 99 85 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.069676'
@@ -2063,8 +2063,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 10 56 26'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '47.4805375'
@@ -2082,8 +2082,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 97 10 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '45.978418'
@@ -2101,8 +2101,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 47 65 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '44.446962'
@@ -2120,8 +2120,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 82 63 94 46'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 120
         CategorieId: 2
         GeoCoordinateX: '47.584693'
@@ -2139,8 +2139,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 55 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '44.395943'
@@ -2158,8 +2158,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 24 68 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '47.328003'
@@ -2177,8 +2177,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 94 55 67 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.274308'
@@ -2196,8 +2196,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 82 84 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '44.551115'
@@ -2215,8 +2215,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 47 89 48 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 123
         CategorieId: 3
         GeoCoordinateX: '45.885588'
@@ -2234,8 +2234,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 27 84 72'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.8462419'
@@ -2253,8 +2253,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 93 31 47'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.75444'
@@ -2272,8 +2272,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 76 60 51 67'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.567296'
@@ -2291,8 +2291,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 86 18 05'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.795454'
@@ -2310,8 +2310,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 43 10 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.242573'
@@ -2329,8 +2329,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 37 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '49.320257'
@@ -2348,8 +2348,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 23'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
         GeoCoordinateX: '43.724391'
@@ -2367,8 +2367,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 25 40 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.706091'
@@ -2386,8 +2386,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 59 79 02'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.580418'
@@ -2405,8 +2405,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 32 03 35'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '42.546214'
@@ -2424,8 +2424,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 53 71 93 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 124
         CategorieId: 2
         GeoCoordinateX: '44.452912'
@@ -2443,8 +2443,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 07 71 22'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '44.452912'
@@ -2462,8 +2462,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 92 14 76'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '47.667176'
@@ -2481,8 +2481,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 45 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.033306'
@@ -2500,8 +2500,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 86 52 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.781593'
@@ -2519,8 +2519,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 58 96'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.223107'
@@ -2538,8 +2538,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 80 31 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.439236'
@@ -2557,8 +2557,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 72 05 07 05 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '44.372609'
@@ -2576,8 +2576,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 87 60 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '41.8467643'
@@ -2595,8 +2595,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 62 08'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.344059'
@@ -2614,8 +2614,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 85 80 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.721683'
@@ -2633,8 +2633,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 75 21 85 30'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '44.6953419'
@@ -2652,8 +2652,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 31 87 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '45.123826'
@@ -2671,8 +2671,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 45 61 81 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '43.68218'
@@ -2690,8 +2690,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '00351 244 821 071'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.3836559'
@@ -2709,8 +2709,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 93 08'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.483615'
@@ -2728,8 +2728,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 94 63 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.81466'
@@ -2747,8 +2747,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 89 43 67'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '46.536402'
@@ -2766,8 +2766,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 82 07 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.466102'
@@ -2785,8 +2785,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '05 61 64 69 14'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.720254'
@@ -2804,8 +2804,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 98 66 38'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: null
@@ -2823,8 +2823,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 97 27 38'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.515125'
@@ -2842,8 +2842,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 66 53 20 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.537476'
@@ -2861,8 +2861,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 70 01 85'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.546214'
@@ -2880,8 +2880,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 83 80 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: null
@@ -2899,8 +2899,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 29 48 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '43.282801'
@@ -2918,8 +2918,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 43 97 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.586323'
@@ -2937,8 +2937,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 35 15 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '41.9712149'
@@ -2956,8 +2956,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 32 31 70'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '42.78773'
@@ -2975,8 +2975,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 90 03 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.408889'
@@ -2994,8 +2994,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 07 68 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.439236'
@@ -3013,8 +3013,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 69 93 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.692694'
@@ -3032,8 +3032,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 91 01 83'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 125
         CategorieId: 2
         GeoCoordinateX: '40.8850733'
@@ -3051,8 +3051,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 58 02 09'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.2071759'
@@ -3070,8 +3070,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 23 78 03'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '44.893626'
@@ -3089,8 +3089,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 28 61 70'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '45.515125'
@@ -3108,8 +3108,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 68 01 28'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '43.528906'
@@ -3127,8 +3127,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 79 25 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
         GeoCoordinateX: '43.567595'
@@ -3146,8 +3146,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 94 43 84'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.767088'
@@ -3165,8 +3165,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 27 19'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '44.452912'
@@ -3184,8 +3184,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 08 54 21'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '45.001378'
@@ -3203,8 +3203,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 93 49'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
         GeoCoordinateX: '43.112328'
@@ -3222,8 +3222,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 83 65 13'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '48.629668'
@@ -3241,8 +3241,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -3260,8 +3260,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'
@@ -3279,8 +3279,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: '46.227638'

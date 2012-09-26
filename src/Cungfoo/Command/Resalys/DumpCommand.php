@@ -57,6 +57,9 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\EtablissementThematique",
         "\\Cungfoo\\Model\\EtablissementServiceComplementaire",
         "\\Cungfoo\\Model\\EtablissementTypeHebergement",
+        "\\Cungfoo\\Model\\PointInteret",
+        "\\Cungfoo\\Model\\PointInteretI18n",
+        "\\Cungfoo\\Model\\EtablissementPointInteret",
     );
 
     protected function configure()
