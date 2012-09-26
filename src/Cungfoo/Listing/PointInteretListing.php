@@ -24,6 +24,9 @@ class PointInteretListing extends BasePointInteretListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('address');
+        $this->removeColumn('address2');
+        $this->removeColumn('zipcode');
         $this->removeColumn('image');
     }
 
