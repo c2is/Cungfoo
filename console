@@ -28,6 +28,8 @@ $console->add(new \Cungfoo\Command\Resalys\Load\CatalogueCommand());
 $console->add(new \Cungfoo\Command\Resalys\Load\PrixCommand());
 $console->add(new \Cungfoo\Command\Resalys\DumpCommand());
 
+$console->add(new \Cungfoo\Command\ViaFrance\Load\PointOfInterestCommand());
+
 $console->add(new \Cungfoo\Command\Job\DaemonCommand());
 
 $console->add(new \VacancesDirectes\Command\Load\Etablissement\CoordinatesCommand());
