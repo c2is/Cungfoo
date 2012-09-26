@@ -60,6 +60,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     protected $id;
 
     /**
+     * The value for the code field.
+     * @var        string
+     */
+    protected $code;
+
+    /**
      * The value for the address field.
      * @var        string
      */
@@ -172,6 +178,16 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get the [code] column value.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -318,6 +334,27 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
         return $this;
     } // setId()
+
+    /**
+     * Set the value of [code] column.
+     *
+     * @param string $v new value
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function setCode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->code !== $v) {
+            $this->code = $v;
+            $this->modifiedColumns[] = PointInteretPeer::CODE;
+        }
+
+
+        return $this;
+    } // setCode()
 
     /**
      * Set the value of [address] column.
@@ -503,13 +540,14 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->address = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->address2 = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->zipcode = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->city = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->image = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->address = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->address2 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->zipcode = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->city = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->image = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->created_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->updated_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -518,7 +556,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PointInteret object", $e);
@@ -803,6 +841,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
+        if ($this->isColumnModified(PointInteretPeer::CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
+        }
         if ($this->isColumnModified(PointInteretPeer::ADDRESS)) {
             $modifiedColumns[':p' . $index++]  = '`ADDRESS`';
         }
@@ -837,6 +878,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case '`CODE`':
+                        $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
                     case '`ADDRESS`':
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
@@ -1013,24 +1057,27 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getAddress();
+                return $this->getCode();
                 break;
             case 2:
-                return $this->getAddress2();
+                return $this->getAddress();
                 break;
             case 3:
-                return $this->getZipcode();
+                return $this->getAddress2();
                 break;
             case 4:
-                return $this->getCity();
+                return $this->getZipcode();
                 break;
             case 5:
-                return $this->getImage();
+                return $this->getCity();
                 break;
             case 6:
-                return $this->getCreatedAt();
+                return $this->getImage();
                 break;
             case 7:
+                return $this->getCreatedAt();
+                break;
+            case 8:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1063,13 +1110,14 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $keys = PointInteretPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getAddress(),
-            $keys[2] => $this->getAddress2(),
-            $keys[3] => $this->getZipcode(),
-            $keys[4] => $this->getCity(),
-            $keys[5] => $this->getImage(),
-            $keys[6] => $this->getCreatedAt(),
-            $keys[7] => $this->getUpdatedAt(),
+            $keys[1] => $this->getCode(),
+            $keys[2] => $this->getAddress(),
+            $keys[3] => $this->getAddress2(),
+            $keys[4] => $this->getZipcode(),
+            $keys[5] => $this->getCity(),
+            $keys[6] => $this->getImage(),
+            $keys[7] => $this->getCreatedAt(),
+            $keys[8] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementPointInterets) {
@@ -1116,24 +1164,27 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setAddress($value);
+                $this->setCode($value);
                 break;
             case 2:
-                $this->setAddress2($value);
+                $this->setAddress($value);
                 break;
             case 3:
-                $this->setZipcode($value);
+                $this->setAddress2($value);
                 break;
             case 4:
-                $this->setCity($value);
+                $this->setZipcode($value);
                 break;
             case 5:
-                $this->setImage($value);
+                $this->setCity($value);
                 break;
             case 6:
-                $this->setCreatedAt($value);
+                $this->setImage($value);
                 break;
             case 7:
+                $this->setCreatedAt($value);
+                break;
+            case 8:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1161,13 +1212,14 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $keys = PointInteretPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setAddress($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setAddress2($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setZipcode($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCity($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setImage($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setAddress($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setAddress2($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setZipcode($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setCity($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setImage($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setCreatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setUpdatedAt($arr[$keys[8]]);
     }
 
     /**
@@ -1180,6 +1232,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $criteria = new Criteria(PointInteretPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(PointInteretPeer::ID)) $criteria->add(PointInteretPeer::ID, $this->id);
+        if ($this->isColumnModified(PointInteretPeer::CODE)) $criteria->add(PointInteretPeer::CODE, $this->code);
         if ($this->isColumnModified(PointInteretPeer::ADDRESS)) $criteria->add(PointInteretPeer::ADDRESS, $this->address);
         if ($this->isColumnModified(PointInteretPeer::ADDRESS2)) $criteria->add(PointInteretPeer::ADDRESS2, $this->address2);
         if ($this->isColumnModified(PointInteretPeer::ZIPCODE)) $criteria->add(PointInteretPeer::ZIPCODE, $this->zipcode);
@@ -1250,6 +1303,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setCode($this->getCode());
         $copyObj->setAddress($this->getAddress());
         $copyObj->setAddress2($this->getAddress2());
         $copyObj->setZipcode($this->getZipcode());
@@ -1963,6 +2017,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->code = null;
         $this->address = null;
         $this->address2 = null;
         $this->zipcode = null;

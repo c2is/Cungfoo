@@ -414,6 +414,7 @@
 
     <table name="point_interet">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="address" type="varchar" required="true" />
         <column name="address2" type="varchar" required="true" />

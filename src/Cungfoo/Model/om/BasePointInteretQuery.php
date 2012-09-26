@@ -25,6 +25,7 @@ use Cungfoo\Model\PointInteretQuery;
  *
  *
  * @method PointInteretQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method PointInteretQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method PointInteretQuery orderByAddress($order = Criteria::ASC) Order by the address column
  * @method PointInteretQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
  * @method PointInteretQuery orderByZipcode($order = Criteria::ASC) Order by the zipcode column
@@ -34,6 +35,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method PointInteretQuery groupById() Group by the id column
+ * @method PointInteretQuery groupByCode() Group by the code column
  * @method PointInteretQuery groupByAddress() Group by the address column
  * @method PointInteretQuery groupByAddress2() Group by the address2 column
  * @method PointInteretQuery groupByZipcode() Group by the zipcode column
@@ -57,6 +59,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteret findOne(PropelPDO $con = null) Return the first PointInteret matching the query
  * @method PointInteret findOneOrCreate(PropelPDO $con = null) Return the first PointInteret matching the query, or a new PointInteret object populated from the query conditions when no match is found
  *
+ * @method PointInteret findOneByCode(string $code) Return the first PointInteret filtered by the code column
  * @method PointInteret findOneByAddress(string $address) Return the first PointInteret filtered by the address column
  * @method PointInteret findOneByAddress2(string $address2) Return the first PointInteret filtered by the address2 column
  * @method PointInteret findOneByZipcode(string $zipcode) Return the first PointInteret filtered by the zipcode column
@@ -66,6 +69,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteret findOneByUpdatedAt(string $updated_at) Return the first PointInteret filtered by the updated_at column
  *
  * @method array findById(int $id) Return PointInteret objects filtered by the id column
+ * @method array findByCode(string $code) Return PointInteret objects filtered by the code column
  * @method array findByAddress(string $address) Return PointInteret objects filtered by the address column
  * @method array findByAddress2(string $address2) Return PointInteret objects filtered by the address2 column
  * @method array findByZipcode(string $zipcode) Return PointInteret objects filtered by the zipcode column
@@ -176,7 +180,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `IMAGE`, `CREATED_AT`, `UPDATED_AT` FROM `point_interet` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `IMAGE`, `CREATED_AT`, `UPDATED_AT` FROM `point_interet` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -290,6 +294,35 @@ abstract class BasePointInteretQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode('fooValue');   // WHERE code = 'fooValue'
+     * $query->filterByCode('%fooValue%'); // WHERE code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $code The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($code)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $code)) {
+                $code = str_replace('*', '%', $code);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::CODE, $code, $comparison);
     }
 
     /**

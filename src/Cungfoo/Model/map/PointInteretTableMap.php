@@ -43,6 +43,7 @@ class PointInteretTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
         $this->addColumn('ADDRESS', 'Address', 'VARCHAR', true, 255, null);
         $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', true, 255, null);
         $this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', true, 255, null);

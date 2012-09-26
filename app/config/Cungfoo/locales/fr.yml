@@ -231,6 +231,7 @@ point_interet.crud.list: Liste des POI
 point_interet.crud.update: Mettre à jour le POI %name%
 point_interet.crud.view: Détails du POI %name%
 point_interet.id: Id
+point_interet.code: Code interne
 point_interet.address: Adresse
 point_interet.address2: Adresse 2
 point_interet.zipcode: Code Postal

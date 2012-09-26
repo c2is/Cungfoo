@@ -20,6 +20,7 @@ class BasePointInteretListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('code'));
         $this->addColumn(new Column\TextColumn('address'));
         $this->addColumn(new Column\TextColumn('address2'));
         $this->addColumn(new Column\TextColumn('zipcode'));

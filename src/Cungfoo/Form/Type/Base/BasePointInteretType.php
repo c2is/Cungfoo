@@ -27,6 +27,13 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.id',
             'required' => false,
         ));
+        $builder->add('code', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'point_interet.code',
+            'required' => false,
+        ));
         $builder->add('address', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),

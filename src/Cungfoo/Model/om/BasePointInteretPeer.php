@@ -37,16 +37,19 @@ abstract class BasePointInteretPeer
     const TM_CLASS = 'PointInteretTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the ID field */
     const ID = 'point_interet.ID';
+
+    /** the column name for the CODE field */
+    const CODE = 'point_interet.CODE';
 
     /** the column name for the ADDRESS field */
     const ADDRESS = 'point_interet.ADDRESS';
@@ -95,12 +98,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[PointInteretPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'address', 'address2', 'zipcode', 'city', 'image', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'address', 'address2', 'zipcode', 'city', 'image', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'image', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'image', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -110,12 +113,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Address' => 1, 'Address2' => 2, 'Zipcode' => 3, 'City' => 4, 'Image' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'address' => 1, 'address2' => 2, 'zipcode' => 3, 'city' => 4, 'image' => 5, 'createdAt' => 6, 'updatedAt' => 7, ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::ADDRESS => 1, PointInteretPeer::ADDRESS2 => 2, PointInteretPeer::ZIPCODE => 3, PointInteretPeer::CITY => 4, PointInteretPeer::IMAGE => 5, PointInteretPeer::CREATED_AT => 6, PointInteretPeer::UPDATED_AT => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ADDRESS' => 1, 'ADDRESS2' => 2, 'ZIPCODE' => 3, 'CITY' => 4, 'IMAGE' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'address' => 1, 'address2' => 2, 'zipcode' => 3, 'city' => 4, 'image' => 5, 'created_at' => 6, 'updated_at' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'Image' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'image' => 6, 'createdAt' => 7, 'updatedAt' => 8, ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::IMAGE => 6, PointInteretPeer::CREATED_AT => 7, PointInteretPeer::UPDATED_AT => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'IMAGE' => 6, 'CREATED_AT' => 7, 'UPDATED_AT' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'image' => 6, 'created_at' => 7, 'updated_at' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -190,6 +193,7 @@ abstract class BasePointInteretPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(PointInteretPeer::ID);
+            $criteria->addSelectColumn(PointInteretPeer::CODE);
             $criteria->addSelectColumn(PointInteretPeer::ADDRESS);
             $criteria->addSelectColumn(PointInteretPeer::ADDRESS2);
             $criteria->addSelectColumn(PointInteretPeer::ZIPCODE);
@@ -199,6 +203,7 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn(PointInteretPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.ADDRESS');
             $criteria->addSelectColumn($alias . '.ADDRESS2');
             $criteria->addSelectColumn($alias . '.ZIPCODE');
