@@ -4,7 +4,7 @@ namespace Cungfoo\Lib\Resalys\Loader;
 
 use Symfony\Component\Yaml\Yaml;
 
-abstract class BaseLoader
+abstract class AbstractLoader
 {
     protected $client;
     protected $baseId;

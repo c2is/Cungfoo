@@ -5,7 +5,7 @@ namespace Cungfoo\Lib\Resalys\Client;
 use Silex\Application;
 use Symfony\Component\Yaml\Yaml;
 
-class PrixClient extends BaseClient
+class PrixClient extends AbstractClient
 {
     const DEFAULT_LOADER_FILE   = '/app/config/Resalys/loader.yml';
     const LOADER_PATTERN        = '\\Cungfoo\\Lib\\Resalys\\Loader\\%sLoader';

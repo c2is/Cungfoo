@@ -2,13 +2,13 @@
 
 namespace Cungfoo\Lib\Resalys\Loader;
 
-use Cungfoo\Lib\Resalys\Loader\BaseLoader,
+use Cungfoo\Lib\Resalys\Loader\AbstractLoader,
     Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\Etablissement,
     Cungfoo\Model\TypeHebergementQuery,
     Cungfoo\Model\EtablissementTypeHebergementQuery;
 
-class getAllEtabsLoader extends BaseLoader
+class getAllEtabsLoader extends AbstractLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {

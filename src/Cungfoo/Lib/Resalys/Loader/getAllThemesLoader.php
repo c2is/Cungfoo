@@ -2,9 +2,9 @@
 
 namespace Cungfoo\Lib\Resalys\Loader;
 
-use Cungfoo\Lib\Resalys\Loader\BaseLoader;
+use Cungfoo\Lib\Resalys\Loader\AbstractLoader;
 
-class getAllThemesLoader extends BaseLoader
+class getAllThemesLoader extends AbstractLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {

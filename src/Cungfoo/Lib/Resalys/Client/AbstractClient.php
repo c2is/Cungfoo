@@ -5,7 +5,7 @@ namespace Cungfoo\Lib\Resalys\Client;
 use Silex\Application;
 use Symfony\Component\Yaml\Yaml;
 
-abstract class BaseClient
+abstract class AbstractClient
 {
     const DEFAULT_CLIENT_FILE   = '/app/config/Resalys/client.yml';
     const DEFAULT_LANGUAGE_FILE = '/app/config/languages.yml';
