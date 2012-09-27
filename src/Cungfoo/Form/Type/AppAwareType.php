@@ -23,8 +23,8 @@ abstract class AppAwareType extends AbstractType
         $this->app = $app;
     }
 
-    public function getMetadata($namespace = '')
+    public function getMetadata($class)
     {
-        return $this->app['validator.mapping.class_metadata_factory']->getClassMetadata($namespace.'\\'.$this->getName());
+        return $this->app['validator.mapping.class_metadata_factory']->getClassMetadata($class);
     }
 }
