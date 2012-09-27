@@ -2,11 +2,11 @@
 
 namespace Cungfoo\Lib\Resalys\Loader;
 
-use Cungfoo\Lib\Resalys\Loader\BaseLoader,
+use Cungfoo\Lib\Resalys\Loader\AbstractLoader,
     Cungfoo\Model\CategoryTypeHebergementQuery,
     Cungfoo\Model\CategoryTypeHebergement;
 
-class getAllRoomTypeCategoriesLoader extends BaseLoader
+class getAllRoomTypeCategoriesLoader extends AbstractLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {

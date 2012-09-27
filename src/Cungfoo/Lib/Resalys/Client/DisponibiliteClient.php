@@ -5,7 +5,7 @@ namespace Cungfoo\Lib\Resalys\Client;
 use Silex\Application;
 use Symfony\Component\Yaml\Yaml;
 
-class DisponibiliteClient extends BaseClient
+class DisponibiliteClient extends AbstractClient
 {
     protected function getName()
     {
