@@ -24,9 +24,8 @@ class EtablissementPointInteretType extends BaseEtablissementPointInteretType
     {
         parent::buildForm($builder, $options);
 
-        //$this->getMetadata(__NAMESPACE__)
+        //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
-        //    ->addPropertyConstraint('field2', new Assert\NotBlank())
         //;
     }
 
