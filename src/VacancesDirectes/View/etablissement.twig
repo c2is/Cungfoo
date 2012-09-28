@@ -8,17 +8,17 @@
                 <blockquote>CAMPING CONTENT</blockquote>
                 <h1>{{ etab.name }}</h1>
                 <fieldset>
-                    <legend>Les vacances à {{ etab.ville }}</legend>
+                    <legend>{{ "Les vacances à" | trans }} {{ etab.ville }}</legend>
                     <img src="{{ asset(etab.ville.region.getWebImagePath) }}">
-                    <p>A proximité nous avons listé</p>
+                    <p>{{ "A proximité nous avons listé" | trans }} :</p>
                     <ul class="details">
-                        <li>{{ nbSiteAVisiter }} site à visiter</li>
-                        <li>{{ nbActivitesSportives }} activités sprotives</li>
-                        <li>{{ nbEvenementsCulturels }} événements culturels</li>
+                        <li>{{ nbSiteAVisiter }} {{ "site à visiter" | trans }}</li>
+                        <li>{{ nbActivitesSportives }} {{ "activités sprotives" | trans }}</li>
+                        <li>{{ nbEvenementsCulturels }} {{ "événements culturels" | trans }}</li>
                     </ul>
                     {% if eventPrioritaire %}
                     <div>
-                        <strong>L'événement à ne pas manquer :</strong>
+                        <strong>{{ "L'événement à ne pas manquer" | trans }} :</strong>
                         <img src="{{ eventPrioritaire.image }}">
                         <span>{{ eventPrioritaire.title }}</span>
                         <p>{{ eventPrioritaire.description }}</p>
