@@ -34,6 +34,12 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.code',
             'required' => false,
         ));
+        $builder->add('image_path', 'file', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.image_path',
+            'required' => false,
+        ));
         $builder->add('pays', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(

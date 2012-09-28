@@ -276,6 +276,7 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
         <column name="pays_id" type="integer" />
         <behavior name="timestampable" />
 
@@ -289,6 +290,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
+            <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
 

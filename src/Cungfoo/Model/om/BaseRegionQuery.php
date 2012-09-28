@@ -26,12 +26,14 @@ use Cungfoo\Model\Ville;
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method RegionQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method RegionQuery groupById() Group by the id column
  * @method RegionQuery groupByCode() Group by the code column
+ * @method RegionQuery groupByImagePath() Group by the image_path column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
@@ -56,12 +58,14 @@ use Cungfoo\Model\Ville;
  * @method Region findOneOrCreate(PropelPDO $con = null) Return the first Region matching the query, or a new Region object populated from the query conditions when no match is found
  *
  * @method Region findOneByCode(string $code) Return the first Region filtered by the code column
+ * @method Region findOneByImagePath(string $image_path) Return the first Region filtered by the image_path column
  * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  *
  * @method array findById(int $id) Return Region objects filtered by the id column
  * @method array findByCode(string $code) Return Region objects filtered by the code column
+ * @method array findByImagePath(string $image_path) Return Region objects filtered by the image_path column
  * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
@@ -168,7 +172,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -311,6 +315,35 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
+     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imagePath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function filterByImagePath($imagePath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imagePath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imagePath)) {
+                $imagePath = str_replace('*', '%', $imagePath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionPeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**

@@ -16,6 +16,7 @@ class CrudableBehavior extends Behavior
         'crud_prefix'       => null,
         'crud_model'        => null,
         'crud_form'         => null,
+        'crud_type_file'    => null,
     );
 
     protected $additionalBuilders = array(
@@ -24,4 +25,147 @@ class CrudableBehavior extends Behavior
         'CrudableBaseListingBehaviorBuilder',
         'CrudableListingBehaviorBuilder',
     );
+
+    public function crudTypeFileExists()
+    {
+        return $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file');
+    }
+
+    public function objectMethods($builder)
+    {
+        $this->builder = $builder;
+        $script = '';
+
+        $this->addSaveFromCrud($script);
+
+        if ($this->crudTypeFileExists())
+        {
+            $this->addGetUploadDir($script);
+            $this->addGetUploadRootDir($script);
+
+            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
+            {
+                $this->addGetWebPath($columnName, $script);
+                $this->addGetAbsolutePath($columnName, $script);
+                $this->addUploadFile($columnName, $script);
+            }
+        }
+
+        return $script;
+    }
+
+    protected function addSaveFromCrud(&$script)
+    {
+        $script .= "
+/**
+ * @param \Symfony\Component\Form\Form \$form
+ * @param PropelPDO \$con
+ * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+ * @throws PropelException
+ * @throws Exception
+ * @see        doSave()
+ */
+public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$con = null)
+{";
+
+
+        if ($this->crudTypeFileExists())
+        {
+            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
+            {
+                $utils = new \Cungfoo\Lib\Utils();
+                $columnNameCamelize = $utils->camelize($columnName);
+
+                $script .= "
+        \$this->upload$columnNameCamelize(\$form);
+    ";
+
+            }
+        }
+        $script .= "
+    return \$this->save(\$con);
+}
+";
+    }
+
+    protected function addGetUploadDir(&$script)
+    {
+        $tableName = $this->getTable()->getName() . 's';
+        $script .= "
+/**
+ * @return string
+ */
+public function getUploadDir()
+{
+    return 'uploads/$tableName';
+}
+";
+    }
+
+    protected function addGetUploadRootDir(&$script)
+    {
+        $script .= "
+/**
+ * @return string
+ */
+public function getUploadRootDir()
+{
+    return __DIR__.'/../../../../web/'.\$this->getUploadDir();
+}
+";
+    }
+
+    protected function addGetWebPath($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnName = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @return string
+ */
+public function addGetWeb$columnName()
+{
+    return null === \$this->get$columnName() ? null : \$this->getUploadDir().'/'.\$this->get$columnName();
+}
+";
+    }
+
+    protected function addGetAbsolutePath($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnName = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @return string
+ */
+public function getAbsolute$columnName()
+{
+    return null === \$this->get$columnName() ? null : \$this->getUploadRootDir().'/'.\$this->get$columnName();
+}
+";
+    }
+
+    protected function addUploadFile($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnNameCamelize = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @param \Symfony\Component\Form\Form \$form
+ * @return void
+ */
+public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
+{
+    if (!file_exists(\$this->getUploadRootDir() . '/' . \$form['$columnName']->getData()))
+    {
+        \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
+        \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
+        \$this->set$columnNameCamelize(\$image);
+    }
+}
+";
+    }
 }

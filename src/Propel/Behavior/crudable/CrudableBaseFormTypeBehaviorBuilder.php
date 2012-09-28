@@ -186,7 +186,12 @@ class {$this->getClassname()} extends AppAwareType
      */
     private function getColumnType(Column $column)
     {
-        if ($column->getAttribute('widget', false))
+        $typeFileColumns = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
+        if (in_array($column->getName(), $typeFileColumns))
+        {
+            return 'file';
+        }
+        elseif ($column->getAttribute('widget', false))
         {
             return $column->getAttribute('widget');
         }

@@ -189,6 +189,7 @@ region.crud.view: Détails de la région %name%
 region.id: Id
 region.code: Code
 region.name: Nom
+region.image.path: Image
 region.pays: Pays
 region.pays.id: Code pays
 

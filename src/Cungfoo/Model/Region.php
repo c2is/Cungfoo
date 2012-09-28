@@ -3,7 +3,7 @@
 namespace Cungfoo\Model;
 
 use Cungfoo\Model\om\BaseRegion;
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Skeleton subclass for representing a row from the 'region' table.

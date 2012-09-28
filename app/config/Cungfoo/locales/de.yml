@@ -125,6 +125,7 @@ region.crud.update: Aktualisieren Sie die Region% name%
 region.crud.view: Details der Fläche% name%
 region.id: Code
 region.name: Name
+region.image.path: Bild
 region.pays: Land
 region.pays.id: Landesvorwahl
 

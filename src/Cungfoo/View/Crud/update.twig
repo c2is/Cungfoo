@@ -3,10 +3,10 @@
 {% block content %}
     {% if form.id.get('value') %}
         <h2>{{ (name ~ ".crud.update") | trans  ({'%name%': form.id.get('value') }) }}</h2>
-        <form action="{{ path('%s_crud_update' | format (name), {'id': form.id.get('value')}) }}" method="post">
+        <form action="{{ path('%s_crud_update' | format (name), {'id': form.id.get('value')}) }}" method="post" {{ form_enctype(form) }}>
     {% else %}
         <h2>{{ (name ~ ".crud.create") | trans}}</h2>
-        <form action="{{ path('%s_crud_create' | format (name)) }}" method="post">
+        <form action="{{ path('%s_crud_create' | format (name)) }}" method="post" {{ form_enctype(form) }}>
     {% endif %}
         {{ form_widget(form) }}
         <div class="form-actions">

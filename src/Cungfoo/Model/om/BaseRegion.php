@@ -66,6 +66,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $code;
 
     /**
+     * The value for the image_path field.
+     * @var        string
+     */
+    protected $image_path;
+
+    /**
      * The value for the pays_id field.
      * @var        int
      */
@@ -158,6 +164,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Get the [image_path] column value.
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->image_path;
     }
 
     /**
@@ -287,6 +303,27 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setCode()
 
     /**
+     * Set the value of [image_path] column.
+     *
+     * @param string $v new value
+     * @return Region The current object (for fluent API support)
+     */
+    public function setImagePath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_path !== $v) {
+            $this->image_path = $v;
+            $this->modifiedColumns[] = RegionPeer::IMAGE_PATH;
+        }
+
+
+        return $this;
+    } // setImagePath()
+
+    /**
      * Set the value of [pays_id] column.
      *
      * @param int $v new value
@@ -391,9 +428,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->pays_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->pays_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -402,7 +440,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -686,6 +724,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
+        if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+        }
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) {
             $modifiedColumns[':p' . $index++]  = '`PAYS_ID`';
         }
@@ -711,6 +752,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_PATH`':
+                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`PAYS_ID`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
@@ -890,12 +934,15 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getPaysId();
+                return $this->getImagePath();
                 break;
             case 3:
-                return $this->getCreatedAt();
+                return $this->getPaysId();
                 break;
             case 4:
+                return $this->getCreatedAt();
+                break;
+            case 5:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -929,9 +976,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getPaysId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[2] => $this->getImagePath(),
+            $keys[3] => $this->getPaysId(),
+            $keys[4] => $this->getCreatedAt(),
+            $keys[5] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -984,12 +1032,15 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setPaysId($value);
+                $this->setImagePath($value);
                 break;
             case 3:
-                $this->setCreatedAt($value);
+                $this->setPaysId($value);
                 break;
             case 4:
+                $this->setCreatedAt($value);
+                break;
+            case 5:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1018,9 +1069,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setPaysId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setPaysId($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
     }
 
     /**
@@ -1034,6 +1086,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         if ($this->isColumnModified(RegionPeer::ID)) $criteria->add(RegionPeer::ID, $this->id);
         if ($this->isColumnModified(RegionPeer::CODE)) $criteria->add(RegionPeer::CODE, $this->code);
+        if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) $criteria->add(RegionPeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) $criteria->add(RegionPeer::PAYS_ID, $this->pays_id);
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) $criteria->add(RegionPeer::UPDATED_AT, $this->updated_at);
@@ -1101,6 +1154,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setPaysId($this->getPaysId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1669,6 +1723,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
+        $this->image_path = null;
         $this->pays_id = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -1874,6 +1929,69 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {    $this->getCurrentTranslation()->setName($v);
 
         return $this;
+    }
+
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+            $this->uploadImagePath($form);
+
+        return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/regions';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return string
+     */
+    public function addGetWebImagePath()
+    {
+        return null === $this->getImagePath() ? null : $this->getUploadDir().'/'.$this->getImagePath();
+    }
+
+    /**
+     * @return string
+     */
+    public function getAbsoluteImagePath()
+    {
+        return null === $this->getImagePath() ? null : $this->getUploadRootDir().'/'.$this->getImagePath();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImagePath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+            $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImagePath($image);
+        }
     }
 
 }

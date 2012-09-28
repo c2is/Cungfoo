@@ -1962,4 +1962,19 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         return $this;
     }
 
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
+    }
+
 }

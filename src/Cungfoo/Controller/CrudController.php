@@ -209,11 +209,11 @@ class CrudController implements ControllerProviderInterface
 
         if ('POST' == $request->getMethod())
         {
-            $form->bind($app['request']->get($form->getName()));
+            $form->bindRequest($request);
 
             if ($form->isValid())
             {
-                $object->save();
+                $object->saveFromCrud($form);
 
                 return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_list', $this->modelName), array('id' => $object->getId())));
             }
