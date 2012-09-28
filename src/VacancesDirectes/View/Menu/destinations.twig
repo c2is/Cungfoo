@@ -38,7 +38,7 @@
                 <strong>{{ letter }}</strong>
                 <ul>
                     {% for etab in etabs %}
-                    <li><a class="camping" href="camping/{{ etab.Id }}">{{ etab.Name }}</a></li>
+                    <li><a class="camping" href="{{ path('camping', {'id': etab.Id}) }}">{{ etab.Name }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
@@ -57,7 +57,7 @@
                         <a class="ville" href="ville/{{ villeId }}">{{ ville.Name }}</a>
                         <ul>
                             {% for etab in ville.Etabs %}
-                            <li><a href="camping/{{ etab.Id }}">{{ etab.Name }}</a></li>
+                            <li><a href="{{ path('camping', {'id': etab.Id}) }}">{{ etab.Name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Cungfoo</title>
+    <title>{% block title %}{% endblock %} - Vacances Directes</title>
     <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('cungfoo/css/main.css') }}">
     <script type="text/javascript" src="{{ asset('/cungfoo/js/jquery/jquery-1.7.2.min.js') }}"></script>
@@ -14,12 +14,9 @@
         <img src="{{ asset( "vacancesdirectes/img/logo_%s.jpg" | format ( app.context.getLanguage ) ) }}"/>
 
         {% include "language_switcher.twig" %}
-
         {% include "menu.twig" %}
 
-        {% block content %}
-
-        {% endblock %}
+        {% block content %}{% endblock %}
     </div>
     <script type="text/javascript" src="{{ asset('cungfoo/js/domAutocomplete.jquery.js') }}"></script>
 </body>

@@ -25,6 +25,27 @@ class SearchEngineController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
+        $controllers->get('/', function (Request $request) use ($app)
+        {
+            /** Search form date */
+            $formData = new DateData();
+            $dateSearchForm = $app['form.factory']->create(new DateType($app), $formData);
+            if ('POST' == $request->getMethod())
+            {
+                /** Manage search form date validation */
+                $dateSearchForm->bind($request->get($dateSearchForm->getName()));
+                if ($dateSearchForm->isValid())
+                {
+
+                }
+            }
+
+            return $app['twig']->render('Form/search_engine.twig', array(
+                'dateSearchForm'    => $dateSearchForm->createView(),
+            ));
+        })
+        ->bind('search_engine');
+
         $controllers->match('/destinations/{id}/villes', function ($id) use ($app)
         {
 

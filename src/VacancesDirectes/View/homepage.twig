@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="span8">
+                <blockquote>HOMEPAGE CONTENT</blockquote>
+            </div>
+            <div class="span4">
+                <blockquote>SEARCH ENGINE</blockquote>
+                {{ render(path('search_engine')) }}
+            </div>
+        </div>
+{% endblock %}

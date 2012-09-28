@@ -20,6 +20,7 @@ use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 $app->mount('/', new \VacancesDirectes\Controller\HomepageController());
 $app->mount('/menu', new \VacancesDirectes\Controller\MenuController());
+$app->mount('/camping', new \VacancesDirectes\Controller\CampingController());
 $app->mount('/search_engine', new \VacancesDirectes\Controller\SearchEngineController());
 
 $app->error(function (\Exception $e, $code) use ($app) {
