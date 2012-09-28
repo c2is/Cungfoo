@@ -1967,7 +1967,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     /**
      * @return string
      */
-    public function addGetWebImagePath()
+    public function getWebImagePath()
     {
         return null === $this->getImagePath() ? null : $this->getUploadDir().'/'.$this->getImagePath();
     }

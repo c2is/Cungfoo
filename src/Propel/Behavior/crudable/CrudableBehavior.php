@@ -124,7 +124,7 @@ public function getUploadRootDir()
 /**
  * @return string
  */
-public function addGetWeb$columnName()
+public function getWeb$columnName()
 {
     return null === \$this->get$columnName() ? null : \$this->getUploadDir().'/'.\$this->get$columnName();
 }

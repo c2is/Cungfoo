@@ -18,4 +18,5 @@ use Cungfoo\Model\om\BaseEventPeer;
  */
 class EventPeer extends BaseEventPeer
 {
+    const CATEGORY_SPORTIVE = 'SPO';
 }
