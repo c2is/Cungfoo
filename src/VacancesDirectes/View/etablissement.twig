@@ -1,12 +1,30 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ etablissement.name }}{% endblock %}
+{% block title %}{{ etab.name }}{% endblock %}
 
 {% block content %}
         <div class="row">
             <div class="span8">
                 <blockquote>CAMPING CONTENT</blockquote>
-                <h1>{{ etablissement.name }}</h1>
+                <h1>{{ etab.name }}</h1>
+                <fieldset>
+                    <legend>Les vacances à {{ etab.ville }}</legend>
+                    <img src="{{ asset(etab.ville.region.getWebImagePath) }}">
+                    <p>A proximité nous avons listé</p>
+                    <ul class="details">
+                        <li>{{ nbSiteAVisiter }} site à visiter</li>
+                        <li>{{ nbActivitesSportives }} activités sprotives</li>
+                        <li>{{ nbEvenementsCulturels }} événements culturels</li>
+                    </ul>
+                    {% if eventPrioritaire %}
+                    <div>
+                        <strong>L'événement à ne pas manquer :</strong>
+                        <img src="{{ eventPrioritaire.image }}">
+                        <span>{{ eventPrioritaire.title }}</span>
+                        <p>{{ eventPrioritaire.description }}</p>
+                    </div>
+                    {% endif %}
+                </fieldset>
             </div>
             <div class="span4">
                 <blockquote>SIDEBAR</blockquote>

@@ -21,19 +21,58 @@ class CampingController implements ControllerProviderInterface
         {
             $locale = $app['context']->get('language');
 
-            /** @var \Cungfoo\Model\Etablissement $etablissement  */
-            $etablissement = \Cungfoo\Model\EtablissementQuery::create()
+            /** @var \Cungfoo\Model\Etablissement $etab  */
+            $etab = \Cungfoo\Model\EtablissementQuery::create()
                 ->joinWithI18n($locale)
                 ->filterById($id)
                 ->findOne()
             ;
 
+            /** @var \Cungfoo\Model\PointInteret $nbSiteAVisiter */
+            $nbSiteAVisiter = \Cungfoo\Model\PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($id)
+                ->endUse()
+                ->count()
+            ;
+
+            /** @var \Cungfoo\Model\Event $nbActivitesSportives */
+            $nbActivitesSportives = \Cungfoo\Model\EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($id)
+                ->endUse()
+                ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE)
+                ->count()
+            ;
+
+            /** @var \Cungfoo\Model\Event $nbEvenementsCulturels */
+            $nbEvenementsCulturels = \Cungfoo\Model\EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($id)
+                ->endUse()
+                ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE, \Criteria::NOT_EQUAL)
+                ->count()
+            ;
+
+            /** @var \Cungfoo\Model\Event $eventPrioritaire */
+            $eventPrioritaire = \Cungfoo\Model\EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($id)
+                ->endUse()
+                ->orderByPriority(\Criteria::ASC)
+                ->findOne()
+            ;
+
             return $app['twig']->render('etablissement.twig', array(
-                'etablissement'     => $etablissement,
-                'locale'            => $locale
+                'locale'                => $locale,
+                'etab'                  => $etab,
+                'nbSiteAVisiter'        => $nbSiteAVisiter,
+                'nbActivitesSportives'  => $nbActivitesSportives,
+                'nbEvenementsCulturels' => $nbEvenementsCulturels,
+                'eventPrioritaire'      => $eventPrioritaire,
             ));
         })
-        ->bind('camping')
+        ->bind('camping_index')
         ;
 
         return $controllers;
