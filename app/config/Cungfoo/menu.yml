@@ -60,6 +60,9 @@ menu:
               resalys:
                   title:  menu.resalys
                   route:  resalys_actions
+              viafrance:
+                  title:  menu.viafrance
+                  route:  viafrance_actions
               job:
                   title:  menu.job
                   route:  job_list

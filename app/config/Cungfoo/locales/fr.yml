@@ -1,3 +1,5 @@
+general.import: Importer
+
 activite.crud.create: Création d'une activité
 activite.crud.list: Liste activités
 activite.crud.update: Mettre à jour l'activité %name%
@@ -197,6 +199,8 @@ resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
 resalys.actions.import.prix: Import des prix Resalys
 resalys.title.import.prix: Import des prix Resalys
+
+viafrance.import.events: Importation des events
 
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires

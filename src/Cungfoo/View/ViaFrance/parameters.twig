@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>{{ "viafrance.import.events" | trans }}</th>
+            <td class="pull-right"><a href="{{ path('viafrance_actions_import_events') }}" class="btn">{{ "general.import" | trans }}</a></td>
+        </tr>
+    </table>
+{% endblock %}
+
