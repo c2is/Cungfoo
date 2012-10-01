@@ -202,6 +202,7 @@ resalys.actions.import.prix: Import des prix Resalys
 resalys.title.import.prix: Import des prix Resalys
 
 viafrance.import.events: Importation des events
+viafrance.import.poi: Importation des POI
 
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires

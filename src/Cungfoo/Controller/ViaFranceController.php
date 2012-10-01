@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Lib\Job\EventJobHandler,
+    Cungfoo\Lib\Job\PointOfInterestJobHandler,
     Cungfoo\Model\Job;
 
 /**
@@ -40,6 +41,17 @@ class ViaFranceController implements ControllerProviderInterface
             return $app->redirect($app['url_generator']->generate('viafrance_actions'));
         })
         ->bind('viafrance_actions_import_events');
+
+        $controllers->get('/import/points-interet', function (Application $app) {
+            $jobImport = new Job();
+            $jobImport
+                ->setType(PointOfInterestJobHandler::getName())
+                ->save()
+            ;
+
+            return $app->redirect($app['url_generator']->generate('viafrance_actions'));
+        })
+        ->bind('viafrance_actions_import_points_interet');
 
         return $controllers;
     }
