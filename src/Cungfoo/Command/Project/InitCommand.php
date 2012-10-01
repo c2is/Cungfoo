@@ -22,15 +22,16 @@ class InitCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $commands = array();
-        $commands[] = array('command' => 'propel:generate');
-        $commands[] = array('command' => 'propel:fixture:load');
-        $commands[] = array('command' => 'logs:clear');
-        $commands[] = array('command' => 'cache:clear');
+        $commands = array(
+            array('command' => 'propel:generate'),
+            array('command' => 'propel:fixture:load'),
+            array('command' => 'logs:clear'),
+            array('command' => 'cache:clear'),
+        );
 
         foreach ($commands as $command)
         {
-            if (!$this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output))
+            if ($this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output) === false)
             {
                 return false;
             }
