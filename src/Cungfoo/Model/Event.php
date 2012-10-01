@@ -20,6 +20,6 @@ class Event extends BaseEvent
 {
     public function __toString()
     {
-        return $this->getTitle();
+        return $this->getName();
     }
 }

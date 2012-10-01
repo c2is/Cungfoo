@@ -153,13 +153,13 @@ class {$this->getClassname()} extends AppAwareType
      * @param Column $column
      * @return string
      */
-    private function addBuilderAccordingToColumn(Column $column)
+    private function addBuilderAccordingToColumn(Column $column, $options = array())
     {
         if (!in_array($column->getName(), array('created_at', 'updated_at')))
         {
-            return $this->addBuilder($column->getName(), $this->getColumnType($column), array(
+            return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array(
                 'constraints' => $this->addConstraints($column)
-            ));
+            ), $options));
         }
     }
 
@@ -186,12 +186,7 @@ class {$this->getClassname()} extends AppAwareType
      */
     private function getColumnType(Column $column)
     {
-        $typeFileColumns = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
-        if (in_array($column->getName(), $typeFileColumns))
-        {
-            return 'file';
-        }
-        elseif ($column->getAttribute('widget', false))
+        if ($column->getAttribute('widget', false))
         {
             return $column->getAttribute('widget');
         }
@@ -202,6 +197,10 @@ class {$this->getClassname()} extends AppAwareType
         elseif (PropelTypes::INTEGER === $column->getType())
         {
             return 'integer';
+        }
+        elseif (PropelTypes::BOOLEAN === $column->getType())
+        {
+            return 'checkbox';
         }
         elseif (PropelTypes::FLOAT === $column->getType())
         {
@@ -216,6 +215,10 @@ class {$this->getClassname()} extends AppAwareType
             return 'datetime';
         }
         elseif (PropelTypes::LONGVARBINARY === $column->getType())
+        {
+            return 'file';
+        }
+        elseif ('file' === $column->getType())
         {
             return 'file';
         }
@@ -251,7 +254,23 @@ class {$this->getClassname()} extends AppAwareType
             // for the other columns
             else
             {
+                $addDeletedField = false;
+                $typeFileColumns = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
+                if (in_array($column->getName(), $typeFileColumns))
+                {
+                    $column->setType('file');
+                    $addDeletedField = true;
+                }
+
                 $builders .= $this->addBuilderAccordingToColumn($column);
+
+                if ($addDeletedField)
+                {
+                    $columnDeleted = clone $column;
+                    $columnDeleted->setType(PropelTypes::BOOLEAN);
+                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
+                    $builders .= $this->addBuilderAccordingToColumn($columnDeleted, array('property_path' => false));
+                }
             }
         }
 

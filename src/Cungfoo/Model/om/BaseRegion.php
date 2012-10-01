@@ -1943,7 +1943,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-            $this->uploadImagePath($form);
+        if (!$form['image_path_deleted']->getData())
+        {
+            $this->resetModified(RegionPeer::IMAGE_PATH);
+        }
+
+        $this->uploadImagePath($form);
 
         return $this->save($con);
     }

@@ -123,7 +123,8 @@ region.crud.update: Update the region %name%
 region.crud.view: Details of region %name%
 region.id: Code
 region.name: Name
-region.image.path: Image
+region.image_path: Picture
+region.image_path_deleted: Delete the picture ?
 region.pays: Country
 region.pays.id: Country code
 

@@ -40,6 +40,13 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.image_path',
             'required' => false,
         ));
+        $builder->add('image_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'region.image_path_deleted',
+            'required' => false,
+        ));
         $builder->add('pays', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(

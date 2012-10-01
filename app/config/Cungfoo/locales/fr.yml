@@ -189,7 +189,8 @@ region.crud.view: Détails de la région %name%
 region.id: Id
 region.code: Code
 region.name: Nom
-region.image.path: Image
+region.image_path: Image
+region.image_path_deleted: Supprimer l'image ?
 region.pays: Pays
 region.pays.id: Code pays
 

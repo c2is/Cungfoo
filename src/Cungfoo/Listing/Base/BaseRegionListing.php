@@ -21,7 +21,6 @@ class BaseRegionListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
-        $this->addColumn(new Column\TextColumn('image_path'));
     }
 
     /**

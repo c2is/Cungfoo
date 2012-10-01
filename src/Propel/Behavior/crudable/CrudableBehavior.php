@@ -69,10 +69,18 @@ public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$co
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
                 $utils = new \Cungfoo\Lib\Utils();
+                $columnNameDeleted  = $columnName . '_deleted';
                 $columnNameCamelize = $utils->camelize($columnName);
 
+                $columnPeerName = ucfirst($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
+
                 $script .= "
-        \$this->upload$columnNameCamelize(\$form);
+    if (!\$form['$columnNameDeleted']->getData())
+    {
+        \$this->resetModified($columnPeerName);
+    }
+
+    \$this->upload$columnNameCamelize(\$form);
     ";
 
             }
