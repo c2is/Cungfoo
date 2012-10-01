@@ -58,10 +58,10 @@ menu:
             title: menu.parameters
             items:
               resalys:
-                  title:  menu.resalys
+                  title:  menu.parameters.resalys
                   route:  resalys_actions
               viafrance:
-                  title:  menu.viafrance
+                  title:  menu.parameters.viafrance
                   route:  viafrance_actions
               job:
                   title:  menu.job

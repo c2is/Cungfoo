@@ -136,9 +136,10 @@ menu.etablissement: Établissement
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter
 menu.parameters: Paramètres
+menu.parameters.resalys: Imports Resalys
+menu.parameters.viafrance: Imports ViaFrance
 menu.pays: Pays
 menu.region: Régions
-menu.resalys: Gestion de Resalys
 menu.themes: Themes
 menu.title: Cungfoo
 menu.ville: Villes
