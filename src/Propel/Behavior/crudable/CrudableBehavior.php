@@ -9,10 +9,7 @@ class CrudableBehavior extends Behavior
 {
     // default parameters value
     protected $parameters = array(
-        'route_controller'  => null,
         'route_prefix'      => '/',
-        'routes_file'       => null,
-        'languages_file'    => null,
         'crud_prefix'       => null,
         'crud_model'        => null,
         'crud_form'         => null,
@@ -45,8 +42,6 @@ class CrudableBehavior extends Behavior
 
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
-                $this->addGetWebPath($columnName, $script);
-                $this->addGetAbsolutePath($columnName, $script);
                 $this->addUploadFile($columnName, $script);
             }
         }
@@ -104,45 +99,22 @@ public function getUploadDir()
 
     protected function addGetUploadRootDir(&$script)
     {
+        $absoluteModelDir = realpath(sprintf('%s/%s/%s',
+            $this->getTable()->getGeneratorConfig()->getBuildProperties()['phpDir'],
+            str_replace('\\', '/', $this->getTable()->getDatabase()->getNamespace()),
+            $this->getTable()->getGeneratorConfig()->getBuildProperties()['namespaceOm']
+        ));
+        $absoluteWebDir     = realpath($this->getTable()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableWebDir']);
+        $subDirectoryLevel  = str_repeat('/..', count(array_diff_assoc(explode('/', $absoluteModelDir), explode('/', $absoluteWebDir))));
+        $relativeWebDir     = implode('/', array_diff_assoc(explode('/', $absoluteWebDir), explode('/', $absoluteModelDir)));
+
         $script .= "
 /**
  * @return string
  */
 public function getUploadRootDir()
 {
-    return __DIR__.'/../../../../web/'.\$this->getUploadDir();
-}
-";
-    }
-
-    protected function addGetWebPath($columnName, &$script)
-    {
-        $utils = new \Cungfoo\Lib\Utils();
-        $columnName = $utils->camelize($columnName);
-
-        $script .= "
-/**
- * @return string
- */
-public function getWeb$columnName()
-{
-    return null === \$this->get$columnName() ? null : \$this->getUploadDir().'/'.\$this->get$columnName();
-}
-";
-    }
-
-    protected function addGetAbsolutePath($columnName, &$script)
-    {
-        $utils = new \Cungfoo\Lib\Utils();
-        $columnName = $utils->camelize($columnName);
-
-        $script .= "
-/**
- * @return string
- */
-public function getAbsolute$columnName()
-{
-    return null === \$this->get$columnName() ? null : \$this->getUploadRootDir().'/'.\$this->get$columnName();
+    return __DIR__.'$subDirectoryLevel/$relativeWebDir/'.\$this->getUploadDir();
 }
 ";
     }
@@ -163,7 +135,7 @@ public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
     {
         \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
         \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
-        \$this->set$columnNameCamelize(\$image);
+        \$this->set$columnNameCamelize(\$this->getUploadDir() . '/' . \$image);
     }
 }
 ";

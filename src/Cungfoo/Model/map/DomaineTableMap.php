@@ -55,17 +55,4 @@ class DomaineTableMap extends TableMap
     {
     } // buildRelations()
 
-    /**
-     *
-     * Gets the list of behaviors registered for this table
-     *
-     * @return array Associative array (name => parameters) of behaviors
-     */
-    public function getBehaviors()
-    {
-        return array(
-            'crudable' => array('route_controller' => '\Cungfoo\Controller\CrudController', 'route_prefix' => '/', 'routes_file' => '../Cungfoo/crud.yml', 'languages_file' => '../languages.yml', 'crud_prefix' => '', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
-        );
-    } // getBehaviors()
-
 } // DomaineTableMap
