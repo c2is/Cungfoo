@@ -17,14 +17,14 @@ class JobController implements ControllerProviderInterface
      */
     public function connect(Application $app)
     {
-        // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
         $controllers->get('/', function () use ($app)
         {
             $jobs = \Cungfoo\Model\JobQuery::create()
-                ->orderByCreatedAt(\Criteria::ASC)
-                ->find();
+                ->orderByCreatedAt(\Criteria::DESC)
+                ->find()
+            ;
 
             return $app['twig']->render('Job/list.twig', array(
                 'jobs' => $jobs
@@ -36,8 +36,8 @@ class JobController implements ControllerProviderInterface
         {
             $job = \Cungfoo\Model\JobQuery::create()
                 ->filterById($id)
-                ->orderByCreatedAt(\Criteria::DESC)
-                ->findOne();
+                ->findOne()
+            ;
 
             if (null === $job)
             {
@@ -46,8 +46,9 @@ class JobController implements ControllerProviderInterface
 
             $jobLogs = \Cungfoo\Model\JobLogQuery::create()
                 ->filterByJobId($job->getId())
-                ->orderById()
-                ->find();
+                ->orderById(\Criteria::ASC)
+                ->find()
+            ;
 
             return $app['twig']->render('Job/list_log.twig', array(
                 'name' => $job->getType(),

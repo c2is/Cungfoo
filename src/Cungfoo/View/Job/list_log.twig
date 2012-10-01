@@ -16,7 +16,7 @@
         <tr{% if jobLog.level == "error" %} class="error" {% endif %}>
           <td class="center">{{ jobLog.level }}</td>
           <td>{{ jobLog.message | raw }}</td>
-          <td class="center">{{ jobLog.createdAt | date("m/d/Y H:i:s")}}</td>
+          <td class="center">{{ jobLog.createdAt | date("d/m/Y H:i:s")}}</td>
         </tr>
       {% endfor %}
       </tbody>

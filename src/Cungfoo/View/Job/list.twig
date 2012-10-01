@@ -20,8 +20,8 @@
           <td class="center">{{ job.name }}</td>
           <td class="center">{{ job.type }}</td>
           <td class="center">{{ job.message }}</td>
-          <td class="center">{{ job.createdAt | date("m/d/Y H:i:s") }}</td>
-          <td class="center">{{ job.completedAt | date("m/d/Y H:i:s") }}</td>
+          <td class="center">{{ job.createdAt | date("d/m/Y H:i:s") }}</td>
+          <td class="center">{{ job.completedAt | date("d/m/Y H:i:s") }}</td>
           <td class="center"><a href="{{ path('job_log_list', {'id':job.id}) }}"><i class="icon-list-alt"></i></a></td>
         </tr>
       {% endfor %}
