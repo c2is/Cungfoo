@@ -1965,22 +1965,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
-     * @return string
-     */
-    public function getWebImagePath()
-    {
-        return null === $this->getImagePath() ? null : $this->getUploadDir().'/'.$this->getImagePath();
-    }
-
-    /**
-     * @return string
-     */
-    public function getAbsoluteImagePath()
-    {
-        return null === $this->getImagePath() ? null : $this->getUploadRootDir().'/'.$this->getImagePath();
-    }
-
-    /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
      */
@@ -1990,7 +1974,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {
             $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
             $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImagePath($image);
+            $this->setImagePath($this->getUploadDir() . '/' . $image);
         }
     }
 

@@ -329,16 +329,10 @@ class {$this->getClassname()} extends AppAwareType
             $languagesConfiguration = array(locale_get_default());
 
             // get the configuration of the site languages
-            $languageParameter = $this->getDatabase()->getBehavior('crudable')->getParameter('languages_file');
-            if (null !== $languageParameter)
+            $languageFilename = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableLanguagesConf'];
+            if (file_exists($languageFilename))
             {
-                $propelDirectory    = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
-                $languageFilename   = sprintf('%s/%s', $propelDirectory, $languageParameter);
-
-                if (file_exists($languageFilename))
-                {
-                    $languagesConfiguration = array_keys(Yaml::parse($languageFilename)['languages']);
-                }
+                $languagesConfiguration = array_keys(Yaml::parse($languageFilename)['languages']);
             }
 
             $options = array(
@@ -461,14 +455,11 @@ class {$this->getClassname()} extends AppAwareType
             return;
         }
 
-        $behaviorParameters = $this->getDatabase()->getBehavior('crudable')->getParameters();
+        $behaviorParameters = $this->getTable()->getBehavior('crudable')->getParameters();
 
         // mandatory parameters
         $mandatoryParameters = array(
-            'route_controller',
-            'route_prefix',
-            'routes_file',
-            'languages_file',
+            'route_prefix'
         );
 
         // validate that the parameter are set
@@ -482,7 +473,7 @@ class {$this->getClassname()} extends AppAwareType
 
         // validate the existence of the crud configuration file
         $propelDirectory = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['projectDir'];
-        $crudFilename    = sprintf('%s/%s', $propelDirectory, $behaviorParameters['routes_file']);
+        $crudFilename    = $this->getTable()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableRoutesConf'];
 
         if (!file_exists($crudFilename))
         {
@@ -493,7 +484,7 @@ class {$this->getClassname()} extends AppAwareType
 
         $crudConfiguration = Yaml::parse($crudFilename);
         $crudConfiguration['crud']['prefix'] = $behaviorParameters['route_prefix'];
-        $crudConfiguration['crud']['controller'] = $behaviorParameters['route_controller'];
+        $crudConfiguration['crud']['controller'] = $this->getTable()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableRoutesController'];
 
         $tableParameters = $this->getTable()->getBehavior('crudable')->getParameters();
         $crudConfiguration['crud']['items'][$this->getTable()->getName()] = array(

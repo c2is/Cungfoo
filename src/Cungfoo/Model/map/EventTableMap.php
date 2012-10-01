@@ -77,7 +77,7 @@ class EventTableMap extends TableMap
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name, str_date', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_controller' => '', 'route_prefix' => '/', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/events', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/events', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
 
