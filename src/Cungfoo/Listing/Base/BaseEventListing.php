@@ -20,8 +20,8 @@ class BaseEventListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('code'));
         $this->addColumn(new Column\TextColumn('category'));
-        $this->addColumn(new Column\TextColumn('title'));
         $this->addColumn(new Column\TextColumn('address'));
         $this->addColumn(new Column\TextColumn('address2'));
         $this->addColumn(new Column\TextColumn('zipcode'));

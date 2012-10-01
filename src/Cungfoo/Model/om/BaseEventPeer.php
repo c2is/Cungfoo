@@ -48,11 +48,11 @@ abstract class BaseEventPeer
     /** the column name for the ID field */
     const ID = 'event.ID';
 
+    /** the column name for the CODE field */
+    const CODE = 'event.CODE';
+
     /** the column name for the CATEGORY field */
     const CATEGORY = 'event.CATEGORY';
-
-    /** the column name for the TITLE field */
-    const TITLE = 'event.TITLE';
 
     /** the column name for the ADDRESS field */
     const ADDRESS = 'event.ADDRESS';
@@ -104,11 +104,11 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[EventPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Category', 'Title', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'category', 'title', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CATEGORY, EventPeer::TITLE, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CATEGORY', 'TITLE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'category', 'title', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Category', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CODE, EventPeer::CATEGORY, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'created_at', 'updated_at', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
@@ -119,11 +119,11 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Category' => 1, 'Title' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'Image' => 7, 'Priority' => 8, 'CreatedAt' => 9, 'UpdatedAt' => 10, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'category' => 1, 'title' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'createdAt' => 9, 'updatedAt' => 10, ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CATEGORY => 1, EventPeer::TITLE => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::IMAGE => 7, EventPeer::PRIORITY => 8, EventPeer::CREATED_AT => 9, EventPeer::UPDATED_AT => 10, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CATEGORY' => 1, 'TITLE' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'IMAGE' => 7, 'PRIORITY' => 8, 'CREATED_AT' => 9, 'UPDATED_AT' => 10, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'category' => 1, 'title' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'created_at' => 9, 'updated_at' => 10, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Category' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'Image' => 7, 'Priority' => 8, 'CreatedAt' => 9, 'UpdatedAt' => 10, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'createdAt' => 9, 'updatedAt' => 10, ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CODE => 1, EventPeer::CATEGORY => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::IMAGE => 7, EventPeer::PRIORITY => 8, EventPeer::CREATED_AT => 9, EventPeer::UPDATED_AT => 10, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'IMAGE' => 7, 'PRIORITY' => 8, 'CREATED_AT' => 9, 'UPDATED_AT' => 10, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'created_at' => 9, 'updated_at' => 10, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
@@ -199,8 +199,8 @@ abstract class BaseEventPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(EventPeer::ID);
+            $criteria->addSelectColumn(EventPeer::CODE);
             $criteria->addSelectColumn(EventPeer::CATEGORY);
-            $criteria->addSelectColumn(EventPeer::TITLE);
             $criteria->addSelectColumn(EventPeer::ADDRESS);
             $criteria->addSelectColumn(EventPeer::ADDRESS2);
             $criteria->addSelectColumn(EventPeer::ZIPCODE);
@@ -211,8 +211,8 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn(EventPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CATEGORY');
-            $criteria->addSelectColumn($alias . '.TITLE');
             $criteria->addSelectColumn($alias . '.ADDRESS');
             $criteria->addSelectColumn($alias . '.ADDRESS2');
             $criteria->addSelectColumn($alias . '.ZIPCODE');

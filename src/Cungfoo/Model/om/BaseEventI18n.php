@@ -59,6 +59,12 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     protected $locale;
 
     /**
+     * The value for the name field.
+     * @var        string
+     */
+    protected $name;
+
+    /**
      * The value for the str_date field.
      * @var        string
      */
@@ -125,6 +131,16 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [name] column value.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * Get the [str_date] column value.
      *
      * @return string
@@ -179,6 +195,27 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
 
         return $this;
     } // setLocale()
+
+    /**
+     * Set the value of [name] column.
+     *
+     * @param string $v new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setName($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->name !== $v) {
+            $this->name = $v;
+            $this->modifiedColumns[] = EventI18nPeer::NAME;
+        }
+
+
+        return $this;
+    } // setName()
 
     /**
      * Set the value of [str_date] column.
@@ -239,7 +276,8 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->str_date = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->str_date = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +286,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EventI18n object", $e);
@@ -478,6 +516,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
+        if ($this->isColumnModified(EventI18nPeer::NAME)) {
+            $modifiedColumns[':p' . $index++]  = '`NAME`';
+        }
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) {
             $modifiedColumns[':p' . $index++]  = '`STR_DATE`';
         }
@@ -497,6 +538,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                         break;
                     case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
+                        break;
+                    case '`NAME`':
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`STR_DATE`':
                         $stmt->bindValue($identifier, $this->str_date, PDO::PARAM_STR);
@@ -647,6 +691,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 return $this->getLocale();
                 break;
             case 2:
+                return $this->getName();
+                break;
+            case 3:
                 return $this->getStrDate();
                 break;
             default:
@@ -680,7 +727,8 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
-            $keys[2] => $this->getStrDate(),
+            $keys[2] => $this->getName(),
+            $keys[3] => $this->getStrDate(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEvent) {
@@ -727,6 +775,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 $this->setLocale($value);
                 break;
             case 2:
+                $this->setName($value);
+                break;
+            case 3:
                 $this->setStrDate($value);
                 break;
         } // switch()
@@ -755,7 +806,8 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setStrDate($arr[$keys[2]]);
+        if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setStrDate($arr[$keys[3]]);
     }
 
     /**
@@ -769,6 +821,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
 
         if ($this->isColumnModified(EventI18nPeer::ID)) $criteria->add(EventI18nPeer::ID, $this->id);
         if ($this->isColumnModified(EventI18nPeer::LOCALE)) $criteria->add(EventI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(EventI18nPeer::NAME)) $criteria->add(EventI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) $criteria->add(EventI18nPeer::STR_DATE, $this->str_date);
 
         return $criteria;
@@ -842,6 +895,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     {
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
+        $copyObj->setName($this->getName());
         $copyObj->setStrDate($this->getStrDate());
 
         if ($deepCopy && !$this->startCopy) {
@@ -958,6 +1012,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->locale = null;
+        $this->name = null;
         $this->str_date = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;

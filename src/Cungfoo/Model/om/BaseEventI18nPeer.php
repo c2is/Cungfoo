@@ -37,19 +37,22 @@ abstract class BaseEventI18nPeer
     const TM_CLASS = 'EventI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
     const ID = 'event_i18n.ID';
 
     /** the column name for the LOCALE field */
     const LOCALE = 'event_i18n.LOCALE';
+
+    /** the column name for the NAME field */
+    const NAME = 'event_i18n.NAME';
 
     /** the column name for the STR_DATE field */
     const STR_DATE = 'event_i18n.STR_DATE';
@@ -73,12 +76,12 @@ abstract class BaseEventI18nPeer
      * e.g. EventI18nPeer::$fieldNames[EventI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'StrDate', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'strDate', ),
-        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID, EventI18nPeer::LOCALE, EventI18nPeer::STR_DATE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'STR_DATE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'str_date', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'StrDate', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'strDate', ),
+        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID, EventI18nPeer::LOCALE, EventI18nPeer::NAME, EventI18nPeer::STR_DATE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'STR_DATE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'str_date', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -88,12 +91,12 @@ abstract class BaseEventI18nPeer
      * e.g. EventI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'StrDate' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'strDate' => 2, ),
-        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID => 0, EventI18nPeer::LOCALE => 1, EventI18nPeer::STR_DATE => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'STR_DATE' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'str_date' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'StrDate' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'strDate' => 3, ),
+        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID => 0, EventI18nPeer::LOCALE => 1, EventI18nPeer::NAME => 2, EventI18nPeer::STR_DATE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'STR_DATE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'str_date' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -169,10 +172,12 @@ abstract class BaseEventI18nPeer
         if (null === $alias) {
             $criteria->addSelectColumn(EventI18nPeer::ID);
             $criteria->addSelectColumn(EventI18nPeer::LOCALE);
+            $criteria->addSelectColumn(EventI18nPeer::NAME);
             $criteria->addSelectColumn(EventI18nPeer::STR_DATE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
+            $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.STR_DATE');
         }
     }

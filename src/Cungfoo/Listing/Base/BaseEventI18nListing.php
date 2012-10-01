@@ -22,6 +22,7 @@ class BaseEventI18nListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('locale'));
         $this->addColumn(new Column\TextColumn('locale'));
+        $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('str_date'));
     }
 

@@ -31,9 +31,15 @@ class BaseEventI18nType extends AppAwareType
             'label' => 'event_i18n.locale',
             'required' => false,
         ));
-        $builder->add('str_date', 'text', array(
+        $builder->add('name', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),
+            ),
+            'label' => 'event_i18n.name',
+            'required' => false,
+        ));
+        $builder->add('str_date', 'text', array(
+            'constraints' => array(
             ),
             'label' => 'event_i18n.str_date',
             'required' => false,

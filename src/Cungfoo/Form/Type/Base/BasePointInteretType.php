@@ -36,35 +36,30 @@ class BasePointInteretType extends AppAwareType
         ));
         $builder->add('address', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'point_interet.address',
             'required' => false,
         ));
         $builder->add('address2', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'point_interet.address2',
             'required' => false,
         ));
         $builder->add('zipcode', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'point_interet.zipcode',
             'required' => false,
         ));
         $builder->add('city', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'point_interet.city',
             'required' => false,
         ));
         $builder->add('image', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'point_interet.image',
             'required' => false,

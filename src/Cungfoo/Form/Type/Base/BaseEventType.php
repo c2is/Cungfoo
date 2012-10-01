@@ -27,58 +27,51 @@ class BaseEventType extends AppAwareType
             'label' => 'event.id',
             'required' => false,
         ));
-        $builder->add('category', 'text', array(
+        $builder->add('code', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),
+            ),
+            'label' => 'event.code',
+            'required' => false,
+        ));
+        $builder->add('category', 'text', array(
+            'constraints' => array(
             ),
             'label' => 'event.category',
             'required' => false,
         ));
-        $builder->add('title', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'event.title',
-            'required' => false,
-        ));
         $builder->add('address', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.address',
             'required' => false,
         ));
         $builder->add('address2', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.address2',
             'required' => false,
         ));
         $builder->add('zipcode', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.zipcode',
             'required' => false,
         ));
         $builder->add('city', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.city',
             'required' => false,
         ));
         $builder->add('image', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.image',
             'required' => false,
         ));
         $builder->add('priority', 'text', array(
             'constraints' => array(
-                new Assert\NotBlank(),
             ),
             'label' => 'event.priority',
             'required' => false,
@@ -100,12 +93,19 @@ class BaseEventType extends AppAwareType
             ),
             'label' => 'event.eventI18ns',
             'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'event.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
                 'str_date' => array(
                     'required' => false,
                     'label' => 'event.str_date',
                     'type' => 'text',
                     'constraints' => array(
-                        new Assert\NotBlank(),
                     ),
                 ),
             ),

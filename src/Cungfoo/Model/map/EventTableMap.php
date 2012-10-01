@@ -43,14 +43,14 @@ class EventTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('CATEGORY', 'Category', 'VARCHAR', true, 255, null);
-        $this->addColumn('TITLE', 'Title', 'VARCHAR', true, 255, null);
-        $this->addColumn('ADDRESS', 'Address', 'VARCHAR', true, 255, null);
-        $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', true, 255, null);
-        $this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', true, 255, null);
-        $this->addColumn('CITY', 'City', 'VARCHAR', true, 255, null);
-        $this->addColumn('IMAGE', 'Image', 'VARCHAR', true, 255, null);
-        $this->addColumn('PRIORITY', 'Priority', 'VARCHAR', true, 255, null);
+        $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
+        $this->addColumn('CATEGORY', 'Category', 'VARCHAR', false, 255, null);
+        $this->addColumn('ADDRESS', 'Address', 'VARCHAR', false, 255, null);
+        $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', false, 255, null);
+        $this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', false, 255, null);
+        $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE', 'Image', 'VARCHAR', false, 255, null);
+        $this->addColumn('PRIORITY', 'Priority', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -76,7 +76,7 @@ class EventTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'str_date', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name, str_date', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_controller' => '', 'route_prefix' => '/', 'routes_file' => '', 'languages_file' => '', 'crud_prefix' => '/events', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()

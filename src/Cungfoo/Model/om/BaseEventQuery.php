@@ -25,8 +25,8 @@ use Cungfoo\Model\EventQuery;
  *
  *
  * @method EventQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method EventQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method EventQuery orderByCategory($order = Criteria::ASC) Order by the category column
- * @method EventQuery orderByTitle($order = Criteria::ASC) Order by the title column
  * @method EventQuery orderByAddress($order = Criteria::ASC) Order by the address column
  * @method EventQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
  * @method EventQuery orderByZipcode($order = Criteria::ASC) Order by the zipcode column
@@ -37,8 +37,8 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method EventQuery groupById() Group by the id column
+ * @method EventQuery groupByCode() Group by the code column
  * @method EventQuery groupByCategory() Group by the category column
- * @method EventQuery groupByTitle() Group by the title column
  * @method EventQuery groupByAddress() Group by the address column
  * @method EventQuery groupByAddress2() Group by the address2 column
  * @method EventQuery groupByZipcode() Group by the zipcode column
@@ -63,8 +63,8 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOne(PropelPDO $con = null) Return the first Event matching the query
  * @method Event findOneOrCreate(PropelPDO $con = null) Return the first Event matching the query, or a new Event object populated from the query conditions when no match is found
  *
+ * @method Event findOneByCode(string $code) Return the first Event filtered by the code column
  * @method Event findOneByCategory(string $category) Return the first Event filtered by the category column
- * @method Event findOneByTitle(string $title) Return the first Event filtered by the title column
  * @method Event findOneByAddress(string $address) Return the first Event filtered by the address column
  * @method Event findOneByAddress2(string $address2) Return the first Event filtered by the address2 column
  * @method Event findOneByZipcode(string $zipcode) Return the first Event filtered by the zipcode column
@@ -75,8 +75,8 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOneByUpdatedAt(string $updated_at) Return the first Event filtered by the updated_at column
  *
  * @method array findById(int $id) Return Event objects filtered by the id column
+ * @method array findByCode(string $code) Return Event objects filtered by the code column
  * @method array findByCategory(string $category) Return Event objects filtered by the category column
- * @method array findByTitle(string $title) Return Event objects filtered by the title column
  * @method array findByAddress(string $address) Return Event objects filtered by the address column
  * @method array findByAddress2(string $address2) Return Event objects filtered by the address2 column
  * @method array findByZipcode(string $zipcode) Return Event objects filtered by the zipcode column
@@ -188,7 +188,7 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CATEGORY`, `TITLE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT` FROM `event` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT` FROM `event` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -305,6 +305,35 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCode('fooValue');   // WHERE code = 'fooValue'
+     * $query->filterByCode('%fooValue%'); // WHERE code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $code The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByCode($code = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($code)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $code)) {
+                $code = str_replace('*', '%', $code);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::CODE, $code, $comparison);
+    }
+
+    /**
      * Filter the query on the category column
      *
      * Example usage:
@@ -331,35 +360,6 @@ abstract class BaseEventQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventPeer::CATEGORY, $category, $comparison);
-    }
-
-    /**
-     * Filter the query on the title column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByTitle('fooValue');   // WHERE title = 'fooValue'
-     * $query->filterByTitle('%fooValue%'); // WHERE title LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $title The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EventQuery The current query, for fluid interface
-     */
-    public function filterByTitle($title = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($title)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $title)) {
-                $title = str_replace('*', '%', $title);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EventPeer::TITLE, $title, $comparison);
     }
 
     /**
