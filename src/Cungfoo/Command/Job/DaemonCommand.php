@@ -6,9 +6,9 @@ namespace Cungfoo\Command\Job;
 use Cungfoo\Command\Command as BaseCommand;
 
 use Symfony\Component\Console\Input\InputArgument,
-Symfony\Component\Console\Input\InputInterface,
-Symfony\Component\Console\Input\InputOption,
-Symfony\Component\Console\Output\OutputInterface;
+    Symfony\Component\Console\Input\InputInterface,
+    Symfony\Component\Console\Input\InputOption,
+    Symfony\Component\Console\Output\OutputInterface;
 
 class DaemonCommand extends BaseCommand
 {
@@ -59,6 +59,7 @@ class DaemonCommand extends BaseCommand
                 {
                     $output->writeln(sprintf('<info>%s</info>', 'execution of the job'));
                     $idleJob->run(array(
+                        'app' => $this->getSilexApplication(),
                         'rootDir' => $this->getApplication()->getRootDir(),
                         'output' => $output
                     ));
