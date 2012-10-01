@@ -33,15 +33,16 @@ class PointOfInterestCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $client = new PointOfInterestClient();
+        $client->loadConfig($this->getApplication()->getRootDir().'/app/config/ViaFrance/client.yml');
+
+        $loader = new PointOfInterestLoader();
+
         $con = \Propel::getConnection();
         $con->beginTransaction();
 
         try
         {
-            $client = new PointOfInterestClient();
-            $client->loadConfig($this->getApplication()->getRootDir().'/app/config/ViaFrance/client.yml');
-
-            $loader = new PointOfInterestLoader();
             $loader->init($con);
 
             $etabs = \Cungfoo\Model\EtablissementQuery::create()

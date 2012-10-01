@@ -30,15 +30,16 @@ class EventJobHandler extends JobHandler
         $this->addLog(sprintf('Run %s', get_class($this)), JobLogPeer::LEVEL_INFO);
         $startedAt = time();
 
+        $client = new EventClient();
+        $client->loadConfig($params['app']['config']->getRootDir().'/app/config/ViaFrance/client.yml');
+
+        $loader = new EventLoader();
+
         $con = \Propel::getConnection();
         $con->beginTransaction();
 
         try
         {
-            $client = new EventClient();
-            $client->loadConfig($params['app']['config']->getRootDir().'/app/config/ViaFrance/client.yml');
-
-            $loader = new EventLoader();
             $loader->init($con);
 
             $etabs = \Cungfoo\Model\EtablissementQuery::create()

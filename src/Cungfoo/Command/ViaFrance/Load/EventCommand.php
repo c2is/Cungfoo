@@ -33,15 +33,16 @@ class EventCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $client = new EventClient();
+        $client->loadConfig($this->getApplication()->getRootDir().'/app/config/ViaFrance/client.yml');
+
+        $loader = new EventLoader();
+
         $con = \Propel::getConnection();
         $con->beginTransaction();
 
         try
         {
-            $client = new EventClient();
-            $client->loadConfig($this->getApplication()->getRootDir().'/app/config/ViaFrance/client.yml');
-
-            $loader = new EventLoader();
             $loader->init($con);
 
             $etabs = \Cungfoo\Model\EtablissementQuery::create()

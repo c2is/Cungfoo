@@ -30,15 +30,16 @@ class PointOfInterestJobHandler extends JobHandler
         $this->addLog(sprintf('Run %s', get_class($this)), JobLogPeer::LEVEL_INFO);
         $startedAt = time();
 
+        $client = new PointOfInterestClient();
+        $client->loadConfig($params['app']['config']->getRootDir().'/app/config/ViaFrance/client.yml');
+
+        $loader = new PointOfInterestLoader();
+
         $con = \Propel::getConnection();
         $con->beginTransaction();
 
         try
         {
-            $client = new PointOfInterestClient();
-            $client->loadConfig($params['app']['config']->getRootDir().'/app/config/ViaFrance/client.yml');
-
-            $loader = new PointOfInterestLoader();
             $loader->init($con);
 
             $etabs = \Cungfoo\Model\EtablissementQuery::create()
