@@ -245,13 +245,13 @@ event.crud.list: Liste des évènements
 event.crud.update: Mettre à jour l'évènement %name%
 event.crud.view: Détails de l'évènement %name%
 event.id: Id
+event.code: Code interne
 event.category: Catégorie
-event.title: Titre
+event.name: Name
 event.address: Adresse
 event.address2: Adresse 2
 event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
-event.str.date: DateD
-event.str_date: DateD
+event.str.date: Période
