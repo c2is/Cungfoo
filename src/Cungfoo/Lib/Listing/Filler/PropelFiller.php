@@ -50,9 +50,12 @@ class PropelFiller extends AbstractDatabaseFiller
             $getTextMethod = 'get'.$utils->camelize($textFieldName);
         }
 
+        $text = ($object) ? $object->$getTextMethod() : '';
+        $id   = ($object) ? $object->getId() : '';
+
         return array(
-            'text' => $object->$getTextMethod(),
-            'id'   => $object->getId()
+            'text' => $text,
+            'id'   => $id
         );
     }
 
