@@ -34,7 +34,7 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.code',
             'required' => false,
         ));
-        $builder->add('image_path', 'file', array(
+        $builder->add('image_path', 'cungfoo_file', array(
             'constraints' => array(
             ),
             'label' => 'region.image_path',

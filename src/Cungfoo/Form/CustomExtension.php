@@ -28,6 +28,7 @@ class CustomExtension extends AbstractExtension
             new Type\TranslationType(),
             new Type\TranslationCollectionType(),
             new Type\TextrichType(),
+            new Type\CungfooFileType(),
         );
     }
 }

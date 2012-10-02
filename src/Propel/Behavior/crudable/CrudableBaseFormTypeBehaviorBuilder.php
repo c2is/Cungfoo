@@ -216,11 +216,11 @@ class {$this->getClassname()} extends AppAwareType
         }
         elseif (PropelTypes::LONGVARBINARY === $column->getType())
         {
-            return 'file';
+            return 'cungfoo_file';
         }
-        elseif ('file' === $column->getType())
+        elseif ('cungfoo_file' === $column->getType())
         {
-            return 'file';
+            return 'cungfoo_file';
         }
     }
 
@@ -258,7 +258,7 @@ class {$this->getClassname()} extends AppAwareType
                 $typeFileColumns = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
                 if (in_array($column->getName(), $typeFileColumns))
                 {
-                    $column->setType('file');
+                    $column->setType('cungfoo_file');
                     $addDeletedField = true;
                 }
 
