@@ -226,6 +226,7 @@ type_hebergement.etablissements: Établissements ayant ce type hébergement
 type_hebergement.id: Id
 type_hebergement.code: Code
 type_hebergement.name: Nom
+type_hebergement.category.type.hebergement: Catégorie
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes

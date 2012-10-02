@@ -24,6 +24,7 @@ class RegionListing extends BaseRegionListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('pays'));
         $this->removeColumn('image_path');
     }
 

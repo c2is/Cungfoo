@@ -24,6 +24,7 @@ class VilleListing extends BaseVilleListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('region'));
     }
 
 } // VilleListing
