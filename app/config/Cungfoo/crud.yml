@@ -62,3 +62,7 @@ crud:
             prefix: /events
             model: \Cungfoo\Model\Event
             form: \Cungfoo\Form\Type\EventType
+        personnage:
+            prefix: /personnages
+            model: \Cungfoo\Model\Personnage
+            form: \Cungfoo\Form\Type\PersonnageType

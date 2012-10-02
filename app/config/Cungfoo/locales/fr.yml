@@ -262,3 +262,16 @@ event.city: Ville
 event.image: Image
 event.priority: Priorité
 event.str.date: Période
+
+personnage.crud.create: Création d'un personnage
+personnage.crud.list: Liste des personnages
+personnage.crud.update: Mettre à jour le personnage %name%
+personnage.crud.view: Détails du personnage %name%
+personnage.id: Id
+personnage.etablissement: Etablissement
+personnage.age: Age
+personnage.prenom: Prénom
+personnage.image_path: Image
+personnage.interet_1: Intéret 1
+personnage.interet_2: Intéret 2
+personnage.interet_3: Intéret 3

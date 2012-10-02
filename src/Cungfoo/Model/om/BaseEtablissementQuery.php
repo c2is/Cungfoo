@@ -30,6 +30,7 @@ use Cungfoo\Model\EtablissementSituationGeographique;
 use Cungfoo\Model\EtablissementThematique;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\Event;
+use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\SituationGeographique;
@@ -133,6 +134,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinEtablissementEvent($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementEvent relation
  * @method EtablissementQuery rightJoinEtablissementEvent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementEvent relation
  * @method EtablissementQuery innerJoinEtablissementEvent($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementEvent relation
+ *
+ * @method EtablissementQuery leftJoinPersonnage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Personnage relation
+ * @method EtablissementQuery rightJoinPersonnage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Personnage relation
+ * @method EtablissementQuery innerJoinPersonnage($relationAlias = null) Adds a INNER JOIN clause to the query using the Personnage relation
  *
  * @method EtablissementQuery leftJoinEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementI18n relation
  * @method EtablissementQuery rightJoinEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementI18n relation
@@ -1894,6 +1899,80 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinEtablissementEvent($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'EtablissementEvent', '\Cungfoo\Model\EtablissementEventQuery');
+    }
+
+    /**
+     * Filter the query by a related Personnage object
+     *
+     * @param   Personnage|PropelObjectCollection $personnage  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByPersonnage($personnage, $comparison = null)
+    {
+        if ($personnage instanceof Personnage) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $personnage->getEtablissementId(), $comparison);
+        } elseif ($personnage instanceof PropelObjectCollection) {
+            return $this
+                ->usePersonnageQuery()
+                ->filterByPrimaryKeys($personnage->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPersonnage() only accepts arguments of type Personnage or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Personnage relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinPersonnage($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Personnage');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Personnage');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Personnage relation Personnage object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\PersonnageQuery A secondary query class using the current class as primary query
+     */
+    public function usePersonnageQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinPersonnage($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Personnage', '\Cungfoo\Model\PersonnageQuery');
     }
 
     /**
