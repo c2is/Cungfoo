@@ -48,6 +48,8 @@ use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\Event;
 use Cungfoo\Model\EventQuery;
+use Cungfoo\Model\Personnage;
+use Cungfoo\Model\PersonnageQuery;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretQuery;
 use Cungfoo\Model\ServiceComplementaire;
@@ -280,6 +282,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collEtablissementEventsPartial;
 
     /**
+     * @var        PropelObjectCollection|Personnage[] Collection to store aggregation of Personnage objects.
+     */
+    protected $collPersonnages;
+    protected $collPersonnagesPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -465,6 +473,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementEventsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $personnagesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1396,6 +1410,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collEtablissementEvents = null;
 
+            $this->collPersonnages = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1894,6 +1910,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->personnagesScheduledForDeletion !== null) {
+                if (!$this->personnagesScheduledForDeletion->isEmpty()) {
+                    foreach ($this->personnagesScheduledForDeletion as $personnage) {
+                        // need to save related object because we set the relation to null
+                        $personnage->save($con);
+                    }
+                    $this->personnagesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPersonnages !== null) {
+                foreach ($this->collPersonnages as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementI18nsScheduledForDeletion !== null) {
                 if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
                     EtablissementI18nQuery::create()
@@ -2263,6 +2297,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collPersonnages !== null) {
+                    foreach ($this->collPersonnages as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2453,6 +2495,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementEvents) {
                 $result['EtablissementEvents'] = $this->collEtablissementEvents->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collPersonnages) {
+                $result['Personnages'] = $this->collPersonnages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2776,6 +2821,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getPersonnages() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPersonnage($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -2971,6 +3022,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('EtablissementEvent' == $relationName) {
             $this->initEtablissementEvents();
+        }
+        if ('Personnage' == $relationName) {
+            $this->initPersonnages();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -5066,6 +5120,213 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collPersonnages collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPersonnages()
+     */
+    public function clearPersonnages()
+    {
+        $this->collPersonnages = null; // important to set this to null since that means it is uninitialized
+        $this->collPersonnagesPartial = null;
+    }
+
+    /**
+     * reset is the collPersonnages collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialPersonnages($v = true)
+    {
+        $this->collPersonnagesPartial = $v;
+    }
+
+    /**
+     * Initializes the collPersonnages collection.
+     *
+     * By default this just sets the collPersonnages collection to an empty array (like clearcollPersonnages());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPersonnages($overrideExisting = true)
+    {
+        if (null !== $this->collPersonnages && !$overrideExisting) {
+            return;
+        }
+        $this->collPersonnages = new PropelObjectCollection();
+        $this->collPersonnages->setModel('Personnage');
+    }
+
+    /**
+     * Gets an array of Personnage objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|Personnage[] List of Personnage objects
+     * @throws PropelException
+     */
+    public function getPersonnages($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collPersonnagesPartial && !$this->isNew();
+        if (null === $this->collPersonnages || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPersonnages) {
+                // return empty collection
+                $this->initPersonnages();
+            } else {
+                $collPersonnages = PersonnageQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collPersonnagesPartial && count($collPersonnages)) {
+                      $this->initPersonnages(false);
+
+                      foreach($collPersonnages as $obj) {
+                        if (false == $this->collPersonnages->contains($obj)) {
+                          $this->collPersonnages->append($obj);
+                        }
+                      }
+
+                      $this->collPersonnagesPartial = true;
+                    }
+
+                    return $collPersonnages;
+                }
+
+                if($partial && $this->collPersonnages) {
+                    foreach($this->collPersonnages as $obj) {
+                        if($obj->isNew()) {
+                            $collPersonnages[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collPersonnages = $collPersonnages;
+                $this->collPersonnagesPartial = false;
+            }
+        }
+
+        return $this->collPersonnages;
+    }
+
+    /**
+     * Sets a collection of Personnage objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $personnages A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setPersonnages(PropelCollection $personnages, PropelPDO $con = null)
+    {
+        $this->personnagesScheduledForDeletion = $this->getPersonnages(new Criteria(), $con)->diff($personnages);
+
+        foreach ($this->personnagesScheduledForDeletion as $personnageRemoved) {
+            $personnageRemoved->setEtablissement(null);
+        }
+
+        $this->collPersonnages = null;
+        foreach ($personnages as $personnage) {
+            $this->addPersonnage($personnage);
+        }
+
+        $this->collPersonnages = $personnages;
+        $this->collPersonnagesPartial = false;
+    }
+
+    /**
+     * Returns the number of related Personnage objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related Personnage objects.
+     * @throws PropelException
+     */
+    public function countPersonnages(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collPersonnagesPartial && !$this->isNew();
+        if (null === $this->collPersonnages || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPersonnages) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getPersonnages());
+                }
+                $query = PersonnageQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPersonnages);
+        }
+    }
+
+    /**
+     * Method called to associate a Personnage object to this object
+     * through the Personnage foreign key attribute.
+     *
+     * @param    Personnage $l Personnage
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addPersonnage(Personnage $l)
+    {
+        if ($this->collPersonnages === null) {
+            $this->initPersonnages();
+            $this->collPersonnagesPartial = true;
+        }
+        if (!in_array($l, $this->collPersonnages->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddPersonnage($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Personnage $personnage The personnage object to add.
+     */
+    protected function doAddPersonnage($personnage)
+    {
+        $this->collPersonnages[]= $personnage;
+        $personnage->setEtablissement($this);
+    }
+
+    /**
+     * @param	Personnage $personnage The personnage object to remove.
+     */
+    public function removePersonnage($personnage)
+    {
+        if ($this->getPersonnages()->contains($personnage)) {
+            $this->collPersonnages->remove($this->collPersonnages->search($personnage));
+            if (null === $this->personnagesScheduledForDeletion) {
+                $this->personnagesScheduledForDeletion = clone $this->collPersonnages;
+                $this->personnagesScheduledForDeletion->clear();
+            }
+            $this->personnagesScheduledForDeletion[]= $personnage;
+            $personnage->setEtablissement(null);
+        }
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -6879,6 +7140,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPersonnages) {
+                foreach ($this->collPersonnages as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -6971,6 +7237,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementEvents->clearIterator();
         }
         $this->collEtablissementEvents = null;
+        if ($this->collPersonnages instanceof PropelCollection) {
+            $this->collPersonnages->clearIterator();
+        }
+        $this->collPersonnages = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }

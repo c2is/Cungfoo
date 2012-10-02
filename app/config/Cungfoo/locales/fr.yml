@@ -152,6 +152,9 @@ menu.thematique: Thématiques
 menu.viafrance: Via France
 menu.poi: POI
 menu.event: Evènement
+menu.cms: Cms
+menu.personnages: Personnages
+
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -262,3 +265,16 @@ event.city: Ville
 event.image: Image
 event.priority: Priorité
 event.str.date: Période
+
+personnage.crud.create: Création d'un personnage
+personnage.crud.list: Liste des personnages
+personnage.crud.update: Mettre à jour le personnage %name%
+personnage.crud.view: Détails du personnage %name%
+personnage.id: Id
+personnage.etablissement: Etablissement
+personnage.age: Age
+personnage.prenom: Prénom
+personnage.image_path: Image
+personnage.interet_1: Intéret 1
+personnage.interet_2: Intéret 2
+personnage.interet_3: Intéret 3

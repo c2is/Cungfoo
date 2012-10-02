@@ -450,4 +450,30 @@
             <parameter name="crud_prefix" value="/events" />
         </behavior>
     </table>
+
+    <table name="personnage">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="etablissement_id" type="integer" />
+        <column name="prenom" type="varchar" required="true" />
+        <column name="age" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
+        <column name="interet_1" type="varchar" />
+        <column name="interet_2" type="varchar" />
+        <column name="interet_3" type="varchar" />
+        <behavior name="timestampable" />
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="prenom, interet_1, interet_2, interet_3" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/personnages" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
 </database>

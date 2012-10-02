@@ -63,6 +63,13 @@ class CampingController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $personnages = \Cungfoo\Model\PersonnageQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($id)
+                ->limit(3)
+                ->find()
+            ;
+
             return $app['twig']->render('etablissement.twig', array(
                 'locale'                => $locale,
                 'etab'                  => $etab,
@@ -70,6 +77,7 @@ class CampingController implements ControllerProviderInterface
                 'nbActivitesSportives'  => $nbActivitesSportives,
                 'nbEvenementsCulturels' => $nbEvenementsCulturels,
                 'eventPrioritaire'      => $eventPrioritaire,
+                'personnages'           => $personnages
             ));
         })
         ->bind('camping_index')

@@ -22,6 +22,7 @@ use Cungfoo\Model\EtablissementServiceComplementairePeer;
 use Cungfoo\Model\EtablissementSituationGeographiquePeer;
 use Cungfoo\Model\EtablissementThematiquePeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
+use Cungfoo\Model\PersonnagePeer;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\EtablissementTableMap;
 
@@ -508,6 +509,9 @@ abstract class BaseEtablissementPeer
         // Invalidate objects in EtablissementEventPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementEventPeer::clearInstancePool();
+        // Invalidate objects in PersonnagePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        PersonnagePeer::clearInstancePool();
         // Invalidate objects in EtablissementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementI18nPeer::clearInstancePool();
