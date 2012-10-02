@@ -19,19 +19,13 @@ abstract class AbstractDatabaseFiller extends AbstractFiller
 
         if ($this->isMultipleFK($name, $data))
         {
-            if (!isset($column->getOptions()['text_field_name']))
-            {
-                throw new \Exception(sprintf('Option "text_field_name" is missing on "%s" listing defintion.', $name));
-            }
-            $info = $this->getMulitpleFKInfo($name, $data, $column->getOptions()['text_field_name']);
+            $textFieldName = (isset($column->getOptions()['text_field_name'])) ? $column->getOptions()['text_field_name'] : null;
+            $info = $this->getMulitpleFKInfo($name, $data, $textFieldName);
         }
         elseif ($this->isSingleFK($name, $data))
         {
-            if (!isset($column->getOptions()['text_field_name']))
-            {
-                throw new \Exception(sprintf('Option "text_field_name" is missing on "%s" listing defintion.', $name));
-            }
-            $info[] = $this->getSingleFKInfo($name, $data, $column->getOptions()['text_field_name']);
+            $textFieldName = (isset($column->getOptions()['text_field_name'])) ? $column->getOptions()['text_field_name'] : null;
+            $info[] = $this->getSingleFKInfo($name, $data, $textFieldName);
         }
         else
         {
@@ -70,6 +64,6 @@ abstract class AbstractDatabaseFiller extends AbstractFiller
     abstract protected function getFieldInfo     ($name, $data);
     abstract protected function isSingleFK       ($name, $data);
     abstract protected function isMultipleFK     ($name, $data);
-    abstract protected function getSingleFKInfo  ($name, $data, $textFieldName);
-    abstract protected function getMulitpleFKInfo($name, $data, $textFieldName);
+    abstract protected function getSingleFKInfo  ($name, $data, $textFieldName = null);
+    abstract protected function getMulitpleFKInfo($name, $data, $textFieldName = null);
 }

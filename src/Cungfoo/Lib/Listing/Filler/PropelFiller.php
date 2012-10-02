@@ -38,11 +38,17 @@ class PropelFiller extends AbstractDatabaseFiller
         return method_exists($data, $method);
     }
 
-    protected function getSingleFKInfo($name, $data, $textFieldName)
+    protected function getSingleFKInfo($name, $data, $textFieldName = null)
     {
         $utils  = new Utils();
         $method = 'get'.$utils->camelize($name);
         $object = $data->$method();
+
+        $getTextMethod = '__toString';
+        if (!is_null($textFieldName))
+        {
+            $getTextMethod = 'get'.$utils->camelize($textFieldName);
+        }
 
         return array(
             'text' => $object->$getTextMethod(),
@@ -50,7 +56,7 @@ class PropelFiller extends AbstractDatabaseFiller
         );
     }
 
-    protected function getMulitpleFKInfo($name, $data, $textFieldName)
+    protected function getMulitpleFKInfo($name, $data, $textFieldName = null)
     {
         $utils       = new Utils();
         $plurializer = new \DefaultEnglishPluralizer();
@@ -59,9 +65,14 @@ class PropelFiller extends AbstractDatabaseFiller
         $method  = 'get'.$utils->camelize($plurializer->getPluralForm($name));
         $objects = $data->$method();
 
-        if (count($objects))
+        $getTextMethod = '__toString';
+        if (!is_null($textFieldName))
         {
             $getTextMethod = 'get'.$utils->camelize($textFieldName);
+        }
+
+        if (count($objects))
+        {
             foreach ($objects as $object)
             {
                 $info[] = array(
