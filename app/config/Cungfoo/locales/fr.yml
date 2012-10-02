@@ -152,6 +152,9 @@ menu.thematique: Thématiques
 menu.viafrance: Via France
 menu.poi: POI
 menu.event: Evènement
+menu.cms: Cms
+menu.personnages: Personnages
+
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
