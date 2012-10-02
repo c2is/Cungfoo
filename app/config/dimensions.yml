@@ -4,7 +4,7 @@ dimensions:
     class: "\Cungfoo\Model\Site"
     site.individual:
       domaines: [fr, en, de]
-    site.business:
+    site.ce:
       domaines: [fr]
   domaine:
     class: "\Cungfoo\Model\Domaine"
