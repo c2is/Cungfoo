@@ -8,7 +8,7 @@
  * @package Cungfoo by C2IS
  */
 
-namespace Cungfoo\Command\Resalys;
+namespace Cungfoo\Command\Fixtures;
 
 use Cungfoo\Command\Command as BaseCommand;
 
@@ -68,21 +68,22 @@ class DumpCommand extends BaseCommand
     protected function configure()
     {
         $this
-            ->setName('resalys:dump')
-            ->setDescription('Dump static resalys data to a yaml fixtures')
+            ->setName('fixtures:dump')
+            ->setDescription('Dump fixtures from current database informations and binaries')
             ->addOption('directory', 'dir', InputOption::VALUE_OPTIONAL, 'Give a output directory.', '/app/resources/data/fixtures')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('<info>Resalys:dump</info> <comment>started</comment>.');
+        $output->writeln(sprintf('<info>%s</info> <comment>started</comment>.', $this->getName()));
 
         $utils = new \Cungfoo\Lib\Utils();
         $fixturesDirectory = sprintf('%s/%s', $this->getApplication()->getRootDir(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR));
+        $fileFixturesDirectory = realpath(sprintf('%s/%s', $fixturesDirectory));
         if (!is_dir($fixturesDirectory))
         {
-            $output->writeln(sprintf('<info>Resalys:dump</info> <error>error : directory %s does not exist</error>.', $fixturesDirectory));
+            $output->writeln(sprintf('<info>%s</info> <error>error : directory %s does not exist</error>.', $this->getName(), $fixturesDirectory));
 
             return false;
         }
@@ -91,6 +92,10 @@ class DumpCommand extends BaseCommand
         {
             // fixtures order
             $order = 0;
+            $filesystem = new \Symfony\Component\Filesystem\Filesystem();
+
+            // remove all files before dump
+            $filesystem->remove($fileFixturesDirectory);
 
             foreach ($this->models as $model)
             {
@@ -105,7 +110,7 @@ class DumpCommand extends BaseCommand
 
                 // format for yaml
                 $objectsArrayForYaml = array();
-                array_walk($objectsArray, function($value, $key) use (&$objectsArrayForYaml, $model) {
+                array_walk($objectsArray, function($value, $key) use (&$objectsArrayForYaml, $model, $fixturesDirectory, $filesystem) {
                     if (isset($value['CreatedAt']))
                     {
                         unset($value['CreatedAt']);
@@ -125,6 +130,17 @@ class DumpCommand extends BaseCommand
                         $valueId        = $value['Id'];
                         unset($value['Id']);
 
+                        foreach ($value as $field)
+                        {
+                            if ($field && is_string($field))
+                            {
+                                $file = $this->getApplication()->getRootDir() . '/web/' . $field;
+                                if (file_exists($file))
+                                {
+                                    $filesystem->copy($file, $fixturesDirectory . '/files/' . $field);
+                                }
+                            }
+                        }
                         $objectsArrayForYaml[$valueId] = $value;
                     }
                     else
@@ -140,22 +156,22 @@ class DumpCommand extends BaseCommand
                 $modelPath   = explode('\\', $model);
                 $tableName   = $utils->underscore(end($modelPath));
                 $prefix      = str_pad($order, 2, '0', STR_PAD_LEFT);
-                $fixtureName = sprintf('%s/%s-resalys-%s.yml', $fixturesDirectory, $prefix, $tableName);
+                $fixtureName = sprintf('%s/%s-%s.yml', $fixturesDirectory, $prefix, $tableName);
 
                 // dump fixtures files
                 file_put_contents($fixtureName, $objectsYaml);
-                $output->writeln(sprintf('<info>Resalys:dump</info> table <comment>%s</comment> is dumped.', $tableName));
+                $output->writeln(sprintf('<info>%s</info> table <comment>%s</comment> is dumped.', $this->getName(), $tableName));
             }
         }
         catch (\Exception $exception)
         {
-            $output->writeln(sprintf('<info>Resalys:dump</info> <error>error %s:</error>.', $exception));
+            $output->writeln(sprintf('<info>%s</info> <error>error %s:</error>.', $this->getName(), $exception));
 
             return false;
         }
 
 
-        $output->writeln(sprintf('<info>Resalys:dump</info> <info>success</info>.'));
+        $output->writeln(sprintf('<info>%s</info> <info>success</info>.', $this->getName()));
 
         return true;
     }

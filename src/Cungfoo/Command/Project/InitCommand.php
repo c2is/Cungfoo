@@ -24,7 +24,7 @@ class InitCommand extends Command
     {
         $commands = array(
             array('command' => 'propel:generate'),
-            array('command' => 'propel:fixture:load'),
+            array('command' => 'fixture:load'),
             array('command' => 'logs:clear'),
             array('command' => 'cache:clear'),
         );

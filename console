@@ -26,7 +26,10 @@ $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
 $console->add(new \Cungfoo\Command\Resalys\Load\CatalogueCommand());
 $console->add(new \Cungfoo\Command\Resalys\Load\PrixCommand());
-$console->add(new \Cungfoo\Command\Resalys\DumpCommand());
+
+$console->add(new \Cungfoo\Command\Fixtures\DumpCommand());
+$console->add(new \Cungfoo\Command\Fixtures\LoadCommand());
+$console->add(new \Cungfoo\Command\Fixtures\Load\BinariesCommand());
 
 $console->add(new \Cungfoo\Command\ViaFrance\Load\PointOfInterestCommand());
 $console->add(new \Cungfoo\Command\ViaFrance\Load\EventCommand());

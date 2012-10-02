@@ -36,7 +36,9 @@
 
 {% block file_widget %}
 {% spaceless %}
-{{ block('form_widget_simple') }}<br/>
-<img src="{{ asset(value) }}"/>
+{{ block('form_widget_simple') }}
+{% if value %}
+<br/><a href="{{ asset(value) }}">{{ value }}</a>
+{% endif %}
 {% endspaceless %}
 {% endblock %}
