@@ -1,0 +1,49 @@
+\Cungfoo\Model\PaysI18n:
+    5_de:
+        Id: 5
+        Locale: de
+        Name: France
+    5_en:
+        Id: 5
+        Locale: en
+        Name: France
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: France
+    6_de:
+        Id: 6
+        Locale: de
+        Name: Italie
+    6_en:
+        Id: 6
+        Locale: en
+        Name: Italie
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: Italie
+    7_de:
+        Id: 7
+        Locale: de
+        Name: Espagne
+    7_en:
+        Id: 7
+        Locale: en
+        Name: Espagne
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: Espagne
+    8_de:
+        Id: 8
+        Locale: de
+        Name: Portugal
+    8_en:
+        Id: 8
+        Locale: en
+        Name: Portugal
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: Portugal

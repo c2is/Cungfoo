@@ -1,0 +1,145 @@
+\Cungfoo\Model\ActiviteI18n:
+    13_de:
+        Id: 13
+        Locale: de
+        Name: 'Ping-pong (Gratuit)'
+    13_en:
+        Id: 13
+        Locale: en
+        Name: 'Ping-pong (Gratuit)'
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: 'Ping-pong (Gratuit)'
+    14_de:
+        Id: 14
+        Locale: de
+        Name: 'Club enfants'
+    14_en:
+        Id: 14
+        Locale: en
+        Name: 'Club enfants'
+    14_fr:
+        Id: 14
+        Locale: fr
+        Name: 'Club enfants'
+    15_de:
+        Id: 15
+        Locale: de
+        Name: 'Pétanque (Gratuit)'
+    15_en:
+        Id: 15
+        Locale: en
+        Name: 'Pétanque (Gratuit)'
+    15_fr:
+        Id: 15
+        Locale: fr
+        Name: 'Pétanque (Gratuit)'
+    16_de:
+        Id: 16
+        Locale: de
+        Name: 'Club ados'
+    16_en:
+        Id: 16
+        Locale: en
+        Name: 'Club ados'
+    16_fr:
+        Id: 16
+        Locale: fr
+        Name: 'Club ados'
+    17_de:
+        Id: 17
+        Locale: de
+        Name: 'Terrain multisports'
+    17_en:
+        Id: 17
+        Locale: en
+        Name: 'Terrain multisports'
+    17_fr:
+        Id: 17
+        Locale: fr
+        Name: 'Terrain multisports'
+    18_de:
+        Id: 18
+        Locale: de
+        Name: 'Salle de musculation et fitness'
+    18_en:
+        Id: 18
+        Locale: en
+        Name: 'Salle de musculation et fitness'
+    18_fr:
+        Id: 18
+        Locale: fr
+        Name: 'Salle de musculation et fitness'
+    19_de:
+        Id: 19
+        Locale: de
+        Name: 'Discothèque à proximité'
+    19_en:
+        Id: 19
+        Locale: en
+        Name: 'Discothèque à proximité'
+    19_fr:
+        Id: 19
+        Locale: fr
+        Name: 'Discothèque à proximité'
+    20_de:
+        Id: 20
+        Locale: de
+        Name: 'Mini golf à proximité'
+    20_en:
+        Id: 20
+        Locale: en
+        Name: 'Mini golf à proximité'
+    20_fr:
+        Id: 20
+        Locale: fr
+        Name: 'Mini golf à proximité'
+    21_de:
+        Id: 21
+        Locale: de
+        Name: 'Tennis à proximité'
+    21_en:
+        Id: 21
+        Locale: en
+        Name: 'Tennis à proximité'
+    21_fr:
+        Id: 21
+        Locale: fr
+        Name: 'Tennis à proximité'
+    22_de:
+        Id: 22
+        Locale: de
+        Name: 'Golf à proximité'
+    22_en:
+        Id: 22
+        Locale: en
+        Name: 'Golf à proximité'
+    22_fr:
+        Id: 22
+        Locale: fr
+        Name: 'Golf à proximité'
+    23_de:
+        Id: 23
+        Locale: de
+        Name: 'Equitation à proximité'
+    23_en:
+        Id: 23
+        Locale: en
+        Name: 'Equitation à proximité'
+    23_fr:
+        Id: 23
+        Locale: fr
+        Name: 'Equitation à proximité'
+    24_de:
+        Id: 24
+        Locale: de
+        Name: 'Pêche à proximité'
+    24_en:
+        Id: 24
+        Locale: en
+        Name: 'Pêche à proximité'
+    24_fr:
+        Id: 24
+        Locale: fr
+        Name: 'Pêche à proximité'

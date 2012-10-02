@@ -1,0 +1,157 @@
+\Cungfoo\Model\ServiceComplementaireI18n:
+    14_de:
+        Id: 14
+        Locale: de
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+    14_en:
+        Id: 14
+        Locale: en
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+    14_fr:
+        Id: 14
+        Locale: fr
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+    15_de:
+        Id: 15
+        Locale: de
+        Name: Wifi
+    15_en:
+        Id: 15
+        Locale: en
+        Name: Wifi
+    15_fr:
+        Id: 15
+        Locale: fr
+        Name: Wifi
+    16_de:
+        Id: 16
+        Locale: de
+        Name: 'Chiens autorisés'
+    16_en:
+        Id: 16
+        Locale: en
+        Name: 'Chiens autorisés'
+    16_fr:
+        Id: 16
+        Locale: fr
+        Name: 'Chiens autorisés'
+    17_de:
+        Id: 17
+        Locale: de
+        Name: 'Dépannage alimentation'
+    17_en:
+        Id: 17
+        Locale: en
+        Name: 'Dépannage alimentation'
+    17_fr:
+        Id: 17
+        Locale: fr
+        Name: 'Dépannage alimentation'
+    18_de:
+        Id: 18
+        Locale: de
+        Name: 'Location de vélos'
+    18_en:
+        Id: 18
+        Locale: en
+        Name: 'Location de vélos'
+    18_fr:
+        Id: 18
+        Locale: fr
+        Name: 'Location de vélos'
+    19_de:
+        Id: 19
+        Locale: de
+        Name: 'TV au bar'
+    19_en:
+        Id: 19
+        Locale: en
+        Name: 'TV au bar'
+    19_fr:
+        Id: 19
+        Locale: fr
+        Name: 'TV au bar'
+    20_de:
+        Id: 20
+        Locale: de
+        Name: 'Navette plage (gratuite)'
+    20_en:
+        Id: 20
+        Locale: en
+        Name: 'Navette plage (gratuite)'
+    20_fr:
+        Id: 20
+        Locale: fr
+        Name: 'Navette plage (gratuite)'
+    21_de:
+        Id: 21
+        Locale: de
+        Name: 'Navette plage (payante)'
+    21_en:
+        Id: 21
+        Locale: en
+        Name: 'Navette plage (payante)'
+    21_fr:
+        Id: 21
+        Locale: fr
+        Name: 'Navette plage (payante)'
+    22_de:
+        Id: 22
+        Locale: de
+        Name: Bar
+    22_en:
+        Id: 22
+        Locale: en
+        Name: Bar
+    22_fr:
+        Id: 22
+        Locale: fr
+        Name: Bar
+    23_de:
+        Id: 23
+        Locale: de
+        Name: Snack
+    23_en:
+        Id: 23
+        Locale: en
+        Name: Snack
+    23_fr:
+        Id: 23
+        Locale: fr
+        Name: Snack
+    24_de:
+        Id: 24
+        Locale: de
+        Name: .
+    24_en:
+        Id: 24
+        Locale: en
+        Name: .
+    24_fr:
+        Id: 24
+        Locale: fr
+        Name: .
+    25_de:
+        Id: 25
+        Locale: de
+        Name: 'Restauration à emporter'
+    25_en:
+        Id: 25
+        Locale: en
+        Name: 'Restauration à emporter'
+    25_fr:
+        Id: 25
+        Locale: fr
+        Name: 'Restauration à emporter'
+    26_de:
+        Id: 26
+        Locale: de
+        Name: Restaurant
+    26_en:
+        Id: 26
+        Locale: en
+        Name: Restaurant
+    26_fr:
+        Id: 26
+        Locale: fr
+        Name: Restaurant

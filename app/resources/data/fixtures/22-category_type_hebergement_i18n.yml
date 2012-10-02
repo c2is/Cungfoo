@@ -1,0 +1,73 @@
+\Cungfoo\Model\CategoryTypeHebergementI18n:
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'Salles de réception'
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'Salles de réception'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Salles de réception'
+    8_de:
+        Id: 8
+        Locale: de
+        Name: Mobil-homes
+    8_en:
+        Id: 8
+        Locale: en
+        Name: Mobil-homes
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: Mobil-homes
+    9_de:
+        Id: 9
+        Locale: de
+        Name: Chalets
+    9_en:
+        Id: 9
+        Locale: en
+        Name: Chalets
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: Chalets
+    10_de:
+        Id: 10
+        Locale: de
+        Name: Caravanes
+    10_en:
+        Id: 10
+        Locale: en
+        Name: Caravanes
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: Caravanes
+    11_de:
+        Id: 11
+        Locale: de
+        Name: Gîtes
+    11_en:
+        Id: 11
+        Locale: en
+        Name: Gîtes
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: Gîtes
+    12_de:
+        Id: 12
+        Locale: de
+        Name: Emplacements
+    12_en:
+        Id: 12
+        Locale: en
+        Name: Emplacements
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: Emplacements

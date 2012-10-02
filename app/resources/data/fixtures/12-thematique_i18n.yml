@@ -1,0 +1,85 @@
+\Cungfoo\Model\ThematiqueI18n:
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'Nouveautés 2012'
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'Nouveautés 2012'
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Nouveautés 2012'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'Parcs aquatiques'
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'Parcs aquatiques'
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'Parcs aquatiques'
+    10_de:
+        Id: 10
+        Locale: de
+        Name: 'Pieds dans l''eau'
+    10_en:
+        Id: 10
+        Locale: en
+        Name: 'Pieds dans l''eau'
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: 'Pieds dans l''eau'
+    11_de:
+        Id: 11
+        Locale: de
+        Name: 'Vacances farniente'
+    11_en:
+        Id: 11
+        Locale: en
+        Name: 'Vacances farniente'
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: 'Vacances farniente'
+    12_de:
+        Id: 12
+        Locale: de
+        Name: 'Vacances club'
+    12_en:
+        Id: 12
+        Locale: en
+        Name: 'Vacances club'
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: 'Vacances club'
+    13_de:
+        Id: 13
+        Locale: de
+        Name: 'Vacances sensations'
+    13_en:
+        Id: 13
+        Locale: en
+        Name: 'Vacances sensations'
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: 'Vacances sensations'
+    14_de:
+        Id: 14
+        Locale: de
+        Name: 'Vacances découverte'
+    14_en:
+        Id: 14
+        Locale: en
+        Name: 'Vacances découverte'
+    14_fr:
+        Id: 14
+        Locale: fr
+        Name: 'Vacances découverte'

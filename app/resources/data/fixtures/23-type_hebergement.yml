@@ -1,0 +1,124 @@
+\Cungfoo\Model\TypeHebergement:
+    42:
+        Code: 100M
+        CategoryTypeHebergementId: 8
+    43:
+        Code: 110M
+        CategoryTypeHebergementId: 8
+    44:
+        Code: 130M
+        CategoryTypeHebergementId: 8
+    45:
+        Code: 140M
+        CategoryTypeHebergementId: 8
+    46:
+        Code: 150M
+        CategoryTypeHebergementId: 8
+    47:
+        Code: 160M
+        CategoryTypeHebergementId: 8
+    48:
+        Code: 170M
+        CategoryTypeHebergementId: 8
+    49:
+        Code: 180M
+        CategoryTypeHebergementId: 8
+    50:
+        Code: AMI4
+        CategoryTypeHebergementId: 8
+    51:
+        Code: BT2L
+        CategoryTypeHebergementId: 8
+    52:
+        Code: BT3
+        CategoryTypeHebergementId: 8
+    53:
+        Code: CHA5
+        CategoryTypeHebergementId: 9
+    54:
+        Code: CON5
+        CategoryTypeHebergementId: 10
+    55:
+        Code: COR6
+        CategoryTypeHebergementId: 8
+    56:
+        Code: DOM5
+        CategoryTypeHebergementId: 8
+    57:
+        Code: DOM6
+        CategoryTypeHebergementId: 8
+    58:
+        Code: DOML
+        CategoryTypeHebergementId: 8
+    59:
+        Code: EMPF
+        CategoryTypeHebergementId: 12
+    60:
+        Code: EMPL
+        CategoryTypeHebergementId: 12
+    61:
+        Code: EST5
+        CategoryTypeHebergementId: 10
+    62:
+        Code: FAM6
+        CategoryTypeHebergementId: 8
+    63:
+        Code: HEL6
+        CategoryTypeHebergementId: 8
+    64:
+        Code: LOG5
+        CategoryTypeHebergementId: 8
+    65:
+        Code: OCE4
+        CategoryTypeHebergementId: 8
+    66:
+        Code: OHA6
+        CategoryTypeHebergementId: 8
+    67:
+        Code: RES5
+        CategoryTypeHebergementId: 8
+    68:
+        Code: SALL
+        CategoryTypeHebergementId: 7
+    69:
+        Code: SPA6
+        CategoryTypeHebergementId: 8
+    70:
+        Code: SPA7
+        CategoryTypeHebergementId: 8
+    71:
+        Code: SPA8
+        CategoryTypeHebergementId: 8
+    72:
+        Code: TBIH
+        CategoryTypeHebergementId: 11
+    73:
+        Code: TBRA
+        CategoryTypeHebergementId: 11
+    74:
+        Code: TCOZ
+        CategoryTypeHebergementId: 11
+    75:
+        Code: TDA1
+        CategoryTypeHebergementId: 11
+    76:
+        Code: TDA2
+        CategoryTypeHebergementId: 11
+    77:
+        Code: TDIV
+        CategoryTypeHebergementId: 11
+    78:
+        Code: TGOU
+        CategoryTypeHebergementId: 11
+    79:
+        Code: TGWE
+        CategoryTypeHebergementId: 11
+    80:
+        Code: TTOM
+        CategoryTypeHebergementId: 11
+    81:
+        Code: VAC5
+        CategoryTypeHebergementId: 8
+    82:
+        Code: VAM5
+        CategoryTypeHebergementId: 8

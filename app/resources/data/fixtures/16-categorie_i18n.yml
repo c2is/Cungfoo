@@ -1,0 +1,61 @@
+\Cungfoo\Model\CategorieI18n:
+    6_de:
+        Id: 6
+        Locale: de
+        Name: '5 Etoiles'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: '5 Etoiles'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: '5 Etoiles'
+    7_de:
+        Id: 7
+        Locale: de
+        Name: '4 Etoiles'
+    7_en:
+        Id: 7
+        Locale: en
+        Name: '4 Etoiles'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: '4 Etoiles'
+    8_de:
+        Id: 8
+        Locale: de
+        Name: '3 Etoiles'
+    8_en:
+        Id: 8
+        Locale: en
+        Name: '3 Etoiles'
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: '3 Etoiles'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: '2 Etoiles'
+    9_en:
+        Id: 9
+        Locale: en
+        Name: '2 Etoiles'
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: '2 Etoiles'
+    10_de:
+        Id: 10
+        Locale: de
+        Name: '1 Etoile'
+    10_en:
+        Id: 10
+        Locale: en
+        Name: '1 Etoile'
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: '1 Etoile'
