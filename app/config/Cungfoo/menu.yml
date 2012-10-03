@@ -1,9 +1,18 @@
 menu:
     title: menu.title
     items:
-        etablissement:
-            title:  menu.etablissement
-            route:  etablissement_crud_list
+        etablissements:
+          title: menu.etablissements
+          items:
+            liste:
+              title:  menu.liste_etablissements
+              route:  etablissement_crud_list
+            multimedia:
+              title:  menu.multimedia
+              route:  multimedia_etablissement_crud_list
+            tag_multimedia:
+              title:  menu.tag_multimedia
+              route:  tag_crud_list
         theme:
             title: menu.themes
             items:

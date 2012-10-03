@@ -132,7 +132,10 @@ locale.german: Allemand
 menu.activite: Activités
 menu.destination: Destinations
 menu.categorie: Catégories
-menu.etablissement: Établissement
+menu.etablissements: Établissements
+menu.liste_etablissements: Liste
+menu.multimedia: Multimédia
+menu.tag_multimedia: Tag multimédia
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter
 menu.parameters: Paramètres
