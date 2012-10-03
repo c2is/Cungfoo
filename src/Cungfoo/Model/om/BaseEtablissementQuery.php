@@ -30,6 +30,7 @@ use Cungfoo\Model\EtablissementSituationGeographique;
 use Cungfoo\Model\EtablissementThematique;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\Event;
+use Cungfoo\Model\MultimediaEtablissement;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\ServiceComplementaire;
@@ -138,6 +139,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinPersonnage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Personnage relation
  * @method EtablissementQuery rightJoinPersonnage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Personnage relation
  * @method EtablissementQuery innerJoinPersonnage($relationAlias = null) Adds a INNER JOIN clause to the query using the Personnage relation
+ *
+ * @method EtablissementQuery leftJoinMultimediaEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaEtablissement relation
+ * @method EtablissementQuery rightJoinMultimediaEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaEtablissement relation
+ * @method EtablissementQuery innerJoinMultimediaEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the MultimediaEtablissement relation
  *
  * @method EtablissementQuery leftJoinEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementI18n relation
  * @method EtablissementQuery rightJoinEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementI18n relation
@@ -1973,6 +1978,80 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinPersonnage($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Personnage', '\Cungfoo\Model\PersonnageQuery');
+    }
+
+    /**
+     * Filter the query by a related MultimediaEtablissement object
+     *
+     * @param   MultimediaEtablissement|PropelObjectCollection $multimediaEtablissement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByMultimediaEtablissement($multimediaEtablissement, $comparison = null)
+    {
+        if ($multimediaEtablissement instanceof MultimediaEtablissement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $multimediaEtablissement->getEtablissementId(), $comparison);
+        } elseif ($multimediaEtablissement instanceof PropelObjectCollection) {
+            return $this
+                ->useMultimediaEtablissementQuery()
+                ->filterByPrimaryKeys($multimediaEtablissement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByMultimediaEtablissement() only accepts arguments of type MultimediaEtablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the MultimediaEtablissement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinMultimediaEtablissement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('MultimediaEtablissement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'MultimediaEtablissement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the MultimediaEtablissement relation MultimediaEtablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\MultimediaEtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useMultimediaEtablissementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinMultimediaEtablissement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'MultimediaEtablissement', '\Cungfoo\Model\MultimediaEtablissementQuery');
     }
 
     /**

@@ -66,3 +66,7 @@ crud:
             prefix: /personnages
             model: \Cungfoo\Model\Personnage
             form: \Cungfoo\Form\Type\PersonnageType
+        multimedia_etablissement:
+            prefix: /multimedias
+            model: \Cungfoo\Model\MultimediaEtablissement
+            form: \Cungfoo\Form\Type\MultimediaEtablissementType
