@@ -71,6 +71,6 @@ crud:
             model: \Cungfoo\Model\MultimediaEtablissement
             form: \Cungfoo\Form\Type\MultimediaEtablissementType
         tag:
-            prefix: /tag-multimedia
+            prefix: /tag-multimedias
             model: \Cungfoo\Model\Tag
             form: \Cungfoo\Form\Type\TagType

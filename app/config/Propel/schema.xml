@@ -520,7 +520,7 @@
         </behavior>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/tag-multimedia" />
+            <parameter name="crud_prefix" value="/tag-multimedias" />
         </behavior>
     </table>
 
