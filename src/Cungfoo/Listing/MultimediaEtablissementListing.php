@@ -23,6 +23,7 @@ class MultimediaEtablissementListing extends BaseMultimediaEtablissementListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('titre'));
     }
 
 } // MultimediaEtablissementListing

@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseMultimediaEtablissement;
  */
 class MultimediaEtablissement extends BaseMultimediaEtablissement
 {
+    public function __toString()
+    {
+        return $this->getTitre();
+    }
 }

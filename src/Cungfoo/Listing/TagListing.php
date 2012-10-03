@@ -23,6 +23,7 @@ class TagListing extends BaseTagListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // TagListing

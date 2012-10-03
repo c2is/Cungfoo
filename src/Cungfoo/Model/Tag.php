@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseTag;
  */
 class Tag extends BaseTag
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
