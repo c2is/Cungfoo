@@ -1,0 +1,136 @@
+// Import var + reset
+@import "common.less";
+@import "lesshat.less";
+
+/* LAYOUT */
+body{background:#f5f5f5 url("../images/common/pict/bg.jpg") no-repeat 0 0;background-size:100% auto;color:@colorGris2;font:12px Arial, sans-serif;min-width:1000px;}
+header, section, footer {position:relative;}
+.full-width{position:relative;min-width:100%;float:left;z-index:0;}
+.fixed-width{position:relative;width:976px;margin:0 auto;}
+
+/* header */
+#header{width:902px;margin:0 auto;font-family:@ptnarrow;
+    #logo{display:block;float:left;margin-bottom:25px;}
+    #catchline{font-weight:bold;font-size:23px;text-transform:uppercase;text-align:center;margin-top:70px;}
+    #headerRight{float:right;}
+    #telephone{width:256px;height:60px;background: url("../images/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
+        span{font-size:18px;line-height:19px;color:@colorGris2;
+            &:before{content:"";width:40px;height:29px;background:transparent url("../images/common/ui/phone-icon.png") no-repeat 0px 0px;float:left;margin:5px;}
+            a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
+        }
+    }
+    #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:10px;color:#fff;text-decoration:none;margin:15px 0 0 15px;}
+}
+/* specifs home */
+.home #telephone{clear:both;}
+
+/* nav */
+#nav{font:23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
+    ul{top:-7px;}
+    .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;.border-radius(7px 7px 0 0);z-index:50;
+        &:hover, &.current{background:@colorFushia;
+            small{color: #fff;}
+            a:after{content:url('../images/common/pict/Triangle-Tab.png');position:absolute;bottom:8px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+        }
+        &:hover .subnav{display:block;}
+        a{position:relative;display:block;padding:16px 10px 10px;color:@colorBlanc;text-decoration:none;
+          &#home{padding-bottom:4px;}
+          &#home img{width:27px;height:27px;margin:3px 0 0;}
+          small {font-family:Arial, sans-serif;font-weight:bold;font-size:15px;color:@colorFushia;}
+        }
+        .subnav{padding:20px;position:absolute;top:57px;left:0px;width:920px;background:@colorBgBlanc;float:none;box-shadow:0px 10px 15px 0px @colorGris1;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
+            li{padding:0;margin-right:20px;background:none;float:left;width:123px;
+                &:last-child{margin-right:0;}
+                a{position:relative;padding:0;width:123px;height:auto;display:block;
+                  span.img-hover{position:absolute;top:0;left:0;border:4px solid @colorBlanc;width:115px;height:79px;display:block;}
+                }
+            }
+        }
+    }
+}
+
+/* lang */
+#lang{width:41px;height:27px;background: url('../images/dyn/ui/lang-flag-fr.png') no-repeat 0px 0px;border-width:4px 6px;border-style:solid;border-color:#a7a9ac;position:relative;display:inline-block;text-indent:-9999px;float:right;margin-top:19px;
+    &:after{width:12px;height:4px;content:"";background:url('../images/common/ui/lang-arrow.png') no-repeat 0px 0px;position:absolute;left:50%;bottom:-8px;margin-left:-6px;}
+}
+
+/* generic */
+.left{float:left;}
+.right{float:right;}
+
+h1{margin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
+h2{color:@colorBgGrisF;font:bold 20px 'Arial', sans-serif;}
+h3{color:@colorBgGrisM;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
+h4{font-weight:bold;}
+h5{color:@colorBgGrisM;font:bold 25px/24px @ptnarrow;text-transform:uppercase;}
+h6{color:@colorBgGrisM;font:bold 25px/24px @ptnarrow;text-transform:uppercase;}
+
+.bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);
+  &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
+  &.fushia{background-color:@colorFushia;color:@colorBlanc;}
+  &.trans{background:transparent;padding:0;}
+  &.cfushia{color:@colorFushia;}
+  &.big{padding:5px 10px;}
+}
+
+.pathway{font:11px/28px Arial,sans-serif;color:@colorBgGrisM;text-align:right;
+    li{display:inline;
+      &:last-child a{color:@colorFushia;}
+    }
+    a{text-decoration:none;color:inherit;
+      &:hover{text-decoration:underline;}
+    }
+}
+
+/* structure */
+#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;}
+.column{width:928px;margin:0 24px;position:relative;
+  &.left{width:616px;margin:0 0 0 24px;}
+  &.right{width:288px;margin:0 24px 0 0;}
+}
+
+
+
+/* page fiche */
+@import "fiche.less";
+
+/* page CE */
+@import "ce.less";
+
+
+/* footer */
+footer{text-align:center;background:@colorBgGrisM;color:@colorBlanc;
+    a{color:@colorBlanc;}
+}
+.footer-link{background:@colorBgGrisF;padding:5px 0;
+  .card{display:inline-block;background-image:url(../images/common/pict/footerCards.png);background-repeat:none;text-indent:-999em;vertical-align:middle;margin-right:5px;}
+  .transac{background-position:0 0;width:30px;height:29px;margin-left:20px;}
+  .visa{background-position:0 -40px;width:50px;height:32px;}
+  .master{background-position:0 -80px;width:48px;height:28px;}
+}
+
+
+/* /LAYOUT */
+
+/*Import Plugins styles*/
+@import "plugins.less";
+
+/*Import Media Queries*/
+@import "mq.less";
+
+
+/*PRINT*/
+@media print {
+    * { position: static !important; float: none !important; background: transparent !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    h2, h3 { page-break-after: avoid; }
+    .noprint{display:none;}
+}
