@@ -43,11 +43,11 @@ use Cungfoo\Model\TagI18nQuery;
  *
  * @method TagI18n findOneById(int $id) Return the first TagI18n filtered by the id column
  * @method TagI18n findOneByLocale(string $locale) Return the first TagI18n filtered by the locale column
- * @method TagI18n findOneByName(int $name) Return the first TagI18n filtered by the name column
+ * @method TagI18n findOneByName(string $name) Return the first TagI18n filtered by the name column
  *
  * @method array findById(int $id) Return TagI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return TagI18n objects filtered by the locale column
- * @method array findByName(int $name) Return TagI18n objects filtered by the name column
+ * @method array findByName(string $name) Return TagI18n objects filtered by the name column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -302,36 +302,24 @@ abstract class BaseTagI18nQuery extends ModelCriteria
      *
      * Example usage:
      * <code>
-     * $query->filterByName(1234); // WHERE name = 1234
-     * $query->filterByName(array(12, 34)); // WHERE name IN (12, 34)
-     * $query->filterByName(array('min' => 12)); // WHERE name > 12
+     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
+     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $name The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $name The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return TagI18nQuery The current query, for fluid interface
      */
     public function filterByName($name = null, $comparison = null)
     {
-        if (is_array($name)) {
-            $useMinMax = false;
-            if (isset($name['min'])) {
-                $this->addUsingAlias(TagI18nPeer::NAME, $name['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($name['max'])) {
-                $this->addUsingAlias(TagI18nPeer::NAME, $name['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($name)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $name)) {
+                $name = str_replace('*', '%', $name);
+                $comparison = Criteria::LIKE;
             }
         }
 

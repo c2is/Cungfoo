@@ -2125,7 +2125,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         if (!$form['image_path_deleted']->getData())
         {
-            $this->resetModified(Multimedia_etablissementPeer::IMAGE_PATH);
+            $this->resetModified(MultimediaEtablissementPeer::IMAGE_PATH);
         }
 
         $this->uploadImagePath($form);

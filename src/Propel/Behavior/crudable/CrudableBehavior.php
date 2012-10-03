@@ -72,7 +72,7 @@ public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$co
                 $columnNameDeleted  = $columnName . '_deleted';
                 $columnNameCamelize = $utils->camelize($columnName);
 
-                $columnPeerName = ucfirst($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
+                $columnPeerName = $utils->camelize($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
 
                 $script .= "
     if (!\$form['$columnNameDeleted']->getData())

@@ -47,7 +47,7 @@ class BaseTagType extends AppAwareType
                 'name' => array(
                     'required' => false,
                     'label' => 'tag.name',
-                    'type' => 'integer',
+                    'type' => 'text',
                     'constraints' => array(
                     ),
                 ),

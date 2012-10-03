@@ -1887,7 +1887,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         /**
          * Get the [name] column value.
          *
-         * @return int
+         * @return string
          */
         public function getName()
         {
@@ -1898,7 +1898,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         /**
          * Set the value of [name] column.
          *
-         * @param int $v new value
+         * @param string $v new value
          * @return TagI18n The current object (for fluent API support)
          */
         public function setName($v)

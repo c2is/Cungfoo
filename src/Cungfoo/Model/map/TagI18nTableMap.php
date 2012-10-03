@@ -44,7 +44,7 @@ class TagI18nTableMap extends TableMap
         // columns
         $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'tag', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('NAME', 'Name', 'INTEGER', false, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

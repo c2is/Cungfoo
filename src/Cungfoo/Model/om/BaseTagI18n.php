@@ -60,7 +60,7 @@ abstract class BaseTagI18n extends BaseObject implements Persistent
 
     /**
      * The value for the name field.
-     * @var        int
+     * @var        string
      */
     protected $name;
 
@@ -127,7 +127,7 @@ abstract class BaseTagI18n extends BaseObject implements Persistent
     /**
      * Get the [name] column value.
      *
-     * @return int
+     * @return string
      */
     public function getName()
     {
@@ -183,13 +183,13 @@ abstract class BaseTagI18n extends BaseObject implements Persistent
     /**
      * Set the value of [name] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return TagI18n The current object (for fluent API support)
      */
     public function setName($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
         if ($this->name !== $v) {
@@ -239,7 +239,7 @@ abstract class BaseTagI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->name = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -499,7 +499,7 @@ abstract class BaseTagI18n extends BaseObject implements Persistent
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
                     case '`NAME`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_INT);
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                 }
             }
