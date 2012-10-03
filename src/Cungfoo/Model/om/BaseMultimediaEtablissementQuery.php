@@ -17,6 +17,8 @@ use Cungfoo\Model\MultimediaEtablissement;
 use Cungfoo\Model\MultimediaEtablissementI18n;
 use Cungfoo\Model\MultimediaEtablissementPeer;
 use Cungfoo\Model\MultimediaEtablissementQuery;
+use Cungfoo\Model\MultimediaEtablissementTag;
+use Cungfoo\Model\Tag;
 
 /**
  * Base class that represents a query for the 'multimedia_etablissement' table.
@@ -42,6 +44,10 @@ use Cungfoo\Model\MultimediaEtablissementQuery;
  * @method MultimediaEtablissementQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
  * @method MultimediaEtablissementQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
  * @method MultimediaEtablissementQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
+ *
+ * @method MultimediaEtablissementQuery leftJoinMultimediaEtablissementTag($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaEtablissementTag relation
+ * @method MultimediaEtablissementQuery rightJoinMultimediaEtablissementTag($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaEtablissementTag relation
+ * @method MultimediaEtablissementQuery innerJoinMultimediaEtablissementTag($relationAlias = null) Adds a INNER JOIN clause to the query using the MultimediaEtablissementTag relation
  *
  * @method MultimediaEtablissementQuery leftJoinMultimediaEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaEtablissementI18n relation
  * @method MultimediaEtablissementQuery rightJoinMultimediaEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaEtablissementI18n relation
@@ -514,6 +520,80 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related MultimediaEtablissementTag object
+     *
+     * @param   MultimediaEtablissementTag|PropelObjectCollection $multimediaEtablissementTag  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   MultimediaEtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByMultimediaEtablissementTag($multimediaEtablissementTag, $comparison = null)
+    {
+        if ($multimediaEtablissementTag instanceof MultimediaEtablissementTag) {
+            return $this
+                ->addUsingAlias(MultimediaEtablissementPeer::ID, $multimediaEtablissementTag->getMultimediaEtablissementId(), $comparison);
+        } elseif ($multimediaEtablissementTag instanceof PropelObjectCollection) {
+            return $this
+                ->useMultimediaEtablissementTagQuery()
+                ->filterByPrimaryKeys($multimediaEtablissementTag->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByMultimediaEtablissementTag() only accepts arguments of type MultimediaEtablissementTag or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the MultimediaEtablissementTag relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return MultimediaEtablissementQuery The current query, for fluid interface
+     */
+    public function joinMultimediaEtablissementTag($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('MultimediaEtablissementTag');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'MultimediaEtablissementTag');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the MultimediaEtablissementTag relation MultimediaEtablissementTag object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\MultimediaEtablissementTagQuery A secondary query class using the current class as primary query
+     */
+    public function useMultimediaEtablissementTagQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinMultimediaEtablissementTag($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'MultimediaEtablissementTag', '\Cungfoo\Model\MultimediaEtablissementTagQuery');
+    }
+
+    /**
      * Filter the query by a related MultimediaEtablissementI18n object
      *
      * @param   MultimediaEtablissementI18n|PropelObjectCollection $multimediaEtablissementI18n  the related object to use as filter
@@ -585,6 +665,23 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
         return $this
             ->joinMultimediaEtablissementI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'MultimediaEtablissementI18n', '\Cungfoo\Model\MultimediaEtablissementI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related Tag object
+     * using the multimedia_etablissement_tag table as cross reference
+     *
+     * @param   Tag $tag the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   MultimediaEtablissementQuery The current query, for fluid interface
+     */
+    public function filterByTag($tag, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useMultimediaEtablissementTagQuery()
+            ->filterByTag($tag, $comparison)
+            ->endUse();
     }
 
     /**

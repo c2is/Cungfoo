@@ -70,3 +70,7 @@ crud:
             prefix: /multimedias
             model: \Cungfoo\Model\MultimediaEtablissement
             form: \Cungfoo\Form\Type\MultimediaEtablissementType
+        tag:
+            prefix: /tag-multimedia
+            model: \Cungfoo\Model\Tag
+            form: \Cungfoo\Form\Type\TagType

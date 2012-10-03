@@ -47,6 +47,14 @@ class BaseMultimediaEtablissementType extends AppAwareType
             'label' => 'multimedia_etablissement.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('tags', 'model', array(
+            'class' => 'Cungfoo\Model\Tag',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'multimedia_etablissement.tags',
+            'required' => false,
+        ));
         $builder->add('multimedia_etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\MultimediaEtablissementI18n',
             'languages' => array(
