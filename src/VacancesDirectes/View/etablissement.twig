@@ -16,6 +16,26 @@
                         <li>{{ nbActivitesSportives }} {{ "activités sprotives" | trans }}</li>
                         <li>{{ nbEvenementsCulturels }} {{ "événements culturels" | trans }}</li>
                     </ul>
+                    {% if personnages %}
+                    <div>{{ "Vous aimerez" | trans }}</div>
+                    <div>{{ "comme" | trans }}</div>
+                    <ul>
+                        {% for personnage in personnages %}
+                            <li>
+                                <div>
+                                    <img src="/{{ personnage.imagePath }}" />
+                                    <span>{{ personnage.prenom | trans }}</span>
+                                    <span>{{ personnage.age }} {{ "ans" | trans }}</span>
+                                    <ul>
+                                        <li>{{ personnage.interet1 }}</li>
+                                        <li>{{ personnage.interet2 }}</li>
+                                        <li>{{ personnage.interet3 }}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     {% if eventPrioritaire %}
                     <div>
                         <strong>{{ "L'événement à ne pas manquer" | trans }} :</strong>
