@@ -33,3 +33,6 @@ $app->get('/', function () use ($app) {
 })
 ->bind('homepage')
 ;
+
+$app->mount('/resalys', new \Resalys\Controller\WrapperController());
+$app->mount('/achat', new \VacancesDirectesCe\Controller\AchatController());
