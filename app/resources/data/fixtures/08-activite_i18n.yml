@@ -1,145 +1,145 @@
 \Cungfoo\Model\ActiviteI18n:
-    13_de:
-        Id: 13
+    1_de:
+        Id: 1
         Locale: de
         Name: 'Ping-pong (Gratuit)'
-    13_en:
-        Id: 13
+    1_en:
+        Id: 1
         Locale: en
         Name: 'Ping-pong (Gratuit)'
-    13_fr:
-        Id: 13
+    1_fr:
+        Id: 1
         Locale: fr
         Name: 'Ping-pong (Gratuit)'
-    14_de:
-        Id: 14
+    2_de:
+        Id: 2
         Locale: de
         Name: 'Club enfants'
-    14_en:
-        Id: 14
+    2_en:
+        Id: 2
         Locale: en
         Name: 'Club enfants'
-    14_fr:
-        Id: 14
+    2_fr:
+        Id: 2
         Locale: fr
         Name: 'Club enfants'
-    15_de:
-        Id: 15
+    3_de:
+        Id: 3
         Locale: de
         Name: 'Pétanque (Gratuit)'
-    15_en:
-        Id: 15
+    3_en:
+        Id: 3
         Locale: en
         Name: 'Pétanque (Gratuit)'
-    15_fr:
-        Id: 15
+    3_fr:
+        Id: 3
         Locale: fr
         Name: 'Pétanque (Gratuit)'
-    16_de:
-        Id: 16
+    4_de:
+        Id: 4
         Locale: de
         Name: 'Club ados'
-    16_en:
-        Id: 16
+    4_en:
+        Id: 4
         Locale: en
         Name: 'Club ados'
-    16_fr:
-        Id: 16
+    4_fr:
+        Id: 4
         Locale: fr
         Name: 'Club ados'
-    17_de:
-        Id: 17
+    5_de:
+        Id: 5
         Locale: de
         Name: 'Terrain multisports'
-    17_en:
-        Id: 17
+    5_en:
+        Id: 5
         Locale: en
         Name: 'Terrain multisports'
-    17_fr:
-        Id: 17
+    5_fr:
+        Id: 5
         Locale: fr
         Name: 'Terrain multisports'
-    18_de:
-        Id: 18
+    6_de:
+        Id: 6
         Locale: de
         Name: 'Salle de musculation et fitness'
-    18_en:
-        Id: 18
+    6_en:
+        Id: 6
         Locale: en
         Name: 'Salle de musculation et fitness'
-    18_fr:
-        Id: 18
+    6_fr:
+        Id: 6
         Locale: fr
         Name: 'Salle de musculation et fitness'
-    19_de:
-        Id: 19
+    7_de:
+        Id: 7
         Locale: de
         Name: 'Discothèque à proximité'
-    19_en:
-        Id: 19
+    7_en:
+        Id: 7
         Locale: en
         Name: 'Discothèque à proximité'
-    19_fr:
-        Id: 19
+    7_fr:
+        Id: 7
         Locale: fr
         Name: 'Discothèque à proximité'
-    20_de:
-        Id: 20
+    8_de:
+        Id: 8
         Locale: de
         Name: 'Mini golf à proximité'
-    20_en:
-        Id: 20
+    8_en:
+        Id: 8
         Locale: en
         Name: 'Mini golf à proximité'
-    20_fr:
-        Id: 20
+    8_fr:
+        Id: 8
         Locale: fr
         Name: 'Mini golf à proximité'
-    21_de:
-        Id: 21
+    9_de:
+        Id: 9
         Locale: de
         Name: 'Tennis à proximité'
-    21_en:
-        Id: 21
+    9_en:
+        Id: 9
         Locale: en
         Name: 'Tennis à proximité'
-    21_fr:
-        Id: 21
+    9_fr:
+        Id: 9
         Locale: fr
         Name: 'Tennis à proximité'
-    22_de:
-        Id: 22
+    10_de:
+        Id: 10
         Locale: de
         Name: 'Golf à proximité'
-    22_en:
-        Id: 22
+    10_en:
+        Id: 10
         Locale: en
         Name: 'Golf à proximité'
-    22_fr:
-        Id: 22
+    10_fr:
+        Id: 10
         Locale: fr
         Name: 'Golf à proximité'
-    23_de:
-        Id: 23
+    11_de:
+        Id: 11
         Locale: de
         Name: 'Equitation à proximité'
-    23_en:
-        Id: 23
+    11_en:
+        Id: 11
         Locale: en
         Name: 'Equitation à proximité'
-    23_fr:
-        Id: 23
+    11_fr:
+        Id: 11
         Locale: fr
         Name: 'Equitation à proximité'
-    24_de:
-        Id: 24
+    12_de:
+        Id: 12
         Locale: de
         Name: 'Pêche à proximité'
-    24_en:
-        Id: 24
+    12_en:
+        Id: 12
         Locale: en
         Name: 'Pêche à proximité'
-    24_fr:
-        Id: 24
+    12_fr:
+        Id: 12
         Locale: fr
         Name: 'Pêche à proximité'

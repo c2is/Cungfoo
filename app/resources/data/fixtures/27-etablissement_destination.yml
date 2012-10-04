@@ -1,43 +1,43 @@
 \Cungfoo\Model\EtablissementDestination:
-    212_4:
-        EtablissementId: 212
-        DestinationId: 4
-    258_4:
-        EtablissementId: 258
-        DestinationId: 4
-    279_4:
-        EtablissementId: 279
-        DestinationId: 4
-    183_5:
-        EtablissementId: 183
-        DestinationId: 5
-    234_5:
-        EtablissementId: 234
-        DestinationId: 5
-    245_5:
-        EtablissementId: 245
-        DestinationId: 5
-    252_5:
-        EtablissementId: 252
-        DestinationId: 5
-    259_5:
-        EtablissementId: 259
-        DestinationId: 5
-    285_5:
-        EtablissementId: 285
-        DestinationId: 5
-    290_5:
-        EtablissementId: 290
-        DestinationId: 5
-    257_6:
-        EtablissementId: 257
-        DestinationId: 6
-    259_6:
-        EtablissementId: 259
-        DestinationId: 6
-    260_6:
-        EtablissementId: 260
-        DestinationId: 6
-    301_6:
-        EtablissementId: 301
-        DestinationId: 6
+    39_1:
+        EtablissementId: 39
+        DestinationId: 1
+    85_1:
+        EtablissementId: 85
+        DestinationId: 1
+    106_1:
+        EtablissementId: 106
+        DestinationId: 1
+    10_2:
+        EtablissementId: 10
+        DestinationId: 2
+    61_2:
+        EtablissementId: 61
+        DestinationId: 2
+    72_2:
+        EtablissementId: 72
+        DestinationId: 2
+    79_2:
+        EtablissementId: 79
+        DestinationId: 2
+    86_2:
+        EtablissementId: 86
+        DestinationId: 2
+    112_2:
+        EtablissementId: 112
+        DestinationId: 2
+    117_2:
+        EtablissementId: 117
+        DestinationId: 2
+    84_3:
+        EtablissementId: 84
+        DestinationId: 3
+    86_3:
+        EtablissementId: 86
+        DestinationId: 3
+    87_3:
+        EtablissementId: 87
+        DestinationId: 3
+    128_3:
+        EtablissementId: 128
+        DestinationId: 3
