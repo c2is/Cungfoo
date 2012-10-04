@@ -8,7 +8,7 @@
  * @package Cungfoo by C2IS
  */
 
-namespace Cungfoo\Command\Resalys\Load;
+namespace Resalys\Command\Load;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
