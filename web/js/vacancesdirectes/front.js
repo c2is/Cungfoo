@@ -20,9 +20,9 @@ $(function() { //domReady
 
 // Gestion du click sur le parent
     if($('.linkParent').length > 0) { addLinkBlock(); }
-
+// init Sliders
     if( $('.slider').length > 0 ){ slider(); }
-
+// init tabs navigation
     if( $('.tabControls').length > 0){
         var oTabControls = $('.tabControls'),
             oTabs = $('.tabs'),
@@ -39,6 +39,12 @@ $(function() { //domReady
             e.preventDefault();
         });
     }
+// triggerClick
+    $('.triggerClick').click( function(){
+        var oTarget = $(this).attr('data-triggerLink');
+        $('[href='+oTarget+']').trigger('click');
+        return false;
+    });
 
     $('.goto').click(function(e){
         e.preventDefault();

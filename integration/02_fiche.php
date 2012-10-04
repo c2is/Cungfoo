@@ -52,7 +52,7 @@
                 <span class="review rated">4</span>
                 <span class="review">5</span>
                 <meta itemprop="ratingValue" content="4">
-                <a href="#_"><span class="reviewCount" itemprop="reviewCount">46</span> avis clients</a>
+                <a href="#_" data-triggerLink="#tabAvis" class="triggerClick"><span class="reviewCount" itemprop="reviewCount">46</span> avis clients</a>
             </div>
 
             <ul class="tabControls clear">

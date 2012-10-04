@@ -21,28 +21,28 @@ closedir($dir);
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>YOUR PROJECT HERE</title>
+    <title>Vacances Directes</title>
 
     <meta name="description" content="">
     <meta name="author" content="C2iS">
 
     <style>
-
-        body { background:#fff; font: 13px Arial, Helvetica, sans-serif; color:#000; }
+        html{background-color:#464545;background-image:url("../web/images/vacancesdirectes/common/pict/bg.jpg");background-size:100%;background-repeat:no-repeat;}
+        body {font: 13px Arial, Helvetica, sans-serif; color:#000; }
         #wrap { margin: 30px auto; width:1000px }
         ol, ul { border: 1px solid #000; background:#dedede; padding:10px; margin:0 0 40px 0;}
         li {margin-left:20px;}
         a {color:inherit; }
         a:hover {text-decoration:none;}
         header {margin-bottom:30px;}
-        h1 {display: inline-block; vertical-align: 0; padding-left:30px;}
+        h1 {display: inline-block; vertical-align: 0; padding-left:30px; color:#fff;}
     </style>
 </head>
 <body>
 <div id="wrap">
     <header>
-        <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="YOUR PROJECT HERE">
-        <h1>YOUR PROJECT HERE</h1>
+        <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="Vacances Directes">
+        <h1>Vacances Directes</h1>
     </header>
     <section>
         <?php if(!empty($dossier)) {
