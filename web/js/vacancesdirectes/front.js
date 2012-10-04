@@ -42,7 +42,9 @@ $(function() { //domReady
 // triggerClick
     $('.triggerClick').click( function(){
         var oTarget = $(this).attr('data-triggerLink');
+        var targetOffset = $(oTarget).offset().top;
         $('[href='+oTarget+']').trigger('click');
+        $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
 
@@ -92,8 +94,8 @@ function slider(){
     });
 }
 function tabs(tView){
-    $('.tabs').hide();
-    $(tView).show();
+    $('.tabs').slideUp();
+    $(tView).slideDown();
 }
 
 
