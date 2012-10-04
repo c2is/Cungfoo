@@ -36,7 +36,7 @@
                     <span itemprop="addressRegion">Languedoc-Roussillon</span> |
                     <span itemprop="postalCode">34450</span>
                     <span itemprop="addressLocality">Vias</span>
-                    <button class="bt trans cfushia">Situer sur la carte</button>
+                    <button data-triggerLink="#tabProximite" class="triggerClick bt trans cfushia">Situer sur la carte</button>
                 </div>
                 <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                     <meta itemprop="latitude" content="40.75">
@@ -57,7 +57,7 @@
 
             <ul class="tabControls clear">
                 <li><a href="#tabCamp" class="active">Le camping</a></li>
-                <li><a href="#tabLocation">Les locations</a></li>
+                <li><a href="#tabLocations">Les locations</a></li>
                 <li><a href="#tabSurplace">Sur place</a></li>
                 <li><a href="#tabProximite">A proximité</a></li>
                 <li><a href="#tabAvis">Avis</a></li>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="tabCampDesc">
                     <h3>Le camping Le Petit-Mousse, le paradis de l'eau</h3>
-                    <h4>364 emplacements | Ouvert du 27 avril 2012 au 16 septembre 2012</h4>
+                    <p><strong>364 emplacements | Ouvert du 27 avril 2012 au 16 septembre 2012</strong></p>
                     <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
                 </div>
 
@@ -142,12 +142,13 @@
                     <a href="#_">Tous les plus du campings</a>
                     <hr>
                     <h4>Les vacances à Vias</h4>
+                    img carto france
 
                     <a href="#_">Tout savoir</a>
                 </div>
             </div>
         <!-- tab Locations -->
-            <div id="tabLocation" class="tabs">
+            <div id="tabLocations" class="tabs">
                 Tab Location
             </div>
         <!-- tab Sur place -->
