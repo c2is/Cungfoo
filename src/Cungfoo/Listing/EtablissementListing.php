@@ -32,6 +32,11 @@ class EtablissementListing extends BaseEtablissementListing
         $this->removeColumn('phone2');
         $this->removeColumn('fax');
         $this->removeColumn('mail');
+        $this->removeColumn('opening_date');
+        $this->removeColumn('closing_date');
+        $this->removeColumn('geo_coordinate_x');
+        $this->removeColumn('geo_coordinate_y');
+        $this->removeColumn('description');
     }
 
 } // EtablissementListing

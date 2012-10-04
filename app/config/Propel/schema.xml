@@ -73,6 +73,9 @@
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
         <column name="minimum_price" type="varchar" />
+        <column name="video_path" type="varchar" />
+        <column name="image_360_path" type="varchar" />
+        <column name="description" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
@@ -89,6 +92,8 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
+            <parameter name="crud_type_file" value="video_path,image_360_path" />
+            <parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
