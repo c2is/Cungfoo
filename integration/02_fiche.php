@@ -46,13 +46,14 @@
 
             <div class="ratingFiche" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                 Note :
-                <span class="review rated">1</span>
-                <span class="review rated">2</span>
-                <span class="review rated">3</span>
-                <span class="review rated">4</span>
-                <span class="review">5</span>
-                <meta itemprop="ratingValue" content="4">
-                <a href="#_" data-triggerLink="#tabAvis" class="triggerClick"><span class="reviewCount" itemprop="reviewCount">46</span> avis clients</a>
+                <span itemprop="ratingValue" content="4" title="4/5">
+                    <span class="review rated">1</span>
+                    <span class="review rated">2</span>
+                    <span class="review rated">3</span>
+                    <span class="review rated">4</span>
+                    <span class="review">5</span>
+                </span>
+                <button data-triggerLink="#tabAvis" class="triggerClick"><span class="reviewCount" itemprop="reviewCount">46</span> avis clients</button>
             </div>
 
             <ul class="tabControls clear">
@@ -96,8 +97,8 @@
                             <label for="photosRegions"><input type="radio" id="photosRegions" name="affPhoto" value="regions">Régions</label>
                         </fieldset>
                         <fieldset class="right">
-                            <a class="popin tabCampVideo" href="#_">Vidéo</a>
-                            <a class="popin tabCamp360" href="#_">360°</a>
+                            <a class="popinVideo tabCampVideo" href="http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent" title="Titre de la popin : vidéo>Vidéo</a>
+                            <a class="popin360 tabCamp360" href="#_">360°</a>
                         </fieldset>
                     </form>
                 </div>
@@ -109,63 +110,103 @@
 
                 <a href="#semainier" class="bt big fushia right goto">Tarifs & disponibilités</a>
 
-                <div class="bloc gris">
+                <div class="temoignFiche bloc gris">
                     <h3>Vous aimerez</h3>
-                    <h4>comme</h4>
-                    <div class="temoigFiche fish">
+                    <h4>comme...</h4>
+                    <div class="temoignFicheIt fish">
                         <span class="perso">Amélie</span>
                         <span class="age">10 ans</span>
                         <ul>
-                            <li>- les activités du club enfant (5-12 ans)</li>
-                            <li>- le toboggan aquatique</li>
-                            <li>- l'équitation (2 km)</li>
+                            <li>les activités du club enfant (5-12 ans)</li>
+                            <li>le toboggan aquatique</li>
+                            <li>l'équitation (2 km)</li>
                         </ul>
                     </div>
-                    <div class="temoigFiche drink">
+                    <div class="temoignFicheIt drink">
                         <span class="perso">Pierre</span>
                         <span class="age">36 ans</span>
                         <ul>
-                            <li>- la location de vélos</li>
-                            <li>- les barbecues collectifs</li>
-                            <li>- le restaurant et le snacks</li>
+                            <li>la location de vélos</li>
+                            <li>les barbecues collectifs</li>
+                            <li>le restaurant et le snacks</li>
                         </ul>
                     </div>
-                    <div class="temoigFiche glass">
+                    <div class="temoignFicheIt glass">
                         <span class="perso">Isabelle</span>
                         <span class="age">48 ans</span>
                         <ul>
-                            <li>- l'accès direct à la plage</li>
-                            <li>- l'accès wifi dans tout le camping</li>
-                            <li>- la laverie</li>
+                            <li>l'accès direct à la plage</li>
+                            <li>l'accès wifi dans tout le camping</li>
+                            <li>la laverie</li>
                         </ul>
                     </div>
-                    <a href="#_">Tous les plus du campings</a>
-                    <hr>
+                    <a href="#_" class="bt trans right">Tous les plus du camping</a>
+                    <hr class="clearboth">
                     <h4>Les vacances à Vias</h4>
-                    img carto france
-
-                    <a href="#_">Tout savoir</a>
+                    <dl>
+                        <dd class="img"><img src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png" alt="France > Languedoc-Roussillon"></dd>
+                        <dt>A proximité<br> nous avons listé :</dt>
+                        <dd class="list">
+                           <ul>
+                               <li>14 sites à visiter</li>
+                               <li>24 activités sportives</li>
+                               <li>14 événements culturels</li>
+                           </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>L'événement à ne pas manquer :</dt>
+                        <dd class="img"><img src="http://pimg.devlint.fr/76x75" alt="France > Languedoc-Roussillon"></dd>
+                        <dd class="list event">
+                           <strong>FERIA DE BÉZIERS<br> Du vendredi 10 août 2012<br> au mercredi15 août 2012</strong>
+                           avenue Jean-Constans<br> 34500 BEZIERS<br> Distance du camping : 15 km<br>
+                        </dd>
+                    </dl>
+                    <a href="#_" class="bt trans right">Tout savoir</a>
                 </div>
+                <nav class="paginationTabs clear">
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
+                </nav>
             </div>
         <!-- tab Locations -->
             <div id="tabLocations" class="tabs">
                 Tab Location
+                <nav class="paginationTabs clear">
+                    <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
+                </nav>
             </div>
         <!-- tab Sur place -->
             <div id="tabSurplace" class="tabs">
                 Tab Sur place
+                <nav class="paginationTabs clear">
+                    <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
+                </nav>
             </div>
         <!-- tab A proximité -->
             <div id="tabProximite" class="tabs">
                 Tab A proximité
+                <nav class="paginationTabs clear">
+                    <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabAvis">Les avis</button>
+                </nav>
             </div>
         <!-- tab Avis -->
             <div id="tabAvis" class="tabs">
                 Tab Avis
+                <nav class="paginationTabs clear">
+                    <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">Infos pratiques</button>
+                </nav>
             </div>
         <!-- tab Infos Pratiques -->
             <div id="tabInfos" class="tabs">
                 Tab Infos Pratiques
+                <nav class="paginationTabs clear">
+                    <button class="bt trans left triggerClick" data-triggerLink="#tabAvis">Les avis</button>
+                    <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">Le camping</button>
+                </nav>
             </div>
 
         <!-- Iframe Semainier Resalys -->
