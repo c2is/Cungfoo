@@ -52,6 +52,7 @@ class BinariesCommand extends BaseCommand
 
             $result = array();
             exec(sprintf('ls -lR %s | grep ^d | wc -l', $uploadsDirectory), $result);
+            $nbFiles = trim($result[0]);
         }
         catch (\Exception $exception)
         {
@@ -60,7 +61,7 @@ class BinariesCommand extends BaseCommand
             return false;
         }
 
-        $output->writeln(sprintf('<comment>%s</comment> binar%s file%s loaded.', $result[0], $result[0] > 1 ? 'ies' : 'y', $result[0] > 1 ? 's' : ''));
+        $output->writeln(sprintf('<comment>%s</comment> binar%s file%s loaded.', $nbFiles, $nbFiles > 1 ? 'ies' : 'y', $nbFiles > 1 ? 's' : ''));
 
         return true;
     }
