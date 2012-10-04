@@ -41,7 +41,7 @@ closedir($dir);
 <body>
 <div id="wrap">
     <header>
-        <img src="../images/common/pict/logo.png" alt="YOUR PROJECT HERE">
+        <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="YOUR PROJECT HERE">
         <h1>YOUR PROJECT HERE</h1>
     </header>
     <section>

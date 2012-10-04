@@ -13,9 +13,9 @@
     <meta name="author" content="">
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../css/vacancesdirectes/screen.css">
+    <link rel="stylesheet" href="../web/css/vacancesdirectes/screen.css">
 
-    <script src="../../vendor/head.extended.js"></script>
-    <script>var templatePath = '../../';</script><!-- templatePath : chemin du template en absolue -->
+    <script src="../web/vendor/head.extended.js"></script>
+    <script>var templatePath = '../web/';</script><!-- templatePath : chemin du template en absolue -->
 </head>
 <body <?php if($page !=''){ echo 'class="'.$page.'"'; } ?> >

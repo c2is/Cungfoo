@@ -1,7 +1,7 @@
 <header class="clear">
     <nav id="nav"><ul class="topnav fixed-width clear">
         <li class="tab"><a id="home" href="#">
-            <img  src="../../images/vacancesdirectes/common/pict/home.png" alt="Accueil">
+            <img  src="../web/images/vacancesdirectes/common/pict/home.png" alt="Accueil">
             <span>Vacances directes.com</span></a>
         </li>
     </ul></nav>
@@ -15,6 +15,6 @@
             </div>
         </div>
         <a href="01_ce-home.php" title="Retourner à Vacances directes & Village Center" id="logo">
-            <img src="../../images/vacancesdirectes/common/pict/ce-vacancesdirectes-logo.png" alt="Vacances directes & Village Center" /></a>
+            <img src="../web/images/vacancesdirectes/common/pict/ce-vacancesdirectes-logo.png" alt="Vacances directes & Village Center" /></a>
     </div>
 </header>
