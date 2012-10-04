@@ -24,8 +24,8 @@ $console->add(new \Cungfoo\Command\Project\InitCommand());
 $console->add(new \Cungfoo\Command\Tests\UnitCommand());
 $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
-$console->add(new \Cungfoo\Command\Resalys\Load\CatalogueCommand());
-$console->add(new \Cungfoo\Command\Resalys\Load\PrixCommand());
+$console->add(new \Resalys\Command\Load\CatalogueCommand());
+$console->add(new \Resalys\Command\Load\PrixCommand());
 
 $console->add(new \Cungfoo\Command\Fixtures\DumpCommand());
 $console->add(new \Cungfoo\Command\Fixtures\LoadCommand());
