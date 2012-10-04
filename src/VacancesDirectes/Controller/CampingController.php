@@ -24,7 +24,7 @@ class CampingController implements ControllerProviderInterface
             /** @var \Cungfoo\Model\Etablissement $etab  */
             $etab = \Cungfoo\Model\EtablissementQuery::create()
                 ->joinWithI18n($locale)
-                ->filterById($id)
+                ->filterByCode($id)
                 ->findOne()
             ;
 
