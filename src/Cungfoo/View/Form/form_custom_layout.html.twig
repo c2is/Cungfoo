@@ -1,8 +1,8 @@
 {% use 'form_div_layout.html.twig' %}
 
 {% block textrich_widget %}
-<link rel="stylesheet" href="{{ asset('redactor/css/redactor.css') }}">
-<script src="{{ asset('redactor/redactor.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('vendor/redactor/css/redactor.css') }}">
+<script src="{{ asset('vendor/redactor/redactor.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#{{ id }}').redactor();
@@ -18,7 +18,7 @@
     <ul class="nav nav-tabs">
         {% for child in form %}
             {% if not child.rendered %}
-            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ app.request.basepath }}/famfamfam/{{ child.vars.value.locale }}.gif" /></a></li>
+            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ asset('images/cungfoo/flags/' ~ child.vars.value.locale ~ '.gif') }}" /></a></li>
             {% endif %}
         {% endfor %}
     </ul>

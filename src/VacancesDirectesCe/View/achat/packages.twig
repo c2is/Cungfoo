@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block title %}Packages{% endblock %}
+
+{% block content %}
+        <div class="column">
+            <h1>BEFORE <span>IFRAME</span></h1>
+            <iframe src="{{ path('resalys_wrapper', {'webuser': 'web_ce_achat_fr', 'iframe': 1}) }}" width="960px" height="700px"></iframe>
+            <h1>AFTER <span>IFRAME</span></h1>
+        </div>
+{% endblock %}

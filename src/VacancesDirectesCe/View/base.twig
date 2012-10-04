@@ -1,13 +1,80 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<html class="js-false" lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% block title %}{% endblock %} - Vacances Directes CE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css') }}">
+
+    <script src="{{ asset('vendor/head.extended.js') }}"></script>
+    <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
 </head>
-<body>
-    <div class="container">
+<body class="ce">
+    <header class="clear">
+        <nav id="nav"><ul class="topnav fixed-width clear">
+            <li class="tab"><a id="home" href="{{ path('homepage') }}">
+                <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="Accueil">
+                <span>Vacances directes.com</span></a>
+            </li>
+        </ul></nav>
+
+        <div id="header" class="fixed-width clear">
+            <div id="headerRight">
+                <div id="telephone">
+                    <span>Informations & réservations
+                        <a href="tel:+33825133400">0825 133 400 (0,15€/min)</a>
+                    </span>
+                </div>
+            </div>
+            <a href="{{ path('homepage') }}" title="Retourner à Vacances directes & Village Center" id="logo">
+                <img src="{{ asset('images/vacancesdirectes/common/pict/ce-vacancesdirectes-logo.png') }}" alt="Vacances directes & Village Center" /></a>
+        </div>
+    </header>
+
+    <div id="wrap" class="fixed-width clear">
         {% block content %}{% endblock %}
-    </div>
+    </div><!-- End of document -->
+
+    <footer class="clear">
+        <div class="footer-link" class="full-width">
+            <a href="#_">Contact</a> -
+            <a href="#_">Charte qualité</a> -
+            <a href="#_">Conditions générales de location</a> -
+            <a href="#_">FAQ</a> -
+            <a href="#_">Guide pratique</a> -
+            <a href="#_">Plan du site</a> -
+            <a href="#_">Crédits</a> -
+            <a href="#_">Mentions légales</a>
+            <span class="card transac">Transactions sécurisées</span>
+            <span class="card visa">CB Visa</span>
+            <span class="card master">MasterCard</span>
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src='+ templatePath + '"vendor/jquery/jquery-1.7.2.min.js">\x3C/script>')</script>
+
+    <script>
+        head.js(
+            {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
+            //{selectivizr: templatePath+"js/libs/selectivizr-min.js"}, // extend css selectors for IE
+            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js"},
+            {frontJS: templatePath + "js/vacancesdirectes/front.js"}
+        );
+    </script>
+
+    <!-- Prompt IE 6 users to install Chrome Frame -->
+    <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
 </body>
 </html>
