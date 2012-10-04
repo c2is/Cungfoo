@@ -28,8 +28,17 @@ $app->error(function (\Exception $e, $code) use ($app) {
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });
 
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('homepage.twig', array());
+$app->get('/login', function(Request $request) use ($app) {
+    return $app['twig']->render('login.twig', array(
+        'error'         => $app['security.last_error']($request),
+        'last_username' => $app['session']->get('_security.last_username'),
+    ));
+})
+->bind('login')
+;
+
+$app->get('/', function(Request $request) use ($app) {
+    return $app->redirect($app['url_generator']->generate('achat_packages'));
 })
 ->bind('homepage')
 ;
