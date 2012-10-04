@@ -345,7 +345,7 @@ class {$this->getClassname()} extends AppAwareType
             }
 
             // set default languages
-            $languagesConfiguration = array(locale_get_default());
+            $languagesConfiguration = array('fr');
 
             // get the configuration of the site languages
             $languageFilename = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableLanguagesConf'];
