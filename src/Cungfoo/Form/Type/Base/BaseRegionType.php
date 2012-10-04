@@ -27,7 +27,7 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.id',
             'required' => false,
         ));
-        $builder->add('code', 'textrich', array(
+        $builder->add('code', 'text', array(
             'constraints' => array(
                 new Assert\NotBlank(),
             ),

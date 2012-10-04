@@ -79,8 +79,9 @@ class DumpCommand extends BaseCommand
         $output->writeln(sprintf('<info>%s</info> <comment>started</comment>.', $this->getName()));
 
         $utils = new \Cungfoo\Lib\Utils();
-        $fixturesDirectory = sprintf('%s/%s', $this->getApplication()->getRootDir(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR));
-        $fileFixturesDirectory = realpath(sprintf('%s/%s', $fixturesDirectory));
+
+        $fixturesDirectory = realpath(sprintf('%s/%s', $this->getApplication()->getRootDir(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
+
         if (!is_dir($fixturesDirectory))
         {
             $output->writeln(sprintf('<info>%s</info> <error>error : directory %s does not exist</error>.', $this->getName(), $fixturesDirectory));
@@ -95,7 +96,7 @@ class DumpCommand extends BaseCommand
             $filesystem = new \Symfony\Component\Filesystem\Filesystem();
 
             // remove all files before dump
-            $filesystem->remove($fileFixturesDirectory);
+            $filesystem->remove($fixturesDirectory.'/uploads/*');
 
             foreach ($this->models as $model)
             {
@@ -127,17 +128,17 @@ class DumpCommand extends BaseCommand
                     }
                     else if (isset($value['Id']))
                     {
-                        $valueId        = $value['Id'];
+                        $valueId = $value['Id'];
                         unset($value['Id']);
 
                         foreach ($value as $field)
                         {
                             if ($field && is_string($field))
                             {
-                                $file = $this->getApplication()->getRootDir() . '/web/' . $field;
+                                $file = $this->getApplication()->getRootDir().'/web/'.$field;
                                 if (file_exists($file))
                                 {
-                                    $filesystem->copy($file, $fixturesDirectory . '/files/' . $field);
+                                    $filesystem->copy($file, $fixturesDirectory.'/'.$field);
                                 }
                             }
                         }
