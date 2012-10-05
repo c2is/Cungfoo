@@ -10,7 +10,7 @@ include('includes/ce-top.php'); ?>
         <div class="column">
             <h1><span>Bienvenue dans l’espace </span>comité d’entreprise</h1>
 
-            <a href="00_ce-fiche.php" class="bt trans popinIframe">Accès à une fiche camping en popin</a>
+            <a href="00_ce-fiche.php" class="popinIframe">Accès à une fiche camping en popin</a>
 
         </div>
 
