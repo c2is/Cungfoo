@@ -145,7 +145,85 @@
 </div>
 <!-- tab Locations -->
 <div id="tabLocations" class="tabs">
-    Tab Location
+    <form class="filterBy" action="">
+        <fieldset>
+            <span>Filtrer par :</span>
+            <select name="" id="type">
+                <option value="t0" selected="selected">Tous types</option>
+                <option value="t1">Chalet</option>
+                <option value="t2">Mobil-homes</option>
+            </select>
+            <select name="" id="capacite">
+                <option value="c1">Capacité : 2/3 places</option>
+                <option value="c2">Capacité : 3/4 places</option>
+                <option value="c3">Capacité : 5 places</option>
+                <option value="c4">Capacité : 6/8 places</option>
+            </select>
+        </fieldset>
+    </form>
+
+    <div class="typLocation clear">
+        <img src="http://pimg.devlint.fr/250x200/ccc/333/*" alt="" class="left">
+        <div style="overflow:hidden;">
+        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <img src="http://pimg.devlint.fr/120x80/ccc/333/*" alt="" class="left">
+        <strong>Nombre de chambres : 2<br>
+        Surface : 32m<sup>2</sup> environ<br>
+        Type de terrasse : rez de jardin</strong>
+        <p class="clearboth">Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis. Nunc libero nulla, pellentesque sit amet rhoncus vel, pharetra eget lorem. Quisque feugiat urna sit amet libero iaculis tempus. Mauris eleifend eros ornare velit viverra scelerisque. Fusce in lacus et. Quisque feugiat urna sit amet libero iaculis tempus.</p>
+        </div>
+        <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+    </div>
+    <div class="typLocation clear">
+        <img src="http://pimg.devlint.fr/250x200/ccc/333/*" alt="" class="left">
+        <div style="overflow:hidden;">
+        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <img src="http://pimg.devlint.fr/120x80/ccc/333/*" alt="" class="left">
+        <strong>Nombre de chambres : 2<br>
+        Surface : 32m<sup>2</sup> environ<br>
+        Type de terrasse : rez de jardin</strong>
+        <p class="clearboth">Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis. Nunc libero nulla, pellentesque sit amet rhoncus vel, pharetra eget lorem. Quisque feugiat urna sit amet libero iaculis tempus. Mauris eleifend eros ornare velit viverra scelerisque. Fusce in lacus et. Quisque feugiat urna sit amet libero iaculis tempus.</p>
+        </div>
+        <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+    </div>
+    <div class="typLocation clear">
+        <img src="http://pimg.devlint.fr/250x200/ccc/333/*" alt="" class="left">
+        <div style="overflow:hidden;">
+        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <img src="http://pimg.devlint.fr/120x80/ccc/333/*" alt="" class="left">
+        <strong>Nombre de chambres : 2<br>
+        Surface : 32m<sup>2</sup> environ<br>
+        Type de terrasse : rez de jardin</strong>
+        <p class="clearboth">Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis. Nunc libero nulla, pellentesque sit amet rhoncus vel, pharetra eget lorem. Quisque feugiat urna sit amet libero iaculis tempus. Mauris eleifend eros ornare velit viverra scelerisque. Fusce in lacus et. Quisque feugiat urna sit amet libero iaculis tempus.</p>
+        </div>
+        <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+    </div>
+    <div class="typLocation clear">
+        <img src="http://pimg.devlint.fr/250x200/ccc/333/*" alt="" class="left">
+        <div style="overflow:hidden;">
+        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <img src="http://pimg.devlint.fr/120x80/ccc/333/*" alt="" class="left">
+        <strong>Nombre de chambres : 2<br>
+        Surface : 32m<sup>2</sup> environ<br>
+        Type de terrasse : rez de jardin</strong>
+        <p class="clearboth">Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis. Nunc libero nulla, pellentesque sit amet rhoncus vel, pharetra eget lorem. Quisque feugiat urna sit amet libero iaculis tempus. Mauris eleifend eros ornare velit viverra scelerisque. Fusce in lacus et. Quisque feugiat urna sit amet libero iaculis tempus.</p>
+        </div>
+        <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+    </div>
+    <div class="typLocation clear">
+        <img src="http://pimg.devlint.fr/250x200/ccc/333/*" alt="" class="left">
+        <div style="overflow:hidden;">
+        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <img src="http://pimg.devlint.fr/120x80/ccc/333/*" alt="" class="left">
+        <strong>Nombre de chambres : 2<br>
+        Surface : 32m<sup>2</sup> environ<br>
+        Type de terrasse : rez de jardin</strong>
+        <p class="clearboth">Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis. Nunc libero nulla, pellentesque sit amet rhoncus vel, pharetra eget lorem. Quisque feugiat urna sit amet libero iaculis tempus. Mauris eleifend eros ornare velit viverra scelerisque. Fusce in lacus et. Quisque feugiat urna sit amet libero iaculis tempus.</p>
+        </div>
+        <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+    </div>
+
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
@@ -153,7 +231,8 @@
 </div>
 <!-- tab Sur place -->
 <div id="tabSurplace" class="tabs">
-    Tab Sur place
+    <h3>Tab Sur place</h3>
+        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
@@ -161,7 +240,8 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    Tab A proximité
+    <h3>Tab A proximité</h3>
+        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabAvis">Les avis</button>
@@ -169,7 +249,8 @@
 </div>
 <!-- tab Avis -->
 <div id="tabAvis" class="tabs">
-    Tab Avis
+    <h3>Tab Avis</h3>
+        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">Infos pratiques</button>
@@ -177,7 +258,8 @@
 </div>
 <!-- tab Infos Pratiques -->
 <div id="tabInfos" class="tabs">
-    Tab Infos Pratiques
+    <h3>Tab Infos Pratiques</h3>
+        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabAvis">Les avis</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">Le camping</button>
