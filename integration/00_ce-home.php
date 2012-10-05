@@ -26,7 +26,7 @@
                     <input type="password" name="password" id="password" />
                     </div>
                     <div class="right">
-                        <input class="bt big fushia goto" type="submit" value="Se connecter" />
+                        <input class="bt big fushia" type="submit" value="Se connecter" />
                         <a href="#">Identifiant oublié ?</a><br />
                         <a href="#">Mote de passe oublié ?</a>
                     </div>

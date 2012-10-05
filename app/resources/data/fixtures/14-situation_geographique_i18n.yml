@@ -1,109 +1,109 @@
 \Cungfoo\Model\SituationGeographiqueI18n:
-    10_de:
-        Id: 10
+    1_de:
+        Id: 1
         Locale: de
         Name: 'Accès direct à la plage'
-    10_en:
-        Id: 10
+    1_en:
+        Id: 1
         Locale: en
         Name: 'Accès direct à la plage'
-    10_fr:
-        Id: 10
+    1_fr:
+        Id: 1
         Locale: fr
         Name: 'Accès direct à la plage'
-    11_de:
-        Id: 11
+    2_de:
+        Id: 2
         Locale: de
         Name: 'Lac, rivière ou plan d''eau à proximité'
-    11_en:
-        Id: 11
+    2_en:
+        Id: 2
         Locale: en
         Name: 'Lac, rivière ou plan d''eau à proximité'
-    11_fr:
-        Id: 11
+    2_fr:
+        Id: 2
         Locale: fr
         Name: 'Lac, rivière ou plan d''eau à proximité'
-    12_de:
-        Id: 12
+    3_de:
+        Id: 3
         Locale: de
         Name: 'A la campagne'
-    12_en:
-        Id: 12
+    3_en:
+        Id: 3
         Locale: en
         Name: 'A la campagne'
-    12_fr:
-        Id: 12
+    3_fr:
+        Id: 3
         Locale: fr
         Name: 'A la campagne'
-    13_de:
-        Id: 13
+    4_de:
+        Id: 4
         Locale: de
         Name: 'En rétro littoral <10km'
-    13_en:
-        Id: 13
+    4_en:
+        Id: 4
         Locale: en
         Name: 'En rétro littoral <10km'
-    13_fr:
-        Id: 13
+    4_fr:
+        Id: 4
         Locale: fr
         Name: 'En rétro littoral <10km'
-    14_de:
-        Id: 14
+    5_de:
+        Id: 5
         Locale: de
         Name: 'Accès mer <5km'
-    14_en:
-        Id: 14
+    5_en:
+        Id: 5
         Locale: en
         Name: 'Accès mer <5km'
-    14_fr:
-        Id: 14
+    5_fr:
+        Id: 5
         Locale: fr
         Name: 'Accès mer <5km'
-    15_de:
-        Id: 15
+    6_de:
+        Id: 6
         Locale: de
         Name: 'En bord de mer <2km'
-    15_en:
-        Id: 15
+    6_en:
+        Id: 6
         Locale: en
         Name: 'En bord de mer <2km'
-    15_fr:
-        Id: 15
+    6_fr:
+        Id: 6
         Locale: fr
         Name: 'En bord de mer <2km'
-    16_de:
-        Id: 16
+    7_de:
+        Id: 7
         Locale: de
         Name: 'A la montagne'
-    16_en:
-        Id: 16
+    7_en:
+        Id: 7
         Locale: en
         Name: 'A la montagne'
-    16_fr:
-        Id: 16
+    7_fr:
+        Id: 7
         Locale: fr
         Name: 'A la montagne'
-    17_de:
-        Id: 17
+    8_de:
+        Id: 8
         Locale: de
         Name: 'Au bord d''un lac'
-    17_en:
-        Id: 17
+    8_en:
+        Id: 8
         Locale: en
         Name: 'Au bord d''un lac'
-    17_fr:
-        Id: 17
+    8_fr:
+        Id: 8
         Locale: fr
         Name: 'Au bord d''un lac'
-    18_de:
-        Id: 18
+    9_de:
+        Id: 9
         Locale: de
         Name: 'Au bord d''une rivière'
-    18_en:
-        Id: 18
+    9_en:
+        Id: 9
         Locale: en
         Name: 'Au bord d''une rivière'
-    18_fr:
-        Id: 18
+    9_fr:
+        Id: 9
         Locale: fr
         Name: 'Au bord d''une rivière'
