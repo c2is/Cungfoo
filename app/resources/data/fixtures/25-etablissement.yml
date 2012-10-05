@@ -18,6 +18,9 @@
         GeoCoordinateX: '46.791528'
         GeoCoordinateY: '-2.064456'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     2:
         Code: 100
         Name: 'Pins Parasols '
@@ -37,6 +40,9 @@
         GeoCoordinateX: '43.433152'
         GeoCoordinateY: '6.737034'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     3:
         Code: 101
         Name: 'Plage Fleurie '
@@ -56,6 +62,9 @@
         GeoCoordinateX: '44.407452'
         GeoCoordinateY: '4.395401'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     4:
         Code: 102
         Name: 'Playa Montroig'
@@ -75,6 +84,9 @@
         GeoCoordinateX: '41.9409043'
         GeoCoordinateY: '2.8651246'
         MinimumPrice: '360.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     5:
         Code: 103
         Name: 'Playa Tropicana '
@@ -94,6 +106,9 @@
         GeoCoordinateX: '40.2457632'
         GeoCoordinateY: '0.2761488'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     6:
         Code: 104
         Name: 'Port de plaisance'
@@ -113,6 +128,9 @@
         GeoCoordinateX: '47.875568'
         GeoCoordinateY: '-4.1063729'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     7:
         Code: 106
         Name: 'La Ribeyre'
@@ -132,6 +150,9 @@
         GeoCoordinateX: '45.573436'
         GeoCoordinateY: '2.943472'
         MinimumPrice: '264.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     8:
         Code: 108
         Name: 'Le Roussillonnais '
@@ -151,6 +172,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '168.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     9:
         Code: 109
         Name: 'Les Sables de Cordouan '
@@ -170,6 +194,9 @@
         GeoCoordinateX: '45.716275'
         GeoCoordinateY: '-1.143904'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     10:
         Code: 11
         Name: 'Azu''Rivage'
@@ -189,6 +216,9 @@
         GeoCoordinateX: '43.798959'
         GeoCoordinateY: '-1.303089'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     11:
         Code: 110
         Name: 'Saint Aygulf Plage'
@@ -208,6 +238,9 @@
         GeoCoordinateX: '43.433152'
         GeoCoordinateY: '6.737034'
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     12:
         Code: 111
         Name: 'Saint Louis'
@@ -227,6 +260,9 @@
         GeoCoordinateX: '43.597772'
         GeoCoordinateY: '6.95671'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     13:
         Code: 112
         Name: 'Sainte Baume'
@@ -246,6 +282,9 @@
         GeoCoordinateX: '43.37055'
         GeoCoordinateY: '5.782809'
         MinimumPrice: '270.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     14:
         Code: 113
         Name: 'Le Sainte-Marie '
@@ -265,6 +304,9 @@
         GeoCoordinateX: '42.72835'
         GeoCoordinateY: '3.014642'
         MinimumPrice: '168.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     15:
         Code: 114
         Name: 'Le Sen Yan '
@@ -284,6 +326,9 @@
         GeoCoordinateX: '44.0756609'
         GeoCoordinateY: '-1.1661729'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     16:
         Code: 116
         Name: 'La Ferme de la Serraz '
@@ -303,6 +348,9 @@
         GeoCoordinateX: '45.776496'
         GeoCoordinateY: '6.220515'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     17:
         Code: 117
         Name: 'Signol '
@@ -322,6 +370,9 @@
         GeoCoordinateX: '45.978418'
         GeoCoordinateY: '-1.332125'
         MinimumPrice: '162.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     18:
         Code: 118
         Name: 'Le Soleil '
@@ -341,6 +392,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '294.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     19:
         Code: 119
         Name: 'Le Soleil de la Méditerranée'
@@ -360,6 +414,9 @@
         GeoCoordinateX: '42.61783'
         GeoCoordinateY: '3.004182'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     20:
         Code: 12
         Name: 'Le Bahia Club'
@@ -379,6 +436,9 @@
         GeoCoordinateX: '42.78773'
         GeoCoordinateY: '3.036565'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     21:
         Code: 120
         Name: 'Les Sources '
@@ -398,6 +458,9 @@
         GeoCoordinateX: '47.835925'
         GeoCoordinateY: '7.176868'
         MinimumPrice: '126.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     22:
         Code: 121
         Name: 'Le Talaris '
@@ -417,6 +480,9 @@
         GeoCoordinateX: '44.978459'
         GeoCoordinateY: '-1.075745'
         MinimumPrice: '234.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     23:
         Code: 122
         Name: 'Le Tamerici '
@@ -436,6 +502,9 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     24:
         Code: 123
         Name: 'Tenuta Primero '
@@ -455,6 +524,9 @@
         GeoCoordinateX: '42.490557'
         GeoCoordinateY: '9.116462'
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     25:
         Code: 125
         Name: 'Ur Onea '
@@ -474,6 +546,9 @@
         GeoCoordinateX: '43.439236'
         GeoCoordinateY: '-1.590062'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     26:
         Code: 126
         Name: 'Via Romana '
@@ -493,6 +568,9 @@
         GeoCoordinateX: '42.010314'
         GeoCoordinateY: '9.325429'
         MinimumPrice: '203.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     27:
         Code: 127
         Name: 'Le Vieux Port '
@@ -512,6 +590,9 @@
         GeoCoordinateX: '43.81466'
         GeoCoordinateY: '-1.37825'
         MinimumPrice: '192.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     28:
         Code: 128
         Name: 'Les Vignes '
@@ -531,6 +612,9 @@
         GeoCoordinateX: '44.033876'
         GeoCoordinateY: '-1.258325'
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     29:
         Code: 129
         Name: 'Vilanova Park '
@@ -550,6 +634,9 @@
         GeoCoordinateX: '42.8467181'
         GeoCoordinateY: '-2.6716351'
         MinimumPrice: '306.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     30:
         Code: 130
         Name: Zagarella
@@ -569,6 +656,9 @@
         GeoCoordinateX: '46.791528'
         GeoCoordinateY: '-2.064456'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     31:
         Code: 131
         Name: 'Le Ruisseau des Pyrénées'
@@ -588,6 +678,9 @@
         GeoCoordinateX: '43.439236'
         GeoCoordinateY: '-1.590062'
         MinimumPrice: '276.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     32:
         Code: 133
         Name: 'La Masia'
@@ -607,6 +700,9 @@
         GeoCoordinateX: '41.6742739'
         GeoCoordinateY: '2.7921031'
         MinimumPrice: '294.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     33:
         Code: 134
         Name: 'Les Tamaris'
@@ -626,6 +722,9 @@
         GeoCoordinateX: '42.78773'
         GeoCoordinateY: '3.036565'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     34:
         Code: 135
         Name: 'Playa Joyel'
@@ -645,6 +744,9 @@
         GeoCoordinateX: '43.4799637'
         GeoCoordinateY: '-3.52139'
         MinimumPrice: '282.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     35:
         Code: 136
         Name: 'Grande Italia'
@@ -664,6 +766,9 @@
         GeoCoordinateX: '45.216488'
         GeoCoordinateY: '12.294207'
         MinimumPrice: '294.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     36:
         Code: 137
         Name: 'Le Pearl Village Club'
@@ -683,6 +788,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     37:
         Code: 138
         Name: 'Les Pins Maritimes'
@@ -702,6 +810,9 @@
         GeoCoordinateX: '43.120541'
         GeoCoordinateY: '6.128639'
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     38:
         Code: 139
         Name: 'zz Le Barralet'
@@ -721,6 +832,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     39:
         Code: 14
         Name: 'Beau Rivage '
@@ -740,6 +854,9 @@
         GeoCoordinateX: '43.4255939'
         GeoCoordinateY: '3.606834'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     40:
         Code: 140
         Name: 'zz Village Cavallino'
@@ -759,6 +876,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     41:
         Code: 141
         Name: 'zz Aux Hamacs'
@@ -778,6 +898,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     42:
         Code: 142
         Name: 'zz Prat Dou Rey'
@@ -797,6 +920,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     43:
         Code: 143
         Name: 'zz Rouffiac'
@@ -816,6 +942,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     44:
         Code: 144
         Name: 'zz Séquoia Parc'
@@ -835,6 +964,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     45:
         Code: 145
         Name: 'zz Trémolat'
@@ -854,6 +986,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     46:
         Code: 146
         Name: 'zz L''Atlantique'
@@ -873,6 +1008,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     47:
         Code: 147
         Name: 'zz Le Bahamas Beach'
@@ -892,6 +1030,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     48:
         Code: 148
         Name: 'zz La Barque'
@@ -911,6 +1052,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     49:
         Code: 149
         Name: 'zz Chanset'
@@ -930,6 +1074,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     50:
         Code: 15
         Name: 'Beaulieu '
@@ -949,6 +1096,9 @@
         GeoCoordinateX: '46.186048'
         GeoCoordinateY: '-1.1180349'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     51:
         Code: 150
         Name: 'zz Le Chêne Gris'
@@ -968,6 +1118,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     52:
         Code: 151
         Name: 'zz Les Dauphins Bleus'
@@ -987,6 +1140,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     53:
         Code: 152
         Name: 'zz Domaine de Beaulieu'
@@ -1006,6 +1162,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     54:
         Code: 153
         Name: 'zz Le Lamparo'
@@ -1025,6 +1184,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     55:
         Code: 154
         Name: 'zz Marmotel'
@@ -1044,6 +1206,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     56:
         Code: 155
         Name: 'zz Les Ondines'
@@ -1063,6 +1228,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     57:
         Code: 156
         Name: 'zz Pyla Camping'
@@ -1082,6 +1250,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     58:
         Code: 157
         Name: 'zz La Rotonde'
@@ -1101,6 +1272,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     59:
         Code: 158
         Name: 'zz Village Stoja'
@@ -1120,6 +1294,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     60:
         Code: 159
         Name: 'zz Le Tamarit Park'
@@ -1139,6 +1316,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     61:
         Code: 16
         Name: 'Bois Soleil'
@@ -1158,6 +1338,9 @@
         GeoCoordinateX: '46.536402'
         GeoCoordinateY: '-1.772826'
         MinimumPrice: '210.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     62:
         Code: 160
         Name: 'zz Le Trivoly'
@@ -1177,6 +1360,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     63:
         Code: 161
         Name: 'zz Almadies'
@@ -1196,6 +1382,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     64:
         Code: 162
         Name: 'zz Bois de Pleuven'
@@ -1215,6 +1404,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     65:
         Code: 163
         Name: 'zz Domaine de la Forêt'
@@ -1234,6 +1426,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     66:
         Code: 164
         Name: 'zz Le Lac'
@@ -1253,6 +1448,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     67:
         Code: 165
         Name: 'zz Rieu Montagné'
@@ -1272,6 +1470,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     68:
         Code: 166
         Name: 'zz Domaine des Bans'
@@ -1291,6 +1492,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     69:
         Code: 167
         Name: 'zz Douce Quiétude'
@@ -1310,6 +1514,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     70:
         Code: 168
         Name: 'zz Fleutron'
@@ -1329,6 +1536,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     71:
         Code: 169
         Name: 'zz Palmeraie'
@@ -1348,6 +1558,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     72:
         Code: 17
         Name: 'Bordenéo '
@@ -1367,6 +1580,9 @@
         GeoCoordinateX: '47.347009'
         GeoCoordinateY: '-3.156406'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     73:
         Code: 170
         Name: 'zz Les Tours'
@@ -1386,6 +1602,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     74:
         Code: 171
         Name: 'zz Abri de Camargue'
@@ -1405,6 +1624,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     75:
         Code: 172
         Name: 'zz Domaine des Iscles'
@@ -1424,6 +1646,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     76:
         Code: 173
         Name: 'zz Lacs du Verdon'
@@ -1443,6 +1668,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     77:
         Code: 174
         Name: 'zz Les Pins Payrac'
@@ -1462,6 +1690,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     78:
         Code: 175
         Name: 'Domaine des Pins'
@@ -1481,6 +1712,9 @@
         GeoCoordinateX: '46.720204'
         GeoCoordinateY: '-1.945917'
         MinimumPrice: '234.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     79:
         Code: 176
         Name: 'Atlantic Club Montalivet'
@@ -1500,6 +1734,9 @@
         GeoCoordinateX: '45.3569389'
         GeoCoordinateY: '-1.061774'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     80:
         Code: 177
         Name: 'Les Ajoncs d''Or'
@@ -1519,6 +1756,9 @@
         GeoCoordinateX: '47.285448'
         GeoCoordinateY: '-2.393236'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     81:
         Code: 178
         Name: 'Camping Les Biches'
@@ -1538,6 +1778,9 @@
         GeoCoordinateX: '46.720204'
         GeoCoordinateY: '-1.945917'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     82:
         Code: 18
         Name: 'La Bretonnière'
@@ -1557,6 +1800,9 @@
         GeoCoordinateX: '46.6400409'
         GeoCoordinateY: '-1.712725'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     83:
         Code: 19
         Name: 'Le California'
@@ -1576,6 +1822,9 @@
         GeoCoordinateX: '46.791528'
         GeoCoordinateY: '-2.064456'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     84:
         Code: 2
         Name: 'Le Mas'
@@ -1595,6 +1844,9 @@
         GeoCoordinateX: '44.936'
         GeoCoordinateY: '1.018'
         MinimumPrice: '126.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     85:
         Code: 20
         Name: 'Le Calypso'
@@ -1614,6 +1866,9 @@
         GeoCoordinateX: '42.75444'
         GeoCoordinateY: '2.993641'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     86:
         Code: 21
         Name: 'Camping du Lac '
@@ -1633,6 +1888,9 @@
         GeoCoordinateX: '44.427565'
         GeoCoordinateY: '6.035874'
         MinimumPrice: '162.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     87:
         Code: 22
         Name: 'Cap Agathois '
@@ -1652,6 +1910,9 @@
         GeoCoordinateX: '43.312455'
         GeoCoordinateY: '3.47083'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     88:
         Code: 23
         Name: 'Le Carbonnier'
@@ -1671,6 +1932,9 @@
         GeoCoordinateX: '44.744816'
         GeoCoordinateY: '1.258582'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     89:
         Code: 24
         Name: 'Castell Mar'
@@ -1690,6 +1954,9 @@
         GeoCoordinateX: '42.2582587'
         GeoCoordinateY: '3.0744421'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     90:
         Code: 25
         Name: 'Castell Montgri '
@@ -1709,6 +1976,9 @@
         GeoCoordinateX: '42.0519544'
         GeoCoordinateY: '3.1962936'
         MinimumPrice: '330.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     91:
         Code: 26
         Name: 'Caussanel '
@@ -1728,6 +1998,9 @@
         GeoCoordinateX: '44.235174'
         GeoCoordinateY: '2.752384'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     92:
         Code: 27
         Name: 'Cayola '
@@ -1747,6 +2020,9 @@
         GeoCoordinateX: '43.312489'
         GeoCoordinateY: '3.418564'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     93:
         Code: 28
         Name: 'Le Chaponnet'
@@ -1766,6 +2042,9 @@
         GeoCoordinateX: '46.6057'
         GeoCoordinateY: '-1.82988'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     94:
         Code: 29
         Name: 'Domaine des Charmilles'
@@ -1785,6 +2064,9 @@
         GeoCoordinateX: '45.981425'
         GeoCoordinateY: '-1.041028'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     95:
         Code: 3
         Name: 'Le Cala Gogo'
@@ -1804,6 +2086,9 @@
         GeoCoordinateX: '42.61783'
         GeoCoordinateY: '3.004182'
         MinimumPrice: '294.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     96:
         Code: 30
         Name: 'Le Château de Galinée '
@@ -1823,6 +2108,9 @@
         GeoCoordinateX: '48.632091'
         GeoCoordinateY: '-2.259804'
         MinimumPrice: '266.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     97:
         Code: 31
         Name: 'La Chênaie '
@@ -1842,6 +2130,9 @@
         GeoCoordinateX: '47.115491'
         GeoCoordinateY: '-2.104444'
         MinimumPrice: '210.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     98:
         Code: 32
         Name: 'Les Chênes Verts '
@@ -1861,6 +2152,9 @@
         GeoCoordinateX: '44.855269'
         GeoCoordinateY: '1.333955'
         MinimumPrice: '192.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     99:
         Code: 33
         Name: 'Le Col Vert '
@@ -1880,6 +2174,9 @@
         GeoCoordinateX: '43.95512'
         GeoCoordinateY: '-1.305229'
         MinimumPrice: '162.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     100:
         Code: 34
         Name: 'Le Conguel '
@@ -1899,6 +2196,9 @@
         GeoCoordinateX: '47.482133'
         GeoCoordinateY: '-3.121053'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     101:
         Code: 35
         Name: 'La Coste Rouge '
@@ -1918,6 +2218,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     102:
         Code: 36
         Name: 'La Côte d''Argent '
@@ -1937,6 +2240,9 @@
         GeoCoordinateX: '45.186089'
         GeoCoordinateY: '-1.057202'
         MinimumPrice: '294.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     103:
         Code: 37
         Name: 'Crin Blanc '
@@ -1956,6 +2262,9 @@
         GeoCoordinateX: '45.333533'
         GeoCoordinateY: '7.101924'
         MinimumPrice: '204.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     104:
         Code: 38
         Name: 'Cupulatta '
@@ -1975,6 +2284,9 @@
         GeoCoordinateX: '41.591369'
         GeoCoordinateY: '9.278311'
         MinimumPrice: '315.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     105:
         Code: 39
         Name: 'Les Cyprès '
@@ -1994,6 +2306,9 @@
         GeoCoordinateX: '46.697777'
         GeoCoordinateY: '-1.944529'
         MinimumPrice: '210.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     106:
         Code: 4
         Name: 'Le Petit Mousse'
@@ -2013,6 +2328,9 @@
         GeoCoordinateX: '43.312489'
         GeoCoordinateY: '3.418564'
         MinimumPrice: '198.00'
+        VideoPath: 'http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent'
+        Image360Path: 'http://www.youtube.com/embed/Z1qXQMpdzQY?rel=0&amp;wmode=transparent'
+        Description: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.'
     107:
         Code: 40
         Name: 'Les Deux Fontaines '
@@ -2032,6 +2350,9 @@
         GeoCoordinateX: '47.819167'
         GeoCoordinateY: '-3.79258'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     108:
         Code: 41
         Name: 'Les Deux Plages '
@@ -2051,6 +2372,9 @@
         GeoCoordinateX: '46.069676'
         GeoCoordinateY: '-1.088543'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     109:
         Code: 42
         Name: 'Domaine d''Inly '
@@ -2070,6 +2394,9 @@
         GeoCoordinateX: '47.4805375'
         GeoCoordinateY: '-2.4738651'
         MinimumPrice: '273.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     110:
         Code: 43
         Name: 'Domaine d''Oléron '
@@ -2089,6 +2416,9 @@
         GeoCoordinateX: '45.978418'
         GeoCoordinateY: '-1.332125'
         MinimumPrice: '234.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     111:
         Code: 44
         Name: 'Domaine de Chaussy '
@@ -2108,6 +2438,9 @@
         GeoCoordinateX: '44.446962'
         GeoCoordinateY: '4.41779'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     112:
         Code: 45
         Name: 'Domaine de Kermario'
@@ -2127,6 +2460,9 @@
         GeoCoordinateX: '47.584693'
         GeoCoordinateY: '-3.077786'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     113:
         Code: 46
         Name: 'Domaine de la Rive'
@@ -2146,6 +2482,9 @@
         GeoCoordinateX: '44.395943'
         GeoCoordinateY: '-1.166917'
         MinimumPrice: '318.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     114:
         Code: 47
         Name: 'Domaine de Léveno '
@@ -2165,6 +2504,9 @@
         GeoCoordinateX: '47.328003'
         GeoCoordinateY: '-2.4297589'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     115:
         Code: 48
         Name: 'Domaine des Naïades'
@@ -2184,6 +2526,9 @@
         GeoCoordinateX: '43.274308'
         GeoCoordinateY: '6.521865'
         MinimumPrice: '385.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     116:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
@@ -2203,6 +2548,9 @@
         GeoCoordinateX: '44.551115'
         GeoCoordinateY: '4.413293'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     117:
         Code: 5
         Name: 'Airotel Oléron'
@@ -2222,6 +2570,9 @@
         GeoCoordinateX: '45.885588'
         GeoCoordinateY: '-1.19505'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     118:
         Code: 50
         Name: 'Domaine du Verdon '
@@ -2241,6 +2592,9 @@
         GeoCoordinateX: '43.8462419'
         GeoCoordinateY: '6.5137'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     119:
         Code: 51
         Name: 'Les Dunes '
@@ -2260,6 +2614,9 @@
         GeoCoordinateX: '42.75444'
         GeoCoordinateY: '2.993641'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     120:
         Code: 52
         Name: 'Eden '
@@ -2279,6 +2636,9 @@
         GeoCoordinateX: '43.567296'
         GeoCoordinateY: '3.896473'
         MinimumPrice: '168.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     121:
         Code: 53
         Name: 'Les Embruns '
@@ -2298,6 +2658,9 @@
         GeoCoordinateX: '44.795454'
         GeoCoordinateY: '-1.147783'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     122:
         Code: 54
         Name: 'Eurolac '
@@ -2317,6 +2680,9 @@
         GeoCoordinateX: '43.242573'
         GeoCoordinateY: '0.096065'
         MinimumPrice: '234.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     123:
         Code: 55
         Name: 'Le Fanal '
@@ -2336,6 +2702,9 @@
         GeoCoordinateX: '49.320257'
         GeoCoordinateY: '-1.102929'
         MinimumPrice: '204.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     124:
         Code: 56
         Name: 'La Farigoulette '
@@ -2355,6 +2724,9 @@
         GeoCoordinateX: '43.724391'
         GeoCoordinateY: '6.069215'
         MinimumPrice: '234.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     125:
         Code: 57
         Name: 'Les Fontaines '
@@ -2374,6 +2746,9 @@
         GeoCoordinateX: '42.706091'
         GeoCoordinateY: '3.009898'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     126:
         Code: 58
         Name: 'Les Frênes '
@@ -2393,6 +2768,9 @@
         GeoCoordinateX: '43.580418'
         GeoCoordinateY: '7.125102'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     127:
         Code: 59
         Name: 'Front de Mer'
@@ -2412,6 +2790,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '270.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     128:
         Code: 6
         Name: 'Aluna Vacances '
@@ -2431,6 +2812,9 @@
         GeoCoordinateX: '44.452912'
         GeoCoordinateY: '4.341765'
         MinimumPrice: '270.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     129:
         Code: 60
         Name: 'Grand''Terre '
@@ -2450,6 +2834,9 @@
         GeoCoordinateX: '44.452912'
         GeoCoordinateY: '4.341765'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     130:
         Code: 61
         Name: 'Château de la Grenouillère '
@@ -2469,6 +2856,9 @@
         GeoCoordinateX: '47.667176'
         GeoCoordinateY: '1.460599'
         MinimumPrice: '210.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     131:
         Code: 63
         Name: 'Les Huttes '
@@ -2488,6 +2878,9 @@
         GeoCoordinateX: '46.033306'
         GeoCoordinateY: '-1.379923'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     132:
         Code: 64
         Name: 'L''Idéal '
@@ -2507,6 +2900,9 @@
         GeoCoordinateX: '45.781593'
         GeoCoordinateY: '6.203303'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     133:
         Code: 65
         Name: 'Les Ilates'
@@ -2526,6 +2922,9 @@
         GeoCoordinateX: '46.223107'
         GeoCoordinateY: '-1.439882'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     134:
         Code: 66
         Name: 'Ilbarritz '
@@ -2545,6 +2944,9 @@
         GeoCoordinateX: '43.439236'
         GeoCoordinateY: '-1.590062'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     135:
         Code: 67
         Name: 'Internacional de Calonge '
@@ -2564,6 +2966,9 @@
         GeoCoordinateX: '44.372609'
         GeoCoordinateY: '0.239981'
         MinimumPrice: '282.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     136:
         Code: 68
         Name: 'Internacional Palamos '
@@ -2583,6 +2988,9 @@
         GeoCoordinateX: '41.8467643'
         GeoCoordinateY: '3.1286356'
         MinimumPrice: '270.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     137:
         Code: 69
         Name: 'Le Jard '
@@ -2602,6 +3010,9 @@
         GeoCoordinateX: '46.344059'
         GeoCoordinateY: '-1.4387859'
         MinimumPrice: '210.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     138:
         Code: 7
         Name: 'Les Amandiers'
@@ -2621,6 +3032,9 @@
         GeoCoordinateX: '43.721683'
         GeoCoordinateY: '4.173218'
         MinimumPrice: '138.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     139:
         Code: 70
         Name: 'Lac Bleu '
@@ -2640,6 +3054,9 @@
         GeoCoordinateX: '44.6953419'
         GeoCoordinateY: '5.485029'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     140:
         Code: 71
         Name: 'Lac de Miel '
@@ -2659,6 +3076,9 @@
         GeoCoordinateX: '45.123826'
         GeoCoordinateY: '1.723226'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     141:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
@@ -2678,6 +3098,9 @@
         GeoCoordinateX: '43.68218'
         GeoCoordinateY: '0.993749'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     142:
         Code: 73
         Name: 'Land''s Hause '
@@ -2697,6 +3120,9 @@
         GeoCoordinateX: '43.3836559'
         GeoCoordinateY: '1.5360347'
         MinimumPrice: '336.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     143:
         Code: 74
         Name: 'Lou Broustaricq '
@@ -2716,6 +3142,9 @@
         GeoCoordinateX: '44.483615'
         GeoCoordinateY: '-1.075989'
         MinimumPrice: '162.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     144:
         Code: 75
         Name: 'Lou Pignada '
@@ -2735,6 +3164,9 @@
         GeoCoordinateX: '43.81466'
         GeoCoordinateY: '-1.37825'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     145:
         Code: 76
         Name: 'La Loubine '
@@ -2754,6 +3186,9 @@
         GeoCoordinateX: '46.536402'
         GeoCoordinateY: '-1.772826'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     146:
         Code: 77
         Name: 'Loyada '
@@ -2773,6 +3208,9 @@
         GeoCoordinateX: '46.466102'
         GeoCoordinateY: '-1.618261'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     147:
         Code: 78
         Name: 'Malazéou '
@@ -2792,6 +3230,9 @@
         GeoCoordinateX: '42.720254'
         GeoCoordinateY: '1.837545'
         MinimumPrice: '198.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     148:
         Code: 79
         Name: 'Mare e Pineta '
@@ -2811,6 +3252,9 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     149:
         Code: 8
         Name: 'Sandaya Soulac Plage'
@@ -2830,6 +3274,9 @@
         GeoCoordinateX: '45.515125'
         GeoCoordinateY: '-1.123258'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     150:
         Code: 80
         Name: 'La Marine '
@@ -2849,6 +3296,9 @@
         GeoCoordinateX: '43.537476'
         GeoCoordinateY: '4.137918'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     151:
         Code: 81
         Name: 'Les Marsouins'
@@ -2868,6 +3318,9 @@
         GeoCoordinateX: '42.546214'
         GeoCoordinateY: '3.022911'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     152:
         Code: 82
         Name: 'Marze '
@@ -2887,6 +3340,9 @@
         GeoCoordinateX: null
         GeoCoordinateY: null
         MinimumPrice: '258.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     153:
         Code: 83
         Name: 'La Maïre '
@@ -2906,6 +3362,9 @@
         GeoCoordinateX: '43.282801'
         GeoCoordinateY: '3.279651'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     154:
         Code: 84
         Name: 'Le Moulin'
@@ -2925,6 +3384,9 @@
         GeoCoordinateX: '46.586323'
         GeoCoordinateY: '5.7030839'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     155:
         Code: 85
         Name: 'Camping Neptuno '
@@ -2944,6 +3406,9 @@
         GeoCoordinateX: '41.9712149'
         GeoCoordinateY: '3.1488764'
         MinimumPrice: '276.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     156:
         Code: 86
         Name: 'L''Oasis'
@@ -2963,6 +3428,9 @@
         GeoCoordinateX: '42.78773'
         GeoCoordinateY: '3.036565'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     157:
         Code: 87
         Name: 'L''Océano d''Or'
@@ -2982,6 +3450,9 @@
         GeoCoordinateX: '46.408889'
         GeoCoordinateY: '-1.576171'
         MinimumPrice: '222.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     158:
         Code: 88
         Name: 'Oyam '
@@ -3001,6 +3472,9 @@
         GeoCoordinateX: '43.439236'
         GeoCoordinateY: '-1.590062'
         MinimumPrice: '174.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     159:
         Code: 89
         Name: 'Les Oyats '
@@ -3020,6 +3494,9 @@
         GeoCoordinateX: '43.692694'
         GeoCoordinateY: '-1.384908'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     160:
         Code: 9
         Name: Ametlla
@@ -3039,6 +3516,9 @@
         GeoCoordinateX: '40.8850733'
         GeoCoordinateY: '0.8033742'
         MinimumPrice: '306.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     161:
         Code: 90
         Name: Pachacaïd
@@ -3058,6 +3538,9 @@
         GeoCoordinateX: '43.2071759'
         GeoCoordinateY: '6.465117'
         MinimumPrice: '324.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     162:
         Code: 91
         Name: 'Domaine de la Paille Basse'
@@ -3077,6 +3560,9 @@
         GeoCoordinateX: '44.893626'
         GeoCoordinateY: '1.478613'
         MinimumPrice: '240.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     163:
         Code: 92
         Name: 'Le Palace '
@@ -3096,6 +3582,9 @@
         GeoCoordinateX: '45.515125'
         GeoCoordinateY: '-1.123258'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     164:
         Code: 93
         Name: 'Palavas Camping'
@@ -3115,6 +3604,9 @@
         GeoCoordinateX: '43.528906'
         GeoCoordinateY: '3.933493'
         MinimumPrice: '252.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     165:
         Code: 94
         Name: 'Le Parc '
@@ -3134,6 +3626,9 @@
         GeoCoordinateX: '43.567595'
         GeoCoordinateY: '6.691291'
         MinimumPrice: '162.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     166:
         Code: 95
         Name: 'Park Albatros '
@@ -3153,6 +3648,9 @@
         GeoCoordinateX: '44.767088'
         GeoCoordinateY: '7.9539789'
         MinimumPrice: '276.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     167:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
@@ -3172,6 +3670,9 @@
         GeoCoordinateX: '44.452912'
         GeoCoordinateY: '4.341765'
         MinimumPrice: '246.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     168:
         Code: 97
         Name: 'Petit Bois (Cantal)'
@@ -3191,6 +3692,9 @@
         GeoCoordinateX: '45.001378'
         GeoCoordinateY: '3.223658'
         MinimumPrice: '138.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     169:
         Code: 98
         Name: 'Le Pinada '
@@ -3210,6 +3714,9 @@
         GeoCoordinateX: '43.112328'
         GeoCoordinateY: '2.739141'
         MinimumPrice: '186.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     170:
         Code: 99
         Name: 'Les Pins '
@@ -3229,6 +3736,9 @@
         GeoCoordinateX: '48.629668'
         GeoCoordinateY: '-2.464789'
         MinimumPrice: '228.00'
+        VideoPath: null
+        Image360Path: null
+        Description: null
     171:
         Code: 997
         Name: 'zzz Fictif enregistrement Linéaire Liberté'
@@ -3248,6 +3758,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     172:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
@@ -3267,6 +3780,9 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
     173:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
@@ -3286,3 +3802,6 @@
         GeoCoordinateX: '46.227638'
         GeoCoordinateY: '2.213749'
         MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
