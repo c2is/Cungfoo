@@ -26,15 +26,15 @@ header, section, footer {position:relative;}
   .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;.border-radius(7px 7px 0 0);z-index:50;
     &:hover, &.current{background:@colorFushia;
       small{color: #fff;}
-      a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;bottom:8px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+      a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
     }
     &:hover .subnav{display:block;}
-    a{position:relative;display:block;padding:16px 10px 10px;color:@colorBlanc;text-decoration:none;
+    a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;.verticalCenter(50px);
       &#home{padding-bottom:4px;}
       &#home img{width:27px;height:27px;margin:3px 0 0;}
       small {font-family:Arial, sans-serif;font-weight:bold;font-size:15px;color:@colorFushia;}
     }
-    .subnav{padding:20px;position:absolute;top:57px;left:0px;width:920px;background:@colorBgBlanc;float:none;box-shadow:0px 10px 15px 0px @colorGris1;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
+    .subnav{padding:20px;position:absolute;top:57px;left:0px;width:920px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -2px @colorGris1;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
       li{padding:0;margin-right:20px;background:none;float:left;width:123px;
         &:last-child{margin-right:0;}
         a{position:relative;padding:0;width:123px;height:auto;display:block;
@@ -67,6 +67,7 @@ h6{color:@colorGris1;}
   &.trans{background:transparent;padding:0;}
   &.cfushia{color:@colorFushia;}
   &.big{padding:5px 10px;}
+  &.small{padding:1px 10px;font-size:12px;.border-radius(10px)}
 }
 
 .pathway{font:11px/28px Arial,sans-serif;color:@colorBgGrisM;text-align:right;
