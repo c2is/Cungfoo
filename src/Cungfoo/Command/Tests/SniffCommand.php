@@ -39,7 +39,7 @@ class SniffCommand extends Command
         else if ($input->getOption('modified-files'))
         {
             ob_start();
-            passthru(sprintf('git diff --name-only --cached'));
+            passthru(sprintf('git diff --cached --name-status | grep -v [D] | cut -c 3-'));
             $outputGitDiffStaged = trim(ob_get_contents(), "\n");
             ob_end_clean();
 
