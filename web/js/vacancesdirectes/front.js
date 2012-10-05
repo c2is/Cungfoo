@@ -42,10 +42,12 @@ $(function() { //domReady
 // triggerClick
     $('.triggerClick').click( function(){
         var oTarget = $(this).attr('data-triggerLink');
+        var targetOffset = $(oTarget).offset().top;
         $('[href='+oTarget+']').trigger('click');
+        $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
-
+// scroll to anchor
     $('.goto').click(function(e){
         e.preventDefault();
         var oAnchor = this.hash;
@@ -54,11 +56,17 @@ $(function() { //domReady
         $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
+// popins
+    $(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
+    $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
+    //$(".popin360").colorbox();
+    $(".popinInline").colorbox({inline:true, width:"75%"});
+
 });
 
 function slider(){
-    var slider = $('.slider')
-        slider.each( function(){
+    var slider = $('.slider');
+    slider.each( function(){
         consoleLog('a slider found');
         var btLeft = '<button class="prev">&lt;</button>',
             btRight = '<button class="next">&gt;</button>',
@@ -92,8 +100,8 @@ function slider(){
     });
 }
 function tabs(tView){
-    $('.tabs').hide();
-    $(tView).show();
+    $('.tabs').slideUp();
+    $(tView).slideDown();
 }
 
 

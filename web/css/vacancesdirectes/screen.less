@@ -143,10 +143,11 @@ textarea { overflow: auto;  resize: vertical; }
 *:focus:-ms-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
 
 /* MICRO CLEARFIX : http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clear:before, .clear:after { content: ""; display: table; }
-.clear:after { clear: both; }
-.clear { zoom: 1; }
-.clearboth { clear:both; }
+.clear:before, .clear:after, .bloc:before, .bloc:after{content:"";display:table;}
+.clear:after, .bloc:after{clear:both;}
+.clear, .bloc{zoom:1;}
+/* + clearboth */
+.clearboth{clear:both;}
 
 /* LINK PARENT */
 .linkParent {cursor: pointer;}
