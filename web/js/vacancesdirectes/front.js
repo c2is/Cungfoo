@@ -57,7 +57,7 @@ $(function() { //domReady
         return false;
     });
 // popins
-    //$(".popin").colorbox();
+    $(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
