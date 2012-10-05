@@ -39,43 +39,44 @@
     <li><a href="#tabInfos">Infos pratiques</a></li>
 </ul>
 
+<div class="tabCampDiapo">
+    <div class="slider"><div class="slide clear">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 1" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 1" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 2" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 1" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 1" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 4" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 3" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 4" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 3" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 3" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 2" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 3" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 4" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 5" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 2" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 4" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 2" class="regions">
+    </div></div>
+    <form class="tabCampDiapoOptions clear" action="#_">
+        <fieldset class="left">
+            <span>Photos</span>
+            <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">Toutes</label>
+            <label for="photosCamping"><input type="radio" id="photosCamping" name="affPhoto" value="camping">Camping</label>
+            <label for="photosLocations"><input type="radio" id="photosLocations" name="affPhoto" value="locations">Locations</label>
+            <label for="photosActivites"><input type="radio" id="photosActivites" name="affPhoto" value="activites">Activités</label>
+            <label for="photosRegions"><input type="radio" id="photosRegions" name="affPhoto" value="regions">Régions</label>
+        </fieldset>
+        <fieldset class="right">
+            <a class="popinVideo tabCampVideo" href="http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent" title="Titre de la popin : vidéo">Vidéo</a>
+            <a class="popin360 tabCamp360" href="#_">360°</a>
+        </fieldset>
+    </form>
+</div>
+
 <!-- tab Camping -->
 <div id="tabCamp" class="tabs">
-    <div class="tabCampDiapo">
-        <div class="slider"><div class="slide clear">
-            <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 1" class="camping">
-            <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 1" class="locations">
-            <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 2" class="camping">
-            <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 1" class="activites">
-            <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 1" class="regions">
-            <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 4" class="regions">
-            <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 3" class="camping">
-            <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 4" class="camping">
-            <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 3" class="locations">
-            <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 3" class="activites">
-            <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 2" class="locations">
-            <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 3" class="regions">
-            <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 4" class="locations">
-            <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 5" class="locations">
-            <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 2" class="activites">
-            <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 4" class="activites">
-            <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 2" class="regions">
-        </div></div>
-        <form class="tabCampDiapoOptions clear" action="#_">
-            <fieldset class="left">
-                <span>Photos</span>
-                <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">Toutes</label>
-                <label for="photosCamping"><input type="radio" id="photosCamping" name="affPhoto" value="camping">Camping</label>
-                <label for="photosLocations"><input type="radio" id="photosLocations" name="affPhoto" value="locations">Locations</label>
-                <label for="photosActivites"><input type="radio" id="photosActivites" name="affPhoto" value="activites">Activités</label>
-                <label for="photosRegions"><input type="radio" id="photosRegions" name="affPhoto" value="regions">Régions</label>
-            </fieldset>
-            <fieldset class="right">
-                <a class="popinVideo tabCampVideo" href="http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent" title="Titre de la popin : vidéo">Vidéo</a>
-                <a class="popin360 tabCamp360" href="#_">360°</a>
-            </fieldset>
-        </form>
-    </div>
     <div class="tabCampDesc">
         <h3>Le camping Le Petit-Mousse, le paradis de l'eau</h3>
         <p><strong>364 emplacements | Ouvert du 27 avril 2012 au 16 septembre 2012</strong></p>

@@ -66,28 +66,35 @@ $(function() { //domReady
 
 function slider(){
     var slider = $('.slider');
-    slider.each( function(){
-        consoleLog('a slider found');
+    slider.each( function(n){
+        slider = $(this);
         var btLeft = '<button class="prev">&lt;</button>',
             btRight = '<button class="next">&gt;</button>',
             btns = btLeft + btRight;
-        $(this).append(btns).find('.slide').carouFredSel({
+        $(this).append(btns);
+        $('.slide').carouFredSel({
             circular: true,
             infinite: true,
+            prev:{
+                button: function(){
+                    return $(this).parents('.slider').find('.prev');
+                }
+            },
+            next:{
+                button: function(){
+                    return $(this).parents('.slider').find('.next');
+                }
+            },
+            events:{
+                namespace: "cfs"+ n
+            },
             auto: false/*,
             scroll: {
                 //fx: 'crossfade'
             }*/
         });
-        $('.prev').live('click', function() {
-            slider.find('.slide').trigger("prev", 1);
-        });
-        $('.next').live('click', function() {
-            slider.find('.slide').trigger("next", 1);
-        });
         $('[name="affPhoto"]').change( function(){
             var nVal = $(this).val();
-            consoleLog(nVal);
             if( nVal == "all"){
                 slider.find('img').not(':visible').fadeIn();
                 slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
@@ -100,6 +107,17 @@ function slider(){
     });
 }
 function tabs(tView){
+    var sView = tView.split('#')[1];
+    if( sView == 'tabCamp' || sView == 'tabLocations' ){
+        $('.tabCampDiapo').slideDown();
+        if( sView == 'tabLocations' ){
+            $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
+        }else{
+            $('[name="affPhoto"][value="all"]').parent('label').trigger('click');
+        }
+    }else{
+        $('.tabCampDiapo').slideUp();
+    }
     $('.tabs').slideUp();
     $(tView).slideDown();
 }
