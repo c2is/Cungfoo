@@ -139,30 +139,16 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.minimum_price',
             'required' => false,
         ));
-        $builder->add('video_path', 'cungfoo_file', array(
+        $builder->add('video_path', 'text', array(
             'constraints' => array(
             ),
             'label' => 'etablissement.video_path',
             'required' => false,
         ));
-        $builder->add('video_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'etablissement.video_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_360_path', 'cungfoo_file', array(
+        $builder->add('image_360_path', 'text', array(
             'constraints' => array(
             ),
             'label' => 'etablissement.image_360_path',
-            'required' => false,
-        ));
-        $builder->add('image_360_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'etablissement.image_360_path_deleted',
             'required' => false,
         ));
         $builder->add('description', 'textarea', array(

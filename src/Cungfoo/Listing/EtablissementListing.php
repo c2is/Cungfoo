@@ -37,6 +37,8 @@ class EtablissementListing extends BaseEtablissementListing
         $this->removeColumn('geo_coordinate_x');
         $this->removeColumn('geo_coordinate_y');
         $this->removeColumn('description');
+        $this->removeColumn('video_path');
+        $this->removeColumn('image_360_path');
     }
 
 } // EtablissementListing

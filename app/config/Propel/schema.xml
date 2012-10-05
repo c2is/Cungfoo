@@ -92,7 +92,6 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
-            <parameter name="crud_type_file" value="video_path,image_360_path" />
         </behavior>
     </table>
 

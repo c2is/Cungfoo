@@ -7619,65 +7619,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['video_path_deleted']->getData())
-        {
-            $this->resetModified(EtablissementPeer::VIDEO_PATH);
-        }
-
-        $this->uploadVideoPath($form);
-
-        if (!$form['image_360_path_deleted']->getData())
-        {
-            $this->resetModified(EtablissementPeer::IMAGE_360_PATH);
-        }
-
-        $this->uploadImage360Path($form);
-
         return $this->save($con);
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploadDir()
-    {
-        return 'uploads/etablissements';
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploadRootDir()
-    {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadVideoPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['video_path']->getData()))
-        {
-            $image = uniqid().'.'.$form['video_path']->getData()->guessExtension();
-            $form['video_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setVideoPath($this->getUploadDir() . '/' . $image);
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImage360Path(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_360_path']->getData()))
-        {
-            $image = uniqid().'.'.$form['image_360_path']->getData()->guessExtension();
-            $form['image_360_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImage360Path($this->getUploadDir() . '/' . $image);
-        }
     }
 
 }
