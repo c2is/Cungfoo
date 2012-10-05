@@ -165,7 +165,7 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.image_360_path_deleted',
             'required' => false,
         ));
-        $builder->add('description', 'textrich', array(
+        $builder->add('description', 'textarea', array(
             'constraints' => array(
             ),
             'label' => 'etablissement.description',

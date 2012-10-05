@@ -192,6 +192,10 @@ class {$this->getClassname()} extends AppAwareType
         {
             return 'text';
         }
+        elseif (PropelTypes::LONGVARCHAR === $column->getType())
+        {
+            return 'textarea';
+        }
         elseif (PropelTypes::INTEGER === $column->getType())
         {
             return 'integer';

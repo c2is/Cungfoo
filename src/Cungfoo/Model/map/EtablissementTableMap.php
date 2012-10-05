@@ -63,7 +63,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('MINIMUM_PRICE', 'MinimumPrice', 'VARCHAR', false, 255, null);
         $this->addColumn('VIDEO_PATH', 'VideoPath', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_360_PATH', 'Image360Path', 'VARCHAR', false, 255, null);
-        $this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
@@ -109,7 +109,7 @@ class EtablissementTableMap extends TableMap
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'video_path,image_360_path', 'crud_type_richtext' => 'description', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'video_path,image_360_path', ),
         );
     } // getBehaviors()
 
