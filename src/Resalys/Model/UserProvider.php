@@ -4,39 +4,55 @@ namespace Resalys\Model;
 
 use Symfony\Component\Security\Core\User\UserProviderInterface,
     Symfony\Component\Security\Core\User\UserInterface,
-    Symfony\Component\Security\Core\User\User,
     Symfony\Component\Security\Core\Exception\UsernameNotFoundException,
     Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\Security\Core\User\User,
     Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+
+use Resalys\Lib\Client\AuthClient;
 
 class UserProvider implements UserProviderInterface
 {
+    protected $app;
+    protected $client;
     protected $password;
-    protected $factory;
 
     public function __construct($app)
     {
-        $this->password = !empty($_POST['_password']) ? $_POST['_password']: null;
-        $this->factory  = $app['security.encoder_factory'];
+        $this->app = $app;
+        $this->client      = new AuthClient($app['config']->get('root_dir'));
+        $this->password    = !empty($_POST['_password']) ? $_POST['_password']: null;
     }
 
     public function loadUserByUsername($username)
     {
+        $user = null;
+
         if (!$username)
         {
             throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
         }
 
-        if ($this->password && $this->password != "cesoft")
+        if ($this->password)
         {
-            throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
+            $this->client->setCredentials($username, $this->password);
+
+            try
+            {
+                $this->app['session']->set('resalys_user', $this->client->getSession());
+            }
+            catch (\Exception $exception)
+            {
+                throw new UsernameNotFoundException('Username / Password not found.');
+            }
+
+            if (!$this->app['session']->get('resalys_user'))
+            {
+                throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
+            }
         }
 
-        $user = new User($username, '');
-        $encoder = $this->factory->getEncoder($user);
-        $password = $encoder->encodePassword($this->password, $user->getSalt());
-
-        return new User($username, $password, array('ROLE_USER'), true, true, true, true);
+        return new User($username, $this->password, array('ROLE_USER'), true, true, true, true);
     }
 
     public function refreshUser(UserInterface $user)

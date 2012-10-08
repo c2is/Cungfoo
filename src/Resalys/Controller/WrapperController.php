@@ -28,9 +28,9 @@ class WrapperController implements ControllerProviderInterface
             $iframe = file_get_contents(sprintf("http://preprod.vacances-directes.com/rsl/clickbooking?%s", $queryString));
 
             $modifiedIframe = str_replace(array(
-                '##TESTC2IS##',
+                // parameters to override
             ), array(
-                'TAC TAC T\'AS VU',
+                // values
             ), $iframe);
 
             return new Response($modifiedIframe);
@@ -38,5 +38,11 @@ class WrapperController implements ControllerProviderInterface
         ->bind('resalys_wrapper');
 
         return $controllers;
+    }
+
+    public function getStylesheetTag($url, $app, Request $request)
+    {
+        $asset = $app['twig']->getExtension('asset')->asset($url);
+        return sprintf('<link rel="stylesheet" href="%s://%s%s">', $request->getScheme(), $request->getHttpHost(), $asset);
     }
 }
