@@ -24,18 +24,29 @@ $(function() { //domReady
     if( $('.slider').length > 0 ){ slider(); }
 // init tabs navigation
     if( $('.tabControls').length > 0){
-        var oTabControls = $('.tabControls'),
+        var oHash = window.location.hash,
+            oTabControls = $('.tabControls'),
             oTabs = $('.tabs'),
             oTabLink = oTabControls.find('a'),
             tView = oTabControls.find('a.active').attr('href');
         oTabs.hide().css({'visibility':'visible'});
-        tabs(tView);
+        if( oHash != '' ){
+            consoleLog(oHash);
+            setTimeout(function(){
+                $('.tabControls').find('[href='+oHash+']').trigger('click');
+            }, 0);
+        }else{
+            tabs(tView);
+        }
         oTabLink.click( function(e){
             var tTabs = $(this),
                 tView = $(this).attr('href');
             oTabLink.removeClass('active');
             tTabs.addClass('active');
             tabs(tView);
+            var targetOffset = $('.tabControls').offset().top;
+            consoleLog(targetOffset);
+            $('html, body').animate({scrollTop: targetOffset},400);
             e.preventDefault();
         });
     }
@@ -43,7 +54,7 @@ $(function() { //domReady
     $('.triggerClick').click( function(){
         var oTarget = $(this).attr('data-triggerLink');
         var targetOffset = $(oTarget).offset().top;
-        $('[href='+oTarget+']').trigger('click');
+        $('.tabControls').find('[href='+oTarget+']').trigger('click');
         $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
