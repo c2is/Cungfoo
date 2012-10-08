@@ -21,6 +21,7 @@ class BaseEtablissementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('title'));
         $this->addColumn(new Column\TextColumn('address1'));
         $this->addColumn(new Column\TextColumn('address2'));
         $this->addColumn(new Column\TextColumn('zip'));

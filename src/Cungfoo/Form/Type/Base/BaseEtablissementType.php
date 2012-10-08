@@ -41,6 +41,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.name',
             'required' => false,
         ));
+        $builder->add('title', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.title',
+            'required' => false,
+        ));
         $builder->add('address1', 'text', array(
             'constraints' => array(
             ),
