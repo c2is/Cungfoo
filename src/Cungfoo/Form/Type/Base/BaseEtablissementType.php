@@ -41,6 +41,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.name',
             'required' => false,
         ));
+        $builder->add('title', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.title',
+            'required' => false,
+        ));
         $builder->add('address1', 'text', array(
             'constraints' => array(
             ),
@@ -155,6 +161,12 @@ class BaseEtablissementType extends AppAwareType
             'constraints' => array(
             ),
             'label' => 'etablissement.description',
+            'required' => false,
+        ));
+        $builder->add('capacite', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.capacite',
             'required' => false,
         ));
         $builder->add('type_hebergements', 'model', array(

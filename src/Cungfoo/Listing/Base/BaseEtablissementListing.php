@@ -21,6 +21,7 @@ class BaseEtablissementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('title'));
         $this->addColumn(new Column\TextColumn('address1'));
         $this->addColumn(new Column\TextColumn('address2'));
         $this->addColumn(new Column\TextColumn('zip'));
@@ -37,6 +38,7 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('minimum_price'));
         $this->addColumn(new Column\TextColumn('video_path'));
         $this->addColumn(new Column\TextColumn('image_360_path'));
+        $this->addColumn(new Column\TextColumn('capacite'));
     }
 
     /**

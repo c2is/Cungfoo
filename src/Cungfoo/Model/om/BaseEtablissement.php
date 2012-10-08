@@ -110,6 +110,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $name;
 
     /**
+     * The value for the title field.
+     * @var        string
+     */
+    protected $title;
+
+    /**
      * The value for the address1 field.
      * @var        string
      */
@@ -222,6 +228,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        string
      */
     protected $description;
+
+    /**
+     * The value for the capacite field.
+     * @var        string
+     */
+    protected $capacite;
 
     /**
      * The value for the created_at field.
@@ -535,6 +547,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [title] column value.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
      * Get the [address1] column value.
      *
      * @return string
@@ -779,6 +801,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [capacite] column value.
+     *
+     * @return string
+     */
+    public function getCapacite()
+    {
+        return $this->capacite;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -914,6 +946,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         return $this;
     } // setName()
+
+    /**
+     * Set the value of [title] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->title !== $v) {
+            $this->title = $v;
+            $this->modifiedColumns[] = EtablissementPeer::TITLE;
+        }
+
+
+        return $this;
+    } // setTitle()
 
     /**
      * Set the value of [address1] column.
@@ -1327,6 +1380,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setDescription()
 
     /**
+     * Set the value of [capacite] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setCapacite($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->capacite !== $v) {
+            $this->capacite = $v;
+            $this->modifiedColumns[] = EtablissementPeer::CAPACITE;
+        }
+
+
+        return $this;
+    } // setCapacite()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1407,27 +1481,29 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->address1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->address2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->zip = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->city = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->mail = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->country_code = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->phone1 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->phone2 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->fax = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->opening_date = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->closing_date = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
-            $this->ville_id = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
-            $this->categorie_id = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
-            $this->geo_coordinate_x = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->geo_coordinate_y = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->minimum_price = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->video_path = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->image_360_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->created_at = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->updated_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->title = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->address1 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->address2 = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->zip = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->city = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->mail = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->country_code = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->phone1 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->phone2 = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->fax = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->opening_date = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->closing_date = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+            $this->ville_id = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
+            $this->categorie_id = ($row[$startcol + 16] !== null) ? (int) $row[$startcol + 16] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->minimum_price = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->video_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->description = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->created_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->updated_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1436,7 +1512,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 24; // 24 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 26; // 26 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2094,6 +2170,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
+        if ($this->isColumnModified(EtablissementPeer::TITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`TITLE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::ADDRESS1)) {
             $modifiedColumns[':p' . $index++]  = '`ADDRESS1`';
         }
@@ -2151,6 +2230,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) {
             $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
+        if ($this->isColumnModified(EtablissementPeer::CAPACITE)) {
+            $modifiedColumns[':p' . $index++]  = '`CAPACITE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -2176,6 +2258,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`TITLE`':
+                        $stmt->bindValue($identifier, $this->title, PDO::PARAM_STR);
                         break;
                     case '`ADDRESS1`':
                         $stmt->bindValue($identifier, $this->address1, PDO::PARAM_STR);
@@ -2233,6 +2318,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`CAPACITE`':
+                        $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2490,66 +2578,72 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getName();
                 break;
             case 3:
-                return $this->getAddress1();
+                return $this->getTitle();
                 break;
             case 4:
-                return $this->getAddress2();
+                return $this->getAddress1();
                 break;
             case 5:
-                return $this->getZip();
+                return $this->getAddress2();
                 break;
             case 6:
-                return $this->getCity();
+                return $this->getZip();
                 break;
             case 7:
-                return $this->getMail();
+                return $this->getCity();
                 break;
             case 8:
-                return $this->getCountryCode();
+                return $this->getMail();
                 break;
             case 9:
-                return $this->getPhone1();
+                return $this->getCountryCode();
                 break;
             case 10:
-                return $this->getPhone2();
+                return $this->getPhone1();
                 break;
             case 11:
-                return $this->getFax();
+                return $this->getPhone2();
                 break;
             case 12:
-                return $this->getOpeningDate();
+                return $this->getFax();
                 break;
             case 13:
-                return $this->getClosingDate();
+                return $this->getOpeningDate();
                 break;
             case 14:
-                return $this->getVilleId();
+                return $this->getClosingDate();
                 break;
             case 15:
-                return $this->getCategorieId();
+                return $this->getVilleId();
                 break;
             case 16:
-                return $this->getGeoCoordinateX();
+                return $this->getCategorieId();
                 break;
             case 17:
-                return $this->getGeoCoordinateY();
+                return $this->getGeoCoordinateX();
                 break;
             case 18:
-                return $this->getMinimumPrice();
+                return $this->getGeoCoordinateY();
                 break;
             case 19:
-                return $this->getVideoPath();
+                return $this->getMinimumPrice();
                 break;
             case 20:
-                return $this->getImage360Path();
+                return $this->getVideoPath();
                 break;
             case 21:
-                return $this->getDescription();
+                return $this->getImage360Path();
                 break;
             case 22:
-                return $this->getCreatedAt();
+                return $this->getDescription();
                 break;
             case 23:
+                return $this->getCapacite();
+                break;
+            case 24:
+                return $this->getCreatedAt();
+                break;
+            case 25:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -2584,27 +2678,29 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getName(),
-            $keys[3] => $this->getAddress1(),
-            $keys[4] => $this->getAddress2(),
-            $keys[5] => $this->getZip(),
-            $keys[6] => $this->getCity(),
-            $keys[7] => $this->getMail(),
-            $keys[8] => $this->getCountryCode(),
-            $keys[9] => $this->getPhone1(),
-            $keys[10] => $this->getPhone2(),
-            $keys[11] => $this->getFax(),
-            $keys[12] => $this->getOpeningDate(),
-            $keys[13] => $this->getClosingDate(),
-            $keys[14] => $this->getVilleId(),
-            $keys[15] => $this->getCategorieId(),
-            $keys[16] => $this->getGeoCoordinateX(),
-            $keys[17] => $this->getGeoCoordinateY(),
-            $keys[18] => $this->getMinimumPrice(),
-            $keys[19] => $this->getVideoPath(),
-            $keys[20] => $this->getImage360Path(),
-            $keys[21] => $this->getDescription(),
-            $keys[22] => $this->getCreatedAt(),
-            $keys[23] => $this->getUpdatedAt(),
+            $keys[3] => $this->getTitle(),
+            $keys[4] => $this->getAddress1(),
+            $keys[5] => $this->getAddress2(),
+            $keys[6] => $this->getZip(),
+            $keys[7] => $this->getCity(),
+            $keys[8] => $this->getMail(),
+            $keys[9] => $this->getCountryCode(),
+            $keys[10] => $this->getPhone1(),
+            $keys[11] => $this->getPhone2(),
+            $keys[12] => $this->getFax(),
+            $keys[13] => $this->getOpeningDate(),
+            $keys[14] => $this->getClosingDate(),
+            $keys[15] => $this->getVilleId(),
+            $keys[16] => $this->getCategorieId(),
+            $keys[17] => $this->getGeoCoordinateX(),
+            $keys[18] => $this->getGeoCoordinateY(),
+            $keys[19] => $this->getMinimumPrice(),
+            $keys[20] => $this->getVideoPath(),
+            $keys[21] => $this->getImage360Path(),
+            $keys[22] => $this->getDescription(),
+            $keys[23] => $this->getCapacite(),
+            $keys[24] => $this->getCreatedAt(),
+            $keys[25] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -2690,66 +2786,72 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setName($value);
                 break;
             case 3:
-                $this->setAddress1($value);
+                $this->setTitle($value);
                 break;
             case 4:
-                $this->setAddress2($value);
+                $this->setAddress1($value);
                 break;
             case 5:
-                $this->setZip($value);
+                $this->setAddress2($value);
                 break;
             case 6:
-                $this->setCity($value);
+                $this->setZip($value);
                 break;
             case 7:
-                $this->setMail($value);
+                $this->setCity($value);
                 break;
             case 8:
-                $this->setCountryCode($value);
+                $this->setMail($value);
                 break;
             case 9:
-                $this->setPhone1($value);
+                $this->setCountryCode($value);
                 break;
             case 10:
-                $this->setPhone2($value);
+                $this->setPhone1($value);
                 break;
             case 11:
-                $this->setFax($value);
+                $this->setPhone2($value);
                 break;
             case 12:
-                $this->setOpeningDate($value);
+                $this->setFax($value);
                 break;
             case 13:
-                $this->setClosingDate($value);
+                $this->setOpeningDate($value);
                 break;
             case 14:
-                $this->setVilleId($value);
+                $this->setClosingDate($value);
                 break;
             case 15:
-                $this->setCategorieId($value);
+                $this->setVilleId($value);
                 break;
             case 16:
-                $this->setGeoCoordinateX($value);
+                $this->setCategorieId($value);
                 break;
             case 17:
-                $this->setGeoCoordinateY($value);
+                $this->setGeoCoordinateX($value);
                 break;
             case 18:
-                $this->setMinimumPrice($value);
+                $this->setGeoCoordinateY($value);
                 break;
             case 19:
-                $this->setVideoPath($value);
+                $this->setMinimumPrice($value);
                 break;
             case 20:
-                $this->setImage360Path($value);
+                $this->setVideoPath($value);
                 break;
             case 21:
-                $this->setDescription($value);
+                $this->setImage360Path($value);
                 break;
             case 22:
-                $this->setCreatedAt($value);
+                $this->setDescription($value);
                 break;
             case 23:
+                $this->setCapacite($value);
+                break;
+            case 24:
+                $this->setCreatedAt($value);
+                break;
+            case 25:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2779,27 +2881,29 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setAddress1($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setAddress2($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setZip($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setCity($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setMail($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setCountryCode($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setPhone1($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setPhone2($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setFax($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setOpeningDate($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setClosingDate($arr[$keys[13]]);
-        if (array_key_exists($keys[14], $arr)) $this->setVilleId($arr[$keys[14]]);
-        if (array_key_exists($keys[15], $arr)) $this->setCategorieId($arr[$keys[15]]);
-        if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateX($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateY($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setMinimumPrice($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setVideoPath($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setImage360Path($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setDescription($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCreatedAt($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setUpdatedAt($arr[$keys[23]]);
+        if (array_key_exists($keys[3], $arr)) $this->setTitle($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setAddress1($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setAddress2($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setZip($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setCity($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setMail($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setCountryCode($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setPhone1($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setPhone2($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setFax($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setOpeningDate($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setClosingDate($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setVilleId($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setCategorieId($arr[$keys[16]]);
+        if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateX($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateY($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setMinimumPrice($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setVideoPath($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setDescription($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setCreatedAt($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setUpdatedAt($arr[$keys[25]]);
     }
 
     /**
@@ -2814,6 +2918,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::ID)) $criteria->add(EtablissementPeer::ID, $this->id);
         if ($this->isColumnModified(EtablissementPeer::CODE)) $criteria->add(EtablissementPeer::CODE, $this->code);
         if ($this->isColumnModified(EtablissementPeer::NAME)) $criteria->add(EtablissementPeer::NAME, $this->name);
+        if ($this->isColumnModified(EtablissementPeer::TITLE)) $criteria->add(EtablissementPeer::TITLE, $this->title);
         if ($this->isColumnModified(EtablissementPeer::ADDRESS1)) $criteria->add(EtablissementPeer::ADDRESS1, $this->address1);
         if ($this->isColumnModified(EtablissementPeer::ADDRESS2)) $criteria->add(EtablissementPeer::ADDRESS2, $this->address2);
         if ($this->isColumnModified(EtablissementPeer::ZIP)) $criteria->add(EtablissementPeer::ZIP, $this->zip);
@@ -2833,6 +2938,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
 
@@ -2900,6 +3006,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setName($this->getName());
+        $copyObj->setTitle($this->getTitle());
         $copyObj->setAddress1($this->getAddress1());
         $copyObj->setAddress2($this->getAddress2());
         $copyObj->setZip($this->getZip());
@@ -2919,6 +3026,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setVideoPath($this->getVideoPath());
         $copyObj->setImage360Path($this->getImage360Path());
         $copyObj->setDescription($this->getDescription());
+        $copyObj->setCapacite($this->getCapacite());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -7219,6 +7327,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->id = null;
         $this->code = null;
         $this->name = null;
+        $this->title = null;
         $this->address1 = null;
         $this->address2 = null;
         $this->zip = null;
@@ -7238,6 +7347,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->video_path = null;
         $this->image_360_path = null;
         $this->description = null;
+        $this->capacite = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
