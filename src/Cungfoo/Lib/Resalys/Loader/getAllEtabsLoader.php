@@ -61,6 +61,22 @@ class getAllEtabsLoader extends AbstractLoader
         $objectEtab->setOpeningDate($etab->{'opening_date'});
         $objectEtab->setClosingDate($etab->{'closing_date'});
 
+        if (isset($etab->{'cms_criteria_values'}->{'cms_criteria_value'}))
+        {
+            foreach ($etab->{'cms_criteria_values'}->{'cms_criteria_value'} as $cmsData)
+            {
+                switch ($cmsData->code)
+                {
+                    case 'ELAT':
+                        $objectEtab->setGeoCoordinateX($cmsData->value);
+                        break;
+                    case 'ELON':
+                        $objectEtab->setGeoCoordinateY($cmsData->value);
+                        break;
+                }
+            }
+        }
+
         // update type hebergement
         $this->updateTypeHebergement($objectEtab, $etab->{'roomtypes'}, $con);
 
