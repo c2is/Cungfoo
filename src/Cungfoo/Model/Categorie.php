@@ -22,4 +22,26 @@ class Categorie extends BaseCategorie
     {
         return $this->getName();
     }
+
+    public function getStars()
+    {
+        switch ($this->getCode())
+        {
+            case '1ETO':
+                return '*';
+                break;
+            case '2ETO':
+                return '**';
+                break;
+            case '3ETO':
+                return '***';
+                break;
+            case '4ETO':
+                return '****';
+                break;
+            case '5ETO':
+                return '*****';
+                break;
+        }
+    }
 }

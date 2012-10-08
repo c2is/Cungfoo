@@ -71,7 +71,7 @@
                 <label for="photosRegions"><input type="radio" id="photosRegions" name="affPhoto" value="regions">Régions</label>
             </fieldset>
             <fieldset class="right">
-                <a class="popinVideo tabCampVideo" href="http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent" title="Titre de la popin : vidéo>Vidéo</a>
+                <a class="popinVideo tabCampVideo" href="http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent" title="Titre de la popin : vidéo">Vidéo</a>
                 <a class="popin360 tabCamp360" href="#_">360°</a>
             </fieldset>
         </form>

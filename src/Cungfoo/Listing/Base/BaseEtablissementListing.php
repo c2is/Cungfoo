@@ -35,6 +35,8 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('geo_coordinate_x'));
         $this->addColumn(new Column\TextColumn('geo_coordinate_y'));
         $this->addColumn(new Column\TextColumn('minimum_price'));
+        $this->addColumn(new Column\TextColumn('video_path'));
+        $this->addColumn(new Column\TextColumn('image_360_path'));
     }
 
     /**

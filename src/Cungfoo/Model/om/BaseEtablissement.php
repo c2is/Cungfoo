@@ -206,6 +206,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $minimum_price;
 
     /**
+     * The value for the video_path field.
+     * @var        string
+     */
+    protected $video_path;
+
+    /**
+     * The value for the image_360_path field.
+     * @var        string
+     */
+    protected $image_360_path;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -731,6 +749,36 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [video_path] column value.
+     *
+     * @return string
+     */
+    public function getVideoPath()
+    {
+        return $this->video_path;
+    }
+
+    /**
+     * Get the [image_360_path] column value.
+     *
+     * @return string
+     */
+    public function getImage360Path()
+    {
+        return $this->image_360_path;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -1216,6 +1264,69 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setMinimumPrice()
 
     /**
+     * Set the value of [video_path] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setVideoPath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->video_path !== $v) {
+            $this->video_path = $v;
+            $this->modifiedColumns[] = EtablissementPeer::VIDEO_PATH;
+        }
+
+
+        return $this;
+    } // setVideoPath()
+
+    /**
+     * Set the value of [image_360_path] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setImage360Path($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_360_path !== $v) {
+            $this->image_360_path = $v;
+            $this->modifiedColumns[] = EtablissementPeer::IMAGE_360_PATH;
+        }
+
+
+        return $this;
+    } // setImage360Path()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = EtablissementPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1312,8 +1423,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->geo_coordinate_x = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->geo_coordinate_y = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
             $this->minimum_price = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->created_at = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->updated_at = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->video_path = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->image_360_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->created_at = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->updated_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1322,7 +1436,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 21; // 21 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 24; // 24 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2028,6 +2142,15 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) {
             $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
         }
+        if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`VIDEO_PATH`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_360_PATH`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -2101,6 +2224,15 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`MINIMUM_PRICE`':
                         $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
+                        break;
+                    case '`VIDEO_PATH`':
+                        $stmt->bindValue($identifier, $this->video_path, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_360_PATH`':
+                        $stmt->bindValue($identifier, $this->image_360_path, PDO::PARAM_STR);
+                        break;
+                    case '`DESCRIPTION`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2406,9 +2538,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getMinimumPrice();
                 break;
             case 19:
-                return $this->getCreatedAt();
+                return $this->getVideoPath();
                 break;
             case 20:
+                return $this->getImage360Path();
+                break;
+            case 21:
+                return $this->getDescription();
+                break;
+            case 22:
+                return $this->getCreatedAt();
+                break;
+            case 23:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -2459,8 +2600,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[16] => $this->getGeoCoordinateX(),
             $keys[17] => $this->getGeoCoordinateY(),
             $keys[18] => $this->getMinimumPrice(),
-            $keys[19] => $this->getCreatedAt(),
-            $keys[20] => $this->getUpdatedAt(),
+            $keys[19] => $this->getVideoPath(),
+            $keys[20] => $this->getImage360Path(),
+            $keys[21] => $this->getDescription(),
+            $keys[22] => $this->getCreatedAt(),
+            $keys[23] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -2594,9 +2738,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setMinimumPrice($value);
                 break;
             case 19:
-                $this->setCreatedAt($value);
+                $this->setVideoPath($value);
                 break;
             case 20:
+                $this->setImage360Path($value);
+                break;
+            case 21:
+                $this->setDescription($value);
+                break;
+            case 22:
+                $this->setCreatedAt($value);
+                break;
+            case 23:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2642,8 +2795,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[16], $arr)) $this->setGeoCoordinateX($arr[$keys[16]]);
         if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateY($arr[$keys[17]]);
         if (array_key_exists($keys[18], $arr)) $this->setMinimumPrice($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setCreatedAt($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setUpdatedAt($arr[$keys[20]]);
+        if (array_key_exists($keys[19], $arr)) $this->setVideoPath($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setImage360Path($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setDescription($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setCreatedAt($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setUpdatedAt($arr[$keys[23]]);
     }
 
     /**
@@ -2674,6 +2830,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
         if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementPeer::MINIMUM_PRICE, $this->minimum_price);
+        if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
+        if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
+        if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
 
@@ -2757,6 +2916,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
         $copyObj->setMinimumPrice($this->getMinimumPrice());
+        $copyObj->setVideoPath($this->getVideoPath());
+        $copyObj->setImage360Path($this->getImage360Path());
+        $copyObj->setDescription($this->getDescription());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -7073,6 +7235,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
         $this->minimum_price = null;
+        $this->video_path = null;
+        $this->image_360_path = null;
+        $this->description = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
