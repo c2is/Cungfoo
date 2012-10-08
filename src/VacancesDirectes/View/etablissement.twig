@@ -3,6 +3,29 @@
 {% block title %}{{ etab.name }}{% endblock %}
 
 {% block content %}
+        <div>
+            <ul>
+                {% for media in multimedia %}
+                    <li>
+                        <div>
+                            <img src="{{ asset(media.imagePath) }}" alt="{{ media.titre }}"/>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>{{ "Toutes" | trans }}</li>
+                {% for tag in tags %}
+                    <li>
+                        <div>
+                            <span>{{ tag.name }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
         <div class="row">
             <div class="span8">
                 <blockquote>CAMPING CONTENT</blockquote>
