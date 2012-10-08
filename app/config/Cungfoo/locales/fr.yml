@@ -125,6 +125,7 @@ etablissement.video_path: Vidéo
 etablissement.image_360_path: Visite 360
 etablissement.description: Description
 etablissement.capacite: Capacité
+etablissement.title: Titre
 
 list.actions: Actions
 

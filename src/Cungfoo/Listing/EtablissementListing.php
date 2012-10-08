@@ -24,6 +24,7 @@ class EtablissementListing extends BaseEtablissementListing
     {
         parent::configure();
 
+        $this->removeColumn('title');
         $this->removeColumn('address1');
         $this->removeColumn('address2');
         $this->removeColumn('zip');
