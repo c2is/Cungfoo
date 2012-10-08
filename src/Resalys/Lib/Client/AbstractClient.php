@@ -1,6 +1,6 @@
 <?php
 
-namespace Cungfoo\Lib\Resalys\Client;
+namespace Resalys\Lib\Client;
 
 use Silex\Application;
 use Symfony\Component\Yaml\Yaml;
