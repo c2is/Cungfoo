@@ -6,13 +6,16 @@
         <div class="column">
             <iframe src="{{ path('resalys_wrapper', {
                 iframe: 1,
+                webuser: 'web_ce_achat_fr',
                 display: 'default',
+                tokens: 'ignore_token',
+                session: app.session.get('resalys_user').session,
                 template: 'search_product_results',
+                actions: 'updateProductCriterias;getProductProposals',
                 criterias_object_name: 'search_form',
                 product_CMSCriteria_ALL: 'ALL',
-                product_start_date: "02/04/2012",
-                webuser: 'web_ce_achat_fr',
-                session: app.session.get('resalys_user').session
+                product_CMSCriteria_PHS: '',
+                product_start_date: "now" | date("d/m/Y"),
             }) }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}
