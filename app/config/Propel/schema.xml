@@ -73,6 +73,9 @@
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
         <column name="minimum_price" type="varchar" />
+        <column name="video_path" type="varchar" />
+        <column name="image_360_path" type="varchar" />
+        <column name="description" type="longvarchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">

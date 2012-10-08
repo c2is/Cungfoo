@@ -61,6 +61,9 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         $this->addColumn('MINIMUM_PRICE', 'MinimumPrice', 'VARCHAR', false, 255, null);
+        $this->addColumn('VIDEO_PATH', 'VideoPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_360_PATH', 'Image360Path', 'VARCHAR', false, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators

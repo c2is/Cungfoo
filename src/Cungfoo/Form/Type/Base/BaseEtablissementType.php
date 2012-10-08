@@ -139,6 +139,24 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.minimum_price',
             'required' => false,
         ));
+        $builder->add('video_path', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.video_path',
+            'required' => false,
+        ));
+        $builder->add('image_360_path', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.image_360_path',
+            'required' => false,
+        ));
+        $builder->add('description', 'textarea', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.description',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(
