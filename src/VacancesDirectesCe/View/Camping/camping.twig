@@ -68,62 +68,46 @@
         </div>
         <div class="tabCampDesc">
             <h3>Le camping Le Petit-Mousse, le paradis de l'eau</h3>
-            <p><strong>364 emplacements | Ouvert du 27 avril 2012 au 16 septembre 2012</strong></p>
+            <p><strong>364 emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
             <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
         </div>
-
-        <a href="#semainier" class="bt big fushia right goto">Tarifs & disponibilités</a>
 
         <div class="temoignFiche bloc gris">
             <h3>Vous aimerez</h3>
             <h4>comme...</h4>
-            <div class="temoignFicheIt fish">
-                <span class="perso">Amélie</span>
-                <span class="age">10 ans</span>
-                <ul>
-                    <li>les activités du club enfant (5-12 ans)</li>
-                    <li>le toboggan aquatique</li>
-                    <li>l'équitation (2 km)</li>
-                </ul>
-            </div>
-            <div class="temoignFicheIt drink">
-                <span class="perso">Pierre</span>
-                <span class="age">36 ans</span>
-                <ul>
-                    <li>la location de vélos</li>
-                    <li>les barbecues collectifs</li>
-                    <li>le restaurant et le snacks</li>
-                </ul>
-            </div>
-            <div class="temoignFicheIt glass">
-                <span class="perso">Isabelle</span>
-                <span class="age">48 ans</span>
-                <ul>
-                    <li>l'accès direct à la plage</li>
-                    <li>l'accès wifi dans tout le camping</li>
-                    <li>la laverie</li>
-                </ul>
-            </div>
+            {% for personnage in personnages %}
+                <div class="temoignFicheIt fish">
+                    <span class="perso">{{ personnage.prenom | trans }}</span>
+                    <span class="age">{{ personnage.age }} ans</span>
+                    <ul>
+                        <li>{{ personnage.interet1 }}</li>
+                        <li>{{ personnage.interet2 }}</li>
+                        <li>{{ personnage.interet3 }}</li>
+                    </ul>
+                </div>
+            {% endfor %}
             <a href="#_" class="bt trans right">Tous les plus du camping</a>
             <hr class="clearboth">
             <h4>Les vacances à Vias</h4>
             <dl>
-                <dd class="img"><img src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png" alt="France > Languedoc-Roussillon"></dd>
+                <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}"></dd>
                 <dt>A proximité<br> nous avons listé :</dt>
                 <dd class="list">
                    <ul>
-                       <li>14 sites à visiter</li>
-                       <li>24 activités sportives</li>
-                       <li>14 événements culturels</li>
+                       <li>{{ nbSiteAVisiter }} sites à visiter</li>
+                       <li>{{ nbActivitesSportives }} activités sportives</li>
+                       <li>{{ nbEvenementsCulturels }} événements culturels</li>
                    </ul>
                 </dd>
             </dl>
             <dl>
                 <dt>L'événement à ne pas manquer :</dt>
-                <dd class="img"><img src="http://pimg.devlint.fr/76x75" alt="France > Languedoc-Roussillon"></dd>
+                <dd class="img"><img src="{{ eventPrioritaire.image }}" /></dd>
                 <dd class="list event">
-                   <strong>FERIA DE BÉZIERS<br> Du vendredi 10 août 2012<br> au mercredi15 août 2012</strong>
-                   avenue Jean-Constans<br> 34500 BEZIERS<br> Distance du camping : 15 km<br>
+                    <strong>{{ eventPrioritaire.name }}<br />
+                    {{ eventPrioritaire.strDate }}</strong> {{ eventPrioritaire.address }}<br />
+                    {{ eventPrioritaire.zipcode }} {{ eventPrioritaire.city }}<br />
+                    Distance du camping : 15 km
                 </dd>
             </dl>
             <a href="#_" class="bt trans right">Tout savoir</a>
