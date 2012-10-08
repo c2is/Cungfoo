@@ -158,15 +158,15 @@
     14_de:
         Id: 14
         Locale: de
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
     14_en:
         Id: 14
         Locale: en
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
     14_fr:
         Id: 14
         Locale: fr
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
     15_de:
         Id: 15
         Locale: de

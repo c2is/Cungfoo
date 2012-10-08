@@ -65,13 +65,23 @@ class getAllEtabsLoader extends AbstractLoader
         {
             foreach ($etab->{'cms_criteria_values'}->{'cms_criteria_value'} as $cmsData)
             {
+                $value = trim($cmsData->value);
                 switch ($cmsData->code)
                 {
                     case 'ELAT':
-                        $objectEtab->setGeoCoordinateX($cmsData->value);
+                        $objectEtab->setGeoCoordinateX($value);
                         break;
                     case 'ELON':
-                        $objectEtab->setGeoCoordinateY($cmsData->value);
+                        $objectEtab->setGeoCoordinateY($value);
+                        break;
+                    case 'ENEM':
+                        $objectEtab->setCapacite($value);
+                        break;
+                    case 'EDOU':
+                        $objectEtab->setOpeningDate($value);
+                        break;
+                    case 'EDFE':
+                        $objectEtab->setClosingDate($value);
                         break;
                 }
             }

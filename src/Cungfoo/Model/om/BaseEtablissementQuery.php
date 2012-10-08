@@ -65,6 +65,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByVideoPath($order = Criteria::ASC) Order by the video_path column
  * @method EtablissementQuery orderByImage360Path($order = Criteria::ASC) Order by the image_360_path column
  * @method EtablissementQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
@@ -90,6 +91,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByVideoPath() Group by the video_path column
  * @method EtablissementQuery groupByImage360Path() Group by the image_360_path column
  * @method EtablissementQuery groupByDescription() Group by the description column
+ * @method EtablissementQuery groupByCapacite() Group by the capacite column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -173,6 +175,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByVideoPath(string $video_path) Return the first Etablissement filtered by the video_path column
  * @method Etablissement findOneByImage360Path(string $image_360_path) Return the first Etablissement filtered by the image_360_path column
  * @method Etablissement findOneByDescription(string $description) Return the first Etablissement filtered by the description column
+ * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
  *
@@ -198,6 +201,7 @@ use Cungfoo\Model\Ville;
  * @method array findByVideoPath(string $video_path) Return Etablissement objects filtered by the video_path column
  * @method array findByImage360Path(string $image_360_path) Return Etablissement objects filtered by the image_360_path column
  * @method array findByDescription(string $description) Return Etablissement objects filtered by the description column
+ * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
  *
@@ -303,7 +307,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `MINIMUM_PRICE`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `MINIMUM_PRICE`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CAPACITE`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1094,6 +1098,35 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the capacite column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCapacite('fooValue');   // WHERE capacite = 'fooValue'
+     * $query->filterByCapacite('%fooValue%'); // WHERE capacite LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $capacite The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByCapacite($capacite = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($capacite)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $capacite)) {
+                $capacite = str_replace('*', '%', $capacite);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::CAPACITE, $capacite, $comparison);
     }
 
     /**

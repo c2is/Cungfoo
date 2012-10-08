@@ -76,6 +76,7 @@
         <column name="video_path" type="varchar" />
         <column name="image_360_path" type="varchar" />
         <column name="description" type="longvarchar" />
+        <column name="capacite" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">

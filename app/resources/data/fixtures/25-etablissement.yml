@@ -11,16 +11,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 38 06 56'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 4
         CategorieId: null
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.80806056'
+        GeoCoordinateY: '-2.104654312'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '543'
     2:
         Code: 100
         Name: 'Pins Parasols '
@@ -33,16 +34,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 90 61'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-29 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 12
         CategorieId: null
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.46392303'
+        GeoCoordinateY: '6.725360155'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '189'
     3:
         Code: 101
         Name: 'Plage Fleurie '
@@ -55,16 +57,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 87 03 88'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 13
         CategorieId: null
-        GeoCoordinateX: '44.407452'
-        GeoCoordinateY: '4.395401'
+        GeoCoordinateX: '44.412402'
+        GeoCoordinateY: '4.349979'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '299'
     4:
         Code: 102
         Name: 'Playa Montroig'
@@ -77,16 +80,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 25'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '41.9409043'
-        GeoCoordinateY: '2.8651246'
+        GeoCoordinateX: '41.03292'
+        GeoCoordinateY: '0.96921'
         MinimumPrice: '360.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1177'
     5:
         Code: 103
         Name: 'Playa Tropicana '
@@ -99,16 +103,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 82 63 48 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '40.2457632'
-        GeoCoordinateY: '0.2761488'
+        GeoCoordinateX: '40.22119452'
+        GeoCoordinateY: '0.268542767'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '340'
     6:
         Code: 104
         Name: 'Port de plaisance'
@@ -121,16 +126,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 85 05 84'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 6
         CategorieId: null
-        GeoCoordinateX: '47.875568'
-        GeoCoordinateY: '-4.1063729'
+        GeoCoordinateX: '47.88203498'
+        GeoCoordinateY: '-4.103393555'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '340'
     7:
         Code: 106
         Name: 'La Ribeyre'
@@ -143,16 +149,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 86 12 87'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.573436'
-        GeoCoordinateY: '2.943472'
+        GeoCoordinateX: '45.56285457'
+        GeoCoordinateY: '2.938236594'
         MinimumPrice: '264.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '430'
     8:
         Code: 108
         Name: 'Le Roussillonnais '
@@ -165,16 +172,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 96 76 12'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-25 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56766828'
+        GeoCoordinateY: '3.044221401'
         MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '706'
     9:
         Code: 109
         Name: 'Les Sables de Cordouan '
@@ -187,16 +195,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 50 18 13'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.716275'
-        GeoCoordinateY: '-1.143904'
+        GeoCoordinateX: '45.72995496'
+        GeoCoordinateY: '-1.175955534'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '150'
     10:
         Code: 11
         Name: 'Azu''Rivage'
@@ -209,16 +218,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 36 68 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 106
         CategorieId: 3
-        GeoCoordinateX: '43.798959'
-        GeoCoordinateY: '-1.303089'
+        GeoCoordinateX: '43.785238'
+        GeoCoordinateY: '-1.305147'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '250'
     11:
         Code: 110
         Name: 'Saint Aygulf Plage'
@@ -231,16 +241,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 43 80 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2112-10-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.392481'
+        GeoCoordinateY: '6.726462'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1100'
     12:
         Code: 111
         Name: 'Saint Louis'
@@ -253,16 +264,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 90 29 44'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.597772'
-        GeoCoordinateY: '6.95671'
+        GeoCoordinateX: '43.58853542'
+        GeoCoordinateY: '6.93888545'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '200'
     13:
         Code: 112
         Name: 'Sainte Baume'
@@ -275,16 +287,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 83 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.37055'
-        GeoCoordinateY: '5.782809'
+        GeoCoordinateX: '43.37692956'
+        GeoCoordinateY: '5.788040757'
         MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '250'
     14:
         Code: 113
         Name: 'Le Sainte-Marie '
@@ -297,16 +310,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 09 37 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.72835'
-        GeoCoordinateY: '3.014642'
+        GeoCoordinateX: '42.7139833'
+        GeoCoordinateY: '3.0314219'
         MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '300'
     15:
         Code: 114
         Name: 'Le Sen Yan '
@@ -319,16 +333,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 15 03 72'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.0756609'
-        GeoCoordinateY: '-1.1661729'
+        GeoCoordinateX: '44.07217817'
+        GeoCoordinateY: '-1.156412959'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '375'
     16:
         Code: 116
         Name: 'La Ferme de la Serraz '
@@ -341,16 +356,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 85 65'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.7750889'
+        GeoCoordinateY: '6.226780415'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '187'
     17:
         Code: 117
         Name: 'Signol '
@@ -363,16 +379,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 88 70 26'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96824412'
+        GeoCoordinateY: '-1.245038509'
         MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '300'
     18:
         Code: 118
         Name: 'Le Soleil '
@@ -385,16 +402,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 32 11 40'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.5757234'
+        GeoCoordinateY: '3.042392135'
         MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '844'
     19:
         Code: 119
         Name: 'Le Soleil de la Méditerranée'
@@ -407,16 +425,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 55 25'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.62443095'
+        GeoCoordinateY: '3.025810719'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '522'
     20:
         Code: 12
         Name: 'Le Bahia Club'
@@ -429,16 +448,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 21 54 71'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-06-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-14 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.78606298'
+        GeoCoordinateY: '3.019276857'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '210'
     21:
         Code: 120
         Name: 'Les Sources '
@@ -451,16 +471,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 06 13 61'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '47.835925'
-        GeoCoordinateY: '7.176868'
+        GeoCoordinateX: '47.83392225'
+        GeoCoordinateY: '7.165617943'
         MinimumPrice: '126.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '267'
     22:
         Code: 121
         Name: 'Le Talaris '
@@ -473,16 +494,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 37 10 44'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.978459'
-        GeoCoordinateY: '-1.075745'
+        GeoCoordinateX: '45.00800533'
+        GeoCoordinateY: '-1.112129688'
         MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '476'
     23:
         Code: 122
         Name: 'Le Tamerici '
@@ -495,16 +517,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 50 68 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '43.29217342'
+        GeoCoordinateY: '10.51079929'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '301'
     24:
         Code: 123
         Name: 'Tenuta Primero '
@@ -517,16 +540,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 65 39'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.490557'
-        GeoCoordinateY: '9.116462'
+        GeoCoordinateX: '45.69481972'
+        GeoCoordinateY: '13.45171809'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '800'
     25:
         Code: 125
         Name: 'Ur Onea '
@@ -539,16 +563,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 95 41 42'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43388862'
+        GeoCoordinateY: '-1.590839624'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '280'
     26:
         Code: 126
         Name: 'Via Romana '
@@ -561,16 +586,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 58 98'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.010314'
-        GeoCoordinateY: '9.325429'
+        GeoCoordinateX: '41.98642663'
+        GeoCoordinateY: '9.398889542'
         MinimumPrice: '203.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '54'
     27:
         Code: 127
         Name: 'Le Vieux Port '
@@ -583,16 +609,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 80 11'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79771568'
+        GeoCoordinateY: '-1.400853395'
         MinimumPrice: '192.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1546'
     28:
         Code: 128
         Name: 'Les Vignes '
@@ -605,16 +632,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 03 26 53'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.033876'
-        GeoCoordinateY: '-1.258325'
+        GeoCoordinateX: '44.02413608'
+        GeoCoordinateY: '-1.27867341'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '450'
     29:
         Code: 129
         Name: 'Vilanova Park '
@@ -627,16 +655,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.8467181'
-        GeoCoordinateY: '-2.6716351'
+        GeoCoordinateX: '41.23213011'
+        GeoCoordinateY: '1.690725088'
         MinimumPrice: '306.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1385'
     30:
         Code: 130
         Name: Zagarella
@@ -649,16 +678,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 60 39'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.7812729'
+        GeoCoordinateY: '-2.017439604'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '278'
     31:
         Code: 131
         Name: 'Le Ruisseau des Pyrénées'
@@ -671,16 +701,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 91 82'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.436804'
+        GeoCoordinateY: '-1.567666'
         MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '480'
     32:
         Code: 133
         Name: 'La Masia'
@@ -693,16 +724,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 78 00 16'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 4
-        GeoCoordinateX: '41.6742739'
-        GeoCoordinateY: '2.7921031'
+        GeoCoordinateX: '41.664833'
+        GeoCoordinateY: '2.777781'
         MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '757'
     33:
         Code: 134
         Name: 'Les Tamaris'
@@ -715,16 +747,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 84 61 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.783858'
+        GeoCoordinateY: '3.021154'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '434'
     34:
         Code: 135
         Name: 'Playa Joyel'
@@ -737,16 +770,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 35 46 23'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.4799637'
-        GeoCoordinateY: '-3.52139'
+        GeoCoordinateX: '43.491413'
+        GeoCoordinateY: '-3.537512'
         MinimumPrice: '282.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1050'
     35:
         Code: 136
         Name: 'Grande Italia'
@@ -759,16 +793,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 95 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-26 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.216488'
-        GeoCoordinateY: '12.294207'
+        GeoCoordinateX: '45.226879'
+        GeoCoordinateY: '12.294774'
         MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '195'
     36:
         Code: 137
         Name: 'Le Pearl Village Club'
@@ -781,16 +816,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 60 43'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.573436'
+        GeoCoordinateY: '3.01918'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '164'
     37:
         Code: 138
         Name: 'Les Pins Maritimes'
@@ -803,16 +839,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 59 02 51'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.120541'
-        GeoCoordinateY: '6.128639'
+        GeoCoordinateX: '43.0935263'
+        GeoCoordinateY: '6.16381530'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '700'
     38:
         Code: 139
         Name: 'zz Le Barralet'
@@ -825,16 +862,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     39:
         Code: 14
         Name: 'Beau Rivage '
@@ -847,16 +885,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 50 29 78'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 15
         CategorieId: 3
-        GeoCoordinateX: '43.4255939'
-        GeoCoordinateY: '3.606834'
+        GeoCoordinateX: '43.43042156'
+        GeoCoordinateY: '3.610414267'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '234'
     40:
         Code: 140
         Name: 'zz Village Cavallino'
@@ -869,16 +908,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     41:
         Code: 141
         Name: 'zz Aux Hamacs'
@@ -891,16 +931,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     42:
         Code: 142
         Name: 'zz Prat Dou Rey'
@@ -913,16 +954,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     43:
         Code: 143
         Name: 'zz Rouffiac'
@@ -935,16 +977,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     44:
         Code: 144
         Name: 'zz Séquoia Parc'
@@ -957,16 +1000,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     45:
         Code: 145
         Name: 'zz Trémolat'
@@ -979,16 +1023,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     46:
         Code: 146
         Name: 'zz L''Atlantique'
@@ -1001,16 +1046,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     47:
         Code: 147
         Name: 'zz Le Bahamas Beach'
@@ -1023,16 +1069,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     48:
         Code: 148
         Name: 'zz La Barque'
@@ -1045,16 +1092,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     49:
         Code: 149
         Name: 'zz Chanset'
@@ -1067,16 +1115,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     50:
         Code: 15
         Name: 'Beaulieu '
@@ -1089,16 +1138,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 05 65 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.186048'
-        GeoCoordinateY: '-1.1180349'
+        GeoCoordinateX: '46.17793608'
+        GeoCoordinateY: '-1.115090847'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '171'
     51:
         Code: 150
         Name: 'zz Le Chêne Gris'
@@ -1111,16 +1161,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     52:
         Code: 151
         Name: 'zz Les Dauphins Bleus'
@@ -1133,16 +1184,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     53:
         Code: 152
         Name: 'zz Domaine de Beaulieu'
@@ -1155,16 +1207,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     54:
         Code: 153
         Name: 'zz Le Lamparo'
@@ -1177,16 +1230,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     55:
         Code: 154
         Name: 'zz Marmotel'
@@ -1199,16 +1253,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     56:
         Code: 155
         Name: 'zz Les Ondines'
@@ -1221,16 +1276,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     57:
         Code: 156
         Name: 'zz Pyla Camping'
@@ -1243,16 +1299,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     58:
         Code: 157
         Name: 'zz La Rotonde'
@@ -1265,16 +1322,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     59:
         Code: 158
         Name: 'zz Village Stoja'
@@ -1287,16 +1345,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     60:
         Code: 159
         Name: 'zz Le Tamarit Park'
@@ -1309,16 +1368,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     61:
         Code: 16
         Name: 'Bois Soleil'
@@ -1331,16 +1391,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 35 10 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 77
         CategorieId: 1
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.55466987'
+        GeoCoordinateY: '-1.805577278'
         MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '199'
     62:
         Code: 160
         Name: 'zz Le Trivoly'
@@ -1353,16 +1414,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     63:
         Code: 161
         Name: 'zz Almadies'
@@ -1375,16 +1437,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     64:
         Code: 162
         Name: 'zz Bois de Pleuven'
@@ -1397,16 +1460,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     65:
         Code: 163
         Name: 'zz Domaine de la Forêt'
@@ -1419,16 +1483,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     66:
         Code: 164
         Name: 'zz Le Lac'
@@ -1441,16 +1506,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     67:
         Code: 165
         Name: 'zz Rieu Montagné'
@@ -1463,16 +1529,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     68:
         Code: 166
         Name: 'zz Domaine des Bans'
@@ -1485,16 +1552,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     69:
         Code: 167
         Name: 'zz Douce Quiétude'
@@ -1507,16 +1575,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     70:
         Code: 168
         Name: 'zz Fleutron'
@@ -1529,16 +1598,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     71:
         Code: 169
         Name: 'zz Palmeraie'
@@ -1551,16 +1621,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     72:
         Code: 17
         Name: 'Bordenéo '
@@ -1573,16 +1644,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 79 49 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 57
         CategorieId: 2
-        GeoCoordinateX: '47.347009'
-        GeoCoordinateY: '-3.156406'
+        GeoCoordinateX: '47.355914'
+        GeoCoordinateY: '-3.168789'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '202'
     73:
         Code: 170
         Name: 'zz Les Tours'
@@ -1595,16 +1667,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     74:
         Code: 171
         Name: 'zz Abri de Camargue'
@@ -1617,16 +1690,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     75:
         Code: 172
         Name: 'zz Domaine des Iscles'
@@ -1639,16 +1713,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     76:
         Code: 173
         Name: 'zz Lacs du Verdon'
@@ -1661,16 +1736,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     77:
         Code: 174
         Name: 'zz Les Pins Payrac'
@@ -1683,16 +1759,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     78:
         Code: 175
         Name: 'Domaine des Pins'
@@ -1705,16 +1782,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 37 65'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 4
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.738375'
+        GeoCoordinateY: '-1.978054'
         MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '121'
     79:
         Code: 176
         Name: 'Atlantic Club Montalivet'
@@ -1727,16 +1805,17 @@
         Phone1: ''
         Phone2: '06 32 12 14 52'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-06-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 126
         CategorieId: 1
-        GeoCoordinateX: '45.3569389'
-        GeoCoordinateY: '-1.061774'
+        GeoCoordinateX: '45.373855'
+        GeoCoordinateY: '-1.144638'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '842'
     80:
         Code: 177
         Name: 'Les Ajoncs d''Or'
@@ -1749,16 +1828,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 28 72 24'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: '47.305775'
+        GeoCoordinateY: '-2.377167'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '222'
     81:
         Code: 178
         Name: 'Camping Les Biches'
@@ -1771,16 +1851,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 29 64 91'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.740096'
+        GeoCoordinateY: '-1.945052'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '434'
     82:
         Code: 18
         Name: 'La Bretonnière'
@@ -1793,16 +1874,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 58 15'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.6400409'
-        GeoCoordinateY: '-1.712725'
+        GeoCoordinateX: '46.64475555'
+        GeoCoordinateY: '-1.732943058'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '150'
     83:
         Code: 19
         Name: 'Le California'
@@ -1815,16 +1897,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 74 90 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.75718789'
+        GeoCoordinateY: '-1.97853148'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '213'
     84:
         Code: 2
         Name: 'Le Mas'
@@ -1837,16 +1920,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '05 53 29 68 06'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 1
         CategorieId: null
-        GeoCoordinateX: '44.936'
-        GeoCoordinateY: '1.018'
+        GeoCoordinateX: '44.93689388'
+        GeoCoordinateY: '1.085318327'
         MinimumPrice: '126.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '137'
     85:
         Code: 20
         Name: 'Le Calypso'
@@ -1859,16 +1943,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 36 81 43'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '42.767919'
+        GeoCoordinateY: '3.029699922'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '308'
     86:
         Code: 21
         Name: 'Camping du Lac '
@@ -1881,16 +1966,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 87 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-18 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 16
         CategorieId: 3
-        GeoCoordinateX: '44.427565'
-        GeoCoordinateY: '6.035874'
+        GeoCoordinateX: '44.42476978'
+        GeoCoordinateY: '6.031816006'
         MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '90'
     87:
         Code: 22
         Name: 'Cap Agathois '
@@ -1903,16 +1989,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 87 37 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: '43.310056'
+        GeoCoordinateY: '3.509442'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '174'
     88:
         Code: 23
         Name: 'Le Carbonnier'
@@ -1925,16 +2012,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 86 74 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.744816'
-        GeoCoordinateY: '1.258582'
+        GeoCoordinateX: '44.7421154'
+        GeoCoordinateY: '1.263438463'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '196'
     89:
         Code: 24
         Name: 'Castell Mar'
@@ -1947,16 +2035,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 48 40 97'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.2582587'
-        GeoCoordinateY: '3.0744421'
+        GeoCoordinateX: '42.2553319'
+        GeoCoordinateY: '3.136843443'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '310'
     90:
         Code: 25
         Name: 'Castell Montgri '
@@ -1969,16 +2058,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 84 26 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.0519544'
-        GeoCoordinateY: '3.1962936'
+        GeoCoordinateX: '42.0521756'
+        GeoCoordinateY: '3.19160074'
         MinimumPrice: '330.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1200'
     91:
         Code: 26
         Name: 'Caussanel '
@@ -1991,16 +2081,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 78 90 05'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '44.235174'
-        GeoCoordinateY: '2.752384'
+        GeoCoordinateX: '44.21435585'
+        GeoCoordinateY: '2.766510844'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '228'
     92:
         Code: 27
         Name: 'Cayola '
@@ -2013,16 +2104,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 81 93 15 46'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.28224717'
+        GeoCoordinateY: '3.371078074'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '176'
     93:
         Code: 28
         Name: 'Le Chaponnet'
@@ -2035,16 +2127,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 82 07 74'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '46.6057'
-        GeoCoordinateY: '-1.82988'
+        GeoCoordinateX: '46.60419665'
+        GeoCoordinateY: '-1.832286716'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '330'
     94:
         Code: 29
         Name: 'Domaine des Charmilles'
@@ -2057,16 +2150,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 05 51 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.981425'
-        GeoCoordinateY: '-1.041028'
+        GeoCoordinateX: '45.99008181'
+        GeoCoordinateY: '-1.051871181'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '270'
     95:
         Code: 3
         Name: 'Le Cala Gogo'
@@ -2079,16 +2173,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 67 66 11'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.59948962'
+        GeoCoordinateY: '3.037636578'
         MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '654'
     96:
         Code: 30
         Name: 'Le Château de Galinée '
@@ -2101,16 +2196,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 30 54 83'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '48.632091'
-        GeoCoordinateY: '-2.259804'
+        GeoCoordinateX: '48.58438992'
+        GeoCoordinateY: '-2.257309556'
         MinimumPrice: '266.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '273'
     97:
         Code: 31
         Name: 'La Chênaie '
@@ -2123,16 +2219,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 07 87 55'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-14 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '47.115491'
-        GeoCoordinateY: '-2.104444'
+        GeoCoordinateX: '47.11890222'
+        GeoCoordinateY: '-2.072934508'
         MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '221'
     98:
         Code: 32
         Name: 'Les Chênes Verts '
@@ -2145,16 +2242,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 53 93 18'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.855269'
-        GeoCoordinateY: '1.333955'
+        GeoCoordinateX: '44.86323045'
+        GeoCoordinateY: '1.297008991'
         MinimumPrice: '192.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '143'
     99:
         Code: 33
         Name: 'Le Col Vert '
@@ -2167,16 +2265,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 72 69 45 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.95512'
-        GeoCoordinateY: '-1.305229'
+        GeoCoordinateX: '43.90345841'
+        GeoCoordinateY: '-1.310065985'
         MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '800'
     100:
         Code: 34
         Name: 'Le Conguel '
@@ -2189,16 +2288,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 50 23 63'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '47.482133'
-        GeoCoordinateY: '-3.121053'
+        GeoCoordinateX: '47.47675288'
+        GeoCoordinateY: '-3.092372417'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '250'
     101:
         Code: 35
         Name: 'La Coste Rouge '
@@ -2211,16 +2311,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 13 14 12'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.532127'
+        GeoCoordinateY: '3.05197'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '145'
     102:
         Code: 36
         Name: 'La Côte d''Argent '
@@ -2233,16 +2334,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 18 78 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-18 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '45.186089'
-        GeoCoordinateY: '-1.057202'
+        GeoCoordinateX: '45.22291902'
+        GeoCoordinateY: '-1.164722443'
         MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '870'
     103:
         Code: 37
         Name: 'Crin Blanc '
@@ -2255,16 +2357,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 59 92 01'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '45.333533'
-        GeoCoordinateY: '7.101924'
+        GeoCoordinateX: '43.66136775'
+        GeoCoordinateY: '4.473999739'
         MinimumPrice: '204.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '170'
     104:
         Code: 38
         Name: 'Cupulatta '
@@ -2277,16 +2380,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 19 17 93 60'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 5
-        GeoCoordinateX: '41.591369'
-        GeoCoordinateY: '9.278311'
+        GeoCoordinateX: '41.64617179'
+        GeoCoordinateY: '9.293650389'
         MinimumPrice: '315.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '120'
     105:
         Code: 39
         Name: 'Les Cyprès '
@@ -2299,16 +2403,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 89 95 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.697777'
-        GeoCoordinateY: '-1.944529'
+        GeoCoordinateX: '46.6761495'
+        GeoCoordinateY: '-1.913208961'
         MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '280'
     106:
         Code: 4
         Name: 'Le Petit Mousse'
@@ -2321,16 +2426,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 90 80 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 2
         CategorieId: 3
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.29095518'
+        GeoCoordinateY: '3.403937817'
         MinimumPrice: '198.00'
         VideoPath: 'http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent'
         Image360Path: 'http://www.youtube.com/embed/Z1qXQMpdzQY?rel=0&amp;wmode=transparent'
         Description: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.'
+        Capacite: '364'
     107:
         Code: 40
         Name: 'Les Deux Fontaines '
@@ -2343,16 +2449,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 35 50 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '47.819167'
-        GeoCoordinateY: '-3.79258'
+        GeoCoordinateX: '47.7986345'
+        GeoCoordinateY: '-3.791956902'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '293'
     108:
         Code: 41
         Name: 'Les Deux Plages '
@@ -2365,16 +2472,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 99 85 48'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.069676'
-        GeoCoordinateY: '-1.088543'
+        GeoCoordinateX: '46.08444237'
+        GeoCoordinateY: '-1.093429327'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '265'
     109:
         Code: 42
         Name: 'Domaine d''Inly '
@@ -2387,16 +2495,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 10 56 26'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '47.4805375'
-        GeoCoordinateY: '-2.4738651'
+        GeoCoordinateX: '47.47158955'
+        GeoCoordinateY: '-2.467031479'
         MinimumPrice: '273.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '500'
     110:
         Code: 43
         Name: 'Domaine d''Oléron '
@@ -2409,16 +2518,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 97 10 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96790109'
+        GeoCoordinateY: '-1.31872952'
         MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '172'
     111:
         Code: 44
         Name: 'Domaine de Chaussy '
@@ -2431,16 +2541,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 47 65 41'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '44.446962'
-        GeoCoordinateY: '4.41779'
+        GeoCoordinateX: '44.44722341'
+        GeoCoordinateY: '4.36678648'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '300'
     112:
         Code: 45
         Name: 'Domaine de Kermario'
@@ -2453,16 +2564,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 82 63 94 46'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-03-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 120
         CategorieId: 2
-        GeoCoordinateX: '47.584693'
-        GeoCoordinateY: '-3.077786'
+        GeoCoordinateX: '47.59528254'
+        GeoCoordinateY: '-3.066279888'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '123'
     113:
         Code: 46
         Name: 'Domaine de la Rive'
@@ -2475,16 +2587,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 55 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '44.395943'
-        GeoCoordinateY: '-1.166917'
+        GeoCoordinateX: '44.46066389'
+        GeoCoordinateY: '-1.130706668'
         MinimumPrice: '318.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '800'
     114:
         Code: 47
         Name: 'Domaine de Léveno '
@@ -2497,16 +2610,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 24 68 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-29 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '47.328003'
-        GeoCoordinateY: '-2.4297589'
+        GeoCoordinateX: '47.33350768'
+        GeoCoordinateY: '-2.390749454'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '600'
     115:
         Code: 48
         Name: 'Domaine des Naïades'
@@ -2519,16 +2633,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 94 55 67 80'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-03-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.274308'
-        GeoCoordinateY: '6.521865'
+        GeoCoordinateX: '43.28539469'
+        GeoCoordinateY: '6.57928437'
         MinimumPrice: '385.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '470'
     116:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
@@ -2541,16 +2656,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 82 84 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.551115'
-        GeoCoordinateY: '4.413293'
+        GeoCoordinateX: '44.53427499'
+        GeoCoordinateY: '4.406890869'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '170'
     117:
         Code: 5
         Name: 'Airotel Oléron'
@@ -2563,16 +2679,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 47 89 48 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 123
         CategorieId: 3
-        GeoCoordinateX: '45.885588'
-        GeoCoordinateY: '-1.19505'
+        GeoCoordinateX: '45.8828959'
+        GeoCoordinateY: '-1.2042464'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '133'
     118:
         Code: 50
         Name: 'Domaine du Verdon '
@@ -2585,16 +2702,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 27 84 72'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.8462419'
-        GeoCoordinateY: '6.5137'
+        GeoCoordinateX: '43.83920493'
+        GeoCoordinateY: '6.493869424'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '500'
     119:
         Code: 51
         Name: 'Les Dunes '
@@ -2607,16 +2725,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 93 31 47'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '42.76536313'
+        GeoCoordinateY: '3.031582832'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '615'
     120:
         Code: 52
         Name: 'Eden '
@@ -2629,16 +2748,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 76 60 51 67'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.567296'
-        GeoCoordinateY: '3.896473'
+        GeoCoordinateX: '43.54960955'
+        GeoCoordinateY: '3.894379735'
         MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '302'
     121:
         Code: 53
         Name: 'Les Embruns '
@@ -2651,16 +2771,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 86 18 05'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.795454'
-        GeoCoordinateY: '-1.147783'
+        GeoCoordinateX: '44.75173929'
+        GeoCoordinateY: '-1.187531948'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '800'
     122:
         Code: 54
         Name: 'Eurolac '
@@ -2673,16 +2794,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 43 10 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.242573'
-        GeoCoordinateY: '0.096065'
+        GeoCoordinateX: '44.22287547'
+        GeoCoordinateY: '-1.203721762'
         MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '540'
     123:
         Code: 55
         Name: 'Le Fanal '
@@ -2695,16 +2817,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 37 64'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '49.320257'
-        GeoCoordinateY: '-1.102929'
+        GeoCoordinateX: '49.31883866'
+        GeoCoordinateY: '-1.108932495'
         MinimumPrice: '204.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '186'
     124:
         Code: 56
         Name: 'La Farigoulette '
@@ -2717,16 +2840,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 23'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 1
-        GeoCoordinateX: '43.724391'
-        GeoCoordinateY: '6.069215'
+        GeoCoordinateX: '43.73420486'
+        GeoCoordinateY: '6.077772975'
         MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '219'
     125:
         Code: 57
         Name: 'Les Fontaines '
@@ -2739,16 +2863,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 25 40 69'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.706091'
-        GeoCoordinateY: '3.009898'
+        GeoCoordinateX: '42.68903253'
+        GeoCoordinateY: '2.998972535'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '160'
     126:
         Code: 58
         Name: 'Les Frênes '
@@ -2761,16 +2886,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 59 79 02'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-17 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.580418'
-        GeoCoordinateY: '7.125102'
+        GeoCoordinateX: '43.61142443'
+        GeoCoordinateY: '7.123936415'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '110'
     127:
         Code: 59
         Name: 'Front de Mer'
@@ -2783,16 +2909,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 32 03 35'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.546969'
+        GeoCoordinateY: '3.04659'
         MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '588'
     128:
         Code: 6
         Name: 'Aluna Vacances '
@@ -2805,16 +2932,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 53 71 93 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 124
         CategorieId: 2
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.449111'
+        GeoCoordinateY: '4.3525926'
         MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '199'
     129:
         Code: 60
         Name: 'Grand''Terre '
@@ -2827,16 +2955,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 07 71 22'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.42471997'
+        GeoCoordinateY: '4.331874847'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '300'
     130:
         Code: 61
         Name: 'Château de la Grenouillère '
@@ -2849,16 +2978,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 92 14 76'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '47.667176'
-        GeoCoordinateY: '1.460599'
+        GeoCoordinateX: '47.68714583'
+        GeoCoordinateY: '1.483572721'
         MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '275'
     131:
         Code: 63
         Name: 'Les Huttes '
@@ -2871,16 +3001,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 45 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.033306'
-        GeoCoordinateY: '-1.379923'
+        GeoCoordinateX: '46.01528621'
+        GeoCoordinateY: '-1.39242053'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '205'
     132:
         Code: 64
         Name: 'L''Idéal '
@@ -2893,16 +3024,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 86 52 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-20 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.781593'
-        GeoCoordinateY: '6.203303'
+        GeoCoordinateX: '45.795155'
+        GeoCoordinateY: '6.205735803'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '300'
     133:
         Code: 65
         Name: 'Les Ilates'
@@ -2915,16 +3047,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 58 96'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.223107'
-        GeoCoordinateY: '-1.439882'
+        GeoCoordinateX: '46.22760164'
+        GeoCoordinateY: '-1.426178813'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '240'
     134:
         Code: 66
         Name: 'Ilbarritz '
@@ -2937,16 +3070,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 80 31 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.45307856'
+        GeoCoordinateY: '-1.573544741'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '374'
     135:
         Code: 67
         Name: 'Internacional de Calonge '
@@ -2959,16 +3093,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 72 05 07 05 '
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '44.372609'
-        GeoCoordinateY: '0.239981'
+        GeoCoordinateX: '41.83260316'
+        GeoCoordinateY: '3.084572554'
         MinimumPrice: '282.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '712'
     136:
         Code: 68
         Name: 'Internacional Palamos '
@@ -2981,16 +3116,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 87 60 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '41.8467643'
-        GeoCoordinateY: '3.1286356'
+        GeoCoordinateX: '41.857027'
+        GeoCoordinateY: '3.137991'
         MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '453'
     137:
         Code: 69
         Name: 'Le Jard '
@@ -3003,16 +3139,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 62 08'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.34851988'
+        GeoCoordinateY: '-1.387576461'
         MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '350'
     138:
         Code: 7
         Name: 'Les Amandiers'
@@ -3025,16 +3162,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 85 80 57'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.721683'
-        GeoCoordinateY: '4.173218'
+        GeoCoordinateX: '43.71691503'
+        GeoCoordinateY: '4.167069197'
         MinimumPrice: '138.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '150'
     139:
         Code: 70
         Name: 'Lac Bleu '
@@ -3047,16 +3185,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 75 21 85 30'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '44.6953419'
-        GeoCoordinateY: '5.485029'
+        GeoCoordinateX: '44.68386545'
+        GeoCoordinateY: '5.450313091'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '130'
     140:
         Code: 71
         Name: 'Lac de Miel '
@@ -3069,16 +3208,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 31 87 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '45.123826'
-        GeoCoordinateY: '1.723226'
+        GeoCoordinateX: '45.13193732'
+        GeoCoordinateY: '1.762683392'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '180'
     141:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
@@ -3091,16 +3231,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 45 61 81 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '43.68218'
-        GeoCoordinateY: '0.993749'
+        GeoCoordinateX: '43.68601738'
+        GeoCoordinateY: '1.00292623'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '130'
     142:
         Code: 73
         Name: 'Land''s Hause '
@@ -3113,16 +3254,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '00351 244 821 071'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.3836559'
-        GeoCoordinateY: '1.5360347'
+        GeoCoordinateX: '39.69684787'
+        GeoCoordinateY: '-8.97567451'
         MinimumPrice: '336.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '92'
     143:
         Code: 74
         Name: 'Lou Broustaricq '
@@ -3135,16 +3277,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 93 08'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.483615'
-        GeoCoordinateY: '-1.075989'
+        GeoCoordinateX: '44.4990307'
+        GeoCoordinateY: '-1.079460382'
         MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '576'
     144:
         Code: 75
         Name: 'Lou Pignada '
@@ -3157,16 +3300,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 94 63 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79725104'
+        GeoCoordinateY: '-1.381938457'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '430'
     145:
         Code: 76
         Name: 'La Loubine '
@@ -3179,16 +3323,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 89 43 67'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.54614044'
+        GeoCoordinateY: '-1.805588007'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '386'
     146:
         Code: 77
         Name: 'Loyada '
@@ -3201,16 +3346,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 82 07 93'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.466102'
-        GeoCoordinateY: '-1.618261'
+        GeoCoordinateX: '46.46559831'
+        GeoCoordinateY: '-1.652584076'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '226'
     147:
         Code: 78
         Name: 'Malazéou '
@@ -3223,16 +3369,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '05 61 64 69 14'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.720254'
-        GeoCoordinateY: '1.837545'
+        GeoCoordinateX: '42.72870307'
+        GeoCoordinateY: '1.825538278'
         MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '285'
     148:
         Code: 79
         Name: 'Mare e Pineta '
@@ -3245,16 +3392,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 98 66 38'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-20 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.65568393'
+        GeoCoordinateY: '12.24521756'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '1326'
     149:
         Code: 8
         Name: 'Sandaya Soulac Plage'
@@ -3267,16 +3415,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 97 27 38'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.4856205'
+        GeoCoordinateY: '-1.1477709'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '526'
     150:
         Code: 80
         Name: 'La Marine '
@@ -3289,16 +3438,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 66 53 20 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.537476'
-        GeoCoordinateY: '4.137918'
+        GeoCoordinateX: '43.50737094'
+        GeoCoordinateY: '4.145380855'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '293'
     151:
         Code: 81
         Name: 'Les Marsouins'
@@ -3311,16 +3461,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 70 01 85'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-14 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56372132'
+        GeoCoordinateY: '3.034651279'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '587'
     152:
         Code: 82
         Name: 'Marze '
@@ -3333,16 +3484,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 83 80 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '42.74528669'
+        GeoCoordinateY: '10.94759166'
         MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '600'
     153:
         Code: 83
         Name: 'La Maïre '
@@ -3355,16 +3507,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 29 48 31'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.27113581'
+        GeoCoordinateY: '3.329329491'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '206'
     154:
         Code: 84
         Name: 'Le Moulin'
@@ -3377,16 +3530,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 43 97 04'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.586323'
-        GeoCoordinateY: '5.7030839'
+        GeoCoordinateX: '46.58725895'
+        GeoCoordinateY: '5.700777769'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '240'
     155:
         Code: 85
         Name: 'Camping Neptuno '
@@ -3399,16 +3553,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 35 15 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-11 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '41.9712149'
-        GeoCoordinateY: '3.1488764'
+        GeoCoordinateX: '41.993343'
+        GeoCoordinateY: '3.188749'
         MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '322'
     156:
         Code: 86
         Name: 'L''Oasis'
@@ -3421,16 +3576,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 32 31 70'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.77629471'
+        GeoCoordinateY: '3.02487731'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '496'
     157:
         Code: 87
         Name: 'L''Océano d''Or'
@@ -3443,16 +3599,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 90 03 54'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.408889'
-        GeoCoordinateY: '-1.576171'
+        GeoCoordinateX: '46.42087836'
+        GeoCoordinateY: '-1.569660902'
         MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '430'
     158:
         Code: 88
         Name: 'Oyam '
@@ -3465,16 +3622,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 07 68 20'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43522086'
+        GeoCoordinateY: '-1.582331657'
         MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '350'
     159:
         Code: 89
         Name: 'Les Oyats '
@@ -3487,16 +3645,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 69 93 92'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.692694'
-        GeoCoordinateY: '-1.384908'
+        GeoCoordinateX: '43.724728'
+        GeoCoordinateY: '-1.421765'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '500'
     160:
         Code: 9
         Name: Ametlla
@@ -3509,16 +3668,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 91 01 83'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: 125
         CategorieId: 2
-        GeoCoordinateX: '40.8850733'
-        GeoCoordinateY: '0.8033742'
+        GeoCoordinateX: '40.86483588'
+        GeoCoordinateY: '0.778688192'
         MinimumPrice: '306.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '372'
     161:
         Code: 90
         Name: Pachacaïd
@@ -3531,16 +3691,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 58 02 09'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.2071759'
-        GeoCoordinateY: '6.465117'
+        GeoCoordinateX: '43.190284'
+        GeoCoordinateY: '6.471419'
         MinimumPrice: '324.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '400'
     162:
         Code: 91
         Name: 'Domaine de la Paille Basse'
@@ -3553,16 +3714,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 23 78 03'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.893626'
-        GeoCoordinateY: '1.478613'
+        GeoCoordinateX: '44.9448477'
+        GeoCoordinateY: '1.4416739'
         MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '262'
     163:
         Code: 92
         Name: 'Le Palace '
@@ -3575,16 +3737,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 28 61 70'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-23 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.50097801'
+        GeoCoordinateY: '-1.129317284'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '570'
     164:
         Code: 93
         Name: 'Palavas Camping'
@@ -3597,16 +3760,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 68 01 28'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '43.528906'
-        GeoCoordinateY: '3.933493'
+        GeoCoordinateX: '43.51973054'
+        GeoCoordinateY: '3.909483254'
         MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '435'
     165:
         Code: 94
         Name: 'Le Parc '
@@ -3619,16 +3783,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 79 25 52'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-30 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.567595'
-        GeoCoordinateY: '6.691291'
+        GeoCoordinateX: '43.58432727'
+        GeoCoordinateY: '6.689981818'
         MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '100'
     166:
         Code: 95
         Name: 'Park Albatros '
@@ -3641,16 +3806,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 94 43 84'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.767088'
-        GeoCoordinateY: '7.9539789'
+        GeoCoordinateX: '43.02830997'
+        GeoCoordinateY: '10.53853869'
         MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '885'
     167:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
@@ -3663,16 +3829,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 27 19'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.45909408'
+        GeoCoordinateY: '4.341879487'
         MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '110'
     168:
         Code: 97
         Name: 'Petit Bois (Cantal)'
@@ -3685,16 +3852,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 08 54 21'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '45.001378'
-        GeoCoordinateY: '3.223658'
+        GeoCoordinateX: '44.99907285'
+        GeoCoordinateY: '3.219047785'
         MinimumPrice: '138.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '90'
     169:
         Code: 98
         Name: 'Le Pinada '
@@ -3707,16 +3875,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 93 49'
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: 3
-        GeoCoordinateX: '43.112328'
-        GeoCoordinateY: '2.739141'
+        GeoCoordinateX: '43.11730606'
+        GeoCoordinateY: '2.73617506'
         MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '110'
     170:
         Code: 99
         Name: 'Les Pins '
@@ -3729,16 +3898,17 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 83 65 13'
         Fax: 04.92.94.10.01
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.629668'
-        GeoCoordinateY: '-2.464789'
+        GeoCoordinateX: '48.63805601'
+        GeoCoordinateY: '-2.455675006'
         MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: '488'
     171:
         Code: 997
         Name: 'zzz Fictif enregistrement Linéaire Liberté'
@@ -3751,16 +3921,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     172:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
@@ -3773,16 +3944,17 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-19 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-10-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
     173:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
@@ -3795,13 +3967,175 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2011-12-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.227638'
-        GeoCoordinateY: '2.213749'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
+        Capacite: ''
+    174:
+        Code: 179
+        Name: 'Z Vacances directes'
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    175:
+        Code: 180
+        Name: 'Aqua Viva'
+        Address1: 'Route de Souillac'
+        Address2: ''
+        Zip: '24200'
+        City: 'CARSAC AILLAC'
+        Mail: test@resalys.com
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: 107
+        CategorieId: 1
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    176:
+        Code: 181
+        Name: Arbousiers
+        Address1: 'Chemin des Arbousiers'
+        Address2: 'Le Cabenas'
+        Zip: '83320'
+        City: CARQUEIRANNE
+        Mail: test@resalys.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    177:
+        Code: 182
+        Name: Aurilandes
+        Address1: '1001 Promenade de l’Etang'
+        Address2: ''
+        Zip: '40200'
+        City: AUREILHAN
+        Mail: test@resalys.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: 113
+        CategorieId: 4
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    178:
+        Code: 183
+        Name: 'Baie du Kernic'
+        Address1: 'Route de Pen An Théven'
+        Address2: ''
+        Zip: '29430'
+        City: PLOUESCAT
+        Mail: test@resalys.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: 61
+        CategorieId: 3
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    179:
+        Code: 184
+        Name: 'Bois d’Amour'
+        Address1: '10 allée Diane'
+        Address2: ''
+        Zip: '44500'
+        City: 'LA BAULE'
+        Mail: test@resalys.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: 61
+        CategorieId: 3
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null
+    180:
+        Code: 185
+        Name: 'Le Castellas'
+        Address1: 'RN 112'
+        Address2: ''
+        Zip: '34200'
+        City: SETE
+        Mail: test@resalys.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Zurich";}
+        VilleId: 119
+        CategorieId: 2
+        GeoCoordinateX: null
+        GeoCoordinateY: null
+        MinimumPrice: null
+        VideoPath: null
+        Image360Path: null
+        Description: null
+        Capacite: null

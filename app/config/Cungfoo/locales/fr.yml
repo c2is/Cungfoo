@@ -124,6 +124,7 @@ etablissement.minimum_price: Prix 'à partir de'
 etablissement.video_path: Vidéo
 etablissement.image_360_path: Visite 360
 etablissement.description: Description
+etablissement.capacite: Capacité
 
 list.actions: Actions
 

@@ -224,6 +224,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $description;
 
     /**
+     * The value for the capacite field.
+     * @var        string
+     */
+    protected $capacite;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -779,6 +785,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [capacite] column value.
+     *
+     * @return string
+     */
+    public function getCapacite()
+    {
+        return $this->capacite;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -1327,6 +1343,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setDescription()
 
     /**
+     * Set the value of [capacite] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setCapacite($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->capacite !== $v) {
+            $this->capacite = $v;
+            $this->modifiedColumns[] = EtablissementPeer::CAPACITE;
+        }
+
+
+        return $this;
+    } // setCapacite()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1426,8 +1463,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->video_path = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
             $this->image_360_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
             $this->description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->created_at = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->updated_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->created_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->updated_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1436,7 +1474,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 24; // 24 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 25; // 25 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2151,6 +2189,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) {
             $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
+        if ($this->isColumnModified(EtablissementPeer::CAPACITE)) {
+            $modifiedColumns[':p' . $index++]  = '`CAPACITE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -2233,6 +2274,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`CAPACITE`':
+                        $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2547,9 +2591,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getDescription();
                 break;
             case 22:
-                return $this->getCreatedAt();
+                return $this->getCapacite();
                 break;
             case 23:
+                return $this->getCreatedAt();
+                break;
+            case 24:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -2603,8 +2650,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[19] => $this->getVideoPath(),
             $keys[20] => $this->getImage360Path(),
             $keys[21] => $this->getDescription(),
-            $keys[22] => $this->getCreatedAt(),
-            $keys[23] => $this->getUpdatedAt(),
+            $keys[22] => $this->getCapacite(),
+            $keys[23] => $this->getCreatedAt(),
+            $keys[24] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -2747,9 +2795,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setDescription($value);
                 break;
             case 22:
-                $this->setCreatedAt($value);
+                $this->setCapacite($value);
                 break;
             case 23:
+                $this->setCreatedAt($value);
+                break;
+            case 24:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2798,8 +2849,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[19], $arr)) $this->setVideoPath($arr[$keys[19]]);
         if (array_key_exists($keys[20], $arr)) $this->setImage360Path($arr[$keys[20]]);
         if (array_key_exists($keys[21], $arr)) $this->setDescription($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCreatedAt($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setUpdatedAt($arr[$keys[23]]);
+        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCreatedAt($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setUpdatedAt($arr[$keys[24]]);
     }
 
     /**
@@ -2833,6 +2885,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
 
@@ -2919,6 +2972,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setVideoPath($this->getVideoPath());
         $copyObj->setImage360Path($this->getImage360Path());
         $copyObj->setDescription($this->getDescription());
+        $copyObj->setCapacite($this->getCapacite());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -7238,6 +7292,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->video_path = null;
         $this->image_360_path = null;
         $this->description = null;
+        $this->capacite = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
