@@ -31,6 +31,10 @@ $app['security.access_rules'] = array(
     array('^/.+$', 'ROLE_USER'),
 );
 
+$app['security.encoder.digest'] = $app->share(function ($app) {
+    return new \Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder();
+});
+
 /* T W I G  C O N F I G U R A T I O N  */
 $app['twig.path'] = array(__DIR__.'/View');
 
