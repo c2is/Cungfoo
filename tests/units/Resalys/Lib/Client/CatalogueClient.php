@@ -1,10 +1,10 @@
 <?php
-namespace tests\units\Cungfoo\Lib\Resalys\Client;
+namespace tests\units\Resalys\Lib\Client;
 
-require_once __DIR__ . '/../../../../../bootstrap.php';
+require_once __DIR__ . '/../../../../bootstrap.php';
 
 use mageekguy\atoum;
-use Cungfoo\Lib\Resalys\Client\CatalogueClient as Client;
+use Resalys\Lib\Client\CatalogueClient as Client;
 
 class CatalogueClient extends atoum\test
 {
