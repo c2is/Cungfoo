@@ -1,0 +1,136 @@
+\Cungfoo\Model\AvantageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'les activités du club enfant (5-12 ans) DE'
+        Description: ''
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'les activités du club enfant (5-12 ans) EN'
+        Description: ''
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'les activités du club enfant (5-12 ans)'
+        Description: 'Desc. les activités du club enfant (5-12 ans)'
+    2_de:
+        Id: 2
+        Locale: de
+        Name: 'le toboggan aquatique DE'
+        Description: ''
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'le toboggan aquatique EN'
+        Description: ''
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'le toboggan aquatique'
+        Description: 'Desc. le toboggan aquatique'
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'l''équitation DE'
+        Description: ''
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'l''équitation EN'
+        Description: ''
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'l''équitation'
+        Description: 'Desc. l''équitation'
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'la location des vélos DE'
+        Description: ''
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'la location des vélos EN'
+        Description: ''
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'la location des vélos'
+        Description: 'Desc. la location des vélos'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'les barbecues collectifs DE'
+        Description: ''
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'les barbecues collectifs EN'
+        Description: ''
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'les barbecues collectifs'
+        Description: 'Desc. les barbecues collectifs'
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'le restaurant et le snack DE'
+        Description: ''
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'le restaurant et le snack EN'
+        Description: ''
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'le restaurant et le snack'
+        Description: 'Desc. le restaurant et le snack'
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'l''accès direct à la plage DE'
+        Description: ''
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'l''accès direct à la plage EN'
+        Description: ''
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'l''accès direct à la plage'
+        Description: 'Desc. l''accès direct à la plage'
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'l''accès au wifi dans tout le camping DE'
+        Description: ''
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'l''accès au wifi dans tout le camping EN'
+        Description: ''
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'l''accès au wifi dans tout le camping'
+        Description: 'Desc. l''accès au wifi dans tout le camping'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'la laverie DE'
+        Description: ''
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'la laverie EN'
+        Description: ''
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'la laverie'
+        Description: 'Desc. la laverie'
