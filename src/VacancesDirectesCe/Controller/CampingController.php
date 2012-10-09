@@ -69,6 +69,17 @@ class CampingController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($etab->getId())
+                ->find()
+            ;
+
+            $tags = \Cungfoo\Model\TagQuery::create()
+                ->joinWithI18n($locale)
+                ->find()
+            ;
+
             return $app['twig']->render('Camping/camping.twig', array(
                 'locale'                => $locale,
                 'etab'                  => $etab,
@@ -76,7 +87,9 @@ class CampingController implements ControllerProviderInterface
                 'nbActivitesSportives'  => $nbActivitesSportives,
                 'nbEvenementsCulturels' => $nbEvenementsCulturels,
                 'eventPrioritaire'      => $eventPrioritaire,
-                'personnages'           => $personnages
+                'personnages'           => $personnages,
+                'multimedia'            => $multimedia,
+                'tags'                  => $tags
             ));
         })
         ->bind('popin_camping');
