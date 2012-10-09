@@ -77,7 +77,7 @@ $(function() { //domReady
 
 function slider(){
     var slider = $('.slider');
-    slider.each( function(n){
+    slider.each( function(){
         slider = $(this);
         var btLeft = '<button class="prev">&lt;</button>',
             btRight = '<button class="next">&gt;</button>',
@@ -96,8 +96,8 @@ function slider(){
                     return $(this).parents('.slider').find('.next');
                 }
             },
-            events:{
-                namespace: "cfs"+ n
+            items: {
+                filter: 'img'
             },
             auto: false/*,
             scroll: {
@@ -108,12 +108,22 @@ function slider(){
             var nVal = $(this).val();
             if( nVal == "all"){
                 slider.find('img').not(':visible').fadeIn();
-                slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+                slider.find('.slide').trigger("configuration",["items.filter","img:visible"]);
             }else{
                 slider.find('.'+nVal).fadeIn();
                 slider.find('img').not('.'+nVal).hide();
-                slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+                slider.find('.slide').trigger("configuration",["items.filter","img:visible"]);
             }
+        });
+        slider.find('img').each(function(){
+            var tip = $(this).attr("title");
+            $(this).hover( function(){
+               $(this).attr('title', '');
+               $('<div id="littleTIP">'+tip+'</div>').appendTo(slider);
+           }, function(){
+               $('#littleTIP').remove();
+               $(this).attr('title', tip);
+           });
         });
     });
 }

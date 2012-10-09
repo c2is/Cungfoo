@@ -42,23 +42,23 @@
 
 <div class="tabCampDiapo">
     <div class="slider"><div class="slide clear">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 1" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 1" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 2" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 1" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 1" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 4" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 3" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 4" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 3" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 3" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 2" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 3" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 4" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 5" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 2" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 4" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 2" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="01 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 1" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="02 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 1" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="03 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 2" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="04 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 1" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="05 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 1" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="06 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 4" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="07 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 3" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="08 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 4" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="09 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 3" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="10 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 3" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="11 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 2" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="12 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 3" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="13 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 4" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="14 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 5" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="15 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 2" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="16 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 4" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="17 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 2" class="regions">
     </div></div>
     <form class="tabCampDiapoOptions clear" action="#_">
         <fieldset class="left">
