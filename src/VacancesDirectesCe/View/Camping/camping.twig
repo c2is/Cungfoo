@@ -80,9 +80,9 @@
                     <span class="perso">{{ personnage.prenom | trans }}</span>
                     <span class="age">{{ personnage.age }} ans</span>
                     <ul>
-                        <li>{{ personnage.interet1 }}</li>
-                        <li>{{ personnage.interet2 }}</li>
-                        <li>{{ personnage.interet3 }}</li>
+                        {% for avantage in personnage.avantages %}
+                        <li>{{ avantage.name }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             {% endfor %}

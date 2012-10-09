@@ -46,13 +46,13 @@
                         {% for personnage in personnages %}
                             <li>
                                 <div>
-                                    <img src="/{{ personnage.imagePath }}" />
+                                    <img src="{{ asset(personnage.imagePath) }}" />
                                     <span>{{ personnage.prenom | trans }}</span>
                                     <span>{{ personnage.age }} {{ "ans" | trans }}</span>
                                     <ul>
-                                        <li>{{ personnage.interet1 }}</li>
-                                        <li>{{ personnage.interet2 }}</li>
-                                        <li>{{ personnage.interet3 }}</li>
+                                        {% for avantage in personnage.avantages %}
+                                        <li>{{ avantage.name | trans }}</li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </li>
