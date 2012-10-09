@@ -65,6 +65,9 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\EtablissementEvent",
         "\\Cungfoo\\Model\\Tag",
         "\\Cungfoo\\Model\\TagI18n",
+        "\\Cungfoo\\Model\\MultimediaEtablissement",
+        "\\Cungfoo\\Model\\MultimediaEtablissementI18n",
+        "\\Cungfoo\\Model\\MultimediaEtablissementTag",
     );
 
     protected function configure()
