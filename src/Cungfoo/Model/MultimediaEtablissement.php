@@ -22,4 +22,19 @@ class MultimediaEtablissement extends BaseMultimediaEtablissement
     {
         return $this->getTitre();
     }
+
+    public function getTagsForDisplay()
+    {
+        $tags = $this->getTags();
+        $arrayNames = array();
+
+        foreach($tags as $tag)
+        {
+            $arrayNames[] = $tag->getName();
+        }
+
+        $names = implode(" ", $arrayNames);
+
+        return $names;
+    }
 }

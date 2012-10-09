@@ -25,10 +25,12 @@ use Cungfoo\Model\TagQuery;
  *
  *
  * @method TagQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method TagQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method TagQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TagQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method TagQuery groupById() Group by the id column
+ * @method TagQuery groupBySlug() Group by the slug column
  * @method TagQuery groupByCreatedAt() Group by the created_at column
  * @method TagQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -47,10 +49,12 @@ use Cungfoo\Model\TagQuery;
  * @method Tag findOne(PropelPDO $con = null) Return the first Tag matching the query
  * @method Tag findOneOrCreate(PropelPDO $con = null) Return the first Tag matching the query, or a new Tag object populated from the query conditions when no match is found
  *
+ * @method Tag findOneBySlug(string $slug) Return the first Tag filtered by the slug column
  * @method Tag findOneByCreatedAt(string $created_at) Return the first Tag filtered by the created_at column
  * @method Tag findOneByUpdatedAt(string $updated_at) Return the first Tag filtered by the updated_at column
  *
  * @method array findById(int $id) Return Tag objects filtered by the id column
+ * @method array findBySlug(string $slug) Return Tag objects filtered by the slug column
  * @method array findByCreatedAt(string $created_at) Return Tag objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Tag objects filtered by the updated_at column
  *
@@ -156,7 +160,7 @@ abstract class BaseTagQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CREATED_AT`, `UPDATED_AT` FROM `tag` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `SLUG`, `CREATED_AT`, `UPDATED_AT` FROM `tag` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -270,6 +274,35 @@ abstract class BaseTagQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TagPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the slug column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
+     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $slug The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TagQuery The current query, for fluid interface
+     */
+    public function filterBySlug($slug = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($slug)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $slug)) {
+                $slug = str_replace('*', '%', $slug);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TagPeer::SLUG, $slug, $comparison);
     }
 
     /**

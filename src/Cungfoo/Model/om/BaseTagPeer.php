@@ -37,16 +37,19 @@ abstract class BaseTagPeer
     const TM_CLASS = 'TagTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
     const ID = 'tag.ID';
+
+    /** the column name for the SLUG field */
+    const SLUG = 'tag.SLUG';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'tag.CREATED_AT';
@@ -80,12 +83,12 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[TagPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::SLUG, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -95,12 +98,12 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::CREATED_AT => 1, TagPeer::UPDATED_AT => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::SLUG => 1, TagPeer::CREATED_AT => 2, TagPeer::UPDATED_AT => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'created_at' => 2, 'updated_at' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -175,10 +178,12 @@ abstract class BaseTagPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(TagPeer::ID);
+            $criteria->addSelectColumn(TagPeer::SLUG);
             $criteria->addSelectColumn(TagPeer::CREATED_AT);
             $criteria->addSelectColumn(TagPeer::UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
         }

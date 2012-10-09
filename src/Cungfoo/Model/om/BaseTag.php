@@ -60,6 +60,12 @@ abstract class BaseTag extends BaseObject implements Persistent
     protected $id;
 
     /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -142,6 +148,16 @@ abstract class BaseTag extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -240,6 +256,27 @@ abstract class BaseTag extends BaseObject implements Persistent
     } // setId()
 
     /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return Tag The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = TagPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -318,8 +355,9 @@ abstract class BaseTag extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->slug = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -328,7 +366,7 @@ abstract class BaseTag extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = TagPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = TagPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Tag object", $e);
@@ -613,6 +651,9 @@ abstract class BaseTag extends BaseObject implements Persistent
         if ($this->isColumnModified(TagPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
+        if ($this->isColumnModified(TagPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`SLUG`';
+        }
         if ($this->isColumnModified(TagPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -632,6 +673,9 @@ abstract class BaseTag extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case '`SLUG`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -793,9 +837,12 @@ abstract class BaseTag extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getCreatedAt();
+                return $this->getSlug();
                 break;
             case 2:
+                return $this->getCreatedAt();
+                break;
+            case 3:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -828,8 +875,9 @@ abstract class BaseTag extends BaseObject implements Persistent
         $keys = TagPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getCreatedAt(),
-            $keys[2] => $this->getUpdatedAt(),
+            $keys[1] => $this->getSlug(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMultimediaEtablissementTags) {
@@ -876,9 +924,12 @@ abstract class BaseTag extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setCreatedAt($value);
+                $this->setSlug($value);
                 break;
             case 2:
+                $this->setCreatedAt($value);
+                break;
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -906,8 +957,9 @@ abstract class BaseTag extends BaseObject implements Persistent
         $keys = TagPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[1], $arr)) $this->setSlug($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
     }
 
     /**
@@ -920,6 +972,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         $criteria = new Criteria(TagPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(TagPeer::ID)) $criteria->add(TagPeer::ID, $this->id);
+        if ($this->isColumnModified(TagPeer::SLUG)) $criteria->add(TagPeer::SLUG, $this->slug);
         if ($this->isColumnModified(TagPeer::CREATED_AT)) $criteria->add(TagPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TagPeer::UPDATED_AT)) $criteria->add(TagPeer::UPDATED_AT, $this->updated_at);
 
@@ -985,6 +1038,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setSlug($this->getSlug());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1693,6 +1747,7 @@ abstract class BaseTag extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->slug = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -1753,11 +1808,11 @@ abstract class BaseTag extends BaseObject implements Persistent
     /**
      * return the string representation of this object
      *
-     * @return string
+     * @return string The value of the 'slug' column
      */
     public function __toString()
     {
-        return (string) $this->exportTo(TagPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->getSlug();
     }
 
     /**

@@ -27,6 +27,13 @@ class BaseTagType extends AppAwareType
             'label' => 'tag.id',
             'required' => false,
         ));
+        $builder->add('slug', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'tag.slug',
+            'required' => false,
+        ));
         $builder->add('multimedia_etablissements', 'model', array(
             'class' => 'Cungfoo\Model\MultimediaEtablissement',
             'constraints' => array(
@@ -49,6 +56,7 @@ class BaseTagType extends AppAwareType
                     'label' => 'tag.name',
                     'type' => 'text',
                     'constraints' => array(
+                        new Assert\NotBlank(),
                     ),
                 ),
             ),
