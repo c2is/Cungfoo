@@ -64,6 +64,7 @@ class CampingController implements ControllerProviderInterface
             $personnages = \Cungfoo\Model\PersonnageQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEtablissementId($etab->getId())
+                ->orderByAge(\Criteria::ASC)
                 ->limit(3)
                 ->find()
             ;

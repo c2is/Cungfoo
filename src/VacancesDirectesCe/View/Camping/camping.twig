@@ -52,9 +52,9 @@
             </form>
         </div>
         <div class="tabCampDesc">
-            <h3>Le camping Le Petit-Mousse, le paradis de l'eau</h3>
-            <p><strong>364 emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
-            <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+            <h3>{{ etab.title}}</h3>
+            <p><strong>{{ etab.capacite }} emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
+            <p>{{ etab.description }}</p>
         </div>
 
         <div class="temoignFiche bloc gris">
@@ -65,9 +65,9 @@
                     <span class="perso">{{ personnage.prenom | trans }}</span>
                     <span class="age">{{ personnage.age }} ans</span>
                     <ul>
-                        <li>{{ personnage.interet1 }}</li>
-                        <li>{{ personnage.interet2 }}</li>
-                        <li>{{ personnage.interet3 }}</li>
+                        {% for avantage in personnage.avantages %}
+                        <li>{{ avantage.name }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             {% endfor %}
