@@ -1,0 +1,96 @@
+body{background:#f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 0 0;background-size:100% auto;color:@colorGris2;font:12px Arial, sans-serif;min-width:1000px;}
+body.popin{/*background:#fff;*/background-attachment:fixed;min-width:0;}
+header, section, footer {position:relative;}
+.full-width{position:relative;min-width:100%;float:left;z-index:0;}
+.fixed-width{position:relative;width:976px;margin:0 auto;}
+
+/* header */
+#header{width:902px;margin:0 auto;font-family:@ptnarrow;
+  #logo{display:block;float:left;margin-bottom:25px;}
+  #catchline{font-weight:bold;font-size:23px;text-transform:uppercase;text-align:center;margin-top:70px;}
+  #headerRight{float:right;}
+  #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
+    span{font-size:18px;line-height:19px;color:@colorGris2;
+      &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon.png") no-repeat 0px 0px;float:left;margin:5px;}
+      a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
+    }
+  }
+  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:10px;color:#fff;text-decoration:none;margin:15px 0 0 15px;}
+}
+/* specifs home */
+.home #telephone{clear:both;}
+
+/* nav */
+#nav{font:23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
+  ul{top:-7px;}
+  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;.border-radius(7px 7px 0 0);z-index:50;
+    &:hover, &.current{background:@colorFushia;
+      small{color: #fff;}
+      a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+    }
+    &:hover .subnav{display:block;}
+    a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;.verticalCenter(50px);
+      &#home{padding-bottom:4px;}
+      &#home img{width:27px;height:27px;margin:3px 0 0;}
+      small {font-family:Arial, sans-serif;font-weight:bold;font-size:15px;color:@colorFushia;}
+    }
+    .subnav{padding:20px;position:absolute;top:57px;left:0px;width:920px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -2px @colorGris1;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
+      li{padding:0;margin-right:20px;background:none;float:left;width:123px;
+        &:last-child{margin-right:0;}
+        a{position:relative;padding:0;width:123px;height:auto;display:block;
+          span.img-hover{position:absolute;top:0;left:0;border:4px solid @colorBlanc;width:115px;height:79px;display:block;}
+        }
+      }
+    }
+  }
+}
+
+/* lang */
+#lang{width:41px;height:27px;background: url('../../images/vacancesdirectes/dyn/ui/lang-flag-fr.png') no-repeat 0px 0px;border-width:4px 6px;border-style:solid;border-color:#a7a9ac;position:relative;display:inline-block;text-indent:-9999px;float:right;margin-top:19px;
+  &:after{width:12px;height:4px;content:"";background:url('../../images/vacancesdirectes/common/ui/lang-arrow.png') no-repeat 0px 0px;position:absolute;left:50%;bottom:-8px;margin-left:-6px;}
+}
+
+/* generic */
+.left{float:left;}
+.right{float:right;}
+.h1-like, .h2-like, .h3-like, .h4-like, .h5-like, .h6-like{display:block;}
+h1, .h1-like{dismargin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
+h2, .h2-like{color:@colorGris2;font:bold 20px 'Arial', sans-serif;}
+h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
+h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+h5, .h5-like{color:@colorGris1;}
+h6, .h6-like{color:@colorGris1;}
+
+.bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);
+  &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
+  &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
+  &.fushia{background-color:@colorFushia;color:@colorBlanc;}
+  &.trans{background:transparent;padding:0;}
+  &.cfushia{color:@colorFushia;}
+  &.big{padding:5px 10px;}
+  &.small{padding:1px 10px;font-size:12px;.border-radius(10px)}
+}
+
+.pathway{font:11px/28px Arial,sans-serif;color:@colorBgGrisM;text-align:right;
+  li{display:inline;
+    &:last-child a{color:@colorFushia;}
+  }
+  a{text-decoration:none;color:inherit;
+    &:hover{text-decoration:underline;}
+  }
+}
+
+/* structure */
+#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;}
+.popin #wrap{width:646px;padding:0 15px;margin:0 auto;}
+.column{width:928px;margin:0 24px;position:relative;
+  &.left{width:616px;margin:0 0 0 24px;}
+  &.right{width:288px;margin:0 24px 0 0;}
+}
+
+.bloc{clear:both;.border-radius(7px);padding:1px 15px 10px;
+  &.gris{background-color:@colorBgGrisC;}
+  hr{height:0;border:5px solid #fff;margin:15px 0;}
+}
+
+

@@ -1,0 +1,93 @@
+//@import "common.less";
+.ce{
+
+/* COMMON */
+  #nav ul{top:0px;
+    li.tab{height:50px;.border-radius(0);
+      a{margin:0;}
+    }
+    img {position:absolute;}
+    span {margin-left:35px;}
+  }
+  li.tab:hover a:after{content:'';}
+
+
+h1 {margin:10px 0 20px;}
+h1 span {color:@colorBgGrisF;}
+
+#userBox{float:right;
+  span{font-family:@ptnarrow;font-size:20px;font-weight:bold;text-transform:uppercase;display:block;margin-bottom:3px;}
+}
+
+/* structure */
+.column{
+/*.clear>.left{width:468px;margin:0;}
+.clear>.right{width:436px;margin:0;}*/
+  &.left{width:468px;}
+  &.right{width:436px;}
+}
+
+/* HOME */
+.greyBox{background-color:@colorBgGrisC;border-radius:10px;padding:20px;margin:15px 0;position:relative;
+  &#boxLogin{
+    #formLogin{
+      >.left{width:214px;margin:0;}
+      >.right{width:164px;margin-left:50px;}
+      label{font-family:@ptnarrow;font-size:16px;font-weight:bold;margin:0 0 2px 0;display:block;}
+      input{margin:0 0 15px 0;
+        &[type=submit]{margin:22px 0 32px;}
+      }
+    }
+  }
+  &#boxDiscover{
+    table{font-family:@ptnarrow;font-size:16px;font-weight:bold;color:@colorBlanc;width:428px;
+      tr:first-child th{border-bottom:1px solid @colorBorderGris;}
+      th, td{padding:10px 0;text-transform:uppercase;text-align:center;}
+      th{color:@colorGris2;font-size:14px;line-height:13px;
+        span{font-size:11px;}
+        &:first-child{width:96px;border-right:1px solid @colorBorderGris;text-align:left;}
+      }
+      td{width:146px;padding:10px;}
+      .rubric{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:0 10px;.half-border-radius(10px);.verticalCenter(32px,);
+        &.fushia{background-color:@colorRubricFushia;}
+        &.jaune{background-color:@colorRubricJaune;}
+        &.orange{background-color:@colorRubricOrange;}
+        &.vert{background-color:@colorRubricVert;}
+        &.violet{background-color:@colorRubricViolet;}
+      }
+    }
+  }
+  &#boxEdito{position:relative;
+    h2{margin-left: 27px;
+      &:before{content:url('../images/common/ui/edito-icon.png');width:27px;height:27px;position:absolute;left:-27px;top:50%;margin-top:-14px;}
+    }
+    &:before{content:url('../images/common/ui/open-quote.png');width:66px;height:122px;position:absolute;left:-5px;top:10px;margin-top:0px;}
+    &:after{content:url('../images/common/ui/close-quote.png');width:66px;height:122px;position:absolute;right:-5px;bottom:10px;margin-top:0px;}
+  }
+  .stamp{background-color:@colorBgBleu;position:relative;
+    &:before{content:url('../images/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
+    &:after{content:url('../images/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+    h2{color:@colorBlanc;height:40px;line-height:40px;text-align:center;
+    }
+  }
+  h2{font-family:@ptnarrow;font-size:24px;text-transform:uppercase;color:@colorBleu;margin:0 0 20px 0;position:relative;
+    span{color:@colorGris2;}
+  }
+}
+
+.bt.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
+
+/* SEARCH */
+#headerContainer #nav ul{width:858px;margin:0 auto;
+  li.tab{width:186px;margin:0 50px;text-align:center;
+    a{text-decoration:underline;
+      &:hover{text-decoration:none;}
+    }
+    &.current a{text-decoration:none;}
+  }
+}
+
+/* RESULT */
+/* BOOKING */
+
+}

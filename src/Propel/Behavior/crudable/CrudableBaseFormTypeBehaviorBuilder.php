@@ -157,9 +157,7 @@ class {$this->getClassname()} extends AppAwareType
     {
         if (!in_array($column->getName(), array('created_at', 'updated_at')))
         {
-            return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array(
-                'constraints' => $this->addConstraints($column)
-            ), $options));
+            return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array('constraints' => $this->addConstraints($column)), $options));
         }
     }
 
@@ -194,6 +192,10 @@ class {$this->getClassname()} extends AppAwareType
         {
             return 'text';
         }
+        elseif (PropelTypes::LONGVARCHAR === $column->getType())
+        {
+            return 'textarea';
+        }
         elseif (PropelTypes::INTEGER === $column->getType())
         {
             return 'integer';
@@ -218,9 +220,10 @@ class {$this->getClassname()} extends AppAwareType
         {
             return 'cungfoo_file';
         }
-        elseif ('cungfoo_file' === $column->getType())
+        else
         {
-            return 'cungfoo_file';
+            // Custom types
+            return $column->getType();
         }
     }
 
@@ -232,6 +235,9 @@ class {$this->getClassname()} extends AppAwareType
     protected function addBuildForm(&$script)
     {
         $builders = "";
+
+        $fileFields     = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
+        $richtextFields = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext'));
 
         // Manage table columns
         foreach ($this->getTable()->getColumns() as $column)
@@ -255,11 +261,15 @@ class {$this->getClassname()} extends AppAwareType
             else
             {
                 $addDeletedField = false;
-                $typeFileColumns = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
-                if (in_array($column->getName(), $typeFileColumns))
+
+                if (in_array($column->getName(), $fileFields))
                 {
                     $column->setType('cungfoo_file');
                     $addDeletedField = true;
+                }
+                else if (in_array($column->getName(), $richtextFields))
+                {
+                    $column->setType('textrich');
                 }
 
                 $builders .= $this->addBuilderAccordingToColumn($column);
@@ -345,7 +355,7 @@ class {$this->getClassname()} extends AppAwareType
             }
 
             // set default languages
-            $languagesConfiguration = array(locale_get_default());
+            $languagesConfiguration = array('fr');
 
             // get the configuration of the site languages
             $languageFilename = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableLanguagesConf'];

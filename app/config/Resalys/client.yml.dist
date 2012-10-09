@@ -16,3 +16,10 @@ services:
             username: web_fr
             password: web_fr
             flow_name: prix_min
+            nb_products: 9999
+    auth:
+        location: http://preprod.vacances-directes.com/rsl/dwsdl?namespace=webresCustomer
+        default_envelope:
+            base_id:  vacancesdirectes_preprod_v6_6
+            username: web_fr
+            password: DInan22101

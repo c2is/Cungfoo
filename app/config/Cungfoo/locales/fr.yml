@@ -116,12 +116,16 @@ etablissement.zip: Code postal
 etablissement.phone1: Télephone 1
 etablissement.phone2: Télephone 2
 etablissement.minimum.price: Prix minimum
-etablissement.geo.coordinate.y: Coord. Y
-etablissement.geo.coordinate.x: Coord. X
-etablissement.opening.date: Ouverture
-etablissement.closing.date: Fermeture
+etablissement.geo_coordinate_x: Latitude
+etablissement.geo_coordinate_y: Longitude
 etablissement.opening_date: Ouverture
 etablissement.closing_date: Fermeture
+etablissement.minimum_price: Prix 'à partir de'
+etablissement.video_path: Vidéo
+etablissement.image_360_path: Visite 360
+etablissement.description: Description
+etablissement.capacite: Capacité
+etablissement.title: Titre
 
 list.actions: Actions
 

@@ -1,85 +1,85 @@
 \Cungfoo\Model\ThematiqueI18n:
-    8_de:
-        Id: 8
+    1_de:
+        Id: 1
         Locale: de
         Name: 'Nouveautés 2012'
-    8_en:
-        Id: 8
+    1_en:
+        Id: 1
         Locale: en
         Name: 'Nouveautés 2012'
-    8_fr:
-        Id: 8
+    1_fr:
+        Id: 1
         Locale: fr
         Name: 'Nouveautés 2012'
-    9_de:
-        Id: 9
+    2_de:
+        Id: 2
         Locale: de
         Name: 'Parcs aquatiques'
-    9_en:
-        Id: 9
+    2_en:
+        Id: 2
         Locale: en
         Name: 'Parcs aquatiques'
-    9_fr:
-        Id: 9
+    2_fr:
+        Id: 2
         Locale: fr
         Name: 'Parcs aquatiques'
-    10_de:
-        Id: 10
+    3_de:
+        Id: 3
         Locale: de
         Name: 'Pieds dans l''eau'
-    10_en:
-        Id: 10
+    3_en:
+        Id: 3
         Locale: en
         Name: 'Pieds dans l''eau'
-    10_fr:
-        Id: 10
+    3_fr:
+        Id: 3
         Locale: fr
         Name: 'Pieds dans l''eau'
-    11_de:
-        Id: 11
+    4_de:
+        Id: 4
         Locale: de
         Name: 'Vacances farniente'
-    11_en:
-        Id: 11
+    4_en:
+        Id: 4
         Locale: en
         Name: 'Vacances farniente'
-    11_fr:
-        Id: 11
+    4_fr:
+        Id: 4
         Locale: fr
         Name: 'Vacances farniente'
-    12_de:
-        Id: 12
+    5_de:
+        Id: 5
         Locale: de
         Name: 'Vacances club'
-    12_en:
-        Id: 12
+    5_en:
+        Id: 5
         Locale: en
         Name: 'Vacances club'
-    12_fr:
-        Id: 12
+    5_fr:
+        Id: 5
         Locale: fr
         Name: 'Vacances club'
-    13_de:
-        Id: 13
+    6_de:
+        Id: 6
         Locale: de
         Name: 'Vacances sensations'
-    13_en:
-        Id: 13
+    6_en:
+        Id: 6
         Locale: en
         Name: 'Vacances sensations'
-    13_fr:
-        Id: 13
+    6_fr:
+        Id: 6
         Locale: fr
         Name: 'Vacances sensations'
-    14_de:
-        Id: 14
+    7_de:
+        Id: 7
         Locale: de
         Name: 'Vacances découverte'
-    14_en:
-        Id: 14
+    7_en:
+        Id: 7
         Locale: en
         Name: 'Vacances découverte'
-    14_fr:
-        Id: 14
+    7_fr:
+        Id: 7
         Locale: fr
         Name: 'Vacances découverte'
