@@ -166,7 +166,7 @@
     </form>
 
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -178,7 +178,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -190,7 +190,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -202,7 +202,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -214,7 +214,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -225,7 +225,6 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-
 
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
@@ -277,6 +276,35 @@
             </ul></dd>
         </dl>
     </div>
+
+    <div class="temoignFiche bloc gris">
+        <h3>Vous aimerez</h3>
+        <h4>comme...</h4>
+        <div>
+            <div class="temoignFicheIt fish">
+                <span class="perso">Amélie</span>
+                <span class="age">10 ans</span>
+            </div>
+        </div>
+        <div class="slider"><div class="slide">
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+        </div></div>
+    </div>
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
@@ -285,7 +313,46 @@
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
     <h3>Tab A proximité</h3>
-        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+      var Lyon = new google.maps.LatLng(45.764544,4.846512);
+      var parliament = new google.maps.LatLng(45.764544,4.846512);
+      var marker;
+      var map;
+
+      function initialize() {
+          var mapOptions = {
+              zoom: 13,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              center: Lyon
+          };
+
+          map = new google.maps.Map(document.getElementById('map_canvas'),
+                  mapOptions);
+
+          marker = new google.maps.Marker({
+              map:map,
+              draggable:true,
+              animation: google.maps.Animation.DROP,
+              position: parliament
+          });
+          google.maps.event.addListener(marker, 'click', toggleBounce);
+      }
+
+      function toggleBounce() {
+
+          if (marker.getAnimation() != null) {
+              marker.setAnimation(null);
+          } else {
+              marker.setAnimation(google.maps.Animation.BOUNCE);
+          }
+      }
+    </script>
+
+    <div id="map_canvas" style="width:616px;height:326px;"><!-- map --></div>
+
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">Infos pratiques</button>

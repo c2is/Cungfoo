@@ -1,72 +1,69 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
-var oWindow = $('windows'),
-    oHtml = $('html'),
-    oBody = $('body'),
-    scrollElem = $('html', 'body');
-
-
-$(function() { //domReady
+/*--  DOMREADY  --*/
+$(function() {
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
-    if(/mobile/i.test(navigator.userAgent) && !location.hash){
+    if (/mobile/i.test(navigator.userAgent) && !location.hash) {
         window.scrollTo(0, 1);
     }
-	
-// Test log exe front.js
-    consoleLog('Execution front.js : ok');
 
 // Test html5 form capacties andif do polyfills
-    if(!Modernizr.input.placeholder){ polyfillPlaceholder(); } // html5 placeholder
+    if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 // Gestion du click sur le parent
-    if($('.linkParent').length > 0) { addLinkBlock(); }
+    if ($('.linkParent').length > 0) { addLinkBlock(); }
+
 // init Sliders
-    if( $('.slider').length > 0 ){ slider(); }
+    if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
+    if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
+
 // init tabs navigation
-    if( $('.tabControls').length > 0){
+    if ($('.tabControls').length > 0) {
         var oHash = window.location.hash,
             oTabControls = $('.tabControls'),
             oTabs = $('.tabs'),
             oTabLink = oTabControls.find('a'),
             tView = oTabControls.find('a.active').attr('href');
         oTabs.hide().css({'visibility':'visible'});
-        if( oHash != '' ){
-            consoleLog(oHash);
-            setTimeout(function(){
+        if (oHash != '') {
+            setTimeout( function(){
                 $('.tabControls').find('[href='+oHash+']').trigger('click');
+
             }, 0);
-        }else{
-            tabs(tView);
+        } else {
+            tabs(tView, false);
         }
-        oTabLink.click( function(e){
+        oTabLink.click( function(e) {
             var tTabs = $(this),
                 tView = $(this).attr('href');
             oTabLink.removeClass('active');
             tTabs.addClass('active');
-            tabs(tView);
+            tabs(tView, true);
             var targetOffset = $('.tabControls').offset().top;
-            consoleLog(targetOffset);
+            //consoleLog(targetOffset);
             $('html, body').animate({scrollTop: targetOffset},400);
             e.preventDefault();
         });
     }
+
 // triggerClick
-    $('.triggerClick').click( function(){
+    $('.triggerClick').click( function() {
         var oTarget = $(this).attr('data-triggerLink');
         var targetOffset = $(oTarget).offset().top;
         $('.tabControls').find('[href='+oTarget+']').trigger('click');
-        $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
+
 // scroll to anchor
-    $('.goto').click(function(e){
+    $('.goto').click(function(e) {
         e.preventDefault();
         var oAnchor = this.hash;
         var targetOffset = $(oAnchor).offset().top;
-        consoleLog(targetOffset);
+        //consoleLog(targetOffset);
         $('html, body').animate({scrollTop: targetOffset},400);
         return false;
     });
+
 // popins
     $(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
@@ -75,72 +72,103 @@ $(function() { //domReady
 
 });
 
-function slider(){
-    var slider = $('.slider');
-    slider.each( function(){
-        slider = $(this);
-        var btLeft = '<button class="prev">&lt;</button>',
-            btRight = '<button class="next">&gt;</button>',
-            btns = btLeft + btRight;
-        $(this).append(btns);
-        $('.slide').carouFredSel({
-            circular: true,
-            infinite: true,
-            prev:{
-                button: function(){
-                    return $(this).parents('.slider').find('.prev');
-                }
-            },
-            next:{
-                button: function(){
-                    return $(this).parents('.slider').find('.next');
-                }
-            },
-            items: {
-                filter: 'img'
-            },
-            auto: false/*,
-            scroll: {
-                //fx: 'crossfade'
-            }*/
-        });
-        $('[name="affPhoto"]').change( function(){
-            var nVal = $(this).val();
-            if( nVal == "all"){
-                slider.find('img').not(':visible').fadeIn();
-                slider.find('.slide').trigger("configuration",["items.filter","img:visible"]);
-            }else{
-                slider.find('.'+nVal).fadeIn();
-                slider.find('img').not('.'+nVal).hide();
-                slider.find('.slide').trigger("configuration",["items.filter","img:visible"]);
+
+
+/*--  FUNCTIONS  --*/
+function sliderPict() {
+    var slider = $('.tabCampDiapo').find('.slider'),
+        btLeft = '<button class="prev">&lt;</button>',
+        btRight = '<button class="next">&gt;</button>',
+        btns = btLeft + btRight;
+        slider.append(btns);
+
+    $('.slide', slider).carouFredSel({
+        circular: true,
+        infinite: true,
+        prev:{
+            button: function() {
+                return $(this).parents('.slider').find('.prev');
             }
-        });
-        slider.find('img').each(function(){
-            var tip = $(this).attr("title");
-            $(this).hover( function(){
-               $(this).attr('title', '');
-               $('<div id="littleTIP">'+tip+'</div>').appendTo(slider);
-           }, function(){
-               $('#littleTIP').remove();
-               $(this).attr('title', tip);
+        },
+        next:{
+            button: function() {
+                return $(this).parents('.slider').find('.next');
+            }
+        },
+        auto: false
+    });
+    $('[name="affPhoto"]').change( function() {
+        var nVal = $(this).val();
+        if (nVal == "all") {
+            slider.find('img').not(':visible').fadeIn();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        } else {
+            slider.find('.'+nVal).fadeIn();
+            slider.find('img').not('.'+nVal).hide();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        }
+    });
+    slider.find('img').each(function() {
+        var tip = $(this).attr("title");
+        $(this).hover( function() {
+           $(this).attr('title', '');
+           $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
+        }, function() {
+           $('#littleTIP').fadeOut(function(){
+              $(this).remove();
            });
+           $(this).attr('title', tip);
         });
     });
 }
-function tabs(tView){
-    var sView = tView.split('#')[1];
-    if( sView == 'tabCamp' || sView == 'tabLocations' ){
-        $('.tabCampDiapo').slideDown();
-        if( sView == 'tabLocations' ){
+
+function sliderActivite() {
+    var slider = $('#tabSurplace').find('.slider'),
+        btLeft = '<button class="prev">&lt;</button>',
+        btRight = '<button class="next">&gt;</button>',
+        btns = btLeft + btRight;
+    slider.after(btns);
+
+    $('.slide', slider).carouFredSel({
+        circular: false,
+        infinite: false,
+        prev:{
+            button: function() {
+                return $(this).parents('.temoignFiche').find('.prev');
+            }
+        },
+        scroll: 1,
+        next:{
+            button: function() {
+                return $(this).parents('.temoignFiche').find('.next');
+            }
+        },
+        auto: false
+    });
+}
+
+function tabs(tView, load) {
+    var sView = tView.split('#')[1],
+        slider = $('.tabCampDiapo');
+    consoleLog(load);
+    if (sView == 'tabCamp' || sView == 'tabLocations') {
+        if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
-        }else{
+        } else {
             $('[name="affPhoto"][value="all"]').parent('label').trigger('click');
         }
-    }else{
-        $('.tabCampDiapo').slideUp();
+        slider.slideDown();
+
+        if (!load)
+            $('html, body').animate({scrollTop: 0},0);
+    } else if (sView == 'tabProximite' || sView == 'tabInfos') {
+        slider.slideUp();
+        if ($('#map_canvas').empty())
+            initialize();
+    } else {
+        slider.slideUp();
     }
-    $('.tabs').slideUp();
-    $(tView).slideDown();
+    $(tView).slideDown().siblings('.tabs').slideUp();
 }
 
 
