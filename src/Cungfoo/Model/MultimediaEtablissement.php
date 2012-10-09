@@ -30,7 +30,7 @@ class MultimediaEtablissement extends BaseMultimediaEtablissement
 
         foreach($tags as $tag)
         {
-            $arrayNames[] = $tag->getName();
+            $arrayNames[] = $tag->getSlug();
         }
 
         $names = implode(" ", $arrayNames);
