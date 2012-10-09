@@ -2584,4 +2584,17 @@ abstract class BaseEtablissementQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'EtablissementI18n', 'Cungfoo\Model\EtablissementI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->filterByName($term, \Criteria::LIKE)
+            ->_or()
+            ->filterByTitle($term, \Criteria::LIKE)
+        ;
+    }
 }

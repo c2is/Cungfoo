@@ -4,6 +4,7 @@ require_once dirname(__FILE__) . '/CrudableBaseFormTypeBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableFormTypeBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableBaseListingBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableListingBehaviorBuilder.php';
+require_once dirname(__FILE__) . '/CrudableBehaviorQueryBuilderModifier.php';
 
 class CrudableBehavior extends Behavior
 {
@@ -22,6 +23,8 @@ class CrudableBehavior extends Behavior
         'CrudableBaseListingBehaviorBuilder',
         'CrudableListingBehaviorBuilder',
     );
+
+    protected $queryBuilderModifier;
 
     public function crudTypeFileExists()
     {
@@ -147,5 +150,15 @@ public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
     }
 }
 ";
+    }
+
+    public function getQueryBuilderModifier()
+    {
+        if (is_null($this->queryBuilderModifier))
+        {
+            $this->queryBuilderModifier = new CrudableBehaviorQueryBuilderModifier($this);
+        }
+
+        return $this->queryBuilderModifier;
     }
 }

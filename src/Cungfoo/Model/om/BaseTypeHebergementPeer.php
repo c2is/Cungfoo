@@ -73,13 +73,6 @@ abstract class BaseTypeHebergementPeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -1025,6 +1018,13 @@ abstract class BaseTypeHebergementPeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BaseTypeHebergementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

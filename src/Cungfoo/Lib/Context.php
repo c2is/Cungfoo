@@ -107,6 +107,12 @@ class Context
                     ->$filterMethod(null)
                 ;
             }
+            else if ($value && method_exists($queryContextualized, $filterMethod = sprintf('filterBy%s', ucfirst($name))))
+            {
+                $queryContextualized
+                    ->$filterMethod($value)
+                ;
+            }
             else if ($name == 'language' && $value && method_exists($query, $useMethod = 'useI18nQuery'))
             {
                 $queryContextualized
@@ -131,11 +137,15 @@ class Context
         {
             if (method_exists($query, sprintf('filterBy%sId', ucfirst($name))))
             {
-                $allowedContext[] = $name;
+                $allowedContext[$name] = $name;
+            }
+            else if (method_exists($query, sprintf('filterBy%s', ucfirst($name))))
+            {
+                $allowedContext[$name] = $name;
             }
             else if (method_exists($query, 'useI18nQuery'))
             {
-                $allowedContext[] = 'language';
+                $allowedContext['language'] = 'language';
             }
         }
 

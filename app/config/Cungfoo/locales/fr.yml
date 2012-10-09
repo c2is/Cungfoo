@@ -29,6 +29,7 @@ job.logs.message: Message
 job.logs.date: Date
 
 context.language: Langue
+context.term: Terme
 context.validate: Valider
 
 crud.button.add: Ajouter

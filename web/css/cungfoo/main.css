@@ -8,6 +8,10 @@
     margin: 0 14px 0 0;
     width: auto;
 }
+#context-selector input {
+    margin: 0 14px 0 0;
+    width: auto;
+}
 #context-selector input.btn {
     margin: 0;
 }

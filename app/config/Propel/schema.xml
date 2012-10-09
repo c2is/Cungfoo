@@ -94,6 +94,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
+            <parameter name="crud_search" value="name, title" />
         </behavior>
     </table>
 
