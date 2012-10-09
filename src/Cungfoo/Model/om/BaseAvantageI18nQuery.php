@@ -12,73 +12,77 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Personnage;
-use Cungfoo\Model\PersonnageI18n;
-use Cungfoo\Model\PersonnageI18nPeer;
-use Cungfoo\Model\PersonnageI18nQuery;
+use Cungfoo\Model\Avantage;
+use Cungfoo\Model\AvantageI18n;
+use Cungfoo\Model\AvantageI18nPeer;
+use Cungfoo\Model\AvantageI18nQuery;
 
 /**
- * Base class that represents a query for the 'personnage_i18n' table.
+ * Base class that represents a query for the 'avantage_i18n' table.
  *
  *
  *
- * @method PersonnageI18nQuery orderById($order = Criteria::ASC) Order by the id column
- * @method PersonnageI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
- * @method PersonnageI18nQuery orderByPrenom($order = Criteria::ASC) Order by the prenom column
+ * @method AvantageI18nQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method AvantageI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
+ * @method AvantageI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method AvantageI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
- * @method PersonnageI18nQuery groupById() Group by the id column
- * @method PersonnageI18nQuery groupByLocale() Group by the locale column
- * @method PersonnageI18nQuery groupByPrenom() Group by the prenom column
+ * @method AvantageI18nQuery groupById() Group by the id column
+ * @method AvantageI18nQuery groupByLocale() Group by the locale column
+ * @method AvantageI18nQuery groupByName() Group by the name column
+ * @method AvantageI18nQuery groupByDescription() Group by the description column
  *
- * @method PersonnageI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method PersonnageI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method PersonnageI18nQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method AvantageI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method AvantageI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method AvantageI18nQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method PersonnageI18nQuery leftJoinPersonnage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Personnage relation
- * @method PersonnageI18nQuery rightJoinPersonnage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Personnage relation
- * @method PersonnageI18nQuery innerJoinPersonnage($relationAlias = null) Adds a INNER JOIN clause to the query using the Personnage relation
+ * @method AvantageI18nQuery leftJoinAvantage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Avantage relation
+ * @method AvantageI18nQuery rightJoinAvantage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Avantage relation
+ * @method AvantageI18nQuery innerJoinAvantage($relationAlias = null) Adds a INNER JOIN clause to the query using the Avantage relation
  *
- * @method PersonnageI18n findOne(PropelPDO $con = null) Return the first PersonnageI18n matching the query
- * @method PersonnageI18n findOneOrCreate(PropelPDO $con = null) Return the first PersonnageI18n matching the query, or a new PersonnageI18n object populated from the query conditions when no match is found
+ * @method AvantageI18n findOne(PropelPDO $con = null) Return the first AvantageI18n matching the query
+ * @method AvantageI18n findOneOrCreate(PropelPDO $con = null) Return the first AvantageI18n matching the query, or a new AvantageI18n object populated from the query conditions when no match is found
  *
- * @method PersonnageI18n findOneById(int $id) Return the first PersonnageI18n filtered by the id column
- * @method PersonnageI18n findOneByLocale(string $locale) Return the first PersonnageI18n filtered by the locale column
- * @method PersonnageI18n findOneByPrenom(string $prenom) Return the first PersonnageI18n filtered by the prenom column
+ * @method AvantageI18n findOneById(int $id) Return the first AvantageI18n filtered by the id column
+ * @method AvantageI18n findOneByLocale(string $locale) Return the first AvantageI18n filtered by the locale column
+ * @method AvantageI18n findOneByName(string $name) Return the first AvantageI18n filtered by the name column
+ * @method AvantageI18n findOneByDescription(string $description) Return the first AvantageI18n filtered by the description column
  *
- * @method array findById(int $id) Return PersonnageI18n objects filtered by the id column
- * @method array findByLocale(string $locale) Return PersonnageI18n objects filtered by the locale column
- * @method array findByPrenom(string $prenom) Return PersonnageI18n objects filtered by the prenom column
+ * @method array findById(int $id) Return AvantageI18n objects filtered by the id column
+ * @method array findByLocale(string $locale) Return AvantageI18n objects filtered by the locale column
+ * @method array findByName(string $name) Return AvantageI18n objects filtered by the name column
+ * @method array findByDescription(string $description) Return AvantageI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BasePersonnageI18nQuery extends ModelCriteria
+abstract class BaseAvantageI18nQuery extends ModelCriteria
 {
     /**
-     * Initializes internal state of BasePersonnageI18nQuery object.
+     * Initializes internal state of BaseAvantageI18nQuery object.
      *
      * @param     string $dbName The dabase name
      * @param     string $modelName The phpName of a model, e.g. 'Book'
      * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
      */
-    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\PersonnageI18n', $modelAlias = null)
+    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\AvantageI18n', $modelAlias = null)
     {
         parent::__construct($dbName, $modelName, $modelAlias);
     }
 
     /**
-     * Returns a new PersonnageI18nQuery object.
+     * Returns a new AvantageI18nQuery object.
      *
      * @param     string $modelAlias The alias of a model in the query
-     * @param     PersonnageI18nQuery|Criteria $criteria Optional Criteria to build the query from
+     * @param     AvantageI18nQuery|Criteria $criteria Optional Criteria to build the query from
      *
-     * @return PersonnageI18nQuery
+     * @return AvantageI18nQuery
      */
     public static function create($modelAlias = null, $criteria = null)
     {
-        if ($criteria instanceof PersonnageI18nQuery) {
+        if ($criteria instanceof AvantageI18nQuery) {
             return $criteria;
         }
-        $query = new PersonnageI18nQuery();
+        $query = new AvantageI18nQuery();
         if (null !== $modelAlias) {
             $query->setModelAlias($modelAlias);
         }
@@ -102,19 +106,19 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
                          A Primary key composition: [$id, $locale]
      * @param     PropelPDO $con an optional connection object
      *
-     * @return   PersonnageI18n|PersonnageI18n[]|mixed the result, formatted by the current formatter
+     * @return   AvantageI18n|AvantageI18n[]|mixed the result, formatted by the current formatter
      */
     public function findPk($key, $con = null)
     {
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = PersonnageI18nPeer::getInstanceFromPool(serialize(array((string) $key[0], (string) $key[1]))))) && !$this->formatter) {
+        if ((null !== ($obj = AvantageI18nPeer::getInstanceFromPool(serialize(array((string) $key[0], (string) $key[1]))))) && !$this->formatter) {
             // the object is alredy in the instance pool
             return $obj;
         }
         if ($con === null) {
-            $con = Propel::getConnection(PersonnageI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(AvantageI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         $this->basePreSelect($con);
         if ($this->formatter || $this->modelAlias || $this->with || $this->select
@@ -133,12 +137,12 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return   PersonnageI18n A model object, or null if the key is not found
+     * @return   AvantageI18n A model object, or null if the key is not found
      * @throws   PropelException
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `PRENOM` FROM `personnage_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION` FROM `avantage_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -150,9 +154,9 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
         }
         $obj = null;
         if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $obj = new PersonnageI18n();
+            $obj = new AvantageI18n();
             $obj->hydrate($row);
-            PersonnageI18nPeer::addInstanceToPool($obj, serialize(array((string) $key[0], (string) $key[1])));
+            AvantageI18nPeer::addInstanceToPool($obj, serialize(array((string) $key[0], (string) $key[1])));
         }
         $stmt->closeCursor();
 
@@ -165,7 +169,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return PersonnageI18n|PersonnageI18n[]|mixed the result, formatted by the current formatter
+     * @return AvantageI18n|AvantageI18n[]|mixed the result, formatted by the current formatter
      */
     protected function findPkComplex($key, $con)
     {
@@ -186,7 +190,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      * @param     array $keys Primary keys to use for the query
      * @param     PropelPDO $con an optional connection object
      *
-     * @return PropelObjectCollection|PersonnageI18n[]|mixed the list of results, formatted by the current formatter
+     * @return PropelObjectCollection|AvantageI18n[]|mixed the list of results, formatted by the current formatter
      */
     public function findPks($keys, $con = null)
     {
@@ -207,12 +211,12 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      *
      * @param     mixed $key Primary key to use for the query
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
     public function filterByPrimaryKey($key)
     {
-        $this->addUsingAlias(PersonnageI18nPeer::ID, $key[0], Criteria::EQUAL);
-        $this->addUsingAlias(PersonnageI18nPeer::LOCALE, $key[1], Criteria::EQUAL);
+        $this->addUsingAlias(AvantageI18nPeer::ID, $key[0], Criteria::EQUAL);
+        $this->addUsingAlias(AvantageI18nPeer::LOCALE, $key[1], Criteria::EQUAL);
 
         return $this;
     }
@@ -222,7 +226,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      *
      * @param     array $keys The list of primary key to use for the query
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
     public function filterByPrimaryKeys($keys)
     {
@@ -230,8 +234,8 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
             return $this->add(null, '1<>1', Criteria::CUSTOM);
         }
         foreach ($keys as $key) {
-            $cton0 = $this->getNewCriterion(PersonnageI18nPeer::ID, $key[0], Criteria::EQUAL);
-            $cton1 = $this->getNewCriterion(PersonnageI18nPeer::LOCALE, $key[1], Criteria::EQUAL);
+            $cton0 = $this->getNewCriterion(AvantageI18nPeer::ID, $key[0], Criteria::EQUAL);
+            $cton1 = $this->getNewCriterion(AvantageI18nPeer::LOCALE, $key[1], Criteria::EQUAL);
             $cton0->addAnd($cton1);
             $this->addOr($cton0);
         }
@@ -249,7 +253,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      * $query->filterById(array('min' => 12)); // WHERE id > 12
      * </code>
      *
-     * @see       filterByPersonnage()
+     * @see       filterByAvantage()
      *
      * @param     mixed $id The value to use as filter.
      *              Use scalar values for equality.
@@ -257,7 +261,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
@@ -265,7 +269,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
             $comparison = Criteria::IN;
         }
 
-        return $this->addUsingAlias(PersonnageI18nPeer::ID, $id, $comparison);
+        return $this->addUsingAlias(AvantageI18nPeer::ID, $id, $comparison);
     }
 
     /**
@@ -281,7 +285,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
     public function filterByLocale($locale = null, $comparison = null)
     {
@@ -294,76 +298,105 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PersonnageI18nPeer::LOCALE, $locale, $comparison);
+        return $this->addUsingAlias(AvantageI18nPeer::LOCALE, $locale, $comparison);
     }
 
     /**
-     * Filter the query on the prenom column
+     * Filter the query on the name column
      *
      * Example usage:
      * <code>
-     * $query->filterByPrenom('fooValue');   // WHERE prenom = 'fooValue'
-     * $query->filterByPrenom('%fooValue%'); // WHERE prenom LIKE '%fooValue%'
+     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
+     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $prenom The value to use as filter.
+     * @param     string $name The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
-    public function filterByPrenom($prenom = null, $comparison = null)
+    public function filterByName($name = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($prenom)) {
+            if (is_array($name)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prenom)) {
-                $prenom = str_replace('*', '%', $prenom);
+            } elseif (preg_match('/[\%\*]/', $name)) {
+                $name = str_replace('*', '%', $name);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(PersonnageI18nPeer::PRENOM, $prenom, $comparison);
+        return $this->addUsingAlias(AvantageI18nPeer::NAME, $name, $comparison);
     }
 
     /**
-     * Filter the query by a related Personnage object
+     * Filter the query on the description column
      *
-     * @param   Personnage|PropelObjectCollection $personnage The related object(s) to use as filter
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return   PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(AvantageI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query by a related Avantage object
+     *
+     * @param   Avantage|PropelObjectCollection $avantage The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   AvantageI18nQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByPersonnage($personnage, $comparison = null)
+    public function filterByAvantage($avantage, $comparison = null)
     {
-        if ($personnage instanceof Personnage) {
+        if ($avantage instanceof Avantage) {
             return $this
-                ->addUsingAlias(PersonnageI18nPeer::ID, $personnage->getId(), $comparison);
-        } elseif ($personnage instanceof PropelObjectCollection) {
+                ->addUsingAlias(AvantageI18nPeer::ID, $avantage->getId(), $comparison);
+        } elseif ($avantage instanceof PropelObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(PersonnageI18nPeer::ID, $personnage->toKeyValue('PrimaryKey', 'Id'), $comparison);
+                ->addUsingAlias(AvantageI18nPeer::ID, $avantage->toKeyValue('PrimaryKey', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByPersonnage() only accepts arguments of type Personnage or PropelCollection');
+            throw new PropelException('filterByAvantage() only accepts arguments of type Avantage or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the Personnage relation
+     * Adds a JOIN clause to the query using the Avantage relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
-    public function joinPersonnage($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function joinAvantage($relationAlias = null, $joinType = 'LEFT JOIN')
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Personnage');
+        $relationMap = $tableMap->getRelation('Avantage');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -378,14 +411,14 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'Personnage');
+            $this->addJoinObject($join, 'Avantage');
         }
 
         return $this;
     }
 
     /**
-     * Use the Personnage relation Personnage object
+     * Use the Avantage relation Avantage object
      *
      * @see       useQuery()
      *
@@ -393,27 +426,27 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\PersonnageQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\AvantageQuery A secondary query class using the current class as primary query
      */
-    public function usePersonnageQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function useAvantageQuery($relationAlias = null, $joinType = 'LEFT JOIN')
     {
         return $this
-            ->joinPersonnage($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Personnage', '\Cungfoo\Model\PersonnageQuery');
+            ->joinAvantage($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Avantage', '\Cungfoo\Model\AvantageQuery');
     }
 
     /**
      * Exclude object from result
      *
-     * @param   PersonnageI18n $personnageI18n Object to remove from the list of results
+     * @param   AvantageI18n $avantageI18n Object to remove from the list of results
      *
-     * @return PersonnageI18nQuery The current query, for fluid interface
+     * @return AvantageI18nQuery The current query, for fluid interface
      */
-    public function prune($personnageI18n = null)
+    public function prune($avantageI18n = null)
     {
-        if ($personnageI18n) {
-            $this->addCond('pruneCond0', $this->getAliasedColName(PersonnageI18nPeer::ID), $personnageI18n->getId(), Criteria::NOT_EQUAL);
-            $this->addCond('pruneCond1', $this->getAliasedColName(PersonnageI18nPeer::LOCALE), $personnageI18n->getLocale(), Criteria::NOT_EQUAL);
+        if ($avantageI18n) {
+            $this->addCond('pruneCond0', $this->getAliasedColName(AvantageI18nPeer::ID), $avantageI18n->getId(), Criteria::NOT_EQUAL);
+            $this->addCond('pruneCond1', $this->getAliasedColName(AvantageI18nPeer::LOCALE), $avantageI18n->getLocale(), Criteria::NOT_EQUAL);
             $this->combine(array('pruneCond0', 'pruneCond1'), Criteria::LOGICAL_OR);
         }
 

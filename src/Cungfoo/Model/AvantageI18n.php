@@ -2,11 +2,11 @@
 
 namespace Cungfoo\Model;
 
-use Cungfoo\Model\om\BasePersonnage;
+use Cungfoo\Model\om\BaseAvantageI18n;
 
 
 /**
- * Skeleton subclass for representing a row from the 'personnage' table.
+ * Skeleton subclass for representing a row from the 'avantage_i18n' table.
  *
  *
  *
@@ -16,10 +16,6 @@ use Cungfoo\Model\om\BasePersonnage;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class Personnage extends BasePersonnage
+class AvantageI18n extends BaseAvantageI18n
 {
-    public function __toString()
-    {
-        return $this->getPrenom();
-    }
 }

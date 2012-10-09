@@ -161,6 +161,7 @@ menu.poi: POI
 menu.event: Evènement
 menu.cms: Cms
 menu.personnages: Personnages
+menu.avantages: Avantages
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -283,9 +284,17 @@ personnage.etablissement: Etablissement
 personnage.age: Age
 personnage.prenom: Prénom
 personnage.image_path: Image
-personnage.interet_1: Intéret 1
-personnage.interet_2: Intéret 2
-personnage.interet_3: Intéret 3
+
+avantage.crud.create: Création d'un avantage
+avantage.crud.list: Liste des avantages
+avantage.crud.update: Mettre à jour l'avantage %name%
+avantage.crud.view: Détails de l'avantage %name%
+avantage.id: Id
+avantage.personnage: Personnage
+avantage.name: Titre
+avantage.description: Description
+avantage.image_path: Image
+avantage.image_path_deleted: Supprimer l'image ?
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média

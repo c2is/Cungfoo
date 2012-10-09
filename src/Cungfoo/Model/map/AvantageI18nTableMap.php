@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'personnage_i18n' table.
+ * This class defines the structure of the 'avantage_i18n' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class PersonnageI18nTableMap extends TableMap
+class AvantageI18nTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.PersonnageI18nTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.AvantageI18nTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,15 +36,16 @@ class PersonnageI18nTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('personnage_i18n');
-        $this->setPhpName('PersonnageI18n');
-        $this->setClassname('Cungfoo\\Model\\PersonnageI18n');
+        $this->setName('avantage_i18n');
+        $this->setPhpName('AvantageI18n');
+        $this->setClassname('Cungfoo\\Model\\AvantageI18n');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'personnage', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'avantage', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('PRENOM', 'Prenom', 'VARCHAR', true, 255, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', true, null, null);
         // validators
     } // initialize()
 
@@ -53,7 +54,7 @@ class PersonnageI18nTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('Avantage', 'Cungfoo\\Model\\Avantage', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
-} // PersonnageI18nTableMap
+} // AvantageI18nTableMap
