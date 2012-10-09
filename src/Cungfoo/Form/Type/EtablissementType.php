@@ -3,6 +3,8 @@
 namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\Form\FormView,
+    Symfony\Component\Form\FormInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
 use Cungfoo\Form\Type\Base\BaseEtablissementType;
@@ -29,4 +31,50 @@ class EtablissementType extends BaseEtablissementType
         //;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->setAttribute('groups',
+            array(
+                array(
+                    'title'         => 'etablissement.group.resalys',
+                    'description'   => 'Données récupérer de resalys',
+                    'content'       => array(
+                        'id',
+                        'code',
+                        'name',
+                        'title',
+                        'address1',
+                        'address2',
+                        'zip',
+                        'city',
+                        'mail',
+                        'country_code',
+                        'phone1',
+                        'phone2',
+                        'fax',
+                        'opening_date',
+                        'closing_date',
+                        'ville',
+                        'categorie',
+                        'minimum_price',
+                        'capacite'
+                    )
+                ),
+                array(
+                    'title'         => 'etablissement.group.cms',
+                    'description'   => 'Données CMS',
+                    'content'       => array(
+                        'geo_coordinate_x',
+                        'geo_coordinate_y',
+                        'video_path',
+                        'image_360_path',
+                        'description',
+                    )
+                ),
+            )
+        );
+    }
 } // EtablissementType
