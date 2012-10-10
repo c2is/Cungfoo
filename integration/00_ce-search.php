@@ -26,7 +26,16 @@ include('includes/ce-top.php'); ?>
 
     <!-- colonne pleine largeur -->
     <div id="searchContainer" class="column clearboth">
-
+        <div id="searchPrincipal" class="searchBox">
+            <label>Du</label><input class="date" type="text" name="datepicker-principal-arrival" id="datepicker-principal-arrival" />
+            <label>Au</label><input class="date" type="text" name="datepicker-principal-departure" id="datepicker-principal-departure" />
+        </div>
+        <div id="datepickerPrincipal" class="datepicker clear"></div>
+        <div id="searchSecondary" class="searchBox">
+            <label>Du</label><input class="date" type="text" name="datepicker-secondary-arrival" id="datepicker-secondary-arrival" />
+            <label>Au</label><input class="date" type="text" name="datepicker-secondary-departure" id="datepicker-secondary-departure" />
+        </div>
+        <div id="datepickerSecondary" class="datepicker clear"></div>
     </div>
     <!-- colonne pleine largeur -->
 
