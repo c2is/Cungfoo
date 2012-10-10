@@ -71,27 +71,6 @@ class BasePersonnageType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'interet_1' => array(
-                    'required' => false,
-                    'label' => 'personnage.interet_1',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'interet_2' => array(
-                    'required' => false,
-                    'label' => 'personnage.interet_2',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'interet_3' => array(
-                    'required' => false,
-                    'label' => 'personnage.interet_3',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
             ),
             'required' => false,
         ));

@@ -37,13 +37,13 @@ abstract class BasePersonnageI18nPeer
     const TM_CLASS = 'PersonnageI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the ID field */
     const ID = 'personnage_i18n.ID';
@@ -53,15 +53,6 @@ abstract class BasePersonnageI18nPeer
 
     /** the column name for the PRENOM field */
     const PRENOM = 'personnage_i18n.PRENOM';
-
-    /** the column name for the INTERET_1 field */
-    const INTERET_1 = 'personnage_i18n.INTERET_1';
-
-    /** the column name for the INTERET_2 field */
-    const INTERET_2 = 'personnage_i18n.INTERET_2';
-
-    /** the column name for the INTERET_3 field */
-    const INTERET_3 = 'personnage_i18n.INTERET_3';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +73,12 @@ abstract class BasePersonnageI18nPeer
      * e.g. PersonnageI18nPeer::$fieldNames[PersonnageI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Prenom', 'Interet1', 'Interet2', 'Interet3', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'prenom', 'interet1', 'interet2', 'interet3', ),
-        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID, PersonnageI18nPeer::LOCALE, PersonnageI18nPeer::PRENOM, PersonnageI18nPeer::INTERET_1, PersonnageI18nPeer::INTERET_2, PersonnageI18nPeer::INTERET_3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'PRENOM', 'INTERET_1', 'INTERET_2', 'INTERET_3', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'prenom', 'interet_1', 'interet_2', 'interet_3', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Prenom', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'prenom', ),
+        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID, PersonnageI18nPeer::LOCALE, PersonnageI18nPeer::PRENOM, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'PRENOM', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'prenom', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -97,12 +88,12 @@ abstract class BasePersonnageI18nPeer
      * e.g. PersonnageI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Prenom' => 2, 'Interet1' => 3, 'Interet2' => 4, 'Interet3' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'interet1' => 3, 'interet2' => 4, 'interet3' => 5, ),
-        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID => 0, PersonnageI18nPeer::LOCALE => 1, PersonnageI18nPeer::PRENOM => 2, PersonnageI18nPeer::INTERET_1 => 3, PersonnageI18nPeer::INTERET_2 => 4, PersonnageI18nPeer::INTERET_3 => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'PRENOM' => 2, 'INTERET_1' => 3, 'INTERET_2' => 4, 'INTERET_3' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'interet_1' => 3, 'interet_2' => 4, 'interet_3' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Prenom' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, ),
+        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID => 0, PersonnageI18nPeer::LOCALE => 1, PersonnageI18nPeer::PRENOM => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'PRENOM' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -179,16 +170,10 @@ abstract class BasePersonnageI18nPeer
             $criteria->addSelectColumn(PersonnageI18nPeer::ID);
             $criteria->addSelectColumn(PersonnageI18nPeer::LOCALE);
             $criteria->addSelectColumn(PersonnageI18nPeer::PRENOM);
-            $criteria->addSelectColumn(PersonnageI18nPeer::INTERET_1);
-            $criteria->addSelectColumn(PersonnageI18nPeer::INTERET_2);
-            $criteria->addSelectColumn(PersonnageI18nPeer::INTERET_3);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.PRENOM');
-            $criteria->addSelectColumn($alias . '.INTERET_1');
-            $criteria->addSelectColumn($alias . '.INTERET_2');
-            $criteria->addSelectColumn($alias . '.INTERET_3');
         }
     }
 

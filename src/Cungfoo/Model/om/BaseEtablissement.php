@@ -48,6 +48,8 @@ use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\Event;
 use Cungfoo\Model\EventQuery;
+use Cungfoo\Model\MultimediaEtablissement;
+use Cungfoo\Model\MultimediaEtablissementQuery;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageQuery;
 use Cungfoo\Model\PointInteret;
@@ -318,6 +320,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collPersonnagesPartial;
 
     /**
+     * @var        PropelObjectCollection|MultimediaEtablissement[] Collection to store aggregation of MultimediaEtablissement objects.
+     */
+    protected $collMultimediaEtablissements;
+    protected $collMultimediaEtablissementsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -509,6 +517,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $personnagesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $multimediaEtablissementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1602,6 +1616,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collPersonnages = null;
 
+            $this->collMultimediaEtablissements = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -2118,6 +2134,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->multimediaEtablissementsScheduledForDeletion !== null) {
+                if (!$this->multimediaEtablissementsScheduledForDeletion->isEmpty()) {
+                    foreach ($this->multimediaEtablissementsScheduledForDeletion as $multimediaEtablissement) {
+                        // need to save related object because we set the relation to null
+                        $multimediaEtablissement->save($con);
+                    }
+                    $this->multimediaEtablissementsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collMultimediaEtablissements !== null) {
+                foreach ($this->collMultimediaEtablissements as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementI18nsScheduledForDeletion !== null) {
                 if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
                     EtablissementI18nQuery::create()
@@ -2525,6 +2559,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collMultimediaEtablissements !== null) {
+                    foreach ($this->collMultimediaEtablissements as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2738,6 +2780,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collPersonnages) {
                 $result['Personnages'] = $this->collPersonnages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collMultimediaEtablissements) {
+                $result['MultimediaEtablissements'] = $this->collMultimediaEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -3097,6 +3142,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getMultimediaEtablissements() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addMultimediaEtablissement($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -3295,6 +3346,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('Personnage' == $relationName) {
             $this->initPersonnages();
+        }
+        if ('MultimediaEtablissement' == $relationName) {
+            $this->initMultimediaEtablissements();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -5597,6 +5651,213 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collMultimediaEtablissements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addMultimediaEtablissements()
+     */
+    public function clearMultimediaEtablissements()
+    {
+        $this->collMultimediaEtablissements = null; // important to set this to null since that means it is uninitialized
+        $this->collMultimediaEtablissementsPartial = null;
+    }
+
+    /**
+     * reset is the collMultimediaEtablissements collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialMultimediaEtablissements($v = true)
+    {
+        $this->collMultimediaEtablissementsPartial = $v;
+    }
+
+    /**
+     * Initializes the collMultimediaEtablissements collection.
+     *
+     * By default this just sets the collMultimediaEtablissements collection to an empty array (like clearcollMultimediaEtablissements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initMultimediaEtablissements($overrideExisting = true)
+    {
+        if (null !== $this->collMultimediaEtablissements && !$overrideExisting) {
+            return;
+        }
+        $this->collMultimediaEtablissements = new PropelObjectCollection();
+        $this->collMultimediaEtablissements->setModel('MultimediaEtablissement');
+    }
+
+    /**
+     * Gets an array of MultimediaEtablissement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|MultimediaEtablissement[] List of MultimediaEtablissement objects
+     * @throws PropelException
+     */
+    public function getMultimediaEtablissements($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collMultimediaEtablissementsPartial && !$this->isNew();
+        if (null === $this->collMultimediaEtablissements || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collMultimediaEtablissements) {
+                // return empty collection
+                $this->initMultimediaEtablissements();
+            } else {
+                $collMultimediaEtablissements = MultimediaEtablissementQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collMultimediaEtablissementsPartial && count($collMultimediaEtablissements)) {
+                      $this->initMultimediaEtablissements(false);
+
+                      foreach($collMultimediaEtablissements as $obj) {
+                        if (false == $this->collMultimediaEtablissements->contains($obj)) {
+                          $this->collMultimediaEtablissements->append($obj);
+                        }
+                      }
+
+                      $this->collMultimediaEtablissementsPartial = true;
+                    }
+
+                    return $collMultimediaEtablissements;
+                }
+
+                if($partial && $this->collMultimediaEtablissements) {
+                    foreach($this->collMultimediaEtablissements as $obj) {
+                        if($obj->isNew()) {
+                            $collMultimediaEtablissements[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collMultimediaEtablissements = $collMultimediaEtablissements;
+                $this->collMultimediaEtablissementsPartial = false;
+            }
+        }
+
+        return $this->collMultimediaEtablissements;
+    }
+
+    /**
+     * Sets a collection of MultimediaEtablissement objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $multimediaEtablissements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setMultimediaEtablissements(PropelCollection $multimediaEtablissements, PropelPDO $con = null)
+    {
+        $this->multimediaEtablissementsScheduledForDeletion = $this->getMultimediaEtablissements(new Criteria(), $con)->diff($multimediaEtablissements);
+
+        foreach ($this->multimediaEtablissementsScheduledForDeletion as $multimediaEtablissementRemoved) {
+            $multimediaEtablissementRemoved->setEtablissement(null);
+        }
+
+        $this->collMultimediaEtablissements = null;
+        foreach ($multimediaEtablissements as $multimediaEtablissement) {
+            $this->addMultimediaEtablissement($multimediaEtablissement);
+        }
+
+        $this->collMultimediaEtablissements = $multimediaEtablissements;
+        $this->collMultimediaEtablissementsPartial = false;
+    }
+
+    /**
+     * Returns the number of related MultimediaEtablissement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related MultimediaEtablissement objects.
+     * @throws PropelException
+     */
+    public function countMultimediaEtablissements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collMultimediaEtablissementsPartial && !$this->isNew();
+        if (null === $this->collMultimediaEtablissements || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collMultimediaEtablissements) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getMultimediaEtablissements());
+                }
+                $query = MultimediaEtablissementQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collMultimediaEtablissements);
+        }
+    }
+
+    /**
+     * Method called to associate a MultimediaEtablissement object to this object
+     * through the MultimediaEtablissement foreign key attribute.
+     *
+     * @param    MultimediaEtablissement $l MultimediaEtablissement
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addMultimediaEtablissement(MultimediaEtablissement $l)
+    {
+        if ($this->collMultimediaEtablissements === null) {
+            $this->initMultimediaEtablissements();
+            $this->collMultimediaEtablissementsPartial = true;
+        }
+        if (!in_array($l, $this->collMultimediaEtablissements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddMultimediaEtablissement($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	MultimediaEtablissement $multimediaEtablissement The multimediaEtablissement object to add.
+     */
+    protected function doAddMultimediaEtablissement($multimediaEtablissement)
+    {
+        $this->collMultimediaEtablissements[]= $multimediaEtablissement;
+        $multimediaEtablissement->setEtablissement($this);
+    }
+
+    /**
+     * @param	MultimediaEtablissement $multimediaEtablissement The multimediaEtablissement object to remove.
+     */
+    public function removeMultimediaEtablissement($multimediaEtablissement)
+    {
+        if ($this->getMultimediaEtablissements()->contains($multimediaEtablissement)) {
+            $this->collMultimediaEtablissements->remove($this->collMultimediaEtablissements->search($multimediaEtablissement));
+            if (null === $this->multimediaEtablissementsScheduledForDeletion) {
+                $this->multimediaEtablissementsScheduledForDeletion = clone $this->collMultimediaEtablissements;
+                $this->multimediaEtablissementsScheduledForDeletion->clear();
+            }
+            $this->multimediaEtablissementsScheduledForDeletion[]= $multimediaEtablissement;
+            $multimediaEtablissement->setEtablissement(null);
+        }
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -7420,6 +7681,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collMultimediaEtablissements) {
+                foreach ($this->collMultimediaEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -7516,6 +7782,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collPersonnages->clearIterator();
         }
         $this->collPersonnages = null;
+        if ($this->collMultimediaEtablissements instanceof PropelCollection) {
+            $this->collMultimediaEtablissements->clearIterator();
+        }
+        $this->collMultimediaEtablissements = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }

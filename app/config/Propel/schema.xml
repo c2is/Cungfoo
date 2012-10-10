@@ -94,6 +94,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
+            <parameter name="crud_search" value="name, title" />
         </behavior>
     </table>
 
@@ -462,9 +463,6 @@
         <column name="prenom" type="varchar" required="true" />
         <column name="age" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
-        <column name="interet_1" type="varchar" />
-        <column name="interet_2" type="varchar" />
-        <column name="interet_3" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
@@ -472,12 +470,83 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="prenom, interet_1, interet_2, interet_3" />
+            <parameter name="i18n_columns" value="prenom" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/personnages" />
             <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
+    <table name="avantage">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="personnage_id" type="integer" />
+        <column name="name" type="varchar" required="true" />
+        <column name="description" type="longvarchar" required="true" />
+        <column name="image_path" type="varchar" />
+        <behavior name="timestampable" />
+
+        <foreign-key foreignTable="personnage" onDelete="CASCADE">
+            <reference local="personnage_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/personnages-avantages" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
+    <table name="multimedia_etablissement">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="etablissement_id" type="integer" />
+        <column name="titre" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
+        <behavior name="timestampable" />
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/multimedias" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
+    <table name="multimedia_etablissement_tag" isCrossRef="true">
+        <column name="multimedia_etablissement_id" type="integer" primaryKey="true"/>
+        <column name="tag_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="multimedia_etablissement" onDelete="CASCADE">
+            <reference local="multimedia_etablissement_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="tag">
+            <reference local="tag_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="tag">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="slug" type="varchar" required="true" primaryString="true"/>
+        <behavior name="timestampable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/tag-multimedias" />
         </behavior>
     </table>
 

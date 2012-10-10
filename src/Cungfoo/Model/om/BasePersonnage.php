@@ -15,6 +15,8 @@ use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Avantage;
+use Cungfoo\Model\AvantageQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\Personnage;
@@ -93,6 +95,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     protected $aEtablissement;
 
     /**
+     * @var        PropelObjectCollection|Avantage[] Collection to store aggregation of Avantage objects.
+     */
+    protected $collAvantages;
+    protected $collAvantagesPartial;
+
+    /**
      * @var        PropelObjectCollection|PersonnageI18n[] Collection to store aggregation of PersonnageI18n objects.
      */
     protected $collPersonnageI18ns;
@@ -125,6 +133,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      * @var        array[PersonnageI18n]
      */
     protected $currentTranslations;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $avantagesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -492,6 +506,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aEtablissement = null;
+            $this->collAvantages = null;
+
             $this->collPersonnageI18ns = null;
 
         } // if (deep)
@@ -639,6 +655,24 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->avantagesScheduledForDeletion !== null) {
+                if (!$this->avantagesScheduledForDeletion->isEmpty()) {
+                    foreach ($this->avantagesScheduledForDeletion as $avantage) {
+                        // need to save related object because we set the relation to null
+                        $avantage->save($con);
+                    }
+                    $this->avantagesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collAvantages !== null) {
+                foreach ($this->collAvantages as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
             }
 
             if ($this->personnageI18nsScheduledForDeletion !== null) {
@@ -842,6 +876,14 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             }
 
 
+                if ($this->collAvantages !== null) {
+                    foreach ($this->collAvantages as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collPersonnageI18ns !== null) {
                     foreach ($this->collPersonnageI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -942,6 +984,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
                 $result['Etablissement'] = $this->aEtablissement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collAvantages) {
+                $result['Avantages'] = $this->collAvantages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collPersonnageI18ns) {
                 $result['PersonnageI18ns'] = $this->collPersonnageI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1121,6 +1166,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
+            foreach ($this->getAvantages() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addAvantage($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getPersonnageI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addPersonnageI18n($relObj->copy($deepCopy));
@@ -1239,8 +1290,218 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
+        if ('Avantage' == $relationName) {
+            $this->initAvantages();
+        }
         if ('PersonnageI18n' == $relationName) {
             $this->initPersonnageI18ns();
+        }
+    }
+
+    /**
+     * Clears out the collAvantages collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addAvantages()
+     */
+    public function clearAvantages()
+    {
+        $this->collAvantages = null; // important to set this to null since that means it is uninitialized
+        $this->collAvantagesPartial = null;
+    }
+
+    /**
+     * reset is the collAvantages collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialAvantages($v = true)
+    {
+        $this->collAvantagesPartial = $v;
+    }
+
+    /**
+     * Initializes the collAvantages collection.
+     *
+     * By default this just sets the collAvantages collection to an empty array (like clearcollAvantages());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initAvantages($overrideExisting = true)
+    {
+        if (null !== $this->collAvantages && !$overrideExisting) {
+            return;
+        }
+        $this->collAvantages = new PropelObjectCollection();
+        $this->collAvantages->setModel('Avantage');
+    }
+
+    /**
+     * Gets an array of Avantage objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Personnage is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|Avantage[] List of Avantage objects
+     * @throws PropelException
+     */
+    public function getAvantages($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collAvantagesPartial && !$this->isNew();
+        if (null === $this->collAvantages || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collAvantages) {
+                // return empty collection
+                $this->initAvantages();
+            } else {
+                $collAvantages = AvantageQuery::create(null, $criteria)
+                    ->filterByPersonnage($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collAvantagesPartial && count($collAvantages)) {
+                      $this->initAvantages(false);
+
+                      foreach($collAvantages as $obj) {
+                        if (false == $this->collAvantages->contains($obj)) {
+                          $this->collAvantages->append($obj);
+                        }
+                      }
+
+                      $this->collAvantagesPartial = true;
+                    }
+
+                    return $collAvantages;
+                }
+
+                if($partial && $this->collAvantages) {
+                    foreach($this->collAvantages as $obj) {
+                        if($obj->isNew()) {
+                            $collAvantages[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collAvantages = $collAvantages;
+                $this->collAvantagesPartial = false;
+            }
+        }
+
+        return $this->collAvantages;
+    }
+
+    /**
+     * Sets a collection of Avantage objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $avantages A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setAvantages(PropelCollection $avantages, PropelPDO $con = null)
+    {
+        $this->avantagesScheduledForDeletion = $this->getAvantages(new Criteria(), $con)->diff($avantages);
+
+        foreach ($this->avantagesScheduledForDeletion as $avantageRemoved) {
+            $avantageRemoved->setPersonnage(null);
+        }
+
+        $this->collAvantages = null;
+        foreach ($avantages as $avantage) {
+            $this->addAvantage($avantage);
+        }
+
+        $this->collAvantages = $avantages;
+        $this->collAvantagesPartial = false;
+    }
+
+    /**
+     * Returns the number of related Avantage objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related Avantage objects.
+     * @throws PropelException
+     */
+    public function countAvantages(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collAvantagesPartial && !$this->isNew();
+        if (null === $this->collAvantages || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collAvantages) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getAvantages());
+                }
+                $query = AvantageQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPersonnage($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collAvantages);
+        }
+    }
+
+    /**
+     * Method called to associate a Avantage object to this object
+     * through the Avantage foreign key attribute.
+     *
+     * @param    Avantage $l Avantage
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function addAvantage(Avantage $l)
+    {
+        if ($this->collAvantages === null) {
+            $this->initAvantages();
+            $this->collAvantagesPartial = true;
+        }
+        if (!in_array($l, $this->collAvantages->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddAvantage($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Avantage $avantage The avantage object to add.
+     */
+    protected function doAddAvantage($avantage)
+    {
+        $this->collAvantages[]= $avantage;
+        $avantage->setPersonnage($this);
+    }
+
+    /**
+     * @param	Avantage $avantage The avantage object to remove.
+     */
+    public function removeAvantage($avantage)
+    {
+        if ($this->getAvantages()->contains($avantage)) {
+            $this->collAvantages->remove($this->collAvantages->search($avantage));
+            if (null === $this->avantagesScheduledForDeletion) {
+                $this->avantagesScheduledForDeletion = clone $this->collAvantages;
+                $this->avantagesScheduledForDeletion->clear();
+            }
+            $this->avantagesScheduledForDeletion[]= $avantage;
+            $avantage->setPersonnage(null);
         }
     }
 
@@ -1486,6 +1747,11 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collAvantages) {
+                foreach ($this->collAvantages as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collPersonnageI18ns) {
                 foreach ($this->collPersonnageI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -1497,6 +1763,10 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
+        if ($this->collAvantages instanceof PropelCollection) {
+            $this->collAvantages->clearIterator();
+        }
+        $this->collAvantages = null;
         if ($this->collPersonnageI18ns instanceof PropelCollection) {
             $this->collPersonnageI18ns->clearIterator();
         }
@@ -1657,78 +1927,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
          */
         public function setPrenom($v)
         {    $this->getCurrentTranslation()->setPrenom($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [interet_1] column value.
-         *
-         * @return string
-         */
-        public function getInteret1()
-        {
-        return $this->getCurrentTranslation()->getInteret1();
-    }
-
-
-        /**
-         * Set the value of [interet_1] column.
-         *
-         * @param string $v new value
-         * @return PersonnageI18n The current object (for fluent API support)
-         */
-        public function setInteret1($v)
-        {    $this->getCurrentTranslation()->setInteret1($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [interet_2] column value.
-         *
-         * @return string
-         */
-        public function getInteret2()
-        {
-        return $this->getCurrentTranslation()->getInteret2();
-    }
-
-
-        /**
-         * Set the value of [interet_2] column.
-         *
-         * @param string $v new value
-         * @return PersonnageI18n The current object (for fluent API support)
-         */
-        public function setInteret2($v)
-        {    $this->getCurrentTranslation()->setInteret2($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [interet_3] column value.
-         *
-         * @return string
-         */
-        public function getInteret3()
-        {
-        return $this->getCurrentTranslation()->getInteret3();
-    }
-
-
-        /**
-         * Set the value of [interet_3] column.
-         *
-         * @param string $v new value
-         * @return PersonnageI18n The current object (for fluent API support)
-         */
-        public function setInteret3($v)
-        {    $this->getCurrentTranslation()->setInteret3($v);
 
         return $this;
     }

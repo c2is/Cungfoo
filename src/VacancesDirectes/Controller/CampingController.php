@@ -66,7 +66,19 @@ class CampingController implements ControllerProviderInterface
             $personnages = \Cungfoo\Model\PersonnageQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEtablissementId($id)
+                ->orderByAge(\Criteria::ASC)
                 ->limit(3)
+                ->find()
+            ;
+
+            $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($id)
+                ->find()
+            ;
+
+            $tags = \Cungfoo\Model\TagQuery::create()
+                ->joinWithI18n($locale)
                 ->find()
             ;
 
@@ -77,7 +89,9 @@ class CampingController implements ControllerProviderInterface
                 'nbActivitesSportives'  => $nbActivitesSportives,
                 'nbEvenementsCulturels' => $nbEvenementsCulturels,
                 'eventPrioritaire'      => $eventPrioritaire,
-                'personnages'           => $personnages
+                'personnages'           => $personnages,
+                'multimedia'           => $multimedia,
+                'tags'           => $tags
             ));
         })
         ->bind('camping_index')

@@ -66,3 +66,15 @@ crud:
             prefix: /personnages
             model: \Cungfoo\Model\Personnage
             form: \Cungfoo\Form\Type\PersonnageType
+        multimedia_etablissement:
+            prefix: /multimedias
+            model: \Cungfoo\Model\MultimediaEtablissement
+            form: \Cungfoo\Form\Type\MultimediaEtablissementType
+        tag:
+            prefix: /tag-multimedias
+            model: \Cungfoo\Model\Tag
+            form: \Cungfoo\Form\Type\TagType
+        avantage:
+            prefix: /personnages-avantages
+            model: \Cungfoo\Model\Avantage
+            form: \Cungfoo\Form\Type\AvantageType

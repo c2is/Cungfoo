@@ -65,24 +65,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     protected $prenom;
 
     /**
-     * The value for the interet_1 field.
-     * @var        string
-     */
-    protected $interet_1;
-
-    /**
-     * The value for the interet_2 field.
-     * @var        string
-     */
-    protected $interet_2;
-
-    /**
-     * The value for the interet_3 field.
-     * @var        string
-     */
-    protected $interet_3;
-
-    /**
      * @var        Personnage
      */
     protected $aPersonnage;
@@ -153,36 +135,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [interet_1] column value.
-     *
-     * @return string
-     */
-    public function getInteret1()
-    {
-        return $this->interet_1;
-    }
-
-    /**
-     * Get the [interet_2] column value.
-     *
-     * @return string
-     */
-    public function getInteret2()
-    {
-        return $this->interet_2;
-    }
-
-    /**
-     * Get the [interet_3] column value.
-     *
-     * @return string
-     */
-    public function getInteret3()
-    {
-        return $this->interet_3;
-    }
-
-    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -250,69 +202,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     } // setPrenom()
 
     /**
-     * Set the value of [interet_1] column.
-     *
-     * @param string $v new value
-     * @return PersonnageI18n The current object (for fluent API support)
-     */
-    public function setInteret1($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->interet_1 !== $v) {
-            $this->interet_1 = $v;
-            $this->modifiedColumns[] = PersonnageI18nPeer::INTERET_1;
-        }
-
-
-        return $this;
-    } // setInteret1()
-
-    /**
-     * Set the value of [interet_2] column.
-     *
-     * @param string $v new value
-     * @return PersonnageI18n The current object (for fluent API support)
-     */
-    public function setInteret2($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->interet_2 !== $v) {
-            $this->interet_2 = $v;
-            $this->modifiedColumns[] = PersonnageI18nPeer::INTERET_2;
-        }
-
-
-        return $this;
-    } // setInteret2()
-
-    /**
-     * Set the value of [interet_3] column.
-     *
-     * @param string $v new value
-     * @return PersonnageI18n The current object (for fluent API support)
-     */
-    public function setInteret3($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->interet_3 !== $v) {
-            $this->interet_3 = $v;
-            $this->modifiedColumns[] = PersonnageI18nPeer::INTERET_3;
-        }
-
-
-        return $this;
-    } // setInteret3()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -351,9 +240,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->prenom = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->interet_1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->interet_2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->interet_3 = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -362,7 +248,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 6; // 6 = PersonnageI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = PersonnageI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PersonnageI18n object", $e);
@@ -595,15 +481,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnageI18nPeer::PRENOM)) {
             $modifiedColumns[':p' . $index++]  = '`PRENOM`';
         }
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_1)) {
-            $modifiedColumns[':p' . $index++]  = '`INTERET_1`';
-        }
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_2)) {
-            $modifiedColumns[':p' . $index++]  = '`INTERET_2`';
-        }
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_3)) {
-            $modifiedColumns[':p' . $index++]  = '`INTERET_3`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `personnage_i18n` (%s) VALUES (%s)',
@@ -623,15 +500,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                         break;
                     case '`PRENOM`':
                         $stmt->bindValue($identifier, $this->prenom, PDO::PARAM_STR);
-                        break;
-                    case '`INTERET_1`':
-                        $stmt->bindValue($identifier, $this->interet_1, PDO::PARAM_STR);
-                        break;
-                    case '`INTERET_2`':
-                        $stmt->bindValue($identifier, $this->interet_2, PDO::PARAM_STR);
-                        break;
-                    case '`INTERET_3`':
-                        $stmt->bindValue($identifier, $this->interet_3, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -781,15 +649,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getPrenom();
                 break;
-            case 3:
-                return $this->getInteret1();
-                break;
-            case 4:
-                return $this->getInteret2();
-                break;
-            case 5:
-                return $this->getInteret3();
-                break;
             default:
                 return null;
                 break;
@@ -822,9 +681,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getPrenom(),
-            $keys[3] => $this->getInteret1(),
-            $keys[4] => $this->getInteret2(),
-            $keys[5] => $this->getInteret3(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPersonnage) {
@@ -873,15 +729,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             case 2:
                 $this->setPrenom($value);
                 break;
-            case 3:
-                $this->setInteret1($value);
-                break;
-            case 4:
-                $this->setInteret2($value);
-                break;
-            case 5:
-                $this->setInteret3($value);
-                break;
         } // switch()
     }
 
@@ -909,9 +756,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setPrenom($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setInteret1($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setInteret2($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setInteret3($arr[$keys[5]]);
     }
 
     /**
@@ -926,9 +770,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnageI18nPeer::ID)) $criteria->add(PersonnageI18nPeer::ID, $this->id);
         if ($this->isColumnModified(PersonnageI18nPeer::LOCALE)) $criteria->add(PersonnageI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(PersonnageI18nPeer::PRENOM)) $criteria->add(PersonnageI18nPeer::PRENOM, $this->prenom);
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_1)) $criteria->add(PersonnageI18nPeer::INTERET_1, $this->interet_1);
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_2)) $criteria->add(PersonnageI18nPeer::INTERET_2, $this->interet_2);
-        if ($this->isColumnModified(PersonnageI18nPeer::INTERET_3)) $criteria->add(PersonnageI18nPeer::INTERET_3, $this->interet_3);
 
         return $criteria;
     }
@@ -1002,9 +843,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setPrenom($this->getPrenom());
-        $copyObj->setInteret1($this->getInteret1());
-        $copyObj->setInteret2($this->getInteret2());
-        $copyObj->setInteret3($this->getInteret3());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1121,9 +959,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->prenom = null;
-        $this->interet_1 = null;
-        $this->interet_2 = null;
-        $this->interet_3 = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

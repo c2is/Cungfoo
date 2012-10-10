@@ -29,6 +29,7 @@ job.logs.message: Message
 job.logs.date: Date
 
 context.language: Langue
+context.term: Terme
 context.validate: Valider
 
 crud.button.add: Ajouter
@@ -136,7 +137,10 @@ locale.german: Allemand
 menu.activite: Activités
 menu.destination: Destinations
 menu.categorie: Catégories
-menu.etablissement: Établissement
+menu.etablissements: Établissements
+menu.liste_etablissements: Liste
+menu.multimedia: Multimédia
+menu.tag_multimedia: Tag multimédia
 menu.job: Gestion des jobs
 menu.logout: Se déconnecter
 menu.parameters: Paramètres
@@ -158,6 +162,7 @@ menu.poi: POI
 menu.event: Evènement
 menu.cms: Cms
 menu.personnages: Personnages
+menu.avantages: Avantages
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -280,6 +285,33 @@ personnage.etablissement: Etablissement
 personnage.age: Age
 personnage.prenom: Prénom
 personnage.image_path: Image
-personnage.interet_1: Intéret 1
-personnage.interet_2: Intéret 2
-personnage.interet_3: Intéret 3
+
+avantage.crud.create: Création d'un avantage
+avantage.crud.list: Liste des avantages
+avantage.crud.update: Mettre à jour l'avantage %name%
+avantage.crud.view: Détails de l'avantage %name%
+avantage.id: Id
+avantage.personnage: Personnage
+avantage.name: Titre
+avantage.description: Description
+avantage.image_path: Image
+avantage.image_path_deleted: Supprimer l'image ?
+
+multimedia_etablissement.crud.create: Création d'un média
+multimedia_etablissement.crud.list: Liste des média
+multimedia_etablissement.crud.update: Mettre à jour le média %name%
+multimedia_etablissement.crud.view: Détails du média %name%
+multimedia_etablissement.id: Id
+multimedia_etablissement.etablissement: Etablissement
+multimedia_etablissement.titre: Titre
+multimedia_etablissement.image_path: Image
+multimedia_etablissement.tags: Tags
+
+tag.crud.create: Création d'un tag
+tag.crud.list: Liste des tags
+tag.crud.update: Mettre à jour le tag %name%
+tag.crud.view: Détails du tag %name%
+tag.id: Id
+tag.name: Nom
+tag.multimedia_etablissements: Média
+

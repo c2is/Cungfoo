@@ -33,32 +33,17 @@
     <div id="tabCamp" class="tabs">
         <div class="tabCampDiapo">
             <div class="slider"><div class="slide clear">
-                <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 1" class="camping">
-                <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 1" class="locations">
-                <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 2" class="camping">
-                <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 1" class="activites">
-                <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 1" class="regions">
-                <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 4" class="regions">
-                <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 3" class="camping">
-                <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 4" class="camping">
-                <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 3" class="locations">
-                <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 3" class="activites">
-                <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 2" class="locations">
-                <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 3" class="regions">
-                <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 4" class="locations">
-                <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 5" class="locations">
-                <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 2" class="activites">
-                <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 4" class="activites">
-                <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 2" class="regions">
+                {% for media in multimedia %}
+                    <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+                {% endfor %}
             </div></div>
             <form class="tabCampDiapoOptions clear" action="#_">
                 <fieldset class="left">
                     <span>Photos</span>
-                    <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">Toutes</label>
-                    <label for="photosCamping"><input type="radio" id="photosCamping" name="affPhoto" value="camping">Camping</label>
-                    <label for="photosLocations"><input type="radio" id="photosLocations" name="affPhoto" value="locations">Locations</label>
-                    <label for="photosActivites"><input type="radio" id="photosActivites" name="affPhoto" value="activites">Activités</label>
-                    <label for="photosRegions"><input type="radio" id="photosRegions" name="affPhoto" value="regions">Régions</label>
+                    <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
+                    {% for tag in tags %}
+                        <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.slug }}</label>
+                    {% endfor %}
                 </fieldset>
                 <fieldset class="right">
                     <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="Titre de la popin : vidéo">Vidéo</a>
@@ -67,9 +52,9 @@
             </form>
         </div>
         <div class="tabCampDesc">
-            <h3>Le camping Le Petit-Mousse, le paradis de l'eau</h3>
-            <p><strong>364 emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
-            <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+            <h3>{{ etab.title}}</h3>
+            <p><strong>{{ etab.capacite }} emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
+            <p>{{ etab.description }}</p>
         </div>
 
         <div class="temoignFiche bloc gris">
@@ -80,9 +65,9 @@
                     <span class="perso">{{ personnage.prenom | trans }}</span>
                     <span class="age">{{ personnage.age }} ans</span>
                     <ul>
-                        <li>{{ personnage.interet1 }}</li>
-                        <li>{{ personnage.interet2 }}</li>
-                        <li>{{ personnage.interet3 }}</li>
+                        {% for avantage in personnage.avantages %}
+                        <li>{{ avantage.name }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             {% endfor %}

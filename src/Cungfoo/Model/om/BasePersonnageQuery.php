@@ -12,6 +12,7 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Avantage;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageI18n;
@@ -44,6 +45,10 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
  * @method PersonnageQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
  * @method PersonnageQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
+ *
+ * @method PersonnageQuery leftJoinAvantage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Avantage relation
+ * @method PersonnageQuery rightJoinAvantage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Avantage relation
+ * @method PersonnageQuery innerJoinAvantage($relationAlias = null) Adds a INNER JOIN clause to the query using the Avantage relation
  *
  * @method PersonnageQuery leftJoinPersonnageI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PersonnageI18n relation
  * @method PersonnageQuery rightJoinPersonnageI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PersonnageI18n relation
@@ -544,6 +549,80 @@ abstract class BasePersonnageQuery extends ModelCriteria
         return $this
             ->joinEtablissement($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Etablissement', '\Cungfoo\Model\EtablissementQuery');
+    }
+
+    /**
+     * Filter the query by a related Avantage object
+     *
+     * @param   Avantage|PropelObjectCollection $avantage  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PersonnageQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByAvantage($avantage, $comparison = null)
+    {
+        if ($avantage instanceof Avantage) {
+            return $this
+                ->addUsingAlias(PersonnagePeer::ID, $avantage->getPersonnageId(), $comparison);
+        } elseif ($avantage instanceof PropelObjectCollection) {
+            return $this
+                ->useAvantageQuery()
+                ->filterByPrimaryKeys($avantage->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByAvantage() only accepts arguments of type Avantage or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Avantage relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PersonnageQuery The current query, for fluid interface
+     */
+    public function joinAvantage($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Avantage');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Avantage');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Avantage relation Avantage object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\AvantageQuery A secondary query class using the current class as primary query
+     */
+    public function useAvantageQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinAvantage($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Avantage', '\Cungfoo\Model\AvantageQuery');
     }
 
     /**
