@@ -9,9 +9,6 @@ use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Output\OutputInterface,
     Symfony\Component\Console\Helper\FormatterHelper;
 
-/**
- * toto
- */
 class GenerateCommand extends Command
 {
     protected function configure()

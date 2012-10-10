@@ -17,6 +17,7 @@ $console  = new \Cungfoo\Console\Application($app, 'Cungfoo', '0.1');
 
 $console->add(new \Propel\Command\Fixtures\LoadCommand());
 $console->add(new \Propel\Command\GenerateCommand());
+$console->add(new \Propel\Command\LoadSchemaCommand());
 
 $console->add(new \Cungfoo\Command\Cache\ClearCommand());
 $console->add(new \Cungfoo\Command\Logs\ClearCommand());
@@ -24,8 +25,7 @@ $console->add(new \Cungfoo\Command\Project\InitCommand());
 $console->add(new \Cungfoo\Command\Tests\UnitCommand());
 $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
-$console->add(new \Resalys\Command\Load\CatalogueCommand());
-$console->add(new \Resalys\Command\Load\PrixCommand());
+$console->add(new \Resalys\Command\LoadCommand());
 
 $console->add(new \Cungfoo\Command\Fixtures\DumpCommand());
 $console->add(new \Cungfoo\Command\Fixtures\LoadCommand());

@@ -4,8 +4,18 @@
 
 {% block content %}
         <div class="column">
-            <h1>BEFORE <span>IFRAME</span></h1>
-            <iframe src="{{ path('resalys_wrapper', {'webuser': 'web_ce_achat_fr', 'iframe': 1}) }}" width="960px" height="700px"></iframe>
-            <h1>AFTER <span>IFRAME</span></h1>
+            <iframe src="{{ path('resalys_wrapper', {
+                iframe: 1,
+                webuser: 'web_ce_achat_fr',
+                display: 'default',
+                tokens: 'ignore_token',
+                session: app.session.get('resalys_user').session,
+                template: 'search_product_results',
+                actions: 'updateProductCriterias;getProductProposals',
+                criterias_object_name: 'search_form',
+                product_CMSCriteria_ALL: 'ALL',
+                product_CMSCriteria_PHS: '',
+                product_start_date: "now" | date("d/m/Y"),
+            }) }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}
