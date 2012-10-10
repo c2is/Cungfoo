@@ -84,8 +84,6 @@
             });*/
         }
     }
-    proxInit();
-    infoInit();
 </script>
 
 <div itemscope itemtype="http://schema.org/Place">
