@@ -41,11 +41,11 @@ $(function() {
             oTabs = $('.tabs'),
             oTabLink = oTabControls.find('a'),
             tView = oTabControls.find('a.active').attr('href');
-        oTabs.hide().css({'visibility':'visible'});
+
+        oTabs.css({position:'absolute',left:'-999em', top:'0'});
         if (oHash != '') {
             setTimeout( function(){
                 $('.tabControls').find('[href='+oHash+']').trigger('click');
-
             }, 0);
         } else {
             tabs(tView, false);
@@ -57,7 +57,6 @@ $(function() {
             tTabs.addClass('active');
             tabs(tView, true);
             var targetOffset = $('.tabControls').offset().top;
-            //consoleLog(targetOffset);
             $('html, body').animate({scrollTop: targetOffset},400);
             e.preventDefault();
         });
@@ -493,33 +492,29 @@ function tabs(tView, load) {
         slider = $('.tabCampDiapo');
 
     if (sView == 'tabCamp' || sView == 'tabLocations') {
+        slider.fadeIn();
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
         } else {
             $('[name="affPhoto"][value="all"]').parent('label').trigger('click');
         }
-        slider.slideDown();
-        if (!load){ $('html, body').animate({scrollTop: 0},0); }
-
-    } else if (sView == 'tabProximite' || sView == 'tabInfos') {
-        slider.slideUp();
-        if (mapsLoaded) {
-            consoleLog('2');
-            google.maps.event.addListenerOnce(map, 'idle', function() {
-                google.maps.event.trigger(map, 'resize');
-                map.setCenter(point); // be sure to reset the map center as well
-            });
-        } else {
-            consoleLog('1');
-            initialize();
-            mapsLoaded = true;
-        }
     } else {
-        slider.slideUp();
+        slider.hide();
+        if (sView == 'tabProximite') {
+            if (!proxMapLoaded) {
+                proxInit();
+                proxMapLoaded = true;
+            }
+        } else if (sView == 'tabInfos') {
+            if (!infoMapLoaded) {
+                infoInit();
+                infoMapLoaded = true;
+            }
+        }
     }
-    $(tView).slideDown().siblings('.tabs').slideUp();
+    $(tView).css({'position':'static'}).animate({'opacity':1}).siblings('.tabs').css({position:'absolute',opacity:'0'});
+    if (!load){ $('html, body').animate({scrollTop: 0},0); }
 }
-
 
 
 

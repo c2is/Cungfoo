@@ -1,3 +1,7 @@
+
+<!-- load gmap v3 API-->
+<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">Le Petit Mousse***</h1>
     <p class="keywordsFiche"><a href="#_">Club enfants</a> - <a href="#_">Parc aquatique</a> - <a href="#_">Plage de mer</a> - <a href="#_">Accès wifi</a> - <a href="#_">Animaux acceptés</a></p>
@@ -126,7 +130,7 @@
             <dt>A proximité<br> nous avons listé :</dt>
             <dd class="list">
                <ul>
-                   <li>14 sites à visiter</li>
+                   <li>14 proxMkrs à visiter</li>
                    <li>24 activités sportives</li>
                    <li>14 événements culturels</li>
                </ul>
@@ -312,60 +316,94 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    <h3>Tab A proximité</h3>
-
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script>
-      var centerPoint = new google.maps.LatLng(45.764544,4.846512),
-        map,
-        infowindow = null,
-        mapsLoaded = false;
+        // global maps vars
+        var map,
+          infowindow = null,
+          proxMapLoaded = false,
+          infoMapLoaded = false;
 
-      function initialize() {
-          var mapOptions = {
-              zoom: 13,
-              mapTypeId: google.maps.MapTypeId.ROADMAP,
-              center: centerPoint
-          };
+        var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
+          new google.maps.Size(19, 17),
+          new google.maps.Point(0,0),
+          new google.maps.Point(0, 17));
+        var shape = {
+          coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+          type: 'poly'
+        };
 
-          map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        // specific function maps
+        var proxMkrs = [
+            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+        ];
+        function proxInit() {
+            var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerproxMkr
+                };
+            proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
 
-          setMarkers(map, sites);
-          infowindow = new google.maps.InfoWindow({ content: "..." });
-      }
+            setMarkers(proxMap, proxMkrs);
+            infowindow = new google.maps.InfoWindow({ content: "..." });
+        }
 
-      var sites = [
-          ['c2is', 45.764544, 4.846512, 5, 'C2iS, Agence Digitale à Lyon'],
-          ['Mount Evans', 39.58108, -105.63535, 4, 'This is Mount Evans.'],
-          ['Flatirons in the Spring', 39.99948, -105.28370, 3, 'These are the Flatirons in the spring.'],
-          ['Irving Homestead', 40.315939, -105.440630, 2, 'This is the Irving Homestead.'],
-          ['Badlands National Park', 43.785890, -101.90175, 1, 'This is Badlands National Park']
-      ];
+        var infoMkrs = [
+            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
+        ];
+        function infoInit() {
+            var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerinfoMkr
+                };
+            infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
 
-      function setMarkers(map, markers) {
+            setMarkers(infoMap, infoMkrs);
+            infowindow = new google.maps.InfoWindow({ content: "..." });
+        }
 
-          for (var i = 0; i < markers.length; i++) {
-              var sites = markers[i];
-              var siteLatLng = new google.maps.LatLng(sites[1], sites[2]);
-              var marker = new google.maps.Marker({
-                  position: siteLatLng,
-                  map: map,
-                  title: sites[0],
-                  zIndex: sites[3],
-                  html: sites[4]
-              });
-
-              var contentString = "";
-
-              google.maps.event.addListener(marker, "click", function () {
-                  infowindow.setContent(this.html);
-                  infowindow.open(map, this);
-              });
-          }
-      }
+        // global function maps
+        function setMarkers(map, mkrs) {
+            for (var i = 0; i < mkrs.length; i++) {
+                var mkr = mkrs[i];
+                var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+                var marker = new google.maps.Marker({
+                    position: siteLatLng,
+                    map: map,
+                    shadow: shadow,
+                    icon: mkr[5],
+                    shape: shape,
+                    title: mkr[0],
+                    zIndex: mkr[3],
+                    html: mkr[4]
+                });
+                var contentString = "";
+                /*google.maps.event.addListener(marker, "click", function () {
+                    infowindow.setContent(this.html);
+                    infowindow.open(map, this);
+                });*/
+            }
+        }
+        proxInit();
+        infoInit();
     </script>
 
-    <div id="map_canvas" style="width:616px;height:326px;"><!-- map --></div>
+    <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
 
 
     <nav class="paginationTabs clear">
@@ -386,6 +424,9 @@
 <div id="tabInfos" class="tabs">
     <h3>Tab Infos Pratiques</h3>
         <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+
+    <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">Le camping</button>
