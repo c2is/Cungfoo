@@ -35,4 +35,45 @@ class Utils extends atoum\test
             ->string($utils->camelize('dummy string word1-2'))->isEqualTo('Dummy string word1-2')
         ;
     }
+
+    public function testDecimalToDmsWithBadParams()
+    {
+        $this->exception(function() {
+            $utils = new Lib\Utils();
+            $utils->decimalToDms('toto', 'tata');
+       });
+    }
+
+    public function testDecimalToDmsWithCorrectParams()
+    {
+        $utils = new Lib\Utils();
+
+        $dms = $utils->decimalToDms(46.8080605, -2.10465431);
+
+        $this
+            ->array($dms)->hasSize(2)
+            ->array($dms[0])->hasSize(3)
+            ->integer($dms[0][0])->isEqualTo(46)
+            ->integer($dms[0][1])->isEqualTo(48)
+            ->float($dms[0][2])->isNearlyEqualTo(29.0196, 0.002)
+            ->array($dms[1])->hasSize(3)
+            ->integer($dms[1][0])->isEqualTo(-2)
+            ->integer($dms[1][1])->isEqualTo(6)
+            ->float($dms[1][2])->isNearlyEqualTo(16.7544, 0.002)
+        ;
+
+        $dms = $utils->decimalToDms(45.7750889, 6.226780415);
+
+        $this
+            ->array($dms)->hasSize(2)
+            ->array($dms[0])->hasSize(3)
+            ->integer($dms[0][0])->isEqualTo(45)
+            ->integer($dms[0][1])->isEqualTo(46)
+            ->float($dms[0][2])->isNearlyEqualTo(30.3204, 0.002)
+            ->array($dms[1])->hasSize(3)
+            ->integer($dms[1][0])->isEqualTo(6)
+            ->integer($dms[1][1])->isEqualTo(13)
+            ->float($dms[1][2])->isNearlyEqualTo(36.4074, 0.002)
+        ;
+    }
 }

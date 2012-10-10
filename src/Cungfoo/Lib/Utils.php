@@ -38,4 +38,40 @@ class Utils
             'password' => $connection['password'],
         );
     }
+
+    public function decimalToDms($latitude, $longitude)
+    {
+        $dms = array();
+
+        if(!is_float($latitude) || !is_float($longitude))
+        {
+            throw new \Exception("float are required");
+        }
+
+        $arrayLat = explode(".",$latitude);
+        $arrayLng = explode(".", $longitude);
+
+        $minutesLat = abs(($latitude - $arrayLat[0])) * 60.0;
+        $arrayMinutesLat = explode(".",$minutesLat);
+        $secondsLat = ($minutesLat - $arrayMinutesLat[0]) * 60.0;
+
+        $minutesLng = abs(($longitude - $arrayLng[0])) * 60.0;
+        $arrayMinutesLng = explode(".",$minutesLng);
+        $secondsLng = ($minutesLng - $arrayMinutesLng[0]) * 60.0;
+
+        $dms = array(
+            0 => array(
+                0 => (int)$arrayLat[0],
+                1 => (int)$arrayMinutesLat[0],
+                2 => (float)round($secondsLat,3)
+            ),
+            1 => array(
+                0 => (int)$arrayLng[0],
+                1 => (int)$arrayMinutesLng[0],
+                2 => (float)round($secondsLng,3)
+            )
+        );
+
+        return $dms;
+    }
 }
