@@ -25,10 +25,16 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EtablissementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method EtablissementI18nQuery orderByCountry($order = Criteria::ASC) Order by the country column
+ * @method EtablissementI18nQuery orderByOuvertureReception($order = Criteria::ASC) Order by the ouverture_reception column
+ * @method EtablissementI18nQuery orderByOuvertureCamping($order = Criteria::ASC) Order by the ouverture_camping column
+ * @method EtablissementI18nQuery orderByArriveesDeparts($order = Criteria::ASC) Order by the arrivees_departs column
  *
  * @method EtablissementI18nQuery groupById() Group by the id column
  * @method EtablissementI18nQuery groupByLocale() Group by the locale column
  * @method EtablissementI18nQuery groupByCountry() Group by the country column
+ * @method EtablissementI18nQuery groupByOuvertureReception() Group by the ouverture_reception column
+ * @method EtablissementI18nQuery groupByOuvertureCamping() Group by the ouverture_camping column
+ * @method EtablissementI18nQuery groupByArriveesDeparts() Group by the arrivees_departs column
  *
  * @method EtablissementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +50,16 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18n findOneById(int $id) Return the first EtablissementI18n filtered by the id column
  * @method EtablissementI18n findOneByLocale(string $locale) Return the first EtablissementI18n filtered by the locale column
  * @method EtablissementI18n findOneByCountry(string $country) Return the first EtablissementI18n filtered by the country column
+ * @method EtablissementI18n findOneByOuvertureReception(string $ouverture_reception) Return the first EtablissementI18n filtered by the ouverture_reception column
+ * @method EtablissementI18n findOneByOuvertureCamping(string $ouverture_camping) Return the first EtablissementI18n filtered by the ouverture_camping column
+ * @method EtablissementI18n findOneByArriveesDeparts(string $arrivees_departs) Return the first EtablissementI18n filtered by the arrivees_departs column
  *
  * @method array findById(int $id) Return EtablissementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EtablissementI18n objects filtered by the locale column
  * @method array findByCountry(string $country) Return EtablissementI18n objects filtered by the country column
+ * @method array findByOuvertureReception(string $ouverture_reception) Return EtablissementI18n objects filtered by the ouverture_reception column
+ * @method array findByOuvertureCamping(string $ouverture_camping) Return EtablissementI18n objects filtered by the ouverture_camping column
+ * @method array findByArriveesDeparts(string $arrivees_departs) Return EtablissementI18n objects filtered by the arrivees_departs column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +150,7 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `COUNTRY` FROM `etablissement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `COUNTRY`, `OUVERTURE_RECEPTION`, `OUVERTURE_CAMPING`, `ARRIVEES_DEPARTS` FROM `etablissement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +336,93 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementI18nPeer::COUNTRY, $country, $comparison);
+    }
+
+    /**
+     * Filter the query on the ouverture_reception column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByOuvertureReception('fooValue');   // WHERE ouverture_reception = 'fooValue'
+     * $query->filterByOuvertureReception('%fooValue%'); // WHERE ouverture_reception LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $ouvertureReception The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterByOuvertureReception($ouvertureReception = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($ouvertureReception)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $ouvertureReception)) {
+                $ouvertureReception = str_replace('*', '%', $ouvertureReception);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::OUVERTURE_RECEPTION, $ouvertureReception, $comparison);
+    }
+
+    /**
+     * Filter the query on the ouverture_camping column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByOuvertureCamping('fooValue');   // WHERE ouverture_camping = 'fooValue'
+     * $query->filterByOuvertureCamping('%fooValue%'); // WHERE ouverture_camping LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $ouvertureCamping The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterByOuvertureCamping($ouvertureCamping = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($ouvertureCamping)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $ouvertureCamping)) {
+                $ouvertureCamping = str_replace('*', '%', $ouvertureCamping);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::OUVERTURE_CAMPING, $ouvertureCamping, $comparison);
+    }
+
+    /**
+     * Filter the query on the arrivees_departs column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByArriveesDeparts('fooValue');   // WHERE arrivees_departs = 'fooValue'
+     * $query->filterByArriveesDeparts('%fooValue%'); // WHERE arrivees_departs LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $arriveesDeparts The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterByArriveesDeparts($arriveesDeparts = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($arriveesDeparts)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $arriveesDeparts)) {
+                $arriveesDeparts = str_replace('*', '%', $arriveesDeparts);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::ARRIVEES_DEPARTS, $arriveesDeparts, $comparison);
     }
 
     /**

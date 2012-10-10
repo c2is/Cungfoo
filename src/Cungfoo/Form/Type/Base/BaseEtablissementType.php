@@ -257,6 +257,27 @@ class BaseEtablissementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'ouverture_reception' => array(
+                    'required' => false,
+                    'label' => 'etablissement.ouverture_reception',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'ouverture_camping' => array(
+                    'required' => false,
+                    'label' => 'etablissement.ouverture_camping',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'arrivees_departs' => array(
+                    'required' => false,
+                    'label' => 'etablissement.arrivees_departs',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));
