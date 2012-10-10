@@ -1,6 +1,92 @@
 
 <!-- load gmap v3 API-->
 <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    // global maps vars
+    var map,
+            infowindow = null,
+            proxMapLoaded = false,
+            infoMapLoaded = false;
+
+    var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
+            new google.maps.Size(19, 17),
+            new google.maps.Point(0,0),
+            new google.maps.Point(0, 17));
+    var shape = {
+        coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+        type: 'poly'
+    };
+
+    // specific function maps
+    var proxMkrs = [
+        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+    ];
+    function proxInit() {
+        var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerproxMkr
+                };
+        proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
+
+        setMarkers(proxMap, proxMkrs);
+        infowindow = new google.maps.InfoWindow({ content: "..." });
+    }
+
+    var infoMkrs = [
+        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
+    ];
+    function infoInit() {
+        var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerinfoMkr
+                };
+        infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
+
+        setMarkers(infoMap, infoMkrs);
+        infowindow = new google.maps.InfoWindow({ content: "..." });
+    }
+
+    // global function maps
+    function setMarkers(map, mkrs) {
+        for (var i = 0; i < mkrs.length; i++) {
+            var mkr = mkrs[i];
+            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+            var marker = new google.maps.Marker({
+                position: siteLatLng,
+                map: map,
+                shadow: shadow,
+                icon: mkr[5],
+                shape: shape,
+                title: mkr[0],
+                zIndex: mkr[3],
+                html: mkr[4]
+            });
+            var contentString = "";
+            /*google.maps.event.addListener(marker, "click", function () {
+                infowindow.setContent(this.html);
+                infowindow.open(map, this);
+            });*/
+        }
+    }
+    proxInit();
+    infoInit();
+</script>
 
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">Le Petit Mousse***</h1>
@@ -316,93 +402,6 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    <script>
-        // global maps vars
-        var map,
-          infowindow = null,
-          proxMapLoaded = false,
-          infoMapLoaded = false;
-
-        var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
-          new google.maps.Size(21, 34),
-          new google.maps.Point(0,0),
-          new google.maps.Point(10, 34));
-        var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
-          new google.maps.Size(21, 34),
-          new google.maps.Point(0,0),
-          new google.maps.Point(10, 34));
-        var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
-          new google.maps.Size(21, 34),
-          new google.maps.Point(0,0),
-          new google.maps.Point(10, 34));
-        var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
-          new google.maps.Size(19, 17),
-          new google.maps.Point(0,0),
-          new google.maps.Point(0, 17));
-        var shape = {
-          coord: [1, 1, 1, 20, 18, 20, 18 , 1],
-          type: 'poly'
-        };
-
-        // specific function maps
-        var proxMkrs = [
-            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
-        ];
-        function proxInit() {
-            var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
-                mapOptions = {
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: centerproxMkr
-                };
-            proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
-
-            setMarkers(proxMap, proxMkrs);
-            infowindow = new google.maps.InfoWindow({ content: "..." });
-        }
-
-        var infoMkrs = [
-            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
-        ];
-        function infoInit() {
-            var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
-                mapOptions = {
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: centerinfoMkr
-                };
-            infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
-
-            setMarkers(infoMap, infoMkrs);
-            infowindow = new google.maps.InfoWindow({ content: "..." });
-        }
-
-        // global function maps
-        function setMarkers(map, mkrs) {
-            for (var i = 0; i < mkrs.length; i++) {
-                var mkr = mkrs[i];
-                var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-                var marker = new google.maps.Marker({
-                    position: siteLatLng,
-                    map: map,
-                    shadow: shadow,
-                    icon: mkr[5],
-                    shape: shape,
-                    title: mkr[0],
-                    zIndex: mkr[3],
-                    html: mkr[4]
-                });
-                var contentString = "";
-                /*google.maps.event.addListener(marker, "click", function () {
-                    infowindow.setContent(this.html);
-                    infowindow.open(map, this);
-                });*/
-            }
-        }
-        proxInit();
-        infoInit();
-    </script>
-
     <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
 
 
