@@ -291,6 +291,8 @@ $(function() {
 
 });
 
+
+/*--  FUNCTIONS  --*/
 function colorizeRange(arrivalDay,departureDay){
     console.log("////////////////////////////////// colorizeRange()  //////////////////////////////////");
     $('#datepickerSecondary .dp_daypicker td:not(".dp_not_in_month")').each(function() {
@@ -415,15 +417,12 @@ function disableDates(){
 
 }
 
-
-
-/*--  FUNCTIONS  --*/
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
         btLeft = '<button class="prev">&lt;</button>',
         btRight = '<button class="next">&gt;</button>',
         btns = btLeft + btRight;
-        slider.append(btns);
+    slider.append(btns);
 
     $('.slide', slider).carouFredSel({
         circular: true,
@@ -454,13 +453,13 @@ function sliderPict() {
     slider.find('img').each(function() {
         var tip = $(this).attr("title");
         $(this).hover( function() {
-           $(this).attr('title', '');
-           $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
+            $(this).attr('title', '');
+            $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
         }, function() {
-           $('#littleTIP').fadeOut(function(){
-              $(this).remove();
-           });
-           $(this).attr('title', tip);
+            $('#littleTIP').fadeOut(function(){
+                $(this).remove();
+            });
+            $(this).attr('title', tip);
         });
     });
 }
@@ -489,7 +488,6 @@ function sliderActivite() {
         auto: false
     });
 }
-
 function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
