@@ -60,7 +60,8 @@ class EtablissementType extends BaseEtablissementType
                         'ville',
                         'categorie',
                         'minimum_price',
-                        'capacite'
+                        'capacite',
+                        'etablissementI18ns',
                     )
                 ),
                 array(
