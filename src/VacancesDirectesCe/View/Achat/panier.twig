@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block title %}Votre dossier{% endblock %}
+
+{% block content %}
+        <div class="column">
+            <iframe src="{{ path('resalys_wrapper') }}?{{ queryString }}" width="960px" height="700px"></iframe>
+        </div>
+{% endblock %}

@@ -28,9 +28,11 @@ class WrapperController implements ControllerProviderInterface
             $iframe = file_get_contents(sprintf("http://preprod.vacances-directes.com/rsl/clickbooking?%s", $queryString));
 
             $modifiedIframe = str_replace(array(
-                '{_c2is.stylesheet}'
+                '{_c2is.uri}',
+                '{_c2is.stylesheet}',
             ), array(
-                $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request)
+                rtrim($app['url_generator']->generate('homepage', array(), true), '/'),
+                $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request),
             ), $iframe);
 
             return new Response($modifiedIframe);
