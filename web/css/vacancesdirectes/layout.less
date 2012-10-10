@@ -29,9 +29,8 @@ header, section, footer {position:relative;}
       a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
     }
     &:hover .subnav{display:block;}
-    a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;.verticalCenter(50px);
-      &#home{padding-bottom:4px;}
-      &#home img{width:27px;height:27px;margin:3px 0 0;}
+    a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;.verticalCenter(50px, image);
+      &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font-family:Arial, sans-serif;font-weight:bold;font-size:15px;color:@colorFushia;}
     }
     .subnav{padding:20px;position:absolute;top:57px;left:0px;width:920px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -2px @colorGris1;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
@@ -70,7 +69,7 @@ h6, .h6-like{color:@colorGris1;}
   &.big{padding:5px 10px;}
   &.small{padding:1px 10px;font-size:12px;.border-radius(10px)}
 }
-
+.boxborder{margin:0 25px 25px 5px;border:5px solid #fff;.box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22))}
 .pathway{font:11px/28px Arial,sans-serif;color:@colorBgGrisM;text-align:right;
   li{display:inline;
     &:last-child a{color:@colorFushia;}

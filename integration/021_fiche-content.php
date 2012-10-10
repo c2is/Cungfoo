@@ -1,3 +1,7 @@
+
+<!-- load gmap v3 API-->
+<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">Le Petit Mousse***</h1>
     <p class="keywordsFiche"><a href="#_">Club enfants</a> - <a href="#_">Parc aquatique</a> - <a href="#_">Plage de mer</a> - <a href="#_">Accès wifi</a> - <a href="#_">Animaux acceptés</a></p>
@@ -42,23 +46,23 @@
 
 <div class="tabCampDiapo">
     <div class="slider"><div class="slide clear">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 1" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 1" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 2" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 1" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 1" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 4" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 3" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" alt="Camping 4" class="camping">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 3" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 3" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 2" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 3" class="regions">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 4" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" alt="Location 5" class="locations">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 2" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" alt="Activité 4" class="activites">
-        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" alt="Régions 2" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="01 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 1" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="02 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 1" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="03 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 2" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="04 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 1" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="05 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 1" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="06 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 4" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="07 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 3" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ff9191" width="616" height="326" title="08 Vacanciale mer<br>(Mobilhome 5places)" alt="Camping 4" class="camping">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="09 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 3" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="10 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 3" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="11 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 2" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="12 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 3" class="regions">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="13 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 4" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/ddd448" width="616" height="326" title="14 Vacanciale mer<br>(Mobilhome 5places)" alt="Location 5" class="locations">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="15 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 2" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/b7b2ab" width="616" height="326" title="16 Vacanciale mer<br>(Mobilhome 5places)" alt="Activité 4" class="activites">
+        <img src="http://pImg.devlint.fr/616x326/3bbd38" width="616" height="326" title="17 Vacanciale mer<br>(Mobilhome 5places)" alt="Régions 2" class="regions">
     </div></div>
     <form class="tabCampDiapoOptions clear" action="#_">
         <fieldset class="left">
@@ -126,7 +130,7 @@
             <dt>A proximité<br> nous avons listé :</dt>
             <dd class="list">
                <ul>
-                   <li>14 sites à visiter</li>
+                   <li>14 proxMkrs à visiter</li>
                    <li>24 activités sportives</li>
                    <li>14 événements culturels</li>
                </ul>
@@ -166,7 +170,7 @@
     </form>
 
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -178,7 +182,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -190,7 +194,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -202,7 +206,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -214,7 +218,7 @@
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
     <div class="typLocation clear">
-        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left">
+        <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
@@ -225,7 +229,6 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-
 
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
@@ -277,6 +280,35 @@
             </ul></dd>
         </dl>
     </div>
+
+    <div class="temoignFiche bloc gris">
+        <h3>Vous aimerez</h3>
+        <h4>comme...</h4>
+        <div>
+            <div class="temoignFicheIt fish">
+                <span class="perso">Amélie</span>
+                <span class="age">10 ans</span>
+            </div>
+        </div>
+        <div class="slider"><div class="slide">
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+            <dl>
+                <dd><img src="http://pimg.devlint.fr/152x112" alt="Image" class="boxborder"></dd>
+                <dt>Le toboggan acquatique</dt>
+                <dd>Curabitur eros lorem, tempor nec placerat sed, eleifend in lorem. Proin sed augue at nibh elementum eleifend sed eu turpis.</dd>
+            </dl>
+        </div></div>
+    </div>
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
@@ -284,8 +316,96 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    <h3>Tab A proximité</h3>
-        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+    <script>
+        // global maps vars
+        var map,
+          infowindow = null,
+          proxMapLoaded = false,
+          infoMapLoaded = false;
+
+        var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
+        var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
+          new google.maps.Size(19, 17),
+          new google.maps.Point(0,0),
+          new google.maps.Point(0, 17));
+        var shape = {
+          coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+          type: 'poly'
+        };
+
+        // specific function maps
+        var proxMkrs = [
+            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+        ];
+        function proxInit() {
+            var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerproxMkr
+                };
+            proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
+
+            setMarkers(proxMap, proxMkrs);
+            infowindow = new google.maps.InfoWindow({ content: "..." });
+        }
+
+        var infoMkrs = [
+            ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
+        ];
+        function infoInit() {
+            var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerinfoMkr
+                };
+            infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
+
+            setMarkers(infoMap, infoMkrs);
+            infowindow = new google.maps.InfoWindow({ content: "..." });
+        }
+
+        // global function maps
+        function setMarkers(map, mkrs) {
+            for (var i = 0; i < mkrs.length; i++) {
+                var mkr = mkrs[i];
+                var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+                var marker = new google.maps.Marker({
+                    position: siteLatLng,
+                    map: map,
+                    shadow: shadow,
+                    icon: mkr[5],
+                    shape: shape,
+                    title: mkr[0],
+                    zIndex: mkr[3],
+                    html: mkr[4]
+                });
+                var contentString = "";
+                /*google.maps.event.addListener(marker, "click", function () {
+                    infowindow.setContent(this.html);
+                    infowindow.open(map, this);
+                });*/
+            }
+        }
+        proxInit();
+        infoInit();
+    </script>
+
+    <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
+
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">Infos pratiques</button>
@@ -304,6 +424,9 @@
 <div id="tabInfos" class="tabs">
     <h3>Tab Infos Pratiques</h3>
         <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
+
+    <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
+
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">Le camping</button>
