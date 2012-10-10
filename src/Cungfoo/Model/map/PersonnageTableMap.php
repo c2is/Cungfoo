@@ -57,6 +57,7 @@ class PersonnageTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('Avantage', 'Cungfoo\\Model\\Avantage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), 'CASCADE', null, 'Avantages');
         $this->addRelation('PersonnageI18n', 'Cungfoo\\Model\\PersonnageI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PersonnageI18ns');
     } // buildRelations()
 
@@ -70,7 +71,7 @@ class PersonnageTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'prenom, interet_1, interet_2, interet_3', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'prenom', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/personnages', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
         );
     } // getBehaviors()

@@ -4,8 +4,8 @@
 
 {% block content %}
         <div class="column">
+
             <iframe src="{{ path('resalys_wrapper', {
-                iframe: 1,
                 webuser: 'web_ce_achat_fr',
                 display: 'default',
                 tokens: 'ignore_token',
@@ -14,6 +14,7 @@
                 actions: 'updateProductCriterias;getProductProposals',
                 criterias_object_name: 'search_form',
                 product_CMSCriteria_ALL: 'ALL',
+                search_page: '1',
                 product_CMSCriteria_PHS: '',
                 product_start_date: "now" | date("d/m/Y"),
             }) }}" width="960px" height="700px"></iframe>

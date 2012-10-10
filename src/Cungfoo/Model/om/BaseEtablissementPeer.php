@@ -22,6 +22,7 @@ use Cungfoo\Model\EtablissementServiceComplementairePeer;
 use Cungfoo\Model\EtablissementSituationGeographiquePeer;
 use Cungfoo\Model\EtablissementThematiquePeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
+use Cungfoo\Model\MultimediaEtablissementPeer;
 use Cungfoo\Model\PersonnagePeer;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\EtablissementTableMap;
@@ -147,13 +148,6 @@ abstract class BaseEtablissementPeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -537,6 +531,9 @@ abstract class BaseEtablissementPeer
         // Invalidate objects in PersonnagePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PersonnagePeer::clearInstancePool();
+        // Invalidate objects in MultimediaEtablissementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        MultimediaEtablissementPeer::clearInstancePool();
         // Invalidate objects in EtablissementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementI18nPeer::clearInstancePool();
@@ -1564,6 +1561,13 @@ abstract class BaseEtablissementPeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BaseEtablissementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

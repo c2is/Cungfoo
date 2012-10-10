@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\AvantagePeer;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageI18nPeer;
@@ -76,13 +77,6 @@ abstract class BasePersonnagePeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -396,6 +390,9 @@ abstract class BasePersonnagePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in AvantagePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        AvantagePeer::clearInstancePool();
         // Invalidate objects in PersonnageI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PersonnageI18nPeer::clearInstancePool();
@@ -1030,6 +1027,13 @@ abstract class BasePersonnagePeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BasePersonnagePeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

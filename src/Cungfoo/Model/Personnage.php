@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BasePersonnage;
  */
 class Personnage extends BasePersonnage
 {
+    public function __toString()
+    {
+        return $this->getPrenom();
+    }
 }

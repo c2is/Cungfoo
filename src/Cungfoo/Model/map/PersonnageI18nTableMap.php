@@ -45,9 +45,6 @@ class PersonnageI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'personnage', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('PRENOM', 'Prenom', 'VARCHAR', true, 255, null);
-        $this->addColumn('INTERET_1', 'Interet1', 'VARCHAR', false, 255, null);
-        $this->addColumn('INTERET_2', 'Interet2', 'VARCHAR', false, 255, null);
-        $this->addColumn('INTERET_3', 'Interet3', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

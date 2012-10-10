@@ -3,62 +3,35 @@
         Id: 1
         Locale: de
         Prenom: 'Roger DE'
-        Interet1: 'l''accès direct à la plage DE'
-        Interet2: 'l''accès wi-fi dans tout le camping DE'
-        Interet3: 'la buvette DE'
     1_en:
         Id: 1
         Locale: en
         Prenom: 'Roger EN'
-        Interet1: 'l''accès direct à la plage EN'
-        Interet2: 'l''accès wi-fi dans tout le camping EN'
-        Interet3: 'la buvette EN'
     1_fr:
         Id: 1
         Locale: fr
         Prenom: Roger
-        Interet1: 'l''accès direct à la plage'
-        Interet2: 'l''accès wi-fi dans tout le camping'
-        Interet3: 'la buvette'
     2_de:
         Id: 2
         Locale: de
         Prenom: 'Simon DE'
-        Interet1: 'la location de vélo DE'
-        Interet2: 'les barbecues collectifs DE'
-        Interet3: 'le mc do DE'
     2_en:
         Id: 2
         Locale: en
         Prenom: 'Simon EN'
-        Interet1: 'la location de vélo EN'
-        Interet2: 'les barbecues collectifs EN'
-        Interet3: 'le mc do EN'
     2_fr:
         Id: 2
         Locale: fr
         Prenom: Simon
-        Interet1: 'la location de vélo'
-        Interet2: 'les barbecues collectifs'
-        Interet3: 'le mc do'
     3_de:
         Id: 3
         Locale: de
         Prenom: 'Amélie DE'
-        Interet1: 'les activités du club enfant DE'
-        Interet2: 'le toboggan aquatique DE'
-        Interet3: 'l''équitation DE'
     3_en:
         Id: 3
         Locale: en
         Prenom: 'Amélie EN'
-        Interet1: 'les activités du club enfant EN'
-        Interet2: 'le toboggan aquatique EN'
-        Interet3: 'l''équitation EN'
     3_fr:
         Id: 3
         Locale: fr
         Prenom: Amélie
-        Interet1: 'les activités du club enfant'
-        Interet2: 'le toboggan aquatique'
-        Interet3: 'l''équitation'

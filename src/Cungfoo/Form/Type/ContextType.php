@@ -16,6 +16,7 @@ class ContextType extends AppAwareType
         $this
             ->addDimensions($builder)
             ->addLocale($builder)
+            ->addTerm($builder)
         ;
     }
 
@@ -61,6 +62,17 @@ class ContextType extends AppAwareType
             'data_class'    => null,
             'data'          => $this->app['context']->get('language'),
             'empty_value'   => null
+        ));
+
+        return $this;
+    }
+
+    protected function addTerm($builder)
+    {
+        $builder->add('term', 'text', array(
+            'label'         => sprintf('context.term'),
+            'required'      => false,
+            'data'          => $this->app['context']->get('term')
         ));
 
         return $this;

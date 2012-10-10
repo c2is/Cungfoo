@@ -25,16 +25,10 @@ use Cungfoo\Model\PersonnageI18nQuery;
  * @method PersonnageI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PersonnageI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method PersonnageI18nQuery orderByPrenom($order = Criteria::ASC) Order by the prenom column
- * @method PersonnageI18nQuery orderByInteret1($order = Criteria::ASC) Order by the interet_1 column
- * @method PersonnageI18nQuery orderByInteret2($order = Criteria::ASC) Order by the interet_2 column
- * @method PersonnageI18nQuery orderByInteret3($order = Criteria::ASC) Order by the interet_3 column
  *
  * @method PersonnageI18nQuery groupById() Group by the id column
  * @method PersonnageI18nQuery groupByLocale() Group by the locale column
  * @method PersonnageI18nQuery groupByPrenom() Group by the prenom column
- * @method PersonnageI18nQuery groupByInteret1() Group by the interet_1 column
- * @method PersonnageI18nQuery groupByInteret2() Group by the interet_2 column
- * @method PersonnageI18nQuery groupByInteret3() Group by the interet_3 column
  *
  * @method PersonnageI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PersonnageI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -50,16 +44,10 @@ use Cungfoo\Model\PersonnageI18nQuery;
  * @method PersonnageI18n findOneById(int $id) Return the first PersonnageI18n filtered by the id column
  * @method PersonnageI18n findOneByLocale(string $locale) Return the first PersonnageI18n filtered by the locale column
  * @method PersonnageI18n findOneByPrenom(string $prenom) Return the first PersonnageI18n filtered by the prenom column
- * @method PersonnageI18n findOneByInteret1(string $interet_1) Return the first PersonnageI18n filtered by the interet_1 column
- * @method PersonnageI18n findOneByInteret2(string $interet_2) Return the first PersonnageI18n filtered by the interet_2 column
- * @method PersonnageI18n findOneByInteret3(string $interet_3) Return the first PersonnageI18n filtered by the interet_3 column
  *
  * @method array findById(int $id) Return PersonnageI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PersonnageI18n objects filtered by the locale column
  * @method array findByPrenom(string $prenom) Return PersonnageI18n objects filtered by the prenom column
- * @method array findByInteret1(string $interet_1) Return PersonnageI18n objects filtered by the interet_1 column
- * @method array findByInteret2(string $interet_2) Return PersonnageI18n objects filtered by the interet_2 column
- * @method array findByInteret3(string $interet_3) Return PersonnageI18n objects filtered by the interet_3 column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +138,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `PRENOM`, `INTERET_1`, `INTERET_2`, `INTERET_3` FROM `personnage_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `PRENOM` FROM `personnage_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -336,93 +324,6 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PersonnageI18nPeer::PRENOM, $prenom, $comparison);
-    }
-
-    /**
-     * Filter the query on the interet_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByInteret1('fooValue');   // WHERE interet_1 = 'fooValue'
-     * $query->filterByInteret1('%fooValue%'); // WHERE interet_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $interet1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PersonnageI18nQuery The current query, for fluid interface
-     */
-    public function filterByInteret1($interet1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($interet1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $interet1)) {
-                $interet1 = str_replace('*', '%', $interet1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PersonnageI18nPeer::INTERET_1, $interet1, $comparison);
-    }
-
-    /**
-     * Filter the query on the interet_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByInteret2('fooValue');   // WHERE interet_2 = 'fooValue'
-     * $query->filterByInteret2('%fooValue%'); // WHERE interet_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $interet2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PersonnageI18nQuery The current query, for fluid interface
-     */
-    public function filterByInteret2($interet2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($interet2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $interet2)) {
-                $interet2 = str_replace('*', '%', $interet2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PersonnageI18nPeer::INTERET_2, $interet2, $comparison);
-    }
-
-    /**
-     * Filter the query on the interet_3 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByInteret3('fooValue');   // WHERE interet_3 = 'fooValue'
-     * $query->filterByInteret3('%fooValue%'); // WHERE interet_3 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $interet3 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PersonnageI18nQuery The current query, for fluid interface
-     */
-    public function filterByInteret3($interet3 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($interet3)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $interet3)) {
-                $interet3 = str_replace('*', '%', $interet3);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PersonnageI18nPeer::INTERET_3, $interet3, $comparison);
     }
 
     /**
