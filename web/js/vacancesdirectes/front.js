@@ -150,7 +150,7 @@ function sliderActivite() {
 function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
-    consoleLog(load);
+
     if (sView == 'tabCamp' || sView == 'tabLocations') {
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
@@ -158,13 +158,21 @@ function tabs(tView, load) {
             $('[name="affPhoto"][value="all"]').parent('label').trigger('click');
         }
         slider.slideDown();
+        if (!load){ $('html, body').animate({scrollTop: 0},0); }
 
-        if (!load)
-            $('html, body').animate({scrollTop: 0},0);
     } else if (sView == 'tabProximite' || sView == 'tabInfos') {
         slider.slideUp();
-        if ($('#map_canvas').empty())
+        if (mapsLoaded) {
+            consoleLog('2');
+            google.maps.event.addListenerOnce(map, 'idle', function() {
+                google.maps.event.trigger(map, 'resize');
+                map.setCenter(point); // be sure to reset the map center as well
+            });
+        } else {
+            consoleLog('1');
             initialize();
+            mapsLoaded = true;
+        }
     } else {
         slider.slideUp();
     }

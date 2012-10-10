@@ -316,36 +316,51 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script>
-      var Lyon = new google.maps.LatLng(45.764544,4.846512);
-      var parliament = new google.maps.LatLng(45.764544,4.846512);
-      var marker;
-      var map;
+      var centerPoint = new google.maps.LatLng(45.764544,4.846512),
+        map,
+        infowindow = null,
+        mapsLoaded = false;
 
       function initialize() {
           var mapOptions = {
               zoom: 13,
               mapTypeId: google.maps.MapTypeId.ROADMAP,
-              center: Lyon
+              center: centerPoint
           };
 
-          map = new google.maps.Map(document.getElementById('map_canvas'),
-                  mapOptions);
+          map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-          marker = new google.maps.Marker({
-              map:map,
-              draggable:true,
-              animation: google.maps.Animation.DROP,
-              position: parliament
-          });
-          google.maps.event.addListener(marker, 'click', toggleBounce);
+          setMarkers(map, sites);
+          infowindow = new google.maps.InfoWindow({ content: "..." });
       }
 
-      function toggleBounce() {
+      var sites = [
+          ['c2is', 45.764544, 4.846512, 5, 'C2iS, Agence Digitale à Lyon'],
+          ['Mount Evans', 39.58108, -105.63535, 4, 'This is Mount Evans.'],
+          ['Flatirons in the Spring', 39.99948, -105.28370, 3, 'These are the Flatirons in the spring.'],
+          ['Irving Homestead', 40.315939, -105.440630, 2, 'This is the Irving Homestead.'],
+          ['Badlands National Park', 43.785890, -101.90175, 1, 'This is Badlands National Park']
+      ];
 
-          if (marker.getAnimation() != null) {
-              marker.setAnimation(null);
-          } else {
-              marker.setAnimation(google.maps.Animation.BOUNCE);
+      function setMarkers(map, markers) {
+
+          for (var i = 0; i < markers.length; i++) {
+              var sites = markers[i];
+              var siteLatLng = new google.maps.LatLng(sites[1], sites[2]);
+              var marker = new google.maps.Marker({
+                  position: siteLatLng,
+                  map: map,
+                  title: sites[0],
+                  zIndex: sites[3],
+                  html: sites[4]
+              });
+
+              var contentString = "";
+
+              google.maps.event.addListener(marker, "click", function () {
+                  infowindow.setContent(this.html);
+                  infowindow.open(map, this);
+              });
           }
       }
     </script>
