@@ -331,6 +331,7 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
 
         <behavior name="i18n">
@@ -339,6 +340,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/activites" />
+            <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
 
@@ -406,6 +408,7 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
 
         <behavior name="i18n">
@@ -414,6 +417,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/services-complementaires" />
+            <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
 

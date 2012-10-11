@@ -3,7 +3,7 @@
 {% block title %}Récapitulatif de votre commande{% endblock %}
 
 {% block content %}
-        <div class="column">
+        <div class="column clearboth" id="confirmContainer">
             <iframe src="{{ path('resalys_wrapper') }}?{{ queryString }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}
