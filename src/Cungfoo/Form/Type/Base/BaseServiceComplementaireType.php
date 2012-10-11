@@ -34,6 +34,19 @@ class BaseServiceComplementaireType extends AppAwareType
             'label' => 'service_complementaire.code',
             'required' => false,
         ));
+        $builder->add('image_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'service_complementaire.image_path',
+            'required' => false,
+        ));
+        $builder->add('image_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'service_complementaire.image_path_deleted',
+            'required' => false,
+        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(

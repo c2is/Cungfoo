@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\ArrayInput,
 
 use Cungfoo\Lib\Job\Interfaces\JobHandler,
     Cungfoo\Model\JobLogPeer,
-    Cungfoo\Lib\Resalys\Client\CatalogueClient;
+    Resalys\Lib\Client\CatalogueClient;
 
 class CatalogueClientJobHandler extends JobHandler
 {
