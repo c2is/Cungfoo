@@ -42,10 +42,13 @@ $(function() {
             oTabLink = oTabControls.find('a'),
             tView = oTabControls.find('a.active').attr('href');
 
-        oTabs.css({position:'absolute',left:'-999em', top:'0'});
+        oTabs.css({position:'absolute',left:'-999em', top:'-999em'});
         if (oHash != '') {
             setTimeout( function(){
-                $('.tabControls').find('[href='+oHash+']').trigger('click');
+                if ($(oHash).length > 0)
+                    $('.tabControls').find('[href='+oHash+']').trigger('click');
+                else
+                    tabs(tView, false);
             }, 0);
         } else {
             tabs(tView, false);

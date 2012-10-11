@@ -65,6 +65,24 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
     protected $country;
 
     /**
+     * The value for the ouverture_reception field.
+     * @var        string
+     */
+    protected $ouverture_reception;
+
+    /**
+     * The value for the ouverture_camping field.
+     * @var        string
+     */
+    protected $ouverture_camping;
+
+    /**
+     * The value for the arrivees_departs field.
+     * @var        string
+     */
+    protected $arrivees_departs;
+
+    /**
      * @var        Etablissement
      */
     protected $aEtablissement;
@@ -135,6 +153,36 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [ouverture_reception] column value.
+     *
+     * @return string
+     */
+    public function getOuvertureReception()
+    {
+        return $this->ouverture_reception;
+    }
+
+    /**
+     * Get the [ouverture_camping] column value.
+     *
+     * @return string
+     */
+    public function getOuvertureCamping()
+    {
+        return $this->ouverture_camping;
+    }
+
+    /**
+     * Get the [arrivees_departs] column value.
+     *
+     * @return string
+     */
+    public function getArriveesDeparts()
+    {
+        return $this->arrivees_departs;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -202,6 +250,69 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
     } // setCountry()
 
     /**
+     * Set the value of [ouverture_reception] column.
+     *
+     * @param string $v new value
+     * @return EtablissementI18n The current object (for fluent API support)
+     */
+    public function setOuvertureReception($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->ouverture_reception !== $v) {
+            $this->ouverture_reception = $v;
+            $this->modifiedColumns[] = EtablissementI18nPeer::OUVERTURE_RECEPTION;
+        }
+
+
+        return $this;
+    } // setOuvertureReception()
+
+    /**
+     * Set the value of [ouverture_camping] column.
+     *
+     * @param string $v new value
+     * @return EtablissementI18n The current object (for fluent API support)
+     */
+    public function setOuvertureCamping($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->ouverture_camping !== $v) {
+            $this->ouverture_camping = $v;
+            $this->modifiedColumns[] = EtablissementI18nPeer::OUVERTURE_CAMPING;
+        }
+
+
+        return $this;
+    } // setOuvertureCamping()
+
+    /**
+     * Set the value of [arrivees_departs] column.
+     *
+     * @param string $v new value
+     * @return EtablissementI18n The current object (for fluent API support)
+     */
+    public function setArriveesDeparts($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->arrivees_departs !== $v) {
+            $this->arrivees_departs = $v;
+            $this->modifiedColumns[] = EtablissementI18nPeer::ARRIVEES_DEPARTS;
+        }
+
+
+        return $this;
+    } // setArriveesDeparts()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -240,6 +351,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->country = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->ouverture_reception = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->ouverture_camping = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->arrivees_departs = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +362,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = EtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = EtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EtablissementI18n object", $e);
@@ -481,6 +595,15 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementI18nPeer::COUNTRY)) {
             $modifiedColumns[':p' . $index++]  = '`COUNTRY`';
         }
+        if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_RECEPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`OUVERTURE_RECEPTION`';
+        }
+        if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_CAMPING)) {
+            $modifiedColumns[':p' . $index++]  = '`OUVERTURE_CAMPING`';
+        }
+        if ($this->isColumnModified(EtablissementI18nPeer::ARRIVEES_DEPARTS)) {
+            $modifiedColumns[':p' . $index++]  = '`ARRIVEES_DEPARTS`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `etablissement_i18n` (%s) VALUES (%s)',
@@ -500,6 +623,15 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
                         break;
                     case '`COUNTRY`':
                         $stmt->bindValue($identifier, $this->country, PDO::PARAM_STR);
+                        break;
+                    case '`OUVERTURE_RECEPTION`':
+                        $stmt->bindValue($identifier, $this->ouverture_reception, PDO::PARAM_STR);
+                        break;
+                    case '`OUVERTURE_CAMPING`':
+                        $stmt->bindValue($identifier, $this->ouverture_camping, PDO::PARAM_STR);
+                        break;
+                    case '`ARRIVEES_DEPARTS`':
+                        $stmt->bindValue($identifier, $this->arrivees_departs, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,6 +781,15 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getCountry();
                 break;
+            case 3:
+                return $this->getOuvertureReception();
+                break;
+            case 4:
+                return $this->getOuvertureCamping();
+                break;
+            case 5:
+                return $this->getArriveesDeparts();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +822,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getCountry(),
+            $keys[3] => $this->getOuvertureReception(),
+            $keys[4] => $this->getOuvertureCamping(),
+            $keys[5] => $this->getArriveesDeparts(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -729,6 +873,15 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             case 2:
                 $this->setCountry($value);
                 break;
+            case 3:
+                $this->setOuvertureReception($value);
+                break;
+            case 4:
+                $this->setOuvertureCamping($value);
+                break;
+            case 5:
+                $this->setArriveesDeparts($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +909,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCountry($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setOuvertureReception($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setOuvertureCamping($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setArriveesDeparts($arr[$keys[5]]);
     }
 
     /**
@@ -770,6 +926,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementI18nPeer::ID)) $criteria->add(EtablissementI18nPeer::ID, $this->id);
         if ($this->isColumnModified(EtablissementI18nPeer::LOCALE)) $criteria->add(EtablissementI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(EtablissementI18nPeer::COUNTRY)) $criteria->add(EtablissementI18nPeer::COUNTRY, $this->country);
+        if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_RECEPTION)) $criteria->add(EtablissementI18nPeer::OUVERTURE_RECEPTION, $this->ouverture_reception);
+        if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_CAMPING)) $criteria->add(EtablissementI18nPeer::OUVERTURE_CAMPING, $this->ouverture_camping);
+        if ($this->isColumnModified(EtablissementI18nPeer::ARRIVEES_DEPARTS)) $criteria->add(EtablissementI18nPeer::ARRIVEES_DEPARTS, $this->arrivees_departs);
 
         return $criteria;
     }
@@ -843,6 +1002,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setCountry($this->getCountry());
+        $copyObj->setOuvertureReception($this->getOuvertureReception());
+        $copyObj->setOuvertureCamping($this->getOuvertureCamping());
+        $copyObj->setArriveesDeparts($this->getArriveesDeparts());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -959,6 +1121,9 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->country = null;
+        $this->ouverture_reception = null;
+        $this->ouverture_camping = null;
+        $this->arrivees_departs = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

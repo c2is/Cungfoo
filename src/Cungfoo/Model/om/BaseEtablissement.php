@@ -7987,6 +7987,78 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [ouverture_reception] column value.
+         *
+         * @return string
+         */
+        public function getOuvertureReception()
+        {
+        return $this->getCurrentTranslation()->getOuvertureReception();
+    }
+
+
+        /**
+         * Set the value of [ouverture_reception] column.
+         *
+         * @param string $v new value
+         * @return EtablissementI18n The current object (for fluent API support)
+         */
+        public function setOuvertureReception($v)
+        {    $this->getCurrentTranslation()->setOuvertureReception($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [ouverture_camping] column value.
+         *
+         * @return string
+         */
+        public function getOuvertureCamping()
+        {
+        return $this->getCurrentTranslation()->getOuvertureCamping();
+    }
+
+
+        /**
+         * Set the value of [ouverture_camping] column.
+         *
+         * @param string $v new value
+         * @return EtablissementI18n The current object (for fluent API support)
+         */
+        public function setOuvertureCamping($v)
+        {    $this->getCurrentTranslation()->setOuvertureCamping($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [arrivees_departs] column value.
+         *
+         * @return string
+         */
+        public function getArriveesDeparts()
+        {
+        return $this->getCurrentTranslation()->getArriveesDeparts();
+    }
+
+
+        /**
+         * Set the value of [arrivees_departs] column.
+         *
+         * @param string $v new value
+         * @return EtablissementI18n The current object (for fluent API support)
+         */
+        public function setArriveesDeparts($v)
+        {    $this->getCurrentTranslation()->setArriveesDeparts($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

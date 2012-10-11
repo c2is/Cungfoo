@@ -1,6 +1,3 @@
-
-<!-- load gmap v3 API-->
-<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
     // global maps vars
     var map,
@@ -120,12 +117,12 @@
 </div>-->
 
 <ul class="tabControls clear">
-    <li><a href="#tabCamp" class="active">Le camping</a></li>
+    <li><a href="#tabCamp">Le camping</a></li>
     <li><a href="#tabLocations">Les locations</a></li>
     <li><a href="#tabSurplace">Sur place</a></li>
     <li><a href="#tabProximite">A proximité</a></li>
     <!-- Non V2<li><a href="#tabAvis">Avis</a></li>-->
-    <li><a href="#tabInfos">Infos pratiques</a></li>
+    <li><a href="#tabInfos" class="active">Infos pratiques</a></li>
 </ul>
 
 <div class="tabCampDiapo">
@@ -402,6 +399,92 @@
 <div id="tabProximite" class="tabs">
     <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
 
+    <h3>Activités et sites à visiter</h3>
+    <div class="activites clear">
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Europark</span>
+            <p>Vias Plage<br>
+            <span>34450 Vias Plage</span><br>
+            Distance du camping : 1 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Europark</span>
+            <p>Vias Plage<br>
+            <span>34450 Vias Plage</span><br>
+            Distance du camping : 1 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Europark</span>
+            <p>Vias Plage<br>
+            <span>34450 Vias Plage</span><br>
+            Distance du camping : 1 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Europark</span>
+            <p>Vias Plage<br>
+            <span>34450 Vias Plage</span><br>
+            Distance du camping : 1 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <a href="#_" class="bt trans right">Voir toutes les activités et sites à visiter (23)</a>
+    </div>
+
+    <h3>Agenda culturel et sorties</h3>
+    <div class="agenda clear">
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Ben Harper en concert</span>
+            <strong class="date">Le dimanche 29 juillet 2012</strong>
+            <p>promenade du Maréchal-Leclerc<br>
+            <span>34200 Sete</span><br>
+            Distance du camping : 26 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Ben Harper en concert</span>
+            <strong class="date">Le dimanche 29 juillet 2012</strong>
+            <p>promenade du Maréchal-Leclerc<br>
+            <span>34200 Sete</span><br>
+            Distance du camping : 26 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Ben Harper en concert</span>
+            <strong class="date">Le dimanche 29 juillet 2012</strong>
+            <p>promenade du Maréchal-Leclerc<br>
+            <span>34200 Sete</span><br>
+            Distance du camping : 26 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <div class="miniEncart left clear">
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
+            <span class="h5-like">Ben Harper en concert</span>
+            <strong class="date">Le dimanche 29 juillet 2012</strong>
+            <p>promenade du Maréchal-Leclerc<br>
+            <span>34200 Sete</span><br>
+            Distance du camping : 26 km<br>
+            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+        </div>
+        <a href="#_" class="bt trans right">Voir tous les agenda culturel et sorties (13)</a>
+    </div>
+
+    <div class="infoDestination bloc sombre">
+        <h3>Languedoc-Roussilon</h3>
+        <p>Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations.</p>
+        <a class="bt gris" href="#_">Découvrir le Languedoc-Roussillon</a>
+        
+        <img class="iDestImg1 boxborder" src="http://pimg.devlint.fr/211x93/ccc/333/*" width="211" height="93" alt="">
+        <img class="iDestImg2 boxborder" src="http://pimg.devlint.fr/146x65/ccc/333/*" width="146" height="65" alt="">
+    </div>
 
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
@@ -419,10 +502,34 @@
 </div>-->
 <!-- tab Infos Pratiques -->
 <div id="tabInfos" class="tabs">
-    <h3>Tab Infos Pratiques</h3>
-        <p>Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.</p>
 
     <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
+
+    <h3 class="clearboth">Coordonnées du camping le petit mousse</h3>
+    <div class="blCoordGps left">
+        <span class="gps">gps : 43° 17' 27.438", 3° 24' 14.176"</span>
+        Imp. des Espargouls<br> La Grande Cosse Côte Ouest<br> 34450 Vias Plage
+    </div>
+    <div class="blCoordTel left">
+        Tél. : 04 67 90 99 04<br> Fax : 04 67 90 97 95<br> Réservation : 0 825 13 34 00
+    </div>
+
+    <h3 class="clearboth">Horaires d'ouverture</h3>
+    <dl class="blHoraire hRecept left">
+        <dt>Réception</dt>
+        <dd>Haute saison : 9h-10h / 14h-19h<br> Basse saison : 8h-20h 7j/7</dd>
+    </dl>
+    <dl class="blHoraire hCamp left">
+        <dt>Camping</dt>
+        <dd>Haute saison : 7h- 24h<br> Basse saison : 8h- 22h</dd>
+    </dl>
+
+    <h3 class="clearboth">Arrivées / Départs</h3>
+    <ul class="condArrDep">
+        <li>Les arrivées se font à partir de 15h et jusqu'à 19h. À votre arrivée, adressez-vous directement à l'accueil du
+camping Le Petit Mousse.</li>
+        <li>Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi.</li>
+    </ul>
 
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>

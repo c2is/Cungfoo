@@ -78,6 +78,9 @@
         <column name="image_360_path" type="varchar" />
         <column name="description" type="longvarchar" />
         <column name="capacite" type="varchar" />
+        <column name="ouverture_reception" type="longvarchar" />
+        <column name="ouverture_camping" type="longvarchar" />
+        <column name="arrivees_departs" type="longvarchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
@@ -89,7 +92,7 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="country" />
+            <parameter name="i18n_columns" value="country,ouverture_reception,ouverture_camping,arrivees_departs" />
         </behavior>
 
         <behavior name="crudable">
