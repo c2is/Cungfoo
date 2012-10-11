@@ -45,6 +45,9 @@ class EtablissementI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'etablissement', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('COUNTRY', 'Country', 'VARCHAR', false, 255, null);
+        $this->addColumn('OUVERTURE_RECEPTION', 'OuvertureReception', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('OUVERTURE_CAMPING', 'OuvertureCamping', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('ARRIVEES_DEPARTS', 'ArriveesDeparts', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 
