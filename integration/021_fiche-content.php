@@ -1,9 +1,9 @@
 <script>
     // global maps vars
     var map,
-            infowindow = null,
-            proxMapLoaded = false,
-            infoMapLoaded = false;
+        infowindow = null,
+        proxMapLoaded = false,
+        infoMapLoaded = false;
 
     var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
             new google.maps.Size(21, 34),
