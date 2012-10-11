@@ -1,6 +1,88 @@
 {% extends "base.twig" %}
 
 {% block content %}
+<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    // global maps vars
+    var map,
+            infowindow = null,
+            proxMapLoaded = false,
+            infoMapLoaded = false;
+
+    var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+    var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
+            new google.maps.Size(19, 17),
+            new google.maps.Point(0,0),
+            new google.maps.Point(0, 17));
+    var shape = {
+        coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+        type: 'poly'
+    };
+
+    // specific function maps
+    var proxMkrs = [
+        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+    ];
+    function proxInit() {
+        var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerproxMkr
+                };
+        proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
+
+        setMarkers(proxMap, proxMkrs);
+        infowindow = new google.maps.InfoWindow({ content: "..." });
+    }
+
+    var infoMkrs = [
+        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 5, '<div id="infowindow">{{ etab.name }}</div>', markerFushia]
+    ];
+    function infoInit() {
+        var centerinfoMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
+                mapOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: centerinfoMkr
+                };
+        infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
+
+        setMarkers(infoMap, infoMkrs);
+        infowindow = new google.maps.InfoWindow({ content: "..." });
+    }
+
+    // global function maps
+    function setMarkers(map, mkrs) {
+        for (var i = 0; i < mkrs.length; i++) {
+            var mkr = mkrs[i];
+            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+            var marker = new google.maps.Marker({
+                position: siteLatLng,
+                map: map,
+                shadow: shadow,
+                icon: mkr[5],
+                shape: shape,
+                title: mkr[0],
+                zIndex: mkr[3],
+                html: mkr[4]
+            });
+            var contentString = "";
+        }
+    }
+</script>
+
 <div id="wrap" class="fixed-width clear">
 
     <div itemscope itemtype="http://schema.org/Place">
@@ -60,17 +142,19 @@
         <div class="temoignFiche bloc gris">
             <h3>Vous aimerez</h3>
             <h4>comme...</h4>
-            {% for personnage in personnages %}
-                <div class="temoignFicheIt fish">
-                    <span class="perso">{{ personnage.prenom | trans }}</span>
-                    <span class="age">{{ personnage.age }} ans</span>
-                    <ul>
-                        {% for avantage in personnage.avantages %}
-                        <li>{{ avantage.name }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endfor %}
+            <div>
+                {% for personnage in personnages %}
+                    <div class="temoignFicheIt fish">
+                        <span class="perso">{{ personnage.prenom | trans }}</span>
+                        <span class="age">{{ personnage.age }} ans</span>
+                        <ul>
+                            {% for avantage in personnage.avantages %}
+                            <li>{{ avantage.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
             <a href="#_" class="bt trans right">Tous les plus du camping</a>
             <hr class="clearboth">
             <h4>Les vacances à Vias</h4>
@@ -102,20 +186,36 @@
         </nav>
     </div>
     <div id=tabInfos class="tabs">
-        <h2>Coordonnées du camping {{ etab.name }}</h2>
-        <span>GPS : {{ etab.getDmsCoordinates.latitude.d }}° {{ etab.getDmsCoordinates.latitude.m }}' {{ etab.getDmsCoordinates.latitude.s }}", {{ etab.getDmsCoordinates.longitude.d }}° {{ etab.getDmsCoordinates.longitude.m }}' {{ etab.getDmsCoordinates.longitude.s }}"</span><br/>
-        <span>{{ etab.address1 }}</span>
-        <span>{{ etab.address2 }}</span><br />
-        <span>{{ etab.zip }} {{ etab.city }}</span><br />
-        <span>Tél : {{ etab.phone1 }}</span><br />
-        <span>Fax :{{ etab.phone2 }}</span>
-        <h2>Horaires d'ouverture</h2>
-            <h3>Réception</h3>
-            <p>{{ etab.ouvertureReception | trans | nl2br }}</p>
-            <h3>Camping</h3>
-            <p>{{ etab.ouvertureCamping | trans | nl2br }}</p>
-        <h2>Arrivées/Départs</h2>
-        <p>{{ etab.arriveesDeparts | trans | nl2br }}</p>
+        <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
+        <h3 class="clearboth">Coordonnées du camping {{ etab.name }}</h3>
+        <div class="blCoordGps left">
+            <span class="gps">
+                GPS : {{ etab.getDmsCoordinates.latitude.d }}° {{ etab.getDmsCoordinates.latitude.m }}' {{ etab.getDmsCoordinates.latitude.s }}", {{ etab.getDmsCoordinates.longitude.d }}° {{ etab.getDmsCoordinates.longitude.m }}' {{ etab.getDmsCoordinates.longitude.s }}"
+            </span>
+            {{ etab.address1 }}
+            {{ etab.address2 }}<br />
+            {{ etab.zip }} {{ etab.city }}
+        </div>
+        <div class="blCoordTel left">
+            Tél : {{ etab.phone1 }}<br />
+            Fax :{{ etab.phone2 }}
+        </div>
+        <h3 class="clearboth">Horaires d'ouverture</h3>
+        <dl class="blHoraire hRecept left">
+            <dt>Réception</dt>
+            <dd>{{ etab.ouvertureReception | trans | nl2br }}</dd>
+        </dl>
+        <dl class="blHoraire hCamp left">
+            <dt>Camping</dt>
+            <dd>{{ etab.ouvertureCamping | trans | nl2br }}</dd>
+        </dl>
+        <h3 class="clearboth">Arrivées/Départs</h3>
+        {{ etab.arriveesDeparts | trans | nl2br }}
+
+        <nav class="paginationTabs clear">
+            <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">A proximité</button>
+            <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">Le camping</button>
+        </nav>
     </div>
 </div>
 {% endblock %}
