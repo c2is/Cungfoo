@@ -45,4 +45,5 @@ $app->get('/', function(Request $request) use ($app) {
 
 $app->mount('/resalys', new \Resalys\Controller\WrapperController());
 $app->mount('/achat', new \VacancesDirectesCe\Controller\AchatController());
+$app->mount('/administration', new \VacancesDirectesCe\Controller\AdministrationController());
 $app->mount('/camping', new \VacancesDirectesCe\Controller\CampingController());

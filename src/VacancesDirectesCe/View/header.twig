@@ -12,9 +12,9 @@
 {% if user %}
 <nav id="nav" class="clearboth">
     <ul class="topnav fixed-width clear">
-        <li class="tab current"><a href="#">Achats</a></li>
+        <li class="tab current"><a href="{{ path('achat_packages') }}">Achats</a></li>
         <li class="tab"><a href="#">Documents</a></li>
-        <li class="tab"><a href="#">Administration</a></li>
+        <li class="tab"><a href="{{ path('administration_reservations') }}">Administration</a></li>
     </ul>
 </nav>
 {% endif %}
