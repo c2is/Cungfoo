@@ -57,8 +57,8 @@ h1, .h1-like{dismargin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text
 h2, .h2-like{color:@colorGris2;font:bold 20px 'Arial', sans-serif;}
 h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
 h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
-h5, .h5-like{color:@colorGris1;}
-h6, .h6-like{color:@colorGris1;}
+h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+h6, .h6-like{color:@colorFushia;}
 
 .bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);
   &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
@@ -87,8 +87,12 @@ h6, .h6-like{color:@colorGris1;}
   &.right{width:288px;margin:0 24px 0 0;}
 }
 
-.bloc{clear:both;.border-radius(7px);padding:1px 15px 10px;
+.bloc{clear:both;.border-radius(7px);padding:10px 15px;
+  h3, .h3-like{margin-top:10px !important;}
   &.gris{background-color:@colorBgGrisC;}
+  &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;
+    h3, p, .bt{color:@colorBlanc !important;}
+  }
   hr{height:0;border:5px solid #fff;margin:15px 0;}
 }
 
