@@ -30,11 +30,23 @@
   -webkit-border-radius: @radius;
   border-radius: @radius;
 }
-.half-border-radius(@radius:@radius) {
+.half-border-radius(@radius:@radius, top-right, bottom-left) {
   -webkit-border-top-right-radius: @radius;
   -webkit-border-bottom-left-radius: @radius;
   border-top-right-radius: @radius;
   border-bottom-left-radius: @radius;
+}
+.half-border-radius(@radius:@radius, top-left, top-right) {
+  -webkit-border-top-left-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+}
+.margin(left, @dist:@gutter) {
+  margin-left:@dist;
+}
+.margin(right, @dist:@gutter) {
+  padding-left:@dist;
 }
   .box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
   -webkit-box-shadow: @shadow;
@@ -151,7 +163,20 @@ textarea { overflow: auto;  resize: vertical; }
 /* + clearboth */
 .clearboth{clear:both;}
 
+body{color:@colorGris2;font:12px Arial, sans-serif;}
+.full-width{position:relative;min-width:100%;float:left;z-index:0;}
+.fixed-width{position:relative;width:976px;margin:0 auto;}
+
+/* packages */
 #searchProductFormContener {display:none;}
 #searchResult {
-  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:20px;margin:15px 0;position:relative;width:312px;margin-right:20px;float:left;}
+  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:20px;margin:15px 0;position:relative;width:312px;margin-right:20px;float:left;
+  &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
+  &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
+  .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:20px 20px 10px;.half-border-radius(10px, top-left, top-right);
+    h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;}
+    h2{color:#f5bd8c;}
+    .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:20px;right:20px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
+  }
+  }
 }

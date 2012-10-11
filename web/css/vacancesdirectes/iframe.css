@@ -308,6 +308,22 @@ textarea {
 .clearboth {
   clear: both;
 }
+body {
+  color: #464545;
+  font: 12px Arial, sans-serif;
+}
+.full-width {
+  position: relative;
+  min-width: 100%;
+  float: left;
+  z-index: 0;
+}
+.fixed-width {
+  position: relative;
+  width: 976px;
+  margin: 0 auto;
+}
+/* packages */
 #searchProductFormContener {
   display: none;
 }
@@ -320,4 +336,44 @@ textarea {
   width: 312px;
   margin-right: 20px;
   float: left;
+}
+#searchResult .aProposalBlock.package .proposalDescriptionTitle {
+  background-color: #8dc63f;
+}
+#searchResult .aProposalBlock.bouquet .proposalDescriptionTitle {
+  background-color: #f58220;
+}
+#searchResult .aProposalBlock .proposalDescriptionTitle {
+  background-color: #f58220;
+  margin: -20px -20px 0;
+  padding: 20px 20px 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#searchResult .aProposalBlock .proposalDescriptionTitle h1 {
+  color: #ffffff;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#searchResult .aProposalBlock .proposalDescriptionTitle h2 {
+  color: #f5bd8c;
+}
+#searchResult .aProposalBlock .proposalDescriptionTitle .proposalDescriptionDetailsLink {
+  width: 27px;
+  height: 27px;
+  background: transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;
+  color: #f58220;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
 }
