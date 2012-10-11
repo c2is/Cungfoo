@@ -70,7 +70,7 @@
 /*Centrer verticalement une image de taille variable dans un conteneur de hauteur fixe*/
 .verticalCenter(@height, @case) when (@case = image) {
   .verticalCenter(@height);
-  &>* {vertical-align:middle;}
+  &>img {vertical-align:middle;}
 }
 
 @ptnarrow: 'PT Sans Narrow', Arial, sans-serif;
@@ -124,7 +124,7 @@ svg:not(:root) { overflow: hidden; }
 
 /*FORMS*/
 legend { border: 0; *margin-left: -7px; }
-label{cursor:pointer;}
+//label{cursor:pointer;}
 button, input { line-height: normal; *overflow: visible; }
 table button, table input { *overflow: auto; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
