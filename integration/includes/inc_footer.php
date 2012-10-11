@@ -1,7 +1,6 @@
 <!-- End of document -->
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 	<script>window.jQuery || document.write('<script src='+templatePath+'"vendor/jquery-1.8.0.min.js">\x3C/script>')</script>
-    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 	<script>
 		head.js(
