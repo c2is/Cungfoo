@@ -1347,6 +1347,8 @@ h6,
 }
 .ce #nav ul {
   top: 0px;
+  margin-left: -24px;
+  width: 976px;
 }
 .ce #nav ul li.tab {
   height: 50px;
@@ -1458,8 +1460,8 @@ h6,
   text-decoration: none;
   font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
   padding: 0 10px;
-  -webkit-border-radius: 10px 0 0 10px;
-  border-radius: 10px 0 0 10px;
+  -webkit-border-radius: 0 10px 0 10px;
+  border-radius: 0 10px 0 10px;
   height: 32px;
   line-height: 32px;
 }
