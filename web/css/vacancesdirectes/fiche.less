@@ -112,11 +112,26 @@
   span{font-size:13px;font-weight:bold;display:inline-block;margin-right:50px;}
   select{text-transform:uppercase;font:bold 16px/20px @ptnarrow;color:#999;width:220px;margin-right:5px;}
 }
-.typLocation{padding:0 0 20px;margin-bottom:20px;border-bottom:7px solid @colorBgGrisC;
+.typLocation, .activites .miniEncart, .agenda .miniEncart{padding:0 0 20px;margin-bottom:20px;border-bottom:7px solid @colorBgGrisC;
   > div > .nbPlace{float:left;.border-radius(4px);margin:0 12px 10px 0;background-color:@colorBgGrisC;padding:3px 4px 10px;color:@colorGris1;font-size:9px;font-weight:bold;text-align:center;
-    img{display:block;margin-bottom:5px;}
+     img{display:block;margin-bottom:5px;}
   }
   > div > strong{line-height:1.5;}
+  .h5-like{margin-bottom:5px;}
+  > p {
+    span{color:@colorFushia;text-transform:uppercase;}
+    a{margin-top:10px}
+  }
+}
+.activites > a, .agenda > a{text-decoration:underline;
+  &:hover{text-decoration:none !important;}
+}
+.activites .miniEncart, .agenda .miniEncart{width:308px;border-bottom:0;padding:0;
+  img{margin-right:10px;margin-bottom:0;}
+  .date{color:@colorFushia;}
+  &:nth-child(1n){border-right:7px solid @colorBgGrisC;padding-right:10px;}
+  &:nth-child(2n){border:0;padding-left:20px;padding-right:0;}
+  &:nth-child(3n){clear:left}
 }
 /*tabs surplace*/
 #tabSurplace{
@@ -158,4 +173,27 @@
       span{display:table-cell;vertical-align:middle;}
     }
   }
+}
+
+#tabProximite{
+  h3{margin:40px 0 20px;}
+  .infoDestination{position:relative;margin:40px 0;min-height:175px;padding:10px 50px 10px 300px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:15px 50%;
+    h3{margin-bottom:10px;}
+    .bt{background:@colorBgGrisM;margin:15px 0;text-align:center;}
+    .iDestImg1{position:absolute;left:56px;top:25px;}
+    .iDestImg2{position:absolute;left:20px;top:90px;.transform(rotate(12deg));}
+  }
+}
+
+.blCoordGps{border-right:7px solid @colorBgGrisC;width:50%;margin:10px 0 35px;
+  .gps{display:block;font-size:16px;font-weight:bold;text-transform:uppercase;}
+}
+.blCoordTel{width:50%;padding-left:20px;margin:10px 0 35px;}
+.blHoraire{width:50%;margin:10px 0 35px;
+  &.hRecept{border-right:7px solid @colorBgGrisC;}
+  &.hCamp{padding-left:20px;}
+  dt{text-transform:uppercase;font-weight:bold;}
+}
+.condArrDep{margin:10px 0 35px 10px;list-style:disc outside;
+  li{margin-bottom:5px;}
 }
