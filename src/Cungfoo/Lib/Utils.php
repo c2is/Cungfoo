@@ -60,15 +60,15 @@ class Utils
         $secondsLng = ($minutesLng - $arrayMinutesLng[0]) * 60.0;
 
         $dms = array(
-            0 => array(
-                0 => (int)$arrayLat[0],
-                1 => (int)$arrayMinutesLat[0],
-                2 => (float)round($secondsLat,3)
+            "latitude" => array(
+                "d" => (int)$arrayLat[0],
+                "m" => (int)$arrayMinutesLat[0],
+                "s" => (float)round($secondsLat,3)
             ),
-            1 => array(
-                0 => (int)$arrayLng[0],
-                1 => (int)$arrayMinutesLng[0],
-                2 => (float)round($secondsLng,3)
+            "longitude" => array(
+                "d" => (int)$arrayLng[0],
+                "m" => (int)$arrayMinutesLng[0],
+                "s" => (float)round($secondsLng,3)
             )
         );
 
