@@ -26,11 +26,13 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  *
  * @method ServiceComplementaireQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ServiceComplementaireQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method ServiceComplementaireQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ServiceComplementaireQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ServiceComplementaireQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method ServiceComplementaireQuery groupById() Group by the id column
  * @method ServiceComplementaireQuery groupByCode() Group by the code column
+ * @method ServiceComplementaireQuery groupByImagePath() Group by the image_path column
  * @method ServiceComplementaireQuery groupByCreatedAt() Group by the created_at column
  * @method ServiceComplementaireQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -50,11 +52,13 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  * @method ServiceComplementaire findOneOrCreate(PropelPDO $con = null) Return the first ServiceComplementaire matching the query, or a new ServiceComplementaire object populated from the query conditions when no match is found
  *
  * @method ServiceComplementaire findOneByCode(string $code) Return the first ServiceComplementaire filtered by the code column
+ * @method ServiceComplementaire findOneByImagePath(string $image_path) Return the first ServiceComplementaire filtered by the image_path column
  * @method ServiceComplementaire findOneByCreatedAt(string $created_at) Return the first ServiceComplementaire filtered by the created_at column
  * @method ServiceComplementaire findOneByUpdatedAt(string $updated_at) Return the first ServiceComplementaire filtered by the updated_at column
  *
  * @method array findById(int $id) Return ServiceComplementaire objects filtered by the id column
  * @method array findByCode(string $code) Return ServiceComplementaire objects filtered by the code column
+ * @method array findByImagePath(string $image_path) Return ServiceComplementaire objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return ServiceComplementaire objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return ServiceComplementaire objects filtered by the updated_at column
  *
@@ -160,7 +164,7 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT` FROM `service_complementaire` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT` FROM `service_complementaire` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -303,6 +307,35 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ServiceComplementairePeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
+     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imagePath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ServiceComplementaireQuery The current query, for fluid interface
+     */
+    public function filterByImagePath($imagePath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imagePath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imagePath)) {
+                $imagePath = str_replace('*', '%', $imagePath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(ServiceComplementairePeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**
