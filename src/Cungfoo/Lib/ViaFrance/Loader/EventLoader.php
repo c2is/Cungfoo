@@ -71,6 +71,8 @@ class EventLoader extends AbstractLoader
                 ->setCode($code)
                 ->setCategory($event->{'Category'}['Id'])
                 ->setPriority($event->{'Priority'})
+                ->setGeoCoordinateX($event->attributes()->{'X'})
+                ->setGeoCoordinateY($event->attributes()->{'Y'})
                 ->setImage($event->{'Image1'})
             ;
 

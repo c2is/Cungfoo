@@ -429,6 +429,8 @@
         <column name="address2" type="varchar" />
         <column name="zipcode" type="varchar" />
         <column name="city" type="varchar" />
+        <column name="geo_coordinate_x" type="varchar" />
+        <column name="geo_coordinate_y" type="varchar" />
         <column name="image" type="varchar" />
         <behavior name="timestampable" />
 
@@ -451,6 +453,8 @@
         <column name="address2" type="varchar" />
         <column name="zipcode" type="varchar" />
         <column name="city" type="varchar" />
+        <column name="geo_coordinate_x" type="varchar" />
+        <column name="geo_coordinate_y" type="varchar" />
         <column name="image" type="varchar" />
         <column name="priority" type="varchar" />
         <behavior name="timestampable" />

@@ -70,13 +70,6 @@ abstract class BaseCategoriePeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -785,6 +778,13 @@ abstract class BaseCategoriePeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BaseCategoriePeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

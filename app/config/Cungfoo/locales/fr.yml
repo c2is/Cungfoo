@@ -264,6 +264,8 @@ point_interet.zipcode: Code Postal
 point_interet.city: Ville
 point_interet.name: Nom
 point_interet.image: Image
+point_interet.geo.coordinate.x: Latitude
+point_interet.geo.coordinate.y: Longitude
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -272,14 +274,20 @@ event.crud.view: Détails de l'évènement %name%
 event.id: Id
 event.code: Code interne
 event.category: Catégorie
-event.name: Name
+event.name: Nom
 event.address: Adresse
 event.address2: Adresse 2
 event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
+event.etablissements: Établissements ayant cet évenement
 event.str.date: Période
+event.str_date: Date
+event.geo_coordinate_x: Latitude
+event.geo_coordinate_y: Longitude
+event.geo.coordinate.x: Latitude
+event.geo.coordinate.y: Longitude
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
