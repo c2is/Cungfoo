@@ -457,9 +457,6 @@ function disableDates(){
             if ( $(this).hasClass('dp_weekend') && !$(this).hasClass('selected-date')){
                 $(this).attr('class', 'dp_weekend_disabled');
             }
-//            else if ( $(this).hasClass('dp_weekend_disabled') ){
-//                $(this).attr('class', 'dp_weekend');
-//            }
         });
     }
 
