@@ -1,0 +1,22 @@
+\Cungfoo\Model\EtablissementI18n:
+    106_de:
+        Id: 106
+        Locale: de
+        Country: null
+        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 DE"
+        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h DE"
+        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. DE"
+    106_en:
+        Id: 106
+        Locale: en
+        Country: null
+        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 EN"
+        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h EN"
+        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. EN"
+    106_fr:
+        Id: 106
+        Locale: fr
+        Country: null
+        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7"
+        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h"
+        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi."
