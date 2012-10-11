@@ -33,6 +33,13 @@ class getAllThemesLoader extends AbstractLoader
                     $objectTheme->setLocale($locale);
                     $objectTheme->setName($theme->{'name'});
 
+                    // set theme icon
+                    $imagePathMethod = "setImagePath";
+                    if (method_exists($objectTheme, $imagePathMethod))
+                    {
+                        $objectTheme->$imagePathMethod($theme->{'icon'});
+                    }
+
                     if ($theme->{'parent'})
                     {
                         if (empty($this->config['ThemeLoader']['themes'][$category]['parent']['name']))

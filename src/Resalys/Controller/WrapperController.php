@@ -33,9 +33,11 @@ class WrapperController implements ControllerProviderInterface
             $iframe = str_replace(array(
                 '{_c2is.uri}',
                 '{_c2is.stylesheet}',
+                '<b><b>'
             ), array(
                 $websiteUri,
                 $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request),
+                ''
             ), $iframe);
 
             return new Response($iframe);

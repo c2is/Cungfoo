@@ -8,6 +8,7 @@ activite.etablissements: Établissements ayant cette activité
 activite.id: Id
 activite.code: Code
 activite.name: Nom
+activite.image_path: Image
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
@@ -184,6 +185,7 @@ service_complementaire.etablissements: Établissements ayant ce service complém
 service_complementaire.id: Id
 service_complementaire.code: Code
 service_complementaire.name: Nom
+service_complementaire.image_path: Image
 
 security.username: Nom d'utilisateur
 security.password: Mot de passe

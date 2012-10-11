@@ -34,6 +34,19 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.code',
             'required' => false,
         ));
+        $builder->add('image_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'activite.image_path',
+            'required' => false,
+        ));
+        $builder->add('image_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'activite.image_path_deleted',
+            'required' => false,
+        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(
