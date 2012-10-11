@@ -81,6 +81,7 @@
         <column name="ouverture_reception" type="longvarchar" />
         <column name="ouverture_camping" type="longvarchar" />
         <column name="arrivees_departs" type="longvarchar" />
+        <column name="plan_path" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
@@ -98,6 +99,7 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
             <parameter name="crud_search" value="name, title" />
+            <parameter name="crud_type_file" value="plan_path" />
         </behavior>
     </table>
 

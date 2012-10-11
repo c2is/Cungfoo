@@ -68,6 +68,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByImage360Path($order = Criteria::ASC) Order by the image_360_path column
  * @method EtablissementQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
+ * @method EtablissementQuery orderByPlanPath($order = Criteria::ASC) Order by the plan_path column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
@@ -95,6 +96,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByImage360Path() Group by the image_360_path column
  * @method EtablissementQuery groupByDescription() Group by the description column
  * @method EtablissementQuery groupByCapacite() Group by the capacite column
+ * @method EtablissementQuery groupByPlanPath() Group by the plan_path column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -184,6 +186,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByImage360Path(string $image_360_path) Return the first Etablissement filtered by the image_360_path column
  * @method Etablissement findOneByDescription(string $description) Return the first Etablissement filtered by the description column
  * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
+ * @method Etablissement findOneByPlanPath(string $plan_path) Return the first Etablissement filtered by the plan_path column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
  *
@@ -211,6 +214,7 @@ use Cungfoo\Model\Ville;
  * @method array findByImage360Path(string $image_360_path) Return Etablissement objects filtered by the image_360_path column
  * @method array findByDescription(string $description) Return Etablissement objects filtered by the description column
  * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
+ * @method array findByPlanPath(string $plan_path) Return Etablissement objects filtered by the plan_path column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
  *
@@ -316,7 +320,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `MINIMUM_PRICE`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CAPACITE`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `MINIMUM_PRICE`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CAPACITE`, `PLAN_PATH`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1165,6 +1169,35 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::CAPACITE, $capacite, $comparison);
+    }
+
+    /**
+     * Filter the query on the plan_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPlanPath('fooValue');   // WHERE plan_path = 'fooValue'
+     * $query->filterByPlanPath('%fooValue%'); // WHERE plan_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $planPath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByPlanPath($planPath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($planPath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $planPath)) {
+                $planPath = str_replace('*', '%', $planPath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::PLAN_PATH, $planPath, $comparison);
     }
 
     /**

@@ -185,6 +185,59 @@
             <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
         </nav>
     </div>
+    <!-- tab Sur place -->
+    <div id="tabSurplace" class="tabs">
+        <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
+        <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
+        <div class="colSurPlace clearboth">
+            <dl>
+                <dt><span>Activités</span></dt>
+                <dd class="activites"><ul>
+                    {% for activite in activites %}
+                        <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
+                    {% endfor %}
+                </ul></dd>
+            </dl>
+            <dl>
+                <dt><span>Equipements</span></dt>
+                <dd class="equipements"><ul>
+                </ul></dd>
+            </dl>
+            <dl>
+                <dt><span>Services complémentaires</span></dt>
+                <dd class="services"><ul>
+                    {% for serviceComplementaire in servicesComplementaires %}
+                        <li><img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}"><span>{{ serviceComplementaire.name }}</span></span></li>
+                    {% endfor %}
+                </ul></dd>
+            </dl>
+        </div>
+
+        <div class="temoignFiche bloc gris">
+            <h3>Vous aimerez</h3>
+            <h4>comme...</h4>
+            <div>
+                <div class="temoignFicheIt fish">
+                    <span class="perso">{{ personnageAleatoire.prenom }}</span>
+                    <span class="age">{{ personnageAleatoire.age }} ans</span>
+                </div>
+            </div>
+            <div class="slider"><div class="slide">
+                {% for avantage in personnageAleatoire.avantages %}
+                    <dl>
+                        <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
+                        <dt>{{ avantage.name }}</dt>
+                        <dd>{{ avantage.description }}</dd>
+                    </dl>
+                {% endfor %}
+            </div></div>
+        </div>
+
+        <nav class="paginationTabs clear">
+            <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
+            <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
+        </nav>
+    </div>
     <div id=tabInfos class="tabs">
         <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
         <h3 class="clearboth">Coordonnées du camping {{ etab.name }}</h3>
@@ -192,7 +245,7 @@
             <span class="gps">
                 GPS : {{ etab.getDmsCoordinates.latitude.d }}° {{ etab.getDmsCoordinates.latitude.m }}' {{ etab.getDmsCoordinates.latitude.s }}", {{ etab.getDmsCoordinates.longitude.d }}° {{ etab.getDmsCoordinates.longitude.m }}' {{ etab.getDmsCoordinates.longitude.s }}"
             </span>
-            {{ etab.address1 }}
+            {{ etab.address1 }}<br />
             {{ etab.address2 }}<br />
             {{ etab.zip }} {{ etab.city }}
         </div>
