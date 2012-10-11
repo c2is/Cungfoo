@@ -101,5 +101,21 @@
             <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
         </nav>
     </div>
+    <div id=tabInfos class="tabs">
+        <h2>Coordonnées du camping {{ etab.name }}</h2>
+        <span>GPS : {{ etab.getDmsCoordinates.latitude.d }}° {{ etab.getDmsCoordinates.latitude.m }}' {{ etab.getDmsCoordinates.latitude.s }}", {{ etab.getDmsCoordinates.longitude.d }}° {{ etab.getDmsCoordinates.longitude.m }}' {{ etab.getDmsCoordinates.longitude.s }}"</span><br/>
+        <span>{{ etab.address1 }}</span>
+        <span>{{ etab.address2 }}</span><br />
+        <span>{{ etab.zip }} {{ etab.city }}</span><br />
+        <span>Tél : {{ etab.phone1 }}</span><br />
+        <span>Fax :{{ etab.phone2 }}</span>
+        <h2>Horaires d'ouverture</h2>
+            <h3>Réception</h3>
+            <p>{{ etab.ouvertureReception | trans | nl2br }}</p>
+            <h3>Camping</h3>
+            <p>{{ etab.ouvertureCamping | trans | nl2br }}</p>
+        <h2>Arrivées/Départs</h2>
+        <p>{{ etab.arriveesDeparts | trans | nl2br }}</p>
+    </div>
 </div>
 {% endblock %}

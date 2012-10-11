@@ -61,7 +61,6 @@ class EtablissementType extends BaseEtablissementType
                         'categorie',
                         'minimum_price',
                         'capacite',
-                        'etablissementI18ns',
                     )
                 ),
                 array(
@@ -73,6 +72,7 @@ class EtablissementType extends BaseEtablissementType
                         'video_path',
                         'image_360_path',
                         'description',
+                        'etablissementI18ns',
                     )
                 ),
             )

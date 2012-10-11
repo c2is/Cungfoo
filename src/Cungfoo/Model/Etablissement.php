@@ -22,4 +22,11 @@ class Etablissement extends BaseEtablissement
     {
         return $this->getName();
     }
+
+    public function getDmsCoordinates()
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+
+        return $utils->decimalToDms((float)$this->getGeoCoordinateX(), (float)$this->getGeoCoordinateY());
+    }
 }
