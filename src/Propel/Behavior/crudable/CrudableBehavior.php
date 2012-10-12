@@ -45,6 +45,7 @@ class CrudableBehavior extends Behavior
 
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
+                $columnName = trim($columnName);
                 $this->addUploadFile($columnName, $script);
             }
         }
@@ -71,6 +72,7 @@ public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$co
         {
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
+                $columnName = trim($columnName);
                 $utils = new \Cungfoo\Lib\Utils();
                 $columnNameDeleted  = $columnName . '_deleted';
                 $columnNameCamelize = $utils->camelize($columnName);

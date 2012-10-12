@@ -227,6 +227,11 @@ class {$this->getClassname()} extends AppAwareType
         }
     }
 
+    protected function trimArray($value)
+    {
+        return trim($value);
+    }
+
     /**
      * Adding all builders.
      *
@@ -236,8 +241,8 @@ class {$this->getClassname()} extends AppAwareType
     {
         $builders = "";
 
-        $fileFields     = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file'));
-        $richtextFields = explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext'));
+        $fileFields     = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')));
+        $richtextFields = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext')));
 
         // Manage table columns
         foreach ($this->getTable()->getColumns() as $column)
