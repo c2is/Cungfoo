@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
+use VacancesDirectesCe\Form\Data\AchatLineaireData,
+    VacancesDirectesCe\Form\Type\AchatLineaireType;
+
 class AchatController implements ControllerProviderInterface
 {
     /**
@@ -23,11 +26,18 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/packages.html', function (Request $request) use ($app)
         {
-
-
-            return $app['twig']->render('Achat/packages.twig');
+            return $app['twig']->render('Achat/packages.twig', array(
+            ));
         })
         ->bind('achat_packages');
+
+        $controllers->match('/resultats-recherche.html', function (Request $request) use ($app)
+        {
+            $queryString = http_build_query($request->request->all(), '', '&');
+
+            return $app['twig']->render('Achat/resultatsRecherche.twig', array('queryString' => $queryString));
+        })
+        ->bind('achat_recherche');
 
         $controllers->match('/panier.html', function (Request $request) use ($app)
         {
