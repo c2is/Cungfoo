@@ -118,11 +118,11 @@
 
 <ul class="tabControls clear">
     <li><a href="#tabCamp">Le camping</a></li>
-    <li><a href="#tabLocations">Les locations</a></li>
+    <li><a href="#tabLocations" class="active">Les locations</a></li>
     <li><a href="#tabSurplace">Sur place</a></li>
     <li><a href="#tabProximite">A proximité</a></li>
     <!-- Non V2<li><a href="#tabAvis">Avis</a></li>-->
-    <li><a href="#tabInfos" class="active">Infos pratiques</a></li>
+    <li><a href="#tabInfos">Infos pratiques</a></li>
 </ul>
 
 <div class="tabCampDiapo">
@@ -237,20 +237,22 @@
         <fieldset>
             <span>Filtrer par :</span>
             <select name="type" id="type">
-                <option value="t0" selected="selected">Tous types</option>
-                <option value="t1">Chalet</option>
-                <option value="t2">Mobil-homes</option>
+                <option value="" selected="selected">Tous types</option>
+                <option value="chalet">Chalet</option>
+                <option value="mobilhome">Mobil-homes</option>
             </select>
             <select name="capacite" id="capacite">
-                <option value="c1">Capacité : 2/3 places</option>
-                <option value="c2">Capacité : 3/4 places</option>
-                <option value="c3">Capacité : 5 places</option>
-                <option value="c4">Capacité : 6/8 places</option>
+                <option value="" selected="selected">Toutes les capacités</option>
+                <option value="cap3">Capacité : 3 places</option>
+                <option value="cap4">Capacité : 4 places</option>
+                <option value="cap5">Capacité : 5 places</option>
             </select>
         </fieldset>
     </form>
 
-    <div class="typLocation clear">
+    <div class="noResultTyp">Pas de résultats</div>
+
+    <div class="typLocation chalet cap5 clear">
         <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
         <span class="h4-like">Chalet (Chalet 5 places)</span>
@@ -262,10 +264,10 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-    <div class="typLocation clear">
+    <div class="typLocation mobilhome cap5 clear">
         <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
-        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <span class="h4-like">Mobilhome (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
         <strong>Nombre de chambres : 2<br>
         Surface : 32m<sup>2</sup> environ<br>
@@ -274,10 +276,10 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-    <div class="typLocation clear">
+    <div class="typLocation chalet cap3 clear">
         <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
-        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <span class="h4-like">Chalet (Chalet 3 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
         <strong>Nombre de chambres : 2<br>
         Surface : 32m<sup>2</sup> environ<br>
@@ -286,10 +288,10 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-    <div class="typLocation clear">
+    <div class="typLocation mobilhome cap3 clear">
         <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
-        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <span class="h4-like">Mobilhome (Chalet 3 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
         <strong>Nombre de chambres : 2<br>
         Surface : 32m<sup>2</sup> environ<br>
@@ -298,10 +300,10 @@
         </div>
         <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
     </div>
-    <div class="typLocation clear">
+    <div class="typLocation mobilhome cap5 clear">
         <img src="http://pimg.devlint.fr/181x134/ccc/333/*" width=181" height="134" alt="" class="left boxborder">
         <div style="overflow:hidden;">
-        <span class="h4-like">Chalet (Chalet 5 places)</span>
+        <span class="h4-like">Mobilhome (Chalet 5 places)</span>
         <span class="nbPlace"><img src="http://pimg.devlint.fr/92x33/ccc/333/*" width="92" height="33" alt="">4 adultes, et plus</span>
         <strong>Nombre de chambres : 2<br>
         Surface : 32m<sup>2</sup> environ<br>
