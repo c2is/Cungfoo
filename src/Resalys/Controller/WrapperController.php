@@ -30,14 +30,46 @@ class WrapperController implements ControllerProviderInterface
 
             $iframe = $this->replaceUri($iframe, $websiteUri);
 
+            // define javascript header source code
+            $javascriptHeader = sprintf(<<<eof
+<script src="%s"></script>
+<script>var templatePath = '%s';</script><!-- templatePath : chemin du template en absolue -->
+eof
+, $this->getAsset('vendor/head.extended.js', $app, $request)
+, $this->getAsset('', $app, $request));
+
+            // define javascript footer source code
+            $javascriptFooter = sprintf(<<<eof
+    <script>
+        head.js(
+            {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
+            {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
+            {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
+            {frontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
+            {iframeJS: templatePath+"js/vacancesdirectes/iframe.js"}
+        );
+    </script>
+
+    <!-- Prompt IE 6/7 users to install Chrome Frame -->
+    <!--[if lt IE 8 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+eof
+);
+
             $iframe = str_replace(array(
                 '{_c2is.uri}',
                 '{_c2is.stylesheet}',
-                '<b><b>'
+                '{_c2is.javascript.header}',
+                '{_c2is.javascript.footer}',
+                '<b><b>',
             ), array(
                 $websiteUri,
                 $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request),
-                ''
+                $javascriptHeader,
+                $javascriptFooter,
+                '',
             ), $iframe);
 
             return new Response($iframe);
@@ -63,9 +95,21 @@ class WrapperController implements ControllerProviderInterface
         return $iframe;
     }
 
+    public function getAsset($url, $app, Request $request)
+    {
+        $asset = $app['twig']->getExtension('asset')->asset($url);
+        return sprintf('%s://%s%s', $request->getScheme(), $request->getHttpHost(), $asset);
+    }
+
     public function getStylesheetTag($url, $app, Request $request)
     {
         $asset = $app['twig']->getExtension('asset')->asset($url);
         return sprintf('<link rel="stylesheet" href="%s://%s%s">', $request->getScheme(), $request->getHttpHost(), $asset);
+    }
+
+    public function getJavscriptTag($url, $app, Request $request)
+    {
+        $asset = $app['twig']->getExtension('asset')->asset($url);
+        return sprintf('<script type="text/javascript" src="%s://%s%s"></script>', $request->getScheme(), $request->getHttpHost(), $asset);
     }
 }
