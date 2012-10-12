@@ -74,6 +74,48 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $category_type_hebergement_id;
 
     /**
+     * The value for the nombre_chambre field.
+     * @var        int
+     */
+    protected $nombre_chambre;
+
+    /**
+     * The value for the surface field.
+     * @var        string
+     */
+    protected $surface;
+
+    /**
+     * The value for the type_terrasse field.
+     * @var        string
+     */
+    protected $type_terrasse;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
+     * The value for the image_hebergement_path field.
+     * @var        string
+     */
+    protected $image_hebergement_path;
+
+    /**
+     * The value for the composition field.
+     * @var        string
+     */
+    protected $composition;
+
+    /**
+     * The value for the image_composition_path field.
+     * @var        string
+     */
+    protected $image_composition_path;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -181,6 +223,76 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getCategoryTypeHebergementId()
     {
         return $this->category_type_hebergement_id;
+    }
+
+    /**
+     * Get the [nombre_chambre] column value.
+     *
+     * @return int
+     */
+    public function getNombreChambre()
+    {
+        return $this->nombre_chambre;
+    }
+
+    /**
+     * Get the [surface] column value.
+     *
+     * @return string
+     */
+    public function getSurface()
+    {
+        return $this->surface;
+    }
+
+    /**
+     * Get the [type_terrasse] column value.
+     *
+     * @return string
+     */
+    public function getTypeTerrasse()
+    {
+        return $this->type_terrasse;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Get the [image_hebergement_path] column value.
+     *
+     * @return string
+     */
+    public function getImageHebergementPath()
+    {
+        return $this->image_hebergement_path;
+    }
+
+    /**
+     * Get the [composition] column value.
+     *
+     * @return string
+     */
+    public function getComposition()
+    {
+        return $this->composition;
+    }
+
+    /**
+     * Get the [image_composition_path] column value.
+     *
+     * @return string
+     */
+    public function getImageCompositionPath()
+    {
+        return $this->image_composition_path;
     }
 
     /**
@@ -325,6 +437,153 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     } // setCategoryTypeHebergementId()
 
     /**
+     * Set the value of [nombre_chambre] column.
+     *
+     * @param int $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setNombreChambre($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->nombre_chambre !== $v) {
+            $this->nombre_chambre = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::NOMBRE_CHAMBRE;
+        }
+
+
+        return $this;
+    } // setNombreChambre()
+
+    /**
+     * Set the value of [surface] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setSurface($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->surface !== $v) {
+            $this->surface = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::SURFACE;
+        }
+
+
+        return $this;
+    } // setSurface()
+
+    /**
+     * Set the value of [type_terrasse] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setTypeTerrasse($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->type_terrasse !== $v) {
+            $this->type_terrasse = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::TYPE_TERRASSE;
+        }
+
+
+        return $this;
+    } // setTypeTerrasse()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
+
+    /**
+     * Set the value of [image_hebergement_path] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setImageHebergementPath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_hebergement_path !== $v) {
+            $this->image_hebergement_path = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH;
+        }
+
+
+        return $this;
+    } // setImageHebergementPath()
+
+    /**
+     * Set the value of [composition] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setComposition($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->composition !== $v) {
+            $this->composition = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::COMPOSITION;
+        }
+
+
+        return $this;
+    } // setComposition()
+
+    /**
+     * Set the value of [image_composition_path] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setImageCompositionPath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_composition_path !== $v) {
+            $this->image_composition_path = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::IMAGE_COMPOSITION_PATH;
+        }
+
+
+        return $this;
+    } // setImageCompositionPath()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -405,8 +664,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->category_type_hebergement_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->nombre_chambre = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->surface = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->type_terrasse = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->description = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->image_hebergement_path = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->composition = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->image_composition_path = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -415,7 +681,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergement object", $e);
@@ -722,6 +988,27 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`CATEGORY_TYPE_HEBERGEMENT_ID`';
         }
+        if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) {
+            $modifiedColumns[':p' . $index++]  = '`NOMBRE_CHAMBRE`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::SURFACE)) {
+            $modifiedColumns[':p' . $index++]  = '`SURFACE`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::TYPE_TERRASSE)) {
+            $modifiedColumns[':p' . $index++]  = '`TYPE_TERRASSE`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_HEBERGEMENT_PATH`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::COMPOSITION)) {
+            $modifiedColumns[':p' . $index++]  = '`COMPOSITION`';
+        }
+        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_COMPOSITION_PATH`';
+        }
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -747,6 +1034,27 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                         break;
                     case '`CATEGORY_TYPE_HEBERGEMENT_ID`':
                         $stmt->bindValue($identifier, $this->category_type_hebergement_id, PDO::PARAM_INT);
+                        break;
+                    case '`NOMBRE_CHAMBRE`':
+                        $stmt->bindValue($identifier, $this->nombre_chambre, PDO::PARAM_INT);
+                        break;
+                    case '`SURFACE`':
+                        $stmt->bindValue($identifier, $this->surface, PDO::PARAM_STR);
+                        break;
+                    case '`TYPE_TERRASSE`':
+                        $stmt->bindValue($identifier, $this->type_terrasse, PDO::PARAM_STR);
+                        break;
+                    case '`DESCRIPTION`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_HEBERGEMENT_PATH`':
+                        $stmt->bindValue($identifier, $this->image_hebergement_path, PDO::PARAM_STR);
+                        break;
+                    case '`COMPOSITION`':
+                        $stmt->bindValue($identifier, $this->composition, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_COMPOSITION_PATH`':
+                        $stmt->bindValue($identifier, $this->image_composition_path, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -926,9 +1234,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getCategoryTypeHebergementId();
                 break;
             case 3:
-                return $this->getCreatedAt();
+                return $this->getNombreChambre();
                 break;
             case 4:
+                return $this->getSurface();
+                break;
+            case 5:
+                return $this->getTypeTerrasse();
+                break;
+            case 6:
+                return $this->getDescription();
+                break;
+            case 7:
+                return $this->getImageHebergementPath();
+                break;
+            case 8:
+                return $this->getComposition();
+                break;
+            case 9:
+                return $this->getImageCompositionPath();
+                break;
+            case 10:
+                return $this->getCreatedAt();
+                break;
+            case 11:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -963,8 +1292,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getCategoryTypeHebergementId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[3] => $this->getNombreChambre(),
+            $keys[4] => $this->getSurface(),
+            $keys[5] => $this->getTypeTerrasse(),
+            $keys[6] => $this->getDescription(),
+            $keys[7] => $this->getImageHebergementPath(),
+            $keys[8] => $this->getComposition(),
+            $keys[9] => $this->getImageCompositionPath(),
+            $keys[10] => $this->getCreatedAt(),
+            $keys[11] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -1020,9 +1356,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setCategoryTypeHebergementId($value);
                 break;
             case 3:
-                $this->setCreatedAt($value);
+                $this->setNombreChambre($value);
                 break;
             case 4:
+                $this->setSurface($value);
+                break;
+            case 5:
+                $this->setTypeTerrasse($value);
+                break;
+            case 6:
+                $this->setDescription($value);
+                break;
+            case 7:
+                $this->setImageHebergementPath($value);
+                break;
+            case 8:
+                $this->setComposition($value);
+                break;
+            case 9:
+                $this->setImageCompositionPath($value);
+                break;
+            case 10:
+                $this->setCreatedAt($value);
+                break;
+            case 11:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1052,8 +1409,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[3], $arr)) $this->setNombreChambre($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSurface($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setTypeTerrasse($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setDescription($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setImageHebergementPath($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setComposition($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setImageCompositionPath($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
     }
 
     /**
@@ -1068,6 +1432,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::ID)) $criteria->add(TypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(TypeHebergementPeer::CODE)) $criteria->add(TypeHebergementPeer::CODE, $this->code);
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) $criteria->add(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $this->category_type_hebergement_id);
+        if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) $criteria->add(TypeHebergementPeer::NOMBRE_CHAMBRE, $this->nombre_chambre);
+        if ($this->isColumnModified(TypeHebergementPeer::SURFACE)) $criteria->add(TypeHebergementPeer::SURFACE, $this->surface);
+        if ($this->isColumnModified(TypeHebergementPeer::TYPE_TERRASSE)) $criteria->add(TypeHebergementPeer::TYPE_TERRASSE, $this->type_terrasse);
+        if ($this->isColumnModified(TypeHebergementPeer::DESCRIPTION)) $criteria->add(TypeHebergementPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, $this->image_hebergement_path);
+        if ($this->isColumnModified(TypeHebergementPeer::COMPOSITION)) $criteria->add(TypeHebergementPeer::COMPOSITION, $this->composition);
+        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $this->image_composition_path);
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) $criteria->add(TypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TypeHebergementPeer::UPDATED_AT)) $criteria->add(TypeHebergementPeer::UPDATED_AT, $this->updated_at);
 
@@ -1135,6 +1506,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setCategoryTypeHebergementId($this->getCategoryTypeHebergementId());
+        $copyObj->setNombreChambre($this->getNombreChambre());
+        $copyObj->setSurface($this->getSurface());
+        $copyObj->setTypeTerrasse($this->getTypeTerrasse());
+        $copyObj->setDescription($this->getDescription());
+        $copyObj->setImageHebergementPath($this->getImageHebergementPath());
+        $copyObj->setComposition($this->getComposition());
+        $copyObj->setImageCompositionPath($this->getImageCompositionPath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1896,6 +2274,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $this->id = null;
         $this->code = null;
         $this->category_type_hebergement_id = null;
+        $this->nombre_chambre = null;
+        $this->surface = null;
+        $this->type_terrasse = null;
+        $this->description = null;
+        $this->image_hebergement_path = null;
+        $this->composition = null;
+        $this->image_composition_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -2123,7 +2508,65 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['image_hebergement_path_deleted']->getData())
+        {
+            $this->resetModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
+        }
+
+        $this->uploadImageHebergementPath($form);
+
+        if (!$form['image_composition_path_deleted']->getData())
+        {
+            $this->resetModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
+        }
+
+        $this->uploadImageCompositionPath($form);
+
         return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/type_hebergements';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageHebergementPath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_hebergement_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_hebergement_path']->getData()->guessExtension();
+            $form['image_hebergement_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageHebergementPath($this->getUploadDir() . '/' . $image);
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageCompositionPath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_composition_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_composition_path']->getData()->guessExtension();
+            $form['image_composition_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageCompositionPath($this->getUploadDir() . '/' . $image);
+        }
     }
 
 }
