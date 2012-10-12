@@ -74,10 +74,20 @@
   .verticalCenter(@height);
   &>img {vertical-align:middle;}
 }
+
 .h3Decroch(@colorBg, @color){
   display:inline-block;position:relative;text-transform:uppercase;.border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
   &:after{content:"";position:absolute;top:100%;left:0;border-left:10px solid transparent;border-right:0 solid transparent;border-top:6px solid #23408f;z-index:1;}
+}
 
+.bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);
+  &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
+  &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
+  &.fushia{background-color:@colorFushia;color:@colorBlanc;}
+  &.trans{background:transparent;padding:0;}
+  &.cfushia{color:@colorFushia;}
+  &.big{padding:5px 10px;}
+  &.small{padding:1px 10px;font-size:12px;.border-radius(10px)}
 }
 
 @ptnarrow:'PT Sans Narrow', Arial, sans-serif;
@@ -158,13 +168,13 @@ textarea { overflow: auto;  resize: vertical; }
 /* + clearboth */
 .clearboth{clear:both;}
 
-body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;padding:0 24px;}
+body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* packages */
 #searchProductFormContener {display:none;}
-#searchResult {
+#searchResult {width:948px;
   .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;position:relative;width:296px;margin-right:20px;float:left;
     &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
     &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
@@ -185,7 +195,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;padding:0 24p
 
 
 /* Resa Packages */
-.proposal, .proposals, #paiement, #option{
+.proposal, .proposals, #paiement, #option, #authentication{
 /*clear*/&:before, &:after{content:"";display:table;clear:both;}
 }
 
@@ -244,6 +254,27 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;padding:0 24p
       &:last-child{font-weight:bold;text-align:right;padding-right:15px;}
     }
   }
+}
+
+
+#authentication{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 0 15px;position:relative;width:883px;
+  h3{background-color:@colorBgBleu;position:relative;margin-bottom:25px;text-align:center;
+    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+    span{color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;
+    }
+  }
+  .connectedAs{font:bold 16px/16px @ptnarrow;margin-bottom:25px;
+    .label{color:@colorGris2;opacity:.7;}
+    .field{color:@colorFushia;font-size:24px;padding-left:10px;}
+  }
+  .aField{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;
+    .label{display:block;margin-bottom:5px;}
+    .field{
+      [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
+    }
+  }
+  [type="submit"]{float:right;margin:25px 14px;padding:5px 35px}
 }
 
 #footerContener{overflow:hidden;margin-top:20px;

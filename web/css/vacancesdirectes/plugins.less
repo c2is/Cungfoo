@@ -64,7 +64,6 @@
 @selectTextWidth: 94px;
 @selectHeight: 23px;
 @selectTextHeight: 20px;
-@selectWrapperWidth: 130px;
 
 .stylish-select .SSContainerDivWrapper {
   left:-9999px;
@@ -76,7 +75,7 @@
 .stylish-select .SSContainerDivWrapper {
   margin:0;
   padding:0;
-  width:@selectWrapperWidth;
+  width:@selectWidth;
   position:absolute;
   top:22px;
   left:0;
@@ -112,7 +111,7 @@
   height:@selectHeight;
   float:left;
   margin-right:10px;
-  background-color:#d8d8d8;
+  background-color:@colorBgGrisC;
   position:relative;
   .verticalCenter(@selectHeight);
   .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
@@ -161,7 +160,6 @@
 .stylish-select .newListSelHover,
 .stylish-select .newListSelFocus {
   cursor:default;
-  background-color:#dec8cf;
   .selectedTxt:after{background-position: 0 -2*@selectHeight;}
 }
 

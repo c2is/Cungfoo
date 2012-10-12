@@ -122,7 +122,7 @@ $(function() {
     $(".popinInline").colorbox({inline:true, width:"75%"});
 
 // select
-    $('#searchPrincipal').find('select').sSelect({ddMaxHeight: '300px'});
+    $('#searchPrincipal').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
     $('#datepicker-principal-arrival').Zebra_DatePicker({
