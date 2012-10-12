@@ -212,8 +212,13 @@ region.code: Code
 region.name: Nom
 region.image_path: Image
 region.image_path_deleted: Supprimer l'image ?
+region.image_encart_path: Image de l'encart
+region.image_encart_path_deleted: Supprimer l'image de l'encart ?
+region.image_encart_petite_path: Image de l'encart (petite)
+region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) ?
 region.pays: Pays
 region.pays.id: Code pays
+region.description: Description
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys

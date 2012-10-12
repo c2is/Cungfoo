@@ -25,10 +25,12 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method RegionI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method RegionI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method RegionI18nQuery groupById() Group by the id column
  * @method RegionI18nQuery groupByLocale() Group by the locale column
  * @method RegionI18nQuery groupByName() Group by the name column
+ * @method RegionI18nQuery groupByDescription() Group by the description column
  *
  * @method RegionI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method RegionI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +46,12 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18n findOneById(int $id) Return the first RegionI18n filtered by the id column
  * @method RegionI18n findOneByLocale(string $locale) Return the first RegionI18n filtered by the locale column
  * @method RegionI18n findOneByName(string $name) Return the first RegionI18n filtered by the name column
+ * @method RegionI18n findOneByDescription(string $description) Return the first RegionI18n filtered by the description column
  *
  * @method array findById(int $id) Return RegionI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return RegionI18n objects filtered by the locale column
  * @method array findByName(string $name) Return RegionI18n objects filtered by the name column
+ * @method array findByDescription(string $description) Return RegionI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +142,7 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `region_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION` FROM `region_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +328,35 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

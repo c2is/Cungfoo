@@ -290,7 +290,10 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="longvarchar" />
         <column name="image_path" type="varchar" />
+        <column name="image_encart_path" type="varchar" />
+        <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
         <behavior name="timestampable" />
 
@@ -299,12 +302,12 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
-            <parameter name="crud_type_file" value="image_path" />
+            <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path" />
         </behavior>
     </table>
 
