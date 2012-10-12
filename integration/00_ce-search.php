@@ -4,7 +4,7 @@ $page = 'ce';
 include('includes/inc_header.php');
 include('includes/ce-top.php'); ?>
 
-<div id="wrap" class="fixed-width clear" xmlns="http://www.w3.org/1999/html">
+<div id="wrap" class="fixed-width clear">
 
     <!-- colonne pleine largeur -->
     <div id="headerContainer" class="column">
@@ -86,7 +86,7 @@ include('includes/ce-top.php'); ?>
                                 <ul id="selectCamping">
                                     <li>Camping 1</li>
                                     <li>Camping 2</li>
-                                    <li>Camping 3</li>
+                                    <li class="selected">Camping 3</li>
                                     <li>Camping 4</li>
                                     <li>Camping 5</li>
                                     <li>Camping 6</li>
@@ -120,7 +120,7 @@ include('includes/ce-top.php'); ?>
     <!-- colonne pleine largeur -->
     <div id="discoverContainer" class="column clearboth">
 
-            <iframe width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>
+            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>
 
     </div>
     <!-- colonne pleine largeur -->

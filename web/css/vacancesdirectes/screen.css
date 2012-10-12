@@ -1642,11 +1642,19 @@ h6,
 }
 .ce #searchContainer #searchForm #selectCamping {
   background-color: #e6e5e5;
-  padding: 0 20px;
+  padding: 0;
   margin: 20px 0;
+  height: 115px;
+  overflow: hidden;
 }
 .ce #searchContainer #searchForm #selectCamping li {
-  padding: 4px 0;
+  padding: 0 20px;
+  height: 23px;
+  line-height: 23px;
+}
+.ce #searchContainer #searchForm #selectCamping li.selected {
+  background-color: #ed145b;
+  color: #ffffff;
 }
 .ce #searchContainer #searchForm button {
   float: right;
@@ -1726,7 +1734,9 @@ h6,
 }
 #colorbox,
 #colorbox * {
+  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 #cboxContent {
   margin-top: 32px;
@@ -1860,7 +1870,9 @@ h6,
   color: #000;
   text-decoration: none;
   display: block;
-  padding: 3px 8px;
+  padding: 0 8px;
+  height: 23px;
+  line-height: 23px;
 }
 .stylish-select .newListSelected {
   width: 125px;
@@ -1883,11 +1895,16 @@ h6,
   top: 0;
   right: 0;
 }
+.stylish-select .newListSelected * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
 .stylish-select ul.newList li a:focus {
   -moz-outline-style: none;
 }
 .stylish-select .selectedTxt {
-  width: 125px;
+  width: 97px;
   overflow: hidden;
   padding: 0 23px 0 5px;
   position: absolute;

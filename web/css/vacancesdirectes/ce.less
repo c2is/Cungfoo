@@ -100,8 +100,10 @@ iframe{width:100%;}
   #searchForm {border: 1px solid @colorGris3;padding: 20px;width: 400px;
     legend{font-family:@ptnarrow;font-size:24px;position:absolute;top:0;padding:0 10px;background-color:@colorBlanc;}
     select[name=selectCamping]{display:none;}
-    #selectCamping{background-color:@colorBgGrisC;padding:0 20px;margin:20px 0;
-      li{padding:4px 0}
+    #selectCamping{background-color:@colorBgGrisC;padding:0;margin:20px 0;height:@selectHeight*5;overflow:hidden;
+      li{padding:0 20px;.verticalCenter(@selectHeight);
+        &.selected{background-color:@colorFushia;color:@colorBlanc;}
+      }
     }
     button{float:right;}
   }

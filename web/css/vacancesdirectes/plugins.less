@@ -23,7 +23,7 @@
 #cboxOverlay{background:#464545;}
 #colorbox,
 #colorbox * {
-  -moz-box-sizing: content-box;
+  -webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;
 }
 #cboxContent{margin-top:32px; overflow:visible;}
 .cboxIframe{background:@colorBlanc;}
@@ -102,7 +102,8 @@
   color: #000;
   text-decoration:none;
   display:block;
-  padding:3px 8px;
+  padding:0 8px;
+  .verticalCenter(@selectHeight);
 }
 
 .stylish-select .newListSelected {
@@ -116,13 +117,14 @@
   .verticalCenter(@selectHeight);
   .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
 }
+.stylish-select .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;}
 
 .stylish-select ul.newList li a:focus {
   -moz-outline-style: none;
 }
 
 .stylish-select .selectedTxt {
-  width:@selectWidth;
+  width:@selectWidth - @selectHeight - 5;
   overflow:hidden;
   padding:0 @selectHeight 0 5px;
   position:absolute;
