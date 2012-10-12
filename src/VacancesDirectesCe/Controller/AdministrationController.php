@@ -27,6 +27,12 @@ class AdministrationController implements ControllerProviderInterface
         })
         ->bind('administration_reservations');
 
+        $controllers->match('/coordonnees.html', function (Request $request) use ($app)
+        {
+            return $app['twig']->render('Administration/reservations.twig');
+        })
+        ->bind('administration_coordonnees');
+
         return $controllers;
     }
 }

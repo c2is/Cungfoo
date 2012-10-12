@@ -12,9 +12,16 @@
 {% if user %}
 <nav id="nav" class="clearboth">
     <ul class="topnav fixed-width clear">
-        <li class="tab current"><a href="{{ path('achat_packages') }}">Achats</a></li>
+        <li class="tab{% if currentRoute in ['achat_packages', 'achat_panier', 'achat_confirmation_reservation'] %} current{% endif %}"><a href="{{ path('achat_packages') }}">Achats</a></li>
         <li class="tab"><a href="#">Documents</a></li>
-        <li class="tab"><a href="{{ path('administration_reservations') }}">Administration</a></li>
+        <li class="tab{% if currentRoute in ['administration_reservations', 'administration_coordonnees'] %} current{% endif %}"><a href="{{ path('administration_reservations') }}">Administration</a></li>
     </ul>
+
+    {% if currentRoute in ['administration_reservations', 'administration_coordonnees'] %}
+        <ul class="topnav topnavSub fixed-width clear">
+            <li class="tab{% if currentRoute == 'administration_coordonnees' %} current{% endif %}"><a href="{{ path('administration_coordonnees') }}">Coordonnées</a></li>
+            <li class="tab{% if currentRoute == 'administration_reservations' %} current{% endif %}"><a href="{{ path('administration_reservations') }}">Suivi des achats</a></li>
+        </ul>
+    {% endif %}
 </nav>
 {% endif %}
