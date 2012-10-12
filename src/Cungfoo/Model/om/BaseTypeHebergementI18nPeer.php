@@ -37,13 +37,13 @@ abstract class BaseTypeHebergementI18nPeer
     const TM_CLASS = 'TypeHebergementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the ID field */
     const ID = 'type_hebergement_i18n.ID';
@@ -53,6 +53,18 @@ abstract class BaseTypeHebergementI18nPeer
 
     /** the column name for the NAME field */
     const NAME = 'type_hebergement_i18n.NAME';
+
+    /** the column name for the SURFACE field */
+    const SURFACE = 'type_hebergement_i18n.SURFACE';
+
+    /** the column name for the TYPE_TERRASSE field */
+    const TYPE_TERRASSE = 'type_hebergement_i18n.TYPE_TERRASSE';
+
+    /** the column name for the DESCRIPTION field */
+    const DESCRIPTION = 'type_hebergement_i18n.DESCRIPTION';
+
+    /** the column name for the COMPOSITION field */
+    const COMPOSITION = 'type_hebergement_i18n.COMPOSITION';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,12 +85,12 @@ abstract class BaseTypeHebergementI18nPeer
      * e.g. TypeHebergementI18nPeer::$fieldNames[TypeHebergementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID, TypeHebergementI18nPeer::LOCALE, TypeHebergementI18nPeer::NAME, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Surface', 'TypeTerrasse', 'Description', 'Composition', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'surface', 'typeTerrasse', 'description', 'composition', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID, TypeHebergementI18nPeer::LOCALE, TypeHebergementI18nPeer::NAME, TypeHebergementI18nPeer::SURFACE, TypeHebergementI18nPeer::TYPE_TERRASSE, TypeHebergementI18nPeer::DESCRIPTION, TypeHebergementI18nPeer::COMPOSITION, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SURFACE', 'TYPE_TERRASSE', 'DESCRIPTION', 'COMPOSITION', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'surface', 'type_terrasse', 'description', 'composition', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -88,12 +100,12 @@ abstract class BaseTypeHebergementI18nPeer
      * e.g. TypeHebergementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID => 0, TypeHebergementI18nPeer::LOCALE => 1, TypeHebergementI18nPeer::NAME => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Surface' => 3, 'TypeTerrasse' => 4, 'Description' => 5, 'Composition' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'typeTerrasse' => 4, 'description' => 5, 'composition' => 6, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID => 0, TypeHebergementI18nPeer::LOCALE => 1, TypeHebergementI18nPeer::NAME => 2, TypeHebergementI18nPeer::SURFACE => 3, TypeHebergementI18nPeer::TYPE_TERRASSE => 4, TypeHebergementI18nPeer::DESCRIPTION => 5, TypeHebergementI18nPeer::COMPOSITION => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SURFACE' => 3, 'TYPE_TERRASSE' => 4, 'DESCRIPTION' => 5, 'COMPOSITION' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'type_terrasse' => 4, 'description' => 5, 'composition' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -170,10 +182,18 @@ abstract class BaseTypeHebergementI18nPeer
             $criteria->addSelectColumn(TypeHebergementI18nPeer::ID);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::LOCALE);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::NAME);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::SURFACE);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::TYPE_TERRASSE);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::COMPOSITION);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.SURFACE');
+            $criteria->addSelectColumn($alias . '.TYPE_TERRASSE');
+            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.COMPOSITION');
         }
     }
 

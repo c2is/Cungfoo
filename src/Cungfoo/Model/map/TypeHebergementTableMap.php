@@ -46,11 +46,8 @@ class TypeHebergementTableMap extends TableMap
         $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
         $this->addForeignKey('CATEGORY_TYPE_HEBERGEMENT_ID', 'CategoryTypeHebergementId', 'INTEGER', 'category_type_hebergement', 'ID', false, null, null);
         $this->addColumn('NOMBRE_CHAMBRE', 'NombreChambre', 'INTEGER', false, null, null);
-        $this->addColumn('SURFACE', 'Surface', 'VARCHAR', false, 255, null);
-        $this->addColumn('TYPE_TERRASSE', 'TypeTerrasse', 'VARCHAR', false, 255, null);
-        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('NOMBRE_PLACE', 'NombrePlace', 'INTEGER', false, null, null);
         $this->addColumn('IMAGE_HEBERGEMENT_PATH', 'ImageHebergementPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('COMPOSITION', 'Composition', 'LONGVARCHAR', false, null, null);
         $this->addColumn('IMAGE_COMPOSITION_PATH', 'ImageCompositionPath', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
@@ -78,7 +75,7 @@ class TypeHebergementTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name,surface,type_terrasse,description,composition', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/type-hebergement', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_hebergement_path, image_composition_path', ),
         );
     } // getBehaviors()
