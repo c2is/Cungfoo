@@ -29,7 +29,7 @@ class AdministrationController implements ControllerProviderInterface
 
         $controllers->match('/coordonnees.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Administration/reservations.twig');
+            return $app['twig']->render('Administration/coordonnees.twig');
         })
         ->bind('administration_coordonnees');
 
