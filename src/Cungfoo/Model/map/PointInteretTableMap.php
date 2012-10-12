@@ -48,6 +48,8 @@ class PointInteretTableMap extends TableMap
         $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', false, 255, null);
         $this->addColumn('ZIPCODE', 'Zipcode', 'VARCHAR', false, 255, null);
         $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
+        $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
+        $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE', 'Image', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);

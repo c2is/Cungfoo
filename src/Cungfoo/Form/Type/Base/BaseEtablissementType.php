@@ -169,6 +169,19 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.capacite',
             'required' => false,
         ));
+        $builder->add('plan_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.plan_path',
+            'required' => false,
+        ));
+        $builder->add('plan_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'etablissement.plan_path_deleted',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(

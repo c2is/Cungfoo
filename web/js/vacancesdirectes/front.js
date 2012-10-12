@@ -65,6 +65,38 @@ $(function() {
         });
     }
 
+    if ($('#tabLocations').length > 0) {
+        var oForm = $('.filterBy');
+        oForm.find('select').change( function(){
+            var sVal1 = $(this).val();
+            var sVal2 = $(this).siblings('select').val();
+            var nElt = $('.typLocation').length;
+
+
+            $('.typLocation').each( function() {
+                if (sVal1 == "" && sVal2 == "") {
+                    $(this).fadeIn();
+                } else if (sVal1 == "") {
+                    $(this).not('.'+sVal2).hide();
+                    $('.'+sVal2).fadeIn();
+                } else if (sVal2 == "") {
+                    $(this).not('.'+sVal1).hide();
+                    $('.'+sVal1).fadeIn();
+                } else {
+                    $(this).not('.'+sVal1+'.'+sVal2).hide();
+                    $('.'+sVal1+'.'+sVal2).fadeIn();
+                }
+            });
+
+                if ($('.typLocation').not(':visible').length >= nElt) {
+                    $('.noResultTyp').fadeIn();
+                }else{
+                    $('.noResultTyp').fadeOut();
+                }
+
+        });
+    }
+
 // triggerClick
     $('.triggerClick').click( function() {
         var oTarget = $(this).attr('data-triggerLink');

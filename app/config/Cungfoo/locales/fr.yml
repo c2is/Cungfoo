@@ -131,6 +131,7 @@ etablissement.title: Titre
 etablissement.ouverture_reception: Ouverture de la réception
 etablissement.ouverture_camping: Ouverture du camping
 etablissement.arrivees_departs: Arrivées et départs
+etablissement.plan_path: Plan
 
 list.actions: Actions
 
@@ -241,6 +242,18 @@ type_hebergement.id: Id
 type_hebergement.code: Code
 type_hebergement.name: Nom
 type_hebergement.category.type.hebergement: Catégorie
+type_hebergement.nombre_chambre: Nombre de chambres
+type_hebergement.surface: Surface
+type_hebergement.type_terrasse: Type de terrasse
+type_hebergement.description: Description
+type_hebergement.image_hebergement_path: Image de l'hébergement
+type_hebergement.image_hebergement_path_deleted: Supprimer l'image de l'hébergement
+type_hebergement.composition: Composition
+type_hebergement.image_composition_path: Image de la composition
+type_hebergement.image_composition_path_deleted: Supprimer l'image de la composition
+type_hebergement.nombre.chambre: Nombre de chambres
+type_hebergement.type.terrasse: Type de terrasse
+type_hebergement.nombre_place: Nombre de place
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes
@@ -264,6 +277,8 @@ point_interet.zipcode: Code Postal
 point_interet.city: Ville
 point_interet.name: Nom
 point_interet.image: Image
+point_interet.geo.coordinate.x: Latitude
+point_interet.geo.coordinate.y: Longitude
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -272,14 +287,20 @@ event.crud.view: Détails de l'évènement %name%
 event.id: Id
 event.code: Code interne
 event.category: Catégorie
-event.name: Name
+event.name: Nom
 event.address: Adresse
 event.address2: Adresse 2
 event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
+event.etablissements: Établissements ayant cet évenement
 event.str.date: Période
+event.str_date: Date
+event.geo_coordinate_x: Latitude
+event.geo_coordinate_y: Longitude
+event.geo.coordinate.x: Latitude
+event.geo.coordinate.y: Longitude
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages

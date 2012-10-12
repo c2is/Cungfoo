@@ -72,6 +72,8 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setAddress2($place->{'Address2'})
                 ->setZipcode($place->{'ZipCode'})
                 ->setCity($place->{'City'})
+                ->setGeoCoordinateX($place->attributes()->{'X'})
+                ->setGeoCoordinateY($place->attributes()->{'Y'})
                 ->setImage($place->{'Image'})
             ;
         }

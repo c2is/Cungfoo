@@ -31,6 +31,8 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
  * @method EventQuery orderByZipcode($order = Criteria::ASC) Order by the zipcode column
  * @method EventQuery orderByCity($order = Criteria::ASC) Order by the city column
+ * @method EventQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
+ * @method EventQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
  * @method EventQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method EventQuery orderByPriority($order = Criteria::ASC) Order by the priority column
  * @method EventQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -43,6 +45,8 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery groupByAddress2() Group by the address2 column
  * @method EventQuery groupByZipcode() Group by the zipcode column
  * @method EventQuery groupByCity() Group by the city column
+ * @method EventQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
+ * @method EventQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
  * @method EventQuery groupByImage() Group by the image column
  * @method EventQuery groupByPriority() Group by the priority column
  * @method EventQuery groupByCreatedAt() Group by the created_at column
@@ -69,6 +73,8 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOneByAddress2(string $address2) Return the first Event filtered by the address2 column
  * @method Event findOneByZipcode(string $zipcode) Return the first Event filtered by the zipcode column
  * @method Event findOneByCity(string $city) Return the first Event filtered by the city column
+ * @method Event findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Event filtered by the geo_coordinate_x column
+ * @method Event findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Event filtered by the geo_coordinate_y column
  * @method Event findOneByImage(string $image) Return the first Event filtered by the image column
  * @method Event findOneByPriority(string $priority) Return the first Event filtered by the priority column
  * @method Event findOneByCreatedAt(string $created_at) Return the first Event filtered by the created_at column
@@ -81,6 +87,8 @@ use Cungfoo\Model\EventQuery;
  * @method array findByAddress2(string $address2) Return Event objects filtered by the address2 column
  * @method array findByZipcode(string $zipcode) Return Event objects filtered by the zipcode column
  * @method array findByCity(string $city) Return Event objects filtered by the city column
+ * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Event objects filtered by the geo_coordinate_x column
+ * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Event objects filtered by the geo_coordinate_y column
  * @method array findByImage(string $image) Return Event objects filtered by the image column
  * @method array findByPriority(string $priority) Return Event objects filtered by the priority column
  * @method array findByCreatedAt(string $created_at) Return Event objects filtered by the created_at column
@@ -188,7 +196,7 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT` FROM `event` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT` FROM `event` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -476,6 +484,64 @@ abstract class BaseEventQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventPeer::CITY, $city, $comparison);
+    }
+
+    /**
+     * Filter the query on the geo_coordinate_x column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByGeoCoordinateX('fooValue');   // WHERE geo_coordinate_x = 'fooValue'
+     * $query->filterByGeoCoordinateX('%fooValue%'); // WHERE geo_coordinate_x LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $geoCoordinateX The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByGeoCoordinateX($geoCoordinateX = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($geoCoordinateX)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $geoCoordinateX)) {
+                $geoCoordinateX = str_replace('*', '%', $geoCoordinateX);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::GEO_COORDINATE_X, $geoCoordinateX, $comparison);
+    }
+
+    /**
+     * Filter the query on the geo_coordinate_y column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByGeoCoordinateY('fooValue');   // WHERE geo_coordinate_y = 'fooValue'
+     * $query->filterByGeoCoordinateY('%fooValue%'); // WHERE geo_coordinate_y LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $geoCoordinateY The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByGeoCoordinateY($geoCoordinateY = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($geoCoordinateY)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $geoCoordinateY)) {
+                $geoCoordinateY = str_replace('*', '%', $geoCoordinateY);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::GEO_COORDINATE_Y, $geoCoordinateY, $comparison);
     }
 
     /**

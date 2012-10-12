@@ -23,6 +23,8 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/packages.html', function (Request $request) use ($app)
         {
+
+
             return $app['twig']->render('Achat/packages.twig');
         })
         ->bind('achat_packages');

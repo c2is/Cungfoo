@@ -58,6 +58,18 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.city',
             'required' => false,
         ));
+        $builder->add('geo_coordinate_x', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.geo_coordinate_x',
+            'required' => false,
+        ));
+        $builder->add('geo_coordinate_y', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.geo_coordinate_y',
+            'required' => false,
+        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),

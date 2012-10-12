@@ -19,6 +19,12 @@ include('includes/ce-top.php'); ?>
                 <li class="tab"><a href="#">Documents</a></li>
                 <li class="tab"><a href="#">Administration</a></li>
             </ul>
+
+            <ul class="topnav topnavSub fixed-width clear">
+                <li class="tab current"><a href="">Coordonnées</a></li>
+                <li class="tab"><a href="">Suivi des achats</a></li>
+            </ul>
+
         </nav>
 
     </div>
