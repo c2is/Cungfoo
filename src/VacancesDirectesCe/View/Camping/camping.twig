@@ -191,13 +191,15 @@
             <fieldset>
                 <span>Filtrer par :</span>
                 <select name="type" id="type">
+                    <option value="">Toutes catégories</option>
                     {% for category in categoryTypeHebergement %}
-                        <option value="c1">Capacité : {{ category.name | trans }}</option>
+                        <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
                     {% endfor %}
                 </select>
                 <select name="capacite" id="capacite">
+                    <option value="">Toutes capacité</option>
                     {% for hebergement in etab.typeHebergements %}
-                        <option value="c1">Capacité : {{ hebergement.nombrePlace }} places</option>
+                        <option value="cap{{ hebergement.nombrePlace }}">Capacité : {{ hebergement.nombrePlace }} places</option>
                     {% endfor %}
                 </select>
             </fieldset>
