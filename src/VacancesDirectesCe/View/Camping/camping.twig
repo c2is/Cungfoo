@@ -105,34 +105,34 @@
 
     <ul class="tabControls clear">
         <li><a href="#tabCamp" class="active">Le camping</a></li>
-        <li><a href="#tabLocation">Les locations</a></li>
+        <li><a href="#tabLocations">Les locations</a></li>
         <li><a href="#tabSurplace">Sur place</a></li>
         <li><a href="#tabProximite">A proximité</a></li>
         <!--<li><a href="#tabAvis">Avis</a></li>-->
         <li><a href="#tabInfos">Infos pratiques</a></li>
     </ul>
 
-    <div id="tabCamp" class="tabs">
-        <div class="tabCampDiapo">
-            <div class="slider"><div class="slide clear">
-                {% for media in multimedia %}
-                    <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+    <div class="tabCampDiapo">
+        <div class="slider"><div class="slide clear">
+            {% for media in multimedia %}
+                <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+            {% endfor %}
+        </div></div>
+        <form class="tabCampDiapoOptions clear" action="#_">
+            <fieldset class="left">
+                <span>Photos</span>
+                <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
+                {% for tag in tags %}
+                    <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.slug }}</label>
                 {% endfor %}
-            </div></div>
-            <form class="tabCampDiapoOptions clear" action="#_">
-                <fieldset class="left">
-                    <span>Photos</span>
-                    <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
-                    {% for tag in tags %}
-                        <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.slug }}</label>
-                    {% endfor %}
-                </fieldset>
-                <fieldset class="right">
-                    <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="Titre de la popin : vidéo">Vidéo</a>
-                    <a class="popin360 tabCamp360" href="#_">360°</a>
-                </fieldset>
-            </form>
-        </div>
+            </fieldset>
+            <fieldset class="right">
+                <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="Titre de la popin : vidéo">Vidéo</a>
+                <a class="popin360 tabCamp360" href="#_">360°</a>
+            </fieldset>
+        </form>
+    </div>
+    <div id="tabCamp" class="tabs">
         <div class="tabCampDesc">
             <h3>{{ etab.title}}</h3>
             <p><strong>{{ etab.capacite }} emplacements | Ouvert du {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
@@ -183,6 +183,43 @@
         </div>
         <nav class="paginationTabs clear">
             <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
+        </nav>
+    </div>
+    <!-- tab Locations -->
+    <div id="tabLocations" class="tabs">
+        <form class="filterBy" action="">
+            <fieldset>
+                <span>Filtrer par :</span>
+                <select name="type" id="type">
+                    {% for category in categoryTypeHebergement %}
+                        <option value="c1">Capacité : {{ category.name | trans }}</option>
+                    {% endfor %}
+                </select>
+                <select name="capacite" id="capacite">
+                    {% for hebergement in etab.typeHebergements %}
+                        <option value="c1">Capacité : {{ hebergement.nombrePlace }} places</option>
+                    {% endfor %}
+                </select>
+            </fieldset>
+        </form>
+        {% for hebergement in etab.typeHebergements %}
+            <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
+                <img src="{{ asset(hebergement.imageHebergementPath) }}" width=181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
+                <div style="overflow:hidden;">
+                <span class="h4-like">{{ hebergement.name | trans }}</span>
+                <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">{{ hebergement.composition | trans | nl2br }}</span>
+                <strong>Nombre de chambres : {{ hebergement.nombreChambre }}<br>
+                Surface : {{ hebergement.surface | trans }}<br>
+                Type de terrasse : {{ hebergement.typeTerrasse | trans }}</strong>
+                <p class="clearboth">{{ hebergement.description | trans | nl2br }}</p>
+                </div>
+                <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
+            </div>
+        {% endfor %}
+
+        <nav class="paginationTabs clear">
+            <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
+            <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
         </nav>
     </div>
     <!-- tab Sur place -->

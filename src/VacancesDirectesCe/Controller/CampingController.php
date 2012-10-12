@@ -97,6 +97,11 @@ class CampingController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $categoryTypeHebergement = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->joinWithI18n($locale)
+                ->find()
+            ;
+
             return $app['twig']->render('Camping/camping.twig', array(
                 'locale'                  => $locale,
                 'etab'                    => $etab,
@@ -109,7 +114,8 @@ class CampingController implements ControllerProviderInterface
                 'tags'                    => $tags,
                 'activites'               => $activites,
                 'servicesComplementaires' => $servicesComplementaires,
-                'personnageAleatoire'    => $personnageAleatoire
+                'personnageAleatoire'    => $personnageAleatoire,
+                'categoryTypeHebergement'    => $categoryTypeHebergement
             ));
         })
         ->bind('popin_camping');
