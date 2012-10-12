@@ -47,22 +47,10 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.nombre_chambre',
             'required' => false,
         ));
-        $builder->add('surface', 'text', array(
+        $builder->add('nombre_place', 'integer', array(
             'constraints' => array(
             ),
-            'label' => 'type_hebergement.surface',
-            'required' => false,
-        ));
-        $builder->add('type_terrasse', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement.type_terrasse',
-            'required' => false,
-        ));
-        $builder->add('description', 'textarea', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement.description',
+            'label' => 'type_hebergement.nombre_place',
             'required' => false,
         ));
         $builder->add('image_hebergement_path', 'cungfoo_file', array(
@@ -76,12 +64,6 @@ class BaseTypeHebergementType extends AppAwareType
             ),
             'property_path' => false,
             'label' => 'type_hebergement.image_hebergement_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('composition', 'textarea', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement.composition',
             'required' => false,
         ));
         $builder->add('image_composition_path', 'cungfoo_file', array(
@@ -120,6 +102,34 @@ class BaseTypeHebergementType extends AppAwareType
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'surface' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.surface',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'type_terrasse' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.type_terrasse',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'composition' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.composition',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),

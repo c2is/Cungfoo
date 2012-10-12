@@ -25,10 +25,18 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TypeHebergementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method TypeHebergementI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method TypeHebergementI18nQuery orderBySurface($order = Criteria::ASC) Order by the surface column
+ * @method TypeHebergementI18nQuery orderByTypeTerrasse($order = Criteria::ASC) Order by the type_terrasse column
+ * @method TypeHebergementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method TypeHebergementI18nQuery orderByComposition($order = Criteria::ASC) Order by the composition column
  *
  * @method TypeHebergementI18nQuery groupById() Group by the id column
  * @method TypeHebergementI18nQuery groupByLocale() Group by the locale column
  * @method TypeHebergementI18nQuery groupByName() Group by the name column
+ * @method TypeHebergementI18nQuery groupBySurface() Group by the surface column
+ * @method TypeHebergementI18nQuery groupByTypeTerrasse() Group by the type_terrasse column
+ * @method TypeHebergementI18nQuery groupByDescription() Group by the description column
+ * @method TypeHebergementI18nQuery groupByComposition() Group by the composition column
  *
  * @method TypeHebergementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TypeHebergementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +52,18 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18n findOneById(int $id) Return the first TypeHebergementI18n filtered by the id column
  * @method TypeHebergementI18n findOneByLocale(string $locale) Return the first TypeHebergementI18n filtered by the locale column
  * @method TypeHebergementI18n findOneByName(string $name) Return the first TypeHebergementI18n filtered by the name column
+ * @method TypeHebergementI18n findOneBySurface(string $surface) Return the first TypeHebergementI18n filtered by the surface column
+ * @method TypeHebergementI18n findOneByTypeTerrasse(string $type_terrasse) Return the first TypeHebergementI18n filtered by the type_terrasse column
+ * @method TypeHebergementI18n findOneByDescription(string $description) Return the first TypeHebergementI18n filtered by the description column
+ * @method TypeHebergementI18n findOneByComposition(string $composition) Return the first TypeHebergementI18n filtered by the composition column
  *
  * @method array findById(int $id) Return TypeHebergementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return TypeHebergementI18n objects filtered by the locale column
  * @method array findByName(string $name) Return TypeHebergementI18n objects filtered by the name column
+ * @method array findBySurface(string $surface) Return TypeHebergementI18n objects filtered by the surface column
+ * @method array findByTypeTerrasse(string $type_terrasse) Return TypeHebergementI18n objects filtered by the type_terrasse column
+ * @method array findByDescription(string $description) Return TypeHebergementI18n objects filtered by the description column
+ * @method array findByComposition(string $composition) Return TypeHebergementI18n objects filtered by the composition column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +154,7 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `type_hebergement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `SURFACE`, `TYPE_TERRASSE`, `DESCRIPTION`, `COMPOSITION` FROM `type_hebergement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +340,122 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the surface column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySurface('fooValue');   // WHERE surface = 'fooValue'
+     * $query->filterBySurface('%fooValue%'); // WHERE surface LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $surface The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterBySurface($surface = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($surface)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $surface)) {
+                $surface = str_replace('*', '%', $surface);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::SURFACE, $surface, $comparison);
+    }
+
+    /**
+     * Filter the query on the type_terrasse column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTypeTerrasse('fooValue');   // WHERE type_terrasse = 'fooValue'
+     * $query->filterByTypeTerrasse('%fooValue%'); // WHERE type_terrasse LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $typeTerrasse The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByTypeTerrasse($typeTerrasse = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($typeTerrasse)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $typeTerrasse)) {
+                $typeTerrasse = str_replace('*', '%', $typeTerrasse);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::TYPE_TERRASSE, $typeTerrasse, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the composition column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByComposition('fooValue');   // WHERE composition = 'fooValue'
+     * $query->filterByComposition('%fooValue%'); // WHERE composition LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $composition The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByComposition($composition = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($composition)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $composition)) {
+                $composition = str_replace('*', '%', $composition);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::COMPOSITION, $composition, $comparison);
     }
 
     /**
