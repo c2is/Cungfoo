@@ -1847,7 +1847,7 @@ h6,
 .stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  width: 125px;
+  min-width: 125px;
   position: absolute;
   top: 22px;
   left: 0;
@@ -1873,6 +1873,7 @@ h6,
   padding: 0 8px;
   height: 23px;
   line-height: 23px;
+  white-space: nowrap;
 }
 .stylish-select .newListSelected {
   width: 125px;

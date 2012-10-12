@@ -58,7 +58,7 @@ include('includes/ce-top.php'); ?>
                         <li>
                             <div class="selectContainer clear">
                                 <select name="selectCountry" onchange="">
-                                    <option value="1">Country 1</option>
+                                    <option value="">Country 1</option>
                                     <option value="2">Country 2</option>
                                     <option value="3">Country 3</option>
                                 </select>
@@ -66,6 +66,7 @@ include('includes/ce-top.php'); ?>
                                     <option value="1">Region 1</option>
                                     <option value="2">Region 2</option>
                                     <option value="3">Region 3</option>
+                                    <option value="4">Languedoc-Roussillon </option>
                                 </select>
                             </div>
                         </li>
