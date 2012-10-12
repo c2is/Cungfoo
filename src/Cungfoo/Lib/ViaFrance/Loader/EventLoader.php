@@ -73,6 +73,7 @@ class EventLoader extends AbstractLoader
                 ->setPriority($event->{'Priority'})
                 ->setGeoCoordinateX($event->attributes()->{'X'})
                 ->setGeoCoordinateY($event->attributes()->{'Y'})
+                ->setDistanceCamping($event->attributes()->{'DistanceXY'})
                 ->setImage($event->{'Image1'})
             ;
 
