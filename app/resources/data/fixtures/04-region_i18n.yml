@@ -3,395 +3,494 @@
         Id: 1
         Locale: de
         Name: Loir-et-Cher
+        Description: null
     1_en:
         Id: 1
         Locale: en
         Name: Loir-et-Cher
+        Description: null
     1_fr:
         Id: 1
         Locale: fr
         Name: Loir-et-Cher
+        Description: null
     2_de:
         Id: 2
         Locale: de
         Name: Périgord/Dordogne
+        Description: null
     2_en:
         Id: 2
         Locale: en
         Name: Périgord/Dordogne
+        Description: null
     2_fr:
         Id: 2
         Locale: fr
         Name: Périgord/Dordogne
+        Description: null
     3_de:
         Id: 3
         Locale: de
         Name: 'Costa Brava'
+        Description: null
     3_en:
         Id: 3
         Locale: en
         Name: 'Costa Brava'
+        Description: null
     3_fr:
         Id: 3
         Locale: fr
         Name: 'Costa Brava'
+        Description: null
     4_de:
         Id: 4
         Locale: de
         Name: Gironde
+        Description: null
     4_en:
         Id: 4
         Locale: en
         Name: Gironde
+        Description: null
     4_fr:
         Id: 4
         Locale: fr
         Name: Gironde
+        Description: null
     5_de:
         Id: 5
         Locale: de
         Name: Alsace/Jura
+        Description: null
     5_en:
         Id: 5
         Locale: en
         Name: Alsace/Jura
+        Description: null
     5_fr:
         Id: 5
         Locale: fr
         Name: Alsace/Jura
+        Description: null
     6_de:
         Id: 6
         Locale: de
         Name: Landes
+        Description: null
     6_en:
         Id: 6
         Locale: en
         Name: Landes
+        Description: null
     6_fr:
         Id: 6
         Locale: fr
         Name: Landes
+        Description: null
     7_de:
         Id: 7
         Locale: de
         Name: 'Costa Dorada'
+        Description: null
     7_en:
         Id: 7
         Locale: en
         Name: 'Costa Dorada'
+        Description: null
     7_fr:
         Id: 7
         Locale: fr
         Name: 'Costa Dorada'
+        Description: null
     8_de:
         Id: 8
         Locale: de
         Name: Normandie
+        Description: null
     8_en:
         Id: 8
         Locale: en
         Name: Normandie
+        Description: null
     8_fr:
         Id: 8
         Locale: fr
         Name: Normandie
+        Description: null
     9_de:
         Id: 9
         Locale: de
         Name: Bretagne
+        Description: null
     9_en:
         Id: 9
         Locale: en
         Name: Bretagne
+        Description: null
     9_fr:
         Id: 9
         Locale: fr
         Name: Bretagne
+        Description: null
     10_de:
         Id: 10
         Locale: de
         Name: Charente-Maritime
+        Description: null
     10_en:
         Id: 10
         Locale: en
         Name: Charente-Maritime
+        Description: null
     10_fr:
         Id: 10
         Locale: fr
         Name: Charente-Maritime
+        Description: null
     11_de:
         Id: 11
         Locale: de
         Name: 'Pays basque'
+        Description: null
     11_en:
         Id: 11
         Locale: en
         Name: 'Pays basque'
+        Description: null
     11_fr:
         Id: 11
         Locale: fr
         Name: 'Pays basque'
+        Description: null
     12_de:
         Id: 12
         Locale: de
         Name: 'Pays de Loire'
+        Description: null
     12_en:
         Id: 12
         Locale: en
         Name: 'Pays de Loire'
+        Description: null
     12_fr:
         Id: 12
         Locale: fr
         Name: 'Pays de Loire'
+        Description: null
     13_de:
         Id: 13
         Locale: de
         Name: Vendée
+        Description: null
     13_en:
         Id: 13
         Locale: en
         Name: Vendée
+        Description: null
     13_fr:
         Id: 13
         Locale: fr
         Name: Vendée
+        Description: null
     14_de:
         Id: 14
         Locale: de
-        Name: 'Languedoc-Roussillon '
+        Name: Languedoc-Roussillon
+        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_en:
         Id: 14
         Locale: en
-        Name: 'Languedoc-Roussillon '
+        Name: Languedoc-Roussillon
+        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_fr:
         Id: 14
         Locale: fr
-        Name: 'Languedoc-Roussillon '
+        Name: Languedoc-Roussillon
+        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     15_de:
         Id: 15
         Locale: de
         Name: Gers
+        Description: null
     15_en:
         Id: 15
         Locale: en
         Name: Gers
+        Description: null
     15_fr:
         Id: 15
         Locale: fr
         Name: Gers
+        Description: null
     16_de:
         Id: 16
         Locale: de
         Name: Auvergne
+        Description: null
     16_en:
         Id: 16
         Locale: en
         Name: Auvergne
+        Description: null
     16_fr:
         Id: 16
         Locale: fr
         Name: Auvergne
+        Description: null
     17_de:
         Id: 17
         Locale: de
         Name: Aveyron
+        Description: null
     17_en:
         Id: 17
         Locale: en
         Name: Aveyron
+        Description: null
     17_fr:
         Id: 17
         Locale: fr
         Name: Aveyron
+        Description: null
     18_de:
         Id: 18
         Locale: de
         Name: Ardèche
+        Description: null
     18_en:
         Id: 18
         Locale: en
         Name: Ardèche
+        Description: null
     18_fr:
         Id: 18
         Locale: fr
         Name: Ardèche
+        Description: null
     19_de:
         Id: 19
         Locale: de
         Name: Ariège/Pyrénées
+        Description: null
     19_en:
         Id: 19
         Locale: en
         Name: Ariège/Pyrénées
+        Description: null
     19_fr:
         Id: 19
         Locale: fr
         Name: Ariège/Pyrénées
+        Description: null
     20_de:
         Id: 20
         Locale: de
         Name: Centro
+        Description: null
     20_en:
         Id: 20
         Locale: en
         Name: Centro
+        Description: null
     20_fr:
         Id: 20
         Locale: fr
         Name: Centro
+        Description: null
     21_de:
         Id: 21
         Locale: de
         Name: Corse
+        Description: null
     21_en:
         Id: 21
         Locale: en
         Name: Corse
+        Description: null
     21_fr:
         Id: 21
         Locale: fr
         Name: Corse
+        Description: null
     22_de:
         Id: 22
         Locale: de
         Name: Drôme/Haute-Provence
+        Description: null
     22_en:
         Id: 22
         Locale: en
         Name: Drôme/Haute-Provence
+        Description: null
     22_fr:
         Id: 22
         Locale: fr
         Name: Drôme/Haute-Provence
+        Description: null
     23_de:
         Id: 23
         Locale: de
         Name: 'Italie adriatique'
+        Description: null
     23_en:
         Id: 23
         Locale: en
         Name: 'Italie adriatique'
+        Description: null
     23_fr:
         Id: 23
         Locale: fr
         Name: 'Italie adriatique'
+        Description: null
     24_de:
         Id: 24
         Locale: de
         Name: 'Costa del Azahar'
+        Description: null
     24_en:
         Id: 24
         Locale: en
         Name: 'Costa del Azahar'
+        Description: null
     24_fr:
         Id: 24
         Locale: fr
         Name: 'Costa del Azahar'
+        Description: null
     25_de:
         Id: 25
         Locale: de
         Name: 'Italie méditerranéenne'
+        Description: null
     25_en:
         Id: 25
         Locale: en
         Name: 'Italie méditerranéenne'
+        Description: null
     25_fr:
         Id: 25
         Locale: fr
         Name: 'Italie méditerranéenne'
+        Description: null
     26_de:
         Id: 26
         Locale: de
         Name: Alpes
+        Description: null
     26_en:
         Id: 26
         Locale: en
         Name: Alpes
+        Description: null
     26_fr:
         Id: 26
         Locale: fr
         Name: Alpes
+        Description: null
     27_de:
         Id: 27
         Locale: de
         Name: 'Provence-Côte d''Azur '
+        Description: null
     27_en:
         Id: 27
         Locale: en
         Name: 'Provence-Côte d''Azur '
+        Description: null
     27_fr:
         Id: 27
         Locale: fr
         Name: 'Provence-Côte d''Azur '
+        Description: null
     28_de:
         Id: 28
         Locale: de
         Name: Verdon
+        Description: null
     28_en:
         Id: 28
         Locale: en
         Name: Verdon
+        Description: null
     28_fr:
         Id: 28
         Locale: fr
         Name: Verdon
+        Description: null
     29_de:
         Id: 29
         Locale: de
         Name: Cantabria
+        Description: null
     29_en:
         Id: 29
         Locale: en
         Name: Cantabria
+        Description: null
     29_fr:
         Id: 29
         Locale: fr
         Name: Cantabria
+        Description: null
     30_de:
         Id: 30
         Locale: de
         Name: Hérault
+        Description: null
     30_en:
         Id: 30
         Locale: en
         Name: Hérault
+        Description: null
     30_fr:
         Id: 30
         Locale: fr
         Name: Hérault
+        Description: null
     31_de:
         Id: 31
         Locale: de
         Name: Aude
+        Description: null
     31_en:
         Id: 31
         Locale: en
         Name: Aude
+        Description: null
     31_fr:
         Id: 31
         Locale: fr
         Name: Aude
+        Description: null
     32_de:
         Id: 32
         Locale: de
         Name: Toscane
+        Description: null
     32_en:
         Id: 32
         Locale: en
         Name: Toscane
+        Description: null
     32_fr:
         Id: 32
         Locale: fr
         Name: Toscane
+        Description: null
     33_de:
         Id: 33
         Locale: de
         Name: 'Pas de Calais'
+        Description: null
     33_en:
         Id: 33
         Locale: en
         Name: 'Pas de Calais'
+        Description: null
     33_fr:
         Id: 33
         Locale: fr
         Name: 'Pas de Calais'
+        Description: null

@@ -8,6 +8,7 @@
         City: 'NOIRMOUTIER-EN-L ILE'
         GeoCoordinateX: '46.999002'
         GeoCoordinateY: '-2.247016'
+        DistanceCamping: '23812'
         Image: 'http://viaimage.viafrance.com/images/evts/6882.jpg'
         Priority: '5'
     2:
@@ -17,8 +18,9 @@
         Address2: ''
         Zipcode: '85330'
         City: 'NOIRMOUTIER-EN-L ILE'
-        GeoCoordinateX: '47.000054'
-        GeoCoordinateY: '-2.244126'
+        GeoCoordinateX: '47.000000'
+        GeoCoordinateY: '-2.244260'
+        DistanceCamping: '23817'
         Image: 'http://viaimage.viafrance.com/images/evts/54197.jpg'
         Priority: '5'
     3:
@@ -30,6 +32,7 @@
         City: 'NOIRMOUTIER-EN-L ILE'
         GeoCoordinateX: '47.000614'
         GeoCoordinateY: '-2.240816'
+        DistanceCamping: '23763'
         Image: 'http://viaimage.viafrance.com/images/evts/115057.jpg'
         Priority: '5'
     4:
@@ -41,6 +44,7 @@
         City: 'NOIRMOUTIER-EN-L ILE'
         GeoCoordinateX: '46.999385'
         GeoCoordinateY: '-2.243360'
+        DistanceCamping: '23725'
         Image: 'http://viaimage.viafrance.com/images/evts/54197.jpg'
         Priority: '7'
     5:
@@ -52,6 +56,7 @@
         City: CANNES
         GeoCoordinateX: '43.551376'
         GeoCoordinateY: '7.017818'
+        DistanceCamping: '25495'
         Image: 'http://viaimage.viafrance.com/images/evts/14096.jpg'
         Priority: '2'
     6:
@@ -61,8 +66,9 @@
         Address2: ''
         Zipcode: '06210'
         City: MANDELIEU-LA-NAPOULE
-        GeoCoordinateX: '43.523192'
-        GeoCoordinateY: '6.941484'
+        GeoCoordinateX: '43.525208'
+        GeoCoordinateY: '6.943854'
+        DistanceCamping: '18884'
         Image: 'http://viaimage.viafrance.com/images/evts/101712.jpg'
         Priority: '3'
     7:
@@ -74,6 +80,7 @@
         City: CANNES
         GeoCoordinateX: '43.550027'
         GeoCoordinateY: '6.957364'
+        DistanceCamping: '21004'
         Image: 'http://viaimage.viafrance.com/images/evts/105258.jpg'
         Priority: '3'
     8:
@@ -85,6 +92,7 @@
         City: CANNES
         GeoCoordinateX: '43.550770'
         GeoCoordinateY: '7.010356'
+        DistanceCamping: '24914'
         Image: 'http://viaimage.viafrance.com/images/evts/148080.jpg'
         Priority: '3'
     9:
@@ -96,6 +104,7 @@
         City: SAINT-PRIVAT
         GeoCoordinateX: '44.628725'
         GeoCoordinateY: '4.410192'
+        DistanceCamping: '24507'
         Image: 'http://viaimage.viafrance.com/images/evts/12828.jpg'
         Priority: '8'
     10:
@@ -107,6 +116,7 @@
         City: GROSPIERRES
         GeoCoordinateX: '44.400518'
         GeoCoordinateY: '4.289792'
+        DistanceCamping: '4957'
         Image: 'http://viaimage.viafrance.com/images/evts/114928.jpg'
         Priority: '8'
     11:
@@ -118,6 +128,7 @@
         City: 'VALLON-PONT-D ARC'
         GeoCoordinateX: '44.396708'
         GeoCoordinateY: '4.386054'
+        DistanceCamping: '3353'
         Image: 'http://viaimage.viafrance.com/images/evts/48278.jpg'
         Priority: '4'
     12:
@@ -129,6 +140,7 @@
         City: 'SAINT REMEZE'
         GeoCoordinateX: '44.339368'
         GeoCoordinateY: '4.485614'
+        DistanceCamping: '13487'
         Image: 'http://viaimage.viafrance.com/images/evts/81529.jpg'
         Priority: '5'
     13:
@@ -140,6 +152,7 @@
         City: BENODET
         GeoCoordinateX: '47.881729'
         GeoCoordinateY: '-4.115098'
+        DistanceCamping: '872'
         Image: 'http://viaimage.viafrance.com/images/evts/45941.jpg'
         Priority: '2'
     14:
@@ -151,6 +164,7 @@
         City: CONCARNEAU
         GeoCoordinateX: '47.870201'
         GeoCoordinateY: '-3.922465'
+        DistanceCamping: '13549'
         Image: 'http://viaimage.viafrance.com/images/evts/61988.jpg'
         Priority: '3'
     15:
@@ -162,6 +176,7 @@
         City: BENODET
         GeoCoordinateX: '47.877283'
         GeoCoordinateY: '-4.106681'
+        DistanceCamping: '582'
         Image: 'http://viaimage.viafrance.com/images/evts/101712.jpg'
         Priority: '5'
     16:
@@ -173,6 +188,7 @@
         City: QUIMPER
         GeoCoordinateX: '47.995440'
         GeoCoordinateY: '-4.102951'
+        DistanceCamping: '12601'
         Image: 'http://viaimage.viafrance.com/images/evts/38870.jpg'
         Priority: '6'
     17:
@@ -184,6 +200,7 @@
         City: 'SAINT OURS'
         GeoCoordinateX: '45.814527'
         GeoCoordinateY: '2.941360'
+        DistanceCamping: '27967'
         Image: 'http://viaimage.viafrance.com/images/evts/128205.jpg'
         Priority: '3'
     18:
@@ -195,6 +212,7 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.774033'
         GeoCoordinateY: '3.088394'
+        DistanceCamping: '26203'
         Image: 'http://viaimage.viafrance.com/images/evts/145719.jpg'
         Priority: '3'
     19:
@@ -206,6 +224,7 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.779362'
         GeoCoordinateY: '3.085982'
+        DistanceCamping: '26654'
         Image: 'http://viaimage.viafrance.com/images/evts/26183.jpg'
         Priority: '3'
     20:
@@ -217,6 +236,7 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.779362'
         GeoCoordinateY: '3.085982'
+        DistanceCamping: '26654'
         Image: 'http://viaimage.viafrance.com/images/evts/45298.jpg'
         Priority: '3'
     21:
@@ -228,6 +248,7 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.703393'
         GeoCoordinateY: '2.899642'
+        DistanceCamping: '19161'
         Image: 'http://viaimage.viafrance.com/images/evts/52326.jpg'
         Priority: '3'
     22:
@@ -239,6 +260,7 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.703393'
         GeoCoordinateY: '2.899642'
+        DistanceCamping: '19161'
         Image: 'http://viaimage.viafrance.com/images/evts/6173.jpg'
         Priority: '3'
     23:
@@ -250,6 +272,7 @@
         City: ARGELES-SUR-MER
         GeoCoordinateX: '42.548141'
         GeoCoordinateY: '3.020296'
+        DistanceCamping: '2922'
         Image: 'http://viaimage.viafrance.com/images/evts/42739.jpg'
         Priority: '3'
     24:
@@ -261,6 +284,7 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.699655'
         GeoCoordinateY: '2.894829'
+        DistanceCamping: '19085'
         Image: 'http://viaimage.viafrance.com/images/evts/46480.jpg'
         Priority: '3'
     25:
@@ -272,6 +296,7 @@
         City: ROCHEFORT-SUR-MER
         GeoCoordinateX: '45.935071'
         GeoCoordinateY: '-0.957925'
+        DistanceCamping: '28363'
         Image: 'http://viaimage.viafrance.com/images/evts/18008.jpg'
         Priority: '7'
     26:
@@ -283,6 +308,7 @@
         City: ROYAN
         GeoCoordinateX: '45.626490'
         GeoCoordinateY: '-1.048053'
+        DistanceCamping: '15192'
         Image: 'http://viaimage.viafrance.com/images/evts/149641.jpg'
         Priority: '8'
     27:
@@ -294,6 +320,7 @@
         City: 'SAINT-PIERRE-D OLERON'
         GeoCoordinateX: '45.942772'
         GeoCoordinateY: '-1.307030'
+        DistanceCamping: '25733'
         Image: 'http://viaimage.viafrance.com/images/evts/101754.jpg'
         Priority: '2'
     28:
@@ -305,6 +332,7 @@
         City: 'DOLUS D OLERON'
         GeoCoordinateX: '45.894005'
         GeoCoordinateY: '-1.288470'
+        DistanceCamping: '20205'
         Image: 'http://viaimage.viafrance.com/images/evts/69307.jpg'
         Priority: '2'
     29:
@@ -316,6 +344,7 @@
         City: DAX
         GeoCoordinateX: '43.712908'
         GeoCoordinateY: '-1.049446'
+        DistanceCamping: '22043'
         Image: 'http://viaimage.viafrance.com/images/evts/147769.jpg'
         Priority: '3'
     30:
@@ -327,6 +356,7 @@
         City: DAX
         GeoCoordinateX: '43.712601'
         GeoCoordinateY: '-1.049369'
+        DistanceCamping: '22061'
         Image: 'http://viaimage.viafrance.com/images/evts/129473.jpg'
         Priority: '3'
     31:
@@ -338,6 +368,7 @@
         City: DAX
         GeoCoordinateX: '43.711239'
         GeoCoordinateY: '-1.045875'
+        DistanceCamping: '22378'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
     32:
@@ -349,6 +380,7 @@
         City: DAX
         GeoCoordinateX: '43.711239'
         GeoCoordinateY: '-1.045875'
+        DistanceCamping: '22378'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
     33:
@@ -358,8 +390,9 @@
         Address2: ''
         Zipcode: '06220'
         City: VALLAURIS
-        GeoCoordinateX: '43.579767'
-        GeoCoordinateY: '7.053379'
+        GeoCoordinateX: '43.579805'
+        GeoCoordinateY: '7.053144'
+        DistanceCamping: '9248'
         Image: 'http://viaimage.viafrance.com/images/evts/71163.jpg'
         Priority: '3'
     34:
@@ -371,6 +404,7 @@
         City: OLLIOULES
         GeoCoordinateX: '43.145954'
         GeoCoordinateY: '5.882614'
+        DistanceCamping: '26783'
         Image: 'http://viaimage.viafrance.com/images/evts/142541.jpg'
         Priority: '5'
     35:
@@ -382,6 +416,7 @@
         City: OLLIOULES
         GeoCoordinateX: '43.145954'
         GeoCoordinateY: '5.882614'
+        DistanceCamping: '26783'
         Image: 'http://viaimage.viafrance.com/images/evts/142214.jpg'
         Priority: '5'
     36:
@@ -393,6 +428,7 @@
         City: SANARY-SUR-MER
         GeoCoordinateX: '43.119241'
         GeoCoordinateY: '5.803409'
+        DistanceCamping: '28661'
         Image: 'http://viaimage.viafrance.com/images/evts/10049.jpg'
         Priority: '5'
     37:
@@ -404,6 +440,7 @@
         City: OLLIOULES
         GeoCoordinateX: '43.145954'
         GeoCoordinateY: '5.882614'
+        DistanceCamping: '26783'
         Image: 'http://viaimage.viafrance.com/images/evts/86966.jpg'
         Priority: '5'
     38:
@@ -415,6 +452,7 @@
         City: MIMIZAN
         GeoCoordinateX: '44.199830'
         GeoCoordinateY: '-1.226855'
+        DistanceCamping: '15256'
         Image: 'http://viaimage.viafrance.com/images/evts/6617.gif'
         Priority: '8'
     39:
@@ -426,6 +464,7 @@
         City: MIMIZAN
         GeoCoordinateX: '44.199830'
         GeoCoordinateY: '-1.226855'
+        DistanceCamping: '15256'
         Image: 'http://viaimage.viafrance.com/images/evts/45378.jpg'
         Priority: '8'
     40:
@@ -437,6 +476,7 @@
         City: MIMIZAN
         GeoCoordinateX: '44.216452'
         GeoCoordinateY: '-1.296837'
+        DistanceCamping: '19555'
         Image: 'http://viaimage.viafrance.com/images/evts/11862.jpg'
         Priority: '8'
     41:
@@ -448,6 +488,7 @@
         City: 'MOLIETS ET MAA'
         GeoCoordinateX: '43.849435'
         GeoCoordinateY: '-1.358910'
+        DistanceCamping: '29580'
         Image: 'http://viaimage.viafrance.com/images/evts/48879.jpg'
         Priority: '8'
     42:
@@ -459,6 +500,7 @@
         City: ANNECY
         GeoCoordinateX: '45.902725'
         GeoCoordinateY: '6.128239'
+        DistanceCamping: '16104'
         Image: 'http://viaimage.viafrance.com/images/evts/38737.jpg'
         Priority: '2'
     43:
@@ -470,6 +512,7 @@
         City: ANNECY
         GeoCoordinateX: '45.899097'
         GeoCoordinateY: '6.130068'
+        DistanceCamping: '15682'
         Image: 'http://viaimage.viafrance.com/images/evts/45298.jpg'
         Priority: '3'
     44:
@@ -481,6 +524,7 @@
         City: ANNECY
         GeoCoordinateX: '45.899097'
         GeoCoordinateY: '6.130068'
+        DistanceCamping: '15682'
         Image: 'http://viaimage.viafrance.com/images/evts/69856.jpg'
         Priority: '3'
     45:
@@ -492,6 +536,7 @@
         City: ANNECY
         GeoCoordinateX: '45.899150'
         GeoCoordinateY: '6.129986'
+        DistanceCamping: '15691'
         Image: 'http://viaimage.viafrance.com/images/evts/24247.jpg'
         Priority: '3'
     46:
@@ -503,6 +548,7 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.155427'
         GeoCoordinateY: '-1.155762'
+        DistanceCamping: '21909'
         Image: 'http://viaimage.viafrance.com/images/evts/102118.jpg'
         Priority: '2'
     47:
@@ -514,6 +560,7 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.142775'
         GeoCoordinateY: '-1.166923'
+        DistanceCamping: '20308'
         Image: 'http://viaimage.viafrance.com/images/evts/46238.jpg'
         Priority: '2'
     48:
@@ -525,6 +572,7 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.160491'
         GeoCoordinateY: '-1.148149'
+        DistanceCamping: '22631'
         Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
         Priority: '3'
     49:
@@ -536,6 +584,7 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.142775'
         GeoCoordinateY: '-1.166923'
+        DistanceCamping: '20308'
         Image: 'http://viaimage.viafrance.com/images/evts/10915.jpg'
         Priority: '3'
     50:
@@ -547,6 +596,7 @@
         City: MULHOUSE
         GeoCoordinateX: '47.750087'
         GeoCoordinateY: '7.336109'
+        DistanceCamping: '15772'
         Image: 'http://viaimage.viafrance.com/images/evts/50802.jpg'
         Priority: '3'
     51:
@@ -558,6 +608,7 @@
         City: MULHOUSE
         GeoCoordinateX: '47.744897'
         GeoCoordinateY: '7.344684'
+        DistanceCamping: '16630'
         Image: 'http://viaimage.viafrance.com/images/evts/101346.jpg'
         Priority: '5'
     52:
@@ -569,6 +620,7 @@
         City: WITTENHEIM
         GeoCoordinateX: '47.796854'
         GeoCoordinateY: '7.312676'
+        DistanceCamping: '11721'
         Image: 'http://viaimage.viafrance.com/images/evts/148825.jpg'
         Priority: '5'
     53:
@@ -580,6 +632,7 @@
         City: SAUSHEIM
         GeoCoordinateX: '47.781885'
         GeoCoordinateY: '7.370132'
+        DistanceCamping: '16321'
         Image: 'http://viaimage.viafrance.com/images/evts/150025.jpg'
         Priority: '5'
     54:
@@ -591,6 +644,7 @@
         City: 'LACANAU OCEAN'
         GeoCoordinateX: '44.999682'
         GeoCoordinateY: '-1.204414'
+        DistanceCamping: '7309'
         Image: 'http://viaimage.viafrance.com/images/evts/11944.jpg'
         Priority: '2'
     55:
@@ -602,6 +656,7 @@
         City: CARCANS-MAUBUISSON
         GeoCoordinateX: '45.104179'
         GeoCoordinateY: '-1.141757'
+        DistanceCamping: '10937'
         Image: 'http://viaimage.viafrance.com/images/evts/25021.jpg'
         Priority: '5'
     56:
@@ -613,6 +668,7 @@
         City: 'LACANAU OCEAN'
         GeoCoordinateX: '44.999682'
         GeoCoordinateY: '-1.204414'
+        DistanceCamping: '7309'
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
     57:
@@ -624,6 +680,7 @@
         City: LACANAU
         GeoCoordinateX: '45.005400'
         GeoCoordinateY: '-1.167234'
+        DistanceCamping: '4338'
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
     58:
@@ -635,6 +692,7 @@
         City: HENDAYE
         GeoCoordinateX: '43.353061'
         GeoCoordinateY: '-1.782000'
+        DistanceCamping: '17858'
         Image: 'http://viaimage.viafrance.com/images/evts/31402.jpg'
         Priority: '3'
     59:
@@ -646,6 +704,7 @@
         City: BIARRITZ
         GeoCoordinateX: '43.465858'
         GeoCoordinateY: '-1.536654'
+        DistanceCamping: '5632'
         Image: 'http://viaimage.viafrance.com/images/evts/87009.jpg'
         Priority: '3'
     60:
@@ -657,6 +716,7 @@
         City: BIARRITZ
         GeoCoordinateX: '43.490909'
         GeoCoordinateY: '-1.544750'
+        DistanceCamping: '7346'
         Image: 'http://viaimage.viafrance.com/images/evts/71522.jpg'
         Priority: '3'
     61:
@@ -668,6 +728,7 @@
         City: BIARRITZ
         GeoCoordinateX: '43.459456'
         GeoCoordinateY: '-1.566323'
+        DistanceCamping: '3461'
         Image: 'http://viaimage.viafrance.com/images/evts/142618.jpg'
         Priority: '3'
     62:
@@ -679,6 +740,7 @@
         City: ALERIA
         GeoCoordinateX: '42.104083'
         GeoCoordinateY: '9.512293'
+        DistanceCamping: '16078'
         Image: 'http://viaimage.viafrance.com/images/evts/82301.jpg'
         Priority: '7'
     63:
@@ -690,6 +752,7 @@
         City: SOLARO
         GeoCoordinateX: '41.863413'
         GeoCoordinateY: '9.394432'
+        DistanceCamping: '13674'
         Image: 'http://viaimage.viafrance.com/images/evts/11845.jpg'
         Priority: '8'
     64:
@@ -701,6 +764,7 @@
         City: ALERIA
         GeoCoordinateX: '42.103964'
         GeoCoordinateY: '9.512885'
+        DistanceCamping: '16096'
         Image: 'http://viaimage.viafrance.com/images/evts/45378.jpg'
         Priority: '8'
     65:
@@ -712,6 +776,7 @@
         City: LINGUIZZETTA
         GeoCoordinateX: '42.198215'
         GeoCoordinateY: '9.557543'
+        DistanceCamping: '26926'
         Image: 'http://viaimage.viafrance.com/images/evts/596.jpg'
         Priority: '8'
     66:
@@ -723,6 +788,7 @@
         City: LABENNE
         GeoCoordinateX: '43.594896'
         GeoCoordinateY: '-1.453436'
+        DistanceCamping: '22930'
         Image: 'http://viaimage.viafrance.com/images/evts/48499.jpg'
         Priority: '8'
     67:
@@ -734,6 +800,7 @@
         City: TARNOS
         GeoCoordinateX: '43.549081'
         GeoCoordinateY: '-1.481077'
+        DistanceCamping: '28371'
         Image: 'http://viaimage.viafrance.com/images/evts/51782.jpg'
         Priority: '8'
     68:
@@ -745,6 +812,7 @@
         City: 'SOUSTONS-PORT-D ALBRET'
         GeoCoordinateX: '43.757168'
         GeoCoordinateY: '-1.336566'
+        DistanceCamping: '6848'
         Image: 'http://viaimage.viafrance.com/images/evts/48501.jpg'
         Priority: '8'
     69:
@@ -756,6 +824,7 @@
         City: TARNOS
         GeoCoordinateX: '43.549081'
         GeoCoordinateY: '-1.481077'
+        DistanceCamping: '28371'
         Image: 'http://viaimage.viafrance.com/images/evts/51373.jpg'
         Priority: '8'
     70:
@@ -767,6 +836,7 @@
         City: 'LA SEYNE-SUR-MER'
         GeoCoordinateX: '43.093030'
         GeoCoordinateY: '5.907684'
+        DistanceCamping: '20784'
         Image: 'http://viaimage.viafrance.com/images/evts/17973.jpg'
         Priority: '2'
     71:
@@ -778,6 +848,7 @@
         City: TOULON
         GeoCoordinateX: '43.126246'
         GeoCoordinateY: '5.925847'
+        DistanceCamping: '19644'
         Image: 'http://viaimage.viafrance.com/images/evts/37137.jpg'
         Priority: '3'
     72:
@@ -789,6 +860,7 @@
         City: TOULON
         GeoCoordinateX: '43.124905'
         GeoCoordinateY: '5.932437'
+        DistanceCamping: '19091'
         Image: 'http://viaimage.viafrance.com/images/evts/59976.jpg'
         Priority: '3'
     73:
@@ -800,6 +872,7 @@
         City: TOULON
         GeoCoordinateX: '43.127928'
         GeoCoordinateY: '5.932094'
+        DistanceCamping: '19182'
         Image: 'http://viaimage.viafrance.com/images/evts/46712.jpg'
         Priority: '3'
     74:
@@ -811,6 +884,7 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.611144'
         GeoCoordinateY: '3.879486'
+        DistanceCamping: '29552'
         Image: 'http://viaimage.viafrance.com/images/evts/115124.jpg'
         Priority: '2'
     75:
@@ -822,6 +896,7 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.610544'
         GeoCoordinateY: '3.881092'
+        DistanceCamping: '29602'
         Image: 'http://viaimage.viafrance.com/images/evts/145939.jpg'
         Priority: '2'
     76:
@@ -833,6 +908,7 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.611327'
         GeoCoordinateY: '3.870293'
+        DistanceCamping: '29027'
         Image: 'http://viaimage.viafrance.com/images/evts/3443.jpg'
         Priority: '3'
     77:
@@ -844,6 +920,7 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.608389'
         GeoCoordinateY: '3.879882'
+        DistanceCamping: '29369'
         Image: 'http://viaimage.viafrance.com/images/evts/17835.jpg'
         Priority: '3'
     78:
@@ -855,6 +932,7 @@
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497269'
         GeoCoordinateY: '-1.777271'
+        DistanceCamping: '6735'
         Image: 'http://viaimage.viafrance.com/images/evts/116477.jpg'
         Priority: '5'
     79:
@@ -866,6 +944,7 @@
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497269'
         GeoCoordinateY: '-1.777271'
+        DistanceCamping: '6735'
         Image: 'http://viaimage.viafrance.com/images/evts/116757.jpg'
         Priority: '5'
     80:
@@ -877,6 +956,7 @@
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497269'
         GeoCoordinateY: '-1.777271'
+        DistanceCamping: '6735'
         Image: 'http://viaimage.viafrance.com/images/evts/57446.jpg'
         Priority: '5'
     81:
@@ -888,6 +968,7 @@
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497269'
         GeoCoordinateY: '-1.777271'
+        DistanceCamping: '6735'
         Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
         Priority: '5'
     82:
@@ -899,6 +980,7 @@
         City: CARNAC
         GeoCoordinateX: '47.584049'
         GeoCoordinateY: '-3.078814'
+        DistanceCamping: '26236'
         Image: 'http://viaimage.viafrance.com/images/evts/131446.jpg'
         Priority: '5'
     83:
@@ -910,6 +992,7 @@
         City: 'LA TRINITE-SUR-MER'
         GeoCoordinateX: '47.584251'
         GeoCoordinateY: '-3.026250'
+        DistanceCamping: '27539'
         Image: 'http://viaimage.viafrance.com/images/evts/101160.jpg'
         Priority: '7'
     84:
@@ -921,6 +1004,7 @@
         City: CARNAC
         GeoCoordinateX: '47.584313'
         GeoCoordinateY: '-3.078680'
+        DistanceCamping: '26267'
         Image: 'http://viaimage.viafrance.com/images/evts/17836.jpg'
         Priority: '7'
     85:
@@ -932,6 +1016,7 @@
         City: CARNAC
         GeoCoordinateX: '47.572561'
         GeoCoordinateY: '-3.067918'
+        DistanceCamping: '25238'
         Image: 'http://viaimage.viafrance.com/images/evts/124237.jpg'
         Priority: '8'
     86:
@@ -943,6 +1028,7 @@
         City: 'NOIRMOUTIER-EN-L ILE'
         GeoCoordinateX: '46.930509'
         GeoCoordinateY: '-2.123497'
+        DistanceCamping: '24043'
         Image: 'http://viaimage.viafrance.com/images/evts/54202.jpg'
         Priority: '7'
     87:
@@ -954,6 +1040,7 @@
         City: SAINT-JEAN-DE-MONTS
         GeoCoordinateX: '46.781595'
         GeoCoordinateY: '-2.067772'
+        DistanceCamping: '8349'
         Image: 'http://viaimage.viafrance.com/images/evts/5759.jpg'
         Priority: '8'
     88:
@@ -965,6 +1052,7 @@
         City: SAINT-JEAN-DE-MONTS
         GeoCoordinateX: '46.797505'
         GeoCoordinateY: '-2.076509'
+        DistanceCamping: '9966'
         Image: 'http://viaimage.viafrance.com/images/evts/48496.jpg'
         Priority: '8'
     89:
@@ -976,6 +1064,7 @@
         City: SAINT-JEAN-DE-MONTS
         GeoCoordinateX: '46.800048'
         GeoCoordinateY: '-2.077186'
+        DistanceCamping: '10192'
         Image: 'http://viaimage.viafrance.com/images/evts/51780.jpg'
         Priority: '8'
     90:
@@ -987,6 +1076,7 @@
         City: 'SOULAC SUR MER'
         GeoCoordinateX: '45.513863'
         GeoCoordinateY: '-1.121698'
+        DistanceCamping: '15660'
         Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
         Priority: '5'
     91:
@@ -998,6 +1088,7 @@
         City: ROYAN
         GeoCoordinateX: '45.619751'
         GeoCoordinateY: '-1.033697'
+        DistanceCamping: '28658'
         Image: 'http://viaimage.viafrance.com/images/evts/43951.jpg'
         Priority: '7'
     92:
@@ -1009,6 +1100,7 @@
         City: GUERANDE
         GeoCoordinateX: '47.327270'
         GeoCoordinateY: '-2.427047'
+        DistanceCamping: '4452'
         Image: 'http://viaimage.viafrance.com/images/evts/82914.jpg'
         Priority: '5'
     93:
@@ -1020,6 +1112,7 @@
         City: PORNICHET
         GeoCoordinateX: '47.265451'
         GeoCoordinateY: '-2.334527'
+        DistanceCamping: '5514'
         Image: 'http://viaimage.viafrance.com/images/evts/100263.jpg'
         Priority: '8'
     94:
@@ -1031,6 +1124,7 @@
         City: PORNICHET
         GeoCoordinateX: '47.258615'
         GeoCoordinateY: '-2.344086'
+        DistanceCamping: '5803'
         Image: 'http://viaimage.viafrance.com/images/evts/38352.jpg'
         Priority: '8'
     95:
@@ -1042,6 +1136,7 @@
         City: 'LE CROISIC'
         GeoCoordinateX: '47.299578'
         GeoCoordinateY: '-2.523728'
+        DistanceCamping: '11065'
         Image: 'http://viaimage.viafrance.com/images/evts/123423.jpg'
         Priority: '5'
     96:
@@ -1053,6 +1148,7 @@
         City: 'LES EYZIES-DE-TAYAC-SIREUIL'
         GeoCoordinateX: '44.936056'
         GeoCoordinateY: '1.012885'
+        DistanceCamping: '5698'
         Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
         Priority: '2'
     97:
@@ -1064,6 +1160,7 @@
         City: PLAZAC
         GeoCoordinateX: '45.036291'
         GeoCoordinateY: '1.037587'
+        DistanceCamping: '11664'
         Image: 'http://viaimage.viafrance.com/images/evts/141170.jpg'
         Priority: '3'
     98:
@@ -1075,6 +1172,7 @@
         City: MONTIGNAC
         GeoCoordinateX: '45.048094'
         GeoCoordinateY: '1.169939'
+        DistanceCamping: '14032'
         Image: 'http://viaimage.viafrance.com/images/evts/94636.jpg'
         Priority: '2'
     99:
@@ -1086,6 +1184,7 @@
         City: 'LES EYZIES-DE-TAYAC-SIREUIL'
         GeoCoordinateX: '44.940352'
         GeoCoordinateY: '1.030007'
+        DistanceCamping: '4367'
         Image: 'http://viaimage.viafrance.com/images/evts/61989.jpg'
         Priority: '3'
     100:
@@ -1097,6 +1196,7 @@
         City: GAP
         GeoCoordinateX: '44.563108'
         GeoCoordinateY: '6.086509'
+        DistanceCamping: '15972'
         Image: 'http://viaimage.viafrance.com/images/evts/56535.jpg'
         Priority: '3'
     101:
@@ -1108,6 +1208,7 @@
         City: GAP
         GeoCoordinateX: '44.565796'
         GeoCoordinateY: '6.093173'
+        DistanceCamping: '16408'
         Image: 'http://viaimage.viafrance.com/images/evts/36245.jpg'
         Priority: '5'
     102:
@@ -1119,6 +1220,7 @@
         City: GAP
         GeoCoordinateX: '44.555666'
         GeoCoordinateY: '6.078185'
+        DistanceCamping: '15002'
         Image: 'http://viaimage.viafrance.com/images/evts/99599.jpg'
         Priority: '8'
     103:
@@ -1130,6 +1232,7 @@
         City: GAP
         GeoCoordinateX: '44.555666'
         GeoCoordinateY: '6.078185'
+        DistanceCamping: '15002'
         Image: 'http://viaimage.viafrance.com/images/evts/20570.jpg'
         Priority: '8'
     104:
@@ -1141,6 +1244,7 @@
         City: AGDE
         GeoCoordinateX: '43.286376'
         GeoCoordinateY: '3.510760'
+        DistanceCamping: '2633'
         Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
         Priority: '3'
     105:
@@ -1152,6 +1256,7 @@
         City: BEZIERS
         GeoCoordinateX: '43.338262'
         GeoCoordinateY: '3.214283'
+        DistanceCamping: '24065'
         Image: 'http://viaimage.viafrance.com/images/evts/145083.jpg'
         Priority: '5'
     106:
@@ -1163,6 +1268,7 @@
         City: BEZIERS
         GeoCoordinateX: '43.341908'
         GeoCoordinateY: '3.217701'
+        DistanceCamping: '23847'
         Image: 'http://viaimage.viafrance.com/images/evts/145285.jpg'
         Priority: '5'
     107:
@@ -1174,6 +1280,7 @@
         City: BEZIERS
         GeoCoordinateX: '43.335521'
         GeoCoordinateY: '3.263645'
+        DistanceCamping: '20071'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
     108:
@@ -1185,6 +1292,7 @@
         City: SOUILLAC
         GeoCoordinateX: '44.893698'
         GeoCoordinateY: '1.476899'
+        DistanceCamping: '23808'
         Image: 'http://viaimage.viafrance.com/images/evts/41100.jpg'
         Priority: '8'
     109:
@@ -1196,6 +1304,7 @@
         City: 'LA ROQUE GAGEAC'
         GeoCoordinateX: '44.825371'
         GeoCoordinateY: '1.183638'
+        DistanceCamping: '11189'
         Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
         Priority: '5'
     110:
@@ -1207,6 +1316,7 @@
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
         GeoCoordinateY: '3.117454'
+        DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/31672.jpg'
         Priority: '7'
     111:
@@ -1218,6 +1328,7 @@
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
         GeoCoordinateY: '3.117454'
+        DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/8363.jpg'
         Priority: '8'
     112:
@@ -1229,6 +1340,7 @@
         City: 'PORT VENDRES'
         GeoCoordinateX: '42.497218'
         GeoCoordinateY: '3.107375'
+        DistanceCamping: '26987'
         Image: 'http://viaimage.viafrance.com/images/evts/49121.jpg'
         Priority: '9'
     113:
@@ -1240,6 +1352,7 @@
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.472984'
         GeoCoordinateY: '3.114160'
+        DistanceCamping: '24257'
         Image: 'http://viaimage.viafrance.com/images/evts/18029.jpg'
         Priority: '9'
     114:
@@ -1251,6 +1364,7 @@
         City: RODEZ
         GeoCoordinateX: '44.349254'
         GeoCoordinateY: '2.576268'
+        DistanceCamping: '21301'
         Image: 'http://viaimage.viafrance.com/images/evts/81399.jpg'
         Priority: '5'
     115:
@@ -1262,6 +1376,7 @@
         City: RODEZ
         GeoCoordinateX: '44.349254'
         GeoCoordinateY: '2.576268'
+        DistanceCamping: '21301'
         Image: 'http://viaimage.viafrance.com/images/evts/142212.jpg'
         Priority: '5'
     116:
@@ -1273,6 +1388,7 @@
         City: RODEZ
         GeoCoordinateX: '44.349340'
         GeoCoordinateY: '2.576173'
+        DistanceCamping: '21313'
         Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
         Priority: '5'
     117:
@@ -1284,6 +1400,7 @@
         City: RODEZ
         GeoCoordinateX: '44.349533'
         GeoCoordinateY: '2.575997'
+        DistanceCamping: '21338'
         Image: 'http://viaimage.viafrance.com/images/evts/7032.jpg'
         Priority: '7'
     118:
@@ -1295,6 +1412,7 @@
         City: DINARD
         GeoCoordinateX: '48.635041'
         GeoCoordinateY: '-2.051627'
+        DistanceCamping: '16126'
         Image: 'http://viaimage.viafrance.com/images/evts/56041.jpg'
         Priority: '3'
     119:
@@ -1306,6 +1424,7 @@
         City: DINARD
         GeoCoordinateX: '48.635041'
         GeoCoordinateY: '-2.051627'
+        DistanceCamping: '16126'
         Image: 'http://viaimage.viafrance.com/images/evts/76377.jpg'
         Priority: '3'
     120:
@@ -1317,6 +1436,7 @@
         City: SAINT-MALO
         GeoCoordinateX: '48.651524'
         GeoCoordinateY: '-2.017950'
+        DistanceCamping: '19100'
         Image: 'http://viaimage.viafrance.com/images/evts/75286.jpg'
         Priority: '3'
     121:
@@ -1328,6 +1448,7 @@
         City: SAINT-MALO
         GeoCoordinateX: '48.647456'
         GeoCoordinateY: '-2.009524'
+        DistanceCamping: '19505'
         Image: 'http://viaimage.viafrance.com/images/evts/69284.jpg'
         Priority: '3'
     122:
@@ -1339,6 +1460,7 @@
         City: DAX
         GeoCoordinateX: '43.710653'
         GeoCoordinateY: '-1.054087'
+        DistanceCamping: '29671'
         Image: 'http://viaimage.viafrance.com/images/evts/45255.jpg'
         Priority: '7'
     123:
@@ -1350,6 +1472,7 @@
         City: DAX
         GeoCoordinateX: '43.710985'
         GeoCoordinateY: '-1.054595'
+        DistanceCamping: '29617'
         Image: 'http://viaimage.viafrance.com/images/evts/68500.jpg'
         Priority: '7'
     124:
@@ -1361,6 +1484,7 @@
         City: ARLES
         GeoCoordinateX: '43.676500'
         GeoCoordinateY: '4.629782'
+        DistanceCamping: '12634'
         Image: 'http://viaimage.viafrance.com/images/evts/83188.jpg'
         Priority: '2'
     125:
@@ -1372,6 +1496,7 @@
         City: ARLES
         GeoCoordinateX: '43.672538'
         GeoCoordinateY: '4.617656'
+        DistanceCamping: '11613'
         Image: 'http://viaimage.viafrance.com/images/evts/124308.jpg'
         Priority: '2'
     126:
@@ -1383,6 +1508,7 @@
         City: ARLES
         GeoCoordinateX: '43.677734'
         GeoCoordinateY: '4.630964'
+        DistanceCamping: '12746'
         Image: 'http://viaimage.viafrance.com/images/evts/15511.jpg'
         Priority: '3'
     127:
@@ -1394,6 +1520,7 @@
         City: ARLES
         GeoCoordinateX: '43.608642'
         GeoCoordinateY: '4.610229'
+        DistanceCamping: '12424'
         Image: 'http://viaimage.viafrance.com/images/evts/81399.jpg'
         Priority: '3'
     128:
@@ -1405,6 +1532,7 @@
         City: PORTO-VECCHIO
         GeoCoordinateX: '41.591326'
         GeoCoordinateY: '9.278463'
+        DistanceCamping: '6223'
         Image: 'http://viaimage.viafrance.com/images/evts/104441.jpg'
         Priority: '2'
     129:
@@ -1416,6 +1544,7 @@
         City: PORTO-VECCHIO
         GeoCoordinateX: '41.699527'
         GeoCoordinateY: '9.394439'
+        DistanceCamping: '10253'
         Image: 'http://viaimage.viafrance.com/images/evts/51785.jpg'
         Priority: '8'
     130:
@@ -1427,6 +1556,7 @@
         City: 'SAINTE LUCIE DE PORTO VECCHI'
         GeoCoordinateX: '41.682074'
         GeoCoordinateY: '9.374987'
+        DistanceCamping: '7842'
         Image: 'http://viaimage.viafrance.com/images/evts/57146.jpg'
         Priority: '8'
     131:
@@ -1438,6 +1568,7 @@
         City: SCAER
         GeoCoordinateX: '48.027272'
         GeoCoordinateY: '-3.702823'
+        DistanceCamping: '26259'
         Image: 'http://viaimage.viafrance.com/images/evts/82436.jpg'
         Priority: '3'
     132:
@@ -1449,6 +1580,7 @@
         City: ROSPORDEN
         GeoCoordinateX: '47.957566'
         GeoCoordinateY: '-3.827141'
+        DistanceCamping: '17854'
         Image: 'http://viaimage.viafrance.com/images/evts/68763.jpg'
         Priority: '8'
     133:
@@ -1460,6 +1592,7 @@
         City: QUIMPER
         GeoCoordinateX: '47.982943'
         GeoCoordinateY: '-4.072122'
+        DistanceCamping: '29244'
         Image: 'http://viaimage.viafrance.com/images/evts/30701.jpg'
         Priority: '9'
     134:
@@ -1471,6 +1604,7 @@
         City: VANNES
         GeoCoordinateX: '47.652184'
         GeoCoordinateY: '-2.759434'
+        DistanceCamping: '29723'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
     135:
@@ -1482,6 +1616,7 @@
         City: VANNES
         GeoCoordinateX: '47.652184'
         GeoCoordinateY: '-2.759434'
+        DistanceCamping: '29723'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
     136:
@@ -1493,6 +1628,7 @@
         City: VANNES
         GeoCoordinateX: '47.652184'
         GeoCoordinateY: '-2.759434'
+        DistanceCamping: '29723'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
     137:
@@ -1504,6 +1640,7 @@
         City: LANESTER
         GeoCoordinateX: '47.777461'
         GeoCoordinateY: '-3.346505'
+        DistanceCamping: '29141'
         Image: 'http://viaimage.viafrance.com/images/evts/128379.jpg'
         Priority: '5'
     138:
@@ -1515,6 +1652,7 @@
         City: LORIENT
         GeoCoordinateX: '47.745712'
         GeoCoordinateY: '-3.360581'
+        DistanceCamping: '27647'
         Image: 'http://viaimage.viafrance.com/images/evts/141913.jpg'
         Priority: '5'
     139:
@@ -1526,6 +1664,7 @@
         City: LANESTER
         GeoCoordinateX: '47.777461'
         GeoCoordinateY: '-3.346505'
+        DistanceCamping: '29141'
         Image: 'http://viaimage.viafrance.com/images/evts/145595.jpg'
         Priority: '5'
     140:
@@ -1537,6 +1676,7 @@
         City: BISCARROSSE
         GeoCoordinateX: '44.388959'
         GeoCoordinateY: '-1.182329'
+        DistanceCamping: '8959'
         Image: 'http://viaimage.viafrance.com/images/evts/147956.jpg'
         Priority: '5'
     141:
@@ -1548,6 +1688,7 @@
         City: ARCACHON
         GeoCoordinateX: '44.661159'
         GeoCoordinateY: '-1.164696'
+        DistanceCamping: '22441'
         Image: 'http://viaimage.viafrance.com/images/evts/115482.jpg'
         Priority: '5'
     142:
@@ -1559,6 +1700,7 @@
         City: ARCACHON
         GeoCoordinateX: '44.661159'
         GeoCoordinateY: '-1.164696'
+        DistanceCamping: '22441'
         Image: 'http://viaimage.viafrance.com/images/evts/128453.jpg'
         Priority: '5'
     143:
@@ -1570,6 +1712,7 @@
         City: ARCACHON
         GeoCoordinateX: '44.661159'
         GeoCoordinateY: '-1.164696'
+        DistanceCamping: '22441'
         Image: 'http://viaimage.viafrance.com/images/evts/147004.jpg'
         Priority: '5'
     144:
@@ -1581,6 +1724,7 @@
         City: 'LE GUERNO'
         GeoCoordinateX: '47.584846'
         GeoCoordinateY: '-2.407675'
+        DistanceCamping: '27958'
         Image: 'http://viaimage.viafrance.com/images/evts/12247.jpg'
         Priority: '5'
     145:
@@ -1592,6 +1736,7 @@
         City: SAINT-RAPHAEL
         GeoCoordinateX: '43.414519'
         GeoCoordinateY: '6.779161'
+        DistanceCamping: '21604'
         Image: 'http://viaimage.viafrance.com/images/evts/101408.jpg'
         Priority: '5'
     146:
@@ -1603,6 +1748,7 @@
         City: SAINT-RAPHAEL
         GeoCoordinateX: '43.414519'
         GeoCoordinateY: '6.779161'
+        DistanceCamping: '21604'
         Image: 'http://viaimage.viafrance.com/images/evts/142168.jpg'
         Priority: '5'
     147:
@@ -1614,6 +1760,7 @@
         City: FREJUS
         GeoCoordinateX: '43.437170'
         GeoCoordinateY: '6.740956'
+        DistanceCamping: '21331'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
     148:
@@ -1625,9 +1772,34 @@
         City: SAINT-RAPHAEL
         GeoCoordinateX: '43.435089'
         GeoCoordinateY: '6.769265'
+        DistanceCamping: '22633'
         Image: 'http://viaimage.viafrance.com/images/evts/20292.jpg'
         Priority: '5'
     149:
+        Code: '855220'
+        Category: DET
+        Address: ''
+        Address2: 'bois du Chapelas'
+        Zipcode: '07000'
+        City: PRIVAS
+        GeoCoordinateX: '44.735269'
+        GeoCoordinateY: '4.599039'
+        DistanceCamping: '27013'
+        Image: 'http://viaimage.viafrance.com/images/evts/27413.jpg'
+        Priority: '8'
+    150:
+        Code: '855392'
+        Category: DET
+        Address: ''
+        Address2: 'Le Village'
+        Zipcode: '04330'
+        City: BARREME
+        GeoCoordinateX: '43.954541'
+        GeoCoordinateY: '6.369714'
+        DistanceCamping: '16220'
+        Image: 'http://viaimage.viafrance.com/images/evts/52365.jpg'
+        Priority: '5'
+    151:
         Code: '435517'
         Category: DET
         Address: 'Centre du village'
@@ -1636,9 +1808,10 @@
         City: 'MOUSTIERS SAINTE MARIE'
         GeoCoordinateX: '43.845438'
         GeoCoordinateY: '6.221755'
+        DistanceCamping: '21820'
         Image: 'http://viaimage.viafrance.com/images/evts/116646.jpg'
         Priority: '5'
-    150:
+    152:
         Code: '285384'
         Category: DET
         Address: ''
@@ -1647,9 +1820,10 @@
         City: 'MOUSTIERS SAINTE MARIE'
         GeoCoordinateX: '43.844211'
         GeoCoordinateY: '6.222559'
+        DistanceCamping: '21751'
         Image: 'http://viaimage.viafrance.com/images/evts/48877.jpg'
         Priority: '5'
-    151:
+    153:
         Code: '399436'
         Category: DET
         Address: 'route D4805'
@@ -1658,20 +1832,10 @@
         City: CASTELLANE
         GeoCoordinateX: '43.827438'
         GeoCoordinateY: '6.475836'
+        DistanceCamping: '1949'
         Image: 'http://viaimage.viafrance.com/images/evts/27173.jpg'
         Priority: '7'
-    152:
-        Code: '435550'
-        Category: DET
-        Address: ''
-        Address2: 'Le Village'
-        Zipcode: '83840'
-        City: BARGEME
-        GeoCoordinateX: '43.730124'
-        GeoCoordinateY: '6.572661'
-        Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
-        Priority: '7'
-    153:
+    154:
         Code: '513040'
         Category: DET
         Address: 'route des Lacs'
@@ -1680,9 +1844,10 @@
         City: BISCARROSSE
         GeoCoordinateX: '44.432034'
         GeoCoordinateY: '-1.183437'
+        DistanceCamping: '23298'
         Image: 'http://viaimage.viafrance.com/images/evts/61604.jpg'
         Priority: '8'
-    154:
+    155:
         Code: '593377'
         Category: DET
         Address: 'boulevard des Sables'
@@ -1691,9 +1856,10 @@
         City: BISCARROSSE
         GeoCoordinateX: '44.446732'
         GeoCoordinateY: '-1.254315'
+        DistanceCamping: '25198'
         Image: 'http://viaimage.viafrance.com/images/evts/71710.jpg'
         Priority: '8'
-    155:
+    156:
         Code: '794700'
         Category: EXP
         Address: 'chemin de Beauvais'
@@ -1702,9 +1868,10 @@
         City: 'SAINTE MERE EGLISE'
         GeoCoordinateX: '49.415984'
         GeoCoordinateY: '-1.315305'
+        DistanceCamping: '18426'
         Image: 'http://viaimage.viafrance.com/images/evts/131146.jpg'
         Priority: '5'
-    156:
+    157:
         Code: '840370'
         Category: SPO
         Address: 'route de Torigni'
@@ -1713,9 +1880,10 @@
         City: SAINT-LO
         GeoCoordinateX: '49.105297'
         GeoCoordinateY: '-1.067690'
+        DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    157:
+    158:
         Code: '840371'
         Category: SPO
         Address: 'route de Torigni'
@@ -1724,9 +1892,10 @@
         City: SAINT-LO
         GeoCoordinateX: '49.105297'
         GeoCoordinateY: '-1.067690'
+        DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    158:
+    159:
         Code: '840375'
         Category: SPO
         Address: 'route de Torigni'
@@ -1735,9 +1904,10 @@
         City: SAINT-LO
         GeoCoordinateX: '49.105297'
         GeoCoordinateY: '-1.067690'
+        DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    159:
+    160:
         Code: '768426'
         Category: EXP
         Address: 'route de Montmeyan'
@@ -1746,9 +1916,10 @@
         City: QUINSON
         GeoCoordinateX: '43.710225'
         GeoCoordinateY: '6.042911'
+        DistanceCamping: '3865'
         Image: 'http://viaimage.viafrance.com/images/evts/29230.jpg'
         Priority: '8'
-    160:
+    161:
         Code: '593522'
         Category: FET
         Address: 'place Frédéric-Mistral'
@@ -1757,9 +1928,10 @@
         City: VALENSOLE
         GeoCoordinateX: '43.837258'
         GeoCoordinateY: '5.986819'
+        DistanceCamping: '13578'
         Image: 'http://viaimage.viafrance.com/images/evts/37690.jpg'
         Priority: '8'
-    161:
+    162:
         Code: '819876'
         Category: SPO
         Address: 'avenue Princesse-Grace'
@@ -1768,9 +1940,10 @@
         City: MONACO
         GeoCoordinateX: '43.762236'
         GeoCoordinateY: '7.414372'
+        DistanceCamping: '28731'
         Image: 'http://viaimage.viafrance.com/images/evts/114891.jpg'
         Priority: '2'
-    162:
+    163:
         Code: '664999'
         Category: SPO
         Address: 'promenade des Anglais'
@@ -1779,9 +1952,10 @@
         City: NICE
         GeoCoordinateX: '43.694883'
         GeoCoordinateY: '7.263174'
+        DistanceCamping: '14537'
         Image: 'http://viaimage.viafrance.com/images/evts/27454.jpg'
         Priority: '2'
-    163:
+    164:
         Code: '665188'
         Category: SPO
         Address: 'promenade des Anglais'
@@ -1790,9 +1964,10 @@
         City: NICE
         GeoCoordinateX: '43.694429'
         GeoCoordinateY: '7.268777'
+        DistanceCamping: '14855'
         Image: 'http://viaimage.viafrance.com/images/evts/131489.jpg'
         Priority: '2'
-    164:
+    165:
         Code: '753724'
         Category: EXP
         Address: 'place du Château'
@@ -1801,9 +1976,22 @@
         City: BLOIS
         GeoCoordinateX: '47.585619'
         GeoCoordinateY: '1.331649'
+        DistanceCamping: '16021'
         Image: 'http://viaimage.viafrance.com/images/evts/115294.jpg'
         Priority: '5'
-    165:
+    166:
+        Code: '786273'
+        Category: FET
+        Address: 'rue de la Grange-aux-Dîmes'
+        Address2: ''
+        Zipcode: '41250'
+        City: CHAMBORD
+        GeoCoordinateX: '47.616051'
+        GeoCoordinateY: '1.517086'
+        DistanceCamping: '8288'
+        Image: 'http://viaimage.viafrance.com/images/evts/40010.jpg'
+        Priority: '6'
+    167:
         Code: '775078'
         Category: DET
         Address: 'place Saint-Louis'
@@ -1812,9 +2000,10 @@
         City: BLOIS
         GeoCoordinateX: '47.588401'
         GeoCoordinateY: '1.335641'
+        DistanceCamping: '15591'
         Image: 'http://viaimage.viafrance.com/images/evts/41099.jpg'
         Priority: '8'
-    166:
+    168:
         Code: '842945'
         Category: MUS
         Address: 'avenue Maunoury'
@@ -1823,20 +2012,10 @@
         City: BLOIS
         GeoCoordinateX: '47.590915'
         GeoCoordinateY: '1.335675'
+        DistanceCamping: '15393'
         Image: 'http://viaimage.viafrance.com/images/evts/149567.jpg'
         Priority: '8'
-    167:
-        Code: '842946'
-        Category: MUS
-        Address: 'avenue Maunoury'
-        Address2: ''
-        Zipcode: '41000'
-        City: BLOIS
-        GeoCoordinateX: '47.590915'
-        GeoCoordinateY: '1.335675'
-        Image: 'http://viaimage.viafrance.com/images/evts/149583.jpg'
-        Priority: '8'
-    168:
+    169:
         Code: '646274'
         Category: FET
         Address: 'boulevard des Arènes'
@@ -1845,9 +2024,10 @@
         City: NIMES
         GeoCoordinateX: '43.834783'
         GeoCoordinateY: '4.359751'
+        DistanceCamping: '20262'
         Image: 'http://viaimage.viafrance.com/images/evts/94356.jpg'
         Priority: '3'
-    169:
+    170:
         Code: '452241'
         Category: DET
         Address: 'Le Martouret'
@@ -1856,9 +2036,10 @@
         City: DIE
         GeoCoordinateX: '44.745786'
         GeoCoordinateY: '5.379474'
+        DistanceCamping: '8867'
         Image: 'http://viaimage.viafrance.com/images/evts/50484.jpg'
         Priority: '8'
-    170:
+    171:
         Code: '371591'
         Category: EXP
         Address: 'avenue de la Clairette'
@@ -1867,9 +2048,10 @@
         City: DIE
         GeoCoordinateX: '44.760858'
         GeoCoordinateY: '5.356225'
+        DistanceCamping: '11330'
         Image: 'http://viaimage.viafrance.com/images/evts/10899.jpg'
         Priority: '8'
-    171:
+    172:
         Code: '406597'
         Category: DET
         Address: 'place de la République'
@@ -1878,9 +2060,10 @@
         City: DIE
         GeoCoordinateX: '44.752223'
         GeoCoordinateY: '5.371233'
+        DistanceCamping: '9833'
         Image: 'http://viaimage.viafrance.com/images/evts/10956.jpg'
         Priority: '8'
-    172:
+    173:
         Code: '439604'
         Category: DET
         Address: 'Hameau les nals'
@@ -1889,9 +2072,10 @@
         City: 'MONTMAUR EN DIOIS'
         GeoCoordinateX: '44.676001'
         GeoCoordinateY: '5.379594'
+        DistanceCamping: '5655'
         Image: 'http://viaimage.viafrance.com/images/evts/53937.jpg'
         Priority: '8'
-    173:
+    174:
         Code: '789418'
         Category: FES
         Address: 'rue du 9-Juin-1944'
@@ -1900,20 +2084,22 @@
         City: TULLE
         GeoCoordinateX: '45.259735'
         GeoCoordinateY: '1.752221'
+        DistanceCamping: '14224'
         Image: 'http://viaimage.viafrance.com/images/evts/55153.jpg'
         Priority: '3'
-    174:
+    175:
         Code: '772492'
         Category: DET
         Address: 'place Jean-Tave'
         Address2: ''
         Zipcode: '19000'
         City: TULLE
-        GeoCoordinateX: '45.266124'
-        GeoCoordinateY: '1.770127'
+        GeoCoordinateX: '45.266370'
+        GeoCoordinateY: '1.770167'
+        DistanceCamping: '14949'
         Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
         Priority: '4'
-    175:
+    176:
         Code: '827164'
         Category: SPO
         Address: 'rue Léon-Branchet'
@@ -1922,9 +2108,10 @@
         City: BRIVE-LA-GAILLARDE
         GeoCoordinateX: '45.160455'
         GeoCoordinateY: '1.546096'
+        DistanceCamping: '17268'
         Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
         Priority: '5'
-    176:
+    177:
         Code: '827173'
         Category: SPO
         Address: 'rue Léon-Branchet'
@@ -1933,9 +2120,10 @@
         City: BRIVE-LA-GAILLARDE
         GeoCoordinateX: '45.160455'
         GeoCoordinateY: '1.546096'
+        DistanceCamping: '17268'
         Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
         Priority: '5'
-    177:
+    178:
         Code: '808313'
         Category: VIV
         Address: 'rue Principale'
@@ -1944,9 +2132,10 @@
         City: PIBRAC
         GeoCoordinateX: '43.617635'
         GeoCoordinateY: '1.283336'
+        DistanceCamping: '23791'
         Image: 'http://viaimage.viafrance.com/images/evts/145311.jpg'
         Priority: '5'
-    178:
+    179:
         Code: '789247'
         Category: EXP
         Address: 'place de l''Hôtel-de-Ville'
@@ -1955,9 +2144,10 @@
         City: 'L ISLE JOURDAIN'
         GeoCoordinateX: '43.613239'
         GeoCoordinateY: '1.081868'
+        DistanceCamping: '10280'
         Image: 'http://viaimage.viafrance.com/images/evts/86838.jpg'
         Priority: '7'
-    179:
+    180:
         Code: '839529'
         Category: VIV
         Address: 'route de Toulouse'
@@ -1966,9 +2156,10 @@
         City: LEGUEVIN
         GeoCoordinateX: '43.600301'
         GeoCoordinateY: '1.242174'
+        DistanceCamping: '21467'
         Image: 'http://viaimage.viafrance.com/images/evts/4831.jpg'
         Priority: '7'
-    180:
+    181:
         Code: '808246'
         Category: VIV
         Address: 'rue Principale'
@@ -1977,9 +2168,10 @@
         City: PIBRAC
         GeoCoordinateX: '43.617635'
         GeoCoordinateY: '1.283336'
+        DistanceCamping: '23791'
         Image: 'http://viaimage.viafrance.com/images/evts/8594.jpg'
         Priority: '8'
-    181:
+    182:
         Code: '826264'
         Category: SPO
         Address: 'route de Vernaux'
@@ -1988,9 +2180,10 @@
         City: LUZENAC
         GeoCoordinateX: '42.771750'
         GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    182:
+    183:
         Code: '826265'
         Category: SPO
         Address: 'route de Vernaux'
@@ -1999,9 +2192,10 @@
         City: LUZENAC
         GeoCoordinateX: '42.771750'
         GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    183:
+    184:
         Code: '826277'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2010,9 +2204,10 @@
         City: LUZENAC
         GeoCoordinateX: '42.771750'
         GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    184:
+    185:
         Code: '826279'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2021,9 +2216,10 @@
         City: LUZENAC
         GeoCoordinateX: '42.771750'
         GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    185:
+    186:
         Code: '204688'
         Category: DET
         Address: ''
@@ -2032,9 +2228,10 @@
         City: 'LES MATHES'
         GeoCoordinateX: '45.687441'
         GeoCoordinateY: '-1.168428'
+        DistanceCamping: '22484'
         Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
         Priority: '2'
-    186:
+    187:
         Code: '620565'
         Category: DET
         Address: 'avenue des Fleurs-de-la-Paix'
@@ -2043,9 +2240,10 @@
         City: ROYAN
         GeoCoordinateX: '45.629222'
         GeoCoordinateY: '-1.014239'
+        DistanceCamping: '19041'
         Image: 'http://viaimage.viafrance.com/images/evts/20134.jpg'
         Priority: '3'
-    187:
+    188:
         Code: '736000'
         Category: FET
         Address: 'avenue de la République'
@@ -2054,9 +2252,10 @@
         City: 'LES SAINTES-MARIES-DE-LA-MER'
         GeoCoordinateX: '43.451120'
         GeoCoordinateY: '4.429291'
+        DistanceCamping: '23730'
         Image: 'http://viaimage.viafrance.com/images/evts/116027.jpg'
         Priority: '3'
-    188:
+    189:
         Code: '404744'
         Category: DET
         Address: 'rue du Pré'
@@ -2065,9 +2264,10 @@
         City: SAINT-CLAUDE
         GeoCoordinateX: '46.388882'
         GeoCoordinateY: '5.864370'
+        DistanceCamping: '25349'
         Image: 'http://viaimage.viafrance.com/images/evts/49136.jpg'
         Priority: '5'
-    189:
+    190:
         Code: '628182'
         Category: DET
         Address: 'rue Richebourg'
@@ -2076,9 +2276,10 @@
         City: LONS-LE-SAUNIER
         GeoCoordinateX: '46.677513'
         GeoCoordinateY: '5.555698'
+        DistanceCamping: '14937'
         Image: 'http://viaimage.viafrance.com/images/evts/37884.jpg'
         Priority: '5'
-    190:
+    191:
         Code: '674033'
         Category: EXP
         Address: 'rue du Murgin'
@@ -2087,9 +2288,10 @@
         City: MOIRANS-EN-MONTAGNE
         GeoCoordinateX: '46.433106'
         GeoCoordinateY: '5.726219'
+        DistanceCamping: '17239'
         Image: 'http://viaimage.viafrance.com/images/evts/90792.jpg'
         Priority: '5'
-    191:
+    192:
         Code: '770953'
         Category: DET
         Address: 'boulevard de l''Europe'
@@ -2098,9 +2300,10 @@
         City: LONS-LE-SAUNIER
         GeoCoordinateX: '46.684989'
         GeoCoordinateY: '5.566564'
+        DistanceCamping: '14926'
         Image: 'http://viaimage.viafrance.com/images/evts/15179.jpg'
         Priority: '5'
-    192:
+    193:
         Code: '791104'
         Category: EXP
         Address: 'avenue Victor-Bouthillier'
@@ -2109,9 +2312,10 @@
         City: SAINT-MARTIN-DE-RE
         GeoCoordinateX: '46.205659'
         GeoCoordinateY: '-1.364480'
+        DistanceCamping: '28635'
         Image: 'http://viaimage.viafrance.com/images/evts/128989.jpg'
         Priority: '5'
-    193:
+    194:
         Code: '665214'
         Category: FES
         Address: 'place Bellevue'
@@ -2120,9 +2324,10 @@
         City: BIARRITZ
         GeoCoordinateX: '43.482737'
         GeoCoordinateY: '-1.561258'
+        DistanceCamping: '29139'
         Image: 'http://viaimage.viafrance.com/images/evts/86929.jpg'
         Priority: '3'
-    194:
+    195:
         Code: '665241'
         Category: SPO
         Address: 'rue Cino-del-Duca'
@@ -2131,9 +2336,10 @@
         City: BIARRITZ
         GeoCoordinateX: '43.482527'
         GeoCoordinateY: '-1.538795'
+        DistanceCamping: '28513'
         Image: 'http://viaimage.viafrance.com/images/evts/114891.jpg'
         Priority: '3'
-    195:
+    196:
         Code: '753719'
         Category: SPO
         Address: 'avenue Edith-Cavell'
@@ -2142,9 +2348,10 @@
         City: BIARRITZ
         GeoCoordinateX: '43.490909'
         GeoCoordinateY: '-1.544750'
+        DistanceCamping: '27803'
         Image: 'http://viaimage.viafrance.com/images/evts/71522.jpg'
         Priority: '3'
-    196:
+    197:
         Code: '827103'
         Category: NEW
         Address: ' Le Bourg'
@@ -2153,9 +2360,10 @@
         City: BORMES-LES-MIMOSAS
         GeoCoordinateX: '43.144564'
         GeoCoordinateY: '6.361816'
+        DistanceCamping: '10233'
         Image: 'http://viaimage.viafrance.com/images/evts/62089.jpg'
         Priority: '5'
-    197:
+    198:
         Code: '756401'
         Category: SAL
         Address: 'Maison de la mer'
@@ -2164,9 +2372,10 @@
         City: 'CAVALAIRE SUR MER'
         GeoCoordinateX: '43.173048'
         GeoCoordinateY: '6.531621'
+        DistanceCamping: '5240'
         Image: 'http://viaimage.viafrance.com/images/evts/46545.jpg'
         Priority: '8'
-    198:
+    199:
         Code: '839906'
         Category: EXP
         Address: 'rue Etienne-Berny'
@@ -2175,9 +2384,10 @@
         City: SAINT-TROPEZ
         GeoCoordinateX: '43.270342'
         GeoCoordinateY: '6.639115'
+        DistanceCamping: '16232'
         Image: 'http://viaimage.viafrance.com/images/evts/67645.jpg'
         Priority: '8'
-    199:
+    200:
         Code: '801454'
         Category: DET
         Address: 'place Neuve'
@@ -2186,9 +2396,10 @@
         City: GRIMAUD
         GeoCoordinateX: '43.273012'
         GeoCoordinateY: '6.521875'
+        DistanceCamping: '10059'
         Image: 'http://viaimage.viafrance.com/images/evts/76524.jpg'
         Priority: '8'
-    200:
+    201:
         Code: '827174'
         Category: SPO
         Address: 'rue Léon-Branchet'
@@ -2197,9 +2408,10 @@
         City: BRIVE-LA-GAILLARDE
         GeoCoordinateX: '45.160455'
         GeoCoordinateY: '1.546096'
+        DistanceCamping: '25322'
         Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
         Priority: '5'
-    201:
+    202:
         Code: '819348'
         Category: EXP
         Address: 'place Suzanne de Villeneuve'
@@ -2208,9 +2420,10 @@
         City: MOUANS-SARTOUX
         GeoCoordinateX: '43.619804'
         GeoCoordinateY: '6.969945'
+        DistanceCamping: '22870'
         Image: 'http://viaimage.viafrance.com/images/evts/145380.jpg'
         Priority: '5'
-    202:
+    203:
         Code: '823384'
         Category: EXP
         Address: 'place Suzanne de Villeneuve'
@@ -2219,9 +2432,10 @@
         City: MOUANS-SARTOUX
         GeoCoordinateX: '43.619804'
         GeoCoordinateY: '6.969945'
+        DistanceCamping: '22870'
         Image: 'http://viaimage.viafrance.com/images/evts/81399.jpg'
         Priority: '5'
-    203:
+    204:
         Code: '386000'
         Category: EXP
         Address: 'place d''Armes'
@@ -2230,9 +2444,10 @@
         City: SAINT-FLOUR
         GeoCoordinateX: '45.033471'
         GeoCoordinateY: '3.095489'
+        DistanceCamping: '10431'
         Image: 'http://viaimage.viafrance.com/images/evts/12509.gif'
         Priority: '5'
-    204:
+    205:
         Code: '765053'
         Category: DET
         Address: 'place de la gare'
@@ -2241,9 +2456,10 @@
         City: LANGEAC
         GeoCoordinateX: '45.101272'
         GeoCoordinateY: '3.490668'
+        DistanceCamping: '24159'
         Image: 'http://viaimage.viafrance.com/images/evts/72552.jpg'
         Priority: '5'
-    205:
+    206:
         Code: '765064'
         Category: DET
         Address: 'avenue Victor Hugo'
@@ -2252,9 +2468,10 @@
         City: LANGEAC
         GeoCoordinateX: '45.101365'
         GeoCoordinateY: '3.494627'
+        DistanceCamping: '24439'
         Image: 'http://viaimage.viafrance.com/images/evts/512.jpg'
         Priority: '5'
-    206:
+    207:
         Code: '396204'
         Category: DET
         Address: ''
@@ -2263,9 +2480,10 @@
         City: RUYNES-EN-MARGERIDE
         GeoCoordinateX: '45.000055'
         GeoCoordinateY: '3.169930'
+        DistanceCamping: '3861'
         Image: 'http://viaimage.viafrance.com/images/evts/15870.jpg'
         Priority: '7'
-    207:
+    208:
         Code: '818836'
         Category: MUS
         Address: '<BR/>'
@@ -2274,9 +2492,10 @@
         City: NARBONNE
         GeoCoordinateX: '43.180312'
         GeoCoordinateY: '3.015479'
+        DistanceCamping: '23701'
         Image: 'http://viaimage.viafrance.com/images/evts/128453.jpg'
         Priority: '5'
-    208:
+    209:
         Code: '829693'
         Category: SPO
         Address: 'avenue Pierre de-Coubertin'
@@ -2285,9 +2504,10 @@
         City: NARBONNE
         GeoCoordinateX: '43.183635'
         GeoCoordinateY: '3.023424'
+        DistanceCamping: '24425'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
-    209:
+    210:
         Code: '818845'
         Category: VIV
         Address: '<BR/>'
@@ -2296,9 +2516,10 @@
         City: NARBONNE
         GeoCoordinateX: '43.180312'
         GeoCoordinateY: '3.015479'
+        DistanceCamping: '23701'
         Image: 'http://viaimage.viafrance.com/images/evts/145321.jpg'
         Priority: '5'
-    210:
+    211:
         Code: '829694'
         Category: SPO
         Address: 'avenue Pierre de-Coubertin'
@@ -2307,9 +2528,10 @@
         City: NARBONNE
         GeoCoordinateX: '43.183635'
         GeoCoordinateY: '3.023424'
+        DistanceCamping: '24425'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
-    211:
+    212:
         Code: '755850'
         Category: EXP
         Address: 'place du Martray'
@@ -2318,9 +2540,10 @@
         City: LAMBALLE
         GeoCoordinateX: '48.469279'
         GeoCoordinateY: '-2.515702'
+        DistanceCamping: '19267'
         Image: 'http://viaimage.viafrance.com/images/evts/43951.jpg'
         Priority: '7'
-    212:
+    213:
         Code: '777379'
         Category: VIV
         Address: 'rue de la Colonne'
@@ -2329,9 +2552,10 @@
         City: 'SAINT CAST LE GUILDO'
         GeoCoordinateX: '48.628484'
         GeoCoordinateY: '-2.261007'
+        DistanceCamping: '14335'
         Image: 'http://viaimage.viafrance.com/images/evts/76058.jpg'
         Priority: '8'
-    213:
+    214:
         Code: '777440'
         Category: DET
         Address: ''
@@ -2340,9 +2564,10 @@
         City: 'SAINT CAST LE GUILDO'
         GeoCoordinateX: '48.631653'
         GeoCoordinateY: '-2.258033'
+        DistanceCamping: '14531'
         Image: 'http://viaimage.viafrance.com/images/evts/115599.jpg'
         Priority: '8'
-    214:
+    215:
         Code: '613373'
         Category: SPO
         Address: 'square de l''Hôtel-de-Ville'
@@ -2351,5 +2576,6 @@
         City: ERQUY
         GeoCoordinateX: '48.628705'
         GeoCoordinateY: '-2.465409'
+        DistanceCamping: '1261'
         Image: 'http://viaimage.viafrance.com/images/evts/17836.jpg'
         Priority: '9'

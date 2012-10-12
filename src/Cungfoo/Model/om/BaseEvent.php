@@ -108,6 +108,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
     protected $geo_coordinate_y;
 
     /**
+     * The value for the distance_camping field.
+     * @var        string
+     */
+    protected $distance_camping;
+
+    /**
      * The value for the image field.
      * @var        string
      */
@@ -282,6 +288,16 @@ abstract class BaseEvent extends BaseObject implements Persistent
     public function getGeoCoordinateY()
     {
         return $this->geo_coordinate_y;
+    }
+
+    /**
+     * Get the [distance_camping] column value.
+     *
+     * @return string
+     */
+    public function getDistanceCamping()
+    {
+        return $this->distance_camping;
     }
 
     /**
@@ -568,6 +584,27 @@ abstract class BaseEvent extends BaseObject implements Persistent
     } // setGeoCoordinateY()
 
     /**
+     * Set the value of [distance_camping] column.
+     *
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setDistanceCamping($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->distance_camping !== $v) {
+            $this->distance_camping = $v;
+            $this->modifiedColumns[] = EventPeer::DISTANCE_CAMPING;
+        }
+
+
+        return $this;
+    } // setDistanceCamping()
+
+    /**
      * Set the value of [image] column.
      *
      * @param string $v new value
@@ -696,10 +733,11 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->city = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->geo_coordinate_x = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->geo_coordinate_y = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->image = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->priority = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->created_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->updated_at = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->distance_camping = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->image = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->priority = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->created_at = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->updated_at = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -708,7 +746,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 13; // 13 = EventPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 14; // 14 = EventPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Event object", $e);
@@ -1017,6 +1055,9 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_Y)) {
             $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
         }
+        if ($this->isColumnModified(EventPeer::DISTANCE_CAMPING)) {
+            $modifiedColumns[':p' . $index++]  = '`DISTANCE_CAMPING`';
+        }
         if ($this->isColumnModified(EventPeer::IMAGE)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE`';
         }
@@ -1066,6 +1107,9 @@ abstract class BaseEvent extends BaseObject implements Persistent
                         break;
                     case '`GEO_COORDINATE_Y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
+                        break;
+                    case '`DISTANCE_CAMPING`':
+                        $stmt->bindValue($identifier, $this->distance_camping, PDO::PARAM_STR);
                         break;
                     case '`IMAGE`':
                         $stmt->bindValue($identifier, $this->image, PDO::PARAM_STR);
@@ -1257,15 +1301,18 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 return $this->getGeoCoordinateY();
                 break;
             case 9:
-                return $this->getImage();
+                return $this->getDistanceCamping();
                 break;
             case 10:
-                return $this->getPriority();
+                return $this->getImage();
                 break;
             case 11:
-                return $this->getCreatedAt();
+                return $this->getPriority();
                 break;
             case 12:
+                return $this->getCreatedAt();
+                break;
+            case 13:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1306,10 +1353,11 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $keys[6] => $this->getCity(),
             $keys[7] => $this->getGeoCoordinateX(),
             $keys[8] => $this->getGeoCoordinateY(),
-            $keys[9] => $this->getImage(),
-            $keys[10] => $this->getPriority(),
-            $keys[11] => $this->getCreatedAt(),
-            $keys[12] => $this->getUpdatedAt(),
+            $keys[9] => $this->getDistanceCamping(),
+            $keys[10] => $this->getImage(),
+            $keys[11] => $this->getPriority(),
+            $keys[12] => $this->getCreatedAt(),
+            $keys[13] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementEvents) {
@@ -1380,15 +1428,18 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->setGeoCoordinateY($value);
                 break;
             case 9:
-                $this->setImage($value);
+                $this->setDistanceCamping($value);
                 break;
             case 10:
-                $this->setPriority($value);
+                $this->setImage($value);
                 break;
             case 11:
-                $this->setCreatedAt($value);
+                $this->setPriority($value);
                 break;
             case 12:
+                $this->setCreatedAt($value);
+                break;
+            case 13:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1424,10 +1475,11 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if (array_key_exists($keys[6], $arr)) $this->setCity($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setGeoCoordinateX($arr[$keys[7]]);
         if (array_key_exists($keys[8], $arr)) $this->setGeoCoordinateY($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setImage($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setPriority($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setCreatedAt($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setUpdatedAt($arr[$keys[12]]);
+        if (array_key_exists($keys[9], $arr)) $this->setDistanceCamping($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setImage($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setPriority($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setCreatedAt($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setUpdatedAt($arr[$keys[13]]);
     }
 
     /**
@@ -1448,6 +1500,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if ($this->isColumnModified(EventPeer::CITY)) $criteria->add(EventPeer::CITY, $this->city);
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_X)) $criteria->add(EventPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_Y)) $criteria->add(EventPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
+        if ($this->isColumnModified(EventPeer::DISTANCE_CAMPING)) $criteria->add(EventPeer::DISTANCE_CAMPING, $this->distance_camping);
         if ($this->isColumnModified(EventPeer::IMAGE)) $criteria->add(EventPeer::IMAGE, $this->image);
         if ($this->isColumnModified(EventPeer::PRIORITY)) $criteria->add(EventPeer::PRIORITY, $this->priority);
         if ($this->isColumnModified(EventPeer::CREATED_AT)) $criteria->add(EventPeer::CREATED_AT, $this->created_at);
@@ -1523,6 +1576,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $copyObj->setCity($this->getCity());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
+        $copyObj->setDistanceCamping($this->getDistanceCamping());
         $copyObj->setImage($this->getImage());
         $copyObj->setPriority($this->getPriority());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2241,6 +2295,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $this->city = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
+        $this->distance_camping = null;
         $this->image = null;
         $this->priority = null;
         $this->created_at = null;

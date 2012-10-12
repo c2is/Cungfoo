@@ -65,6 +65,12 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     protected $name;
 
     /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
      * @var        Region
      */
     protected $aRegion;
@@ -135,6 +141,16 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -202,6 +218,27 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     } // setName()
 
     /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return RegionI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = RegionI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -240,6 +277,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +286,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 3; // 3 = RegionI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = RegionI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating RegionI18n object", $e);
@@ -481,6 +519,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
+        if ($this->isColumnModified(RegionI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `region_i18n` (%s) VALUES (%s)',
@@ -500,6 +541,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                         break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`DESCRIPTION`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,6 +693,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getName();
                 break;
+            case 3:
+                return $this->getDescription();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +728,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
+            $keys[3] => $this->getDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -729,6 +777,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             case 2:
                 $this->setName($value);
                 break;
+            case 3:
+                $this->setDescription($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +807,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
     }
 
     /**
@@ -770,6 +822,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionI18nPeer::ID)) $criteria->add(RegionI18nPeer::ID, $this->id);
         if ($this->isColumnModified(RegionI18nPeer::LOCALE)) $criteria->add(RegionI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(RegionI18nPeer::NAME)) $criteria->add(RegionI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(RegionI18nPeer::DESCRIPTION)) $criteria->add(RegionI18nPeer::DESCRIPTION, $this->description);
 
         return $criteria;
     }
@@ -843,6 +896,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
+        $copyObj->setDescription($this->getDescription());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -959,6 +1013,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->name = null;
+        $this->description = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

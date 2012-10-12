@@ -72,6 +72,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $image_path;
 
     /**
+     * The value for the image_encart_path field.
+     * @var        string
+     */
+    protected $image_encart_path;
+
+    /**
+     * The value for the image_encart_petite_path field.
+     * @var        string
+     */
+    protected $image_encart_petite_path;
+
+    /**
      * The value for the pays_id field.
      * @var        int
      */
@@ -174,6 +186,26 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getImagePath()
     {
         return $this->image_path;
+    }
+
+    /**
+     * Get the [image_encart_path] column value.
+     *
+     * @return string
+     */
+    public function getImageEncartPath()
+    {
+        return $this->image_encart_path;
+    }
+
+    /**
+     * Get the [image_encart_petite_path] column value.
+     *
+     * @return string
+     */
+    public function getImageEncartPetitePath()
+    {
+        return $this->image_encart_petite_path;
     }
 
     /**
@@ -324,6 +356,48 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setImagePath()
 
     /**
+     * Set the value of [image_encart_path] column.
+     *
+     * @param string $v new value
+     * @return Region The current object (for fluent API support)
+     */
+    public function setImageEncartPath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_encart_path !== $v) {
+            $this->image_encart_path = $v;
+            $this->modifiedColumns[] = RegionPeer::IMAGE_ENCART_PATH;
+        }
+
+
+        return $this;
+    } // setImageEncartPath()
+
+    /**
+     * Set the value of [image_encart_petite_path] column.
+     *
+     * @param string $v new value
+     * @return Region The current object (for fluent API support)
+     */
+    public function setImageEncartPetitePath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_encart_petite_path !== $v) {
+            $this->image_encart_petite_path = $v;
+            $this->modifiedColumns[] = RegionPeer::IMAGE_ENCART_PETITE_PATH;
+        }
+
+
+        return $this;
+    } // setImageEncartPetitePath()
+
+    /**
      * Set the value of [pays_id] column.
      *
      * @param int $v new value
@@ -429,9 +503,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->pays_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->image_encart_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->image_encart_petite_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->pays_id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -440,7 +516,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 6; // 6 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -727,6 +803,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
         }
+        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_ENCART_PATH`';
+        }
+        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_ENCART_PETITE_PATH`';
+        }
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) {
             $modifiedColumns[':p' . $index++]  = '`PAYS_ID`';
         }
@@ -755,6 +837,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_ENCART_PATH`':
+                        $stmt->bindValue($identifier, $this->image_encart_path, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_ENCART_PETITE_PATH`':
+                        $stmt->bindValue($identifier, $this->image_encart_petite_path, PDO::PARAM_STR);
                         break;
                     case '`PAYS_ID`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
@@ -937,12 +1025,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getImagePath();
                 break;
             case 3:
-                return $this->getPaysId();
+                return $this->getImageEncartPath();
                 break;
             case 4:
-                return $this->getCreatedAt();
+                return $this->getImageEncartPetitePath();
                 break;
             case 5:
+                return $this->getPaysId();
+                break;
+            case 6:
+                return $this->getCreatedAt();
+                break;
+            case 7:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -977,9 +1071,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getImagePath(),
-            $keys[3] => $this->getPaysId(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
+            $keys[3] => $this->getImageEncartPath(),
+            $keys[4] => $this->getImageEncartPetitePath(),
+            $keys[5] => $this->getPaysId(),
+            $keys[6] => $this->getCreatedAt(),
+            $keys[7] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -1035,12 +1131,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setImagePath($value);
                 break;
             case 3:
-                $this->setPaysId($value);
+                $this->setImageEncartPath($value);
                 break;
             case 4:
-                $this->setCreatedAt($value);
+                $this->setImageEncartPetitePath($value);
                 break;
             case 5:
+                $this->setPaysId($value);
+                break;
+            case 6:
+                $this->setCreatedAt($value);
+                break;
+            case 7:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1070,9 +1172,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setPaysId($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[3], $arr)) $this->setImageEncartPath($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setImageEncartPetitePath($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setPaysId($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
     }
 
     /**
@@ -1087,6 +1191,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::ID)) $criteria->add(RegionPeer::ID, $this->id);
         if ($this->isColumnModified(RegionPeer::CODE)) $criteria->add(RegionPeer::CODE, $this->code);
         if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) $criteria->add(RegionPeer::IMAGE_PATH, $this->image_path);
+        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PATH, $this->image_encart_path);
+        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PETITE_PATH, $this->image_encart_petite_path);
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) $criteria->add(RegionPeer::PAYS_ID, $this->pays_id);
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) $criteria->add(RegionPeer::UPDATED_AT, $this->updated_at);
@@ -1155,6 +1261,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setImagePath($this->getImagePath());
+        $copyObj->setImageEncartPath($this->getImageEncartPath());
+        $copyObj->setImageEncartPetitePath($this->getImageEncartPetitePath());
         $copyObj->setPaysId($this->getPaysId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1724,6 +1832,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->id = null;
         $this->code = null;
         $this->image_path = null;
+        $this->image_encart_path = null;
+        $this->image_encart_petite_path = null;
         $this->pays_id = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -1931,6 +2041,30 @@ abstract class BaseRegion extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return RegionI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**
@@ -1949,6 +2083,20 @@ abstract class BaseRegion extends BaseObject implements Persistent
         }
 
         $this->uploadImagePath($form);
+
+        if (!$form['image_encart_path_deleted']->getData())
+        {
+            $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
+        }
+
+        $this->uploadImageEncartPath($form);
+
+        if (!$form['image_encart_petite_path_deleted']->getData())
+        {
+            $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
+        }
+
+        $this->uploadImageEncartPetitePath($form);
 
         return $this->save($con);
     }
@@ -1980,6 +2128,34 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
             $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
             $this->setImagePath($this->getUploadDir() . '/' . $image);
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageEncartPath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_encart_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_encart_path']->getData()->guessExtension();
+            $form['image_encart_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageEncartPath($this->getUploadDir() . '/' . $image);
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageEncartPetitePath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_encart_petite_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_encart_petite_path']->getData()->guessExtension();
+            $form['image_encart_petite_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageEncartPetitePath($this->getUploadDir() . '/' . $image);
         }
     }
 
