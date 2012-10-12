@@ -102,7 +102,7 @@ include('includes/ce-top.php'); ?>
                         <li>
                             <label>Du</label><input class="date" type="text" name="datepicker-principal-arrival" id="datepicker-principal-arrival" />
                             <label>Au</label><input class="date" type="text" name="datepicker-principal-departure" id="datepicker-principal-departure" />
-                            <button type=submit>Rechercher</button>
+                            <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
                     </ol>
                 </fieldset>

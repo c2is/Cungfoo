@@ -1092,6 +1092,13 @@ h6,
 .agenda .miniEncart > p a {
   margin-top: 10px;
 }
+.noResultTyp {
+  padding: 20px;
+  margin: 20px 0;
+  border-top: 7px solid #e6e5e5;
+  border-bottom: 7px solid #e6e5e5;
+  font-style: italic;
+}
 .activites > a,
 .agenda > a {
   text-decoration: underline;
@@ -1368,6 +1375,16 @@ h6,
 .ce h1 span {
   color: #464545;
 }
+.ce iframe {
+  width: 100%;
+}
+.ce #discoverContainer,
+.ce #basketContainer,
+.ce #confirmContainer {
+  margin: 0;
+  width: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
+}
 .ce #userBox {
   float: right;
 }
@@ -1560,6 +1577,9 @@ h6,
 .ce #headerContainer #nav {
   margin-left: -24px;
   width: 976px;
+  height: auto;
+  font-size: 18px;
+  font-weight: bold;
 }
 .ce #headerContainer #nav ul {
   width: 858px;
@@ -1578,6 +1598,15 @@ h6,
 }
 .ce #headerContainer #nav ul li.tab.current a {
   text-decoration: none;
+}
+.ce #headerContainer #nav .topnavSub {
+  width: 100%;
+  background: #ed145b;
+  text-align: center;
+}
+.ce #headerContainer #nav .topnavSub li.tab {
+  float: none;
+  display: inline-block;
 }
 .ce #searchContainer {
   margin-bottom: 20px;
@@ -1618,6 +1647,9 @@ h6,
 }
 .ce #searchContainer #searchForm #selectCamping li {
   padding: 4px 0;
+}
+.ce #searchContainer #searchForm button {
+  float: right;
 }
 /* plugins styles*/
 /*PLUGINS*/
