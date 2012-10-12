@@ -72,7 +72,6 @@ $(function() {
             var sVal2 = $(this).siblings('select').val();
             var nElt = $('.typLocation').length;
 
-
             $('.typLocation').each( function() {
                 if (sVal1 == "" && sVal2 == "") {
                     $(this).fadeIn();
@@ -88,12 +87,11 @@ $(function() {
                 }
             });
 
-                if ($('.typLocation').not(':visible').length >= nElt) {
-                    $('.noResultTyp').fadeIn();
-                }else{
-                    $('.noResultTyp').fadeOut();
-                }
-
+            if ($('.typLocation').not(':visible').length >= nElt) {
+                $('.noResultTyp').fadeIn();
+            }else{
+                $('.noResultTyp').fadeOut();
+            }
         });
     }
 

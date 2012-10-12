@@ -4,7 +4,7 @@ $page = 'ce';
 include('includes/inc_header.php');
 include('includes/ce-top.php'); ?>
 
-<div id="wrap" class="fixed-width clear" xmlns="http://www.w3.org/1999/html">
+<div id="wrap" class="fixed-width clear">
 
     <!-- colonne pleine largeur -->
     <div id="headerContainer" class="column">
@@ -104,6 +104,7 @@ include('includes/ce-top.php'); ?>
                             <label>Au</label><input class="date" type="text" name="datepicker-principal-departure" id="datepicker-principal-departure" />
                             <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
+
                     </ol>
                 </fieldset>
             </form>
