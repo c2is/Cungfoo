@@ -224,6 +224,28 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;padding:0 24p
   }
 }
 
+#customerAreaContener{
+  h2{font:bold 28px/18px @ptnarrow;margin:40px 0 20px;text-transform:uppercase;}
+  .reservationList{width:97%;
+    tr:nth-child(odd){background:@colorBgGrisC;}
+    tr:first-child{background:@colorBgBlanc;}
+    tr:last-child{
+      &:nth-child(odd){background:@colorBgBlanc;
+        td{background:@colorBgGrisC;}
+      }
+      td:first-child{.border-radius(0 0 0 10px);}
+      td:last-child{.border-radius(0 0 10px 0);}
+    }
+    th{background:@colorBgBleu;font:bold 20px/18px @ptnarrow;text-transform:uppercase;color:@colorBlanc;padding:15px 10px;text-align:center;
+      &:first-child{.border-radius(10px 0 0 0);}
+      &:last-child{.border-radius(0 10px 0 0);}
+    }
+    td{height:36px;text-align:center;color:@colorBgGrisM;font:16px/18px @ptnarrow;padding:5px 3px;vertical-align:middle;
+      &:last-child{font-weight:bold;text-align:right;padding-right:15px;}
+    }
+  }
+}
+
 #footerContener{overflow:hidden;margin-top:20px;
   .footerNavigation{display:none;
     &.gauche, &.droite{display:block;}
