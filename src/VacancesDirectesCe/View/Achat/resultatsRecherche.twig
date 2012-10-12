@@ -18,11 +18,11 @@
                 product_CMSCriteria_PHS: '',
                 product_start_date: "now" | date("d/m/Y"),
 
-                search_form_start_date: '30/06/2012',
-                search_form_free_nb_days: '70',
-                search_form_nb_adults: 1,
+                search_form_start_date: achatLineaire.dateDebut,
+                search_form_free_nb_days: achatLineaire.nbJours,
+                search_form_nb_adults: achatLineaire.nbAdultes,
                 search_form_theme_code: '',
-                search_form_etab_list: ''
+                search_form_etab_list: achatLineaire.campings
             }) }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}
