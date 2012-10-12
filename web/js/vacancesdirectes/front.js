@@ -88,6 +88,10 @@ $(function() {
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
+
+// select
+    $('#searchPrincipal').find('select').sSelect({ddMaxHeight: '300px'});
+
 // datepicker
     $('#datepicker-principal-arrival').Zebra_DatePicker({
         months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],

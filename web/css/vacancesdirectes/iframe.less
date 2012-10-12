@@ -8,39 +8,29 @@
 @colorFushia: #ed145b;
 @colorVert: #b0c700;
 @colorBleu: #009ab0;
+@colorBleuF:#005ea6;
 
-@colorRubricFushia: #c60b46;
-@colorRubricJaune: #e8a713;
-@colorRubricOrange: #f58220;
-@colorRubricVert: #8dc63f;
-@colorRubricViolet: #9a4d9e;
+@colorRubricFushia:#c60b46;
+@colorRubricJaune:#e8a713;
+@colorRubricOrange:#f58220;
+@colorRubricVert:#8dc63f;
+@colorRubricViolet:#9a4d9e;
 
-@colorBgGrisF: #464545; /* bg gris sombre */
-@colorBgGrisM: #8c8a8a; /* bg gris */
-@colorBgGrisC: #e6e5e5; /* bg gris clair */
+@colorBgGrisF:#464545; /* bg gris sombre */
+@colorBgGrisM:#8c8a8a; /* bg gris */
+@colorBgGrisC:#e6e5e5; /* bg gris clair */
 
-@colorBgBlanc: #ffffff; /* bg blanc */
-@colorBgBleu: #009ab0; /* bg bleu */
+@colorBgBlanc:#ffffff; /* bg blanc */
+@colorBgBleu:#009ab0; /* bg bleu */
+@colorBgBleu2:#009bc9; /* bg bleu2 */
 
-@colorBorderGris: #c6c5c5; /* border gris */
+@colorBorderGris:#c6c5c5; /* border gris */
 
 @radius:4px;
 
 .border-radius(@radius:@radius) {
-  -webkit-border-radius: @radius;
-  border-radius: @radius;
-}
-.half-border-radius(@radius:@radius, top-right, bottom-left) {
-  -webkit-border-top-right-radius: @radius;
-  -webkit-border-bottom-left-radius: @radius;
-  border-top-right-radius: @radius;
-  border-bottom-left-radius: @radius;
-}
-.half-border-radius(@radius:@radius, top-left, top-right) {
-  -webkit-border-top-left-radius: @radius;
-  -webkit-border-top-right-radius: @radius;
-  border-top-left-radius: @radius;
-  border-top-right-radius: @radius;
+  -webkit-border-radius:@radius;
+  border-radius:@radius;
 }
 .margin(left, @dist:@gutter) {
   margin-left:@dist;
@@ -48,14 +38,14 @@
 .margin(right, @dist:@gutter) {
   padding-left:@dist;
 }
-  .box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
-  -webkit-box-shadow: @shadow;
-  box-shadow: @shadow;
+.box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
+  -webkit-box-shadow:@shadow;
+  box-shadow:@shadow;
 }
 .text-shadow(@blur:10px, @horz:0px, @vert:0px, @rgba:rgba(0,0,0,0.7), @offx:0, @offy:0, @hex:#666) {
-  text-shadow: @horz @vert @blur @rgba;
-//filter: glow(color=@hex,strength=@blur);
-//filter: dropshadow(color=@hex, offx=@offx, offy=@offy);
+  text-shadow:@horz @vert @blur @rgba;
+//filter:glow(color=@hex,strength=@blur);
+//filter:dropshadow(color=@hex, offx=@offx, offy=@offy);
 }
 .transition(@transition) {
   -webkit-transition:@transition;
@@ -71,8 +61,8 @@
 }
 /*Centrer verticalement une ligne de texte dans un conteneur de hauteur fixe*/
 .verticalCenter(@height) {
-  height: @height;
-  line-height: @height;
+  height:@height;
+  line-height:@height;
 }
 /*Centrer verticalement plusieurs lignes de texte dans un conteneur de hauteur fixe*/
 .verticalCenter(@height, @lineHeight, @case) when (@case = multiple) {
@@ -84,8 +74,13 @@
   .verticalCenter(@height);
   &>img {vertical-align:middle;}
 }
+.h3Decroch(@colorBg, @color){
+  display:inline-block;position:relative;text-transform:uppercase;.border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
+  &:after{content:"";position:absolute;top:100%;left:0;border-left:10px solid transparent;border-right:0 solid transparent;border-top:6px solid #23408f;z-index:1;}
 
-@ptnarrow: 'PT Sans Narrow', Arial, sans-serif;
+}
+
+@ptnarrow:'PT Sans Narrow', Arial, sans-serif;
 
 /*GLOBAL RESET*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
@@ -163,20 +158,84 @@ textarea { overflow: auto;  resize: vertical; }
 /* + clearboth */
 .clearboth{clear:both;}
 
-body{color:@colorGris2;font:12px Arial, sans-serif;}
+body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;padding:0 24px;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* packages */
 #searchProductFormContener {display:none;}
 #searchResult {
-  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:20px;margin:15px 0;position:relative;width:312px;margin-right:20px;float:left;
-  &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
-  &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
-  .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:20px 20px 10px;.half-border-radius(10px, top-left, top-right);
-    h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;}
-    h2{color:#f5bd8c;}
-    .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:20px;right:20px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
+  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;position:relative;width:296px;margin-right:20px;float:left;
+    &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
+    &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
+    .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:10px 20px 10px;.border-radius(10px 10px 0 0);
+      h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:229px;}
+      h2{color:#f5bd8c;}
+      .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:10px;right:15px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
+    }
+    .proposalDescriptionContent{width:100%;
+      tr:first-child td{padding:20px 0;vertical-align:bottom;}
+      .price{font-family:@ptnarrow;font-weight:bold;font-size:44px;text-transform:uppercase;text-align:right;margin-bottom:-13px;display:block;}
+      .action{
+        .chooseButton{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);background-color:@colorBgGrisF;color:@colorBlanc;text-align: center;}
+      }
+    }
   }
+}
+
+
+/* Resa Packages */
+.proposal, .proposals, #paiement, #option{
+/*clear*/&:before, &:after{content:"";display:table;clear:both;}
+}
+
+#reservationContener{
+  h2{font:bold 28px/18px @ptnarrow;margin:40px 0 20px;text-transform:uppercase;}
+  .proposal{background-color:@colorBgGrisC;border-radius:10px;padding:10px;margin:15px 0;position:relative;
+    h3{.h3Decroch(@colorBgBleu2, @colorBlanc)}
+    img{float:left;margin:0 25px 25px 5px;border:5px solid #fff;.box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));min-width:150px;min-height:90px;background:#fff;}
+    .total{float:right; width:118px; height:119px; background:url(../../images/vacancesdirectes/common/sprites/spriteSplash.png); margin:-10px 20px 0px 0px; text-align:center; color:rgb(255, 255, 255); padding-top:36px;
+      .label{font:bold 24px @ptnarrow;text-transform:uppercase;width:77px;height:30px;margin:0 auto;overflow:hidden;}
+      .field{font:bold 18px @ptnarrow;text-transform:uppercase;}
+    }
+  .proposalEtab{font-size:11px;color:@colorGris1;text-transform:uppercase;margin-bottom:5px;}
+  .prestations{width:570px;
+    tr{margin-bottom:2px;
+      &.totalPrice{display:none;}
+    }
+    td{padding:10px 12px;font-weight:bold;font-size:12px;background:#fff;border-bottom:2px solid #E6E5E5;
+      &.optionPrice{text-align:right;font-size:16px;}
+    }
+  }
+  }
+  .proposals > .total{background-color:@colorBgBleu2;position:relative;padding:0 20px;float:right;
+    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right-blanc.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+    div{display:inline-block;color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;
+      &.label{content:':';margin:0 3px}
+    }
+  }
+  #option, #paiement, #reservationSaved{background-color:@colorBgGrisC;border-radius:10px;padding:10px;margin:15px 0;position:relative;
+    h3{.h3Decroch(@colorBgBleu2, @colorBlanc)}
+    img{float:left;margin:0 25px 25px 5px;border:5px solid #fff;.box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));min-width:150px;min-height:90px;background:#fff;}
+    p{margin-left:20px;margin-bottom:10px;}
+    .labelNote .label{display:block;font:bold 16px @ptnarrow;}
+    .labelNote .field textarea{width:400px;height:120px;border:0;margin-bottom:10px;}
+  }
+}
+
+#footerContener{overflow:hidden;margin-top:20px;
+  .footerNavigation{display:none;
+    &.gauche, &.droite{display:block;}
+    &.gauche{float:left;}
+    &.droite{float:right;margin-top:-14px;}
+  }
+  .footerNavigation.gauche a,
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;.border-radius(7px);
+    background-color:@colorBgGrisF;color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
+  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;}
+  .footerNavigation.droite a{background-position:90% 100%;padding-right:25px;}
+  .mentions{clear:both;padding-bottom:15px;text-align:center;
+    a{color:@colorBleuF;}
   }
 }
