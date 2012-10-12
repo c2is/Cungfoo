@@ -4,7 +4,7 @@
 
 {% block content %}
         <div class="column clearboth" id="discoverContainer">
-            <iframe src="{{ path('resalys_wrapper', {
+            <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
                 display: 'customer_area',
                 customer_area_sub_page: 'all_purchases',
                 session: app.session.get('resalys_user').session,

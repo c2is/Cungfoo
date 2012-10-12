@@ -227,6 +227,13 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="category_type_hebergement_id" type="integer" />
+        <column name="nombre_chambre" type="integer" />
+        <column name="surface" type="varchar" />
+        <column name="type_terrasse" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_hebergement_path" type="varchar" />
+        <column name="composition" type="longvarchar" />
+        <column name="image_composition_path" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="category_type_hebergement">
@@ -239,6 +246,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
+            <parameter name="crud_type_file" value="image_hebergement_path, image_composition_path" />
         </behavior>
     </table>
 
