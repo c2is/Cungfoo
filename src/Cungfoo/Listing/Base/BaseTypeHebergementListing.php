@@ -21,8 +21,6 @@ class BaseTypeHebergementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
-        $this->addColumn(new Column\TextColumn('surface'));
-        $this->addColumn(new Column\TextColumn('type_terrasse'));
     }
 
     /**

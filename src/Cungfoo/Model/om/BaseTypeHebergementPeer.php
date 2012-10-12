@@ -38,13 +38,13 @@ abstract class BaseTypeHebergementPeer
     const TM_CLASS = 'TypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 12;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 12;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the ID field */
     const ID = 'type_hebergement.ID';
@@ -58,20 +58,8 @@ abstract class BaseTypeHebergementPeer
     /** the column name for the NOMBRE_CHAMBRE field */
     const NOMBRE_CHAMBRE = 'type_hebergement.NOMBRE_CHAMBRE';
 
-    /** the column name for the SURFACE field */
-    const SURFACE = 'type_hebergement.SURFACE';
-
-    /** the column name for the TYPE_TERRASSE field */
-    const TYPE_TERRASSE = 'type_hebergement.TYPE_TERRASSE';
-
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'type_hebergement.DESCRIPTION';
-
     /** the column name for the IMAGE_HEBERGEMENT_PATH field */
     const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.IMAGE_HEBERGEMENT_PATH';
-
-    /** the column name for the COMPOSITION field */
-    const COMPOSITION = 'type_hebergement.COMPOSITION';
 
     /** the column name for the IMAGE_COMPOSITION_PATH field */
     const IMAGE_COMPOSITION_PATH = 'type_hebergement.IMAGE_COMPOSITION_PATH';
@@ -108,12 +96,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[TypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CategoryTypeHebergementId', 'NombreChambre', 'Surface', 'TypeTerrasse', 'Description', 'ImageHebergementPath', 'Composition', 'ImageCompositionPath', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'categoryTypeHebergementId', 'nombreChambre', 'surface', 'typeTerrasse', 'description', 'imageHebergementPath', 'composition', 'imageCompositionPath', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::SURFACE, TypeHebergementPeer::TYPE_TERRASSE, TypeHebergementPeer::DESCRIPTION, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, TypeHebergementPeer::COMPOSITION, TypeHebergementPeer::IMAGE_COMPOSITION_PATH, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'SURFACE', 'TYPE_TERRASSE', 'DESCRIPTION', 'IMAGE_HEBERGEMENT_PATH', 'COMPOSITION', 'IMAGE_COMPOSITION_PATH', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category_type_hebergement_id', 'nombre_chambre', 'surface', 'type_terrasse', 'description', 'image_hebergement_path', 'composition', 'image_composition_path', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CategoryTypeHebergementId', 'NombreChambre', 'ImageHebergementPath', 'ImageCompositionPath', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'categoryTypeHebergementId', 'nombreChambre', 'imageHebergementPath', 'imageCompositionPath', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, TypeHebergementPeer::IMAGE_COMPOSITION_PATH, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'IMAGE_HEBERGEMENT_PATH', 'IMAGE_COMPOSITION_PATH', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category_type_hebergement_id', 'nombre_chambre', 'image_hebergement_path', 'image_composition_path', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -123,12 +111,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CategoryTypeHebergementId' => 2, 'NombreChambre' => 3, 'Surface' => 4, 'TypeTerrasse' => 5, 'Description' => 6, 'ImageHebergementPath' => 7, 'Composition' => 8, 'ImageCompositionPath' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'categoryTypeHebergementId' => 2, 'nombreChambre' => 3, 'surface' => 4, 'typeTerrasse' => 5, 'description' => 6, 'imageHebergementPath' => 7, 'composition' => 8, 'imageCompositionPath' => 9, 'createdAt' => 10, 'updatedAt' => 11, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 2, TypeHebergementPeer::NOMBRE_CHAMBRE => 3, TypeHebergementPeer::SURFACE => 4, TypeHebergementPeer::TYPE_TERRASSE => 5, TypeHebergementPeer::DESCRIPTION => 6, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH => 7, TypeHebergementPeer::COMPOSITION => 8, TypeHebergementPeer::IMAGE_COMPOSITION_PATH => 9, TypeHebergementPeer::CREATED_AT => 10, TypeHebergementPeer::UPDATED_AT => 11, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 2, 'NOMBRE_CHAMBRE' => 3, 'SURFACE' => 4, 'TYPE_TERRASSE' => 5, 'DESCRIPTION' => 6, 'IMAGE_HEBERGEMENT_PATH' => 7, 'COMPOSITION' => 8, 'IMAGE_COMPOSITION_PATH' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category_type_hebergement_id' => 2, 'nombre_chambre' => 3, 'surface' => 4, 'type_terrasse' => 5, 'description' => 6, 'image_hebergement_path' => 7, 'composition' => 8, 'image_composition_path' => 9, 'created_at' => 10, 'updated_at' => 11, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CategoryTypeHebergementId' => 2, 'NombreChambre' => 3, 'ImageHebergementPath' => 4, 'ImageCompositionPath' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'categoryTypeHebergementId' => 2, 'nombreChambre' => 3, 'imageHebergementPath' => 4, 'imageCompositionPath' => 5, 'createdAt' => 6, 'updatedAt' => 7, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 2, TypeHebergementPeer::NOMBRE_CHAMBRE => 3, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH => 4, TypeHebergementPeer::IMAGE_COMPOSITION_PATH => 5, TypeHebergementPeer::CREATED_AT => 6, TypeHebergementPeer::UPDATED_AT => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 2, 'NOMBRE_CHAMBRE' => 3, 'IMAGE_HEBERGEMENT_PATH' => 4, 'IMAGE_COMPOSITION_PATH' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category_type_hebergement_id' => 2, 'nombre_chambre' => 3, 'image_hebergement_path' => 4, 'image_composition_path' => 5, 'created_at' => 6, 'updated_at' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -206,11 +194,7 @@ abstract class BaseTypeHebergementPeer
             $criteria->addSelectColumn(TypeHebergementPeer::CODE);
             $criteria->addSelectColumn(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID);
             $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_CHAMBRE);
-            $criteria->addSelectColumn(TypeHebergementPeer::SURFACE);
-            $criteria->addSelectColumn(TypeHebergementPeer::TYPE_TERRASSE);
-            $criteria->addSelectColumn(TypeHebergementPeer::DESCRIPTION);
             $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::COMPOSITION);
             $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
             $criteria->addSelectColumn(TypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
@@ -219,11 +203,7 @@ abstract class BaseTypeHebergementPeer
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CATEGORY_TYPE_HEBERGEMENT_ID');
             $criteria->addSelectColumn($alias . '.NOMBRE_CHAMBRE');
-            $criteria->addSelectColumn($alias . '.SURFACE');
-            $criteria->addSelectColumn($alias . '.TYPE_TERRASSE');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
             $criteria->addSelectColumn($alias . '.IMAGE_HEBERGEMENT_PATH');
-            $criteria->addSelectColumn($alias . '.COMPOSITION');
             $criteria->addSelectColumn($alias . '.IMAGE_COMPOSITION_PATH');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
