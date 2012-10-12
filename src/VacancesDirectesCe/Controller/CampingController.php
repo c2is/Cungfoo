@@ -80,16 +80,36 @@ class CampingController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $activites = \Cungfoo\Model\ActiviteQuery::create()
+                ->joinWithI18n($locale)
+                ->find()
+            ;
+
+            $servicesComplementaires = \Cungfoo\Model\ServiceComplementaireQuery::create()
+                ->joinWithI18n($locale)
+                ->find()
+            ;
+
+            $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($etab->getId())
+                ->addAscendingOrderByColumn('RAND()')
+                ->findOne()
+            ;
+
             return $app['twig']->render('Camping/camping.twig', array(
-                'locale'                => $locale,
-                'etab'                  => $etab,
-                'nbSiteAVisiter'        => $nbSiteAVisiter,
-                'nbActivitesSportives'  => $nbActivitesSportives,
-                'nbEvenementsCulturels' => $nbEvenementsCulturels,
-                'eventPrioritaire'      => $eventPrioritaire,
-                'personnages'           => $personnages,
-                'multimedia'            => $multimedia,
-                'tags'                  => $tags
+                'locale'                  => $locale,
+                'etab'                    => $etab,
+                'nbSiteAVisiter'          => $nbSiteAVisiter,
+                'nbActivitesSportives'    => $nbActivitesSportives,
+                'nbEvenementsCulturels'   => $nbEvenementsCulturels,
+                'eventPrioritaire'        => $eventPrioritaire,
+                'personnages'             => $personnages,
+                'multimedia'              => $multimedia,
+                'tags'                    => $tags,
+                'activites'               => $activites,
+                'servicesComplementaires' => $servicesComplementaires,
+                'personnageAleatoire'    => $personnageAleatoire
             ));
         })
         ->bind('popin_camping');

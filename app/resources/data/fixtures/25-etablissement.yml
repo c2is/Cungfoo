@@ -23,6 +23,7 @@
         Image360Path: null
         Description: null
         Capacite: '543'
+        PlanPath: null
     2:
         Code: 100
         Name: 'Pins Parasols '
@@ -47,6 +48,7 @@
         Image360Path: null
         Description: null
         Capacite: '189'
+        PlanPath: null
     3:
         Code: 101
         Name: 'Plage Fleurie '
@@ -71,6 +73,7 @@
         Image360Path: null
         Description: null
         Capacite: '299'
+        PlanPath: null
     4:
         Code: 102
         Name: 'Playa Montroig'
@@ -95,6 +98,7 @@
         Image360Path: null
         Description: null
         Capacite: '1177'
+        PlanPath: null
     5:
         Code: 103
         Name: 'Playa Tropicana '
@@ -119,6 +123,7 @@
         Image360Path: null
         Description: null
         Capacite: '340'
+        PlanPath: null
     6:
         Code: 104
         Name: 'Port de plaisance'
@@ -143,6 +148,7 @@
         Image360Path: null
         Description: null
         Capacite: '340'
+        PlanPath: null
     7:
         Code: 106
         Name: 'La Ribeyre'
@@ -167,6 +173,7 @@
         Image360Path: null
         Description: null
         Capacite: '430'
+        PlanPath: null
     8:
         Code: 108
         Name: 'Le Roussillonnais '
@@ -191,6 +198,7 @@
         Image360Path: null
         Description: null
         Capacite: '706'
+        PlanPath: null
     9:
         Code: 109
         Name: 'Les Sables de Cordouan '
@@ -215,6 +223,7 @@
         Image360Path: null
         Description: null
         Capacite: '150'
+        PlanPath: null
     10:
         Code: 11
         Name: 'Azu''Rivage'
@@ -239,6 +248,7 @@
         Image360Path: null
         Description: null
         Capacite: '250'
+        PlanPath: null
     11:
         Code: 110
         Name: 'Saint Aygulf Plage'
@@ -263,6 +273,7 @@
         Image360Path: null
         Description: null
         Capacite: '1100'
+        PlanPath: null
     12:
         Code: 111
         Name: 'Saint Louis'
@@ -287,6 +298,7 @@
         Image360Path: null
         Description: null
         Capacite: '200'
+        PlanPath: null
     13:
         Code: 112
         Name: 'Sainte Baume'
@@ -311,6 +323,7 @@
         Image360Path: null
         Description: null
         Capacite: '250'
+        PlanPath: null
     14:
         Code: 113
         Name: 'Le Sainte-Marie '
@@ -335,6 +348,7 @@
         Image360Path: null
         Description: null
         Capacite: '300'
+        PlanPath: null
     15:
         Code: 114
         Name: 'Le Sen Yan '
@@ -359,6 +373,7 @@
         Image360Path: null
         Description: null
         Capacite: '375'
+        PlanPath: null
     16:
         Code: 116
         Name: 'La Ferme de la Serraz '
@@ -383,6 +398,7 @@
         Image360Path: null
         Description: null
         Capacite: '187'
+        PlanPath: null
     17:
         Code: 117
         Name: 'Signol '
@@ -407,6 +423,7 @@
         Image360Path: null
         Description: null
         Capacite: '300'
+        PlanPath: null
     18:
         Code: 118
         Name: 'Le Soleil '
@@ -431,6 +448,7 @@
         Image360Path: null
         Description: null
         Capacite: '844'
+        PlanPath: null
     19:
         Code: 119
         Name: 'Le Soleil de la Méditerranée'
@@ -455,6 +473,7 @@
         Image360Path: null
         Description: null
         Capacite: '522'
+        PlanPath: null
     20:
         Code: 12
         Name: 'Le Bahia Club'
@@ -479,6 +498,7 @@
         Image360Path: null
         Description: null
         Capacite: '210'
+        PlanPath: null
     21:
         Code: 120
         Name: 'Les Sources '
@@ -503,6 +523,7 @@
         Image360Path: null
         Description: null
         Capacite: '267'
+        PlanPath: null
     22:
         Code: 121
         Name: 'Le Talaris '
@@ -527,6 +548,7 @@
         Image360Path: null
         Description: null
         Capacite: '476'
+        PlanPath: null
     23:
         Code: 122
         Name: 'Le Tamerici '
@@ -551,6 +573,7 @@
         Image360Path: null
         Description: null
         Capacite: '301'
+        PlanPath: null
     24:
         Code: 123
         Name: 'Tenuta Primero '
@@ -575,6 +598,7 @@
         Image360Path: null
         Description: null
         Capacite: '800'
+        PlanPath: null
     25:
         Code: 125
         Name: 'Ur Onea '
@@ -599,6 +623,7 @@
         Image360Path: null
         Description: null
         Capacite: '280'
+        PlanPath: null
     26:
         Code: 126
         Name: 'Via Romana '
@@ -623,6 +648,7 @@
         Image360Path: null
         Description: null
         Capacite: '54'
+        PlanPath: null
     27:
         Code: 127
         Name: 'Le Vieux Port '
@@ -647,6 +673,7 @@
         Image360Path: null
         Description: null
         Capacite: '1546'
+        PlanPath: null
     28:
         Code: 128
         Name: 'Les Vignes '
@@ -671,6 +698,7 @@
         Image360Path: null
         Description: null
         Capacite: '450'
+        PlanPath: null
     29:
         Code: 129
         Name: 'Vilanova Park '
@@ -695,6 +723,7 @@
         Image360Path: null
         Description: null
         Capacite: '1385'
+        PlanPath: null
     30:
         Code: 130
         Name: Zagarella
@@ -719,6 +748,7 @@
         Image360Path: null
         Description: null
         Capacite: '278'
+        PlanPath: null
     31:
         Code: 131
         Name: 'Le Ruisseau des Pyrénées'
@@ -743,6 +773,7 @@
         Image360Path: null
         Description: null
         Capacite: '480'
+        PlanPath: null
     32:
         Code: 133
         Name: 'La Masia'
@@ -767,6 +798,7 @@
         Image360Path: null
         Description: null
         Capacite: '757'
+        PlanPath: null
     33:
         Code: 134
         Name: 'Les Tamaris'
@@ -791,6 +823,7 @@
         Image360Path: null
         Description: null
         Capacite: '434'
+        PlanPath: null
     34:
         Code: 135
         Name: 'Playa Joyel'
@@ -815,6 +848,7 @@
         Image360Path: null
         Description: null
         Capacite: '1050'
+        PlanPath: null
     35:
         Code: 136
         Name: 'Grande Italia'
@@ -839,6 +873,7 @@
         Image360Path: null
         Description: null
         Capacite: '195'
+        PlanPath: null
     36:
         Code: 137
         Name: 'Le Pearl Village Club'
@@ -863,6 +898,7 @@
         Image360Path: null
         Description: null
         Capacite: '164'
+        PlanPath: null
     37:
         Code: 138
         Name: 'Les Pins Maritimes'
@@ -887,6 +923,7 @@
         Image360Path: null
         Description: null
         Capacite: '700'
+        PlanPath: null
     38:
         Code: 139
         Name: 'zz Le Barralet'
@@ -911,6 +948,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     39:
         Code: 14
         Name: 'Beau Rivage '
@@ -935,6 +973,7 @@
         Image360Path: null
         Description: null
         Capacite: '234'
+        PlanPath: null
     40:
         Code: 140
         Name: 'zz Village Cavallino'
@@ -959,6 +998,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     41:
         Code: 141
         Name: 'zz Aux Hamacs'
@@ -983,6 +1023,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     42:
         Code: 142
         Name: 'zz Prat Dou Rey'
@@ -1007,6 +1048,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     43:
         Code: 143
         Name: 'zz Rouffiac'
@@ -1031,6 +1073,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     44:
         Code: 144
         Name: 'zz Séquoia Parc'
@@ -1055,6 +1098,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     45:
         Code: 145
         Name: 'zz Trémolat'
@@ -1079,6 +1123,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     46:
         Code: 146
         Name: 'zz L''Atlantique'
@@ -1103,6 +1148,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     47:
         Code: 147
         Name: 'zz Le Bahamas Beach'
@@ -1127,6 +1173,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     48:
         Code: 148
         Name: 'zz La Barque'
@@ -1151,6 +1198,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     49:
         Code: 149
         Name: 'zz Chanset'
@@ -1175,6 +1223,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     50:
         Code: 15
         Name: 'Beaulieu '
@@ -1199,6 +1248,7 @@
         Image360Path: null
         Description: null
         Capacite: '171'
+        PlanPath: null
     51:
         Code: 150
         Name: 'zz Le Chêne Gris'
@@ -1223,6 +1273,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     52:
         Code: 151
         Name: 'zz Les Dauphins Bleus'
@@ -1247,6 +1298,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     53:
         Code: 152
         Name: 'zz Domaine de Beaulieu'
@@ -1271,6 +1323,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     54:
         Code: 153
         Name: 'zz Le Lamparo'
@@ -1295,6 +1348,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     55:
         Code: 154
         Name: 'zz Marmotel'
@@ -1319,6 +1373,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     56:
         Code: 155
         Name: 'zz Les Ondines'
@@ -1343,6 +1398,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     57:
         Code: 156
         Name: 'zz Pyla Camping'
@@ -1367,6 +1423,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     58:
         Code: 157
         Name: 'zz La Rotonde'
@@ -1391,6 +1448,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     59:
         Code: 158
         Name: 'zz Village Stoja'
@@ -1415,6 +1473,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     60:
         Code: 159
         Name: 'zz Le Tamarit Park'
@@ -1439,6 +1498,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     61:
         Code: 16
         Name: 'Bois Soleil'
@@ -1463,6 +1523,7 @@
         Image360Path: null
         Description: null
         Capacite: '199'
+        PlanPath: null
     62:
         Code: 160
         Name: 'zz Le Trivoly'
@@ -1487,6 +1548,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     63:
         Code: 161
         Name: 'zz Almadies'
@@ -1511,6 +1573,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     64:
         Code: 162
         Name: 'zz Bois de Pleuven'
@@ -1535,6 +1598,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     65:
         Code: 163
         Name: 'zz Domaine de la Forêt'
@@ -1559,6 +1623,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     66:
         Code: 164
         Name: 'zz Le Lac'
@@ -1583,6 +1648,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     67:
         Code: 165
         Name: 'zz Rieu Montagné'
@@ -1607,6 +1673,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     68:
         Code: 166
         Name: 'zz Domaine des Bans'
@@ -1631,6 +1698,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     69:
         Code: 167
         Name: 'zz Douce Quiétude'
@@ -1655,6 +1723,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     70:
         Code: 168
         Name: 'zz Fleutron'
@@ -1679,6 +1748,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     71:
         Code: 169
         Name: 'zz Palmeraie'
@@ -1703,6 +1773,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     72:
         Code: 17
         Name: 'Bordenéo '
@@ -1727,6 +1798,7 @@
         Image360Path: null
         Description: null
         Capacite: '202'
+        PlanPath: null
     73:
         Code: 170
         Name: 'zz Les Tours'
@@ -1751,6 +1823,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     74:
         Code: 171
         Name: 'zz Abri de Camargue'
@@ -1775,6 +1848,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     75:
         Code: 172
         Name: 'zz Domaine des Iscles'
@@ -1799,6 +1873,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     76:
         Code: 173
         Name: 'zz Lacs du Verdon'
@@ -1823,6 +1898,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     77:
         Code: 174
         Name: 'zz Les Pins Payrac'
@@ -1847,6 +1923,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     78:
         Code: 175
         Name: 'Domaine des Pins'
@@ -1871,6 +1948,7 @@
         Image360Path: null
         Description: null
         Capacite: '121'
+        PlanPath: null
     79:
         Code: 176
         Name: 'Atlantic Club Montalivet'
@@ -1895,6 +1973,7 @@
         Image360Path: null
         Description: null
         Capacite: '842'
+        PlanPath: null
     80:
         Code: 177
         Name: 'Les Ajoncs d''Or'
@@ -1919,6 +1998,7 @@
         Image360Path: null
         Description: null
         Capacite: '222'
+        PlanPath: null
     81:
         Code: 178
         Name: 'Camping Les Biches'
@@ -1943,6 +2023,7 @@
         Image360Path: null
         Description: null
         Capacite: '434'
+        PlanPath: null
     82:
         Code: 18
         Name: 'La Bretonnière'
@@ -1967,6 +2048,7 @@
         Image360Path: null
         Description: null
         Capacite: '150'
+        PlanPath: null
     83:
         Code: 19
         Name: 'Le California'
@@ -1991,6 +2073,7 @@
         Image360Path: null
         Description: null
         Capacite: '213'
+        PlanPath: null
     84:
         Code: 2
         Name: 'Le Mas'
@@ -2015,6 +2098,7 @@
         Image360Path: null
         Description: null
         Capacite: '137'
+        PlanPath: null
     85:
         Code: 20
         Name: 'Le Calypso'
@@ -2039,6 +2123,7 @@
         Image360Path: null
         Description: null
         Capacite: '308'
+        PlanPath: null
     86:
         Code: 21
         Name: 'Camping du Lac '
@@ -2063,6 +2148,7 @@
         Image360Path: null
         Description: null
         Capacite: '90'
+        PlanPath: null
     87:
         Code: 22
         Name: 'Cap Agathois '
@@ -2087,6 +2173,7 @@
         Image360Path: null
         Description: null
         Capacite: '174'
+        PlanPath: null
     88:
         Code: 23
         Name: 'Le Carbonnier'
@@ -2111,6 +2198,7 @@
         Image360Path: null
         Description: null
         Capacite: '196'
+        PlanPath: null
     89:
         Code: 24
         Name: 'Castell Mar'
@@ -2135,6 +2223,7 @@
         Image360Path: null
         Description: null
         Capacite: '310'
+        PlanPath: null
     90:
         Code: 25
         Name: 'Castell Montgri '
@@ -2159,6 +2248,7 @@
         Image360Path: null
         Description: null
         Capacite: '1200'
+        PlanPath: null
     91:
         Code: 26
         Name: 'Caussanel '
@@ -2183,6 +2273,7 @@
         Image360Path: null
         Description: null
         Capacite: '228'
+        PlanPath: null
     92:
         Code: 27
         Name: 'Cayola '
@@ -2207,6 +2298,7 @@
         Image360Path: null
         Description: null
         Capacite: '176'
+        PlanPath: null
     93:
         Code: 28
         Name: 'Le Chaponnet'
@@ -2231,6 +2323,7 @@
         Image360Path: null
         Description: null
         Capacite: '330'
+        PlanPath: null
     94:
         Code: 29
         Name: 'Domaine des Charmilles'
@@ -2255,6 +2348,7 @@
         Image360Path: null
         Description: null
         Capacite: '270'
+        PlanPath: null
     95:
         Code: 3
         Name: 'Le Cala Gogo'
@@ -2279,6 +2373,7 @@
         Image360Path: null
         Description: null
         Capacite: '654'
+        PlanPath: null
     96:
         Code: 30
         Name: 'Le Château de Galinée '
@@ -2303,6 +2398,7 @@
         Image360Path: null
         Description: null
         Capacite: '273'
+        PlanPath: null
     97:
         Code: 31
         Name: 'La Chênaie '
@@ -2327,6 +2423,7 @@
         Image360Path: null
         Description: null
         Capacite: '221'
+        PlanPath: null
     98:
         Code: 32
         Name: 'Les Chênes Verts '
@@ -2351,6 +2448,7 @@
         Image360Path: null
         Description: null
         Capacite: '143'
+        PlanPath: null
     99:
         Code: 33
         Name: 'Le Col Vert '
@@ -2375,6 +2473,7 @@
         Image360Path: null
         Description: null
         Capacite: '800'
+        PlanPath: null
     100:
         Code: 34
         Name: 'Le Conguel '
@@ -2399,6 +2498,7 @@
         Image360Path: null
         Description: null
         Capacite: '250'
+        PlanPath: null
     101:
         Code: 35
         Name: 'La Coste Rouge '
@@ -2423,6 +2523,7 @@
         Image360Path: null
         Description: null
         Capacite: '145'
+        PlanPath: null
     102:
         Code: 36
         Name: 'La Côte d''Argent '
@@ -2447,6 +2548,7 @@
         Image360Path: null
         Description: null
         Capacite: '870'
+        PlanPath: null
     103:
         Code: 37
         Name: 'Crin Blanc '
@@ -2471,6 +2573,7 @@
         Image360Path: null
         Description: null
         Capacite: '170'
+        PlanPath: null
     104:
         Code: 38
         Name: 'Cupulatta '
@@ -2495,6 +2598,7 @@
         Image360Path: null
         Description: null
         Capacite: '120'
+        PlanPath: null
     105:
         Code: 39
         Name: 'Les Cyprès '
@@ -2519,6 +2623,7 @@
         Image360Path: null
         Description: null
         Capacite: '280'
+        PlanPath: null
     106:
         Code: 4
         Name: 'Le Petit Mousse'
@@ -2543,6 +2648,7 @@
         Image360Path: 'http://www.youtube.com/embed/Z1qXQMpdzQY?rel=0&amp;wmode=transparent'
         Description: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.'
         Capacite: '364'
+        PlanPath: uploads/etablissements/5077c5b45766c.jpeg
     107:
         Code: 40
         Name: 'Les Deux Fontaines '
@@ -2567,6 +2673,7 @@
         Image360Path: null
         Description: null
         Capacite: '293'
+        PlanPath: null
     108:
         Code: 41
         Name: 'Les Deux Plages '
@@ -2591,6 +2698,7 @@
         Image360Path: null
         Description: null
         Capacite: '265'
+        PlanPath: null
     109:
         Code: 42
         Name: 'Domaine d''Inly '
@@ -2615,6 +2723,7 @@
         Image360Path: null
         Description: null
         Capacite: '500'
+        PlanPath: null
     110:
         Code: 43
         Name: 'Domaine d''Oléron '
@@ -2639,6 +2748,7 @@
         Image360Path: null
         Description: null
         Capacite: '172'
+        PlanPath: null
     111:
         Code: 44
         Name: 'Domaine de Chaussy '
@@ -2663,6 +2773,7 @@
         Image360Path: null
         Description: null
         Capacite: '300'
+        PlanPath: null
     112:
         Code: 45
         Name: 'Domaine de Kermario'
@@ -2687,6 +2798,7 @@
         Image360Path: null
         Description: null
         Capacite: '123'
+        PlanPath: null
     113:
         Code: 46
         Name: 'Domaine de la Rive'
@@ -2711,6 +2823,7 @@
         Image360Path: null
         Description: null
         Capacite: '800'
+        PlanPath: null
     114:
         Code: 47
         Name: 'Domaine de Léveno '
@@ -2735,6 +2848,7 @@
         Image360Path: null
         Description: null
         Capacite: '600'
+        PlanPath: null
     115:
         Code: 48
         Name: 'Domaine des Naïades'
@@ -2759,6 +2873,7 @@
         Image360Path: null
         Description: null
         Capacite: '470'
+        PlanPath: null
     116:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
@@ -2783,6 +2898,7 @@
         Image360Path: null
         Description: null
         Capacite: '170'
+        PlanPath: null
     117:
         Code: 5
         Name: 'Airotel Oléron'
@@ -2807,6 +2923,7 @@
         Image360Path: null
         Description: null
         Capacite: '133'
+        PlanPath: null
     118:
         Code: 50
         Name: 'Domaine du Verdon '
@@ -2831,6 +2948,7 @@
         Image360Path: null
         Description: null
         Capacite: '500'
+        PlanPath: null
     119:
         Code: 51
         Name: 'Les Dunes '
@@ -2855,6 +2973,7 @@
         Image360Path: null
         Description: null
         Capacite: '615'
+        PlanPath: null
     120:
         Code: 52
         Name: 'Eden '
@@ -2879,6 +2998,7 @@
         Image360Path: null
         Description: null
         Capacite: '302'
+        PlanPath: null
     121:
         Code: 53
         Name: 'Les Embruns '
@@ -2903,6 +3023,7 @@
         Image360Path: null
         Description: null
         Capacite: '800'
+        PlanPath: null
     122:
         Code: 54
         Name: 'Eurolac '
@@ -2927,6 +3048,7 @@
         Image360Path: null
         Description: null
         Capacite: '540'
+        PlanPath: null
     123:
         Code: 55
         Name: 'Le Fanal '
@@ -2951,6 +3073,7 @@
         Image360Path: null
         Description: null
         Capacite: '186'
+        PlanPath: null
     124:
         Code: 56
         Name: 'La Farigoulette '
@@ -2975,6 +3098,7 @@
         Image360Path: null
         Description: null
         Capacite: '219'
+        PlanPath: null
     125:
         Code: 57
         Name: 'Les Fontaines '
@@ -2999,6 +3123,7 @@
         Image360Path: null
         Description: null
         Capacite: '160'
+        PlanPath: null
     126:
         Code: 58
         Name: 'Les Frênes '
@@ -3023,6 +3148,7 @@
         Image360Path: null
         Description: null
         Capacite: '110'
+        PlanPath: null
     127:
         Code: 59
         Name: 'Front de Mer'
@@ -3047,6 +3173,7 @@
         Image360Path: null
         Description: null
         Capacite: '588'
+        PlanPath: null
     128:
         Code: 6
         Name: 'Aluna Vacances '
@@ -3071,6 +3198,7 @@
         Image360Path: null
         Description: null
         Capacite: '199'
+        PlanPath: null
     129:
         Code: 60
         Name: 'Grand''Terre '
@@ -3095,6 +3223,7 @@
         Image360Path: null
         Description: null
         Capacite: '300'
+        PlanPath: null
     130:
         Code: 61
         Name: 'Château de la Grenouillère '
@@ -3119,6 +3248,7 @@
         Image360Path: null
         Description: null
         Capacite: '275'
+        PlanPath: null
     131:
         Code: 63
         Name: 'Les Huttes '
@@ -3143,6 +3273,7 @@
         Image360Path: null
         Description: null
         Capacite: '205'
+        PlanPath: null
     132:
         Code: 64
         Name: 'L''Idéal '
@@ -3167,6 +3298,7 @@
         Image360Path: null
         Description: null
         Capacite: '300'
+        PlanPath: null
     133:
         Code: 65
         Name: 'Les Ilates'
@@ -3191,6 +3323,7 @@
         Image360Path: null
         Description: null
         Capacite: '240'
+        PlanPath: null
     134:
         Code: 66
         Name: 'Ilbarritz '
@@ -3215,6 +3348,7 @@
         Image360Path: null
         Description: null
         Capacite: '374'
+        PlanPath: null
     135:
         Code: 67
         Name: 'Internacional de Calonge '
@@ -3239,6 +3373,7 @@
         Image360Path: null
         Description: null
         Capacite: '712'
+        PlanPath: null
     136:
         Code: 68
         Name: 'Internacional Palamos '
@@ -3263,6 +3398,7 @@
         Image360Path: null
         Description: null
         Capacite: '453'
+        PlanPath: null
     137:
         Code: 69
         Name: 'Le Jard '
@@ -3287,6 +3423,7 @@
         Image360Path: null
         Description: null
         Capacite: '350'
+        PlanPath: null
     138:
         Code: 7
         Name: 'Les Amandiers'
@@ -3311,6 +3448,7 @@
         Image360Path: null
         Description: null
         Capacite: '150'
+        PlanPath: null
     139:
         Code: 70
         Name: 'Lac Bleu '
@@ -3335,6 +3473,7 @@
         Image360Path: null
         Description: null
         Capacite: '130'
+        PlanPath: null
     140:
         Code: 71
         Name: 'Lac de Miel '
@@ -3359,6 +3498,7 @@
         Image360Path: null
         Description: null
         Capacite: '180'
+        PlanPath: null
     141:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
@@ -3383,6 +3523,7 @@
         Image360Path: null
         Description: null
         Capacite: '130'
+        PlanPath: null
     142:
         Code: 73
         Name: 'Land''s Hause '
@@ -3407,6 +3548,7 @@
         Image360Path: null
         Description: null
         Capacite: '92'
+        PlanPath: null
     143:
         Code: 74
         Name: 'Lou Broustaricq '
@@ -3431,6 +3573,7 @@
         Image360Path: null
         Description: null
         Capacite: '576'
+        PlanPath: null
     144:
         Code: 75
         Name: 'Lou Pignada '
@@ -3455,6 +3598,7 @@
         Image360Path: null
         Description: null
         Capacite: '430'
+        PlanPath: null
     145:
         Code: 76
         Name: 'La Loubine '
@@ -3479,6 +3623,7 @@
         Image360Path: null
         Description: null
         Capacite: '386'
+        PlanPath: null
     146:
         Code: 77
         Name: 'Loyada '
@@ -3503,6 +3648,7 @@
         Image360Path: null
         Description: null
         Capacite: '226'
+        PlanPath: null
     147:
         Code: 78
         Name: 'Malazéou '
@@ -3527,6 +3673,7 @@
         Image360Path: null
         Description: null
         Capacite: '285'
+        PlanPath: null
     148:
         Code: 79
         Name: 'Mare e Pineta '
@@ -3551,6 +3698,7 @@
         Image360Path: null
         Description: null
         Capacite: '1326'
+        PlanPath: null
     149:
         Code: 8
         Name: 'Sandaya Soulac Plage'
@@ -3575,6 +3723,7 @@
         Image360Path: null
         Description: null
         Capacite: '526'
+        PlanPath: null
     150:
         Code: 80
         Name: 'La Marine '
@@ -3599,6 +3748,7 @@
         Image360Path: null
         Description: null
         Capacite: '293'
+        PlanPath: null
     151:
         Code: 81
         Name: 'Les Marsouins'
@@ -3623,6 +3773,7 @@
         Image360Path: null
         Description: null
         Capacite: '587'
+        PlanPath: null
     152:
         Code: 82
         Name: 'Marze '
@@ -3647,6 +3798,7 @@
         Image360Path: null
         Description: null
         Capacite: '600'
+        PlanPath: null
     153:
         Code: 83
         Name: 'La Maïre '
@@ -3671,6 +3823,7 @@
         Image360Path: null
         Description: null
         Capacite: '206'
+        PlanPath: null
     154:
         Code: 84
         Name: 'Le Moulin'
@@ -3695,6 +3848,7 @@
         Image360Path: null
         Description: null
         Capacite: '240'
+        PlanPath: null
     155:
         Code: 85
         Name: 'Camping Neptuno '
@@ -3719,6 +3873,7 @@
         Image360Path: null
         Description: null
         Capacite: '322'
+        PlanPath: null
     156:
         Code: 86
         Name: 'L''Oasis'
@@ -3743,6 +3898,7 @@
         Image360Path: null
         Description: null
         Capacite: '496'
+        PlanPath: null
     157:
         Code: 87
         Name: 'L''Océano d''Or'
@@ -3767,6 +3923,7 @@
         Image360Path: null
         Description: null
         Capacite: '430'
+        PlanPath: null
     158:
         Code: 88
         Name: 'Oyam '
@@ -3791,6 +3948,7 @@
         Image360Path: null
         Description: null
         Capacite: '350'
+        PlanPath: null
     159:
         Code: 89
         Name: 'Les Oyats '
@@ -3815,6 +3973,7 @@
         Image360Path: null
         Description: null
         Capacite: '500'
+        PlanPath: null
     160:
         Code: 9
         Name: Ametlla
@@ -3839,6 +3998,7 @@
         Image360Path: null
         Description: null
         Capacite: '372'
+        PlanPath: null
     161:
         Code: 90
         Name: Pachacaïd
@@ -3863,6 +4023,7 @@
         Image360Path: null
         Description: null
         Capacite: '400'
+        PlanPath: null
     162:
         Code: 91
         Name: 'Domaine de la Paille Basse'
@@ -3887,6 +4048,7 @@
         Image360Path: null
         Description: null
         Capacite: '262'
+        PlanPath: null
     163:
         Code: 92
         Name: 'Le Palace '
@@ -3911,6 +4073,7 @@
         Image360Path: null
         Description: null
         Capacite: '570'
+        PlanPath: null
     164:
         Code: 93
         Name: 'Palavas Camping'
@@ -3935,6 +4098,7 @@
         Image360Path: null
         Description: null
         Capacite: '435'
+        PlanPath: null
     165:
         Code: 94
         Name: 'Le Parc '
@@ -3959,6 +4123,7 @@
         Image360Path: null
         Description: null
         Capacite: '100'
+        PlanPath: null
     166:
         Code: 95
         Name: 'Park Albatros '
@@ -3983,6 +4148,7 @@
         Image360Path: null
         Description: null
         Capacite: '885'
+        PlanPath: null
     167:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
@@ -4007,6 +4173,7 @@
         Image360Path: null
         Description: null
         Capacite: '110'
+        PlanPath: null
     168:
         Code: 97
         Name: 'Petit Bois (Cantal)'
@@ -4031,6 +4198,7 @@
         Image360Path: null
         Description: null
         Capacite: '90'
+        PlanPath: null
     169:
         Code: 98
         Name: 'Le Pinada '
@@ -4055,6 +4223,7 @@
         Image360Path: null
         Description: null
         Capacite: '110'
+        PlanPath: null
     170:
         Code: 99
         Name: 'Les Pins '
@@ -4079,6 +4248,7 @@
         Image360Path: null
         Description: null
         Capacite: '488'
+        PlanPath: null
     171:
         Code: 997
         Name: 'zzz Fictif enregistrement Linéaire Liberté'
@@ -4103,6 +4273,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     172:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
@@ -4127,6 +4298,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     173:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
@@ -4151,6 +4323,7 @@
         Image360Path: null
         Description: null
         Capacite: ''
+        PlanPath: null
     174:
         Code: 179
         Name: 'Z Vacances directes'
@@ -4175,6 +4348,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     175:
         Code: 180
         Name: 'Aqua Viva'
@@ -4199,6 +4373,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     176:
         Code: 181
         Name: Arbousiers
@@ -4223,6 +4398,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     177:
         Code: 182
         Name: Aurilandes
@@ -4247,6 +4423,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     178:
         Code: 183
         Name: 'Baie du Kernic'
@@ -4271,6 +4448,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     179:
         Code: 184
         Name: 'Bois d’Amour'
@@ -4295,6 +4473,7 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null
     180:
         Code: 185
         Name: 'Le Castellas'
@@ -4319,3 +4498,4 @@
         Image360Path: null
         Description: null
         Capacite: null
+        PlanPath: null

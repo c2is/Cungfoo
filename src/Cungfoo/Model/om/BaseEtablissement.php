@@ -238,6 +238,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $capacite;
 
     /**
+     * The value for the plan_path field.
+     * @var        string
+     */
+    protected $plan_path;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -822,6 +828,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getCapacite()
     {
         return $this->capacite;
+    }
+
+    /**
+     * Get the [plan_path] column value.
+     *
+     * @return string
+     */
+    public function getPlanPath()
+    {
+        return $this->plan_path;
     }
 
     /**
@@ -1415,6 +1431,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setCapacite()
 
     /**
+     * Set the value of [plan_path] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setPlanPath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->plan_path !== $v) {
+            $this->plan_path = $v;
+            $this->modifiedColumns[] = EtablissementPeer::PLAN_PATH;
+        }
+
+
+        return $this;
+    } // setPlanPath()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1516,8 +1553,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
             $this->description = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
             $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->created_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->updated_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1526,7 +1564,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 26; // 26 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 27; // 27 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2267,6 +2305,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) {
             $modifiedColumns[':p' . $index++]  = '`CAPACITE`';
         }
+        if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`PLAN_PATH`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -2355,6 +2396,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`CAPACITE`':
                         $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
+                        break;
+                    case '`PLAN_PATH`':
+                        $stmt->bindValue($identifier, $this->plan_path, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2683,9 +2727,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getCapacite();
                 break;
             case 24:
-                return $this->getCreatedAt();
+                return $this->getPlanPath();
                 break;
             case 25:
+                return $this->getCreatedAt();
+                break;
+            case 26:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -2741,8 +2788,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[21] => $this->getImage360Path(),
             $keys[22] => $this->getDescription(),
             $keys[23] => $this->getCapacite(),
-            $keys[24] => $this->getCreatedAt(),
-            $keys[25] => $this->getUpdatedAt(),
+            $keys[24] => $this->getPlanPath(),
+            $keys[25] => $this->getCreatedAt(),
+            $keys[26] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -2894,9 +2942,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setCapacite($value);
                 break;
             case 24:
-                $this->setCreatedAt($value);
+                $this->setPlanPath($value);
                 break;
             case 25:
+                $this->setCreatedAt($value);
+                break;
+            case 26:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2947,8 +2998,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
         if (array_key_exists($keys[22], $arr)) $this->setDescription($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setCreatedAt($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setUpdatedAt($arr[$keys[25]]);
+        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
     }
 
     /**
@@ -2984,6 +3036,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
+        if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
 
@@ -3072,6 +3125,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setImage360Path($this->getImage360Path());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setCapacite($this->getCapacite());
+        $copyObj->setPlanPath($this->getPlanPath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -7609,6 +7663,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->image_360_path = null;
         $this->description = null;
         $this->capacite = null;
+        $this->plan_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -8071,7 +8126,44 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['plan_path_deleted']->getData())
+        {
+            $this->resetModified(EtablissementPeer::PLAN_PATH);
+        }
+
+        $this->uploadPlanPath($form);
+
         return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/etablissements';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadPlanPath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['plan_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['plan_path']->getData()->guessExtension();
+            $form['plan_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setPlanPath($this->getUploadDir() . '/' . $image);
+        }
     }
 
 }

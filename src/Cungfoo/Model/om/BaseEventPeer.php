@@ -37,13 +37,13 @@ abstract class BaseEventPeer
     const TM_CLASS = 'EventTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 11;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 11;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the ID field */
     const ID = 'event.ID';
@@ -65,6 +65,12 @@ abstract class BaseEventPeer
 
     /** the column name for the CITY field */
     const CITY = 'event.CITY';
+
+    /** the column name for the GEO_COORDINATE_X field */
+    const GEO_COORDINATE_X = 'event.GEO_COORDINATE_X';
+
+    /** the column name for the GEO_COORDINATE_Y field */
+    const GEO_COORDINATE_Y = 'event.GEO_COORDINATE_Y';
 
     /** the column name for the IMAGE field */
     const IMAGE = 'event.IMAGE';
@@ -90,13 +96,6 @@ abstract class BaseEventPeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -104,12 +103,12 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[EventPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Category', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CODE, EventPeer::CATEGORY, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'image', 'priority', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Category', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'image', 'priority', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CODE, EventPeer::CATEGORY, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::GEO_COORDINATE_X, EventPeer::GEO_COORDINATE_Y, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'image', 'priority', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -119,12 +118,12 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Category' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'Image' => 7, 'Priority' => 8, 'CreatedAt' => 9, 'UpdatedAt' => 10, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'createdAt' => 9, 'updatedAt' => 10, ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CODE => 1, EventPeer::CATEGORY => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::IMAGE => 7, EventPeer::PRIORITY => 8, EventPeer::CREATED_AT => 9, EventPeer::UPDATED_AT => 10, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'IMAGE' => 7, 'PRIORITY' => 8, 'CREATED_AT' => 9, 'UPDATED_AT' => 10, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'image' => 7, 'priority' => 8, 'created_at' => 9, 'updated_at' => 10, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Category' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'GeoCoordinateX' => 7, 'GeoCoordinateY' => 8, 'Image' => 9, 'Priority' => 10, 'CreatedAt' => 11, 'UpdatedAt' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geoCoordinateX' => 7, 'geoCoordinateY' => 8, 'image' => 9, 'priority' => 10, 'createdAt' => 11, 'updatedAt' => 12, ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CODE => 1, EventPeer::CATEGORY => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::GEO_COORDINATE_X => 7, EventPeer::GEO_COORDINATE_Y => 8, EventPeer::IMAGE => 9, EventPeer::PRIORITY => 10, EventPeer::CREATED_AT => 11, EventPeer::UPDATED_AT => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'GEO_COORDINATE_X' => 7, 'GEO_COORDINATE_Y' => 8, 'IMAGE' => 9, 'PRIORITY' => 10, 'CREATED_AT' => 11, 'UPDATED_AT' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geo_coordinate_x' => 7, 'geo_coordinate_y' => 8, 'image' => 9, 'priority' => 10, 'created_at' => 11, 'updated_at' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -205,6 +204,8 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn(EventPeer::ADDRESS2);
             $criteria->addSelectColumn(EventPeer::ZIPCODE);
             $criteria->addSelectColumn(EventPeer::CITY);
+            $criteria->addSelectColumn(EventPeer::GEO_COORDINATE_X);
+            $criteria->addSelectColumn(EventPeer::GEO_COORDINATE_Y);
             $criteria->addSelectColumn(EventPeer::IMAGE);
             $criteria->addSelectColumn(EventPeer::PRIORITY);
             $criteria->addSelectColumn(EventPeer::CREATED_AT);
@@ -217,6 +218,8 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn($alias . '.ADDRESS2');
             $criteria->addSelectColumn($alias . '.ZIPCODE');
             $criteria->addSelectColumn($alias . '.CITY');
+            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_X');
+            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_Y');
             $criteria->addSelectColumn($alias . '.IMAGE');
             $criteria->addSelectColumn($alias . '.PRIORITY');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
@@ -816,6 +819,13 @@ abstract class BaseEventPeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BaseEventPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

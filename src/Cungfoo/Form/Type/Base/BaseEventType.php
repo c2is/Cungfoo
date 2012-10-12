@@ -64,6 +64,18 @@ class BaseEventType extends AppAwareType
             'label' => 'event.city',
             'required' => false,
         ));
+        $builder->add('geo_coordinate_x', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.geo_coordinate_x',
+            'required' => false,
+        ));
+        $builder->add('geo_coordinate_y', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.geo_coordinate_y',
+            'required' => false,
+        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),

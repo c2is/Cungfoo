@@ -37,13 +37,13 @@ abstract class BasePointInteretPeer
     const TM_CLASS = 'PointInteretTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 11;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /** the column name for the ID field */
     const ID = 'point_interet.ID';
@@ -62,6 +62,12 @@ abstract class BasePointInteretPeer
 
     /** the column name for the CITY field */
     const CITY = 'point_interet.CITY';
+
+    /** the column name for the GEO_COORDINATE_X field */
+    const GEO_COORDINATE_X = 'point_interet.GEO_COORDINATE_X';
+
+    /** the column name for the GEO_COORDINATE_Y field */
+    const GEO_COORDINATE_Y = 'point_interet.GEO_COORDINATE_Y';
 
     /** the column name for the IMAGE field */
     const IMAGE = 'point_interet.IMAGE';
@@ -84,13 +90,6 @@ abstract class BasePointInteretPeer
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -98,12 +97,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[PointInteretPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'Image', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'image', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'image', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'Image', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'image', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::GEO_COORDINATE_X, PointInteretPeer::GEO_COORDINATE_Y, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'image', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -113,12 +112,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'Image' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'image' => 6, 'createdAt' => 7, 'updatedAt' => 8, ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::IMAGE => 6, PointInteretPeer::CREATED_AT => 7, PointInteretPeer::UPDATED_AT => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'IMAGE' => 6, 'CREATED_AT' => 7, 'UPDATED_AT' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'image' => 6, 'created_at' => 7, 'updated_at' => 8, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'GeoCoordinateX' => 6, 'GeoCoordinateY' => 7, 'Image' => 8, 'CreatedAt' => 9, 'UpdatedAt' => 10, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geoCoordinateX' => 6, 'geoCoordinateY' => 7, 'image' => 8, 'createdAt' => 9, 'updatedAt' => 10, ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::GEO_COORDINATE_X => 6, PointInteretPeer::GEO_COORDINATE_Y => 7, PointInteretPeer::IMAGE => 8, PointInteretPeer::CREATED_AT => 9, PointInteretPeer::UPDATED_AT => 10, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'GEO_COORDINATE_X' => 6, 'GEO_COORDINATE_Y' => 7, 'IMAGE' => 8, 'CREATED_AT' => 9, 'UPDATED_AT' => 10, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geo_coordinate_x' => 6, 'geo_coordinate_y' => 7, 'image' => 8, 'created_at' => 9, 'updated_at' => 10, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -198,6 +197,8 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn(PointInteretPeer::ADDRESS2);
             $criteria->addSelectColumn(PointInteretPeer::ZIPCODE);
             $criteria->addSelectColumn(PointInteretPeer::CITY);
+            $criteria->addSelectColumn(PointInteretPeer::GEO_COORDINATE_X);
+            $criteria->addSelectColumn(PointInteretPeer::GEO_COORDINATE_Y);
             $criteria->addSelectColumn(PointInteretPeer::IMAGE);
             $criteria->addSelectColumn(PointInteretPeer::CREATED_AT);
             $criteria->addSelectColumn(PointInteretPeer::UPDATED_AT);
@@ -208,6 +209,8 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn($alias . '.ADDRESS2');
             $criteria->addSelectColumn($alias . '.ZIPCODE');
             $criteria->addSelectColumn($alias . '.CITY');
+            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_X');
+            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_Y');
             $criteria->addSelectColumn($alias . '.IMAGE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
@@ -806,6 +809,13 @@ abstract class BasePointInteretPeer
         return $objs;
     }
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
 } // BasePointInteretPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
