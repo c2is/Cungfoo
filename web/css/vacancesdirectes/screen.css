@@ -1595,6 +1595,30 @@ h6,
   background-color: #e6e5e5;
   border: 0 none;
 }
+.ce #searchContainer #searchForm {
+  border: 1px solid #e6e5e5;
+  padding: 20px;
+  width: 400px;
+}
+.ce #searchContainer #searchForm legend {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  padding: 0 10px;
+  background-color: #ffffff;
+}
+.ce #searchContainer #searchForm select[name=selectCamping] {
+  display: none;
+}
+.ce #searchContainer #searchForm #selectCamping {
+  background-color: #e6e5e5;
+  padding: 0 20px;
+  margin: 20px 0;
+}
+.ce #searchContainer #searchForm #selectCamping li {
+  padding: 4px 0;
+}
 /* plugins styles*/
 /*PLUGINS*/
 /*
@@ -1781,7 +1805,7 @@ h6,
 .stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  width: 130px;
+  width: 125px;
   position: absolute;
   top: 22px;
   left: 0;
@@ -1812,7 +1836,7 @@ h6,
   height: 23px;
   float: left;
   margin-right: 10px;
-  background-color: #d8d8d8;
+  background-color: #e6e5e5;
   position: relative;
   height: 23px;
   line-height: 23px;
@@ -1863,7 +1887,6 @@ h6,
 .stylish-select .newListSelHover,
 .stylish-select .newListSelFocus {
   cursor: default;
-  background-color: #dec8cf;
 }
 .stylish-select .newListSelHover .selectedTxt:after,
 .stylish-select .newListSelFocus .selectedTxt:after {
