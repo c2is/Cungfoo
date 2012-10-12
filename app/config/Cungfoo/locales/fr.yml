@@ -253,6 +253,7 @@ type_hebergement.image_composition_path: Image de la composition
 type_hebergement.image_composition_path_deleted: Supprimer l'image de la composition
 type_hebergement.nombre.chambre: Nombre de chambres
 type_hebergement.type.terrasse: Type de terrasse
+type_hebergement.nombre_place: Nombre de place
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes

@@ -80,6 +80,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $nombre_chambre;
 
     /**
+     * The value for the nombre_place field.
+     * @var        int
+     */
+    protected $nombre_place;
+
+    /**
      * The value for the image_hebergement_path field.
      * @var        string
      */
@@ -209,6 +215,16 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getNombreChambre()
     {
         return $this->nombre_chambre;
+    }
+
+    /**
+     * Get the [nombre_place] column value.
+     *
+     * @return int
+     */
+    public function getNombrePlace()
+    {
+        return $this->nombre_place;
     }
 
     /**
@@ -394,6 +410,27 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     } // setNombreChambre()
 
     /**
+     * Set the value of [nombre_place] column.
+     *
+     * @param int $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setNombrePlace($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->nombre_place !== $v) {
+            $this->nombre_place = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::NOMBRE_PLACE;
+        }
+
+
+        return $this;
+    } // setNombrePlace()
+
+    /**
      * Set the value of [image_hebergement_path] column.
      *
      * @param string $v new value
@@ -517,10 +554,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->category_type_hebergement_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
             $this->nombre_chambre = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
-            $this->image_hebergement_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->image_composition_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->nombre_place = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
+            $this->image_hebergement_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->image_composition_path = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->created_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->updated_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -529,7 +567,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergement object", $e);
@@ -839,6 +877,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) {
             $modifiedColumns[':p' . $index++]  = '`NOMBRE_CHAMBRE`';
         }
+        if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) {
+            $modifiedColumns[':p' . $index++]  = '`NOMBRE_PLACE`';
+        }
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_HEBERGEMENT_PATH`';
         }
@@ -873,6 +914,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                         break;
                     case '`NOMBRE_CHAMBRE`':
                         $stmt->bindValue($identifier, $this->nombre_chambre, PDO::PARAM_INT);
+                        break;
+                    case '`NOMBRE_PLACE`':
+                        $stmt->bindValue($identifier, $this->nombre_place, PDO::PARAM_INT);
                         break;
                     case '`IMAGE_HEBERGEMENT_PATH`':
                         $stmt->bindValue($identifier, $this->image_hebergement_path, PDO::PARAM_STR);
@@ -1061,15 +1105,18 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getNombreChambre();
                 break;
             case 4:
-                return $this->getImageHebergementPath();
+                return $this->getNombrePlace();
                 break;
             case 5:
-                return $this->getImageCompositionPath();
+                return $this->getImageHebergementPath();
                 break;
             case 6:
-                return $this->getCreatedAt();
+                return $this->getImageCompositionPath();
                 break;
             case 7:
+                return $this->getCreatedAt();
+                break;
+            case 8:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1105,10 +1152,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getCategoryTypeHebergementId(),
             $keys[3] => $this->getNombreChambre(),
-            $keys[4] => $this->getImageHebergementPath(),
-            $keys[5] => $this->getImageCompositionPath(),
-            $keys[6] => $this->getCreatedAt(),
-            $keys[7] => $this->getUpdatedAt(),
+            $keys[4] => $this->getNombrePlace(),
+            $keys[5] => $this->getImageHebergementPath(),
+            $keys[6] => $this->getImageCompositionPath(),
+            $keys[7] => $this->getCreatedAt(),
+            $keys[8] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -1167,15 +1215,18 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setNombreChambre($value);
                 break;
             case 4:
-                $this->setImageHebergementPath($value);
+                $this->setNombrePlace($value);
                 break;
             case 5:
-                $this->setImageCompositionPath($value);
+                $this->setImageHebergementPath($value);
                 break;
             case 6:
-                $this->setCreatedAt($value);
+                $this->setImageCompositionPath($value);
                 break;
             case 7:
+                $this->setCreatedAt($value);
+                break;
+            case 8:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1206,10 +1257,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setNombreChambre($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImageHebergementPath($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setImageCompositionPath($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[4], $arr)) $this->setNombrePlace($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setImageHebergementPath($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setImageCompositionPath($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setCreatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setUpdatedAt($arr[$keys[8]]);
     }
 
     /**
@@ -1225,6 +1277,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::CODE)) $criteria->add(TypeHebergementPeer::CODE, $this->code);
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) $criteria->add(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $this->category_type_hebergement_id);
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) $criteria->add(TypeHebergementPeer::NOMBRE_CHAMBRE, $this->nombre_chambre);
+        if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) $criteria->add(TypeHebergementPeer::NOMBRE_PLACE, $this->nombre_place);
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, $this->image_hebergement_path);
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $this->image_composition_path);
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) $criteria->add(TypeHebergementPeer::CREATED_AT, $this->created_at);
@@ -1295,6 +1348,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $copyObj->setCode($this->getCode());
         $copyObj->setCategoryTypeHebergementId($this->getCategoryTypeHebergementId());
         $copyObj->setNombreChambre($this->getNombreChambre());
+        $copyObj->setNombrePlace($this->getNombrePlace());
         $copyObj->setImageHebergementPath($this->getImageHebergementPath());
         $copyObj->setImageCompositionPath($this->getImageCompositionPath());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2059,6 +2113,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $this->code = null;
         $this->category_type_hebergement_id = null;
         $this->nombre_chambre = null;
+        $this->nombre_place = null;
         $this->image_hebergement_path = null;
         $this->image_composition_path = null;
         $this->created_at = null;

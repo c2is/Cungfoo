@@ -228,6 +228,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="category_type_hebergement_id" type="integer" />
         <column name="nombre_chambre" type="integer" />
+        <column name="nombre_place" type="integer" />
         <column name="surface" type="varchar" />
         <column name="type_terrasse" type="varchar" />
         <column name="description" type="longvarchar" />

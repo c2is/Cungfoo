@@ -29,6 +29,7 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method TypeHebergementQuery orderByCategoryTypeHebergementId($order = Criteria::ASC) Order by the category_type_hebergement_id column
  * @method TypeHebergementQuery orderByNombreChambre($order = Criteria::ASC) Order by the nombre_chambre column
+ * @method TypeHebergementQuery orderByNombrePlace($order = Criteria::ASC) Order by the nombre_place column
  * @method TypeHebergementQuery orderByImageHebergementPath($order = Criteria::ASC) Order by the image_hebergement_path column
  * @method TypeHebergementQuery orderByImageCompositionPath($order = Criteria::ASC) Order by the image_composition_path column
  * @method TypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -38,6 +39,7 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery groupByCode() Group by the code column
  * @method TypeHebergementQuery groupByCategoryTypeHebergementId() Group by the category_type_hebergement_id column
  * @method TypeHebergementQuery groupByNombreChambre() Group by the nombre_chambre column
+ * @method TypeHebergementQuery groupByNombrePlace() Group by the nombre_place column
  * @method TypeHebergementQuery groupByImageHebergementPath() Group by the image_hebergement_path column
  * @method TypeHebergementQuery groupByImageCompositionPath() Group by the image_composition_path column
  * @method TypeHebergementQuery groupByCreatedAt() Group by the created_at column
@@ -65,6 +67,7 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergement findOneByCode(string $code) Return the first TypeHebergement filtered by the code column
  * @method TypeHebergement findOneByCategoryTypeHebergementId(int $category_type_hebergement_id) Return the first TypeHebergement filtered by the category_type_hebergement_id column
  * @method TypeHebergement findOneByNombreChambre(int $nombre_chambre) Return the first TypeHebergement filtered by the nombre_chambre column
+ * @method TypeHebergement findOneByNombrePlace(int $nombre_place) Return the first TypeHebergement filtered by the nombre_place column
  * @method TypeHebergement findOneByImageHebergementPath(string $image_hebergement_path) Return the first TypeHebergement filtered by the image_hebergement_path column
  * @method TypeHebergement findOneByImageCompositionPath(string $image_composition_path) Return the first TypeHebergement filtered by the image_composition_path column
  * @method TypeHebergement findOneByCreatedAt(string $created_at) Return the first TypeHebergement filtered by the created_at column
@@ -74,6 +77,7 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method array findByCode(string $code) Return TypeHebergement objects filtered by the code column
  * @method array findByCategoryTypeHebergementId(int $category_type_hebergement_id) Return TypeHebergement objects filtered by the category_type_hebergement_id column
  * @method array findByNombreChambre(int $nombre_chambre) Return TypeHebergement objects filtered by the nombre_chambre column
+ * @method array findByNombrePlace(int $nombre_place) Return TypeHebergement objects filtered by the nombre_place column
  * @method array findByImageHebergementPath(string $image_hebergement_path) Return TypeHebergement objects filtered by the image_hebergement_path column
  * @method array findByImageCompositionPath(string $image_composition_path) Return TypeHebergement objects filtered by the image_composition_path column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergement objects filtered by the created_at column
@@ -181,7 +185,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `NOMBRE_CHAMBRE`, `IMAGE_HEBERGEMENT_PATH`, `IMAGE_COMPOSITION_PATH`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `NOMBRE_CHAMBRE`, `NOMBRE_PLACE`, `IMAGE_HEBERGEMENT_PATH`, `IMAGE_COMPOSITION_PATH`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -408,6 +412,47 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementPeer::NOMBRE_CHAMBRE, $nombreChambre, $comparison);
+    }
+
+    /**
+     * Filter the query on the nombre_place column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByNombrePlace(1234); // WHERE nombre_place = 1234
+     * $query->filterByNombrePlace(array(12, 34)); // WHERE nombre_place IN (12, 34)
+     * $query->filterByNombrePlace(array('min' => 12)); // WHERE nombre_place > 12
+     * </code>
+     *
+     * @param     mixed $nombrePlace The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByNombrePlace($nombrePlace = null, $comparison = null)
+    {
+        if (is_array($nombrePlace)) {
+            $useMinMax = false;
+            if (isset($nombrePlace['min'])) {
+                $this->addUsingAlias(TypeHebergementPeer::NOMBRE_PLACE, $nombrePlace['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($nombrePlace['max'])) {
+                $this->addUsingAlias(TypeHebergementPeer::NOMBRE_PLACE, $nombrePlace['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::NOMBRE_PLACE, $nombrePlace, $comparison);
     }
 
     /**

@@ -46,6 +46,7 @@ class TypeHebergementTableMap extends TableMap
         $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
         $this->addForeignKey('CATEGORY_TYPE_HEBERGEMENT_ID', 'CategoryTypeHebergementId', 'INTEGER', 'category_type_hebergement', 'ID', false, null, null);
         $this->addColumn('NOMBRE_CHAMBRE', 'NombreChambre', 'INTEGER', false, null, null);
+        $this->addColumn('NOMBRE_PLACE', 'NombrePlace', 'INTEGER', false, null, null);
         $this->addColumn('IMAGE_HEBERGEMENT_PATH', 'ImageHebergementPath', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_COMPOSITION_PATH', 'ImageCompositionPath', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);

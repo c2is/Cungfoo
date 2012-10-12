@@ -47,6 +47,12 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.nombre_chambre',
             'required' => false,
         ));
+        $builder->add('nombre_place', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.nombre_place',
+            'required' => false,
+        ));
         $builder->add('image_hebergement_path', 'cungfoo_file', array(
             'constraints' => array(
             ),
