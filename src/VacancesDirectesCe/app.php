@@ -31,6 +31,10 @@ $app['security.access_rules'] = array(
     array('^/.+$', 'ROLE_USER'),
 );
 
+$app['security.last_error'] = $app->protect(function () {
+    return "Le login que vous avez saisi est incorrect. Veuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
+});
+
 $app['security.encoder.digest'] = $app->share(function ($app) {
     return new \Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder();
 });
