@@ -355,6 +355,7 @@ $(function() {
         }
     });
 
+    $('.sMultSelect').sMultSelect();
 });
 
 

@@ -952,3 +952,53 @@ InfoBox.prototype.panMap = function() {
 
 }(jQuery));
 
+(function($) {
+    $.fn.sMultSelect = function(params) {
+        //params = params = $.extend( {}, params);
+        this.each(function() {
+            var $mul = $(this);
+
+            var origId = $mul.attr('id'),
+                $newMul = $('<ul id="'+origId+'Ul" class="sMultSelectUl"></ul>'),
+                $newMulLi;
+
+            $mul.after($newMul);
+
+
+            function addMulItem(item, container) {
+                var text = $(item).text(),
+                    val = $(item).val(),
+                    cSelected = "";
+
+
+                if ($(item).attr('selected')) {
+                    cSelected = "selected";
+                }
+
+                container.append(
+                    $('<li data-val="'+val+'" class="'+cSelected+'">'+text+'</li>')
+                );
+            }
+            $mul.children('option').each(function(){
+                addMulItem(this, $newMul);
+            });
+
+            $newMulLi = $newMul.find('li');
+            $newMulLi.click( function(){
+                var link = $(this),
+                    val = $(this).attr('data-val'),
+                    nSel = $mul.find('[value="'+val+'"]');
+
+                if (nSel.is(':selected')){
+                    link.removeClass('selected');
+                    nSel.removeAttr('selected');
+                } else {
+                    link.addClass('selected');
+                    nSel.attr('selected', 'selected');
+                }
+
+            });
+
+        });
+    };
+})(jQuery);
