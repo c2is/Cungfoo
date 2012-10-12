@@ -39,13 +39,13 @@ abstract class BaseRegionPeer
     const TM_CLASS = 'RegionTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the ID field */
     const ID = 'region.ID';
@@ -55,6 +55,12 @@ abstract class BaseRegionPeer
 
     /** the column name for the IMAGE_PATH field */
     const IMAGE_PATH = 'region.IMAGE_PATH';
+
+    /** the column name for the IMAGE_ENCART_PATH field */
+    const IMAGE_ENCART_PATH = 'region.IMAGE_ENCART_PATH';
+
+    /** the column name for the IMAGE_ENCART_PETITE_PATH field */
+    const IMAGE_ENCART_PETITE_PATH = 'region.IMAGE_ENCART_PETITE_PATH';
 
     /** the column name for the PAYS_ID field */
     const PAYS_ID = 'region.PAYS_ID';
@@ -91,12 +97,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[RegionPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'PaysId', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'paysId', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::PAYS_ID, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'PAYS_ID', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'pays_id', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'ImageEncartPath', 'ImageEncartPetitePath', 'PaysId', 'CreatedAt', 'UpdatedAt', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'imageEncartPath', 'imageEncartPetitePath', 'paysId', 'createdAt', 'updatedAt', ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::IMAGE_ENCART_PATH, RegionPeer::IMAGE_ENCART_PETITE_PATH, RegionPeer::PAYS_ID, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'IMAGE_ENCART_PATH', 'IMAGE_ENCART_PETITE_PATH', 'PAYS_ID', 'CREATED_AT', 'UPDATED_AT', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'image_encart_path', 'image_encart_petite_path', 'pays_id', 'created_at', 'updated_at', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -106,12 +112,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'PaysId' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'paysId' => 3, 'createdAt' => 4, 'updatedAt' => 5, ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::PAYS_ID => 3, RegionPeer::CREATED_AT => 4, RegionPeer::UPDATED_AT => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'PAYS_ID' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'pays_id' => 3, 'created_at' => 4, 'updated_at' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'ImageEncartPath' => 3, 'ImageEncartPetitePath' => 4, 'PaysId' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'imageEncartPath' => 3, 'imageEncartPetitePath' => 4, 'paysId' => 5, 'createdAt' => 6, 'updatedAt' => 7, ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::IMAGE_ENCART_PATH => 3, RegionPeer::IMAGE_ENCART_PETITE_PATH => 4, RegionPeer::PAYS_ID => 5, RegionPeer::CREATED_AT => 6, RegionPeer::UPDATED_AT => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'IMAGE_ENCART_PATH' => 3, 'IMAGE_ENCART_PETITE_PATH' => 4, 'PAYS_ID' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'image_encart_path' => 3, 'image_encart_petite_path' => 4, 'pays_id' => 5, 'created_at' => 6, 'updated_at' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -188,6 +194,8 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn(RegionPeer::ID);
             $criteria->addSelectColumn(RegionPeer::CODE);
             $criteria->addSelectColumn(RegionPeer::IMAGE_PATH);
+            $criteria->addSelectColumn(RegionPeer::IMAGE_ENCART_PATH);
+            $criteria->addSelectColumn(RegionPeer::IMAGE_ENCART_PETITE_PATH);
             $criteria->addSelectColumn(RegionPeer::PAYS_ID);
             $criteria->addSelectColumn(RegionPeer::CREATED_AT);
             $criteria->addSelectColumn(RegionPeer::UPDATED_AT);
@@ -195,6 +203,8 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
+            $criteria->addSelectColumn($alias . '.IMAGE_ENCART_PATH');
+            $criteria->addSelectColumn($alias . '.IMAGE_ENCART_PETITE_PATH');
             $criteria->addSelectColumn($alias . '.PAYS_ID');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');

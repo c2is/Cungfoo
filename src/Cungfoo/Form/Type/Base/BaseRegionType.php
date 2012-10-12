@@ -47,6 +47,32 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('image_encart_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.image_encart_path',
+            'required' => false,
+        ));
+        $builder->add('image_encart_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'region.image_encart_path_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_encart_petite_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.image_encart_petite_path',
+            'required' => false,
+        ));
+        $builder->add('image_encart_petite_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'region.image_encart_petite_path_deleted',
+            'required' => false,
+        ));
         $builder->add('pays', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(
@@ -69,6 +95,13 @@ class BaseRegionType extends AppAwareType
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'region.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),

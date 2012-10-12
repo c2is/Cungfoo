@@ -28,6 +28,7 @@ class BaseEventListing extends Listing
         $this->addColumn(new Column\TextColumn('city'));
         $this->addColumn(new Column\TextColumn('geo_coordinate_x'));
         $this->addColumn(new Column\TextColumn('geo_coordinate_y'));
+        $this->addColumn(new Column\TextColumn('distance_camping'));
         $this->addColumn(new Column\TextColumn('image'));
         $this->addColumn(new Column\TextColumn('priority'));
     }

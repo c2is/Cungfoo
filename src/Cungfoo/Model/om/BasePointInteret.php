@@ -102,6 +102,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     protected $geo_coordinate_y;
 
     /**
+     * The value for the distance_camping field.
+     * @var        string
+     */
+    protected $distance_camping;
+
+    /**
      * The value for the image field.
      * @var        string
      */
@@ -260,6 +266,16 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     public function getGeoCoordinateY()
     {
         return $this->geo_coordinate_y;
+    }
+
+    /**
+     * Get the [distance_camping] column value.
+     *
+     * @return string
+     */
+    public function getDistanceCamping()
+    {
+        return $this->distance_camping;
     }
 
     /**
@@ -515,6 +531,27 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     } // setGeoCoordinateY()
 
     /**
+     * Set the value of [distance_camping] column.
+     *
+     * @param string $v new value
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function setDistanceCamping($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->distance_camping !== $v) {
+            $this->distance_camping = $v;
+            $this->modifiedColumns[] = PointInteretPeer::DISTANCE_CAMPING;
+        }
+
+
+        return $this;
+    } // setDistanceCamping()
+
+    /**
      * Set the value of [image] column.
      *
      * @param string $v new value
@@ -621,9 +658,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->city = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->geo_coordinate_x = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->geo_coordinate_y = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->image = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->created_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->updated_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->distance_camping = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->image = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -632,7 +670,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 11; // 11 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PointInteret object", $e);
@@ -938,6 +976,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretPeer::GEO_COORDINATE_Y)) {
             $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
         }
+        if ($this->isColumnModified(PointInteretPeer::DISTANCE_CAMPING)) {
+            $modifiedColumns[':p' . $index++]  = '`DISTANCE_CAMPING`';
+        }
         if ($this->isColumnModified(PointInteretPeer::IMAGE)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE`';
         }
@@ -981,6 +1022,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                         break;
                     case '`GEO_COORDINATE_Y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
+                        break;
+                    case '`DISTANCE_CAMPING`':
+                        $stmt->bindValue($identifier, $this->distance_camping, PDO::PARAM_STR);
                         break;
                     case '`IMAGE`':
                         $stmt->bindValue($identifier, $this->image, PDO::PARAM_STR);
@@ -1166,12 +1210,15 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 return $this->getGeoCoordinateY();
                 break;
             case 8:
-                return $this->getImage();
+                return $this->getDistanceCamping();
                 break;
             case 9:
-                return $this->getCreatedAt();
+                return $this->getImage();
                 break;
             case 10:
+                return $this->getCreatedAt();
+                break;
+            case 11:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1211,9 +1258,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $keys[5] => $this->getCity(),
             $keys[6] => $this->getGeoCoordinateX(),
             $keys[7] => $this->getGeoCoordinateY(),
-            $keys[8] => $this->getImage(),
-            $keys[9] => $this->getCreatedAt(),
-            $keys[10] => $this->getUpdatedAt(),
+            $keys[8] => $this->getDistanceCamping(),
+            $keys[9] => $this->getImage(),
+            $keys[10] => $this->getCreatedAt(),
+            $keys[11] => $this->getUpdatedAt(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementPointInterets) {
@@ -1281,12 +1329,15 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->setGeoCoordinateY($value);
                 break;
             case 8:
-                $this->setImage($value);
+                $this->setDistanceCamping($value);
                 break;
             case 9:
-                $this->setCreatedAt($value);
+                $this->setImage($value);
                 break;
             case 10:
+                $this->setCreatedAt($value);
+                break;
+            case 11:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1321,9 +1372,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if (array_key_exists($keys[5], $arr)) $this->setCity($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setGeoCoordinateX($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setGeoCoordinateY($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setImage($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setCreatedAt($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setUpdatedAt($arr[$keys[10]]);
+        if (array_key_exists($keys[8], $arr)) $this->setDistanceCamping($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setImage($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
     }
 
     /**
@@ -1343,6 +1395,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretPeer::CITY)) $criteria->add(PointInteretPeer::CITY, $this->city);
         if ($this->isColumnModified(PointInteretPeer::GEO_COORDINATE_X)) $criteria->add(PointInteretPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(PointInteretPeer::GEO_COORDINATE_Y)) $criteria->add(PointInteretPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
+        if ($this->isColumnModified(PointInteretPeer::DISTANCE_CAMPING)) $criteria->add(PointInteretPeer::DISTANCE_CAMPING, $this->distance_camping);
         if ($this->isColumnModified(PointInteretPeer::IMAGE)) $criteria->add(PointInteretPeer::IMAGE, $this->image);
         if ($this->isColumnModified(PointInteretPeer::CREATED_AT)) $criteria->add(PointInteretPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PointInteretPeer::UPDATED_AT)) $criteria->add(PointInteretPeer::UPDATED_AT, $this->updated_at);
@@ -1416,6 +1469,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $copyObj->setCity($this->getCity());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
+        $copyObj->setDistanceCamping($this->getDistanceCamping());
         $copyObj->setImage($this->getImage());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -2132,6 +2186,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $this->city = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
+        $this->distance_camping = null;
         $this->image = null;
         $this->created_at = null;
         $this->updated_at = null;

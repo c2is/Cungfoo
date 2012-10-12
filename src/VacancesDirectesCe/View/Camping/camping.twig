@@ -32,12 +32,19 @@
 
     // specific function maps
     var proxMkrs = [
-        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 5, '<div id="infowindow">{{ etab.name }}</div>', markerFushia]
+        {% for poi in sitesAVisiter %}
+            ,['{{ poi.name }}', {{ poi.geoCoordinateX }}, {{ poi.geoCoordinateY }}, 5, '<div id="infowindow">{{ poi.name }}</div>', markerVert]
+        {% endfor %}
+        {% for event in events %}
+            ,['{{ event.name }}', {{ event.geoCoordinateX }}, {{ event.geoCoordinateY }}, 5, '<div id="infowindow">{{ event.name }}</div>', markerBleu]
+        {% endfor %}
+
     ];
     function proxInit() {
-        var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
-                mapOptions = {
-                    zoom: 13,
+        var centerproxMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
+                    mapOptions = {
+                        zoom: 11,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     center: centerproxMkr
                 };
@@ -79,6 +86,10 @@
                 html: mkr[4]
             });
             var contentString = "";
+            /*google.maps.event.addListener(marker, "click", function () {
+                infowindow.setContent(this.html);
+                infowindow.open(map, this);
+            });*/
         }
     }
 </script>
@@ -128,7 +139,7 @@
             </fieldset>
             <fieldset class="right">
                 <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="Titre de la popin : vidéo">Vidéo</a>
-                <a class="popin360 tabCamp360" href="#_">360°</a>
+                <a class="popin360 tabCamp360" href="{{ etab.image360Path }}">360°</a>
             </fieldset>
         </form>
     </div>
@@ -155,7 +166,6 @@
                     </div>
                 {% endfor %}
             </div>
-            <a href="#_" class="bt trans right">Tous les plus du camping</a>
             <hr class="clearboth">
             <h4>Les vacances à Vias</h4>
             <dl>
@@ -179,7 +189,6 @@
                     Distance du camping : 15 km
                 </dd>
             </dl>
-            <a href="#_" class="bt trans right">Tout savoir</a>
         </div>
         <nav class="paginationTabs clear">
             <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
@@ -197,13 +206,14 @@
                     {% endfor %}
                 </select>
                 <select name="capacite" id="capacite">
-                    <option value="">Toutes capacité</option>
+                    <option value="">Toutes capacités</option>
                     {% for hebergement in etab.typeHebergements %}
                         <option value="cap{{ hebergement.nombrePlace }}">Capacité : {{ hebergement.nombrePlace }} places</option>
                     {% endfor %}
                 </select>
             </fieldset>
         </form>
+        <div class="noResultTyp">Pas de résultats</div>
         {% for hebergement in etab.typeHebergements %}
             <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
                 <img src="{{ asset(hebergement.imageHebergementPath) }}" width=181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
@@ -215,7 +225,6 @@
                 Type de terrasse : {{ hebergement.typeTerrasse | trans }}</strong>
                 <p class="clearboth">{{ hebergement.description | trans | nl2br }}</p>
                 </div>
-                <a href="#_" class="bt sombre right" title="En savoir plus">En savoir plus</a>
             </div>
         {% endfor %}
 
@@ -275,6 +284,50 @@
         <nav class="paginationTabs clear">
             <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">Les locations</button>
             <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">A proximité</button>
+        </nav>
+    </div>
+    <div id="tabProximite" class="tabs">
+        <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
+
+        <h3>Activités et sites à visiter</h3>
+        <div class="activites clear">
+            {% for poi in sitesAVisiter %}
+                <div class="miniEncart left clear">
+                    <img src="{{ poi.image }}" width="101" height="101" alt="{{ poi.name }}" class="left boxborder">
+                    <span class="h5-like">{{ poi.name }}</span>
+                    <p>{{ poi.address }}<br>
+                        {{ poi.address2 }}<br>
+                    <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
+                    Distance du camping : {{ poi.distanceCamping/100 }} km<br>
+                </div>
+            {% endfor %}
+        </div>
+        <h3>Agenda culturel et sorties</h3>
+        <div class="agenda clear">
+            {% for event in events %}
+                <div class="miniEncart left clear">
+                    <img src="{{ event.image }}" width="101" height="101" alt="{{ event.name }}" class="left boxborder">
+                    <span class="h5-like">{{ event.name }}</span>
+                    <strong class="date">{{ event.strDate }}</strong>
+                    <p>{{ event.address }}<br>
+                        {{ event.address2 }}<br>
+                    <span>{{ event.zipcode }} {{ event.city }}</span><br>
+                    Distance du camping : {{ event.distanceCamping/100 }} km<br>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="infoDestination bloc sombre">
+            <h3>{{ region.name }}</h3>
+            <p>{{ region.description }}</p>
+
+            <img class="iDestImg1 boxborder" src="{{ asset(region.imageEncartPath) }}" width="211" height="93" alt="{{ region.name }}">
+            <img class="iDestImg2 boxborder" src="{{ asset(region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ region.name }}">
+        </div>
+
+        <nav class="paginationTabs clear">
+            <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">Sur place</button>
+            <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">Infos pratiques</button>
         </nav>
     </div>
     <div id=tabInfos class="tabs">

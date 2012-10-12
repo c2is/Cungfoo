@@ -30,6 +30,24 @@ class CampingController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $region = \Cungfoo\Model\RegionQuery::create()
+                ->useVilleQuery()
+                    ->useEtablissementQuery()
+                        ->filterByCode($idResalys)
+                    ->endUse()
+                ->endUse()
+                ->findOne()
+            ;
+
+            $sitesAVisiter = \Cungfoo\Model\PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+                ->addAscendingOrderByColumn('RAND()')
+                ->limit(4)
+                ->find()
+            ;
+
             $nbSiteAVisiter = \Cungfoo\Model\PointInteretQuery::create()
                 ->useEtablissementPointInteretQuery()
                     ->filterByEtablissementId($etab->getId())
@@ -43,6 +61,15 @@ class CampingController implements ControllerProviderInterface
                 ->endUse()
                 ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE)
                 ->count()
+            ;
+
+            $events = \Cungfoo\Model\EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+                ->addAscendingOrderByColumn('RAND()')
+                ->limit(4)
+                ->find()
             ;
 
             $nbEvenementsCulturels = \Cungfoo\Model\EventQuery::create()
@@ -105,6 +132,7 @@ class CampingController implements ControllerProviderInterface
             return $app['twig']->render('Camping/camping.twig', array(
                 'locale'                  => $locale,
                 'etab'                    => $etab,
+                'region'                  => $region,
                 'nbSiteAVisiter'          => $nbSiteAVisiter,
                 'nbActivitesSportives'    => $nbActivitesSportives,
                 'nbEvenementsCulturels'   => $nbEvenementsCulturels,
@@ -115,7 +143,9 @@ class CampingController implements ControllerProviderInterface
                 'activites'               => $activites,
                 'servicesComplementaires' => $servicesComplementaires,
                 'personnageAleatoire'    => $personnageAleatoire,
-                'categoryTypeHebergement'    => $categoryTypeHebergement
+                'categoryTypeHebergement'    => $categoryTypeHebergement,
+                'sitesAVisiter'    => $sitesAVisiter,
+                'events'    => $events
             ));
         })
         ->bind('popin_camping');
