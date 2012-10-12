@@ -72,110 +72,33 @@
 /*
 * Vacances directes select style
 ---------------------------------------------------------*/
-.stylish-select .SSContainerDivWrapper {
-  margin:0;
-  padding:0;
-  min-width:@selectWidth;
-  position:absolute;
-  top:22px;
-  left:0;
-  z-index:2;
-}
+.stylish-select{
+  .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
+  ul.newList {margin:0;padding:0;list-style:none;color:#000;background:#fff;border:1px solid #ccc;overflow:auto;}
+  ul.newList * {margin:0;padding:0;}
+  ul.newList a {color: #000;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
+  .newListSelected {width:@selectWidth;color:#000;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
+    .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
+  }
+  .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;}
+  ul.newList li a:focus {-moz-outline-style: none;}
+  .selectedTxt {width:@selectWidth - @selectHeight - 5;overflow:hidden;padding:0 @selectHeight 0 5px;position:absolute;}
+  .hiLite {background:#ED145B!important;color:#fff!important;}
+  .newListHover {background-color:#ccc!important;color:#000!important;cursor:default;}
+  .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+  .newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+  .newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
 
-.stylish-select ul.newList {
-  margin:0;
-  padding:0;
-  list-style:none;
-  color:#000;
-  background:#fff;
-  border:1px solid #ccc;
-  overflow:auto;
-}
+  .newListSelHover,
+  .newListSelFocus {cursor:default;
+    .selectedTxt:after{background-position: 0 -2*@selectHeight;}
+  }
 
-.stylish-select ul.newList * {
-  margin:0;
-  padding:0;
-}
+  .newListOptionTitle {font-weight:bold;}
 
+  .newListOptionTitle ul {margin:3px 0 0;}
 
-.stylish-select ul.newList a {
-  color: #000;
-  text-decoration:none;
-  display:block;
-  padding:0 8px;
-  .verticalCenter(@selectHeight);
-  white-space:nowrap;
-}
-
-.stylish-select .newListSelected {
-  width:@selectWidth;
-  color:#000;
-  height:@selectHeight;
-  float:left;
-  margin-right:10px;
-  background-color:@colorBgGrisC;
-  position:relative;
-  .verticalCenter(@selectHeight);
-  .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
-}
-.stylish-select .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;}
-
-.stylish-select ul.newList li a:focus {
-  -moz-outline-style: none;
-}
-
-.stylish-select .selectedTxt {
-  width:@selectWidth - @selectHeight - 5;
-  overflow:hidden;
-  padding:0 @selectHeight 0 5px;
-  position:absolute;
-}
-
-.stylish-select .hiLite {
-  background:#ED145B!important;
-  color:#fff!important;
-}
-
-.stylish-select .newListHover {
-  background-color:#ccc!important;
-  color:#000!important;
-  cursor:default;
-}
-
-.stylish-select .newListDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-
-.stylish-select .newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-
-.stylish-select .newListOptionDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-
-.stylish-select .newListSelHover,
-.stylish-select .newListSelFocus {
-  cursor:default;
-  .selectedTxt:after{background-position: 0 -2*@selectHeight;}
-}
-
-.stylish-select .newListOptionTitle {
-  font-weight:bold;
-}
-
-.stylish-select .newListOptionTitle ul {
-  margin:3px 0 0;
-}
-
-.stylish-select .newListOptionTitle li {
-  font-weight:normal;
+  .newListOptionTitle li {font-weight:normal;}
 }
 
 
