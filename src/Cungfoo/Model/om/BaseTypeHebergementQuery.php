@@ -28,12 +28,26 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TypeHebergementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method TypeHebergementQuery orderByCategoryTypeHebergementId($order = Criteria::ASC) Order by the category_type_hebergement_id column
+ * @method TypeHebergementQuery orderByNombreChambre($order = Criteria::ASC) Order by the nombre_chambre column
+ * @method TypeHebergementQuery orderBySurface($order = Criteria::ASC) Order by the surface column
+ * @method TypeHebergementQuery orderByTypeTerrasse($order = Criteria::ASC) Order by the type_terrasse column
+ * @method TypeHebergementQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method TypeHebergementQuery orderByImageHebergementPath($order = Criteria::ASC) Order by the image_hebergement_path column
+ * @method TypeHebergementQuery orderByComposition($order = Criteria::ASC) Order by the composition column
+ * @method TypeHebergementQuery orderByImageCompositionPath($order = Criteria::ASC) Order by the image_composition_path column
  * @method TypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TypeHebergementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method TypeHebergementQuery groupById() Group by the id column
  * @method TypeHebergementQuery groupByCode() Group by the code column
  * @method TypeHebergementQuery groupByCategoryTypeHebergementId() Group by the category_type_hebergement_id column
+ * @method TypeHebergementQuery groupByNombreChambre() Group by the nombre_chambre column
+ * @method TypeHebergementQuery groupBySurface() Group by the surface column
+ * @method TypeHebergementQuery groupByTypeTerrasse() Group by the type_terrasse column
+ * @method TypeHebergementQuery groupByDescription() Group by the description column
+ * @method TypeHebergementQuery groupByImageHebergementPath() Group by the image_hebergement_path column
+ * @method TypeHebergementQuery groupByComposition() Group by the composition column
+ * @method TypeHebergementQuery groupByImageCompositionPath() Group by the image_composition_path column
  * @method TypeHebergementQuery groupByCreatedAt() Group by the created_at column
  * @method TypeHebergementQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -58,12 +72,26 @@ use Cungfoo\Model\TypeHebergementQuery;
  *
  * @method TypeHebergement findOneByCode(string $code) Return the first TypeHebergement filtered by the code column
  * @method TypeHebergement findOneByCategoryTypeHebergementId(int $category_type_hebergement_id) Return the first TypeHebergement filtered by the category_type_hebergement_id column
+ * @method TypeHebergement findOneByNombreChambre(int $nombre_chambre) Return the first TypeHebergement filtered by the nombre_chambre column
+ * @method TypeHebergement findOneBySurface(string $surface) Return the first TypeHebergement filtered by the surface column
+ * @method TypeHebergement findOneByTypeTerrasse(string $type_terrasse) Return the first TypeHebergement filtered by the type_terrasse column
+ * @method TypeHebergement findOneByDescription(string $description) Return the first TypeHebergement filtered by the description column
+ * @method TypeHebergement findOneByImageHebergementPath(string $image_hebergement_path) Return the first TypeHebergement filtered by the image_hebergement_path column
+ * @method TypeHebergement findOneByComposition(string $composition) Return the first TypeHebergement filtered by the composition column
+ * @method TypeHebergement findOneByImageCompositionPath(string $image_composition_path) Return the first TypeHebergement filtered by the image_composition_path column
  * @method TypeHebergement findOneByCreatedAt(string $created_at) Return the first TypeHebergement filtered by the created_at column
  * @method TypeHebergement findOneByUpdatedAt(string $updated_at) Return the first TypeHebergement filtered by the updated_at column
  *
  * @method array findById(int $id) Return TypeHebergement objects filtered by the id column
  * @method array findByCode(string $code) Return TypeHebergement objects filtered by the code column
  * @method array findByCategoryTypeHebergementId(int $category_type_hebergement_id) Return TypeHebergement objects filtered by the category_type_hebergement_id column
+ * @method array findByNombreChambre(int $nombre_chambre) Return TypeHebergement objects filtered by the nombre_chambre column
+ * @method array findBySurface(string $surface) Return TypeHebergement objects filtered by the surface column
+ * @method array findByTypeTerrasse(string $type_terrasse) Return TypeHebergement objects filtered by the type_terrasse column
+ * @method array findByDescription(string $description) Return TypeHebergement objects filtered by the description column
+ * @method array findByImageHebergementPath(string $image_hebergement_path) Return TypeHebergement objects filtered by the image_hebergement_path column
+ * @method array findByComposition(string $composition) Return TypeHebergement objects filtered by the composition column
+ * @method array findByImageCompositionPath(string $image_composition_path) Return TypeHebergement objects filtered by the image_composition_path column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return TypeHebergement objects filtered by the updated_at column
  *
@@ -169,7 +197,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `NOMBRE_CHAMBRE`, `SURFACE`, `TYPE_TERRASSE`, `DESCRIPTION`, `IMAGE_HEBERGEMENT_PATH`, `COMPOSITION`, `IMAGE_COMPOSITION_PATH`, `CREATED_AT`, `UPDATED_AT` FROM `type_hebergement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -355,6 +383,221 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $categoryTypeHebergementId, $comparison);
+    }
+
+    /**
+     * Filter the query on the nombre_chambre column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByNombreChambre(1234); // WHERE nombre_chambre = 1234
+     * $query->filterByNombreChambre(array(12, 34)); // WHERE nombre_chambre IN (12, 34)
+     * $query->filterByNombreChambre(array('min' => 12)); // WHERE nombre_chambre > 12
+     * </code>
+     *
+     * @param     mixed $nombreChambre The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByNombreChambre($nombreChambre = null, $comparison = null)
+    {
+        if (is_array($nombreChambre)) {
+            $useMinMax = false;
+            if (isset($nombreChambre['min'])) {
+                $this->addUsingAlias(TypeHebergementPeer::NOMBRE_CHAMBRE, $nombreChambre['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($nombreChambre['max'])) {
+                $this->addUsingAlias(TypeHebergementPeer::NOMBRE_CHAMBRE, $nombreChambre['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::NOMBRE_CHAMBRE, $nombreChambre, $comparison);
+    }
+
+    /**
+     * Filter the query on the surface column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySurface('fooValue');   // WHERE surface = 'fooValue'
+     * $query->filterBySurface('%fooValue%'); // WHERE surface LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $surface The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterBySurface($surface = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($surface)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $surface)) {
+                $surface = str_replace('*', '%', $surface);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::SURFACE, $surface, $comparison);
+    }
+
+    /**
+     * Filter the query on the type_terrasse column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTypeTerrasse('fooValue');   // WHERE type_terrasse = 'fooValue'
+     * $query->filterByTypeTerrasse('%fooValue%'); // WHERE type_terrasse LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $typeTerrasse The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByTypeTerrasse($typeTerrasse = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($typeTerrasse)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $typeTerrasse)) {
+                $typeTerrasse = str_replace('*', '%', $typeTerrasse);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::TYPE_TERRASSE, $typeTerrasse, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_hebergement_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImageHebergementPath('fooValue');   // WHERE image_hebergement_path = 'fooValue'
+     * $query->filterByImageHebergementPath('%fooValue%'); // WHERE image_hebergement_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imageHebergementPath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByImageHebergementPath($imageHebergementPath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imageHebergementPath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imageHebergementPath)) {
+                $imageHebergementPath = str_replace('*', '%', $imageHebergementPath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, $imageHebergementPath, $comparison);
+    }
+
+    /**
+     * Filter the query on the composition column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByComposition('fooValue');   // WHERE composition = 'fooValue'
+     * $query->filterByComposition('%fooValue%'); // WHERE composition LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $composition The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByComposition($composition = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($composition)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $composition)) {
+                $composition = str_replace('*', '%', $composition);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::COMPOSITION, $composition, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_composition_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImageCompositionPath('fooValue');   // WHERE image_composition_path = 'fooValue'
+     * $query->filterByImageCompositionPath('%fooValue%'); // WHERE image_composition_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imageCompositionPath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByImageCompositionPath($imageCompositionPath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imageCompositionPath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imageCompositionPath)) {
+                $imageCompositionPath = str_replace('*', '%', $imageCompositionPath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $imageCompositionPath, $comparison);
     }
 
     /**

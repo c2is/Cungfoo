@@ -41,6 +41,62 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.category_type_hebergement',
             'required' => false,
         ));
+        $builder->add('nombre_chambre', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.nombre_chambre',
+            'required' => false,
+        ));
+        $builder->add('surface', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.surface',
+            'required' => false,
+        ));
+        $builder->add('type_terrasse', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.type_terrasse',
+            'required' => false,
+        ));
+        $builder->add('description', 'textarea', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.description',
+            'required' => false,
+        ));
+        $builder->add('image_hebergement_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.image_hebergement_path',
+            'required' => false,
+        ));
+        $builder->add('image_hebergement_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'type_hebergement.image_hebergement_path_deleted',
+            'required' => false,
+        ));
+        $builder->add('composition', 'textarea', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.composition',
+            'required' => false,
+        ));
+        $builder->add('image_composition_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.image_composition_path',
+            'required' => false,
+        ));
+        $builder->add('image_composition_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'type_hebergement.image_composition_path_deleted',
+            'required' => false,
+        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(
