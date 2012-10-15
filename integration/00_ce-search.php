@@ -49,9 +49,9 @@ include('includes/ce-top.php'); ?>
     </div>
 
     <div id="searchContainer" class="column clearboth">
-        <div class="searchBox">
+        <div class="searchBox full-width">
 
-            <form id="searchForm">
+            <form id="searchForm" class="searchFrame">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
                     <ol>
@@ -92,6 +92,8 @@ include('includes/ce-top.php'); ?>
                     </ol>
                 </fieldset>
             </form>
+            <div id="searchContent" class="searchFrame">
+            </div>
         </div>
 <!--        <div id="datepickerPrincipal" class="datepicker clear"></div>-->
 <!--        <div id="searchSecondary" class="searchBox">-->

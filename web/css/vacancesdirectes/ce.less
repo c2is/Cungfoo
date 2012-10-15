@@ -94,10 +94,12 @@ iframe{width:100%;}
     li.tab{float:none;display:inline-block;}
   }
 }
-#searchContainer{margin-bottom:20px;
+#searchContainer{margin-bottom:20px;z-index:1;
   .searchBox{padding:20px 0;display:inline-block;background-color:transparent;}
   .date input {width:96px;height:23px;padding: 0 0 0 5px;background-color:@colorBgGrisC;border:0 none;}
-  #searchForm {border: 1px solid @colorGris3;padding: 20px;width: 400px;
+  #searchForm{float:left;}
+  #searchContent{float:right;}
+  .searchFrame {border: 1px solid @colorGris3;padding: 20px;width: 452px;
     legend{font-family:@ptnarrow;font-size:24px;position:absolute;top:0;padding:0 10px;background-color:@colorBlanc;}
     .sMultSelect{display:none;}
     .sMultSelectUl{/*background-color:@colorBgGrisC;padding:0;margin:20px 0;height:@selectHeight*5;overflow:auto;*/

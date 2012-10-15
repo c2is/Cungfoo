@@ -120,7 +120,7 @@ $(function() {
     $(".popinInline").colorbox({inline:true, width:"75%"});
 
 // select
-    $('#searchPrincipal').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+    $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
     var d = new Date(),
