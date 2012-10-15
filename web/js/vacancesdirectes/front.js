@@ -132,9 +132,12 @@ $(function() {
         fCurrentDay = ((''+currentDay).length<2 ? '0' : '') + currentDay,
         fCurrentDate = currentYear + '/' + fCurrentMonth + '/' + fCurrentDay,
         currentDate = fCurrentDate.split('/').join(''),
-        fStartDate = '2013/04/01',
-        fEndDate = '2013/10/31',
+        fStartDate = '2013/04/06',
+        fEndDate = '2013/10/26',
         fSeasonDates = [fStartDate,fEndDate],
+        fHighSeasonStartDate = '2013/06/29',
+        fHighSeasonEndDate = '2013/08/31',
+        fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
         startDate = fStartDate.split('/').join('');
     console.log(fSeasonDates);
     console.log(fSeasonDates);
@@ -162,9 +165,9 @@ $(function() {
     }
     $('#widgetCalendar').DatePicker({
         flat: true,
-        date: fSeasonDates,
+        date: '',
         current: fStartDate,
-        calendars: 3,
+        calendars: 5,
         mode: 'range',
         starts: 1,
         format:'Y/m/d',
@@ -204,9 +207,36 @@ $(function() {
             });
         },
         onRender: function(date) {
+            console.log("################################## onRender:  ##################################");
+            var renderDate = date,
+                disabledDate,
+                highSeasonDate,
+                renderYear = renderDate.getFullYear(),
+                renderMonth = renderDate.getMonth()+1,
+                renderDay = renderDate.getDate(),
+                fRenderMonth = ((''+renderMonth).length<2 ? '0' : '') + renderMonth,
+                fRenderDay = ((''+renderDay).length<2 ? '0' : '') + renderDay,
+                fRenderDate = renderYear + '/' + fRenderMonth + '/' + fRenderDay,
+                renderDate = parseInt(fRenderDate.split('/').join(''),10),
+                startDate = parseInt(fStartDate.split('/').join(''),10),
+                endDate = parseInt(fEndDate.split('/').join(''),10),
+                highSeasonStartDate = parseInt(fHighSeasonStartDate.split('/').join(''),10),
+                highSeasonEndDate = parseInt(fHighSeasonEndDate.split('/').join(''),10);
+//            console.log(renderDate);
+//            console.log(startDate);
+//            console.log(endDate);
+                if (renderDate < startDate || renderDate > endDate){
+                    console.log("DISABLED: " + renderDate);
+                    disabledDate = renderDate;
+                }
+                else if (renderDate >= highSeasonStartDate && renderDate <= highSeasonEndDate){
+                    console.log("HIGH SEASON: " + renderDate);
+                    highSeasonDate = renderDate;
+                }
+            console.log(disabledDate);
             return {
-                disabled: (date.valueOf() < startDate.valueOf()),
-                className: date.valueOf() == startDate.valueOf() ? 'datepickerSpecial' : false
+                disabled: disabledDate != undefined,
+                className: highSeasonDate != undefined ? 'datepickerSpecial' : false
             }
         }
     });
