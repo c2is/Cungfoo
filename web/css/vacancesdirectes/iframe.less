@@ -173,25 +173,29 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* packages */
-#searchProductFormContener {display:none;}
-#searchResult {width:948px;
-  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;position:relative;width:296px;margin-right:20px;float:left;
-    &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
-    &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
-    .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:10px 20px 10px;.border-radius(10px 10px 0 0);
-      h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:229px;}
-      h2{color:#f5bd8c;}
-      .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:10px;right:15px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
-    }
-    .proposalDescriptionContent{width:100%;
-      tr:first-child td{padding:20px 0;vertical-align:bottom;}
-      .price{font-family:@ptnarrow;font-weight:bold;font-size:44px;text-transform:uppercase;text-align:right;margin-bottom:-13px;display:block;}
-      .action{
-        .chooseButton{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);background-color:@colorBgGrisF;color:@colorBlanc;text-align: center;}
+#homePage{
+  .content{overflow:hidden;}
+  #searchProductFormContener {display:none;}
+  #searchResult {width:948px;
+    .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;position:relative;width:296px;margin-right:20px;float:left;
+      &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
+      &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
+      .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:10px 20px 10px;.border-radius(10px 10px 0 0);
+        h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:229px;}
+        h2{color:#f5bd8c;}
+        .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:10px;right:15px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
+      }
+      .proposalDescriptionContent{width:100%;
+        tr:first-child td{padding:20px 0;vertical-align:bottom;}
+        .price{font-family:@ptnarrow;font-weight:bold;font-size:44px;text-transform:uppercase;text-align:right;margin-bottom:-13px;display:block;}
+        .action{
+          .chooseButton{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;.border-radius(7px);background-color:@colorBgGrisF;color:@colorBlanc;text-align: center;}
+        }
       }
     }
   }
 }
+
 
 
 /* Resa Packages */

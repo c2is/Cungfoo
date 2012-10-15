@@ -1616,11 +1616,10 @@ h6,
   display: inline-block;
   background-color: transparent;
 }
-.ce #searchContainer input.date {
+.ce #searchContainer .date input {
   width: 96px;
   height: 23px;
   padding: 0 0 0 5px;
-  margin-left: 5px;
   background-color: #e6e5e5;
   border: 0 none;
 }
@@ -1900,6 +1899,7 @@ h6,
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+  cursor: pointer;
 }
 .stylish-select ul.newList li a:focus {
   -moz-outline-style: none;
@@ -1951,122 +1951,271 @@ h6,
 .stylish-select .newListOptionTitle li {
   font-weight: normal;
 }
-/* = HEADER
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker .dp_header td {
-  color: #ffffff;
+#widget {
+  position: relative;
 }
-.Zebra_DatePicker .dp_header .dp_previous,
-.Zebra_DatePicker .dp_header .dp_next {
-  width: 30px;
+#widgetField {
+  height: 23px;
+  overflow: hidden;
+  position: relative;
+  width: 260px;
+  float: left;
 }
-.Zebra_DatePicker .dp_header .dp_caption {
-  font-weight: bold;
+#widgetField input {
+  background-color: #E6E5E5;
+  color: #000000;
+  float: left;
+  height: 23px;
+  line-height: 23px;
+  position: relative;
+  width: 260px;
+  border: 0 none;
+  cursor: pointer;
+  padding: 0 32px 0 5px;
 }
-.Zebra_DatePicker .dp_header .dp_hover {
-  background: #222;
-  color: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.Zebra_DatePicker .dp_header .dp_blocked {
-  color: #888;
-  cursor: default;
-}
-/* = DATEPICKER
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker .dp_daypicker th {
-  background: #ed145b;
-  color: #ffffff;
-}
-.Zebra_DatePicker td.dp_not_in_month {
-  background: #F3F3F3;
-  color: #F3F3F3;
-  cursor: default;
-}
-.Zebra_DatePicker td.dp_weekend {
-  background: #d8d8d8;
-}
-.Zebra_DatePicker td.dp_weekend_disabled {
-  color: #CCC;
-  cursor: default;
-}
-.Zebra_DatePicker td.dp_week_number {
-  background: #ed145b;
-  color: #555;
-  cursor: text;
-  font-style: italic;
-}
-/* = MONTHPICKER
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker .dp_monthpicker td {
-  width: 33%;
-}
-/* = YEARPICKER
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker .dp_yearpicker td {
-  width: 33%;
-}
-/* = FOOTER
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker .dp_footer {
-  margin-top: 3px;
-}
-.Zebra_DatePicker .dp_footer td {
-  color: #ffffff;
-  padding: 2px;
-  font-weight: bold;
-}
-.Zebra_DatePicker .dp_footer .dp_hover {
-  background: #222;
-  color: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-/* = SOME MORE GLOBALS (MUST BE LAST IN ORDER TO OVERWRITE PREVIOUS PROPERTIES)
-----------------------------------------------------------------------------------------------------------------------*/
-.Zebra_DatePicker td.dp_current {
-  color: #c40000;
-}
-.Zebra_DatePicker td.dp_disabled_current {
-  color: #e38585;
-}
-.Zebra_DatePicker td.dp_disabled {
-  background: #F3F3F3;
-  color: #CDCDCD;
-  cursor: default;
-}
-.Zebra_DatePicker td.dp_hover {
-  background: #5f5f5f;
-  color: #ffffff;
-}
-.Zebra_DatePicker.arrival td.arrival-date,
-.Zebra_DatePicker td.selected-date,
-.Zebra_DatePicker td.dp_selected {
-  background: #ed145b;
-  color: #ffffff !important;
-}
-/* = ICON
-----------------------------------------------------------------------------------------------------------------------*/
-button.Zebra_DatePicker_Icon {
-  position: absolute;
+#widgetField span {
+  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat scroll 0 0 transparent;
+  float: left;
   width: 27px;
   height: 23px;
-  background: url('../../images/vacancesdirectes/common/ui/arrow-calendar.png') no-repeat 0 0;
-  text-indent: -9000px;
-  border: none;
-  cursor: pointer;
-  margin: 0 0 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#widgetField:hover span {
+  background-position: 0 -46px;
+}
+#widgetCalendar {
+  background: none repeat scroll 0 0 #464545;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 33px;
+  width: 540px;
+  z-index: 10;
+}
+#widgetCalendar .datepicker {
+  bottom: 0;
+  position: absolute;
+  top: auto;
+}
+#widgetCalendar .datepickerContainer,
+#widgetCalendar .datepickerBorderT,
+#widgetCalendar .datepickerBorderB,
+#widgetCalendar .datepickerBorderL,
+#widgetCalendar .datepickerBorderR,
+#widgetCalendar .datepickerBorderTL,
+#widgetCalendar .datepickerBorderTR,
+#widgetCalendar .datepickerBorderBL,
+#widgetCalendar .datepickerBorderBR {
+  background: none repeat scroll 0 0 transparent !important;
+}
+input.date span {
+  content: "";
+  width: 27px;
+  height: 23px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+div.datepicker {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 196px;
+  height: 147px;
+  position: absolute;
+  cursor: default;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.datepickerContainer {
+  background: #121212;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.datepickerBorderT {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  right: 10px;
+  height: 10px;
+  background: url(../images/datepicker_t.png);
+}
+.datepickerBorderB {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  right: 10px;
+  height: 10px;
+  background: url(../images/datepicker_b.png);
+}
+.datepickerBorderL {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  top: 10px;
+  width: 10px;
+  background: url(../images/datepicker_l.png);
+}
+.datepickerBorderR {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  top: 10px;
+  width: 10px;
+  background: url(../images/datepicker_r.png);
+}
+.datepickerBorderTL {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: url(../images/datepicker_tl.png);
+}
+.datepickerBorderTR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: url(../images/datepicker_tr.png);
+}
+.datepickerBorderBL {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: url(../images/datepicker_bl.png);
+}
+.datepickerBorderBR {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: url(../images/datepicker_br.png);
+}
+.datepickerHidden {
+  display: none;
+}
+div.datepicker table {
+  border-collapse: collapse;
+}
+div.datepicker a {
+  color: #eee;
+  text-decoration: none;
+  cursor: default;
+  outline: none;
+}
+div.datepicker table td {
+  text-align: right;
   padding: 0;
-  line-height: 0;
+  margin: 0;
 }
-button.Zebra_DatePicker_Icon_Disabled {
-  background-position: -23px 0;
+div.datepicker th {
+  text-align: center;
+  color: #999;
+  font-weight: normal;
 }
-button.Zebra_DatePicker_Icon_Inside {
-  margin: 0 3px 0 0;
+div.datepicker tbody th {
+  text-align: left;
+}
+div.datepicker tbody a {
+  display: block;
+}
+.datepickerDays a {
+  width: 20px;
+  line-height: 16px;
+  height: 16px;
+  padding-right: 2px;
+}
+.datepickerYears a,
+.datepickerMonths a {
+  width: 44px;
+  line-height: 36px;
+  height: 36px;
+  text-align: center;
+}
+td.datepickerNotInMonth a {
+  color: #666;
+}
+tbody.datepickerDays td.datepickerSelected {
+  background: #ed145b;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background: #75092d;
+}
+tbody.datepickerYears td.datepickerSelected,
+tbody.datepickerMonths td.datepickerSelected {
+  background: #75092d;
+}
+div.datepicker a:hover,
+div.datepicker a:hover {
+  color: #ed80a4;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+  color: #999;
+}
+div.datepicker tbody th {
+  text-align: left;
+}
+.datepickerSpace div {
+  width: 20px;
+}
+.datepickerGoNext a,
+.datepickerGoPrev a,
+.datepickerMonth a {
+  text-align: center;
+  height: 23px;
+  line-height: 23px;
+}
+.datepickerGoNext a span,
+.datepickerGoPrev a span,
+.datepickerMonth a span {
+  vertical-align: middle;
+}
+.datepickerGoNext a {
+  float: right;
+  width: 20px;
+}
+.datepickerGoPrev a {
+  float: left;
+  width: 20px;
+}
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+  display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+  display: none;
+}
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+  display: none;
+}
+td.datepickerDisabled a,
+td.datepickerDisabled.datepickerNotInMonth a {
+  color: #333;
+}
+td.datepickerDisabled a:hover {
+  color: #333;
+}
+td.datepickerSpecial a {
+  background: #700;
+}
+td.datepickerSpecial.datepickerSelected a {
+  background: #a00;
 }
 /* Fix icon position in Chrome & Safari */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

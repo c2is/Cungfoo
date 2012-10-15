@@ -125,6 +125,93 @@ $(function() {
     $('#searchPrincipal').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
+    var d = new Date(),
+        currentYear = d.getFullYear(),
+        currentMonth = d.getMonth()+1,
+        currentDay = d.getDate(),
+        fCurrentMonth = ((''+currentMonth).length<2 ? '0' : '') + currentMonth,
+        fCurrentDay = ((''+currentDay).length<2 ? '0' : '') + currentDay,
+        fCurrentDate = currentYear + '/' + fCurrentMonth + '/' + fCurrentDay,
+        currentDate = fCurrentDate.split('/').join(''),
+        fStartDate = '2013/04/01',
+        fEndDate = '2013/10/31',
+        fSeasonDates = [fStartDate,fEndDate],
+        startDate = fStartDate.split('/').join('');
+    console.log(fSeasonDates);
+    console.log(fSeasonDates);
+    console.log(fCurrentDate);
+    console.log(d);
+
+    if (currentDate > startDate){
+        fStartDate = fCurrentDate;
+    }
+    console.log(currentDate);
+    console.log(startDate);
+    console.log(fStartDate);
+
+    var datepicker = $('#datepicker');
+    $('#widgetCalendar').DatePicker({
+        flat: true,
+        date: fSeasonDates,
+        current: fStartDate,
+        calendars: 3,
+        mode: 'range',
+        starts: 1,
+        format:'Y/m/d',
+        position: 'right',
+        onBeforeShow: function(){
+//            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
+        onChange: function(formated, dates){
+            console.log(formated);
+            console.log(dates);
+            var selectedDates  = new Array();
+            $.each(dates, function(index, value) {
+//                alert(index + ': ' + value);
+                var selectedYear = value.getFullYear(),
+                    selectedMonth = value.getMonth()+1,
+                    selectedDay = value.getDate();
+                console.log(currentYear);
+                console.log(currentMonth);
+                console.log(currentDay);
+                selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
+            });
+            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+//            datepicker.val(formated);
+//            if ($('#closeOnSelect input').attr('checked')) {
+//                datepicker.DatePickerHide();
+//            }
+        }
+    });
+    var state = false;
+    $('#widgetInput').bind('click', function(){
+        $('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
+        state = !state;
+        return false;
+    });
+    $('#widgetCalendar div.datepicker').css('position', 'absolute');
+    /*
+    datepicker.DatePicker({
+        flat: true,
+        date: fSeasonDates,
+        current: fStartDate,
+        calendars: 3,
+        mode: 'range',
+        starts: 1,
+        format:'m/d/Y',
+        position: 'right',
+        onBeforeShow: function(){
+//            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
+        onChange: function(formated, dates){
+//            datepicker.val(formated);
+//            if ($('#closeOnSelect input').attr('checked')) {
+//                datepicker.DatePickerHide();
+//            }
+        }
+    });
+    */
+    /*
     $('#datepicker-principal-arrival').Zebra_DatePicker({
         months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
@@ -356,6 +443,7 @@ $(function() {
             checkMonth(departureAvailableDates, departureDatepicker);
         }
     });
+    */
 
 });
 

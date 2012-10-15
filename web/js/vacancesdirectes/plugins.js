@@ -236,19 +236,6 @@ InfoBox.prototype.panMap = function() {
 (function(a,b,c){function Z(c,d,e){var g=b.createElement(c);if(d){g.id=f+d}if(e){g.style.cssText=e}return a(g)}function $(a){var b=y.length,c=(Q+a)%b;return c<0?b+c:c}function _(a,b){return Math.round((/%/.test(a)?(b==="x"?bb():cb())/100:1)*parseInt(a,10))}function ab(a){return K.photo||/\.(gif|png|jp(e|g|eg)|bmp|ico)((#|\?).*)?$/i.test(a)}function bb(){return c.innerWidth||z.width()}function cb(){return c.innerHeight||z.height()}function db(){var b,c=a.data(P,e);if(c==null){K=a.extend({},d);if(console&&console.log){console.log("Error: cboxElement missing settings object")}}else{K=a.extend({},c)}for(b in K){if(a.isFunction(K[b])&&b.slice(0,2)!=="on"){K[b]=K[b].call(P)}}K.rel=K.rel||P.rel||a(P).data("rel")||"nofollow";K.href=K.href||a(P).attr("href");K.title=K.title||P.title;if(typeof K.href==="string"){K.href=a.trim(K.href)}}function eb(b,c){a.event.trigger(b);if(c){c.call(P)}}function fb(){var a,b=f+"Slideshow_",c="click."+f,d,e,g;if(K.slideshow&&y[1]){d=function(){F.html(K.slideshowStop).unbind(c).bind(j,function(){if(K.loop||y[Q+1]){a=setTimeout(W.next,K.slideshowSpeed)}}).bind(i,function(){clearTimeout(a)}).one(c+" "+k,e);r.removeClass(b+"off").addClass(b+"on");a=setTimeout(W.next,K.slideshowSpeed)};e=function(){clearTimeout(a);F.html(K.slideshowStart).unbind([j,i,k,c].join(" ")).one(c,function(){W.next();d()});r.removeClass(b+"on").addClass(b+"off")};if(K.slideshowAuto){d()}else{e()}}else{r.removeClass(b+"off "+b+"on")}}function gb(b){if(!U){P=b;db();y=a(P);Q=0;if(K.rel!=="nofollow"){y=a("."+g).filter(function(){var b=a.data(this,e),c;if(b){c=a(this).data("rel")||b.rel||this.rel}return c===K.rel});Q=y.index(P);if(Q===-1){y=y.add(P);Q=y.length-1}}if(!S){S=T=true;r.show();if(K.returnFocus){a(P).blur().one(l,function(){a(this).focus()})}q.css({opacity:+K.opacity,cursor:K.overlayClose?"pointer":"auto"}).show();K.w=_(K.initialWidth,"x");K.h=_(K.initialHeight,"y");W.position();if(o){z.bind("resize."+p+" scroll."+p,function(){q.css({width:bb(),height:cb(),top:z.scrollTop(),left:z.scrollLeft()})}).trigger("resize."+p)}eb(h,K.onOpen);J.add(D).hide();I.html(K.close).show()}W.load(true)}}function hb(){if(!r&&b.body){Y=false;z=a(c);r=Z(X).attr({id:e,"class":n?f+(o?"IE6":"IE"):""}).hide();q=Z(X,"Overlay",o?"position:absolute":"").hide();C=Z(X,"LoadingOverlay").add(Z(X,"LoadingGraphic"));s=Z(X,"Wrapper");t=Z(X,"Content").append(A=Z(X,"LoadedContent","width:0; height:0; overflow:hidden"),D=Z(X,"Title"),E=Z(X,"Current"),G=Z(X,"Next"),H=Z(X,"Previous"),F=Z(X,"Slideshow").bind(h,fb),I=Z(X,"Close"));s.append(Z(X).append(Z(X,"TopLeft"),u=Z(X,"TopCenter"),Z(X,"TopRight")),Z(X,false,"clear:left").append(v=Z(X,"MiddleLeft"),t,w=Z(X,"MiddleRight")),Z(X,false,"clear:left").append(Z(X,"BottomLeft"),x=Z(X,"BottomCenter"),Z(X,"BottomRight"))).find("div div").css({"float":"left"});B=Z(X,false,"position:absolute; width:9999px; visibility:hidden; display:none");J=G.add(H).add(E).add(F);a(b.body).append(q,r.append(s,B))}}function ib(){if(r){if(!Y){Y=true;L=u.height()+x.height()+t.outerHeight(true)-t.height();M=v.width()+w.width()+t.outerWidth(true)-t.width();N=A.outerHeight(true);O=A.outerWidth(true);r.css({"padding-bottom":L,"padding-right":M});G.click(function(){W.next()});H.click(function(){W.prev()});I.click(function(){W.close()});q.click(function(){if(K.overlayClose){W.close()}});a(b).bind("keydown."+f,function(a){var b=a.keyCode;if(S&&K.escKey&&b===27){a.preventDefault();W.close()}if(S&&K.arrowKey&&y[1]){if(b===37){a.preventDefault();H.click()}else if(b===39){a.preventDefault();G.click()}}});a("."+g,b).live("click",function(a){if(!(a.which>1||a.shiftKey||a.altKey||a.metaKey)){a.preventDefault();gb(this)}})}return true}return false}var d={transition:"elastic",speed:300,width:false,initialWidth:"600",innerWidth:false,maxWidth:false,height:false,initialHeight:"450",innerHeight:false,maxHeight:false,scalePhotos:true,scrolling:true,inline:false,html:false,iframe:false,fastIframe:true,photo:false,href:false,title:false,rel:false,opacity:.9,preloading:true,current:"image {current} of {total}",previous:"previous",next:"next",close:"close",xhrError:"This content failed to load.",imgError:"This image failed to load.",open:false,returnFocus:true,reposition:true,loop:true,slideshow:false,slideshowAuto:true,slideshowSpeed:2500,slideshowStart:"start slideshow",slideshowStop:"stop slideshow",onOpen:false,onLoad:false,onComplete:false,onCleanup:false,onClosed:false,overlayClose:true,escKey:true,arrowKey:true,top:false,bottom:false,left:false,right:false,fixed:false,data:undefined},e="colorbox",f="cbox",g=f+"Element",h=f+"_open",i=f+"_load",j=f+"_complete",k=f+"_cleanup",l=f+"_closed",m=f+"_purge",n=!a.support.opacity&&!a.support.style,o=n&&!c.XMLHttpRequest,p=f+"_IE6",q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X="div",Y;if(a.colorbox){return}a(hb);W=a.fn[e]=a[e]=function(b,c){var f=this;b=b||{};hb();if(ib()){if(!f[0]){if(f.selector){return f}f=a("<a/>");b.open=true}if(c){b.onComplete=c}f.each(function(){a.data(this,e,a.extend({},a.data(this,e)||d,b))}).addClass(g);if(a.isFunction(b.open)&&b.open.call(f)||b.open){gb(f[0])}}return f};W.position=function(a,b){function j(a){u[0].style.width=x[0].style.width=t[0].style.width=a.style.width;t[0].style.height=v[0].style.height=w[0].style.height=a.style.height}var c,d=0,e=0,g=r.offset(),h,i;z.unbind("resize."+f);r.css({top:-9e4,left:-9e4});h=z.scrollTop();i=z.scrollLeft();if(K.fixed&&!o){g.top-=h;g.left-=i;r.css({position:"fixed"})}else{d=h;e=i;r.css({position:"absolute"})}if(K.right!==false){e+=Math.max(bb()-K.w-O-M-_(K.right,"x"),0)}else if(K.left!==false){e+=_(K.left,"x")}else{e+=Math.round(Math.max(bb()-K.w-O-M,0)/2)}if(K.bottom!==false){d+=Math.max(cb()-K.h-N-L-_(K.bottom,"y"),0)}else if(K.top!==false){d+=_(K.top,"y")}else{d+=Math.round(Math.max(cb()-K.h-N-L,0)/2)}r.css({top:g.top,left:g.left});a=r.width()===K.w+O&&r.height()===K.h+N?0:a||0;s[0].style.width=s[0].style.height="9999px";c={width:K.w+O,height:K.h+N,top:d,left:e};if(a===0){r.css(c)}r.dequeue().animate(c,{duration:a,complete:function(){j(this);T=false;s[0].style.width=K.w+O+M+"px";s[0].style.height=K.h+N+L+"px";if(K.reposition){setTimeout(function(){z.bind("resize."+f,W.position)},1)}if(b){b()}},step:function(){j(this)}})};W.resize=function(a){if(S){a=a||{};if(a.width){K.w=_(a.width,"x")-O-M}if(a.innerWidth){K.w=_(a.innerWidth,"x")}A.css({width:K.w});if(a.height){K.h=_(a.height,"y")-N-L}if(a.innerHeight){K.h=_(a.innerHeight,"y")}if(!a.innerHeight&&!a.height){A.css({height:"auto"});K.h=A.height()}A.css({height:K.h});W.position(K.transition==="none"?0:K.speed)}};W.prep=function(b){function g(){K.w=K.w||A.width();K.w=K.mw&&K.mw<K.w?K.mw:K.w;return K.w}function h(){K.h=K.h||A.height();K.h=K.mh&&K.mh<K.h?K.mh:K.h;return K.h}if(!S){return}var c,d=K.transition==="none"?0:K.speed;A.remove();A=Z(X,"LoadedContent").append(b);A.hide().appendTo(B.show()).css({width:g(),overflow:K.scrolling?"auto":"hidden"}).css({height:h()}).prependTo(t);B.hide();a(R).css({"float":"none"});if(o){a("select").not(r.find("select")).filter(function(){return this.style.visibility!=="hidden"}).css({visibility:"hidden"}).one(k,function(){this.style.visibility="inherit"})}c=function(){function s(){if(n){r[0].style.removeAttribute("filter")}}var b,c,g=y.length,h,i="frameBorder",k="allowTransparency",l,o,p,q;if(!S){return}l=function(){clearTimeout(V);C.detach().hide();eb(j,K.onComplete)};if(n){if(R){A.fadeIn(100)}}D.html(K.title).add(A).show();if(g>1){if(typeof K.current==="string"){E.html(K.current.replace("{current}",Q+1).replace("{total}",g)).show()}G[K.loop||Q<g-1?"show":"hide"]().html(K.next);H[K.loop||Q?"show":"hide"]().html(K.previous);if(K.slideshow){F.show()}if(K.preloading){b=[$(-1),$(1)];while(c=y[b.pop()]){q=a.data(c,e);if(q&&q.href){o=q.href;if(a.isFunction(o)){o=o.call(c)}}else{o=c.href}if(ab(o)){p=new Image;p.src=o}}}}else{J.hide()}if(K.iframe){h=Z("iframe")[0];if(i in h){h[i]=0}if(k in h){h[k]="true"}h.name=f+ +(new Date);if(K.fastIframe){l()}else{a(h).one("load",l)}h.src=K.href;if(!K.scrolling){h.scrolling="no"}a(h).addClass(f+"Iframe").appendTo(A).one(m,function(){h.src="//about:blank"})}else{l()}if(K.transition==="fade"){r.fadeTo(d,1,s)}else{s()}};if(K.transition==="fade"){r.fadeTo(d,0,function(){W.position(0,c)})}else{W.position(d,c)}};W.load=function(b){var c,d,e=W.prep;T=true;R=false;P=y[Q];if(!b){db()}eb(m);eb(i,K.onLoad);K.h=K.height?_(K.height,"y")-N-L:K.innerHeight&&_(K.innerHeight,"y");K.w=K.width?_(K.width,"x")-O-M:K.innerWidth&&_(K.innerWidth,"x");K.mw=K.w;K.mh=K.h;if(K.maxWidth){K.mw=_(K.maxWidth,"x")-O-M;K.mw=K.w&&K.w<K.mw?K.w:K.mw}if(K.maxHeight){K.mh=_(K.maxHeight,"y")-N-L;K.mh=K.h&&K.h<K.mh?K.h:K.mh}c=K.href;V=setTimeout(function(){C.show().appendTo(t)},100);if(K.inline){Z(X).hide().insertBefore(a(c)[0]).one(m,function(){a(this).replaceWith(A.children())});e(a(c))}else if(K.iframe){e(" ")}else if(K.html){e(K.html)}else if(ab(c)){a(R=new Image).addClass(f+"Photo").error(function(){K.title=false;e(Z(X,"Error").html(K.imgError))}).load(function(){var a;R.onload=null;if(K.scalePhotos){d=function(){R.height-=R.height*a;R.width-=R.width*a};if(K.mw&&R.width>K.mw){a=(R.width-K.mw)/R.width;d()}if(K.mh&&R.height>K.mh){a=(R.height-K.mh)/R.height;d()}}if(K.h){R.style.marginTop=Math.max(K.h-R.height,0)/2+"px"}if(y[1]&&(K.loop||y[Q+1])){R.style.cursor="pointer";R.onclick=function(){W.next()}}if(n){R.style.msInterpolationMode="bicubic"}setTimeout(function(){e(R)},1)});setTimeout(function(){R.src=c},1)}else if(c){B.load(c,K.data,function(b,c,d){e(c==="error"?Z(X,"Error").html(K.xhrError):a(this).contents())})}};W.next=function(){if(!T&&y[1]&&(K.loop||y[Q+1])){Q=$(1);W.load()}};W.prev=function(){if(!T&&y[1]&&(K.loop||Q)){Q=$(-1);W.load()}};W.close=function(){if(S&&!U){U=true;S=false;eb(k,K.onCleanup);z.unbind("."+f+" ."+p);q.fadeTo(200,0);r.stop().fadeTo(300,0,function(){r.add(q).css({opacity:1,cursor:"auto"}).hide();eb(m);A.remove();setTimeout(function(){U=false;eb(l,K.onClosed)},1)})}};W.remove=function(){a([]).add(r).add(q).remove();r=null;a("."+g).removeData(e).removeClass(g).die()};W.element=function(){return a(P)};W.settings=d})(jQuery,document,this);
 
 /**
- * Stylish Select 0.4.5 - jQuery plugin to replace a select drop down box with a stylable unordered list
- * http://github.com/sko77sun/Stylish-Select
- *
- * Requires: jQuery 1.3 or newer
- *
- * Contributions from Justin Beasley: http://www.harvest.org/ Anatoly Ressin: http://www.artazor.lv/ Wilfred Hughes: https://github.com/Wilfred
- *
- * Dual licensed under the MIT and GPL licenses.
-
- (function(a){a("html").addClass("stylish-select");if(!Array.prototype.indexOf)Array.prototype.indexOf=function(a){if(this===void 0||this===null)throw new TypeError;var n=Object(this),j=n.length>>>0;if(j===0)return-1;var b=0;arguments.length>0&&(b=Number(arguments[1]),b!==b?b=0:b!==0&&b!==1/0&&b!==-(1/0)&&(b=(b>0||-1)*Math.floor(Math.abs(b))));if(b>=j)return-1;for(b=b>=0?b:Math.max(j-Math.abs(b),0);b<j;b++)if(b in n&&n[b]===a)return b;return-1};a.fn.extend({getSetSSValue:function(m){return m?(a(this).val(m).change(),this):a(this).find(":selected").val()},resetSS:function(){var m=a(this).data("ssOpts");$this=a(this);$this.next().remove();$this.unbind(".sSelect").sSelect(m)}});a.fn.sSelect=function(m){return this.each(function(){function n(){var h=d.offset().top,c=a(window).height(),b=a(window).scrollTop();k>parseInt(o.ddMaxHeight)&&(k=parseInt(o.ddMaxHeight));h-=b;h+k>=c?(f.css({height:k}),i.css({top:"-"+k+"px",height:k}),e.onTop=!0):(f.css({height:k}),i.css({top:s+"px",height:k}),e.onTop=!1)}function j(a,x){a==!0&&(p=c,e.change());x==!0&&(c=p,b(c));i.hide();d.css({position:"static"})}function b(a,c){if(a==-1)l.text(o.defaultText),g.removeClass("hiLite");else{g.removeClass("hiLite").eq(a).addClass("hiLite");var b=g.eq(a).text(),d=g.eq(a).parent().data("key");try{e.val(d)}catch(f){e[0].selectedIndex=a}l.text(b);c==!0&&(p=a,e.change());i.is(":visible")&&g.eq(a).focus()}}function t(h){a(h).unbind("keydown.sSelect").bind("keydown.sSelect",function(a){a=a.which;r=!0;switch(a){case 40:case 39:return c<u-1&&(++c,b(c)),!1;case 38:case 37:return c>0&&(--c,b(c)),!1;case 33:case 36:return c=0,b(c),!1;case 34:case 35:return c=u-1,b(c),!1;case 13:case 27:return j(!0),!1}keyPressed=String.fromCharCode(a).toLowerCase();if(typeof q.indexOf(keyPressed)!="undefined"){++c;c=q.indexOf(keyPressed,c);if(c==-1||c==null||v!=keyPressed)c=q.indexOf(keyPressed);b(c);v=keyPressed;return!1}})}var o=a.extend({defaultText:"Please select",animationSpeed:0,ddMaxHeight:"",containerClass:""},m),e=a(this),l=a('<div class="selectedTxt"></div>'),d=a('<div class="newListSelected '+o.containerClass+'"></div>'),i=a('<div class="SSContainerDivWrapper" style="visibility:hidden;"></div>'),f=a('<ul class="newList"></ul>'),w=-1,c=-1,p=-1,q=[],v=!1,r=!1,g;a(this).data("ssOpts",m);d.insertAfter(e);d.attr("tabindex",e.attr("tabindex")||"0");l.prependTo(d);f.appendTo(d);f.wrap(i);i=f.parent();e.hide();l.data("ssReRender",!l.is(":visible"));e.children("optgroup").length==0?(e.children().each(function(b){var d=a(this).text(),e=a(this).val();q.push(d.charAt(0).toLowerCase());if(a(this).attr("selected")=="selected"||a(this).attr("selected")==!0)o.defaultText=d,c=p=b;f.append(a('<li><a href="JavaScript:void(0);">'+d+"</a></li>").data("key",e))}),g=f.children().children()):(e.children("optgroup").each(function(){var b=a(this).attr("label"),b=a('<li class="newListOptionTitle">'+b+"</li>"),d=a("<ul></ul>");b.appendTo(f);d.appendTo(b);a(this).children().each(function(){++w;var b=a(this).text(),h=a(this).val();q.push(b.charAt(0).toLowerCase());if(a(this).attr("selected")=="selected"||a(this).attr("selected")==!0)o.defaultText=b,c=p=w;d.append(a('<li><a href="JavaScript:void(0);">'+b+"</a></li>").data("key",h))})}),g=f.find("ul li a"));var k=f.height(),s=d.height(),u=g.length;c!=-1?b(c):l.text(o.defaultText);n();a(window).bind("resize.sSelect scroll.sSelect",n);l.bind("click.sSelect",function(b){b.stopPropagation();a(this).data("ssReRender")&&(k=f.height("").height(),i.height(""),s=d.height(),a(this).data("ssReRender",!1),n());a(".SSContainerDivWrapper").not(a(this).next()).hide().parent().css("position","static").removeClass("newListSelFocus");i.toggle();d.css("position","relative");c==-1&&(c=0);g.eq(c).focus()});g.bind("click.sSelect",function(h){h=a(h.target);c=g.index(h);r=!0;b(c,!0);j()});g.bind("mouseenter.sSelect",function(b){a(b.target).addClass("newListHover")}).bind("mouseleave.sSelect",function(b){a(b.target).removeClass("newListHover")});e.bind("change.sSelect",function(d){d=a(d.target);if(r==!0)return r=!1;var e=d.find(":selected");c=d.find("option").index(e);b(c)});d.bind("click.sSelect",function(a){a.stopPropagation();t(this)});d.bind("focus.sSelect",function(){a(this).addClass("newListSelFocus");t(this)});d.bind("blur.sSelect",function(){a(this).removeClass("newListSelFocus")});a(document).bind("click.sSelect",function(){d.removeClass("newListSelFocus");i.is(":visible")?j(!1,!0):j(!1)});l.bind("mouseenter.sSelect",function(b){a(b.target).parent().addClass("newListSelHover")}).bind("mouseleave.sSelect",function(b){a(b.target).parent().removeClass("newListSelHover")});i.css({left:"0",display:"none",visibility:"visible"})})}})(jQuery);
- */
-
-/**
  * Stylish Select 0.4.9 - jQuery plugin to replace a select drop down box with a stylable unordered list
  * http://github.com/scottdarby/Stylish-Select
  *
@@ -952,3 +939,921 @@ InfoBox.prototype.panMap = function() {
 
 }(jQuery));
 
+/**
+ *
+ * Date picker
+ * Author: Stefan Petre www.eyecon.ro
+ *
+ * Dual licensed under the MIT and GPL licenses
+ *
+ */
+
+(function ($) {
+/*
+    var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+        daysShort = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+        daysMin = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
+        monthsShort = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jui", "Aoû", "Sepe", "Oct", "Nov", "Déc"],
+    console.log(daysShort);
+    console.log(daysMin);
+    console.log(monthsShort);
+
+    function truncate(array, character){
+        $.each(array, function(index, value) {
+            value = value.substr(0, character);
+//            alert(index + ': ' + value);
+        });
+    }
+*/
+
+    var DatePicker = function () {
+        var	ids = {},
+            views = {
+                years: 'datepickerViewYears',
+                moths: 'datepickerViewMonths',
+                days: 'datepickerViewDays'
+            },
+            tpl = {
+                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div></div>',
+                head: [
+                    '<td>',
+                    '<table cellspacing="0" cellpadding="0">',
+                    '<thead>',
+                    '<tr>',
+                    '<th class="datepickerGoPrev"><a href="#"><span><%=prev%></span></a></th>',
+                    '<th colspan="6" class="datepickerMonth"><a href="#"><span></span></a></th>',
+                    '<th class="datepickerGoNext"><a href="#"><span><%=next%></span></a></th>',
+                    '</tr>',
+                    '<tr class="datepickerDoW">',
+                    '<th><span><%=week%></span></th>',
+                    '<th><span><%=day1%></span></th>',
+                    '<th><span><%=day2%></span></th>',
+                    '<th><span><%=day3%></span></th>',
+                    '<th><span><%=day4%></span></th>',
+                    '<th><span><%=day5%></span></th>',
+                    '<th><span><%=day6%></span></th>',
+                    '<th><span><%=day7%></span></th>',
+                    '</tr>',
+                    '</thead>',
+                    '</table></td>'
+                ],
+                space : '<td class="datepickerSpace"><div></div></td>',
+                days: [
+                    '<tbody class="datepickerDays">',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[0].week%></span></a></th>',
+                    '<td class="<%=weeks[0].days[0].classname%>"><a href="#"><span><%=weeks[0].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[1].classname%>"><a href="#"><span><%=weeks[0].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[2].classname%>"><a href="#"><span><%=weeks[0].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[3].classname%>"><a href="#"><span><%=weeks[0].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[4].classname%>"><a href="#"><span><%=weeks[0].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[5].classname%>"><a href="#"><span><%=weeks[0].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[0].days[6].classname%>"><a href="#"><span><%=weeks[0].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[1].week%></span></a></th>',
+                    '<td class="<%=weeks[1].days[0].classname%>"><a href="#"><span><%=weeks[1].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[1].classname%>"><a href="#"><span><%=weeks[1].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[2].classname%>"><a href="#"><span><%=weeks[1].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[3].classname%>"><a href="#"><span><%=weeks[1].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[4].classname%>"><a href="#"><span><%=weeks[1].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[5].classname%>"><a href="#"><span><%=weeks[1].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[1].days[6].classname%>"><a href="#"><span><%=weeks[1].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[2].week%></span></a></th>',
+                    '<td class="<%=weeks[2].days[0].classname%>"><a href="#"><span><%=weeks[2].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[1].classname%>"><a href="#"><span><%=weeks[2].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[2].classname%>"><a href="#"><span><%=weeks[2].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[3].classname%>"><a href="#"><span><%=weeks[2].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[4].classname%>"><a href="#"><span><%=weeks[2].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[5].classname%>"><a href="#"><span><%=weeks[2].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[2].days[6].classname%>"><a href="#"><span><%=weeks[2].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[3].week%></span></a></th>',
+                    '<td class="<%=weeks[3].days[0].classname%>"><a href="#"><span><%=weeks[3].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[1].classname%>"><a href="#"><span><%=weeks[3].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[2].classname%>"><a href="#"><span><%=weeks[3].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[3].classname%>"><a href="#"><span><%=weeks[3].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[4].classname%>"><a href="#"><span><%=weeks[3].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[5].classname%>"><a href="#"><span><%=weeks[3].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[3].days[6].classname%>"><a href="#"><span><%=weeks[3].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[4].week%></span></a></th>',
+                    '<td class="<%=weeks[4].days[0].classname%>"><a href="#"><span><%=weeks[4].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[1].classname%>"><a href="#"><span><%=weeks[4].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[2].classname%>"><a href="#"><span><%=weeks[4].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[3].classname%>"><a href="#"><span><%=weeks[4].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[4].classname%>"><a href="#"><span><%=weeks[4].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[5].classname%>"><a href="#"><span><%=weeks[4].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[4].days[6].classname%>"><a href="#"><span><%=weeks[4].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<th class="datepickerWeek"><a href="#"><span><%=weeks[5].week%></span></a></th>',
+                    '<td class="<%=weeks[5].days[0].classname%>"><a href="#"><span><%=weeks[5].days[0].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[1].classname%>"><a href="#"><span><%=weeks[5].days[1].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[2].classname%>"><a href="#"><span><%=weeks[5].days[2].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[3].classname%>"><a href="#"><span><%=weeks[5].days[3].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[4].classname%>"><a href="#"><span><%=weeks[5].days[4].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[5].classname%>"><a href="#"><span><%=weeks[5].days[5].text%></span></a></td>',
+                    '<td class="<%=weeks[5].days[6].classname%>"><a href="#"><span><%=weeks[5].days[6].text%></span></a></td>',
+                    '</tr>',
+                    '</tbody>'
+                ],
+                months: [
+                    '<tbody class="<%=className%>">',
+                    '<tr>',
+                    '<td colspan="2"><a href="#"><span><%=data[0]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[1]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[2]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[3]%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<td colspan="2"><a href="#"><span><%=data[4]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[5]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[6]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[7]%></span></a></td>',
+                    '</tr>',
+                    '<tr>',
+                    '<td colspan="2"><a href="#"><span><%=data[8]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[9]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[10]%></span></a></td>',
+                    '<td colspan="2"><a href="#"><span><%=data[11]%></span></a></td>',
+                    '</tr>',
+                    '</tbody>'
+                ]
+            },
+            defaults = {
+                flat: false,
+                starts: 1,
+                prev: '&#9664;',
+                next: '&#9654;',
+                lastSel: false,
+                mode: 'single',
+                view: 'days',
+                calendars: 1,
+                format: 'Y-m-d',
+                position: 'bottom',
+                eventName: 'click',
+                onRender: function(){return {};},
+                onChange: function(){return true;},
+                onShow: function(){return true;},
+                onBeforeShow: function(){return true;},
+                onHide: function(){return true;},
+                locale: {
+                    days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+                    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                    daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+                    months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+                    monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    weekMin: 'wk'
+                }
+//                locale: {
+//                    days: days,
+//                    daysShort: daysShort,
+//                    daysMin: daysMin,
+//                    months: months,
+//                    monthsShort: monthsShort,
+//                    weekMin: 'wk'
+//                }
+            },
+            fill = function(el) {
+                var options = $(el).data('datepicker');
+                var cal = $(el);
+                var currentCal = Math.floor(options.calendars/2), date, data, dow, month, cnt = 0, week, days, indic, indic2, html, tblCal;
+                cal.find('td>table tbody').remove();
+                for (var i = 0; i < options.calendars; i++) {
+                    date = new Date(options.current);
+                    date.addMonths(-currentCal + i);
+                    tblCal = cal.find('table').eq(i+1);
+                    switch (tblCal[0].className) {
+                        case 'datepickerViewDays':
+                            dow = formatDate(date, 'B, Y');
+                            break;
+                        case 'datepickerViewMonths':
+                            dow = date.getFullYear();
+                            break;
+                        case 'datepickerViewYears':
+                            dow = (date.getFullYear()-6) + ' - ' + (date.getFullYear()+5);
+                            break;
+                    }
+                    tblCal.find('thead tr:first th:eq(1) span').text(dow);
+                    dow = date.getFullYear()-6;
+                    data = {
+                        data: [],
+                        className: 'datepickerYears'
+                    }
+                    for ( var j = 0; j < 12; j++) {
+                        data.data.push(dow + j);
+                    }
+                    html = tmpl(tpl.months.join(''), data);
+                    date.setDate(1);
+                    data = {weeks:[], test: 10};
+                    month = date.getMonth();
+                    var dow = (date.getDay() - options.starts) % 7;
+                    date.addDays(-(dow + (dow < 0 ? 7 : 0)));
+                    week = -1;
+                    cnt = 0;
+                    while (cnt < 42) {
+                        indic = parseInt(cnt/7,10);
+                        indic2 = cnt%7;
+                        if (!data.weeks[indic]) {
+                            week = date.getWeekNumber();
+                            data.weeks[indic] = {
+                                week: week,
+                                days: []
+                            };
+                        }
+                        data.weeks[indic].days[indic2] = {
+                            text: date.getDate(),
+                            classname: []
+                        };
+                        if (month != date.getMonth()) {
+                            data.weeks[indic].days[indic2].classname.push('datepickerNotInMonth');
+                        }
+                        if (date.getDay() == 0) {
+                            data.weeks[indic].days[indic2].classname.push('datepickerSunday');
+                        }
+                        if (date.getDay() == 6) {
+                            data.weeks[indic].days[indic2].classname.push('datepickerSaturday');
+                        }
+                        var fromUser = options.onRender(date);
+                        var val = date.valueOf();
+                        if (fromUser.selected || options.date == val || $.inArray(val, options.date) > -1 || (options.mode == 'range' && val >= options.date[0] && val <= options.date[1])) {
+                            data.weeks[indic].days[indic2].classname.push('datepickerSelected');
+                        }
+                        if (fromUser.disabled) {
+                            data.weeks[indic].days[indic2].classname.push('datepickerDisabled');
+                        }
+                        if (fromUser.className) {
+                            data.weeks[indic].days[indic2].classname.push(fromUser.className);
+                        }
+                        data.weeks[indic].days[indic2].classname = data.weeks[indic].days[indic2].classname.join(' ');
+                        cnt++;
+                        date.addDays(1);
+                    }
+                    html = tmpl(tpl.days.join(''), data) + html;
+                    data = {
+                        data: options.locale.monthsShort,
+                        className: 'datepickerMonths'
+                    };
+                    html = tmpl(tpl.months.join(''), data) + html;
+                    tblCal.append(html);
+                }
+            },
+            parseDate = function (date, format) {
+                if (date.constructor == Date) {
+                    return new Date(date);
+                }
+                var parts = date.split(/\W+/);
+                var against = format.split(/\W+/), d, m, y, h, min, now = new Date();
+                for (var i = 0; i < parts.length; i++) {
+                    switch (against[i]) {
+                        case 'd':
+                        case 'e':
+                            d = parseInt(parts[i],10);
+                            break;
+                        case 'm':
+                            m = parseInt(parts[i], 10)-1;
+                            break;
+                        case 'Y':
+                        case 'y':
+                            y = parseInt(parts[i], 10);
+                            y += y > 100 ? 0 : (y < 29 ? 2000 : 1900);
+                            break;
+                        case 'H':
+                        case 'I':
+                        case 'k':
+                        case 'l':
+                            h = parseInt(parts[i], 10);
+                            break;
+                        case 'P':
+                        case 'p':
+                            if (/pm/i.test(parts[i]) && h < 12) {
+                                h += 12;
+                            } else if (/am/i.test(parts[i]) && h >= 12) {
+                                h -= 12;
+                            }
+                            break;
+                        case 'M':
+                            min = parseInt(parts[i], 10);
+                            break;
+                    }
+                }
+                return new Date(
+                    y === undefined ? now.getFullYear() : y,
+                    m === undefined ? now.getMonth() : m,
+                    d === undefined ? now.getDate() : d,
+                    h === undefined ? now.getHours() : h,
+                    min === undefined ? now.getMinutes() : min,
+                    0
+                );
+            },
+            formatDate = function(date, format) {
+                var m = date.getMonth();
+                var d = date.getDate();
+                var y = date.getFullYear();
+                var wn = date.getWeekNumber();
+                var w = date.getDay();
+                var s = {};
+                var hr = date.getHours();
+                var pm = (hr >= 12);
+                var ir = (pm) ? (hr - 12) : hr;
+                var dy = date.getDayOfYear();
+                if (ir == 0) {
+                    ir = 12;
+                }
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                var parts = format.split(''), part;
+                for ( var i = 0; i < parts.length; i++ ) {
+                    part = parts[i];
+                    switch (parts[i]) {
+                        case 'a':
+                            part = date.getDayName();
+                            break;
+                        case 'A':
+                            part = date.getDayName(true);
+                            break;
+                        case 'b':
+                            part = date.getMonthName();
+                            break;
+                        case 'B':
+                            part = date.getMonthName(true);
+                            break;
+                        case 'C':
+                            part = 1 + Math.floor(y / 100);
+                            break;
+                        case 'd':
+                            part = (d < 10) ? ("0" + d) : d;
+                            break;
+                        case 'e':
+                            part = d;
+                            break;
+                        case 'H':
+                            part = (hr < 10) ? ("0" + hr) : hr;
+                            break;
+                        case 'I':
+                            part = (ir < 10) ? ("0" + ir) : ir;
+                            break;
+                        case 'j':
+                            part = (dy < 100) ? ((dy < 10) ? ("00" + dy) : ("0" + dy)) : dy;
+                            break;
+                        case 'k':
+                            part = hr;
+                            break;
+                        case 'l':
+                            part = ir;
+                            break;
+                        case 'm':
+                            part = (m < 9) ? ("0" + (1+m)) : (1+m);
+                            break;
+                        case 'M':
+                            part = (min < 10) ? ("0" + min) : min;
+                            break;
+                        case 'p':
+                        case 'P':
+                            part = pm ? "PM" : "AM";
+                            break;
+                        case 's':
+                            part = Math.floor(date.getTime() / 1000);
+                            break;
+                        case 'S':
+                            part = (sec < 10) ? ("0" + sec) : sec;
+                            break;
+                        case 'u':
+                            part = w + 1;
+                            break;
+                        case 'w':
+                            part = w;
+                            break;
+                        case 'y':
+                            part = ('' + y).substr(2, 2);
+                            break;
+                        case 'Y':
+                            part = y;
+                            break;
+                    }
+                    parts[i] = part;
+                }
+                return parts.join('');
+            },
+            extendDate = function(options) {
+                if (Date.prototype.tempDate) {
+                    return;
+                }
+                Date.prototype.tempDate = null;
+                Date.prototype.months = options.months;
+                Date.prototype.monthsShort = options.monthsShort;
+                Date.prototype.days = options.days;
+                Date.prototype.daysShort = options.daysShort;
+                Date.prototype.getMonthName = function(fullName) {
+                    return this[fullName ? 'months' : 'monthsShort'][this.getMonth()];
+                };
+                Date.prototype.getDayName = function(fullName) {
+                    return this[fullName ? 'days' : 'daysShort'][this.getDay()];
+                };
+                Date.prototype.addDays = function (n) {
+                    this.setDate(this.getDate() + n);
+                    this.tempDate = this.getDate();
+                };
+                Date.prototype.addMonths = function (n) {
+                    if (this.tempDate == null) {
+                        this.tempDate = this.getDate();
+                    }
+                    this.setDate(1);
+                    this.setMonth(this.getMonth() + n);
+                    this.setDate(Math.min(this.tempDate, this.getMaxDays()));
+                };
+                Date.prototype.addYears = function (n) {
+                    if (this.tempDate == null) {
+                        this.tempDate = this.getDate();
+                    }
+                    this.setDate(1);
+                    this.setFullYear(this.getFullYear() + n);
+                    this.setDate(Math.min(this.tempDate, this.getMaxDays()));
+                };
+                Date.prototype.getMaxDays = function() {
+                    var tmpDate = new Date(Date.parse(this)),
+                        d = 28, m;
+                    m = tmpDate.getMonth();
+                    d = 28;
+                    while (tmpDate.getMonth() == m) {
+                        d ++;
+                        tmpDate.setDate(d);
+                    }
+                    return d - 1;
+                };
+                Date.prototype.getFirstDay = function() {
+                    var tmpDate = new Date(Date.parse(this));
+                    tmpDate.setDate(1);
+                    return tmpDate.getDay();
+                };
+                Date.prototype.getWeekNumber = function() {
+                    var tempDate = new Date(this);
+                    tempDate.setDate(tempDate.getDate() - (tempDate.getDay() + 6) % 7 + 3);
+                    var dms = tempDate.valueOf();
+                    tempDate.setMonth(0);
+                    tempDate.setDate(4);
+                    return Math.round((dms - tempDate.valueOf()) / (604800000)) + 1;
+                };
+                Date.prototype.getDayOfYear = function() {
+                    var now = new Date(this.getFullYear(), this.getMonth(), this.getDate(), 0, 0, 0);
+                    var then = new Date(this.getFullYear(), 0, 0, 0, 0, 0);
+                    var time = now - then;
+                    return Math.floor(time / 24*60*60*1000);
+                };
+            },
+            layout = function (el) {
+                var options = $(el).data('datepicker');
+                var cal = $('#' + options.id);
+                if (!options.extraHeight) {
+                    var divs = $(el).find('div');
+                    options.extraHeight = divs.get(0).offsetHeight + divs.get(1).offsetHeight;
+                    options.extraWidth = divs.get(2).offsetWidth + divs.get(3).offsetWidth;
+                }
+                var tbl = cal.find('table:first').get(0);
+                var width = tbl.offsetWidth;
+                var height = tbl.offsetHeight;
+                cal.css({
+                    width: width + options.extraWidth + 'px',
+                    height: height + options.extraHeight + 'px'
+                }).find('div.datepickerContainer').css({
+                        width: width + 'px',
+                        height: height + 'px'
+                    });
+            },
+            click = function(ev) {
+                if ($(ev.target).is('span')) {
+                    ev.target = ev.target.parentNode;
+                }
+                var el = $(ev.target);
+                if (el.is('a')) {
+                    ev.target.blur();
+                    if (el.hasClass('datepickerDisabled')) {
+                        return false;
+                    }
+                    var options = $(this).data('datepicker');
+                    var parentEl = el.parent();
+                    var tblEl = parentEl.parent().parent().parent();
+                    var tblIndex = $('table', this).index(tblEl.get(0)) - 1;
+                    var tmp = new Date(options.current);
+                    var changed = false;
+                    var fillIt = false;
+                    if (parentEl.is('th')) {
+                        if (parentEl.hasClass('datepickerWeek') && options.mode == 'range' && !parentEl.next().hasClass('datepickerDisabled')) {
+                            var val = parseInt(parentEl.next().text(), 10);
+                            tmp.addMonths(tblIndex - Math.floor(options.calendars/2));
+                            if (parentEl.next().hasClass('datepickerNotInMonth')) {
+                                tmp.addMonths(val > 15 ? -1 : 1);
+                            }
+                            tmp.setDate(val);
+                            options.date[0] = (tmp.setHours(0,0,0,0)).valueOf();
+                            tmp.setHours(23,59,59,0);
+                            tmp.addDays(6);
+                            options.date[1] = tmp.valueOf();
+                            fillIt = true;
+                            changed = true;
+                            options.lastSel = false;
+                        } else if (parentEl.hasClass('datepickerMonth')) {
+                            tmp.addMonths(tblIndex - Math.floor(options.calendars/2));
+                            switch (tblEl.get(0).className) {
+                                case 'datepickerViewDays':
+                                    tblEl.get(0).className = 'datepickerViewMonths';
+                                    el.find('span').text(tmp.getFullYear());
+                                    break;
+                                case 'datepickerViewMonths':
+                                    tblEl.get(0).className = 'datepickerViewYears';
+                                    el.find('span').text((tmp.getFullYear()-6) + ' - ' + (tmp.getFullYear()+5));
+                                    break;
+                                case 'datepickerViewYears':
+                                    tblEl.get(0).className = 'datepickerViewDays';
+                                    el.find('span').text(formatDate(tmp, 'B, Y'));
+                                    break;
+                            }
+                        } else if (parentEl.parent().parent().is('thead')) {
+                            switch (tblEl.get(0).className) {
+                                case 'datepickerViewDays':
+                                    options.current.addMonths(parentEl.hasClass('datepickerGoPrev') ? -1 : 1);
+                                    break;
+                                case 'datepickerViewMonths':
+                                    options.current.addYears(parentEl.hasClass('datepickerGoPrev') ? -1 : 1);
+                                    break;
+                                case 'datepickerViewYears':
+                                    options.current.addYears(parentEl.hasClass('datepickerGoPrev') ? -12 : 12);
+                                    break;
+                            }
+                            fillIt = true;
+                        }
+                    } else if (parentEl.is('td') && !parentEl.hasClass('datepickerDisabled')) {
+                        switch (tblEl.get(0).className) {
+                            case 'datepickerViewMonths':
+                                options.current.setMonth(tblEl.find('tbody.datepickerMonths td').index(parentEl));
+                                options.current.setFullYear(parseInt(tblEl.find('thead th.datepickerMonth span').text(), 10));
+                                options.current.addMonths(Math.floor(options.calendars/2) - tblIndex);
+                                tblEl.get(0).className = 'datepickerViewDays';
+                                break;
+                            case 'datepickerViewYears':
+                                options.current.setFullYear(parseInt(el.text(), 10));
+                                tblEl.get(0).className = 'datepickerViewMonths';
+                                break;
+                            default:
+                                var val = parseInt(el.text(), 10);
+                                tmp.addMonths(tblIndex - Math.floor(options.calendars/2));
+                                if (parentEl.hasClass('datepickerNotInMonth')) {
+                                    tmp.addMonths(val > 15 ? -1 : 1);
+                                }
+                                tmp.setDate(val);
+                                switch (options.mode) {
+                                    case 'multiple':
+                                        val = (tmp.setHours(0,0,0,0)).valueOf();
+                                        if ($.inArray(val, options.date) > -1) {
+                                            $.each(options.date, function(nr, dat){
+                                                if (dat == val) {
+                                                    options.date.splice(nr,1);
+                                                    return false;
+                                                }
+                                            });
+                                        } else {
+                                            options.date.push(val);
+                                        }
+                                        break;
+                                    case 'range':
+                                        if (!options.lastSel) {
+                                            options.date[0] = (tmp.setHours(0,0,0,0)).valueOf();
+                                        }
+                                        val = (tmp.setHours(23,59,59,0)).valueOf();
+                                        if (val < options.date[0]) {
+                                            options.date[1] = options.date[0] + 86399000;
+                                            options.date[0] = val - 86399000;
+                                        } else {
+                                            options.date[1] = val;
+                                        }
+                                        options.lastSel = !options.lastSel;
+                                        break;
+                                    default:
+                                        options.date = tmp.valueOf();
+                                        break;
+                                }
+                                break;
+                        }
+                        fillIt = true;
+                        changed = true;
+                    }
+                    if (fillIt) {
+                        fill(this);
+                    }
+                    if (changed) {
+                        options.onChange.apply(this, prepareDate(options));
+                    }
+                }
+                return false;
+            },
+            prepareDate = function (options) {
+                var tmp;
+                if (options.mode == 'single') {
+                    tmp = new Date(options.date);
+                    return [formatDate(tmp, options.format), tmp, options.el];
+                } else {
+                    tmp = [[],[], options.el];
+                    $.each(options.date, function(nr, val){
+                        var date = new Date(val);
+                        tmp[0].push(formatDate(date, options.format));
+                        tmp[1].push(date);
+                    });
+                    return tmp;
+                }
+            },
+            getViewport = function () {
+                var m = document.compatMode == 'CSS1Compat';
+                return {
+                    l : window.pageXOffset || (m ? document.documentElement.scrollLeft : document.body.scrollLeft),
+                    t : window.pageYOffset || (m ? document.documentElement.scrollTop : document.body.scrollTop),
+                    w : window.innerWidth || (m ? document.documentElement.clientWidth : document.body.clientWidth),
+                    h : window.innerHeight || (m ? document.documentElement.clientHeight : document.body.clientHeight)
+                };
+            },
+            isChildOf = function(parentEl, el, container) {
+                if (parentEl == el) {
+                    return true;
+                }
+                if (parentEl.contains) {
+                    return parentEl.contains(el);
+                }
+                if ( parentEl.compareDocumentPosition ) {
+                    return !!(parentEl.compareDocumentPosition(el) & 16);
+                }
+                var prEl = el.parentNode;
+                while(prEl && prEl != container) {
+                    if (prEl == parentEl)
+                        return true;
+                    prEl = prEl.parentNode;
+                }
+                return false;
+            },
+            show = function (ev) {
+                var cal = $('#' + $(this).data('datepickerId'));
+                if (!cal.is(':visible')) {
+                    var calEl = cal.get(0);
+                    fill(calEl);
+                    var options = cal.data('datepicker');
+                    options.onBeforeShow.apply(this, [cal.get(0)]);
+                    var pos = $(this).offset();
+                    var viewPort = getViewport();
+                    var top = pos.top;
+                    var left = pos.left;
+                    var oldDisplay = $.curCSS(calEl, 'display');
+                    cal.css({
+                        visibility: 'hidden',
+                        display: 'block'
+                    });
+                    layout(calEl);
+                    switch (options.position){
+                        case 'top':
+                            top -= calEl.offsetHeight;
+                            break;
+                        case 'left':
+                            left -= calEl.offsetWidth;
+                            break;
+                        case 'right':
+                            left += this.offsetWidth;
+                            break;
+                        case 'bottom':
+                            top += this.offsetHeight;
+                            break;
+                    }
+                    if (top + calEl.offsetHeight > viewPort.t + viewPort.h) {
+                        top = pos.top  - calEl.offsetHeight;
+                    }
+                    if (top < viewPort.t) {
+                        top = pos.top + this.offsetHeight + calEl.offsetHeight;
+                    }
+                    if (left + calEl.offsetWidth > viewPort.l + viewPort.w) {
+                        left = pos.left - calEl.offsetWidth;
+                    }
+                    if (left < viewPort.l) {
+                        left = pos.left + this.offsetWidth
+                    }
+                    cal.css({
+                        visibility: 'visible',
+                        display: 'block',
+                        top: top + 'px',
+                        left: left + 'px'
+                    });
+                    if (options.onShow.apply(this, [cal.get(0)]) != false) {
+                        cal.show();
+                    }
+                    $(document).bind('mousedown', {cal: cal, trigger: this}, hide);
+                }
+                return false;
+            },
+            hide = function (ev) {
+                if (ev.target != ev.data.trigger && !isChildOf(ev.data.cal.get(0), ev.target, ev.data.cal.get(0))) {
+                    if (ev.data.cal.data('datepicker').onHide.apply(this, [ev.data.cal.get(0)]) != false) {
+                        ev.data.cal.hide();
+                    }
+                    $(document).unbind('mousedown', hide);
+                }
+            };
+        return {
+            init: function(options){
+                options = $.extend({}, defaults, options||{});
+                extendDate(options.locale);
+                options.calendars = Math.max(1, parseInt(options.calendars,10)||1);
+                options.mode = /single|multiple|range/.test(options.mode) ? options.mode : 'single';
+                return this.each(function(){
+                    if (!$(this).data('datepicker')) {
+                        options.el = this;
+                        if (options.date.constructor == String) {
+                            options.date = parseDate(options.date, options.format);
+                            options.date.setHours(0,0,0,0);
+                        }
+                        if (options.mode != 'single') {
+                            if (options.date.constructor != Array) {
+                                options.date = [options.date.valueOf()];
+                                if (options.mode == 'range') {
+                                    options.date.push(((new Date(options.date[0])).setHours(23,59,59,0)).valueOf());
+                                }
+                            } else {
+                                for (var i = 0; i < options.date.length; i++) {
+                                    options.date[i] = (parseDate(options.date[i], options.format).setHours(0,0,0,0)).valueOf();
+                                }
+                                if (options.mode == 'range') {
+                                    options.date[1] = ((new Date(options.date[1])).setHours(23,59,59,0)).valueOf();
+                                }
+                            }
+                        } else {
+                            options.date = options.date.valueOf();
+                        }
+                        if (!options.current) {
+                            options.current = new Date();
+                        } else {
+                            options.current = parseDate(options.current, options.format);
+                        }
+                        options.current.setDate(1);
+                        options.current.setHours(0,0,0,0);
+                        var id = 'datepicker_' + parseInt(Math.random() * 1000), cnt;
+                        options.id = id;
+                        $(this).data('datepickerId', options.id);
+                        var cal = $(tpl.wrapper).attr('id', id).bind('click', click).data('datepicker', options);
+                        if (options.className) {
+                            cal.addClass(options.className);
+                        }
+                        var html = '';
+                        for (var i = 0; i < options.calendars; i++) {
+                            cnt = options.starts;
+                            if (i > 0) {
+                                html += tpl.space;
+                            }
+                            html += tmpl(tpl.head.join(''), {
+                                week: options.locale.weekMin,
+                                prev: options.prev,
+                                next: options.next,
+                                day1: options.locale.daysMin[(cnt++)%7],
+                                day2: options.locale.daysMin[(cnt++)%7],
+                                day3: options.locale.daysMin[(cnt++)%7],
+                                day4: options.locale.daysMin[(cnt++)%7],
+                                day5: options.locale.daysMin[(cnt++)%7],
+                                day6: options.locale.daysMin[(cnt++)%7],
+                                day7: options.locale.daysMin[(cnt++)%7]
+                            });
+                        }
+                        cal
+                            .find('tr:first').append(html)
+                            .find('table').addClass(views[options.view]);
+                        fill(cal.get(0));
+                        if (options.flat) {
+                            cal.appendTo(this).show().css('position', 'relative');
+                            layout(cal.get(0));
+                        } else {
+                            cal.appendTo(document.body);
+                            $(this).bind(options.eventName, show);
+                        }
+                    }
+                });
+            },
+            showPicker: function() {
+                return this.each( function () {
+                    if ($(this).data('datepickerId')) {
+                        show.apply(this);
+                    }
+                });
+            },
+            hidePicker: function() {
+                return this.each( function () {
+                    if ($(this).data('datepickerId')) {
+                        $('#' + $(this).data('datepickerId')).hide();
+                    }
+                });
+            },
+            setDate: function(date, shiftTo){
+                return this.each(function(){
+                    if ($(this).data('datepickerId')) {
+                        var cal = $('#' + $(this).data('datepickerId'));
+                        var options = cal.data('datepicker');
+                        options.date = date;
+                        if (options.date.constructor == String) {
+                            options.date = parseDate(options.date, options.format);
+                            options.date.setHours(0,0,0,0);
+                        }
+                        if (options.mode != 'single') {
+                            if (options.date.constructor != Array) {
+                                options.date = [options.date.valueOf()];
+                                if (options.mode == 'range') {
+                                    options.date.push(((new Date(options.date[0])).setHours(23,59,59,0)).valueOf());
+                                }
+                            } else {
+                                for (var i = 0; i < options.date.length; i++) {
+                                    options.date[i] = (parseDate(options.date[i], options.format).setHours(0,0,0,0)).valueOf();
+                                }
+                                if (options.mode == 'range') {
+                                    options.date[1] = ((new Date(options.date[1])).setHours(23,59,59,0)).valueOf();
+                                }
+                            }
+                        } else {
+                            options.date = options.date.valueOf();
+                        }
+                        if (shiftTo) {
+                            options.current = new Date (options.mode != 'single' ? options.date[0] : options.date);
+                        }
+                        fill(cal.get(0));
+                    }
+                });
+            },
+            getDate: function(formated) {
+                if (this.size() > 0) {
+                    return prepareDate($('#' + $(this).data('datepickerId')).data('datepicker'))[formated ? 0 : 1];
+                }
+            },
+            clear: function(){
+                return this.each(function(){
+                    if ($(this).data('datepickerId')) {
+                        var cal = $('#' + $(this).data('datepickerId'));
+                        var options = cal.data('datepicker');
+                        if (options.mode != 'single') {
+                            options.date = [];
+                            fill(cal.get(0));
+                        }
+                    }
+                });
+            },
+            fixLayout: function(){
+                return this.each(function(){
+                    if ($(this).data('datepickerId')) {
+                        var cal = $('#' + $(this).data('datepickerId'));
+                        var options = cal.data('datepicker');
+                        if (options.flat) {
+                            layout(cal.get(0));
+                        }
+                    }
+                });
+            }
+        };
+    }();
+    $.fn.extend({
+        DatePicker: DatePicker.init,
+        DatePickerHide: DatePicker.hidePicker,
+        DatePickerShow: DatePicker.showPicker,
+        DatePickerSetDate: DatePicker.setDate,
+        DatePickerGetDate: DatePicker.getDate,
+        DatePickerClear: DatePicker.clear,
+        DatePickerLayout: DatePicker.fixLayout
+    });
+})(jQuery);
+
+(function(){
+    var cache = {};
+
+    this.tmpl = function tmpl(str, data){
+        // Figure out if we're getting a template, or if we need to
+        // load the template - and be sure to cache the result.
+        var fn = !/\W/.test(str) ?
+            cache[str] = cache[str] ||
+                tmpl(document.getElementById(str).innerHTML) :
+
+            // Generate a reusable function that will serve as a template
+            // generator (and which will be cached).
+            new Function("obj",
+                "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+                    // Introduce the data as local variables using with(){}
+                    "with(obj){p.push('" +
+
+                    // Convert the template into pure JavaScript
+                    str
+                        .replace(/[\r\t\n]/g, " ")
+                        .split("<%").join("\t")
+                        .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+                        .replace(/\t=(.*?)%>/g, "',$1,'")
+                        .split("\t").join("');")
+                        .split("%>").join("p.push('")
+                        .split("\r").join("\\'")
+                    + "');}return p.join('');");
+
+        // Provide some basic currying to the user
+        return data ? fn( data ) : fn;
+    };
+})();

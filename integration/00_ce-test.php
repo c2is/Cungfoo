@@ -101,13 +101,7 @@ include('includes/ce-top.php'); ?>
                             </p>
                         </li>
                         <li>
-                            <div id="widget">
-                                <div id="widgetField" class="clear">
-                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
-                                </div>
-                                <div id="widgetCalendar">
-                                </div>
-                            </div>
+                            <input type="text" name="datepicker" id="datepicker"><span class="date"></span></input>
                             <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
                     </ol>
@@ -126,7 +120,7 @@ include('includes/ce-top.php'); ?>
     <!-- colonne pleine largeur -->
     <div id="discoverContainer" class="column clearboth">
 
-<!--            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>-->
+            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>
 
     </div>
     <!-- colonne pleine largeur -->

@@ -364,13 +364,16 @@ body {
   margin: 0 auto;
 }
 /* packages */
-#searchProductFormContener {
+#homePage .content {
+  overflow: hidden;
+}
+#homePage #searchProductFormContener {
   display: none;
 }
-#searchResult {
+#homePage #searchResult {
   width: 948px;
 }
-#searchResult .aProposalBlock {
+#homePage #searchResult .aProposalBlock {
   background-color: #e6e5e5;
   border-radius: 10px;
   padding: 15px 20px;
@@ -380,20 +383,20 @@ body {
   margin-right: 20px;
   float: left;
 }
-#searchResult .aProposalBlock.package .proposalDescriptionTitle {
+#homePage #searchResult .aProposalBlock.package .proposalDescriptionTitle {
   background-color: #8dc63f;
 }
-#searchResult .aProposalBlock.bouquet .proposalDescriptionTitle {
+#homePage #searchResult .aProposalBlock.bouquet .proposalDescriptionTitle {
   background-color: #f58220;
 }
-#searchResult .aProposalBlock .proposalDescriptionTitle {
+#homePage #searchResult .aProposalBlock .proposalDescriptionTitle {
   background-color: #f58220;
   margin: -20px -20px 0;
   padding: 10px 20px 10px;
   -webkit-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-#searchResult .aProposalBlock .proposalDescriptionTitle h1 {
+#homePage #searchResult .aProposalBlock .proposalDescriptionTitle h1 {
   color: #ffffff;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-weight: bold;
@@ -404,10 +407,10 @@ body {
   white-space: nowrap;
   width: 229px;
 }
-#searchResult .aProposalBlock .proposalDescriptionTitle h2 {
+#homePage #searchResult .aProposalBlock .proposalDescriptionTitle h2 {
   color: #f5bd8c;
 }
-#searchResult .aProposalBlock .proposalDescriptionTitle .proposalDescriptionDetailsLink {
+#homePage #searchResult .aProposalBlock .proposalDescriptionTitle .proposalDescriptionDetailsLink {
   width: 27px;
   height: 27px;
   background: transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;
@@ -422,14 +425,14 @@ body {
   line-height: 27px;
   text-align: center;
 }
-#searchResult .aProposalBlock .proposalDescriptionContent {
+#homePage #searchResult .aProposalBlock .proposalDescriptionContent {
   width: 100%;
 }
-#searchResult .aProposalBlock .proposalDescriptionContent tr:first-child td {
+#homePage #searchResult .aProposalBlock .proposalDescriptionContent tr:first-child td {
   padding: 20px 0;
   vertical-align: bottom;
 }
-#searchResult .aProposalBlock .proposalDescriptionContent .price {
+#homePage #searchResult .aProposalBlock .proposalDescriptionContent .price {
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-weight: bold;
   font-size: 44px;
@@ -438,7 +441,7 @@ body {
   margin-bottom: -13px;
   display: block;
 }
-#searchResult .aProposalBlock .proposalDescriptionContent .action .chooseButton {
+#homePage #searchResult .aProposalBlock .proposalDescriptionContent .action .chooseButton {
   display: block;
   border: 0;
   text-transform: uppercase;
