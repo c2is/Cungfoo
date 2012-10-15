@@ -80,6 +80,8 @@ include('includes/ce-top.php'); ?>
                         </li>
                         <li>
                             <div id="widget">
+                                <input class="hidden" type="text" id="arrival"  name="arrival" readonly="readonly" />
+                                <input class="hidden" type="text" id="departure"  name="departure" readonly="readonly" />
                                 <div id="widgetField" class="clear">
                                     <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
                                 </div>

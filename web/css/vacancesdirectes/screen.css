@@ -2028,8 +2028,14 @@ h6,
   cursor: pointer;
   padding: 0 32px 0 5px;
 }
+#widget input.hidden {
+  display: none;
+  width: 125px;
+  margin: 0 10px 10px 0;
+  border: 0 none;
+}
 #widgetField span {
-  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat scroll 0 0 transparent;
+  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat scroll 0 0 transparent;
   float: left;
   width: 27px;
   height: 23px;
@@ -2037,7 +2043,8 @@ h6,
   top: 0;
   right: 0;
 }
-#widgetField:hover span {
+#widgetField:hover span,
+#widgetField.opened span {
   background-position: 0 -46px;
 }
 #widgetCalendar {
@@ -2046,9 +2053,10 @@ h6,
   left: 0;
   overflow: hidden;
   position: absolute;
-  top: 33px;
+  top: 23px;
   width: 540px;
   z-index: 10;
+  margin: 10px 0;
 }
 #widgetCalendar .datepicker {
   bottom: 0;
@@ -2214,7 +2222,7 @@ tbody.datepickerMonths td.datepickerSelected {
 }
 div.datepicker a:hover,
 div.datepicker a:hover {
-  color: #ed80a4;
+  color: #ed145b;
 }
 div.datepicker td.datepickerNotInMonth a:hover {
   color: #999;

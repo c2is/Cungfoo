@@ -147,7 +147,7 @@ $(function() {
     console.log(startDate);
     console.log(fStartDate);
 
-    var datepicker = $('#datepicker');
+    var firstSelection = true;
     $('#widgetCalendar').DatePicker({
         flat: true,
         date: fSeasonDates,
@@ -158,11 +158,15 @@ $(function() {
         format:'Y/m/d',
         position: 'right',
         onBeforeShow: function(){
+            console.log("################################## onBeforeShow:  ##################################");
+
 //            datepicker.DatePickerSetDate(datepicker.val(), true);
         },
         onChange: function(formated, dates){
+            console.log("################################## onChange:  ##################################");
             console.log(formated);
             console.log(dates);
+
             var selectedDates  = new Array();
             $.each(dates, function(index, value) {
 //                alert(index + ': ' + value);
@@ -174,15 +178,44 @@ $(function() {
                 console.log(currentDay);
                 selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
             });
+            if (firstSelection) {
+                console.log(selectedDates[0]);
+            }
+            else {
+                console.log(selectedDates[1]);
+                firstSelection = true;
+            }
+            console.log(selectedDates)
             $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+            $('#widget input.hidden').each(function(index, value){
+                $(this).val(selectedDates[index]);
+            });
 //            datepicker.val(formated);
 //            if ($('#closeOnSelect input').attr('checked')) {
 //                datepicker.DatePickerHide();
 //            }
         }
+        /*
+        flat: true,
+        date: ['2013-04-06', '2013-10-26'],
+        current: '2013-04-06',
+        format: 'Y-m-d',
+        calendars: 1,
+        mode: 'multiple',
+        onRender: function(date) {
+//            return {
+//                disabled: (date.valueOf() < d.valueOf()),
+//                className: date.valueOf() == d2.valueOf() ? 'datepickerSpecial' : false
+//            }
+        },
+        onChange: function(formated, dates) {
+        },
+        starts: 0
+        */
     });
     var state = false;
     $('#widgetField').bind('click', function(){
+        $(this).toggleClass('opened');
         $('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
         state = !state;
         return false;

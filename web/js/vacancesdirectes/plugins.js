@@ -1000,26 +1000,18 @@ InfoBox.prototype.panMap = function() {
  * Dual licensed under the MIT and GPL licenses
  *
  */
+/*
+ var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+ months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+ daysShort = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+ daysMin = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
+ monthsShort = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jui", "Aoû", "Sepe", "Oct", "Nov", "Déc"],
+ console.log(daysShort);
+ console.log(daysMin);
+ console.log(monthsShort);
+ */
 
 (function ($) {
-/*
-    var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-        months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-        daysShort = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
-        daysMin = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
-        monthsShort = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jui", "Aoû", "Sepe", "Oct", "Nov", "Déc"],
-    console.log(daysShort);
-    console.log(daysMin);
-    console.log(monthsShort);
-
-    function truncate(array, character){
-        $.each(array, function(index, value) {
-            value = value.substr(0, character);
-//            alert(index + ': ' + value);
-        });
-    }
-*/
-
     var DatePicker = function () {
         var	ids = {},
             views = {
@@ -1158,20 +1150,12 @@ InfoBox.prototype.panMap = function() {
                 onHide: function(){return true;},
                 locale: {
                     days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-                    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                    daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-                    months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-                    monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+                    daysMin: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
+                    months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+                    monthsShort: ["janv", "févr", "mars", "avr.", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
                     weekMin: 'wk'
                 }
-//                locale: {
-//                    days: days,
-//                    daysShort: daysShort,
-//                    daysMin: daysMin,
-//                    months: months,
-//                    monthsShort: monthsShort,
-//                    weekMin: 'wk'
-//                }
             },
             fill = function(el) {
                 var options = $(el).data('datepicker');
