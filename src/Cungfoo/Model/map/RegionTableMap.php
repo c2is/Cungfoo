@@ -45,6 +45,8 @@ class RegionTableMap extends TableMap
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
         $this->addColumn('IMAGE_PATH', 'ImagePath', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_ENCART_PATH', 'ImageEncartPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_ENCART_PETITE_PATH', 'ImageEncartPetitePath', 'VARCHAR', false, 255, null);
         $this->addForeignKey('PAYS_ID', 'PaysId', 'INTEGER', 'pays', 'ID', false, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
@@ -71,8 +73,8 @@ class RegionTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/regions', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name,description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/regions', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path,image_encart_path,image_encart_petite_path', ),
         );
     } // getBehaviors()
 

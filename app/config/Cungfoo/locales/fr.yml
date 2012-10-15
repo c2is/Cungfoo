@@ -212,8 +212,13 @@ region.code: Code
 region.name: Nom
 region.image_path: Image
 region.image_path_deleted: Supprimer l'image ?
+region.image_encart_path: Image de l'encart
+region.image_encart_path_deleted: Supprimer l'image de l'encart ?
+region.image_encart_petite_path: Image de l'encart (petite)
+region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) ?
 region.pays: Pays
 region.pays.id: Code pays
+region.description: Description
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -279,6 +284,10 @@ point_interet.name: Nom
 point_interet.image: Image
 point_interet.geo.coordinate.x: Latitude
 point_interet.geo.coordinate.y: Longitude
+point_interet.geo_coordinate_x: Latitude
+point_interet.geo_coordinate_y: Longitude
+point_interet.distance_camping: Distance du camping
+point_interet.distance.camping: Distance du camping
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -301,6 +310,8 @@ event.geo_coordinate_x: Latitude
 event.geo_coordinate_y: Longitude
 event.geo.coordinate.x: Latitude
 event.geo.coordinate.y: Longitude
+event.distance_camping: Distance du camping
+event.distance.camping: Distance du camping
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages

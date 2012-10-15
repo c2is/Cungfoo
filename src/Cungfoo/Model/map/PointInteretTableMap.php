@@ -50,6 +50,7 @@ class PointInteretTableMap extends TableMap
         $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
         $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
+        $this->addColumn('DISTANCE_CAMPING', 'DistanceCamping', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE', 'Image', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
