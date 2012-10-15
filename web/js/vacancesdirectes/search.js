@@ -10,7 +10,10 @@ $(function() {
         });
 
         $.getJSON(getCampingsByPays + '?code=' + code, function(choices) {
-            reloadSearchSelect($('#AchatLineaire_campings'), choices);
+            var select = $('#AchatLineaire_campings');
+
+            reloadSearchSelect(select, choices);
+            select.resetMultSelect();
         });
     });
 
@@ -18,7 +21,10 @@ $(function() {
         var code = $(this).val();
 
         $.getJSON(getCampingsByRegion + '?code=' + code, function(choices) {
-            reloadSearchSelect($('#AchatLineaire_campings'), choices);
+            var select = $('#AchatLineaire_campings');
+
+            reloadSearchSelect(select, choices);
+            select.resetMultSelect();
         });
     });
 
@@ -32,7 +38,7 @@ $(function() {
         }
 
         $.each(choices, function() {
-            if (selectedItem == this.id)
+            if (selectedItem == this.code)
             {
                 options += '<option selected="selected" value="' + this.code + '">' + this.name + '</option>';
             }

@@ -49,6 +49,15 @@
                             <label>Au</label>{{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'date'}}) }}
                             <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
+                        <li>
+                            <div id="widget">
+                                <div id="widgetField" class="clear">
+                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
+                                </div>
+                                <div id="widgetCalendar">
+                                </div>
+                            </div>
+                        </li>
                     </ol>
                 </fieldset>
                 {{ form_rest(achatLineaireForm) }}
