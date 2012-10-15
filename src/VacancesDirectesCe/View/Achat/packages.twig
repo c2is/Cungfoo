@@ -26,7 +26,7 @@
 
     <div id="searchContainer" class="column clearboth">
         <div id="searchPrincipal" class="searchBox classic">
-            <form id="searchForm" action="{{ path(app.request.get('_route')) }}" method="post">
+            <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
 
@@ -45,18 +45,17 @@
                             </div>
                         </li>
                         <li>
-                            <label>Du</label>{{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'date'}}) }}
-                            <label>Au</label>{{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'date'}}) }}
-                            <button type="submit" class="bt fushia">Rechercher</button>
-                        </li>
-                        <li>
                             <div id="widget">
+                                {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
+                                {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
                                 <div id="widgetField" class="clear">
                                     <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
                                 </div>
                                 <div id="widgetCalendar">
+
                                 </div>
                             </div>
+                            <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
                     </ol>
                 </fieldset>
