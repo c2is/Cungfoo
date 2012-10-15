@@ -956,39 +956,43 @@ InfoBox.prototype.panMap = function() {
     $.fn.sMultSelect = function(params) {
         //params = params = $.extend( {}, params);
         this.each(function() {
+            // declaration de l'objet
             var $mul = $(this);
 
+            // creation du nouvel objet sous forme de liste <ul>
             var origId = $mul.attr('id'),
                 $newMul = $('<ul id="'+origId+'Ul" class="sMultSelectUl"></ul>'),
                 $newMulLi;
-
+            // insertion de ce nouvel objet
             $mul.after($newMul);
 
-
+            // function de creation de elements <li> correspondant aux <option>
             function addMulItem(item, container) {
                 var text = $(item).text(),
                     val = $(item).val(),
                     cSelected = "";
 
-
+                // si une <option> a l'attribut [selected]
                 if ($(item).attr('selected')) {
                     cSelected = "selected";
                 }
-
+                // insertion des <li> dans la liste <ul>
                 container.append(
                     $('<li data-val="'+val+'" class="'+cSelected+'">'+text+'</li>')
                 );
             }
+            // lancement de la function de creation des <li>
             $mul.children('option').each(function(){
                 addMulItem(this, $newMul);
             });
-
+            // declaration de la var correspondant aux nouveaux elements <li>
             $newMulLi = $newMul.find('li');
+            // action au clic sur un element <li>
             $newMulLi.click( function(){
                 var link = $(this),
                     val = $(this).attr('data-val'),
                     nSel = $mul.find('[value="'+val+'"]');
-
+                // si l'<option> a l'attribut [selected]
                 if (nSel.is(':selected')){
                     link.removeClass('selected');
                     nSel.removeAttr('selected');
@@ -996,9 +1000,8 @@ InfoBox.prototype.panMap = function() {
                     link.addClass('selected');
                     nSel.attr('selected', 'selected');
                 }
-
             });
-
         });
+        return this;
     };
 })(jQuery);
