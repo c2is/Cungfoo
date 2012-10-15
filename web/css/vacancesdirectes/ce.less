@@ -98,9 +98,11 @@ iframe{width:100%;}
   .searchBox{padding:20px 0;display:inline-block;background-color:transparent;}
   .date input {width:96px;height:23px;padding: 0 0 0 5px;background-color:@colorBgGrisC;border:0 none;}
   #searchForm{float:left;}
-  #searchContent{float:right;}
-  .searchFrame {border: 1px solid @colorGris3;padding: 20px;width: 452px;
-    legend{font-family:@ptnarrow;font-size:24px;position:absolute;top:0;padding:0 10px;background-color:@colorBlanc;}
+  #searchText{float:right;min-height:203px;}
+  .searchBlock {border: 1px solid @colorGris3;padding: 20px;width: 452px;
+    legend,h2{font-family:@ptnarrow;font-size:24px;font-weight:normal;}
+    legend{position:absolute;top:0;padding:0 10px;background-color:@colorBlanc;}
+    h2{margin-bottom:5px;}
     .sMultSelect{display:none;}
     .sMultSelectUl{/*background-color:@colorBgGrisC;padding:0;margin:20px 0;height:@selectHeight*5;overflow:auto;*/
       li{padding:0 20px;.verticalCenter(@selectHeight);cursor:pointer;

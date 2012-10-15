@@ -51,7 +51,7 @@ include('includes/ce-top.php'); ?>
     <div id="searchContainer" class="column clearboth">
         <div class="searchBox full-width">
 
-            <form id="searchForm" class="searchFrame">
+            <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
                     <ol>
@@ -92,7 +92,11 @@ include('includes/ce-top.php'); ?>
                     </ol>
                 </fieldset>
             </form>
-            <div id="searchContent" class="searchFrame">
+            <div id="searchText" class="searchBlock">
+                <h2>Titre</h2>
+                <div id="searchTextContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque libero purus, imperdiet quis suscipit a, ullamcorper a arcu. Ut quis eros justo. Morbi quis massa a lorem fringilla dictum eget dictum libero. Maecenas accumsan ultrices risus non suscipit. Nam id massa vel nisl elementum semper non nec justo. Pellentesque sodales congue arcu quis molestie. Morbi ligula dui, sodales eu commodo vitae, sagittis ac justo.</p>
+                </div>
             </div>
         </div>
 <!--        <div id="datepickerPrincipal" class="datepicker clear"></div>-->
