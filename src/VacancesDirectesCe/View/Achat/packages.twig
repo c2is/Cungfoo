@@ -2,6 +2,10 @@
 
 {% block title %}Packages{% endblock %}
 
+{% block headjs %}{{ parent() }}
+,{search: templatePath + "js/vacancesdirectes/search.js"}
+{% endblock %}
+
 {% block content %}
     <!--<div id="linearSwitcher">
         <p>
@@ -48,6 +52,12 @@
                     </ol>
                 </fieldset>
                 {{ form_rest(achatLineaireForm) }}
+
+                <script type="text/javascript">
+                    var getRegionsByPays    = "{{ path('search_get_regions_by_pays') }}";
+                    var getCampingsByPays   = "{{ path('search_get_campings_by_pays') }}";
+                    var getCampingsByRegion = "{{ path('search_get_campings_by_region') }}";
+                </script>
             </form>
         </div>
 
