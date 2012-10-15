@@ -148,6 +148,17 @@ $(function() {
     console.log(fStartDate);
 
     var firstSelection = true;
+
+    function switchLinear() {
+        var radioValue = $('input[type=radio][name=linearType]:checked').attr('value');
+        $('#searchContainer .searchBox').attr('id',radioValue);
+        if (radioValue == "classic"){
+
+        }
+        else {
+
+        }
+    }
     $('#widgetCalendar').DatePicker({
         flat: true,
         date: fSeasonDates,
@@ -160,7 +171,7 @@ $(function() {
         onBeforeShow: function(){
             console.log("################################## onBeforeShow:  ##################################");
 
-//            datepicker.DatePickerSetDate(datepicker.val(), true);
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
         },
         onChange: function(formated, dates){
             console.log("################################## onChange:  ##################################");
@@ -169,7 +180,7 @@ $(function() {
 
             var selectedDates  = new Array();
             $.each(dates, function(index, value) {
-//                alert(index + ': ' + value);
+                //                alert(index + ': ' + value);
                 var selectedYear = value.getFullYear(),
                     selectedMonth = value.getMonth()+1,
                     selectedDay = value.getDate();
@@ -190,82 +201,67 @@ $(function() {
             $('#widget input.hidden').each(function(index, value){
                 $(this).val(selectedDates[index]);
             });
-//            datepicker.val(formated);
-//            if ($('#closeOnSelect input').attr('checked')) {
-//                datepicker.DatePickerHide();
-//            }
         }
-        /*
-        flat: true,
-        date: ['2013-04-06', '2013-10-26'],
-        current: '2013-04-06',
-        format: 'Y-m-d',
-        calendars: 1,
-        mode: 'multiple',
-        onRender: function(date) {
-//            return {
-//                disabled: (date.valueOf() < d.valueOf()),
-//                className: date.valueOf() == d2.valueOf() ? 'datepickerSpecial' : false
-//            }
-        },
-        onChange: function(formated, dates) {
-        },
-        starts: 0
-        */
     });
-    var state = false;
-    $('#widgetField').bind('click', function(){
-        $(this).toggleClass('opened');
-        $('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
-        state = !state;
-        return false;
-    });
-    $('#widgetCalendar div.datepicker').css('position', 'absolute');
-    /*
-    datepicker.DatePicker({
+/*
+    $('#widgetCalendar').DatePicker({
         flat: true,
         date: fSeasonDates,
         current: fStartDate,
         calendars: 3,
         mode: 'range',
         starts: 1,
-        format:'m/d/Y',
+        format:'Y/m/d',
         position: 'right',
         onBeforeShow: function(){
-//            datepicker.DatePickerSetDate(datepicker.val(), true);
+            console.log("################################## onBeforeShow:  ##################################");
+
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
         },
         onChange: function(formated, dates){
-//            datepicker.val(formated);
-//            if ($('#closeOnSelect input').attr('checked')) {
-//                datepicker.DatePickerHide();
-//            }
+            console.log("################################## onChange:  ##################################");
+            console.log(formated);
+            console.log(dates);
+
+            var selectedDates  = new Array();
+            $.each(dates, function(index, value) {
+                //                alert(index + ': ' + value);
+                var selectedYear = value.getFullYear(),
+                    selectedMonth = value.getMonth()+1,
+                    selectedDay = value.getDate();
+                console.log(currentYear);
+                console.log(currentMonth);
+                console.log(currentDay);
+                selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
+            });
+            if (firstSelection) {
+                console.log(selectedDates[0]);
+            }
+            else {
+                console.log(selectedDates[1]);
+                firstSelection = true;
+            }
+            console.log(selectedDates)
+            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+            $('#widget input.hidden').each(function(index, value){
+                $(this).val(selectedDates[index]);
+            });
         }
     });
-    */
+*/
+    var state = false;
+    $('#widgetField').bind('click', function(){
+        $(this).toggleClass('opened');
+        $(this).next('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
+        state = !state;
+        return false;
+    });
+    $('#linearSwitcher input').bind('click', function(){
+            switchLinear();
+    });
+    $('#widgetCalendar div.datepicker').css('position', 'absolute');
+
     /*
-    $('#datepicker-principal-arrival').Zebra_DatePicker({
-        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-        lang_clear_date: ['Effacer'],
-        format: 'd/m/Y',
-        readonly_element: true,
-        pair: $('#datepicker-principal-departure'),
-        disabled_dates: ['* * * 0,1,2,3,4,5'],
-        direction: ['01/04/2013', '30/06/2013'],
-        always_visible: $('#datepickerPrincipal')
-    });
-
-    $('#datepicker-principal-departure').Zebra_DatePicker({
-        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-        lang_clear_date: ['Effacer'],
-        format: 'd/m/Y',
-        readonly_element: true,
-        disabled_dates: ['* * * 0,1,2,3,4,5'],
-        direction: ['01/09/2013', '15/11/2013'],
-        always_visible: $('#datepickerPrincipal')
-    });
-
     $('#datepicker-secondary-arrival').Zebra_DatePicker({
         months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
