@@ -23,12 +23,27 @@ class WrapperController implements ControllerProviderInterface
 
         $controllers->match('/wrapper', function (Request $request) use ($app)
         {
-            $queryString = $request->getQueryString();
-            $websiteUri  = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
+            $queryParameters = $request->query->all();
+            $queryString     = $request->getQueryString();
+            $websiteUri      = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
 
             $iframe = file_get_contents(sprintf("http://preprod.vacances-directes.com/rsl/clickbooking?%s", $queryString));
+            $iframe = $this->replace($iframe);
 
-            $iframe = $this->replaceUri($iframe, $websiteUri);
+            // define back button
+            $backUri = '';
+            if (!empty($queryParameters['from']))
+            {
+                switch ($queryParameters['from'])
+                {
+                    case 'package':
+                        $backUri = 'achat/packages.html';
+                        break;
+                    case 'result':
+                        $backUri = 'achat/resultats-recherche.html';
+                        break;
+                }
+            }
 
             // define javascript header source code
             $javascriptHeader = sprintf(<<<eof
@@ -63,12 +78,14 @@ eof
                 '{_c2is.stylesheet}',
                 '{_c2is.javascript.header}',
                 '{_c2is.javascript.footer}',
+                '{_c2is.back}',
                 '<b><b>',
             ), array(
                 $websiteUri,
                 $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request),
                 $javascriptHeader,
                 $javascriptFooter,
+                $backUri,
                 '',
             ), $iframe);
 
@@ -79,15 +96,15 @@ eof
         return $controllers;
     }
 
-    public function replaceUri($iframe, $uri)
+    public function replace($iframe)
     {
         $matches = null;
 
-        if (preg_match_all('"{_c2is.replace.uri, \'(.*)\', \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
+        if (preg_match_all('"{_c2is.replace, \'(.*)\', \'(.*)\', \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
         {
             foreach ($matches as $match)
             {
-                $newUri = str_replace($match[1], $uri, $match[2]);
+                $newUri = str_replace($match[1], $match[2], $match[3]);
                 $iframe = str_replace($match[0], $newUri, $iframe);
             }
         }

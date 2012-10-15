@@ -24,6 +24,7 @@
         </p>
     </div>-->
 
+
     <div id="searchContainer" class="column clearboth">
         <div id="searchPrincipal" class="searchBox classic">
             <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
@@ -67,6 +68,12 @@
                     var getCampingsByRegion = "{{ path('search_get_campings_by_region') }}";
                 </script>
             </form>
+            <div id="searchText" class="searchBlock">
+                <h2>Titre</h2>
+                <div id="searchTextContent">
+                    <p>Vous souhaitez réserver un linéaire haute saison : Profitez de 8 semaines minimum consécutives (du 06/07 au 31/08/13) sur le ou les campings spécialement choisis par vos soins.</p><br/><p>Vous pouvez aisément ajouter, dès l’achat, des semaines consécutives avant ou après le linéaire (135€ la semaine). N’oubliez pas, grâce à ce linéaire, vous pouvez acheter un linéaire mini : 6 semaines consécutives en basse saison (135€ la semaine) !</p>
+                </div>
+            </div>
         </div>
 
 

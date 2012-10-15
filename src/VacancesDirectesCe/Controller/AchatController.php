@@ -76,7 +76,7 @@ class AchatController implements ControllerProviderInterface
         $controllers->match('/resultats-recherche.html', function (Request $request) use ($app)
         {
             $achatLineaire = $request->query->all();
-            if (empty($achatLineaire['sort']))
+            if (isset($achatLineaire['dateDebut']))
             {
                 $app['session']->set('search_parameters', $achatLineaire);
             }
@@ -86,8 +86,8 @@ class AchatController implements ControllerProviderInterface
 
                 // override default paramterers
                 $postParameters = $request->request->all();
-                $achatLineaire['maxResults'] = $postParameters['search_form_max_results'];
-                $achatLineaire['sortString'] = $postParameters['search_form_sort_string'];
+                $achatLineaire['maxResults'] = isset($postParameters['search_form_max_results']) ? $postParameters['search_form_max_results'] : 12;
+                $achatLineaire['sortString'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
             }
 
             return $app['twig']->render('Achat/resultatsRecherche.twig', array(
@@ -98,7 +98,10 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/panier.html', function (Request $request) use ($app)
         {
-            $queryString = http_build_query($request->request->all(), '', '&');
+            $queryParameters   = $request->query->all();
+            $requestParameters = $request->request->all();
+
+            $queryString = http_build_query(array_merge($requestParameters, array('from' => $queryParameters['from'])), '', '&');
 
             return $app['twig']->render('Achat/panier.twig', array('queryString' => $queryString));
         })
