@@ -3,6 +3,55 @@
 {% block title %}Packages{% endblock %}
 
 {% block content %}
+    <!--<div id="linearSwitcher">
+        <p>
+            <label>Rechercher de :</label>
+            <input type = "radio"
+                   name = "linearType"
+                   id = "classicLinear"
+                   value = "classic"
+                   checked = "checked" />
+            <label for = "classicLinear">linéaires classiques</label>
+            <input type = "radio"
+                   name = "linearType"
+                   id = "miniLinear"
+                   value = "mini" />
+            <label for = "miniLinear">linéaires basse saison</label>
+        </p>
+    </div>-->
+
+    <div id="searchContainer" class="column clearboth">
+        <div id="searchPrincipal" class="searchBox classic">
+            <form id="searchForm" action="{{ path(app.request.get('_route')) }}" method="post">
+                <fieldset>
+                    <legend>Recherche de linéaires classiques</legend>
+
+                    <pre>{{ form_errors(achatLineaireForm) }}</pre>
+
+                    <ol>
+                        <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.pays) }}
+                                {{ form_widget(achatLineaireForm.region) }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.campings, { 'attr': {'class': 'sMultSelect'}}) }}
+                            </div>
+                        </li>
+                        <li>
+                            <label>Du</label>{{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'date'}}) }}
+                            <label>Au</label>{{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'date'}}) }}
+                            <button type="submit" class="bt fushia">Rechercher</button>
+                        </li>
+                    </ol>
+                </fieldset>
+                {{ form_rest(achatLineaireForm) }}
+            </form>
+        </div>
+
+
         <div class="column clearboth" id="discoverContainer">
 
             <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
