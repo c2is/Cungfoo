@@ -2221,13 +2221,13 @@ div.datepicker th {
   font-weight: normal;
 }
 div.datepicker tbody th {
-  text-align: left;
+  text-align: right;
 }
 div.datepicker tbody a {
   display: block;
 }
 .datepickerDays a {
-  width: 20px;
+  width: 21px;
   line-height: 16px;
   height: 16px;
   padding-right: 2px;
@@ -2265,7 +2265,7 @@ div.datepicker tbody th {
   text-align: left;
 }
 .datepickerSpace div {
-  width: 16px;
+  width: 8px;
 }
 .datepickerGoNext a,
 .datepickerGoPrev a,
@@ -2310,6 +2310,10 @@ td.datepickerSpecial a {
 }
 td.datepickerSpecial.datepickerSelected a {
   background: #ed145b;
+}
+tr.datepickerDoW th:first-child,
+th.datepickerWeek {
+  display: none;
 }
 /* Fix icon position in Chrome & Safari */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

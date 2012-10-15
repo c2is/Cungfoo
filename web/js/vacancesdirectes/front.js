@@ -214,6 +214,7 @@ $(function() {
                 renderYear = renderDate.getFullYear(),
                 renderMonth = renderDate.getMonth()+1,
                 renderDay = renderDate.getDate(),
+                renderWeekDay = renderDate.getDay(),
                 fRenderMonth = ((''+renderMonth).length<2 ? '0' : '') + renderMonth,
                 fRenderDay = ((''+renderDay).length<2 ? '0' : '') + renderDay,
                 fRenderDate = renderYear + '/' + fRenderMonth + '/' + fRenderDay,
@@ -225,7 +226,8 @@ $(function() {
 //            console.log(renderDate);
 //            console.log(startDate);
 //            console.log(endDate);
-                if (renderDate < startDate || renderDate > endDate){
+            console.log(renderWeekDay);
+                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 ){
                     console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }

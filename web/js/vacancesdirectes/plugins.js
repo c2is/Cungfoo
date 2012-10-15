@@ -1491,7 +1491,7 @@ InfoBox.prototype.panMap = function() {
                 var el = $(ev.target);
                 if (el.is('a')) {
                     ev.target.blur();
-                    if (el.hasClass('datepickerDisabled')) {
+                    if ( (el.hasClass('datepickerDisabled')) ) {
                         return false;
                     }
                     var options = $(this).data('datepicker');
