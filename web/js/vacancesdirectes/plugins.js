@@ -951,8 +951,12 @@ InfoBox.prototype.panMap = function() {
 
     $.fn.sMultSelect = function(options){
         return this.each(function(){
-            // declaration de l'objet
-            var $mul = $(this);
+            var defaults = {
+                msgNull:    'No result'
+            };
+
+            var opts = $.extend(defaults, options),
+                $mul = $(this);
 
             $(this).data('ssOpts',options);
 
@@ -979,9 +983,15 @@ InfoBox.prototype.panMap = function() {
                 );
             }
             // lancement de la function de creation des <li>
-            $mul.children('option').each(function(){
-                addMulItem(this, $newMul);
-            });
+            if ($mul.is(':empty')){
+                $newMul.html('<li style="font-style:italic;padding:2px 5px;">'+opts.msgNull+'</li>');
+            }else{
+                $mul.children('option').each(function(){
+                    addMulItem(this, $newMul);
+                });
+            }
+
+
             // declaration de la var correspondant aux nouveaux elements <li>
             $newMulLi = $newMul.find('li');
             // action au clic sur un element <li>
