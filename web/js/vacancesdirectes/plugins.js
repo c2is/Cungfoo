@@ -938,12 +938,23 @@ InfoBox.prototype.panMap = function() {
 
 }(jQuery));
 
-(function($) {
-    $.fn.sMultSelect = function(params) {
-        //params = params = $.extend( {}, params);
-        this.each(function() {
+
+/* stylish multiple select - LGU */
+(function($){
+    $.fn.extend({
+        resetMultSelect: function(){
+            $this = $(this);
+            $this.next().remove();
+            $this.unbind('.sMultSelect').sMultSelect();
+        }
+    });
+
+    $.fn.sMultSelect = function(options){
+        return this.each(function(){
             // declaration de l'objet
             var $mul = $(this);
+
+            $(this).data('ssOpts',options);
 
             // creation du nouvel objet sous forme de liste <ul>
             var origId = $mul.attr('id'),
@@ -988,9 +999,9 @@ InfoBox.prototype.panMap = function() {
                 }
             });
         });
-        return this;
     };
 })(jQuery);
+
 
 /**
  *

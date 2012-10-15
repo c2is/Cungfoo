@@ -95,6 +95,7 @@ $(function() {
         });
     }
 
+
 // triggerClick
     $('.triggerClick').click( function() {
         var oTarget = $(this).attr('data-triggerLink');
@@ -444,9 +445,9 @@ $(function() {
     */
 
     $('.sMultSelect').sMultSelect();
-    $('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
         .wrap('<div class="viewport"><div class="overview"></div></div>');
-    $('.tinyScroll').tinyscrollbar();
+    $('.tinyScroll').tinyscrollbar();*/
 });
 
 
