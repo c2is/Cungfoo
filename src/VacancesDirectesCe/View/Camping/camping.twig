@@ -201,14 +201,14 @@
                 <span>Filtrer par :</span>
                 <select name="type" id="type">
                     <option value="">Toutes catégories</option>
-                    {% for category in categoryTypeHebergement %}
+                    {% for category in etab.categoriesTypeHergement %}
                         <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
                     {% endfor %}
                 </select>
                 <select name="capacite" id="capacite">
                     <option value="">Toutes capacités</option>
-                    {% for hebergement in etab.typeHebergements %}
-                        <option value="cap{{ hebergement.nombrePlace }}">Capacité : {{ hebergement.nombrePlace }} places</option>
+                    {% for nbPlace in etab.capacitesTypeHebergement %}
+                        <option value="cap{{ nbPlace }}">Capacité : {{ nbPlace }} places</option>
                     {% endfor %}
                 </select>
             </fieldset>
@@ -241,7 +241,7 @@
             <dl>
                 <dt><span>Activités</span></dt>
                 <dd class="activites"><ul>
-                    {% for activite in activites %}
+                    {% for activite in etab.activites %}
                         <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
                     {% endfor %}
                 </ul></dd>
@@ -254,7 +254,7 @@
             <dl>
                 <dt><span>Services complémentaires</span></dt>
                 <dd class="services"><ul>
-                    {% for serviceComplementaire in servicesComplementaires %}
+                    {% for serviceComplementaire in etab.serviceComplementaires %}
                         <li><img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}"><span>{{ serviceComplementaire.name }}</span></span></li>
                     {% endfor %}
                 </ul></dd>
