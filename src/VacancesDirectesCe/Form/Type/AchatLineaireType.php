@@ -83,12 +83,12 @@ class AchatLineaireType extends AppAwareType
             'empty_value' => false,
         ));
 
-        $builder->add('dateDebut', 'text', array(
+        $builder->add('dateDebut', 'hidden', array(
             'label' => 'Date de début',
             'required' => false,
         ));
 
-        $builder->add('dateFin', 'text', array(
+        $builder->add('dateFin', 'hidden', array(
             'label' => 'Date de fin',
             'required' => false,
         ));
