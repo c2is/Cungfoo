@@ -29,13 +29,13 @@ class AchatLineaireData
         {
             $aDateDebut = explode('/', $this->dateDebut);
             $dateDebutDate    = new \DateTime(sprintf('%s/%s/%s', $aDateDebut[1], $aDateDebut[0], $aDateDebut[2]));
-            $debutJuilletDate = new \DateTime('07/01/2012');
+            $debutJuilletDate = new \DateTime('06/30/2013');
 
             $dateDebutTimestamp = $dateDebutDate->getTimestamp();
 
             if ($dateDebutTimestamp > $debutJuilletDate->getTimestamp())
             {
-                $context->addViolation("La date de début doit être inférieur au 2 juillet 2012.");
+                $context->addViolation("La date de début doit être inférieur au 30 juin 2013.");
             }
         }
 
@@ -47,13 +47,13 @@ class AchatLineaireData
         {
             $aDateFin = explode('/', $this->dateFin);
             $dateFinDate    = new \DateTime(sprintf('%s/%s/%s', $aDateFin[1], $aDateFin[0], $aDateFin[2]));
-            $finAoutDate = new \DateTime('08/31/2012');
+            $finAoutDate = new \DateTime('08/30/2013');
 
             $dateFinTimestamp = $dateFinDate->getTimestamp();
 
             if ($dateFinTimestamp < $finAoutDate->getTimestamp())
             {
-                $context->addViolation("La date de fin doit être supérieur au 30 aout 2012.");
+                $context->addViolation("La date de fin doit être supérieur au 30 aout 2013.");
             }
         }
     }
