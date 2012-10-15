@@ -2,6 +2,10 @@
 
 {% block title %}Packages{% endblock %}
 
+{% block headjs %}{{ parent() }}
+,{search: templatePath + "js/vacancesdirectes/search.js"}
+{% endblock %}
+
 {% block content %}
     <!--<div id="linearSwitcher">
         <p>
@@ -45,9 +49,24 @@
                             <label>Au</label>{{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'date'}}) }}
                             <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
+                        <li>
+                            <div id="widget">
+                                <div id="widgetField" class="clear">
+                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
+                                </div>
+                                <div id="widgetCalendar">
+                                </div>
+                            </div>
+                        </li>
                     </ol>
                 </fieldset>
                 {{ form_rest(achatLineaireForm) }}
+
+                <script type="text/javascript">
+                    var getRegionsByPays    = "{{ path('search_get_regions_by_pays') }}";
+                    var getCampingsByPays   = "{{ path('search_get_campings_by_pays') }}";
+                    var getCampingsByRegion = "{{ path('search_get_campings_by_region') }}";
+                </script>
             </form>
         </div>
 

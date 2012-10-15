@@ -28,13 +28,18 @@ function parentExists() {
 
 function resize_myframe() {
     //var height = document.getElementById('pageContener').offsetHeight;
-    var height = $('#pageContener').height();
+    var height = $('body').outerHeight();
     //consoleLog(height);
-    if($('#reservationContener > .warning').length){
+    /*if($('#reservationContener > .warning').length){
         height += $('#reservationContener > .warning').outerHeight(true);
     }
-
+     */
     height += 50;
 
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
+
+    setTimeout( function(){
+        var height = $('body').height();
+        consoleLog(height);
+    },1000)
 }
