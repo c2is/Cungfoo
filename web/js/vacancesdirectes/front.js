@@ -202,6 +202,12 @@ $(function() {
             $('#widget input.hidden').each(function(index, value){
                 $(this).val(selectedDates[index]);
             });
+        },
+        onRender: function(date) {
+            return {
+                disabled: (date.valueOf() < startDate.valueOf()),
+                className: date.valueOf() == startDate.valueOf() ? 'datepickerSpecial' : false
+            }
         }
     });
 /*
