@@ -2,8 +2,12 @@
 
 {% block title %}Packages{% endblock %}
 
+{% block headjs %}{{ parent() }}
+,{search: templatePath + "js/vacancesdirectes/search.js"}
+{% endblock %}
+
 {% block content %}
-    <div id="linearSwitcher">
+    <!--<div id="linearSwitcher">
         <p>
             <label>Rechercher de :</label>
             <input type = "radio"
@@ -18,11 +22,11 @@
                    value = "mini" />
             <label for = "miniLinear">linéaires basse saison</label>
         </p>
-    </div>
+    </div>-->
 
     <div id="searchContainer" class="column clearboth">
         <div id="searchPrincipal" class="searchBox classic">
-            <form id="searchForm" action="{{ path(app.request.get('_route')) }}" method="post">
+            <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
 
@@ -41,13 +45,27 @@
                             </div>
                         </li>
                         <li>
-                            <label>Du</label>{{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'date'}}) }}
-                            <label>Au</label>{{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'date'}}) }}
+                            <div id="widget">
+                                {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
+                                {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
+                                <div id="widgetField" class="clear">
+                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
+                                </div>
+                                <div id="widgetCalendar">
+
+                                </div>
+                            </div>
                             <button type="submit" class="bt fushia">Rechercher</button>
                         </li>
                     </ol>
                 </fieldset>
                 {{ form_rest(achatLineaireForm) }}
+
+                <script type="text/javascript">
+                    var getRegionsByPays    = "{{ path('search_get_regions_by_pays') }}";
+                    var getCampingsByPays   = "{{ path('search_get_campings_by_pays') }}";
+                    var getCampingsByRegion = "{{ path('search_get_campings_by_region') }}";
+                </script>
             </form>
         </div>
 

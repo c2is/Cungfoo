@@ -95,6 +95,7 @@ $(function() {
         });
     }
 
+
 // triggerClick
     $('.triggerClick').click( function() {
         var oTarget = $(this).attr('data-triggerLink');
@@ -120,32 +121,154 @@ $(function() {
     $(".popinInline").colorbox({inline:true, width:"75%"});
 
 // select
-    $('#searchPrincipal').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+    $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
-    $('#datepicker-principal-arrival').Zebra_DatePicker({
-        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-        lang_clear_date: ['Effacer'],
-        format: 'd/m/Y',
-        readonly_element: true,
-        pair: $('#datepicker-principal-departure'),
-        disabled_dates: ['* * * 0,1,2,3,4,5'],
-        direction: ['01/04/2013', '30/06/2013'],
-        always_visible: $('#datepickerPrincipal')
-    });
+    var d = new Date(),
+        currentYear = d.getFullYear(),
+        currentMonth = d.getMonth()+1,
+        currentDay = d.getDate(),
+        fCurrentMonth = ((''+currentMonth).length<2 ? '0' : '') + currentMonth,
+        fCurrentDay = ((''+currentDay).length<2 ? '0' : '') + currentDay,
+        fCurrentDate = currentYear + '/' + fCurrentMonth + '/' + fCurrentDay,
+        currentDate = fCurrentDate.split('/').join(''),
+        fStartDate = '2013/04/01',
+        fEndDate = '2013/10/31',
+        fSeasonDates = [fStartDate,fEndDate],
+        startDate = fStartDate.split('/').join('');
+    console.log(fSeasonDates);
+    console.log(fSeasonDates);
+    console.log(fCurrentDate);
+    console.log(d);
 
-    $('#datepicker-principal-departure').Zebra_DatePicker({
-        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-        lang_clear_date: ['Effacer'],
-        format: 'd/m/Y',
-        readonly_element: true,
-        disabled_dates: ['* * * 0,1,2,3,4,5'],
-        direction: ['01/09/2013', '15/11/2013'],
-        always_visible: $('#datepickerPrincipal')
-    });
+    if (currentDate > startDate){
+        fStartDate = fCurrentDate;
+    }
+    console.log(currentDate);
+    console.log(startDate);
+    console.log(fStartDate);
 
+    var firstSelection = true;
+
+    function switchLinear() {
+        var radioValue = $('input[type=radio][name=linearType]:checked').attr('value');
+        $('#searchContainer .searchBox').attr('id',radioValue);
+        if (radioValue == "classic"){
+
+        }
+        else {
+
+        }
+    }
+    $('#widgetCalendar').DatePicker({
+        flat: true,
+        date: fSeasonDates,
+        current: fStartDate,
+        calendars: 3,
+        mode: 'range',
+        starts: 1,
+        format:'Y/m/d',
+        position: 'right',
+        onBeforeShow: function(){
+            console.log("################################## onBeforeShow:  ##################################");
+
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
+        onChange: function(formated, dates){
+            console.log("################################## onChange:  ##################################");
+            console.log(formated);
+            console.log(dates);
+
+            var selectedDates  = new Array();
+            $.each(dates, function(index, value) {
+                //                alert(index + ': ' + value);
+                var selectedYear = value.getFullYear(),
+                    selectedMonth = value.getMonth()+1,
+                    selectedDay = value.getDate();
+                console.log(currentYear);
+                console.log(currentMonth);
+                console.log(currentDay);
+                selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
+            });
+            if (firstSelection) {
+                console.log(selectedDates[0]);
+            }
+            else {
+                console.log(selectedDates[1]);
+                firstSelection = true;
+            }
+            console.log(selectedDates)
+            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+            $('#widget input.hidden').each(function(index, value){
+                $(this).val(selectedDates[index]);
+            });
+        },
+        onRender: function(date) {
+            return {
+                disabled: (date.valueOf() < startDate.valueOf()),
+                className: date.valueOf() == startDate.valueOf() ? 'datepickerSpecial' : false
+            }
+        }
+    });
+/*
+    $('#widgetCalendar').DatePicker({
+        flat: true,
+        date: fSeasonDates,
+        current: fStartDate,
+        calendars: 3,
+        mode: 'range',
+        starts: 1,
+        format:'Y/m/d',
+        position: 'right',
+        onBeforeShow: function(){
+            console.log("################################## onBeforeShow:  ##################################");
+
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
+        onChange: function(formated, dates){
+            console.log("################################## onChange:  ##################################");
+            console.log(formated);
+            console.log(dates);
+
+            var selectedDates  = new Array();
+            $.each(dates, function(index, value) {
+                //                alert(index + ': ' + value);
+                var selectedYear = value.getFullYear(),
+                    selectedMonth = value.getMonth()+1,
+                    selectedDay = value.getDate();
+                console.log(currentYear);
+                console.log(currentMonth);
+                console.log(currentDay);
+                selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
+            });
+            if (firstSelection) {
+                console.log(selectedDates[0]);
+            }
+            else {
+                console.log(selectedDates[1]);
+                firstSelection = true;
+            }
+            console.log(selectedDates)
+            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+            $('#widget input.hidden').each(function(index, value){
+                $(this).val(selectedDates[index]);
+            });
+        }
+    });
+*/
+    var state = false;
+    $('#widgetField').bind('click', function(){
+        $(this).toggleClass('opened');
+        $(this).next('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
+        state = !state;
+        return false;
+    });
+    $('#linearSwitcher input').bind('click', function(){
+            switchLinear();
+    });
+    $('#widgetCalendar div.datepicker').css('position', 'absolute');
+
+    /*
     $('#datepicker-secondary-arrival').Zebra_DatePicker({
         months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
@@ -354,11 +477,12 @@ $(function() {
             checkMonth(departureAvailableDates, departureDatepicker);
         }
     });
+    */
 
-    $('.sMultSelect').sMultSelect();
-    $('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
+    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
         .wrap('<div class="viewport"><div class="overview"></div></div>');
-    $('.tinyScroll').tinyscrollbar();
+    $('.tinyScroll').tinyscrollbar();*/
 });
 
 

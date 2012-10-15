@@ -47,3 +47,4 @@ $app->mount('/resalys', new \Resalys\Controller\WrapperController());
 $app->mount('/achat', new \VacancesDirectesCe\Controller\AchatController());
 $app->mount('/administration', new \VacancesDirectesCe\Controller\AdministrationController());
 $app->mount('/camping', new \VacancesDirectesCe\Controller\CampingController());
+$app->mount('/search', new \VacancesDirectesCe\Controller\SearchController());

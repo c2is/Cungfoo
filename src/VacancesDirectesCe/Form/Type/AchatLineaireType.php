@@ -41,9 +41,12 @@ class AchatLineaireType extends AppAwareType
         ));
 
         $regionsList = RegionQuery::create()
-            ->useI18nQuery()
-                ->withColumn('Name')
+            ->useI18nQuery('fr', 'region_i18n')
+                ->withColumn('region_i18n.Name', 'Name')
                 ->orderByName()
+            ->endUse()
+            ->usePaysQuery()
+                ->withColumn('pays.Code', 'Pays')
             ->endUse()
             ->select(array('Code'))
             ->find()
@@ -62,6 +65,11 @@ class AchatLineaireType extends AppAwareType
                 ->withColumn('Name')
                 ->orderByName()
             ->endUse()
+            ->useVilleQuery()
+                ->useRegionQuery()
+                    ->withColumn('region.Code', 'Region')
+                ->endUse()
+            ->endUse()
             ->select(array('Code'))
             ->find()
             ->toArray()
@@ -75,12 +83,12 @@ class AchatLineaireType extends AppAwareType
             'empty_value' => false,
         ));
 
-        $builder->add('dateDebut', 'text', array(
+        $builder->add('dateDebut', 'hidden', array(
             'label' => 'Date de début',
             'required' => false,
         ));
 
-        $builder->add('dateFin', 'text', array(
+        $builder->add('dateFin', 'hidden', array(
             'label' => 'Date de fin',
             'required' => false,
         ));

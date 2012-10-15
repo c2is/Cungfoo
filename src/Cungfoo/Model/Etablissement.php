@@ -29,4 +29,31 @@ class Etablissement extends BaseEtablissement
 
         return $utils->decimalToDms((float)$this->getGeoCoordinateX(), (float)$this->getGeoCoordinateY());
     }
+
+    public function getCategoriesTypeHergement()
+    {
+        return \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+            ->joinWithI18n()
+            ->useTypeHebergementQuery()
+                ->useEtablissementTypeHebergementQuery()
+                    ->filterByEtablissementId($this->getId())
+                ->endUse()
+            ->endUse()
+            ->distinct()
+            ->find()
+        ;
+    }
+
+    public function getCapacitesTypeHebergement()
+    {
+        return \Cungfoo\Model\TypeHebergementQuery::create()
+            ->select('NombrePlace')
+            ->joinWithI18n()
+            ->useEtablissementTypeHebergementQuery()
+                ->filterByEtablissementId($this->getId())
+            ->endUse()
+            ->distinct()
+            ->find()
+        ;
+    }
 }

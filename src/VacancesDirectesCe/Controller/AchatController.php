@@ -57,6 +57,10 @@ class AchatController implements ControllerProviderInterface
                         $achatLineaireParameters['campings'] = '';
                     }
 
+                    // default parameters
+                    $achatLineaireParameters['maxResults'] = 12;
+                    $achatLineaireParameters['sortString'] = "Priority,StartDate,Etab,RoomType(2),ProductPriority";
+
                     unset($achatLineaireParameters['token']);
 
                     return $app->redirect($app['url_generator']->generate('achat_recherche', $achatLineaireParameters));
@@ -71,13 +75,23 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/resultats-recherche.html', function (Request $request) use ($app)
         {
-            $queryString = http_build_query($request->request->all(), '', '&');
+            $achatLineaire = $request->query->all();
+            if (empty($achatLineaire['sort']))
+            {
+                $app['session']->set('search_parameters', $achatLineaire);
+            }
+            else
+            {
+                $achatLineaire = $app['session']->get('search_parameters');
 
-            // array(6) { ["pays"]=> string(1) "1" ["region"]=> string(1) "1" ["dateDebut"]=> string(10) "01/07/2012" ["dateFin"]=> string(10) "31/08/2012" ["nbAdultes"]=> string(1) "1" ["_token"]=> string(40) "5cac746b36845442f3ac0b7c63c852a4218e5c4d" }
+                // override default paramterers
+                $postParameters = $request->request->all();
+                $achatLineaire['maxResults'] = $postParameters['search_form_max_results'];
+                $achatLineaire['sortString'] = $postParameters['search_form_sort_string'];
+            }
 
             return $app['twig']->render('Achat/resultatsRecherche.twig', array(
-                'queryString'   => $queryString,
-                'achatLineaire' => $request->query->all(),
+                'achatLineaire' => $achatLineaire,
             ));
         })
         ->bind('achat_recherche');
