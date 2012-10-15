@@ -1175,7 +1175,7 @@ InfoBox.prototype.panMap = function() {
                     daysMin: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
                     months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
                     monthsShort: ["janv", "févr", "mars", "avr.", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
-                    weekMin: 'wk'
+                    weekMin: 'Se'
                 }
             },
             fill = function(el) {

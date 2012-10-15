@@ -153,9 +153,10 @@
   overflow: hidden;
   position: absolute;
   top: 23px;
-  width: 540px;
+  width: 886px;
   z-index:10;
   margin:10px 0;
+//  border: 1px solid @colorGris3;
 }
 #widgetCalendar .datepicker {
   bottom: 0;
@@ -186,10 +187,10 @@ div.datepicker {
   top: 10px;
   left: 10px;
 }
-.datepickerContainer>table>tbody>tr>td:nth-child(1) thead .datepickerGoNext,
-.datepickerContainer>table>tbody>tr>td:nth-child(3) thead .datepickerGoPrev,
-.datepickerContainer>table>tbody>tr>td:nth-child(3) thead .datepickerGoNext,
-.datepickerContainer>table>tbody>tr>td:nth-child(5) thead .datepickerGoPrev {visibility:hidden;}
+.datepickerContainer>table>tbody>tr>td:first-child thead .datepickerGoPrev {visibility:visible;}
+.datepickerContainer>table>tbody>tr>td thead .datepickerGoPrev,
+.datepickerContainer>table>tbody>tr>td thead .datepickerGoNext {visibility:hidden;}
+.datepickerContainer>table>tbody>tr>td:last-child thead .datepickerGoNext {visibility:visible;}
 .datepickerBorderT {position: absolute;left: 10px;top: 0;right: 10px;height: 10px;background: url(../images/datepicker_t.png);}
 .datepickerBorderB {position: absolute;left: 10px;bottom: 0;right: 10px;height: 10px;background: url(../images/datepicker_b.png);}
 .datepickerBorderL {position: absolute;left: 0;bottom: 10px;top: 10px;width: 10px;background: url(../images/datepicker_l.png);}
@@ -241,12 +242,14 @@ div.datepicker tbody a {
 }
 td.datepickerNotInMonth a {
   color: #666;
+  visibility: hidden;
 }
 tbody.datepickerDays td.datepickerSelected{
   background: @colorFushia;
 }
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
   background: #75092d;
+  visibility: hidden;
 }
 tbody.datepickerYears td.datepickerSelected,
 tbody.datepickerMonths td.datepickerSelected{
@@ -264,25 +267,22 @@ div.datepicker tbody th {
   text-align: left;
 }
 .datepickerSpace div {
-  width: 20px;
+  width: 16px;
 }
 .datepickerGoNext a,
 .datepickerGoPrev a,
 .datepickerMonth a {
   text-align: center;
   .verticalCenter(23px);
+  margin-bottom:5px;
 }
 .datepickerGoNext a span,
 .datepickerGoPrev a span,
 .datepickerMonth a span {
   vertical-align:middle;
 }
-.datepickerGoNext a {
-  float: right;
-  width: 20px;
-}
+.datepickerGoNext a,
 .datepickerGoPrev a {
-  float: left;
   width: 20px;
 }
 table.datepickerViewDays tbody.datepickerMonths,
@@ -307,11 +307,13 @@ td.datepickerDisabled a:hover {
   color: #333;
 }
 td.datepickerSpecial a {
-  background: #700;
+  background: #7d5864;
 }
 td.datepickerSpecial.datepickerSelected a {
-  background: #a00;
+  background: @colorFushia;
 }
+//tr.datepickerDoW th:first-child,
+//th.datepickerWeek{display:none;}
 
 /* Fix icon position in Chrome & Safari */
 @media screen and (-webkit-min-device-pixel-ratio:0) {

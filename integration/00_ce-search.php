@@ -24,29 +24,28 @@ include('includes/ce-top.php'); ?>
                 <li class="tab current"><a href="">Coordonnées</a></li>
                 <li class="tab"><a href="">Suivi des achats</a></li>
             </ul>
-
         </nav>
 
     </div>
     <!-- colonne pleine largeur -->
 
     <!-- colonne pleine largeur -->
-    <div id="linearSwitcher">
-        <p>
-            <label>Rechercher de :</label>
-            <input type = "radio"
-                   name = "linearType"
-                   id = "classicLinear"
-                   value = "classic"
-                   checked = "checked" />
-            <label for = "classicLinear">linéaires classiques</label>
-            <input type = "radio"
-                   name = "linearType"
-                   id = "miniLinear"
-                   value = "mini" />
-            <label for = "miniLinear">linéaires basse saison</label>
-        </p>
-    </div>
+<!--    <div id="linearSwitcher">-->
+<!--        <p>-->
+<!--            <label>Rechercher de :</label>-->
+<!--            <input type = "radio"-->
+<!--                   name = "linearType"-->
+<!--                   id = "classicLinear"-->
+<!--                   value = "classic"-->
+<!--                   checked = "checked" />-->
+<!--            <label for = "classicLinear">linéaires classiques</label>-->
+<!--            <input type = "radio"-->
+<!--                   name = "linearType"-->
+<!--                   id = "miniLinear"-->
+<!--                   value = "mini" />-->
+<!--            <label for = "miniLinear">linéaires basse saison</label>-->
+<!--        </p>-->
+<!--    </div>-->
 
     <div id="searchContainer" class="column clearboth">
         <div class="searchBox full-width">
@@ -99,6 +98,7 @@ include('includes/ce-top.php'); ?>
                 </div>
             </div>
         </div>
+    </div>
 <!--        <div id="datepickerPrincipal" class="datepicker clear"></div>-->
 <!--        <div id="searchSecondary" class="searchBox">-->
 <!--            <label>Du</label><input class="date" type="text" name="datepicker-secondary-arrival" id="datepicker-secondary-arrival" />-->
@@ -111,11 +111,11 @@ include('includes/ce-top.php'); ?>
     <!-- colonne pleine largeur -->
     <div id="discoverContainer" class="column clearboth">
 
-<!--            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>-->
+            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>
 
     </div>
     <!-- colonne pleine largeur -->
-</div>
+
 
 <?php include('includes/ce-bottom.php'); ?>
 <?php include('includes/inc_footer.php'); ?>
