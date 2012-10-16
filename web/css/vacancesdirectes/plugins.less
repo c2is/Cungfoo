@@ -1,4 +1,35 @@
 /*PLUGINS*/
+/* infoBox */
+.infoBox { background: #fff; width: 265px; height: 160px; margin: 0; padding: 6px; font-size: 11px;
+  -webkit-border-radius: 6px;
+  -mos-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+.lt-ie9 .infoBox { border: 1px solid #ccc;  }
+.infoBox:after { content: ''; z-index: 1; position: absolute; bottom: -20px; left: 0; width: 100%; height: 20px; background: url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 222px 100%;}
+
+.infoBox .content { postition: relative !important; height: 138px; overflow: hidden; }
+
+.infoBox img { float: right; }
+.infoBox .content img { float: left; margin: 0 6px 3px 0; }
+
+.infoBox .title { font-size: 16px !important; line-height:16px !important;  margin-bottom: 4px !important; }
+.infoBox .city, .infoBox .dept { font-size: 12px; font-weight: bold; }
+
+.infoBox .heberg { font-weight: bold; clear: both; margin-bottom: 4px; }
+.infoBox .btns { position: absolute; bottom: 6px; right: 6px; text-align: right; }
+.infoBox .price { color: #d91935; font: 22px 'Francois One', Arial, Sans-sherif; text-transform: uppercase; }
+
+.infoBox .btn-red { margin-left: 7px; }
+
+
 /*
     ColorBox Core Style:
     The following CSS is consistent between example themes and should not be altered.

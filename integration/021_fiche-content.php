@@ -5,22 +5,23 @@
         proxMapLoaded = false,
         infoMapLoaded = false;
 
+    // global markers vars
     var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
     var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
     var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
     var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
-            new google.maps.Size(19, 17),
-            new google.maps.Point(0,0),
-            new google.maps.Point(0, 17));
+        new google.maps.Size(19, 17),
+        new google.maps.Point(0,0),
+        new google.maps.Point(0, 17));
     var shape = {
         coord: [1, 1, 1, 20, 18, 20, 18 , 1],
         type: 'poly'
@@ -28,7 +29,7 @@
 
     // specific function maps
     var proxMkrs = [
-        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
+        ['c2is', 45.764544, 4.846512, 5, '12', markerBleu]
     ];
     function proxInit() {
         var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
@@ -44,7 +45,7 @@
     }
 
     var infoMkrs = [
-        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
+        ['c2is', 45.764544, 4.846512, 5, '12', markerFushia]
     ];
     function infoInit() {
         var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
@@ -72,13 +73,40 @@
                 shape: shape,
                 title: mkr[0],
                 zIndex: mkr[3],
-                html: mkr[4]
+                idCamp: mkr[4]
             });
-            var contentString = "";
-            /*google.maps.event.addListener(marker, "click", function () {
-                infowindow.setContent(this.html);
-                infowindow.open(map, this);
-            });*/
+
+            google.maps.event.addListener(marker, "click", function (e) {
+                if(!this.content){ //1st click
+                    $.ajax({
+                        url: 'blocs/smallInfoBox.php?id='+this.idCamp,
+                        success: function(response){
+                            this.content = response;
+                            ib.setContent(response);
+                            ib.open(map, marker);
+                        }
+                    });
+                }else{
+                    ib.setContent(this.content);
+                    ib.open(map, marker);
+                }
+            });
+
+            // infobox vars
+            var boxOptions = {
+                content: ''
+                ,disableAutoPan: false
+                ,maxWidth: 0
+                ,pixelOffset: new google.maps.Size(-227, -50)
+                ,zIndex: null
+                ,closeBoxMargin: "0px 0px 2px 2px"
+                ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+                ,infoBoxClearance: new google.maps.Size(1, 1)
+                ,alignBottom: true
+                ,pane: "floatPane"
+                ,enableEventPropagation: false
+            };
+            var ib = new InfoBox(boxOptions);
         }
     }
 </script>
@@ -118,9 +146,9 @@
 
 <ul class="tabControls clear">
     <li><a href="#tabCamp">Le camping</a></li>
-    <li><a href="#tabLocations" class="active">Les locations</a></li>
+    <li><a href="#tabLocations">Les locations</a></li>
     <li><a href="#tabSurplace">Sur place</a></li>
-    <li><a href="#tabProximite">A proximité</a></li>
+    <li><a href="#tabProximite" class="active">A proximité</a></li>
     <!-- Non V2<li><a href="#tabAvis">Avis</a></li>-->
     <li><a href="#tabInfos">Infos pratiques</a></li>
 </ul>
