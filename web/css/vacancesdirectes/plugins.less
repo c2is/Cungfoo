@@ -76,17 +76,17 @@
 // Stylish Select
 .stylish-select{
   .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
-  ul.newList {margin:0;padding:0;list-style:none;color:#000;background:#fff;border:1px solid #ccc;overflow:auto;}
+  ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color: #000;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
-  .newListSelected {width:@selectWidth;color:#000;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
+  .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
   .selectedTxt {width:@selectWidth - @selectHeight - 5;overflow:hidden;padding:0 @selectHeight 0 5px;position:absolute;}
   .hiLite {background:#ED145B!important;color:#fff!important;}
-  .newListHover {background-color:#ccc!important;color:#000!important;cursor:default;}
+  .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
   .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
   .newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
   .newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
@@ -116,7 +116,7 @@
 }
 #widgetField input {
   background-color: #E6E5E5;
-  color: #000000;
+  color: @colorGris2;
   float: left;
   height: 23px;
   line-height: 23px;
@@ -147,7 +147,7 @@
 #widgetField:hover span,
 #widgetField.opened span { background-position: 0 -46px; }
 #widgetCalendar {
-  background: none repeat scroll 0 0 @colorGris2;
+  background: none repeat scroll 0 0 @colorGris3;
   height: 0;
   left: 0;
   overflow: hidden;
@@ -182,7 +182,7 @@ div.datepicker {
   display: none;
 }
 .datepickerContainer {
-  background: #121212;
+  background: @colorGris3;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -206,7 +206,7 @@ div.datepicker table {
   border-collapse:collapse;
 }
 div.datepicker a {
-  color: #eee;
+  color: @colorGris2;
   text-decoration: none;
   cursor: default;
   outline: none;
@@ -217,7 +217,7 @@ div.datepicker table td {
   margin: 0;
 }
 div.datepicker th {
-  text-align: center;
+  text-align: right;
   color: #999;
   font-weight: normal;
 }
@@ -247,6 +247,12 @@ td.datepickerNotInMonth a {
 tbody.datepickerDays td.datepickerSelected{
   background: @colorFushia;
 }
+td.datepickerSelected a,
+div.datepicker td.datepickerSelected a:hover,
+td.datepickerDisabled.datepickerSelected a,
+div.datepicker td.datepickerDisabled.datepickerSelected a:hover{
+  color:@colorBlanc;
+}
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
   background: #75092d;
   visibility: hidden;
@@ -262,9 +268,6 @@ div.datepicker a:hover {
 }
 div.datepicker td.datepickerNotInMonth a:hover {
   color: #999;
-}
-div.datepicker tbody th {
-  text-align: left;
 }
 .datepickerSpace div {
   width: 8px;
@@ -300,17 +303,20 @@ table.datepickerViewYears tr.datepickerDoW {
   display: none;
 }
 td.datepickerDisabled a,
+td.datepickerUnselectable a,
 td.datepickerDisabled.datepickerNotInMonth a{
-  color: #333;
+  color: #c2c2c2;
 }
-td.datepickerDisabled a:hover {
-  color: #333;
+td.datepickerDisabled a:hover,
+td.datepickerUnselectable a:hover {
+  color: #c2c2c2;
 }
 td.datepickerSpecial a {
-  background: #7d5864;
+  background: #e7d0d7;
 }
 td.datepickerSpecial.datepickerSelected a {
   background: @colorFushia;
+  color: @colorBlanc;
 }
 tr.datepickerDoW th:first-child,
 th.datepickerWeek{display:none;}
