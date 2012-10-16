@@ -84,6 +84,7 @@ eof
                 '{_c2is.javascript.header}',
                 '{_c2is.javascript.footer}',
                 '{_c2is.back}',
+                '{_c2is.uri.ficheCamping}',
                 '<b><b>',
             ), array(
                 $websiteUri,
@@ -91,6 +92,7 @@ eof
                 $javascriptHeader,
                 $javascriptFooter,
                 $backUri,
+                sprintf('%s/camping', $websiteUri),
                 '',
             ), $iframe);
 

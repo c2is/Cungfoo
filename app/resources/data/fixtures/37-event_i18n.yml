@@ -364,16 +364,11 @@
         Locale: fr
         Name: 'Festival automobile de Mulhouse'
         StrDate: 'Du samedi 29 juin 2013 au lundi 1 juillet 2013'
-    51_en:
-        Id: 51
-        Locale: en
-        Name: 'Once upon a time... Children in printed fabrics from 1750 to today, exhibition'
-        StrDate: 'From Thursday, November 10 2011 to Sunday, October 14 2012'
     51_fr:
         Id: 51
         Locale: fr
-        Name: 'Il était une fois… l''enfant dans le tissu imprimé de 1750 à nos jours, exposition'
-        StrDate: 'Du jeudi 10 novembre 2011 au dimanche 14 octobre 2012'
+        Name: 'Mondial de la bière Strasbourg-Europe'
+        StrDate: 'Du jeudi 12 septembre 2013 au dimanche 15 septembre 2013'
     52_fr:
         Id: 52
         Locale: fr
@@ -417,58 +412,53 @@
     58_en:
         Id: 58
         Locale: en
-        Name: 'Hendaye Garden Expo'
-        StrDate: 'From Friday, April 19 2013 to Sunday, April 21 2013'
+        Name: 'Bayonne Festival'
+        StrDate: 'From Wednesday, July 24 2013 to Sunday, July 28 2013'
     58_fr:
         Id: 58
         Locale: fr
-        Name: 'Hendaye fête le printemps !'
-        StrDate: 'Du vendredi 19 avril 2013 au dimanche 21 avril 2013'
-    59_de:
-        Id: 59
-        Locale: de
-        Name: Avrilexpo
-        StrDate: 'Vom Freitag, 26. April 2013 bis zum Sonntag, 28. April 2013'
+        Name: 'Fêtes de Bayonne'
+        StrDate: 'Du mercredi 24 juillet 2013 au dimanche 28 juillet 2013'
     59_en:
         Id: 59
         Locale: en
-        Name: Avrilexpo
-        StrDate: 'From Friday, April 26 2013 to Sunday, April 28 2013'
+        Name: 'Hendaye Garden Expo'
+        StrDate: 'From Friday, April 19 2013 to Sunday, April 21 2013'
     59_fr:
         Id: 59
         Locale: fr
-        Name: Avrilexpo
-        StrDate: 'Du vendredi 26 avril 2013 au dimanche 28 avril 2013'
+        Name: 'Hendaye fête le printemps !'
+        StrDate: 'Du vendredi 19 avril 2013 au dimanche 21 avril 2013'
     60_de:
         Id: 60
         Locale: de
-        Name: 'Makilas, Amateur-Golfturnier'
-        StrDate: 'Vom Montag, 13. Mai 2013 bis zum Mittwoch, 15. Mai 2013'
+        Name: Avrilexpo
+        StrDate: 'Vom Freitag, 26. April 2013 bis zum Sonntag, 28. April 2013'
     60_en:
         Id: 60
         Locale: en
-        Name: 'The Makilas, golf'
-        StrDate: 'From Monday, May 13 2013 to Wednesday, May 15 2013'
+        Name: Avrilexpo
+        StrDate: 'From Friday, April 26 2013 to Sunday, April 28 2013'
     60_fr:
         Id: 60
         Locale: fr
-        Name: 'Makilas du golf'
-        StrDate: 'Du lundi 13 mai 2013 au mercredi 15 mai 2013'
+        Name: Avrilexpo
+        StrDate: 'Du vendredi 26 avril 2013 au dimanche 28 avril 2013'
     61_de:
         Id: 61
         Locale: de
-        Name: 'Wettkampf im Springreiten von Biarritz'
-        StrDate: 'Vom Donnerstag, 20. Juni 2013 bis zum Sonntag, 23. Juni 2013'
+        Name: 'Makilas, Amateur-Golfturnier'
+        StrDate: 'Vom Montag, 13. Mai 2013 bis zum Mittwoch, 15. Mai 2013'
     61_en:
         Id: 61
         Locale: en
-        Name: 'Show Jumping in Biarritz'
-        StrDate: 'From Thursday, June 20 2013 to Sunday, June 23 2013'
+        Name: 'The Makilas, golf'
+        StrDate: 'From Monday, May 13 2013 to Wednesday, May 15 2013'
     61_fr:
         Id: 61
         Locale: fr
-        Name: 'Jumping de Biarritz'
-        StrDate: 'Du jeudi 20 juin 2013 au dimanche 23 juin 2013'
+        Name: 'Makilas du golf'
+        StrDate: 'Du lundi 13 mai 2013 au mercredi 15 mai 2013'
     62_fr:
         Id: 62
         Locale: fr
@@ -547,53 +537,48 @@
     74_de:
         Id: 74
         Locale: de
-        Name: 'Caravaggio und der europäische Caravaggismus, Ausstellung'
-        StrDate: 'Vom Freitag, 22. Juni 2012 bis zum Sonntag, 14. Oktober 2012'
+        Name: 'Zur Freude der Blumen: die Pflanzenwelt in der Fotografie, Ausstellung'
+        StrDate: 'Vom Freitag, 13. Juli 2012 bis zum Sonntag, 21. Oktober 2012'
     74_en:
         Id: 74
         Locale: en
-        Name: 'Caravaggio and European Caravaggisti, exhibition'
-        StrDate: 'From Friday, June 22 2012 to Sunday, October 14 2012'
+        Name: 'The happiness of flowers: the plant kingdom in photography, exhibition'
+        StrDate: 'From Friday, July 13 2012 to Sunday, October 21 2012'
     74_fr:
         Id: 74
         Locale: fr
-        Name: 'Caravage et le caravagisme européen, exposition'
-        StrDate: 'Du vendredi 22 juin 2012 au dimanche 14 octobre 2012'
-    75_de:
-        Id: 75
-        Locale: de
-        Name: 'Zur Freude der Blumen: die Pflanzenwelt in der Fotografie, Ausstellung'
-        StrDate: 'Vom Freitag, 13. Juli 2012 bis zum Sonntag, 21. Oktober 2012'
-    75_en:
-        Id: 75
-        Locale: en
-        Name: 'The happiness of flowers: the plant kingdom in photography, exhibition'
-        StrDate: 'From Friday, July 13 2012 to Sunday, October 21 2012'
+        Name: 'Au bonheur des fleurs : le règne végétal dans la photographie, exposition'
+        StrDate: 'Du vendredi 13 juillet 2012 au dimanche 21 octobre 2012'
     75_fr:
         Id: 75
         Locale: fr
-        Name: 'Au bonheur des fleurs : le règne végétal dans la photographie, exposition'
-        StrDate: 'Du vendredi 13 juillet 2012 au dimanche 21 octobre 2012'
-    76_fr:
-        Id: 76
-        Locale: fr
         Name: 'Marche des Fiertés lesbiennes, gay, bi et trans de Montpellier'
         StrDate: 'Le samedi 1 juin 2013'
-    77_de:
-        Id: 77
+    76_de:
+        Id: 76
         Locale: de
         Name: 'Montpellier Beach Masters, Beachvolleyball'
         StrDate: 'Vom Dienstag, 11. Juni 2013 bis zum Donnerstag, 20. Juni 2013'
-    77_en:
-        Id: 77
+    76_en:
+        Id: 76
         Locale: en
         Name: 'Montpellier Beach Masters, beach volley'
         StrDate: 'From Tuesday, June 11 2013 to Thursday, June 20 2013'
-    77_fr:
-        Id: 77
+    76_fr:
+        Id: 76
         Locale: fr
         Name: 'Montpellier Beach Masters, beach-volley'
         StrDate: 'Du mardi 11 juin 2013 au jeudi 20 juin 2013'
+    77_en:
+        Id: 77
+        Locale: en
+        Name: 'Agde Film Festival, Les Hérault du Cinéma'
+        StrDate: 'From Friday, June 21 2013 to Sunday, June 23 2013'
+    77_fr:
+        Id: 77
+        Locale: fr
+        Name: 'Festival du Film d''Agde, Les Hérault du cinéma'
+        StrDate: 'Du vendredi 21 juin 2013 au dimanche 23 juin 2013'
     78_en:
         Id: 78
         Locale: en
@@ -692,7 +677,7 @@
     89_fr:
         Id: 89
         Locale: fr
-        Name: 'Mini-golf Le Marais, Saint-Jean-de-Monts, parcours'
+        Name: 'Char à cerf-volant à Saint-Jean-de-Monts'
         StrDate: 'Toute l''année'
     90_de:
         Id: 90
@@ -742,22 +727,27 @@
     96_fr:
         Id: 96
         Locale: fr
-        Name: 'Village des Eyzies de Tayac-Sireuil, découverte'
-        StrDate: 'A partir du dimanche 1 janvier 2012'
+        Name: 'Grottes de Lascaux II, visite'
+        StrDate: 'Toute l''année'
     97_fr:
         Id: 97
         Locale: fr
-        Name: 'Festival du Périgord Noir'
-        StrDate: 'Du samedi 4 août 2012 au vendredi 12 octobre 2012'
+        Name: 'Village des Eyzies de Tayac-Sireuil, découverte'
+        StrDate: 'Toute l''année'
     98_fr:
         Id: 98
         Locale: fr
-        Name: 'Grottes de Lascaux II, visite'
+        Name: 'Grotte de Font-de-Gaume, Les Eyzies-de-Tayac-Sireuil, visite'
         StrDate: 'Toute l''année'
+    99_en:
+        Id: 99
+        Locale: en
+        Name: 'National Museum of Prehistory, les Eyzies-de-Tayac, visit'
+        StrDate: 'All year long'
     99_fr:
         Id: 99
         Locale: fr
-        Name: 'Grotte de Font-de-Gaume, Les Eyzies-de-Tayac-Sireuil, visite'
+        Name: 'Musée national de la Préhistoire, Les Eyzies-de-Tayac, visite'
         StrDate: 'Toute l''année'
     100_fr:
         Id: 100
@@ -779,81 +769,76 @@
         Locale: fr
         Name: 'Pierre Rigal, Erection, spectacle'
         StrDate: 'Du vendredi 5 avril 2013 au samedi 6 avril 2013'
-    104_en:
-        Id: 104
-        Locale: en
-        Name: 'Agde Film Festival, Les Hérault du Cinéma'
-        StrDate: 'From Friday, June 21 2013 to Sunday, June 23 2013'
     104_fr:
         Id: 104
         Locale: fr
-        Name: 'Festival du Film d''Agde, Les Hérault du cinéma'
-        StrDate: 'Du vendredi 21 juin 2013 au dimanche 23 juin 2013'
+        Name: 'Orchestre Perpignan Méditerranée en concert'
+        StrDate: 'Le samedi 13 avril 2013'
     105_fr:
         Id: 105
         Locale: fr
-        Name: 'Le Musée du Biterrois et la Société Archéologique, exposition'
-        StrDate: 'Du vendredi 22 juin 2012 au dimanche 14 octobre 2012'
+        Name: 'Béziers – Colomiers, Pro D2, rugby'
+        StrDate: 'Le dimanche 14 avril 2013'
     106_fr:
         Id: 106
         Locale: fr
-        Name: 'Orchestre Perpignan Méditerranée en concert'
-        StrDate: 'Le samedi 13 avril 2013'
+        Name: 'Le Jeu de l’amour et du hasard, spectacle'
+        StrDate: 'Du mardi 16 avril 2013 au jeudi 18 avril 2013'
     107_fr:
         Id: 107
         Locale: fr
-        Name: 'Béziers – Colomiers, Pro D2, rugby'
-        StrDate: 'Le dimanche 14 avril 2013'
+        Name: 'Périple au coeur de la Dordogne, randonnée à vélo'
+        StrDate: 'Du jeudi 1 mars 2012 au mercredi 31 octobre 2012'
     108_fr:
         Id: 108
         Locale: fr
-        Name: 'Périple au coeur de la Dordogne, randonnée à vélo'
-        StrDate: 'Du jeudi 1 mars 2012 au mercredi 31 octobre 2012'
+        Name: 'La Roque Gageac, visite'
+        StrDate: 'Toute l''année'
     109_fr:
         Id: 109
         Locale: fr
-        Name: 'La Roque Gageac, visite'
+        Name: 'Musée Maillol, Banyuls sur Mer, visite'
         StrDate: 'Toute l''année'
     110_fr:
         Id: 110
         Locale: fr
-        Name: 'Musée Maillol, Banyuls sur Mer, visite'
+        Name: 'Caves du cellier des Templiers, visite'
         StrDate: 'Toute l''année'
     111_fr:
         Id: 111
         Locale: fr
-        Name: 'Caves du cellier des Templiers, visite'
+        Name: 'Visite de la vinaigrerie la Guinelle, Port-Vendres'
         StrDate: 'Toute l''année'
     112_fr:
         Id: 112
         Locale: fr
-        Name: 'Visite de la vinaigrerie la Guinelle, Port-Vendres'
+        Name: 'Visite de l''église romane de la Rectorie, Banyuls-sur-Mer'
         StrDate: 'Toute l''année'
     113_fr:
         Id: 113
         Locale: fr
-        Name: 'Visite de l''église romane de la Rectorie, Banyuls-sur-Mer'
-        StrDate: 'Toute l''année'
+        Name: 'Ouverture du musée Soulages de Rodez'
+        StrDate: 'A partir du samedi 1 juin 2013'
     114_fr:
         Id: 114
         Locale: fr
-        Name: 'Musée Soulages : Enrichissements récents, exposition'
-        StrDate: 'Du samedi 16 juin 2012 au dimanche 14 octobre 2012'
+        Name: 'Kurt Schwitters, Ray Johnson, exposition : Merz et Moticos'
+        StrDate: 'Du vendredi 22 juin 2012 au dimanche 28 octobre 2012'
     115_fr:
         Id: 115
         Locale: fr
-        Name: 'Les Primitifs sont petits, cahiers de Louis Soutter (1923-1930)'
-        StrDate: 'Du samedi 16 juin 2012 au dimanche 14 octobre 2012'
+        Name: 'Viaduc de Millau, découverte'
+        StrDate: 'Toute l''année'
     116_fr:
         Id: 116
         Locale: fr
-        Name: 'Ouverture du musée Soulages de Rodez'
-        StrDate: 'A partir du samedi 1 juin 2013'
+        Name: 'Jardin des Explorateurs, Viaduc de Millau, Creissels, visite'
+        StrDate: 'Toute l''année'
     117_fr:
         Id: 117
         Locale: fr
-        Name: 'Kurt Schwitters, Ray Johnson, exposition : Merz et Moticos'
-        StrDate: 'Du vendredi 22 juin 2012 au dimanche 28 octobre 2012'
+        Name: 'Le Comte de Bouderbala, spectacle'
+        StrDate: 'Le mercredi 17 avril 2013'
     118_en:
         Id: 118
         Locale: en
@@ -957,13 +942,13 @@
     129_fr:
         Id: 129
         Locale: fr
-        Name: 'Minigolf Olmuccio club, Porto-Vecchio, loisirs'
-        StrDate: 'A partir du jeudi 15 avril 2010'
+        Name: 'Ecole de Voile de Pinarello, loisirs'
+        StrDate: 'Du vendredi 1 avril 2011 au mercredi 31 octobre 2012'
     130_fr:
         Id: 130
         Locale: fr
-        Name: 'Ecole de Voile de Pinarello, loisirs'
-        StrDate: 'Du vendredi 1 avril 2011 au mercredi 31 octobre 2012'
+        Name: 'Aquarium de la Poudrière, Porto, visite'
+        StrDate: 'Toute l''année'
     131_fr:
         Id: 131
         Locale: fr
@@ -1057,323 +1042,313 @@
     149_fr:
         Id: 149
         Locale: fr
-        Name: 'Village de Moustiers-Sainte-Marie, visite'
-        StrDate: 'Toute l''année'
+        Name: 'Pêche dans l''Espezonnette, truite à la mouche'
+        StrDate: 'Du lundi 1 octobre 2012 au mardi 31 décembre 2013'
     150_fr:
         Id: 150
         Locale: fr
-        Name: 'Parc naturel régional du Verdon, balade'
-        StrDate: 'Toute l''année'
+        Name: 'Parapente à Castellane'
+        StrDate: 'Du vendredi 1 janvier 2010 au lundi 31 décembre 2012'
     151_fr:
         Id: 151
         Locale: fr
-        Name: 'Gorges du Verdon, Castellane, découverte'
+        Name: 'Village de Moustiers-Sainte-Marie, visite'
         StrDate: 'Toute l''année'
     152_fr:
         Id: 152
         Locale: fr
-        Name: 'Bargème, visite'
+        Name: 'Parc naturel régional du Verdon, balade'
         StrDate: 'Toute l''année'
     153_fr:
         Id: 153
         Locale: fr
-        Name: 'Golf de Biscarrosse, activité'
+        Name: 'Gorges du Verdon, Castellane, découverte'
         StrDate: 'Toute l''année'
     154_fr:
         Id: 154
         Locale: fr
-        Name: 'Casino de Biscarrosse, loisirs'
-        StrDate: 'Toute l''année'
+        Name: 'Festival de Radio France et Montpellier Languedoc-Roussillon'
+        StrDate: 'Du lundi 8 juillet 2013 au vendredi 26 juillet 2013'
     155_fr:
         Id: 155
         Locale: fr
-        Name: 'Ya pus d''saisons !, exposition'
-        StrDate: 'Du dimanche 1 avril 2012 au mercredi 7 novembre 2012'
+        Name: 'Golf de Biscarrosse, activité'
+        StrDate: 'Toute l''année'
     156_fr:
         Id: 156
         Locale: fr
-        Name: 'Saint-Lô - Vertou Ussa, Football, CFA 2, Groupe H'
-        StrDate: 'Le samedi 13 avril 2013'
+        Name: 'Casino de Biscarrosse, loisirs'
+        StrDate: 'Toute l''année'
     157_fr:
         Id: 157
         Locale: fr
-        Name: 'Saint-Lô - Mondeville, Football, CFA 2, Groupe H'
-        StrDate: 'Le samedi 20 avril 2013'
+        Name: 'Ya pus d''saisons !, exposition'
+        StrDate: 'Du dimanche 1 avril 2012 au mercredi 7 novembre 2012'
     158_fr:
         Id: 158
         Locale: fr
-        Name: 'Saint-Lô - La Chapelle Marais, Football, CFA 2, Groupe H'
-        StrDate: 'Le samedi 11 mai 2013'
+        Name: 'Saint-Lô - Vertou Ussa, Football, CFA 2, Groupe H'
+        StrDate: 'Le samedi 13 avril 2013'
     159_fr:
         Id: 159
         Locale: fr
-        Name: 'Néandertal l''Européen, exposition'
-        StrDate: 'Du jeudi 2 février 2012 au jeudi 1 novembre 2012'
-    160_en:
-        Id: 160
-        Locale: en
-        Name: 'Lavander Festival'
-        StrDate: 'From Monday, July 1 2013 to Wednesday, July 31 2013'
+        Name: 'Saint-Lô - Mondeville, Football, CFA 2, Groupe H'
+        StrDate: 'Le samedi 20 avril 2013'
     160_fr:
         Id: 160
         Locale: fr
-        Name: 'Fête de la Lavande'
-        StrDate: 'Du lundi 1 juillet 2013 au mercredi 31 juillet 2013'
-    161_en:
-        Id: 161
-        Locale: en
-        Name: 'Monte-Carlo ATP Tennis Masters Series'
-        StrDate: 'From Saturday, April 13 2013 to Sunday, April 21 2013'
+        Name: 'Saint-Lô - La Chapelle Marais, Football, CFA 2, Groupe H'
+        StrDate: 'Le samedi 11 mai 2013'
     161_fr:
         Id: 161
         Locale: fr
-        Name: 'Tennis Masters Series ATP de Monte-Carlo'
-        StrDate: 'Du samedi 13 avril 2013 au dimanche 21 avril 2013'
-    162_de:
-        Id: 162
-        Locale: de
-        Name: 'ATP Nizza'
-        StrDate: 'Vom Montag, 20. Mai 2013 bis zum Sonntag, 26. Mai 2013'
+        Name: 'Néandertal l''Européen, exposition'
+        StrDate: 'Du jeudi 2 février 2012 au jeudi 1 novembre 2012'
     162_en:
         Id: 162
         Locale: en
-        Name: 'Nice Côte d''Azur Tennis Open'
-        StrDate: 'From Monday, May 20 2013 to Sunday, May 26 2013'
+        Name: 'Lavander Festival'
+        StrDate: 'From Monday, July 1 2013 to Wednesday, July 31 2013'
     162_fr:
         Id: 162
         Locale: fr
-        Name: 'Open de Nice Côte d''Azur'
-        StrDate: 'Du lundi 20 mai 2013 au dimanche 26 mai 2013'
-    163_de:
-        Id: 163
-        Locale: de
-        Name: 'Ironman France - Triathlon von Nizza'
-        StrDate: 'Sonntag, 23. Juni 2013'
+        Name: 'Fête de la Lavande'
+        StrDate: 'Du lundi 1 juillet 2013 au mercredi 31 juillet 2013'
     163_en:
         Id: 163
         Locale: en
-        Name: 'Ironman France - Nice Triathlon'
-        StrDate: 'Sunday, June 23 2013'
+        Name: 'Monte-Carlo ATP Tennis Masters Series'
+        StrDate: 'From Saturday, April 13 2013 to Sunday, April 21 2013'
     163_fr:
         Id: 163
         Locale: fr
-        Name: 'Ironman France - Triathlon de Nice'
-        StrDate: 'Le dimanche 23 juin 2013'
+        Name: 'Tennis Masters Series ATP de Monte-Carlo'
+        StrDate: 'Du samedi 13 avril 2013 au dimanche 21 avril 2013'
     164_de:
         Id: 164
         Locale: de
-        Name: 'Königliches Festessen der Renaissance, Ausstellung'
-        StrDate: 'Vom Samstag, 7. Juli 2012 bis zum Sonntag, 21. Oktober 2012'
+        Name: 'ATP Nizza'
+        StrDate: 'Vom Montag, 20. Mai 2013 bis zum Sonntag, 26. Mai 2013'
+    164_en:
+        Id: 164
+        Locale: en
+        Name: 'Nice Côte d''Azur Tennis Open'
+        StrDate: 'From Monday, May 20 2013 to Sunday, May 26 2013'
     164_fr:
         Id: 164
         Locale: fr
-        Name: 'Festins royaux de la Renaissance, exposition'
-        StrDate: 'Du samedi 7 juillet 2012 au dimanche 21 octobre 2012'
+        Name: 'Open de Nice Côte d''Azur'
+        StrDate: 'Du lundi 20 mai 2013 au dimanche 26 mai 2013'
+    165_de:
+        Id: 165
+        Locale: de
+        Name: 'Ironman France - Triathlon von Nizza'
+        StrDate: 'Sonntag, 23. Juni 2013'
+    165_en:
+        Id: 165
+        Locale: en
+        Name: 'Ironman France - Nice Triathlon'
+        StrDate: 'Sunday, June 23 2013'
     165_fr:
         Id: 165
         Locale: fr
-        Name: 'Randonnée Royale : de Blois à Chambord, randonnée'
-        StrDate: 'Du jeudi 1 mars 2012 au mercredi 31 octobre 2012'
+        Name: 'Ironman France - Triathlon de Nice'
+        StrDate: 'Le dimanche 23 juin 2013'
+    166_de:
+        Id: 166
+        Locale: de
+        Name: 'Königliches Festessen der Renaissance, Ausstellung'
+        StrDate: 'Vom Samstag, 7. Juli 2012 bis zum Sonntag, 21. Oktober 2012'
     166_fr:
         Id: 166
         Locale: fr
-        Name: 'Térez Montcalm en concert'
-        StrDate: 'Le vendredi 12 avril 2013'
+        Name: 'Festins royaux de la Renaissance, exposition'
+        StrDate: 'Du samedi 7 juillet 2012 au dimanche 21 octobre 2012'
     167_fr:
         Id: 167
         Locale: fr
-        Name: 'Youn Sun Nah en concert'
-        StrDate: 'Le vendredi 31 mai 2013'
-    168_en:
-        Id: 168
-        Locale: en
-        Name: 'Pentecost Feria'
-        StrDate: 'From Wednesday, May 15 2013 to Monday, May 20 2013'
+        Name: 'Game Fair, salon de la chasse'
+        StrDate: 'Du vendredi 21 juin 2013 au dimanche 23 juin 2013'
     168_fr:
         Id: 168
         Locale: fr
-        Name: 'Féria de Pentecôte'
-        StrDate: 'Du mercredi 15 mai 2013 au lundi 20 mai 2013'
+        Name: 'Randonnée Royale : de Blois à Chambord, randonnée'
+        StrDate: 'Du jeudi 1 mars 2012 au mercredi 31 octobre 2012'
     169_fr:
         Id: 169
         Locale: fr
-        Name: 'Acro''Parc, Die, acrobranche'
-        StrDate: 'A partir du jeudi 1 mars 2012'
+        Name: 'Térez Montcalm en concert'
+        StrDate: 'Le vendredi 12 avril 2013'
+    170_en:
+        Id: 170
+        Locale: en
+        Name: 'Pentecost Feria'
+        StrDate: 'From Wednesday, May 15 2013 to Monday, May 20 2013'
     170_fr:
         Id: 170
         Locale: fr
-        Name: 'Cave de Die Jaillance, visite'
-        StrDate: 'Toute l''année'
+        Name: 'Féria de Pentecôte'
+        StrDate: 'Du mercredi 15 mai 2013 au lundi 20 mai 2013'
     171_fr:
         Id: 171
         Locale: fr
-        Name: 'Marché de Die, Place de la République'
-        StrDate: 'Toute l''année'
+        Name: 'Acro''Parc, Die, acrobranche'
+        StrDate: 'A partir du jeudi 1 mars 2012'
     172_fr:
         Id: 172
         Locale: fr
-        Name: 'Quad à Montmaur-en-Diois, loisirs'
+        Name: 'Cave de Die Jaillance, visite'
         StrDate: 'Toute l''année'
     173_fr:
         Id: 173
         Locale: fr
-        Name: 'Nuits de nacre'
-        StrDate: 'Du vendredi 13 septembre 2013 au lundi 16 septembre 2013'
+        Name: 'Marché de Die, Place de la République'
+        StrDate: 'Toute l''année'
     174_fr:
         Id: 174
         Locale: fr
-        Name: 'Chemin de Saint-Jacques-de-Compostelle, inauguration de la voie de Rocamadour'
-        StrDate: 'Du samedi 4 février 2012 au lundi 31 décembre 2012'
+        Name: 'Quad à Montmaur-en-Diois, loisirs'
+        StrDate: 'Toute l''année'
     175_fr:
         Id: 175
         Locale: fr
-        Name: 'Brive - Pau, Pro D2, rugby'
-        StrDate: 'Le dimanche 28 octobre 2012'
+        Name: 'Nuits de nacre'
+        StrDate: 'Du vendredi 13 septembre 2013 au lundi 16 septembre 2013'
     176_fr:
         Id: 176
         Locale: fr
-        Name: 'Brive - Oyonnax, Pro D2, rugby'
-        StrDate: 'Le dimanche 14 avril 2013'
+        Name: 'Chemin de Saint-Jacques-de-Compostelle, inauguration de la voie de Rocamadour'
+        StrDate: 'Du samedi 4 février 2012 au lundi 31 décembre 2012'
     177_fr:
         Id: 177
         Locale: fr
-        Name: 'Piano Furioso, spectacle musical'
-        StrDate: 'Le samedi 25 mai 2013'
+        Name: 'Brive - Pau, Pro D2, rugby'
+        StrDate: 'Le dimanche 28 octobre 2012'
     178_fr:
         Id: 178
         Locale: fr
-        Name: 'Le Subrejoug dans tous ses états, exposition'
-        StrDate: 'Du lundi 18 juin 2012 au vendredi 19 octobre 2012'
+        Name: 'Brive - Oyonnax, Pro D2, rugby'
+        StrDate: 'Le dimanche 14 avril 2013'
     179_fr:
         Id: 179
         Locale: fr
-        Name: 'Magicien(s) tout est écrit, spectacle'
-        StrDate: 'Le samedi 6 avril 2013'
+        Name: 'Piano Furioso, spectacle musical'
+        StrDate: 'Le samedi 25 mai 2013'
     180_fr:
         Id: 180
         Locale: fr
-        Name: 'Les Fourberies de Scapin, spectacle'
-        StrDate: 'Le vendredi 5 avril 2013'
+        Name: 'Le Subrejoug dans tous ses états, exposition'
+        StrDate: 'Du lundi 18 juin 2012 au vendredi 19 octobre 2012'
     181_fr:
         Id: 181
         Locale: fr
-        Name: 'US Luzenac - Bourg Peronnas, football, National'
+        Name: 'Magicien(s) tout est écrit, spectacle'
         StrDate: 'Le samedi 6 avril 2013'
     182_fr:
         Id: 182
         Locale: fr
-        Name: 'US Luzenac - Red Star, football, National'
-        StrDate: 'Le vendredi 19 avril 2013'
+        Name: 'Les Fourberies de Scapin, spectacle'
+        StrDate: 'Le vendredi 5 avril 2013'
     183_fr:
         Id: 183
         Locale: fr
-        Name: 'US Luzenac - Paris FC, football, National'
-        StrDate: 'Le samedi 4 mai 2013'
+        Name: 'US Luzenac - Bourg Peronnas, football, National'
+        StrDate: 'Le samedi 6 avril 2013'
     184_fr:
         Id: 184
         Locale: fr
-        Name: 'US Luzenac - Orléans, football, National'
-        StrDate: 'Le vendredi 17 mai 2013'
-    185_en:
-        Id: 185
-        Locale: en
-        Name: 'The Palmyre Zoo, Les Mathes, visit'
-        StrDate: 'All year long'
+        Name: 'US Luzenac - Red Star, football, National'
+        StrDate: 'Le vendredi 19 avril 2013'
     185_fr:
         Id: 185
         Locale: fr
-        Name: 'Zoo de la Palmyre, Les Mathes, visite'
-        StrDate: 'Toute l''année'
+        Name: 'US Luzenac - Paris FC, football, National'
+        StrDate: 'Le samedi 4 mai 2013'
     186_fr:
         Id: 186
         Locale: fr
-        Name: 'Les Jardins du Monde, Royan, visite'
-        StrDate: 'Toute l''année'
+        Name: 'US Luzenac - Orléans, football, National'
+        StrDate: 'Le vendredi 17 mai 2013'
     187_en:
         Id: 187
         Locale: en
-        Name: 'Saintes-Maries-de-la-Mer Gypsy Festival and Pilgrimage'
-        StrDate: 'From Friday, May 24 2013 to Saturday, May 25 2013'
+        Name: 'The Palmyre Zoo, Les Mathes, visit'
+        StrDate: 'All year long'
     187_fr:
         Id: 187
         Locale: fr
-        Name: 'Fête des Gitans - Pèlerinage des Saintes-Maries-de-la-Mer'
-        StrDate: 'Du vendredi 24 mai 2013 au samedi 25 mai 2013'
+        Name: 'Zoo de la Palmyre, Les Mathes, visite'
+        StrDate: 'Toute l''année'
     188_fr:
         Id: 188
         Locale: fr
-        Name: 'Gorges de l''Abîme, Saint-Claude, randonnée'
+        Name: 'Les Jardins du Monde, Royan, visite'
         StrDate: 'Toute l''année'
+    189_en:
+        Id: 189
+        Locale: en
+        Name: 'Saintes-Maries-de-la-Mer Gypsy Festival and Pilgrimage'
+        StrDate: 'From Friday, May 24 2013 to Saturday, May 25 2013'
     189_fr:
         Id: 189
         Locale: fr
-        Name: 'La maison de la Vache qui rit, Lons-le-Saunier, visite'
-        StrDate: 'Du mardi 1 février 2011 au lundi 31 décembre 2012'
+        Name: 'Fête des Gitans - Pèlerinage des Saintes-Maries-de-la-Mer'
+        StrDate: 'Du vendredi 24 mai 2013 au samedi 25 mai 2013'
     190_fr:
         Id: 190
         Locale: fr
-        Name: 'Réouverture du musée du Jouet de Moirans-en-Montagne'
-        StrDate: 'Du dimanche 1 juillet 2012 au lundi 31 décembre 2012'
+        Name: 'Mon jouet préféré, photographies d’Hervé Plumet, exposition'
+        StrDate: 'Du samedi 20 octobre 2012 au dimanche 14 avril 2013'
     191_fr:
         Id: 191
         Locale: fr
-        Name: 'Centre Nautique Aqua''Rel, Lons-le-Saunier, visite'
-        StrDate: 'Toute l''année'
+        Name: 'La maison de la Vache qui rit, Lons-le-Saunier, visite'
+        StrDate: 'Du mardi 1 février 2011 au lundi 31 décembre 2012'
     192_fr:
         Id: 192
         Locale: fr
-        Name: 'Ré, les facettes d''une Ile, exposition'
-        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 décembre 2012'
-    193_de:
-        Id: 193
-        Locale: de
-        Name: 'Internationales Bridgefestival von Biarritz'
-        StrDate: 'Vom Freitag, 28. Juni 2013 bis zum Mittwoch, 10. Juli 2013'
+        Name: 'Réouverture du musée du Jouet de Moirans-en-Montagne'
+        StrDate: 'Du dimanche 1 juillet 2012 au lundi 31 décembre 2012'
     193_fr:
         Id: 193
         Locale: fr
-        Name: 'Festival international de bridge de Biarritz'
-        StrDate: 'Du vendredi 28 juin 2013 au mercredi 10 juillet 2013'
-    194_de:
-        Id: 194
-        Locale: de
-        Name: 'Open GDF Suez von Biarritz'
-        StrDate: 'Vom Sonntag, 7. Juli 2013 bis zum Sonntag, 14. Juli 2013'
-    194_en:
-        Id: 194
-        Locale: en
-        Name: 'Suez Gaz French Open in Biarritz'
-        StrDate: 'From Sunday, July 7 2013 to Sunday, July 14 2013'
+        Name: 'Centre Nautique Aqua''Rel, Lons-le-Saunier, visite'
+        StrDate: 'Toute l''année'
     194_fr:
         Id: 194
         Locale: fr
-        Name: 'Open Suez Gaz de France de Biarritz'
-        StrDate: 'Du dimanche 7 juillet 2013 au dimanche 14 juillet 2013'
+        Name: 'Ré, les facettes d''une Ile, exposition'
+        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 décembre 2012'
     195_de:
         Id: 195
         Locale: de
-        Name: 'Biarritz Cup'
-        StrDate: 'Vom Montag, 8. Juli 2013 bis zum Montag, 15. Juli 2013'
-    195_en:
-        Id: 195
-        Locale: en
-        Name: 'Biarritz Cup'
-        StrDate: 'From Monday, July 8 2013 to Monday, July 15 2013'
+        Name: 'Internationales Bridgefestival von Biarritz'
+        StrDate: 'Vom Freitag, 28. Juni 2013 bis zum Mittwoch, 10. Juli 2013'
     195_fr:
         Id: 195
         Locale: fr
-        Name: 'Biarritz Cup'
-        StrDate: 'Du lundi 8 juillet 2013 au lundi 15 juillet 2013'
+        Name: 'Festival international de bridge de Biarritz'
+        StrDate: 'Du vendredi 28 juin 2013 au mercredi 10 juillet 2013'
+    196_de:
+        Id: 196
+        Locale: de
+        Name: 'Open GDF Suez von Biarritz'
+        StrDate: 'Vom Sonntag, 7. Juli 2013 bis zum Sonntag, 14. Juli 2013'
+    196_en:
+        Id: 196
+        Locale: en
+        Name: 'Suez Gaz French Open in Biarritz'
+        StrDate: 'From Sunday, July 7 2013 to Sunday, July 14 2013'
     196_fr:
         Id: 196
         Locale: fr
-        Name: 'L''huile d''olive du Château Léoube'
-        StrDate: 'Du vendredi 1 juin 2012 au mardi 31 décembre 2013'
+        Name: 'Open Suez Gaz de France de Biarritz'
+        StrDate: 'Du dimanche 7 juillet 2013 au dimanche 14 juillet 2013'
     197_fr:
         Id: 197
         Locale: fr
-        Name: 'Salon des Arts'
-        StrDate: 'Du samedi 29 septembre 2012 au dimanche 14 octobre 2012'
+        Name: 'L''huile d''olive du Château Léoube'
+        StrDate: 'Du vendredi 1 juin 2012 au mardi 31 décembre 2013'
     198_fr:
         Id: 198
         Locale: fr
@@ -1384,78 +1359,93 @@
         Locale: fr
         Name: 'Marché provençal de Grimaud'
         StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+    200_de:
+        Id: 200
+        Locale: de
+        Name: 'Hafen von Saint-Tropez, Besichtigung'
+        StrDate: 'Das ganze Jahr'
+    200_en:
+        Id: 200
+        Locale: en
+        Name: 'Saint-Tropez harbour, visit'
+        StrDate: 'All year long'
     200_fr:
         Id: 200
         Locale: fr
-        Name: 'Brive - La Rochelle, Pro D2, rugby'
-        StrDate: 'Le dimanche 5 mai 2013'
+        Name: 'Port de Saint-Tropez, visite'
+        StrDate: 'Toute l''année'
     201_fr:
         Id: 201
         Locale: fr
-        Name: 'Collages, exposition'
-        StrDate: 'Du dimanche 1 juillet 2012 au dimanche 4 novembre 2012'
+        Name: 'Brive - La Rochelle, Pro D2, rugby'
+        StrDate: 'Le dimanche 5 mai 2013'
     202_fr:
         Id: 202
         Locale: fr
-        Name: 'Pascal Broccolichi, exposition : Hyperprisme 3'
-        StrDate: 'Du dimanche 20 mai 2012 au dimanche 4 novembre 2012'
+        Name: 'Collages, exposition'
+        StrDate: 'Du dimanche 1 juillet 2012 au dimanche 4 novembre 2012'
     203_fr:
         Id: 203
         Locale: fr
-        Name: 'Cathédrale Saint-Pierre à Saint-Flour, visite'
-        StrDate: 'Toute l''année'
+        Name: 'Pascal Broccolichi, exposition : Hyperprisme 3'
+        StrDate: 'Du dimanche 20 mai 2012 au dimanche 4 novembre 2012'
     204_fr:
         Id: 204
         Locale: fr
-        Name: 'Train touristique des Gorges de l''Allier, découverte'
+        Name: 'Cathédrale Saint-Pierre à Saint-Flour, visite'
         StrDate: 'Toute l''année'
     205_fr:
         Id: 205
         Locale: fr
-        Name: 'Les Gorges de l''Allier, découverte et activités'
+        Name: 'Train touristique des Gorges de l''Allier, découverte'
         StrDate: 'Toute l''année'
     206_fr:
         Id: 206
         Locale: fr
-        Name: 'Viaduc de Garabit, Ruynes-en-Margerides, découverte'
+        Name: 'Les Gorges de l''Allier, découverte et activités'
         StrDate: 'Toute l''année'
     207_fr:
         Id: 207
         Locale: fr
-        Name: 'La Chambre Philharmonique en concert'
-        StrDate: 'Le dimanche 7 avril 2013'
+        Name: 'Viaduc de Garabit, Ruynes-en-Margerides, découverte'
+        StrDate: 'Toute l''année'
     208_fr:
         Id: 208
         Locale: fr
-        Name: 'Narbonne – Auch, Pro D2, rugby'
-        StrDate: 'Le dimanche 14 avril 2013'
+        Name: 'La Chambre Philharmonique en concert'
+        StrDate: 'Le dimanche 7 avril 2013'
     209_fr:
         Id: 209
         Locale: fr
-        Name: 'Ballet du Grand Théâtre de Genève, spectacle'
-        StrDate: 'Le mardi 16 avril 2013'
+        Name: 'Narbonne – Auch, Pro D2, rugby'
+        StrDate: 'Le dimanche 14 avril 2013'
     210_fr:
         Id: 210
         Locale: fr
-        Name: 'Narbonne – Béziers, Pro D2, rugby'
-        StrDate: 'Le dimanche 21 avril 2013'
+        Name: 'Ballet du Grand Théâtre de Genève, spectacle'
+        StrDate: 'Le mardi 16 avril 2013'
     211_fr:
         Id: 211
         Locale: fr
-        Name: 'Empreintes d’un voyage au Japon, exposition'
-        StrDate: 'Du dimanche 1 avril 2012 au lundi 31 décembre 2012'
+        Name: 'Narbonne – Béziers, Pro D2, rugby'
+        StrDate: 'Le dimanche 21 avril 2013'
     212_fr:
         Id: 212
         Locale: fr
-        Name: 'Compagnie Les Baladins du Rire, spectacle pour enfants - Bric à Boîtes -'
-        StrDate: 'Du vendredi 13 juillet 2012 au mardi 30 octobre 2012'
+        Name: 'Empreintes d’un voyage au Japon, exposition'
+        StrDate: 'Du dimanche 1 avril 2012 au lundi 31 décembre 2012'
     213_fr:
         Id: 213
         Locale: fr
-        Name: 'Sortie grandes marées'
-        StrDate: 'Du vendredi 9 mars 2012 au vendredi 14 décembre 2012'
+        Name: 'Compagnie Les Baladins du Rire, spectacle pour enfants - Bric à Boîtes -'
+        StrDate: 'Du vendredi 13 juillet 2012 au mardi 30 octobre 2012'
     214_fr:
         Id: 214
+        Locale: fr
+        Name: 'Sortie grandes marées'
+        StrDate: 'Du vendredi 9 mars 2012 au vendredi 14 décembre 2012'
+    215_fr:
+        Id: 215
         Locale: fr
         Name: 'Landes et bruyères, Cap d’Erquy-Cap Fréhel'
         StrDate: 'Du lundi 29 avril 2013 au mercredi 1 mai 2013'
