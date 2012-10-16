@@ -24,9 +24,8 @@
         </p>
     </div>-->
 
-
-    <div id="searchContainer" class="column clearboth">
-        <div id="searchPrincipal" class="searchBox classic">
+    <div id="searchContainer" class="column clear">
+        <div class="searchBox full-width">
             <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
@@ -75,9 +74,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-        <div class="column clearboth" id="discoverContainer">
+    <div class="column clearboth">
+        <div id="discoverContainer">
 
             <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
                 webuser: 'web_ce_achat_fr',
@@ -93,4 +93,5 @@
                 product_start_date: "now" | date("d/m/Y"),
             }) }}" width="960px" height="700px"></iframe>
         </div>
+    </div>
 {% endblock %}
