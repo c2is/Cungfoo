@@ -1630,7 +1630,7 @@ h6,
 }
 .ce #searchContainer #searchText {
   float: right;
-  min-height: 227px;
+  min-height: 203px;
 }
 .ce #searchContainer .searchBlock {
   border: 1px solid #e6e5e5;
@@ -2087,12 +2087,14 @@ h6,
   top: 23px;
   width: 886px;
   z-index: 10;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 #widgetCalendar .datepicker {
   bottom: 0;
   position: absolute;
   top: auto;
+  border: 1px solid #adadad;
+  width: 886px !important;
 }
 #widgetCalendar .datepickerContainer,
 #widgetCalendar .datepickerBorderT,
