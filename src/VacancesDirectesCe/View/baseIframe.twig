@@ -1,0 +1,50 @@
+{% set currentRoute = app.request.get('_route') %}
+
+<!doctype html>
+<html class="js-false" lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}{% endblock %} - Vacances Directes CE</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css') }}">
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script src="{{ asset('vendor/head.extended.js') }}"></script>
+    <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
+</head>
+<!doctype html>
+<html class="js-false" lang="fr">
+<body class="popin">
+
+    <div id="wrap" class="clear">
+        {% block content %}{% endblock %}
+    </div><!-- End of document -->
+
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src='+ templatePath + '"vendor/jquery-1.8.0.min.js">\x3C/script>')</script>
+
+    <script>
+        head.js(
+            {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
+            {selectivizr: templatePath+"js/libs/selectivizr-min.js"}, // extend css selectors for IE
+            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js"},
+            {frontJS: templatePath + "js/vacancesdirectes/front.js"}
+            {% block headjs %}{% endblock %}
+        );
+    </script>
+
+    <!-- Prompt IE 6 users to install Chrome Frame -->
+    <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+</body>
+</html>
