@@ -31,8 +31,19 @@ $app['security.access_rules'] = array(
     array('^/.+$', 'ROLE_USER'),
 );
 
-$app['security.last_error'] = $app->protect(function () {
-    return "Le login que vous avez saisi est incorrect. Veuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
+$app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) {
+    $errorMessage = "Le login que vous avez saisi est incorrect. Veuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
+
+    if ($request->attributes->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
+        return $errorMessage;
+    }
+
+    $session = $request->getSession();
+    if ($session && $session->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
+        $session->remove(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR);
+
+        return $errorMessage;
+    }
 });
 
 $app['security.encoder.digest'] = $app->share(function ($app) {
