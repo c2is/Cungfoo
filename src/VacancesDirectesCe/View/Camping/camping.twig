@@ -98,7 +98,7 @@
 
     <div itemscope itemtype="http://schema.org/Place">
         <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
-        <p class="keywordsFiche">Club enfants - Parc aquatique - Plage de mer - Accès wifi - Animaux acceptés</p>
+
 
         <h2>Camping {{ etab.city }}</h2>
         <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -171,7 +171,7 @@
             </div>
             <hr class="clearboth">
             {% endif %}
-            <h4>Les vacances à Vias</h4>
+            <h4>Les vacances à {{ etab.city }}</h4>
             <dl>
                 <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}"></dd>
                 <dt>A proximité<br> nous avons listé :</dt>
@@ -223,7 +223,6 @@
                 </select>
             </fieldset>
         </form>
-        <div class="noResultTyp">Pas de résultats</div>
         {% if etab.typeHebergements | length %}
         {% for hebergement in etab.typeHebergements %}
             <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
@@ -364,7 +363,7 @@
         </div>
         <div class="blCoordTel left">
             Tél : {{ etab.phone1 }}<br />
-            Fax :{{ etab.phone2 }}
+            Fax : {{ etab.phone2 }}
         </div>
         <h3 class="clearboth">Horaires d'ouverture</h3>
         <dl class="blHoraire hRecept left">

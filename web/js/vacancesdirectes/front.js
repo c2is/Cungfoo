@@ -34,6 +34,10 @@ $(function() {
     if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
+//Focus champ de connexion
+    if ($('#username').length > 0) { $("#username").focus(); }
+
+
 // init tabs navigation
     if ($('.tabControls').length > 0) {
         var oHash = window.location.hash,
