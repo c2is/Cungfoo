@@ -53,6 +53,7 @@ include('includes/ce-top.php'); ?>
             <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
+                    <span>La période de haute saison doit être comprise dans la sélection.</span>
                     <ol>
                         <li>
                             <div class="selectContainer clear">
@@ -79,7 +80,7 @@ include('includes/ce-top.php'); ?>
                                 <input class="hidden" type="text" id="arrival"  name="arrival" readonly="readonly" />
                                 <input class="hidden" type="text" id="departure"  name="departure" readonly="readonly" />
                                 <div id="widgetField" class="clear">
-                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
+                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
                                 <div id="widgetCalendar">
 
