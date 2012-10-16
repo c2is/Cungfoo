@@ -98,8 +98,23 @@
 
     <div itemscope itemtype="http://schema.org/Place">
         <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
-
-
+        <p class="keywordsFiche">
+            {% if etab.activites | length %}
+                {% for activite in etab.activites %}
+                    {% if loop.index <= 2 %}
+                        {{ activite.name }} -
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if etab.serviceComplementaires | length %}
+                {% for serviceComplementaire in etab.serviceComplementaires %}
+                    {% if loop.index <= 2 %}
+                        {{ serviceComplementaire.name }}
+                        {% if loop.index < 2 %} - {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </p>
         <h2>Camping {{ etab.city }}</h2>
         <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="addressCountry">{{ etab.country }}</span> |
