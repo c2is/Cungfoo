@@ -520,6 +520,10 @@ $(function() {
 
 /*--  FUNCTIONS  --*/
 
+function openIframePopin(url){
+    $.colorbox({href: url, iframe:true, width:'80%', height:'80%', close:"&times;"});
+}
+
 // datepickers
 function colorizeRange(arrivalDay,departureDay){
     console.log("////////////////////////////////// colorizeRange()  //////////////////////////////////");

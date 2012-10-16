@@ -6,10 +6,13 @@ $(function() {
     if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 // popins
-    $(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
-    $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
-    //$(".popin360").colorbox();
-    $(".popinInline").colorbox({inline:true, width:"75%"});
+    $(".popinIframe").click( function(e){
+        var url = $(this).attr('href');
+        parent.openIframePopin(url);
+        e.preventDefault();
+    });
+
+    //$(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
 
     if ($('#homePage .aProposalBlock').length) {
         $('#homePage .aProposalBlock:nth-child(5n)').addClass('aProposalBlockLast');
