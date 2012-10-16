@@ -125,9 +125,11 @@
 
     <div class="tabCampDiapo">
         <div class="slider"><div class="slide clear">
+            {% if multimedia | length %}
             {% for media in multimedia %}
                 <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
             {% endfor %}
+            {% endif %}
         </div></div>
         <form class="tabCampDiapoOptions clear" action="#_">
             <fieldset class="left">
@@ -181,6 +183,7 @@
                    </ul>
                 </dd>
             </dl>
+            {% if eventPrioritaire | length %}
             <dl>
                 <dt>L'événement à ne pas manquer :</dt>
                 <dd class="img"><img src="{{ eventPrioritaire.image }}" /></dd>
@@ -191,6 +194,7 @@
                     Distance du camping : 15 km
                 </dd>
             </dl>
+            {% endif %}
         </div>
         <nav class="paginationTabs clear">
             <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">Les locations</button>
@@ -203,19 +207,24 @@
                 <span>Filtrer par :</span>
                 <select name="type" id="type">
                     <option value="">Toutes catégories</option>
+                    {% if etab.categoriesTypeHergement | length %}
                     {% for category in etab.categoriesTypeHergement %}
                         <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
                     {% endfor %}
+                    {% endif %}
                 </select>
                 <select name="capacite" id="capacite">
                     <option value="">Toutes capacités</option>
+                    {% if etab.capacitesTypeHebergement | length %}
                     {% for nbPlace in etab.capacitesTypeHebergement %}
                         <option value="cap{{ nbPlace }}">Capacité : {{ nbPlace }} places</option>
                     {% endfor %}
+                    {% endif %}
                 </select>
             </fieldset>
         </form>
         <div class="noResultTyp">Pas de résultats</div>
+        {% if etab.typeHebergements | length %}
         {% for hebergement in etab.typeHebergements %}
             <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
                 <img src="{{ asset(hebergement.imageHebergementPath) }}" width=181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
@@ -229,6 +238,7 @@
                 </div>
             </div>
         {% endfor %}
+        {% endif %}
 
         <nav class="paginationTabs clear">
             <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">Le camping</button>
@@ -240,6 +250,7 @@
         <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
         <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
         <div class="colSurPlace clearboth">
+            {% if etab.activites | length %}
             <dl>
                 <dt><span>Activités</span></dt>
                 <dd class="activites"><ul>
@@ -248,11 +259,13 @@
                     {% endfor %}
                 </ul></dd>
             </dl>
+            {% endif %}
             <dl>
                 <dt><span>Equipements</span></dt>
                 <dd class="equipements"><ul>
                 </ul></dd>
             </dl>
+            {% if etab.serviceComplementaires | length %}
             <dl>
                 <dt><span>Services complémentaires</span></dt>
                 <dd class="services"><ul>
@@ -261,6 +274,7 @@
                     {% endfor %}
                 </ul></dd>
             </dl>
+            {% endif %}
         </div>
 
         {% if personnageAleatoire %}
@@ -292,7 +306,7 @@
     </div>
     <div id="tabProximite" class="tabs">
         <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
-
+        {% if sitesAVisiter | length %}
         <h3>Activités et sites à visiter</h3>
         <div class="activites clear">
             {% for poi in sitesAVisiter %}
@@ -306,6 +320,8 @@
                 </div>
             {% endfor %}
         </div>
+        {% endif %}
+        {% if events | length %}
         <h3>Agenda culturel et sorties</h3>
         <div class="agenda clear">
             {% for event in events %}
@@ -320,6 +336,7 @@
                 </div>
             {% endfor %}
         </div>
+        {% endif %}
 
         <div class="infoDestination bloc sombre">
             <h3>{{ region.name }}</h3>
