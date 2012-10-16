@@ -1491,7 +1491,7 @@ InfoBox.prototype.panMap = function() {
                 var el = $(ev.target);
                 if (el.is('a')) {
                     ev.target.blur();
-                    if ( (el.hasClass('datepickerDisabled')) ) {
+                    if ( (el.hasClass('datepickerDisabled')) || (el.hasClass('datepickerUnselectable')) ) {
                         return false;
                     }
                     var options = $(this).data('datepicker');
@@ -1502,7 +1502,7 @@ InfoBox.prototype.panMap = function() {
                     var changed = false;
                     var fillIt = false;
                     if (parentEl.is('th')) {
-                        if (parentEl.hasClass('datepickerWeek') && options.mode == 'range' && !parentEl.next().hasClass('datepickerDisabled')) {
+                        if (parentEl.hasClass('datepickerWeek') && options.mode == 'range' && !parentEl.next().hasClass('datepickerDisabled') && !parentEl.next().hasClass('datepickerUnselectable')) {
                             var val = parseInt(parentEl.next().text(), 10);
                             tmp.addMonths(tblIndex - Math.floor(options.calendars/2));
                             if (parentEl.next().hasClass('datepickerNotInMonth')) {
@@ -1546,7 +1546,7 @@ InfoBox.prototype.panMap = function() {
                             }
                             fillIt = true;
                         }
-                    } else if (parentEl.is('td') && !parentEl.hasClass('datepickerDisabled')) {
+                    } else if (parentEl.is('td') && !parentEl.hasClass('datepickerDisabled') && !parentEl.hasClass('datepickerUnselectable')) {
                         switch (tblEl.get(0).className) {
                             case 'datepickerViewMonths':
                                 options.current.setMonth(tblEl.find('tbody.datepickerMonths td').index(parentEl));
