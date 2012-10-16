@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block title %}Identifiant oublié ?{% endblock %}
+
+{% block content %}
+        <div class="column clearboth" id="discoverContainer">
+            <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
+                webuser: 'web_ce_achat_fr',
+                display: 'forget_login',
+                template: 'search_product_results',
+                actions: 'displayForgetLoginForm',
+                criterias_object_name: 'search_form',
+                search_page: '1',
+            }) }}" width="960px" height="700px"></iframe>
+        </div>
+{% endblock %}
