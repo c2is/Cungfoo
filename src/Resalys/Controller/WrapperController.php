@@ -9,7 +9,8 @@ use Silex\Application,
 use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\HttpFoundation\Response,
-    Symfony\Component\Routing\Route;
+    Symfony\Component\Routing\Route,
+    Symfony\Component\Yaml\Yaml;
 
 class WrapperController implements ControllerProviderInterface
 {
@@ -27,7 +28,11 @@ class WrapperController implements ControllerProviderInterface
             $queryString     = $request->getQueryString();
             $websiteUri      = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
 
-            $iframe = file_get_contents(sprintf("http://preprod.vacances-directes.com/rsl/clickbooking?%s", $queryString));
+            $clientConfigurationFilename = sprintf('%s/app/config/Resalys/client.yml', $app['config']->get('root_dir'));
+            $clientConfiguration = Yaml::parse($clientConfigurationFilename);
+
+
+            $iframe = file_get_contents(sprintf("%s?%s", $clientConfiguration['services']['modele']['location'], $queryString));
             $iframe = $this->replace($iframe);
 
             // define back button
@@ -79,6 +84,7 @@ eof
                 '{_c2is.javascript.header}',
                 '{_c2is.javascript.footer}',
                 '{_c2is.back}',
+                '{_c2is.uri.ficheCamping}',
                 '<b><b>',
             ), array(
                 $websiteUri,
@@ -86,6 +92,7 @@ eof
                 $javascriptHeader,
                 $javascriptFooter,
                 $backUri,
+                sprintf('%s/camping', $websiteUri),
                 '',
             ), $iframe);
 

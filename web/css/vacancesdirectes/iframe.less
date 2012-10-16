@@ -271,24 +271,23 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 }
 
 
-#authentication{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 0 15px;position:relative;width:883px;
+#authentication, #forgetPassword{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 0 15px;position:relative;width:883px;overflow:hidden;
   h3{background-color:@colorBgBleu;position:relative;margin-bottom:25px;text-align:center;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
     span{color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;
     }
   }
-  .connectedAs{font:bold 16px/16px @ptnarrow;margin-bottom:25px;
+  .connectedAs, .formMessage{font:bold 16px/16px @ptnarrow;margin-bottom:25px;
     .label{color:@colorGris2;opacity:.7;}
     .field{color:@colorFushia;font-size:24px;padding-left:10px;}
   }
-  .aField{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;
-    .label{display:block;margin-bottom:5px;}
-    .field{
-      [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
-    }
+  .aField{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;margin-bottom:15px;
+    label{display:block;margin-bottom:5px;}
+    [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
   }
-  [type="submit"]{float:right;margin:25px 14px;padding:5px 35px}
+  .aBtField{.clearboth();}
+  [type="submit"], .okButton{float:right;margin:0 14px 15px;padding:5px 35px}
 }
 
 #searchResultPage{
@@ -315,6 +314,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
       .total{float:right; width:118px; height:119px; background:url(../../images/vacancesdirectes/common/sprites/spriteSplash.png); margin:-10px 20px 0px 0px; text-align:center; color:rgb(255, 255, 255); padding-top:43px;
         .label{font:bold 21px/21px @ptnarrow;margin:0 15px;}
       }
+      .popinIframe{display:inline-block;margin-bottom:10px;}
       .proposalEtab{font-size:11px;color:@colorGris1;text-transform:uppercase;margin-bottom:5px;}
       table{width:570px;
         tr{margin-bottom:2px;

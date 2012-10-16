@@ -13,7 +13,6 @@
 <nav id="nav" class="clearboth">
     <ul class="topnav fixed-width clear">
         <li class="tab{% if currentRoute in ['achat_packages', 'achat_panier', 'achat_confirmation_reservation', 'achat_recherche'] %} current{% endif %}"><a href="{{ path('achat_packages') }}">Achats</a></li>
-        <li class="tab"><a href="#">Documents</a></li>
         <li class="tab{% if currentRoute in ['administration_reservations', 'administration_coordonnees'] %} current{% endif %}"><a href="{{ path('administration_reservations') }}">Administration</a></li>
     </ul>
 

@@ -34,6 +34,10 @@ $(function() {
     if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
+//Focus champ de connexion
+    if ($('#username').length > 0) { $("#username").focus(); }
+
+
 // init tabs navigation
     if ($('.tabControls').length > 0) {
         var oHash = window.location.hash,
@@ -169,6 +173,11 @@ $(function() {
         starts: 1,
         format:'Y/m/d',
         position: 'right',
+        onBeforeShow: function(){
+            console.log("################################## onBeforeShow:  ##################################");
+
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
         onChange: function(formated, dates){
             console.log("################################## onChange:  ##################################");
             console.log(formated);
@@ -203,6 +212,9 @@ $(function() {
             var renderDate = date,
                 disabledDate,
                 highSeasonDate,
+                renderYear = renderDate.getFullYear(),
+                renderMonth = renderDate.getMonth()+1,
+                renderDay = renderDate.getDate(),
                 renderWeekDay = renderDate.getDay(),
                 fRenderDate = formatDate(renderDate),
                 renderDate = numDate(fRenderDate),
@@ -222,11 +234,56 @@ $(function() {
 //                    console.log("HIGH SEASON: " + renderDate);
                     highSeasonDate = renderDate;
                 }
+            console.log(disabledDate);
             return {
                 disabled: disabledDate != undefined,
                 className: highSeasonDate != undefined ? 'datepickerSpecial' : false
             }
+        }
+    });
+/*
+    $('#widgetCalendar').DatePicker({
+        flat: true,
+        date: fSeasonDates,
+        current: fStartDate,
+        calendars: 3,
+        mode: 'range',
+        starts: 1,
+        format:'Y/m/d',
+        position: 'right',
+        onBeforeShow: function(){
+            console.log("################################## onBeforeShow:  ##################################");
 
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
+        onChange: function(formated, dates){
+            console.log("################################## onChange:  ##################################");
+            console.log(formated);
+            console.log(dates);
+
+            var selectedDates  = new Array();
+            $.each(dates, function(index, value) {
+                //                alert(index + ': ' + value);
+                var selectedYear = value.getFullYear(),
+                    selectedMonth = value.getMonth()+1,
+                    selectedDay = value.getDate();
+                console.log(currentYear);
+                console.log(currentMonth);
+                console.log(currentDay);
+                selectedDates.push(((''+selectedDay).length<2 ? '0' : '') + selectedDay + '/' + ((''+selectedMonth).length<2 ? '0' : '') + selectedMonth + '/' + selectedYear);
+            });
+            if (firstSelection) {
+                console.log(selectedDates[0]);
+            }
+            else {
+                console.log(selectedDates[1]);
+                firstSelection = true;
+            }
+            console.log(selectedDates)
+            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+            $('#widget input.hidden').each(function(index, value){
+                $(this).val(selectedDates[index]);
+            });
         }
     });
 
@@ -242,6 +299,216 @@ $(function() {
     });
     $('#widgetCalendar div.datepicker').css('position', 'absolute');
 
+    /*
+    $('#datepicker-secondary-arrival').Zebra_DatePicker({
+        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        lang_clear_date: ['Effacer'],
+        format: 'd/m/Y',
+        readonly_element: true,
+        pair: $('#datepicker-secondary-departure'),
+        disabled_dates: ['* 7,8 *', '* * * 0,1,2,3,4,5'],
+        direction: ['06/04/2013', '15/11/2013'],
+        always_visible: $('#datepickerSecondary'),
+        onChange: function(view, elements) {
+            console.log("################################## ARRIVAL / onChange:  ##################################");
+            console.log(view);
+            console.log(elements);
+            var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+            arrivalAvailableDates = elements;
+            arrivalDatepicker = $('#datepickerSecondary .arrival .dp_daypicker');
+            if (view == "days"){
+                var currentMonth = arrivalDatepicker.prev('.dp_header').find('.dp_caption').text().split(",")[0];
+                console.log("currentMonth: " + currentMonth);
+                $.each( month, function(i, n){
+                    if (n == currentMonth){
+                        arrivalMonth = i + 1;
+                    }
+                });
+                console.log("arrivalMonth: " + arrivalMonth);
+                console.log("selectedArrivalMonth: " + selectedArrivalMonth);
+                console.log("departureMonth: " + departureMonth);
+                console.log("selectedDepartureMonth: " + selectedDepartureMonth);
+            }
+            if (arrivalMonth > selectedArrivalMonth && arrivalMonth < selectedDepartureMonth){
+                console.log("IF MOIS INTERMEDIAIRE");
+                arrivalDatepicker.find('td:not(".dp_not_in_month")').addClass('selected-date');
+            }
+            else if (arrivalMonth == selectedArrivalMonth){
+                console.log("IF PREMIER MOIS");
+                arrivalDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    if ( parseInt($(this).text(), 10) >= parseInt(arrivalDay, 10) ){
+                        console.log($(this).text());
+                        $(this).addClass("selected-date");
+                    }
+                });
+            }
+            else if (arrivalMonth == selectedDepartureMonth){
+                console.log("IF DERNIER MOIS");
+                arrivalDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    if ( parseInt($(this).text(), 10) <= parseInt(departureDay, 10) ){
+                        console.log($(this).text());
+                        $(this).addClass("selected-date");
+                    }
+                });
+            }
+
+            console.log("arrival: " + arrivalAvailableDates)
+        },
+        onSelect: function(fDate, nDate, oDate) {
+            console.log("################################## ARRIVAL / onSelect:  ##################################");
+            //console.log(fDate);
+            //console.log(nDate);
+            //console.log(oDate);
+            //console.log(oDate.getTime());
+
+            var d = oDate;
+//            arrivalYear = d.getFullYear();
+            if (arrivalMonth == undefined) {
+                arrivalMonth = d.getMonth()+1;
+            }
+            arrivalMonth = ((''+arrivalMonth).length<2 ? '0' : '') + arrivalMonth;
+            arrivalDay = d.getDate();
+            arrivalDay = ((''+arrivalDay).length<2 ? '0' : '') + arrivalDay;
+            //console.log(departureMonth);
+//            arrivalDate = arrivalYear + arrivalMonth + arrivalDay;
+//            arrivalMonth = parseInt(arrivalMonth, 10);
+            selectedArrivalMonth = d.getMonth()+1;
+            if (arrivalMonth == undefined) {
+                arrivalMonth = selectedArrivalMonth;
+            }
+            //console.log("arrivalDate: " + arrivalDate);
+            //console.log("departureDate: " + departureDate);
+
+            $('#datepickerSecondary .dp_daypicker td.arrival-date').removeClass('arrival-date');
+
+            //console.log("arrivalDay: " + arrivalDay);
+            //console.log("departureDay: " + departureDay);
+
+            sameMonth = true;
+            checkMonth(arrivalAvailableDates, arrivalDatepicker);
+        }
+    });
+
+    $('#datepicker-secondary-departure').Zebra_DatePicker({
+        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        lang_clear_date: ['Effacer'],
+        format: 'd/m/Y',
+        readonly_element: true,
+        disabled_dates: ['* 7,8 *', '* * * 0,1,2,3,4,5'],
+        direction: ['13/04/2013', '15/11/2013'],
+        always_visible: $('#datepickerSecondary'),
+        onChange: function(view, elements) {
+            console.log('################################## DEPARTURE / onChange: ##################################');
+            $('#datepickerSecondary').children().eq(0).addClass('arrival');
+            $('#datepickerSecondary').children().eq(1).addClass('departure');
+            console.log(view);
+            console.log(elements);
+
+            var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+            departureDatepicker = $('#datepickerSecondary .departure .dp_daypicker');
+            departureAvailableDates = elements;
+            if (view == "days"){
+                var currentMonth = departureDatepicker.prev('.dp_header').find('.dp_caption').text().split(",")[0];
+                console.log("currentMonth: " + currentMonth);
+                $.each( month, function(i, n){
+                    if (n == currentMonth){
+                        departureMonth = i + 1;
+                    }
+                });
+                console.log("arrivalMonth: " + arrivalMonth);
+                console.log("selectedArrivalMonth: " + selectedArrivalMonth);
+                console.log("departureMonth: " + departureMonth);
+                console.log("selectedDepartureMonth: " + selectedDepartureMonth);
+            }
+            if (departureMonth < selectedDepartureMonth && departureMonth > selectedArrivalMonth && selectedDepartureMonth != undefined){
+                console.log("IF MOIS INTERMEDIAIRE");
+                departureDatepicker.find('td:not(".dp_not_in_month")').addClass('selected-date');
+            }
+            else if (departureMonth < selectedDepartureMonth && departureMonth < selectedArrivalMonth && selectedDepartureMonth != undefined){
+                console.log("IF MOIS AVANT");
+                departureDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    console.log("disabled days: " + $(this).text());
+                    console.log("disabled class: " + $(this).attr('class'));
+                    if ( $(this).hasClass('dp_weekend')){
+                        $(this).attr('class', 'dp_weekend_disabled');
+                    }
+                    console.log("disabled class: " + $(this).attr('class'));
+                });
+            }
+            else if (departureMonth == selectedDepartureMonth && departureMonth == selectedArrivalMonth && selectedDepartureMonth != undefined){
+                console.log("IF PREMIER ET DERNIER MOIS");
+                departureDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    if (parseInt($(this).text(), 10) >= parseInt(arrivalDay, 10) && parseInt($(this).text(), 10) <= parseInt(departureDay, 10)){
+                        console.log($(this).text());
+                        $(this).addClass("selected-date");
+                    }
+                    else {
+                        console.log("disabled days: " + $(this).text());
+                        console.log("disabled class: " + $(this).attr('class'));
+                        if ( $(this).hasClass('dp_weekend')){
+                            $(this).attr('class', 'dp_weekend_disabled');
+                        }
+                        console.log("disabled class: " + $(this).attr('class'));
+                    }
+                });
+            }
+            else if (departureMonth == selectedDepartureMonth && selectedDepartureMonth != undefined){
+                console.log("IF DERNIER MOIS");
+                departureDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    if ( parseInt($(this).text(), 10) <= parseInt(departureDay, 10) ){
+                        console.log($(this).text());
+                        $(this).addClass("selected-date");
+                    }
+                });
+            }
+            else if (departureMonth == selectedArrivalMonth && selectedDepartureMonth != undefined){
+                console.log("IF PREMIER MOIS");
+                departureDatepicker.find('td:not(".dp_not_in_month")').each(function() {
+                    if ( parseInt($(this).text(), 10) >= parseInt(arrivalDay, 10) ){
+                        console.log($(this).text());
+                        $(this).addClass("selected-date");
+                    }
+                    else {
+                        console.log("disabled days: " + $(this).text());
+                        console.log("disabled class: " + $(this).attr('class'));
+                        if ( $(this).hasClass('dp_weekend')){
+                            $(this).attr('class', 'dp_weekend_disabled');
+                        }
+                        console.log("disabled class: " + $(this).attr('class'));
+                    }
+                });
+            }
+            console.log("departure: " + departureAvailableDates)
+        },
+        onSelect: function(fDate, nDate, oDate) {
+            console.log("################################## DEPARTURE / onSelect:  ##################################");
+            //console.log(fDate);
+            //console.log(nDate);
+            //console.log(oDate);
+            //console.log(oDate.getTime());
+
+            var d = oDate;
+//            departureYear = d.getFullYear();
+//            departureMonth = d.getMonth()+1;
+//            departureMonth = ((''+departureMonth).length<2 ? '0' : '') + departureMonth;
+            departureDay = d.getDate();
+            departureDay = ((''+departureDay).length<2 ? '0' : '') + departureDay;
+            //console.log(departureMonth);
+//            departureDate = departureYear + departureMonth + departureDay;
+//            departureMonth = parseInt(departureMonth, 10);
+            selectedDepartureMonth = d.getMonth()+1;
+            //console.log("arrivalDate: " + arrivalDate);
+            //console.log("departureDate: " + departureDate);
+
+            //console.log("arrivalDay: " + arrivalDay);
+            //console.log("departureDay: " + departureDay);
+
+            checkMonth(departureAvailableDates, departureDatepicker);
+        }
+    });
+    */
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
@@ -251,6 +518,10 @@ $(function() {
 
 
 /*--  FUNCTIONS  --*/
+
+function openIframePopin(url){
+    $.colorbox({href: url, iframe:true, width:'80%', height:'80%', close:"&times;"});
+}
 
 // datepicker
 function unselectForbiddenDates(miniDepartureDate, date){

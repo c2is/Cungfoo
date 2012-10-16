@@ -75,10 +75,10 @@
                 html: mkr[4]
             });
             var contentString = "";
-            /*google.maps.event.addListener(marker, "click", function () {
+            google.maps.event.addListener(marker, "click", function () {
                 infowindow.setContent(this.html);
                 infowindow.open(map, this);
-            });*/
+            });
         }
     }
 </script>
