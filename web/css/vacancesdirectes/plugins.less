@@ -1,33 +1,21 @@
 /*PLUGINS*/
 /* infoBox */
-.infoBox { background: #fff; width: 265px; height: 160px; margin: 0; padding: 6px; font-size: 11px;
-  -webkit-border-radius: 6px;
-  -mos-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+.infoBox{background:@colorBgGrisC;width:305px;height:130px;margin:0;padding:10px;font-size:11px;
+.border-radius(6px);.box-shadow(0 0 10px rgba(0, 0, 0, .5));}
 
-.lt-ie9 .infoBox { border: 1px solid #ccc;  }
-.infoBox:after { content: ''; z-index: 1; position: absolute; bottom: -20px; left: 0; width: 100%; height: 20px; background: url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 222px 100%;}
+.lt-ie9 .infoBox{border:1px solid #ccc;}
+.infoBox:after{content:'';z-index:1;position:absolute;bottom:-20px;left:0;width:100%;height:20px;background:url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 50% 100%;}
 
-.infoBox .content { postition: relative !important; height: 138px; overflow: hidden; }
+.infoBox .content{postition:relative;height:138px;overflow:hidden;}
 
-.infoBox img { float: right; }
-.infoBox .content img { float: left; margin: 0 6px 3px 0; }
+.infoBox > img{float:right;margin:-5px -5px 0 0 !important;}
+.infoBox .content img{float:left;margin:0 10px 3px 0;}
 
-.infoBox .title { font-size: 16px !important; line-height:16px !important;  margin-bottom: 4px !important; }
-.infoBox .city, .infoBox .dept { font-size: 12px; font-weight: bold; }
+.infoBox .title{font:bold 16px/18px @ptnarrow;color:@colorFushia;text-transform:uppercase;margin-bottom:10px;}
+.infoBox .country, .infoBox .reg, .infoBox .city{color:@colorGris1;font-size:11px;text-transform:uppercase;line-height:1.2em;}
+.infoBox .city{color:@colorFushia;}
 
-.infoBox .heberg { font-weight: bold; clear: both; margin-bottom: 4px; }
-.infoBox .btns { position: absolute; bottom: 6px; right: 6px; text-align: right; }
-.infoBox .price { color: #d91935; font: 22px 'Francois One', Arial, Sans-sherif; text-transform: uppercase; }
-
-.infoBox .btn-red { margin-left: 7px; }
+.infoBox .bt{display:inline-block;font-size:11px;margin-top:5px;}
 
 
 /*
@@ -91,7 +79,7 @@
 /**
 * Hide lists on page load
 ---------------------------------------------------------*/
-@selectWidth: 125px;
+@selectWidth: 165px;
 @selectTextWidth: 94px;
 @selectHeight: 23px;
 @selectTextHeight: 20px;
@@ -107,17 +95,17 @@
 // Stylish Select
 .stylish-select{
   .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
-  ul.newList {margin:0;padding:0;list-style:none;color:#000;background:#fff;border:1px solid #ccc;overflow:auto;}
+  ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color: #000;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
-  .newListSelected {width:@selectWidth;color:#000;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
+  .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
   .selectedTxt {width:@selectWidth - @selectHeight - 5;overflow:hidden;padding:0 @selectHeight 0 5px;position:absolute;}
   .hiLite {background:#ED145B!important;color:#fff!important;}
-  .newListHover {background-color:#ccc!important;color:#000!important;cursor:default;}
+  .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
   .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
   .newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
   .newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
@@ -147,7 +135,7 @@
 }
 #widgetField input {
   background-color: #E6E5E5;
-  color: #000000;
+  color: @colorGris2;
   float: left;
   height: 23px;
   line-height: 23px;
@@ -178,7 +166,7 @@
 #widgetField:hover span,
 #widgetField.opened span { background-position: 0 -46px; }
 #widgetCalendar {
-  background: none repeat scroll 0 0 @colorGris2;
+  background: none repeat scroll 0 0 @colorGris3;
   height: 0;
   left: 0;
   overflow: hidden;
@@ -186,13 +174,15 @@
   top: 23px;
   width: 886px;
   z-index:10;
-  margin:10px 0;
+  margin:5px 0;
 //  border: 1px solid @colorGris3;
 }
 #widgetCalendar .datepicker {
   bottom: 0;
   position: absolute;
   top: auto;
+  border: 1px solid #adadad;
+  width:886px !important;
 }
 #widgetCalendar .datepickerContainer, #widgetCalendar .datepickerBorderT, #widgetCalendar .datepickerBorderB, #widgetCalendar .datepickerBorderL, #widgetCalendar .datepickerBorderR, #widgetCalendar .datepickerBorderTL, #widgetCalendar .datepickerBorderTR, #widgetCalendar .datepickerBorderBL, #widgetCalendar .datepickerBorderBR {
   background: none repeat scroll 0 0 transparent !important;
@@ -213,7 +203,7 @@ div.datepicker {
   display: none;
 }
 .datepickerContainer {
-  background: #121212;
+  background: @colorGris3;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -237,7 +227,7 @@ div.datepicker table {
   border-collapse:collapse;
 }
 div.datepicker a {
-  color: #eee;
+  color: @colorGris2;
   text-decoration: none;
   cursor: default;
   outline: none;
@@ -248,7 +238,7 @@ div.datepicker table td {
   margin: 0;
 }
 div.datepicker th {
-  text-align: center;
+  text-align: right;
   color: #999;
   font-weight: normal;
 }
@@ -278,6 +268,12 @@ td.datepickerNotInMonth a {
 tbody.datepickerDays td.datepickerSelected{
   background: @colorFushia;
 }
+td.datepickerSelected a,
+div.datepicker td.datepickerSelected a:hover,
+td.datepickerDisabled.datepickerSelected a,
+div.datepicker td.datepickerDisabled.datepickerSelected a:hover{
+  color:@colorBlanc;
+}
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
   background: #75092d;
   visibility: hidden;
@@ -293,9 +289,6 @@ div.datepicker a:hover {
 }
 div.datepicker td.datepickerNotInMonth a:hover {
   color: #999;
-}
-div.datepicker tbody th {
-  text-align: left;
 }
 .datepickerSpace div {
   width: 8px;
@@ -331,17 +324,20 @@ table.datepickerViewYears tr.datepickerDoW {
   display: none;
 }
 td.datepickerDisabled a,
+td.datepickerUnselectable a,
 td.datepickerDisabled.datepickerNotInMonth a{
-  color: #333;
+  color: #c2c2c2;
 }
-td.datepickerDisabled a:hover {
-  color: #333;
+td.datepickerDisabled a:hover,
+td.datepickerUnselectable a:hover {
+  color: #c2c2c2;
 }
 td.datepickerSpecial a {
-  background: #7d5864;
+  background: #e7d0d7;
 }
 td.datepickerSpecial.datepickerSelected a {
   background: @colorFushia;
+  color: @colorBlanc;
 }
 tr.datepickerDoW th:first-child,
 th.datepickerWeek{display:none;}

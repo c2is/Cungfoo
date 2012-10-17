@@ -23,8 +23,8 @@
             </div>
             <div class="right">
                 <input class="bt big fushia" type="submit" value="Se connecter"/>
-                <a href="#">Identifiant oublié ?</a><br/>
-                <a href="#">Mote de passe oublié ?</a>
+                <a href="{{ path('request_identifiant') }}">Identifiant oublié ?</a><br/>
+                <a href="{{ path('request_password') }}">Mot de passe oublié ?</a>
             </div>
         </form>
 
@@ -108,7 +108,4 @@
 </div>
 <!-- // colonne droite -->
 <!--</div>-->
-<div class="column clearboth">
-    <a class="bt big fushia full" href="#semainier">Demandez vos identifiants pour accéder à votre espace !</a>
-</div>
 {% endblock %}

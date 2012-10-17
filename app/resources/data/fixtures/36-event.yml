@@ -600,17 +600,17 @@
         Image: 'http://viaimage.viafrance.com/images/evts/50802.jpg'
         Priority: '3'
     51:
-        Code: '717314'
-        Category: EXP
-        Address: 'rue Jean-Jacques-Henner'
+        Code: '746610'
+        Category: SAL
+        Address: 'rue Lefebvre'
         Address2: ''
         Zipcode: '68100'
         City: MULHOUSE
-        GeoCoordinateX: '47.744897'
-        GeoCoordinateY: '7.344684'
-        DistanceCamping: '16630'
-        Image: 'http://viaimage.viafrance.com/images/evts/101346.jpg'
-        Priority: '5'
+        GeoCoordinateX: '47.762348'
+        GeoCoordinateY: '7.338427'
+        DistanceCamping: '15154'
+        Image: 'http://viaimage.viafrance.com/images/evts/23247.jpg'
+        Priority: '3'
     52:
         Code: '845767'
         Category: DET
@@ -684,6 +684,18 @@
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
     58:
+        Code: '650671'
+        Category: FET
+        Address: 'place de la Liberté'
+        Address2: ''
+        Zipcode: '64100'
+        City: BAYONNE
+        GeoCoordinateX: '43.492984'
+        GeoCoordinateY: '-1.474818'
+        DistanceCamping: '11431'
+        Image: 'http://viaimage.viafrance.com/images/evts/145586.jpg'
+        Priority: '2'
+    59:
         Code: '768923'
         Category: SAL
         Address: ''
@@ -695,7 +707,7 @@
         DistanceCamping: '17858'
         Image: 'http://viaimage.viafrance.com/images/evts/31402.jpg'
         Priority: '3'
-    59:
+    60:
         Code: '666877'
         Category: SAL
         Address: ''
@@ -707,7 +719,7 @@
         DistanceCamping: '5632'
         Image: 'http://viaimage.viafrance.com/images/evts/87009.jpg'
         Priority: '3'
-    60:
+    61:
         Code: '665053'
         Category: SPO
         Address: 'avenue Edith-Cavell'
@@ -718,18 +730,6 @@
         GeoCoordinateY: '-1.544750'
         DistanceCamping: '7346'
         Image: 'http://viaimage.viafrance.com/images/evts/71522.jpg'
-        Priority: '3'
-    61:
-        Code: '665182'
-        Category: SPO
-        Address: 'allée Gabrielle-Dorziat'
-        Address2: ''
-        Zipcode: '64200'
-        City: BIARRITZ
-        GeoCoordinateX: '43.459456'
-        GeoCoordinateY: '-1.566323'
-        DistanceCamping: '3461'
-        Image: 'http://viaimage.viafrance.com/images/evts/142618.jpg'
         Priority: '3'
     62:
         Code: '746556'
@@ -876,18 +876,6 @@
         Image: 'http://viaimage.viafrance.com/images/evts/46712.jpg'
         Priority: '3'
     74:
-        Code: '752316'
-        Category: EXP
-        Address: 'rue Montpelliéret'
-        Address2: ''
-        Zipcode: '34000'
-        City: MONTPELLIER
-        GeoCoordinateX: '43.611144'
-        GeoCoordinateY: '3.879486'
-        DistanceCamping: '29552'
-        Image: 'http://viaimage.viafrance.com/images/evts/115124.jpg'
-        Priority: '2'
-    75:
         Code: '824264'
         Category: EXP
         Address: 'esplanade Charles-de-Gaulle'
@@ -899,7 +887,7 @@
         DistanceCamping: '29602'
         Image: 'http://viaimage.viafrance.com/images/evts/145939.jpg'
         Priority: '2'
-    76:
+    75:
         Code: '776735'
         Category: FET
         Address: ' Jardins-du-Peyrou'
@@ -911,7 +899,7 @@
         DistanceCamping: '29027'
         Image: 'http://viaimage.viafrance.com/images/evts/3443.jpg'
         Priority: '3'
-    77:
+    76:
         Code: '665102'
         Category: SPO
         Address: 'place de la Comédie'
@@ -922,6 +910,18 @@
         GeoCoordinateY: '3.879882'
         DistanceCamping: '29369'
         Image: 'http://viaimage.viafrance.com/images/evts/17835.jpg'
+        Priority: '3'
+    77:
+        Code: '670653'
+        Category: FES
+        Address: 'avenue Sergents'
+        Address2: ''
+        Zipcode: '34300'
+        City: AGDE
+        GeoCoordinateX: '43.286376'
+        GeoCoordinateY: '3.510760'
+        DistanceCamping: '17917'
+        Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
         Priority: '3'
     78:
         Code: '827255'
@@ -1056,16 +1056,16 @@
         Image: 'http://viaimage.viafrance.com/images/evts/48496.jpg'
         Priority: '8'
     89:
-        Code: '400839'
+        Code: '856751'
         Category: DET
-        Address: 'rue de Notre-Dame'
+        Address: 'avenue de l''Estacade'
         Address2: ''
         Zipcode: '85160'
         City: SAINT-JEAN-DE-MONTS
-        GeoCoordinateX: '46.800048'
-        GeoCoordinateY: '-2.077186'
-        DistanceCamping: '10192'
-        Image: 'http://viaimage.viafrance.com/images/evts/51780.jpg'
+        GeoCoordinateX: '46.790346'
+        GeoCoordinateY: '-2.083201'
+        DistanceCamping: '9869'
+        Image: 'http://viaimage.viafrance.com/images/evts/40514.jpg'
         Priority: '8'
     90:
         Code: '398531'
@@ -1140,30 +1140,6 @@
         Image: 'http://viaimage.viafrance.com/images/evts/123423.jpg'
         Priority: '5'
     96:
-        Code: '818927'
-        Category: DET
-        Address: ''
-        Address2: Village
-        Zipcode: '24620'
-        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
-        GeoCoordinateX: '44.936056'
-        GeoCoordinateY: '1.012885'
-        DistanceCamping: '5698'
-        Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
-        Priority: '2'
-    97:
-        Code: '670717'
-        Category: FES
-        Address: 'Le Bourg'
-        Address2: ''
-        Zipcode: '24580'
-        City: PLAZAC
-        GeoCoordinateX: '45.036291'
-        GeoCoordinateY: '1.037587'
-        DistanceCamping: '11664'
-        Image: 'http://viaimage.viafrance.com/images/evts/141170.jpg'
-        Priority: '3'
-    98:
         Code: '298932'
         Category: DET
         Address: 'route Départementale-704'
@@ -1175,7 +1151,19 @@
         DistanceCamping: '14032'
         Image: 'http://viaimage.viafrance.com/images/evts/94636.jpg'
         Priority: '2'
-    99:
+    97:
+        Code: '818927'
+        Category: DET
+        Address: ''
+        Address2: Village
+        Zipcode: '24620'
+        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
+        GeoCoordinateX: '44.936056'
+        GeoCoordinateY: '1.012885'
+        DistanceCamping: '5698'
+        Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
+        Priority: '2'
+    98:
         Code: '457494'
         Category: EXP
         Address: 'route des Grottes'
@@ -1187,6 +1175,18 @@
         DistanceCamping: '4367'
         Image: 'http://viaimage.viafrance.com/images/evts/61989.jpg'
         Priority: '3'
+    99:
+        Code: '606321'
+        Category: EXP
+        Address: 'rue du Musée'
+        Address2: ''
+        Zipcode: '24620'
+        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
+        GeoCoordinateX: '44.935992'
+        GeoCoordinateY: '1.013669'
+        DistanceCamping: '5636'
+        Image: 'http://viaimage.viafrance.com/images/evts/49830.jpg'
+        Priority: '5'
     100:
         Code: '761391'
         Category: SAL
@@ -1236,30 +1236,6 @@
         Image: 'http://viaimage.viafrance.com/images/evts/20570.jpg'
         Priority: '8'
     104:
-        Code: '670653'
-        Category: FES
-        Address: 'avenue Sergents'
-        Address2: ''
-        Zipcode: '34300'
-        City: AGDE
-        GeoCoordinateX: '43.286376'
-        GeoCoordinateY: '3.510760'
-        DistanceCamping: '2633'
-        Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
-        Priority: '3'
-    105:
-        Code: '817026'
-        Category: EXP
-        Address: 'place des Casernes'
-        Address2: 'Caserne Saint-Jacques - Rampe du 96e'
-        Zipcode: '34500'
-        City: BEZIERS
-        GeoCoordinateX: '43.338262'
-        GeoCoordinateY: '3.214283'
-        DistanceCamping: '24065'
-        Image: 'http://viaimage.viafrance.com/images/evts/145083.jpg'
-        Priority: '5'
-    106:
         Code: '825546'
         Category: MUS
         Address: 'allée Paul-Riquet'
@@ -1271,7 +1247,7 @@
         DistanceCamping: '23847'
         Image: 'http://viaimage.viafrance.com/images/evts/145285.jpg'
         Priority: '5'
-    107:
+    105:
         Code: '829533'
         Category: SPO
         Address: 'avenue des Olympiades'
@@ -1283,7 +1259,19 @@
         DistanceCamping: '20071'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
-    108:
+    106:
+        Code: '825549'
+        Category: VIV
+        Address: 'allée Paul-Riquet'
+        Address2: ''
+        Zipcode: '34500'
+        City: BEZIERS
+        GeoCoordinateX: '43.341908'
+        GeoCoordinateY: '3.217701'
+        DistanceCamping: '23847'
+        Image: 'http://viaimage.viafrance.com/images/evts/143332.jpg'
+        Priority: '5'
+    107:
         Code: '775068'
         Category: DET
         Address: 'place de l''Abbaye'
@@ -1295,7 +1283,7 @@
         DistanceCamping: '23808'
         Image: 'http://viaimage.viafrance.com/images/evts/41100.jpg'
         Priority: '8'
-    109:
+    108:
         Code: '433948'
         Category: DET
         Address: ''
@@ -1307,7 +1295,7 @@
         DistanceCamping: '11189'
         Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
         Priority: '5'
-    110:
+    109:
         Code: '307654'
         Category: EXP
         Address: 'route des Mas'
@@ -1319,7 +1307,7 @@
         DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/31672.jpg'
         Priority: '7'
-    111:
+    110:
         Code: '371894'
         Category: EXP
         Address: 'route du Mas Reig'
@@ -1331,7 +1319,7 @@
         DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/8363.jpg'
         Priority: '8'
-    112:
+    111:
         Code: '307653'
         Category: EXP
         Address: 'rue de la Madeloc'
@@ -1343,7 +1331,7 @@
         DistanceCamping: '26987'
         Image: 'http://viaimage.viafrance.com/images/evts/49121.jpg'
         Priority: '9'
-    113:
+    112:
         Code: '307568'
         Category: EXP
         Address: 'rue Charles de Foucault'
@@ -1355,31 +1343,7 @@
         DistanceCamping: '24257'
         Image: 'http://viaimage.viafrance.com/images/evts/18029.jpg'
         Priority: '9'
-    114:
-        Code: '807925'
-        Category: EXP
-        Address: 'place Raynaldy'
-        Address2: ''
-        Zipcode: '12000'
-        City: RODEZ
-        GeoCoordinateX: '44.349254'
-        GeoCoordinateY: '2.576268'
-        DistanceCamping: '21301'
-        Image: 'http://viaimage.viafrance.com/images/evts/81399.jpg'
-        Priority: '5'
-    115:
-        Code: '807942'
-        Category: EXP
-        Address: 'place Raynaldy'
-        Address2: ''
-        Zipcode: '12000'
-        City: RODEZ
-        GeoCoordinateX: '44.349254'
-        GeoCoordinateY: '2.576268'
-        DistanceCamping: '21301'
-        Image: 'http://viaimage.viafrance.com/images/evts/142212.jpg'
-        Priority: '5'
-    116:
+    113:
         Code: '792877'
         Category: EXP
         Address: 'Musée Soulages'
@@ -1391,7 +1355,7 @@
         DistanceCamping: '21313'
         Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
         Priority: '5'
-    117:
+    114:
         Code: '767506'
         Category: EXP
         Address: 'place Georges-Clemenceau'
@@ -1403,6 +1367,42 @@
         DistanceCamping: '21338'
         Image: 'http://viaimage.viafrance.com/images/evts/7032.jpg'
         Priority: '7'
+    115:
+        Code: '383646'
+        Category: DET
+        Address: 'route Départementale-992'
+        Address2: 'Aire des Cazalous'
+        Zipcode: '12100'
+        City: MILLAU
+        GeoCoordinateX: '44.085476'
+        GeoCoordinateY: '3.022231'
+        DistanceCamping: '24916'
+        Image: 'http://viaimage.viafrance.com/images/evts/408.jpg'
+        Priority: '2'
+    116:
+        Code: '769492'
+        Category: EXP
+        Address: 'Les Cazalous'
+        Address2: 'RD 992 route d''Albi'
+        Zipcode: '12100'
+        City: CREISSELS
+        GeoCoordinateX: '44.086670'
+        GeoCoordinateY: '3.062606'
+        DistanceCamping: '27543'
+        Image: 'http://viaimage.viafrance.com/images/evts/21404.jpg'
+        Priority: '4'
+    117:
+        Code: '810065'
+        Category: VIV
+        Address: Traverse-de-Colombiers
+        Address2: Montfloures
+        Zipcode: '34500'
+        City: BEZIERS
+        GeoCoordinateX: '43.324684'
+        GeoCoordinateY: '3.172106'
+        DistanceCamping: '16767'
+        Image: 'http://viaimage.viafrance.com/images/evts/102236.jpg'
+        Priority: '5'
     118:
         Code: '635430'
         Category: SAL
@@ -1536,18 +1536,6 @@
         Image: 'http://viaimage.viafrance.com/images/evts/104441.jpg'
         Priority: '2'
     129:
-        Code: '424508'
-        Category: DET
-        Address: 'La Testa'
-        Address2: ''
-        Zipcode: '20137'
-        City: PORTO-VECCHIO
-        GeoCoordinateX: '41.699527'
-        GeoCoordinateY: '9.394439'
-        DistanceCamping: '10253'
-        Image: 'http://viaimage.viafrance.com/images/evts/51785.jpg'
-        Priority: '8'
-    130:
         Code: '555395'
         Category: SPO
         Address: 'Plage de Pinarello'
@@ -1558,6 +1546,18 @@
         GeoCoordinateY: '9.374987'
         DistanceCamping: '7842'
         Image: 'http://viaimage.viafrance.com/images/evts/57146.jpg'
+        Priority: '8'
+    130:
+        Code: '616009'
+        Category: EXP
+        Address: 'place de la Marine'
+        Address2: 'Golfe de Porto'
+        Zipcode: '20150'
+        City: PORTO
+        GeoCoordinateX: '41.581454'
+        GeoCoordinateY: '9.276432'
+        DistanceCamping: '7332'
+        Image: 'http://viaimage.viafrance.com/images/evts/72728.jpg'
         Priority: '8'
     131:
         Code: '462070'
@@ -1836,6 +1836,18 @@
         Image: 'http://viaimage.viafrance.com/images/evts/27173.jpg'
         Priority: '7'
     154:
+        Code: '652990'
+        Category: FES
+        Address: 'esplanade Charles-de-Gaulle'
+        Address2: 'BP 2200'
+        Zipcode: '34000'
+        City: MONTPELLIER
+        GeoCoordinateX: '43.611140'
+        GeoCoordinateY: '3.881185'
+        DistanceCamping: '6919'
+        Image: 'http://viaimage.viafrance.com/images/evts/141181.jpg'
+        Priority: '3'
+    155:
         Code: '513040'
         Category: DET
         Address: 'route des Lacs'
@@ -1847,7 +1859,7 @@
         DistanceCamping: '23298'
         Image: 'http://viaimage.viafrance.com/images/evts/61604.jpg'
         Priority: '8'
-    155:
+    156:
         Code: '593377'
         Category: DET
         Address: 'boulevard des Sables'
@@ -1859,7 +1871,7 @@
         DistanceCamping: '25198'
         Image: 'http://viaimage.viafrance.com/images/evts/71710.jpg'
         Priority: '8'
-    156:
+    157:
         Code: '794700'
         Category: EXP
         Address: 'chemin de Beauvais'
@@ -1871,7 +1883,7 @@
         DistanceCamping: '18426'
         Image: 'http://viaimage.viafrance.com/images/evts/131146.jpg'
         Priority: '5'
-    157:
+    158:
         Code: '840370'
         Category: SPO
         Address: 'route de Torigni'
@@ -1883,7 +1895,7 @@
         DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    158:
+    159:
         Code: '840371'
         Category: SPO
         Address: 'route de Torigni'
@@ -1895,7 +1907,7 @@
         DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    159:
+    160:
         Code: '840375'
         Category: SPO
         Address: 'route de Torigni'
@@ -1907,7 +1919,7 @@
         DistanceCamping: '23917'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '8'
-    160:
+    161:
         Code: '768426'
         Category: EXP
         Address: 'route de Montmeyan'
@@ -1919,7 +1931,7 @@
         DistanceCamping: '3865'
         Image: 'http://viaimage.viafrance.com/images/evts/29230.jpg'
         Priority: '8'
-    161:
+    162:
         Code: '593522'
         Category: FET
         Address: 'place Frédéric-Mistral'
@@ -1931,7 +1943,7 @@
         DistanceCamping: '13578'
         Image: 'http://viaimage.viafrance.com/images/evts/37690.jpg'
         Priority: '8'
-    162:
+    163:
         Code: '819876'
         Category: SPO
         Address: 'avenue Princesse-Grace'
@@ -1943,7 +1955,7 @@
         DistanceCamping: '28731'
         Image: 'http://viaimage.viafrance.com/images/evts/114891.jpg'
         Priority: '2'
-    163:
+    164:
         Code: '664999'
         Category: SPO
         Address: 'promenade des Anglais'
@@ -1955,7 +1967,7 @@
         DistanceCamping: '14537'
         Image: 'http://viaimage.viafrance.com/images/evts/27454.jpg'
         Priority: '2'
-    164:
+    165:
         Code: '665188'
         Category: SPO
         Address: 'promenade des Anglais'
@@ -1967,7 +1979,7 @@
         DistanceCamping: '14855'
         Image: 'http://viaimage.viafrance.com/images/evts/131489.jpg'
         Priority: '2'
-    165:
+    166:
         Code: '753724'
         Category: EXP
         Address: 'place du Château'
@@ -1979,7 +1991,7 @@
         DistanceCamping: '16021'
         Image: 'http://viaimage.viafrance.com/images/evts/115294.jpg'
         Priority: '5'
-    166:
+    167:
         Code: '786273'
         Category: FET
         Address: 'rue de la Grange-aux-Dîmes'
@@ -1991,7 +2003,7 @@
         DistanceCamping: '8288'
         Image: 'http://viaimage.viafrance.com/images/evts/40010.jpg'
         Priority: '6'
-    167:
+    168:
         Code: '775078'
         Category: DET
         Address: 'place Saint-Louis'
@@ -2003,7 +2015,7 @@
         DistanceCamping: '15591'
         Image: 'http://viaimage.viafrance.com/images/evts/41099.jpg'
         Priority: '8'
-    168:
+    169:
         Code: '842945'
         Category: MUS
         Address: 'avenue Maunoury'
@@ -2015,7 +2027,7 @@
         DistanceCamping: '15393'
         Image: 'http://viaimage.viafrance.com/images/evts/149567.jpg'
         Priority: '8'
-    169:
+    170:
         Code: '646274'
         Category: FET
         Address: 'boulevard des Arènes'
@@ -2027,7 +2039,7 @@
         DistanceCamping: '20262'
         Image: 'http://viaimage.viafrance.com/images/evts/94356.jpg'
         Priority: '3'
-    170:
+    171:
         Code: '452241'
         Category: DET
         Address: 'Le Martouret'
@@ -2039,7 +2051,7 @@
         DistanceCamping: '8867'
         Image: 'http://viaimage.viafrance.com/images/evts/50484.jpg'
         Priority: '8'
-    171:
+    172:
         Code: '371591'
         Category: EXP
         Address: 'avenue de la Clairette'
@@ -2051,7 +2063,7 @@
         DistanceCamping: '11330'
         Image: 'http://viaimage.viafrance.com/images/evts/10899.jpg'
         Priority: '8'
-    172:
+    173:
         Code: '406597'
         Category: DET
         Address: 'place de la République'
@@ -2063,7 +2075,7 @@
         DistanceCamping: '9833'
         Image: 'http://viaimage.viafrance.com/images/evts/10956.jpg'
         Priority: '8'
-    173:
+    174:
         Code: '439604'
         Category: DET
         Address: 'Hameau les nals'
@@ -2075,7 +2087,7 @@
         DistanceCamping: '5655'
         Image: 'http://viaimage.viafrance.com/images/evts/53937.jpg'
         Priority: '8'
-    174:
+    175:
         Code: '789418'
         Category: FES
         Address: 'rue du 9-Juin-1944'
@@ -2087,7 +2099,7 @@
         DistanceCamping: '14224'
         Image: 'http://viaimage.viafrance.com/images/evts/55153.jpg'
         Priority: '3'
-    175:
+    176:
         Code: '772492'
         Category: DET
         Address: 'place Jean-Tave'
@@ -2099,7 +2111,7 @@
         DistanceCamping: '14949'
         Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
         Priority: '4'
-    176:
+    177:
         Code: '827164'
         Category: SPO
         Address: 'rue Léon-Branchet'
@@ -2111,7 +2123,7 @@
         DistanceCamping: '17268'
         Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
         Priority: '5'
-    177:
+    178:
         Code: '827173'
         Category: SPO
         Address: 'rue Léon-Branchet'
@@ -2123,7 +2135,7 @@
         DistanceCamping: '17268'
         Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
         Priority: '5'
-    178:
+    179:
         Code: '808313'
         Category: VIV
         Address: 'rue Principale'
@@ -2135,7 +2147,7 @@
         DistanceCamping: '23791'
         Image: 'http://viaimage.viafrance.com/images/evts/145311.jpg'
         Priority: '5'
-    179:
+    180:
         Code: '789247'
         Category: EXP
         Address: 'place de l''Hôtel-de-Ville'
@@ -2147,7 +2159,7 @@
         DistanceCamping: '10280'
         Image: 'http://viaimage.viafrance.com/images/evts/86838.jpg'
         Priority: '7'
-    180:
+    181:
         Code: '839529'
         Category: VIV
         Address: 'route de Toulouse'
@@ -2159,7 +2171,7 @@
         DistanceCamping: '21467'
         Image: 'http://viaimage.viafrance.com/images/evts/4831.jpg'
         Priority: '7'
-    181:
+    182:
         Code: '808246'
         Category: VIV
         Address: 'rue Principale'
@@ -2171,7 +2183,7 @@
         DistanceCamping: '23791'
         Image: 'http://viaimage.viafrance.com/images/evts/8594.jpg'
         Priority: '8'
-    182:
+    183:
         Code: '826264'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2183,7 +2195,7 @@
         DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    183:
+    184:
         Code: '826265'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2195,7 +2207,7 @@
         DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    184:
+    185:
         Code: '826277'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2207,7 +2219,7 @@
         DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    185:
+    186:
         Code: '826279'
         Category: SPO
         Address: 'route de Vernaux'
@@ -2219,7 +2231,7 @@
         DistanceCamping: '7345'
         Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
-    186:
+    187:
         Code: '204688'
         Category: DET
         Address: ''
@@ -2231,7 +2243,7 @@
         DistanceCamping: '22484'
         Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
         Priority: '2'
-    187:
+    188:
         Code: '620565'
         Category: DET
         Address: 'avenue des Fleurs-de-la-Paix'
@@ -2243,7 +2255,7 @@
         DistanceCamping: '19041'
         Image: 'http://viaimage.viafrance.com/images/evts/20134.jpg'
         Priority: '3'
-    188:
+    189:
         Code: '736000'
         Category: FET
         Address: 'avenue de la République'
@@ -2255,19 +2267,19 @@
         DistanceCamping: '23730'
         Image: 'http://viaimage.viafrance.com/images/evts/116027.jpg'
         Priority: '3'
-    189:
-        Code: '404744'
-        Category: DET
-        Address: 'rue du Pré'
-        Address2: ''
-        Zipcode: '39200'
-        City: SAINT-CLAUDE
-        GeoCoordinateX: '46.388882'
-        GeoCoordinateY: '5.864370'
-        DistanceCamping: '25349'
-        Image: 'http://viaimage.viafrance.com/images/evts/49136.jpg'
-        Priority: '5'
     190:
+        Code: '856662'
+        Category: EXP
+        Address: 'rue du Murgin'
+        Address2: ''
+        Zipcode: '39260'
+        City: MOIRANS-EN-MONTAGNE
+        GeoCoordinateX: '46.433106'
+        GeoCoordinateY: '5.726219'
+        DistanceCamping: '17239'
+        Image: 'http://viaimage.viafrance.com/images/evts/27808.jpg'
+        Priority: '5'
+    191:
         Code: '628182'
         Category: DET
         Address: 'rue Richebourg'
@@ -2279,7 +2291,7 @@
         DistanceCamping: '14937'
         Image: 'http://viaimage.viafrance.com/images/evts/37884.jpg'
         Priority: '5'
-    191:
+    192:
         Code: '674033'
         Category: EXP
         Address: 'rue du Murgin'
@@ -2291,7 +2303,7 @@
         DistanceCamping: '17239'
         Image: 'http://viaimage.viafrance.com/images/evts/90792.jpg'
         Priority: '5'
-    192:
+    193:
         Code: '770953'
         Category: DET
         Address: 'boulevard de l''Europe'
@@ -2303,7 +2315,7 @@
         DistanceCamping: '14926'
         Image: 'http://viaimage.viafrance.com/images/evts/15179.jpg'
         Priority: '5'
-    193:
+    194:
         Code: '791104'
         Category: EXP
         Address: 'avenue Victor-Bouthillier'
@@ -2315,7 +2327,7 @@
         DistanceCamping: '28635'
         Image: 'http://viaimage.viafrance.com/images/evts/128989.jpg'
         Priority: '5'
-    194:
+    195:
         Code: '665214'
         Category: FES
         Address: 'place Bellevue'
@@ -2327,7 +2339,7 @@
         DistanceCamping: '29139'
         Image: 'http://viaimage.viafrance.com/images/evts/86929.jpg'
         Priority: '3'
-    195:
+    196:
         Code: '665241'
         Category: SPO
         Address: 'rue Cino-del-Duca'
@@ -2338,18 +2350,6 @@
         GeoCoordinateY: '-1.538795'
         DistanceCamping: '28513'
         Image: 'http://viaimage.viafrance.com/images/evts/114891.jpg'
-        Priority: '3'
-    196:
-        Code: '753719'
-        Category: SPO
-        Address: 'avenue Edith-Cavell'
-        Address2: ''
-        Zipcode: '64200'
-        City: BIARRITZ
-        GeoCoordinateX: '43.490909'
-        GeoCoordinateY: '-1.544750'
-        DistanceCamping: '27803'
-        Image: 'http://viaimage.viafrance.com/images/evts/71522.jpg'
         Priority: '3'
     197:
         Code: '827103'
@@ -2364,18 +2364,6 @@
         Image: 'http://viaimage.viafrance.com/images/evts/62089.jpg'
         Priority: '5'
     198:
-        Code: '756401'
-        Category: SAL
-        Address: 'Maison de la mer'
-        Address2: ''
-        Zipcode: '83240'
-        City: 'CAVALAIRE SUR MER'
-        GeoCoordinateX: '43.173048'
-        GeoCoordinateY: '6.531621'
-        DistanceCamping: '5240'
-        Image: 'http://viaimage.viafrance.com/images/evts/46545.jpg'
-        Priority: '8'
-    199:
         Code: '839906'
         Category: EXP
         Address: 'rue Etienne-Berny'
@@ -2387,7 +2375,7 @@
         DistanceCamping: '16232'
         Image: 'http://viaimage.viafrance.com/images/evts/67645.jpg'
         Priority: '8'
-    200:
+    199:
         Code: '801454'
         Category: DET
         Address: 'place Neuve'
@@ -2399,6 +2387,18 @@
         DistanceCamping: '10059'
         Image: 'http://viaimage.viafrance.com/images/evts/76524.jpg'
         Priority: '8'
+    200:
+        Code: '375919'
+        Category: DET
+        Address: 'terre-plein du Nouveau-Port'
+        Address2: ''
+        Zipcode: '83990'
+        City: SAINT-TROPEZ
+        GeoCoordinateX: '43.272058'
+        GeoCoordinateY: '6.639006'
+        DistanceCamping: '16330'
+        Image: 'http://viaimage.viafrance.com/images/evts/72530.jpg'
+        Priority: '4'
     201:
         Code: '827174'
         Category: SPO

@@ -15,9 +15,9 @@ $app = require_once __DIR__ . '/../../app/bootstrap.php';
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider());
 $app['security.firewalls'] =  array(
-    'ce_login' => array(
-        'pattern' => '^/login$',
-    ),
+    'resalys' => array('pattern' => '^/resalys'),
+    'request' => array('pattern' => '^/request'),
+    'ce_login' => array('pattern' => '^/login$'),
     'ce' => array(
         'pattern'   => '/',
         'form'      => array('login_path' => '/login', 'check_path' => '/login_check'),
@@ -29,6 +29,8 @@ $app['security.firewalls'] =  array(
 );
 $app['security.access_rules'] = array(
     array('^/.+$', 'ROLE_USER'),
+    array('^/request', ''),
+    array('^/resalys', '')
 );
 
 $app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) {
