@@ -26,12 +26,46 @@ class RequestController implements ControllerProviderInterface
 
         $controllers->match('/identifiant.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Request/identifiant.twig');
+            if ('POST' == $request->getMethod())
+            {
+                $query = $request->request->all();
+            }
+            else
+            {
+                $query = array(
+                    'webuser' => 'web_ce_achat_fr',
+                    'display' => 'forget_login',
+                    'template' => 'search_product_results',
+                    'actions' => 'displayForgetLoginForm',
+                    'criterias_object_name' => 'search_form',
+                    'search_page' => '1',
+                    'page_after_auth' => '',
+                );
+            }
+
+            return $app['twig']->render('Request/identifiant.twig', array('query' => $query));
         })->bind('request_identifiant');
 
         $controllers->match('/mot-de-passe.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Request/motDePasse.twig');
+            if ('POST' == $request->getMethod())
+            {
+                $query = $request->request->all();
+            }
+            else
+            {
+                $query = array(
+                    'webuser' => 'web_ce_achat_fr',
+                    'display' => 'forget_password',
+                    'template' => 'search_product_results',
+                    'actions' => 'displayForgetPasswordForm',
+                    'criterias_object_name' => 'search_form',
+                    'search_page' => '1',
+                    'page_after_auth' => '',
+                );
+            }
+
+            return $app['twig']->render('Request/motDePasse.twig', array('query' => $query));
         })->bind('request_password');
 
         return $controllers;
