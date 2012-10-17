@@ -1,21 +1,10 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
-var arrivalDatepicker;
-var arrivalAvailableDates ;
-var arrivalYear;
-var arrivalMonth;
-var selectedArrivalMonth;
-var arrivalDay;
-var arrivalDate;
-
-var departureDatepicker;
-var departureAvailableDates;
-var departureYear;
-var departureMonth;
-var selectedDepartureMonth;
-var departureDay;
-var departureDate;
-var sameMonth;
+//datepicker
+var linear = "classic",
+    miniDepartureDate,
+    arrivalDate,
+    departureDate;
 
 /*--  DOMREADY  --*/
 $(function() {
@@ -137,7 +126,8 @@ $(function() {
         fHighSeasonStartDate = '2013/06/29',
         fHighSeasonEndDate = '2013/08/31',
         fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
-        startDate = numDate(fStartDate);
+        startDate = numDate(fStartDate),
+        firstSelection = true;
 
     console.log(fSeasonDates);
     console.log(fHighSeasonDates);
@@ -150,9 +140,6 @@ $(function() {
     console.log(currentDate);
     console.log(startDate);
     console.log(fStartDate);
-
-    var firstSelection = true,
-        miniDepartureDate;
 
     $('#widgetCalendar').DatePicker({
         flat: true,
@@ -168,10 +155,17 @@ $(function() {
 
             //            datepicker.DatePickerSetDate(datepicker.val(), true);
         },
+        onShow: function(){
+            console.log("################################## onShow:  ##################################");
+
+            //            datepicker.DatePickerSetDate(datepicker.val(), true);
+        },
         onChange: function(formated, dates){
             console.log("################################## onChange:  ##################################");
             console.log(formated);
             console.log(dates);
+            arrivalDate = dates[0];
+            departureDate = dates[1];
 
             var weekDuration = 1000*60*60*24*7,
                 numWeeks = 6,
@@ -182,9 +176,8 @@ $(function() {
             });
             if (firstSelection) {
                 console.log("1ère sélection : " + selectedDates[0]);
-                miniDepartureDate = numDate(formatDate(new Date(dates[0].getTime() + numWeeks*weekDuration)));
-                console.log("miniDepartureDate : " + miniDepartureDate);
-                unselectForbiddenDates(miniDepartureDate, dates[0]);
+                miniDepartureDate = numDate(formatDate(new Date(arrivalDate.getTime() + numWeeks*weekDuration)));
+                unselectForbiddenDates(miniDepartureDate, arrivalDate);
                 firstSelection = false;
             }
             else {
@@ -235,6 +228,10 @@ $(function() {
         state = !state;
         return false;
     });
+    $('.datepickerGoPrev a, .datepickerGoNext a').bind('click', function(){
+        console.log("CLICK BUTTON")
+        unselectForbiddenDates(miniDepartureDate, arrivalDate);
+    });
     $('#linearSwitcher input').bind('click', function(){
 //        switchLinear();
     });
@@ -266,25 +263,64 @@ function openIframePopin(url){
  }
  }*/
 function unselectForbiddenDates(miniDepartureDate, date){
-    console.log(miniDepartureDate);
-    console.log(date);
-    $('#widgetCalendar td').each(function(index, value){
-        if ( $(this).not('.datepickerNotInMonth').hasClass('datepickerSelected') )
-        {
-            $(this).parents('.datepickerViewDays').find('.datepickerSaturday').each(function(index,value){
-                if ($(this).hasClass('datepickerSelected')){
-                    return false;
-                }
-                else {
+    console.log("miniDepartureDate: " + miniDepartureDate);
+    console.log("date: " + date);
+    if (linear == "classic"){
+        $('#widgetCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth')).each(function(index, value){
+
+                var afterArrivalDate = false;
+                $(this).parents('.datepickerViewDays').find('.datepickerSaturday').each(function(index,value){
                     console.log(value);
+                    /*
+                    console.log(afterArrivalDate);
+                    if ($(this).hasClass('datepickerSelected')) {
+                        console.log("ARRIVAL");
+                        afterArrivalDate = true;
+                    }
+                    else if (!afterArrivalDate) {
+                        console.log("before ARRIVAL");
+                        $(this).addClass('datepickerUnselectable');
+                    }
+                    else {
+                        console.log("after ARRIVAL");
+                        console.log("value: ");
+                        console.log(value);
+                    }
+                    */
+                });
+                $(this).parents('.datepickerViewDays').parent('td').prevAll('td').not('.datepickerSpace').find('.datepickerSaturday').each(function(index,value){
                     $(this).addClass('datepickerUnselectable');
-                }
-            });
-            $(this).parents('.datepickerViewDays').parent('td').prevAll('td').not('.datepickerSpace').find('.datepickerSaturday').each(function(index,value){
-                $(this).addClass('datepickerUnselectable');
-            });
-        }
-    });
+                });
+
+        });
+    }
+    else if (linear == "mini") {
+        $('#widgetCalendar td').each(function(index, value){
+            /*
+            if ( $(this).not('.datepickerNotInMonth').hasClass('datepickerSelected') )
+            {
+                $(this).parents('.datepickerViewDays').find('.datepickerSaturday').each(function(index,value){
+                    var afterArrivalDate;
+                    if ($(this).hasClass('datepickerSelected')) {
+                        afterArrivalDate = true
+                        return false;
+                    }
+                    else if (!afterArrivalDate) {
+
+                        $(this).addClass('datepickerUnselectable');
+                    }
+                    else {
+                        console.log("value: ");
+                        console.log(value);
+                    }
+                });
+                $(this).parents('.datepickerViewDays').parent('td').prevAll('td').not('.datepickerSpace').find('.datepickerSaturday').each(function(index,value){
+                    $(this).addClass('datepickerUnselectable');
+                });
+            }
+            */
+        });
+    }
 }
 
 function formatDate(d){
@@ -311,7 +347,7 @@ function numDate(d){
     var nThisDate = parseInt(d.split('/').join(''),10);
     return nThisDate;
 }
-
+/*
 function colorizeRange(arrivalDay,departureDay){
     console.log("////////////////////////////////// colorizeRange()  //////////////////////////////////");
     $('#datepickerSecondary .dp_daypicker td:not(".dp_not_in_month")').each(function() {
@@ -449,6 +485,7 @@ function disableDates(){
     }
 
 }
+*/
 
 // slider
 function sliderPict() {
