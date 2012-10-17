@@ -91,6 +91,8 @@ eof
                 '{_c2is.javascript.footer}',
                 '{_c2is.back}',
                 '{_c2is.uri.ficheCamping}',
+                'Choisir',
+                ',00',
                 '<b><b>',
             ), array(
                 $websiteUri,
@@ -99,6 +101,8 @@ eof
                 $javascriptFooter,
                 $backUri,
                 sprintf('%s/camping', $websiteUri),
+                'Réserver',
+                '',
                 '',
             ), $iframe);
 
