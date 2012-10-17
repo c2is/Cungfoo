@@ -35,6 +35,12 @@ class WrapperController implements ControllerProviderInterface
             $iframe = file_get_contents(sprintf("%s?%s", $clientConfiguration['services']['modele']['location'], $queryString));
             $iframe = $this->replace($iframe);
 
+            $dayNight = preg_match_all('"([0-9]*) jours / ([0-9]*) nuits"', $iframe, $matches, PREG_SET_ORDER);
+            foreach ($matches as $match)
+            {
+                $iframe = str_replace($match[0], sprintf('%s</div><div class="field">semaines', (int)($match[1] / 8)), $iframe);
+            }
+
             // define back button
             $backUri = '';
             if (!empty($queryParameters['from']))
