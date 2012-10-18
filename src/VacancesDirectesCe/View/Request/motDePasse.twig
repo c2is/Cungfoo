@@ -4,13 +4,6 @@
 
 {% block content %}
         <div class="column clearboth" id="discoverContainer">
-            <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-                webuser: 'web_ce_achat_fr',
-                display: 'forget_password',
-                template: 'search_product_results',
-                actions: 'displayForgetPasswordForm',
-                criterias_object_name: 'search_form',
-                search_page: '1',
-            }) }}" width="960px" height="700px"></iframe>
+            <iframe id="frameResalys" name="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}

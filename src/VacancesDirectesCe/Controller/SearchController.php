@@ -63,6 +63,7 @@ class SearchController implements ControllerProviderInterface
                 ->endUse()
                 ->_endif()
                 ->select(array('code','name'))
+                ->orderByName()
                 ->find()
                 ->toArray()
             ;
@@ -85,6 +86,7 @@ class SearchController implements ControllerProviderInterface
                 ->endUse()
                 ->_endif()
                 ->select(array('code','name'))
+                ->orderByName()
                 ->find()
                 ->toArray()
             ;
