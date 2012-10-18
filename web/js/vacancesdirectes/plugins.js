@@ -1024,14 +1024,14 @@ InfoBox.prototype.panMap = function() {
                 days: 'datepickerViewDays'
             },
             tpl = {
-                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div></div>',
+                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerGoPrev"><a href="#"><span>&#9664;</span></a></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div><div class="datepickerGoNext"><a href="#"><span>&#9654;</span></a></div><span class="datepickerInfo">' + info + '</span></div>',
                 head: [
                     '<td>',
                     '<table cellspacing="0" cellpadding="0">',
                     '<thead>',
                     '<tr>',
                     '<th class="datepickerGoPrev"><a href="#"><span><%=prev%></span></a></th>',
-                    '<th colspan="6" class="datepickerMonth"><a href="#"><span></span></a></th>',
+                    '<th colspan="8" class="datepickerMonth"><a href="#"><span></span></a></th>',
                     '<th class="datepickerGoNext"><a href="#"><span><%=next%></span></a></th>',
                     '</tr>',
                     '<tr class="datepickerDoW">',
@@ -1045,7 +1045,8 @@ InfoBox.prototype.panMap = function() {
                     '<th><span><%=day7%></span></th>',
                     '</tr>',
                     '</thead>',
-                    '</table></td>'
+                    '</table>',
+                    '</td>'
                 ],
                 space : '<td class="datepickerSpace"><div></div></td>',
                 days: [
