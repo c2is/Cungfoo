@@ -262,6 +262,7 @@ $(function() {
     $('#widgetCalendar div.datepickerContainer').css('margin-left', '-180px');
 
     initializeForbiddenDates();
+    $('#linearSwitcher input[checked=checked]').trigger('click');
 
     var preselectedDates = new Array();
     if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
@@ -291,6 +292,7 @@ function openIframePopin(url){
 
 // datepicker
 function switchLinear() {
+    console.log("################################## switchLinear()  ##################################");
     $('#widgetCalendar').DatePickerClear();
     var radioValue = $('input[type=radio][name=linearType]:checked').attr('value');
     $('#searchContainer .searchBox').attr('id',radioValue);
@@ -306,6 +308,7 @@ function switchLinear() {
 }
 
 function initializeForbiddenDates() {
+    console.log(firstRendering);
     var startHighSeasonDay = false,
         endHighSeasonDay = false,
         allSaturdays = $('#widgetCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));

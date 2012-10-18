@@ -125,9 +125,8 @@ include('includes/ce-top.php'); ?>
                 fEndDate = '2013/10/26',                // must be a saturday
                 fHighSeasonStartDate = '2013/06/29',    // must be a saturday
                 fHighSeasonEndDate = '2013/08/31',      // must be a saturday
-                linear = "classic",
-                numMiniWeeks = 6,                       // minimum number of weeks selectable (for linear mini)
-                info = "La période de haute saison doit être comprise dans la sélection.";
+                linear,
+                numMiniWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
     </script>
 
 <?php include('includes/ce-bottom.php'); ?>

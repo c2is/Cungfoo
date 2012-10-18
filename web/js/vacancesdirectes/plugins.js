@@ -1016,6 +1016,7 @@ InfoBox.prototype.panMap = function() {
  */
 
 (function ($) {
+    var datepickerInfo = "";
     var DatePicker = function () {
         var	ids = {},
             views = {
@@ -1024,7 +1025,7 @@ InfoBox.prototype.panMap = function() {
                 days: 'datepickerViewDays'
             },
             tpl = {
-                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerGoPrev"><a href="#"><span>&#9664;</span></a></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div><div class="datepickerGoNext"><a href="#"><span>&#9654;</span></a></div><span class="datepickerInfo">' + info + '</span></div>',
+                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerGoPrev"><a href="#"><span>&#9664;</span></a></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div><div class="datepickerGoNext"><a href="#"><span>&#9654;</span></a></div><span class="datepickerInfo">' + datepickerInfo + '</span></div>',
                 head: [
                     '<td>',
                     '<table cellspacing="0" cellpadding="0">',

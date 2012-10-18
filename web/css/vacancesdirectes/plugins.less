@@ -281,12 +281,17 @@ tbody.datepickerYears td.datepickerSelected a,
 tbody.datepickerMonths td.datepickerSelected a{
   background-color: #75092d;
 }
-div.datepicker .datepickerDays td.datepickerSpecial a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
   background-color: #e7cad3;
   color: #fde1ea;
+}
+div.datepicker .datepickerDays td.datepickerSpecial a {
+  background-color: #e7cad3;
+  color: #464545;
 }
 div.datepicker .datepickerDays td a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover {

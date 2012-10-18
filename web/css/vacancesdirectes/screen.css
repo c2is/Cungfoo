@@ -1379,7 +1379,8 @@ h6,
   width: 100%;
 }
 .ce #basketContainer,
-.ce #confirmContainer {
+.ce #confirmContainer,
+.ce #discoverContainer {
   margin: 0;
   width: 100%;
   background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
@@ -1405,6 +1406,15 @@ h6,
 }
 .ce .column.right {
   width: 436px;
+}
+.ce .error {
+  margin-bottom: 10px;
+  font: 12px Arial, sans-serif;
+  color: #f58220;
+}
+.ce .error li:before {
+  content: "-";
+  padding-right: 3px;
 }
 .ce .greyBox {
   background-color: #e6e5e5;
@@ -2292,12 +2302,17 @@ tbody.datepickerYears td.datepickerSelected a,
 tbody.datepickerMonths td.datepickerSelected a {
   background-color: #75092d;
 }
-div.datepicker .datepickerDays td.datepickerSpecial a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
   background-color: #e7cad3;
   color: #fde1ea;
+}
+div.datepicker .datepickerDays td.datepickerSpecial a {
+  background-color: #e7cad3;
+  color: #464545;
 }
 div.datepicker .datepickerDays td a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover {
