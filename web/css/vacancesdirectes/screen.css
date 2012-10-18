@@ -1379,7 +1379,8 @@ h6,
   width: 100%;
 }
 .ce #basketContainer,
-.ce #confirmContainer {
+.ce #confirmContainer,
+.ce #discoverContainer {
   margin: 0;
   width: 100%;
   background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
@@ -1405,6 +1406,15 @@ h6,
 }
 .ce .column.right {
   width: 436px;
+}
+.ce .error {
+  margin-bottom: 10px;
+  font: 12px Arial, sans-serif;
+  color: #f58220;
+}
+.ce .error li:before {
+  content: "-";
+  padding-right: 3px;
 }
 .ce .greyBox {
   background-color: #e6e5e5;
