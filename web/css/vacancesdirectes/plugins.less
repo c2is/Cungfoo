@@ -104,17 +104,17 @@
 }
 
 // Datepicker
-#widget {
+#datepicker {
   position: relative;
 }
-#widgetField {
+#datepickerField {
   height: 23px;
   overflow: hidden;
   position: relative;
   width: 260px;
   float:left;
 }
-#widgetField input {
+#datepickerField input {
   background-color: #E6E5E5;
   color: @colorGris2;
   float: left;
@@ -126,16 +126,16 @@
   cursor:pointer;
   padding: 0 32px 0 5px;
 }
-#widgetField span.date {
+#datepickerField span.date {
   cursor:pointer;
 }
-#widget input.hidden {
+#datepicker input.hidden {
   display:none;
   width: 125px;
   margin:  0 10px 10px 0;
   border: 0 none;
 }
-#widgetField span {
+#datepickerField span {
   background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat scroll 0 0 transparent;
   float:left;
   width: 27px;
@@ -144,9 +144,9 @@
   top:0;
   right:0;
 }
-#widgetField:hover span,
-#widgetField.opened span { background-position: 0 -46px; }
-#widgetCalendar {
+#datepickerField:hover span,
+#datepickerField.opened span { background-position: 0 -46px; }
+#datepickerCalendar {
   background: none repeat scroll 0 0 @colorGris3;
   height: 0;
   left: 0;
@@ -154,16 +154,16 @@
   position: absolute;
   top: 23px;
   width: 886px;
-  z-index:10;
+  z-index:1;
   margin:5px 0;
 }
-#widgetCalendar .datepickerGoPrev a,
-#widgetCalendar .datepickerGoNext a { text-decoration: none; }
-#widgetCalendar .datepickerGoPrev,
-#widgetCalendar .datepickerGoNext{position:absolute;top:30px;z-index:1;}
-#widgetCalendar .datepickerGoPrev{left:10px;}
-#widgetCalendar .datepickerGoNext{right:10px;}
-#widgetCalendar .datepicker {
+#datepickerCalendar .datepickerGoPrev a,
+#datepickerCalendar .datepickerGoNext a { text-decoration: none; }
+#datepickerCalendar .datepickerGoPrev,
+#datepickerCalendar .datepickerGoNext{position:absolute;top:30px;z-index:1;}
+#datepickerCalendar .datepickerGoPrev{left:10px;}
+#datepickerCalendar .datepickerGoNext{right:10px;}
+#datepickerCalendar .datepicker {
   bottom: 0;
   position: absolute;
   top: auto;
@@ -171,17 +171,17 @@
   width:886px !important;
   z-index:0;
 }
-#widgetCalendar .datepickerContainer,
-#widgetCalendar .datepickerBorderBL,
-#widgetCalendar .datepickerBorderB,
-#widgetCalendar .datepickerBorderBR,
-#widgetCalendar .datepickerBorderL,
-#widgetCalendar .datepickerBorderR {
+#datepickerCalendar .datepickerContainer,
+#datepickerCalendar .datepickerBorderBL,
+#datepickerCalendar .datepickerBorderB,
+#datepickerCalendar .datepickerBorderBR,
+#datepickerCalendar .datepickerBorderL,
+#datepickerCalendar .datepickerBorderR {
   background: none repeat scroll 0 0 transparent !important;
 }
-#widgetCalendar .datepickerBorderTL,
-#widgetCalendar .datepickerBorderT,
-#widgetCalendar .datepickerBorderTR {background: @colorBgGrisC;}
+#datepickerCalendar .datepickerBorderTL,
+#datepickerCalendar .datepickerBorderT,
+#datepickerCalendar .datepickerBorderTR {background: @colorBgGrisC;}
 input.date {
   span{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat 0 0;position:absolute;top:0;right:0;}
 }
@@ -226,6 +226,7 @@ div.datepicker a {
   color: @colorGris2;
   text-decoration: none;
   outline: none;
+  font-weight:bold;
 }
 div.datepicker table td {
   text-align: right;
@@ -233,10 +234,12 @@ div.datepicker table td {
   margin: 0;
 }
 div.datepicker table td.datepickerDisabled a,
-div.datepicker table td.datepickerUnselectable a {cursor:default;}
+div.datepicker table td.datepickerUnselectable a {
+  cursor:default;
+  font-weight:normal;
+}
 div.datepicker th {
   text-align: center;
-  font-weight:bold;
   color: @colorBlanc;
   font-weight: normal;
 }
@@ -259,7 +262,7 @@ div.datepicker tbody a {
 .datepickerDays a {
   width: 25px;
   .verticalCenter(23px);
-  padding-right: 6px;
+  padding:0 6px 0 0;
 }
 .datepickerYears a,
 .datepickerMonths a{
@@ -297,11 +300,17 @@ div.datepicker .datepickerDays td a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover {
   background-color: @colorBgBlanc;
   color: @colorFushia;
+//  width: 23px;
+//  .verticalCenter(21px);
+//  border:1px solid @colorFushia;
+//  padding: 0 3px;
+
 }
 div.datepicker .datepickerDays td.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerUnselectable a:hover {
   background-color: transparent;
   color: #c2c2c2;
+  border:0 none;
 }
 div.datepicker td.datepickerNotInMonth a:hover {
   color: #999;
@@ -316,22 +325,22 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 .datepickerSpace div {
   width: 0;
 }
-#widgetCalendar .datepickerGoNext a,
-#widgetCalendar .datepickerGoPrev a,
-#widgetCalendar .datepickerMonth a {
+#datepickerCalendar .datepickerGoNext a,
+#datepickerCalendar .datepickerGoPrev a,
+#datepickerCalendar .datepickerMonth a {
   font-size:14px;
   text-align: center;
   .verticalCenter(23px);
 }
-#widgetCalendar .datepickerMonth a {cursor:default;}
-#widgetCalendar .datepickerGoNext a,
-#widgetCalendar .datepickerGoPrev a {width: 20px;cursor:pointer;}
-#widgetCalendar .datepickerGoNPrev a{left:0;}
-#widgetCalendar .datepickerGoNext a{right:0;}
-#widgetCalendar .datepickerGoPrev a:hover,
-#widgetCalendar .datepickerGoNext a:hover,
-#widgetCalendar .datepickerMonth a,
-#widgetCalendar .datepickerMonth a:hover {color:@colorBlanc;}
+#datepickerCalendar .datepickerMonth a {cursor:default;}
+#datepickerCalendar .datepickerGoNext a,
+#datepickerCalendar .datepickerGoPrev a {width: 20px;cursor:pointer;}
+#datepickerCalendar .datepickerGoNPrev a{left:0;}
+#datepickerCalendar .datepickerGoNext a{right:0;}
+#datepickerCalendar .datepickerGoPrev a:hover,
+#datepickerCalendar .datepickerGoNext a:hover,
+#datepickerCalendar .datepickerMonth a,
+#datepickerCalendar .datepickerMonth a:hover {color:@colorBlanc;}
 .datepickerInfo {font-family:@ptnarrow;font-size:14px;font-weight:bold;color:@colorFushia;position:absolute;top:5px;left:10px;}
 
 table.datepickerViewDays tbody.datepickerMonths,
@@ -364,6 +373,13 @@ div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
 div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover{
   background-color: @colorFushia;
   color:@colorBlanc;
+  font-weight:bold;
+}
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover{
+  font-weight:normal;
 }
 div.datepicker .datepickerDays td.datepickerNotInMonth.datepickerSelected {
   background-color: @colorFushia;
@@ -372,7 +388,15 @@ div.datepicker .datepickerDays td.datepickerNotInMonth.datepickerSelected {
 }
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerSelected a {
   background-color: @colorFushia;
+  color: @colorGris2;
+}
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a {
   color: @colorBlanc;
+}
+div.datepicker .datepickerDays td.datepickerSelected a {
+  color:@colorGris2;
+  font-weight:bold;
 }
 div.datepicker .datepickerDays td.datepickerSelected a:hover {
   background-color: @colorBlanc;

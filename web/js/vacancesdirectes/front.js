@@ -127,7 +127,7 @@ $(function() {
     $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
-    if ($('#searchContainer #widget').length) {
+    if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
@@ -153,7 +153,7 @@ $(function() {
         //console.log(startDate);
         //console.log(fStartDate);
 
-        $('#widgetCalendar').DatePicker({
+        $('#datepickerCalendar').DatePicker({
             flat: true,
             date: '',
             current: '2013/07/01',
@@ -194,8 +194,8 @@ $(function() {
                     firstSelection = true;
                 }
                 //console.log(selectedDates)
-                $('#widgetInput').val('Du ' + selectedDates.join(' au '));
-                $('#widget input.hidden').each(function(index, value){
+                $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
+                $('#datepicker input.hidden').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -233,9 +233,9 @@ $(function() {
         });
 
         var state = false;
-        $('#widgetField').bind('click', function(){
+        $('#datepickerField').bind('click', function(){
             $(this).toggleClass('opened');
-            $(this).next('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
+            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
             state = !state;
             return false;
         });
@@ -272,22 +272,26 @@ $(function() {
         $('#linearSwitcher input').bind('click', function(){
             switchLinear();
         });
-        $('#widgetCalendar div.datepicker').css('position', 'absolute');
-        $('#widgetCalendar div.datepickerContainer').css('margin-left', '-180px');
+        $('#datepickerCalendar div.datepicker').css('position', 'absolute');
+        $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-180px');
 
         initializeForbiddenDates();
         $('#linearSwitcher input[checked=checked]').trigger('click');
 
+        var preselectedFDates = new Array();
         var preselectedDates = new Array();
         if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
             $.each($('input.hidden'), function(i, item) {
                 //console.log(item.value);
+
                 var fDate = item.value.split("/").reverse().join('/');
-                //console.log(fDate);
-                preselectedDates.push(fDate);
+                console.log(fDate);
+                preselectedFDates.push(fDate);
+                preselectedDates.push(item.value);
             });
             //console.log(preselectedDates);
-            $('#widgetCalendar').DatePickerSetDate(preselectedDates);
+            $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
+            $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
         }
     }
 
@@ -308,7 +312,7 @@ function openIframePopin(url){
 // datepicker
 function switchLinear() {
     //console.log("################################## switchLinear()  ##################################");
-    $('#widgetCalendar').DatePickerClear();
+    $('#datepickerCalendar').DatePickerClear();
     var radioValue = $('input[type=radio][name=linearType]:checked').attr('value');
     $('#searchContainer .searchBox').attr('id',radioValue);
     $('#linearSwitcher').attr('class','column clear ' + radioValue);
@@ -316,7 +320,7 @@ function switchLinear() {
     var legendText = radioValue == "classic" ? "Recherche de linéaires classiques" : "Recherche de linéaires basse saison";
     var infoText = radioValue == "classic" ? "La période en haute saison doit être comprise dans la sélection." : "Un minimum de 6 semaines doit être compris dans la sélection.";
     $('#' + radioValue).find('legend').text(legendText);
-    $('#' + radioValue + ' #widgetCalendar').find('.datepickerInfo').text(infoText);
+    $('#' + radioValue + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
     linear = radioValue;
     firstRendering = true;
     initializeForbiddenDates();
@@ -326,7 +330,7 @@ function initializeForbiddenDates() {
     //console.log(firstRendering);
     var startHighSeasonDay = false,
         endHighSeasonDay = false,
-        allSaturdays = $('#widgetCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
+        allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering && linear == "classic"){
         allSaturdays.each(function(index, value){
@@ -370,8 +374,8 @@ function unselectForbiddenDates(date){
         startHighSeasonDay = false,
         endHighSeasonDay = false,
         numWeek = 1,
-        allSaturdays = $('#widgetCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth')),
-        allDaysNotInMonthSelected = $('#widgetCalendar td.datepickerNotInMonth.datepickerSelected');
+        allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth')),
+        allDaysNotInMonthSelected = $('#datepickerCalendar td.datepickerNotInMonth.datepickerSelected');
 
     allSaturdays.each(function(index, value){
 

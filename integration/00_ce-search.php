@@ -79,13 +79,13 @@ include('includes/ce-top.php'); ?>
                             </div>
                         </li>
                         <li>
-                            <div id="widget">
+                            <div id="datepicker">
                                 <input class="hidden" type="hidden" id="AchatLineaire_dateDebut"  name="AchatLineaire[dateDebut]" readonly="readonly" value="22/06/2013" />
                                 <input class="hidden" type="hidden" type="text" id="AchatLineaire_dateFin"  name="AchatLineaire[dateFin]" readonly="readonly" value="31/08/2013" />
-                                <div id="widgetField" class="clear">
-                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+                                <div id="datepickerField" class="clear">
+                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
-                                <div id="widgetCalendar">
+                                <div id="datepickerCalendar">
 
                                 </div>
                             </div>
