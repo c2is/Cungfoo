@@ -229,7 +229,6 @@
     <div id="tabProximite" class="tabs">
         <div id="proxMap" class="gmap" style="width:616px;height:326px;">
             <script>
-                var proxMapLoaded = false;
                 function proxInit() {
                     var proxMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
@@ -301,11 +300,10 @@
     <div id=tabInfos class="tabs">
         <div id="infoMap" class="gmap" style="width:616px;height:326px;">
             <script>
-                var infoMapLoaded = false;
                 function infoInit() {
                     var infoMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{#{{ path('infobox_camping', {idResalys: etab.code}) }}#}', markerFushia]
+                        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia]
                     ];
                     var centerinfoMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
                             mapOptions = {
