@@ -1687,6 +1687,7 @@ h6,
   margin: 20px 0;
   height: 115px;
   overflow: auto;
+  width: 350px;
 }
 .ce #searchContainer .searchBlock .sMultSelectUl li {
   padding: 0 10px;
@@ -2007,7 +2008,7 @@ h6,
 .stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  min-width: 165px;
+  min-width: 170px;
   position: absolute;
   top: 22px;
   left: 0;
@@ -2036,7 +2037,7 @@ h6,
   white-space: nowrap;
 }
 .stylish-select .newListSelected {
-  width: 165px;
+  width: 170px;
   color: #464545;
   height: 23px;
   float: left;
@@ -2066,7 +2067,7 @@ h6,
   -moz-outline-style: none;
 }
 .stylish-select .selectedTxt {
-  width: 132px;
+  width: 137px;
   overflow: hidden;
   padding: 0 23px 0 10px;
   position: absolute;
