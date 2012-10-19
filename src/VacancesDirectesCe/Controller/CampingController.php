@@ -134,7 +134,17 @@ class CampingController implements ControllerProviderInterface
 
         $controllers->match('/infobox/{idResalys}', function ($idResalys) use ($app)
         {
-            return $app['twig']->render('Camping/camping.infobox.twig', array());
+            $locale = $app['context']->get('language');
+
+            $etab = \Cungfoo\Model\EtablissementQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByCode($idResalys)
+                ->findOne()
+            ;
+
+            return $app['twig']->render('Camping/camping.infobox.twig', array(
+                'etab'                    => $etab
+            ));
 
         })->bind('infobox_camping');
 
