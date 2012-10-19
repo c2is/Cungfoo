@@ -314,7 +314,7 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    <div id="proxMap" style="width:616px;height:326px;">
+    <div id="proxMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function proxInit() {
                 var proxMkrs = [
@@ -437,7 +437,7 @@
 <!-- tab Infos Pratiques -->
 <div id="tabInfos" class="tabs">
 
-    <div id="infoMap" style="width:616px;height:326px;">
+    <div id="infoMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function infoInit() {
                 var infoMkrs = [

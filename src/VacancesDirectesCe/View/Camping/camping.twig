@@ -227,8 +227,9 @@
         </nav>
     </div>
     <div id="tabProximite" class="tabs">
-        <div id="proxMap" style="width:616px;height:326px;">
+        <div id="proxMap" class="gmap" style="width:616px;height:326px;">
             <script>
+                var proxMapLoaded = false;
                 function proxInit() {
                     var proxMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
@@ -298,8 +299,9 @@
         </nav>
     </div>
     <div id=tabInfos class="tabs">
-        <div id="infoMap" style="width:616px;height:326px;">
+        <div id="infoMap" class="gmap" style="width:616px;height:326px;">
             <script>
+                var infoMapLoaded = false;
                 function infoInit() {
                     var infoMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]

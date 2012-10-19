@@ -296,6 +296,11 @@ $(function() {
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
         .wrap('<div class="viewport"><div class="overview"></div></div>');
     $('.tinyScroll').tinyscrollbar();*/
+
+//init Gmap
+    if ($('.gmap').length > 0) {
+        loadGmapScript();
+    }
 });
 
 
@@ -583,17 +588,6 @@ function tabs(tView, load) {
         }
     } else {
         slider.hide();
-        if (sView == 'tabProximite') {
-            if (!proxMapLoaded) {
-                proxInit();
-                proxMapLoaded = true;
-            }
-        } else if (sView == 'tabInfos') {
-            if (!infoMapLoaded) {
-                infoInit();
-                infoMapLoaded = true;
-            }
-        }
     }
     $(tView).css({'position':'static'}).animate({'opacity':1}).siblings('.tabs').css({position:'absolute',opacity:'0'});
     if (!load){ $('html, body').animate({scrollTop: 0},0); }
@@ -603,86 +597,107 @@ function tabs(tView, load) {
 /****
  * GMAP FUNCIONS
  */
-// global maps vars
 var map,
-    infowindow = null,
-    proxMapLoaded = false,
-    infoMapLoaded = false;
+    markerBleu,
+    markerVert,
+    markerFushia,
+    shadow,
+    shape,
+    boxOptions,
+    ib;
 
-// global markers vars
-var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
-    new google.maps.Size(21, 34),
-    new google.maps.Point(0,0),
-    new google.maps.Point(10, 34));
-var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
-    new google.maps.Size(21, 34),
-    new google.maps.Point(0,0),
-    new google.maps.Point(10, 34));
-var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
-    new google.maps.Size(21, 34),
-    new google.maps.Point(0,0),
-    new google.maps.Point(10, 34));
-var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
-    new google.maps.Size(19, 17),
-    new google.maps.Point(0,0),
-    new google.maps.Point(0, 17));
-var shape = {
-    coord: [1, 1, 1, 20, 18, 20, 18 , 1],
-    type: 'poly'
-};
-
-// global function maps
-
-// infobox vars
-var boxOptions = {
-    /*content: ''
-     ,*/disableAutoPan: false
-    ,maxWidth: 0
-    ,pixelOffset: new google.maps.Size(-152, -50)
-    ,zIndex: null
-    ,closeBoxMargin: "0px 0px 2px 2px"
-    ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
-    ,infoBoxClearance: new google.maps.Size(1, 1)
-    ,alignBottom: true
-    ,pane: "floatPane"
-    ,enableEventPropagation: false
-};
-var ib = new InfoBox(boxOptions);
-
-function setMarkers(map, mkrs) {
-    for (var i = 0; i < mkrs.length; i++) {
-        var mkr = mkrs[i];
-        var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-        var marker = new google.maps.Marker({
-            position: siteLatLng,
-            map: map,
-            shadow: shadow,
-            icon: mkr[5],
-            shape: shape,
-            title: mkr[0],
-            zIndex: mkr[3],
-            idCamp: mkr[4]
-        });
-
-        if (marker.idCamp != ''){
-            google.maps.event.addListener(marker, "click", function (e) {
-                var marker = this;
-
-                if(!marker.content){ //1st click
-                    $.ajax({
-                        url: this.idCamp,
-                        success: function(response){
-                            marker.content = response;
-                            ib.setContent(response);
-                            ib.open(map, marker);
-                        }
-                    });
-                }else{
-                    ib.setContent(marker.content);
-                    ib.open(map, marker);
-                }
-            });
-        }
-    }
+function loadGmapScript() { // call at the end of the DOM ready
+    var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://maps.googleapis.com/maps/api/js?key="+sGoogleApiKey+"&sensor=true&callback=loadPluginsGmap";
+    document.body.appendChild(script);
 }
 
+function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/js...
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = templatePath+"js/vacancesdirectes/pluginGmap.js"; // call initializeAllGmap() at the end of pluginGmap.js (do a callback)
+    document.body.appendChild(script);
+}
+
+
+    function setMarkers(map, mkrs) {
+        for (var i = 0; i < mkrs.length; i++) {
+            var mkr = mkrs[i];
+            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+            var marker = new google.maps.Marker({
+                position: siteLatLng,
+                map: map,
+                shadow: shadow,
+                icon: mkr[5],
+                shape: shape,
+                title: mkr[0],
+                zIndex: mkr[3],
+                idCamp: mkr[4]
+            });
+
+            if (marker.idCamp != ''){
+                google.maps.event.addListener(marker, "click", function (e) {
+                    var marker = this;
+
+                    if(!marker.content){ //1st click
+                        $.ajax({
+                            url: this.idCamp,
+                            success: function(response){
+                                marker.content = response;
+                                ib.setContent(response);
+                                ib.open(map, marker);
+                            }
+                        });
+                    }else{
+                        ib.setContent(marker.content);
+                        ib.open(map, marker);
+                    }
+                });
+            }
+        }
+    }
+function initializeAllGmap() {
+
+    // infobox vars
+    boxOptions = {
+        /*content: ''
+         ,*/disableAutoPan: false
+        ,maxWidth: 0
+        ,pixelOffset: new google.maps.Size(-152, -50)
+        ,zIndex: null
+        ,closeBoxMargin: "0px 0px 2px 2px"
+        ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+        ,infoBoxClearance: new google.maps.Size(1, 1)
+        ,alignBottom: true
+        ,pane: "floatPane"
+        ,enableEventPropagation: false
+    };
+    ib = new InfoBox(boxOptions);
+
+    // global markers vars
+    markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
+    markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
+    markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
+    shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
+        new google.maps.Size(19, 17),
+        new google.maps.Point(0,0),
+        new google.maps.Point(0, 17));
+    shape = {
+        coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+        type: 'poly'
+    };
+
+    proxInit();
+    infoInit();
+}
