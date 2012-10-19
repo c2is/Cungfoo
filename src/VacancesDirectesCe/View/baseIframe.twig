@@ -15,13 +15,11 @@
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css') }}">
-    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <script src="{{ asset('vendor/head.extended.js') }}"></script>
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
+
 </head>
-<!doctype html>
-<html class="js-false" lang="fr">
 <body class="popin">
 
     <div id="wrap" class="clear">
@@ -34,7 +32,7 @@
     <script>
         head.js(
             {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
-            {selectivizr: templatePath+"js/libs/selectivizr-min.js"}, // extend css selectors for IE
+            {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js"},
             {frontJS: templatePath + "js/vacancesdirectes/front.js"}
             {% block headjs %}{% endblock %}
