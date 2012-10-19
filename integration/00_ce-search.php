@@ -122,11 +122,11 @@ include('includes/ce-top.php'); ?>
 
     <script type="text/javascript">
         var fStartDate = '2013/04/06',                  // must be a saturday
-                fEndDate = '2013/10/26',                // must be a saturday
-                fHighSeasonStartDate = '2013/06/29',    // must be a saturday
-                fHighSeasonEndDate = '2013/08/31',      // must be a saturday
-                linear,
-                numMiniWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
+            fEndDate = '2013/10/26',                // must be a saturday
+            fHighSeasonStartDate = '2013/06/29',    // must be a saturday
+            fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+            linear,
+            numMiniWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
     </script>
 
 <?php include('includes/ce-bottom.php'); ?>

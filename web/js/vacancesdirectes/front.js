@@ -1,11 +1,10 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
 //datepicker
-var startDate = numDate(fStartDate),
-    endDate = numDate(fEndDate),
-    highSeasonStartDate = numDate(fHighSeasonStartDate),
-    highSeasonEndDate = numDate(fHighSeasonEndDate),
-    weekDuration = 1000*60*60*24*7,
+var startDate,
+    endDate,
+    highSeasonStartDate,
+    highSeasonEndDate,
     firstSelection = true,
     firstRendering = true;
 
@@ -120,160 +119,168 @@ $(function() {
     $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
 // datepicker
-    var d = new Date(),
-        fCurrentDate = formatDate(d),
-        currentDate = numDate(fCurrentDate),
-        fSeasonDates = [fStartDate,fEndDate],
-        fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
-        startDate = numDate(fStartDate),
-        arrivalDate,
-        departureDate;
+    if ($('#searchContainer #widget').length) {
+        var d = new Date(),
+            fCurrentDate = formatDate(d),
+            currentDate = numDate(fCurrentDate),
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            highSeasonStartDate = numDate(fHighSeasonStartDate),
+            highSeasonEndDate = numDate(fHighSeasonEndDate),
+            fSeasonDates = [fStartDate,fEndDate],
+            fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
+            startDate = numDate(fStartDate),
+            arrivalDate,
+            departureDate;
 
-    //console.log(fSeasonDates);
-    //console.log(fHighSeasonDates);
-    //console.log(fCurrentDate);
-    //console.log(d);
+        //console.log(fSeasonDates);
+        //console.log(fHighSeasonDates);
+        //console.log(fCurrentDate);
+        //console.log(d);
 
-    if (currentDate > startDate){
-        fStartDate = fCurrentDate;
-    }
-    //console.log(currentDate);
-    //console.log(startDate);
-    //console.log(fStartDate);
+        if (currentDate > startDate){
+            fStartDate = fCurrentDate;
+        }
+        //console.log(currentDate);
+        //console.log(startDate);
+        //console.log(fStartDate);
 
-    $('#widgetCalendar').DatePicker({
-        flat: true,
-        date: '',
-        current: '2013/07/01',
-        calendars: 7,
-        mode: 'range',
-        starts: 1,
-        format:'Y/m/d',
-        position: 'right',
-        onBeforeShow: function(){
-            //console.log("################################## onBeforeShow:  ##################################");
+        $('#widgetCalendar').DatePicker({
+            flat: true,
+            date: '',
+            current: '2013/07/01',
+            calendars: 7,
+            mode: 'range',
+            starts: 1,
+            format:'Y/m/d',
+            position: 'right',
+            onBeforeShow: function(){
+                //console.log("################################## onBeforeShow:  ##################################");
 
-        },
-        onShow: function(){
-            //console.log("################################## onShow:  ##################################");
+            },
+            onShow: function(){
+                //console.log("################################## onShow:  ##################################");
 
-        },
-        onChange: function(formated, dates){
-            //console.log("################################## onChange:  ##################################");
-            //console.log(formated);
-            //console.log(dates);
-            arrivalDate = dates[0];
-            departureDate = dates[1];
+            },
+            onChange: function(formated, dates){
+                //console.log("################################## onChange:  ##################################");
+                //console.log(formated);
+                //console.log(dates);
+                arrivalDate = dates[0];
+                departureDate = dates[1];
 
-            var selectedDates  = new Array(),
-                selectedDays = new Array();
-            firstRendering = false;
-            $.each(dates, function(index, value) {
-                //console.log(index + ": " + value);
-                selectedDates.push(writeDate(value));
-                selectedDays.push($(this));
-            });
-            if (firstSelection) {
-                unselectForbiddenDates(arrivalDate);
-                firstSelection = false;
+                var selectedDates  = new Array(),
+                    selectedDays = new Array();
+                firstRendering = false;
+                $.each(dates, function(index, value) {
+                    //console.log(index + ": " + value);
+                    selectedDates.push(writeDate(value));
+                    selectedDays.push($(this));
+                });
+                if (firstSelection) {
+                    unselectForbiddenDates(arrivalDate);
+                    firstSelection = false;
+                }
+                else {
+                    unselectForbiddenDates(departureDate);
+                    firstSelection = true;
+                }
+                //console.log(selectedDates)
+                $('#widgetInput').val('Du ' + selectedDates.join(' au '));
+                $('#widget input.hidden').each(function(index, value){
+                    $(this).val(selectedDates[index]);
+                });
+            },
+            onRender: function(date) {
+    //            //console.log("################################## onRender:  ##################################");
+
+                var renderDate = date,
+                    disabledDate,
+                    highSeasonDate,
+                    renderWeekDay = renderDate.getDay(),
+                    fRenderDate = formatDate(renderDate),
+                    renderDate = numDate(fRenderDate);
+
+    //            //console.log(renderDate);
+    //            //console.log(startDate);
+    //            //console.log(endDate);
+    //            //console.log(renderWeekDay);
+
+                    if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 || (renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) ){
+    //                    //console.log("DISABLED: " + renderDate);
+                        disabledDate = renderDate;
+                    }
+
+                    if (renderDate >= highSeasonStartDate && renderDate <= highSeasonEndDate){
+    //                    //console.log("HIGH SEASON: " + renderDate);
+                        highSeasonDate = renderDate;
+                    }
+
+    //            //console.log(disabledDate);
+                return {
+                    disabled: disabledDate != undefined,
+                    className: highSeasonDate != undefined ? 'datepickerSpecial' : false
+                }
+            }
+        });
+
+        var state = false;
+        $('#widgetField').bind('click', function(){
+            $(this).toggleClass('opened');
+            $(this).next('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
+            state = !state;
+            return false;
+        });
+
+        var currentMonth = 1;
+        $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').bind('click', function(e){
+            //console.log("--- CHANGE MONTH ---");
+            var datepicker = $('.datepickerContainer');
+            var direction = $(this).parent().hasClass('datepickerGoPrev') ? "+=" : "-=";
+            var currentButton = $(this);
+            if (currentButton.hasClass('isFading')){
+                //console.log("is fading");
+                return false;
+            }
+            currentMonth = direction == "-=" ? currentMonth+1 : currentMonth-1;
+
+            datepicker.animate({
+                marginLeft: direction + "175px"
+            }, 500);
+
+            if (currentMonth >= 7 - 5 || currentMonth <= 0){
+                currentButton.addClass('isFading').fadeOut(1000);
             }
             else {
-                unselectForbiddenDates(departureDate);
-                firstSelection = true;
+                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
             }
-            //console.log(selectedDates)
-            $('#widgetInput').val('Du ' + selectedDates.join(' au '));
-            $('#widget input.hidden').each(function(index, value){
-                $(this).val(selectedDates[index]);
-            });
-        },
-        onRender: function(date) {
-//            //console.log("################################## onRender:  ##################################");
 
-            var renderDate = date,
-                disabledDate,
-                highSeasonDate,
-                renderWeekDay = renderDate.getDay(),
-                fRenderDate = formatDate(renderDate),
-                renderDate = numDate(fRenderDate);
-
-//            //console.log(renderDate);
-//            //console.log(startDate);
-//            //console.log(endDate);
-//            //console.log(renderWeekDay);
-
-                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 || (renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) ){
-//                    //console.log("DISABLED: " + renderDate);
-                    disabledDate = renderDate;
-                }
-
-                if (renderDate >= highSeasonStartDate && renderDate <= highSeasonEndDate){
-//                    //console.log("HIGH SEASON: " + renderDate);
-                    highSeasonDate = renderDate;
-                }
-
-//            //console.log(disabledDate);
-            return {
-                disabled: disabledDate != undefined,
-                className: highSeasonDate != undefined ? 'datepickerSpecial' : false
-            }
-        }
-    });
-    var state = false;
-    $('#widgetField').bind('click', function(){
-        $(this).toggleClass('opened');
-        $(this).next('#widgetCalendar').stop().animate({height: state ? 0 : $('#widgetCalendar div.datepicker').get(0).offsetHeight}, 500);
-        state = !state;
-        return false;
-    });
-    var currentMonth = 1;
-    $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').bind('click', function(e){
-        //console.log("--- CHANGE MONTH ---");
-        var datepicker = $('.datepickerContainer');
-        var direction = $(this).parent().hasClass('datepickerGoPrev') ? "+=" : "-=";
-        var currentButton = $(this);
-        if (currentButton.hasClass('isFading')){
-            //console.log("is fading");
+            //console.log(currentMonth);
             return false;
-        }
-        currentMonth = direction == "-=" ? currentMonth+1 : currentMonth-1;
-
-        datepicker.animate({
-            marginLeft: direction + "175px"
-        }, 500);
-
-        if (currentMonth >= 7 - 5 || currentMonth <= 0){
-            currentButton.addClass('isFading').fadeOut(1000);
-        }
-        else {
-            $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
-        }
-
-        //console.log(currentMonth);
-        return false;
-    });
-    $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
-        return false;
-    });
-    $('#linearSwitcher input').bind('click', function(){
-        switchLinear();
-    });
-    $('#widgetCalendar div.datepicker').css('position', 'absolute');
-    $('#widgetCalendar div.datepickerContainer').css('margin-left', '-180px');
-
-    initializeForbiddenDates();
-    $('#linearSwitcher input[checked=checked]').trigger('click');
-
-    var preselectedDates = new Array();
-    if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-        $.each($('input.hidden'), function(i, item) {
-            console.log(item.value);
-            var fDate = item.value.split("/").reverse().join('/');
-            console.log(fDate);
-            preselectedDates.push(fDate);
         });
-        console.log(preselectedDates);
-        $('#widgetCalendar').DatePickerSetDate(preselectedDates);
+        $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
+            return false;
+        });
+        $('#linearSwitcher input').bind('click', function(){
+            switchLinear();
+        });
+        $('#widgetCalendar div.datepicker').css('position', 'absolute');
+        $('#widgetCalendar div.datepickerContainer').css('margin-left', '-180px');
+
+        initializeForbiddenDates();
+        $('#linearSwitcher input[checked=checked]').trigger('click');
+
+        var preselectedDates = new Array();
+        if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
+            $.each($('input.hidden'), function(i, item) {
+                //console.log(item.value);
+                var fDate = item.value.split("/").reverse().join('/');
+                //console.log(fDate);
+                preselectedDates.push(fDate);
+            });
+            //console.log(preselectedDates);
+            $('#widgetCalendar').DatePickerSetDate(preselectedDates);
+        }
     }
 
 
@@ -292,12 +299,12 @@ function openIframePopin(url){
 
 // datepicker
 function switchLinear() {
-    console.log("################################## switchLinear()  ##################################");
+    //console.log("################################## switchLinear()  ##################################");
     $('#widgetCalendar').DatePickerClear();
     var radioValue = $('input[type=radio][name=linearType]:checked').attr('value');
     $('#searchContainer .searchBox').attr('id',radioValue);
     $('#linearSwitcher').attr('class','column clear ' + radioValue);
-    console.log(linear);
+    //console.log(linear);
     var legendText = radioValue == "classic" ? "Recherche de linéaires classiques" : "Recherche de linéaires basse saison";
     var infoText = radioValue == "classic" ? "La période en haute saison doit être comprise dans la sélection." : "Un minimum de 6 semaines doit être compris dans la sélection.";
     $('#' + radioValue).find('legend').text(legendText);
@@ -308,7 +315,7 @@ function switchLinear() {
 }
 
 function initializeForbiddenDates() {
-    console.log(firstRendering);
+    //console.log(firstRendering);
     var startHighSeasonDay = false,
         endHighSeasonDay = false,
         allSaturdays = $('#widgetCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
