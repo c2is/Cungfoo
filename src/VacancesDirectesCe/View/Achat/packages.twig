@@ -7,22 +7,28 @@
 {% endblock %}
 
 {% block content %}
-    <!--<div id="linearSwitcher">
+
+    <!-- colonne pleine largeur -->
+    <div id="linearSwitcher" class="column clear">
         <p>
-            <label>Rechercher de :</label>
+            <label>Recherche de :</label>
+        </p>
+        <p class="clearboth">
             <input type = "radio"
                    name = "linearType"
                    id = "classicLinear"
                    value = "classic"
                    checked = "checked" />
             <label for = "classicLinear">linéaires classiques</label>
+        </p>
+        <p class="clearboth">
             <input type = "radio"
                    name = "linearType"
                    id = "miniLinear"
                    value = "mini" />
             <label for = "miniLinear">linéaires basse saison</label>
         </p>
-    </div>-->
+    </div>
 
     <div id="searchContainer" class="column clear">
         <div class="searchBox full-width">
@@ -45,13 +51,13 @@
                             </div>
                         </li>
                         <li>
-                            <div id="widget">
+                            <div id="datepicker">
                                 {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
                                 {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
-                                <div id="widgetField" class="clear">
-                                    <input type="text" name="datepicker" id="widgetInput" readonly="readonly" /><span class="date"></span>
+                                <div id="datepickerField" class="clear">
+                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" /><span class="date"></span>
                                 </div>
-                                <div id="widgetCalendar">
+                                <div id="datepickerCalendar">
 
                                 </div>
                             </div>
@@ -60,6 +66,16 @@
                     </ol>
                 </fieldset>
                 {{ form_rest(achatLineaireForm) }}
+
+                <script type="text/javascript">
+                    var fStartDate = '2013/04/06',                  // must be a saturday
+                            fEndDate = '2013/10/26',                // must be a saturday
+                            fHighSeasonStartDate = '2013/06/29',    // must be a saturday
+                            fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+                            linear = "classic",
+                            numMiniWeeks = 6,                       // minimum number of weeks selectable (for linear mini)
+                            info = "La période de haute saison doit être comprise dans la sélection.";
+                </script>
 
                 <script type="text/javascript">
                     var getRegionsByPays    = "{{ path('search_get_regions_by_pays') }}";
