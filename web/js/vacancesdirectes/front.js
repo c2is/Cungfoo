@@ -1,5 +1,13 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
+if (!fStartDate){
+    var linear ="";
+    var fStartDate ="";
+    var fEndDate ="";
+    var fHighSeasonStartDate ="";
+    var fHighSeasonEndDate ="";
+}
+
 //datepicker
 var startDate = numDate(fStartDate),
     endDate = numDate(fEndDate),
