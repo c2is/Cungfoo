@@ -28,6 +28,18 @@ class AchatController implements ControllerProviderInterface
         {
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
+
+            // set form if session search_parameters exist
+            if ($app['session']->get('search_parameters'))
+            {
+                $searchParametersData = $app['session']->get('search_parameters');
+                $dataForm->pays = $searchParametersData['pays'];
+                $dataForm->region = $searchParametersData['region'];
+                $dataForm->campings = explode(';', $searchParametersData['campings']);
+                $dataForm->dateDebut = $searchParametersData['dateDebut'];
+                $dataForm->dateFin = $searchParametersData['dateFin'];
+            }
+
             $achatLineaireForm = $app['form.factory']->create(new AchatLineaireType($app), $dataForm);
 
             // form validation

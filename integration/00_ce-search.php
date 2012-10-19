@@ -30,22 +30,26 @@ include('includes/ce-top.php'); ?>
     <!-- colonne pleine largeur -->
 
     <!-- colonne pleine largeur -->
-<!--    <div id="linearSwitcher">-->
-<!--        <p>-->
-<!--            <label>Rechercher de :</label>-->
-<!--            <input type = "radio"-->
-<!--                   name = "linearType"-->
-<!--                   id = "classicLinear"-->
-<!--                   value = "classic"-->
-<!--                   checked = "checked" />-->
-<!--            <label for = "classicLinear">linéaires classiques</label>-->
-<!--            <input type = "radio"-->
-<!--                   name = "linearType"-->
-<!--                   id = "miniLinear"-->
-<!--                   value = "mini" />-->
-<!--            <label for = "miniLinear">linéaires basse saison</label>-->
-<!--        </p>-->
-<!--    </div>-->
+    <div id="linearSwitcher" class="column clear">
+        <p>
+            <label>Recherche de :</label>
+        </p>
+        <p class="clearboth">
+            <input type = "radio"
+                   name = "linearType"
+                   id = "classicLinear"
+                   value = "classic"
+                   checked = "checked" />
+            <label for = "classicLinear">linéaires classiques</label>
+        </p>
+        <p class="clearboth">
+            <input type = "radio"
+                   name = "linearType"
+                   id = "miniLinear"
+                   value = "mini" />
+            <label for = "miniLinear">linéaires basse saison</label>
+        </p>
+    </div>
 
     <div id="searchContainer" class="column clearboth">
         <div class="searchBox full-width">
@@ -53,7 +57,6 @@ include('includes/ce-top.php'); ?>
             <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires classiques</legend>
-                    <span>La période de haute saison doit être comprise dans la sélection.</span>
                     <ol>
                         <li>
                             <div class="selectContainer clear">
@@ -77,8 +80,8 @@ include('includes/ce-top.php'); ?>
                         </li>
                         <li>
                             <div id="widget">
-                                <input class="hidden" type="text" id="arrival"  name="arrival" readonly="readonly" />
-                                <input class="hidden" type="text" id="departure"  name="departure" readonly="readonly" />
+                                <input class="hidden" type="hidden" id="AchatLineaire_dateDebut"  name="AchatLineaire[dateDebut]" readonly="readonly" value="22/06/2013" />
+                                <input class="hidden" type="hidden" type="text" id="AchatLineaire_dateFin"  name="AchatLineaire[dateFin]" readonly="readonly" value="31/08/2013" />
                                 <div id="widgetField" class="clear">
                                     <input type="text" name="datepicker" id="widgetInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
@@ -117,6 +120,14 @@ include('includes/ce-top.php'); ?>
     </div>
     <!-- colonne pleine largeur -->
 
+    <script type="text/javascript">
+        var fStartDate = '2013/04/06',                  // must be a saturday
+                fEndDate = '2013/10/26',                // must be a saturday
+                fHighSeasonStartDate = '2013/06/29',    // must be a saturday
+                fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+                linear,
+                numMiniWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
+    </script>
 
 <?php include('includes/ce-bottom.php'); ?>
 <?php include('includes/inc_footer.php'); ?>

@@ -18,6 +18,11 @@ $(function() {
         $('#homePage .aProposalBlock:nth-child(5n)').addClass('aProposalBlockLast');
     }
 
+    // add 'semaines' on select package elements
+    $('.proposalDescriptionContent .description select.control_select option').each(function() {
+        $(this).text($(this).val() + ' semaines');
+    });
+
     $('.sortContener').find('select').sSelect({ddMaxHeight: '300px'});
 
 });
