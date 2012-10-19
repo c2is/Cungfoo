@@ -79,7 +79,7 @@
 /**
 * Hide lists on page load
 ---------------------------------------------------------*/
-@selectWidth: 165px;
+@selectWidth: 170px;
 @selectTextWidth: 94px;
 @selectHeight: 23px;
 @selectTextHeight: 20px;
@@ -103,7 +103,7 @@
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
-  .selectedTxt {width:@selectWidth - @selectHeight - 5;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;}
+  .selectedTxt {width:@selectWidth - @selectHeight - 10;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;}
   .hiLite {background:#ED145B!important;color:#fff!important;}
   .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
   .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
@@ -228,13 +228,11 @@ div.datepicker {
 .datepickerBorderTL {position: absolute;top: 0;left: 0;width: 10px;height: 30px;background: url(../images/datepicker_tl.png);}
 .datepickerBorderT {position: absolute;left: 10px;top: 0;right: 10px;height: 30px;background: url(../images/datepicker_t.png);}
 .datepickerBorderTR {position: absolute;top: 0;right: 0;width: 10px;height: 30px;background: url(../images/datepicker_tr.png);}
-.datepickerBorderB {position: absolute;left: 10px;bottom: 0;right: 10px;height: 10px;background: url(../images/datepicker_b.png);}
+.datepickerBorderB {position: absolute;left: 10px;bottom: 0;right: 10px;height: 30px;background: url(../images/datepicker_b.png);}
 .datepickerBorderL {position: absolute;left: 0;bottom: 10px;top: 10px;width: 10px;background: url(../images/datepicker_l.png);}
 .datepickerBorderR {position: absolute;right: 0;bottom: 10px;top: 10px;width: 10px;background: url(../images/datepicker_r.png);}
-
-
-.datepickerBorderBL {position: absolute;bottom: 0;left: 0;width: 10px;height: 10px;background: url(../images/datepicker_bl.png);}
-.datepickerBorderBR {position: absolute;bottom: 0;right: 0;width: 10px;height: 10px;background: url(../images/datepicker_br.png);}
+.datepickerBorderBL {position: absolute;bottom: 0;left: 0;width: 10px;height: 30px;background: url(../images/datepicker_bl.png);}
+.datepickerBorderBR {position: absolute;bottom: 0;right: 0;width: 10px;height: 30px;background: url(../images/datepicker_br.png);}
 .datepickerHidden {
   display: none;
 }
@@ -309,11 +307,12 @@ div.datepicker .datepickerDays td.datepickerSpecial a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
   background-color: #e7cad3;
-  color: #fde1ea;
+  color: @colorBlanc;
 }
-div.datepicker .datepickerDays td.datepickerSpecial a {
-  background-color: #e7cad3;
-  color: #464545;
+div.datepicker .datepickerDays td.datepickerHighSeason a,
+div.datepicker .datepickerDays td.datepickerHighSeason a {
+  background-color: transparent;
+  color: #c2c2c2;
 }
 div.datepicker .datepickerDays td a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover {
@@ -360,8 +359,12 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 #datepickerCalendar .datepickerGoNext a:hover,
 #datepickerCalendar .datepickerMonth a,
 #datepickerCalendar .datepickerMonth a:hover {color:@colorBlanc;}
-.datepickerInfo {font-family:@ptnarrow;font-size:14px;font-weight:bold;color:@colorFushia;position:absolute;top:5px;left:10px;}
-
+.datepickerInfo,
+.datepickerLegend {font-family:@ptnarrow;font-size:14px;position:absolute;left:10px;}
+.datepickerInfo {top:5px;color:@colorFushia;font-weight:bold;}
+.datepickerLegend {margin-left:28px;bottom:5px;color:@colorGris2;}
+.datepickerLegend:before {content:"";width:19px;height:19px;background-color:#e7cad3;position:absolute;top:0;left:-28px}
+#datepickerCalendar .bt{position:absolute;right:10px;bottom:5px;}
 table.datepickerViewDays tbody.datepickerMonths,
 table.datepickerViewDays tbody.datepickerYears {
   display: none;

@@ -81,7 +81,7 @@ include('includes/ce-top.php'); ?>
                         <li>
                             <div id="datepicker">
                                 <input class="hidden" type="hidden" id="AchatLineaire_dateDebut"  name="AchatLineaire[dateDebut]" readonly="readonly" value="22/06/2013" />
-                                <input class="hidden" type="hidden" type="text" id="AchatLineaire_dateFin"  name="AchatLineaire[dateFin]" readonly="readonly" value="31/08/2013" />
+                                <input class="hidden" type="hidden" id="AchatLineaire_dateFin"  name="AchatLineaire[dateFin]" readonly="readonly" value="31/08/2013" />
                                 <div id="datepickerField" class="clear">
                                     <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
@@ -103,20 +103,14 @@ include('includes/ce-top.php'); ?>
             </div>
         </div>
     </div>
-<!--        <div id="datepickerPrincipal" class="datepicker clear"></div>-->
-<!--        <div id="searchSecondary" class="searchBox">-->
-<!--            <label>Du</label><input class="date" type="text" name="datepicker-secondary-arrival" id="datepicker-secondary-arrival" />-->
-<!--            <label>Au</label><input class="date" type="text" name="datepicker-secondary-departure" id="datepicker-secondary-departure" />-->
-<!--        </div>-->
-<!--        <div id="datepickerSecondary" class="datepicker clear"></div>-->
-
     <!-- colonne pleine largeur -->
 
     <!-- colonne pleine largeur -->
-    <div id="discoverContainer" class="column clearboth">
+    <div class="column clearboth">
+        <div id="discoverContainer">
+            <iframe id="frameResalys" width="960px" height="700px" src="http://10.63.1.231/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&display=default&tokens=ignore_token&session=vacancesdirectes_preprod_v6_6_qGFg2UBoNV05wsj&template=search_product_results&actions=updateProductCriterias%3BgetProductProposals&criterias_object_name=search_form&product_CMSCriteria_ALL=ALL&search_page=1&product_CMSCriteria_PHS=&product_start_date=01%2F02%2F2013"></iframe>
 
-            <iframe id="frameResalys" width="960px" height="700px" src="/c2is/Cungfoo/web/ce_dev.php/resalys/wrapper?webuser=web_ce_achat_fr&amp;display=default&amp;tokens=ignore_token&amp;session=vacancesdirectes_preprod_v6_6_3Vxwpf4fVGJs5Z5I&amp;template=search_product_results&amp;actions=updateProductCriterias%3BgetProductProposals&amp;criterias_object_name=search_form&amp;product_CMSCriteria_ALL=ALL&amp;search_page=1&amp;product_CMSCriteria_PHS=&amp;product_start_date=10%2F10%2F2012"></iframe>
-
+        </div>
     </div>
     <!-- colonne pleine largeur -->
 
@@ -126,7 +120,7 @@ include('includes/ce-top.php'); ?>
             fHighSeasonStartDate = '2013/06/29',    // must be a saturday
             fHighSeasonEndDate = '2013/08/31',      // must be a saturday
             linear,
-            numMiniWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
+            numMinWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
     </script>
 
 <?php include('includes/ce-bottom.php'); ?>

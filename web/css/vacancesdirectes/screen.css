@@ -1386,6 +1386,11 @@ h6,
   width: 100%;
   background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
 }
+.ce #discoverContainer {
+  margin: 0;
+  width: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
+}
 .ce #userBox {
   float: right;
 }
@@ -1651,7 +1656,7 @@ h6,
 }
 .ce #searchContainer #searchText {
   float: right;
-  min-height: 245px;
+  min-height: 203px;
 }
 .ce #searchContainer .searchBlock {
   border: 1px solid #e6e5e5;
@@ -1682,6 +1687,7 @@ h6,
   margin: 20px 0;
   height: 115px;
   overflow: auto;
+  width: 350px;
 }
 .ce #searchContainer .searchBlock .sMultSelectUl li {
   padding: 0 10px;
@@ -2002,7 +2008,7 @@ h6,
 .stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  min-width: 165px;
+  min-width: 170px;
   position: absolute;
   top: 22px;
   left: 0;
@@ -2031,7 +2037,7 @@ h6,
   white-space: nowrap;
 }
 .stylish-select .newListSelected {
-  width: 165px;
+  width: 170px;
   color: #464545;
   height: 23px;
   float: left;
@@ -2261,7 +2267,7 @@ div.datepicker {
   left: 10px;
   bottom: 0;
   right: 10px;
-  height: 10px;
+  height: 30px;
   background: url(../images/datepicker_b.png);
 }
 .datepickerBorderL {
@@ -2285,7 +2291,7 @@ div.datepicker {
   bottom: 0;
   left: 0;
   width: 10px;
-  height: 10px;
+  height: 30px;
   background: url(../images/datepicker_bl.png);
 }
 .datepickerBorderBR {
@@ -2293,7 +2299,7 @@ div.datepicker {
   bottom: 0;
   right: 0;
   width: 10px;
-  height: 10px;
+  height: 30px;
   background: url(../images/datepicker_br.png);
 }
 .datepickerHidden {
@@ -2371,11 +2377,12 @@ div.datepicker .datepickerDays td.datepickerSpecial a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
   background-color: #e7cad3;
-  color: #fde1ea;
+  color: #ffffff;
 }
-div.datepicker .datepickerDays td.datepickerSpecial a {
-  background-color: #e7cad3;
-  color: #464545;
+div.datepicker .datepickerDays td.datepickerHighSeason a,
+div.datepicker .datepickerDays td.datepickerHighSeason a {
+  background-color: transparent;
+  color: #c2c2c2;
 }
 div.datepicker .datepickerDays td a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial a:hover {
@@ -2429,14 +2436,36 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 #datepickerCalendar .datepickerMonth a:hover {
   color: #ffffff;
 }
-.datepickerInfo {
+.datepickerInfo,
+.datepickerLegend {
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 14px;
-  font-weight: bold;
-  color: #ed145b;
   position: absolute;
-  top: 5px;
   left: 10px;
+}
+.datepickerInfo {
+  top: 5px;
+  color: #ed145b;
+  font-weight: bold;
+}
+.datepickerLegend {
+  margin-left: 28px;
+  bottom: 5px;
+  color: #464545;
+}
+.datepickerLegend:before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  background-color: #e7cad3;
+  position: absolute;
+  top: 0;
+  left: -28px;
+}
+#datepickerCalendar .bt {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
 }
 table.datepickerViewDays tbody.datepickerMonths,
 table.datepickerViewDays tbody.datepickerYears {

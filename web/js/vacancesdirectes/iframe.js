@@ -29,7 +29,7 @@ function parentExists() {
 function resize_myframe() {
     //var height = $('html').height();
     var height = $('body').height();
-    height += 50;
+    height += 70;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     //consoleLog(height);
 }
