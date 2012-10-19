@@ -1,88 +1,3 @@
-<script>
-    // global maps vars
-    var map,
-        infowindow = null,
-        proxMapLoaded = false,
-        infoMapLoaded = false;
-
-    var markerBleu = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerBleu.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
-    var markerVert = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerVert.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
-    var markerFushia = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/markerFushia.png',
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
-    var shadow = new google.maps.MarkerImage(templatePath+'images/vacancesdirectes/common/map/shadow.png',
-            new google.maps.Size(19, 17),
-            new google.maps.Point(0,0),
-            new google.maps.Point(0, 17));
-    var shape = {
-        coord: [1, 1, 1, 20, 18, 20, 18 , 1],
-        type: 'poly'
-    };
-
-    // specific function maps
-    var proxMkrs = [
-        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerBleu]
-    ];
-    function proxInit() {
-        var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
-                mapOptions = {
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: centerproxMkr
-                };
-        proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
-
-        setMarkers(proxMap, proxMkrs);
-        infowindow = new google.maps.InfoWindow({ content: "..." });
-    }
-
-    var infoMkrs = [
-        ['c2is', 45.764544, 4.846512, 5, '<div id="infowindow">C2iS, Agence Digitale à Lyon</div>', markerFushia]
-    ];
-    function infoInit() {
-        var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
-                mapOptions = {
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: centerinfoMkr
-                };
-        infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
-
-        setMarkers(infoMap, infoMkrs);
-        infowindow = new google.maps.InfoWindow({ content: "..." });
-    }
-
-    // global function maps
-    function setMarkers(map, mkrs) {
-        for (var i = 0; i < mkrs.length; i++) {
-            var mkr = mkrs[i];
-            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-            var marker = new google.maps.Marker({
-                position: siteLatLng,
-                map: map,
-                shadow: shadow,
-                icon: mkr[5],
-                shape: shape,
-                title: mkr[0],
-                zIndex: mkr[3],
-                html: mkr[4]
-            });
-            var contentString = "";
-            google.maps.event.addListener(marker, "click", function () {
-                infowindow.setContent(this.html);
-                infowindow.open(map, this);
-            });
-        }
-    }
-</script>
-
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">Le Petit Mousse***</h1>
     <p class="keywordsFiche"><a href="#_">Club enfants</a> - <a href="#_">Parc aquatique</a> - <a href="#_">Plage de mer</a> - <a href="#_">Accès wifi</a> - <a href="#_">Animaux acceptés</a></p>
@@ -117,8 +32,8 @@
 </div>-->
 
 <ul class="tabControls clear">
-    <li><a href="#tabCamp">Le camping</a></li>
-    <li><a href="#tabLocations" class="active">Les locations</a></li>
+    <li><a href="#tabCamp" class="active">Le camping</a></li>
+    <li><a href="#tabLocations">Les locations</a></li>
     <li><a href="#tabSurplace">Sur place</a></li>
     <li><a href="#tabProximite">A proximité</a></li>
     <!-- Non V2<li><a href="#tabAvis">Avis</a></li>-->
@@ -399,7 +314,24 @@
 </div>
 <!-- tab A proximité -->
 <div id="tabProximite" class="tabs">
-    <div id="proxMap" style="width:616px;height:326px;"><!-- map --></div>
+    <div id="proxMap" class="gmap" style="width:616px;height:326px;">
+        <script>
+            function proxInit() {
+                var proxMkrs = [
+                    //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                    ['c2is', 45.764544, 4.846512, 1, '', markerBleu]
+                ];
+                var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
+                        mapOptions = {
+                            zoom: 13,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            center: centerproxMkr
+                        };
+                proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
+                setMarkers(proxMap, proxMkrs);
+            }
+        </script>
+    </div>
 
     <h3>Activités et sites à visiter</h3>
     <div class="activites clear">
@@ -505,7 +437,24 @@
 <!-- tab Infos Pratiques -->
 <div id="tabInfos" class="tabs">
 
-    <div id="infoMap" style="width:616px;height:326px;"><!-- map --></div>
+    <div id="infoMap" class="gmap" style="width:616px;height:326px;">
+        <script>
+            function infoInit() {
+                var infoMkrs = [
+                    //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                    ['c2is', 45.764544, 4.846512, 5, '12', markerFushia]
+                ];
+                var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
+                        mapOptions = {
+                            zoom: 13,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            center: centerinfoMkr
+                        };
+                infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
+                setMarkers(infoMap, infoMkrs);
+            }
+        </script>
+    </div>
 
     <h3 class="clearboth">Coordonnées du camping le petit mousse</h3>
     <div class="blCoordGps left">

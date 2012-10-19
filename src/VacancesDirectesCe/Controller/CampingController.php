@@ -132,6 +132,12 @@ class CampingController implements ControllerProviderInterface
         })
         ->bind('popin_camping');
 
+        $controllers->match('/infobox/{idResalys}', function ($idResalys) use ($app)
+        {
+            return $app['twig']->render('Camping/camping.infobox.twig', array());
+
+        })->bind('infobox_camping');
+
         return $controllers;
     }
 }
