@@ -305,7 +305,7 @@
                 function infoInit() {
                     var infoMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{#{{ path('infobox_camping', {idResalys: etab.code}) }}#}', markerFushia]
+                        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia]
                     ];
                     var centerinfoMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
                             mapOptions = {
