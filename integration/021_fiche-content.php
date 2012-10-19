@@ -318,7 +318,8 @@
         <script>
             function proxInit() {
                 var proxMkrs = [
-                    ['c2is', 45.764544, 4.846512, 5, '', markerBleu]
+                    //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                    ['c2is', 45.764544, 4.846512, 1, '', markerBleu]
                 ];
                 var centerproxMkr = new google.maps.LatLng(45.764544,4.846512),
                         mapOptions = {
@@ -440,6 +441,7 @@
         <script>
             function infoInit() {
                 var infoMkrs = [
+                    //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                     ['c2is', 45.764544, 4.846512, 5, '12', markerFushia]
                 ];
                 var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),

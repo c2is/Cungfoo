@@ -625,6 +625,23 @@ var shape = {
 };
 
 // global function maps
+
+// infobox vars
+var boxOptions = {
+    /*content: ''
+     ,*/disableAutoPan: false
+    ,maxWidth: 0
+    ,pixelOffset: new google.maps.Size(-152, -50)
+    ,zIndex: null
+    ,closeBoxMargin: "0px 0px 2px 2px"
+    ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+    ,infoBoxClearance: new google.maps.Size(1, 1)
+    ,alignBottom: true
+    ,pane: "floatPane"
+    ,enableEventPropagation: false
+};
+var ib = new InfoBox(boxOptions);
+
 function setMarkers(map, mkrs) {
     for (var i = 0; i < mkrs.length; i++) {
         var mkr = mkrs[i];
@@ -642,36 +659,22 @@ function setMarkers(map, mkrs) {
 
         if (marker.idCamp != ''){
             google.maps.event.addListener(marker, "click", function (e) {
-                if(!this.content){ //1st click
+                var marker = this;
+
+                if(!marker.content){ //1st click
                     $.ajax({
-                        url: 'blocs/smallInfoBox.php?id='+this.idCamp,
+                        url: this.idCamp,
                         success: function(response){
-                            this.content = response;
+                            marker.content = response;
                             ib.setContent(response);
                             ib.open(map, marker);
                         }
                     });
                 }else{
-                    ib.setContent(this.content);
+                    ib.setContent(marker.content);
                     ib.open(map, marker);
                 }
             });
-
-            // infobox vars
-            var boxOptions = {
-                content: ''
-                ,disableAutoPan: false
-                ,maxWidth: 0
-                ,pixelOffset: new google.maps.Size(-152, -50)
-                ,zIndex: null
-                ,closeBoxMargin: "0px 0px 2px 2px"
-                ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
-                ,infoBoxClearance: new google.maps.Size(1, 1)
-                ,alignBottom: true
-                ,pane: "floatPane"
-                ,enableEventPropagation: false
-            };
-            var ib = new InfoBox(boxOptions);
         }
     }
 }
