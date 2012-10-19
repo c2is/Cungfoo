@@ -884,6 +884,7 @@ function addLinkBlock(){
 
 (function ($) {
     var datepickerInfo = "";
+    var datepickerLegend = "";
     var DatePicker = function () {
         var	ids = {},
             views = {
@@ -892,7 +893,7 @@ function addLinkBlock(){
                 days: 'datepickerViewDays'
             },
             tpl = {
-                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerGoPrev"><a href="#"><span>&#9664;</span></a></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div><div class="datepickerGoNext"><a href="#"><span>&#9654;</span></a></div><span class="datepickerInfo">' + datepickerInfo + '</span></div>',
+                wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerGoPrev"><a href="#"><span>&#9664;</span></a></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div><div class="datepickerGoNext"><a href="#"><span>&#9654;</span></a></div><span class="datepickerInfo">' + datepickerInfo + '</span><span class="datepickerLegend">' + datepickerLegend + '</span><button class="bt fushia small">Appliquer</button></div>',
                 head: [
                     '<td>',
                     '<table cellspacing="0" cellpadding="0">',
