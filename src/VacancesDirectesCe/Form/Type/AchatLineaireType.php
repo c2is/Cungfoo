@@ -35,7 +35,6 @@ class AchatLineaireType extends AppAwareType
 
         $builder->add('pays', 'choice', array(
             'choices'   => $this->formatForList($paysList, 'Code', 'Name', 'Pays'),
-            'label' => 'Pays',
             'required' => false,
             'empty_value' => false
         ));
@@ -55,7 +54,6 @@ class AchatLineaireType extends AppAwareType
 
         $builder->add('region', 'choice', array(
             'choices'   => $this->formatForList($regionsList, 'Code', 'Name', 'Région'),
-            'label' => 'Region',
             'required' => false,
             'empty_value' => false,
         ));
@@ -78,19 +76,23 @@ class AchatLineaireType extends AppAwareType
         $builder->add('campings', 'choice', array(
             'choices'   => $this->formatForList($campingsList, 'Code', 'Name'),
             'multiple'  => true,
-            'label' => 'Campings',
             'required' => false,
             'empty_value' => false,
         ));
 
         $builder->add('dateDebut', 'hidden', array(
-            'label' => 'Date de début',
             'required' => false,
         ));
 
         $builder->add('dateFin', 'hidden', array(
-            'label' => 'Date de fin',
             'required' => false,
+        ));
+
+        $builder->add('isBasseSaison', 'choice', array(
+            'choices'  => array('linéaire classiques', 'linéaire basse saison'),
+            'required' => false,
+            'expanded' => true,
+            'multiple' => false
         ));
     }
 
@@ -100,7 +102,7 @@ class AchatLineaireType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'constraints' => new Assert\Callback(array('methods' => array('isValide')))
+            'constraints' => new Assert\Callback(array('methods' => array('isValid')))
         ));
     }
 

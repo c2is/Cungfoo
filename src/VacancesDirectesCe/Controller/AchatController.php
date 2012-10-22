@@ -26,6 +26,8 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/packages.html', function (Request $request) use ($app)
         {
+            $isAlreadyClassique = $this->getAlreadyClassique($app);
+
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
@@ -80,7 +82,8 @@ class AchatController implements ControllerProviderInterface
             }
 
             return $app['twig']->render('Achat/packages.twig', array(
-                'achatLineaireForm' => $achatLineaireForm->createView(),
+                'achatLineaireForm'  => $achatLineaireForm->createView(),
+                'isAlreadyClassique' => $isAlreadyClassique,
             ));
         })
         ->bind('achat_packages');
@@ -128,5 +131,22 @@ class AchatController implements ControllerProviderInterface
         ->bind('achat_confirmation_reservation');
 
         return $controllers;
+    }
+
+    public function getAlreadyClassique(Application $app)
+    {
+        try
+        {
+            $url = sprintf("%s?webuser=web_ce_achat_fr&display=customer_area&tokens=ignore_token&session=%s&customer_area_sub_page=has_lineaire",
+                $app['url_generator']->generate('resalys_wrapper', array(), true),
+                $app['session']->get('resalys_user')->session
+            );
+
+            return trim(file_get_contents($url)) == 1;
+        }
+        catch (\Exception $e)
+        {
+            return false;
+        }
     }
 }

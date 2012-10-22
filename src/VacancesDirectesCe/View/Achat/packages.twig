@@ -7,29 +7,6 @@
 {% endblock %}
 
 {% block content %}
-
-    <!-- colonne pleine largeur -->
-    <div id="linearSwitcher" class="column clear">
-        <p>
-            <label>Recherche de :</label>
-        </p>
-        <p class="clearboth">
-            <input type = "radio"
-                   name = "linearType"
-                   id = "classicLinear"
-                   value = "classic"
-                   checked = "checked" />
-            <label for = "classicLinear">linéaires classiques</label>
-        </p>
-        <p class="clearboth">
-            <input type = "radio"
-                   name = "linearType"
-                   id = "miniLinear"
-                   value = "mini" />
-            <label for = "miniLinear">linéaires basse saison</label>
-        </p>
-    </div>
-
     <div id="searchContainer" class="column clear">
         <div class="searchBox full-width">
             <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
@@ -39,6 +16,9 @@
                     <div class="error">{{ form_errors(achatLineaireForm) }}</div>
 
                     <ol>
+                        <li class="{% if not isAlreadyClassique %}hidden{% endif %}">
+                            {{ form_widget(achatLineaireForm.isBasseSaison) }}
+                        </li>
                         <li>
                             <div class="selectContainer clear">
                                 {{ form_widget(achatLineaireForm.pays) }}
