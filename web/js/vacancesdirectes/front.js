@@ -169,14 +169,6 @@ $(function() {
             starts: 1,
             format:'Y/m/d',
             position: 'right',
-            onBeforeShow: function(){
-                //console.log("################################## onBeforeShow:  ##################################");
-
-            },
-            onShow: function(){
-                //console.log("################################## onShow:  ##################################");
-
-            },
             onChange: function(formated, dates){
                 //console.log("################################## onChange:  ##################################");
                 //console.log(formated);
@@ -324,6 +316,14 @@ $(function() {
     }
 });
 
+/*-- HEADREADY --*/
+head.ready(function(){
+    if ($('#searchForm').length) {
+        console.log( $('#searchText').height());
+        console.log( $('#searchForm').height());
+        $('#searchText').height($('#searchForm').height());
+    }
+});
 
 /*--  FUNCTIONS  --*/
 
