@@ -16,7 +16,7 @@
                     <div class="error">{{ form_errors(achatLineaireForm) }}</div>
 
                     <ol>
-                        <li class="{% if not isAlreadyClassique %}hidden{% endif %}">
+                        <li data-already-linear="{{ isAlreadyClassique }}">
                             {{ form_widget(achatLineaireForm.isBasseSaison) }}
                         </li>
                         <li>
@@ -53,7 +53,7 @@
                             fHighSeasonStartDate = '2013/06/29',    // must be a saturday
                             fHighSeasonEndDate = '2013/08/31',      // must be a saturday
                             linear = "classic",
-                            numMiniWeeks = 6,                       // minimum number of weeks selectable (for linear mini)
+                            numMinWeeks = 6,                       // minimum number of weeks selectable (for linear mini)
                             info = "La période de haute saison doit être comprise dans la sélection.";
                 </script>
 
