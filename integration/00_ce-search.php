@@ -36,7 +36,7 @@ include('includes/ce-top.php'); ?>
             <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires</legend>
-
+                    <div class="error"></div>
                     <ol>
                         <li>
                             <div id="AchatLineaire_isClassique" class="clear" data-already-linear="1">

@@ -248,8 +248,9 @@ $(function() {
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerField').removeClass('opened');
-            $('#datepickerCalendar').stop().animate({height: 0}, 500);
+            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+                $('#datepickerField').removeClass('opened');
+            });
             state = !state;
             return false;
         });
@@ -346,7 +347,7 @@ function switchLinear() {
     $('#AchatLineaire_isClassique').attr('class','clear ' + radioValue);
     var alreadyLinear = parseInt($('#AchatLineaire_isClassique').attr('data-already-linear'));
     var titleText = alreadyLinear ? "Recherche de linéaires" : "Recherche de linéaires classiques";
-    var infoText = radioValue == "classic" ? "La période en haute saison doit être comprise dans la sélection." : "Un minimum de 6 semaines doit être compris dans la sélection.";
+    var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inlure un minimum de 6 semaines.";
     var legendText = "haute saison";
     if (!alreadyLinear){
         $('#' + radioValue).find('legend').text(titleText);
