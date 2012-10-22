@@ -442,7 +442,7 @@
             function infoInit() {
                 var infoMkrs = [
                     //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                    ['c2is', 45.764544, 4.846512, 5, '12', markerFushia]
+                    ['c2is', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia]
                 ];
                 var centerinfoMkr = new google.maps.LatLng(45.764544,4.846512),
                         mapOptions = {
