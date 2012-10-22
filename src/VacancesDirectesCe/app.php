@@ -17,6 +17,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider());
 $app['security.firewalls'] =  array(
     'resalys' => array('pattern' => '^/resalys'),
     'request' => array('pattern' => '^/request'),
+    'request' => array('pattern' => '^/editos'),
     'ce_login' => array('pattern' => '^/login$'),
     'ce' => array(
         'pattern'   => '/',

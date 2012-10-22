@@ -168,6 +168,7 @@ menu.event: Evènement
 menu.cms: Cms
 menu.personnages: Personnages
 menu.avantages: Avantages
+menu.editos: Éditos
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -333,6 +334,15 @@ avantage.name: Titre
 avantage.description: Description
 avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
+
+edito.crud.create: Création d'un édito
+edito.crud.list: Liste des editos
+edito.crud.update: Mettre à jour l'édito %name%
+edito.crud.view: Détails de l'édito %name%
+edito.id: Id
+edito.slug: Slug
+edito.name: Titre
+edito.description: Description
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média

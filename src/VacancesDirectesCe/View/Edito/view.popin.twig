@@ -1,0 +1,23 @@
+{% extends "baseIframe.twig" %}
+
+{% block title %}
+    {% if edito %}
+    {{ edito.name }}
+    {% else %}
+    404 Not Found
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div id="wrap" class="fixed-width clear">
+    {% if edito %}
+    <h1>{{ edito.name }}</h1>
+    {{ edito.description | raw }}
+    {% else %}
+    <h1><span>404 Not Found</span></h1>
+    {% endif %}
+</div>
+{% endblock %}

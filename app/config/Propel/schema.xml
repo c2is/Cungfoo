@@ -577,4 +577,21 @@
         </behavior>
     </table>
 
+    <table name="edito">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="slug" type="varchar"/>
+        <column name="name" type="varchar" required="false"/>
+        <column name="description" type="longvarchar" required="true"/>
+        <behavior name="timestampable" />
+
+        <unique name="unique_slug">
+            <unique-column name="slug"/>
+        </unique>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/editos" />
+            <parameter name="crud_type_richtext" value="description" />
+        </behavior>
+    </table>
+
 </database>

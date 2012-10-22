@@ -78,3 +78,7 @@ crud:
             prefix: /personnages-avantages
             model: \Cungfoo\Model\Avantage
             form: \Cungfoo\Form\Type\AvantageType
+        edito:
+            prefix: /editos
+            model: \Cungfoo\Model\Edito
+            form: \Cungfoo\Form\Type\EditoType

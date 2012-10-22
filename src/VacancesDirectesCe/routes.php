@@ -50,3 +50,4 @@ $app->mount('/camping', new \VacancesDirectesCe\Controller\CampingController());
 $app->mount('/search', new \VacancesDirectesCe\Controller\SearchController());
 
 $app->mount('/request', new \VacancesDirectesCe\Controller\RequestController());
+$app->mount('/editos', new \VacancesDirectesCe\Controller\EditoController());
