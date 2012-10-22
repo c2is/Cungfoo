@@ -1623,21 +1623,23 @@ h6,
   float: none;
   display: inline-block;
 }
-.ce #linearSwitcher {
-  margin-top: 20px;
+.ce #AchatLineaire_isClassique {
+  margin-bottom: 20px;
 }
-.ce #linearSwitcher label,
-.ce #linearSwitcher input {
+.ce #AchatLineaire_isClassique label,
+.ce #AchatLineaire_isClassique input {
   float: left;
   margin: 3px 0;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 14px;
 }
-.ce #linearSwitcher input {
-  margin: 4px 5px 0 0;
+.ce #AchatLineaire_isClassique input {
+  margin: 7px 5px 0 0;
 }
 .ce #searchContainer {
   margin-bottom: 20px;
   z-index: 1;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .ce #searchContainer .searchBox {
   padding: 20px 0;
