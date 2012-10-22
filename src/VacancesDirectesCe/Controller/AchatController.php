@@ -40,6 +40,7 @@ class AchatController implements ControllerProviderInterface
                 $dataForm->campings = explode(';', $searchParametersData['campings']);
                 $dataForm->dateDebut = $searchParametersData['dateDebut'];
                 $dataForm->dateFin = $searchParametersData['dateFin'];
+                $dataForm->isBasseSaison = $searchParametersData['isBasseSaison'];
             }
 
             $achatLineaireForm = $app['form.factory']->create(new AchatLineaireType($app), $dataForm);

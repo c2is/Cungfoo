@@ -35,3 +35,16 @@
     <div id="SearchDate_date_interval" data-debut-saison="{{ app.config.get('vd_config')['date']['debut_saison'] | date('Y-m-d') }}" data-fin-saison="{{ app.config.get('vd_config')['date']['fin_saison'] | date('Y-m-d') }}"></div>
     {{ block('date_widget') }}
 {% endblock %}
+
+{% block _AchatLineaire_isBasseSaison_widget %}
+{% spaceless %}
+    <div id="AchatLineaire_isClassique" class="clear" data-already-linear="1">
+    {% for child in form %}
+        <p class="clearboth">
+        {{ form_widget(child) }}
+        {{ form_label(child) }}
+        </p>
+    {% endfor %}
+</div>
+{% endspaceless %}
+{% endblock %}

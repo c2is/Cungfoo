@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block title %}
+    {% if edito %}
+    {{ edito.name }}
+    {% else %}
+    404 Not Found
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+    {% if edito %}
+    <h1>{{ edito.name }}</h1>
+    {% else %}
+    <h1><span>404 Not Found</span></h1>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="column clearboth">
+    {% if edito %}
+        {{ edito.description | raw }}
+    {% endif %}
+    </div>
+{% endblock %}

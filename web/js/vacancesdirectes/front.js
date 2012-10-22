@@ -276,7 +276,7 @@ $(function() {
         $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
             return false;
         });
-        $('#AchatLineaire_isClassique input[type="radio"][name="AchatLineaire[isClassique]"]').bind('click', function(){
+        $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]').bind('click', function(){
             clearDatepicker();
             switchLinear();
         });
@@ -342,19 +342,21 @@ function clearDatepicker() {
 
 function switchLinear() {
     console.log("################################## switchLinear()  ##################################");
-    var radioValue = $('#AchatLineaire_isClassique input[type="radio"][name="AchatLineaire[isClassique]"]:checked').attr('value') == 1 ? "classic" : "mini";
+    var radioValue = $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]:checked').attr('value') == 1 ? "mini" : "classic";
     $('#searchContainer .searchBox').attr('id',radioValue);
-    $('#AchatLineaire_isClassique').attr('class','clear ' + radioValue);
-    var alreadyLinear = parseInt($('#AchatLineaire_isClassique').attr('data-already-linear'));
+    $('#AchatLineaire_isBasseSaison').attr('class','clear ' + radioValue);
+    var alreadyLinear = parseInt($('#AchatLineaire_isBasseSaison').parent('li').attr('data-already-linear'));
     var titleText = alreadyLinear ? "Recherche de linéaires" : "Recherche de linéaires classiques";
+
     var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inlure un minimum de 6 semaines.";
     var legendText = "haute saison";
+
     if (!alreadyLinear){
-        $('#' + radioValue).find('legend').text(titleText);
-        $('#AchatLineaire_isClassique').parent('li').hide();
+        $('#AchatLineaire_isBasseSaison').parent('li').hide();
     }
     else {
-        $('#AchatLineaire_isClassique').parent('li').show();
+        $('#' + radioValue).find('legend').text(titleText);
+        $('#AchatLineaire_isBasseSaison').parent('li').show();
     }
     $('#' + radioValue + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
     $('#' + radioValue + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
