@@ -11,9 +11,9 @@
                 session: app.session.get('resalys_user').session,
                 template: 'search_product_results',
                 actions: 'updateCriterias;getProposals',
+                search_page: achatLineaire.search_page,
                 criterias_object_name: 'search_form',
                 product_CMSCriteria_ALL: 'ALL',
-                search_page: '0',
                 product_CMSCriteria_PHS: '',
                 product_start_date: "now" | date("d/m/Y"),
 
@@ -22,8 +22,8 @@
                 search_form_nb_adults: achatLineaire.nbAdultes,
                 search_form_theme_code: achatLineaire.region ? achatLineaire.region : achatLineaire.pays ? achatLineaire.pays : '',
                 search_form_etab_list: achatLineaire.campings,
-                search_form_max_results: achatLineaire.maxResults,
-                search_form_sort_string: achatLineaire.sortString
+                search_form_max_results: achatLineaire.search_form_max_results,
+                search_form_sort_string: achatLineaire.search_form_sort_string
             }) }}" width="960px" height="700px"></iframe>
         </div>
 {% endblock %}

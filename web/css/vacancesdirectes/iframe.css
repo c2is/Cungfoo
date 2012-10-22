@@ -468,13 +468,25 @@ body {
   color: #ffffff;
   text-align: center;
 }
-/* warning */
+/* warning / error */
 .warning {
   border: 3px solid #ed145b;
   margin: 0 20px 25px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
+}
+.error {
+  margin-bottom: 10px;
+  font: 12px Arial, sans-serif;
+  color: #f58220;
+}
+.error li:before {
+  content: "-";
+  padding-right: 3px;
+}
+#forgetPassword .error {
+  margin: -15px 0 20px;
 }
 /* // warning */
 /* Resa Packages */
@@ -840,6 +852,13 @@ body {
   display: block;
   margin-bottom: 5px;
 }
+#authentication .aField label:after,
+#forgetPassword .aField label:after,
+#authentication .aField .label:after,
+#forgetPassword .aField .label:after {
+  content: ":";
+  padding-left: 3px;
+}
 #authentication .aField [type="text"],
 #forgetPassword .aField [type="text"],
 #authentication .aField [type="password"],
@@ -861,6 +880,13 @@ body {
   float: right;
   margin: 0 14px 15px;
   padding: 5px 35px;
+}
+#forgetPassword .aField label {
+  float: left;
+  padding: 7px 10px 0 0;
+  text-align: right;
+  padding-right: 10px;
+  width: 120px;
 }
 #searchResultPage #headerContener,
 #searchResultPage #contentNavigationContener,
@@ -1007,17 +1033,23 @@ body {
   overflow: hidden;
   margin-top: 20px;
 }
+#footerContener .mentions,
 #footerContener .footerNavigation {
   display: none;
 }
+#footerContener .mentions.gauche,
 #footerContener .footerNavigation.gauche,
+#footerContener .mentions.droite,
 #footerContener .footerNavigation.droite,
+#footerContener .mentions.pageListe,
 #footerContener .footerNavigation.pageListe {
   display: block;
 }
+#footerContener .mentions.gauche,
 #footerContener .footerNavigation.gauche {
   float: left;
 }
+#footerContener .mentions.droite,
 #footerContener .footerNavigation.droite {
   float: right;
   margin-top: -14px;

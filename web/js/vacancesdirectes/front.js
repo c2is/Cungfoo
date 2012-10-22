@@ -327,7 +327,7 @@ $(function() {
 /*--  FUNCTIONS  --*/
 
 function openIframePopin(url){
-    $.colorbox({href: url, iframe:true, width:'80%', height:'80%', close:"&times;"});
+    $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 
 // datepicker

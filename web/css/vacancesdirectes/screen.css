@@ -1301,6 +1301,11 @@ h6,
   -o-transform: rotate(12deg);
   transform: rotate(12deg);
 }
+/* Gmap infoBox dans popin */
+.popin #infoMap .infoBox .bt {
+  display: none;
+}
+/* //Gmap */
 .blCoordGps {
   border-right: 7px solid #e6e5e5;
   width: 50%;
@@ -1660,6 +1665,9 @@ h6,
   float: right;
   min-height: 203px;
 }
+.ce #searchContainer .selectContainer .newListSelected:last-child {
+  margin-right: 0;
+}
 .ce #searchContainer .searchBlock {
   border: 1px solid #e6e5e5;
   padding: 20px;
@@ -1689,7 +1697,6 @@ h6,
   margin: 20px 0;
   height: 115px;
   overflow: auto;
-  width: 350px;
 }
 .ce #searchContainer .searchBlock .sMultSelectUl li {
   padding: 0 10px;
@@ -2010,7 +2017,7 @@ h6,
 .stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  min-width: 170px;
+  min-width: 200px;
   position: absolute;
   top: 22px;
   left: 0;
@@ -2039,7 +2046,7 @@ h6,
   white-space: nowrap;
 }
 .stylish-select .newListSelected {
-  width: 170px;
+  width: 200px;
   color: #464545;
   height: 23px;
   float: left;
@@ -2069,7 +2076,7 @@ h6,
   -moz-outline-style: none;
 }
 .stylish-select .selectedTxt {
-  width: 137px;
+  width: 167px;
   overflow: hidden;
   padding: 0 23px 0 10px;
   position: absolute;
