@@ -1628,17 +1628,17 @@ h6,
   float: none;
   display: inline-block;
 }
-.ce #AchatLineaire_isClassique {
+.ce #AchatLineaire_isBasseSaison {
   margin-bottom: 20px;
 }
-.ce #AchatLineaire_isClassique label,
-.ce #AchatLineaire_isClassique input {
+.ce #AchatLineaire_isBasseSaison label,
+.ce #AchatLineaire_isBasseSaison input {
   float: left;
   margin: 3px 0;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 14px;
 }
-.ce #AchatLineaire_isClassique input {
+.ce #AchatLineaire_isBasseSaison input {
   margin: 7px 5px 0 0;
 }
 .ce #searchContainer {
@@ -1663,7 +1663,6 @@ h6,
 }
 .ce #searchContainer #searchText {
   float: right;
-  min-height: 203px;
 }
 .ce #searchContainer .selectContainer .newListSelected:last-child {
   margin-right: 0;
