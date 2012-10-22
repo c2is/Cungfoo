@@ -72,8 +72,9 @@ class AchatController implements ControllerProviderInterface
                     }
 
                     // default parameters
-                    $achatLineaireParameters['maxResults'] = 12;
-                    $achatLineaireParameters['sortString'] = "Priority,StartDate,Etab,RoomType(2),ProductPriority";
+                    $achatLineaireParameters['search_page'] = 1;
+                    $achatLineaireParameters['search_form_max_results'] = 12;
+                    $achatLineaireParameters['search_form_sort_string'] = "Priority,StartDate,Etab,RoomType(2),ProductPriority";
 
                     unset($achatLineaireParameters['token']);
 
@@ -101,8 +102,9 @@ class AchatController implements ControllerProviderInterface
 
                 // override default paramterers
                 $postParameters = $request->request->all();
-                $achatLineaire['maxResults'] = isset($postParameters['search_form_max_results']) ? $postParameters['search_form_max_results'] : 12;
-                $achatLineaire['sortString'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
+                $achatLineaire['search_page'] = isset($postParameters['search_page']) ? $postParameters['search_page'] : 1;
+                $achatLineaire['search_form_max_results'] = isset($postParameters['search_form_max_results']) ? $postParameters['search_form_max_results'] : 12;
+                $achatLineaire['search_form_sort_string'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
             }
 
             return $app['twig']->render('Achat/resultatsRecherche.twig', array(
