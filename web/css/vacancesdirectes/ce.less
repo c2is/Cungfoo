@@ -140,8 +140,23 @@ iframe{width:100%;}
     label, .label{display:block;margin-bottom:5px;
       &:after{content:":";padding-left:3px;}
     }
+    &.fieldbox{margin-bottom:5px;
+      label{display:inline-block;}
+      input{float:left;margin-right:10px;}
+    }
+    &.fieldline{margin-bottom:25px;
+      label{float:left;margin:5px;}
+    input{width:133px;}
+    }
     [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
   }
+
+  .infoscomp{
+    label, .label{
+      &:after{content:"";}
+    }
+  }
+
   .aBtField{.clearboth();}
   [type="submit"], .okButton{float:right;margin:0 14px 15px;padding:5px 35px}
 }
