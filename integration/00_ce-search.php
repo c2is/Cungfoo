@@ -31,12 +31,13 @@ include('includes/ce-top.php'); ?>
 
     <!-- colonne pleine largeur -->
     <div id="searchContainer" class="column clear">
+        <div class="error"></div>
         <div class="searchBox full-width">
 
             <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires</legend>
-                    <div class="error"></div>
+
                     <ol>
                         <li>
                             <div id="AchatLineaire_isBasseSaison" class="clear" data-already-linear="1">
@@ -54,7 +55,7 @@ include('includes/ce-top.php'); ?>
                                     <option value="">Country 1</option>
                                     <option value="2">Country 2</option>
                                     <option value="3">Country 3</option>
-                                </select>git
+                                </select>
                                 <select name="selectRegion" onchange="">
                                     <option value="1">Region 1</option>
                                     <option value="2">Region 2</option>

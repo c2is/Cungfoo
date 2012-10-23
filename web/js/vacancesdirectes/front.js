@@ -351,10 +351,10 @@ function switchLinear() {
     console.log(radioValue);
     console.log(alreadyLinear);
     if (!alreadyLinear){
+        $('#' + radioValue).find('legend').text(titleText);
         $('#AchatLineaire_isBasseSaison').parent('li').hide();
     }
     else {
-        $('#' + radioValue).find('legend').text(titleText);
         $('#AchatLineaire_isBasseSaison').parent('li').show();
     }
     $('#' + radioValue + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
