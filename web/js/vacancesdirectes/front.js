@@ -277,6 +277,7 @@ $(function() {
             return false;
         });
         $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]').bind('click', function(){
+            console.log("---------------------------------- CHANGE LINEAR  ----------------------------------");
             clearDatepicker();
             switchLinear();
         });
@@ -318,9 +319,7 @@ $(function() {
 
 /*-- HEADREADY --*/
 head.ready(function(){
-    if ($('#searchForm').length) {
-        console.log( $('#searchText').height());
-        console.log( $('#searchForm').height());
+    if ($('#searchContainer').length) {
         $('#searchText').height($('#searchForm').height());
     }
 });
@@ -345,12 +344,12 @@ function switchLinear() {
     var radioValue = $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]:checked').attr('value') == 1 ? "mini" : "classic";
     $('#searchContainer .searchBox').attr('id',radioValue);
     $('#AchatLineaire_isBasseSaison').attr('class','clear ' + radioValue);
-    var alreadyLinear = parseInt($('#AchatLineaire_isBasseSaison').parent('li').attr('data-already-linear'));
+    var alreadyLinear = parseInt($('#AchatLineaire_isBasseSaison').attr('data-already-linear'));
     var titleText = alreadyLinear ? "Recherche de linéaires" : "Recherche de linéaires classiques";
-
     var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inlure un minimum de 6 semaines.";
     var legendText = "haute saison";
-
+    console.log(radioValue);
+    console.log(alreadyLinear);
     if (!alreadyLinear){
         $('#AchatLineaire_isBasseSaison').parent('li').hide();
     }
@@ -375,7 +374,7 @@ function initializeForbiddenDates() {
     if (firstRendering){
         allSaturdays.each(function(index, value){
             var td = $(this);
-            console.log(endHighSeasonDay);
+//            console.log(endHighSeasonDay);
             defineHighSeason(td);
             if (endHighSeasonDay && linear == "classic"){
                 td.addClass('datepickerUnselectable');

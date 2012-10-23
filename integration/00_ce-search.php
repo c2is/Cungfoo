@@ -39,15 +39,13 @@ include('includes/ce-top.php'); ?>
                     <div class="error"></div>
                     <ol>
                         <li>
-                            <div id="AchatLineaire_isClassique" class="clear" data-already-linear="1">
+                            <div id="AchatLineaire_isBasseSaison" class="clear" data-already-linear="1">
                                 <p class="clearboth">
-                                    <input type="radio" id="AchatLineaire_isClassique_1" name="AchatLineaire[isClassique]" value="1" checked="checked">
-                                    <label for="AchatLineaire_isClassique_1">classiques</label>
-                                </p>
+                                    <input type="radio" checked="checked" value="0" name="AchatLineaire[isBasseSaison]" id="AchatLineaire_isBasseSaison_0">
+                                    <label for="AchatLineaire_isBasseSaison_0">classiques</label></p>
                                 <p class="clearboth">
-                                    <input type="radio" id="AchatLineaire_isClassique_0" name="AchatLineaire[isClassique]" value="0">
-                                    <label for="AchatLineaire_isClassique_0">basse saison</label>
-                                </p>
+                                    <input type="radio" value="1" name="AchatLineaire[isBasseSaison]" id="AchatLineaire_isBasseSaison_1">
+                                    <label for="AchatLineaire_isBasseSaison_1">basse saison</label></p>
                             </div>
                         </li>
                         <li>
@@ -56,7 +54,7 @@ include('includes/ce-top.php'); ?>
                                     <option value="">Country 1</option>
                                     <option value="2">Country 2</option>
                                     <option value="3">Country 3</option>
-                                </select>
+                                </select>git
                                 <select name="selectRegion" onchange="">
                                     <option value="1">Region 1</option>
                                     <option value="2">Region 2</option>
