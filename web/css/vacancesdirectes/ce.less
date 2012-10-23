@@ -137,7 +137,7 @@ iframe{width:100%;}
     span{color:@colorGris2;}
   }
   .field{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;margin-bottom:15px;
-    label, .label{display:block;margin-bottom:5px;
+    label{display:block;margin-bottom:5px;
       &:after{content:":";padding-left:3px;}
     }
     &.fieldbox{margin-bottom:5px;
@@ -149,11 +149,17 @@ iframe{width:100%;}
     input{width:133px;}
     }
     [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
+    &.horoInput{
+      label{float:left;margin:5px 5px 0 0;width:100px;}
+      [type="text"]{width:133px;margin-right:15px;}
+    }
   }
-
+  #DemandeIdentifiant_permanence_choices{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;margin-bottom:15px;
+    label{margin-right:15px;}
+  }
   .infoscomp{
     .left{width:35%;}
-    label, .label{
+    .fieldbox label{
       &:after{content:"";}
     }
   }
