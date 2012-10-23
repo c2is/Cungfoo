@@ -126,6 +126,42 @@ iframe{width:100%;}
   }
 }
 
+#DemandeIdentifiant{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 20px 15px;position:relative;overflow:hidden;
+  /*legend{background-color:@colorBgBleu;position:relative;margin-bottom:25px;text-align:center;
+    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+    span{color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;display:inline-block;margin:0 25px;}
+  }*/
+  fieldset{padding-bottom:40px;}
+  legend{font-family:@ptnarrow;font-size:24px;text-transform:uppercase;color:@colorBleu;margin:0 0 15px 0;position:relative;
+    span{color:@colorGris2;}
+  }
+  .field{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;margin-bottom:15px;
+    label, .label{display:block;margin-bottom:5px;
+      &:after{content:":";padding-left:3px;}
+    }
+    &.fieldbox{margin-bottom:5px;
+      label{display:inline-block;}
+      input{float:left;margin-right:10px;}
+    }
+    &.fieldline{margin-bottom:25px;
+      label{float:left;margin:5px;}
+    input{width:133px;}
+    }
+    [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
+  }
+
+  .infoscomp{
+    .left{width:35%;}
+    label, .label{
+      &:after{content:"";}
+    }
+  }
+
+  .aBtField{.clearboth();}
+  [type="submit"], .okButton{float:right;margin:0 14px 15px;padding:5px 35px}
+}
+
 
 /* RESULT */
 
