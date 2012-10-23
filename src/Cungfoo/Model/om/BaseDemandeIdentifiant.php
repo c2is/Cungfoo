@@ -148,6 +148,42 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     protected $permanence_apres_midi_a;
 
     /**
+     * The value for the client_vc field.
+     * @var        boolean
+     */
+    protected $client_vc;
+
+    /**
+     * The value for the client_vc_code field.
+     * @var        string
+     */
+    protected $client_vc_code;
+
+    /**
+     * The value for the client_vd field.
+     * @var        boolean
+     */
+    protected $client_vd;
+
+    /**
+     * The value for the client_vd_code field.
+     * @var        string
+     */
+    protected $client_vd_code;
+
+    /**
+     * The value for the brochure field.
+     * @var        boolean
+     */
+    protected $brochure;
+
+    /**
+     * The value for the identifiant field.
+     * @var        boolean
+     */
+    protected $identifiant;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -341,6 +377,66 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     public function getPermanenceApresMidiA()
     {
         return $this->permanence_apres_midi_a;
+    }
+
+    /**
+     * Get the [client_vc] column value.
+     *
+     * @return boolean
+     */
+    public function getClientVc()
+    {
+        return $this->client_vc;
+    }
+
+    /**
+     * Get the [client_vc_code] column value.
+     *
+     * @return string
+     */
+    public function getClientVcCode()
+    {
+        return $this->client_vc_code;
+    }
+
+    /**
+     * Get the [client_vd] column value.
+     *
+     * @return boolean
+     */
+    public function getClientVd()
+    {
+        return $this->client_vd;
+    }
+
+    /**
+     * Get the [client_vd_code] column value.
+     *
+     * @return string
+     */
+    public function getClientVdCode()
+    {
+        return $this->client_vd_code;
+    }
+
+    /**
+     * Get the [brochure] column value.
+     *
+     * @return boolean
+     */
+    public function getBrochure()
+    {
+        return $this->brochure;
+    }
+
+    /**
+     * Get the [identifiant] column value.
+     *
+     * @return boolean
+     */
+    public function getIdentifiant()
+    {
+        return $this->identifiant;
     }
 
     /**
@@ -775,6 +871,164 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     } // setPermanenceApresMidiA()
 
     /**
+     * Sets the value of the [client_vc] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setClientVc($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->client_vc !== $v) {
+            $this->client_vc = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::CLIENT_VC;
+        }
+
+
+        return $this;
+    } // setClientVc()
+
+    /**
+     * Set the value of [client_vc_code] column.
+     *
+     * @param string $v new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setClientVcCode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->client_vc_code !== $v) {
+            $this->client_vc_code = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::CLIENT_VC_CODE;
+        }
+
+
+        return $this;
+    } // setClientVcCode()
+
+    /**
+     * Sets the value of the [client_vd] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setClientVd($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->client_vd !== $v) {
+            $this->client_vd = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::CLIENT_VD;
+        }
+
+
+        return $this;
+    } // setClientVd()
+
+    /**
+     * Set the value of [client_vd_code] column.
+     *
+     * @param string $v new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setClientVdCode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->client_vd_code !== $v) {
+            $this->client_vd_code = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::CLIENT_VD_CODE;
+        }
+
+
+        return $this;
+    } // setClientVdCode()
+
+    /**
+     * Sets the value of the [brochure] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setBrochure($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->brochure !== $v) {
+            $this->brochure = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::BROCHURE;
+        }
+
+
+        return $this;
+    } // setBrochure()
+
+    /**
+     * Sets the value of the [identifiant] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setIdentifiant($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->identifiant !== $v) {
+            $this->identifiant = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::IDENTIFIANT;
+        }
+
+
+        return $this;
+    } // setIdentifiant()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -869,8 +1123,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $this->permanence_matin_a = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
             $this->permanence_apres_midi_de = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
             $this->permanence_apres_midi_a = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->created_at = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->updated_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->client_vc = ($row[$startcol + 17] !== null) ? (boolean) $row[$startcol + 17] : null;
+            $this->client_vc_code = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->client_vd = ($row[$startcol + 19] !== null) ? (boolean) $row[$startcol + 19] : null;
+            $this->client_vd_code = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->brochure = ($row[$startcol + 21] !== null) ? (boolean) $row[$startcol + 21] : null;
+            $this->identifiant = ($row[$startcol + 22] !== null) ? (boolean) $row[$startcol + 22] : null;
+            $this->created_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->updated_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -879,7 +1139,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
 
-            return $startcol + 19; // 19 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 25; // 25 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeIdentifiant object", $e);
@@ -1153,6 +1413,24 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A)) {
             $modifiedColumns[':p' . $index++]  = '`PERMANENCE_APRES_MIDI_A`';
         }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC)) {
+            $modifiedColumns[':p' . $index++]  = '`CLIENT_VC`';
+        }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC_CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CLIENT_VC_CODE`';
+        }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD)) {
+            $modifiedColumns[':p' . $index++]  = '`CLIENT_VD`';
+        }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD_CODE)) {
+            $modifiedColumns[':p' . $index++]  = '`CLIENT_VD_CODE`';
+        }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::BROCHURE)) {
+            $modifiedColumns[':p' . $index++]  = '`BROCHURE`';
+        }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) {
+            $modifiedColumns[':p' . $index++]  = '`IDENTIFIANT`';
+        }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -1220,6 +1498,24 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                         break;
                     case '`PERMANENCE_APRES_MIDI_A`':
                         $stmt->bindValue($identifier, $this->permanence_apres_midi_a, PDO::PARAM_STR);
+                        break;
+                    case '`CLIENT_VC`':
+                        $stmt->bindValue($identifier, (int) $this->client_vc, PDO::PARAM_INT);
+                        break;
+                    case '`CLIENT_VC_CODE`':
+                        $stmt->bindValue($identifier, $this->client_vc_code, PDO::PARAM_STR);
+                        break;
+                    case '`CLIENT_VD`':
+                        $stmt->bindValue($identifier, (int) $this->client_vd, PDO::PARAM_INT);
+                        break;
+                    case '`CLIENT_VD_CODE`':
+                        $stmt->bindValue($identifier, $this->client_vd_code, PDO::PARAM_STR);
+                        break;
+                    case '`BROCHURE`':
+                        $stmt->bindValue($identifier, (int) $this->brochure, PDO::PARAM_INT);
+                        break;
+                    case '`IDENTIFIANT`':
+                        $stmt->bindValue($identifier, (int) $this->identifiant, PDO::PARAM_INT);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1413,9 +1709,27 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 return $this->getPermanenceApresMidiA();
                 break;
             case 17:
-                return $this->getCreatedAt();
+                return $this->getClientVc();
                 break;
             case 18:
+                return $this->getClientVcCode();
+                break;
+            case 19:
+                return $this->getClientVd();
+                break;
+            case 20:
+                return $this->getClientVdCode();
+                break;
+            case 21:
+                return $this->getBrochure();
+                break;
+            case 22:
+                return $this->getIdentifiant();
+                break;
+            case 23:
+                return $this->getCreatedAt();
+                break;
+            case 24:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1463,8 +1777,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $keys[14] => $this->getPermanenceMatinA(),
             $keys[15] => $this->getPermanenceApresMidiDe(),
             $keys[16] => $this->getPermanenceApresMidiA(),
-            $keys[17] => $this->getCreatedAt(),
-            $keys[18] => $this->getUpdatedAt(),
+            $keys[17] => $this->getClientVc(),
+            $keys[18] => $this->getClientVcCode(),
+            $keys[19] => $this->getClientVd(),
+            $keys[20] => $this->getClientVdCode(),
+            $keys[21] => $this->getBrochure(),
+            $keys[22] => $this->getIdentifiant(),
+            $keys[23] => $this->getCreatedAt(),
+            $keys[24] => $this->getUpdatedAt(),
         );
 
         return $result;
@@ -1551,9 +1871,27 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->setPermanenceApresMidiA($value);
                 break;
             case 17:
-                $this->setCreatedAt($value);
+                $this->setClientVc($value);
                 break;
             case 18:
+                $this->setClientVcCode($value);
+                break;
+            case 19:
+                $this->setClientVd($value);
+                break;
+            case 20:
+                $this->setClientVdCode($value);
+                break;
+            case 21:
+                $this->setBrochure($value);
+                break;
+            case 22:
+                $this->setIdentifiant($value);
+                break;
+            case 23:
+                $this->setCreatedAt($value);
+                break;
+            case 24:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1597,8 +1935,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if (array_key_exists($keys[14], $arr)) $this->setPermanenceMatinA($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setPermanenceApresMidiDe($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setPermanenceApresMidiA($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCreatedAt($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setUpdatedAt($arr[$keys[18]]);
+        if (array_key_exists($keys[17], $arr)) $this->setClientVc($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setClientVcCode($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setClientVd($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setClientVdCode($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setBrochure($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setIdentifiant($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCreatedAt($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setUpdatedAt($arr[$keys[24]]);
     }
 
     /**
@@ -1627,6 +1971,12 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_MATIN_A)) $criteria->add(DemandeIdentifiantPeer::PERMANENCE_MATIN_A, $this->permanence_matin_a);
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE)) $criteria->add(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE, $this->permanence_apres_midi_de);
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A)) $criteria->add(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A, $this->permanence_apres_midi_a);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC)) $criteria->add(DemandeIdentifiantPeer::CLIENT_VC, $this->client_vc);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC_CODE)) $criteria->add(DemandeIdentifiantPeer::CLIENT_VC_CODE, $this->client_vc_code);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD)) $criteria->add(DemandeIdentifiantPeer::CLIENT_VD, $this->client_vd);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD_CODE)) $criteria->add(DemandeIdentifiantPeer::CLIENT_VD_CODE, $this->client_vd_code);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::BROCHURE)) $criteria->add(DemandeIdentifiantPeer::BROCHURE, $this->brochure);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) $criteria->add(DemandeIdentifiantPeer::IDENTIFIANT, $this->identifiant);
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) $criteria->add(DemandeIdentifiantPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) $criteria->add(DemandeIdentifiantPeer::UPDATED_AT, $this->updated_at);
 
@@ -1708,6 +2058,12 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $copyObj->setPermanenceMatinA($this->getPermanenceMatinA());
         $copyObj->setPermanenceApresMidiDe($this->getPermanenceApresMidiDe());
         $copyObj->setPermanenceApresMidiA($this->getPermanenceApresMidiA());
+        $copyObj->setClientVc($this->getClientVc());
+        $copyObj->setClientVcCode($this->getClientVcCode());
+        $copyObj->setClientVd($this->getClientVd());
+        $copyObj->setClientVdCode($this->getClientVdCode());
+        $copyObj->setBrochure($this->getBrochure());
+        $copyObj->setIdentifiant($this->getIdentifiant());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         if ($makeNew) {
@@ -1778,6 +2134,12 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $this->permanence_matin_a = null;
         $this->permanence_apres_midi_de = null;
         $this->permanence_apres_midi_a = null;
+        $this->client_vc = null;
+        $this->client_vc_code = null;
+        $this->client_vd = null;
+        $this->client_vd_code = null;
+        $this->brochure = null;
+        $this->identifiant = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;

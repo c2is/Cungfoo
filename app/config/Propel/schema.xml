@@ -612,6 +612,12 @@
         <column name="permanence_matin_a" type="varchar"/>
         <column name="permanence_apres_midi_de" type="varchar"/>
         <column name="permanence_apres_midi_a" type="varchar"/>
+        <column name="client_vc" type="boolean"/>
+        <column name="client_vc_code" type="varchar"/>
+        <column name="client_vd" type="boolean"/>
+        <column name="client_vd_code" type="varchar"/>
+        <column name="brochure" type="boolean"/>
+        <column name="identifiant" type="boolean"/>
         <behavior name="timestampable" />
 
         <behavior name="crudable">

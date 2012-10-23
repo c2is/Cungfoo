@@ -36,6 +36,12 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiantQuery orderByPermanenceMatinA($order = Criteria::ASC) Order by the permanence_matin_a column
  * @method DemandeIdentifiantQuery orderByPermanenceApresMidiDe($order = Criteria::ASC) Order by the permanence_apres_midi_de column
  * @method DemandeIdentifiantQuery orderByPermanenceApresMidiA($order = Criteria::ASC) Order by the permanence_apres_midi_a column
+ * @method DemandeIdentifiantQuery orderByClientVc($order = Criteria::ASC) Order by the client_vc column
+ * @method DemandeIdentifiantQuery orderByClientVcCode($order = Criteria::ASC) Order by the client_vc_code column
+ * @method DemandeIdentifiantQuery orderByClientVd($order = Criteria::ASC) Order by the client_vd column
+ * @method DemandeIdentifiantQuery orderByClientVdCode($order = Criteria::ASC) Order by the client_vd_code column
+ * @method DemandeIdentifiantQuery orderByBrochure($order = Criteria::ASC) Order by the brochure column
+ * @method DemandeIdentifiantQuery orderByIdentifiant($order = Criteria::ASC) Order by the identifiant column
  * @method DemandeIdentifiantQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DemandeIdentifiantQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
@@ -56,6 +62,12 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiantQuery groupByPermanenceMatinA() Group by the permanence_matin_a column
  * @method DemandeIdentifiantQuery groupByPermanenceApresMidiDe() Group by the permanence_apres_midi_de column
  * @method DemandeIdentifiantQuery groupByPermanenceApresMidiA() Group by the permanence_apres_midi_a column
+ * @method DemandeIdentifiantQuery groupByClientVc() Group by the client_vc column
+ * @method DemandeIdentifiantQuery groupByClientVcCode() Group by the client_vc_code column
+ * @method DemandeIdentifiantQuery groupByClientVd() Group by the client_vd column
+ * @method DemandeIdentifiantQuery groupByClientVdCode() Group by the client_vd_code column
+ * @method DemandeIdentifiantQuery groupByBrochure() Group by the brochure column
+ * @method DemandeIdentifiantQuery groupByIdentifiant() Group by the identifiant column
  * @method DemandeIdentifiantQuery groupByCreatedAt() Group by the created_at column
  * @method DemandeIdentifiantQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -82,6 +94,12 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiant findOneByPermanenceMatinA(string $permanence_matin_a) Return the first DemandeIdentifiant filtered by the permanence_matin_a column
  * @method DemandeIdentifiant findOneByPermanenceApresMidiDe(string $permanence_apres_midi_de) Return the first DemandeIdentifiant filtered by the permanence_apres_midi_de column
  * @method DemandeIdentifiant findOneByPermanenceApresMidiA(string $permanence_apres_midi_a) Return the first DemandeIdentifiant filtered by the permanence_apres_midi_a column
+ * @method DemandeIdentifiant findOneByClientVc(boolean $client_vc) Return the first DemandeIdentifiant filtered by the client_vc column
+ * @method DemandeIdentifiant findOneByClientVcCode(string $client_vc_code) Return the first DemandeIdentifiant filtered by the client_vc_code column
+ * @method DemandeIdentifiant findOneByClientVd(boolean $client_vd) Return the first DemandeIdentifiant filtered by the client_vd column
+ * @method DemandeIdentifiant findOneByClientVdCode(string $client_vd_code) Return the first DemandeIdentifiant filtered by the client_vd_code column
+ * @method DemandeIdentifiant findOneByBrochure(boolean $brochure) Return the first DemandeIdentifiant filtered by the brochure column
+ * @method DemandeIdentifiant findOneByIdentifiant(boolean $identifiant) Return the first DemandeIdentifiant filtered by the identifiant column
  * @method DemandeIdentifiant findOneByCreatedAt(string $created_at) Return the first DemandeIdentifiant filtered by the created_at column
  * @method DemandeIdentifiant findOneByUpdatedAt(string $updated_at) Return the first DemandeIdentifiant filtered by the updated_at column
  *
@@ -102,6 +120,12 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method array findByPermanenceMatinA(string $permanence_matin_a) Return DemandeIdentifiant objects filtered by the permanence_matin_a column
  * @method array findByPermanenceApresMidiDe(string $permanence_apres_midi_de) Return DemandeIdentifiant objects filtered by the permanence_apres_midi_de column
  * @method array findByPermanenceApresMidiA(string $permanence_apres_midi_a) Return DemandeIdentifiant objects filtered by the permanence_apres_midi_a column
+ * @method array findByClientVc(boolean $client_vc) Return DemandeIdentifiant objects filtered by the client_vc column
+ * @method array findByClientVcCode(string $client_vc_code) Return DemandeIdentifiant objects filtered by the client_vc_code column
+ * @method array findByClientVd(boolean $client_vd) Return DemandeIdentifiant objects filtered by the client_vd column
+ * @method array findByClientVdCode(string $client_vd_code) Return DemandeIdentifiant objects filtered by the client_vd_code column
+ * @method array findByBrochure(boolean $brochure) Return DemandeIdentifiant objects filtered by the brochure column
+ * @method array findByIdentifiant(boolean $identifiant) Return DemandeIdentifiant objects filtered by the identifiant column
  * @method array findByCreatedAt(string $created_at) Return DemandeIdentifiant objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return DemandeIdentifiant objects filtered by the updated_at column
  *
@@ -207,7 +231,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CREATED_AT`, `UPDATED_AT` FROM `demande_identifiant` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CLIENT_VC`, `CLIENT_VC_CODE`, `CLIENT_VD`, `CLIENT_VD_CODE`, `BROCHURE`, `IDENTIFIANT`, `CREATED_AT`, `UPDATED_AT` FROM `demande_identifiant` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -785,6 +809,172 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A, $permanenceApresMidiA, $comparison);
+    }
+
+    /**
+     * Filter the query on the client_vc column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByClientVc(true); // WHERE client_vc = true
+     * $query->filterByClientVc('yes'); // WHERE client_vc = true
+     * </code>
+     *
+     * @param     boolean|string $clientVc The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByClientVc($clientVc = null, $comparison = null)
+    {
+        if (is_string($clientVc)) {
+            $client_vc = in_array(strtolower($clientVc), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::CLIENT_VC, $clientVc, $comparison);
+    }
+
+    /**
+     * Filter the query on the client_vc_code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByClientVcCode('fooValue');   // WHERE client_vc_code = 'fooValue'
+     * $query->filterByClientVcCode('%fooValue%'); // WHERE client_vc_code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $clientVcCode The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByClientVcCode($clientVcCode = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($clientVcCode)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $clientVcCode)) {
+                $clientVcCode = str_replace('*', '%', $clientVcCode);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::CLIENT_VC_CODE, $clientVcCode, $comparison);
+    }
+
+    /**
+     * Filter the query on the client_vd column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByClientVd(true); // WHERE client_vd = true
+     * $query->filterByClientVd('yes'); // WHERE client_vd = true
+     * </code>
+     *
+     * @param     boolean|string $clientVd The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByClientVd($clientVd = null, $comparison = null)
+    {
+        if (is_string($clientVd)) {
+            $client_vd = in_array(strtolower($clientVd), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::CLIENT_VD, $clientVd, $comparison);
+    }
+
+    /**
+     * Filter the query on the client_vd_code column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByClientVdCode('fooValue');   // WHERE client_vd_code = 'fooValue'
+     * $query->filterByClientVdCode('%fooValue%'); // WHERE client_vd_code LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $clientVdCode The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByClientVdCode($clientVdCode = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($clientVdCode)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $clientVdCode)) {
+                $clientVdCode = str_replace('*', '%', $clientVdCode);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::CLIENT_VD_CODE, $clientVdCode, $comparison);
+    }
+
+    /**
+     * Filter the query on the brochure column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByBrochure(true); // WHERE brochure = true
+     * $query->filterByBrochure('yes'); // WHERE brochure = true
+     * </code>
+     *
+     * @param     boolean|string $brochure The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByBrochure($brochure = null, $comparison = null)
+    {
+        if (is_string($brochure)) {
+            $brochure = in_array(strtolower($brochure), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::BROCHURE, $brochure, $comparison);
+    }
+
+    /**
+     * Filter the query on the identifiant column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByIdentifiant(true); // WHERE identifiant = true
+     * $query->filterByIdentifiant('yes'); // WHERE identifiant = true
+     * </code>
+     *
+     * @param     boolean|string $identifiant The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function filterByIdentifiant($identifiant = null, $comparison = null)
+    {
+        if (is_string($identifiant)) {
+            $identifiant = in_array(strtolower($identifiant), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeIdentifiantPeer::IDENTIFIANT, $identifiant, $comparison);
     }
 
     /**

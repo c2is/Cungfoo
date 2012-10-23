@@ -59,6 +59,12 @@ class DemandeIdentifiantTableMap extends TableMap
         $this->addColumn('PERMANENCE_MATIN_A', 'PermanenceMatinA', 'VARCHAR', false, 255, null);
         $this->addColumn('PERMANENCE_APRES_MIDI_DE', 'PermanenceApresMidiDe', 'VARCHAR', false, 255, null);
         $this->addColumn('PERMANENCE_APRES_MIDI_A', 'PermanenceApresMidiA', 'VARCHAR', false, 255, null);
+        $this->addColumn('CLIENT_VC', 'ClientVc', 'BOOLEAN', false, 1, null);
+        $this->addColumn('CLIENT_VC_CODE', 'ClientVcCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('CLIENT_VD', 'ClientVd', 'BOOLEAN', false, 1, null);
+        $this->addColumn('CLIENT_VD_CODE', 'ClientVdCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('BROCHURE', 'Brochure', 'BOOLEAN', false, 1, null);
+        $this->addColumn('IDENTIFIANT', 'Identifiant', 'BOOLEAN', false, 1, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators

@@ -8,7 +8,103 @@
 
 {% block content %}
 <form action="" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
+    <fieldset>
+        <legend>Société</legend>
+        <p class="field">
+            {{ form_label(form.societe_nom) }}
+            {{ form_widget(form.societe_nom) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_adresse_1) }}
+            {{ form_widget(form.societe_adresse_1) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_adresse_2) }}
+            {{ form_widget(form.societe_adresse_2) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_adresse_3) }}
+            {{ form_widget(form.societe_adresse_3) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_adresse_4) }}
+            {{ form_widget(form.societe_adresse_4) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_telephone) }}
+            {{ form_widget(form.societe_telephone) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.societe_fax) }}
+            {{ form_widget(form.societe_fax) }}
+        </p>
+    </fieldset>
+    <fieldset>
+        <p class="field">
+            {{ form_label(form.contact_prenom) }}
+            {{ form_widget(form.contact_prenom) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.contact_nom) }}
+            {{ form_widget(form.contact_nom) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.contact_telephone) }}
+            {{ form_widget(form.contact_telephone) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.contact_mail) }}
+            {{ form_widget(form.contact_mail) }}
+        </p>
+    </fieldset>
+    <fieldset>
+        <p class="field">
+            {{ form_label(form.permanence_choices) }}
+            {{ form_widget(form.permanence_choices) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.permanence_matin_de) }}
+            {{ form_widget(form.permanence_matin_de) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.permanence_matin_a) }}
+            {{ form_widget(form.permanence_matin_a) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.permanence_apres_midi_de) }}
+            {{ form_widget(form.permanence_apres_midi_de) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.permanence_apres_midi_a) }}
+            {{ form_widget(form.permanence_apres_midi_a) }}
+        </p>
+    </fieldset>
+    <fieldset>
+        <p class="field">
+            {{ form_label(form.client_vd) }}
+            {{ form_widget(form.client_vd) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.client_vd_code) }}
+            {{ form_widget(form.client_vd_code) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.client_vc) }}
+            {{ form_widget(form.client_vc) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.client_vc_code) }}
+            {{ form_widget(form.client_vc_code) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.brochure) }}
+            {{ form_widget(form.brochure) }}
+        </p>
+        <p class="field">
+            {{ form_label(form.identifiant) }}
+            {{ form_widget(form.identifiant) }}
+        </p>
+    </fieldset>
     <input type="submit" class="bt big fushia">
 </form>
 {% endblock %}

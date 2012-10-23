@@ -123,6 +123,42 @@ class BaseDemandeIdentifiantType extends AppAwareType
             'label' => 'demande_identifiant.permanence_apres_midi_a',
             'required' => false,
         ));
+        $builder->add('client_vc', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.client_vc',
+            'required' => false,
+        ));
+        $builder->add('client_vc_code', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.client_vc_code',
+            'required' => false,
+        ));
+        $builder->add('client_vd', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.client_vd',
+            'required' => false,
+        ));
+        $builder->add('client_vd_code', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.client_vd_code',
+            'required' => false,
+        ));
+        $builder->add('brochure', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.brochure',
+            'required' => false,
+        ));
+        $builder->add('identifiant', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_identifiant.identifiant',
+            'required' => false,
+        ));
     }
 
     /**
