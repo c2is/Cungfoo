@@ -31,12 +31,13 @@ include('includes/ce-top.php'); ?>
 
     <!-- colonne pleine largeur -->
     <div id="searchContainer" class="column clear">
+        <div class="error"></div>
         <div class="searchBox full-width">
 
             <form id="searchForm" class="searchBlock">
                 <fieldset>
                     <legend>Recherche de linéaires</legend>
-                    <div class="error"></div>
+
                     <ol>
                         <li>
                             <div id="AchatLineaire_isBasseSaison" class="clear" data-already-linear="1">

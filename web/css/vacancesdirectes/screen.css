@@ -1628,19 +1628,6 @@ h6,
   float: none;
   display: inline-block;
 }
-.ce #AchatLineaire_isBasseSaison {
-  margin-bottom: 20px;
-}
-.ce #AchatLineaire_isBasseSaison label,
-.ce #AchatLineaire_isBasseSaison input {
-  float: left;
-  margin: 3px 0;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
-  font-size: 14px;
-}
-.ce #AchatLineaire_isBasseSaison input {
-  margin: 7px 5px 0 0;
-}
 .ce #searchContainer {
   margin-bottom: 20px;
   z-index: 1;
@@ -1659,9 +1646,29 @@ h6,
   border: 0 none;
 }
 .ce #searchContainer #searchForm {
+  position: relative;
   float: left;
 }
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison {
+  margin-bottom: 20px;
+}
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison label,
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input {
+  float: left;
+  margin: -4px 0 0;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"] {
+  margin: 0 5px 10px 10px;
+}
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #ed145b;
+}
 .ce #searchContainer #searchText {
+  position: relative;
   float: right;
 }
 .ce #searchContainer .selectContainer .newListSelected:last-child {
@@ -1680,7 +1687,7 @@ h6,
 }
 .ce #searchContainer .searchBlock legend {
   position: absolute;
-  top: 0;
+  top: -19px;
   padding: 0 10px;
   background-color: #ffffff;
 }
