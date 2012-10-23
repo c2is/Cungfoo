@@ -82,3 +82,7 @@ crud:
             prefix: /editos
             model: \Cungfoo\Model\Edito
             form: \Cungfoo\Form\Type\EditoType
+        demande_identifiant:
+            prefix: /demandes_identifiant
+            model: \Cungfoo\Model\DemandeIdentifiant
+            form: \Cungfoo\Form\Type\DemandeIdentifiantType

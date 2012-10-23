@@ -20,6 +20,7 @@
         "symfony/validator": "2.1.*",
         "symfony/filesystem": "2.1.*",
         "symfony/yaml": "2.1.*",
+        "swiftmailer/swiftmailer": "dev-master",
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
         "mageekguy/atoum": "dev-master",
