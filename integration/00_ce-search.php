@@ -54,7 +54,7 @@ include('includes/ce-top.php'); ?>
                                     <option value="">Country 1</option>
                                     <option value="2">Country 2</option>
                                     <option value="3">Country 3</option>
-                                </select>
+                                </select>git
                                 <select name="selectRegion" onchange="">
                                     <option value="1">Region 1</option>
                                     <option value="2">Region 2</option>
