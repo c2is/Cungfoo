@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
-use VacancesDirectesCe\Form\Data\AchatLineaireData,
-    VacancesDirectesCe\Form\Type\AchatLineaireType;
+use Cungfoo\Model\DemandeIdentifiant,
+    Cungfoo\Form\Type\DemandeIdentifiantType;
 
 class RequestController implements ControllerProviderInterface
 {
@@ -67,6 +67,37 @@ class RequestController implements ControllerProviderInterface
 
             return $app['twig']->render('Request/motDePasse.twig', array('query' => $query));
         })->bind('request_password');
+
+        $controllers->match('/demande-identifiant.html', function (Request $request) use ($app)
+        {
+            $demandeIdentifiantModel = new DemandeIdentifiant();
+            $form = $app['form.factory']->create(new DemandeIdentifiantType($app), $demandeIdentifiantModel);
+
+            if ('POST' == $request->getMethod())
+            {
+
+                $form->bindRequest($request);
+
+                if ($form->isValid())
+                {
+                    $demandeIdentifiantParameters = $request->get('DemandeIdentifiant');
+                    $permanenceChoicesParameter = isset($demandeIdentifiantParameters['permanence_choices']) ? $demandeIdentifiantParameters['permanence_choices'] : array();
+                    $demandeIdentifiantModel->setPermanence(implode(', ', $permanenceChoicesParameter));
+                    $demandeIdentifiantModel->saveAndSendMail($app);
+
+                    return $app->redirect($app['url_generator']->generate('request_confirmation_identifiant'));
+                }
+            }
+
+            return $app['twig']->render('Request/demandeIdentifiant.twig', array(
+                'form' => $form->createView()
+            ));
+        })->bind('request_create_identifiant');
+
+        $controllers->match('/confirmation/demande-identifiant.html', function (Request $request) use ($app)
+        {
+            return $app['twig']->render('Request/demandeIdentifiantConfirmation.twig');
+        })->bind('request_confirmation_identifiant');
 
         return $controllers;
     }

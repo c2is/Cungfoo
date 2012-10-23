@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block title %}Demandez vos identifiants pour accéder à votre espace{% endblock %}
+
+{% block header %}
+    <h1>Demandez vos identifiants pour accéder à votre espace</h1>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" class="bt big fushia">
+</form>
+{% endblock %}

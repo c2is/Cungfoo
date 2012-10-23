@@ -362,3 +362,23 @@ tag.id: Id
 tag.name: Nom
 tag.multimedia_etablissements: Média
 
+demande_identifiant.crud.list: Liste des demandes d'identifiant
+demande_identifiant.crud.view: Détails de la demande %name%
+demande_identifiant.id: Id
+demande_identifiant.societe_nom: Nom de la société
+demande_identifiant.societe_adresse_1: Adresse 1
+demande_identifiant.societe_adresse_2: Adresse 2
+demande_identifiant.societe_adresse_3: Adresse 3
+demande_identifiant.societe_adresse_4: Adresse 4
+demande_identifiant.societe_telephone: Téléphone de la société
+demande_identifiant.societe_fax: Fax de la société
+demande_identifiant.contact_prenom: Prénom
+demande_identifiant.contact_nom: Nom
+demande_identifiant.contact_telephone: Téléphone
+demande_identifiant.contact_mail: Email
+demande_identifiant.permanence: Permanence
+demande_identifiant.permanence_matin_de: Matin de
+demande_identifiant.permanence_matin_a: Matin à
+demande_identifiant.permanence_apres_midi_de: Après midi de
+demande_identifiant.permanence_apres_midi_a: Après midi à
+
