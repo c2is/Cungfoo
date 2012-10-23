@@ -8,6 +8,7 @@
 
 {% block content %}
 <form action="" method="post" {{ form_enctype(form) }}>
+    <p class="error">{{ form_errors(form) }}</p>
     <fieldset>
         <legend>Société</legend>
         <p class="field">
@@ -105,6 +106,7 @@
             {{ form_widget(form.identifiant) }}
         </p>
     </fieldset>
+    {{ form_rest(form) }}
     <input type="submit" class="bt big fushia">
 </form>
 {% endblock %}

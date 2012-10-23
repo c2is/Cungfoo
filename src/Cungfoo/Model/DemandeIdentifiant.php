@@ -21,11 +21,33 @@ class DemandeIdentifiant extends BaseDemandeIdentifiant
 
     public function saveAndSendMail(\Silex\Application $app, \PropelPDO $con = null)
     {
+        $body = <<<eof
+
+Nom de la société : {$this->getSocieteNom()}
+Adresse : {$this->getSocieteAdresse1()} {$this->getSocieteAdresse2()} {$this->getSocieteAdresse3()} {$this->getSocieteAdresse4()}
+Téléphone de la société : {$this->getSocieteTelephone()}
+Fax de la société : {$this->getSocieteFax()}
+Prénom : {$this->getContactPrenom()}
+Nom : {$this->getContactNom()}
+Téléphone : {$this->getContactTelephone()}
+Email : {$this->getContactMail()}
+Permanance : {$this->getPermanence()}
+Heure matin : {$this->getPermanenceMatinDe()} {$this->getPermanenceMatinA()}
+Heure après midi : {$this->getPermanenceApresMidiDe()} {$this->getPermanenceApresMidiA()}
+Déjà client Vacances directes : {$this->getClientVd()}
+Code Vacances directes : {$this->getClientVdCode()}
+Déjà client Village center : {$this->getClientVc()}
+Code Village center : {$this->getClientVcCode()}
+Brochure : {$this->getBrochure()}
+Identifiant : {$this->getIdentifiant()}
+
+eof;
+
         $message = \Swift_Message::newInstance()
             ->setSubject('[YourSite] Feedback')
-            ->setFrom(array('morgan.brunot@c2is.fr'))
+            ->setFrom(array('no-reply@vacancesdirectes.fr'))
             ->setTo(array('florent.gallardo@c2is.fr'))
-            ->setBody($this->getSocieteNom());
+            ->setBody($body);
 
         $app['mailer']->send($message);
 

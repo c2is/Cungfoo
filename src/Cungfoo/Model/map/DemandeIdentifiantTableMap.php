@@ -43,17 +43,17 @@ class DemandeIdentifiantTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('SOCIETE_NOM', 'SocieteNom', 'VARCHAR', false, 255, null);
-        $this->addColumn('SOCIETE_ADRESSE_1', 'SocieteAdresse1', 'VARCHAR', false, 255, null);
+        $this->addColumn('SOCIETE_NOM', 'SocieteNom', 'VARCHAR', true, 255, null);
+        $this->addColumn('SOCIETE_ADRESSE_1', 'SocieteAdresse1', 'VARCHAR', true, 255, null);
         $this->addColumn('SOCIETE_ADRESSE_2', 'SocieteAdresse2', 'VARCHAR', false, 255, null);
         $this->addColumn('SOCIETE_ADRESSE_3', 'SocieteAdresse3', 'VARCHAR', false, 255, null);
         $this->addColumn('SOCIETE_ADRESSE_4', 'SocieteAdresse4', 'VARCHAR', false, 255, null);
         $this->addColumn('SOCIETE_TELEPHONE', 'SocieteTelephone', 'VARCHAR', false, 255, null);
         $this->addColumn('SOCIETE_FAX', 'SocieteFax', 'VARCHAR', false, 255, null);
-        $this->addColumn('CONTACT_PRENOM', 'ContactPrenom', 'VARCHAR', false, 255, null);
-        $this->addColumn('CONTACT_NOM', 'ContactNom', 'VARCHAR', false, 255, null);
+        $this->addColumn('CONTACT_PRENOM', 'ContactPrenom', 'VARCHAR', true, 255, null);
+        $this->addColumn('CONTACT_NOM', 'ContactNom', 'VARCHAR', true, 255, null);
         $this->addColumn('CONTACT_TELEPHONE', 'ContactTelephone', 'VARCHAR', false, 255, null);
-        $this->addColumn('CONTACT_MAIL', 'ContactMail', 'VARCHAR', false, 255, null);
+        $this->addColumn('CONTACT_MAIL', 'ContactMail', 'VARCHAR', true, 255, null);
         $this->addColumn('PERMANENCE', 'Permanence', 'VARCHAR', false, 255, null);
         $this->addColumn('PERMANENCE_MATIN_DE', 'PermanenceMatinDe', 'VARCHAR', false, 255, null);
         $this->addColumn('PERMANENCE_MATIN_A', 'PermanenceMatinA', 'VARCHAR', false, 255, null);
