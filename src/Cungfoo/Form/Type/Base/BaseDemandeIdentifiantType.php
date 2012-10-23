@@ -29,12 +29,14 @@ class BaseDemandeIdentifiantType extends AppAwareType
         ));
         $builder->add('societe_nom', 'text', array(
             'constraints' => array(
+                new Assert\NotBlank(),
             ),
             'label' => 'demande_identifiant.societe_nom',
             'required' => false,
         ));
         $builder->add('societe_adresse_1', 'text', array(
             'constraints' => array(
+                new Assert\NotBlank(),
             ),
             'label' => 'demande_identifiant.societe_adresse_1',
             'required' => false,
@@ -71,12 +73,14 @@ class BaseDemandeIdentifiantType extends AppAwareType
         ));
         $builder->add('contact_prenom', 'text', array(
             'constraints' => array(
+                new Assert\NotBlank(),
             ),
             'label' => 'demande_identifiant.contact_prenom',
             'required' => false,
         ));
         $builder->add('contact_nom', 'text', array(
             'constraints' => array(
+                new Assert\NotBlank(),
             ),
             'label' => 'demande_identifiant.contact_nom',
             'required' => false,
@@ -89,6 +93,7 @@ class BaseDemandeIdentifiantType extends AppAwareType
         ));
         $builder->add('contact_mail', 'text', array(
             'constraints' => array(
+                new Assert\NotBlank(),
             ),
             'label' => 'demande_identifiant.contact_mail',
             'required' => false,

@@ -596,17 +596,17 @@
 
     <table name="demande_identifiant">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
-        <column name="societe_nom" type="varchar"/>
-        <column name="societe_adresse_1" type="varchar"/>
+        <column name="societe_nom" type="varchar" required="true"/>
+        <column name="societe_adresse_1" type="varchar" required="true"/>
         <column name="societe_adresse_2" type="varchar"/>
         <column name="societe_adresse_3" type="varchar"/>
         <column name="societe_adresse_4" type="varchar"/>
         <column name="societe_telephone" type="varchar"/>
         <column name="societe_fax" type="varchar"/>
-        <column name="contact_prenom" type="varchar"/>
-        <column name="contact_nom" type="varchar"/>
+        <column name="contact_prenom" type="varchar" required="true"/>
+        <column name="contact_nom" type="varchar" required="true"/>
         <column name="contact_telephone" type="varchar"/>
-        <column name="contact_mail" type="varchar"/>
+        <column name="contact_mail" type="varchar" required="true"/>
         <column name="permanence" type="varchar"/>
         <column name="permanence_matin_de" type="varchar"/>
         <column name="permanence_matin_a" type="varchar"/>

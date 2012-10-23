@@ -388,3 +388,5 @@ demande_identifiant.client_vc_code: Code partenaire
 demande_identifiant.brochure: Souhaitez-vous recevoir la brochure CE 2013 ?
 demande_identifiant.identifiant: Souhaitez-vous obtenir un identifiant pour une gestion en ligne ?
 
+This value should not be blank.: Cette valeur ne doit pas être vide.
+

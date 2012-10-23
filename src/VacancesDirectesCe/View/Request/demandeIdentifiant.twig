@@ -9,14 +9,17 @@
 {% block content %}
 <div class="column" id="DemandeIdentifiant">
     <form action="" method="post" {{ form_enctype(form) }}>
+        <p class="error">{{ form_errors(form) }}</p>
         <fieldset class="societe">
             <legend>Société</legend>
             <p class="field">
+                {{ form_errors(form.societe_nom) }}
                 {{ form_label(form.societe_nom) }}
                 {{ form_widget(form.societe_nom) }}
             </p>
             <br class="clearboth">
             <p class="field">
+                {{ form_errors(form.societe_adresse_1) }}
                 {{ form_label(form.societe_adresse_1) }}
                 {{ form_widget(form.societe_adresse_1) }}
             </p>
@@ -46,10 +49,12 @@
         <fieldset class="contact">
             <legend>Contact principal</legend>
             <p class="field">
+                {{ form_errors(form.contact_prenom) }}
                 {{ form_label(form.contact_prenom) }}
                 {{ form_widget(form.contact_prenom) }}
             </p>
             <p class="field">
+                {{ form_errors(form.contact_nom) }}
                 {{ form_label(form.contact_nom) }}
                 {{ form_widget(form.contact_nom) }}
             </p>
@@ -59,6 +64,7 @@
                 {{ form_widget(form.contact_telephone) }}
             </p>
             <p class="field">
+                {{ form_errors(form.contact_mail) }}
                 {{ form_label(form.contact_mail) }}
                 {{ form_widget(form.contact_mail) }}
             </p>
@@ -124,6 +130,7 @@
             </p>
         </fieldset>
         <input type="submit" class="bt big fushia">
+        {{ form_rest(form) }}
     </form>
 </div>
 {% endblock %}
