@@ -7,13 +7,26 @@
 
 /* variables */
 
-
-
 // DOM Ready
 $(function() {
     if(parentExists()){
-    resize_myframe();
+        resize_myframe();
     }
+
+    $('.proposalDescriptionDetailsLink').hover( function(){
+        var yTop = $(this).offset();
+        consoleLog(yTop.top);
+
+        $(this).parent().next('.proposalDescriptionDetailsPopUp').css({top:yTop.top}).fadeIn();
+        $(this).parents('.aProposalBlock').siblings('.aProposalBlock').stop().animate({opacity:.2}, 250);
+    }, function(){
+        consoleLog('out');
+        $(this).parent().next('.proposalDescriptionDetailsPopUp').fadeOut();
+        $(this).parents('.aProposalBlock').siblings('.aProposalBlock').stop().animate({opacity:1}, 250);
+    });
+
+
+
 });
 
 // Gestion du console.log (évite le bug sur ie si la console n'est pas ouverte)

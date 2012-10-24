@@ -34,10 +34,14 @@
     <!-- // colonne gauche -->
     <!-- colonne droite -->
         <aside class="column right">
-            toto
+            <?php include('blocs/top.php'); ?>
+            <?php include('blocs/top.php'); ?>
+            <?php include('blocs/top.php'); ?>
+            <?php include('blocs/top.php'); ?>
         </aside>
     <!-- // colonne droite -->
     </div>
 
 <?php include('includes/bottom.php'); ?>
 <?php include('includes/inc_footer.php'); ?>
+
