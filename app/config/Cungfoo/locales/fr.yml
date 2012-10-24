@@ -389,4 +389,5 @@ demande_identifiant.brochure: Souhaitez-vous recevoir la brochure CE 2013 ?
 demande_identifiant.identifiant: Souhaitez-vous obtenir un identifiant pour une gestion en ligne ?
 
 This value should not be blank.: Cette valeur ne doit pas être vide.
+This value is not a valid email address.: Cette valeur n'est pas une adresse email valide.
 

@@ -39,6 +39,15 @@ class DemandeIdentifiantType extends BaseDemandeIdentifiantType
             'property_path' => false,
         ));
 
+        $builder->add('contact_mail', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+                new Assert\Email(),
+            ),
+            'label' => 'demande_identifiant.contact_mail',
+            'required' => false,
+        ));
+
         $builder->remove('permanence');
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))

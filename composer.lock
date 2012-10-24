@@ -294,12 +294,6 @@
         {
             "package": "symfony/translation",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/translation",
-            "version": "dev-master",
             "source-reference": "v2.1.1",
             "commit-date": "1347274422"
         },
@@ -338,12 +332,6 @@
             "version": "dev-master",
             "source-reference": "v2.1.0-RC2",
             "commit-date": "1345643321"
-        },
-        {
-            "package": "twig/twig",
-            "version": "dev-master",
-            "alias-pretty-version": "1.11.x-dev",
-            "alias-version": "1.11.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
