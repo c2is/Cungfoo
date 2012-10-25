@@ -6,7 +6,10 @@ use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
+    Symfony\Component\HttpFoundation\Response,
+    Symfony\Component\Routing\Route;
 
 class CampingController implements ControllerProviderInterface
 {
@@ -17,47 +20,69 @@ class CampingController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{id}', function ($id) use ($app)
+        $controllers->match('/{idResalys}', function ($idResalys) use ($app)
         {
             $locale = $app['context']->get('language');
 
-            /** @var \Cungfoo\Model\Etablissement $etab  */
             $etab = \Cungfoo\Model\EtablissementQuery::create()
                 ->joinWithI18n($locale)
-                ->filterById($id)
+                ->filterByCode($idResalys)
                 ->findOne()
             ;
 
-            /** @var \Cungfoo\Model\PointInteret $nbSiteAVisiter */
+            $region = \Cungfoo\Model\RegionQuery::create()
+                ->useVilleQuery()
+                    ->useEtablissementQuery()
+                        ->filterByCode($idResalys)
+                    ->endUse()
+                ->endUse()
+                ->findOne()
+            ;
+
+            $sitesAVisiter = \Cungfoo\Model\PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+                ->addAscendingOrderByColumn('RAND()')
+                ->limit(4)
+                ->find()
+            ;
+
             $nbSiteAVisiter = \Cungfoo\Model\PointInteretQuery::create()
                 ->useEtablissementPointInteretQuery()
-                    ->filterByEtablissementId($id)
+                    ->filterByEtablissementId($etab->getId())
                 ->endUse()
                 ->count()
             ;
 
-            /** @var \Cungfoo\Model\Event $nbActivitesSportives */
             $nbActivitesSportives = \Cungfoo\Model\EventQuery::create()
                 ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($id)
+                    ->filterByEtablissementId($etab->getId())
                 ->endUse()
                 ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE)
                 ->count()
             ;
 
-            /** @var \Cungfoo\Model\Event $nbEvenementsCulturels */
+            $events = \Cungfoo\Model\EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+                ->addAscendingOrderByColumn('RAND()')
+                ->limit(4)
+                ->find()
+            ;
+
             $nbEvenementsCulturels = \Cungfoo\Model\EventQuery::create()
                 ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($id)
+                    ->filterByEtablissementId($etab->getId())
                 ->endUse()
                 ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE, \Criteria::NOT_EQUAL)
                 ->count()
             ;
 
-            /** @var \Cungfoo\Model\Event $eventPrioritaire */
             $eventPrioritaire = \Cungfoo\Model\EventQuery::create()
                 ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($id)
+                    ->filterByEtablissementId($etab->getId())
                 ->endUse()
                 ->orderByPriority(\Criteria::ASC)
                 ->findOne()
@@ -65,7 +90,7 @@ class CampingController implements ControllerProviderInterface
 
             $personnages = \Cungfoo\Model\PersonnageQuery::create()
                 ->joinWithI18n($locale)
-                ->filterByEtablissementId($id)
+                ->filterByEtablissementId($etab->getId())
                 ->orderByAge(\Criteria::ASC)
                 ->limit(3)
                 ->find()
@@ -73,7 +98,7 @@ class CampingController implements ControllerProviderInterface
 
             $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
                 ->joinWithI18n($locale)
-                ->filterByEtablissementId($id)
+                ->filterByEtablissementId($etab->getId())
                 ->find()
             ;
 
@@ -82,20 +107,46 @@ class CampingController implements ControllerProviderInterface
                 ->find()
             ;
 
-            return $app['twig']->render('etablissement.twig', array(
-                'locale'                => $locale,
-                'etab'                  => $etab,
-                'nbSiteAVisiter'        => $nbSiteAVisiter,
-                'nbActivitesSportives'  => $nbActivitesSportives,
-                'nbEvenementsCulturels' => $nbEvenementsCulturels,
-                'eventPrioritaire'      => $eventPrioritaire,
-                'personnages'           => $personnages,
-                'multimedia'           => $multimedia,
-                'tags'           => $tags
+            $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($etab->getId())
+                ->addAscendingOrderByColumn('RAND()')
+                ->findOne()
+            ;
+
+            return $app['twig']->render('Camping/camping.twig', array(
+                'locale'                  => $locale,
+                'etab'                    => $etab,
+                'region'                  => $region,
+                'nbSiteAVisiter'          => $nbSiteAVisiter,
+                'nbActivitesSportives'    => $nbActivitesSportives,
+                'nbEvenementsCulturels'   => $nbEvenementsCulturels,
+                'eventPrioritaire'        => $eventPrioritaire,
+                'personnages'             => $personnages,
+                'multimedia'              => $multimedia,
+                'tags'                    => $tags,
+                'personnageAleatoire'     => $personnageAleatoire,
+                'sitesAVisiter'           => $sitesAVisiter,
+                'events'                  => $events
             ));
         })
-        ->bind('camping_index')
-        ;
+        ->bind('camping');
+
+        $controllers->match('/infobox/{idResalys}', function ($idResalys) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $etab = \Cungfoo\Model\EtablissementQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByCode($idResalys)
+                ->findOne()
+            ;
+
+            return $app['twig']->render('Camping/camping.infobox.twig', array(
+                'etab'                    => $etab
+            ));
+
+        })->bind('infobox_camping');
 
         return $controllers;
     }
