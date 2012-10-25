@@ -1,15 +1,13 @@
 {% set menu = app.config.get('vd_menu') %}
 
-<div>
-    <a href="{{ path( 'homepage' ) }}">{{ menu.title|trans }}</a>
-    <ul>
+<nav id="nav"><ul class="topnav fixed-width clear">
+    <li class="tab current"><a id="home" href="{{ path( 'homepage' ) }}"><img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}"></a></li>
         {% for item in menu.items %}
-            <li>{{ item.title|trans }}</li>
+            <li class="tab"><a>{{ item.title|trans }}</a>
+                <div class="subnav container_12">
+                    {{ render ( path ( item.route ) ) }}
+                </div>
+            </li>
         {% endfor %}
     </ul>
-    <ul>
-        {% for item in menu.items %}
-            <li>{{ render ( path ( item.route ) ) }}</li>
-        {% endfor %}
-    </ul>
-</div>
+</nav>
