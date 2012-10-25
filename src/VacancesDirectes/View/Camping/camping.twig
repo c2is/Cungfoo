@@ -29,7 +29,7 @@
                 <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
                 <span itemprop="postalCode">{{ etab.zip }}</span>
                 <span itemprop="addressLocality">{{ etab.ville }}</span>
-                <button class="bt trans cfushia">{{ "fiche.situer_carte" | trans }}</button>
+                <button data-triggerLink="#tabProximite" class="triggerClick bt trans cfushia">{{ "fiche.situer_carte" | trans }}</button>
             </div>
             <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                 <meta itemprop="latitude" content="{{ etab.geoCoordinateX }}">
