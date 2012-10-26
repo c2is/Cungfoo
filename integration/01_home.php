@@ -152,8 +152,11 @@
             </div>
         </div>
         <div class="column clearboth">
-            <div id="categoriesBloc" class="radiusBox fushia">
-                <h2>Faites le plein d'activités</h2>
+            <div id="activitiesBloc" class="radiusBox fushia">
+                <h2 id="activitiesBlocTitle">Faites le plein d'activités</h2>
+                <div id="activitiesBlocHeadline1"><span>Je participe à toutes les activités du camping</span></div>
+                <div id="activitiesBlocHeadline2"><span>Je participe à toutes les activités du camping</span></div>
+                <div id="activitiesBlocHeadline3"><span>Je participe à toutes les activités du camping</span></div>
 
             </div>
         </div>
