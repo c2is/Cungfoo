@@ -38,7 +38,7 @@
 
 {% block _AchatLineaire_isBasseSaison_widget %}
 {% spaceless %}
-    <div id="AchatLineaire_isClassique" class="clear" data-already-linear="1">
+    <div class="clear">
     {% for child in form %}
         <p class="clearboth">
         {{ form_widget(child) }}
@@ -48,3 +48,16 @@
 </div>
 {% endspaceless %}
 {% endblock %}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+    {% for child in form %}
+        <label class="{{ (multiple ? 'checkbox' : 'radio') ~ (inline is defined and inline ? ' inline' : '') }}">
+            {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+            {{ child.vars.label|trans({}, translation_domain) }}
+        </label>
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}

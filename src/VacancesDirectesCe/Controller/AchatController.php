@@ -26,7 +26,7 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/packages.html', function (Request $request) use ($app)
         {
-            $isAlreadyClassique = $this->getAlreadyClassique($app);
+            $isAlreadyClassique = (int) $this->getAlreadyClassique($app);
 
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();

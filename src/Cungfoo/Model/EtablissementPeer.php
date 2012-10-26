@@ -22,7 +22,7 @@ class EtablissementPeer extends BaseEtablissementPeer
     {
         return \Cungfoo\Model\EtablissementQuery::create()
             ->orderByName()
-            ->select(array('Id', 'Name'))
+            ->select(array('Id', 'Code', 'Name'))
             ->find($con)
         ;
     }
@@ -45,7 +45,7 @@ class EtablissementPeer extends BaseEtablissementPeer
                     ->endUse()
                 ->endUse()
             ->endUse()
-            ->select(array('Id', 'Region.Id', 'RegionI18n.Name', 'Ville.Id', 'VilleI18n.Name', 'Name'))
+            ->select(array('Id', 'Code', 'Region.Id', 'RegionI18n.Name', 'Ville.Id', 'VilleI18n.Name', 'Name'))
             ->find($con)
         ;
     }

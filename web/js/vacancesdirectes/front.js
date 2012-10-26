@@ -352,11 +352,11 @@ function switchLinear() {
     console.log(radioValue);
     console.log(alreadyLinear);
     if (!alreadyLinear){
-        $('#' + radioValue).find('legend').text(titleText);
-        $('#AchatLineaire_isBasseSaison').parent('li').hide();
+        $('#AchatLineaire_isBasseSaison').hide();
     }
     else {
-        $('#AchatLineaire_isBasseSaison').parent('li').show();
+        $('#' + radioValue).find('legend').text(titleText);
+        $('#AchatLineaire_isBasseSaison').show();
     }
     $('#' + radioValue + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
     $('#' + radioValue + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
