@@ -152,8 +152,6 @@ eof
         $this->replaceCampingFicheUri($iframe);
 
         $this->replaceString($iframe, 'Choisir', 'Réserver');
-        $this->replaceString($iframe, '.00');
-        $this->replaceString($iframe, ',00');
         $this->replaceString($iframe, '<b><b>');
         $this->replaceString($iframe, 'Vos séjours', 'Votre réservation');
     }
