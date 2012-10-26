@@ -190,7 +190,7 @@
         ImagePath: null
         ImageEncartPath: null
         ImageEncartPetitePath: null
-        PaysId: null
+        PaysId: 2
     33:
         Code: PASD
         ImagePath: null

@@ -13,8 +13,9 @@ class AchatLineaireData
     public $campings;
     public $dateDebut;
     public $dateFin;
+    public $isBasseSaison = false;
 
-    public function isValide(ExecutionContext $context)
+    public function isValid(ExecutionContext $context)
     {
         if (!$this->nbAdultes)
         {
@@ -33,7 +34,7 @@ class AchatLineaireData
 
             $dateDebutTimestamp = $dateDebutDate->getTimestamp();
 
-            if ($dateDebutTimestamp > $debutJuilletDate->getTimestamp())
+            if (!$this->isBasseSaison && $dateDebutTimestamp > $debutJuilletDate->getTimestamp())
             {
                 $context->addViolation("La date de début doit être inférieur au 30 juin 2013.");
             }
@@ -51,7 +52,7 @@ class AchatLineaireData
 
             $dateFinTimestamp = $dateFinDate->getTimestamp();
 
-            if ($dateFinTimestamp < $finAoutDate->getTimestamp())
+            if (!$this->isBasseSaison && $dateFinTimestamp < $finAoutDate->getTimestamp())
             {
                 $context->addViolation("La date de fin doit être supérieur au 30 aout 2013.");
             }

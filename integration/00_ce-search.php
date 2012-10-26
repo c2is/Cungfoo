@@ -30,34 +30,25 @@ include('includes/ce-top.php'); ?>
     <!-- colonne pleine largeur -->
 
     <!-- colonne pleine largeur -->
-    <div id="linearSwitcher" class="column clear">
-        <p>
-            <label>Recherche de :</label>
-        </p>
-        <p class="clearboth">
-            <input type = "radio"
-                   name = "linearType"
-                   id = "classicLinear"
-                   value = "classic"
-                   checked = "checked" />
-            <label for = "classicLinear">linéaires classiques</label>
-        </p>
-        <p class="clearboth">
-            <input type = "radio"
-                   name = "linearType"
-                   id = "miniLinear"
-                   value = "mini" />
-            <label for = "miniLinear">linéaires basse saison</label>
-        </p>
-    </div>
-
-    <div id="searchContainer" class="column clearboth">
+    <div id="searchContainer" class="column clear">
+        <div class="error"></div>
         <div class="searchBox full-width">
 
             <form id="searchForm" class="searchBlock">
                 <fieldset>
-                    <legend>Recherche de linéaires classiques</legend>
+                    <legend>Recherche de linéaires</legend>
+
                     <ol>
+                        <li>
+                            <div id="AchatLineaire_isBasseSaison" class="clear" data-already-linear="1">
+                                <p class="clearboth">
+                                    <input type="radio" checked="checked" value="0" name="AchatLineaire[isBasseSaison]" id="AchatLineaire_isBasseSaison_0">
+                                    <label for="AchatLineaire_isBasseSaison_0">classiques</label></p>
+                                <p class="clearboth">
+                                    <input type="radio" value="1" name="AchatLineaire[isBasseSaison]" id="AchatLineaire_isBasseSaison_1">
+                                    <label for="AchatLineaire_isBasseSaison_1">basse saison</label></p>
+                            </div>
+                        </li>
                         <li>
                             <div class="selectContainer clear">
                                 <select name="selectCountry" onchange="">

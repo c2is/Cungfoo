@@ -1,0 +1,136 @@
+{% extends "base.twig" %}
+
+{% block title %}Demandez vos identifiants pour accéder à votre espace{% endblock %}
+
+{% block header %}
+    <h1>Demandez vos identifiants pour accéder à votre espace</h1>
+{% endblock %}
+
+{% block content %}
+<div class="column" id="DemandeIdentifiant">
+    <form action="" method="post" {{ form_enctype(form) }}>
+        <div class="error">{{ form_errors(form) }}</div>
+        <fieldset class="societe">
+            <legend>Société</legend>
+            <div class="field">
+                {{ form_label(form.societe_nom) }}
+                {{ form_widget(form.societe_nom) }}
+                {{ form_errors(form.societe_nom) }}
+            </div>
+            <br class="clearboth">
+            <div class="field">
+                {{ form_label(form.societe_adresse_1) }}
+                {{ form_widget(form.societe_adresse_1) }}
+                {{ form_errors(form.societe_adresse_1) }}
+            </div>
+            <div class="field">
+                {{ form_label(form.societe_adresse_2) }}
+                {{ form_widget(form.societe_adresse_2) }}
+            </div>
+            <br class="clearboth">
+            <div class="field">
+                {{ form_label(form.societe_adresse_3) }}
+                {{ form_widget(form.societe_adresse_3) }}
+            </div>
+            <div class="field">
+                {{ form_label(form.societe_adresse_4) }}
+                {{ form_widget(form.societe_adresse_4) }}
+            </div>
+            <br class="clearboth">
+            <div class="field">
+                {{ form_label(form.societe_telephone) }}
+                {{ form_widget(form.societe_telephone) }}
+            </div>
+            <div class="field">
+                {{ form_label(form.societe_fax) }}
+                {{ form_widget(form.societe_fax) }}
+            </div>
+        </fieldset>
+        <fieldset class="contact">
+            <legend>Contact principal</legend>
+            <div class="field">
+                {{ form_label(form.contact_prenom) }}
+                {{ form_widget(form.contact_prenom) }}
+                {{ form_errors(form.contact_prenom) }}
+            </div>
+            <div class="field">
+                {{ form_label(form.contact_nom) }}
+                {{ form_widget(form.contact_nom) }}
+                {{ form_errors(form.contact_nom) }}
+            </div>
+            <br class="clearboth">
+            <div class="field">
+                {{ form_label(form.contact_telephone) }}
+                {{ form_widget(form.contact_telephone) }}
+            </div>
+            <div class="field">
+                {{ form_label(form.contact_mail) }}
+                {{ form_widget(form.contact_mail) }}
+                {{ form_errors(form.contact_mail) }}
+            </div>
+        </fieldset>
+        <fieldset class="permanence">
+            <legend>Permanence</legend>
+            <div class="field">
+                <span class="fieldline">{{ form_label(form.permanence_choices) }}</span>
+                {{ form_widget(form.permanence_choices) }}
+            </div>
+            <br class="clearboth">
+            <div class="field horoInput">
+                {{ form_label(form.permanence_matin_de) }}
+                {{ form_widget(form.permanence_matin_de) }}
+            </div>
+            <div class="field horoInput">
+                {{ form_label(form.permanence_matin_a) }}
+                {{ form_widget(form.permanence_matin_a) }}
+            </div>
+            <br class="clearboth">
+            <div class="field horoInput">
+                {{ form_label(form.permanence_apres_midi_de) }}
+                {{ form_widget(form.permanence_apres_midi_de) }}
+            </div>
+            <div class="field horoInput">
+                {{ form_label(form.permanence_apres_midi_a) }}
+                {{ form_widget(form.permanence_apres_midi_a) }}
+            </div>
+        </fieldset>
+        <fieldset class="infoscomp">
+            <legend>Informations complémentaires</legend>
+            <div class="left">
+                <div class="field fieldbox">
+                    {{ form_widget(form.client_vd) }}
+                    {{ form_label(form.client_vd) }}
+                </div>
+                <br class="clearboth">
+                <div class="field fieldline">
+                    {{ form_label(form.client_vd_code) }}
+                    {{ form_widget(form.client_vd_code) }}
+                </div>
+            </div>
+            <div class="left">
+                <div class="field fieldbox">
+                    {{ form_widget(form.client_vc) }}
+                    {{ form_label(form.client_vc) }}
+                </div>
+                <br class="clearboth">
+                <div class="field fieldline">
+                    {{ form_label(form.client_vc_code) }}
+                    {{ form_widget(form.client_vc_code) }}
+                </div>
+            </div>
+            <br class="clearboth">
+            <div class="field fieldbox">
+                {{ form_widget(form.brochure) }}
+                {{ form_label(form.brochure) }}
+            </div>
+            <br class="clearboth">
+            <div class="field fieldbox">
+                {{ form_widget(form.identifiant) }}
+                {{ form_label(form.identifiant) }}
+            </div>
+        </fieldset>
+        <input type="submit" class="bt big fushia" value="Envoyer">
+        {{ form_rest(form) }}
+    </form>
+</div>
+{% endblock %}

@@ -577,4 +577,52 @@
         </behavior>
     </table>
 
+    <table name="edito">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="slug" type="varchar"/>
+        <column name="name" type="varchar" required="false"/>
+        <column name="description" type="longvarchar" required="true"/>
+        <behavior name="timestampable" />
+
+        <unique name="unique_slug">
+            <unique-column name="slug"/>
+        </unique>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/editos" />
+            <parameter name="crud_type_richtext" value="description" />
+        </behavior>
+    </table>
+
+    <table name="demande_identifiant">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="societe_nom" type="varchar" required="true"/>
+        <column name="societe_adresse_1" type="varchar" required="true"/>
+        <column name="societe_adresse_2" type="varchar"/>
+        <column name="societe_adresse_3" type="varchar"/>
+        <column name="societe_adresse_4" type="varchar"/>
+        <column name="societe_telephone" type="varchar"/>
+        <column name="societe_fax" type="varchar"/>
+        <column name="contact_prenom" type="varchar" required="true"/>
+        <column name="contact_nom" type="varchar" required="true"/>
+        <column name="contact_telephone" type="varchar"/>
+        <column name="contact_mail" type="varchar" required="true"/>
+        <column name="permanence" type="varchar"/>
+        <column name="permanence_matin_de" type="varchar"/>
+        <column name="permanence_matin_a" type="varchar"/>
+        <column name="permanence_apres_midi_de" type="varchar"/>
+        <column name="permanence_apres_midi_a" type="varchar"/>
+        <column name="client_vc" type="boolean"/>
+        <column name="client_vc_code" type="varchar"/>
+        <column name="client_vd" type="boolean"/>
+        <column name="client_vd_code" type="varchar"/>
+        <column name="brochure" type="boolean"/>
+        <column name="identifiant" type="boolean"/>
+        <behavior name="timestampable" />
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/demandes_identifiant" />
+        </behavior>
+    </table>
+
 </database>

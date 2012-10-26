@@ -14,6 +14,12 @@ use Symfony\Component\HttpFoundation\Request,
 
 class WrapperController implements ControllerProviderInterface
 {
+    protected
+        $app,
+        $request,
+        $websiteUri
+    ;
+
     /**
      * {@inheritdoc}
      */
@@ -24,48 +30,89 @@ class WrapperController implements ControllerProviderInterface
 
         $controllers->match('/wrapper', function (Request $request) use ($app)
         {
-            $queryParameters = $request->query->all();
-            $queryString     = $request->getQueryString();
-            $websiteUri      = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
+            // define default class attributes
+            $this->app        = $app;
+            $this->request   = $request;
+            $this->websiteUri = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
 
+            // get content of resalys modele
             $clientConfigurationFilename = sprintf('%s/app/config/Resalys/client.yml', $app['config']->get('root_dir'));
             $clientConfiguration = Yaml::parse($clientConfigurationFilename);
+            $iframe = file_get_contents(sprintf("%s?%s", $clientConfiguration['services']['modele']['location'], $this->request->getQueryString()));
 
+            // start replace functions
+            $this->replaceC2isMarker($iframe);
+            $this->replaceSpecifics($iframe);
 
-            $iframe = file_get_contents(sprintf("%s?%s", $clientConfiguration['services']['modele']['location'], $queryString));
-            $iframe = $this->replace($iframe);
+            return new Response($iframe);
+        })
+        ->bind('resalys_wrapper');
 
-            $dayNight = preg_match_all('"([0-9]*) jours / ([0-9]*) nuits"', $iframe, $matches, PREG_SET_ORDER);
+        return $controllers;
+    }
+
+    protected function getAsset($url)
+    {
+        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        return sprintf('%s://%s%s',
+            $this->request->getScheme(),
+            $this->request->getHttpHost(),
+            $asset
+        );
+    }
+
+    protected function getStylesheetTag($url)
+    {
+        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        return sprintf('<link rel="stylesheet" href="%s://%s%s">',
+            $this->request->getScheme(),
+            $this->request->getHttpHost(),
+            $asset
+        );
+    }
+
+    protected function getJavscriptTag($url)
+    {
+        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        return sprintf('<script type="text/javascript" src="%s://%s%s"></script>',
+            $this->request->getScheme(),
+            $this->request->getHttpHost(),
+            $asset
+        );
+    }
+
+    protected function replaceC2isMarkerFunction(&$iframe)
+    {
+        $matches = null;
+
+        if (preg_match_all('"{_c2is.replace, \'(.*)\', \'(.*)\', \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
+        {
             foreach ($matches as $match)
             {
-                $iframe = str_replace($match[0], sprintf('%s</div><div class="field">semaines', (int)($match[1] / 8)), $iframe);
+                $newUri = str_replace($match[1], $match[2], $match[3]);
+                $iframe = str_replace($match[0], $newUri, $iframe);
             }
+        }
+    }
 
-            // define back button
-            $backUri = '';
-            if (!empty($queryParameters['from']))
-            {
-                switch ($queryParameters['from'])
-                {
-                    case 'package':
-                        $backUri = 'achat/packages.html';
-                        break;
-                    case 'result':
-                        $backUri = 'achat/resultats-recherche.html';
-                        break;
-                }
-            }
+    protected function replaceC2isMarker(&$iframe)
+    {
+        $this->replaceC2isMarkerFunction($iframe);
 
             // define javascript header source code
-            $javascriptHeader = sprintf(<<<eof
+        $javascriptHeader = sprintf(<<<eof
 <script src="%s"></script>
 <script>var templatePath = '%s';</script><!-- templatePath : chemin du template en absolue -->
 eof
-, $this->getAsset('vendor/head.extended.js', $app, $request)
-, $this->getAsset('', $app, $request));
+, $this->getAsset('vendor/head.extended.js')
+, $this->getAsset('')
+);
 
             // define javascript footer source code
-            $javascriptFooter = sprintf(<<<eof
+        $javascriptFooter = sprintf(<<<eof
     <script>
         head.js(
             {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
@@ -84,66 +131,80 @@ eof
 eof
 );
 
-            $iframe = str_replace(array(
-                '{_c2is.uri}',
-                '{_c2is.stylesheet}',
-                '{_c2is.javascript.header}',
-                '{_c2is.javascript.footer}',
-                '{_c2is.back}',
-                '{_c2is.uri.ficheCamping}',
-                'Choisir',
-                ',00',
-                '<b><b>',
-            ), array(
-                $websiteUri,
-                $this->getStylesheetTag('css/vacancesdirectes/iframe.css', $app, $request),
-                $javascriptHeader,
-                $javascriptFooter,
-                $backUri,
-                sprintf('%s/camping', $websiteUri),
-                'Réserver',
-                '',
-                '',
-            ), $iframe);
-
-            return new Response($iframe);
-        })
-        ->bind('resalys_wrapper');
-
-        return $controllers;
+        $iframe = str_replace(array(
+            '{_c2is.uri}',
+            '{_c2is.stylesheet}',
+            '{_c2is.javascript.header}',
+            '{_c2is.javascript.footer}',
+        ), array(
+            $this->websiteUri,
+            $this->getStylesheetTag('css/vacancesdirectes/iframe.css'),
+            $javascriptHeader,
+            $javascriptFooter,
+        ), $iframe);
     }
 
-    public function replace($iframe)
+    protected function replaceSpecifics(&$iframe)
     {
-        $matches = null;
+        $this->replaceDayNightByWeeks($iframe);
+        $this->replaceBackButtonUri($iframe);
+        $this->replaceWeekTimes($iframe);
+        $this->replaceCampingFicheUri($iframe);
 
-        if (preg_match_all('"{_c2is.replace, \'(.*)\', \'(.*)\', \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
+        $this->replaceString($iframe, 'Choisir', 'Réserver');
+        $this->replaceString($iframe, '<b><b>');
+        $this->replaceString($iframe, 'Vos séjours', 'Votre réservation');
+    }
+
+    protected function replaceDayNightByWeeks(&$iframe)
+    {
+        $dayNight = preg_match_all('"<div class=\"label\">([0-9]*) jours / ([0-9]*) nuits</div>"', $iframe, $matches, PREG_SET_ORDER);
+        foreach ($matches as $match)
         {
-            foreach ($matches as $match)
+            $iframe = str_replace($match[0], sprintf('<div class="label">%s</div><div class="field">semaines</div>', (int)($match[1] / 8)), $iframe);
+        }
+
+        $dayNight = preg_match_all('"<p class=\"proposalLength\">([0-9]*) jours / ([0-9]*) nuits</p>"', $iframe, $matches, PREG_SET_ORDER);
+        foreach ($matches as $match)
+        {
+            $iframe = str_replace($match[0], sprintf('<p class="proposalLength">%s semaines</p>', (int)($match[1] / 8)), $iframe);
+        }
+    }
+
+    protected function replaceBackButtonUri(&$iframe)
+    {
+        $queryParameters  = $this->request->query->all();
+
+        $backUri = '';
+        if (!empty($queryParameters['from']))
+        {
+            switch ($queryParameters['from'])
             {
-                $newUri = str_replace($match[1], $match[2], $match[3]);
-                $iframe = str_replace($match[0], $newUri, $iframe);
+                case 'package':
+                    $backUri = 'achat/packages.html';
+                    break;
+                case 'result':
+                    $backUri = 'achat/resultats-recherche.html';
+                    break;
             }
         }
 
-        return $iframe;
+        $iframe = str_replace('{_c2is.back}', $backUri, $iframe);
     }
 
-    public function getAsset($url, $app, Request $request)
+    protected function replaceWeekTimes(&$iframe)
     {
-        $asset = $app['twig']->getExtension('asset')->asset($url);
-        return sprintf('%s://%s%s', $request->getScheme(), $request->getHttpHost(), $asset);
+        $iframe = preg_replace("/(\d*) x /", "$1 semaines / ", $iframe);
+        $iframe = preg_replace("/1 semaines /", "1 semaine ", $iframe);
     }
 
-    public function getStylesheetTag($url, $app, Request $request)
+    protected function replaceCampingFicheUri(&$iframe)
     {
-        $asset = $app['twig']->getExtension('asset')->asset($url);
-        return sprintf('<link rel="stylesheet" href="%s://%s%s">', $request->getScheme(), $request->getHttpHost(), $asset);
+        $iframe = str_replace('{_c2is.uri.ficheCamping}', sprintf('%s/camping', $this->websiteUri), $iframe);
     }
 
-    public function getJavscriptTag($url, $app, Request $request)
+    protected function replaceString(&$iframe, $search, $replace = '')
     {
-        $asset = $app['twig']->getExtension('asset')->asset($url);
-        return sprintf('<script type="text/javascript" src="%s://%s%s"></script>', $request->getScheme(), $request->getHttpHost(), $asset);
+        $iframe = str_replace($search, $replace, $iframe);
     }
 }

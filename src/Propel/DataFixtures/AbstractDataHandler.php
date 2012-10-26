@@ -67,9 +67,8 @@ abstract class AbstractDataHandler
         {
             $finder = new Finder();
             $files  = $finder->files()->name('*TableMap.php')
-                ->in($this->getRootDir() . '/../')
-                ->exclude('PropelBundle')
-                ->exclude('Tests');
+                ->in($this->getRootDir() . '/src/')
+            ;
 
             foreach ($files as $file)
             {

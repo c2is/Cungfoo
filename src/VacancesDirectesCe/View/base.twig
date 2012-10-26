@@ -33,7 +33,7 @@
             <div id="headerRight">
                 <div id="telephone">
                     <span>Informations & réservations
-                        <a href="tel:+33825133400">0825 133 400 (0,15€/min)</a>
+                        <a>0825 133 400 (0,15€/min)</a>
                     </span>
                 </div>
             </div>
@@ -46,7 +46,9 @@
 
 
         <div id="headerContainer" class="column">
-            {% include 'header.twig'%}
+            {% block header %}
+                {% include 'header.twig'%}
+            {% endblock %}
         </div>
 
         {% block content %}{% endblock %}
@@ -54,9 +56,9 @@
 
     <footer class="clear">
         <div class="footer-link" class="full-width">
-            <a href="#_">Conditions générales de location</a> -
-            <a href="#_">Crédits</a> -
-            <a href="#_">Mentions légales</a>
+            <a href="{{ path('edito_by_slug', {slug: 'conditions-generales-de-location'}) }}">Conditions générales de location</a> -
+            <a href="{{ path('edito_by_slug', {slug: 'credits'}) }}">Crédits</a> -
+            <a href="{{ path('edito_by_slug', {slug: 'mentions-legales'}) }}">Mentions légales</a>
             <span class="card transac">Transactions sécurisées</span>
             <span class="card visa">CB Visa</span>
             <span class="card master">MasterCard</span>

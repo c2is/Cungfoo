@@ -26,6 +26,8 @@ class AchatController implements ControllerProviderInterface
 
         $controllers->match('/packages.html', function (Request $request) use ($app)
         {
+            $isAlreadyClassique = (int) $this->getAlreadyClassique($app);
+
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
@@ -38,6 +40,7 @@ class AchatController implements ControllerProviderInterface
                 $dataForm->campings = explode(';', $searchParametersData['campings']);
                 $dataForm->dateDebut = $searchParametersData['dateDebut'];
                 $dataForm->dateFin = $searchParametersData['dateFin'];
+                $dataForm->isBasseSaison = $searchParametersData['isBasseSaison'];
             }
 
             $achatLineaireForm = $app['form.factory']->create(new AchatLineaireType($app), $dataForm);
@@ -70,8 +73,9 @@ class AchatController implements ControllerProviderInterface
                     }
 
                     // default parameters
-                    $achatLineaireParameters['maxResults'] = 12;
-                    $achatLineaireParameters['sortString'] = "Priority,StartDate,Etab,RoomType(2),ProductPriority";
+                    $achatLineaireParameters['search_page'] = 1;
+                    $achatLineaireParameters['search_form_max_results'] = 12;
+                    $achatLineaireParameters['search_form_sort_string'] = "Priority,StartDate,Etab,RoomType(2),ProductPriority";
 
                     unset($achatLineaireParameters['token']);
 
@@ -80,7 +84,8 @@ class AchatController implements ControllerProviderInterface
             }
 
             return $app['twig']->render('Achat/packages.twig', array(
-                'achatLineaireForm' => $achatLineaireForm->createView(),
+                'achatLineaireForm'  => $achatLineaireForm->createView(),
+                'isAlreadyClassique' => $isAlreadyClassique,
             ));
         })
         ->bind('achat_packages');
@@ -98,8 +103,9 @@ class AchatController implements ControllerProviderInterface
 
                 // override default paramterers
                 $postParameters = $request->request->all();
-                $achatLineaire['maxResults'] = isset($postParameters['search_form_max_results']) ? $postParameters['search_form_max_results'] : 12;
-                $achatLineaire['sortString'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
+                $achatLineaire['search_page'] = isset($postParameters['search_page']) ? $postParameters['search_page'] : 1;
+                $achatLineaire['search_form_max_results'] = isset($postParameters['search_form_max_results']) ? $postParameters['search_form_max_results'] : 12;
+                $achatLineaire['search_form_sort_string'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
             }
 
             return $app['twig']->render('Achat/resultatsRecherche.twig', array(
@@ -128,5 +134,22 @@ class AchatController implements ControllerProviderInterface
         ->bind('achat_confirmation_reservation');
 
         return $controllers;
+    }
+
+    public function getAlreadyClassique(Application $app)
+    {
+        try
+        {
+            $url = sprintf("%s?webuser=web_ce_achat_fr&display=customer_area&tokens=ignore_token&session=%s&customer_area_sub_page=has_lineaire",
+                $app['url_generator']->generate('resalys_wrapper', array(), true),
+                $app['session']->get('resalys_user')->session
+            );
+
+            return trim(file_get_contents($url)) == 1;
+        }
+        catch (\Exception $e)
+        {
+            return false;
+        }
     }
 }

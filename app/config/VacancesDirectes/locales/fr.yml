@@ -48,3 +48,47 @@ date_search.button.submit: Rechercher
 "comme": comme
 "ans": ans
 "Toutes": Toutes
+
+header.information: Informations & réservations
+header.telephone: 0825 133 400 (0,15€/min)
+
+fiche.camping: Camping
+fiche.situer_carte: Situer sur la carte
+fiche.le_camping: Le camping
+fiche.les_locations: Les locations
+fiche.sur_place: Sur place
+fiche.a_proximite: A proximité
+fiche.infos_pratiques: Infos pratiques
+fiche.video: Vidéo
+fiche.emplacements: emplacements
+fiche.ouvert_du: Ouvert du
+fiche.vous_aimerez: Vous aimerez
+fiche.comme: comme...
+fiche.les_vacances_a: Les vacances à
+fiche.nous_avons_liste: nous avons listé :
+fiche.sites_a_visiter: sites à visiter
+fiche.activites_sportives: activités sportives
+fiche.evenements_culturels: événements culturels
+fiche.evenement_ne_pas_manquer: L'événement à ne pas manquer :
+fiche.distance_camping: Distance du camping :
+fiche.filtrer_par: Filtrer par :
+fiche.toutes_categories: Toutes catégories
+fiche.toutes_capacite: Toutes capacités
+fiche.capacite: Capacité :
+fiche.places: places
+fiche.nombre_chambres: Nombre de chambres :
+fiche.surface: Surface :
+fiche.type_terrasse: Type de terrasse :
+fiche.activites: Activités
+fiche.equipements: Equipements
+fiche.services_complementaires: Services complémentaires
+fiche.activites_et_sites_a_visiter: Activités et sites à visiter
+fiche.km: km
+fiche.agenda_culturel_et_sorties: Agenda culturel et sorties
+fiche.coordonnees_du_camping: Coordonnées du camping
+fiche.gps: GPS :
+fiche.horaires_ouverture: Horaires d'ouverture
+fiche.reception: Réception
+fiche.arrivees_departs: Arrivées/Départs
+fiche.fax: Fax :
+fiche.tel: Tél :

@@ -1,0 +1,351 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div id="wrap" class="fixed-width clear">
+    <div class="column left">
+        <div itemscope itemtype="http://schema.org/Place">
+            <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
+            <p class="keywordsFiche">
+                {% if etab.activites | length %}
+                    {% for activite in etab.activites %}
+                        {% if loop.index <= 2 %}
+                            {{ activite.name }} -
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if etab.serviceComplementaires | length %}
+                    {% for serviceComplementaire in etab.serviceComplementaires %}
+                        {% if loop.index <= 2 %}
+                            {{ serviceComplementaire.name }}
+                            {% if loop.index < 2 %} - {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </p>
+            <h2>{{ "fiche.camping" | trans }} {{ etab.city }}</h2>
+            <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="addressCountry">{{ etab.country }}</span> |
+                <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
+                <span itemprop="postalCode">{{ etab.zip }}</span>
+                <span itemprop="addressLocality">{{ etab.ville }}</span>
+                <button data-triggerLink="#tabProximite" class="triggerClick bt trans cfushia">{{ "fiche.situer_carte" | trans }}</button>
+            </div>
+            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="{{ etab.geoCoordinateX }}">
+                <meta itemprop="longitude" content="{{ etab.geoCoordinateY }}">
+            </div>
+        </div>
+
+        <ul class="tabControls clear">
+            <li><a href="#tabCamp" class="active">{{ "fiche.le_camping" | trans }}</a></li>
+            <li><a href="#tabLocations">{{ "fiche.les_locations" | trans }}</a></li>
+            <li><a href="#tabSurplace">{{ "fiche.sur_place" | trans }}</a></li>
+            <li><a href="#tabProximite">{{ "fiche.a_proximite" | trans }}</a></li>
+            <!--<li><a href="#tabAvis">Avis</a></li>-->
+            <li><a href="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</a></li>
+        </ul>
+
+        <div class="tabCampDiapo">
+            <div class="slider"><div class="slide clear">
+                {% if multimedia | length %}
+                {% for media in multimedia %}
+                    <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+                {% endfor %}
+                {% endif %}
+            </div></div>
+            <form class="tabCampDiapoOptions clear" action="#_">
+                <fieldset class="left">
+                    <span>Photos</span>
+                    <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
+                    {% for tag in tags %}
+                        <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.slug }}</label>
+                    {% endfor %}
+                </fieldset>
+                <fieldset class="right">
+                    <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="">{{ "fiche.video" | trans }}</a>
+                    <a class="popin360 tabCamp360" href="{{ etab.image360Path }}">360°</a>
+                </fieldset>
+            </form>
+        </div>
+        <div id="tabCamp" class="tabs">
+            <div class="tabCampDesc">
+                <h3>{{ etab.title}}</h3>
+                <p><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
+                <p>{{ etab.description }}</p>
+            </div>
+
+            <div class="temoignFiche bloc gris">
+                {% if personnages | length %}
+                <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+                <h4>{{ "fiche.comme" | trans }}</h4>
+                <div>
+                    {% for personnage in personnages %}
+                        <div class="temoignFicheIt fish">
+                            <span class="perso">{{ personnage.prenom | trans }}</span>
+                            <span class="age">{{ personnage.age }} ans</span>
+                            <ul>
+                                {% for avantage in personnage.avantages %}
+                                <li>{{ avantage.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+                <hr class="clearboth">
+                {% endif %}
+                <h4>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h4>
+                <dl>
+                    <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}"></dd>
+                    <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
+                    <dd class="list">
+                       <ul>
+                           <li>{{ nbSiteAVisiter }} {{ "fiche.sites_a_visiter" | trans }}</li>
+                           <li>{{ nbActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>
+                           <li>{{ nbEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>
+                       </ul>
+                    </dd>
+                </dl>
+                {% if eventPrioritaire | length %}
+                <dl>
+                    <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
+                    <dd class="img"><img src="{{ eventPrioritaire.image }}" /></dd>
+                    <dd class="list event">
+                        <strong>{{ eventPrioritaire.name }}<br />
+                        {{ eventPrioritaire.strDate }}</strong> {{ eventPrioritaire.address }}<br />
+                        {{ eventPrioritaire.zipcode }} {{ eventPrioritaire.city }}<br />
+                        {{ "fiche.distance_camping" | trans }} {{ eventPrioritaire.distanceCamping/100 }} {{ "fiche.km" | trans }}
+                    </dd>
+                </dl>
+                {% endif %}
+            </div>
+            <nav class="paginationTabs clear">
+                <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
+            </nav>
+        </div>
+        <!-- tab Locations -->
+        <div id="tabLocations" class="tabs">
+            <form class="filterBy" action="">
+                <fieldset>
+                    <span>{{ "fiche.filtrer_par" | trans }}</span>
+                    <select name="type" id="type">
+                        <option value="">{{ "fiche.toutes_categories" | trans }}</option>
+                        {% if etab.categoriesTypeHergement | length %}
+                        {% for category in etab.categoriesTypeHergement %}
+                            <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                    <select name="capacite" id="capacite">
+                        <option value="">{{ "fiche.toutes_capacite" | trans }}</option>
+                        {% if etab.capacitesTypeHebergement | length %}
+                        {% for nbPlace in etab.capacitesTypeHebergement %}
+                            <option value="cap{{ nbPlace }}">{{ "fiche.capacite" | trans }} {{ nbPlace }} {{ "fiche.places" | trans }}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                </fieldset>
+            </form>
+            {% if etab.typeHebergements | length %}
+            {% for hebergement in etab.typeHebergements %}
+                <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
+                    <img src="{{ asset(hebergement.imageHebergementPath) }}" width=181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
+                    <div style="overflow:hidden;">
+                    <span class="h4-like">{{ hebergement.name | trans }}</span>
+                    <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">{{ hebergement.composition | trans | nl2br }}</span>
+                    <strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombreChambre }}<br>
+                    {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
+                    {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>
+                    <p class="clearboth">{{ hebergement.description | trans | nl2br }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+
+            <nav class="paginationTabs clear">
+                <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
+                <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">{{ "fiche.sur_place" | trans }}</button>
+            </nav>
+        </div>
+        <!-- tab Sur place -->
+        <div id="tabSurplace" class="tabs">
+            <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
+            <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
+            <div class="colSurPlace clearboth">
+                {% if etab.activites | length %}
+                <dl>
+                    <dt><span>{{ "fiche.activites" | trans }}</span></dt>
+                    <dd class="activites"><ul>
+                        {% for activite in etab.activites %}
+                            <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
+                        {% endfor %}
+                    </ul></dd>
+                </dl>
+                {% endif %}
+                <dl>
+                    <dt><span>{{ "fiche.equipements" | trans }}</span></dt>
+                    <dd class="equipements"><ul>
+                    </ul></dd>
+                </dl>
+                {% if etab.serviceComplementaires | length %}
+                <dl>
+                    <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
+                    <dd class="services"><ul>
+                        {% for serviceComplementaire in etab.serviceComplementaires %}
+                            <li><img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}"><span>{{ serviceComplementaire.name }}</span></span></li>
+                        {% endfor %}
+                    </ul></dd>
+                </dl>
+                {% endif %}
+            </div>
+
+            {% if personnageAleatoire %}
+            <div class="temoignFiche bloc gris">
+                <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+                <h4>{{ "fiche.comme" | trans }}</h4>
+                <div>
+                    <div class="temoignFicheIt fish">
+                        <span class="perso">{{ personnageAleatoire.prenom }}</span>
+                        <span class="age">{{ personnageAleatoire.age }} ans</span>
+                    </div>
+                </div>
+                <div class="slider"><div class="slide">
+                    {% for avantage in personnageAleatoire.avantages %}
+                        <dl>
+                            <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
+                            <dt>{{ avantage.name }}</dt>
+                            <dd>{{ avantage.description }}</dd>
+                        </dl>
+                    {% endfor %}
+                </div></div>
+            </div>
+            {% endif %}
+
+            <nav class="paginationTabs clear">
+                <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
+                <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">{{ "fiche.a_proximite" | trans }}</button>
+            </nav>
+        </div>
+        <div id="tabProximite" class="tabs">
+            <div id="proxMap" class="gmap" style="width:616px;height:326px;">
+                <script>
+                    function proxInit() {
+                        var proxMkrs = [
+                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 5, '{#{{ path('infobox_camping', {idResalys: etab.code}) }}#}', markerFushia]
+                            {% for poi in sitesAVisiter %}
+                            ,['{{ poi.name }}', {{ poi.geoCoordinateX }}, {{ poi.geoCoordinateY }}, 1, '', markerVert]
+                            {% endfor %}
+                            {% for event in events %}
+                            ,['{{ event.name }}', {{ event.geoCoordinateX }}, {{ event.geoCoordinateY }}, 1, '', markerBleu]
+                            {% endfor %}
+
+                        ];
+                        var centerproxMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
+                                mapOptions = {
+                                    zoom: 11,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                    center: centerproxMkr
+                                };
+                        proxMap = new google.maps.Map(document.getElementById('proxMap'), mapOptions);
+                        setMarkers(proxMap, proxMkrs);
+                    }
+                </script>
+            </div>
+            {% if sitesAVisiter | length %}
+            <h3>{{ "fiche.activites_et_sites_a_visiter" | trans }}</h3>
+            <div class="activites clear">
+                {% for poi in sitesAVisiter %}
+                    <div class="miniEncart left clear">
+                        <img src="{{ poi.image }}" width="101" height="101" alt="{{ poi.name }}" class="left boxborder">
+                        <span class="h5-like">{{ poi.name }}</span>
+                        <p>{{ poi.address }}<br>
+                            {{ poi.address2 }}<br>
+                        <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
+                            {{ "fiche.distance_camping" | trans }} {{ poi.distanceCamping/100 }} {{ "fiche.km" | trans }}<br>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if events | length %}
+            <h3>{{ "fiche.agenda_culturel_et_sorties" | trans }}</h3>
+            <div class="agenda clear">
+                {% for event in events %}
+                    <div class="miniEncart left clear">
+                        <img src="{{ event.image }}" width="101" height="101" alt="{{ event.name }}" class="left boxborder">
+                        <span class="h5-like">{{ event.name }}</span>
+                        <strong class="date">{{ event.strDate }}</strong>
+                        <p>{{ event.address }}<br>
+                            {{ event.address2 }}<br>
+                        <span>{{ event.zipcode }} {{ event.city }}</span><br>
+                            {{ "fiche.distance_camping" | trans }} {{ event.distanceCamping/100 }} {{ "fiche.km" | trans }}<br>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="infoDestination bloc sombre">
+                <h3>{{ region.name }}</h3>
+                <p>{{ region.description }}</p>
+
+                <img class="iDestImg1 boxborder" src="{{ asset(region.imageEncartPath) }}" width="211" height="93" alt="{{ region.name }}">
+                <img class="iDestImg2 boxborder" src="{{ asset(region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ region.name }}">
+            </div>
+
+            <nav class="paginationTabs clear">
+                <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">{{ "fiche.sur_place" | trans }}</button>
+                <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</button>
+            </nav>
+        </div>
+        <div id=tabInfos class="tabs">
+            <div id="infoMap" class="gmap" style="width:616px;height:326px;">
+                <script>
+                    function infoInit() {
+                        var infoMkrs = [
+                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia]
+                        ];
+                        var centerinfoMkr = new google.maps.LatLng({{ etab.geoCoordinateX }},{{ etab.geoCoordinateY }}),
+                                mapOptions = {
+                                    zoom: 11,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                    center: centerinfoMkr
+                                };
+                        infoMap = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
+                        setMarkers(infoMap, infoMkrs);
+                    }
+                </script>
+            </div>
+            <h3 class="clearboth">{{ "fiche.coordonnees_du_camping" | trans }} {{ etab.name }}</h3>
+            <div class="blCoordGps left">
+                <span class="gps">
+                    {{ "fiche.gps" | trans }} {{ etab.getDmsCoordinates.latitude.d }}° {{ etab.getDmsCoordinates.latitude.m }}' {{ etab.getDmsCoordinates.latitude.s }}", {{ etab.getDmsCoordinates.longitude.d }}° {{ etab.getDmsCoordinates.longitude.m }}' {{ etab.getDmsCoordinates.longitude.s }}"
+                </span>
+                {{ etab.address1 }}<br />
+                {{ etab.address2 }}<br />
+                {{ etab.zip }} {{ etab.city }}
+            </div>
+            <div class="blCoordTel left">
+                {{ "fiche.tel" | trans }} {{ etab.phone1 }}<br />
+                {{ "fiche.fax" | trans }} {{ etab.phone2 }}
+            </div>
+            <h3 class="clearboth">{{ "fiche.horaires_ouverture" | trans }}</h3>
+            <dl class="blHoraire hRecept left">
+                <dt>{{ "fiche.reception" | trans }}</dt>
+                <dd>{{ etab.ouvertureReception | trans | nl2br }}</dd>
+            </dl>
+            <dl class="blHoraire hCamp left">
+                <dt>{{ "fiche.camping" | trans }}</dt>
+                <dd>{{ etab.ouvertureCamping | trans | nl2br }}</dd>
+            </dl>
+            <h3 class="clearboth">{{ "fiche.arrivees_departs" | trans }}</h3>
+            {{ etab.arriveesDeparts | trans | nl2br }}
+
+            <nav class="paginationTabs clear">
+                <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">{{ "fiche.a_proximite" | trans }}</button>
+                <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}

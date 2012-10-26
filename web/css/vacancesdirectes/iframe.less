@@ -178,16 +178,45 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 
 /* packages */
 #searchProductFormContener {display:none;}
-#homePage #searchResult {width:928px;
-  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;position:relative;width:296px;margin-right:20px;float:left;
+#homePage #searchResult {width:928px;height:560px;position:relative;
+  .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;width:296px;margin-right:20px;float:left;
     &.aProposalBlockLast{margin-right:0;}
-    &.package .proposalDescriptionTitle{background-color:@colorRubricVert;}
-    &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;}
-    .proposalDescriptionTitle{background-color:@colorRubricOrange;margin:-20px -20px 0;padding:10px 20px 10px;.border-radius(10px 10px 0 0);
-      h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:229px;}
-      h2{color:#f5bd8c;}
-      .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;color:@colorRubricOrange;position:absolute;top:10px;right:15px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;}
+    &.package .proposalDescriptionTitle{background-color:@colorRubricVert;
+      .proposalDescriptionDetailsLink{color:@colorRubricVert;}
     }
+    &.bouquet .proposalDescriptionTitle{background-color:@colorRubricOrange;
+      .proposalDescriptionDetailsLink{color:@colorRubricOrange;}
+    }
+    .proposalDescriptionTitle{position:relative;background-color:@colorRubricOrange;color:@colorRubricOrange;margin:-20px -20px 0;padding:10px 20px 10px;.border-radius(10px 10px 0 0);
+        h1{color:@colorBlanc;font-family:@ptnarrow;font-weight:bold;font-size:20px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:229px;}
+         h2{color:#f5bd8c;}
+        .proposalDescriptionDetailsLink{width:27px;height:27px;background:transparent url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 0;position:absolute;top:10px;right:15px;font-family:@ptnarrow;font-weight:bold;font-size:18px;.verticalCenter(27px);text-align: center;cursor:help;}
+    }
+    /* popUp*/
+    .proposalDescriptionDetailsPopUp{position:absolute;width:744px;top:0;left:50%;background:#fff;.border-radius(10px);overflow:hidden;margin:30px 0px 0px -372px;z-index:2;padding-bottom:25px;.box-shadow();
+        .titre{float:left;margin-bottom:10px;text-transform:uppercase;text-decoration:none;font:bold 23px/24px @ptnarrow;padding:7px 25px;.border-radius(0 0 10px 0);color:#fff;background-color:@colorRubricOrange;}
+        .left{width:240px;}
+        .right{width:504px;border-left:1px solid #ccc;}
+        .soustitre{display:block;margin:20px 40px 15px;text-align:center;font:16px/20px Arial, sans-serif;color:#28568a;}
+        .promoPrix{display:block;width:209px;margin:0 auto;text-align:center;background:url(../../images/vacancesdirectes/common/pict/arrowLeftPopCE.png) no-repeat 0 0;font:bold 21px/28px @ptnarrow;color:#28568a;
+          strong{color:@colorRubricOrange;font-size:30px;}
+          em{color:@colorRubricOrange;}
+        }
+        .titreDestination{.h3Decroch(@colorRubricOrange, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;.border-radius(7px 0 7px 0);
+        }
+        ul{margin:20px 0 0 16px;
+          li{float:left;width:155px;color:#28568a;font:10px/14px Arial, sans-serif;}
+        }
+    }
+    &.package{
+      .titre{background-color:@colorRubricVert;}
+      .promoPrix{
+        strong{color:@colorRubricVert;}
+        em{color:@colorRubricVert;}
+      }
+      .titreDestination{.h3Decroch(@colorRubricVert, @colorBlanc);}
+    }
+  /* popUp*/
     .proposalDescriptionContent{width:100%;
       tr:first-child td{padding:20px 0;vertical-align:bottom;}
       .price{font-family:@ptnarrow;font-weight:bold;font-size:44px;text-transform:uppercase;text-align:right;margin-bottom:-13px;display:block;}
@@ -198,8 +227,12 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
   }
 }
 
-/* warning */
+/* warning / error */
 .warning{border:3px solid @colorFushia;margin:0 20px 25px;padding:10px;font-weight:bold;text-align:center;}
+.error{margin-bottom:10px;font:12px Arial, sans-serif;color:@colorRubricOrange;
+  li:before{content:"-";padding-right:3px;}
+}
+#forgetPassword .error{margin:-15px 0 20px;}
 /* // warning */
 
 /* Resa Packages */
@@ -283,11 +316,18 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
     .field{color:@colorFushia;font-size:24px;padding-left:10px;}
   }
   .aField{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;margin-bottom:15px;
-    label, .label{display:block;margin-bottom:5px;}
+    label, .label{display:block;margin-bottom:5px;
+      &:after{content:":";padding-left:3px;}
+    }
     [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
   }
   .aBtField{.clearboth();}
   [type="submit"], .okButton{float:right;margin:0 14px 15px;padding:5px 35px}
+}
+#forgetPassword{
+  .aField{
+    label{float:left;padding:7px 10px 0 0;text-align:right;padding-right:10px;width:120px;}
+  }
 }
 
 #searchResultPage{
@@ -335,7 +375,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 }
 
 #footerContener{overflow:hidden;margin-top:20px;
-  .footerNavigation{display:none;
+  .mentions, .footerNavigation{display:none;
     &.gauche, &.droite, &.pageListe{display:block;}
     &.gauche{float:left;}
     &.droite{float:right;margin-top:-14px;}

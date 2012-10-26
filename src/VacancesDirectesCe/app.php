@@ -17,6 +17,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider());
 $app['security.firewalls'] =  array(
     'resalys' => array('pattern' => '^/resalys'),
     'request' => array('pattern' => '^/request'),
+    'editos' => array('pattern' => '^/editos'),
     'ce_login' => array('pattern' => '^/login$'),
     'ce' => array(
         'pattern'   => '/',
@@ -54,6 +55,27 @@ $app['security.encoder.digest'] = $app->share(function ($app) {
 
 /* T W I G  C O N F I G U R A T I O N  */
 $app['twig.path'] = array(__DIR__.'/View', __DIR__.'/../Cungfoo/View');
+
+$app['translator'] = $app->share($app->extend('translator',
+    function($translator, $app) {
+        $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
+        $translator->addResource('yaml', sprintf('%s/Cungfoo/locales/fr.yml', $app['config']->get('config_dir')), 'fr');
+
+        return $translator;
+    }
+));
+
+$app->register(new \Silex\Provider\SwiftmailerServiceProvider());
+
+$app['swiftmailer.options'] = array(
+    'host' => 'smtp.teaser.net',
+    'port' => '587',
+    'username' => 'serveurs@c2is.fr',
+    'password' => 'RiiU879kH',
+    'encryption' => null,
+    'auth_mode' => null
+);
+
 
 return $app;
 

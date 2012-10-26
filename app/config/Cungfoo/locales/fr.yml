@@ -168,6 +168,7 @@ menu.event: Evènement
 menu.cms: Cms
 menu.personnages: Personnages
 menu.avantages: Avantages
+menu.editos: Éditos
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -334,6 +335,15 @@ avantage.description: Description
 avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
 
+edito.crud.create: Création d'un édito
+edito.crud.list: Liste des editos
+edito.crud.update: Mettre à jour l'édito %name%
+edito.crud.view: Détails de l'édito %name%
+edito.id: Id
+edito.slug: Slug
+edito.name: Titre
+edito.description: Description
+
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
 multimedia_etablissement.crud.update: Mettre à jour le média %name%
@@ -351,4 +361,33 @@ tag.crud.view: Détails du tag %name%
 tag.id: Id
 tag.name: Nom
 tag.multimedia_etablissements: Média
+
+demande_identifiant.crud.list: Liste des demandes d'identifiant
+demande_identifiant.crud.view: Détails de la demande %name%
+demande_identifiant.id: Id
+demande_identifiant.societe_nom: Nom de la société
+demande_identifiant.societe_adresse_1: Adresse 1
+demande_identifiant.societe_adresse_2: Adresse 2
+demande_identifiant.societe_adresse_3: Adresse 3
+demande_identifiant.societe_adresse_4: Adresse 4
+demande_identifiant.societe_telephone: Téléphone de la société
+demande_identifiant.societe_fax: Fax de la société
+demande_identifiant.contact_prenom: Prénom
+demande_identifiant.contact_nom: Nom
+demande_identifiant.contact_telephone: Téléphone
+demande_identifiant.contact_mail: Email
+demande_identifiant.permanence: Permanence
+demande_identifiant.permanence_matin_de: Matin de
+demande_identifiant.permanence_matin_a: Matin à
+demande_identifiant.permanence_apres_midi_de: Après midi de
+demande_identifiant.permanence_apres_midi_a: Après midi à
+demande_identifiant.client_vd: Déjà client chez Vacances directes
+demande_identifiant.client_vd_code: Code partenaire
+demande_identifiant.client_vc: Déjà client chez Village Center Loisirs
+demande_identifiant.client_vc_code: Code partenaire
+demande_identifiant.brochure: Souhaitez-vous recevoir la brochure CE 2013 ?
+demande_identifiant.identifiant: Souhaitez-vous obtenir un identifiant pour une gestion en ligne ?
+
+This value should not be blank.: Cette valeur ne doit pas être vide.
+This value is not a valid email address.: Cette valeur n'est pas une adresse email valide.
 

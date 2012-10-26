@@ -35,3 +35,29 @@
     <div id="SearchDate_date_interval" data-debut-saison="{{ app.config.get('vd_config')['date']['debut_saison'] | date('Y-m-d') }}" data-fin-saison="{{ app.config.get('vd_config')['date']['fin_saison'] | date('Y-m-d') }}"></div>
     {{ block('date_widget') }}
 {% endblock %}
+
+{% block _AchatLineaire_isBasseSaison_widget %}
+{% spaceless %}
+    <div class="clear">
+    {% for child in form %}
+        <p class="clearboth">
+        {{ form_widget(child) }}
+        {{ form_label(child) }}
+        </p>
+    {% endfor %}
+</div>
+{% endspaceless %}
+{% endblock %}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+    {% for child in form %}
+        <label class="{{ (multiple ? 'checkbox' : 'radio') ~ (inline is defined and inline ? ' inline' : '') }}">
+            {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+            {{ child.vars.label|trans({}, translation_domain) }}
+        </label>
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}
