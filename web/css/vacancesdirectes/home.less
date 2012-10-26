@@ -70,13 +70,20 @@
   }
   #activitiesBloc{width:928px;height:253px;background:url("../../images/vacancesdirectes/common/pict/activities-bloc.jpg") no-repeat 0 0 transparent;padding-bottom:5px;
     #activitiesBlocTitle{width:285px;height:24px;color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;}
-    #activitiesBlocHeadline1{width:172px;height:955px;position:absolute;top:117px;left:137px;padding:0 15px;background:url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -115px transparent;text-align:center;.verticalCenter(115px,14px,multiple);}
-    #activitiesBlocHeadline1 span{margin-top:10px;color:@colorBlanc;font-size:16px;}
-    #activitiesBlocHeadline2{width:172px;height:95px;position:absolute;top:117px;left:437px;padding:0 15px;background:url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -210px transparent;text-align:center;.verticalCenter(115px,14px,multiple);}
-    #activitiesBlocHeadline2 span{margin-top:10px;color:@colorBlanc;font-size:16px;}
-    #activitiesBlocHeadline3{width:172px;height:105px;position:absolute;top:117px;left:737px;padding:0 15px;background:url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -305px transparent;text-align:center;.verticalCenter(115px,14px,multiple);}
-    #activitiesBlocHeadline3 span{margin-top:-20px;color:@colorBlanc;font-size:16px;}
-
+    .blueCloud {position:absolute;padding:0 25px 0 15px;background:url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;text-align:center;}
+    .blueCloud span{color:@colorBlanc;font:bold 15px/15px @ptnarrow;text-transform:uppercase;}
+    #activitiesBlocHeadline1{width:172px;.verticalCenter(95px,15px,multiple);top:47px;left:70px;background-position:0 -115px;}
+    #activitiesBlocHeadline1 span{margin-top:-18px;}
+    #activitiesBlocHeadline2{width:172px;.verticalCenter(95px,15px,multiple);top:60px;left:415px;background-position:0 -210px;}
+    #activitiesBlocHeadline2 span{margin-top:-6px;}
+    #activitiesBlocHeadline3{width:172px;.verticalCenter(105px,15px,multiple);top:82px;left:680px;background-position:0 -305px;}
+    #activitiesBlocHeadline3 span{margin-top:-12px;}
+    .activities{position:absolute;top:130px;width:220px;height:100px;}
+    .activities li a{color:@colorBlanc;padding-left:15px;border-left:1px solid #f25b8d;font-size:14px;line-height:12px;text-decoration:none;}
+    .activities li a:hover{font-weight:bold;}
+    #activities1{left:220px;}
+    #activities2{left:365px;}
+    #activities3{left:560px;}
   }
 }
 .ie-lte7 .stain .span{display:inline;}

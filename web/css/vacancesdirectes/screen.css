@@ -1065,71 +1065,90 @@ h6,
   font: bold 24px/24px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
 }
+.home #activitiesBloc .blueCloud {
+  position: absolute;
+  padding: 0 25px 0 15px;
+  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;
+  text-align: center;
+}
+.home #activitiesBloc .blueCloud span {
+  color: #ffffff;
+  font: bold 15px/15px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
 .home #activitiesBloc #activitiesBlocHeadline1 {
   width: 172px;
-  height: 955px;
-  position: absolute;
-  top: 117px;
-  left: 137px;
-  padding: 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -115px transparent;
-  text-align: center;
-  height: 115px;
-  line-height: 115px;
+  height: 95px;
+  line-height: 95px;
+  top: 47px;
+  left: 70px;
+  background-position: 0 -115px;
 }
 .home #activitiesBloc #activitiesBlocHeadline1 > * {
   vertical-align: middle;
   display: inline-block;
-  line-height: 14px;
+  line-height: 15px;
 }
 .home #activitiesBloc #activitiesBlocHeadline1 span {
-  margin-top: 10px;
-  color: #ffffff;
-  font-size: 16px;
+  margin-top: -18px;
 }
 .home #activitiesBloc #activitiesBlocHeadline2 {
   width: 172px;
   height: 95px;
-  position: absolute;
-  top: 117px;
-  left: 437px;
-  padding: 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -210px transparent;
-  text-align: center;
-  height: 115px;
-  line-height: 115px;
+  line-height: 95px;
+  top: 60px;
+  left: 415px;
+  background-position: 0 -210px;
 }
 .home #activitiesBloc #activitiesBlocHeadline2 > * {
   vertical-align: middle;
   display: inline-block;
-  line-height: 14px;
+  line-height: 15px;
 }
 .home #activitiesBloc #activitiesBlocHeadline2 span {
-  margin-top: 10px;
-  color: #ffffff;
-  font-size: 16px;
+  margin-top: -6px;
 }
 .home #activitiesBloc #activitiesBlocHeadline3 {
   width: 172px;
   height: 105px;
-  position: absolute;
-  top: 117px;
-  left: 737px;
-  padding: 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 -305px transparent;
-  text-align: center;
-  height: 115px;
-  line-height: 115px;
+  line-height: 105px;
+  top: 82px;
+  left: 680px;
+  background-position: 0 -305px;
 }
 .home #activitiesBloc #activitiesBlocHeadline3 > * {
   vertical-align: middle;
   display: inline-block;
-  line-height: 14px;
+  line-height: 15px;
 }
 .home #activitiesBloc #activitiesBlocHeadline3 span {
-  margin-top: -20px;
+  margin-top: -12px;
+}
+.home #activitiesBloc .activities {
+  position: absolute;
+  top: 130px;
+  width: 220px;
+  height: 100px;
+}
+.home #activitiesBloc .activities li a {
   color: #ffffff;
-  font-size: 16px;
+  padding-left: 15px;
+  border-left: 1px solid #f25b8d;
+  font-size: 14px;
+  line-height: 12px;
+  text-decoration: none;
+}
+.home #activitiesBloc .activities li a:hover {
+  font-weight: bold;
+}
+.home #activitiesBloc #activities1 {
+  left: 220px;
+}
+.home #activitiesBloc #activities2 {
+  left: 365px;
+}
+.home #activitiesBloc #activities3 {
+  left: 560px;
 }
 .ie-lte7 .stain .span {
   display: inline;
