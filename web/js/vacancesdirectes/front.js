@@ -315,6 +315,7 @@ $(function() {
     if ($('.gmap').length > 0) {
         loadGmapScript();
     }
+
 });
 
 /*-- HEADREADY --*/
@@ -346,7 +347,7 @@ function switchLinear() {
     $('#AchatLineaire_isBasseSaison').attr('class','clear ' + radioValue);
     var alreadyLinear = parseInt($('#AchatLineaire_isBasseSaison').attr('data-already-linear'));
     var titleText = alreadyLinear ? "Recherche de linéaires" : "Recherche de linéaires classiques";
-    var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inlure un minimum de 6 semaines.";
+    var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inclure un minimum de 6 semaines.";
     var legendText = "haute saison";
     console.log(radioValue);
     console.log(alreadyLinear);
