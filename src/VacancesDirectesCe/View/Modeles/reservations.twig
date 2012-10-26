@@ -1,0 +1,72 @@
+{% extends "base.twig" %}
+
+{% block title %}Packages{% endblock %}
+
+{% block headjs %}{{ parent() }}
+,{search: templatePath + "js/vacancesdirectes/search.js"}
+{% endblock %}
+
+{% block content %}
+    <div id="searchContainerReservation" class="column clear">
+        <div class="searchBox full-width">
+            <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
+                <fieldset>
+                    <legend>Recherche de linéaires classique</legend>
+
+                    <div class="error">{{ form_errors(achatLineaireForm) }}</div>
+
+                    <ol>
+                        <li id="AchatLineaire_isBasseSaison" data-already-linear="1" style="display:none;">
+                            {{ form_widget(achatLineaireForm.isBasseSaison) }}
+                        </li>
+                        <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.pays) }}
+                                {{ form_widget(achatLineaireForm.region) }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.campings, { 'attr': {'class': 'sMultSelect'}}) }}
+                            </div>
+                        </li>
+                        <li>
+                            <div id="datepicker">
+                                {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
+                                {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
+                                <div id="datepickerField" class="clear">
+                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" /><span class="date"></span>
+                                </div>
+                                <div id="datepickerCalendar">
+
+                                </div>
+                            </div>
+                            <button type="submit" class="bt fushia">Rechercher</button>
+                        </li>
+                    </ol>
+                </fieldset>
+                {{ form_rest(achatLineaireForm) }}
+
+                <script type="text/javascript">
+                    var fStartDate = '2013/04/06',                  // must be a saturday
+                            fEndDate = '2013/10/26',                // must be a saturday
+                            linear = "reservation",
+                            numMinWeeks = 1,                       // minimum number of weeks selectable (for linear mini)
+                            info = "";
+                </script>
+
+                <script type="text/javascript">
+                    var getRegionsByPays    = "{{ path('search_get_regions_by_pays') }}";
+                    var getCampingsByPays   = "{{ path('search_get_campings_by_pays') }}";
+                    var getCampingsByRegion = "{{ path('search_get_campings_by_region') }}";
+                </script>
+            </form>
+            <div id="searchText" class="searchBlock">
+                <h2>Choisissez votre linéaire</h2>
+                <div id="searchTextContent">
+                    <p>Vous souhaitez réserver un linéaire haute saison : Profitez de 8 semaines minimum consécutives (du 06/07 au 31/08/13) sur le ou les campings spécialement choisis par vos soins.</p><br/><p>Vous pouvez aisément ajouter, dès l’achat, des semaines consécutives avant ou après le linéaire (135€ la semaine). N’oubliez pas, grâce à ce linéaire, vous pouvez acheter un linéaire mini : 6 semaines consécutives en basse saison (135€ la semaine) !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -23,13 +23,13 @@ class AdministrationController implements ControllerProviderInterface
 
         $controllers->match('/reservations.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Administration/reservations.twig');
+            return $app['twig']->render('Modeles/suiviReservations.twig');
         })
         ->bind('administration_reservations');
 
         $controllers->match('/coordonnees.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Administration/coordonnees.twig');
+            return $app['twig']->render('Modeles/coordonnees.twig');
         })
         ->bind('administration_coordonnees');
 
