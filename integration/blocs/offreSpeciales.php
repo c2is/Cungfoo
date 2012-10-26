@@ -1,0 +1,1 @@
+<p>{{ Bloc "Offres spéciales" }}</p>
