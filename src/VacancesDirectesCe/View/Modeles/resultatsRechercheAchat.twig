@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block content %}
+        <div class="column clearboth" id="discoverContainer">
+            <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
+                webuser: webUserAchat,
+                display: 'search_results',
+                tokens: 'ignore_token',
+                session: app.session.get('resalys_user').session,
+                template: 'search_product_results',
+                actions: 'updateCriterias;getProposals',
+                search_page: achatLineaire.search_page,
+                criterias_object_name: 'search_form',
+                product_CMSCriteria_ALL: 'ALL',
+                product_CMSCriteria_PHS: '',
+                product_start_date: "now" | date("d/m/Y"),
+                page_before_auth: 'search_results',
+                page_after_auth: 'search_results',
+
+                search_form_start_date: achatLineaire.dateDebut,
+                search_form_free_nb_days: achatLineaire.nbJours,
+                search_form_nb_adults: achatLineaire.nbAdultes,
+                search_form_theme_code: achatLineaire.region ? achatLineaire.region : achatLineaire.pays ? achatLineaire.pays : '',
+                search_form_etab_list: achatLineaire.campings,
+                search_form_max_results: achatLineaire.search_form_max_results,
+                search_form_sort_string: achatLineaire.search_form_sort_string
+            }) }}" width="960px" height="700px"></iframe>
+        </div>
+{% endblock %}

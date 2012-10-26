@@ -5,7 +5,7 @@
 {% block content %}
         <div class="column clearboth" id="discoverContainer">
             <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-                webuser: 'web_ce_achat_fr',
+                webuser: webUserReservation,
                 display: 'search_results',
                 tokens: 'ignore_token',
                 session: app.session.get('resalys_user').session,
