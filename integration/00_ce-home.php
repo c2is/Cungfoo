@@ -14,8 +14,8 @@
     <!--<div class="clear">-->
     <!-- colonne gauche -->
         <div class="column left">
-            <div id="boxLogin" class="greyBox">
-                <div class="stamp">
+            <div id="boxLogin" class="radiusBox greyC">
+                <div class="stamp blue">
                     <h2>Identification</h2>
                 </div>
                 <form id="formLogin" class="clear">
@@ -34,8 +34,8 @@
                 </form>
 
             </div>
-            <div id="boxDiscover" class="greyBox">
-                <h2><span>Découvrez tous </span>nos produits<br ><span>pensés pour </span>nos adhérents !</h2>
+            <div id="boxDiscover" class="radiusBox greyC">
+                <h2>Découvrez tous <span>nos produits</span><br >pensés pour <span>nos adhérents !</span></h2>
                 <table>
                     <tr>
                         <th></th>
@@ -67,8 +67,8 @@
     <!-- // colonne gauche -->
     <!-- colonne droite -->
         <div class="column right">
-            <div id="boxEdito" class="greyBox">
-                <h2>L'édito</h2>
+            <div id="boxEdito" class="radiusBox greyC">
+                <h2><span>L'édito</span></h2>
                 <p>Chers partenaires,</p>
                 <br />
                 <p>Le secteur de l’hôtellerie de plein air connaît d’importantes mutations depuis 10 ans et notamment sur la qualité des prestations proposées (parcs aquatiques, club enfants, mobilhome...).</p>
@@ -84,10 +84,11 @@
         </div>
     <!-- // colonne droite -->
     <!--</div>-->
+        <!-- colonne pleine largeur -->
         <div class="column clearboth">
             <a class="bt big fushia full" href="#semainier">Demandez vos identifiants pour accéder à votre espace !</a>
         </div>
-        <!-- colonne pleine largeur -->
+        <!-- // colonne pleine largeur -->
     </div>
 
 <?php include('includes/ce-bottom.php'); ?>
