@@ -13,7 +13,7 @@ class AchatLineaireData
     public $campings;
     public $dateDebut;
     public $dateFin;
-    public $isBasseSaison = false;
+    public $isBasseSaison = true;
 
     public function isValid(ExecutionContext $context)
     {
@@ -30,7 +30,7 @@ class AchatLineaireData
         {
             $aDateDebut = explode('/', $this->dateDebut);
             $dateDebutDate    = new \DateTime(sprintf('%s/%s/%s', $aDateDebut[1], $aDateDebut[0], $aDateDebut[2]));
-            $debutJuilletDate = new \DateTime('06/30/2013');
+            $debutJuilletDate = new \DateTime('04/30/2013');
 
             $dateDebutTimestamp = $dateDebutDate->getTimestamp();
 
