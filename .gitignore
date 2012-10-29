@@ -8,3 +8,5 @@
 /app/resources/data/sql/*
 /web/uploads/*
 .idea/
+.vagrant
+Vagrantfile
