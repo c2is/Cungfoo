@@ -1,0 +1,1 @@
+<p>{{ Bloc "La communauté" }}</p>
