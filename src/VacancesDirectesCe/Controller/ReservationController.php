@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request,
 use VacancesDirectesCe\Form\Data\AchatLineaireData,
     VacancesDirectesCe\Form\Type\AchatLineaireType;
 
-class AchatController implements ControllerProviderInterface
+class ReservationController implements ControllerProviderInterface
 {
     /**
      * {@inheritdoc}
@@ -24,9 +24,8 @@ class AchatController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/achats.html', function (Request $request) use ($app)
+        $controllers->match('/reservation.html', function (Request $request) use ($app)
         {
-            $isAlreadyClassique = (int) $this->getAlreadyClassique($app);
 
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
@@ -79,16 +78,15 @@ class AchatController implements ControllerProviderInterface
 
                     unset($achatLineaireParameters['token']);
 
-                    return $app->redirect($app['url_generator']->generate('achat_recherche', $achatLineaireParameters));
+                    return $app->redirect($app['url_generator']->generate('reservation_recherche', $achatLineaireParameters));
                 }
             }
 
-            return $app['twig']->render('Modeles/achats.twig', array(
+            return $app['twig']->render('Modeles/reservations.twig', array(
                 'achatLineaireForm'  => $achatLineaireForm->createView(),
-                'isAlreadyClassique' => $isAlreadyClassique,
             ));
         })
-        ->bind('achat_achats');
+        ->bind('reservation_reservations');
 
         $controllers->match('/resultats-recherche.html', function (Request $request) use ($app)
         {
@@ -108,12 +106,12 @@ class AchatController implements ControllerProviderInterface
                 $achatLineaire['search_form_sort_string'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
             }
 
-            return $app['twig']->render('Modeles/resultatsRechercheAchat.twig', array(
+            return $app['twig']->render('Modeles/resultatsRechercheReservation.twig', array(
                 'achatLineaire' => $achatLineaire,
-                'webUserAchat'  => 'web_ce_achat_fr'
+                'webUserReservation'  => 'web_ce_cpc_fr'
             ));
         })
-        ->bind('achat_recherche');
+        ->bind('reservation_recherche');
 
         $controllers->match('/panier.html', function (Request $request) use ($app)
         {
@@ -124,7 +122,7 @@ class AchatController implements ControllerProviderInterface
 
             return $app['twig']->render('Modeles/panier.twig', array('queryString' => $queryString));
         })
-        ->bind('achat_panier');
+        ->bind('reservation_panier');
 
         $controllers->match('/confirmation-reservation.html', function (Request $request) use ($app)
         {
@@ -132,7 +130,7 @@ class AchatController implements ControllerProviderInterface
 
             return $app['twig']->render('Modeles/confirmation.twig', array('queryString' => $queryString));
         })
-        ->bind('achat_confirmation_reservation');
+        ->bind('reservation_confirmation_reservation');
 
         return $controllers;
     }

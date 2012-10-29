@@ -123,11 +123,11 @@
                         <a class="country" href="#">Destination France</a>
                         <ul>
                             <li><a class="region" href="#">- Languedoc-Roussillon</a></li>
-                            <li><a class="region" href="#">- Corse</a></li>
-                            <li><a class="region" href="#">- Provence Côte d'Azur</a></li>
-                            <li><a class="region" href="#">- Bretagne</a></li>
-                            <li><a class="region" href="#">- Pays Basque</a></li>
-                        </ul>
+    <li>                    <li><a class="region" href="#">- Corse</a></li>
+    <li>                    <li><a class="region" href="#">- Provence Côte d'Azur</a></li>
+    <li>                    <li><a class="region" href="#">- Bretagne</a></li>
+    <li>                    <li><a class="region" href="#">- Pays Basque</a></li>
+    <li>                </ul>
                         <a class="bt link" href="#">Plus de régions</a>
                     </div>
                 </div>
@@ -154,10 +154,36 @@
         <div class="column clearboth">
             <div id="activitiesBloc" class="radiusBox fushia">
                 <h2 id="activitiesBlocTitle">Faites le plein d'activités</h2>
-                <div id="activitiesBlocHeadline1"><span>Je participe à toutes les activités du camping</span></div>
-                <div id="activitiesBlocHeadline2"><span>Je participe à toutes les activités du camping</span></div>
-                <div id="activitiesBlocHeadline3"><span>Je participe à toutes les activités du camping</span></div>
-
+                <div id="activitiesBlocHeadline1" class="blueCloud"><span>En vacances avec mes parents, j'aime&hellip;</span></div>
+                <div id="activitiesBlocHeadline2" class="blueCloud"><span>Envie d'un petit break, de prendre l'air&hellip;</span></div>
+                <div id="activitiesBlocHeadline3" class="blueCloud"><span>Des vacances sous le signe de la détente et du bonheur&hellip;</span></div>
+<ul id="activities1" class="activities">
+    <li><a href="#">Equitation</a></li>
+    <li><a href="#">Plongée</a></li>
+    <li><a href="#">Volley</a></li>
+    <li><a href="#">Pétanque</a></li>
+    <li><a href="#">Natation</a></li>
+    <li><a href="#">Minigolf</a></li>
+    <li><a href="#">Accrobranches</a></li>
+</ul>
+<ul id="activities2" class="activities">
+    <li><a href="#">Randonnée</a></li>
+    <li><a href="#">Ski nautique</a></li>
+    <li><a href="#">Tir à l'arc</a></li>
+    <li><a href="#">Golf</a></li>
+    <li><a href="#">Cyclisme</a></li>
+    <li><a href="#">Spa</a></li>
+    <li><a href="#">Planche à voile</a></li>
+</ul>
+<ul id="activities3" class="activities">
+    <li><a href="#">Pétanque</a></li>
+    <li><a href="#">Aquagym</a></li>
+    <li><a href="#">Pilate</a></li>
+    <li><a href="#">Marche nordique</a></li>
+    <li><a href="#">Loisirs créatifs</a></li>
+    <li><a href="#">Parcours d'oxygénation</a></li>
+    <li><a href="#">Cours de cuisine</a></li>
+</ul>
             </div>
         </div>
         <div class="column clearboth">
