@@ -1,0 +1,1 @@
+<p>{{ Bloc "Vous avez déjà consulté" }}</p>

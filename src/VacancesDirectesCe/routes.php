@@ -38,13 +38,14 @@ $app->get('/login', function(Request $request) use ($app) {
 ;
 
 $app->get('/', function(Request $request) use ($app) {
-    return $app->redirect($app['url_generator']->generate('achat_packages'));
+    return $app->redirect($app['url_generator']->generate('achat_achats'));
 })
 ->bind('homepage')
 ;
 
 $app->mount('/resalys', new \Resalys\Controller\WrapperController());
 $app->mount('/achat', new \VacancesDirectesCe\Controller\AchatController());
+$app->mount('/reservation', new \VacancesDirectesCe\Controller\ReservationController());
 $app->mount('/administration', new \VacancesDirectesCe\Controller\AdministrationController());
 $app->mount('/camping', new \VacancesDirectesCe\Controller\CampingController());
 $app->mount('/search', new \VacancesDirectesCe\Controller\SearchController());

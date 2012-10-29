@@ -1,0 +1,1 @@
+<p>{{ Bloc "Vacances réussies" }}</p>
