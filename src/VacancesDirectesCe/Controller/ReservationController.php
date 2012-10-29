@@ -30,10 +30,10 @@ class ReservationController implements ControllerProviderInterface
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
-            // set form if session search_parameters exist
-            if ($app['session']->get('search_parameters'))
+            // set form if session search_parameters_reservation exist
+            if ($app['session']->get('search_parameters_reservation'))
             {
-                $searchParametersData = $app['session']->get('search_parameters');
+                $searchParametersData = $app['session']->get('search_parameters_reservation');
                 $dataForm->pays = $searchParametersData['pays'];
                 $dataForm->region = $searchParametersData['region'];
                 $dataForm->campings = explode(';', $searchParametersData['campings']);
@@ -93,11 +93,11 @@ class ReservationController implements ControllerProviderInterface
             $achatLineaire = $request->query->all();
             if (isset($achatLineaire['dateDebut']))
             {
-                $app['session']->set('search_parameters', $achatLineaire);
+                $app['session']->set('search_parameters_reservation', $achatLineaire);
             }
             else
             {
-                $achatLineaire = $app['session']->get('search_parameters');
+                $achatLineaire = $app['session']->get('search_parameters_reservation');
 
                 // override default paramterers
                 $postParameters = $request->request->all();
