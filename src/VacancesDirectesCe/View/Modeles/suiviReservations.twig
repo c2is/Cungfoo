@@ -6,6 +6,7 @@
         <div class="column clearboth" id="discoverContainer">
             <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
                 display: 'customer_area',
+                webuser: 'web_ce_achat_fr',
                 customer_area_sub_page: 'all_reservations',
                 session: app.session.get('resalys_user').session,
             }) }}" width="960px" height="700px"></iframe>

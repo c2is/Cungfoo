@@ -27,6 +27,12 @@ class AdministrationController implements ControllerProviderInterface
         })
         ->bind('administration_coordonnees');
 
+        $controllers->match('/adherents.html', function (Request $request) use ($app)
+        {
+            return $app['twig']->render('Modeles/adherents.twig');
+        })
+        ->bind('administration_adherents');
+
         return $controllers;
     }
 }
