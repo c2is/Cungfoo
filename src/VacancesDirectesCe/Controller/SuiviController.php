@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
-class AdministrationController implements ControllerProviderInterface
+class SuiviController implements ControllerProviderInterface
 {
     /**
      * {@inheritdoc}
@@ -21,11 +21,17 @@ class AdministrationController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/coordonnees.html', function (Request $request) use ($app)
+        $controllers->match('/reservations.html', function (Request $request) use ($app)
         {
-            return $app['twig']->render('Modeles/coordonnees.twig');
+            return $app['twig']->render('Modeles/suiviReservations.twig');
         })
-        ->bind('administration_coordonnees');
+        ->bind('suivi_reservations');
+
+        $controllers->match('/achats.html', function (Request $request) use ($app)
+        {
+            return $app['twig']->render('Modeles/suiviAchats.twig');
+        })
+        ->bind('suivi_achats');
 
         return $controllers;
     }
