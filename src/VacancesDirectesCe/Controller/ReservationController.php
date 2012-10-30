@@ -24,9 +24,8 @@ class ReservationController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/reservation.html', function (Request $request) use ($app)
+        $controllers->match('/recherche.html', function (Request $request) use ($app)
         {
-
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
@@ -78,17 +77,17 @@ class ReservationController implements ControllerProviderInterface
 
                     unset($achatLineaireParameters['token']);
 
-                    return $app->redirect($app['url_generator']->generate('reservation_recherche', $achatLineaireParameters));
+                    return $app->redirect($app['url_generator']->generate('reservation_disponibilites', $achatLineaireParameters));
                 }
             }
 
-            return $app['twig']->render('Modeles/reservations.twig', array(
+            return $app['twig']->render('Modeles/Reservation/recherche.twig', array(
                 'achatLineaireForm'  => $achatLineaireForm->createView(),
             ));
         })
-        ->bind('reservation_reservations');
+        ->bind('reservation_recherche');
 
-        $controllers->match('/resultats-recherche.html', function (Request $request) use ($app)
+        $controllers->match('/disponibilites.html', function (Request $request) use ($app)
         {
             $achatLineaire = $request->query->all();
             if (isset($achatLineaire['dateDebut']))
@@ -106,12 +105,23 @@ class ReservationController implements ControllerProviderInterface
                 $achatLineaire['search_form_sort_string'] = isset($postParameters['search_form_sort_string']) ? $postParameters['search_form_sort_string'] : "Priority,StartDate,Etab,RoomType(2),ProductPriority";
             }
 
-            return $app['twig']->render('Modeles/resultatsRechercheReservation.twig', array(
+            return $app['twig']->render('Modeles/Reservation/disponibilites.twig', array(
                 'achatLineaire' => $achatLineaire,
                 'webUserReservation'  => 'web_ce_cpc_fr'
             ));
         })
-        ->bind('reservation_recherche');
+        ->bind('reservation_disponibilites');
+
+        $controllers->match('/options.html', function (Request $request) use ($app)
+        {
+            $queryParameters   = $request->query->all();
+            $requestParameters = $request->request->all();
+
+            $queryString = http_build_query($requestParameters, '', '&');
+
+            return $app['twig']->render('Modeles/options.twig', array('queryString' => $queryString));
+        })
+        ->bind('reservation_options');
 
         $controllers->match('/panier.html', function (Request $request) use ($app)
         {
@@ -124,13 +134,13 @@ class ReservationController implements ControllerProviderInterface
         })
         ->bind('reservation_panier');
 
-        $controllers->match('/confirmation-reservation.html', function (Request $request) use ($app)
+        $controllers->match('/confirmation.html', function (Request $request) use ($app)
         {
             $queryString = http_build_query($request->request->all(), '', '&');
 
             return $app['twig']->render('Modeles/confirmation.twig', array('queryString' => $queryString));
         })
-        ->bind('reservation_confirmation_reservation');
+        ->bind('reservation_confirmation');
 
         return $controllers;
     }
