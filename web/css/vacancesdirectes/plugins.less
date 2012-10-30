@@ -1,7 +1,7 @@
 /*PLUGINS*/
 /* infoBox */
 .infoBox{background:@colorBgGrisC;width:305px;height:130px;margin:0;padding:10px;font-size:11px;
-._border-radius(6px);._box-shadow(0 0 10px rgba(0, 0, 0, .5));}
+.border-radius(6px);.box-shadow(0 0 10px rgba(0, 0, 0, .5));}
 
 .lt-ie9 .infoBox{border:1px solid #ccc;}
 .infoBox:after{content:'';z-index:1;position:absolute;bottom:-20px;left:0;width:100%;height:20px;background:url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 50% 100%;}
@@ -97,8 +97,8 @@
   .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
   ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;}
-  .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;._verticalCenter(@selectHeight);
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;.verticalCenter(@selectHeight);white-space:nowrap;}
+  .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;.verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
@@ -278,7 +278,7 @@ div.datepicker tbody a {
 }
 .datepickerDays a {
   width: 25px;
-  ._verticalCenter(23px);
+  .verticalCenter(23px);
   padding:0 6px 0 0;
 }
 .datepickerYears a,
@@ -319,7 +319,7 @@ div.datepicker .datepickerDays td.datepickerSpecial a:hover {
   background-color: @colorBgBlanc;
   color: @colorFushia;
 //  width: 23px;
-//  ._verticalCenter(21px);
+//  .verticalCenter(21px);
 //  border:1px solid @colorFushia;
 //  padding: 0 3px;
 
@@ -348,7 +348,7 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 #datepickerCalendar .datepickerMonth a {
   font-size:14px;
   text-align: center;
-  ._verticalCenter(23px);
+  .verticalCenter(23px);
 }
 #datepickerCalendar .datepickerMonth a {cursor:default;}
 #datepickerCalendar .datepickerGoNext a,
