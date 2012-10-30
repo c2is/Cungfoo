@@ -203,18 +203,22 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
           em{color:@colorRubricOrange;}
         }
         .titreDestination{.h3Decroch(@colorRubricOrange, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;.border-radius(7px 0 7px 0);
+          &:after{border-top-color:#763905;}
         }
         ul{margin:20px 0 0 16px;
           li{float:left;width:155px;color:#28568a;font:10px/14px Arial, sans-serif;}
         }
+        p{margin:15px 0 -5px 16px;}
     }
     &.package{
       .titre{background-color:@colorRubricVert;}
-      .promoPrix{
+      .promoPrix{background:transparent;
         strong{color:@colorRubricVert;}
         em{color:@colorRubricVert;}
       }
-      .titreDestination{.h3Decroch(@colorRubricVert, @colorBlanc);}
+      .titreDestination{.h3Decroch(@colorRubricVert, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;.border-radius(7px 0 7px 0);
+        &:after{border-top-color:#3A5318;}
+      }
     }
   /* popUp*/
     .proposalDescriptionContent{width:100%;
