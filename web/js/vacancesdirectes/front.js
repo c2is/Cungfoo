@@ -502,6 +502,11 @@ $(function() {
         loadGmapScript();
     }
 
+//init Search
+    if ($('#searchBloc').length > 0) {
+        initSearchBloc();
+    }
+
 });
 
 /*-- HEADREADY --*/
@@ -512,7 +517,14 @@ head.ready(function(){
 });
 
 /*--  FUNCTIONS  --*/
-
+function initSearchBloc() {
+    $("#nbAdults").SpinnerControl({
+        type:'range',
+        typedata:{ min:0, max:23, interval:1 },
+        defaultVal:2,
+        width:'50px'
+    });
+}
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
