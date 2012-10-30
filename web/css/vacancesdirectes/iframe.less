@@ -59,11 +59,6 @@
   -o-transform:@transform;
   transform:@transform;
 }
-/*Centrer verticalement une ligne de texte dans un conteneur de hauteur fixe*/
-._verticalCenter(@height) {
-  height:@height;
-  line-height:@height;
-}
 /* Centrer verticalement dans un conteneur de hauteur fixe */
 ._verticalCenter(@height, @lineHeight:auto) {
   height: @height;                                                            /* Centrer verticalement une ligne de texte */
@@ -200,18 +195,22 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
           em{color:@colorRubricOrange;}
         }
         .titreDestination{.h3Decroch(@colorRubricOrange, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
+          &:after{border-top-color:#763905;}
         }
         ul{margin:20px 0 0 16px;
           li{float:left;width:155px;color:#28568a;font:10px/14px Arial, sans-serif;}
         }
+        p{margin:15px 0 -5px 16px;}
     }
     &.package{
       .titre{background-color:@colorRubricVert;}
-      .promoPrix{
+      .promoPrix{background:transparent;
         strong{color:@colorRubricVert;}
         em{color:@colorRubricVert;}
       }
-      .titreDestination{.h3Decroch(@colorRubricVert, @colorBlanc);}
+      .titreDestination{.h3Decroch(@colorRubricVert, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
+        &:after{border-top-color:#3A5318;}
+      }
     }
   /* popUp*/
     .proposalDescriptionContent{width:100%;
@@ -331,12 +330,15 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
   #headerContener, #contentNavigationContener, #generic_information_container, #searchFormContener{display:none;}
   .searchResultTitle{font:bold 28px/18px @ptnarrow;margin:40px 0 25px 20px;text-transform:uppercase;}
   .sortContener{margin:0 0 40px 20px;color:@colorGris1;font-size:13px;
-    .selects{
-      .newListSelected:first-child{width:203px;
-        .selectedTxt{width:175px;}
-        .SSContainerDivWrapper{min-width:203px;}
+    .newListSelected{
+        &.sortBy{width:203px;
+         .selectedTxt{width:175px;}
+         .SSContainerDivWrapper{min-width:203px;}
       }
-      .newListSelected:last-child{}
+      &.sortNb{width:76px;
+        .selectedTxt{width:47px;}
+        .SSContainerDivWrapper{min-width:76px;}
+      }
     }
     p > span{float:left;margin-right:8px;}
     .newListSelected{margin-top:-3px;}

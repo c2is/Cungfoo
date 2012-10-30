@@ -510,6 +510,7 @@ $(function() {
 
 //init Gmap
     if ($('.gmap').length > 0) {
+        consoleLog('map');
         loadGmapScript();
     }
 
@@ -857,6 +858,7 @@ var map,
     ib;
 
 function loadGmapScript() { // call at the end of the DOM ready
+    consoleLog('map');
     var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
     var script = document.createElement("script");
     script.type = "text/javascript";

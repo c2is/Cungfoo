@@ -13,14 +13,22 @@
 <nav id="nav" class="clearboth">
     <ul class="topnav fixed-width clear">
         <li class="tab{% if currentRoute in ['achat_achats', 'achat_panier', 'achat_confirmation_reservation', 'achat_recherche'] %} current{% endif %}"><a href="{{ path('achat_achats') }}">Achats</a></li>
-        <li class="tab{% if currentRoute in ['reservation_reservation', 'reservation_panier', 'reservation_reservations', 'reservation_recherche'] %} current{% endif %}"><a href="{{ path('reservation_reservations') }}">Réservations</a></li>
-        <li class="tab{% if currentRoute in ['administration_reservations', 'administration_coordonnees'] %} current{% endif %}"><a href="{{ path('administration_reservations') }}">Administration</a></li>
+        <li class="tab{% if currentRoute in ['reservation_panier', 'reservation_disponibilites', 'reservation_recherche', 'reservation_options', 'reservation_confirmation'] %} current{% endif %}"><a href="{{ path('reservation_recherche') }}">Réservations</a></li>
+        <li class="tab{% if currentRoute in ['suivi_reservations', 'suivi_achats'] %} current{% endif %}"><a href="{{ path('suivi_achats') }}">Suivi</a></li>
+        <li class="tab{% if currentRoute in ['administration_coordonnees', 'administration_adherents'] %} current{% endif %}"><a href="{{ path('administration_coordonnees') }}">Administration</a></li>
     </ul>
 
-    {% if currentRoute in ['administration_reservations', 'administration_coordonnees'] %}
+    {% if currentRoute in ['administration_adherents', 'administration_coordonnees'] %}
         <ul class="topnav topnavSub fixed-width clear">
             <li class="tab{% if currentRoute == 'administration_coordonnees' %} current{% endif %}"><a href="{{ path('administration_coordonnees') }}">Coordonnées</a></li>
-            <li class="tab{% if currentRoute == 'administration_reservations' %} current{% endif %}"><a href="{{ path('administration_reservations') }}">Suivi des achats</a></li>
+            <li class="tab{% if currentRoute == 'administration_adherents' %} current{% endif %}"><a href="{{ path('administration_adherents') }}">Tous les adhérents</a></li>
+        </ul>
+    {% endif %}
+
+    {% if currentRoute in ['suivi_reservations', 'suivi_achats'] %}
+        <ul class="topnav topnavSub fixed-width clear">
+            <li class="tab{% if currentRoute == 'suivi_achats' %} current{% endif %}"><a href="{{ path('suivi_achats') }}">Achats</a></li>
+            <li class="tab{% if currentRoute == 'suivi_reservations' %} current{% endif %}"><a href="{{ path('suivi_reservations') }}">Réservations</a></li>
         </ul>
     {% endif %}
 </nav>

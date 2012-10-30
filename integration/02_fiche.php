@@ -34,16 +34,10 @@
     <!-- // colonne gauche -->
     <!-- colonne droite -->
         <aside class="column right">
-            <?php include('blocs/ficheReservation.php'); ?>
-            <?php include('blocs/search.php'); ?>
-            <?php include('blocs/offreSpeciales.php'); ?>
-            <?php include('blocs/dejaVu.php'); ?>
-            <?php include('blocs/communaute.php'); ?>
-            <?php include('blocs/vacancesReussies.php'); ?>
-            <?php include('blocs/aimeriezAussi.php'); ?>
         </aside>
     <!-- // colonne droite -->
     </div>
 
 <?php include('includes/bottom.php'); ?>
 <?php include('includes/inc_footer.php'); ?>
+
