@@ -338,12 +338,15 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
   #headerContener, #contentNavigationContener, #generic_information_container, #searchFormContener{display:none;}
   .searchResultTitle{font:bold 28px/18px @ptnarrow;margin:40px 0 25px 20px;text-transform:uppercase;}
   .sortContener{margin:0 0 40px 20px;color:@colorGris1;font-size:13px;
-    .selects{
-      .newListSelected:first-child{width:203px;
-        .selectedTxt{width:175px;}
-        .SSContainerDivWrapper{min-width:203px;}
+    .newListSelected{
+        &.sortBy{width:203px;
+         .selectedTxt{width:175px;}
+         .SSContainerDivWrapper{min-width:203px;}
       }
-      .newListSelected:last-child{}
+      &.sortNb{width:76px;
+        .selectedTxt{width:47px;}
+        .SSContainerDivWrapper{min-width:76px;}
+      }
     }
     p > span{float:left;margin-right:8px;}
     .newListSelected{margin-top:-3px;}
