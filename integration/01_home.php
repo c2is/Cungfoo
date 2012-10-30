@@ -8,7 +8,7 @@
         <div class="column left">
             <div class="ratio-33 left">
 
-                <div id="topLocations" class="locationForwards">
+                <div id="topLocations" class="locationForwards clear">
                     <div class="stamp grey">
                         <h2>Top campings</h2>
                     </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="ratio-33 left clear">
 
-                <div id="lastLocations" class="locationForwards">
+                <div id="lastLocations" class="locationForwards clear">
                     <div class="stamp grey">
                         <h2>Dernières minutes</h2>
                     </div>
@@ -115,19 +115,19 @@
         <!-- // colonne droite -->
 
         <!-- colonne pleine largeur -->
-        <div class="column clearboth">
+        <div class="column clearboth clear">
             <div id="destinationsBloc" class="radiusBox greyC">
                 <h2><span>Vacances directes c'est </span>4 pays<span> & </span>26 régions<span> touristiques</span></h2>
                 <div class="left">
                     <div id="national">
                         <a class="country" href="#">Destination France</a>
                         <ul>
-                            <li><a class="region" href="#">- Languedoc-Roussillon</a></li>
-    <li>                    <li><a class="region" href="#">- Corse</a></li>
-    <li>                    <li><a class="region" href="#">- Provence Côte d'Azur</a></li>
-    <li>                    <li><a class="region" href="#">- Bretagne</a></li>
-    <li>                    <li><a class="region" href="#">- Pays Basque</a></li>
-    <li>                </ul>
+                            <li>- <a class="region" href="#">Languedoc-Roussillon</a></li>
+                            <li>- <a class="region" href="#">Corse</a></li>
+                            <li>- <a class="region" href="#">Provence Côte d'Azur</a></li>
+                            <li>- <a class="region" href="#">Bretagne</a></li>
+                            <li>- <a class="region" href="#">Pays Basque</a></li>
+                        </ul>
                         <a class="bt link" href="#">Plus de régions</a>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 <div id="forwardBlocHeadline"><span>Je participe à toutes les activités du camping</span></div>
             </div>
         </div>
-        <div class="column clearboth">
+        <div class="column clearboth clear">
             <div id="activitiesBloc" class="radiusBox fushia">
                 <h2 id="activitiesBlocTitle">Faites le plein d'activités</h2>
                 <div id="activitiesBlocHeadline1" class="blueCloud"><span>En vacances avec mes parents, j'aime&hellip;</span></div>
@@ -187,7 +187,22 @@
             </div>
         </div>
         <div class="column clearboth">
-            <div id="mapBloc" class="radiusBox greyC">
+            <div id="mapBloc" class="radiusBox greyC clear">
+                <div id="mapView" class="left">
+
+                </div>
+                <div id="mapContent" class="left">
+                    <h2>Campings Vacances Directes</h2>
+                    <h3>Filter par</h3>
+                    <ul id="mapFilters">
+                        <li><a id="filterNew" href="#"><span>Nouveautés saison 2012</span></a></li>
+                        <li><a id="filterChildren" href="#"><span>Les enfants d'abord</span></a></li>
+                        <li><a id="filterWaterParks" href="#"><span>Parcs aquatiques</span></a></li>
+                        <li><a id="filterIndoorPools" href="#"><span>Piscines couvertes</span></a></li>
+                        <li><a id="filterWaterfront" href="#"><span>Les pieds dans l'eau</span></a></li>
+                        <li><a id="filterAnimals" href="#"><span>En vacances avec votre chien</span></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- // colonne pleine largeur -->

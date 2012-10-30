@@ -19,7 +19,7 @@
 //    .background-clip
 //    .background-origin
 //    .background-size
-//    .border-radius
+//    ._border-radius
     //    .border-top-left-radius
     //    .border-top-right-radius
     //    .border-bottom-left-radius
@@ -59,11 +59,11 @@
     //    .skew
     //    .skewX
     //    .skewY
-//    .transition
-    //    .transition-property
-    //    .transition-duration
-    //    .transition-timing-function
-    //    .transition-delay
+//    ._transition
+    //    ._transition-property
+    //    ._transition-duration
+    //    ._transition-timing-function
+    //    ._transition-delay
 //    .user-select
 
 
@@ -530,9 +530,9 @@
     //  element{  .background-size(~"auto, 100%"); }
 
 
-// .border-radius
+// ._border-radius
 
-  .border-radius(@arguments:0) {
+  ._border-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -556,9 +556,9 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .border-radius(10px); //  all corner rounded }
-    //  element{  .border-radius(~"10px / 20px"); //  horizontal and vertical rounded differently  }
-    //  element{  .border-radius(~"0 10px 0 0"); // only top right corner rounded  }
+    //  element{  ._border-radius(10px); //  all corner rounded }
+    //  element{  ._border-radius(~"10px / 20px"); //  horizontal and vertical rounded differently  }
+    //  element{  ._border-radius(~"0 10px 0 0"); // only top right corner rounded  }
 
 
 // .border-top-left-radius
@@ -712,7 +712,7 @@
 
 //  .box-shadow
 
-  .box-shadow(@arguments:none){
+  ._box-shadow(@arguments:none){
 
       //  Local config for disabling properties
 
@@ -736,7 +736,7 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red"); }
+    //  element{  ._box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red"); }
 
 
 //  .box-sizing
@@ -1076,7 +1076,7 @@
 
 //  .transform
 
-  .transform(@arguments:none){
+  ._transform(@arguments:none){
 
       //  Local config for disabling properties
 
@@ -1108,7 +1108,7 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transform(~"scale(.5) translate(10px, 20px)"); }
+    //  element{  ._transform(~"scale(.5) translate(10px, 20px)"); }
 
 
 //  .transform-origin
@@ -1881,9 +1881,9 @@
     //  element{  .skewY(36deg);  }
 
 
-//  .transition
+//  ._transition
 
-  .transition(@arguments:all){
+  ._transition(@arguments:all){
 
       //  Local config for disabling properties
 
@@ -1921,12 +1921,12 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-  //   element{  .transition(~"transform 1s ease-in-out, border-radius 2s 1s linear");  }
+  //   element{  ._transition(~"transform 1s ease-in-out, border-radius 2s 1s linear");  }
 
 
-//  .transition-property
+//  ._transition-property
 
-  .transition-property(@arguments:all){
+  ._transition-property(@arguments:all){
 
       //  Local config for disabling properties
 
@@ -1964,12 +1964,12 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transition-property(width);  }
+    //  element{  ._transition-property(width);  }
 
 
-//  .transition-duration
+//  ._transition-duration
 
-  .transition-duration(@arguments:0){
+  ._transition-duration(@arguments:0){
 
       //  Local config for disabling properties
 
@@ -1998,12 +1998,12 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transition-duration(250ms);  }
+    //  element{  ._transition-duration(250ms);  }
 
 
-//  .transition-timing-function
+//  ._transition-timing-function
 
-  .transition-timing-function(@arguments:ease){
+  ._transition-timing-function(@arguments:ease){
 
       //  Local config for disabling properties
 
@@ -2032,12 +2032,12 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transition-timing-function(cubic-bezier(0,0,1,1));  }
+    //  element{  ._transition-timing-function(cubic-bezier(0,0,1,1));  }
 
 
-//  .transition-delay
+//  ._transition-delay
 
-  .transition-delay(@arguments:0){
+  ._transition-delay(@arguments:0){
 
       //  Local config for disabling properties
 
@@ -2066,7 +2066,7 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transition-delay(2s);  }
+    //  element{  ._transition-delay(2s);  }
 
 
 //  .user-select
