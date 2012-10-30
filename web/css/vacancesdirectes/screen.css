@@ -483,14 +483,14 @@ footer {
   color: #ed145b;
 }
 #nav .tab .subnav {
-  padding: 20px;
+  padding: 24px;
   position: absolute;
   top: 57px;
   left: 0px;
-  width: 920px;
+  width: 976px;
   background: #ffffff;
   float: none;
-  box-shadow: 0 10px 10px -2px #5f5f5f;
+  box-shadow: 0 10px 10px -12px #464545;
   z-index: 20;
   text-transform: none;
   z-index: 40;
@@ -784,7 +784,7 @@ h6,
 }
 .column.right {
   width: 288px;
-  margin-right: 0 24px 0 0;
+  margin: 0 24px 0 0;
 }
 .column .ratio-33 {
   width: 300px;
@@ -1268,7 +1268,7 @@ h6,
 .home #mapBloc #mapView {
   width: 604px;
   height: 392px;
-  background-color: #464545;
+  background: url("http://pimg.devlint.fr/604x392/ccc/333/google%20map") no-repeat 0 0 transparent;
   margin-right: 24px;
 }
 .home #mapBloc #mapContent {
@@ -1376,7 +1376,7 @@ h6,
   width: 36px;
   height: 25px;
   text-indent: -999em;
-  padding: 0 .2px;
+  padding: 0 2px;
   border-left: 1px solid #e6e5e5;
   background-image: url(../../images/vacancesdirectes/common/pict/iconSharing.png);
   background-repeat: no-repeat;
@@ -2251,11 +2251,13 @@ h6,
 .ce #headerContainer #nav ul {
   width: 858px;
   margin: 0 auto;
+  text-align: center;
 }
 .ce #headerContainer #nav ul li.tab {
   width: 186px;
-  margin: 0 50px;
-  text-align: center;
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
 }
 .ce #headerContainer #nav ul li.tab a {
   text-decoration: underline;
@@ -2275,83 +2277,102 @@ h6,
   float: none;
   display: inline-block;
 }
-.ce #searchContainer {
+.ce #searchContainer,
+.ce #searchContainerReservation {
   margin-bottom: 20px;
   z-index: 1;
   margin-top: 50px;
 }
-.ce #searchContainer .searchBox {
+.ce #searchContainer .searchBox,
+.ce #searchContainerReservation .searchBox {
   padding: 20px 0;
   display: inline-block;
   background-color: transparent;
 }
-.ce #searchContainer .date input {
+.ce #searchContainer .date input,
+.ce #searchContainerReservation .date input {
   width: 96px;
   height: 23px;
   padding: 0 0 0 5px;
   background-color: #e6e5e5;
   border: 0 none;
 }
-.ce #searchContainer #searchForm {
+.ce #searchContainer #searchForm,
+.ce #searchContainerReservation #searchForm {
   position: relative;
   float: left;
 }
-.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison {
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison,
+.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison {
   margin-bottom: 20px;
 }
 .ce #searchContainer #searchForm #AchatLineaire_isBasseSaison label,
-.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input {
+.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison label,
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input,
+.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input {
   float: left;
   margin: -4px 0 0;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 14px;
   cursor: pointer;
 }
-.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"] {
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"],
+.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input[type="radio"] {
   margin: 0 5px 10px 10px;
 }
-.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label {
+.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label,
+.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label {
   font-weight: bold;
   color: #ed145b;
 }
-.ce #searchContainer #searchText {
+.ce #searchContainer #searchText,
+.ce #searchContainerReservation #searchText {
   position: relative;
   float: right;
 }
-.ce #searchContainer .selectContainer .newListSelected:last-child {
+.ce #searchContainer .selectContainer .newListSelected:last-child,
+.ce #searchContainerReservation .selectContainer .newListSelected:last-child {
   margin-right: 0;
 }
-.ce #searchContainer .searchBlock {
+.ce #searchContainer .searchBlock,
+.ce #searchContainerReservation .searchBlock {
   border: 1px solid #e6e5e5;
   padding: 20px;
   width: 452px;
 }
 .ce #searchContainer .searchBlock legend,
-.ce #searchContainer .searchBlock h2 {
+.ce #searchContainerReservation .searchBlock legend,
+.ce #searchContainer .searchBlock h2,
+.ce #searchContainerReservation .searchBlock h2 {
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 24px;
   font-weight: normal;
 }
-.ce #searchContainer .searchBlock legend {
+.ce #searchContainer .searchBlock legend,
+.ce #searchContainerReservation .searchBlock legend {
   position: absolute;
   top: -19px;
   padding: 0 10px;
   background-color: #ffffff;
 }
-.ce #searchContainer .searchBlock h2 {
+.ce #searchContainer .searchBlock h2,
+.ce #searchContainerReservation .searchBlock h2 {
   margin-bottom: 5px;
 }
-.ce #searchContainer .searchBlock .sMultSelect {
+.ce #searchContainer .searchBlock .sMultSelect,
+.ce #searchContainerReservation .searchBlock .sMultSelect {
   display: none;
 }
-.ce #searchContainer .searchBlock .sMultSelectUl {
+.ce #searchContainer .searchBlock .sMultSelectUl,
+.ce #searchContainerReservation .searchBlock .sMultSelectUl {
   background-color: #e6e5e5;
   padding: 0;
   margin: 20px 0;
   height: 115px;
   overflow: auto;
 }
-.ce #searchContainer .searchBlock .sMultSelectUl li {
+.ce #searchContainer .searchBlock .sMultSelectUl li,
+.ce #searchContainerReservation .searchBlock .sMultSelectUl li {
   padding: 0 10px;
   height: 23px;
   /* Centrer verticalement une ligne de texte */
@@ -2363,19 +2384,23 @@ h6,
 
   cursor: pointer;
 }
-.ce #searchContainer .searchBlock .sMultSelectUl li > * {
+.ce #searchContainer .searchBlock .sMultSelectUl li > *,
+.ce #searchContainerReservation .searchBlock .sMultSelectUl li > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-.ce #searchContainer .searchBlock .sMultSelectUl li > img {
+.ce #searchContainer .searchBlock .sMultSelectUl li > img,
+.ce #searchContainerReservation .searchBlock .sMultSelectUl li > img {
   vertical-align: middle;
 }
-.ce #searchContainer .searchBlock .sMultSelectUl li.selected {
+.ce #searchContainer .searchBlock .sMultSelectUl li.selected,
+.ce #searchContainerReservation .searchBlock .sMultSelectUl li.selected {
   background-color: #ed145b;
   color: #ffffff;
 }
-.ce #searchContainer .searchBlock button {
+.ce #searchContainer .searchBlock button,
+.ce #searchContainerReservation .searchBlock button {
   float: right;
 }
 .ce #DemandeIdentifiant {
@@ -2549,6 +2574,101 @@ h6,
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
+}
+/* aside blocs */
+.element {
+  position: relative;
+  margin: 0;
+}
+.element .fb-like {
+  width: 109px;
+  height: 20px;
+  margin: 0 15px 0 5px;
+}
+.element .details {
+  font-size: 13px;
+  color: #5f5f5f;
+  position: relative;
+}
+.element .details .title,
+.element .details .region,
+.element .details .condition,
+.element .details .stain {
+  display: block;
+}
+.element .details .title {
+  font-weight: bold;
+}
+.element .details .period {
+  font-style: italic;
+}
+.element .details .condition .price {
+  color: #f58220;
+  font-weight: bold;
+  text-decoration: none;
+}
+.element .details .counter {
+  width: 48px;
+  height: 48px;
+  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -391px transparent;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  color: #f58220;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  text-align: center;
+  height: 48px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 48px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.element .details .counter > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.element .details .counter > img {
+  vertical-align: middle;
+}
+.element .details .stain {
+  width: 90px;
+  height: 70px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 70px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  margin-left: -10px;
+  position: relative;
+}
+.element .details .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 22px;
+}
+.element .details .stain > img {
+  vertical-align: middle;
+}
+.element .details .stain > span {
+  margin-top: 10px;
+}
+.element .details .stain .price {
+  font-size: 27px;
+  font-weight: bold;
 }
 /* plugins styles*/
 /*PLUGINS*/
