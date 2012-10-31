@@ -1,7 +1,7 @@
 
 /*fiche*/
-#ficheShare{position:absolute;top:-46px;right:0;padding:5px;background:@colorBgBlanc;.border-radius(10px 10px 0 0);
-  .icon{float:left;width:36px;height:25px;text-indent:-999em;padding:0 .2px;border-left:1px solid @colorBgGrisC;
+#ficheShare{position:absolute;top:-46px;right:0;padding:5px;background:@colorBgBlanc;._border-radius(10px 10px 0 0);
+  .icon{float:left;width:36px;height:25px;text-indent:-999em;padding:0 2px;border-left:1px solid @colorBgGrisC;
     background-image:url(../../images/vacancesdirectes/common/pict/iconSharing.png);background-repeat:no-repeat;
     &:first-child{border:0;}
   }
@@ -29,7 +29,7 @@
 
 .tabControls{margin:35px 0 10px;
   li{display:inline;
-    a{font:bold 12px/35px Arial, sans-serif;float:left;margin-right:1px;background:@colorBgGrisC;color:@colorGris2;.border-radius(10px 10px 0 0);text-transform:uppercase;padding:6px 12px 0;text-decoration:none;position:relative;
+    a{font:bold 12px/35px Arial, sans-serif;float:left;margin-right:1px;background:@colorBgGrisC;color:@colorGris2;._border-radius(10px 10px 0 0);text-transform:uppercase;padding:6px 12px 0;text-decoration:none;position:relative;
       &.active, &:hover{background:@colorBgGrisM;color:@colorBlanc;}
       &.active:after{content:""}
       &.active:after{top:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
@@ -108,12 +108,12 @@
     }
   }
 }
-.filterBy{background-color:@colorBgGrisF;color:@colorBlanc;padding:15px;.border-radius(10px);margin-bottom:20px;
+.filterBy{background-color:@colorBgGrisF;color:@colorBlanc;padding:15px;._border-radius(10px);margin-bottom:20px;
   span{font-size:13px;font-weight:bold;display:inline-block;margin-right:50px;}
   select{text-transform:uppercase;font:bold 16px/20px @ptnarrow;color:#999;width:220px;margin-right:5px;}
 }
 .typLocation, .activites .miniEncart, .agenda .miniEncart{padding:0 0 20px;margin-bottom:20px;border-bottom:7px solid @colorBgGrisC;
-  > div > .nbPlace{float:left;.border-radius(4px);margin:0 12px 10px 0;background-color:@colorBgGrisC;padding:3px 4px 10px;color:@colorGris1;font-size:9px;font-weight:bold;text-align:center;
+  > div > .nbPlace{float:left;._border-radius(4px);margin:0 12px 10px 0;background-color:@colorBgGrisC;padding:3px 4px 10px;color:@colorGris1;font-size:9px;font-weight:bold;text-align:center;
      img{display:block;margin-bottom:5px;}
   }
   > div > strong{line-height:1.5;}
@@ -138,7 +138,7 @@
 #tabSurplace{
   .right{margin-bottom:20px;}
   .temoignFiche{position:relative;margin-bottom:25px;
-    button{display:block;position:absolute;z-index:2;top:50%;margin-top:-45px;height:70px;width:31px;background-color:transparent;background-image:url(../../images/vacancesdirectes/common/ui/sliderArrows-fushia.png);background-repeat:no-repeat;border:0;cursor:pointer;text-indent:-999em;.transition(all ease .3s);
+    button{display:block;position:absolute;z-index:2;top:50%;margin-top:-45px;height:70px;width:31px;background-color:transparent;background-image:url(../../images/vacancesdirectes/common/ui/sliderArrows-fushia.png);background-repeat:no-repeat;border:0;cursor:pointer;text-indent:-999em;._transition(all ease .3s);
       &.prev{left:0;background-position:0 0;}
       &.next{right:0;background-position:100%100%;}
       &.disabled{opacity:0;cursor:default;}
@@ -156,7 +156,7 @@
   dl{display:table-cell;vertical-align:top;border-right:7px solid @colorBgGrisC;padding:0 5px 0 22px;
     &:first-child{padding-left:0;}
     &:last-child{border:0;padding-right:0;}
-    dt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/14px @ptnarrow;padding:3px 20px;.border-radius(7px);background-color:@colorBgGrisC;color:@colorGris2;text-align:center;display:table;vertical-align:middle;margin:0 auto 25px;height:38px;
+    dt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/14px @ptnarrow;padding:3px 20px;._border-radius(7px);background-color:@colorBgGrisC;color:@colorGris2;text-align:center;display:table;vertical-align:middle;margin:0 auto 25px;height:38px;
       span{display:table-cell;vertical-align:middle;}
     }
     dd{margin:0 0 0 10px;
@@ -182,7 +182,7 @@
     h3{margin-bottom:10px;}
     .bt{background:@colorBgGrisM;margin:15px 0;text-align:center;}
     .iDestImg1{position:absolute;left:56px;top:25px;}
-    .iDestImg2{position:absolute;left:20px;top:90px;.transform(rotate(12deg));}
+    .iDestImg2{position:absolute;left:20px;top:90px;._transform(rotate(12deg));}
   }
 }
 
