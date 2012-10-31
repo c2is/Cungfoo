@@ -197,17 +197,17 @@
     14_de:
         Id: 14
         Locale: de
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_en:
         Id: 14
         Locale: en
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_fr:
         Id: 14
         Locale: fr
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     15_de:
         Id: 15
