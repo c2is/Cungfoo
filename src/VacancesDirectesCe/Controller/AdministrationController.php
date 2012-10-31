@@ -33,6 +33,17 @@ class AdministrationController implements ControllerProviderInterface
         })
         ->bind('administration_adherents');
 
+        $controllers->match('/adherents/ajout.html', function (Request $request) use ($app)
+        {
+            $queryParameters   = $request->query->all();
+            $requestParameters = $request->request->all();
+
+            $queryString = http_build_query($requestParameters, '', '&');
+
+            return $app['twig']->render('Modeles/adherentAjout.twig', array('queryString' => $queryString));
+        })
+        ->bind('administration_adherents_ajout');
+
         return $controllers;
     }
 }
