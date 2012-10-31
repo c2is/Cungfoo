@@ -133,6 +133,20 @@ $(function() {
 // select
     $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
+// footer
+    // ajust borders height
+    if($('#footerInfo').length){
+        var maxHeight = 0;
+        $('#footerInfo').children('div').each(function(index){
+            if ($(this).height() > maxHeight){
+                maxHeight = $(this).height();
+            }
+            if ($('#footerInfo').children('div').length == index+1){
+                $('#infoMenu, #infoAbout').css('height',maxHeight);
+            }
+        });
+    }
+
 // datepicker
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
@@ -488,8 +502,6 @@ $(function() {
             }
 
         }
-
-
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')

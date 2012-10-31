@@ -13,7 +13,7 @@
 <nav id="nav" class="clearboth">
     <ul class="topnav fixed-width clear">
         <li class="tab{% if currentRoute in ['achat_achats', 'achat_panier', 'achat_confirmation_reservation', 'achat_recherche'] %} current{% endif %}"><a href="{{ path('achat_achats') }}">Achats</a></li>
-        <li class="tab{% if currentRoute in ['reservation_reservation', 'reservation_panier', 'reservation_reservations', 'reservation_recherche'] %} current{% endif %}"><a href="{{ path('reservation_reservations') }}">Réservations</a></li>
+        <li class="tab{% if currentRoute in ['reservation_panier', 'reservation_disponibilites', 'reservation_recherche', 'reservation_options', 'reservation_confirmation'] %} current{% endif %}"><a href="{{ path('reservation_recherche') }}">Réservations</a></li>
         <li class="tab{% if currentRoute in ['suivi_reservations', 'suivi_achats'] %} current{% endif %}"><a href="{{ path('suivi_achats') }}">Suivi</a></li>
         <li class="tab{% if currentRoute in ['administration_coordonnees', 'administration_adherents'] %} current{% endif %}"><a href="{{ path('administration_coordonnees') }}">Administration</a></li>
     </ul>
