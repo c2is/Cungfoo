@@ -240,7 +240,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 /* // warning */
 
 /* Resa Packages */
-.proposal, .proposals, #paiement, #option, #authentication{
+.proposal, .proposals, #paiement, #option, #authentication, #newCustomerLayer{
 /*clear*/&:before, &:after{content:"";display:table;clear:both;}
 }
 
@@ -299,7 +299,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 
 #customerAreaContener{
   h2{font:bold 28px/18px @ptnarrow;margin:40px 0 20px;text-transform:uppercase;}
-  .reservationList{width:97%;
+  .reservationList{width:100% !important;
     tr:nth-child(odd){background:@colorBgGrisC;}
     tr:first-child{background:@colorBgBlanc;}
     tr:last-child{
@@ -314,6 +314,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
       &:last-child{._border-radius(0 10px 0 0);}
     }
     td{height:36px;text-align:center;color:@colorBgGrisM;font:16px/18px @ptnarrow;padding:5px 3px;vertical-align:middle;
+      &.allResaAmount{text-align:center !important;}
       &:last-child{font-weight:bold;text-align:right;padding-right:15px;}
     }
   }
@@ -324,7 +325,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 }
 
 
-#authentication, #forgetPassword{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 0 15px;position:relative;width:883px;overflow:hidden;
+#authentication, #forgetPassword{background-color:@colorBgGrisC;border-radius:10px;padding:10px 20px;margin:40px 0 15px;position:relative;overflow:hidden;
   h3{background-color:@colorBgBleu;position:relative;margin-bottom:25px;text-align:center;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
@@ -340,6 +341,22 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
       &:after{content:":";padding-left:3px;}
     }
     [type="text"], [type="password"]{width:266px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;}
+  }
+  #option{background-color:transparent;border-radius:0;padding:0;margin:0;
+    p{margin:0 !important;}
+    .label{display:inline-block;margin-right:15px;}
+    select{width:185px;border:0;padding:4px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;margin-bottom:5px;margin-right:50px}
+  }
+  #address, #option{margin-top:25px;}
+  h4{font:24px/28px @ptnarrow;margin-bottom:25px;color:@colorBgGrisF;}
+  table{font:bold 16px/16px @ptnarrow;width:155px;
+    label, .label{display:block;margin-bottom:5px;width:150px;}
+    [type="text"], [type="password"], select{width:185px;border:0;padding:4px 10px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;margin-bottom:5px;margin-right:50px}
+    select{padding:4px;}
+    .rsl-date-input{
+      input{width:150px;margin-right:0;}
+      a{background:@colorBgBlanc;padding:4px 9px;margin-left:1px;}
+    }
   }
   .aBtField{.clearboth();}
   [type="submit"], .okButton{float:right;margin:0 14px 15px;padding:5px 35px}
@@ -398,7 +415,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
   }
 }
 
-#footerContener{overflow:hidden;margin-top:20px;
+#footerContener{overflow:hidden;margin-top:20px;clear:both;
   .mentions, .footerNavigation{display:none;
     &.gauche, &.droite, &.pageListe{display:block;}
     &.gauche{float:left;}
