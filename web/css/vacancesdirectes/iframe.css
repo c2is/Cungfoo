@@ -12,7 +12,9 @@
 /* bg bleu */
 /* bg bleu2 */
 /* border gris */
-/* Centrer verticalement dans un conteneur de hauteur fixe */
+/*Centrer verticalement une ligne de texte dans un conteneur de hauteur fixe*/
+/*Centrer verticalement plusieurs lignes de texte dans un conteneur de hauteur fixe*/
+/*Centrer verticalement une image de taille variable dans un conteneur de hauteur fixe*/
 .bt {
   display: block;
   border: 0;
@@ -446,23 +448,9 @@ body {
   font-weight: bold;
   font-size: 18px;
   height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
   line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
   text-align: center;
   cursor: help;
-}
-#homePage #searchResult .aProposalBlock .proposalDescriptionTitle .proposalDescriptionDetailsLink > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#homePage #searchResult .aProposalBlock .proposalDescriptionTitle .proposalDescriptionDetailsLink > img {
-  vertical-align: middle;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp {
   position: absolute;
@@ -937,6 +925,22 @@ body {
   text-align: right;
   padding-right: 15px;
 }
+#customerAreaContener .bt {
+  margin: 30px;
+}
+#customerAreaContener .bt img {
+  display: none;
+}
+#customerAreaContener .bt:before {
+  border: 2px solid #FFFFFF;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  content: "+";
+  display: inline-block;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 0 3px;
+}
 #authentication,
 #forgetPassword {
   background-color: #e6e5e5;
@@ -1327,22 +1331,8 @@ body {
   display: block;
   padding: 0 8px;
   height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
   line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
   white-space: nowrap;
-}
-.stylish-select ul.newList a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select ul.newList a > img {
-  vertical-align: middle;
 }
 .stylish-select .newListSelected {
   width: 125px;
@@ -1352,21 +1342,7 @@ body {
   background-color: #e6e5e5;
   position: relative;
   height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
   line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-.stylish-select .newListSelected > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select .newListSelected > img {
-  vertical-align: middle;
 }
 .stylish-select .newListSelected .selectedTxt:after {
   content: "";
