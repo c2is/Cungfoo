@@ -247,7 +247,7 @@ abstract class BaseServiceComplementaireI18n extends BaseObject implements Persi
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = ServiceComplementaireI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

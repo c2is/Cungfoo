@@ -384,7 +384,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 6; // 6 = EditoPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

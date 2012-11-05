@@ -194,7 +194,7 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 2; // 2 = EtablissementActivitePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

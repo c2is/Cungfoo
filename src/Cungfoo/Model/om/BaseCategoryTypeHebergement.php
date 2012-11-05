@@ -352,7 +352,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 4; // 4 = CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

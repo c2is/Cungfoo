@@ -247,7 +247,7 @@ abstract class BaseThematiqueI18n extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = ThematiqueI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

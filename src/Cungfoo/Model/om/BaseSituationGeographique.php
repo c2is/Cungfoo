@@ -365,7 +365,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 4; // 4 = SituationGeographiquePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
