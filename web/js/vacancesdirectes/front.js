@@ -306,7 +306,7 @@ $(function() {
             return false;
         });
         $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]').bind('click', function(){
-            console.log("---------------------------------- CHANGE LINEAR  ----------------------------------");
+            //console.log("---------------------------------- CHANGE LINEAR  ----------------------------------");
             clearDatepicker();
             switchLinear();
         });
@@ -484,7 +484,7 @@ $(function() {
                 $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
             }
 
-            console.log("################################## switchLinear()  ##################################");
+            //console.log("################################## switchLinear()  ##################################");
              $('#searchContainer .searchBox').attr('id',linear);
              $('#AchatLineaire_isBasseSaison').attr('class','clear ' + linear);
              var titleText = "Recherche de linéaires";
@@ -495,15 +495,15 @@ $(function() {
              $('#' + linear + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
              firstRendering = true;
 
-            console.log("################################## initializeForbiddenDates()  ##################################");
-            console.log(firstRendering);
+            //console.log("################################## initializeForbiddenDates()  ##################################");
+            //console.log(firstRendering);
             var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
 
             allSaturdays.removeClass('datepickerUnselectable');
             if (firstRendering){
                allSaturdays.each(function(index, value){
                    var td = $(this);
-            //            console.log(endHighSeasonDay);
+            //            //console.log(endHighSeasonDay);
 
                    if (linear == "reservation"){
                        var len = allSaturdays.length;
@@ -512,7 +512,7 @@ $(function() {
                        }
 
                    }
-            //            console.log(value);
+            //            //console.log(value);
                });
             }
 
@@ -525,7 +525,7 @@ $(function() {
 
 //init Gmap
     if ($('.gmap').length > 0) {
-        consoleLog('map');
+        //consoleLog('map');
         loadGmapScript();
     }
 
@@ -558,15 +558,15 @@ function openIframePopin(url){
 
 // datepicker
 function clearDatepicker() {
-//    console.log("################################## clearDatepicker()  ##################################");
-    !firstSelection ? console.log("if") : console.log("else");
+//    //console.log("################################## clearDatepicker()  ##################################");
+    !firstSelection ? //console.log("if") : //console.log("else");
     if (!firstSelection){$('#datepickerCalendar td.datepickerSaturday:not(.datepickerUnselectable, .datepickerNotInMonth):eq(0) a').trigger("click");}
     $('#datepickerCalendar').DatePickerClear().DatePickerClear();
     $('#datepicker input').val('');
 }
 
 function switchLinear() {
-    console.log("################################## switchLinear()  ##################################");
+    //console.log("################################## switchLinear()  ##################################");
     var radioValue = $('#AchatLineaire_isBasseSaison input[type="radio"][name="AchatLineaire[isBasseSaison]"]:checked').attr('value') == 1 ? "mini" : "classic";
     $('#searchContainer .searchBox').attr('id',radioValue);
     $('#AchatLineaire_isBasseSaison').attr('class','clear ' + radioValue);
@@ -574,8 +574,8 @@ function switchLinear() {
     var titleText = alreadyLinear ? "Recherche de linéaires" : "Recherche de linéaires classiques";
     var infoText = radioValue == "classic" ? "La période choisie doit inclure les 8 semaines de la haute saison." : "La période choisie doit inclure un minimum de 6 semaines.";
     var legendText = "haute saison";
-    console.log(radioValue);
-    console.log(alreadyLinear);
+    //console.log(radioValue);
+    //console.log(alreadyLinear);
     if (!alreadyLinear){
         $('#AchatLineaire_isBasseSaison').hide();
     }
@@ -591,8 +591,8 @@ function switchLinear() {
 }
 
 function initializeForbiddenDates() {
-    console.log("################################## initializeForbiddenDates()  ##################################");
-    console.log(firstRendering);
+    //console.log("################################## initializeForbiddenDates()  ##################################");
+    //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
         startHighSeasonDay = false,
         endHighSeasonDay = false;
@@ -600,7 +600,7 @@ function initializeForbiddenDates() {
     if (firstRendering){
         allSaturdays.each(function(index, value){
             var td = $(this);
-//            console.log(endHighSeasonDay);
+//            //console.log(endHighSeasonDay);
             defineHighSeason(td);
             if (endHighSeasonDay && linear == "classic"){
                 td.addClass('datepickerUnselectable');
@@ -613,7 +613,7 @@ function initializeForbiddenDates() {
                 }
 
             }
-//            console.log(value);
+//            //console.log(value);
         });
     }
 
@@ -621,7 +621,7 @@ function initializeForbiddenDates() {
 }
 
 function unselectForbiddenDates(date){
-    console.log("################################## unselectForbiddenDates(dates)  ##################################");
+    //console.log("################################## unselectForbiddenDates(dates)  ##################################");
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
@@ -690,7 +690,7 @@ function unselectForbiddenDates(date){
             var len = allSaturdays.length;
             if (index >= len - numMinWeeks) {
                 td.addClass('datepickerUnselectable');
-                console.log(value);
+                //console.log(value);
             }
         }
 
@@ -710,8 +710,8 @@ function unselectForbiddenDates(date){
                 }
             }
             else if (linear == "mini" && firstSelection) {
-                console.log(numWeek);
-                console.log(numMinWeeks);
+                //console.log(numWeek);
+                //console.log(numMinWeeks);
                 if (numWeek < numMinWeeks){
                     numWeek++;
                     //console.log("after ARRIVAL");
@@ -725,30 +725,30 @@ function unselectForbiddenDates(date){
 }
 
 function defineHighSeason(td) {
-//    console.log("################################## defineHighSeason()  ##################################");
+//    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-    console.log("HIGH SEASON LAST DAY");
+    //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-    console.log("HIGH SEASON FIRST DAY");
+    //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
 
 function defineSelectedDates(td) {
-//    console.log("################################## defineSelectedDates()  ##################################");
+//    //console.log("################################## defineSelectedDates()  ##################################");
     // td ARRIVAL
     if (td.hasClass('datepickerSelected') && firstSelection) {
-        console.log("#1: ARRIVAL DAY");
+        //console.log("#1: ARRIVAL DAY");
         td.addClass('arrival');
         arrivalDay = true;
     }
     // td DEPARTURE
     if (td.hasClass('datepickerSelected') && !firstSelection) {
-        console.log("#2: DEPARTURE DAY");
+        //console.log("#2: DEPARTURE DAY");
         td.addClass('departure');
         departureDay = true;
     }
@@ -885,7 +885,7 @@ var map,
     ib;
 
 function loadGmapScript() { // call at the end of the DOM ready
-    consoleLog('map');
+    //consoleLog('map');
     var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
     var script = document.createElement("script");
     script.type = "text/javascript";
