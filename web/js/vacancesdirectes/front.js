@@ -559,7 +559,6 @@ function openIframePopin(url){
 // datepicker
 function clearDatepicker() {
 //    //console.log("################################## clearDatepicker()  ##################################");
-    !firstSelection ? //console.log("if") : //console.log("else");
     if (!firstSelection){$('#datepickerCalendar td.datepickerSaturday:not(.datepickerUnselectable, .datepickerNotInMonth):eq(0) a').trigger("click");}
     $('#datepickerCalendar').DatePickerClear().DatePickerClear();
     $('#datepicker input').val('');
