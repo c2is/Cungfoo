@@ -21,7 +21,8 @@
     {% if currentRoute in ['administration_adherents', 'administration_coordonnees', 'administration_adherents_ajout'] %}
         <ul class="topnav topnavSub fixed-width clear">
             <li class="tab{% if currentRoute == 'administration_coordonnees' %} current{% endif %}"><a href="{{ path('administration_coordonnees') }}">Coordonnées</a></li>
-            <li class="tab{% if currentRoute in ['administration_adherents', 'administration_adherents_ajout'] %} current{% endif %}"><a href="{{ path('administration_adherents') }}">Tous les adhérents</a></li>
+            <!-- TODO PROD -->
+            <!--<li class="tab{% if currentRoute in ['administration_adherents', 'administration_adherents_ajout'] %} current{% endif %}"><a href="{{ path('administration_adherents') }}">Tous les adhérents</a></li>-->
         </ul>
     {% endif %}
 

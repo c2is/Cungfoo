@@ -39,6 +39,8 @@ class ReservationController implements ControllerProviderInterface
                 $dataForm->dateDebut = $searchParametersData['dateDebut'];
                 $dataForm->dateFin = $searchParametersData['dateFin'];
                 $dataForm->isBasseSaison = $searchParametersData['isBasseSaison'];
+                $dataForm->nbAdultes = $searchParametersData['nbAdultes'];
+                $dataForm->nbEnfants = $searchParametersData['nbEnfants'];
             }
 
             $achatLineaireForm = $app['form.factory']->create(new AchatLineaireType($app), $dataForm);
