@@ -31,11 +31,17 @@
                             </div>
                         </li>
                         <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.nbAdultes) }}
+                                {{ form_widget(achatLineaireForm.nbEnfants) }}
+                            </div>
+                        </li>
+                        <li class="clear">
                             <div id="datepicker">
                                 {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
                                 {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
                                 <div id="datepickerField" class="clear">
-                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" /><span class="date"></span>
+                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
                                 <div id="datepickerCalendar">
 

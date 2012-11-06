@@ -19,9 +19,33 @@ class AchatLineaireType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nbAdultes', 'hidden', array(
-            'required' => true,
-        ));
+        if ($this->getApplication()['request']->get('_route') == "reservation_recherche")
+        {
+            $builder->add('nbAdultes', 'choice', array(
+                'required' => false,
+                'choices'  => $this->formatForNb(range(1, 10), 'adulte'),
+                'empty_value' => "Nombre d'adultes",
+                'empty_data'  => null
+            ));
+
+            $builder->add('nbEnfants', 'choice', array(
+                'required' => false,
+                'choices'  => $this->formatForNb(range(0, 10), 'enfant'),
+                'empty_value' => "Nombre d'enfants",
+                'empty_data'  => null
+            ));
+        }
+        else
+        {
+            $builder->add('nbAdultes', 'hidden', array(
+                'required' => true,
+            ));
+
+            $builder->add('nbEnfants', 'hidden', array(
+                'required' => true,
+            ));
+        }
+
 
         $paysList = PaysQuery::create()
             ->useI18nQuery()
@@ -112,6 +136,17 @@ class AchatLineaireType extends AppAwareType
     public function getName()
     {
         return 'AchatLineaire';
+    }
+
+    protected function formatForNb($values, $label)
+    {
+        $choices = array();
+        foreach ($values as $key => $value)
+        {
+            $choices[$value] = sprintf("%s %s%s", $value, $label, $value > 1 ? 's' : '');
+        }
+
+        return $choices;
     }
 
     protected function formatForList($list, $key, $value, $empty = null)

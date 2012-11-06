@@ -31,6 +31,9 @@ class AchatController implements ControllerProviderInterface
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
+            $dataForm->nbAdultes = 1;
+            $dataForm->nbEnfants = 0;
+
             // set form if session search_parameters_achat exist
             if ($app['session']->get('search_parameters_achat'))
             {

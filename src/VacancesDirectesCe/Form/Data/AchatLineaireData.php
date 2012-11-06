@@ -7,7 +7,8 @@ use Symfony\Component\Validator\ExecutionContext;
 
 class AchatLineaireData
 {
-    public $nbAdultes = 1;
+    public $nbAdultes = null;
+    public $nbEnfants = null;
     public $pays;
     public $region;
     public $campings;
@@ -17,9 +18,14 @@ class AchatLineaireData
 
     public function isValid(ExecutionContext $context)
     {
-        if (!$this->nbAdultes)
+        if ($this->nbAdultes === null)
         {
             $context->addViolation("Le nombre d'adultes doit être renseigné.");
+        }
+
+        if ($this->nbEnfants === null)
+        {
+            $this->nbEnfants = 0;
         }
 
         if (!$this->dateDebut)
