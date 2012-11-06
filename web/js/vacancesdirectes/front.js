@@ -133,6 +133,21 @@ $(function() {
 // select
     $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
 
+//navigation
+//    var mylist = $('#campingsList')
+//    var listitems = mylist.children('li').get();
+//    listitems.sort(function(a, b) {
+//        return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+//    })
+//    $.each(listitems, function(idx, itm) { mylist.append(itm); });
+    $('#campingsList').listnav({
+        includeNums: false,
+        includeOther: false,
+        prefixes: ["le","la","l'","un","une"],
+        noMatchText: "Il n'existe aucun camping commençant par cette lettre."
+    });
+
+
 // footer
     // ajust borders height
     if($('#footerInfo').length){
