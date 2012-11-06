@@ -247,7 +247,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = CategoryTypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

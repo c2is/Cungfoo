@@ -1,37 +1,37 @@
 \Cungfoo\Model\Activite:
     1:
         Code: PING
-        ImagePath: null
+        ImagePath: .
     2:
         Code: CENF
-        ImagePath: null
+        ImagePath: .
     3:
         Code: PETG
-        ImagePath: null
+        ImagePath: .
     4:
         Code: CADO
-        ImagePath: null
+        ImagePath: .
     5:
         Code: TEMU
-        ImagePath: null
+        ImagePath: .
     6:
         Code: SAMU
-        ImagePath: null
+        ImagePath: .
     7:
         Code: DISC
-        ImagePath: null
+        ImagePath: .
     8:
         Code: MIGO
-        ImagePath: null
+        ImagePath: .
     9:
         Code: TENN
-        ImagePath: null
+        ImagePath: .
     10:
         Code: GOLF
-        ImagePath: null
+        ImagePath: .
     11:
         Code: EQUI
-        ImagePath: null
+        ImagePath: .
     12:
         Code: PECH
-        ImagePath: null
+        ImagePath: .

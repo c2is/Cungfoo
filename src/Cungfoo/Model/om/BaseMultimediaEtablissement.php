@@ -414,7 +414,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = MultimediaEtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

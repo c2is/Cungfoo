@@ -745,7 +745,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 14; // 14 = EventPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

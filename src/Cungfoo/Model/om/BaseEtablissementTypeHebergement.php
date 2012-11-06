@@ -194,7 +194,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 2; // 2 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

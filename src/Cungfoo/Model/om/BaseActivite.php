@@ -403,7 +403,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = ActivitePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

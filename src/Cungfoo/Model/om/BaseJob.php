@@ -569,7 +569,7 @@ abstract class BaseJob extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 9; // 9 = JobPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

@@ -387,7 +387,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = AvantagePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

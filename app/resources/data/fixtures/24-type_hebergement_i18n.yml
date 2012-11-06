@@ -194,7 +194,7 @@
     9_de:
         Id: 9
         Locale: de
-        Name: 'Amical (4 places, max. 3 adultes) DE'
+        Name: 'Amical (4 places, max. 3 adultes)'
         Surface: '30m2 DE'
         TypeTerrasse: 'rez de jardin DE'
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mi magna, auctor sed euismod ut, luctus quis justo. Etiam purus neque, convallis at rutrum pharetra, semper sed augue. Suspendisse lorem libero, gravida non feugiat at, tincidunt vel nibh. Mauris id arcu purus.'
@@ -202,7 +202,7 @@
     9_en:
         Id: 9
         Locale: en
-        Name: 'Amical (4 places, max. 3 adultes) EN'
+        Name: 'Amical (4 places, max. 3 adultes)'
         Surface: '30m2 EN'
         TypeTerrasse: 'rez de jardin EN'
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mi magna, auctor sed euismod ut, luctus quis justo. Etiam purus neque, convallis at rutrum pharetra, semper sed augue. Suspendisse lorem libero, gravida non feugiat at, tincidunt vel nibh. Mauris id arcu purus.'

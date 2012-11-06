@@ -4362,8 +4362,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 107
         CategorieId: 1
         GeoCoordinateX: null
@@ -4387,8 +4387,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: null
         CategorieId: null
         GeoCoordinateX: null
@@ -4412,8 +4412,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 113
         CategorieId: 4
         GeoCoordinateX: null
@@ -4437,8 +4437,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 61
         CategorieId: 3
         GeoCoordinateX: null
@@ -4462,8 +4462,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 61
         CategorieId: 3
         GeoCoordinateX: null
@@ -4487,8 +4487,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-11-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-01-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         VilleId: 119
         CategorieId: 2
         GeoCoordinateX: null

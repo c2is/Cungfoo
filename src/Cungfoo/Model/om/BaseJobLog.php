@@ -409,7 +409,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 6; // 6 = JobLogPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

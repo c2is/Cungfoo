@@ -197,7 +197,7 @@ eof
     protected function replaceWeekTimes(&$iframe)
     {
         $iframe = preg_replace("/(\d*) x /", "$1 semaines / ", $iframe);
-        $iframe = preg_replace("/1 semaines /", "1 semaine ", $iframe);
+        $iframe = preg_replace("/1 semaines \//", "", $iframe);
     }
 
     protected function replaceCampingFicheUri(&$iframe)

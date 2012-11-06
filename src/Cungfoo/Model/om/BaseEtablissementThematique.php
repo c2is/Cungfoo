@@ -194,7 +194,7 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 2; // 2 = EtablissementThematiquePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block title %}Ajout d'un adhérent / Administration{% endblock %}
+
+{% block content %}
+        <div class="column clearboth" id="confirmContainer">
+            <iframe id="frameResalys" src="{{ path('resalys_wrapper') }}?{{ queryString }}" width="960px" height="700px"></iframe>
+        </div>
+{% endblock %}

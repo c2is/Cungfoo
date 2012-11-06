@@ -210,7 +210,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = DomainePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

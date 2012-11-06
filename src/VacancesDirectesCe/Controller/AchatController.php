@@ -65,7 +65,7 @@ class AchatController implements ControllerProviderInterface
 
                     if (!empty($achatLineaireParameters['campings']))
                     {
-                        $achatLineaireParameters['campings'] = implode(';', $achatLineaireParameters['campings']);
+                        $achatLineaireParameters['campings'] = implode(',', $achatLineaireParameters['campings']);
                     }
                     else
                     {

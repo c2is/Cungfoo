@@ -42,7 +42,6 @@ class EtablissementType extends BaseEtablissementType
                     'title'         => 'etablissement.group.resalys',
                     'description'   => 'Données resalys',
                     'content'       => array(
-                        'id',
                         'code',
                         'name',
                         'title',
