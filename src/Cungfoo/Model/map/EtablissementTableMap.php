@@ -67,6 +67,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('CAPACITE', 'Capacite', 'VARCHAR', false, 255, null);
         $this->addColumn('PLAN_PATH', 'PlanPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('PUBLISHED', 'Published', 'BOOLEAN', false, 1, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
