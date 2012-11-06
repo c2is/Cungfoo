@@ -93,6 +93,7 @@ class AchatLineaireType extends AppAwareType
                 ->endUse()
             ->endUse()
             ->select(array('Code'))
+            ->filterByPublished(true)
             ->find()
             ->toArray()
         ;
