@@ -114,7 +114,7 @@ class AchatLineaireType extends AppAwareType
         ));
 
         $builder->add('isBasseSaison', 'choice', array(
-            'choices'  => array('linéaire classique', 'linéaire basse saison'),
+            'choices'  => array('Linéaire classique', 'Linéaire basse saison'),
             'required' => false,
             'expanded' => true,
             'multiple' => false
