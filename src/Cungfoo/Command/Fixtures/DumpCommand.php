@@ -142,12 +142,13 @@ class DumpCommand extends BaseCommand
                         $valueId = $value['Id'];
                         unset($value['Id']);
 
+
                         foreach ($value as $field)
                         {
                             if ($field && is_string($field))
                             {
                                 $file = $this->getApplication()->getRootDir().'/web/'.$field;
-                                if (file_exists($file))
+                                if ($field != '.' && file_exists($file))
                                 {
                                     $filesystem->copy($file, $fixturesDirectory.'/'.$field);
                                 }

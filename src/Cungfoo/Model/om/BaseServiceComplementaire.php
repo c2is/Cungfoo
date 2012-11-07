@@ -403,7 +403,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

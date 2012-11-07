@@ -352,7 +352,7 @@ abstract class BasePays extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 4; // 4 = PaysPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

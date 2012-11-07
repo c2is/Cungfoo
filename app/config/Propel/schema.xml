@@ -82,6 +82,9 @@
         <column name="ouverture_camping" type="longvarchar" />
         <column name="arrivees_departs" type="longvarchar" />
         <column name="plan_path" type="varchar" />
+
+        <column name="published" type="boolean" />
+
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">

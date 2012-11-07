@@ -154,6 +154,7 @@ eof
         $this->replaceString($iframe, 'Choisir', 'Réserver');
         $this->replaceString($iframe, '<b><b>');
         $this->replaceString($iframe, 'Vos séjours', 'Votre réservation');
+        $this->replaceString($iframe, '.00', '');
     }
 
     protected function replaceDayNightByWeeks(&$iframe)
@@ -161,13 +162,15 @@ eof
         $dayNight = preg_match_all('"<div class=\"label\">([0-9]*) jours / ([0-9]*) nuits</div>"', $iframe, $matches, PREG_SET_ORDER);
         foreach ($matches as $match)
         {
-            $iframe = str_replace($match[0], sprintf('<div class="label">%s</div><div class="field">semaines</div>', (int)($match[1] / 8)), $iframe);
+            $weeks = (int)($match[1] / 7);
+            $iframe = str_replace($match[0], sprintf('<div class="label">%s</div><div class="field">semaine%s</div>', $weeks, $weeks == 1 ? '' : 's'), $iframe);
         }
 
         $dayNight = preg_match_all('"<p class=\"proposalLength\">([0-9]*) jours / ([0-9]*) nuits</p>"', $iframe, $matches, PREG_SET_ORDER);
         foreach ($matches as $match)
         {
-            $iframe = str_replace($match[0], sprintf('<p class="proposalLength">%s semaines</p>', (int)($match[1] / 8)), $iframe);
+            $weeks = (int)($match[1] / 7);
+            $iframe = str_replace($match[0], sprintf('<p class="proposalLength">%s semaine%s</p>', $weeks, $weeks == 1 ? '' : 's'), $iframe);
         }
     }
 
@@ -195,7 +198,7 @@ eof
     protected function replaceWeekTimes(&$iframe)
     {
         $iframe = preg_replace("/(\d*) x /", "$1 semaines / ", $iframe);
-        $iframe = preg_replace("/1 semaines /", "1 semaine ", $iframe);
+        $iframe = preg_replace("/1 semaines \//", "", $iframe);
     }
 
     protected function replaceCampingFicheUri(&$iframe)

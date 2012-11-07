@@ -194,7 +194,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 2; // 2 = EtablissementDestinationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

@@ -247,7 +247,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = MultimediaEtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

@@ -50,22 +50,34 @@
             <li class=""><a href="#{{ group.title | replace({'.': ''})}}">{{ group.title | trans }}</a></li>
         {% endfor %}
         </ul>
-        <div id="crudGroupContent" class="tab-content">
 
+        <div id="crudGroupContent" class="tab-content">
         {{ form_errors(form) }}
-        {{ form_rest(form) }}
         {% for group in form.get('attr').groups %}
-            <div class="tab-pane" id="{{ group.title | replace({'.': ''})}}">
+
+            {% if group.columns is defined %}
+                {% set columns = group.columns %}
+            {% else %}
+                {% set columns = 1 %}
+            {% endif %}
+
+            <div class="tab-pane row" id="{{ group.title | replace({'.': ''})}}">
             {% if group.content is defined %}
                 {% if group.description is defined %}
                 <blockquote>{{ group.description }}</blockquote>
                 {% endif %}
                 {% for row in group.content %}
-                    {{ form_row(form[row]) }}
+                    <div class="span{{ 12 / columns }}">
+                        {{ form_row(form[row]) }}
+                    </div>
                 {% endfor %}
             {% endif %}
             </div>
         {% endfor %}
+        </div>
+
+        <div style="display: none">
+        {{ form_rest(form) }}
         </div>
 
         <script>

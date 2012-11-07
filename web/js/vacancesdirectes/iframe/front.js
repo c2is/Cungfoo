@@ -23,7 +23,9 @@ $(function() {
         $(this).text($(this).val() + ' semaines');
     });
 
-    $('.sortContener').find('select').sSelect({ddMaxHeight: '300px'});
+    //$('.sortContener').find('select').sSelect({ddMaxHeight: '300px'});
+    $('.sortContener').find('#search_form_sort_string').sSelect({ddMaxHeight: '300px', containerClass: 'sortBy'});
+    $('.sortContener').find('#search_form_max_results').sSelect({ddMaxHeight: '300px', containerClass: 'sortNb'});
 
 });
 

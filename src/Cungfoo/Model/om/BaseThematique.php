@@ -365,7 +365,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 4; // 4 = ThematiquePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

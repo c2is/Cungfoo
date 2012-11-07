@@ -247,7 +247,7 @@ abstract class BaseBaignadeI18n extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = BaignadeI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

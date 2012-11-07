@@ -25,7 +25,7 @@ class SearchEngineController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', function (Request $request) use ($app)
+        $controllers->match('/', function (Request $request) use ($app)
         {
             /** Search form date */
             $formData = new DateData();

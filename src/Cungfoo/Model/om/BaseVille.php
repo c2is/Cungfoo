@@ -401,7 +401,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

@@ -352,7 +352,7 @@ abstract class BaseCategorie extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 4; // 4 = CategoriePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

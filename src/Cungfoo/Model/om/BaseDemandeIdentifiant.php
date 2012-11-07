@@ -1138,7 +1138,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 25; // 25 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {

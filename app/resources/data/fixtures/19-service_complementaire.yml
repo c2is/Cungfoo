@@ -1,40 +1,40 @@
 \Cungfoo\Model\ServiceComplementaire:
     1:
         Code: S34N
-        ImagePath: null
+        ImagePath: .
     2:
         Code: WIFI
-        ImagePath: null
+        ImagePath: .
     3:
         Code: ANIM
-        ImagePath: null
+        ImagePath: .
     4:
         Code: DEPA
-        ImagePath: null
+        ImagePath: .
     5:
         Code: LOVP
-        ImagePath: null
+        ImagePath: .
     6:
         Code: TVBA
-        ImagePath: null
+        ImagePath: .
     7:
         Code: NAVG
-        ImagePath: null
+        ImagePath: .
     8:
         Code: NAVP
-        ImagePath: null
+        ImagePath: .
     9:
         Code: BAR
-        ImagePath: null
+        ImagePath: .
     10:
         Code: SNAC
-        ImagePath: null
+        ImagePath: .
     11:
         Code: WIFP
-        ImagePath: null
+        ImagePath: .
     12:
         Code: RAE
-        ImagePath: null
+        ImagePath: .
     13:
         Code: REST
-        ImagePath: null
+        ImagePath: .

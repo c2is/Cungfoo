@@ -18,7 +18,6 @@
 
     <script src="{{ asset('vendor/head.extended.js') }}"></script>
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
-    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body class="ce">
     <header class="clear">
@@ -33,7 +32,7 @@
             <div id="headerRight">
                 <div id="telephone">
                     <span>Informations & réservations
-                        <a>0825 133 400 (0,15€/min)</a>
+                        <a>0826 105 110 (0,15€/min)</a>
                     </span>
                 </div>
             </div>
@@ -55,13 +54,9 @@
     </div><!-- End of document -->
 
     <footer class="clear">
-        <div class="footer-link" class="full-width">
+        <div class="footer-links" class="full-width">
             <a href="{{ path('edito_by_slug', {slug: 'conditions-generales-de-location'}) }}">Conditions générales de location</a> -
-            <a href="{{ path('edito_by_slug', {slug: 'credits'}) }}">Crédits</a> -
-            <a href="{{ path('edito_by_slug', {slug: 'mentions-legales'}) }}">Mentions légales</a>
-            <span class="card transac">Transactions sécurisées</span>
-            <span class="card visa">CB Visa</span>
-            <span class="card master">MasterCard</span>
+            <a href="{{ path('edito_by_slug', {slug: 'mentions-legales-credits'}) }}">Mentions légales & crédits</a>
         </div>
     </footer>
 

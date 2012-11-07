@@ -11,7 +11,7 @@
         <div class="searchBox full-width">
             <form id="searchForm" class="searchBlock" action="{{ path(app.request.get('_route')) }}" method="post">
                 <fieldset>
-                    <legend>Recherche de linéaires classique</legend>
+                    <legend>Remplissez les séjours de vos adhérents</legend>
 
                     <div class="error">{{ form_errors(achatLineaireForm) }}</div>
 
@@ -31,11 +31,17 @@
                             </div>
                         </li>
                         <li>
+                            <div class="selectContainer clear">
+                                {{ form_widget(achatLineaireForm.nbAdultes) }}
+                                {{ form_widget(achatLineaireForm.nbEnfants) }}
+                            </div>
+                        </li>
+                        <li class="clear">
                             <div id="datepicker">
                                 {{ form_widget(achatLineaireForm.dateDebut, { 'attr': {'class': 'hidden'}}) }}
                                 {{ form_widget(achatLineaireForm.dateFin, { 'attr': {'class': 'hidden'}}) }}
                                 <div id="datepickerField" class="clear">
-                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" /><span class="date"></span>
+                                    <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                                 </div>
                                 <div id="datepickerCalendar">
 
@@ -62,9 +68,9 @@
                 </script>
             </form>
             <div id="searchText" class="searchBlock">
-                <h2>Choisissez votre linéaire</h2>
+                <h2>Choisissez votre séjour</h2>
                 <div id="searchTextContent">
-                    <p>Vous souhaitez réserver un linéaire haute saison : Profitez de 8 semaines minimum consécutives (du 06/07 au 31/08/13) sur le ou les campings spécialement choisis par vos soins.</p><br/><p>Vous pouvez aisément ajouter, dès l’achat, des semaines consécutives avant ou après le linéaire (135€ la semaine). N’oubliez pas, grâce à ce linéaire, vous pouvez acheter un linéaire mini : 6 semaines consécutives en basse saison (135€ la semaine) !</p>
+                    <p>Vous avez ici accès à toutes les disponibilités Vacances directes/Village Center. Vous retrouvez donc les disponibilités des produits que vous avez achetés, et afin d'obtenir les meilleurs résultats pour vos adhérents, vous avez également accès à toutes les disponilibilités au coup par coup.</p>
                 </div>
             </div>
         </div>

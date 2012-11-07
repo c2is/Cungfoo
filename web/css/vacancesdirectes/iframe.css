@@ -536,6 +536,9 @@ body {
   border-top: 6px solid #23408f;
   z-index: 1;
 }
+#homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp .titreDestination:after {
+  border-top-color: #763905;
+}
 #homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp ul {
   margin: 20px 0 0 16px;
 }
@@ -545,8 +548,14 @@ body {
   color: #28568a;
   font: 10px/14px Arial, sans-serif;
 }
+#homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp p {
+  margin: 15px 0 -5px 16px;
+}
 #homePage #searchResult .aProposalBlock.package .titre {
   background-color: #8dc63f;
+}
+#homePage #searchResult .aProposalBlock.package .promoPrix {
+  background: transparent;
 }
 #homePage #searchResult .aProposalBlock.package .promoPrix strong {
   color: #8dc63f;
@@ -565,6 +574,11 @@ body {
   font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
+  font: bold 10px Arial, sans-serif;
+  padding: 5px 30px 5px 10px;
+  margin: 0 0 0 -10px;
+  -webkit-border-radius: 7px 0 7px 0;
+  border-radius: 7px 0 7px 0;
 }
 #homePage #searchResult .aProposalBlock.package .titreDestination:after {
   content: "";
@@ -575,6 +589,9 @@ body {
   border-right: 0 solid transparent;
   border-top: 6px solid #23408f;
   z-index: 1;
+}
+#homePage #searchResult .aProposalBlock.package .titreDestination:after {
+  border-top-color: #3A5318;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionContent {
   width: 100%;
@@ -631,7 +648,8 @@ body {
 .proposals,
 #paiement,
 #option,
-#authentication {
+#authentication,
+#newCustomerLayer {
   /*clear*/
 }
 .proposal:before,
@@ -639,11 +657,13 @@ body {
 #paiement:before,
 #option:before,
 #authentication:before,
+#newCustomerLayer:before,
 .proposal:after,
 .proposals:after,
 #paiement:after,
 #option:after,
-#authentication:after {
+#authentication:after,
+#newCustomerLayer:after {
   content: "";
   display: table;
   clear: both;
@@ -692,11 +712,20 @@ body {
   height: 98px;
   background: #fff;
 }
+#reservationContener .proposal .deleteProductIcon {
+  width: 19px;
+  height: 23px;
+  background: url("../../images/vacancesdirectes/common/ui/bin.png") no-repeat 0 0 transparent;
+  text-indent: -9999px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 #reservationContener .proposal .total {
   float: right;
   width: 118px;
   height: 119px;
-  background: url(../../images/vacancesdirectes/common/sprites/spriteSplash.png);
+  background: url("../../images/vacancesdirectes/common/sprites/spriteSplash.png");
   margin: -10px 20px 0px 0px;
   text-align: center;
   color: #ffffff;
@@ -851,13 +880,72 @@ body {
   border: 0;
   margin-bottom: 10px;
 }
+.anOccupant {
+  background-color: #e6e5e5;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px 0;
+  position: relative;
+}
+.anOccupant h3 {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-border-radius: 10px 0 10px 0;
+  border-radius: 10px 0 10px 0;
+  background-color: #009bc9;
+  color: #ffffff;
+  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  padding: 5px 10px;
+  margin: 0 0 10px -20px;
+  background-image: none !important;
+}
+.anOccupant h3:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-left: 10px solid transparent;
+  border-right: 0 solid transparent;
+  border-top: 6px solid #23408f;
+  z-index: 1;
+}
+.anOccupant h3 span {
+  font: bold 13px arial;
+  text-transform: none;
+}
+.anOccupant h4 {
+  font: bold 16px 'PT Sans Narrow', Arial, sans-serif;
+  margin: 10px 0 20px;
+}
+.anOccupant .occupantFields {
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.anOccupant .occupantFields span {
+  margin-left: 20px;
+}
+.anOccupant .occupantFields [type="text"],
+.anOccupant .occupantFields [type="password"] {
+  border: 0;
+  padding: 4px 10px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-left: 10px;
+}
+.anOccupant .occupantFields .rsl-date-input a {
+  background: #ffffff;
+  padding: 4px 9px;
+  margin-left: 1px;
+}
 #customerAreaContener h2 {
   font: bold 28px/18px 'PT Sans Narrow', Arial, sans-serif;
   margin: 40px 0 20px;
   text-transform: uppercase;
 }
 #customerAreaContener .reservationList {
-  width: 97%;
+  width: 100% !important;
 }
 #customerAreaContener .reservationList tr:nth-child(odd) {
   background: #e6e5e5;
@@ -903,10 +991,29 @@ body {
   padding: 5px 3px;
   vertical-align: middle;
 }
+#customerAreaContener .reservationList td.allResaAmount {
+  text-align: center !important;
+}
 #customerAreaContener .reservationList td:last-child {
   font-weight: bold;
   text-align: right;
   padding-right: 15px;
+}
+#customerAreaContener .bt {
+  margin: 30px;
+}
+#customerAreaContener .bt img {
+  display: none;
+}
+#customerAreaContener .bt:before {
+  border: 2px solid #FFFFFF;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  content: "+";
+  display: inline-block;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 0 3px;
 }
 #authentication,
 #forgetPassword {
@@ -915,7 +1022,6 @@ body {
   padding: 10px 20px;
   margin: 40px 0 15px;
   position: relative;
-  width: 883px;
   overflow: hidden;
 }
 #authentication h3,
@@ -1006,6 +1112,86 @@ body {
   color: #8c8a8a;
   font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
 }
+#authentication #option,
+#forgetPassword #option {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+#authentication #option p,
+#forgetPassword #option p {
+  margin: 0 !important;
+}
+#authentication #option .label,
+#forgetPassword #option .label {
+  display: inline-block;
+  margin-right: 15px;
+}
+#authentication #option select,
+#forgetPassword #option select {
+  width: 185px;
+  border: 0;
+  padding: 4px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+#authentication #address,
+#forgetPassword #address,
+#authentication #option,
+#forgetPassword #option {
+  margin-top: 25px;
+}
+#authentication h4,
+#forgetPassword h4 {
+  font: 24px/28px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 25px;
+  color: #464545;
+}
+#authentication table,
+#forgetPassword table {
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  width: 155px;
+}
+#authentication table label,
+#forgetPassword table label,
+#authentication table .label,
+#forgetPassword table .label {
+  display: block;
+  margin-bottom: 5px;
+  width: 150px;
+}
+#authentication table [type="text"],
+#forgetPassword table [type="text"],
+#authentication table [type="password"],
+#forgetPassword table [type="password"],
+#authentication table select,
+#forgetPassword table select {
+  width: 185px;
+  border: 0;
+  padding: 4px 10px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+#authentication table select,
+#forgetPassword table select {
+  padding: 4px;
+}
+#authentication table .rsl-date-input input,
+#forgetPassword table .rsl-date-input input {
+  width: 150px;
+  margin-right: 0;
+}
+#authentication table .rsl-date-input a,
+#forgetPassword table .rsl-date-input a {
+  background: #ffffff;
+  padding: 4px 9px;
+  margin-left: 1px;
+}
 #authentication .aBtField,
 #forgetPassword .aBtField {
   clear: both;
@@ -1041,14 +1227,23 @@ body {
   color: #5f5f5f;
   font-size: 13px;
 }
-#searchResultPage .sortContener .selects .newListSelected:first-child {
+#searchResultPage .sortContener .newListSelected.sortBy {
   width: 203px;
 }
-#searchResultPage .sortContener .selects .newListSelected:first-child .selectedTxt {
+#searchResultPage .sortContener .newListSelected.sortBy .selectedTxt {
   width: 175px;
 }
-#searchResultPage .sortContener .selects .newListSelected:first-child .SSContainerDivWrapper {
+#searchResultPage .sortContener .newListSelected.sortBy .SSContainerDivWrapper {
   min-width: 203px;
+}
+#searchResultPage .sortContener .newListSelected.sortNb {
+  width: 76px;
+}
+#searchResultPage .sortContener .newListSelected.sortNb .selectedTxt {
+  width: 47px;
+}
+#searchResultPage .sortContener .newListSelected.sortNb .SSContainerDivWrapper {
+  min-width: 76px;
 }
 #searchResultPage .sortContener p > span {
   float: left;
@@ -1166,9 +1361,21 @@ body {
   font-size: 17px;
   text-align: center;
 }
+#searchResultPage #searchResult .convention {
+  float: right;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-border-radius: 0 10px 0 10px;
+  border-radius: 0 10px 0 10px;
+  background: #8c8a8a;
+  color: #ffffff;
+  margin: -54px -10px 0px 0px;
+  padding: 7px 15px;
+}
 #footerContener {
   overflow: hidden;
   margin-top: 20px;
+  clear: both;
 }
 #footerContener .mentions,
 #footerContener .footerNavigation {

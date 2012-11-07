@@ -34,6 +34,7 @@
     <!-- // colonne gauche -->
     <!-- colonne droite -->
         <aside class="column right">
+            <?php include('blocs/search.php') ?>
         </aside>
     <!-- // colonne droite -->
     </div>

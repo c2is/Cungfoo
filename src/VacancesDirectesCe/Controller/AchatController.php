@@ -31,10 +31,13 @@ class AchatController implements ControllerProviderInterface
             /** AchatLineaire form */
             $dataForm = new AchatLineaireData();
 
-            // set form if session search_parameters exist
-            if ($app['session']->get('search_parameters'))
+            $dataForm->nbAdultes = 1;
+            $dataForm->nbEnfants = 0;
+
+            // set form if session search_parameters_achat exist
+            if ($app['session']->get('search_parameters_achat'))
             {
-                $searchParametersData = $app['session']->get('search_parameters');
+                $searchParametersData = $app['session']->get('search_parameters_achat');
                 $dataForm->pays = $searchParametersData['pays'];
                 $dataForm->region = $searchParametersData['region'];
                 $dataForm->campings = explode(';', $searchParametersData['campings']);
@@ -65,7 +68,7 @@ class AchatController implements ControllerProviderInterface
 
                     if (!empty($achatLineaireParameters['campings']))
                     {
-                        $achatLineaireParameters['campings'] = implode(';', $achatLineaireParameters['campings']);
+                        $achatLineaireParameters['campings'] = implode(',', $achatLineaireParameters['campings']);
                     }
                     else
                     {
@@ -95,11 +98,11 @@ class AchatController implements ControllerProviderInterface
             $achatLineaire = $request->query->all();
             if (isset($achatLineaire['dateDebut']))
             {
-                $app['session']->set('search_parameters', $achatLineaire);
+                $app['session']->set('search_parameters_achat', $achatLineaire);
             }
             else
             {
-                $achatLineaire = $app['session']->get('search_parameters');
+                $achatLineaire = $app['session']->get('search_parameters_achat');
 
                 // override default paramterers
                 $postParameters = $request->request->all();
