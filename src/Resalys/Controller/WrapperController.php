@@ -154,6 +154,7 @@ eof
         $this->replaceString($iframe, 'Choisir', 'Réserver');
         $this->replaceString($iframe, '<b><b>');
         $this->replaceString($iframe, 'Vos séjours', 'Votre réservation');
+        $this->replaceString($iframe, '.00', '');
     }
 
     protected function replaceDayNightByWeeks(&$iframe)
