@@ -713,13 +713,13 @@ body {
   background: #fff;
 }
 #reservationContener .proposal .deleteProductIcon {
-  width: 27px;
-  height: 33px;
+  width: 19px;
+  height: 23px;
   background: url("../../images/vacancesdirectes/common/ui/bin.png") no-repeat 0 0 transparent;
   text-indent: -9999px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
 }
 #reservationContener .proposal .total {
   float: right;

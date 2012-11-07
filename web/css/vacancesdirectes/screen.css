@@ -687,9 +687,6 @@ footer {
 #nav .tab .subnav ol#campingsList li:before {
   content: "- ";
 }
-#nav .tab:nth-child(2) .subnav {
-  display: block;
-}
 /* lang */
 #lang {
   width: 41px;
