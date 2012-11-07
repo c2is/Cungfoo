@@ -66,6 +66,7 @@ class EtablissementType extends BaseEtablissementType
                     'title'         => 'etablissement.group.cms',
                     'description'   => 'Données CMS',
                     'content'       => array(
+                        'published',
                         'geo_coordinate_x',
                         'geo_coordinate_y',
                         'video_path',

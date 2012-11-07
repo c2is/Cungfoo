@@ -14,7 +14,7 @@ class AchatLineaireData
     public $campings;
     public $dateDebut;
     public $dateFin;
-    public $isBasseSaison = true;
+    public $isBasseSaison = false;
 
     public function isValid(ExecutionContext $context)
     {

@@ -182,6 +182,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.plan_path_deleted',
             'required' => false,
         ));
+        $builder->add('published', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.published',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(
