@@ -36,7 +36,18 @@
         </div>
     </header>
 
-    {% block content %}{% endblock %}
+    {% block content %}
+    <div id="wrap" class="fixed-width clear">
+        <div class="column left">
+            {% block leftColumn %}
+            {% endblock %}
+        </div>
+        <aside class="column right">
+            {% block rightColumn %}
+            {% endblock %}
+        </aside>
+    </div>
+    {% endblock %}
 
     <footer class="clear">
         <div class="footer-link" class="full-width">
