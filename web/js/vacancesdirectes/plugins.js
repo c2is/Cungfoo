@@ -2267,15 +2267,29 @@ TextMorph.prototype.setOptions = function(options){
                 });
             }
 
+            var prevChar;
             function addLetterClass(firstChar, $el, isPrefix) {
                 if (/\W/.test(firstChar)) firstChar = '-'; // not A-Z, a-z or 0-9, so considered "other"
                 if (!isNaN(firstChar)) firstChar = '_'; // use '_' if the first char is a number
                 $el.addClass('ln-' + firstChar);
-
+                console.log(prevChar);
+                console.log(firstChar);
+                console.log($el);
+                console.log("isPrefix: " + isPrefix);
                 if (counts[firstChar] == undefined) counts[firstChar] = 0;
-                if (counts[firstChar] == 0) $el.addClass('ln-first');
+                if (counts[firstChar] == 0 && (firstChar == 'l' && isPrefix)) {
+//                    $el.addClass('ln-first').prepend('<span class="ln-letter">' + firstChar.toUpperCase() + '</span>');
+                    console.log(">>>>>>>>>>>>>>>>>>>>>>> IF");
+                }
+                else if (counts[firstChar] == 0) {
+                    $el.addClass('ln-first').prepend('<span class="ln-letter">' + firstChar.toUpperCase() + '</span>');
+                    console.log("ELSE IF");
+                }
+                if (prevChar != firstChar && prevChar != undefined  && counts[firstChar] == 0) $el.before('<li class="ln-separator" />');
+                prevChar = firstChar;
                 counts[firstChar]++;
                 if (!isPrefix) allCount++;
+                else $el.addClass('prefix');
             }
 
             function addDisabledClass() {
