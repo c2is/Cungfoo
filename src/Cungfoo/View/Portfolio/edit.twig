@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <h2>{{ "portfolio.crud.edit" | trans }}</h2>
+
+    <ul class="portfolio-edit">
+        <li>
+            <h2>{{ media.name }}</h2>
+        </li>
+        <li>
+            <img src="{{ asset(media.pathMiniature) }}" />
+        </li>
+    </ul>
+
+    <hr/>
+
+    <div class="form-actions">
+        <div class="btn-group">
+            <a class="btn" href="{{ path('portfolio') }}"><i class="icon-list"></i> {{ "crud.button.list" | trans }}</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <h2>{{ "portfolio.crud.create" | trans }}</h2>
+
+    <form action="{{ path('portfolio_media_create') }}" method="post" {{ form_enctype(form) }}>
+        <div class="prettyFile">
+            {{ form_errors(form) }}
+            {{ form_errors(form.files) }}
+            {{ form_widget(form.files, { 'full_name': form.files.get('full_name') ~ '[]'}) }}
+            <a href="#" class="btn" id="addFiles">Ajouter des fichiers à télécharger</a>
+            <input type="submit" class="btn" />
+            <a class="btn pull-right" href="{{ path('portfolio') }}"><i class="icon-list"></i> {{ "crud.button.list" | trans }}</a>
+        </div>
+
+        <hr/>
+
+        <table class="table table-striped">
+            <tbody class="portfolio-files-preview">
+            </tbody>
+        </table>
+
+        {{ form_rest(form) }}
+
+    </form>
+{% endblock %}
+
+{% block javascripts %}{{ parent() }}
+<script type="text/javascript">
+$(document).ready(function() {
+    if ($('.prettyFile').length) {
+        $('.prettyFile').each(function() {
+            var pF = $(this);
+            var fileInput = pF.find('input[type="file"]');
+
+            fileInput.change(function() {
+                $.each(fileInput[0].files, function() {
+                    media = this;
+
+                    var tableLine = $('<tr></tr>');
+                    tableLine.append('<td width="60" class="portfolio-files-preview-image"></td>');
+                    tableLine.append('<td valign="middle" class="portfolio-files-preview-name"></td>');
+                    tableLine.append('<td class="portfolio-files-preview-size"></td>');
+
+                    if (strpos(media.type, 'image/') !== false) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + e.target.result + '" /></div>');
+                        }
+
+                        reader.readAsDataURL(media);
+                    }
+                    else if (strpos(media.type, 'application/pdf') !== false) {
+                        $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + "{{ asset('images/cungfoo/icons/pdf.png') }}" + '" /></div>');
+                    }
+                    else {
+                        $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + "{{ asset('images/cungfoo/icons/unknown.png') }}" + '" /></div>');
+                    }
+
+
+                    $('.portfolio-files-preview-name', tableLine).html(media.name);
+                    $('.portfolio-files-preview-size', tableLine).html(bytesToSize(media.size));
+                    $('.portfolio-files-preview').append(tableLine);
+                });
+            });
+
+            pF.find('#addFiles').click(function(e) {
+                e.preventDefault();
+                fileInput.click();
+            })
+        });
+    }
+
+    function strpos (haystack, needle, offset) {
+        var i = (haystack + '').indexOf(needle, (offset || 0));
+        return i === -1 ? false : i;
+    }
+
+    function bytesToSize (bytes) {
+      var sizes = ['Bytes', 'KB', 'MB'];
+      if (bytes == 0) return 'n/a';
+      var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+      return ((i == 0)? (bytes / Math.pow(1024, i)) : (bytes / Math.pow(1024, i)).toFixed(1)) + ' ' + sizes[i];
+    };
+});
+</script>
+{% endblock %}

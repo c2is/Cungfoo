@@ -628,4 +628,25 @@
         </behavior>
     </table>
 
+    <table name="portfolio_media">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name_origin" type="varchar"/>
+        <column name="name" type="varchar"/>
+        <column name="description" type="longvarchar"/>
+        <column name="path_origin" type="varchar" />
+        <column name="path_miniature" type="varchar" />
+        <column name="size" type="varchar" />
+        <column name="type" type="varchar" />
+
+        <behavior name="timestampable" />
+    </table>
+
+    <table name="portfolio_tag">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar"/>
+        <column name="description" type="varchar" />
+
+        <behavior name="timestampable" />
+    </table>
+
 </database>
