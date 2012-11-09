@@ -143,7 +143,7 @@ $(function() {
     $('#campingsList').listnav({
         includeNums: false,
         includeOther: false,
-        prefixes: ["le","la","l'","un","une"],
+//        prefixes: ["le","la","l'","un","une"],
         noMatchText: "Il n'existe aucun camping commençant par cette lettre."
     });
 
@@ -556,7 +556,11 @@ function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 
-// datepicker
+/*-----------------------------------------------------------
+ DATEPICKER
+ -----------------------------------------------------------*/
+
+// reset
 function clearDatepicker() {
 //    //console.log("################################## clearDatepicker()  ##################################");
     if (!firstSelection){$('#datepickerCalendar td.datepickerSaturday:not(.datepickerUnselectable, .datepickerNotInMonth):eq(0) a').trigger("click");}
