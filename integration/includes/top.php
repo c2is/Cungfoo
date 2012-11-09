@@ -196,7 +196,20 @@
             </li>
             <li class="tab"><a href="#">Les bons plans</a>
                 <div id="deals" class="subnav">
-
+                    <div class="title">Sélectionnez un bon plan</div>
+                    <ul>
+                        <li>Premières minutes</li>
+                        <li>Dernières minutes</li>
+                        <li>Dernières disponibilités</li>
+                        <li>Coups de coeur</li>
+                        <li>Ponts de mai</li>
+                    </ul>
+                    <div>
+                        <span>Abonnement newsletter</span>
+                        <div class="bt bleu">S'inscrire</div>
+                    </div>
+                    <div class="radiusBox greyC clear">
+                    </div>
                 </div>
             </li>
             <li class="tab"><a href="#">Vos vacances</a>
