@@ -14,38 +14,38 @@
                     </div>
                     <div class="element clear">
                         <div class="left">
-                            <img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                            <a href="#_" class="linkBlock"><img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" /></a>
                             <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>
                         </div>
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
 							<span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover"><span>à partir de<br /><span class="price">152<span class="fine">&nbsp;</span>€</span></span></a>
+                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
                     </div>
                     <div class="element clear radiusBox greyC">
                         <div class="left">
-                            <img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                            <a href="#_" class="linkBlock"><img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" /></a>
                             <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>
                         </div>
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover"><span>à partir de<br /><span class="price">152<span class="fine">&nbsp;</span>€</span></span></a>
+                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
                     </div>
                     <div class="element clear">
                         <div class="left">
-                            <img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                            <a href="#_" class="linkBlock"><img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" /></a>
                             <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>
                         </div>
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover"><span>à partir de<br /><span class="price">152<span class="fine">&nbsp;</span>€</span></span></a>
+                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
                     </div>
                     <a href="#_" class="bt link">Voir tous les agenda culturel et sorties (13)</a>
@@ -58,48 +58,48 @@
                         <h2>Dernières minutes</h2>
                     </div>
                     <div class="element clear">
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -5</span>
-					        <span class="condition"><a href="#" class="price">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear">
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="condition">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -45</span>
-					        <span class="condition"><a href="#" class="price">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear">
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -20</span>
-					        <span class="condition"><a href="#" class="price">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear">
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -5</span>
-					        <span class="condition"><a href="#" class="price">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element last clear">
-                        <div class="details left">
+                        <div class="details left linkParent">
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -15</span>
-					        <span class="condition"><a href="#" class="price">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
                     <a href="#_" class="bt link left">Voir tous les agenda culturel et sorties (13)</a>
