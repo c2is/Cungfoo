@@ -24,6 +24,86 @@ include('includes/top.php'); ?>
                 </fieldset>
             </form>
 
+            <span class="infoComp">Comparateur</span>
+
+            <div id="result" class="clear">
+                <div class="itemResult" data-crit="#situation,#destinations,#formule" data-critPlus="#autres">
+                    <!-- item.title -->
+                    <div class="itemResultTitle">
+                        <input type="checkbox" name="compar" value="idCamp1">
+                        Palavas Camping ******
+                        du 11/08/2012 au 28/08/2012
+                    </div>
+                    <!-- item.left -->
+                    <div class="itemResultLeft">
+                        [img]
+
+                        <div class="ratingFiche" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                            Note :
+                            <span itemprop="ratingValue" content="4" title="4/5">
+                                <span class="review rated">1</span>
+                                <span class="review rated">2</span>
+                                <span class="review rated">3</span>
+                                <span class="review rated">4</span>
+                                <span class="review">5</span>
+                            </span>
+                            <span class="reviewCount" itemprop="reviewCount">46</span> avis clients
+                        </div>
+                    </div>
+                    <!-- item.center -->
+                    <div class="itemResultCenter">
+                        - Accès direct à la plage
+                        - Cadre boisé
+                        - Parc aquatique
+                        - Nombreuses animations
+
+                        [picto] [picto] [picto] [picto]
+
+                        <a class="bt sombre" href="#_">Découvrir le camping</a>
+                    </div>
+                    <!-- item.right -->
+                    <div class="itemResultRight">
+                        [img country]
+                        France
+                        Languedoc-roussilon
+                        Palavs Les Flots
+                        En savoir plus <br>sur la destination
+
+                        <div class="itemResultPopDest" style="display:none;">
+                            Pavalas Les Flots
+                            [img]
+                            La ville de Palalas Les Flots...
+
+                            [img] Mozart - Les Noces de Figaro - Opéra - Montpellier
+                            Du mercredi 20 juin 2012 au jeudi 28 juin 2012
+                            <a class="button trans" href="#_">Plus d'événements</a>
+
+                            [img] Visitez le parc zoologique de Montpellier
+                            <a class="button trans" href="#_">Plus de visites</a>
+
+                            &Agrave; ne pas manquer
+                            <a class="button trans" href="#_">14 sites à visiter</a>
+                            <a class="button trans" href="#_">24 activités</a>
+                            <a class="button trans" href="#_">14 événements</a>
+
+                            <a class="button" href="#_">Découvrir Palavas Les Flots</a>
+                        </div>
+
+                    </div>
+                    <!-- item.bottom -->
+                    <div class="itemResultBottom">
+                        <form action="#_">
+                            <fieldset>
+                                <input type="radio" id="camp1-1" name="camp1" checked="checked"><label for="camp1-1">Familial (mobil-home 6 places) 952, 00 €</label>
+                                <input type="radio" id="camp1-2" name="camp1"><label for="camp1-2">Vacancial (mobil-home 6 places) 1141, 00 €</label>
+                                <input type="radio" id="camp1-3" name="camp1"><label for="camp1-3">Special (mobil-home 8 places) 1141, 00 €</label>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div><!-- // .itemResult -->
+            </div><!-- // #result -->
+
         </div>
 
     <!-- // colonne gauche -->
