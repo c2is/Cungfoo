@@ -39,6 +39,12 @@ class BasePortfolioMediaType extends AppAwareType
             'label' => 'portfolio_media.name',
             'required' => false,
         ));
+        $builder->add('description', 'textarea', array(
+            'constraints' => array(
+            ),
+            'label' => 'portfolio_media.description',
+            'required' => false,
+        ));
         $builder->add('path_origin', 'text', array(
             'constraints' => array(
             ),
@@ -61,6 +67,14 @@ class BasePortfolioMediaType extends AppAwareType
             'constraints' => array(
             ),
             'label' => 'portfolio_media.type',
+            'required' => false,
+        ));
+        $builder->add('portfolio_tags', 'model', array(
+            'class' => 'Cungfoo\Model\PortfolioTag',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'portfolio_media.portfolio_tags',
             'required' => false,
         ));
     }

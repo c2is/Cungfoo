@@ -1,16 +1,29 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-    <h2>{{ "portfolio.crud.edit" | trans }}</h2>
+    <h2>{{ "portfolio.crud.update" | trans ({'%name%': media.name }) }}</h2>
 
-    <ul class="portfolio-edit">
-        <li>
-            <h2>{{ media.name }}</h2>
-        </li>
-        <li>
-            <img src="{{ asset(media.pathMiniature) }}" />
-        </li>
-    </ul>
+    <img src="{{ asset(media.pathMiniature) }}" />
+
+    <hr/>
+
+    <div class="row">
+        <div class="span8">
+            <form action="{{ path('portfolio_media_edit', {'id': media.id}) }}" method="post" {{ form_enctype(tagsForm) }}>
+                {{ form_widget(mediaForm) }}
+                <input class="btn" type="submit" href="#" value="Modifier" />
+            </form>
+        </div>
+        <div class="span4">
+            <form action="{{ path('portfolio_media_tag_create', {'id': media.id}) }}" method="post" {{ form_enctype(tagsForm) }}>
+                {{ form_widget(tagsForm.tags) }}
+                {{ form_rest(tagsForm) }}
+                <a id="addTag" class="btn" href="#">Ajouter une ligne de saisie de tag</a>
+                <input id="submitTag" class="btn" type="submit" href="#" value="Ajouter" />
+            </form>
+        </div>
+    </div>
+
 
     <hr/>
 
@@ -19,4 +32,23 @@
             <a class="btn" href="{{ path('portfolio') }}"><i class="icon-list"></i> {{ "crud.button.list" | trans }}</a>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}{{ parent() }}
+<script type="text/javascript">
+    function addTag() {
+        var collectionHolder = $('#form_tags');
+        var prototype = collectionHolder.attr('data-prototype');
+        console.log(collectionHolder.children().length);
+        form = prototype.replace(/__name__/g, collectionHolder.children().length);
+        collectionHolder.append(form);
+    }
+
+    $(document).ready(function() {
+        $('#addTag').live('click', function(event){
+            event.preventDefault();
+            addTag();
+        });
+    });
+</script>
 {% endblock %}

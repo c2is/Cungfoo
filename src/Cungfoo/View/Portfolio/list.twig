@@ -45,21 +45,7 @@
     </thead>
     <tbody>
     {% for media in medias %}
-        <tr>
-            <td>
-                <table>
-                    <tr><th>Name</th><td><a href="{{ asset(media.pathOrigin) }}">{{ media.name }}</a></td></tr>
-                    <tr><th>Type</th><td>{{ media.type }}</td></tr>
-                    <tr><th>Size</th><td>{{ media.size }}</td></tr>
-                </table>
-            </td>
-            <td></td>
-            <td width="100"><img src="{{ asset(media.pathMiniature) }}" /></td>
-            <td class="actions-item">
-                <a href="{{ path('portfolio_media_edit', {id: media.id}) }}"><i class="icon-edit"></i></a>
-                <a href="{{ path('portfolio_media_delete', {id: media.id}) }}" class="delete"><i data-confirm-ok="{{ "crud.modal.delete.ok" | trans }}" data-confirm-cancel="{{ "crud.modal.delete.cancel" | trans }}" data-confirm-title="{{ "crud.modal.delete.title" | trans }}" data-confirm-message="{{ "crud.modal.delete.message" | trans  ({'%code%': media.name }) }}"  class="icon-remove-circle"></i></a>
-            </td>
-        </tr>
+        {% include 'Portfolio/media-row-table.twig' %}
     {% endfor %}
     </tbody>
     </table>

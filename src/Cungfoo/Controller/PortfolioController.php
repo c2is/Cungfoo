@@ -13,6 +13,9 @@ Symfony\Component\Routing\Route;
 use Symfony\Component\Filesystem\Filesystem;
 
 use Cungfoo\Model\PortfolioMediaQuery,
+    Cungfoo\Form\Type\PortfolioMediaType,
+    Cungfoo\Form\Type\PortfolioTagType,
+    Cungfoo\Model\PortfolioMediaTag,
     Cungfoo\Model\PortfolioMedia;
 
 use \Exception;
@@ -41,15 +44,45 @@ class PortfolioController implements ControllerProviderInterface
         ->value('page', 1)
         ->bind('portfolio');
 
-        $controllers->get('/media/{id}/edit', function (Request $request, $id) use ($app)
+        $controllers->match('/media/{id}/edit', function (Request $request, $id) use ($app)
         {
             $media = PortfolioMediaQuery::create()
                 ->filterById($id)
                 ->findOne()
             ;
 
+            $mediaForm = $app['form.factory']->create(new PortfolioMediaType($app), $media);
+
+            $mediaTagsForm = $app['form.factory']->createBuilder('form')
+                ->add('tags', 'collection', array(
+                    'type' => new PortfolioTagType($app),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'label' => 'Liste des tags'
+                ))->getForm()
+            ;
+
+            if (!$media)
+            {
+                throw new Exception(sprintf("Media %s Not Found", $id), 1);
+            }
+
+            if ('POST' == $request->getMethod())
+            {
+                $mediaForm->bindRequest($request);
+
+                if ($mediaForm->isValid())
+                {
+                    $media->save();
+                }
+            }
+
             return $app['twig']->render('Portfolio/edit.twig', array(
-                'media' => $media
+                'media'     => $media,
+                'mediaForm' => $mediaForm->createView(),
+                'tagsForm'  => $mediaTagsForm->createView(),
+
             ));
         })
         ->assert('id', '\d+')
@@ -116,6 +149,45 @@ class PortfolioController implements ControllerProviderInterface
 
         })
         ->bind('portfolio_media_create');
+
+        $controllers->match('/media/{id}/tag/add', function (Request $request, $id) use ($app)
+        {
+            $mediaTagsForm = $app['form.factory']->createBuilder('form')
+                ->add('tags', 'collection', array(
+                    'type' => new PortfolioTagType($app),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'label' => 'Liste des tags'
+                ))->getForm()
+            ;
+
+            if ($request->getMethod() == 'POST')
+            {
+                $mediaTagsForm->bind($request);
+
+                if ($mediaTagsForm->isValid())
+                {
+                    $data  = $mediaTagsForm->getData();
+
+                    foreach ($data['tags'] as $tag)
+                    {
+                        $tag->save();
+                        $mediaTag = new PortfolioMediaTag();
+                        $mediaTag
+                            ->setMediaId($id)
+                            ->setTagId($tag->getId())
+                            ->save()
+                        ;
+                    }
+
+                    return $app->redirect($app['url_generator']->generate('portfolio_media_edit', array('id' => $id)));
+                }
+
+            }
+
+        })
+        ->bind('portfolio_media_tag_create');
 
         return $controllers;
     }

@@ -24,6 +24,22 @@ class PortfolioMediaType extends BasePortfolioMediaType
     {
         parent::buildForm($builder, $options);
 
+        $builder->remove('name_origin');
+        $builder->remove('path_origin');
+        $builder->remove('path_miniature');
+        $builder->remove('size');
+        $builder->remove('type');
+
+        $builder->add('portfolio_tags', 'model', array(
+            'class' => 'Cungfoo\Model\PortfolioTag',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'expanded' => true,
+            'label' => 'portfolio_media.portfolio_tags',
+            'required' => false,
+        ));
+
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;

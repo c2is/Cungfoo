@@ -24,6 +24,8 @@ class PortfolioTagType extends BasePortfolioTagType
     {
         parent::buildForm($builder, $options);
 
+        $builder->remove('portfolio_medias');
+
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;

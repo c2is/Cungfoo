@@ -2,11 +2,11 @@
 
 namespace Cungfoo\Model;
 
-use Cungfoo\Model\om\BasePortfolioTag;
+use Cungfoo\Model\om\BasePortfolioMediaTag;
 
 
 /**
- * Skeleton subclass for representing a row from the 'portfolio_tag' table.
+ * Skeleton subclass for representing a row from the 'portfolio_media_tag' table.
  *
  *
  *
@@ -16,10 +16,6 @@ use Cungfoo\Model\om\BasePortfolioTag;
  *
  * @package    propel.generator.Cungfoo.Model
  */
-class PortfolioTag extends BasePortfolioTag
+class PortfolioMediaTag extends BasePortfolioMediaTag
 {
-    public function __toString()
-    {
-        return $this->getName();
-    }
 }

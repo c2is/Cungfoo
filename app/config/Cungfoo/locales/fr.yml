@@ -170,6 +170,7 @@ menu.cms: Cms
 menu.personnages: Personnages
 menu.avantages: Avantages
 menu.editos: Éditos
+menu.portfolio: Portfolio
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -344,6 +345,16 @@ edito.id: Id
 edito.slug: Slug
 edito.name: Titre
 edito.description: Description
+
+portfolio.crud.create: Ajout de medias
+portfolio.crud.list: Liste des medias
+portfolio.crud.update: Mettre à jour le media %name%
+portfolio.crud.view: Détails du media %name%
+portfolio_media.name: Nom du media
+portfolio_media.description: Description
+portfolio_media.portfolio_tags: Liste des tags
+portfolio_tag.name: Nom
+portfolio_tag.description: Description
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média

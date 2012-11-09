@@ -60,6 +60,8 @@ class PortfolioMediaTableMap extends TableMap
      */
     public function buildRelations()
     {
+        $this->addRelation('PortfolioMediaTag', 'Cungfoo\\Model\\PortfolioMediaTag', RelationMap::ONE_TO_MANY, array('id' => 'media_id', ), 'CASCADE', null, 'PortfolioMediaTags');
+        $this->addRelation('PortfolioTag', 'Cungfoo\\Model\\PortfolioTag', RelationMap::MANY_TO_MANY, array(), null, null, 'PortfolioTags');
     } // buildRelations()
 
     /**

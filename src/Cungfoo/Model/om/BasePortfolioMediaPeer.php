@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\PortfolioMedia;
 use Cungfoo\Model\PortfolioMediaPeer;
+use Cungfoo\Model\PortfolioMediaTagPeer;
 use Cungfoo\Model\map\PortfolioMediaTableMap;
 
 /**
@@ -407,6 +408,9 @@ abstract class BasePortfolioMediaPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in PortfolioMediaTagPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        PortfolioMediaTagPeer::clearInstancePool();
     }
 
     /**

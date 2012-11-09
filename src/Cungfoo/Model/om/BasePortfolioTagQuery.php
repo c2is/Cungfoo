@@ -5,11 +5,15 @@ namespace Cungfoo\Model\om;
 use \Criteria;
 use \Exception;
 use \ModelCriteria;
+use \ModelJoin;
 use \PDO;
 use \Propel;
+use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\PortfolioMedia;
+use Cungfoo\Model\PortfolioMediaTag;
 use Cungfoo\Model\PortfolioTag;
 use Cungfoo\Model\PortfolioTagPeer;
 use Cungfoo\Model\PortfolioTagQuery;
@@ -34,6 +38,10 @@ use Cungfoo\Model\PortfolioTagQuery;
  * @method PortfolioTagQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PortfolioTagQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method PortfolioTagQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ *
+ * @method PortfolioTagQuery leftJoinPortfolioMediaTag($relationAlias = null) Adds a LEFT JOIN clause to the query using the PortfolioMediaTag relation
+ * @method PortfolioTagQuery rightJoinPortfolioMediaTag($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PortfolioMediaTag relation
+ * @method PortfolioTagQuery innerJoinPortfolioMediaTag($relationAlias = null) Adds a INNER JOIN clause to the query using the PortfolioMediaTag relation
  *
  * @method PortfolioTag findOne(PropelPDO $con = null) Return the first PortfolioTag matching the query
  * @method PortfolioTag findOneOrCreate(PropelPDO $con = null) Return the first PortfolioTag matching the query, or a new PortfolioTag object populated from the query conditions when no match is found
@@ -409,6 +417,97 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioTagPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query by a related PortfolioMediaTag object
+     *
+     * @param   PortfolioMediaTag|PropelObjectCollection $portfolioMediaTag  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PortfolioTagQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByPortfolioMediaTag($portfolioMediaTag, $comparison = null)
+    {
+        if ($portfolioMediaTag instanceof PortfolioMediaTag) {
+            return $this
+                ->addUsingAlias(PortfolioTagPeer::ID, $portfolioMediaTag->getTagId(), $comparison);
+        } elseif ($portfolioMediaTag instanceof PropelObjectCollection) {
+            return $this
+                ->usePortfolioMediaTagQuery()
+                ->filterByPrimaryKeys($portfolioMediaTag->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPortfolioMediaTag() only accepts arguments of type PortfolioMediaTag or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the PortfolioMediaTag relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PortfolioTagQuery The current query, for fluid interface
+     */
+    public function joinPortfolioMediaTag($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('PortfolioMediaTag');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'PortfolioMediaTag');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the PortfolioMediaTag relation PortfolioMediaTag object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\PortfolioMediaTagQuery A secondary query class using the current class as primary query
+     */
+    public function usePortfolioMediaTagQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinPortfolioMediaTag($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PortfolioMediaTag', '\Cungfoo\Model\PortfolioMediaTagQuery');
+    }
+
+    /**
+     * Filter the query by a related PortfolioMedia object
+     * using the portfolio_media_tag table as cross reference
+     *
+     * @param   PortfolioMedia $portfolioMedia the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PortfolioTagQuery The current query, for fluid interface
+     */
+    public function filterByPortfolioMedia($portfolioMedia, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->usePortfolioMediaTagQuery()
+            ->filterByPortfolioMedia($portfolioMedia, $comparison)
+            ->endUse();
     }
 
     /**

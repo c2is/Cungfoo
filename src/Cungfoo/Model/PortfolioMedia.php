@@ -30,6 +30,11 @@ class PortfolioMedia extends BasePortfolioMedia
     protected $webDirectory       = null;
     protected $portfolioDirectory = null;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function getWebDirectory($imageDirectory = '')
     {
         return $this->webDirectory . $imageDirectory;

@@ -649,4 +649,17 @@
         <behavior name="timestampable" />
     </table>
 
+    <table name="portfolio_media_tag" isCrossRef="true">
+        <column name="media_id" type="integer" primaryKey="true" />
+        <column name="tag_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="portfolio_media" onDelete="CASCADE">
+            <reference local="media_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="portfolio_tag">
+            <reference local="tag_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
 </database>

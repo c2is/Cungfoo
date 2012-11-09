@@ -10,12 +10,18 @@ use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
+use \PropelCollection;
 use \PropelDateTime;
 use \PropelException;
+use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\PortfolioMedia;
 use Cungfoo\Model\PortfolioMediaPeer;
 use Cungfoo\Model\PortfolioMediaQuery;
+use Cungfoo\Model\PortfolioMediaTag;
+use Cungfoo\Model\PortfolioMediaTagQuery;
+use Cungfoo\Model\PortfolioTag;
+use Cungfoo\Model\PortfolioTagQuery;
 
 /**
  * Base class that represents a row from the 'portfolio_media' table.
@@ -106,6 +112,17 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * @var        PropelObjectCollection|PortfolioMediaTag[] Collection to store aggregation of PortfolioMediaTag objects.
+     */
+    protected $collPortfolioMediaTags;
+    protected $collPortfolioMediaTagsPartial;
+
+    /**
+     * @var        PropelObjectCollection|PortfolioTag[] Collection to store aggregation of PortfolioTag objects.
+     */
+    protected $collPortfolioTags;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -118,6 +135,18 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $portfolioTagsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $portfolioMediaTagsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -599,6 +628,9 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
+            $this->collPortfolioMediaTags = null;
+
+            $this->collPortfolioTags = null;
         } // if (deep)
     }
 
@@ -732,6 +764,43 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->portfolioTagsScheduledForDeletion !== null) {
+                if (!$this->portfolioTagsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->portfolioTagsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    PortfolioMediaTagQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->portfolioTagsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getPortfolioTags() as $portfolioTag) {
+                    if ($portfolioTag->isModified()) {
+                        $portfolioTag->save($con);
+                    }
+                }
+            }
+
+            if ($this->portfolioMediaTagsScheduledForDeletion !== null) {
+                if (!$this->portfolioMediaTagsScheduledForDeletion->isEmpty()) {
+                    PortfolioMediaTagQuery::create()
+                        ->filterByPrimaryKeys($this->portfolioMediaTagsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->portfolioMediaTagsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPortfolioMediaTags !== null) {
+                foreach ($this->collPortfolioMediaTags as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
             }
 
             $this->alreadyInSave = false;
@@ -930,6 +999,14 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
             }
 
 
+                if ($this->collPortfolioMediaTags !== null) {
+                    foreach ($this->collPortfolioMediaTags as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -1012,10 +1089,11 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
      *                    Defaults to BasePeer::TYPE_PHPNAME.
      * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to true.
      * @param     array $alreadyDumpedObjects List of objects to skip to avoid recursion
+     * @param     boolean $includeForeignObjects (optional) Whether to include hydrated related objects. Default to FALSE.
      *
      * @return array an associative array containing the field names (as keys) and field values
      */
-    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array())
+    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
         if (isset($alreadyDumpedObjects['PortfolioMedia'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
@@ -1034,6 +1112,11 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
             $keys[8] => $this->getCreatedAt(),
             $keys[9] => $this->getUpdatedAt(),
         );
+        if ($includeForeignObjects) {
+            if (null !== $this->collPortfolioMediaTags) {
+                $result['PortfolioMediaTags'] = $this->collPortfolioMediaTags->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+        }
 
         return $result;
     }
@@ -1224,6 +1307,24 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         $copyObj->setType($this->getType());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+
+        if ($deepCopy && !$this->startCopy) {
+            // important: temporarily setNew(false) because this affects the behavior of
+            // the getter/setter methods for fkey referrer objects.
+            $copyObj->setNew(false);
+            // store object hash to prevent cycle
+            $this->startCopy = true;
+
+            foreach ($this->getPortfolioMediaTags() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPortfolioMediaTag($relObj->copy($deepCopy));
+                }
+            }
+
+            //unflag object copy
+            $this->startCopy = false;
+        } // if ($deepCopy)
+
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -1270,6 +1371,422 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         return self::$peer;
     }
 
+
+    /**
+     * Initializes a collection based on the name of a relation.
+     * Avoids crafting an 'init[$relationName]s' method name
+     * that wouldn't work when StandardEnglishPluralizer is used.
+     *
+     * @param string $relationName The name of the relation to initialize
+     * @return void
+     */
+    public function initRelation($relationName)
+    {
+        if ('PortfolioMediaTag' == $relationName) {
+            $this->initPortfolioMediaTags();
+        }
+    }
+
+    /**
+     * Clears out the collPortfolioMediaTags collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPortfolioMediaTags()
+     */
+    public function clearPortfolioMediaTags()
+    {
+        $this->collPortfolioMediaTags = null; // important to set this to null since that means it is uninitialized
+        $this->collPortfolioMediaTagsPartial = null;
+    }
+
+    /**
+     * reset is the collPortfolioMediaTags collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialPortfolioMediaTags($v = true)
+    {
+        $this->collPortfolioMediaTagsPartial = $v;
+    }
+
+    /**
+     * Initializes the collPortfolioMediaTags collection.
+     *
+     * By default this just sets the collPortfolioMediaTags collection to an empty array (like clearcollPortfolioMediaTags());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPortfolioMediaTags($overrideExisting = true)
+    {
+        if (null !== $this->collPortfolioMediaTags && !$overrideExisting) {
+            return;
+        }
+        $this->collPortfolioMediaTags = new PropelObjectCollection();
+        $this->collPortfolioMediaTags->setModel('PortfolioMediaTag');
+    }
+
+    /**
+     * Gets an array of PortfolioMediaTag objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this PortfolioMedia is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|PortfolioMediaTag[] List of PortfolioMediaTag objects
+     * @throws PropelException
+     */
+    public function getPortfolioMediaTags($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collPortfolioMediaTagsPartial && !$this->isNew();
+        if (null === $this->collPortfolioMediaTags || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioMediaTags) {
+                // return empty collection
+                $this->initPortfolioMediaTags();
+            } else {
+                $collPortfolioMediaTags = PortfolioMediaTagQuery::create(null, $criteria)
+                    ->filterByPortfolioMedia($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collPortfolioMediaTagsPartial && count($collPortfolioMediaTags)) {
+                      $this->initPortfolioMediaTags(false);
+
+                      foreach($collPortfolioMediaTags as $obj) {
+                        if (false == $this->collPortfolioMediaTags->contains($obj)) {
+                          $this->collPortfolioMediaTags->append($obj);
+                        }
+                      }
+
+                      $this->collPortfolioMediaTagsPartial = true;
+                    }
+
+                    return $collPortfolioMediaTags;
+                }
+
+                if($partial && $this->collPortfolioMediaTags) {
+                    foreach($this->collPortfolioMediaTags as $obj) {
+                        if($obj->isNew()) {
+                            $collPortfolioMediaTags[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collPortfolioMediaTags = $collPortfolioMediaTags;
+                $this->collPortfolioMediaTagsPartial = false;
+            }
+        }
+
+        return $this->collPortfolioMediaTags;
+    }
+
+    /**
+     * Sets a collection of PortfolioMediaTag objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $portfolioMediaTags A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setPortfolioMediaTags(PropelCollection $portfolioMediaTags, PropelPDO $con = null)
+    {
+        $this->portfolioMediaTagsScheduledForDeletion = $this->getPortfolioMediaTags(new Criteria(), $con)->diff($portfolioMediaTags);
+
+        foreach ($this->portfolioMediaTagsScheduledForDeletion as $portfolioMediaTagRemoved) {
+            $portfolioMediaTagRemoved->setPortfolioMedia(null);
+        }
+
+        $this->collPortfolioMediaTags = null;
+        foreach ($portfolioMediaTags as $portfolioMediaTag) {
+            $this->addPortfolioMediaTag($portfolioMediaTag);
+        }
+
+        $this->collPortfolioMediaTags = $portfolioMediaTags;
+        $this->collPortfolioMediaTagsPartial = false;
+    }
+
+    /**
+     * Returns the number of related PortfolioMediaTag objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related PortfolioMediaTag objects.
+     * @throws PropelException
+     */
+    public function countPortfolioMediaTags(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collPortfolioMediaTagsPartial && !$this->isNew();
+        if (null === $this->collPortfolioMediaTags || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioMediaTags) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getPortfolioMediaTags());
+                }
+                $query = PortfolioMediaTagQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPortfolioMedia($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPortfolioMediaTags);
+        }
+    }
+
+    /**
+     * Method called to associate a PortfolioMediaTag object to this object
+     * through the PortfolioMediaTag foreign key attribute.
+     *
+     * @param    PortfolioMediaTag $l PortfolioMediaTag
+     * @return PortfolioMedia The current object (for fluent API support)
+     */
+    public function addPortfolioMediaTag(PortfolioMediaTag $l)
+    {
+        if ($this->collPortfolioMediaTags === null) {
+            $this->initPortfolioMediaTags();
+            $this->collPortfolioMediaTagsPartial = true;
+        }
+        if (!in_array($l, $this->collPortfolioMediaTags->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddPortfolioMediaTag($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	PortfolioMediaTag $portfolioMediaTag The portfolioMediaTag object to add.
+     */
+    protected function doAddPortfolioMediaTag($portfolioMediaTag)
+    {
+        $this->collPortfolioMediaTags[]= $portfolioMediaTag;
+        $portfolioMediaTag->setPortfolioMedia($this);
+    }
+
+    /**
+     * @param	PortfolioMediaTag $portfolioMediaTag The portfolioMediaTag object to remove.
+     */
+    public function removePortfolioMediaTag($portfolioMediaTag)
+    {
+        if ($this->getPortfolioMediaTags()->contains($portfolioMediaTag)) {
+            $this->collPortfolioMediaTags->remove($this->collPortfolioMediaTags->search($portfolioMediaTag));
+            if (null === $this->portfolioMediaTagsScheduledForDeletion) {
+                $this->portfolioMediaTagsScheduledForDeletion = clone $this->collPortfolioMediaTags;
+                $this->portfolioMediaTagsScheduledForDeletion->clear();
+            }
+            $this->portfolioMediaTagsScheduledForDeletion[]= $portfolioMediaTag;
+            $portfolioMediaTag->setPortfolioMedia(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this PortfolioMedia is new, it will return
+     * an empty collection; or if this PortfolioMedia has previously
+     * been saved, it will retrieve related PortfolioMediaTags from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in PortfolioMedia.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|PortfolioMediaTag[] List of PortfolioMediaTag objects
+     */
+    public function getPortfolioMediaTagsJoinPortfolioTag($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = PortfolioMediaTagQuery::create(null, $criteria);
+        $query->joinWith('PortfolioTag', $join_behavior);
+
+        return $this->getPortfolioMediaTags($query, $con);
+    }
+
+    /**
+     * Clears out the collPortfolioTags collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPortfolioTags()
+     */
+    public function clearPortfolioTags()
+    {
+        $this->collPortfolioTags = null; // important to set this to null since that means it is uninitialized
+        $this->collPortfolioTagsPartial = null;
+    }
+
+    /**
+     * Initializes the collPortfolioTags collection.
+     *
+     * By default this just sets the collPortfolioTags collection to an empty collection (like clearPortfolioTags());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initPortfolioTags()
+    {
+        $this->collPortfolioTags = new PropelObjectCollection();
+        $this->collPortfolioTags->setModel('PortfolioTag');
+    }
+
+    /**
+     * Gets a collection of PortfolioTag objects related by a many-to-many relationship
+     * to the current object by way of the portfolio_media_tag cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this PortfolioMedia is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|PortfolioTag[] List of PortfolioTag objects
+     */
+    public function getPortfolioTags($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collPortfolioTags || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPortfolioTags) {
+                // return empty collection
+                $this->initPortfolioTags();
+            } else {
+                $collPortfolioTags = PortfolioTagQuery::create(null, $criteria)
+                    ->filterByPortfolioMedia($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collPortfolioTags;
+                }
+                $this->collPortfolioTags = $collPortfolioTags;
+            }
+        }
+
+        return $this->collPortfolioTags;
+    }
+
+    /**
+     * Sets a collection of PortfolioTag objects related by a many-to-many relationship
+     * to the current object by way of the portfolio_media_tag cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $portfolioTags A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setPortfolioTags(PropelCollection $portfolioTags, PropelPDO $con = null)
+    {
+        $this->clearPortfolioTags();
+        $currentPortfolioTags = $this->getPortfolioTags();
+
+        $this->portfolioTagsScheduledForDeletion = $currentPortfolioTags->diff($portfolioTags);
+
+        foreach ($portfolioTags as $portfolioTag) {
+            if (!$currentPortfolioTags->contains($portfolioTag)) {
+                $this->doAddPortfolioTag($portfolioTag);
+            }
+        }
+
+        $this->collPortfolioTags = $portfolioTags;
+    }
+
+    /**
+     * Gets the number of PortfolioTag objects related by a many-to-many relationship
+     * to the current object by way of the portfolio_media_tag cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related PortfolioTag objects
+     */
+    public function countPortfolioTags($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collPortfolioTags || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPortfolioTags) {
+                return 0;
+            } else {
+                $query = PortfolioTagQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPortfolioMedia($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPortfolioTags);
+        }
+    }
+
+    /**
+     * Associate a PortfolioTag object to this object
+     * through the portfolio_media_tag cross reference table.
+     *
+     * @param  PortfolioTag $portfolioTag The PortfolioMediaTag object to relate
+     * @return void
+     */
+    public function addPortfolioTag(PortfolioTag $portfolioTag)
+    {
+        if ($this->collPortfolioTags === null) {
+            $this->initPortfolioTags();
+        }
+        if (!$this->collPortfolioTags->contains($portfolioTag)) { // only add it if the **same** object is not already associated
+            $this->doAddPortfolioTag($portfolioTag);
+
+            $this->collPortfolioTags[]= $portfolioTag;
+        }
+    }
+
+    /**
+     * @param	PortfolioTag $portfolioTag The portfolioTag object to add.
+     */
+    protected function doAddPortfolioTag($portfolioTag)
+    {
+        $portfolioMediaTag = new PortfolioMediaTag();
+        $portfolioMediaTag->setPortfolioTag($portfolioTag);
+        $this->addPortfolioMediaTag($portfolioMediaTag);
+    }
+
+    /**
+     * Remove a PortfolioTag object to this object
+     * through the portfolio_media_tag cross reference table.
+     *
+     * @param PortfolioTag $portfolioTag The PortfolioMediaTag object to relate
+     * @return void
+     */
+    public function removePortfolioTag(PortfolioTag $portfolioTag)
+    {
+        if ($this->getPortfolioTags()->contains($portfolioTag)) {
+            $this->collPortfolioTags->remove($this->collPortfolioTags->search($portfolioTag));
+            if (null === $this->portfolioTagsScheduledForDeletion) {
+                $this->portfolioTagsScheduledForDeletion = clone $this->collPortfolioTags;
+                $this->portfolioTagsScheduledForDeletion->clear();
+            }
+            $this->portfolioTagsScheduledForDeletion[]= $portfolioTag;
+        }
+    }
+
     /**
      * Clears the current object and sets all attributes to their default values
      */
@@ -1305,8 +1822,26 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collPortfolioMediaTags) {
+                foreach ($this->collPortfolioMediaTags as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collPortfolioTags) {
+                foreach ($this->collPortfolioTags as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
+        if ($this->collPortfolioMediaTags instanceof PropelCollection) {
+            $this->collPortfolioMediaTags->clearIterator();
+        }
+        $this->collPortfolioMediaTags = null;
+        if ($this->collPortfolioTags instanceof PropelCollection) {
+            $this->collPortfolioTags->clearIterator();
+        }
+        $this->collPortfolioTags = null;
     }
 
     /**
