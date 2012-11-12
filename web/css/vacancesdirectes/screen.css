@@ -873,6 +873,13 @@ footer {
 #searchBloc #switchForm li a#tabSearchBlocBudget span {
   background-position: 0px -320px;
 }
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  height: 40px;
+  margin-top: 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
 #searchBloc #switchForm li a.active#tabSearchBlocDate span,
 #searchBloc #switchForm li a:hover#tabSearchBlocDate span {
   background-position: -60px -240px;
@@ -885,26 +892,23 @@ footer {
 #searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
   background-position: -60px -320px;
 }
-#searchBloc #switchForm li .active {
-  height: 40px;
+#searchBloc #switchForm li a.active span,
+#searchBloc #switchForm li a:hover span {
   margin-top: 0;
-  -webkit-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
 }
 #searchBloc #switchForm li:first-child a {
   -webkit-border-radius: 10px 0 0 0;
   border-radius: 10px 0 0 0;
-}
-#searchBloc #switchForm li:first-child a.active {
-  -webkit-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
 }
 #searchBloc #switchForm li:last-child a {
   -webkit-border-radius: 0 10px 0 0;
   border-radius: 0 10px 0 0;
   margin-right: 0;
 }
-#searchBloc #switchForm li:first-child a.active {
+#searchBloc #switchForm li:first-child a.active,
+#searchBloc #switchForm li:first-child a:hover,
+#searchBloc #switchForm li:last-child a.active,
+#searchBloc #switchForm li:last-child a:hover {
   -webkit-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
@@ -4013,45 +4017,6 @@ th.datepickerWeek {
   button.Zebra_DatePicker_Icon_Inside {
     margin: 0 5px 0 0;
   }
-}
-.SpinnerControl {
-  overflow: auto;
-  float: left;
-}
-.SpinnerControl .ValueDisplay {
-  min-width: 30px;
-  border: 1px solid black;
-  height: 29px;
-  overflow: auto;
-  font-family: Verdana;
-  font-size: 14px;
-  line-height: 29px;
-  text-align: center;
-}
-.SpinnerControl div {
-  height: 31px;
-  line-height: 31px;
-  float: left;
-}
-.SpinnerControl .LeftButton {
-  width: 30px;
-  background: #adff2f;
-  cursor: pointer;
-}
-.SpinnerControl .LeftButton:hover {
-  width: 30px;
-  background: green;
-  cursor: pointer;
-}
-.SpinnerControl .RightButton {
-  width: 30px;
-  background: red;
-  cursor: pointer;
-}
-.SpinnerControl .RightButton:hover {
-  width: 30px;
-  background: #b22222;
-  cursor: pointer;
 }
 /*
 	STYLE SHEET FOR IHWY JQUERY LISTNAV PLUGIN V 2.0, 3/2/2009

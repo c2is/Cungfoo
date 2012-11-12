@@ -148,17 +148,20 @@ header, section, footer {position:relative;}
         &#tabSearchBlocTrajet span{background-position:0px -280px;}
         &#tabSearchBlocBudget span{background-position:0px -320px;}
         &.active,
-        &:hover{
+        &:hover{height:40px;margin-top:0;._border-radius(10px 10px 0 0);
           &#tabSearchBlocDate span{background-position:-60px -240px;}
           &#tabSearchBlocTrajet span{background-position:-60px -280px;}
           &#tabSearchBlocBudget span{background-position:-60px -320px;}
+          span{margin-top:0;}
         }
+
       }
-      .active{height:40px;margin-top:0;._border-radius(10px 10px 0 0);}
       &:first-child a{._border-radius(10px 0 0 0);}
-      &:first-child a.active{._border-radius(10px 10px 0 0);}
       &:last-child a{._border-radius(0 10px 0 0);margin-right:0;}
-      &:first-child a.active{._border-radius(10px 10px 0 0);}
+      &:first-child a.active,
+      &:first-child a:hover,
+      &:last-child a.active,
+      &:last-child a:hover{._border-radius(10px 10px 0 0);}
     }
   }
   #searchBlocDate{
