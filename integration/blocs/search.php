@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="selectContainer clear">
+                <li id="SearchDate_selectContainer1" class="selectContainer clear">
                     <div class="selectContainer clear">
                         <select id="SearchDate_destination" name="SearchDate[destination]" >
                             <option value="">Destination</option>
@@ -30,13 +30,21 @@
                     </div>
                 </li>
                 <li>
-                    <div class="selectContainer clear">
+                    <div id="SearchDate_selectContainer2" class="selectContainer clear">
                         <select id="SearchDate_ville" name="SearchDate[ville]">
-                            <option value="">Lieu de séjour</option>
+                            <option value="">Lieux de séjour</option>
                             <option value="1" class="country">Pays de séjour 1</option>
                             <option value="2">Lieu de séjour 1</option>
                             <option value="3">Lieu de séjour 2</option>
-                            <option value="3">Lieu de séjour 3</option>
+                            <option value="4">Lieu de séjour 3</option>
+                            <option value="5" class="country">Pays de séjour 2</option>
+                            <option value="6">Lieu de séjour 1</option>
+                            <option value="7">Lieu de séjour 2</option>
+                            <option value="8">Lieu de séjour 3</option>
+                            <option value="9" class="country">Pays de séjour 13</option>
+                            <option value="10">Lieu de séjour 1</option>
+                            <option value="11">Lieu de séjour 2</option>
+                            <option value="12">Lieu de séjour 3</option>
                         </select>
                         <select id="SearchDate_camping" name="SearchDate[camping]">
                             <option value="">Campings</option>
@@ -45,9 +53,9 @@
                             <option value="3">Camping 2</option>
                             <option value="3">Camping 3</option>
                         </select>
+                        <span class="left">ou</span>
+                        <div class="switchSelect" title=""></div>
                     </div>
-                    <span class="ou">ou</span>
-                    <div id="switchVilleCamping" title=""></div>
                 </li>
                 <li>
                     <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
@@ -67,6 +75,8 @@
                 </li>
                 <li>
                     <a href="#">+ de critères</a>
+                </li>
+                <li>
                     <button type="submit" class="bt sombre big">Trouver</button>
                 </li>
             </ol>

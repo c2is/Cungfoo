@@ -722,9 +722,10 @@ $(function() {
     if ($('#searchBlocDate').length > 0) {
         countItem();
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
+        switchSelect();
     }
 
-    initCritResult();
+//    initCritResult();
 });
 
 /*-- HEADREADY --*/
@@ -757,6 +758,30 @@ function countItem() {
         $input.val(newVal);
         return false;
     });
+}
+var selectNum = 0;
+function switchSelect(){
+    console.log("################################## switchSelect()  ##################################");
+    $('.switchSelect').live('click', function(){
+        selectNum = selectNum == 0 ? 1 : 0;
+        var $button = $(this);
+        var $selects = $button.siblings(".newListSelected");
+        console.log($selects);
+        var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
+        $button.attr('title',$buttonTitle);
+        if(selectNum) {
+            $selects.eq(0).fadeOut(500, function(){
+                $selects.eq(1).fadeIn(300);
+            });
+        }
+        else {
+            $selects.eq(1).fadeOut(500, function(){
+                $selects.eq(0).fadeIn(300);
+            });
+        }
+        return false;
+    });
+    $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
 }
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
