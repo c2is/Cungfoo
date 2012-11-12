@@ -483,3 +483,18 @@ th.datepickerWeek{display:none;}
 #demoFour a { display:block; text-align:center; width:85px; border:1px solid silver; padding:10px; margin:0 10px 10px 0; text-decoration:none }
 #demoFour a:hover { background-color:#eee }
 
+/** noUislider 2.5.5
+  ** @author: 		@leongersen
+ ** @repository:	https://github.com/leongersen/noUiSlider
+ **/
+.noUiSlider{width:400px;border:1px solid #ccc;height:8px;background:#eee;-webkit-touch-callout:none;
+  .noUi-handle{
+    > div {position:absolute;width:16px;height:16px;top:-5px;left:-8px;z-index:5;border:1px solid #ccc;background:#eee;}
+    > div:hover, > div.noUi-activeHandle {background:#ace;border-color:#369;}
+  }
+  .noUi-midBar{height:100%;z-index:0;background:#39c;-webkit-touch-callout:none;}
+  .rangeBox{display:block;margin-top:15px;}
+}
+@media (-webkit-min-device-pixel-ratio:1.2),-moz-touch-enabled,(max-device-width:1024px){
+  .noUi-handle > div {height:32px;width:32px;top:-13px;left:-16px;}
+}

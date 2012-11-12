@@ -709,10 +709,7 @@ $(function() {
     }
 
 //init Search
-    if ($('#searchBloc').length > 0) {
-        initSearchBloc();
-    }
-
+    initRangeResult();
 });
 
 /*-- HEADREADY --*/
@@ -723,14 +720,6 @@ head.ready(function(){
 });
 
 /*--  FUNCTIONS  --*/
-function initSearchBloc() {
-    $("#nbAdults").SpinnerControl({
-        type:'range',
-        typedata:{ min:0, max:23, interval:1 },
-        defaultVal:2,
-        width:'50px'
-    });
-}
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
@@ -1083,42 +1072,42 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
 }
 
 
-    function setMarkers(map, mkrs) {
-        for (var i = 0; i < mkrs.length; i++) {
-            var mkr = mkrs[i];
-            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-            var marker = new google.maps.Marker({
-                position: siteLatLng,
-                map: map,
-                shadow: shadow,
-                icon: mkr[5],
-                shape: shape,
-                title: mkr[0],
-                zIndex: mkr[3],
-                idCamp: mkr[4]
+function setMarkers(map, mkrs) {
+    for (var i = 0; i < mkrs.length; i++) {
+        var mkr = mkrs[i];
+        var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+        var marker = new google.maps.Marker({
+            position: siteLatLng,
+            map: map,
+            shadow: shadow,
+            icon: mkr[5],
+            shape: shape,
+            title: mkr[0],
+            zIndex: mkr[3],
+            idCamp: mkr[4]
+        });
+
+        if (marker.idCamp != ''){
+            google.maps.event.addListener(marker, "click", function (e) {
+                var marker = this;
+
+                if(!marker.content){ //1st click
+                    $.ajax({
+                        url: this.idCamp,
+                        success: function(response){
+                            marker.content = response;
+                            ib.setContent(response);
+                            ib.open(map, marker);
+                        }
+                    });
+                }else{
+                    ib.setContent(marker.content);
+                    ib.open(map, marker);
+                }
             });
-
-            if (marker.idCamp != ''){
-                google.maps.event.addListener(marker, "click", function (e) {
-                    var marker = this;
-
-                    if(!marker.content){ //1st click
-                        $.ajax({
-                            url: this.idCamp,
-                            success: function(response){
-                                marker.content = response;
-                                ib.setContent(response);
-                                ib.open(map, marker);
-                            }
-                        });
-                    }else{
-                        ib.setContent(marker.content);
-                        ib.open(map, marker);
-                    }
-                });
-            }
         }
     }
+}
 function initializeAllGmap() {
 
     // infobox vars
@@ -1161,4 +1150,40 @@ function initializeAllGmap() {
 
     proxInit();
     infoInit();
+}
+
+
+function initRangeResult(){
+    var $range = $("#noUiSlider"),
+        minScale = $range.data('range').minScale,
+        maxScale = $range.data('range').maxScale,
+        minStart = $range.data('range').minStart,
+        minStop = $range.data('range').minStop;
+
+
+    consoleLog(minStop);
+
+    var initRange = function(){
+        $range .empty().noUiSlider('init', {
+            'scale'		:		[minScale,maxScale],
+            'start'		:		[minStart,minStop],
+
+            change: function(){
+                var values = $(this).noUiSlider('value');
+                $(this).find('.noUi-lowerHandle .rangeBox').text(values[0]);
+                $(this).find('.noUi-upperHandle .rangeBox').text(values[1]);
+            },
+            end: function(type){
+                var message = "The slider was last changed by ";
+                if ( type=="click" ){ message=message+"clicking the bar."; }
+                else if ( type=="slide" ){ message=message+"sliding a handle."; }
+                else if ( type=="move" ){ message=message+"calling the move function."; }
+                consoleLog(message);
+            }
+        }).find('.noUi-handle div').each(function(index){
+                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+'</span>');
+            });
+    };
+
+    initRange.call();
 }
