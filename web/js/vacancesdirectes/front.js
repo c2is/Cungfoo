@@ -1,8 +1,8 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
-
+var
 //datepicker
-var startDate,
+    startDate,
     endDate,
     highSeasonStartDate,
     highSeasonEndDate,
@@ -11,7 +11,17 @@ var startDate,
     startHighSeasonDay = false,
     endHighSeasonDay = false,
     arrivalDay = false,
-    departureDay = false;
+    departureDay = false,
+//resultCrit
+    list = $('#results'),                                   //la liste a trier
+    items = list.find('.itemResult'),                       //les items de cette liste
+    itemsRanged = list.find('[data-ranged="true"]'),        //items dans la range de prix
+    itemsFiltered = list.find('[data-filtered="true"]'),    //items repondants aux criteres
+    minPrice,                                               //le prix minimum de la liste
+    maxPrice,                                               //le prix maximum de la liste
+    containerCrit = $('#formSearchRefined'),                //conteneur des criteres
+    nbVisible = 10,                                         //nombre d'items visible avant pagination
+    nbToShow = 5;                                           //nombre d'items a afficher si pagination existe
 
 
 /*--  DOMREADY  --*/
@@ -714,6 +724,7 @@ $(function() {
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
+    initCritResult();
 });
 
 /*-- HEADREADY --*/
