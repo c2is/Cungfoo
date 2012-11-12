@@ -18,12 +18,12 @@ class DateType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('dateDebut', 'date', array(
+        $builder->add('dateDebut', 'text', array(
             'label' => 'date_search.date_debut',
             'required' => false,
         ));
 
-        $builder->add('dateFin', 'date', array(
+        $builder->add('dateFin', 'text', array(
             'label' => 'date_search.date_fin',
             'required' => false,
         ));
