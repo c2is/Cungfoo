@@ -711,6 +711,7 @@ $(function() {
 //init Search
     if ($('#searchBlocDate').length > 0) {
         countItem();
+        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
 });
@@ -725,17 +726,17 @@ head.ready(function(){
 /*--  FUNCTIONS  --*/
 function countItem() {
     console.log("################################## countItem()  ##################################");
-    $('.spin-button-down, .spin-button-up').live('click', function(){
+    $('.spin-bt-down, .spin-bt-up').live('click', function(){
         var $button = $(this);
         var $input = $button.siblings("input[type=number]");
         var oldValue = $input.val();
-        if ($button.hasClass('spin-button-up')) {
+        if ($button.hasClass('spin-bt-up')) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
-            if ($input.attr('id') == 'nbAdults' && oldValue >= 2) {
+            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue >= 2) {
                 var newVal = parseFloat(oldValue) - 1;
             }
-            else if ($input.attr('id') == 'nbChildren' && oldValue >= 1) {
+            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue >= 1) {
                 var newVal = parseFloat(oldValue) - 1;
             }
             else {

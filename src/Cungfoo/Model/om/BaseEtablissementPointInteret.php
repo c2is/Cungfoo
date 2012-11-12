@@ -22,7 +22,7 @@ use Cungfoo\Model\PointInteretQuery;
 /**
  * Base class that represents a row from the 'etablissement_point_interet' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -91,7 +91,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -101,7 +101,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Get the [point_interet_id] column value.
-     *
+     * 
      * @return int
      */
     public function getPointInteretId()
@@ -111,7 +111,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Get the [distance] column value.
-     *
+     * 
      * @return string
      */
     public function getDistance()
@@ -121,7 +121,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementPointInteret The current object (for fluent API support)
      */
@@ -146,7 +146,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Set the value of [point_interet_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementPointInteret The current object (for fluent API support)
      */
@@ -171,7 +171,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
     /**
      * Set the value of [distance] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementPointInteret The current object (for fluent API support)
      */
@@ -232,7 +232,7 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 3; // 3 = EtablissementPointInteretPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -488,13 +488,13 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`POINT_INTERET_ID`':
+                    case '`POINT_INTERET_ID`':						
                         $stmt->bindValue($identifier, $this->point_interet_id, PDO::PARAM_INT);
                         break;
-                    case '`DISTANCE`':
+                    case '`DISTANCE`':						
                         $stmt->bindValue($identifier, $this->distance, PDO::PARAM_STR);
                         break;
                 }

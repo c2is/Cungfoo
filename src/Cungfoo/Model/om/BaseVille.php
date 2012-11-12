@@ -28,7 +28,7 @@ use Cungfoo\Model\VilleQuery;
 /**
  * Base class that represents a row from the 'ville' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -115,13 +115,13 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[VilleI18n]
@@ -142,7 +142,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -152,7 +152,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     *
+     * 
      * @return string
      */
     public function getCode()
@@ -162,7 +162,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [region_id] column value.
-     *
+     * 
      * @return int
      */
     public function getRegionId()
@@ -172,7 +172,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -209,7 +209,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -246,7 +246,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -267,7 +267,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     *
+     * 
      * @param string $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -288,7 +288,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [region_id] column.
-     *
+     * 
      * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -313,7 +313,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Ville The current object (for fluent API support)
@@ -336,7 +336,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Ville The current object (for fluent API support)
@@ -401,7 +401,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 5; // 5 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -706,19 +706,19 @@ abstract class BaseVille extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':
+                    case '`CODE`':						
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`REGION_ID`':
+                    case '`REGION_ID`':						
                         $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -1765,7 +1765,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1774,12 +1774,12 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = VillePeer::UPDATED_AT;
-
+    
         return $this;
     }
 
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -1790,10 +1790,10 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -1803,7 +1803,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -1818,7 +1818,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 foreach ($this->collVilleI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -1834,10 +1834,10 @@ abstract class BaseVille extends BaseObject implements Persistent
             }
             $this->addVilleI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -1862,10 +1862,10 @@ abstract class BaseVille extends BaseObject implements Persistent
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -1876,33 +1876,33 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [name] column value.
-         *
+         * 
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-
-
+    
+    
         /**
          * Set the value of [name] column.
-         *
+         * 
          * @param string $v new value
          * @return VilleI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

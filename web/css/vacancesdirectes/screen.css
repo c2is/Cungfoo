@@ -819,6 +819,9 @@ footer {
   color: #f58220;
 }
 /* search */
+form li {
+  margin-bottom: 10px;
+}
 #searchBloc {
   color: #ffffff;
 }
@@ -944,32 +947,33 @@ footer {
 #searchBloc #searchBlocDate #datepickerField {
   width: 248px;
 }
-#searchBloc #searchBlocDate input {
+#searchBloc #searchBlocDate label {
+  font: bold 17px/19px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+#searchBloc #searchBlocDate .spinner input {
   width: 40px;
   height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
   border: 0 none;
   color: #ed145b;
-  font: bold 24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
 }
-#searchBloc #searchBlocDate input > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#searchBloc #searchBlocDate input > img {
-  vertical-align: middle;
-}
-#searchBloc #searchBlocDate input[type=button] {
+#searchBloc #searchBlocDate .spinner .spin-bt-down,
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
   width: 27px;
+  height: 27px;
   background-color: #464545;
   color: #ffffff;
+  font: bold 33px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down {
+  margin-right: 2px;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
+  margin-left: 2px;
 }
 /* lang */
 #lang {

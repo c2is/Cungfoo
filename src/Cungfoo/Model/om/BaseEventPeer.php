@@ -17,7 +17,7 @@ use Cungfoo\Model\map\EventTableMap;
 /**
  * Base static class for performing query and update operations on the 'event' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -100,7 +100,7 @@ abstract class BaseEventPeer
 
 
     // i18n behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -418,7 +418,7 @@ abstract class BaseEventPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -428,7 +428,7 @@ abstract class BaseEventPeer
     {
         EventPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to event
      * by a foreign key with ON DELETE CASCADE
@@ -474,7 +474,7 @@ abstract class BaseEventPeer
 
         return (int) $row[$startcol];
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -485,7 +485,7 @@ abstract class BaseEventPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = EventPeer::getOMClass();
         // populate the object(s)
@@ -729,7 +729,7 @@ abstract class BaseEventPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             EventPeer::clearRelatedInstancePool();
             $con->commit();

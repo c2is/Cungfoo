@@ -22,7 +22,7 @@ use Cungfoo\Model\Ville;
 /**
  * Base class that represents a query for the 'region' table.
  *
- *
+ * 
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -127,7 +127,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Region|Region[]|mixed the result, formatted by the current formatter
@@ -182,7 +182,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -782,7 +782,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -794,7 +794,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addUsingAlias(RegionPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -804,7 +804,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(RegionPeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -814,7 +814,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(RegionPeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -826,7 +826,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addUsingAlias(RegionPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -836,7 +836,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(RegionPeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *
@@ -847,7 +847,7 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -860,12 +860,12 @@ abstract class BaseRegionQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'RegionI18n';
-
+    
         return $this
             ->joinRegionI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -881,10 +881,10 @@ abstract class BaseRegionQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('RegionI18n');
         $this->with['RegionI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *

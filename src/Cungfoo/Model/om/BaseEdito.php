@@ -20,7 +20,7 @@ use Cungfoo\Model\EditoQuery;
 /**
  * Base class that represents a row from the 'edito' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -97,7 +97,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -107,7 +107,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [slug] column value.
-     *
+     * 
      * @return string
      */
     public function getSlug()
@@ -117,7 +117,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -127,7 +127,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -137,7 +137,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -174,7 +174,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -211,7 +211,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -232,7 +232,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [slug] column.
-     *
+     * 
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -253,7 +253,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -274,7 +274,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     *
+     * 
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -295,7 +295,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Edito The current object (for fluent API support)
@@ -318,7 +318,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Edito The current object (for fluent API support)
@@ -384,7 +384,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 6; // 6 = EditoPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -637,22 +637,22 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SLUG`':
+                    case '`SLUG`':						
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':
+                    case '`DESCRIPTION`':						
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -1110,7 +1110,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1119,12 +1119,12 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = EditoPeer::UPDATED_AT;
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

@@ -22,7 +22,7 @@ use Cungfoo\Model\TypeHebergementQuery;
 /**
  * Base class that represents a row from the 'etablissement_type_hebergement' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [type_hebergement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getTypeHebergementId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [type_hebergement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -194,7 +194,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 2; // 2 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -447,10 +447,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TYPE_HEBERGEMENT_ID`':
+                    case '`TYPE_HEBERGEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
                         break;
                 }

@@ -22,7 +22,7 @@ use Cungfoo\Model\ServiceComplementaireQuery;
 /**
  * Base class that represents a row from the 'etablissement_service_complementaire' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Get the [service_complementaire_id] column value.
-     *
+     * 
      * @return int
      */
     public function getServiceComplementaireId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementServiceComplementaire The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Set the value of [service_complementaire_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementServiceComplementaire The current object (for fluent API support)
      */
@@ -194,7 +194,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 2; // 2 = EtablissementServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -447,10 +447,10 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`SERVICE_COMPLEMENTAIRE_ID`':
+                    case '`SERVICE_COMPLEMENTAIRE_ID`':						
                         $stmt->bindValue($identifier, $this->service_complementaire_id, PDO::PARAM_INT);
                         break;
                 }

@@ -21,7 +21,7 @@ use Cungfoo\Model\Etablissement;
 /**
  * Base class that represents a query for the 'categorie' table.
  *
- *
+ * 
  *
  * @method CategorieQuery orderById($order = Criteria::ASC) Order by the id column
  * @method CategorieQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -106,7 +106,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Categorie|Categorie[]|mixed the result, formatted by the current formatter
@@ -161,7 +161,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT` FROM `categorie` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -555,7 +555,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -567,7 +567,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         return $this->addUsingAlias(CategoriePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -577,7 +577,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(CategoriePeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -587,7 +587,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(CategoriePeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -599,7 +599,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         return $this->addUsingAlias(CategoriePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -609,7 +609,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(CategoriePeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *
@@ -620,7 +620,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(CategoriePeer::CREATED_AT);
     }
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -633,12 +633,12 @@ abstract class BaseCategorieQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'CategorieI18n';
-
+    
         return $this
             ->joinCategorieI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -654,10 +654,10 @@ abstract class BaseCategorieQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('CategorieI18n');
         $this->with['CategorieI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *
