@@ -115,6 +115,10 @@ class PortfolioMedia extends BasePortfolioMedia
         {
             $this->setPathMiniature('/images/cungfoo/icons/pdf.png');
         }
+        else if ($this->getType() === 'application/zip')
+        {
+            $this->setPathMiniature('/images/cungfoo/icons/zip.png');
+        }
         else
         {
             $this->setPathMiniature('/images/cungfoo/icons/unknown.png');

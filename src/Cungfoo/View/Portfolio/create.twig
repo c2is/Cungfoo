@@ -53,6 +53,9 @@ $(document).ready(function() {
                     else if (strpos(media.type, 'application/pdf') !== false) {
                         $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + "{{ asset('images/cungfoo/icons/pdf.png') }}" + '" /></div>');
                     }
+                    else if (strpos(media.type, 'application/zip') !== false) {
+                        $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + "{{ asset('images/cungfoo/icons/zip.png') }}" + '" /></div>');
+                    }
                     else {
                         $('.portfolio-files-preview-image', tableLine).html('<div class="portfolio-image-square"><img src="' + "{{ asset('images/cungfoo/icons/unknown.png') }}" + '" /></div>');
                     }
