@@ -944,6 +944,33 @@ footer {
 #searchBloc #searchBlocDate #datepickerField {
   width: 248px;
 }
+#searchBloc #searchBlocDate input {
+  width: 40px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  border: 0 none;
+  color: #ed145b;
+  font: bold 24px 'PT Sans Narrow', Arial, sans-serif;
+}
+#searchBloc #searchBlocDate input > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#searchBloc #searchBlocDate input > img {
+  vertical-align: middle;
+}
+#searchBloc #searchBlocDate input[type=button] {
+  width: 27px;
+  background-color: #464545;
+  color: #ffffff;
+}
 /* lang */
 #lang {
   width: 41px;
