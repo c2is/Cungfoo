@@ -20,7 +20,7 @@ use Cungfoo\Model\JobQuery;
 /**
  * Base class that represents a query for the 'job' table.
  *
- *
+ * 
  *
  * @method JobQuery orderById($order = Criteria::ASC) Order by the id column
  * @method JobQuery orderByName($order = Criteria::ASC) Order by the name column
@@ -121,7 +121,7 @@ abstract class BaseJobQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Job|Job[]|mixed the result, formatted by the current formatter
@@ -176,7 +176,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `NAME`, `TYPE`, `PARAMS`, `MESSAGE`, `COMPLETED_AT`, `STATUS`, `CREATED_AT`, `UPDATED_AT` FROM `job` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -667,7 +667,7 @@ abstract class BaseJobQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -679,7 +679,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         return $this->addUsingAlias(JobPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -689,7 +689,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(JobPeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -699,7 +699,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(JobPeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -711,7 +711,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         return $this->addUsingAlias(JobPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -721,7 +721,7 @@ abstract class BaseJobQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(JobPeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *

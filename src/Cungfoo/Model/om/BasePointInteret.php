@@ -28,7 +28,7 @@ use Cungfoo\Model\PointInteretQuery;
 /**
  * Base class that represents a row from the 'point_interet' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -157,13 +157,13 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[PointInteretI18n]
@@ -190,7 +190,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -200,7 +200,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     *
+     * 
      * @return string
      */
     public function getCode()
@@ -210,7 +210,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [address] column value.
-     *
+     * 
      * @return string
      */
     public function getAddress()
@@ -220,7 +220,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [address2] column value.
-     *
+     * 
      * @return string
      */
     public function getAddress2()
@@ -230,7 +230,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [zipcode] column value.
-     *
+     * 
      * @return string
      */
     public function getZipcode()
@@ -240,7 +240,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [city] column value.
-     *
+     * 
      * @return string
      */
     public function getCity()
@@ -250,7 +250,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_x] column value.
-     *
+     * 
      * @return string
      */
     public function getGeoCoordinateX()
@@ -260,7 +260,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_y] column value.
-     *
+     * 
      * @return string
      */
     public function getGeoCoordinateY()
@@ -270,7 +270,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [distance_camping] column value.
-     *
+     * 
      * @return string
      */
     public function getDistanceCamping()
@@ -280,7 +280,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [image] column value.
-     *
+     * 
      * @return string
      */
     public function getImage()
@@ -290,7 +290,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -327,7 +327,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -364,7 +364,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -385,7 +385,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -406,7 +406,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [address] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -427,7 +427,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [address2] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -448,7 +448,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [zipcode] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -469,7 +469,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [city] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -490,7 +490,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_x] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -511,7 +511,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_y] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -532,7 +532,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [distance_camping] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -553,7 +553,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Set the value of [image] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteret The current object (for fluent API support)
      */
@@ -574,7 +574,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return PointInteret The current object (for fluent API support)
@@ -597,7 +597,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return PointInteret The current object (for fluent API support)
@@ -669,7 +669,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 12; // 12 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -999,40 +999,40 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':
+                    case '`CODE`':						
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS`':
+                    case '`ADDRESS`':						
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS2`':
+                    case '`ADDRESS2`':						
                         $stmt->bindValue($identifier, $this->address2, PDO::PARAM_STR);
                         break;
-                    case '`ZIPCODE`':
+                    case '`ZIPCODE`':						
                         $stmt->bindValue($identifier, $this->zipcode, PDO::PARAM_STR);
                         break;
-                    case '`CITY`':
+                    case '`CITY`':						
                         $stmt->bindValue($identifier, $this->city, PDO::PARAM_STR);
                         break;
-                    case '`GEO_COORDINATE_X`':
+                    case '`GEO_COORDINATE_X`':						
                         $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
                         break;
-                    case '`GEO_COORDINATE_Y`':
+                    case '`GEO_COORDINATE_Y`':						
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
-                    case '`DISTANCE_CAMPING`':
+                    case '`DISTANCE_CAMPING`':						
                         $stmt->bindValue($identifier, $this->distance_camping, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE`':
+                    case '`IMAGE`':						
                         $stmt->bindValue($identifier, $this->image, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -2266,7 +2266,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2275,12 +2275,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = PointInteretPeer::UPDATED_AT;
-
+    
         return $this;
     }
 
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -2291,10 +2291,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -2304,7 +2304,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -2319,7 +2319,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 foreach ($this->collPointInteretI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -2335,10 +2335,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             }
             $this->addPointInteretI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -2363,10 +2363,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -2377,33 +2377,33 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [name] column value.
-         *
+         * 
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-
-
+    
+    
         /**
          * Set the value of [name] column.
-         *
+         * 
          * @param string $v new value
          * @return PointInteretI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

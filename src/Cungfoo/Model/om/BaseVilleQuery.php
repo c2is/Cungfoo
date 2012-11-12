@@ -22,7 +22,7 @@ use Cungfoo\Model\VilleQuery;
 /**
  * Base class that represents a query for the 'ville' table.
  *
- *
+ * 
  *
  * @method VilleQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VilleQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -115,7 +115,7 @@ abstract class BaseVilleQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Ville|Ville[]|mixed the result, formatted by the current formatter
@@ -170,7 +170,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `REGION_ID`, `CREATED_AT`, `UPDATED_AT` FROM `ville` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -683,7 +683,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -695,7 +695,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addUsingAlias(VillePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -705,7 +705,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(VillePeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -715,7 +715,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(VillePeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -727,7 +727,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addUsingAlias(VillePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -737,7 +737,7 @@ abstract class BaseVilleQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(VillePeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *
@@ -748,7 +748,7 @@ abstract class BaseVilleQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(VillePeer::CREATED_AT);
     }
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -761,12 +761,12 @@ abstract class BaseVilleQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'VilleI18n';
-
+    
         return $this
             ->joinVilleI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -782,10 +782,10 @@ abstract class BaseVilleQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('VilleI18n');
         $this->with['VilleI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *

@@ -11,6 +11,10 @@
 // require default application configuration
 $app = require_once __DIR__ . '/../../app/bootstrap.php';
 
+$app['config']->addParams(array(
+    'globale'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectesCe/config.yml', $app['config']->get('config_dir'))),
+));
+
 /* S E C U R I T Y   M A N A G E R */
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider());

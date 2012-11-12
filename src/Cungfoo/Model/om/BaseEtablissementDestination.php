@@ -22,7 +22,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'etablissement_destination' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Get the [destination_id] column value.
-     *
+     * 
      * @return int
      */
     public function getDestinationId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementDestination The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Set the value of [destination_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementDestination The current object (for fluent API support)
      */
@@ -194,7 +194,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-            $this->postHydrate($row, $startcol, $rehydrate);
+
             return $startcol + 2; // 2 = EtablissementDestinationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -447,10 +447,10 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`DESTINATION_ID`':
+                    case '`DESTINATION_ID`':						
                         $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                 }

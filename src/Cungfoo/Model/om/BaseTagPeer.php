@@ -17,7 +17,7 @@ use Cungfoo\Model\map\TagTableMap;
 /**
  * Base static class for performing query and update operations on the 'tag' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -70,7 +70,7 @@ abstract class BaseTagPeer
 
 
     // i18n behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -368,7 +368,7 @@ abstract class BaseTagPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -378,7 +378,7 @@ abstract class BaseTagPeer
     {
         TagPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to tag
      * by a foreign key with ON DELETE CASCADE
@@ -424,7 +424,7 @@ abstract class BaseTagPeer
 
         return (int) $row[$startcol];
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -435,7 +435,7 @@ abstract class BaseTagPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = TagPeer::getOMClass();
         // populate the object(s)
@@ -679,7 +679,7 @@ abstract class BaseTagPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TagPeer::clearRelatedInstancePool();
             $con->commit();

@@ -135,6 +135,7 @@ header, section, footer {position:relative;}
 }
 
 /* search */
+form li{margin-bottom:10px;}
 #searchBloc{color:@colorBlanc;
   #switchForm{margin:0 0 20px 0;
     li{display:inline;
@@ -148,17 +149,20 @@ header, section, footer {position:relative;}
         &#tabSearchBlocTrajet span{background-position:0px -280px;}
         &#tabSearchBlocBudget span{background-position:0px -320px;}
         &.active,
-        &:hover{
+        &:hover{height:40px;margin-top:0;._border-radius(10px 10px 0 0);
           &#tabSearchBlocDate span{background-position:-60px -240px;}
           &#tabSearchBlocTrajet span{background-position:-60px -280px;}
           &#tabSearchBlocBudget span{background-position:-60px -320px;}
+          span{margin-top:0;}
         }
+
       }
-      .active{height:40px;margin-top:0;._border-radius(10px 10px 0 0);}
       &:first-child a{._border-radius(10px 0 0 0);}
-      &:first-child a.active{._border-radius(10px 10px 0 0);}
       &:last-child a{._border-radius(0 10px 0 0);margin-right:0;}
-      &:first-child a.active{._border-radius(10px 10px 0 0);}
+      &:first-child a.active,
+      &:first-child a:hover,
+      &:last-child a.active,
+      &:last-child a:hover{._border-radius(10px 10px 0 0);}
     }
   }
   #searchBlocDate{
@@ -182,6 +186,14 @@ header, section, footer {position:relative;}
     .datepickerBorderBL,
     .datepickerBorderBR {height: 10px;}
     #datepickerField{width:248px;}
+    label{font:bold 17px/19px @ptnarrow;text-transform:uppercase;}
+    .spinner{
+      input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
+      .spin-bt-down,
+      .spin-bt-up{width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 33px/27px @ptnarrow;text-align:center;cursor:pointer;}
+      .spin-bt-down{margin-right:2px;}
+      .spin-bt-up{margin-left:2px;}
+    }
   }
 
 }
