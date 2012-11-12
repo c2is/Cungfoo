@@ -709,8 +709,8 @@ $(function() {
     }
 
 //init Search
-    if ($('#searchBloc').length > 0) {
-        initSearchBloc();
+    if ($('#searchBlocDate').length > 0) {
+        countItem();
     }
 
 });
@@ -723,12 +723,27 @@ head.ready(function(){
 });
 
 /*--  FUNCTIONS  --*/
-function initSearchBloc() {
-    $("#nbAdults").SpinnerControl({
-        type:'range',
-        typedata:{ min:0, max:23, interval:1 },
-        defaultVal:2,
-        width:'50px'
+function countItem() {
+    console.log("################################## countItem()  ##################################");
+    $('.spin-button-down, .spin-button-up').live('click', function(){
+        var $button = $(this);
+        var $input = $button.siblings("input[type=number]");
+        var oldValue = $input.val();
+        if ($button.hasClass('spin-button-up')) {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            if ($input.attr('id') == 'nbAdults' && oldValue >= 2) {
+                var newVal = parseFloat(oldValue) - 1;
+            }
+            else if ($input.attr('id') == 'nbChildren' && oldValue >= 1) {
+                var newVal = parseFloat(oldValue) - 1;
+            }
+            else {
+                return false
+            }
+        }
+        $input.val(newVal);
+        return false;
     });
 }
 function openIframePopin(url){

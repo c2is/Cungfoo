@@ -40,11 +40,19 @@
             </p>
             <p>
                 <label for="nbAdults">Adulte(s)</label>
-                <input id="nbAdults" class="spinner" type="number" value="2">
+                <div class="spinnerContainer">
+                    <input type="button" value="–" class="spin-button-down">
+                    <input type="number" id="nbAdults" class="spinner" value="2">
+                    <input type="button" value="+" class="spin-button-up">
+                </div>
             </p>
             <p>
-                <label for="nbChildren">Adulte(s)</label>
-                <input id="nbChildren" class="spinner" type="number" value="2">
+                <label for="nbChildren">Enfant(s)</label>
+                <div class="spinnerContainer">
+                    <input type="button" value="–" class="spin-button-down">
+                    <input type="number" id="nbChildren" class="spinner" value="0">
+                    <input type="button" value="+" class="spin-button-up">
+                </div>
             </p>
             <p>
                 <a href="#">+ de critères</a>
