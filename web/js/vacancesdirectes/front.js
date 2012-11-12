@@ -1,8 +1,8 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
-
+var
 //datepicker
-var startDate,
+    startDate,
     endDate,
     highSeasonStartDate,
     highSeasonEndDate,
@@ -11,8 +11,17 @@ var startDate,
     startHighSeasonDay = false,
     endHighSeasonDay = false,
     arrivalDay = false,
-    departureDay = false;
-
+    departureDay = false,
+//resultCrit
+    list = $('#results'),                                   //la liste a trier
+    items = list.find('.itemResult'),                       //les items de cette liste
+    itemsRanged = list.find('[data-ranged="true"]'),        //items dans la range de prix
+    itemsFiltered = list.find('[data-filtered="true"]'),    //items repondants aux criteres
+    minPrice,                                               //le prix minimum de la liste
+    maxPrice,                                               //le prix maximum de la liste
+    containerCrit = $('#formSearchRefined'),                //conteneur des criteres
+    nbVisible = 10,                                         //nombre d'items visible avant pagination
+    nbToShow = 5;                                           //nombre d'items a afficher si pagination existe
 
 /*--  DOMREADY  --*/
 $(function() {
@@ -709,7 +718,7 @@ $(function() {
     }
 
 //init Search
-    initRangeResult();
+    initCritResult();
 });
 
 /*-- HEADREADY --*/
@@ -1153,37 +1162,218 @@ function initializeAllGmap() {
 }
 
 
-function initRangeResult(){
+/*** FONCTIONS RESULTATS DE RECHERCHE ***/
+function initCritResult(){
+
+//variables globales
+    if ( $('.formSearchRefined').length ) {
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+    }
+    if ( $('#results').length ) {
+        launchFilters();
+    }
+
+    $('.formSearchRefined .searchGlobalSubmit').click(function(e) {
+        critSelection();
+        displayResults();
+        e.preventDefault();
+    });
+
+    $('#formSearchRefined input:checkbox').change(function() {
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+    });
+}
+
+//launcher des filtres
+function launchFilters() {
+
+    console.log('/--- launchFilters ---/');
+
+    items.attr('data-filtered', false);
+
+    //attribution min/max pour le range slider
+    findMinMaxRange();
+
+    //creation du rangeSlider de prix
+    rangeSliderPrice();
+
+    //selection des criteres
+    if ( containerCrit.find('input:checked').length ) {
+        critSelection();
+    }
+
+}
+
+//attribution min/max prix pour le range slider
+function findMinMaxRange() {
+    var allPrices = [];
+    items.each(function() {
+        var itemPrice = parseInt($(this).find('.itemResultBottom :checked + label .price').text());
+        consoleLog(itemPrice);
+        allPrices.push(itemPrice);
+        $(this).attr('data-ranged', true);
+    });
+
+    //prix min
+    Array.min = function(array) {
+        return Math.min.apply(Math, array);
+    };
+    minPrice = Array.min(allPrices);
+
+    //prix max
+    Array.max = function(array) {
+        return Math.max.apply(Math, array);
+    };
+    maxPrice = Array.max(allPrices);
+
+    //items dans la range de prix
+    items = list.find('[data-ranged="true"]');
+
+    console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+}
+
+//creation du rangeSlider de prix
+function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
-        minScale = $range.data('range').minScale,
-        maxScale = $range.data('range').maxScale,
-        minStart = $range.data('range').minStart,
-        minStop = $range.data('range').minStop;
-
-
-    consoleLog(minStop);
+        minScale = minPrice,
+        maxScale = maxPrice,
+        minStart = minPrice,
+        minStop = maxPrice;
 
     var initRange = function(){
-        $range .empty().noUiSlider('init', {
+        $range.empty().noUiSlider('init', {
             'scale'		:		[minScale,maxScale],
             'start'		:		[minStart,minStop],
 
             change: function(){
                 var values = $(this).noUiSlider('value');
-                $(this).find('.noUi-lowerHandle .rangeBox').text(values[0]);
-                $(this).find('.noUi-upperHandle .rangeBox').text(values[1]);
+                $(this).find('.noUi-lowerHandle .rangeBox').text(values[0] + "€");
+                $(this).find('.noUi-upperHandle .rangeBox').text(values[1] + "€");
             },
             end: function(type){
-                var message = "The slider was last changed by ";
-                if ( type=="click" ){ message=message+"clicking the bar."; }
-                else if ( type=="slide" ){ message=message+"sliding a handle."; }
-                else if ( type=="move" ){ message=message+"calling the move function."; }
-                consoleLog(message);
+                var values = $(this).noUiSlider('value');
+                valueMin = values[0];
+                valueMax = values[1];
+
+                items.each(function() {
+                    var originPrice = parseInt($(this).find('.itemResultBottom :checked + label .price').text());
+
+                    if ( parseInt(originPrice) >= parseInt(valueMin) && parseInt(originPrice) <= parseInt(valueMax) ) {
+                        $(this).attr('data-ranged', true);
+                    }else{
+                        $(this).attr('data-ranged', false);
+                    }
+                });
+                critSelection();
+                displayResults();
+                console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+'</span>');
-            });
+            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+'</span>');
+        });
     };
 
     initRange.call();
+}
+
+//selection des criteres
+function critSelection() {
+
+    //init des tableaux
+    var arrayCrit = [];         //tableau des criteres
+    var arrayCritPlus = [];     //tableau des criteres cumulatifs
+
+    //remplissage de arrayCrit
+    $(containerCrit.find('.contentCrit input:checked')).each(function() {
+        arrayCrit.push($(this).attr('id'));
+    });
+
+    //remplissage de arrayCritPlus (cumulatifs)
+    $(containerCrit.find('.contentCritPlus input:checked')).each(function() {
+        arrayCritPlus.push($(this).attr('id'));
+    });
+
+    //si aucun critere n'est selectionne
+    if ( arrayCrit == 0 && arrayCritPlus == 0 ) {
+        items.attr('data-filtered', true);
+        console.log('aucun critere selectionne');
+    }else{
+        if ( arrayCrit == 0) {
+            console.log('aucun critere selectionner dans arrayCrit');
+        }else{
+            //boucle de comparaison pour arrayCrit
+            items.each(function() {
+                console.log('-------------------- UN ITEM (crit) ----------------------');
+
+                var itemToShow = $(this);
+
+                //creation des tableau a comparer (avec les valeurs separer par des virgules)
+                var dataCompareCrit = $(this).attr('data-crit').split(',');
+
+                //comparaison des criteres
+                jQuery.each(arrayCrit, function(i) {
+                    if ( jQuery.inArray(arrayCrit[i], dataCompareCrit) > -1 ) {
+                        console.log('critere present : '+this);
+                        itemToShow.attr('data-filtered', true);
+                        return false; //on sort de la boucle car au moins 1 critere est present
+                    }else{
+                        itemToShow.attr('data-filtered', false);
+                    }
+                });
+
+            });
+        }
+
+        if ( arrayCritPlus == 0 ) {
+            console.log('aucun critere selectionner dans arrayCritPlus');
+        }else{
+            //boucle de comparaison pour arrayCritPlus
+            itemsFiltered.each(function() {
+                console.log('-------------------- UN ITEM (critPlus) ----------------------');
+
+                var itemToShow = $(this);
+
+                //creation des tableau a comparer (avec les valeurs separer par des virgules)
+                var dataCompareCritPlus = $(this).attr('data-critPlus').split(',');
+
+                //comparaison des criteresPlus
+                jQuery.each(arrayCritPlus, function(i) {
+                    if ( jQuery.inArray(arrayCritPlus[i], dataCompareCritPlus) > -1 ) {
+                        console.log('critere present : '+this);
+                        itemToShow.attr('data-filtered', true);
+                    }else{
+                        itemToShow.attr('data-filtered', false);
+                        console.log('criterePlus non present : '+this);
+                        return false; //on sort de la boucle car au moins 1 critere n'est pas present
+                    }
+                });
+            });
+        }
+    }
+
+    console.log('/--- critSelection ---/');
+}
+
+//gestion de l'affichage en fonction des criteres + rangeSlider
+function displayResults() {
+    var nbItemsDisplayed = 0;
+
+    items.each(function() {
+        var dataRanged = $(this).attr('data-ranged');
+        var dataFiltered = $(this).attr('data-filtered');
+
+        if ( dataFiltered == 'true' && dataRanged == 'true' ) {
+            $(this).fadeIn().next('.disclaim').fadeIn();
+            nbItemsDisplayed++;
+        }else{
+            $(this).fadeOut().next('.disclaim').fadeOut();
+        };
+    });
+
+    //mise a jour du nombre d'items affiches
+    $('#nbListResultats').text(nbItemsDisplayed);
+
+    console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
 }
