@@ -948,8 +948,9 @@ form li {
   width: 248px;
 }
 #searchBloc #searchBlocDate label {
-  font: bold 17px/19px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
+  margin-right: 15px;
 }
 #searchBloc #searchBlocDate .spinner input {
   width: 40px;
@@ -974,6 +975,11 @@ form li {
 }
 #searchBloc #searchBlocDate .spinner .spin-bt-up {
   margin-left: 2px;
+}
+#searchBloc #searchBlocDate #switchVilleCamping {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/ui/umbrella.png") no-repeat 0 0 #464545;
 }
 /* lang */
 #lang {

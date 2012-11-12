@@ -50,7 +50,7 @@
                     <div id="switchVilleCamping" title=""></div>
                 </li>
                 <li>
-                    <label for="SearchDate_nbAdultes">Adulte(s)</label>
+                    <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
                         <input type="number" id="SearchDate_nbAdultes" class="left" value="2">
@@ -58,7 +58,7 @@
                     </div>
                 </li>
                 <li>
-                    <label for="SearchDate_nbEnfants">Enfant(s)</label>
+                    <label for="SearchDate_nbEnfants" class="left">Enfant(s)</label>
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
                         <input type="number" id="SearchDate_nbEnfants" class="left" value="0">
