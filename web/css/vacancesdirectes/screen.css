@@ -424,6 +424,7 @@ footer {
   -webkit-border-radius: 7px 7px 0 0;
   border-radius: 7px 7px 0 0;
   z-index: 50;
+  margin-right: 1px;
 }
 #nav .tab:hover,
 #nav .tab.current {
@@ -816,6 +817,128 @@ footer {
 }
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
+}
+/* search */
+#searchBloc {
+  color: #ffffff;
+}
+#searchBloc #switchForm {
+  margin: 0 0 20px 0;
+}
+#searchBloc #switchForm li {
+  display: inline;
+}
+#searchBloc #switchForm li a {
+  width: 82px;
+  height: 34px;
+  background-color: #ffffff;
+  float: left;
+  margin: 6px 1px 0 0;
+  position: relative;
+}
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  background-color: #8c8a8a;
+}
+#searchBloc #switchForm li a.active:after,
+#searchBloc #switchForm li a:hover:after {
+  top: 100%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-top-color: #8C8A8A;
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px;
+}
+#searchBloc #switchForm li a span {
+  width: 60px;
+  height: 34px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;
+  margin: -3px 11px 0;
+  position: relative;
+  text-indent: -9999px;
+}
+#searchBloc #switchForm li a#tabSearchBlocDate span {
+  background-position: 0px -240px;
+}
+#searchBloc #switchForm li a#tabSearchBlocTrajet span {
+  background-position: 0px -280px;
+}
+#searchBloc #switchForm li a#tabSearchBlocBudget span {
+  background-position: 0px -320px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocDate span,
+#searchBloc #switchForm li a:hover#tabSearchBlocDate span {
+  background-position: -60px -240px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocTrajet span,
+#searchBloc #switchForm li a:hover#tabSearchBlocTrajet span {
+  background-position: -60px -280px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocBudget span,
+#searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
+  background-position: -60px -320px;
+}
+#searchBloc #switchForm li .active {
+  height: 40px;
+  margin-top: 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li:first-child a {
+  -webkit-border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 0;
+}
+#searchBloc #switchForm li:first-child a.active {
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li:last-child a {
+  -webkit-border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;
+  margin-right: 0;
+}
+#searchBloc #switchForm li:first-child a.active {
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #searchBlocDate p {
+  margin-bottom: 15px;
+}
+#searchBloc #searchBlocDate div.datepicker {
+  right: 0;
+}
+#searchBloc #searchBlocDate #datepickerCalendar {
+  width: 362px;
+  right: 0;
+  left: auto;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepicker {
+  width: 362px !important;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerContainer {
+  top: 10px;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerBorderTL,
+#searchBloc #searchBlocDate .datepickerBorderT,
+#searchBloc #searchBlocDate .datepickerBorderTR,
+#searchBloc #searchBlocDate .datepickerBorderB,
+#searchBloc #searchBlocDate .datepickerBorderBL,
+#searchBloc #searchBlocDate .datepickerBorderBR {
+  height: 10px;
+}
+#searchBloc #searchBlocDate #datepickerField {
+  width: 248px;
 }
 /* lang */
 #lang {
@@ -1378,6 +1501,9 @@ h6,
 .home .element .details .counter > img {
   vertical-align: middle;
 }
+.home #searchBloc {
+  margin-top: -150px;
+}
 .home #destinationsBloc {
   width: 400px;
   height: 253px;
@@ -1718,22 +1844,22 @@ h6,
   background-color: #cfcccc;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterNew:before {
-  background-position: -50px 0;
+  background-position: -60px 0;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterChildren:before {
-  background-position: -50px -40px;
+  background-position: -60px -40px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterWaterParks:before {
-  background-position: -50px -80px;
+  background-position: -60px -80px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterIndoorPools:before {
-  background-position: -50px -120px;
+  background-position: -60px -120px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterWaterfront:before {
-  background-position: -50px -160px;
+  background-position: -60px -160px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterAnimals:before {
-  background-position: -50px -200px;
+  background-position: -60px -200px;
 }
 .ie-lte7 .stain .span {
   display: inline;

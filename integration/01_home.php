@@ -110,7 +110,7 @@
 
         <!-- colonne droite -->
         <aside class="column right">
-            toto
+            <?php include('blocs/search.php') ?>
         </aside>
         <!-- // colonne droite -->
 
