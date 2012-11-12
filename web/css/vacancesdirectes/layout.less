@@ -23,7 +23,7 @@ header, section, footer {position:relative;}
 /* nav */
 #nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
   .topnav{top:-7px;}
-  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;
+  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-right:1px;
     &:hover, &.current{background:@colorFushia;
       small{color: #fff;}
       &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
@@ -132,6 +132,58 @@ header, section, footer {position:relative;}
     }
   }
 //  .tab:nth-child(4) .subnav{display:block;}
+}
+
+/* search */
+#searchBloc{color:@colorBlanc;
+  #switchForm{margin:0 0 20px 0;
+    li{display:inline;
+      a{width:82px;height:34px;background-color:@colorBlanc;float:left;margin:6px 1px 0 0;position:relative;
+        &.active,
+        &:hover{background-color:@colorBgGrisM;}
+        &.active:after,
+        &:hover:after{top:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
+        span {width:60px;height:34px;display:block;background:url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;margin:-3px 11px 0;position:relative;text-indent:-9999px;}
+        &#tabSearchBlocDate span{background-position:0px -240px;}
+        &#tabSearchBlocTrajet span{background-position:0px -280px;}
+        &#tabSearchBlocBudget span{background-position:0px -320px;}
+        &.active,
+        &:hover{
+          &#tabSearchBlocDate span{background-position:-60px -240px;}
+          &#tabSearchBlocTrajet span{background-position:-60px -280px;}
+          &#tabSearchBlocBudget span{background-position:-60px -320px;}
+        }
+      }
+      .active{height:40px;margin-top:0;._border-radius(10px 10px 0 0);}
+      &:first-child a{._border-radius(10px 0 0 0);}
+      &:first-child a.active{._border-radius(10px 10px 0 0);}
+      &:last-child a{._border-radius(0 10px 0 0);margin-right:0;}
+      &:first-child a.active{._border-radius(10px 10px 0 0);}
+    }
+  }
+  #searchBlocDate{
+    p{margin-bottom:15px;}
+    div.datepicker{right:0;}
+    #datepickerCalendar {width: 362px; right:0;left:auto;}
+    #datepickerCalendar .datepicker {
+      width: 362px !important;
+    }
+    #datepickerCalendar .datepickerGoPrev,
+    #datepickerCalendar .datepickerGoNext,
+    .datepickerContainer {
+      top: 10px;
+    }
+    #datepickerCalendar .datepickerGoPrev,
+    #datepickerCalendar .datepickerGoNext,
+    .datepickerBorderTL,
+    .datepickerBorderT,
+    .datepickerBorderTR,
+    .datepickerBorderB,
+    .datepickerBorderBL,
+    .datepickerBorderBR {height: 10px;}
+    #datepickerField{width:248px;}
+  }
+
 }
 
 /* lang */
