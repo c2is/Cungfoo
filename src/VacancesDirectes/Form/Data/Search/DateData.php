@@ -17,19 +17,6 @@ class DateData
 
     public function isValide(ExecutionContext $context)
     {
-        if (!$this->destination)
-        {
-            $context->addViolation('date_search.destination.required', array (), null);
-        }
-        else
-        {
-            $pays = get_class($this->destination) == "Cungfoo\Model\Pays" ?: $this->destination->getPays();
-            if ($pays->getName() == "France" && !($this->ville || $this->camping))
-            {
-                $context->addViolation('date_search.ville.required', array (), null);
-            }
-        }
-
         if ($this->dateDebut || $this->dateFin)
         {
             if (!$this->dateFin)

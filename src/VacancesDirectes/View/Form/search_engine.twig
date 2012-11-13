@@ -4,8 +4,9 @@
         <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
         <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
     </ul>
-    <form id="searchBlocDate" action="#_">
+    <form id="searchBlocDate" method="post" action="{{ path(app.request.get('_route')) }}">
         <fieldset>
+            {{ form_errors(searchDateForm) }}
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
@@ -14,9 +15,7 @@
                         <div id="datepickerField" class="clear">
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                         </div>
-                        <div id="datepickerCalendar">
-
-                        </div>
+                        <div id="datepickerCalendar"></div>
                     </div>
                 </li>
                 <li id="SearchDate_selectContainer1" class="selectContainer clear">
@@ -49,13 +48,14 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">+ de critères</a>
+                    <a class="more" href="#">+ de critères</a>
                 </li>
                 <li>
                     <button type="submit" class="bt sombre big">Trouver</button>
                 </li>
             </ol>
         </fieldset>
+        {{ form_rest(searchDateForm) }}
     </form>
     <form id="searchBlocTrajet" action="#_">
         <fieldset>
@@ -70,8 +70,17 @@
 </div>
 
 <script type="text/javascript">
-    var fStartDate = '2013/04/06',                  // must be a saturday
-        fEndDate = '2013/10/26',                // must be a saturday
-        linear = "reservation",
+    var fStartDate  = '2013/04/06',  // must be a saturday
+        fEndDate    = '2013/10/26',  // must be a saturday
+        linear      = "reservation",
         numMinWeeks = 1;
+
+    var selectVille = {
+            'byPaysPath': "{{ path('search_engine_get_villes_by_destination') }}",
+            'emptyValue': "{{ 'date_search.ville.empty_value'|trans }}"
+        },
+        selectCamping = {
+            'byPaysPath': "{{ path('search_engine_get_campings_by_destination') }}",
+            'emptyValue': "{{ 'date_search.camping.empty_value'|trans }}"
+        };
 </script>
