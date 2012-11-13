@@ -44,9 +44,9 @@ Identifiant : {$this->getIdentifiant()}
 eof;
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('[YourSite] Feedback')
-            ->setFrom(array('no-reply@vacancesdirectes.fr'))
-            ->setTo(array('florent.gallardo@c2is.fr'))
+            ->setSubject($app['config']->get('globale')['demande_identifiant']['sujet'])
+            ->setFrom(array($app['config']->get('globale')['demande_identifiant']['from_mail']=>$app['config']->get('globale')['demande_identifiant']['from']))
+            ->setTo(array($app['config']->get('globale')['demande_identifiant']['mail']))
             ->setBody($body);
 
         $app['mailer']->send($message);

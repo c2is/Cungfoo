@@ -21,9 +21,9 @@ header, section, footer {position:relative;}
 .home #telephone{clear:both;}
 
 /* nav */
-#nav{font:23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
+#nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
   .topnav{top:-7px;}
-  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;
+  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-right:1px;
     &:hover, &.current{background:@colorFushia;
       small{color: #fff;}
       &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
@@ -33,50 +33,192 @@ header, section, footer {position:relative;}
       &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font:bold  15px Arial,sans-serif;color:@colorFushia;}
     }
-    .subnav{padding:24px;position:absolute;top:57px;left:0px;width:976px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -12px @colorBgGrisF;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;
-      // DESTINATIONS
-      .ratio-33{width:300px;margin-right:16px;
-        &:last-child{width:296px;margin-right:0;}
-        .radiusBox2, .radiusBox{font:12px/13px Arial,sans-serif;
-          .view{width:290px;height:90px;background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;margin:-15px -20px 15px;._border-radius(6px 6px 0 0);
-            &#france{background-position:0px 0px;}
-            &#spain{background-position:0px -90px;}
-            &#italia{background-position:0px -180px;}
-            &#portugal{background-position:0px -270px;}
+    .subnav{padding:18px;position:absolute;top:57px;left:0px;width:976px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -12px @colorBgGrisF;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;cursor:default;
+      p{font:18px/19px Arial,sans-serif;}
+      .title{font:bold 22px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+      .subtitle{font:bold 18px @ptnarrow;color:@colorFushia;text-transform:uppercase;margin:3px 0 2px;}
+      .type{margin:10px 20px;}
+      .objective{margin:10px;}
+      &#destinations{
+        .ratio-33{width:300px;margin-left:16px;
+          &:first-child{width:308px;margin-left:0;}
+          .radiusBox,
+          .radiusBox2{font:12px/13px Arial,sans-serif;
+            .view{width:290px;height:90px;margin:-15px -20px 15px;._border-radius(6px 6px 0 0);
+              .bg{position:absolute;top:0;left:0;}
+            }
+            .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+            .region{
+              .link{padding-bottom:5px;border-bottom:7px solid @colorBorderGris;}
+              &:last-child .link{padding-bottom:0;border-bottom:0 none;}
+            }
+            a{text-decoration:none;}
+            .link{text-align:right;}
+          }
+          .radiusBox{height:511px;
+            .title{position:relative;display:inline;
+              &:after{content:url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');position:absolute;bottom:0px;right:-56px;width:46px;height:56px;}
+            }
+          }
+        }
+        #campingsList-nav {background-color:@colorFushia;padding:0 20px;margin:10px -20px 10px 40px;
+          &:after{content:"";}
+          span{margin-right:-6px;}
+          .ln-letters{margin-top:-4px;
+            a{padding:0;border:0 none;width:16px;._verticalCenter(16px);text-align:center;position:relative;
+              &.all{position:absolute;top:-38px;left:-50px;width:288px;height:30px;background-color:transparent;border:0 none;text-indent:-9999px;}
+            }
+          }
+          .ln-letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px Arial,sans-serif;color:@colorGris2;}
+        }
+        ol#campingsList{overflow-x:hidden;height:390px;
+          li{position:relative;margin-left:50px;
+            &:before{content:"- ";}
+            .ln-letter{position:absolute;top:-5px;left:-50px;height:20px;width:20px;font:bold 17px @ptnarrow;}
+            &.ln-separator{content:"";position:relative;margin:6px 0 6px -50px;height:1px;width:276px;background-color:@colorBorderGris}
+            .ln-letter:before,
+            &.ln-separator:before{content:"";}
+          }
+        }
+      }
+      &#locations{
+        .radiusBox{margin-right:20px;padding:10px;
+          &.capacity{width:135px;font-size:13px;text-align:center;
+            .view{display:block;width:100px;height:50px;margin:0 auto;}
+          }
+          &.exclusively{width:320px;margin-top:-22px;
+            .view{background:width:50px;height:100px;}
+            .content{font-size:18px;position:absolute;top:60px;left:70px;width:200px;._verticalCenter(50px, 20px);}
+          }
+          .stamp{position:absolute;top:10px;right:0;
+            &:after{content:"";}
+            span{margin-right:-6px;}
+          }
+        }
+        .radiusBox2{margin-right:12px;height:130px;
+          .view{width:216px;height:120px;background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;margin:-15px -20px 15px;._border-radius(6px);
+            &#mobilhome{background-position:0px 0px;}
+            &#cottage{background-position:0px -120px;}
+            &#chalet{background-position:0px -240px;}
+            &#caravan{background-position:0px -360px;}
           }
           .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
-          .region{
-            .link{padding-bottom:5px;border-bottom:7px solid @colorBorderGris;}
-            &:last-child .link{padding-bottom:0;border-bottom:0 none;}
-          }
-          a{text-decoration:none;}
-          .link{text-align:right;}
-        }
-        .radiusBox{height:511px;
-          .title{position:relative;display:inline;
-            &:after{content:url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');position:absolute;bottom:0px;right:-56px;width:46px;height:56px;}
+          .stain{position:absolute;bottom:0;right:10px;height:50px;
+            &>*{line-height:16px;}
+            span{margin-top:-6px;}
+            .price{font-size:22px;}
           }
         }
-      }
-      #campingsList-nav {background-color:@colorFushia;padding:4px 17px;margin:10px 0;
-        .ln-letters a{padding:0;border:0 none;width:17px;._verticalCenter(17px);text-align:center;position:relative;
-          &.all{position:absolute;top:-38px;left:0px;width:256px;height:30px;background-color:transparent;border:0 none;text-indent:-9999px;}
+        .radiusBox,
+        .radiusBox2{font:12px/13px Arial,sans-serif;
+          &:last-child{margin-right:0;}
         }
-        .ln-letter-count{position:absolute;top:-30px !important;left:auto !important;right:-5px;width:28px !important;._verticalCenter(35px);font:bold 15px Arial,sans-serif;color:@colorGris2;}
       }
-      ol#campingsList{overflow-x:hidden;height:390px;
-        li{position:relative;margin-left:50px;
-          &.ln-a:first-child:after{content:"A";position:absolute;top:0;left:-50px;height:20px;width:20px;}
-          &.ln-a:last-child:after{content:"";position:absolute;bottom:0;left:-50px;height:1px;width:276px;background-color:@colorBorderGris}
-          &.ln-b:first-child:after{content:"B";position:absolute;top:0;left:-50px;height:20px;width:20px;}
-          &.ln-b:last-child:after{content:"";position:absolute;bottom:0;left:-50px;height:1px;width:276px;background-color:@colorBorderGris}
-          &.ln-C:first-child:after{content:"C";position:absolute;top:0;left:-50px;height:20px;width:20px;}
-          &:before{content:"- ";}
+      &#deals{}
+      .proposals{padding:0 20px;
+        .title{margin:0;}
+        .proposalsDate{padding:0 20px;border-right:7px solid @colorBgGrisC;
+          &:last-child{border-right:0 none;}
+          .from{font:bold 13px @ptnarrow; color:@colorFushia;display:block;}
+          .bt{display:inline;}
+        }
+      }
+      &#holiday{}
+      &#weekends{
+        .radiusBox{
+          .title{color:@colorOrange;}
         }
       }
     }
   }
-//  .tab:nth-child(2) .subnav{display:block;}
+//  .tab:nth-child(4) .subnav{display:block;}
+}
+
+/* search */
+form li{margin-bottom:10px;}
+.stylish-select .newListSelected .selectedTxt:after,
+.stylish-select .newListSelected{height:27px;line-height:27px;}
+#searchBloc{color:@colorBlanc;
+  #switchForm{margin:0 0 20px 0;
+    li{display:inline;
+      a{width:82px;height:34px;background-color:@colorBlanc;float:left;margin:6px 1px 0 0;position:relative;
+        &.active,
+        &:hover{background-color:@colorBgGrisM;}
+        &.active:after,
+        &:hover:after{top:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
+        span {width:60px;height:34px;display:block;background:url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;margin:-3px 11px 0;position:relative;text-indent:-9999px;}
+        &#tabSearchBlocDate span{background-position:0px -240px;}
+        &#tabSearchBlocTrajet span{background-position:0px -280px;}
+        &#tabSearchBlocBudget span{background-position:0px -320px;}
+        &.active,
+        &:hover{height:40px;margin-top:0;._border-radius(10px 10px 0 0);
+          &#tabSearchBlocDate span{background-position:-60px -240px;}
+          &#tabSearchBlocTrajet span{background-position:-60px -280px;}
+          &#tabSearchBlocBudget span{background-position:-60px -320px;}
+          span{margin-top:0;}
+        }
+
+      }
+      &:first-child a{._border-radius(10px 0 0 0);}
+      &:last-child a{._border-radius(0 10px 0 0);margin-right:0;}
+      &:first-child a.active,
+      &:first-child a:hover,
+      &:last-child a.active,
+      &:last-child a:hover{._border-radius(10px 10px 0 0);}
+
+      &:nth-child(2),                           // cache les 2 derniers onglets du moteur de recherche
+      &:nth-child(3){visibility:hidden;}        //
+    }
+  }
+  #searchBlocDate{
+    a.more{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    p{margin-bottom:15px;}
+    div.datepicker{right:0;}
+    #datepickerCalendar {width: 362px;top:27px;right:10px;left:auto;}
+    #datepickerCalendar .datepicker {
+      width: 362px !important;
+    }
+    #datepickerCalendar .datepickerGoPrev,
+    #datepickerCalendar .datepickerGoNext,
+    .datepickerContainer {
+      top: 10px;
+    }
+    #datepickerCalendar .datepickerGoPrev,
+    #datepickerCalendar .datepickerGoNext,
+    .datepickerBorderTL,
+    .datepickerBorderT,
+    .datepickerBorderTR,
+    .datepickerBorderB,
+    .datepickerBorderBL,
+    .datepickerBorderBR {height: 10px;}
+    #datepickerField{width:248px;
+      span {height: 27px;top:2px;}
+      input {height: 27px;line-height: 27px;width:248px;}
+    }
+    label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:15px;}
+    .spinner{
+      input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
+      .spin-bt-down,
+      .spin-bt-up{width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 33px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;}
+      .spin-bt-down{margin-right:2px;}
+      .spin-bt-up{margin-left:2px;}
+    }
+    #SearchDate_selectContainer1 .newListSelected{width:248px;
+      .selectedTxt{width:215px;}
+      .SSContainerDivWrapper{min-width:248px;}
+    }
+    #SearchDate_selectContainer2{
+      .newListSelected{width:188px;
+        .selectedTxt{width:154px;}
+        .SSContainerDivWrapper{min-width:187px;}
+      }
+      span{height:27px;line-height:27px;margin-right:10px;}
+    }
+    .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;float:left;cursor:pointer;}
+    button[type=submit]{margin:0 auto;font-size:21px;}
+  }
+
+
 }
 
 /* lang */
@@ -120,29 +262,37 @@ h6, .h6-like{color:@colorFushia;}
 .stamp{position:relative;text-align:center;
   &.blue{background-color:@colorBgBleu;}
   &.grey{background-color:@colorBgGrisM;}
+  &.fushia{background-color:@colorFushia;}
   &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
   &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right-blanc.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+
   h2{color:@colorBlanc;._verticalCenter(40px);text-align:center;text-transform:uppercase;position:relative;display:inline-block;}
 }
 .radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.greyC{background-color:@colorBgGrisC;}
   &.greyF{background-color:@colorBgGrisF;}
   &.fushia{background-color:@colorFushia;}
-  .stamp:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
-  .stamp:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
+  .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 30px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
+    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
+  }
   &>h2{color:@colorGris1;
     span{color:@colorBleu;}
   }
 }
-.radiusBox2{._border-radius(10px);border:5px solid @colorBgGrisC;padding:15px 20px;margin:15px 0;position:relative;
+.radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
   &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
   &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
-  .stamp:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
-  .stamp:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
-  &>h2{color:@colorGris1;
-    span{color:@colorBleu;}
+  .stamp{color:@colorBlanc;background:url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;._verticalCenter(38px);padding:0 30px;margin-top:10px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
+    &:before{content:"";}
+    &:after{content:""}
+    span{margin-left:-6px;}
   }
+}
+.stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
+  &>span{margin-top:10px;}
+  .price{font-size:27px;font-weight:bold;}
 }
 
 /* structure */

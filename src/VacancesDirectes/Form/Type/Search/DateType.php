@@ -18,12 +18,12 @@ class DateType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('dateDebut', 'date', array(
+        $builder->add('dateDebut', 'hidden', array(
             'label' => 'date_search.date_debut',
             'required' => false,
         ));
 
-        $builder->add('dateFin', 'date', array(
+        $builder->add('dateFin', 'hidden', array(
             'label' => 'date_search.date_fin',
             'required' => false,
         ));
@@ -32,27 +32,33 @@ class DateType extends AppAwareType
             'class'     => 'Cungfoo\Model\Region',
             'group_by'  => 'pays.name',
             'label'     => 'date_search.destination',
+            'empty_value' => "date_search.destination.empty_value",
+            'empty_data'  => null,
             'required'  => false,
         ));
 
         $builder->add('ville', 'model', array(
             'class'     => 'Cungfoo\Model\Ville',
             'label'     => 'date_search.ville',
+            'empty_value' => "date_search.ville.empty_value",
+            'empty_data'  => null,
             'required'  => false,
         ));
 
         $builder->add('camping', 'model', array(
             'class'     => 'Cungfoo\Model\Etablissement',
             'label'     => 'date_search.camping',
+            'empty_value' => "date_search.camping.empty_value",
+            'empty_data'  => null,
             'required'  => false,
         ));
 
-        $builder->add('nbAdultes', 'integer', array(
+        $builder->add('nbAdultes', 'text', array(
             'label'     => 'date_search.nb_adultes',
             'required'  => false,
         ));
 
-        $builder->add('nbEnfants', 'integer', array(
+        $builder->add('nbEnfants', 'text', array(
             'label'     => 'date_search.nb_enfants',
             'required'  => false,
         ));

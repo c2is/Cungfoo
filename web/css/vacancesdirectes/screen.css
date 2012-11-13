@@ -311,6 +311,988 @@ textarea {
 .linkParent {
   cursor: pointer;
 }
+/* plugins styles*/
+/*PLUGINS*/
+/* infoBox */
+.infoBox {
+  background: #e6e5e5;
+  width: 305px;
+  height: 130px;
+  margin: 0;
+  padding: 10px;
+  font-size: 11px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.lt-ie9 .infoBox {
+  border: 1px solid #ccc;
+}
+.infoBox:after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 50% 100%;
+}
+.infoBox .content {
+  postition: relative;
+  height: 138px;
+  overflow: hidden;
+}
+.infoBox > img {
+  float: right;
+  margin: -5px -5px 0 0 !important;
+}
+.infoBox .content img {
+  float: left;
+  margin: 0 10px 3px 0;
+}
+.infoBox .title {
+  font: bold 16px/18px 'PT Sans Narrow', Arial, sans-serif;
+  color: #ed145b;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.infoBox .country,
+.infoBox .reg,
+.infoBox .city {
+  color: #5f5f5f;
+  font-size: 11px;
+  text-transform: uppercase;
+  line-height: 1.2em;
+}
+.infoBox .city {
+  color: #ed145b;
+}
+.infoBox .bt {
+  display: inline-block;
+  font-size: 11px;
+  margin-top: 5px;
+}
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+#cboxMiddleLeft,
+#cboxBottomLeft {
+  clear: left;
+}
+#cboxContent {
+  position: relative;
+}
+#cboxLoadedContent {
+  overflow: auto;
+}
+#cboxTitle {
+  margin: 0;
+}
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  cursor: pointer;
+}
+.cboxPhoto {
+  float: left;
+  margin: auto;
+  border: 0;
+  display: block;
+  max-width: none;
+}
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+  box-sizing: content-box;
+}
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+  background: #464545;
+}
+#colorbox,
+#colorbox * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+#cboxContent {
+  margin-top: 32px;
+  overflow: visible;
+}
+.cboxIframe {
+  background: #ffffff;
+}
+#cboxError {
+  padding: 50px;
+}
+#cboxLoadedContent {
+  border: 4px solid #8c8a8a;
+}
+#cboxLoadingGraphic {
+  background: url(images/loading.gif) no-repeat center center;
+}
+#cboxLoadingOverlay {
+  background: #000;
+}
+#cboxTitle {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+#cboxCurrent {
+  position: absolute;
+  top: -22px;
+  right: 205px;
+  text-indent: -9999px;
+}
+#cboxSlideshow,
+#cboxPrevious,
+#cboxNext {
+  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  background: url(../../images/vacancesdirectes/common/ui/controls.png) no-repeat 0 0;
+}
+#cboxPrevious {
+  background-position: 0px 0px;
+  right: 44px;
+}
+#cboxPrevious:hover {
+  background-position: 0px -25px;
+}
+#cboxNext {
+  background-position: -25px 0px;
+  right: 22px;
+}
+#cboxNext:hover {
+  background-position: -25px -25px;
+}
+#cboxClose {
+  /*background-position:-50px 0px; */
+  position: absolute;
+  top: -30px;
+  right: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 30px;
+}
+#cboxClose:hover {
+  /*background-position:-50px -25px;*/
+}
+.cboxSlideshow_on #cboxPrevious,
+.cboxSlideshow_off #cboxPrevious {
+  right: 66px;
+}
+.cboxSlideshow_on #cboxSlideshow {
+  background-position: -75px -25px;
+  right: 44px;
+}
+.cboxSlideshow_on #cboxSlideshow:hover {
+  background-position: -100px -25px;
+}
+.cboxSlideshow_off #cboxSlideshow {
+  background-position: -100px 0px;
+  right: 44px;
+}
+.cboxSlideshow_off #cboxSlideshow:hover {
+  background-position: -75px -25px;
+}
+/**
+* Stylish Select 0.4.9 - $ plugin to replace a select drop down box with a stylable unordered list
+* http://github.com/scottdarby/Stylish-Select/
+*
+* Copyright (c) 2009 Scott Darby
+*
+* Requires: jQuery 1.3 or newer
+*
+* Dual licensed under the MIT and GPL licenses.
+*/
+/**
+* Hide lists on page load
+---------------------------------------------------------*/
+.stylish-select .SSContainerDivWrapper {
+  left: -9999px;
+}
+/*
+* Vacances directes select style
+---------------------------------------------------------*/
+.stylish-select .SSContainerDivWrapper {
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  z-index: 2;
+}
+.stylish-select ul.newList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #464545;
+  background: #fff;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+.stylish-select ul.newList * {
+  margin: 0;
+  padding: 0;
+}
+.stylish-select ul.newList a {
+  color: #464545;
+  text-decoration: none;
+  display: block;
+  padding: 0 8px;
+  height: 23px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 23px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  white-space: nowrap;
+}
+.stylish-select ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.stylish-select ul.newList a > img {
+  vertical-align: middle;
+}
+.stylish-select .newListSelected {
+  width: 200px;
+  color: #464545;
+  height: 23px;
+  float: left;
+  margin-right: 10px;
+  background-color: #e6e5e5;
+  position: relative;
+  height: 23px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 23px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.stylish-select .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.stylish-select .newListSelected > img {
+  vertical-align: middle;
+}
+.stylish-select .newListSelected .selectedTxt:after {
+  content: "";
+  width: 27px;
+  height: 23px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.stylish-select .newListSelected * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+.stylish-select ul.newList li a:focus {
+  -moz-outline-style: none;
+}
+.stylish-select .selectedTxt {
+  width: 167px;
+  overflow: hidden;
+  padding: 0 23px 0 10px;
+  position: absolute;
+}
+.stylish-select .hiLite {
+  background: #ED145B!important;
+  color: #fff!important;
+}
+.stylish-select .newListHover {
+  background-color: #ccc!important;
+  color: #464545 !important;
+  cursor: default;
+}
+.stylish-select .newListDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListItemDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListOptionDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListSelHover,
+.stylish-select .newListSelFocus {
+  cursor: default;
+}
+.stylish-select .newListSelHover .selectedTxt:after,
+.stylish-select .newListSelFocus .selectedTxt:after {
+  background-position: 0 -46px;
+}
+.stylish-select .newListOptionTitle {
+  font-weight: bold;
+}
+.stylish-select .newListOptionTitle ul {
+  margin: 3px 0 0;
+}
+.stylish-select .newListOptionTitle li {
+  font-weight: normal;
+}
+#datepicker {
+  position: relative;
+}
+#datepickerField {
+  height: 27px;
+  overflow: hidden;
+  position: relative;
+  width: 260px;
+  float: left;
+}
+#datepickerField input {
+  background-color: #E6E5E5;
+  color: #464545;
+  float: left;
+  height: 23px;
+  line-height: 23px;
+  position: relative;
+  width: 260px;
+  border: 0 none;
+  cursor: pointer;
+  padding: 0 32px 0 5px;
+}
+#datepickerField span.date {
+  cursor: pointer;
+}
+#datepicker input.hidden {
+  display: none;
+  width: 125px;
+  margin: 0 10px 10px 0;
+  border: 0 none;
+}
+#datepickerField span {
+  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat scroll 0 0 transparent;
+  float: left;
+  width: 27px;
+  height: 23px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#datepickerField:hover span,
+#datepickerField.opened span {
+  background-position: 0 -46px;
+}
+#datepickerCalendar {
+  background: none repeat scroll 0 0 #e6e5e5;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 23px;
+  width: 886px;
+  z-index: 1;
+  margin: 5px 0;
+}
+#datepickerCalendar .datepickerGoPrev a,
+#datepickerCalendar .datepickerGoNext a {
+  text-decoration: none;
+}
+#datepickerCalendar .datepickerGoPrev,
+#datepickerCalendar .datepickerGoNext {
+  position: absolute;
+  top: 30px;
+  z-index: 1;
+}
+#datepickerCalendar .datepickerGoPrev {
+  left: 10px;
+}
+#datepickerCalendar .datepickerGoNext {
+  right: 10px;
+}
+#datepickerCalendar .datepicker {
+  bottom: 0;
+  position: absolute;
+  top: auto;
+  border: 1px solid #adadad;
+  width: 886px !important;
+  z-index: 0;
+}
+#datepickerCalendar .datepickerContainer,
+#datepickerCalendar .datepickerBorderBL,
+#datepickerCalendar .datepickerBorderB,
+#datepickerCalendar .datepickerBorderBR,
+#datepickerCalendar .datepickerBorderL,
+#datepickerCalendar .datepickerBorderR {
+  background: none repeat scroll 0 0 transparent !important;
+}
+#datepickerCalendar .datepickerBorderTL,
+#datepickerCalendar .datepickerBorderT,
+#datepickerCalendar .datepickerBorderTR {
+  background: #e6e5e5;
+}
+input.date span {
+  content: "";
+  width: 27px;
+  height: 23px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+div.datepicker {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 196px;
+  height: 147px;
+  position: absolute;
+  cursor: default;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.datepickerContainer {
+  background: #e6e5e5;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  width: 866px !important;
+}
+.datepickerContainer > table > tbody > tr > td thead .datepickerGoPrev,
+.datepickerContainer > table > tbody > tr > td thead .datepickerGoNext {
+  display: none;
+}
+.datepickerBorderTL {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 30px;
+  background: url(../images/datepicker_tl.png);
+}
+.datepickerBorderT {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  right: 10px;
+  height: 30px;
+  background: url(../images/datepicker_t.png);
+}
+.datepickerBorderTR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 30px;
+  background: url(../images/datepicker_tr.png);
+}
+.datepickerBorderB {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  right: 10px;
+  height: 30px;
+  background: url(../images/datepicker_b.png);
+}
+.datepickerBorderL {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  top: 10px;
+  width: 10px;
+  background: url(../images/datepicker_l.png);
+}
+.datepickerBorderR {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  top: 10px;
+  width: 10px;
+  background: url(../images/datepicker_r.png);
+}
+.datepickerBorderBL {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 30px;
+  background: url(../images/datepicker_bl.png);
+}
+.datepickerBorderBR {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 30px;
+  background: url(../images/datepicker_br.png);
+}
+.datepickerHidden {
+  display: none;
+}
+div.datepicker table {
+  border-collapse: collapse;
+}
+div.datepicker a {
+  color: #464545;
+  text-decoration: none;
+  outline: none;
+  font-weight: bold;
+}
+div.datepicker table td {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+div.datepicker table td.datepickerDisabled a,
+div.datepicker table td.datepickerUnselectable a {
+  cursor: default;
+  font-weight: normal;
+}
+div.datepicker th {
+  text-align: center;
+  color: #ffffff;
+  font-weight: normal;
+}
+.datepickerViewDays thead tr:first-child {
+  background-color: #ed145b;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+}
+.datepickerViewDays thead tr.datepickerDoW {
+  background-color: #464545;
+  color: #ffffff;
+}
+div.datepicker tbody th {
+  text-align: center;
+  font-weight: bold;
+}
+div.datepicker tbody a {
+  display: block;
+}
+.datepickerDays a {
+  width: 25px;
+  height: 23px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 23px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 6px 0 0;
+}
+.datepickerDays a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.datepickerDays a > img {
+  vertical-align: middle;
+}
+.datepickerYears a,
+.datepickerMonths a {
+  width: 44px;
+  line-height: 36px;
+  height: 36px;
+  text-align: center;
+}
+td.datepickerNotInMonth a {
+  color: #666;
+  visibility: hidden;
+}
+tbody.datepickerDays td.datepickerSelected a,
+tbody.datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
+tbody.datepickerDays td.datepickerSelected a:hover {
+  color: #ed145b;
+}
+tbody.datepickerYears td.datepickerSelected a,
+tbody.datepickerMonths td.datepickerSelected a {
+  background-color: #75092d;
+}
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
+div.datepicker .datepickerDays td.datepickerSpecial a:hover,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
+  background-color: #e7cad3;
+  color: #ffffff;
+}
+div.datepicker .datepickerDays td.datepickerHighSeason a,
+div.datepicker .datepickerDays td.datepickerHighSeason a {
+  background-color: transparent;
+  color: #c2c2c2;
+}
+div.datepicker .datepickerDays td a:hover,
+div.datepicker .datepickerDays td.datepickerSpecial a:hover {
+  background-color: #ffffff;
+  color: #ed145b;
+}
+div.datepicker .datepickerDays td.datepickerDisabled a:hover,
+div.datepicker .datepickerDays td.datepickerUnselectable a:hover {
+  background-color: transparent;
+  color: #c2c2c2;
+  border: 0 none;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+  color: #999;
+}
+/*
+div.datepicker .datepickerDays td a:hover {background-color: @colorBgBlanc;}
+div.datepicker .datepickerDays td.datepickerDisabled a:hover {background-color: transparent;}
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {background-color: @colorFushia;}
+*/
+.datepickerSpace div {
+  width: 0;
+}
+#datepickerCalendar .datepickerGoNext a,
+#datepickerCalendar .datepickerGoPrev a,
+#datepickerCalendar .datepickerMonth a {
+  font-size: 14px;
+  text-align: center;
+  height: 23px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 23px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#datepickerCalendar .datepickerGoNext a > *,
+#datepickerCalendar .datepickerGoPrev a > *,
+#datepickerCalendar .datepickerMonth a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#datepickerCalendar .datepickerGoNext a > img,
+#datepickerCalendar .datepickerGoPrev a > img,
+#datepickerCalendar .datepickerMonth a > img {
+  vertical-align: middle;
+}
+#datepickerCalendar .datepickerMonth a {
+  cursor: default;
+}
+#datepickerCalendar .datepickerGoNext a,
+#datepickerCalendar .datepickerGoPrev a {
+  width: 20px;
+  cursor: pointer;
+}
+#datepickerCalendar .datepickerGoNPrev a {
+  left: 0;
+}
+#datepickerCalendar .datepickerGoNext a {
+  right: 0;
+}
+#datepickerCalendar .datepickerGoPrev a:hover,
+#datepickerCalendar .datepickerGoNext a:hover,
+#datepickerCalendar .datepickerMonth a,
+#datepickerCalendar .datepickerMonth a:hover {
+  color: #ffffff;
+}
+.datepickerInfo,
+.datepickerLegend {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 14px;
+  position: absolute;
+  left: 10px;
+}
+.datepickerInfo {
+  top: 5px;
+  color: #ed145b;
+  font-weight: bold;
+}
+.datepickerLegend {
+  margin-left: 28px;
+  bottom: 5px;
+  color: #464545;
+}
+.datepickerLegend:before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  background-color: #e7cad3;
+  position: absolute;
+  top: 0;
+  left: -28px;
+}
+#datepickerCalendar .bt {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+  display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+  display: none;
+}
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+  display: none;
+}
+td.datepickerDisabled a,
+td.datepickerUnselectable a,
+td.datepickerDisabled.datepickerNotInMonth a {
+  color: #c2c2c2;
+}
+td.datepickerDisabled a:hover,
+td.datepickerUnselectable a:hover {
+  color: #c2c2c2;
+}
+div.datepicker .datepickerDays td.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover {
+  background-color: #ed145b;
+  color: #ffffff;
+  font-weight: bold;
+}
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
+div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover {
+  font-weight: normal;
+}
+div.datepicker .datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background-color: #ed145b;
+  color: #ed145b;
+  visibility: hidden;
+}
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerSelected a {
+  background-color: #ed145b;
+  color: #464545;
+}
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
+div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a {
+  color: #ffffff;
+}
+div.datepicker .datepickerDays td.datepickerSelected a {
+  color: #464545;
+  font-weight: bold;
+}
+div.datepicker .datepickerDays td.datepickerSelected a:hover {
+  background-color: #ffffff;
+  color: #ed145b;
+}
+tr.datepickerDoW th:first-child,
+th.datepickerWeek {
+  display: none;
+}
+/* Fix icon position in Chrome & Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  button.Zebra_DatePicker_Icon_Inside {
+    margin: 0 5px 0 0;
+  }
+}
+/*
+	STYLE SHEET FOR IHWY JQUERY LISTNAV PLUGIN V 2.0, 3/2/2009
+
+	For more information, visit http://www.ihwy.com/Labs/jquery-listnav-plugin.aspx
+*/
+/* default styling example
+----------------------------------------------------------------- */
+.listNav {
+  margin: 0 0 10px;
+}
+.ln-letters {
+  overflow: hidden;
+}
+.ln-letters a {
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  float: left;
+  padding: 2px 6px;
+  border: 1px solid silver;
+  border-right: none;
+  text-decoration: none;
+}
+.ln-letters a.ln-last {
+  border-right: 1px solid silver;
+}
+.ln-letters a:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+.ln-letters a.ln-selected {
+  background-color: #ffffff;
+  color: #ed145b;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.ln-letters a.ln-disabled {
+  color: #ccc;
+  font-weight: normal;
+}
+.ln-letter-count {
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1;
+  margin-bottom: 3px;
+  color: #336699;
+}
+/* demo-specific
+----------------------------------------------------------------- */
+#demoThree-nav .ln-letters a {
+  border: none;
+  border-top: 2px solid pink;
+  color: red;
+}
+#demoThree-nav .ln-letters a.ln-last {
+  border-right: none;
+}
+#demoThree-nav .ln-letters a:hover,
+#demoThree-nav .ln-letters a.ln-selected {
+  border-top: 2px solid red;
+  background-color: pink;
+  color: White !important;
+}
+#demoThree-nav .ln-letters a.ln-disabled {
+  color: pink;
+}
+#demoThree-nav .ln-letters a.ln-disabled:hover {
+  color: white;
+}
+#demoThree-nav .ln-letter-count {
+  color: red;
+}
+#demoThree li {
+  color: pink;
+}
+#demoThree li a {
+  color: red;
+  text-decoration: none;
+}
+#demoThree li a:hover {
+  text-decoration: underline;
+}
+#demo4 #listWrapper {
+  width: 650px;
+}
+#demoFour li {
+  float: left;
+}
+#demoFour a {
+  display: block;
+  text-align: center;
+  width: 85px;
+  border: 1px solid silver;
+  padding: 10px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+}
+#demoFour a:hover {
+  background-color: #eeeeee;
+}
+/** noUislider 2.5.5
+  ** @author: 		@leongersen
+ ** @repository:	https://github.com/leongersen/noUiSlider
+ **/
+.noUiSlider {
+  width: 400px;
+  border: 1px solid #ccc;
+  height: 8px;
+  background: #eee;
+  -webkit-touch-callout: none;
+}
+.noUiSlider .noUi-handle > div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: -5px;
+  left: -8px;
+  z-index: 5;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+.noUiSlider .noUi-handle > div:hover,
+.noUiSlider .noUi-handle > div.noUi-activeHandle {
+  background: #ace;
+  border-color: #369;
+}
+.noUiSlider .noUi-midBar {
+  height: 100%;
+  z-index: 0;
+  background: #39c;
+  -webkit-touch-callout: none;
+}
+.noUiSlider .rangeBox {
+  display: block;
+  margin-top: 15px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.2), -moz-touch-enabled, (max-device-width: 1024px) {
+  .noUi-handle > div {
+    height: 32px;
+    width: 32px;
+    top: -13px;
+    left: -16px;
+  }
+}
 /* LAYOUT */
 body {
   background: #f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 0 0;
@@ -405,7 +1387,7 @@ footer {
 }
 /* nav */
 #nav {
-  font: 23px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 23px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
   position: relative;
   background: #464545;
@@ -424,6 +1406,7 @@ footer {
   -webkit-border-radius: 7px 7px 0 0;
   border-radius: 7px 7px 0 0;
   z-index: 50;
+  margin-right: 1px;
 }
 #nav .tab:hover,
 #nav .tab.current {
@@ -481,7 +1464,7 @@ footer {
   color: #ed145b;
 }
 #nav .tab .subnav {
-  padding: 24px;
+  padding: 18px;
   position: absolute;
   top: 57px;
   left: 0px;
@@ -494,76 +1477,86 @@ footer {
   z-index: 40;
   display: none;
   color: #5f5f5f;
+  cursor: default;
 }
-#nav .tab .subnav .ratio-33 {
+#nav .tab .subnav p {
+  font: 18px/19px Arial, sans-serif;
+}
+#nav .tab .subnav .title {
+  font: bold 22px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 3px 0 2px;
+}
+#nav .tab .subnav .subtitle {
+  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  color: #ed145b;
+  text-transform: uppercase;
+  margin: 3px 0 2px;
+}
+#nav .tab .subnav .type {
+  margin: 10px 20px;
+}
+#nav .tab .subnav .objective {
+  margin: 10px;
+}
+#nav .tab .subnav#destinations .ratio-33 {
   width: 300px;
-  margin-right: 16px;
+  margin-left: 16px;
 }
-#nav .tab .subnav .ratio-33:last-child {
-  width: 296px;
-  margin-right: 0;
+#nav .tab .subnav#destinations .ratio-33:first-child {
+  width: 308px;
+  margin-left: 0;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2,
-#nav .tab .subnav .ratio-33 .radiusBox {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 {
   font: 12px/13px Arial, sans-serif;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .view,
-#nav .tab .subnav .ratio-33 .radiusBox .view {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .view,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .view {
   width: 290px;
   height: 90px;
-  background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;
   margin: -15px -20px 15px;
   -webkit-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .view#france,
-#nav .tab .subnav .ratio-33 .radiusBox .view#france {
-  background-position: 0px 0px;
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .view .bg,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .view .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .view#spain,
-#nav .tab .subnav .ratio-33 .radiusBox .view#spain {
-  background-position: 0px -90px;
-}
-#nav .tab .subnav .ratio-33 .radiusBox2 .view#italia,
-#nav .tab .subnav .ratio-33 .radiusBox .view#italia {
-  background-position: 0px -180px;
-}
-#nav .tab .subnav .ratio-33 .radiusBox2 .view#portugal,
-#nav .tab .subnav .ratio-33 .radiusBox .view#portugal {
-  background-position: 0px -270px;
-}
-#nav .tab .subnav .ratio-33 .radiusBox2 .title,
-#nav .tab .subnav .ratio-33 .radiusBox .title {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .title,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .title {
   font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .region .link,
-#nav .tab .subnav .ratio-33 .radiusBox .region .link {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .region .link,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .region .link {
   padding-bottom: 5px;
   border-bottom: 7px solid #c6c5c5;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .region:last-child .link,
-#nav .tab .subnav .ratio-33 .radiusBox .region:last-child .link {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .region:last-child .link,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .region:last-child .link {
   padding-bottom: 0;
   border-bottom: 0 none;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 a,
-#nav .tab .subnav .ratio-33 .radiusBox a {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox a,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 a {
   text-decoration: none;
 }
-#nav .tab .subnav .ratio-33 .radiusBox2 .link,
-#nav .tab .subnav .ratio-33 .radiusBox .link {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .link,
+#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .link {
   text-align: right;
 }
-#nav .tab .subnav .ratio-33 .radiusBox {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox {
   height: 511px;
 }
-#nav .tab .subnav .ratio-33 .radiusBox .title {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .title {
   position: relative;
   display: inline;
 }
-#nav .tab .subnav .ratio-33 .radiusBox .title:after {
+#nav .tab .subnav#destinations .ratio-33 .radiusBox .title:after {
   content: url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');
   position: absolute;
   bottom: 0px;
@@ -571,19 +1564,28 @@ footer {
   width: 46px;
   height: 56px;
 }
-#nav .tab .subnav #campingsList-nav {
+#nav .tab .subnav#destinations #campingsList-nav {
   background-color: #ed145b;
-  padding: 4px 17px;
-  margin: 10px 0;
+  padding: 0 20px;
+  margin: 10px -20px 10px 40px;
 }
-#nav .tab .subnav #campingsList-nav .ln-letters a {
+#nav .tab .subnav#destinations #campingsList-nav:after {
+  content: "";
+}
+#nav .tab .subnav#destinations #campingsList-nav span {
+  margin-right: -6px;
+}
+#nav .tab .subnav#destinations #campingsList-nav .ln-letters {
+  margin-top: -4px;
+}
+#nav .tab .subnav#destinations #campingsList-nav .ln-letters a {
   padding: 0;
   border: 0 none;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   /* Centrer verticalement une ligne de texte */
 
-  line-height: 17px;
+  line-height: 16px;
   /* Centrer verticalement plusieurs lignes de texte */
 
   /* Centrer verticalement une image de taille variable */
@@ -591,29 +1593,29 @@ footer {
   text-align: center;
   position: relative;
 }
-#nav .tab .subnav #campingsList-nav .ln-letters a > * {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letters a > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#nav .tab .subnav #campingsList-nav .ln-letters a > img {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letters a > img {
   vertical-align: middle;
 }
-#nav .tab .subnav #campingsList-nav .ln-letters a.all {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letters a.all {
   position: absolute;
   top: -38px;
-  left: 0px;
-  width: 256px;
+  left: -50px;
+  width: 288px;
   height: 30px;
   background-color: transparent;
   border: 0 none;
   text-indent: -9999px;
 }
-#nav .tab .subnav #campingsList-nav .ln-letter-count {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letter-count {
   position: absolute;
   top: -30px !important;
   left: auto !important;
-  right: -5px;
+  right: 15px;
   width: 28px !important;
   height: 35px;
   /* Centrer verticalement une ligne de texte */
@@ -626,66 +1628,395 @@ footer {
   font: bold 15px Arial, sans-serif;
   color: #464545;
 }
-#nav .tab .subnav #campingsList-nav .ln-letter-count > * {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letter-count > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#nav .tab .subnav #campingsList-nav .ln-letter-count > img {
+#nav .tab .subnav#destinations #campingsList-nav .ln-letter-count > img {
   vertical-align: middle;
 }
-#nav .tab .subnav ol#campingsList {
+#nav .tab .subnav#destinations ol#campingsList {
   overflow-x: hidden;
   height: 390px;
 }
-#nav .tab .subnav ol#campingsList li {
+#nav .tab .subnav#destinations ol#campingsList li {
   position: relative;
   margin-left: 50px;
 }
-#nav .tab .subnav ol#campingsList li.ln-a:first-child:after {
-  content: "A";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  height: 20px;
-  width: 20px;
-}
-#nav .tab .subnav ol#campingsList li.ln-a:last-child:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -50px;
-  height: 1px;
-  width: 276px;
-  background-color: #c6c5c5;
-}
-#nav .tab .subnav ol#campingsList li.ln-b:first-child:after {
-  content: "B";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  height: 20px;
-  width: 20px;
-}
-#nav .tab .subnav ol#campingsList li.ln-b:last-child:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -50px;
-  height: 1px;
-  width: 276px;
-  background-color: #c6c5c5;
-}
-#nav .tab .subnav ol#campingsList li.ln-C:first-child:after {
-  content: "C";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  height: 20px;
-  width: 20px;
-}
-#nav .tab .subnav ol#campingsList li:before {
+#nav .tab .subnav#destinations ol#campingsList li:before {
   content: "- ";
+}
+#nav .tab .subnav#destinations ol#campingsList li .ln-letter {
+  position: absolute;
+  top: -5px;
+  left: -50px;
+  height: 20px;
+  width: 20px;
+  font: bold 17px 'PT Sans Narrow', Arial, sans-serif;
+}
+#nav .tab .subnav#destinations ol#campingsList li.ln-separator {
+  content: "";
+  position: relative;
+  margin: 6px 0 6px -50px;
+  height: 1px;
+  width: 276px;
+  background-color: #c6c5c5;
+}
+#nav .tab .subnav#destinations ol#campingsList li .ln-letter:before,
+#nav .tab .subnav#destinations ol#campingsList li.ln-separator:before {
+  content: "";
+}
+#nav .tab .subnav#locations .radiusBox {
+  margin-right: 20px;
+  padding: 10px;
+}
+#nav .tab .subnav#locations .radiusBox.capacity {
+  width: 135px;
+  font-size: 13px;
+  text-align: center;
+}
+#nav .tab .subnav#locations .radiusBox.capacity .view {
+  display: block;
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+}
+#nav .tab .subnav#locations .radiusBox.exclusively {
+  width: 320px;
+  margin-top: -22px;
+}
+#nav .tab .subnav#locations .radiusBox.exclusively .view {
+  background: width:50px;
+  height: 100px;
+}
+#nav .tab .subnav#locations .radiusBox.exclusively .content {
+  font-size: 18px;
+  position: absolute;
+  top: 60px;
+  left: 70px;
+  width: 200px;
+  height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#nav .tab .subnav#locations .radiusBox.exclusively .content > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+}
+#nav .tab .subnav#locations .radiusBox.exclusively .content > img {
+  vertical-align: middle;
+}
+#nav .tab .subnav#locations .radiusBox .stamp {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+#nav .tab .subnav#locations .radiusBox .stamp:after {
+  content: "";
+}
+#nav .tab .subnav#locations .radiusBox .stamp span {
+  margin-right: -6px;
+}
+#nav .tab .subnav#locations .radiusBox2 {
+  margin-right: 12px;
+  height: 130px;
+}
+#nav .tab .subnav#locations .radiusBox2 .view {
+  width: 216px;
+  height: 120px;
+  background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;
+  margin: -15px -20px 15px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+#nav .tab .subnav#locations .radiusBox2 .view#mobilhome {
+  background-position: 0px 0px;
+}
+#nav .tab .subnav#locations .radiusBox2 .view#cottage {
+  background-position: 0px -120px;
+}
+#nav .tab .subnav#locations .radiusBox2 .view#chalet {
+  background-position: 0px -240px;
+}
+#nav .tab .subnav#locations .radiusBox2 .view#caravan {
+  background-position: 0px -360px;
+}
+#nav .tab .subnav#locations .radiusBox2 .title {
+  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 3px 0 2px;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  height: 50px;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain > * {
+  line-height: 16px;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain span {
+  margin-top: -6px;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain .price {
+  font-size: 22px;
+}
+#nav .tab .subnav#locations .radiusBox,
+#nav .tab .subnav#locations .radiusBox2 {
+  font: 12px/13px Arial, sans-serif;
+}
+#nav .tab .subnav#locations .radiusBox:last-child,
+#nav .tab .subnav#locations .radiusBox2:last-child {
+  margin-right: 0;
+}
+#nav .tab .subnav .proposals {
+  padding: 0 20px;
+}
+#nav .tab .subnav .proposals .title {
+  margin: 0;
+}
+#nav .tab .subnav .proposals .proposalsDate {
+  padding: 0 20px;
+  border-right: 7px solid #e6e5e5;
+}
+#nav .tab .subnav .proposals .proposalsDate:last-child {
+  border-right: 0 none;
+}
+#nav .tab .subnav .proposals .proposalsDate .from {
+  font: bold 13px 'PT Sans Narrow', Arial, sans-serif;
+  color: #ed145b;
+  display: block;
+}
+#nav .tab .subnav .proposals .proposalsDate .bt {
+  display: inline;
+}
+#nav .tab .subnav#weekends .radiusBox .title {
+  color: #f58220;
+}
+/* search */
+form li {
+  margin-bottom: 10px;
+}
+.stylish-select .newListSelected .selectedTxt:after,
+.stylish-select .newListSelected {
+  height: 27px;
+  line-height: 27px;
+}
+#searchBloc {
+  color: #ffffff;
+}
+#searchBloc #switchForm {
+  margin: 0 0 20px 0;
+}
+#searchBloc #switchForm li {
+  display: inline;
+}
+#searchBloc #switchForm li a {
+  width: 82px;
+  height: 34px;
+  background-color: #ffffff;
+  float: left;
+  margin: 6px 1px 0 0;
+  position: relative;
+}
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  background-color: #8c8a8a;
+}
+#searchBloc #switchForm li a.active:after,
+#searchBloc #switchForm li a:hover:after {
+  top: 100%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-top-color: #8C8A8A;
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px;
+}
+#searchBloc #switchForm li a span {
+  width: 60px;
+  height: 34px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;
+  margin: -3px 11px 0;
+  position: relative;
+  text-indent: -9999px;
+}
+#searchBloc #switchForm li a#tabSearchBlocDate span {
+  background-position: 0px -240px;
+}
+#searchBloc #switchForm li a#tabSearchBlocTrajet span {
+  background-position: 0px -280px;
+}
+#searchBloc #switchForm li a#tabSearchBlocBudget span {
+  background-position: 0px -320px;
+}
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  height: 40px;
+  margin-top: 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocDate span,
+#searchBloc #switchForm li a:hover#tabSearchBlocDate span {
+  background-position: -60px -240px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocTrajet span,
+#searchBloc #switchForm li a:hover#tabSearchBlocTrajet span {
+  background-position: -60px -280px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocBudget span,
+#searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
+  background-position: -60px -320px;
+}
+#searchBloc #switchForm li a.active span,
+#searchBloc #switchForm li a:hover span {
+  margin-top: 0;
+}
+#searchBloc #switchForm li:first-child a {
+  -webkit-border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 0;
+}
+#searchBloc #switchForm li:last-child a {
+  -webkit-border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;
+  margin-right: 0;
+}
+#searchBloc #switchForm li:first-child a.active,
+#searchBloc #switchForm li:first-child a:hover,
+#searchBloc #switchForm li:last-child a.active,
+#searchBloc #switchForm li:last-child a:hover {
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li:nth-child(2),
+#searchBloc #switchForm li:nth-child(3) {
+  visibility: hidden;
+}
+#searchBloc #searchBlocDate a.more {
+  color: #ffffff;
+  font: bold 14px/16px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+#searchBloc #searchBlocDate p {
+  margin-bottom: 15px;
+}
+#searchBloc #searchBlocDate div.datepicker {
+  right: 0;
+}
+#searchBloc #searchBlocDate #datepickerCalendar {
+  width: 362px;
+  top: 27px;
+  right: 10px;
+  left: auto;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepicker {
+  width: 362px !important;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerContainer {
+  top: 10px;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerBorderTL,
+#searchBloc #searchBlocDate .datepickerBorderT,
+#searchBloc #searchBlocDate .datepickerBorderTR,
+#searchBloc #searchBlocDate .datepickerBorderB,
+#searchBloc #searchBlocDate .datepickerBorderBL,
+#searchBloc #searchBlocDate .datepickerBorderBR {
+  height: 10px;
+}
+#searchBloc #searchBlocDate #datepickerField {
+  width: 248px;
+}
+#searchBloc #searchBlocDate #datepickerField span {
+  height: 27px;
+  top: 2px;
+}
+#searchBloc #searchBlocDate #datepickerField input {
+  height: 27px;
+  line-height: 27px;
+  width: 248px;
+}
+#searchBloc #searchBlocDate label {
+  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-right: 15px;
+}
+#searchBloc #searchBlocDate .spinner input {
+  width: 40px;
+  height: 27px;
+  border: 0 none;
+  color: #ed145b;
+  font: bold 24px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down,
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
+  width: 27px;
+  height: 27px;
+  background-color: #464545;
+  color: #ffffff;
+  font: bold 33px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down {
+  margin-right: 2px;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
+  margin-left: 2px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected {
+  width: 248px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .selectedTxt {
+  width: 215px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .SSContainerDivWrapper {
+  min-width: 248px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected {
+  width: 188px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .selectedTxt {
+  width: 154px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .SSContainerDivWrapper {
+  min-width: 187px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 span {
+  height: 27px;
+  line-height: 27px;
+  margin-right: 10px;
+}
+#searchBloc #searchBlocDate .switchSelect {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
+  float: left;
+  cursor: pointer;
+}
+#searchBloc #searchBlocDate button[type=submit] {
+  margin: 0 auto;
+  font-size: 21px;
 }
 /* lang */
 #lang {
@@ -856,6 +2187,9 @@ h6,
 .stamp.grey {
   background-color: #8c8a8a;
 }
+.stamp.fushia {
+  background-color: #ed145b;
+}
 .stamp:before {
   content: url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');
   width: 12px;
@@ -913,6 +2247,31 @@ h6,
 .radiusBox.fushia {
   background-color: #ed145b;
 }
+.radiusBox .stamp {
+  color: #ffffff;
+  height: 38px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 38px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+.radiusBox .stamp > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.radiusBox .stamp > img {
+  vertical-align: middle;
+}
 .radiusBox .stamp:before {
   content: url('../../images/vacancesdirectes/common/ui/stamp-left.png');
 }
@@ -928,7 +2287,6 @@ h6,
 .radiusBox2 {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  border: 5px solid #e6e5e5;
   padding: 15px 20px;
   margin: 15px 0;
   position: relative;
@@ -945,17 +2303,74 @@ h6,
   background-color: #ffffff;
   border: 5px solid #ed145b;
 }
+.radiusBox2 .stamp {
+  color: #ffffff;
+  background: url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;
+  height: 38px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 38px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 30px;
+  margin-top: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+.radiusBox2 .stamp > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.radiusBox2 .stamp > img {
+  vertical-align: middle;
+}
 .radiusBox2 .stamp:before {
-  content: url('../../images/vacancesdirectes/common/ui/stamp-left.png');
+  content: "";
 }
 .radiusBox2 .stamp:after {
-  content: url('../../images/vacancesdirectes/common/ui/stamp-right.png');
+  content: "";
 }
-.radiusBox2 > h2 {
-  color: #5f5f5f;
+.radiusBox2 .stamp span {
+  margin-left: -6px;
 }
-.radiusBox2 > h2 span {
-  color: #009ab0;
+.stain {
+  width: 90px;
+  height: 70px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 70px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  margin-left: -10px;
+  position: relative;
+}
+.stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 22px;
+}
+.stain > img {
+  vertical-align: middle;
+}
+.stain > span {
+  margin-top: 10px;
+}
+.stain .price {
+  font-size: 27px;
+  font-weight: bold;
 }
 /* structure */
 #wrap {
@@ -1035,6 +2450,8 @@ h6,
 
   /* HOME */
 
+  /* slider */
+
 }
 .home .boxborder {
   margin: 0 15px 5px 5px;
@@ -1052,6 +2469,12 @@ h6,
 }
 .home #wrap .column.left {
   padding-top: 65px;
+}
+.home #slider {
+  height: 170px;
+  width: 902px;
+  margin: 0 auto;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
 }
 .home .locationForwards {
   position: relative;
@@ -1164,38 +2587,8 @@ h6,
 .home .element .details .counter > img {
   vertical-align: middle;
 }
-.home .element .details .stain {
-  width: 90px;
-  height: 70px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 70px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
-  background-repeat: no-repeat;
-  text-align: center;
-  font-size: 10px;
-  color: #ffffff;
-  margin-left: -10px;
-  position: relative;
-}
-.home .element .details .stain > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: 22px;
-}
-.home .element .details .stain > img {
-  vertical-align: middle;
-}
-.home .element .details .stain > span {
-  margin-top: 10px;
-}
-.home .element .details .stain .price {
-  font-size: 27px;
-  font-weight: bold;
+.home #searchBloc {
+  margin-top: -191px;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -1537,22 +2930,22 @@ h6,
   background-color: #cfcccc;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterNew:before {
-  background-position: -50px 0;
+  background-position: -60px 0;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterChildren:before {
-  background-position: -50px -40px;
+  background-position: -60px -40px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterWaterParks:before {
-  background-position: -50px -80px;
+  background-position: -60px -80px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterIndoorPools:before {
-  background-position: -50px -120px;
+  background-position: -60px -120px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterWaterfront:before {
-  background-position: -50px -160px;
+  background-position: -60px -160px;
 }
 .home #mapBloc #mapContent #mapFilters li a:hover#filterAnimals:before {
-  background-position: -50px -200px;
+  background-position: -60px -200px;
 }
 .ie-lte7 .stain .span {
   display: inline;
@@ -2195,6 +3588,55 @@ h6,
 }
 .condArrDep li {
   margin-bottom: 5px;
+}
+/* page result */
+.itemResultBottom input[checked="checked"] + label {
+  font-weight: bold;
+}
+.formSearchRefined {
+  background: none repeat scroll 0 0 #F0F2F5;
+  margin: 10px auto;
+  padding: 10px;
+}
+.formSearchRefined .sectionTitle {
+  border-top: 1px solid #999999;
+  color: #666666;
+  display: block;
+  font: bold 15px Arial, sans-serif;
+  height: 30px;
+  padding: 10px 0 0;
+  width: 100%;
+}
+.formSearchRefined .criteres {
+  color: #009BD9;
+  font: bold 11px Arial, sans-serif;
+  margin: 10px 0 10px 10px;
+}
+.formSearchRefined fieldset {
+  margin: 0 auto 10px;
+  padding: 0 0 10px;
+  width: 200px;
+}
+.formSearchRefined fieldset label {
+  color: #999999;
+  display: block;
+  font: 11px Arial, sans-serif;
+  margin: 0 0 2px;
+}
+.formSearchRefined fieldset input[type="checkbox"] {
+  margin-right: 5px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.formSearchRefined fieldset p {
+  color: #666666;
+  font: bold 11px Arial, sans-serif;
+  margin: 0 0 5px;
+}
+.formSearchRefined .title {
+  color: #666666;
+  font: bold 15px Arial, sans-serif;
+  text-align: center;
 }
 /* page CE */
 .ce {
@@ -2869,978 +4311,6 @@ h6,
 .element .details .stain .price {
   font-size: 27px;
   font-weight: bold;
-}
-/* plugins styles*/
-/*PLUGINS*/
-/* infoBox */
-.infoBox {
-  background: #e6e5e5;
-  width: 305px;
-  height: 130px;
-  margin: 0;
-  padding: 10px;
-  font-size: 11px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.lt-ie9 .infoBox {
-  border: 1px solid #ccc;
-}
-.infoBox:after {
-  content: '';
-  z-index: 1;
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  background: url(../../images/vacancesdirectes/common/map/infobox.png) no-repeat 50% 100%;
-}
-.infoBox .content {
-  postition: relative;
-  height: 138px;
-  overflow: hidden;
-}
-.infoBox > img {
-  float: right;
-  margin: -5px -5px 0 0 !important;
-}
-.infoBox .content img {
-  float: left;
-  margin: 0 10px 3px 0;
-}
-.infoBox .title {
-  font: bold 16px/18px 'PT Sans Narrow', Arial, sans-serif;
-  color: #ed145b;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.infoBox .country,
-.infoBox .reg,
-.infoBox .city {
-  color: #5f5f5f;
-  font-size: 11px;
-  text-transform: uppercase;
-  line-height: 1.2em;
-}
-.infoBox .city {
-  color: #ed145b;
-}
-.infoBox .bt {
-  display: inline-block;
-  font-size: 11px;
-  margin-top: 5px;
-}
-/*
-    ColorBox Core Style:
-    The following CSS is consistent between example themes and should not be altered.
-*/
-#colorbox,
-#cboxOverlay,
-#cboxWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  overflow: hidden;
-}
-#cboxOverlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-#cboxMiddleLeft,
-#cboxBottomLeft {
-  clear: left;
-}
-#cboxContent {
-  position: relative;
-}
-#cboxLoadedContent {
-  overflow: auto;
-}
-#cboxTitle {
-  margin: 0;
-}
-#cboxLoadingOverlay,
-#cboxLoadingGraphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#cboxPrevious,
-#cboxNext,
-#cboxClose,
-#cboxSlideshow {
-  cursor: pointer;
-}
-.cboxPhoto {
-  float: left;
-  margin: auto;
-  border: 0;
-  display: block;
-  max-width: none;
-}
-.cboxIframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: 0;
-}
-#colorbox,
-#cboxContent,
-#cboxLoadedContent {
-  box-sizing: content-box;
-}
-/*
-    User Style:
-    Change the following styles to modify the appearance of ColorBox.  They are
-    ordered & tabbed in a way that represents the nesting of the generated HTML.
-*/
-#cboxOverlay {
-  background: #464545;
-}
-#colorbox,
-#colorbox * {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-#cboxContent {
-  margin-top: 32px;
-  overflow: visible;
-}
-.cboxIframe {
-  background: #ffffff;
-}
-#cboxError {
-  padding: 50px;
-}
-#cboxLoadedContent {
-  border: 4px solid #8c8a8a;
-}
-#cboxLoadingGraphic {
-  background: url(images/loading.gif) no-repeat center center;
-}
-#cboxLoadingOverlay {
-  background: #000;
-}
-#cboxTitle {
-  position: absolute;
-  top: -22px;
-  left: 0;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: bold;
-}
-#cboxCurrent {
-  position: absolute;
-  top: -22px;
-  right: 205px;
-  text-indent: -9999px;
-}
-#cboxSlideshow,
-#cboxPrevious,
-#cboxNext {
-  text-indent: -9999px;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: -20px;
-  background: url(../../images/vacancesdirectes/common/ui/controls.png) no-repeat 0 0;
-}
-#cboxPrevious {
-  background-position: 0px 0px;
-  right: 44px;
-}
-#cboxPrevious:hover {
-  background-position: 0px -25px;
-}
-#cboxNext {
-  background-position: -25px 0px;
-  right: 22px;
-}
-#cboxNext:hover {
-  background-position: -25px -25px;
-}
-#cboxClose {
-  /*background-position:-50px 0px; */
-  position: absolute;
-  top: -30px;
-  right: 0;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 30px;
-}
-#cboxClose:hover {
-  /*background-position:-50px -25px;*/
-}
-.cboxSlideshow_on #cboxPrevious,
-.cboxSlideshow_off #cboxPrevious {
-  right: 66px;
-}
-.cboxSlideshow_on #cboxSlideshow {
-  background-position: -75px -25px;
-  right: 44px;
-}
-.cboxSlideshow_on #cboxSlideshow:hover {
-  background-position: -100px -25px;
-}
-.cboxSlideshow_off #cboxSlideshow {
-  background-position: -100px 0px;
-  right: 44px;
-}
-.cboxSlideshow_off #cboxSlideshow:hover {
-  background-position: -75px -25px;
-}
-/**
-* Stylish Select 0.4.9 - $ plugin to replace a select drop down box with a stylable unordered list
-* http://github.com/scottdarby/Stylish-Select/
-*
-* Copyright (c) 2009 Scott Darby
-*
-* Requires: jQuery 1.3 or newer
-*
-* Dual licensed under the MIT and GPL licenses.
-*/
-/**
-* Hide lists on page load
----------------------------------------------------------*/
-.stylish-select .SSContainerDivWrapper {
-  left: -9999px;
-}
-/*
-* Vacances directes select style
----------------------------------------------------------*/
-.stylish-select .SSContainerDivWrapper {
-  margin: 0;
-  padding: 0;
-  min-width: 200px;
-  position: absolute;
-  top: 22px;
-  left: 0;
-  z-index: 2;
-}
-.stylish-select ul.newList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: #464545;
-  background: #fff;
-  border: 1px solid #ccc;
-  overflow: auto;
-}
-.stylish-select ul.newList * {
-  margin: 0;
-  padding: 0;
-}
-.stylish-select ul.newList a {
-  color: #464545;
-  text-decoration: none;
-  display: block;
-  padding: 0 8px;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  white-space: nowrap;
-}
-.stylish-select ul.newList a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select ul.newList a > img {
-  vertical-align: middle;
-}
-.stylish-select .newListSelected {
-  width: 200px;
-  color: #464545;
-  height: 23px;
-  float: left;
-  margin-right: 10px;
-  background-color: #e6e5e5;
-  position: relative;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-.stylish-select .newListSelected > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select .newListSelected > img {
-  vertical-align: middle;
-}
-.stylish-select .newListSelected .selectedTxt:after {
-  content: "";
-  width: 27px;
-  height: 23px;
-  display: block;
-  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.stylish-select .newListSelected * {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  cursor: pointer;
-}
-.stylish-select ul.newList li a:focus {
-  -moz-outline-style: none;
-}
-.stylish-select .selectedTxt {
-  width: 167px;
-  overflow: hidden;
-  padding: 0 23px 0 10px;
-  position: absolute;
-}
-.stylish-select .hiLite {
-  background: #ED145B!important;
-  color: #fff!important;
-}
-.stylish-select .newListHover {
-  background-color: #ccc!important;
-  color: #464545 !important;
-  cursor: default;
-}
-.stylish-select .newListDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListOptionDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListSelHover,
-.stylish-select .newListSelFocus {
-  cursor: default;
-}
-.stylish-select .newListSelHover .selectedTxt:after,
-.stylish-select .newListSelFocus .selectedTxt:after {
-  background-position: 0 -46px;
-}
-.stylish-select .newListOptionTitle {
-  font-weight: bold;
-}
-.stylish-select .newListOptionTitle ul {
-  margin: 3px 0 0;
-}
-.stylish-select .newListOptionTitle li {
-  font-weight: normal;
-}
-#datepicker {
-  position: relative;
-}
-#datepickerField {
-  height: 23px;
-  overflow: hidden;
-  position: relative;
-  width: 260px;
-  float: left;
-}
-#datepickerField input {
-  background-color: #E6E5E5;
-  color: #464545;
-  float: left;
-  height: 23px;
-  line-height: 23px;
-  position: relative;
-  width: 260px;
-  border: 0 none;
-  cursor: pointer;
-  padding: 0 32px 0 5px;
-}
-#datepickerField span.date {
-  cursor: pointer;
-}
-#datepicker input.hidden {
-  display: none;
-  width: 125px;
-  margin: 0 10px 10px 0;
-  border: 0 none;
-}
-#datepickerField span {
-  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat scroll 0 0 transparent;
-  float: left;
-  width: 27px;
-  height: 23px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-#datepickerField:hover span,
-#datepickerField.opened span {
-  background-position: 0 -46px;
-}
-#datepickerCalendar {
-  background: none repeat scroll 0 0 #e6e5e5;
-  height: 0;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 23px;
-  width: 886px;
-  z-index: 1;
-  margin: 5px 0;
-}
-#datepickerCalendar .datepickerGoPrev a,
-#datepickerCalendar .datepickerGoNext a {
-  text-decoration: none;
-}
-#datepickerCalendar .datepickerGoPrev,
-#datepickerCalendar .datepickerGoNext {
-  position: absolute;
-  top: 30px;
-  z-index: 1;
-}
-#datepickerCalendar .datepickerGoPrev {
-  left: 10px;
-}
-#datepickerCalendar .datepickerGoNext {
-  right: 10px;
-}
-#datepickerCalendar .datepicker {
-  bottom: 0;
-  position: absolute;
-  top: auto;
-  border: 1px solid #adadad;
-  width: 886px !important;
-  z-index: 0;
-}
-#datepickerCalendar .datepickerContainer,
-#datepickerCalendar .datepickerBorderBL,
-#datepickerCalendar .datepickerBorderB,
-#datepickerCalendar .datepickerBorderBR,
-#datepickerCalendar .datepickerBorderL,
-#datepickerCalendar .datepickerBorderR {
-  background: none repeat scroll 0 0 transparent !important;
-}
-#datepickerCalendar .datepickerBorderTL,
-#datepickerCalendar .datepickerBorderT,
-#datepickerCalendar .datepickerBorderTR {
-  background: #e6e5e5;
-}
-input.date span {
-  content: "";
-  width: 27px;
-  height: 23px;
-  display: block;
-  background: url("../../images/vacancesdirectes/common/ui/arrow-calendar.png") no-repeat 0 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-div.datepicker {
-  position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  width: 196px;
-  height: 147px;
-  position: absolute;
-  cursor: default;
-  top: 0;
-  left: 0;
-  display: none;
-}
-.datepickerContainer {
-  background: #e6e5e5;
-  position: absolute;
-  top: 30px;
-  left: 10px;
-  width: 866px !important;
-}
-.datepickerContainer > table > tbody > tr > td thead .datepickerGoPrev,
-.datepickerContainer > table > tbody > tr > td thead .datepickerGoNext {
-  display: none;
-}
-.datepickerBorderTL {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 30px;
-  background: url(../images/datepicker_tl.png);
-}
-.datepickerBorderT {
-  position: absolute;
-  left: 10px;
-  top: 0;
-  right: 10px;
-  height: 30px;
-  background: url(../images/datepicker_t.png);
-}
-.datepickerBorderTR {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 30px;
-  background: url(../images/datepicker_tr.png);
-}
-.datepickerBorderB {
-  position: absolute;
-  left: 10px;
-  bottom: 0;
-  right: 10px;
-  height: 30px;
-  background: url(../images/datepicker_b.png);
-}
-.datepickerBorderL {
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  top: 10px;
-  width: 10px;
-  background: url(../images/datepicker_l.png);
-}
-.datepickerBorderR {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-  top: 10px;
-  width: 10px;
-  background: url(../images/datepicker_r.png);
-}
-.datepickerBorderBL {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 10px;
-  height: 30px;
-  background: url(../images/datepicker_bl.png);
-}
-.datepickerBorderBR {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 30px;
-  background: url(../images/datepicker_br.png);
-}
-.datepickerHidden {
-  display: none;
-}
-div.datepicker table {
-  border-collapse: collapse;
-}
-div.datepicker a {
-  color: #464545;
-  text-decoration: none;
-  outline: none;
-  font-weight: bold;
-}
-div.datepicker table td {
-  text-align: right;
-  padding: 0;
-  margin: 0;
-}
-div.datepicker table td.datepickerDisabled a,
-div.datepicker table td.datepickerUnselectable a {
-  cursor: default;
-  font-weight: normal;
-}
-div.datepicker th {
-  text-align: center;
-  color: #ffffff;
-  font-weight: normal;
-}
-.datepickerViewDays thead tr:first-child {
-  background-color: #ed145b;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
-}
-.datepickerViewDays thead tr.datepickerDoW {
-  background-color: #464545;
-  color: #ffffff;
-}
-div.datepicker tbody th {
-  text-align: center;
-  font-weight: bold;
-}
-div.datepicker tbody a {
-  display: block;
-}
-.datepickerDays a {
-  width: 25px;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  padding: 0 6px 0 0;
-}
-.datepickerDays a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.datepickerDays a > img {
-  vertical-align: middle;
-}
-.datepickerYears a,
-.datepickerMonths a {
-  width: 44px;
-  line-height: 36px;
-  height: 36px;
-  text-align: center;
-}
-td.datepickerNotInMonth a {
-  color: #666;
-  visibility: hidden;
-}
-tbody.datepickerDays td.datepickerSelected a,
-tbody.datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
-tbody.datepickerDays td.datepickerSelected a:hover {
-  color: #ed145b;
-}
-tbody.datepickerYears td.datepickerSelected a,
-tbody.datepickerMonths td.datepickerSelected a {
-  background-color: #75092d;
-}
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
-div.datepicker .datepickerDays td.datepickerSpecial a:hover,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {
-  background-color: #e7cad3;
-  color: #ffffff;
-}
-div.datepicker .datepickerDays td.datepickerHighSeason a,
-div.datepicker .datepickerDays td.datepickerHighSeason a {
-  background-color: transparent;
-  color: #c2c2c2;
-}
-div.datepicker .datepickerDays td a:hover,
-div.datepicker .datepickerDays td.datepickerSpecial a:hover {
-  background-color: #ffffff;
-  color: #ed145b;
-}
-div.datepicker .datepickerDays td.datepickerDisabled a:hover,
-div.datepicker .datepickerDays td.datepickerUnselectable a:hover {
-  background-color: transparent;
-  color: #c2c2c2;
-  border: 0 none;
-}
-div.datepicker td.datepickerNotInMonth a:hover {
-  color: #999;
-}
-/*
-div.datepicker .datepickerDays td a:hover {background-color: @colorBgBlanc;}
-div.datepicker .datepickerDays td.datepickerDisabled a:hover {background-color: transparent;}
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {background-color: @colorFushia;}
-*/
-.datepickerSpace div {
-  width: 0;
-}
-#datepickerCalendar .datepickerGoNext a,
-#datepickerCalendar .datepickerGoPrev a,
-#datepickerCalendar .datepickerMonth a {
-  font-size: 14px;
-  text-align: center;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#datepickerCalendar .datepickerGoNext a > *,
-#datepickerCalendar .datepickerGoPrev a > *,
-#datepickerCalendar .datepickerMonth a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#datepickerCalendar .datepickerGoNext a > img,
-#datepickerCalendar .datepickerGoPrev a > img,
-#datepickerCalendar .datepickerMonth a > img {
-  vertical-align: middle;
-}
-#datepickerCalendar .datepickerMonth a {
-  cursor: default;
-}
-#datepickerCalendar .datepickerGoNext a,
-#datepickerCalendar .datepickerGoPrev a {
-  width: 20px;
-  cursor: pointer;
-}
-#datepickerCalendar .datepickerGoNPrev a {
-  left: 0;
-}
-#datepickerCalendar .datepickerGoNext a {
-  right: 0;
-}
-#datepickerCalendar .datepickerGoPrev a:hover,
-#datepickerCalendar .datepickerGoNext a:hover,
-#datepickerCalendar .datepickerMonth a,
-#datepickerCalendar .datepickerMonth a:hover {
-  color: #ffffff;
-}
-.datepickerInfo,
-.datepickerLegend {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
-  font-size: 14px;
-  position: absolute;
-  left: 10px;
-}
-.datepickerInfo {
-  top: 5px;
-  color: #ed145b;
-  font-weight: bold;
-}
-.datepickerLegend {
-  margin-left: 28px;
-  bottom: 5px;
-  color: #464545;
-}
-.datepickerLegend:before {
-  content: "";
-  width: 19px;
-  height: 19px;
-  background-color: #e7cad3;
-  position: absolute;
-  top: 0;
-  left: -28px;
-}
-#datepickerCalendar .bt {
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
-}
-table.datepickerViewDays tbody.datepickerMonths,
-table.datepickerViewDays tbody.datepickerYears {
-  display: none;
-}
-table.datepickerViewMonths tbody.datepickerDays,
-table.datepickerViewMonths tbody.datepickerYears,
-table.datepickerViewMonths tr.datepickerDoW {
-  display: none;
-}
-table.datepickerViewYears tbody.datepickerDays,
-table.datepickerViewYears tbody.datepickerMonths,
-table.datepickerViewYears tr.datepickerDoW {
-  display: none;
-}
-td.datepickerDisabled a,
-td.datepickerUnselectable a,
-td.datepickerDisabled.datepickerNotInMonth a {
-  color: #c2c2c2;
-}
-td.datepickerDisabled a:hover,
-td.datepickerUnselectable a:hover {
-  color: #c2c2c2;
-}
-div.datepicker .datepickerDays td.datepickerSelected a,
-div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a,
-div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
-div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
-div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover {
-  background-color: #ed145b;
-  color: #ffffff;
-  font-weight: bold;
-}
-div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a,
-div.datepicker .datepickerDays td.datepickerDisabled.datepickerSelected a:hover,
-div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a,
-div.datepicker .datepickerDays td.datepickerUnselectable.datepickerSelected a:hover {
-  font-weight: normal;
-}
-div.datepicker .datepickerDays td.datepickerNotInMonth.datepickerSelected {
-  background-color: #ed145b;
-  color: #ed145b;
-  visibility: hidden;
-}
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerSelected a {
-  background-color: #ed145b;
-  color: #464545;
-}
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a,
-div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a {
-  color: #ffffff;
-}
-div.datepicker .datepickerDays td.datepickerSelected a {
-  color: #464545;
-  font-weight: bold;
-}
-div.datepicker .datepickerDays td.datepickerSelected a:hover {
-  background-color: #ffffff;
-  color: #ed145b;
-}
-tr.datepickerDoW th:first-child,
-th.datepickerWeek {
-  display: none;
-}
-/* Fix icon position in Chrome & Safari */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  button.Zebra_DatePicker_Icon_Inside {
-    margin: 0 5px 0 0;
-  }
-}
-.SpinnerControl {
-  overflow: auto;
-  float: left;
-}
-.SpinnerControl .ValueDisplay {
-  min-width: 30px;
-  border: 1px solid black;
-  height: 29px;
-  overflow: auto;
-  font-family: Verdana;
-  font-size: 14px;
-  line-height: 29px;
-  text-align: center;
-}
-.SpinnerControl div {
-  height: 31px;
-  line-height: 31px;
-  float: left;
-}
-.SpinnerControl .LeftButton {
-  width: 30px;
-  background: #adff2f;
-  cursor: pointer;
-}
-.SpinnerControl .LeftButton:hover {
-  width: 30px;
-  background: green;
-  cursor: pointer;
-}
-.SpinnerControl .RightButton {
-  width: 30px;
-  background: red;
-  cursor: pointer;
-}
-.SpinnerControl .RightButton:hover {
-  width: 30px;
-  background: #b22222;
-  cursor: pointer;
-}
-/*
-	STYLE SHEET FOR IHWY JQUERY LISTNAV PLUGIN V 2.0, 3/2/2009
-
-	For more information, visit http://www.ihwy.com/Labs/jquery-listnav-plugin.aspx
-*/
-/* default styling example
------------------------------------------------------------------ */
-.listNav {
-  margin: 0 0 10px;
-}
-.ln-letters {
-  overflow: hidden;
-}
-.ln-letters a {
-  font-size: 0.9em;
-  font-weight: bold;
-  display: block;
-  float: left;
-  padding: 2px 6px;
-  border: 1px solid silver;
-  border-right: none;
-  text-decoration: none;
-}
-.ln-letters a.ln-last {
-  border-right: 1px solid silver;
-}
-.ln-letters a:hover {
-  color: #ffffff;
-}
-.ln-letters a.ln-selected {
-  background-color: #ffffff;
-}
-.ln-letters a.ln-disabled {
-  color: #ccc;
-  font-weight: normal;
-}
-.ln-letter-count {
-  text-align: center;
-  font-size: 0.8em;
-  line-height: 1;
-  margin-bottom: 3px;
-  color: #336699;
-}
-/* demo-specific
------------------------------------------------------------------ */
-#demoThree-nav .ln-letters a {
-  border: none;
-  border-top: 2px solid pink;
-  color: red;
-}
-#demoThree-nav .ln-letters a.ln-last {
-  border-right: none;
-}
-#demoThree-nav .ln-letters a:hover,
-#demoThree-nav .ln-letters a.ln-selected {
-  border-top: 2px solid red;
-  background-color: pink;
-  color: White !important;
-}
-#demoThree-nav .ln-letters a.ln-disabled {
-  color: pink;
-}
-#demoThree-nav .ln-letters a.ln-disabled:hover {
-  color: white;
-}
-#demoThree-nav .ln-letter-count {
-  color: red;
-}
-#demoThree li {
-  color: pink;
-}
-#demoThree li a {
-  color: red;
-  text-decoration: none;
-}
-#demoThree li a:hover {
-  text-decoration: underline;
-}
-#demo4 #listWrapper {
-  width: 650px;
-}
-#demoFour li {
-  float: left;
-}
-#demoFour a {
-  display: block;
-  text-align: center;
-  width: 85px;
-  border: 1px solid silver;
-  padding: 10px;
-  margin: 0 10px 10px 0;
-  text-decoration: none;
-}
-#demoFour a:hover {
-  background-color: #eeeeee;
 }
 /* footer */
 /* footer */
