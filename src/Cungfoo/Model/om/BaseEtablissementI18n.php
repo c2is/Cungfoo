@@ -20,7 +20,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'etablissement_i18n' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -124,7 +124,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -134,7 +134,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     * 
+     *
      * @return string
      */
     public function getLocale()
@@ -144,7 +144,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [country] column value.
-     * 
+     *
      * @return string
      */
     public function getCountry()
@@ -154,7 +154,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [ouverture_reception] column value.
-     * 
+     *
      * @return string
      */
     public function getOuvertureReception()
@@ -164,7 +164,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [ouverture_camping] column value.
-     * 
+     *
      * @return string
      */
     public function getOuvertureCamping()
@@ -174,7 +174,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [arrivees_departs] column value.
-     * 
+     *
      * @return string
      */
     public function getArriveesDeparts()
@@ -184,7 +184,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -209,7 +209,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -230,7 +230,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [country] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -251,7 +251,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [ouverture_reception] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -272,7 +272,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [ouverture_camping] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -293,7 +293,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [arrivees_departs] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -361,7 +361,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 6; // 6 = EtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -615,22 +615,22 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':						
+                    case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`COUNTRY`':						
+                    case '`COUNTRY`':
                         $stmt->bindValue($identifier, $this->country, PDO::PARAM_STR);
                         break;
-                    case '`OUVERTURE_RECEPTION`':						
+                    case '`OUVERTURE_RECEPTION`':
                         $stmt->bindValue($identifier, $this->ouverture_reception, PDO::PARAM_STR);
                         break;
-                    case '`OUVERTURE_CAMPING`':						
+                    case '`OUVERTURE_CAMPING`':
                         $stmt->bindValue($identifier, $this->ouverture_camping, PDO::PARAM_STR);
                         break;
-                    case '`ARRIVEES_DEPARTS`':						
+                    case '`ARRIVEES_DEPARTS`':
                         $stmt->bindValue($identifier, $this->arrivees_departs, PDO::PARAM_STR);
                         break;
                 }

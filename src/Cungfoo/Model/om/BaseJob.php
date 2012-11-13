@@ -24,7 +24,7 @@ use Cungfoo\Model\JobQuery;
 /**
  * Base class that represents a row from the 'job' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -153,7 +153,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -163,7 +163,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -173,7 +173,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [type] column value.
-     * 
+     *
      * @return string
      */
     public function getType()
@@ -183,7 +183,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [params] column value.
-     * 
+     *
      * @return string
      */
     public function getParams()
@@ -193,7 +193,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [message] column value.
-     * 
+     *
      * @return string
      */
     public function getMessage()
@@ -203,7 +203,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [completed_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -240,7 +240,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [status] column value.
-     * 
+     *
      * @return int
      */
     public function getStatus()
@@ -250,7 +250,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -287,7 +287,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -324,7 +324,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -345,7 +345,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     * 
+     *
      * @param string $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -366,7 +366,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [type] column.
-     * 
+     *
      * @param string $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -387,7 +387,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [params] column.
-     * 
+     *
      * @param string $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -408,7 +408,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [message] column.
-     * 
+     *
      * @param string $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -429,7 +429,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Sets the value of [completed_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Job The current object (for fluent API support)
@@ -452,7 +452,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Set the value of [status] column.
-     * 
+     *
      * @param int $v new value
      * @return Job The current object (for fluent API support)
      */
@@ -473,7 +473,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Job The current object (for fluent API support)
@@ -496,7 +496,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Job The current object (for fluent API support)
@@ -569,7 +569,7 @@ abstract class BaseJob extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 9; // 9 = JobPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -850,31 +850,31 @@ abstract class BaseJob extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`NAME`':						
+                    case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`TYPE`':						
+                    case '`TYPE`':
                         $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
                         break;
-                    case '`PARAMS`':						
+                    case '`PARAMS`':
                         $stmt->bindValue($identifier, $this->params, PDO::PARAM_STR);
                         break;
-                    case '`MESSAGE`':						
+                    case '`MESSAGE`':
                         $stmt->bindValue($identifier, $this->message, PDO::PARAM_STR);
                         break;
-                    case '`COMPLETED_AT`':						
+                    case '`COMPLETED_AT`':
                         $stmt->bindValue($identifier, $this->completed_at, PDO::PARAM_STR);
                         break;
-                    case '`STATUS`':						
+                    case '`STATUS`':
                         $stmt->bindValue($identifier, $this->status, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -1630,7 +1630,7 @@ abstract class BaseJob extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1639,7 +1639,7 @@ abstract class BaseJob extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = JobPeer::UPDATED_AT;
-    
+
         return $this;
     }
 

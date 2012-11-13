@@ -22,7 +22,7 @@ use Cungfoo\Model\PointInteretQuery;
 /**
  * Base class that represents a query for the 'point_interet' table.
  *
- * 
+ *
  *
  * @method PointInteretQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PointInteretQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -139,7 +139,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   PointInteret|PointInteret[]|mixed the result, formatted by the current formatter
@@ -194,7 +194,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `CREATED_AT`, `UPDATED_AT` FROM `point_interet` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -837,7 +837,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -849,7 +849,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         return $this->addUsingAlias(PointInteretPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -859,7 +859,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(PointInteretPeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -869,7 +869,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(PointInteretPeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -881,7 +881,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         return $this->addUsingAlias(PointInteretPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -891,7 +891,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(PointInteretPeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -902,7 +902,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PointInteretPeer::CREATED_AT);
     }
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -915,12 +915,12 @@ abstract class BasePointInteretQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'PointInteretI18n';
-    
+
         return $this
             ->joinPointInteretI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -936,10 +936,10 @@ abstract class BasePointInteretQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('PointInteretI18n');
         $this->with['PointInteretI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

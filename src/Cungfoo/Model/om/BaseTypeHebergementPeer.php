@@ -18,7 +18,7 @@ use Cungfoo\Model\map\TypeHebergementTableMap;
 /**
  * Base static class for performing query and update operations on the 'type_hebergement' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -86,7 +86,7 @@ abstract class BaseTypeHebergementPeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -394,7 +394,7 @@ abstract class BaseTypeHebergementPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -404,7 +404,7 @@ abstract class BaseTypeHebergementPeer
     {
         TypeHebergementPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to type_hebergement
      * by a foreign key with ON DELETE CASCADE
@@ -450,7 +450,7 @@ abstract class BaseTypeHebergementPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -461,7 +461,7 @@ abstract class BaseTypeHebergementPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = TypeHebergementPeer::getOMClass();
         // populate the object(s)
@@ -943,7 +943,7 @@ abstract class BaseTypeHebergementPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TypeHebergementPeer::clearRelatedInstancePool();
             $con->commit();

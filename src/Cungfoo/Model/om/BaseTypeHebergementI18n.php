@@ -20,7 +20,7 @@ use Cungfoo\Model\TypeHebergementQuery;
 /**
  * Base class that represents a row from the 'type_hebergement_i18n' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -130,7 +130,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -140,7 +140,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     * 
+     *
      * @return string
      */
     public function getLocale()
@@ -150,7 +150,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -160,7 +160,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [surface] column value.
-     * 
+     *
      * @return string
      */
     public function getSurface()
@@ -170,7 +170,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [type_terrasse] column value.
-     * 
+     *
      * @return string
      */
     public function getTypeTerrasse()
@@ -180,7 +180,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     * 
+     *
      * @return string
      */
     public function getDescription()
@@ -190,7 +190,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [composition] column value.
-     * 
+     *
      * @return string
      */
     public function getComposition()
@@ -200,7 +200,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -225,7 +225,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -246,7 +246,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -267,7 +267,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [surface] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -288,7 +288,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [type_terrasse] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -309,7 +309,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -330,7 +330,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [composition] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -399,7 +399,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 7; // 7 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -656,25 +656,25 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':						
+                    case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':						
+                    case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`SURFACE`':						
+                    case '`SURFACE`':
                         $stmt->bindValue($identifier, $this->surface, PDO::PARAM_STR);
                         break;
-                    case '`TYPE_TERRASSE`':						
+                    case '`TYPE_TERRASSE`':
                         $stmt->bindValue($identifier, $this->type_terrasse, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':						
+                    case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`COMPOSITION`':						
+                    case '`COMPOSITION`':
                         $stmt->bindValue($identifier, $this->composition, PDO::PARAM_STR);
                         break;
                 }

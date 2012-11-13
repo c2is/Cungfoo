@@ -28,7 +28,7 @@ use Cungfoo\Model\ServiceComplementaireQuery;
 /**
  * Base class that represents a row from the 'service_complementaire' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -115,13 +115,13 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[ServiceComplementaireI18n]
@@ -148,7 +148,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -158,7 +158,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return string
      */
     public function getCode()
@@ -168,7 +168,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Get the [image_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImagePath()
@@ -178,7 +178,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -215,7 +215,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -252,7 +252,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return ServiceComplementaire The current object (for fluent API support)
      */
@@ -273,7 +273,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param string $v new value
      * @return ServiceComplementaire The current object (for fluent API support)
      */
@@ -294,7 +294,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Set the value of [image_path] column.
-     * 
+     *
      * @param string $v new value
      * @return ServiceComplementaire The current object (for fluent API support)
      */
@@ -315,7 +315,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return ServiceComplementaire The current object (for fluent API support)
@@ -338,7 +338,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return ServiceComplementaire The current object (for fluent API support)
@@ -403,7 +403,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 5; // 5 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -712,19 +712,19 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':						
+                    case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -1881,7 +1881,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1890,12 +1890,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = ServiceComplementairePeer::UPDATED_AT;
-    
+
         return $this;
     }
 
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -1906,10 +1906,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -1919,7 +1919,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -1934,7 +1934,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 foreach ($this->collServiceComplementaireI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -1950,10 +1950,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             }
             $this->addServiceComplementaireI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -1978,10 +1978,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -1992,33 +1992,33 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [name] column value.
-         * 
+         *
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-    
-    
+
+
         /**
          * Set the value of [name] column.
-         * 
+         *
          * @param string $v new value
          * @return ServiceComplementaireI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2033,12 +2033,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         {
             $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2046,15 +2046,15 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return 'uploads/service_complementaires';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

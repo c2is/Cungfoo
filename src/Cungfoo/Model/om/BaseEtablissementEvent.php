@@ -22,7 +22,7 @@ use Cungfoo\Model\EventQuery;
 /**
  * Base class that represents a row from the 'etablissement_event' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -91,7 +91,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEtablissementId()
@@ -101,7 +101,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [event_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEventId()
@@ -111,7 +111,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [distance] column value.
-     * 
+     *
      * @return string
      */
     public function getDistance()
@@ -121,7 +121,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -146,7 +146,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [event_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -171,7 +171,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [distance] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -232,7 +232,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
+            $this->postHydrate($row, $startcol, $rehydrate);
             return $startcol + 3; // 3 = EtablissementEventPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
@@ -488,13 +488,13 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':						
+                    case '`ETABLISSEMENT_ID`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`EVENT_ID`':						
+                    case '`EVENT_ID`':
                         $stmt->bindValue($identifier, $this->event_id, PDO::PARAM_INT);
                         break;
-                    case '`DISTANCE`':						
+                    case '`DISTANCE`':
                         $stmt->bindValue($identifier, $this->distance, PDO::PARAM_STR);
                         break;
                 }
