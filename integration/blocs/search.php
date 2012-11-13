@@ -33,44 +33,46 @@
                     <div id="SearchDate_selectContainer2" class="selectContainer clear">
                         <select id="SearchDate_ville" name="SearchDate[ville]">
                             <option value="">Lieux de séjour</option>
-                            <option value="1" class="country">Pays de séjour 1</option>
+                            <option value="1" class="optGroup-like">Pays de séjour 1</option>
                             <option value="2">Lieu de séjour 1</option>
                             <option value="3">Lieu de séjour 2</option>
                             <option value="4">Lieu de séjour 3</option>
-                            <option value="5" class="country">Pays de séjour 2</option>
+                            <option value="5" class="optGroup-like">Pays de séjour 2</option>
                             <option value="6">Lieu de séjour 1</option>
                             <option value="7">Lieu de séjour 2</option>
                             <option value="8">Lieu de séjour 3</option>
-                            <option value="9" class="country">Pays de séjour 13</option>
+                            <option value="9" class="optGroup-like">Pays de séjour 13</option>
                             <option value="10">Lieu de séjour 1</option>
                             <option value="11">Lieu de séjour 2</option>
                             <option value="12">Lieu de séjour 3</option>
                         </select>
                         <select id="SearchDate_camping" name="SearchDate[camping]">
                             <option value="">Campings</option>
-                            <option value="1" class="country">Pays de séjour 1</option>
+                            <option value="1" class="optGroup-like">Pays de séjour 1</option>
                             <option value="2">Camping 1</option>
                             <option value="3">Camping 2</option>
                             <option value="3">Camping 3</option>
                         </select>
-                        <span class="left">ou</span>
-                        <div class="switchSelect" title=""></div>
+                        <div id="SearchDate_switch">
+                            <span class="left">ou</span>
+                            <div class="switchSelect" title=""></div>
+                        </div>
                     </div>
                 </li>
                 <li>
                     <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
                     <div class="spinner clear">
-                        <div class="spin-bt-down left">-</div>
+                        <button class="spin-bt-down left">-</button>
                         <input class="spin-tb left" type="text" id="SearchDate_nbAdultes" value="2">
-                        <div class="spin-bt-up left">+</div>
+                        <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>
                     <label for="SearchDate_nbEnfants" class="left">Enfant(s)</label>
                     <div class="spinner clear">
-                        <div class="spin-bt-down left">-</div>
+                        <button  class="spin-bt-down left">-</button>
                         <input class="spin-tb left" type="text" id="SearchDate_nbEnfants" value="0">
-                        <div class="spin-bt-up left">+</div>
+                        <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>

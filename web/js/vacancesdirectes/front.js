@@ -745,12 +745,18 @@ function countItem() {
         var $input = $button.siblings(".spin-tb");
         var oldValue = $input.val();
         if ($button.hasClass('spin-bt-up')) {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue >= 2) {
+            if (oldValue < 10) {
+                var newVal = parseFloat(oldValue) + 1;
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue > 1) {
                 var newVal = parseFloat(oldValue) - 1;
             }
-            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue >= 1) {
+            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue > 0) {
                 var newVal = parseFloat(oldValue) - 1;
             }
             else {
@@ -767,7 +773,7 @@ function switchSelect(){
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
         var $button = $(this);
-        var $selects = $button.siblings(".newListSelected");
+        var $selects = $button.parent().siblings(".newListSelected");
         console.log($selects);
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.attr('title',$buttonTitle);

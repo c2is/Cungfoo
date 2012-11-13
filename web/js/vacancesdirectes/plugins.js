@@ -202,13 +202,15 @@ function addLinkBlock(){
             function addItem(item, container) {
                 var option = $(item).text(),
                     key = $(item).val(),
+                    optionClass = $(item).attr('class'),
                     isDisabled = $(item).is(':disabled');
-
+                if (optionClass == undefined) optionClass = ''
+                else  optionClass = ' class="' + optionClass + '"'
                 if (!isDisabled && !$(item).parents().is(':disabled')) {
                     //add first letter of each word to array
                     keys.push(option.charAt(0).toLowerCase());
                 }
-                container.append($('<li><a'+(isDisabled ? ' class="newListItemDisabled"' : '')+' href="JavaScript:void(0);">'+option+'</a></li>').data({
+                container.append($('<li' + optionClass + '><a'+(isDisabled ? ' class="newListItemDisabled"' : '')+' href="JavaScript:void(0);">'+option+'</a></li>').data({
                     'key' : key,
                     'selected' : $(item).is(':selected')
                 }));
@@ -216,8 +218,20 @@ function addLinkBlock(){
 
             $input.children().each(function(){
                 if ($(this).is('option')){
+                    console.log("IF OPTION");
+                    var optionClass;
+                    if ($(this).attr('class') != undefined){
+                        if (!$newUl.hasClass('optGroup')){
+                            $newUl.addClass('optGroup');
+                        }
+                        $(this).parents('ul.newList').addClass('optGroup');
+                        optionClass = $(this).attr('class');
+                        console.log(optionClass);
+                    }
                     addItem(this, $newUl);
+                    console.log(this);
                 } else {
+                    console.log("ELSE NOT OPTION");
                     var optionTitle = $(this).attr('label'),
                         $optGroup = $('<li class="newListOptionTitle ' + ($(this).is(':disabled') ? 'newListOptionDisabled' : '') + '">'+optionTitle+'</li>'),
                         $optGroupList = $('<ul></ul>');

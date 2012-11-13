@@ -593,6 +593,7 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
   white-space: nowrap;
+  cursor: pointer;
 }
 .stylish-select ul.newList a > * {
   vertical-align: middle;
@@ -651,6 +652,16 @@ textarea {
   overflow: hidden;
   padding: 0 23px 0 10px;
   position: absolute;
+}
+.stylish-select ul.newList li:first-child {
+  display: none;
+}
+.stylish-select ul.newList.optGroup li a {
+  padding: 0 8px 0 18px;
+}
+.stylish-select ul.newList.optGroup li.optGroup-like a {
+  padding: 0 8px;
+  font-weight: bold;
 }
 .stylish-select .hiLite {
   background: #ED145B!important;
@@ -745,7 +756,7 @@ textarea {
   position: absolute;
   top: 23px;
   width: 886px;
-  z-index: 1;
+  z-index: 10;
   margin: 5px 0;
 }
 #datepickerCalendar .datepickerGoPrev a,
@@ -1324,7 +1335,7 @@ footer {
 }
 /* header */
 #header {
-  width: 902px;
+  width: 928px;
   margin: 0 auto;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
 }
@@ -1808,6 +1819,7 @@ form li {
 .stylish-select .newListSelected {
   height: 27px;
   line-height: 27px;
+  margin-right: 0;
 }
 #searchBloc {
   color: #ffffff;
@@ -1957,7 +1969,8 @@ form li {
 #searchBloc #searchBlocDate label {
   font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
-  margin-right: 15px;
+  margin-right: 10px;
+  width: 65px;
 }
 #searchBloc #searchBlocDate .spinner input {
   width: 40px;
@@ -1973,16 +1986,27 @@ form li {
   height: 27px;
   background-color: #464545;
   color: #ffffff;
-  font: bold 33px/27px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 26px/27px 'PT Sans Narrow', Arial, sans-serif;
   text-align: center;
   cursor: pointer;
   overflow: hidden;
+  border: 0 none;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down:active,
+#searchBloc #searchBlocDate .spinner .spin-bt-up:active {
+  padding-right: 7px;
 }
 #searchBloc #searchBlocDate .spinner .spin-bt-down {
   margin-right: 2px;
 }
 #searchBloc #searchBlocDate .spinner .spin-bt-up {
   margin-left: 2px;
+}
+#searchBloc #searchBlocDate .selectContainer {
+  height: 27px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 select {
+  display: none;
 }
 #searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected {
   width: 248px;
@@ -1993,6 +2017,9 @@ form li {
 #searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .SSContainerDivWrapper {
   min-width: 248px;
 }
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 select {
+  display: none;
+}
 #searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected {
   width: 188px;
 }
@@ -2000,9 +2027,12 @@ form li {
   width: 154px;
 }
 #searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .SSContainerDivWrapper {
-  min-width: 187px;
+  min-width: 188px;
 }
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 span {
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch {
+  float: right;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch span {
   height: 27px;
   line-height: 27px;
   margin-right: 10px;
@@ -2258,7 +2288,7 @@ h6,
   /* Centrer verticalement une image de taille variable */
 
   padding: 0 30px;
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 15px;
@@ -2467,14 +2497,17 @@ h6,
   text-indent: -9999px;
   margin-top: 7px;
 }
-.home #wrap .column.left {
-  padding-top: 65px;
-}
 .home #slider {
-  height: 170px;
-  width: 902px;
-  margin: 0 auto;
+  position: relative;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
+  height: 170px;
+}
+.home #slider #sliderBackground {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 976px;
+  background-color: #ffffff;
 }
 .home .locationForwards {
   position: relative;
@@ -2502,6 +2535,9 @@ h6,
 .home .locationForwards#topLocations .element {
   padding: 20px 0;
 }
+.home .locationForwards#topLocations .element .details {
+  width: 151px;
+}
 .home .locationForwards#topLocations .stamp {
   margin-bottom: 5px;
 }
@@ -2527,13 +2563,43 @@ h6,
 .home .locationForwards#lastLocations .element .details .condition {
   font-size: 15px;
 }
+.home .locationForwards#specialOffersBloc .stamp {
+  margin-bottom: 0;
+}
+.home .locationForwards#specialOffersBloc h2 {
+  margin-left: 0;
+  position: relative;
+}
+.home .locationForwards#specialOffersBloc h2:before {
+  content: "";
+  background: none;
+}
+.home .locationForwards#specialOffersBloc .element {
+  margin-bottom: 10px;
+  padding: 10px 0 0;
+  border-bottom: 7px solid #ffffff;
+}
+.home .locationForwards#specialOffersBloc .element.last {
+  border: 0 none;
+}
+.home .locationForwards#specialOffersBloc .element .details {
+  width: 132px;
+}
+.home .locationForwards#specialOffersBloc .element .details .title {
+  font: bold 15px/17px Arial;
+  text-transform: uppercase;
+}
 .home .element {
   position: relative;
   margin: 0;
+  padding: 20px 0;
 }
 .home .element .fb-like {
   width: 109px;
   height: 20px;
+  margin: 0 15px 0 5px;
+}
+.home .element .view {
   margin: 0 15px 0 5px;
 }
 .home .element .details {
