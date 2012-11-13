@@ -1820,9 +1820,12 @@ form li {
   height: 27px;
   line-height: 27px;
   margin-right: 0;
+  background-color: #ffffff;
 }
 #searchBloc {
   color: #ffffff;
+  position: absolute;
+  z-index: 1;
 }
 #searchBloc #switchForm {
   margin: 0 0 20px 0;
@@ -1898,6 +1901,9 @@ form li {
 #searchBloc #switchForm li a:hover span {
   margin-top: 0;
 }
+#searchBloc #switchForm li a.active {
+  cursor: default;
+}
 #searchBloc #switchForm li:first-child a {
   -webkit-border-radius: 10px 0 0 0;
   border-radius: 10px 0 0 0;
@@ -1918,11 +1924,19 @@ form li {
 #searchBloc #switchForm li:nth-child(3) {
   visibility: hidden;
 }
-#searchBloc #searchBlocDate a.more {
+#searchBloc #searchBlocDate a.toggleButton {
   color: #ffffff;
   font: bold 14px/16px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
+}
+#searchBloc #searchBlocDate .toggleContainer {
+  padding-top: 10px;
+  display: none;
+}
+#searchBloc #searchBlocDate .toggleContainer label {
+  font: 13px/15px Arial;
+  text-transform: none;
 }
 #searchBloc #searchBlocDate p {
   margin-bottom: 15px;
@@ -1933,7 +1947,7 @@ form li {
 #searchBloc #searchBlocDate #datepickerCalendar {
   width: 362px;
   top: 27px;
-  right: 10px;
+  right: 0;
   left: auto;
 }
 #searchBloc #searchBlocDate #datepickerCalendar .datepicker {
@@ -2564,7 +2578,7 @@ h6,
   font-size: 15px;
 }
 .home .locationForwards#specialOffersBloc .stamp {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 .home .locationForwards#specialOffersBloc h2 {
   margin-left: 0;
@@ -2576,7 +2590,7 @@ h6,
 }
 .home .locationForwards#specialOffersBloc .element {
   margin-bottom: 10px;
-  padding: 10px 0 0;
+  padding: 0;
   border-bottom: 7px solid #ffffff;
 }
 .home .locationForwards#specialOffersBloc .element.last {
@@ -2597,10 +2611,10 @@ h6,
 .home .element .fb-like {
   width: 109px;
   height: 20px;
-  margin: 0 15px 0 5px;
+  margin: 10px 15px 0 5px;
 }
 .home .element .view {
-  margin: 0 15px 0 5px;
+  margin: 0 15px 10px 5px;
 }
 .home .element .details {
   font-size: 13px;
@@ -2655,6 +2669,10 @@ h6,
 }
 .home #searchBloc {
   margin-top: -191px;
+}
+.home #specialOffersBloc {
+  margin-top: 180px;
+  z-index: 0;
 }
 .home #destinationsBloc {
   width: 400px;

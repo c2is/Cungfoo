@@ -137,8 +137,8 @@ header, section, footer {position:relative;}
 /* search */
 form li{margin-bottom:10px;}
 .stylish-select .newListSelected .selectedTxt:after,
-.stylish-select .newListSelected{height:27px;line-height:27px;margin-right:0;}
-#searchBloc{color:@colorBlanc;
+.stylish-select .newListSelected{height:27px;line-height:27px;margin-right:0;background-color:@colorBlanc;}
+#searchBloc{color:@colorBlanc;position:absolute;z-index:1;
   #switchForm{margin:0 0 20px 0;
     li{display:inline;
       a{width:82px;height:34px;background-color:@colorBlanc;float:left;margin:6px 1px 0 0;position:relative;
@@ -157,6 +157,7 @@ form li{margin-bottom:10px;}
           &#tabSearchBlocBudget span{background-position:-60px -320px;}
           span{margin-top:0;}
         }
+        &.active{cursor:default;}
 
       }
       &:first-child a{._border-radius(10px 0 0 0);}
@@ -171,10 +172,13 @@ form li{margin-bottom:10px;}
     }
   }
   #searchBlocDate{
-    a.more{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    .toggleContainer{padding-top:10px;display:none;
+      label{font:13px/15px Arial;text-transform:none;}
+    }
     p{margin-bottom:15px;}
     div.datepicker{right:0;}
-    #datepickerCalendar {width: 362px;top:27px;right:10px;left:auto;}
+    #datepickerCalendar {width: 362px;top:27px;right:0;left:auto;}
     #datepickerCalendar .datepicker {
       width: 362px !important;
     }
@@ -202,6 +206,8 @@ form li{margin-bottom:10px;}
       .spin-bt-up {width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 26px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;border:0 none;}
       .spin-bt-down:active,
       .spin-bt-up:active{padding-right:7px;}
+//      .spin-bt-down:hover,
+//      .spin-bt-up:hover{background-color:@colorBlanc;color:@colorBgGrisF;}
       .spin-bt-down{margin-right:2px;}
       .spin-bt-up{margin-left:2px;}
     }

@@ -19,8 +19,8 @@
                         </div>
                     </div>
                 </li>
-                <li id="SearchDate_selectContainer1" class="selectContainer clear">
-                    <div class="selectContainer clear">
+                <li>
+                    <div id="SearchDate_selectContainer1" class="selectContainer clear">
                         <select id="SearchDate_destination" name="SearchDate[destination]" >
                             <option value="">Destination</option>
                             <option value="1">Destination 1</option>
@@ -31,6 +31,7 @@
                 </li>
                 <li>
                     <div id="SearchDate_selectContainer2" class="selectContainer clear">
+                        <input type="hidden" id="SearchDate_isCamping" value="0" />
                         <select id="SearchDate_ville" name="SearchDate[ville]">
                             <option value="">Lieux de séjour</option>
                             <option value="1" class="optGroup-like">Pays de séjour 1</option>
@@ -76,7 +77,31 @@
                     </div>
                 </li>
                 <li>
-                    <a class="more" href="#">+ de critères</a>
+                    <a class="toggleButton" href="#">+ de critères</a>
+                    <div class="toggleContainer">
+
+                            <div class="mainField">
+                                <input type="checkbox" name="room_features[]" value="PMR-OUI" id="search_form_room_features">
+                                <label for="search_form_room_features">Logements adaptés pour Personne à Mobilité Réduite</label>
+                            </div>
+                            <div class="mainField last">
+                                <input type="checkbox" name="room_features[]" value="LBB-OUI" id="search_form_room_features_2">
+                                <label for="search_form_room_features_2">Lit bébé</label>
+                            </div>
+                            <div class="floatField">
+                                <input type="checkbox" name="options[]" value="PISC" id="check1">
+                                <label for="check1">Piscine</label>
+                            </div>
+                            <div class="floatField">
+                                <input type="checkbox" name="options[]" value="ESPF" id="check2">
+                                <label for="check2">Espace Forme</label>
+                            </div>
+                            <div class="floatField">
+                                <input type="checkbox" name="options[]" value="THAL" id="check3">
+                                <label for="check3">Thalasso</label>
+                            </div>
+
+                    </div>
                 </li>
                 <li>
                     <button type="submit" class="bt sombre big">Trouver</button>
