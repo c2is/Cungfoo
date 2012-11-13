@@ -25,9 +25,15 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method EtablissementTypeHebergementQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementTypeHebergementQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
+ * @method EtablissementTypeHebergementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
+ * @method EtablissementTypeHebergementQuery orderByMinimumPriceStartDate($order = Criteria::ASC) Order by the minimum_price_start_date column
+ * @method EtablissementTypeHebergementQuery orderByMinimumPriceEndDate($order = Criteria::ASC) Order by the minimum_price_end_date column
  *
  * @method EtablissementTypeHebergementQuery groupByEtablissementId() Group by the etablissement_id column
  * @method EtablissementTypeHebergementQuery groupByTypeHebergementId() Group by the type_hebergement_id column
+ * @method EtablissementTypeHebergementQuery groupByMinimumPrice() Group by the minimum_price column
+ * @method EtablissementTypeHebergementQuery groupByMinimumPriceStartDate() Group by the minimum_price_start_date column
+ * @method EtablissementTypeHebergementQuery groupByMinimumPriceEndDate() Group by the minimum_price_end_date column
  *
  * @method EtablissementTypeHebergementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementTypeHebergementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -46,9 +52,15 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method EtablissementTypeHebergement findOneByEtablissementId(int $etablissement_id) Return the first EtablissementTypeHebergement filtered by the etablissement_id column
  * @method EtablissementTypeHebergement findOneByTypeHebergementId(int $type_hebergement_id) Return the first EtablissementTypeHebergement filtered by the type_hebergement_id column
+ * @method EtablissementTypeHebergement findOneByMinimumPrice(string $minimum_price) Return the first EtablissementTypeHebergement filtered by the minimum_price column
+ * @method EtablissementTypeHebergement findOneByMinimumPriceStartDate(string $minimum_price_start_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_start_date column
+ * @method EtablissementTypeHebergement findOneByMinimumPriceEndDate(string $minimum_price_end_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_end_date column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementTypeHebergement objects filtered by the etablissement_id column
  * @method array findByTypeHebergementId(int $type_hebergement_id) Return EtablissementTypeHebergement objects filtered by the type_hebergement_id column
+ * @method array findByMinimumPrice(string $minimum_price) Return EtablissementTypeHebergement objects filtered by the minimum_price column
+ * @method array findByMinimumPriceStartDate(string $minimum_price_start_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_start_date column
+ * @method array findByMinimumPriceEndDate(string $minimum_price_end_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_end_date column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -139,7 +151,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `TYPE_HEBERGEMENT_ID` FROM `etablissement_type_hebergement` WHERE `ETABLISSEMENT_ID` = :p0 AND `TYPE_HEBERGEMENT_ID` = :p1';
+        $sql = 'SELECT `ETABLISSEMENT_ID`, `TYPE_HEBERGEMENT_ID`, `MINIMUM_PRICE`, `MINIMUM_PRICE_START_DATE`, `MINIMUM_PRICE_END_DATE` FROM `etablissement_type_hebergement` WHERE `ETABLISSEMENT_ID` = :p0 AND `TYPE_HEBERGEMENT_ID` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -296,6 +308,121 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId, $comparison);
+    }
+
+    /**
+     * Filter the query on the minimum_price column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMinimumPrice('fooValue');   // WHERE minimum_price = 'fooValue'
+     * $query->filterByMinimumPrice('%fooValue%'); // WHERE minimum_price LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $minimumPrice The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByMinimumPrice($minimumPrice = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($minimumPrice)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $minimumPrice)) {
+                $minimumPrice = str_replace('*', '%', $minimumPrice);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
+    }
+
+    /**
+     * Filter the query on the minimum_price_start_date column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMinimumPriceStartDate('2011-03-14'); // WHERE minimum_price_start_date = '2011-03-14'
+     * $query->filterByMinimumPriceStartDate('now'); // WHERE minimum_price_start_date = '2011-03-14'
+     * $query->filterByMinimumPriceStartDate(array('max' => 'yesterday')); // WHERE minimum_price_start_date > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $minimumPriceStartDate The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByMinimumPriceStartDate($minimumPriceStartDate = null, $comparison = null)
+    {
+        if (is_array($minimumPriceStartDate)) {
+            $useMinMax = false;
+            if (isset($minimumPriceStartDate['min'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($minimumPriceStartDate['max'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate, $comparison);
+    }
+
+    /**
+     * Filter the query on the minimum_price_end_date column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMinimumPriceEndDate('2011-03-14'); // WHERE minimum_price_end_date = '2011-03-14'
+     * $query->filterByMinimumPriceEndDate('now'); // WHERE minimum_price_end_date = '2011-03-14'
+     * $query->filterByMinimumPriceEndDate(array('max' => 'yesterday')); // WHERE minimum_price_end_date > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $minimumPriceEndDate The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByMinimumPriceEndDate($minimumPriceEndDate = null, $comparison = null)
+    {
+        if (is_array($minimumPriceEndDate)) {
+            $useMinMax = false;
+            if (isset($minimumPriceEndDate['min'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($minimumPriceEndDate['max'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate, $comparison);
     }
 
     /**
