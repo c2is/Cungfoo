@@ -165,10 +165,13 @@ form li{margin-bottom:10px;}
       &:first-child a:hover,
       &:last-child a.active,
       &:last-child a:hover{._border-radius(10px 10px 0 0);}
+
+      &:nth-child(2),                           // cache les 2 derniers onglets du moteur de recherche
+      &:nth-child(3){visibility:hidden;}        //
     }
   }
   #searchBlocDate{
-    a{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    a.more{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
     p{margin-bottom:15px;}
     div.datepicker{right:0;}
     #datepickerCalendar {width: 362px;top:27px;right:10px;left:auto;}

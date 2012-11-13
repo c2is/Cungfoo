@@ -742,7 +742,7 @@ function countItem() {
     console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
         var $button = $(this);
-        var $input = $button.siblings("input[type=number]");
+        var $input = $button.siblings(".spin-tb");
         var oldValue = $input.val();
         if ($button.hasClass('spin-bt-up')) {
             var newVal = parseFloat(oldValue) + 1;
@@ -772,14 +772,12 @@ function switchSelect(){
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.attr('title',$buttonTitle);
         if(selectNum) {
-            $selects.eq(0).fadeOut(500, function(){
-                $selects.eq(1).fadeIn(300);
-            });
+            $selects.eq(0).hide();
+            $selects.eq(1).show();
         }
         else {
-            $selects.eq(1).fadeOut(500, function(){
-                $selects.eq(0).fadeIn(300);
-            });
+            $selects.eq(1).hide();
+            $selects.eq(0).show();
         }
         return false;
     });

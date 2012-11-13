@@ -61,7 +61,7 @@
                     <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
-                        <input type="number" id="SearchDate_nbAdultes" class="left" value="2">
+                        <input class="spin-tb left" type="text" id="SearchDate_nbAdultes" value="2">
                         <div class="spin-bt-up left">+</div>
                     </div>
                 </li>
@@ -69,12 +69,12 @@
                     <label for="SearchDate_nbEnfants" class="left">Enfant(s)</label>
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
-                        <input type="number" id="SearchDate_nbEnfants" class="left" value="0">
+                        <input class="spin-tb left" type="text" id="SearchDate_nbEnfants" value="0">
                         <div class="spin-bt-up left">+</div>
                     </div>
                 </li>
                 <li>
-                    <a href="#">+ de critères</a>
+                    <a class="more" href="#">+ de critères</a>
                 </li>
                 <li>
                     <button type="submit" class="bt sombre big">Trouver</button>
