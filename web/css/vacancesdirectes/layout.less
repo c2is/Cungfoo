@@ -135,6 +135,9 @@ header, section, footer {position:relative;}
 }
 
 /* search */
+form li{margin-bottom:10px;}
+.stylish-select .newListSelected .selectedTxt:after,
+.stylish-select .newListSelected{height:27px;line-height:27px;}
 #searchBloc{color:@colorBlanc;
   #switchForm{margin:0 0 20px 0;
     li{display:inline;
@@ -162,12 +165,16 @@ header, section, footer {position:relative;}
       &:first-child a:hover,
       &:last-child a.active,
       &:last-child a:hover{._border-radius(10px 10px 0 0);}
+
+      &:nth-child(2),                           // cache les 2 derniers onglets du moteur de recherche
+      &:nth-child(3){visibility:hidden;}        //
     }
   }
   #searchBlocDate{
+    a.more{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
     p{margin-bottom:15px;}
     div.datepicker{right:0;}
-    #datepickerCalendar {width: 362px; right:0;left:auto;}
+    #datepickerCalendar {width: 362px;top:27px;right:10px;left:auto;}
     #datepickerCalendar .datepicker {
       width: 362px !important;
     }
@@ -184,11 +191,33 @@ header, section, footer {position:relative;}
     .datepickerBorderB,
     .datepickerBorderBL,
     .datepickerBorderBR {height: 10px;}
-    #datepickerField{width:248px;}
-    input{width:40px;._verticalCenter(27px);border:0 none;color:@colorFushia;font:bold 24px @ptnarrow;
-      &[type=button]{width:27px;background-color:@colorBgGrisF;color:@colorBlanc;}
+    #datepickerField{width:248px;
+      span {height: 27px;top:2px;}
+      input {height: 27px;line-height: 27px;width:248px;}
     }
+    label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:15px;}
+    .spinner{
+      input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
+      .spin-bt-down,
+      .spin-bt-up{width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 33px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;}
+      .spin-bt-down{margin-right:2px;}
+      .spin-bt-up{margin-left:2px;}
+    }
+    #SearchDate_selectContainer1 .newListSelected{width:248px;
+      .selectedTxt{width:215px;}
+      .SSContainerDivWrapper{min-width:248px;}
+    }
+    #SearchDate_selectContainer2{
+      .newListSelected{width:188px;
+        .selectedTxt{width:154px;}
+        .SSContainerDivWrapper{min-width:187px;}
+      }
+      span{height:27px;line-height:27px;margin-right:10px;}
+    }
+    .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;float:left;cursor:pointer;}
+    button[type=submit]{margin:0 auto;font-size:21px;}
   }
+
 
 }
 

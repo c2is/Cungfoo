@@ -6,41 +6,55 @@
     </ul>
     <form id="searchBlocDate" action="#_">
         <fieldset>
-            <p>
-                <div id="datepicker">
-                    {{ form_widget(searchDateForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
-                    {{ form_widget(searchDateForm.dateFin, {attr: {readonly: 'readonly'}}) }}
-                    <div id="datepickerField" class="clear">
-                        <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+            <ol>
+                <li>
+                    <div id="datepicker" class="clear">
+                        {{ form_widget(searchDateForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
+                        {{ form_widget(searchDateForm.dateFin, {attr: {readonly: 'readonly'}}) }}
+                        <div id="datepickerField" class="clear">
+                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+                        </div>
+                        <div id="datepickerCalendar">
+
+                        </div>
                     </div>
-                    <div id="datepickerCalendar">
-
+                </li>
+                <li id="SearchDate_selectContainer1" class="selectContainer clear">
+                    <div class="selectContainer clear">
+                        {{ form_widget(searchDateForm.destination) }}
                     </div>
-                </div>
-            </p>
-            <p>
-                {{ form_widget(searchDateForm.destination) }}
-            </p>
-            <p>
-                {{ form_widget(searchDateForm.ville) }}
-                {{ form_widget(searchDateForm.camping) }}
-                <span class="ou">ou</span>
-                <button id="switchListCampLieu">Camping/Lieu de séjour</button>
-            </p>
-            <p>
-                <label for="nbAdults">Adulte(s)</label>
-
-                {{ form_widget(searchDateForm.nbAdultes) }}
-            </p>
-            <p>
-                <label for="nbChildren">Adulte(s)</label>
-
-                {{ form_widget(searchDateForm.nbEnfants) }}
-            </p>
-            <p>
-                <a href="#">+ de critères</a>
-                <button type="submit" class="bt sombre big">Trouver</button>
-            </p>
+                </li>
+                <li>
+                    <div id="SearchDate_selectContainer2" class="selectContainer clear">
+                        {{ form_widget(searchDateForm.ville) }}
+                        {{ form_widget(searchDateForm.camping) }}
+                        <span class="left">ou</span>
+                        <div class="switchSelect" title=""></div>
+                    </div>
+                </li>
+                <li>
+                    {{ form_label(searchDateForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
+                    <div class="spinner clear">
+                        <div class="spin-bt-down left">-</div>
+                        {{ form_widget(searchDateForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
+                        <div class="spin-bt-up left">+</div>
+                    </div>
+                </li>
+                <li>
+                    {{ form_label(searchDateForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
+                    <div class="spinner clear">
+                        <div class="spin-bt-down left">-</div>
+                        {{ form_widget(searchDateForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
+                        <div class="spin-bt-up left">+</div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">+ de critères</a>
+                </li>
+                <li>
+                    <button type="submit" class="bt sombre big">Trouver</button>
+                </li>
+            </ol>
         </fieldset>
     </form>
     <form id="searchBlocTrajet" action="#_">
@@ -56,7 +70,7 @@
 </div>
 
 <script type="text/javascript">
-    var fStartDate = '2013/04/06',              // must be a saturday
+    var fStartDate = '2013/04/06',                  // must be a saturday
         fEndDate = '2013/10/26',                // must be a saturday
         linear = "reservation",
         numMinWeeks = 1;
