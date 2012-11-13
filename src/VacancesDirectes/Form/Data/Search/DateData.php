@@ -12,6 +12,7 @@ class DateData
     public $destination;
     public $ville;
     public $camping;
+    public $isVille   = 1;
     public $nbAdultes = 0;
     public $nbEnfants = 0;
 
@@ -21,13 +22,9 @@ class DateData
         {
             $context->addViolation('date_search.destination.required', array (), null);
         }
-        else
+        else if ($this->destination === "FRA" && !($this->ville || $this->camping))
         {
-            $pays = get_class($this->destination) == "Cungfoo\Model\Pays" ?: $this->destination->getPays();
-            if ($pays->getName() == "France" && !($this->ville || $this->camping))
-            {
-                $context->addViolation('date_search.ville.required', array (), null);
-            }
+            $context->addViolation('date_search.ville.required', array (), null);
         }
 
         if ($this->dateDebut || $this->dateFin)
