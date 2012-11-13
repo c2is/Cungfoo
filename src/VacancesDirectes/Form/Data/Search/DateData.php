@@ -12,11 +12,21 @@ class DateData
     public $destination;
     public $ville;
     public $camping;
+    public $isVille   = 1;
     public $nbAdultes = 0;
     public $nbEnfants = 0;
 
     public function isValide(ExecutionContext $context)
     {
+        if (!$this->destination)
+        {
+            $context->addViolation('date_search.destination.required', array (), null);
+        }
+        else if ($this->destination === "FRA" && !($this->ville || $this->camping))
+        {
+            $context->addViolation('date_search.ville.required', array (), null);
+        }
+
         if ($this->dateDebut || $this->dateFin)
         {
             if (!$this->dateFin)
