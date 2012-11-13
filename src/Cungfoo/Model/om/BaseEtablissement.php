@@ -60,6 +60,8 @@ use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\SituationGeographiqueQuery;
 use Cungfoo\Model\Thematique;
 use Cungfoo\Model\ThematiqueQuery;
+use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
 use Cungfoo\Model\Ville;
@@ -338,6 +340,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collMultimediaEtablissementsPartial;
 
     /**
+     * @var        PropelObjectCollection|TopCamping[] Collection to store aggregation of TopCamping objects.
+     */
+    protected $collTopCampings;
+    protected $collTopCampingsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -535,6 +543,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $multimediaEtablissementsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $topCampingsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1702,6 +1716,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collMultimediaEtablissements = null;
 
+            $this->collTopCampings = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -2236,6 +2252,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->topCampingsScheduledForDeletion !== null) {
+                if (!$this->topCampingsScheduledForDeletion->isEmpty()) {
+                    TopCampingQuery::create()
+                        ->filterByPrimaryKeys($this->topCampingsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->topCampingsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collTopCampings !== null) {
+                foreach ($this->collTopCampings as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementI18nsScheduledForDeletion !== null) {
                 if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
                     EtablissementI18nQuery::create()
@@ -2663,6 +2696,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collTopCampings !== null) {
+                    foreach ($this->collTopCampings as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2887,6 +2928,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collMultimediaEtablissements) {
                 $result['MultimediaEtablissements'] = $this->collMultimediaEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collTopCampings) {
+                $result['TopCampings'] = $this->collTopCampings->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -3264,6 +3308,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getTopCampings() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addTopCamping($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -3465,6 +3515,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('MultimediaEtablissement' == $relationName) {
             $this->initMultimediaEtablissements();
+        }
+        if ('TopCamping' == $relationName) {
+            $this->initTopCampings();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -5974,6 +6027,213 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collTopCampings collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addTopCampings()
+     */
+    public function clearTopCampings()
+    {
+        $this->collTopCampings = null; // important to set this to null since that means it is uninitialized
+        $this->collTopCampingsPartial = null;
+    }
+
+    /**
+     * reset is the collTopCampings collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialTopCampings($v = true)
+    {
+        $this->collTopCampingsPartial = $v;
+    }
+
+    /**
+     * Initializes the collTopCampings collection.
+     *
+     * By default this just sets the collTopCampings collection to an empty array (like clearcollTopCampings());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initTopCampings($overrideExisting = true)
+    {
+        if (null !== $this->collTopCampings && !$overrideExisting) {
+            return;
+        }
+        $this->collTopCampings = new PropelObjectCollection();
+        $this->collTopCampings->setModel('TopCamping');
+    }
+
+    /**
+     * Gets an array of TopCamping objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|TopCamping[] List of TopCamping objects
+     * @throws PropelException
+     */
+    public function getTopCampings($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingsPartial && !$this->isNew();
+        if (null === $this->collTopCampings || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collTopCampings) {
+                // return empty collection
+                $this->initTopCampings();
+            } else {
+                $collTopCampings = TopCampingQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collTopCampingsPartial && count($collTopCampings)) {
+                      $this->initTopCampings(false);
+
+                      foreach($collTopCampings as $obj) {
+                        if (false == $this->collTopCampings->contains($obj)) {
+                          $this->collTopCampings->append($obj);
+                        }
+                      }
+
+                      $this->collTopCampingsPartial = true;
+                    }
+
+                    return $collTopCampings;
+                }
+
+                if($partial && $this->collTopCampings) {
+                    foreach($this->collTopCampings as $obj) {
+                        if($obj->isNew()) {
+                            $collTopCampings[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collTopCampings = $collTopCampings;
+                $this->collTopCampingsPartial = false;
+            }
+        }
+
+        return $this->collTopCampings;
+    }
+
+    /**
+     * Sets a collection of TopCamping objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $topCampings A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setTopCampings(PropelCollection $topCampings, PropelPDO $con = null)
+    {
+        $this->topCampingsScheduledForDeletion = $this->getTopCampings(new Criteria(), $con)->diff($topCampings);
+
+        foreach ($this->topCampingsScheduledForDeletion as $topCampingRemoved) {
+            $topCampingRemoved->setEtablissement(null);
+        }
+
+        $this->collTopCampings = null;
+        foreach ($topCampings as $topCamping) {
+            $this->addTopCamping($topCamping);
+        }
+
+        $this->collTopCampings = $topCampings;
+        $this->collTopCampingsPartial = false;
+    }
+
+    /**
+     * Returns the number of related TopCamping objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related TopCamping objects.
+     * @throws PropelException
+     */
+    public function countTopCampings(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingsPartial && !$this->isNew();
+        if (null === $this->collTopCampings || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collTopCampings) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getTopCampings());
+                }
+                $query = TopCampingQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collTopCampings);
+        }
+    }
+
+    /**
+     * Method called to associate a TopCamping object to this object
+     * through the TopCamping foreign key attribute.
+     *
+     * @param    TopCamping $l TopCamping
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addTopCamping(TopCamping $l)
+    {
+        if ($this->collTopCampings === null) {
+            $this->initTopCampings();
+            $this->collTopCampingsPartial = true;
+        }
+        if (!in_array($l, $this->collTopCampings->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddTopCamping($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	TopCamping $topCamping The topCamping object to add.
+     */
+    protected function doAddTopCamping($topCamping)
+    {
+        $this->collTopCampings[]= $topCamping;
+        $topCamping->setEtablissement($this);
+    }
+
+    /**
+     * @param	TopCamping $topCamping The topCamping object to remove.
+     */
+    public function removeTopCamping($topCamping)
+    {
+        if ($this->getTopCampings()->contains($topCamping)) {
+            $this->collTopCampings->remove($this->collTopCampings->search($topCamping));
+            if (null === $this->topCampingsScheduledForDeletion) {
+                $this->topCampingsScheduledForDeletion = clone $this->collTopCampings;
+                $this->topCampingsScheduledForDeletion->clear();
+            }
+            $this->topCampingsScheduledForDeletion[]= $topCamping;
+            $topCamping->setEtablissement(null);
+        }
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -7804,6 +8064,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collTopCampings) {
+                foreach ($this->collTopCampings as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -7904,6 +8169,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collMultimediaEtablissements->clearIterator();
         }
         $this->collMultimediaEtablissements = null;
+        if ($this->collTopCampings instanceof PropelCollection) {
+            $this->collTopCampings->clearIterator();
+        }
+        $this->collTopCampings = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }

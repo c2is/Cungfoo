@@ -24,6 +24,7 @@ use Cungfoo\Model\EtablissementThematiquePeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
 use Cungfoo\Model\MultimediaEtablissementPeer;
 use Cungfoo\Model\PersonnagePeer;
+use Cungfoo\Model\TopCampingPeer;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\EtablissementTableMap;
 
@@ -551,6 +552,9 @@ abstract class BaseEtablissementPeer
         // Invalidate objects in MultimediaEtablissementPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         MultimediaEtablissementPeer::clearInstancePool();
+        // Invalidate objects in TopCampingPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        TopCampingPeer::clearInstancePool();
         // Invalidate objects in EtablissementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementI18nPeer::clearInstancePool();

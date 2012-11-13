@@ -36,6 +36,7 @@ use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\Thematique;
+use Cungfoo\Model\TopCamping;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\Ville;
 
@@ -157,6 +158,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinMultimediaEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaEtablissement relation
  * @method EtablissementQuery rightJoinMultimediaEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaEtablissement relation
  * @method EtablissementQuery innerJoinMultimediaEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the MultimediaEtablissement relation
+ *
+ * @method EtablissementQuery leftJoinTopCamping($relationAlias = null) Adds a LEFT JOIN clause to the query using the TopCamping relation
+ * @method EtablissementQuery rightJoinTopCamping($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TopCamping relation
+ * @method EtablissementQuery innerJoinTopCamping($relationAlias = null) Adds a INNER JOIN clause to the query using the TopCamping relation
  *
  * @method EtablissementQuery leftJoinEtablissementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementI18n relation
  * @method EtablissementQuery rightJoinEtablissementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementI18n relation
@@ -2281,6 +2286,80 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinMultimediaEtablissement($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'MultimediaEtablissement', '\Cungfoo\Model\MultimediaEtablissementQuery');
+    }
+
+    /**
+     * Filter the query by a related TopCamping object
+     *
+     * @param   TopCamping|PropelObjectCollection $topCamping  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByTopCamping($topCamping, $comparison = null)
+    {
+        if ($topCamping instanceof TopCamping) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $topCamping->getEtablissementId(), $comparison);
+        } elseif ($topCamping instanceof PropelObjectCollection) {
+            return $this
+                ->useTopCampingQuery()
+                ->filterByPrimaryKeys($topCamping->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByTopCamping() only accepts arguments of type TopCamping or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the TopCamping relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinTopCamping($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('TopCamping');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'TopCamping');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the TopCamping relation TopCamping object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\TopCampingQuery A secondary query class using the current class as primary query
+     */
+    public function useTopCampingQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinTopCamping($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TopCamping', '\Cungfoo\Model\TopCampingQuery');
     }
 
     /**

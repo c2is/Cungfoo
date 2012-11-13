@@ -631,4 +631,18 @@
         </behavior>
     </table>
 
+    <table name="top_camping">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="etablissement_id" type="integer" required="true"/>
+        <behavior name="sortable"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/top_camping" />
+        </behavior>
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
 </database>
