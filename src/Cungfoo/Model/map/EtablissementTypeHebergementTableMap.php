@@ -45,6 +45,9 @@ class EtablissementTypeHebergementTableMap extends TableMap
         // columns
         $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
         $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'ID', true, null, null);
+        $this->addColumn('MINIMUM_PRICE', 'MinimumPrice', 'VARCHAR', false, 255, null);
+        $this->addColumn('MINIMUM_PRICE_START_DATE', 'MinimumPriceStartDate', 'DATE', false, null, null);
+        $this->addColumn('MINIMUM_PRICE_END_DATE', 'MinimumPriceEndDate', 'DATE', false, null, null);
         // validators
     } // initialize()
 
@@ -54,7 +57,7 @@ class EtablissementTypeHebergementTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), null, null);
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // EtablissementTypeHebergementTableMap

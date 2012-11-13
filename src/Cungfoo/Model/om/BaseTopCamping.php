@@ -5,41 +5,37 @@ namespace Cungfoo\Model\om;
 use \BaseObject;
 use \BasePeer;
 use \Criteria;
-use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
-use \PropelDateTime;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
-use Cungfoo\Model\EtablissementTypeHebergement;
-use Cungfoo\Model\EtablissementTypeHebergementPeer;
-use Cungfoo\Model\EtablissementTypeHebergementQuery;
-use Cungfoo\Model\TypeHebergement;
-use Cungfoo\Model\TypeHebergementQuery;
+use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingPeer;
+use Cungfoo\Model\TopCampingQuery;
 
 /**
- * Base class that represents a row from the 'etablissement_type_hebergement' table.
+ * Base class that represents a row from the 'top_camping' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseEtablissementTypeHebergement extends BaseObject implements Persistent
+abstract class BaseTopCamping extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\EtablissementTypeHebergementPeer';
+    const PEER = 'Cungfoo\\Model\\TopCampingPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        EtablissementTypeHebergementPeer
+     * @var        TopCampingPeer
      */
     protected static $peer;
 
@@ -50,44 +46,27 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     protected $startCopy = false;
 
     /**
+     * The value for the id field.
+     * @var        int
+     */
+    protected $id;
+
+    /**
      * The value for the etablissement_id field.
      * @var        int
      */
     protected $etablissement_id;
 
     /**
-     * The value for the type_hebergement_id field.
+     * The value for the sortable_rank field.
      * @var        int
      */
-    protected $type_hebergement_id;
-
-    /**
-     * The value for the minimum_price field.
-     * @var        string
-     */
-    protected $minimum_price;
-
-    /**
-     * The value for the minimum_price_start_date field.
-     * @var        string
-     */
-    protected $minimum_price_start_date;
-
-    /**
-     * The value for the minimum_price_end_date field.
-     * @var        string
-     */
-    protected $minimum_price_end_date;
+    protected $sortable_rank;
 
     /**
      * @var        Etablissement
      */
     protected $aEtablissement;
-
-    /**
-     * @var        TypeHebergement
-     */
-    protected $aTypeHebergement;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -103,6 +82,24 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     protected $alreadyInValidation = false;
 
+    // sortable behavior
+
+    /**
+     * Queries to be executed in the save transaction
+     * @var        array
+     */
+    protected $sortableQueries = array();
+
+    /**
+     * Get the [id] column value.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * Get the [etablissement_id] column value.
      *
@@ -114,104 +111,41 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     }
 
     /**
-     * Get the [type_hebergement_id] column value.
+     * Get the [sortable_rank] column value.
      *
      * @return int
      */
-    public function getTypeHebergementId()
+    public function getSortableRank()
     {
-        return $this->type_hebergement_id;
+        return $this->sortable_rank;
     }
 
     /**
-     * Get the [minimum_price] column value.
+     * Set the value of [id] column.
      *
-     * @return string
+     * @param int $v new value
+     * @return TopCamping The current object (for fluent API support)
      */
-    public function getMinimumPrice()
+    public function setId($v)
     {
-        return $this->minimum_price;
-    }
-
-    /**
-     * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
-     *
-     *
-     * @param string $format The date/time format string (either date()-style or strftime()-style).
-     *				 If format is null, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
-     * @throws PropelException - if unable to parse/validate the date/time value.
-     */
-    public function getMinimumPriceStartDate($format = null)
-    {
-        if ($this->minimum_price_start_date === null) {
-            return null;
+        if ($v !== null) {
+            $v = (int) $v;
         }
 
-        if ($this->minimum_price_start_date === '0000-00-00') {
-            // while technically this is not a default value of null,
-            // this seems to be closest in meaning.
-            return null;
-        } else {
-            try {
-                $dt = new DateTime($this->minimum_price_start_date);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
-            }
+        if ($this->id !== $v) {
+            $this->id = $v;
+            $this->modifiedColumns[] = TopCampingPeer::ID;
         }
 
-        if ($format === null) {
-            // Because propel.useDateTimeClass is true, we return a DateTime object.
-            return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
-        }
-    }
 
-    /**
-     * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
-     *
-     *
-     * @param string $format The date/time format string (either date()-style or strftime()-style).
-     *				 If format is null, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
-     * @throws PropelException - if unable to parse/validate the date/time value.
-     */
-    public function getMinimumPriceEndDate($format = null)
-    {
-        if ($this->minimum_price_end_date === null) {
-            return null;
-        }
-
-        if ($this->minimum_price_end_date === '0000-00-00') {
-            // while technically this is not a default value of null,
-            // this seems to be closest in meaning.
-            return null;
-        } else {
-            try {
-                $dt = new DateTime($this->minimum_price_end_date);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
-            }
-        }
-
-        if ($format === null) {
-            // Because propel.useDateTimeClass is true, we return a DateTime object.
-            return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
-        }
-    }
+        return $this;
+    } // setId()
 
     /**
      * Set the value of [etablissement_id] column.
      *
      * @param int $v new value
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     * @return TopCamping The current object (for fluent API support)
      */
     public function setEtablissementId($v)
     {
@@ -221,7 +155,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
         if ($this->etablissement_id !== $v) {
             $this->etablissement_id = $v;
-            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::ETABLISSEMENT_ID;
+            $this->modifiedColumns[] = TopCampingPeer::ETABLISSEMENT_ID;
         }
 
         if ($this->aEtablissement !== null && $this->aEtablissement->getId() !== $v) {
@@ -233,96 +167,25 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     } // setEtablissementId()
 
     /**
-     * Set the value of [type_hebergement_id] column.
+     * Set the value of [sortable_rank] column.
      *
      * @param int $v new value
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     * @return TopCamping The current object (for fluent API support)
      */
-    public function setTypeHebergementId($v)
+    public function setSortableRank($v)
     {
         if ($v !== null) {
             $v = (int) $v;
         }
 
-        if ($this->type_hebergement_id !== $v) {
-            $this->type_hebergement_id = $v;
-            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID;
-        }
-
-        if ($this->aTypeHebergement !== null && $this->aTypeHebergement->getId() !== $v) {
-            $this->aTypeHebergement = null;
+        if ($this->sortable_rank !== $v) {
+            $this->sortable_rank = $v;
+            $this->modifiedColumns[] = TopCampingPeer::SORTABLE_RANK;
         }
 
 
         return $this;
-    } // setTypeHebergementId()
-
-    /**
-     * Set the value of [minimum_price] column.
-     *
-     * @param string $v new value
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPrice($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->minimum_price !== $v) {
-            $this->minimum_price = $v;
-            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE;
-        }
-
-
-        return $this;
-    } // setMinimumPrice()
-
-    /**
-     * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
-     *
-     * @param mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as null.
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPriceStartDate($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->minimum_price_start_date !== null || $dt !== null) {
-            $currentDateAsString = ($this->minimum_price_start_date !== null && $tmpDt = new DateTime($this->minimum_price_start_date)) ? $tmpDt->format('Y-m-d') : null;
-            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-            if ($currentDateAsString !== $newDateAsString) {
-                $this->minimum_price_start_date = $newDateAsString;
-                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE;
-            }
-        } // if either are not null
-
-
-        return $this;
-    } // setMinimumPriceStartDate()
-
-    /**
-     * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
-     *
-     * @param mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as null.
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPriceEndDate($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->minimum_price_end_date !== null || $dt !== null) {
-            $currentDateAsString = ($this->minimum_price_end_date !== null && $tmpDt = new DateTime($this->minimum_price_end_date)) ? $tmpDt->format('Y-m-d') : null;
-            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-            if ($currentDateAsString !== $newDateAsString) {
-                $this->minimum_price_end_date = $newDateAsString;
-                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE;
-            }
-        } // if either are not null
-
-
-        return $this;
-    } // setMinimumPriceEndDate()
+    } // setSortableRank()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -356,11 +219,9 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         try {
 
-            $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->minimum_price_start_date = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->minimum_price_end_date = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+            $this->etablissement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
+            $this->sortable_rank = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -369,10 +230,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = TopCampingPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating EtablissementTypeHebergement object", $e);
+            throw new PropelException("Error populating TopCamping object", $e);
         }
     }
 
@@ -394,9 +255,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
         if ($this->aEtablissement !== null && $this->etablissement_id !== $this->aEtablissement->getId()) {
             $this->aEtablissement = null;
-        }
-        if ($this->aTypeHebergement !== null && $this->type_hebergement_id !== $this->aTypeHebergement->getId()) {
-            $this->aTypeHebergement = null;
         }
     } // ensureConsistency
 
@@ -421,13 +279,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = EtablissementTypeHebergementPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = TopCampingPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -438,7 +296,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         if ($deep) {  // also de-associate any related objects?
 
             $this->aEtablissement = null;
-            $this->aTypeHebergement = null;
         } // if (deep)
     }
 
@@ -459,14 +316,19 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = EtablissementTypeHebergementQuery::create()
+            $deleteQuery = TopCampingQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
+            // sortable behavior
+
+            TopCampingPeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
+            TopCampingPeer::clearInstancePool();
+
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
@@ -502,15 +364,22 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         $isInsert = $this->isNew();
         try {
             $ret = $this->preSave($con);
+            // sortable behavior
+            $this->processSortableQueries($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
+                // sortable behavior
+                if (!$this->isColumnModified(TopCampingPeer::RANK_COL)) {
+                    $this->setSortableRank(TopCampingQuery::create()->getMaxRank($con) + 1);
+                }
+
             } else {
                 $ret = $ret && $this->preUpdate($con);
             }
@@ -522,7 +391,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                EtablissementTypeHebergementPeer::addInstanceToPool($this);
+                TopCampingPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -564,13 +433,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 $this->setEtablissement($this->aEtablissement);
             }
 
-            if ($this->aTypeHebergement !== null) {
-                if ($this->aTypeHebergement->isModified() || $this->aTypeHebergement->isNew()) {
-                    $affectedRows += $this->aTypeHebergement->save($con);
-                }
-                $this->setTypeHebergement($this->aTypeHebergement);
-            }
-
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -602,26 +464,24 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[] = TopCampingPeer::ID;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . TopCampingPeer::ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) {
+        if ($this->isColumnModified(TopCampingPeer::ID)) {
+            $modifiedColumns[':p' . $index++]  = '`ID`';
+        }
+        if ($this->isColumnModified(TopCampingPeer::ETABLISSEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
         }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`TYPE_HEBERGEMENT_ID`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_START_DATE`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_END_DATE`';
+        if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) {
+            $modifiedColumns[':p' . $index++]  = '`SORTABLE_RANK`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `etablissement_type_hebergement` (%s) VALUES (%s)',
+            'INSERT INTO `top_camping` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -630,20 +490,14 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
+                    case '`ID`':
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
                     case '`ETABLISSEMENT_ID`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TYPE_HEBERGEMENT_ID`':
-                        $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
-                        break;
-                    case '`MINIMUM_PRICE`':
-                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
-                        break;
-                    case '`MINIMUM_PRICE_START_DATE`':
-                        $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
-                        break;
-                    case '`MINIMUM_PRICE_END_DATE`':
-                        $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
+                    case '`SORTABLE_RANK`':
+                        $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -652,6 +506,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -743,14 +604,8 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 }
             }
 
-            if ($this->aTypeHebergement !== null) {
-                if (!$this->aTypeHebergement->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aTypeHebergement->getValidationFailures());
-                }
-            }
 
-
-            if (($retval = EtablissementTypeHebergementPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = TopCampingPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
@@ -774,7 +629,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = EtablissementTypeHebergementPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = TopCampingPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -791,19 +646,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         switch ($pos) {
             case 0:
-                return $this->getEtablissementId();
+                return $this->getId();
                 break;
             case 1:
-                return $this->getTypeHebergementId();
+                return $this->getEtablissementId();
                 break;
             case 2:
-                return $this->getMinimumPrice();
-                break;
-            case 3:
-                return $this->getMinimumPriceStartDate();
-                break;
-            case 4:
-                return $this->getMinimumPriceEndDate();
+                return $this->getSortableRank();
                 break;
             default:
                 return null;
@@ -828,24 +677,19 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['EtablissementTypeHebergement'][serialize($this->getPrimaryKey())])) {
+        if (isset($alreadyDumpedObjects['TopCamping'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['EtablissementTypeHebergement'][serialize($this->getPrimaryKey())] = true;
-        $keys = EtablissementTypeHebergementPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['TopCamping'][$this->getPrimaryKey()] = true;
+        $keys = TopCampingPeer::getFieldNames($keyType);
         $result = array(
-            $keys[0] => $this->getEtablissementId(),
-            $keys[1] => $this->getTypeHebergementId(),
-            $keys[2] => $this->getMinimumPrice(),
-            $keys[3] => $this->getMinimumPriceStartDate(),
-            $keys[4] => $this->getMinimumPriceEndDate(),
+            $keys[0] => $this->getId(),
+            $keys[1] => $this->getEtablissementId(),
+            $keys[2] => $this->getSortableRank(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
                 $result['Etablissement'] = $this->aEtablissement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
-            }
-            if (null !== $this->aTypeHebergement) {
-                $result['TypeHebergement'] = $this->aTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
         }
 
@@ -865,7 +709,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = EtablissementTypeHebergementPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = TopCampingPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -882,19 +726,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         switch ($pos) {
             case 0:
-                $this->setEtablissementId($value);
+                $this->setId($value);
                 break;
             case 1:
-                $this->setTypeHebergementId($value);
+                $this->setEtablissementId($value);
                 break;
             case 2:
-                $this->setMinimumPrice($value);
-                break;
-            case 3:
-                $this->setMinimumPriceStartDate($value);
-                break;
-            case 4:
-                $this->setMinimumPriceEndDate($value);
+                $this->setSortableRank($value);
                 break;
         } // switch()
     }
@@ -918,13 +756,11 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = EtablissementTypeHebergementPeer::getFieldNames($keyType);
+        $keys = TopCampingPeer::getFieldNames($keyType);
 
-        if (array_key_exists($keys[0], $arr)) $this->setEtablissementId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setTypeHebergementId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setMinimumPriceStartDate($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setMinimumPriceEndDate($arr[$keys[4]]);
+        if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
+        if (array_key_exists($keys[1], $arr)) $this->setEtablissementId($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setSortableRank($arr[$keys[2]]);
     }
 
     /**
@@ -934,13 +770,11 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
+        $criteria = new Criteria(TopCampingPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $this->etablissement_id);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $this->minimum_price);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $this->minimum_price_start_date);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $this->minimum_price_end_date);
+        if ($this->isColumnModified(TopCampingPeer::ID)) $criteria->add(TopCampingPeer::ID, $this->id);
+        if ($this->isColumnModified(TopCampingPeer::ETABLISSEMENT_ID)) $criteria->add(TopCampingPeer::ETABLISSEMENT_ID, $this->etablissement_id);
+        if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) $criteria->add(TopCampingPeer::SORTABLE_RANK, $this->sortable_rank);
 
         return $criteria;
     }
@@ -955,37 +789,30 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
-        $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $this->etablissement_id);
-        $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
+        $criteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+        $criteria->add(TopCampingPeer::ID, $this->id);
 
         return $criteria;
     }
 
     /**
-     * Returns the composite primary key for this object.
-     * The array elements will be in same order as specified in XML.
-     * @return array
+     * Returns the primary key for this object (row).
+     * @return int
      */
     public function getPrimaryKey()
     {
-        $pks = array();
-        $pks[0] = $this->getEtablissementId();
-        $pks[1] = $this->getTypeHebergementId();
-
-        return $pks;
+        return $this->getId();
     }
 
     /**
-     * Set the [composite] primary key.
+     * Generic method to set the primary key (id column).
      *
-     * @param array $keys The elements of the composite key (order must match the order in XML file).
+     * @param  int $key Primary key.
      * @return void
      */
-    public function setPrimaryKey($keys)
+    public function setPrimaryKey($key)
     {
-        $this->setEtablissementId($keys[0]);
-        $this->setTypeHebergementId($keys[1]);
+        $this->setId($key);
     }
 
     /**
@@ -995,7 +822,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function isPrimaryKeyNull()
     {
 
-        return (null === $this->getEtablissementId()) && (null === $this->getTypeHebergementId());
+        return null === $this->getId();
     }
 
     /**
@@ -1004,7 +831,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of EtablissementTypeHebergement (or compatible) type.
+     * @param object $copyObj An object of TopCamping (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -1012,10 +839,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
-        $copyObj->setTypeHebergementId($this->getTypeHebergementId());
-        $copyObj->setMinimumPrice($this->getMinimumPrice());
-        $copyObj->setMinimumPriceStartDate($this->getMinimumPriceStartDate());
-        $copyObj->setMinimumPriceEndDate($this->getMinimumPriceEndDate());
+        $copyObj->setSortableRank($this->getSortableRank());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1030,6 +854,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
         if ($makeNew) {
             $copyObj->setNew(true);
+            $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
         }
     }
 
@@ -1042,7 +867,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return EtablissementTypeHebergement Clone of current object.
+     * @return TopCamping Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1062,12 +887,12 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return EtablissementTypeHebergementPeer
+     * @return TopCampingPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new EtablissementTypeHebergementPeer();
+            self::$peer = new TopCampingPeer();
         }
 
         return self::$peer;
@@ -1077,7 +902,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * Declares an association between this object and a Etablissement object.
      *
      * @param             Etablissement $v
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     * @return TopCamping The current object (for fluent API support)
      * @throws PropelException
      */
     public function setEtablissement(Etablissement $v = null)
@@ -1093,7 +918,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         // Add binding for other direction of this n:n relationship.
         // If this object has already been added to the Etablissement object, it will not be re-added.
         if ($v !== null) {
-            $v->addEtablissementTypeHebergement($this);
+            $v->addTopCamping($this);
         }
 
 
@@ -1117,7 +942,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aEtablissement->addEtablissementTypeHebergements($this);
+                $this->aEtablissement->addTopCampings($this);
              */
         }
 
@@ -1125,66 +950,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     }
 
     /**
-     * Declares an association between this object and a TypeHebergement object.
-     *
-     * @param             TypeHebergement $v
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     * @throws PropelException
-     */
-    public function setTypeHebergement(TypeHebergement $v = null)
-    {
-        if ($v === null) {
-            $this->setTypeHebergementId(NULL);
-        } else {
-            $this->setTypeHebergementId($v->getId());
-        }
-
-        $this->aTypeHebergement = $v;
-
-        // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the TypeHebergement object, it will not be re-added.
-        if ($v !== null) {
-            $v->addEtablissementTypeHebergement($this);
-        }
-
-
-        return $this;
-    }
-
-
-    /**
-     * Get the associated TypeHebergement object
-     *
-     * @param PropelPDO $con Optional Connection object.
-     * @return TypeHebergement The associated TypeHebergement object.
-     * @throws PropelException
-     */
-    public function getTypeHebergement(PropelPDO $con = null)
-    {
-        if ($this->aTypeHebergement === null && ($this->type_hebergement_id !== null)) {
-            $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->type_hebergement_id, $con);
-            /* The following can be used additionally to
-                guarantee the related object contains a reference
-                to this object.  This level of coupling may, however, be
-                undesirable since it could result in an only partially populated collection
-                in the referenced object.
-                $this->aTypeHebergement->addEtablissementTypeHebergements($this);
-             */
-        }
-
-        return $this->aTypeHebergement;
-    }
-
-    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
     {
+        $this->id = null;
         $this->etablissement_id = null;
-        $this->type_hebergement_id = null;
-        $this->minimum_price = null;
-        $this->minimum_price_start_date = null;
-        $this->minimum_price_end_date = null;
+        $this->sortable_rank = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1208,7 +980,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         } // if ($deep)
 
         $this->aEtablissement = null;
-        $this->aTypeHebergement = null;
     }
 
     /**
@@ -1218,7 +989,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function __toString()
     {
-        return (string) $this->exportTo(EtablissementTypeHebergementPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(TopCampingPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**
@@ -1229,6 +1000,362 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // sortable behavior
+
+    /**
+     * Wrap the getter for rank value
+     *
+     * @return    int
+     */
+    public function getRank()
+    {
+        return $this->sortable_rank;
+    }
+
+    /**
+     * Wrap the setter for rank value
+     *
+     * @param     int
+     * @return    TopCamping
+     */
+    public function setRank($v)
+    {
+        return $this->setSortableRank($v);
+    }
+
+    /**
+     * Check if the object is first in the list, i.e. if it has 1 for rank
+     *
+     * @return    boolean
+     */
+    public function isFirst()
+    {
+        return $this->getSortableRank() == 1;
+    }
+
+    /**
+     * Check if the object is last in the list, i.e. if its rank is the highest rank
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    boolean
+     */
+    public function isLast(PropelPDO $con = null)
+    {
+        return $this->getSortableRank() == TopCampingQuery::create()->getMaxRank($con);
+    }
+
+    /**
+     * Get the next item in the list, i.e. the one for which rank is immediately higher
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    TopCamping
+     */
+    public function getNext(PropelPDO $con = null)
+    {
+
+        return TopCampingQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
+    }
+
+    /**
+     * Get the previous item in the list, i.e. the one for which rank is immediately lower
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    TopCamping
+     */
+    public function getPrevious(PropelPDO $con = null)
+    {
+
+        return TopCampingQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
+    }
+
+    /**
+     * Insert at specified rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     integer    $rank rank value
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    TopCamping the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtRank($rank, PropelPDO $con = null)
+    {
+        $maxRank = TopCampingQuery::create()->getMaxRank($con);
+        if ($rank < 1 || $rank > $maxRank + 1) {
+            throw new PropelException('Invalid rank ' . $rank);
+        }
+        // move the object in the list, at the given rank
+        $this->setSortableRank($rank);
+        if ($rank != $maxRank + 1) {
+            // Keep the list modification query for the save() transaction
+            $this->sortableQueries []= array(
+                'callable'  => array(self::PEER, 'shiftRank'),
+                'arguments' => array(1, $rank, null, )
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Insert in the last rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtBottom(PropelPDO $con = null)
+    {
+        $this->setSortableRank(TopCampingQuery::create()->getMaxRank($con) + 1);
+
+        return $this;
+    }
+
+    /**
+     * Insert in the first rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @return    TopCamping the current object
+     */
+    public function insertAtTop()
+    {
+        return $this->insertAtRank(1);
+    }
+
+    /**
+     * Move the object to a new rank, and shifts the rank
+     * Of the objects inbetween the old and new rank accordingly
+     *
+     * @param     integer   $newRank rank value
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     *
+     * @throws    PropelException
+     */
+    public function moveToRank($newRank, PropelPDO $con = null)
+    {
+        if ($this->isNew()) {
+            throw new PropelException('New objects cannot be moved. Please use insertAtRank() instead');
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        if ($newRank < 1 || $newRank > TopCampingQuery::create()->getMaxRank($con)) {
+            throw new PropelException('Invalid rank ' . $newRank);
+        }
+
+        $oldRank = $this->getSortableRank();
+        if ($oldRank == $newRank) {
+            return $this;
+        }
+
+        $con->beginTransaction();
+        try {
+            // shift the objects between the old and the new rank
+            $delta = ($oldRank < $newRank) ? -1 : 1;
+            TopCampingPeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
+
+            // move the object to its new rank
+            $this->setSortableRank($newRank);
+            $this->save($con);
+
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Exchange the rank of the object with the one passed as argument, and saves both objects
+     *
+     * @param     TopCamping $object
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     *
+     * @throws Exception if the database cannot execute the two updates
+     */
+    public function swapWith($object, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $oldRank = $this->getSortableRank();
+            $newRank = $object->getSortableRank();
+            $this->setSortableRank($newRank);
+            $this->save($con);
+            $object->setSortableRank($oldRank);
+            $object->save($con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     */
+    public function moveUp(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $prev = $this->getPrevious($con);
+            $this->swapWith($prev, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     */
+    public function moveDown(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $next = $this->getNext($con);
+            $this->swapWith($next, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object to the top of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     */
+    public function moveToTop(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+
+        return $this->moveToRank(1, $con);
+    }
+
+    /**
+     * Move the object to the bottom of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return integer the old object's rank
+     */
+    public function moveToBottom(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return false;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $bottom = TopCampingQuery::create()->getMaxRank($con);
+            $res = $this->moveToRank($bottom, $con);
+            $con->commit();
+
+            return $res;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Removes the current object from the list.
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    TopCamping the current object
+     */
+    public function removeFromList(PropelPDO $con = null)
+    {
+        // Keep the list modification query for the save() transaction
+        $this->sortableQueries []= array(
+            'callable'  => array(self::PEER, 'shiftRank'),
+            'arguments' => array(-1, $this->getSortableRank() + 1, null)
+        );
+        // remove the object from the list
+        $this->setSortableRank(null);
+
+        return $this;
+    }
+
+    /**
+     * Execute queries that were saved to be run inside the save transaction
+     */
+    protected function processSortableQueries($con)
+    {
+        foreach ($this->sortableQueries as $query) {
+            $query['arguments'][]= $con;
+            call_user_func_array($query['callable'], $query['arguments']);
+        }
+        $this->sortableQueries = array();
+    }
+
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
     }
 
 }

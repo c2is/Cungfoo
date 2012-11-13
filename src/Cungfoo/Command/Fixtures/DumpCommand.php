@@ -74,6 +74,7 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\Avantage",
         "\\Cungfoo\\Model\\AvantageI18n",
         "\\Cungfoo\\Model\\Edito",
+        "\\Cungfoo\\Model\\TopCamping",
     );
 
     protected function configure()

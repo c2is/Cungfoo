@@ -9,118 +9,98 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\CategoryTypeHebergementPeer;
-use Cungfoo\Model\EtablissementTypeHebergementPeer;
-use Cungfoo\Model\TypeHebergement;
-use Cungfoo\Model\TypeHebergementI18nPeer;
-use Cungfoo\Model\TypeHebergementPeer;
-use Cungfoo\Model\map\TypeHebergementTableMap;
+use Cungfoo\Model\EtablissementPeer;
+use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingPeer;
+use Cungfoo\Model\map\TopCampingTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'type_hebergement' table.
+ * Base static class for performing query and update operations on the 'top_camping' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseTypeHebergementPeer
+abstract class BaseTopCampingPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'type_hebergement';
+    const TABLE_NAME = 'top_camping';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\TypeHebergement';
+    const OM_CLASS = 'Cungfoo\\Model\\TopCamping';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'TypeHebergementTableMap';
+    const TM_CLASS = 'TopCampingTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the ID field */
-    const ID = 'type_hebergement.ID';
+    const ID = 'top_camping.ID';
 
-    /** the column name for the CODE field */
-    const CODE = 'type_hebergement.CODE';
+    /** the column name for the ETABLISSEMENT_ID field */
+    const ETABLISSEMENT_ID = 'top_camping.ETABLISSEMENT_ID';
 
-    /** the column name for the CATEGORY_TYPE_HEBERGEMENT_ID field */
-    const CATEGORY_TYPE_HEBERGEMENT_ID = 'type_hebergement.CATEGORY_TYPE_HEBERGEMENT_ID';
-
-    /** the column name for the NOMBRE_CHAMBRE field */
-    const NOMBRE_CHAMBRE = 'type_hebergement.NOMBRE_CHAMBRE';
-
-    /** the column name for the NOMBRE_PLACE field */
-    const NOMBRE_PLACE = 'type_hebergement.NOMBRE_PLACE';
-
-    /** the column name for the IMAGE_HEBERGEMENT_PATH field */
-    const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.IMAGE_HEBERGEMENT_PATH';
-
-    /** the column name for the IMAGE_COMPOSITION_PATH field */
-    const IMAGE_COMPOSITION_PATH = 'type_hebergement.IMAGE_COMPOSITION_PATH';
-
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'type_hebergement.CREATED_AT';
-
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'type_hebergement.UPDATED_AT';
+    /** the column name for the SORTABLE_RANK field */
+    const SORTABLE_RANK = 'top_camping.SORTABLE_RANK';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of TypeHebergement objects.
+     * An identiy map to hold any loaded instances of TopCamping objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array TypeHebergement[]
+     * @var        array TopCamping[]
      */
     public static $instances = array();
 
 
-    // i18n behavior
+    // sortable behavior
 
     /**
-     * The default locale to use for translations
-     * @var        string
+     * rank column
      */
-    const DEFAULT_LOCALE = 'fr';
+    const RANK_COL = 'top_camping.SORTABLE_RANK';
+
     /**
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. TypeHebergementPeer::$fieldNames[TypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. TopCampingPeer::$fieldNames[TopCampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CategoryTypeHebergementId', 'NombreChambre', 'NombrePlace', 'ImageHebergementPath', 'ImageCompositionPath', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'categoryTypeHebergementId', 'nombreChambre', 'nombrePlace', 'imageHebergementPath', 'imageCompositionPath', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::NOMBRE_PLACE, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, TypeHebergementPeer::IMAGE_COMPOSITION_PATH, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'NOMBRE_PLACE', 'IMAGE_HEBERGEMENT_PATH', 'IMAGE_COMPOSITION_PATH', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category_type_hebergement_id', 'nombre_chambre', 'nombre_place', 'image_hebergement_path', 'image_composition_path', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'SortableRank', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'sortableRank', ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID, TopCampingPeer::ETABLISSEMENT_ID, TopCampingPeer::SORTABLE_RANK, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'SORTABLE_RANK', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'sortable_rank', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. TypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. TopCampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CategoryTypeHebergementId' => 2, 'NombreChambre' => 3, 'NombrePlace' => 4, 'ImageHebergementPath' => 5, 'ImageCompositionPath' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'categoryTypeHebergementId' => 2, 'nombreChambre' => 3, 'nombrePlace' => 4, 'imageHebergementPath' => 5, 'imageCompositionPath' => 6, 'createdAt' => 7, 'updatedAt' => 8, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 2, TypeHebergementPeer::NOMBRE_CHAMBRE => 3, TypeHebergementPeer::NOMBRE_PLACE => 4, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH => 5, TypeHebergementPeer::IMAGE_COMPOSITION_PATH => 6, TypeHebergementPeer::CREATED_AT => 7, TypeHebergementPeer::UPDATED_AT => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 2, 'NOMBRE_CHAMBRE' => 3, 'NOMBRE_PLACE' => 4, 'IMAGE_HEBERGEMENT_PATH' => 5, 'IMAGE_COMPOSITION_PATH' => 6, 'CREATED_AT' => 7, 'UPDATED_AT' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category_type_hebergement_id' => 2, 'nombre_chambre' => 3, 'nombre_place' => 4, 'image_hebergement_path' => 5, 'image_composition_path' => 6, 'created_at' => 7, 'updated_at' => 8, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'SortableRank' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'sortableRank' => 2, ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID => 0, TopCampingPeer::ETABLISSEMENT_ID => 1, TopCampingPeer::SORTABLE_RANK => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'SORTABLE_RANK' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'sortable_rank' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -135,10 +115,10 @@ abstract class BaseTypeHebergementPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = TypeHebergementPeer::getFieldNames($toType);
-        $key = isset(TypeHebergementPeer::$fieldKeys[$fromType][$name]) ? TypeHebergementPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = TopCampingPeer::getFieldNames($toType);
+        $key = isset(TopCampingPeer::$fieldKeys[$fromType][$name]) ? TopCampingPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(TypeHebergementPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(TopCampingPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -155,11 +135,11 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, TypeHebergementPeer::$fieldNames)) {
+        if (!array_key_exists($type, TopCampingPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return TypeHebergementPeer::$fieldNames[$type];
+        return TopCampingPeer::$fieldNames[$type];
     }
 
     /**
@@ -171,12 +151,12 @@ abstract class BaseTypeHebergementPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. TypeHebergementPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. TopCampingPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(TypeHebergementPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(TopCampingPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -194,25 +174,13 @@ abstract class BaseTypeHebergementPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(TypeHebergementPeer::ID);
-            $criteria->addSelectColumn(TypeHebergementPeer::CODE);
-            $criteria->addSelectColumn(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID);
-            $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_CHAMBRE);
-            $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_PLACE);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::CREATED_AT);
-            $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
+            $criteria->addSelectColumn(TopCampingPeer::ID);
+            $criteria->addSelectColumn(TopCampingPeer::ETABLISSEMENT_ID);
+            $criteria->addSelectColumn(TopCampingPeer::SORTABLE_RANK);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CATEGORY_TYPE_HEBERGEMENT_ID');
-            $criteria->addSelectColumn($alias . '.NOMBRE_CHAMBRE');
-            $criteria->addSelectColumn($alias . '.NOMBRE_PLACE');
-            $criteria->addSelectColumn($alias . '.IMAGE_HEBERGEMENT_PATH');
-            $criteria->addSelectColumn($alias . '.IMAGE_COMPOSITION_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
+            $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
         }
     }
 
@@ -232,21 +200,21 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(TopCampingPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            TopCampingPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -265,7 +233,7 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 TypeHebergement
+     * @return                 TopCamping
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -273,7 +241,7 @@ abstract class BaseTypeHebergementPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = TypeHebergementPeer::doSelect($critcopy, $con);
+        $objects = TopCampingPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -291,7 +259,7 @@ abstract class BaseTypeHebergementPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return TypeHebergementPeer::populateObjects(TypeHebergementPeer::doSelectStmt($criteria, $con));
+        return TopCampingPeer::populateObjects(TopCampingPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -309,16 +277,16 @@ abstract class BaseTypeHebergementPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            TypeHebergementPeer::addSelectColumns($criteria);
+            TopCampingPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -332,7 +300,7 @@ abstract class BaseTypeHebergementPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      TypeHebergement $obj A TypeHebergement object.
+     * @param      TopCamping $obj A TopCamping object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -341,7 +309,7 @@ abstract class BaseTypeHebergementPeer
             if ($key === null) {
                 $key = (string) $obj->getId();
             } // if key === null
-            TypeHebergementPeer::$instances[$key] = $obj;
+            TopCampingPeer::$instances[$key] = $obj;
         }
     }
 
@@ -353,7 +321,7 @@ abstract class BaseTypeHebergementPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A TypeHebergement object or a primary key value.
+     * @param      mixed $value A TopCamping object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -361,17 +329,17 @@ abstract class BaseTypeHebergementPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof TypeHebergement) {
+            if (is_object($value) && $value instanceof TopCamping) {
                 $key = (string) $value->getId();
             } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
                 $key = (string) $value;
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or TypeHebergement object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or TopCamping object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(TypeHebergementPeer::$instances[$key]);
+            unset(TopCampingPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -382,14 +350,14 @@ abstract class BaseTypeHebergementPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   TypeHebergement Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   TopCamping Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(TypeHebergementPeer::$instances[$key])) {
-                return TypeHebergementPeer::$instances[$key];
+            if (isset(TopCampingPeer::$instances[$key])) {
+                return TopCampingPeer::$instances[$key];
             }
         }
 
@@ -403,21 +371,15 @@ abstract class BaseTypeHebergementPeer
      */
     public static function clearInstancePool()
     {
-        TypeHebergementPeer::$instances = array();
+        TopCampingPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to type_hebergement
+     * Method to invalidate the instance pool of all tables related to top_camping
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in EtablissementTypeHebergementPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        EtablissementTypeHebergementPeer::clearInstancePool();
-        // Invalidate objects in TypeHebergementI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        TypeHebergementI18nPeer::clearInstancePool();
     }
 
     /**
@@ -467,11 +429,11 @@ abstract class BaseTypeHebergementPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = TypeHebergementPeer::getOMClass();
+        $cls = TopCampingPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool($key))) {
+            $key = TopCampingPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = TopCampingPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -480,7 +442,7 @@ abstract class BaseTypeHebergementPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                TypeHebergementPeer::addInstanceToPool($obj, $key);
+                TopCampingPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -494,21 +456,21 @@ abstract class BaseTypeHebergementPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (TypeHebergement object, last column rank)
+     * @return array (TopCamping object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool($key))) {
+        $key = TopCampingPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = TopCampingPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + TopCampingPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = TypeHebergementPeer::OM_CLASS;
+            $cls = TopCampingPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            TypeHebergementPeer::addInstanceToPool($obj, $key);
+            TopCampingPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -516,7 +478,7 @@ abstract class BaseTypeHebergementPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related CategoryTypeHebergement table
+     * Returns the number of rows matching criteria, joining the related Etablissement table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -524,7 +486,7 @@ abstract class BaseTypeHebergementPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinCategoryTypeHebergement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinEtablissement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -532,26 +494,26 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(TopCampingPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            TopCampingPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(TopCampingPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -567,61 +529,61 @@ abstract class BaseTypeHebergementPeer
 
 
     /**
-     * Selects a collection of TypeHebergement objects pre-filled with their CategoryTypeHebergement objects.
+     * Selects a collection of TopCamping objects pre-filled with their Etablissement objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of TypeHebergement objects.
+     * @return array           Array of TopCamping objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinCategoryTypeHebergement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinEtablissement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+            $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
         }
 
-        TypeHebergementPeer::addSelectColumns($criteria);
-        $startcol = TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
-        CategoryTypeHebergementPeer::addSelectColumns($criteria);
+        TopCampingPeer::addSelectColumns($criteria);
+        $startcol = TopCampingPeer::NUM_HYDRATE_COLUMNS;
+        EtablissementPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(TopCampingPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = TypeHebergementPeer::getInstanceFromPool($key1))) {
+            $key1 = TopCampingPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = TopCampingPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
 
-                $cls = TypeHebergementPeer::getOMClass();
+                $cls = TopCampingPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                TypeHebergementPeer::addInstanceToPool($obj1, $key1);
+                TopCampingPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = CategoryTypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = EtablissementPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = CategoryTypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = EtablissementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryTypeHebergementPeer::getOMClass();
+                    $cls = EtablissementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    CategoryTypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    EtablissementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (TypeHebergement) to $obj2 (CategoryTypeHebergement)
-                $obj2->addTypeHebergement($obj1);
+                // Add the $obj1 (TopCamping) to $obj2 (Etablissement)
+                $obj2->addTopCamping($obj1);
 
             } // if joined row was not null
 
@@ -650,26 +612,26 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(TopCampingPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            TopCampingPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(TopCampingPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -684,12 +646,12 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Selects a collection of TypeHebergement objects pre-filled with all related objects.
+     * Selects a collection of TopCamping objects pre-filled with all related objects.
      *
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of TypeHebergement objects.
+     * @return array           Array of TopCamping objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -699,50 +661,50 @@ abstract class BaseTypeHebergementPeer
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+            $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
         }
 
-        TypeHebergementPeer::addSelectColumns($criteria);
-        $startcol2 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+        TopCampingPeer::addSelectColumns($criteria);
+        $startcol2 = TopCampingPeer::NUM_HYDRATE_COLUMNS;
 
-        CategoryTypeHebergementPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+        EtablissementPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + EtablissementPeer::NUM_HYDRATE_COLUMNS;
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(TopCampingPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = TypeHebergementPeer::getInstanceFromPool($key1))) {
+            $key1 = TopCampingPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = TopCampingPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
-                $cls = TypeHebergementPeer::getOMClass();
+                $cls = TopCampingPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                TypeHebergementPeer::addInstanceToPool($obj1, $key1);
+                TopCampingPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined CategoryTypeHebergement rows
+            // Add objects for joined Etablissement rows
 
-            $key2 = CategoryTypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = EtablissementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = CategoryTypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = EtablissementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryTypeHebergementPeer::getOMClass();
+                    $cls = EtablissementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    CategoryTypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    EtablissementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (TypeHebergement) to the collection in $obj2 (CategoryTypeHebergement)
-                $obj2->addTypeHebergement($obj1);
+                // Add the $obj1 (TopCamping) to the collection in $obj2 (Etablissement)
+                $obj2->addTopCamping($obj1);
             } // if joined row not null
 
             $results[] = $obj1;
@@ -761,7 +723,7 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(TypeHebergementPeer::DATABASE_NAME)->getTable(TypeHebergementPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(TopCampingPeer::DATABASE_NAME)->getTable(TopCampingPeer::TABLE_NAME);
     }
 
     /**
@@ -769,9 +731,9 @@ abstract class BaseTypeHebergementPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseTypeHebergementPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseTypeHebergementPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new TypeHebergementTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseTopCampingPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseTopCampingPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new TopCampingTableMap());
       }
     }
 
@@ -783,13 +745,13 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getOMClass()
     {
-        return TypeHebergementPeer::OM_CLASS;
+        return TopCampingPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a TypeHebergement or Criteria object.
+     * Performs an INSERT on the database, given a TopCamping or Criteria object.
      *
-     * @param      mixed $values Criteria or TypeHebergement object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or TopCamping object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -798,22 +760,22 @@ abstract class BaseTypeHebergementPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from TypeHebergement object
+            $criteria = $values->buildCriteria(); // build Criteria from TopCamping object
         }
 
-        if ($criteria->containsKey(TypeHebergementPeer::ID) && $criteria->keyContainsValue(TypeHebergementPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.TypeHebergementPeer::ID.')');
+        if ($criteria->containsKey(TopCampingPeer::ID) && $criteria->keyContainsValue(TopCampingPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.TopCampingPeer::ID.')');
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -830,9 +792,9 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a TypeHebergement or Criteria object.
+     * Performs an UPDATE on the database, given a TopCamping or Criteria object.
      *
-     * @param      mixed $values Criteria or TypeHebergement object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or TopCamping object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -841,35 +803,35 @@ abstract class BaseTypeHebergementPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(TypeHebergementPeer::ID);
-            $value = $criteria->remove(TypeHebergementPeer::ID);
+            $comparison = $criteria->getComparison(TopCampingPeer::ID);
+            $value = $criteria->remove(TopCampingPeer::ID);
             if ($value) {
-                $selectCriteria->add(TypeHebergementPeer::ID, $value, $comparison);
+                $selectCriteria->add(TopCampingPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(TopCampingPeer::TABLE_NAME);
             }
 
-        } else { // $values is TypeHebergement object
+        } else { // $values is TopCamping object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the type_hebergement table.
+     * Deletes all rows from the top_camping table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -878,19 +840,19 @@ abstract class BaseTypeHebergementPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(TypeHebergementPeer::TABLE_NAME, $con, TypeHebergementPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(TopCampingPeer::TABLE_NAME, $con, TopCampingPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            TypeHebergementPeer::clearInstancePool();
-            TypeHebergementPeer::clearRelatedInstancePool();
+            TopCampingPeer::clearInstancePool();
+            TopCampingPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -901,9 +863,9 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a TypeHebergement or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a TopCamping or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or TypeHebergement object or primary key or array of primary keys
+     * @param      mixed $values Criteria or TopCamping object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -914,32 +876,32 @@ abstract class BaseTypeHebergementPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            TypeHebergementPeer::clearInstancePool();
+            TopCampingPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof TypeHebergement) { // it's a model object
+        } elseif ($values instanceof TopCamping) { // it's a model object
             // invalidate the cache for this single object
-            TypeHebergementPeer::removeInstanceFromPool($values);
+            TopCampingPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-            $criteria->add(TypeHebergementPeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+            $criteria->add(TopCampingPeer::ID, (array) $values, Criteria::IN);
             // invalidate the cache for this object(s)
             foreach ((array) $values as $singleval) {
-                TypeHebergementPeer::removeInstanceFromPool($singleval);
+                TopCampingPeer::removeInstanceFromPool($singleval);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(TopCampingPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -949,7 +911,7 @@ abstract class BaseTypeHebergementPeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            TypeHebergementPeer::clearRelatedInstancePool();
+            TopCampingPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -960,13 +922,13 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Validates all modified columns of given TypeHebergement object.
+     * Validates all modified columns of given TopCamping object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      TypeHebergement $obj The object to validate.
+     * @param      TopCamping $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -976,8 +938,8 @@ abstract class BaseTypeHebergementPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(TypeHebergementPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(TypeHebergementPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(TopCampingPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(TopCampingPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -993,7 +955,7 @@ abstract class BaseTypeHebergementPeer
 
         }
 
-        return BasePeer::doValidate(TypeHebergementPeer::DATABASE_NAME, TypeHebergementPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(TopCampingPeer::DATABASE_NAME, TopCampingPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -1001,23 +963,23 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
-     * @return TypeHebergement
+     * @return TopCamping
      */
     public static function retrieveByPK($pk, PropelPDO $con = null)
     {
 
-        if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool((string) $pk))) {
+        if (null !== ($obj = TopCampingPeer::getInstanceFromPool((string) $pk))) {
             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-        $criteria->add(TypeHebergementPeer::ID, $pk);
+        $criteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+        $criteria->add(TopCampingPeer::ID, $pk);
 
-        $v = TypeHebergementPeer::doSelect($criteria, $con);
+        $v = TopCampingPeer::doSelect($criteria, $con);
 
         return !empty($v) > 0 ? $v[0] : null;
     }
@@ -1027,31 +989,170 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      array $pks List of primary keys
      * @param      PropelPDO $con the connection to use
-     * @return TypeHebergement[]
+     * @return TopCamping[]
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
     public static function retrieveByPKs($pks, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         $objs = null;
         if (empty($pks)) {
             $objs = array();
         } else {
-            $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-            $criteria->add(TypeHebergementPeer::ID, $pks, Criteria::IN);
-            $objs = TypeHebergementPeer::doSelect($criteria, $con);
+            $criteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+            $criteria->add(TopCampingPeer::ID, $pks, Criteria::IN);
+            $objs = TopCampingPeer::doSelect($criteria, $con);
         }
 
         return $objs;
     }
 
-} // BaseTypeHebergementPeer
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . TopCampingPeer::RANK_COL . ')');
+        $stmt = TopCampingPeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return TopCamping
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(TopCampingPeer::RANK_COL, $rank);
+
+        return TopCampingPeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = TopCampingPeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(TopCampingPeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(TopCampingPeer::RANK_COL);
+        }
+
+        return TopCampingPeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+        $criterion = $whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        if (null !== $last) {
+            $criterion->addAnd($whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
+        }
+        $whereCriteria->add($criterion);
+
+        $valuesCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
+        $valuesCriteria->add(TopCampingPeer::RANK_COL, array('raw' => TopCampingPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        TopCampingPeer::clearInstancePool();
+    }
+
+} // BaseTopCampingPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseTypeHebergementPeer::buildTableMap();
+BaseTopCampingPeer::buildTableMap();
 

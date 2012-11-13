@@ -86,3 +86,7 @@ crud:
             prefix: /demandes_identifiant
             model: \Cungfoo\Model\DemandeIdentifiant
             form: \Cungfoo\Form\Type\DemandeIdentifiantType
+        top_camping:
+            prefix: /top_camping
+            model: \Cungfoo\Model\TopCamping
+            form: \Cungfoo\Form\Type\TopCampingType
