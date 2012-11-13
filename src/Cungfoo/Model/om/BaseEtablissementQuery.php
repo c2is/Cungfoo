@@ -63,12 +63,12 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByCategorieId($order = Criteria::ASC) Order by the categorie_id column
  * @method EtablissementQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EtablissementQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
- * @method EtablissementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
  * @method EtablissementQuery orderByVideoPath($order = Criteria::ASC) Order by the video_path column
  * @method EtablissementQuery orderByImage360Path($order = Criteria::ASC) Order by the image_360_path column
  * @method EtablissementQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
  * @method EtablissementQuery orderByPlanPath($order = Criteria::ASC) Order by the plan_path column
+ * @method EtablissementQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
  * @method EtablissementQuery orderByPublished($order = Criteria::ASC) Order by the published column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
@@ -92,12 +92,12 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByCategorieId() Group by the categorie_id column
  * @method EtablissementQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EtablissementQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
- * @method EtablissementQuery groupByMinimumPrice() Group by the minimum_price column
  * @method EtablissementQuery groupByVideoPath() Group by the video_path column
  * @method EtablissementQuery groupByImage360Path() Group by the image_360_path column
  * @method EtablissementQuery groupByDescription() Group by the description column
  * @method EtablissementQuery groupByCapacite() Group by the capacite column
  * @method EtablissementQuery groupByPlanPath() Group by the plan_path column
+ * @method EtablissementQuery groupByVignette() Group by the vignette column
  * @method EtablissementQuery groupByPublished() Group by the published column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
@@ -183,12 +183,12 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByCategorieId(int $categorie_id) Return the first Etablissement filtered by the categorie_id column
  * @method Etablissement findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Etablissement filtered by the geo_coordinate_x column
  * @method Etablissement findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Etablissement filtered by the geo_coordinate_y column
- * @method Etablissement findOneByMinimumPrice(string $minimum_price) Return the first Etablissement filtered by the minimum_price column
  * @method Etablissement findOneByVideoPath(string $video_path) Return the first Etablissement filtered by the video_path column
  * @method Etablissement findOneByImage360Path(string $image_360_path) Return the first Etablissement filtered by the image_360_path column
  * @method Etablissement findOneByDescription(string $description) Return the first Etablissement filtered by the description column
  * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
  * @method Etablissement findOneByPlanPath(string $plan_path) Return the first Etablissement filtered by the plan_path column
+ * @method Etablissement findOneByVignette(string $vignette) Return the first Etablissement filtered by the vignette column
  * @method Etablissement findOneByPublished(boolean $published) Return the first Etablissement filtered by the published column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
@@ -212,12 +212,12 @@ use Cungfoo\Model\Ville;
  * @method array findByCategorieId(int $categorie_id) Return Etablissement objects filtered by the categorie_id column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Etablissement objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Etablissement objects filtered by the geo_coordinate_y column
- * @method array findByMinimumPrice(string $minimum_price) Return Etablissement objects filtered by the minimum_price column
  * @method array findByVideoPath(string $video_path) Return Etablissement objects filtered by the video_path column
  * @method array findByImage360Path(string $image_360_path) Return Etablissement objects filtered by the image_360_path column
  * @method array findByDescription(string $description) Return Etablissement objects filtered by the description column
  * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
  * @method array findByPlanPath(string $plan_path) Return Etablissement objects filtered by the plan_path column
+ * @method array findByVignette(string $vignette) Return Etablissement objects filtered by the vignette column
  * @method array findByPublished(boolean $published) Return Etablissement objects filtered by the published column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
@@ -324,7 +324,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `MINIMUM_PRICE`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CAPACITE`, `PLAN_PATH`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `DESCRIPTION`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1031,35 +1031,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the minimum_price column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMinimumPrice('fooValue');   // WHERE minimum_price = 'fooValue'
-     * $query->filterByMinimumPrice('%fooValue%'); // WHERE minimum_price LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $minimumPrice The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByMinimumPrice($minimumPrice = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($minimumPrice)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $minimumPrice)) {
-                $minimumPrice = str_replace('*', '%', $minimumPrice);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
-    }
-
-    /**
      * Filter the query on the video_path column
      *
      * Example usage:
@@ -1202,6 +1173,35 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::PLAN_PATH, $planPath, $comparison);
+    }
+
+    /**
+     * Filter the query on the vignette column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByVignette('fooValue');   // WHERE vignette = 'fooValue'
+     * $query->filterByVignette('%fooValue%'); // WHERE vignette LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $vignette The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByVignette($vignette = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($vignette)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $vignette)) {
+                $vignette = str_replace('*', '%', $vignette);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::VIGNETTE, $vignette, $comparison);
     }
 
     /**

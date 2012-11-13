@@ -139,12 +139,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.geo_coordinate_y',
             'required' => false,
         ));
-        $builder->add('minimum_price', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.minimum_price',
-            'required' => false,
-        ));
         $builder->add('video_path', 'text', array(
             'constraints' => array(
             ),
@@ -180,6 +174,19 @@ class BaseEtablissementType extends AppAwareType
             ),
             'property_path' => false,
             'label' => 'etablissement.plan_path_deleted',
+            'required' => false,
+        ));
+        $builder->add('vignette', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.vignette',
+            'required' => false,
+        ));
+        $builder->add('vignette_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'etablissement.vignette_deleted',
             'required' => false,
         ));
         $builder->add('published', 'checkbox', array(
