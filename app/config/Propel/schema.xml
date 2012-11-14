@@ -302,6 +302,7 @@
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
+        <column name="mea_home" type="boolean" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">

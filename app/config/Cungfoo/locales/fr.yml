@@ -223,6 +223,7 @@ region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) 
 region.pays: Pays
 region.pays.id: Code pays
 region.description: Description
+region.mea_home: Mise en avant sur la home
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys

@@ -48,6 +48,7 @@ class RegionTableMap extends TableMap
         $this->addColumn('IMAGE_ENCART_PATH', 'ImageEncartPath', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_ENCART_PETITE_PATH', 'ImageEncartPetitePath', 'VARCHAR', false, 255, null);
         $this->addForeignKey('PAYS_ID', 'PaysId', 'INTEGER', 'pays', 'ID', false, null, null);
+        $this->addColumn('MEA_HOME', 'MeaHome', 'BOOLEAN', false, 1, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
