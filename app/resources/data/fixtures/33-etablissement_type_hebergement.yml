@@ -1889,13 +1889,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    112_21_270.00___:
+    '112_21_270.00_Promotion basse saison 7=6 nuits_2012-12-22 00:00:00_2012-12-29 00:00:00':
         EtablissementId: 112
         TypeHebergementId: 21
         MinimumPrice: '270.00'
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPriceDiscountLabel: 'Promotion basse saison 7=6 nuits'
+        MinimumPriceStartDate: '2012-12-22 00:00:00'
+        MinimumPriceEndDate: '2012-12-29 00:00:00'
     112_26____:
         EtablissementId: 112
         TypeHebergementId: 26
