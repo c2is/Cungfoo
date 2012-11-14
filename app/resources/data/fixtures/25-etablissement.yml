@@ -183,10 +183,10 @@
         Published: true
     8:
         Code: 108
-        Name: 'Le Roussillonnais '
+        Name: 'Le Roussillonnais'
         Title: null
         Address1: 'Boulevard de la Mer'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -196,7 +196,7 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-25 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 4
         CategorieId: 3
         GeoCoordinateX: '42.56766828'
         GeoCoordinateY: '3.044221401'
@@ -205,7 +205,7 @@
         Description: null
         Capacite: '706'
         PlanPath: null
-        Vignette: null
+        Vignette: uploads/etablissements/50a27a4b65b8d.png
         Published: true
     9:
         Code: 109
@@ -703,7 +703,7 @@
         Published: true
     28:
         Code: 128
-        Name: 'Les Vignes '
+        Name: 'Les Vignes'
         Title: null
         Address1: 'Route du Cap de l''Homy'
         Address2: 'Route de la Plage'
@@ -716,7 +716,7 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 101
         CategorieId: null
         GeoCoordinateX: '44.02413608'
         GeoCoordinateY: '-1.27867341'
@@ -2753,7 +2753,7 @@
         Description: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.'
         Capacite: '364'
         PlanPath: uploads/etablissements/5077c5b45766c.jpeg
-        Vignette: null
+        Vignette: uploads/etablissements/50a279ae83f08.png
         Published: true
     107:
         Code: 40
@@ -2890,7 +2890,7 @@
         Name: 'Domaine de Kermario'
         Title: null
         Address1: '1 Chemin de Kerluir'
-        Address2: ''
+        Address2: null
         Zip: '56340'
         City: CARNAC
         Mail: test@resalys.com
@@ -2909,7 +2909,7 @@
         Description: null
         Capacite: '123'
         PlanPath: null
-        Vignette: null
+        Vignette: uploads/etablissements/50a2797fa2b79.png
         Published: true
     113:
         Code: 46
