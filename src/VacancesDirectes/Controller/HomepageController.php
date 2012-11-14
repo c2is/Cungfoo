@@ -26,9 +26,18 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-            // some code
+            $locale = $app['context']->get('language');
 
-            return $app['twig']->render('homepage.twig');
+            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->limit(3)
+                ->find()
+            ;
+
+            return $app['twig']->render('homepage.twig', array(
+                'locale'       => $locale,
+                'topCampings'   => $topCampings,
+            ));
         })
         ->bind('homepage');
 
