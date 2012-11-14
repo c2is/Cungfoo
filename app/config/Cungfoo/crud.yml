@@ -90,3 +90,7 @@ crud:
             prefix: /top_camping
             model: \Cungfoo\Model\TopCamping
             form: \Cungfoo\Form\Type\TopCampingType
+        dernieres_minutes:
+            prefix: /dernieres_minutes
+            model: \Cungfoo\Model\DernieresMinutes
+            form: \Cungfoo\Form\Type\DernieresMinutesType
