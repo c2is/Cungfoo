@@ -1619,10 +1619,10 @@
         MinimumPrice: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    112_21___:
+    112_21_270.00__:
         EtablissementId: 112
         TypeHebergementId: 21
-        MinimumPrice: null
+        MinimumPrice: '270.00'
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
     112_26___:

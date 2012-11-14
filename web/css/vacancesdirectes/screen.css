@@ -1815,7 +1815,9 @@ footer {
 form li {
   margin-bottom: 10px;
 }
-.stylish-select .newListSelected .selectedTxt:after,
+.stylish-select .newListSelected .selectedTxt:after {
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;
+}
 .stylish-select .newListSelected {
   height: 27px;
   line-height: 27px;
@@ -1931,8 +1933,10 @@ form li {
   text-decoration: underline;
 }
 #searchBloc #searchBlocDate .toggleContainer {
-  padding-top: 10px;
   display: none;
+}
+#searchBloc #searchBlocDate .toggleContainer > *:last-child {
+  margin-bottom: 10px;
 }
 #searchBloc #searchBlocDate .toggleContainer label {
   font: 13px/15px Arial;
@@ -1973,12 +1977,13 @@ form li {
 }
 #searchBloc #searchBlocDate #datepickerField span {
   height: 27px;
-  top: 2px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
 }
 #searchBloc #searchBlocDate #datepickerField input {
   height: 27px;
   line-height: 27px;
-  width: 248px;
+  width: 216px;
+  background-color: #ffffff;
 }
 #searchBloc #searchBlocDate label {
   font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
@@ -2054,7 +2059,7 @@ form li {
 #searchBloc #searchBlocDate .switchSelect {
   width: 27px;
   height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px #464545;
   float: left;
   cursor: pointer;
 }

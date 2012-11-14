@@ -26,12 +26,14 @@ use Cungfoo\Model\TypeHebergement;
  * @method EtablissementTypeHebergementQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementTypeHebergementQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
  * @method EtablissementTypeHebergementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
+ * @method EtablissementTypeHebergementQuery orderByMinimumPriceDiscountLabel($order = Criteria::ASC) Order by the minimum_price_discount_label column
  * @method EtablissementTypeHebergementQuery orderByMinimumPriceStartDate($order = Criteria::ASC) Order by the minimum_price_start_date column
  * @method EtablissementTypeHebergementQuery orderByMinimumPriceEndDate($order = Criteria::ASC) Order by the minimum_price_end_date column
  *
  * @method EtablissementTypeHebergementQuery groupByEtablissementId() Group by the etablissement_id column
  * @method EtablissementTypeHebergementQuery groupByTypeHebergementId() Group by the type_hebergement_id column
  * @method EtablissementTypeHebergementQuery groupByMinimumPrice() Group by the minimum_price column
+ * @method EtablissementTypeHebergementQuery groupByMinimumPriceDiscountLabel() Group by the minimum_price_discount_label column
  * @method EtablissementTypeHebergementQuery groupByMinimumPriceStartDate() Group by the minimum_price_start_date column
  * @method EtablissementTypeHebergementQuery groupByMinimumPriceEndDate() Group by the minimum_price_end_date column
  *
@@ -53,12 +55,14 @@ use Cungfoo\Model\TypeHebergement;
  * @method EtablissementTypeHebergement findOneByEtablissementId(int $etablissement_id) Return the first EtablissementTypeHebergement filtered by the etablissement_id column
  * @method EtablissementTypeHebergement findOneByTypeHebergementId(int $type_hebergement_id) Return the first EtablissementTypeHebergement filtered by the type_hebergement_id column
  * @method EtablissementTypeHebergement findOneByMinimumPrice(string $minimum_price) Return the first EtablissementTypeHebergement filtered by the minimum_price column
+ * @method EtablissementTypeHebergement findOneByMinimumPriceDiscountLabel(string $minimum_price_discount_label) Return the first EtablissementTypeHebergement filtered by the minimum_price_discount_label column
  * @method EtablissementTypeHebergement findOneByMinimumPriceStartDate(string $minimum_price_start_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_start_date column
  * @method EtablissementTypeHebergement findOneByMinimumPriceEndDate(string $minimum_price_end_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_end_date column
  *
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementTypeHebergement objects filtered by the etablissement_id column
  * @method array findByTypeHebergementId(int $type_hebergement_id) Return EtablissementTypeHebergement objects filtered by the type_hebergement_id column
  * @method array findByMinimumPrice(string $minimum_price) Return EtablissementTypeHebergement objects filtered by the minimum_price column
+ * @method array findByMinimumPriceDiscountLabel(string $minimum_price_discount_label) Return EtablissementTypeHebergement objects filtered by the minimum_price_discount_label column
  * @method array findByMinimumPriceStartDate(string $minimum_price_start_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_start_date column
  * @method array findByMinimumPriceEndDate(string $minimum_price_end_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_end_date column
  *
@@ -151,7 +155,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `TYPE_HEBERGEMENT_ID`, `MINIMUM_PRICE`, `MINIMUM_PRICE_START_DATE`, `MINIMUM_PRICE_END_DATE` FROM `etablissement_type_hebergement` WHERE `ETABLISSEMENT_ID` = :p0 AND `TYPE_HEBERGEMENT_ID` = :p1';
+        $sql = 'SELECT `ETABLISSEMENT_ID`, `TYPE_HEBERGEMENT_ID`, `MINIMUM_PRICE`, `MINIMUM_PRICE_DISCOUNT_LABEL`, `MINIMUM_PRICE_START_DATE`, `MINIMUM_PRICE_END_DATE` FROM `etablissement_type_hebergement` WHERE `ETABLISSEMENT_ID` = :p0 AND `TYPE_HEBERGEMENT_ID` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -337,6 +341,35 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
+    }
+
+    /**
+     * Filter the query on the minimum_price_discount_label column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMinimumPriceDiscountLabel('fooValue');   // WHERE minimum_price_discount_label = 'fooValue'
+     * $query->filterByMinimumPriceDiscountLabel('%fooValue%'); // WHERE minimum_price_discount_label LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $minimumPriceDiscountLabel The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByMinimumPriceDiscountLabel($minimumPriceDiscountLabel = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($minimumPriceDiscountLabel)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $minimumPriceDiscountLabel)) {
+                $minimumPriceDiscountLabel = str_replace('*', '%', $minimumPriceDiscountLabel);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, $minimumPriceDiscountLabel, $comparison);
     }
 
     /**

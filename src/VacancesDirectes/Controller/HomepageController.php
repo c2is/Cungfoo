@@ -31,8 +31,18 @@ class HomepageController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
+            $locale = $app['context']->get('language');
+
+            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->limit(3)
+                ->find()
+            ;
+
             return $app['twig']->render('homepage.twig', array(
-                'searchForm' => $searchEngine->getView(),
+                'searchForm'  => $searchEngine->getView(),
+                'locale'      => $locale,
+                'topCampings' => $topCampings,
             ));
         })
         ->bind('homepage');

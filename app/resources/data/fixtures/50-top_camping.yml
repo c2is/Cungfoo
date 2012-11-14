@@ -1,7 +1,7 @@
 \Cungfoo\Model\TopCamping:
     1:
         EtablissementId: 2
-        SortableRank: 1
+        SortableRank: 4
     2:
         EtablissementId: 106
         SortableRank: 2
@@ -9,8 +9,8 @@
         EtablissementId: 8
         SortableRank: 3
     4:
-        EtablissementId: 14
-        SortableRank: 4
+        EtablissementId: 112
+        SortableRank: 1
     5:
         EtablissementId: 28
         SortableRank: 5
