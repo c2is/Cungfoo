@@ -302,6 +302,7 @@
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
+        <column name="mea_home" type="boolean" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
@@ -643,6 +644,43 @@
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="day_start" type="enum" valueSet="lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche" required="true"/>
+        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="active" type="boolean"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/dernieres_minutes" />
+        </behavior>
+    </table>
+
+    <table name="dernieres_minutes_etablissement" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes_destination" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
 

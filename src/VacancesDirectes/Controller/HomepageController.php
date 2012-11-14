@@ -39,10 +39,15 @@ class HomepageController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $pays = \Cungfoo\Model\PaysQuery::create()
+                ->find()
+            ;
+
             return $app['twig']->render('homepage.twig', array(
                 'searchForm'  => $searchEngine->getView(),
                 'locale'      => $locale,
                 'topCampings' => $topCampings,
+                'pays'        => $pays
             ));
         })
         ->bind('homepage');

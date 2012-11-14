@@ -55,6 +55,18 @@ date_search.button.submit: Rechercher
 header.information: Informations & réservations
 header.telephone: 0825 133 400 (0,15€/min)
 
+footer.contact: Contact
+footer.charte_qualite: Charte qualité
+footer.conditions_generales_de_location: Conditons générales de location
+footer.faq: FAQ
+footer.guide_pratique: Guide pratique
+footer.plan_du_site: Plan du site
+footer.credits: Crédits
+footer.mentions_legales: Mentions légales
+footer.transactions_securisees: Transactions sécurisées
+footer.cb_visa: CB visa
+footer.masterCard: MasterCard
+
 fiche.camping: Camping
 fiche.situer_carte: Situer sur la carte
 fiche.le_camping: Le camping
@@ -97,5 +109,12 @@ fiche.fax: Fax :
 fiche.tel: Tél :
 
 home.topcamping: Top camping
+home.vacances_directes_cest: Vacances directes c'est
+home.4_pays: 4 pays
+home.26_regions: 26 régions
+home.touristiques: touristiques
+home.destination: Destination
+home.destination_france: Destination France
+home.plus_de_regions: Plus de régions
 
 general.a_partir_de: à partir de

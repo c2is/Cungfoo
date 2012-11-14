@@ -55,8 +55,10 @@ class DestinationTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'EtablissementDestinations');
+        $this->addRelation('DernieresMinutesDestination', 'Cungfoo\\Model\\DernieresMinutesDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'DernieresMinutesDestinations');
         $this->addRelation('DestinationI18n', 'Cungfoo\\Model\\DestinationI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DestinationI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
+        $this->addRelation('DernieresMinutes', 'Cungfoo\\Model\\DernieresMinutes', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'DernieresMinutess');
     } // buildRelations()
 
     /**
