@@ -12,17 +12,18 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\HttpFoundation\JsonResponse,
     Symfony\Component\HttpFoundation\RedirectResponse,
-    Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
-    Symfony\Component\Routing\Loader\YamlFileLoader;
+    Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Cungfoo\Lib\Crud\Router as CrudRouter;
 
+use VacancesDirectes\Controller;
 
-$app->mount('/', new \VacancesDirectes\Controller\HomepageController());
-$app->mount('/menu', new \VacancesDirectes\Controller\MenuController());
-$app->mount('/camping', new \VacancesDirectes\Controller\CampingController());
-$app->mount('/search_engine', new \VacancesDirectes\Controller\SearchEngineController());
-$app->mount('/catalogue', new \VacancesDirectes\Controller\CatalogueController());
+$app->mount('/',              new Controller\HomepageController());
+$app->mount('/menu',          new Controller\MenuController());
+$app->mount('/camping',       new Controller\CampingController());
+$app->mount('/search_engine', new Controller\SearchEngineController());
+$app->mount('/catalogue',     new Controller\CatalogueController());
+$app->mount('/dispo',         new Controller\DispoController());
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])
