@@ -46,6 +46,7 @@ class EtablissementTypeHebergementTableMap extends TableMap
         $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
         $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'ID', true, null, null);
         $this->addColumn('MINIMUM_PRICE', 'MinimumPrice', 'VARCHAR', false, 255, null);
+        $this->addColumn('MINIMUM_PRICE_DISCOUNT_LABEL', 'MinimumPriceDiscountLabel', 'VARCHAR', false, 255, null);
         $this->addColumn('MINIMUM_PRICE_START_DATE', 'MinimumPriceStartDate', 'DATE', false, null, null);
         $this->addColumn('MINIMUM_PRICE_END_DATE', 'MinimumPriceEndDate', 'DATE', false, null, null);
         // validators

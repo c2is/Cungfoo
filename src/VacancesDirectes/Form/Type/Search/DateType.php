@@ -26,7 +26,7 @@ class DateType extends AppAwareType
             'required' => false,
         ));
 
-        $builder->add('isVille', 'hidden', array(
+        $builder->add('isCamping', 'hidden', array(
             'required' => false,
         ));
 

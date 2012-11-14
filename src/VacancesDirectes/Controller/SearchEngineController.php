@@ -34,12 +34,11 @@ class SearchEngineController implements ControllerProviderInterface
             {
                 /** Manage search form date validation */
                 $searchDateForm->bind($request->get($searchDateForm->getName()));
-
                 if ($searchDateForm->isValid())
                 {
                     return $app->redirect($app['url_generator']->generate('catalogue', array(
                         'large' => $searchDateData->destination,
-                        'small' => $searchDateData->isVille ? $searchDateData->ville : $searchDateData->camping
+                        'small' => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville
                     )));
                 }
             }

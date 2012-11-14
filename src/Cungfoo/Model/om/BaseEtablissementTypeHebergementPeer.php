@@ -38,13 +38,13 @@ abstract class BaseEtablissementTypeHebergementPeer
     const TM_CLASS = 'EtablissementTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the ETABLISSEMENT_ID field */
     const ETABLISSEMENT_ID = 'etablissement_type_hebergement.ETABLISSEMENT_ID';
@@ -54,6 +54,9 @@ abstract class BaseEtablissementTypeHebergementPeer
 
     /** the column name for the MINIMUM_PRICE field */
     const MINIMUM_PRICE = 'etablissement_type_hebergement.MINIMUM_PRICE';
+
+    /** the column name for the MINIMUM_PRICE_DISCOUNT_LABEL field */
+    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.MINIMUM_PRICE_DISCOUNT_LABEL';
 
     /** the column name for the MINIMUM_PRICE_START_DATE field */
     const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.MINIMUM_PRICE_START_DATE';
@@ -80,12 +83,12 @@ abstract class BaseEtablissementTypeHebergementPeer
      * e.g. EtablissementTypeHebergementPeer::$fieldNames[EtablissementTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('EtablissementId', 'TypeHebergementId', 'MinimumPrice', 'MinimumPriceStartDate', 'MinimumPriceEndDate', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId', 'typeHebergementId', 'minimumPrice', 'minimumPriceStartDate', 'minimumPriceEndDate', ),
-        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, EtablissementTypeHebergementPeer::MINIMUM_PRICE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID', 'TYPE_HEBERGEMENT_ID', 'MINIMUM_PRICE', 'MINIMUM_PRICE_START_DATE', 'MINIMUM_PRICE_END_DATE', ),
-        BasePeer::TYPE_FIELDNAME => array ('etablissement_id', 'type_hebergement_id', 'minimum_price', 'minimum_price_start_date', 'minimum_price_end_date', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('EtablissementId', 'TypeHebergementId', 'MinimumPrice', 'MinimumPriceDiscountLabel', 'MinimumPriceStartDate', 'MinimumPriceEndDate', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId', 'typeHebergementId', 'minimumPrice', 'minimumPriceDiscountLabel', 'minimumPriceStartDate', 'minimumPriceEndDate', ),
+        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, EtablissementTypeHebergementPeer::MINIMUM_PRICE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID', 'TYPE_HEBERGEMENT_ID', 'MINIMUM_PRICE', 'MINIMUM_PRICE_DISCOUNT_LABEL', 'MINIMUM_PRICE_START_DATE', 'MINIMUM_PRICE_END_DATE', ),
+        BasePeer::TYPE_FIELDNAME => array ('etablissement_id', 'type_hebergement_id', 'minimum_price', 'minimum_price_discount_label', 'minimum_price_start_date', 'minimum_price_end_date', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -95,12 +98,12 @@ abstract class BaseEtablissementTypeHebergementPeer
      * e.g. EtablissementTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('EtablissementId' => 0, 'TypeHebergementId' => 1, 'MinimumPrice' => 2, 'MinimumPriceStartDate' => 3, 'MinimumPriceEndDate' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId' => 0, 'typeHebergementId' => 1, 'minimumPrice' => 2, 'minimumPriceStartDate' => 3, 'minimumPriceEndDate' => 4, ),
-        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID => 0, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, EtablissementTypeHebergementPeer::MINIMUM_PRICE => 2, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE => 3, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'MINIMUM_PRICE' => 2, 'MINIMUM_PRICE_START_DATE' => 3, 'MINIMUM_PRICE_END_DATE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('etablissement_id' => 0, 'type_hebergement_id' => 1, 'minimum_price' => 2, 'minimum_price_start_date' => 3, 'minimum_price_end_date' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('EtablissementId' => 0, 'TypeHebergementId' => 1, 'MinimumPrice' => 2, 'MinimumPriceDiscountLabel' => 3, 'MinimumPriceStartDate' => 4, 'MinimumPriceEndDate' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId' => 0, 'typeHebergementId' => 1, 'minimumPrice' => 2, 'minimumPriceDiscountLabel' => 3, 'minimumPriceStartDate' => 4, 'minimumPriceEndDate' => 5, ),
+        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID => 0, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, EtablissementTypeHebergementPeer::MINIMUM_PRICE => 2, EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL => 3, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE => 4, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'MINIMUM_PRICE' => 2, 'MINIMUM_PRICE_DISCOUNT_LABEL' => 3, 'MINIMUM_PRICE_START_DATE' => 4, 'MINIMUM_PRICE_END_DATE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('etablissement_id' => 0, 'type_hebergement_id' => 1, 'minimum_price' => 2, 'minimum_price_discount_label' => 3, 'minimum_price_start_date' => 4, 'minimum_price_end_date' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -177,12 +180,14 @@ abstract class BaseEtablissementTypeHebergementPeer
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE);
+            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE);
         } else {
             $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
             $criteria->addSelectColumn($alias . '.TYPE_HEBERGEMENT_ID');
             $criteria->addSelectColumn($alias . '.MINIMUM_PRICE');
+            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_DISCOUNT_LABEL');
             $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_START_DATE');
             $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_END_DATE');
         }
