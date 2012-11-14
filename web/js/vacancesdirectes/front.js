@@ -34,6 +34,9 @@ $(function() {
 // Test html5 form capacties andif do polyfills
     if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
+//
+    $('.cover').css({backgroundSize: "cover"});
+
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }
 
@@ -1221,7 +1224,12 @@ function initializeAllGmap() {
 /*** FONCTIONS RESULTATS DE RECHERCHE ***/
 function initCritResult(){
 
-//variables globales
+    $('.itemResult .linePrice :radio').change( function(){
+        var oCheck = $(this);
+        oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
+    });
+
+
     if ( $('.formSearchRefined').length ) {
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
@@ -1266,7 +1274,7 @@ function launchFilters() {
 function findMinMaxRange() {
     var allPrices = [];
     items.each(function() {
-        var itemPrice = parseInt($(this).find('.itemResultBottom :checked + label .price').text());
+        var itemPrice = parseInt($(this).find('.itemResultBottom label .price').text());
         consoleLog(itemPrice);
         allPrices.push(itemPrice);
         $(this).attr('data-ranged', true);
@@ -1314,7 +1322,7 @@ function rangeSliderPrice() {
                 valueMax = values[1];
 
                 items.each(function() {
-                    var originPrice = parseInt($(this).find('.itemResultBottom :checked + label .price').text());
+                    var originPrice = parseInt($(this).find('.itemResultBottom label .price').text());
 
                     if ( parseInt(originPrice) >= parseInt(valueMin) && parseInt(originPrice) <= parseInt(valueMax) ) {
                         $(this).attr('data-ranged', true);
