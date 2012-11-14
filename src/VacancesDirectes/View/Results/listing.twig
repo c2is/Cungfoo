@@ -3,3 +3,7 @@
 {% block leftColumn %}
     {% include 'Results/_listing.twig' %}
 {% endblock %}
+
+{% block rightColumn %}
+    {{ render(path('search_engine')) }}
+{% endblock %}

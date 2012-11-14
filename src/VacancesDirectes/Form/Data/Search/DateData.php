@@ -12,7 +12,7 @@ class DateData
     public $destination;
     public $ville;
     public $camping;
-    public $isVille   = 1;
+    public $isCamping = 0;
     public $nbAdultes = 0;
     public $nbEnfants = 0;
 
