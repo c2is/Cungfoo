@@ -5,7 +5,7 @@ header, section, footer {position:relative;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* header */
-#header{width:902px;margin:0 auto;font-family:@ptnarrow;
+#header{width:928px;margin:0 auto;font-family:@ptnarrow;
   #logo{display:block;float:left;margin-bottom:25px;}
   #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin-top:80px;}
   #headerRight{float:right;}
@@ -137,8 +137,8 @@ header, section, footer {position:relative;}
 /* search */
 form li{margin-bottom:10px;}
 .stylish-select .newListSelected .selectedTxt:after,
-.stylish-select .newListSelected{height:27px;line-height:27px;}
-#searchBloc{color:@colorBlanc;
+.stylish-select .newListSelected{height:27px;line-height:27px;margin-right:0;background-color:@colorBlanc;}
+#searchBloc{color:@colorBlanc;position:absolute;z-index:1;
   #switchForm{margin:0 0 20px 0;
     li{display:inline;
       a{width:82px;height:34px;background-color:@colorBlanc;float:left;margin:6px 1px 0 0;position:relative;
@@ -157,6 +157,7 @@ form li{margin-bottom:10px;}
           &#tabSearchBlocBudget span{background-position:-60px -320px;}
           span{margin-top:0;}
         }
+        &.active{cursor:default;}
 
       }
       &:first-child a{._border-radius(10px 0 0 0);}
@@ -171,10 +172,13 @@ form li{margin-bottom:10px;}
     }
   }
   #searchBlocDate{
-    a.more{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
+    .toggleContainer{padding-top:10px;display:none;
+      label{font:13px/15px Arial;text-transform:none;}
+    }
     p{margin-bottom:15px;}
     div.datepicker{right:0;}
-    #datepickerCalendar {width: 362px;top:27px;right:10px;left:auto;}
+    #datepickerCalendar {width: 362px;top:27px;right:0;left:auto;}
     #datepickerCalendar .datepicker {
       width: 362px !important;
     }
@@ -195,24 +199,35 @@ form li{margin-bottom:10px;}
       span {height: 27px;top:2px;}
       input {height: 27px;line-height: 27px;width:248px;}
     }
-    label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:15px;}
+    label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:65px;}
     .spinner{
       input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
       .spin-bt-down,
-      .spin-bt-up{width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 33px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;}
+      .spin-bt-up {width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 26px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;border:0 none;}
+      .spin-bt-down:active,
+      .spin-bt-up:active{padding-right:7px;}
+//      .spin-bt-down:hover,
+//      .spin-bt-up:hover{background-color:@colorBlanc;color:@colorBgGrisF;}
       .spin-bt-down{margin-right:2px;}
       .spin-bt-up{margin-left:2px;}
     }
-    #SearchDate_selectContainer1 .newListSelected{width:248px;
-      .selectedTxt{width:215px;}
-      .SSContainerDivWrapper{min-width:248px;}
+    .selectContainer{height:27px;}
+    #SearchDate_selectContainer1{
+      select{display:none;}
+      .newListSelected{width:248px;
+        .selectedTxt{width:215px;}
+        .SSContainerDivWrapper{min-width:248px;}
+      }
     }
     #SearchDate_selectContainer2{
+      select{display:none;}
       .newListSelected{width:188px;
         .selectedTxt{width:154px;}
-        .SSContainerDivWrapper{min-width:187px;}
+        .SSContainerDivWrapper{min-width:188px;}
       }
-      span{height:27px;line-height:27px;margin-right:10px;}
+      #SearchDate_switch{float:right;
+        span{height:27px;line-height:27px;margin-right:10px;}
+      }
     }
     .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;float:left;cursor:pointer;}
     button[type=submit]{margin:0 auto;font-size:21px;}
@@ -272,7 +287,7 @@ h6, .h6-like{color:@colorFushia;}
   &.greyC{background-color:@colorBgGrisC;}
   &.greyF{background-color:@colorBgGrisF;}
   &.fushia{background-color:@colorFushia;}
-  .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 30px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
+  .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 30px;display:block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
   }

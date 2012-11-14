@@ -293,7 +293,4 @@
             <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="Vacances directes | Le mobil-home et vous" /></a>
         <?php if($page == 'home'){ echo '<h1 id="catchline">+ de 130 campings en France, Espagne, Italie & Portugal</h1>'; }?>
     </div>
-    <div id="slider" class="fixed-width clear">
-
-    </div>
 </header>

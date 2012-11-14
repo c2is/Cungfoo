@@ -7,12 +7,14 @@
 
 
 /* STRUCTURE */
-  #wrap .column.left{padding-top:65px}
+//  #wrap .column.left{padding-top:65px}
 
 /* HOME */
 
-/* slider */
-  #slider{height:170px;width:902px;margin:0 auto;font-family:@ptnarrow;}
+  /* slider */
+  #slider{position:relative;font-family:@ptnarrow;height:170px;
+    #sliderBackground{position:absolute;bottom:0;height:70px;width:976px;background-color:@colorBlanc;}
+  }
 
   .locationForwards{position:relative;margin-bottom:24px;
     .stamp{margin-bottom:25px;}
@@ -21,7 +23,9 @@
     }
     &#topLocations{
       h2:before{background-position:0 0;}
-      .element{padding:20px 0;}
+      .element{padding:20px 0;
+        .details{width:151px;}
+      }
       .stamp{margin-bottom:5px;}
     }
     &#lastLocations{
@@ -34,9 +38,22 @@
         }
       }
     }
+    &#specialOffersBloc{
+      .stamp{margin-bottom:10px;}
+      h2{margin-left:0;position:relative;
+        &:before{content:"";background:none;}
+      }
+      .element{margin-bottom:10px;padding:0;border-bottom: 7px solid @colorBlanc;
+        &.last{border:0 none;}
+        .details{width:132px;
+          .title{font:bold 15px/17px Arial;text-transform:uppercase;}
+        }
+      }
+    }
   }
-  .element{position:relative;margin:0;
-    .fb-like{width:109px;height:20px;margin:0 15px 0 5px;}
+  .element{position:relative;margin:0;padding:20px 0;
+    .fb-like{width:109px;height:20px;margin:10px 15px 0 5px;}
+    .view{margin:0 15px 10px 5px;}
     .details{font-size:13px;color:@colorGris1;position:relative;
       .title, .region, .condition, .stain{display:block;}
       .title{font-weight:bold;}
@@ -47,9 +64,9 @@
       .counter{width:48px;height:48px;background:url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -391px transparent;font-family:@ptnarrow;color:@colorOrange;font-size:18px;font-weight:bold;text-transform:uppercase;position:absolute;top:0;right:-8px;text-align:center;._verticalCenter(48px);}
     }
   }
-  #searchBloc{margin-top:-191px;
+  #searchBloc{margin-top:-191px;}
+  #specialOffersBloc{margin-top:180px;z-index:0;}
 
-  }
   #destinationsBloc{width:400px;height:253px;float:left;margin:0 24px 12px 0;background:url("../../images/vacancesdirectes/common/pict/destinations-bloc.jpg") no-repeat 0 0 transparent;padding-bottom:5px;
     h2{font:bold 24px/24px @ptnarrow;text-transform:uppercase;margin-bottom:45px;
       span{color:@colorBleu;}

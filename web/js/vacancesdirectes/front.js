@@ -723,6 +723,7 @@ $(function() {
         countItem();
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
         switchSelect();
+        toggleSearchCriteria();
     }
 
     if ($('#results').length ){
@@ -739,18 +740,24 @@ head.ready(function(){
 
 /*--  FUNCTIONS  --*/
 function countItem() {
-    console.log("################################## countItem()  ##################################");
+    //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
         var $button = $(this);
         var $input = $button.siblings(".spin-tb");
         var oldValue = $input.val();
         if ($button.hasClass('spin-bt-up')) {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue >= 2) {
+            if (oldValue < 10) {
+                var newVal = parseFloat(oldValue) + 1;
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue > 1) {
                 var newVal = parseFloat(oldValue) - 1;
             }
-            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue >= 1) {
+            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue > 0) {
                 var newVal = parseFloat(oldValue) - 1;
             }
             else {
@@ -761,14 +768,15 @@ function countItem() {
         return false;
     });
 }
+
 var selectNum = 0;
 function switchSelect(){
-    console.log("################################## switchSelect()  ##################################");
+    //console.log("################################## switchSelect()  ##################################");
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
         var $button = $(this);
-        var $selects = $button.siblings(".newListSelected");
-        console.log($selects);
+        var $selects = $button.parent().siblings(".newListSelected");
+        //console.log($selects);
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.attr('title',$buttonTitle);
         if(selectNum) {
@@ -779,10 +787,25 @@ function switchSelect(){
             $selects.eq(1).hide();
             $selects.eq(0).show();
         }
+        $('#SearchDate_isCamping').val(selectNum);
         return false;
     });
     $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
 }
+
+function toggleSearchCriteria(){
+    console.log("################################## toggleSearchCriteria()  ##################################");
+    $('.toggleButton').live('click', function(e){
+        console.log("----------------- toggleSearchCriteria() CLICK -----------------");
+        e.preventDefault();
+        var $button = $(this);
+        var $container = $button.next();
+        console.log($button);
+        console.log($container);
+        $container.stop().slideToggle(1000);
+    });
+}
+
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }

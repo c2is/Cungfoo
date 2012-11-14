@@ -97,13 +97,16 @@
   .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
   ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;}
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;cursor:pointer;}
   .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;._verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
   .selectedTxt {width:@selectWidth - @selectHeight - 10;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;}
+  ul.newList li:first-child{display:none;}
+  ul.newList.optGroup li a {padding:0 8px 0 18px;}
+  ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
   .hiLite {background:#ED145B!important;color:#fff!important;}
   .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
   .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
@@ -173,7 +176,7 @@
   position: absolute;
   top: 23px;
   width: 886px;
-  z-index:1;
+  z-index:10;
   margin:5px 0;
 }
 #datepickerCalendar .datepickerGoPrev a,

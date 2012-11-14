@@ -36,7 +36,10 @@ class SearchEngineController implements ControllerProviderInterface
                 $searchDateForm->bind($request->get($searchDateForm->getName()));
                 if ($searchDateForm->isValid())
                 {
-
+                    return $app->redirect($app['url_generator']->generate('catalogue', array(
+                        'large' => $searchDateData->destination,
+                        'small' => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville
+                    )));
                 }
             }
 
@@ -46,14 +49,31 @@ class SearchEngineController implements ControllerProviderInterface
         })
         ->bind('search_engine');
 
-        $controllers->match('/destinations/{id}/villes', function ($id) use ($app)
+        $controllers->match('/destinations/getVilles', function (Request $request) use ($app)
         {
+            $code = $request->get('code');
+
+            $region = Model\RegionQuery::create()
+                ->filterByCode($code)
+                ->findOne()
+            ;
 
             $villes = Model\VilleQuery::create()
                 ->joinWithI18n($app['context']->get('language'))
-                ->select(array('id', 'name'))
                 ->withColumn('VilleI18n.name', 'name')
-                ->filterByRegionId($id)
+                ->select(array('code', 'name'))
+                ->_if($code)
+                    ->useRegionQuery()
+                        ->_if($region)
+                            ->filterByCode($code)
+                        ->_else()
+                            ->usePaysQuery()
+                                ->filterByCode($code)
+                            ->endUse()
+                        ->_endif()
+                    ->endUse()
+                ->_endif()
+                ->orderBy('name')
                 ->find()
             ;
 
@@ -62,16 +82,33 @@ class SearchEngineController implements ControllerProviderInterface
 
             return $response;
         })
-        ->bind('search_engine_date_villes_by_destination');
+        ->bind('search_engine_get_villes_by_destination');
 
-        $controllers->match('/destinations/{id}/campings', function ($id) use ($app)
+        $controllers->match('/destinations/getCampings', function (Request $request) use ($app)
         {
+            $code = $request->get('code');
+
+            $region = Model\RegionQuery::create()
+                ->filterByCode($code)
+                ->findOne()
+            ;
 
             $campings = Model\EtablissementQuery::create()
-                ->select(array('id', 'name'))
+                ->select(array('code', 'name'))
+                ->_if($code)
                 ->useVilleQuery()
-                    ->filterByRegionId($id)
+                    ->useRegionQuery()
+                    ->_if($region)
+                        ->filterByCode($code)
+                    ->_else()
+                        ->usePaysQuery()
+                            ->filterByCode($code)
+                        ->endUse()
+                    ->_endif()
+                    ->endUse()
                 ->endUse()
+                ->_endif()
+                ->orderByName()
                 ->find()
             ;
 
@@ -80,7 +117,7 @@ class SearchEngineController implements ControllerProviderInterface
 
             return $response;
         })
-        ->bind('search_engine_date_campings_by_destination');
+        ->bind('search_engine_get_campings_by_destination');
 
         return $controllers;
     }
