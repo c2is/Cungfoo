@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-
-use VacancesDirectes\Form\Type\Search\DateType,
-    VacancesDirectes\Form\Data\Search\DateData;
+use VacancesDirectes\Lib\SearchEngine;
 
 class HomepageController implements ControllerProviderInterface
 {
@@ -26,9 +24,16 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-            // some code
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
 
-            return $app['twig']->render('homepage.twig');
+            return $app['twig']->render('homepage.twig', array(
+                'searchForm' => $searchEngine->getView(),
+            ));
         })
         ->bind('homepage');
 
