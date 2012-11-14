@@ -202,13 +202,18 @@ function addLinkBlock(){
             function addItem(item, container) {
                 var option = $(item).text(),
                     key = $(item).val(),
+                    optionClass = $(item).attr('class'),
                     isDisabled = $(item).is(':disabled');
+
+                //add one class to item
+                if (optionClass == undefined) optionClass = ''
+                else  optionClass = ' class="' + optionClass + '"'
 
                 if (!isDisabled && !$(item).parents().is(':disabled')) {
                     //add first letter of each word to array
                     keys.push(option.charAt(0).toLowerCase());
                 }
-                container.append($('<li><a'+(isDisabled ? ' class="newListItemDisabled"' : '')+' href="JavaScript:void(0);">'+option+'</a></li>').data({
+                container.append($('<li' + optionClass + '><a'+(isDisabled ? ' class="newListItemDisabled"' : '')+' href="JavaScript:void(0);">'+option+'</a></li>').data({
                     'key' : key,
                     'selected' : $(item).is(':selected')
                 }));
@@ -216,6 +221,14 @@ function addLinkBlock(){
 
             $input.children().each(function(){
                 if ($(this).is('option')){
+                    var optionClass;
+                    if ($(this).attr('class') != undefined){
+                        if (!$newUl.hasClass('optGroup')){
+                            $newUl.addClass('optGroup');
+                        }
+                        $(this).parents('ul.newList').addClass('optGroup');
+                        optionClass = $(this).attr('class');
+                    }
                     addItem(this, $newUl);
                 } else {
                     var optionTitle = $(this).attr('label'),
@@ -877,9 +890,6 @@ function addLinkBlock(){
  daysShort = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
  daysMin = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
  monthsShort = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jui", "Aoû", "Sepe", "Oct", "Nov", "Déc"],
- console.log(daysShort);
- console.log(daysMin);
- console.log(monthsShort);
  */
 
 (function ($) {
@@ -2115,18 +2125,16 @@ TextMorph.prototype.setOptions = function(options){
                 if (/\W/.test(firstChar)) firstChar = '-'; // not A-Z, a-z or 0-9, so considered "other"
                 if (!isNaN(firstChar)) firstChar = '_'; // use '_' if the first char is a number
                 $el.addClass('ln-' + firstChar);
-                console.log(prevChar);
-                console.log(firstChar);
-                console.log($el);
-                console.log("isPrefix: " + isPrefix);
+                //console.log(prevChar);
+                //console.log(firstChar);
+                //console.log($el);
+                //console.log("isPrefix: " + isPrefix);
                 if (counts[firstChar] == undefined) counts[firstChar] = 0;
                 if (counts[firstChar] == 0 && (firstChar == 'l' && isPrefix)) {
 //                    $el.addClass('ln-first').prepend('<span class="ln-letter">' + firstChar.toUpperCase() + '</span>');
-                    console.log(">>>>>>>>>>>>>>>>>>>>>>> IF");
                 }
                 else if (counts[firstChar] == 0) {
                     $el.addClass('ln-first').prepend('<span class="ln-letter">' + firstChar.toUpperCase() + '</span>');
-                    console.log("ELSE IF");
                 }
                 if (prevChar != firstChar && prevChar != undefined  && counts[firstChar] == 0) $el.before('<li class="ln-separator" />');
                 prevChar = firstChar;

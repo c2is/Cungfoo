@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseEtablissementTypeHebergement;
  */
 class EtablissementTypeHebergement extends BaseEtablissementTypeHebergement
 {
+    public function __toString()
+    {
+        return $this->getMinimumPriceDiscountLabel();
+    }
 }

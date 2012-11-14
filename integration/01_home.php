@@ -4,6 +4,11 @@
     include('includes/inc_header.php');
     include('includes/top.php'); ?>
 
+    <div id="slider" class="fixed-width clear">
+        <div id="sliderPhoto"></div>
+        <div id="sliderBackground"></div>
+        <div id="sliderStain"></div>
+    </div>
     <div id="wrap" class="fixed-width clear">
         <div class="column left">
             <div class="ratio-33 left">
@@ -111,6 +116,7 @@
         <!-- colonne droite -->
         <aside class="column right">
             <?php include('blocs/search.php') ?>
+            <?php include('blocs/offreSpeciales.php') ?>
         </aside>
         <!-- // colonne droite -->
 

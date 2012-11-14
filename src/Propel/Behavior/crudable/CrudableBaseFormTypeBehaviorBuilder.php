@@ -157,6 +157,12 @@ class {$this->getClassname()} extends AppAwareType
     {
         if (!in_array($column->getName(), array('created_at', 'updated_at')))
         {
+            if (PropelTypes::ENUM === $column->getType())
+            {
+                $choices = array_combine($column->getValueSet(), $column->getValueSet());
+                $options = array_merge($options, array('choices' => $choices));
+            }
+
             return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array('constraints' => $this->addConstraints($column)), $options));
         }
     }
@@ -219,6 +225,10 @@ class {$this->getClassname()} extends AppAwareType
         elseif (PropelTypes::LONGVARBINARY === $column->getType())
         {
             return 'cungfoo_file';
+        }
+        elseif (PropelTypes::ENUM === $column->getType())
+        {
+            return 'choice';
         }
         else
         {

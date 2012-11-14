@@ -13,6 +13,9 @@ menu:
             tag_multimedia:
               title:  menu.tag_multimedia
               route:  tag_crud_list
+            top_camping:
+              title:  menu.top_camping
+              route:  top_camping_crud_list
         theme:
             title: menu.themes
             items:

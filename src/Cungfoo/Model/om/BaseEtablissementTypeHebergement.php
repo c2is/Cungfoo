@@ -5,10 +5,12 @@ namespace Cungfoo\Model\om;
 use \BaseObject;
 use \BasePeer;
 use \Criteria;
+use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
+use \PropelDateTime;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
@@ -60,6 +62,30 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     protected $type_hebergement_id;
 
     /**
+     * The value for the minimum_price field.
+     * @var        string
+     */
+    protected $minimum_price;
+
+    /**
+     * The value for the minimum_price_discount_label field.
+     * @var        string
+     */
+    protected $minimum_price_discount_label;
+
+    /**
+     * The value for the minimum_price_start_date field.
+     * @var        string
+     */
+    protected $minimum_price_start_date;
+
+    /**
+     * The value for the minimum_price_end_date field.
+     * @var        string
+     */
+    protected $minimum_price_end_date;
+
+    /**
      * @var        Etablissement
      */
     protected $aEtablissement;
@@ -101,6 +127,100 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function getTypeHebergementId()
     {
         return $this->type_hebergement_id;
+    }
+
+    /**
+     * Get the [minimum_price] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPrice()
+    {
+        return $this->minimum_price;
+    }
+
+    /**
+     * Get the [minimum_price_discount_label] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPriceDiscountLabel()
+    {
+        return $this->minimum_price_discount_label;
+    }
+
+    /**
+     * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getMinimumPriceStartDate($format = null)
+    {
+        if ($this->minimum_price_start_date === null) {
+            return null;
+        }
+
+        if ($this->minimum_price_start_date === '0000-00-00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        } else {
+            try {
+                $dt = new DateTime($this->minimum_price_start_date);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
+            }
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        } elseif (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
+        }
+    }
+
+    /**
+     * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getMinimumPriceEndDate($format = null)
+    {
+        if ($this->minimum_price_end_date === null) {
+            return null;
+        }
+
+        if ($this->minimum_price_end_date === '0000-00-00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        } else {
+            try {
+                $dt = new DateTime($this->minimum_price_end_date);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
+            }
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        } elseif (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
+        }
     }
 
     /**
@@ -154,6 +274,94 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     } // setTypeHebergementId()
 
     /**
+     * Set the value of [minimum_price] column.
+     *
+     * @param string $v new value
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setMinimumPrice($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price !== $v) {
+            $this->minimum_price = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE;
+        }
+
+
+        return $this;
+    } // setMinimumPrice()
+
+    /**
+     * Set the value of [minimum_price_discount_label] column.
+     *
+     * @param string $v new value
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setMinimumPriceDiscountLabel($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price_discount_label !== $v) {
+            $this->minimum_price_discount_label = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL;
+        }
+
+
+        return $this;
+    } // setMinimumPriceDiscountLabel()
+
+    /**
+     * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setMinimumPriceStartDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->minimum_price_start_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->minimum_price_start_date !== null && $tmpDt = new DateTime($this->minimum_price_start_date)) ? $tmpDt->format('Y-m-d') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->minimum_price_start_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setMinimumPriceStartDate()
+
+    /**
+     * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setMinimumPriceEndDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->minimum_price_end_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->minimum_price_end_date !== null && $tmpDt = new DateTime($this->minimum_price_end_date)) ? $tmpDt->format('Y-m-d') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->minimum_price_end_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setMinimumPriceEndDate()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -187,6 +395,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
             $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
+            $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->minimum_price_discount_label = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->minimum_price_start_date = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->minimum_price_end_date = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -195,7 +407,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 2; // 2 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EtablissementTypeHebergement object", $e);
@@ -436,6 +648,18 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`TYPE_HEBERGEMENT_ID`';
         }
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) {
+            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) {
+            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_DISCOUNT_LABEL`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_START_DATE`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_END_DATE`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `etablissement_type_hebergement` (%s) VALUES (%s)',
@@ -452,6 +676,18 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                         break;
                     case '`TYPE_HEBERGEMENT_ID`':
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
+                        break;
+                    case '`MINIMUM_PRICE`':
+                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
+                        break;
+                    case '`MINIMUM_PRICE_DISCOUNT_LABEL`':
+                        $stmt->bindValue($identifier, $this->minimum_price_discount_label, PDO::PARAM_STR);
+                        break;
+                    case '`MINIMUM_PRICE_START_DATE`':
+                        $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
+                        break;
+                    case '`MINIMUM_PRICE_END_DATE`':
+                        $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -604,6 +840,18 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             case 1:
                 return $this->getTypeHebergementId();
                 break;
+            case 2:
+                return $this->getMinimumPrice();
+                break;
+            case 3:
+                return $this->getMinimumPriceDiscountLabel();
+                break;
+            case 4:
+                return $this->getMinimumPriceStartDate();
+                break;
+            case 5:
+                return $this->getMinimumPriceEndDate();
+                break;
             default:
                 return null;
                 break;
@@ -635,6 +883,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         $result = array(
             $keys[0] => $this->getEtablissementId(),
             $keys[1] => $this->getTypeHebergementId(),
+            $keys[2] => $this->getMinimumPrice(),
+            $keys[3] => $this->getMinimumPriceDiscountLabel(),
+            $keys[4] => $this->getMinimumPriceStartDate(),
+            $keys[5] => $this->getMinimumPriceEndDate(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -683,6 +935,18 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             case 1:
                 $this->setTypeHebergementId($value);
                 break;
+            case 2:
+                $this->setMinimumPrice($value);
+                break;
+            case 3:
+                $this->setMinimumPriceDiscountLabel($value);
+                break;
+            case 4:
+                $this->setMinimumPriceStartDate($value);
+                break;
+            case 5:
+                $this->setMinimumPriceEndDate($value);
+                break;
         } // switch()
     }
 
@@ -709,6 +973,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
         if (array_key_exists($keys[0], $arr)) $this->setEtablissementId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setTypeHebergementId($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setMinimumPriceDiscountLabel($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setMinimumPriceStartDate($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setMinimumPriceEndDate($arr[$keys[5]]);
     }
 
     /**
@@ -722,6 +990,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $this->etablissement_id);
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $this->minimum_price);
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, $this->minimum_price_discount_label);
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $this->minimum_price_start_date);
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $this->minimum_price_end_date);
 
         return $criteria;
     }
@@ -794,6 +1066,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
         $copyObj->setTypeHebergementId($this->getTypeHebergementId());
+        $copyObj->setMinimumPrice($this->getMinimumPrice());
+        $copyObj->setMinimumPriceDiscountLabel($this->getMinimumPriceDiscountLabel());
+        $copyObj->setMinimumPriceStartDate($this->getMinimumPriceStartDate());
+        $copyObj->setMinimumPriceEndDate($this->getMinimumPriceEndDate());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -960,6 +1236,10 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         $this->etablissement_id = null;
         $this->type_hebergement_id = null;
+        $this->minimum_price = null;
+        $this->minimum_price_discount_label = null;
+        $this->minimum_price_start_date = null;
+        $this->minimum_price_end_date = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

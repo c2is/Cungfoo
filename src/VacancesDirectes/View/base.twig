@@ -18,7 +18,7 @@
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
-<body>
+<body class="home">
     <header class="clear">
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
@@ -46,14 +46,23 @@
             {% block rightColumn %}
             {% endblock %}
         </aside>
-    </div>
+            {% block columnClearboth %}
+            {% endblock %}
     {% endblock %}
 
     <footer class="clear">
-        <div class="footer-link" class="full-width">
-            <span class="card transac">Transactions sécurisées</span>
-            <span class="card visa">CB Visa</span>
-            <span class="card master">MasterCard</span>
+        <div class="footer-links" class="full-width">
+            <a href="#_">{{ "footer.contact" | trans }}</a> -
+            <a href="#_">{{ "footer.charte_qualite" | trans }}</a> -
+            <a href="#_">{{ "footer.conditions_generales_de_location" | trans }}</a> -
+            <a href="#_">{{ "footer.faq" | trans }}</a> -
+            <a href="#_">{{ "footer.guide_pratique" | trans }}</a> -
+            <a href="#_">{{ "footer.plan_du_site" | trans }}</a> -
+            <a href="#_">{{ "footer.credits" | trans }}</a> -
+            <a href="#_">{{ "footer.mentions_legales" | trans }}</a>
+            <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>
+            <span class="card visa">{{ "footer.cb_visa" | trans }}</span>
+            <span class="card master">{{ "footer.masterCard" | trans }}</span>
         </div>
     </footer>
 
@@ -65,7 +74,8 @@
             {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
             {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js"},
-            {frontJS: templatePath + "js/vacancesdirectes/front.js"}
+            {frontJS: templatePath + "js/vacancesdirectes/front.js"},
+            {search: templatePath + "js/vacancesdirectes/searchSelectChange.js"}
             {% block headjs %}{% endblock %}
         );
     </script>

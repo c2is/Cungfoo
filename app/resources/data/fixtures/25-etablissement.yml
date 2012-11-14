@@ -18,12 +18,12 @@
         CategorieId: null
         GeoCoordinateX: '46.80806056'
         GeoCoordinateY: '-2.104654312'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '543'
         PlanPath: null
+        Vignette: null
         Published: true
     2:
         Code: 100
@@ -44,12 +44,12 @@
         CategorieId: null
         GeoCoordinateX: '43.46392303'
         GeoCoordinateY: '6.725360155'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '189'
         PlanPath: null
+        Vignette: null
         Published: true
     3:
         Code: 101
@@ -70,12 +70,12 @@
         CategorieId: null
         GeoCoordinateX: '44.412402'
         GeoCoordinateY: '4.349979'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '299'
         PlanPath: null
+        Vignette: null
         Published: true
     4:
         Code: 102
@@ -96,12 +96,12 @@
         CategorieId: null
         GeoCoordinateX: '41.03292'
         GeoCoordinateY: '0.96921'
-        MinimumPrice: '360.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1177'
         PlanPath: null
+        Vignette: null
         Published: true
     5:
         Code: 103
@@ -122,12 +122,12 @@
         CategorieId: null
         GeoCoordinateX: '40.22119452'
         GeoCoordinateY: '0.268542767'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '340'
         PlanPath: null
+        Vignette: null
         Published: true
     6:
         Code: 104
@@ -148,12 +148,12 @@
         CategorieId: null
         GeoCoordinateX: '47.88203498'
         GeoCoordinateY: '-4.103393555'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '340'
         PlanPath: null
+        Vignette: null
         Published: true
     7:
         Code: 106
@@ -174,19 +174,19 @@
         CategorieId: 2
         GeoCoordinateX: '45.56285457'
         GeoCoordinateY: '2.938236594'
-        MinimumPrice: '264.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '430'
         PlanPath: null
+        Vignette: null
         Published: true
     8:
         Code: 108
-        Name: 'Le Roussillonnais '
+        Name: 'Le Roussillonnais'
         Title: null
         Address1: 'Boulevard de la Mer'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -196,16 +196,16 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-05-25 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 4
         CategorieId: 3
         GeoCoordinateX: '42.56766828'
         GeoCoordinateY: '3.044221401'
-        MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '706'
         PlanPath: null
+        Vignette: uploads/etablissements/50a27a4b65b8d.png
         Published: true
     9:
         Code: 109
@@ -226,12 +226,12 @@
         CategorieId: null
         GeoCoordinateX: '45.72995496'
         GeoCoordinateY: '-1.175955534'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '150'
         PlanPath: null
+        Vignette: null
         Published: true
     10:
         Code: 11
@@ -252,12 +252,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.785238'
         GeoCoordinateY: '-1.305147'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '250'
         PlanPath: null
+        Vignette: null
         Published: true
     11:
         Code: 110
@@ -278,12 +278,12 @@
         CategorieId: null
         GeoCoordinateX: '43.392481'
         GeoCoordinateY: '6.726462'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1100'
         PlanPath: null
+        Vignette: null
         Published: true
     12:
         Code: 111
@@ -304,12 +304,12 @@
         CategorieId: null
         GeoCoordinateX: '43.58853542'
         GeoCoordinateY: '6.93888545'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '200'
         PlanPath: null
+        Vignette: null
         Published: true
     13:
         Code: 112
@@ -330,12 +330,12 @@
         CategorieId: null
         GeoCoordinateX: '43.37692956'
         GeoCoordinateY: '5.788040757'
-        MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '250'
         PlanPath: null
+        Vignette: null
         Published: true
     14:
         Code: 113
@@ -356,12 +356,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.7139833'
         GeoCoordinateY: '3.0314219'
-        MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '300'
         PlanPath: null
+        Vignette: null
         Published: true
     15:
         Code: 114
@@ -382,12 +382,12 @@
         CategorieId: null
         GeoCoordinateX: '44.07217817'
         GeoCoordinateY: '-1.156412959'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '375'
         PlanPath: null
+        Vignette: null
         Published: true
     16:
         Code: 116
@@ -408,12 +408,12 @@
         CategorieId: 2
         GeoCoordinateX: '45.7750889'
         GeoCoordinateY: '6.226780415'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '187'
         PlanPath: null
+        Vignette: null
         Published: true
     17:
         Code: 117
@@ -434,12 +434,12 @@
         CategorieId: null
         GeoCoordinateX: '45.96824412'
         GeoCoordinateY: '-1.245038509'
-        MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '300'
         PlanPath: null
+        Vignette: null
         Published: true
     18:
         Code: 118
@@ -460,12 +460,12 @@
         CategorieId: null
         GeoCoordinateX: '42.5757234'
         GeoCoordinateY: '3.042392135'
-        MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '844'
         PlanPath: null
+        Vignette: null
         Published: true
     19:
         Code: 119
@@ -486,12 +486,12 @@
         CategorieId: null
         GeoCoordinateX: '42.62443095'
         GeoCoordinateY: '3.025810719'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '522'
         PlanPath: null
+        Vignette: null
         Published: true
     20:
         Code: 12
@@ -512,12 +512,12 @@
         CategorieId: 3
         GeoCoordinateX: '42.78606298'
         GeoCoordinateY: '3.019276857'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '210'
         PlanPath: null
+        Vignette: null
         Published: true
     21:
         Code: 120
@@ -538,12 +538,12 @@
         CategorieId: null
         GeoCoordinateX: '47.83392225'
         GeoCoordinateY: '7.165617943'
-        MinimumPrice: '126.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '267'
         PlanPath: null
+        Vignette: null
         Published: true
     22:
         Code: 121
@@ -564,12 +564,12 @@
         CategorieId: null
         GeoCoordinateX: '45.00800533'
         GeoCoordinateY: '-1.112129688'
-        MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '476'
         PlanPath: null
+        Vignette: null
         Published: true
     23:
         Code: 122
@@ -590,12 +590,12 @@
         CategorieId: null
         GeoCoordinateX: '43.29217342'
         GeoCoordinateY: '10.51079929'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '301'
         PlanPath: null
+        Vignette: null
         Published: true
     24:
         Code: 123
@@ -616,12 +616,12 @@
         CategorieId: null
         GeoCoordinateX: '45.69481972'
         GeoCoordinateY: '13.45171809'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '800'
         PlanPath: null
+        Vignette: null
         Published: true
     25:
         Code: 125
@@ -642,12 +642,12 @@
         CategorieId: null
         GeoCoordinateX: '43.43388862'
         GeoCoordinateY: '-1.590839624'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '280'
         PlanPath: null
+        Vignette: null
         Published: true
     26:
         Code: 126
@@ -668,12 +668,12 @@
         CategorieId: null
         GeoCoordinateX: '41.98642663'
         GeoCoordinateY: '9.398889542'
-        MinimumPrice: '203.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '54'
         PlanPath: null
+        Vignette: null
         Published: true
     27:
         Code: 127
@@ -694,16 +694,16 @@
         CategorieId: null
         GeoCoordinateX: '43.79771568'
         GeoCoordinateY: '-1.400853395'
-        MinimumPrice: '192.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1546'
         PlanPath: null
+        Vignette: null
         Published: true
     28:
         Code: 128
-        Name: 'Les Vignes '
+        Name: 'Les Vignes'
         Title: null
         Address1: 'Route du Cap de l''Homy'
         Address2: 'Route de la Plage'
@@ -716,16 +716,16 @@
         Fax: 04.92.94.10.01
         OpeningDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
         ClosingDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2012-09-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
-        VilleId: null
+        VilleId: 101
         CategorieId: null
         GeoCoordinateX: '44.02413608'
         GeoCoordinateY: '-1.27867341'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '450'
         PlanPath: null
+        Vignette: null
         Published: true
     29:
         Code: 129
@@ -746,12 +746,12 @@
         CategorieId: null
         GeoCoordinateX: '41.23213011'
         GeoCoordinateY: '1.690725088'
-        MinimumPrice: '306.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1385'
         PlanPath: null
+        Vignette: null
         Published: true
     30:
         Code: 130
@@ -772,12 +772,12 @@
         CategorieId: null
         GeoCoordinateX: '46.7812729'
         GeoCoordinateY: '-2.017439604'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '278'
         PlanPath: null
+        Vignette: null
         Published: true
     31:
         Code: 131
@@ -798,12 +798,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.436804'
         GeoCoordinateY: '-1.567666'
-        MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '480'
         PlanPath: null
+        Vignette: null
         Published: true
     32:
         Code: 133
@@ -824,12 +824,12 @@
         CategorieId: 4
         GeoCoordinateX: '41.664833'
         GeoCoordinateY: '2.777781'
-        MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '757'
         PlanPath: null
+        Vignette: null
         Published: true
     33:
         Code: 134
@@ -850,12 +850,12 @@
         CategorieId: null
         GeoCoordinateX: '42.783858'
         GeoCoordinateY: '3.021154'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '434'
         PlanPath: null
+        Vignette: null
         Published: true
     34:
         Code: 135
@@ -876,12 +876,12 @@
         CategorieId: null
         GeoCoordinateX: '43.491413'
         GeoCoordinateY: '-3.537512'
-        MinimumPrice: '282.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1050'
         PlanPath: null
+        Vignette: null
         Published: true
     35:
         Code: 136
@@ -902,12 +902,12 @@
         CategorieId: null
         GeoCoordinateX: '45.226879'
         GeoCoordinateY: '12.294774'
-        MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '195'
         PlanPath: null
+        Vignette: null
         Published: true
     36:
         Code: 137
@@ -928,12 +928,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.573436'
         GeoCoordinateY: '3.01918'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '164'
         PlanPath: null
+        Vignette: null
         Published: true
     37:
         Code: 138
@@ -954,12 +954,12 @@
         CategorieId: null
         GeoCoordinateX: '43.0935263'
         GeoCoordinateY: '6.16381530'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '700'
         PlanPath: null
+        Vignette: null
         Published: true
     38:
         Code: 139
@@ -980,12 +980,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     39:
         Code: 14
@@ -1006,12 +1006,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.43042156'
         GeoCoordinateY: '3.610414267'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '234'
         PlanPath: null
+        Vignette: null
         Published: true
     40:
         Code: 140
@@ -1032,12 +1032,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     41:
         Code: 141
@@ -1058,12 +1058,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     42:
         Code: 142
@@ -1084,12 +1084,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     43:
         Code: 143
@@ -1110,12 +1110,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     44:
         Code: 144
@@ -1136,12 +1136,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     45:
         Code: 145
@@ -1162,12 +1162,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     46:
         Code: 146
@@ -1188,12 +1188,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     47:
         Code: 147
@@ -1214,12 +1214,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     48:
         Code: 148
@@ -1240,12 +1240,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     49:
         Code: 149
@@ -1266,12 +1266,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     50:
         Code: 15
@@ -1292,12 +1292,12 @@
         CategorieId: null
         GeoCoordinateX: '46.17793608'
         GeoCoordinateY: '-1.115090847'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '171'
         PlanPath: null
+        Vignette: null
         Published: true
     51:
         Code: 150
@@ -1318,12 +1318,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     52:
         Code: 151
@@ -1344,12 +1344,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     53:
         Code: 152
@@ -1370,12 +1370,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     54:
         Code: 153
@@ -1396,12 +1396,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     55:
         Code: 154
@@ -1422,12 +1422,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     56:
         Code: 155
@@ -1448,12 +1448,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     57:
         Code: 156
@@ -1474,12 +1474,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     58:
         Code: 157
@@ -1500,12 +1500,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     59:
         Code: 158
@@ -1526,12 +1526,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     60:
         Code: 159
@@ -1552,12 +1552,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     61:
         Code: 16
@@ -1578,12 +1578,12 @@
         CategorieId: 1
         GeoCoordinateX: '46.55466987'
         GeoCoordinateY: '-1.805577278'
-        MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '199'
         PlanPath: null
+        Vignette: null
         Published: true
     62:
         Code: 160
@@ -1604,12 +1604,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     63:
         Code: 161
@@ -1630,12 +1630,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     64:
         Code: 162
@@ -1656,12 +1656,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     65:
         Code: 163
@@ -1682,12 +1682,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     66:
         Code: 164
@@ -1708,12 +1708,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     67:
         Code: 165
@@ -1734,12 +1734,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     68:
         Code: 166
@@ -1760,12 +1760,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     69:
         Code: 167
@@ -1786,12 +1786,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     70:
         Code: 168
@@ -1812,12 +1812,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     71:
         Code: 169
@@ -1838,12 +1838,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     72:
         Code: 17
@@ -1864,12 +1864,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.355914'
         GeoCoordinateY: '-3.168789'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '202'
         PlanPath: null
+        Vignette: null
         Published: true
     73:
         Code: 170
@@ -1890,12 +1890,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     74:
         Code: 171
@@ -1916,12 +1916,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     75:
         Code: 172
@@ -1942,12 +1942,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     76:
         Code: 173
@@ -1968,12 +1968,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     77:
         Code: 174
@@ -1994,12 +1994,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     78:
         Code: 175
@@ -2020,12 +2020,12 @@
         CategorieId: 4
         GeoCoordinateX: '46.738375'
         GeoCoordinateY: '-1.978054'
-        MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '121'
         PlanPath: null
+        Vignette: null
         Published: true
     79:
         Code: 176
@@ -2046,12 +2046,12 @@
         CategorieId: 1
         GeoCoordinateX: '45.373855'
         GeoCoordinateY: '-1.144638'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '842'
         PlanPath: null
+        Vignette: null
         Published: true
     80:
         Code: 177
@@ -2072,12 +2072,12 @@
         CategorieId: null
         GeoCoordinateX: '47.305775'
         GeoCoordinateY: '-2.377167'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '222'
         PlanPath: null
+        Vignette: null
         Published: true
     81:
         Code: 178
@@ -2098,12 +2098,12 @@
         CategorieId: 1
         GeoCoordinateX: '46.740096'
         GeoCoordinateY: '-1.945052'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '434'
         PlanPath: null
+        Vignette: null
         Published: true
     82:
         Code: 18
@@ -2124,12 +2124,12 @@
         CategorieId: null
         GeoCoordinateX: '46.64475555'
         GeoCoordinateY: '-1.732943058'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '150'
         PlanPath: null
+        Vignette: null
         Published: true
     83:
         Code: 19
@@ -2150,12 +2150,12 @@
         CategorieId: 2
         GeoCoordinateX: '46.75718789'
         GeoCoordinateY: '-1.97853148'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '213'
         PlanPath: null
+        Vignette: null
         Published: true
     84:
         Code: 2
@@ -2176,12 +2176,12 @@
         CategorieId: null
         GeoCoordinateX: '44.93689388'
         GeoCoordinateY: '1.085318327'
-        MinimumPrice: '126.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '137'
         PlanPath: null
+        Vignette: null
         Published: true
     85:
         Code: 20
@@ -2202,12 +2202,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.767919'
         GeoCoordinateY: '3.029699922'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '308'
         PlanPath: null
+        Vignette: null
         Published: true
     86:
         Code: 21
@@ -2228,12 +2228,12 @@
         CategorieId: 3
         GeoCoordinateX: '44.42476978'
         GeoCoordinateY: '6.031816006'
-        MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '90'
         PlanPath: null
+        Vignette: null
         Published: true
     87:
         Code: 22
@@ -2254,12 +2254,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.310056'
         GeoCoordinateY: '3.509442'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '174'
         PlanPath: null
+        Vignette: null
         Published: true
     88:
         Code: 23
@@ -2280,12 +2280,12 @@
         CategorieId: 2
         GeoCoordinateX: '44.7421154'
         GeoCoordinateY: '1.263438463'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '196'
         PlanPath: null
+        Vignette: null
         Published: true
     89:
         Code: 24
@@ -2306,12 +2306,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.2553319'
         GeoCoordinateY: '3.136843443'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '310'
         PlanPath: null
+        Vignette: null
         Published: true
     90:
         Code: 25
@@ -2332,12 +2332,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.0521756'
         GeoCoordinateY: '3.19160074'
-        MinimumPrice: '330.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1200'
         PlanPath: null
+        Vignette: null
         Published: true
     91:
         Code: 26
@@ -2358,12 +2358,12 @@
         CategorieId: 1
         GeoCoordinateX: '44.21435585'
         GeoCoordinateY: '2.766510844'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '228'
         PlanPath: null
+        Vignette: null
         Published: true
     92:
         Code: 27
@@ -2384,12 +2384,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.28224717'
         GeoCoordinateY: '3.371078074'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '176'
         PlanPath: null
+        Vignette: null
         Published: true
     93:
         Code: 28
@@ -2410,12 +2410,12 @@
         CategorieId: 2
         GeoCoordinateX: '46.60419665'
         GeoCoordinateY: '-1.832286716'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '330'
         PlanPath: null
+        Vignette: null
         Published: true
     94:
         Code: 29
@@ -2436,12 +2436,12 @@
         CategorieId: 2
         GeoCoordinateX: '45.99008181'
         GeoCoordinateY: '-1.051871181'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '270'
         PlanPath: null
+        Vignette: null
         Published: true
     95:
         Code: 3
@@ -2462,12 +2462,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.59948962'
         GeoCoordinateY: '3.037636578'
-        MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '654'
         PlanPath: null
+        Vignette: null
         Published: true
     96:
         Code: 30
@@ -2488,12 +2488,12 @@
         CategorieId: 1
         GeoCoordinateX: '48.58438992'
         GeoCoordinateY: '-2.257309556'
-        MinimumPrice: '266.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '273'
         PlanPath: null
+        Vignette: null
         Published: true
     97:
         Code: 31
@@ -2514,12 +2514,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.11890222'
         GeoCoordinateY: '-2.072934508'
-        MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '221'
         PlanPath: null
+        Vignette: null
         Published: true
     98:
         Code: 32
@@ -2540,12 +2540,12 @@
         CategorieId: null
         GeoCoordinateX: '44.86323045'
         GeoCoordinateY: '1.297008991'
-        MinimumPrice: '192.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '143'
         PlanPath: null
+        Vignette: null
         Published: true
     99:
         Code: 33
@@ -2566,12 +2566,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.90345841'
         GeoCoordinateY: '-1.310065985'
-        MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '800'
         PlanPath: null
+        Vignette: null
         Published: true
     100:
         Code: 34
@@ -2592,12 +2592,12 @@
         CategorieId: null
         GeoCoordinateX: '47.47675288'
         GeoCoordinateY: '-3.092372417'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '250'
         PlanPath: null
+        Vignette: null
         Published: true
     101:
         Code: 35
@@ -2618,12 +2618,12 @@
         CategorieId: 3
         GeoCoordinateX: '42.532127'
         GeoCoordinateY: '3.05197'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '145'
         PlanPath: null
+        Vignette: null
         Published: true
     102:
         Code: 36
@@ -2644,12 +2644,12 @@
         CategorieId: 1
         GeoCoordinateX: '45.22291902'
         GeoCoordinateY: '-1.164722443'
-        MinimumPrice: '294.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '870'
         PlanPath: null
+        Vignette: null
         Published: true
     103:
         Code: 37
@@ -2670,12 +2670,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.66136775'
         GeoCoordinateY: '4.473999739'
-        MinimumPrice: '204.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '170'
         PlanPath: null
+        Vignette: null
         Published: true
     104:
         Code: 38
@@ -2696,12 +2696,12 @@
         CategorieId: 5
         GeoCoordinateX: '41.64617179'
         GeoCoordinateY: '9.293650389'
-        MinimumPrice: '315.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '120'
         PlanPath: null
+        Vignette: null
         Published: true
     105:
         Code: 39
@@ -2722,12 +2722,12 @@
         CategorieId: null
         GeoCoordinateX: '46.6761495'
         GeoCoordinateY: '-1.913208961'
-        MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '280'
         PlanPath: null
+        Vignette: null
         Published: true
     106:
         Code: 4
@@ -2748,12 +2748,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.29095518'
         GeoCoordinateY: '3.403937817'
-        MinimumPrice: '198.00'
         VideoPath: 'http://www.youtube.com/embed/-ZrF_KETs2c?rel=0&amp;wmode=transparent'
         Image360Path: 'http://www.youtube.com/embed/Z1qXQMpdzQY?rel=0&amp;wmode=transparent'
         Description: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes. Apud has gentes, quarum exordiens initium ab Assyriis ad Nili cataractas porrigitur et confinia Blemmyarum, omnes pari sorte sunt bellatores seminudi coloratis sagulis pube tenus amicti, equorum adiumento pernicium graciliumque camelorum.'
         Capacite: '364'
         PlanPath: uploads/etablissements/5077c5b45766c.jpeg
+        Vignette: uploads/etablissements/50a279ae83f08.png
         Published: true
     107:
         Code: 40
@@ -2774,12 +2774,12 @@
         CategorieId: null
         GeoCoordinateX: '47.7986345'
         GeoCoordinateY: '-3.791956902'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '293'
         PlanPath: null
+        Vignette: null
         Published: true
     108:
         Code: 41
@@ -2800,12 +2800,12 @@
         CategorieId: null
         GeoCoordinateX: '46.08444237'
         GeoCoordinateY: '-1.093429327'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '265'
         PlanPath: null
+        Vignette: null
         Published: true
     109:
         Code: 42
@@ -2826,12 +2826,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.47158955'
         GeoCoordinateY: '-2.467031479'
-        MinimumPrice: '273.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '500'
         PlanPath: null
+        Vignette: null
         Published: true
     110:
         Code: 43
@@ -2852,12 +2852,12 @@
         CategorieId: 2
         GeoCoordinateX: '45.96790109'
         GeoCoordinateY: '-1.31872952'
-        MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '172'
         PlanPath: null
+        Vignette: null
         Published: true
     111:
         Code: 44
@@ -2878,19 +2878,19 @@
         CategorieId: 1
         GeoCoordinateX: '44.44722341'
         GeoCoordinateY: '4.36678648'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '300'
         PlanPath: null
+        Vignette: null
         Published: true
     112:
         Code: 45
         Name: 'Domaine de Kermario'
         Title: null
         Address1: '1 Chemin de Kerluir'
-        Address2: ''
+        Address2: null
         Zip: '56340'
         City: CARNAC
         Mail: test@resalys.com
@@ -2904,12 +2904,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.59528254'
         GeoCoordinateY: '-3.066279888'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '123'
         PlanPath: null
+        Vignette: uploads/etablissements/50a2797fa2b79.png
         Published: true
     113:
         Code: 46
@@ -2930,12 +2930,12 @@
         CategorieId: 1
         GeoCoordinateX: '44.46066389'
         GeoCoordinateY: '-1.130706668'
-        MinimumPrice: '318.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '800'
         PlanPath: null
+        Vignette: null
         Published: true
     114:
         Code: 47
@@ -2956,12 +2956,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.33350768'
         GeoCoordinateY: '-2.390749454'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '600'
         PlanPath: null
+        Vignette: null
         Published: true
     115:
         Code: 48
@@ -2982,12 +2982,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.28539469'
         GeoCoordinateY: '6.57928437'
-        MinimumPrice: '385.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '470'
         PlanPath: null
+        Vignette: null
         Published: true
     116:
         Code: 49
@@ -3008,12 +3008,12 @@
         CategorieId: 2
         GeoCoordinateX: '44.53427499'
         GeoCoordinateY: '4.406890869'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '170'
         PlanPath: null
+        Vignette: null
         Published: true
     117:
         Code: 5
@@ -3034,12 +3034,12 @@
         CategorieId: 3
         GeoCoordinateX: '45.8828959'
         GeoCoordinateY: '-1.2042464'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '133'
         PlanPath: null
+        Vignette: null
         Published: true
     118:
         Code: 50
@@ -3060,12 +3060,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.83920493'
         GeoCoordinateY: '6.493869424'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '500'
         PlanPath: null
+        Vignette: null
         Published: true
     119:
         Code: 51
@@ -3086,12 +3086,12 @@
         CategorieId: null
         GeoCoordinateX: '42.76536313'
         GeoCoordinateY: '3.031582832'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '615'
         PlanPath: null
+        Vignette: null
         Published: true
     120:
         Code: 52
@@ -3112,12 +3112,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.54960955'
         GeoCoordinateY: '3.894379735'
-        MinimumPrice: '168.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '302'
         PlanPath: null
+        Vignette: null
         Published: true
     121:
         Code: 53
@@ -3138,12 +3138,12 @@
         CategorieId: null
         GeoCoordinateX: '44.75173929'
         GeoCoordinateY: '-1.187531948'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '800'
         PlanPath: null
+        Vignette: null
         Published: true
     122:
         Code: 54
@@ -3164,12 +3164,12 @@
         CategorieId: 2
         GeoCoordinateX: '44.22287547'
         GeoCoordinateY: '-1.203721762'
-        MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '540'
         PlanPath: null
+        Vignette: null
         Published: true
     123:
         Code: 55
@@ -3190,12 +3190,12 @@
         CategorieId: null
         GeoCoordinateX: '49.31883866'
         GeoCoordinateY: '-1.108932495'
-        MinimumPrice: '204.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '186'
         PlanPath: null
+        Vignette: null
         Published: true
     124:
         Code: 56
@@ -3216,12 +3216,12 @@
         CategorieId: 1
         GeoCoordinateX: '43.73420486'
         GeoCoordinateY: '6.077772975'
-        MinimumPrice: '234.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '219'
         PlanPath: null
+        Vignette: null
         Published: true
     125:
         Code: 57
@@ -3242,12 +3242,12 @@
         CategorieId: null
         GeoCoordinateX: '42.68903253'
         GeoCoordinateY: '2.998972535'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '160'
         PlanPath: null
+        Vignette: null
         Published: true
     126:
         Code: 58
@@ -3268,12 +3268,12 @@
         CategorieId: null
         GeoCoordinateX: '43.61142443'
         GeoCoordinateY: '7.123936415'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '110'
         PlanPath: null
+        Vignette: null
         Published: true
     127:
         Code: 59
@@ -3294,12 +3294,12 @@
         CategorieId: 2
         GeoCoordinateX: '42.546969'
         GeoCoordinateY: '3.04659'
-        MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '588'
         PlanPath: null
+        Vignette: null
         Published: true
     128:
         Code: 6
@@ -3320,12 +3320,12 @@
         CategorieId: 2
         GeoCoordinateX: '44.449111'
         GeoCoordinateY: '4.3525926'
-        MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '199'
         PlanPath: null
+        Vignette: null
         Published: true
     129:
         Code: 60
@@ -3346,12 +3346,12 @@
         CategorieId: 3
         GeoCoordinateX: '44.42471997'
         GeoCoordinateY: '4.331874847'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '300'
         PlanPath: null
+        Vignette: null
         Published: true
     130:
         Code: 61
@@ -3372,12 +3372,12 @@
         CategorieId: 2
         GeoCoordinateX: '47.68714583'
         GeoCoordinateY: '1.483572721'
-        MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '275'
         PlanPath: null
+        Vignette: null
         Published: true
     131:
         Code: 63
@@ -3398,12 +3398,12 @@
         CategorieId: null
         GeoCoordinateX: '46.01528621'
         GeoCoordinateY: '-1.39242053'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '205'
         PlanPath: null
+        Vignette: null
         Published: true
     132:
         Code: 64
@@ -3424,12 +3424,12 @@
         CategorieId: null
         GeoCoordinateX: '45.795155'
         GeoCoordinateY: '6.205735803'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '300'
         PlanPath: null
+        Vignette: null
         Published: true
     133:
         Code: 65
@@ -3450,12 +3450,12 @@
         CategorieId: null
         GeoCoordinateX: '46.22760164'
         GeoCoordinateY: '-1.426178813'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '240'
         PlanPath: null
+        Vignette: null
         Published: true
     134:
         Code: 66
@@ -3476,12 +3476,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.45307856'
         GeoCoordinateY: '-1.573544741'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '374'
         PlanPath: null
+        Vignette: null
         Published: true
     135:
         Code: 67
@@ -3502,12 +3502,12 @@
         CategorieId: 3
         GeoCoordinateX: '41.83260316'
         GeoCoordinateY: '3.084572554'
-        MinimumPrice: '282.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '712'
         PlanPath: null
+        Vignette: null
         Published: true
     136:
         Code: 68
@@ -3528,12 +3528,12 @@
         CategorieId: 3
         GeoCoordinateX: '41.857027'
         GeoCoordinateY: '3.137991'
-        MinimumPrice: '270.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '453'
         PlanPath: null
+        Vignette: null
         Published: true
     137:
         Code: 69
@@ -3554,12 +3554,12 @@
         CategorieId: null
         GeoCoordinateX: '46.34851988'
         GeoCoordinateY: '-1.387576461'
-        MinimumPrice: '210.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '350'
         PlanPath: null
+        Vignette: null
         Published: true
     138:
         Code: 7
@@ -3580,12 +3580,12 @@
         CategorieId: null
         GeoCoordinateX: '43.71691503'
         GeoCoordinateY: '4.167069197'
-        MinimumPrice: '138.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '150'
         PlanPath: null
+        Vignette: null
         Published: true
     139:
         Code: 70
@@ -3606,12 +3606,12 @@
         CategorieId: 3
         GeoCoordinateX: '44.68386545'
         GeoCoordinateY: '5.450313091'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '130'
         PlanPath: null
+        Vignette: null
         Published: true
     140:
         Code: 71
@@ -3632,12 +3632,12 @@
         CategorieId: 3
         GeoCoordinateX: '45.13193732'
         GeoCoordinateY: '1.762683392'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '180'
         PlanPath: null
+        Vignette: null
         Published: true
     141:
         Code: 72
@@ -3658,12 +3658,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.68601738'
         GeoCoordinateY: '1.00292623'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '130'
         PlanPath: null
+        Vignette: null
         Published: true
     142:
         Code: 73
@@ -3684,12 +3684,12 @@
         CategorieId: null
         GeoCoordinateX: '39.69684787'
         GeoCoordinateY: '-8.97567451'
-        MinimumPrice: '336.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '92'
         PlanPath: null
+        Vignette: null
         Published: true
     143:
         Code: 74
@@ -3710,12 +3710,12 @@
         CategorieId: null
         GeoCoordinateX: '44.4990307'
         GeoCoordinateY: '-1.079460382'
-        MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '576'
         PlanPath: null
+        Vignette: null
         Published: true
     144:
         Code: 75
@@ -3736,12 +3736,12 @@
         CategorieId: null
         GeoCoordinateX: '43.79725104'
         GeoCoordinateY: '-1.381938457'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '430'
         PlanPath: null
+        Vignette: null
         Published: true
     145:
         Code: 76
@@ -3762,12 +3762,12 @@
         CategorieId: 2
         GeoCoordinateX: '46.54614044'
         GeoCoordinateY: '-1.805588007'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '386'
         PlanPath: null
+        Vignette: null
         Published: true
     146:
         Code: 77
@@ -3788,12 +3788,12 @@
         CategorieId: null
         GeoCoordinateX: '46.46559831'
         GeoCoordinateY: '-1.652584076'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '226'
         PlanPath: null
+        Vignette: null
         Published: true
     147:
         Code: 78
@@ -3814,12 +3814,12 @@
         CategorieId: null
         GeoCoordinateX: '42.72870307'
         GeoCoordinateY: '1.825538278'
-        MinimumPrice: '198.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '285'
         PlanPath: null
+        Vignette: null
         Published: true
     148:
         Code: 79
@@ -3840,12 +3840,12 @@
         CategorieId: null
         GeoCoordinateX: '44.65568393'
         GeoCoordinateY: '12.24521756'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '1326'
         PlanPath: null
+        Vignette: null
         Published: true
     149:
         Code: 8
@@ -3866,12 +3866,12 @@
         CategorieId: null
         GeoCoordinateX: '45.4856205'
         GeoCoordinateY: '-1.1477709'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '526'
         PlanPath: null
+        Vignette: null
         Published: true
     150:
         Code: 80
@@ -3892,12 +3892,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.50737094'
         GeoCoordinateY: '4.145380855'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '293'
         PlanPath: null
+        Vignette: null
         Published: true
     151:
         Code: 81
@@ -3918,12 +3918,12 @@
         CategorieId: null
         GeoCoordinateX: '42.56372132'
         GeoCoordinateY: '3.034651279'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '587'
         PlanPath: null
+        Vignette: null
         Published: true
     152:
         Code: 82
@@ -3944,12 +3944,12 @@
         CategorieId: null
         GeoCoordinateX: '42.74528669'
         GeoCoordinateY: '10.94759166'
-        MinimumPrice: '258.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '600'
         PlanPath: null
+        Vignette: null
         Published: true
     153:
         Code: 83
@@ -3970,12 +3970,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.27113581'
         GeoCoordinateY: '3.329329491'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '206'
         PlanPath: null
+        Vignette: null
         Published: true
     154:
         Code: 84
@@ -3996,12 +3996,12 @@
         CategorieId: null
         GeoCoordinateX: '46.58725895'
         GeoCoordinateY: '5.700777769'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '240'
         PlanPath: null
+        Vignette: null
         Published: true
     155:
         Code: 85
@@ -4022,12 +4022,12 @@
         CategorieId: 3
         GeoCoordinateX: '41.993343'
         GeoCoordinateY: '3.188749'
-        MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '322'
         PlanPath: null
+        Vignette: null
         Published: true
     156:
         Code: 86
@@ -4048,12 +4048,12 @@
         CategorieId: null
         GeoCoordinateX: '42.77629471'
         GeoCoordinateY: '3.02487731'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '496'
         PlanPath: null
+        Vignette: null
         Published: true
     157:
         Code: 87
@@ -4074,12 +4074,12 @@
         CategorieId: null
         GeoCoordinateX: '46.42087836'
         GeoCoordinateY: '-1.569660902'
-        MinimumPrice: '222.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '430'
         PlanPath: null
+        Vignette: null
         Published: true
     158:
         Code: 88
@@ -4100,12 +4100,12 @@
         CategorieId: null
         GeoCoordinateX: '43.43522086'
         GeoCoordinateY: '-1.582331657'
-        MinimumPrice: '174.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '350'
         PlanPath: null
+        Vignette: null
         Published: true
     159:
         Code: 89
@@ -4126,12 +4126,12 @@
         CategorieId: null
         GeoCoordinateX: '43.724728'
         GeoCoordinateY: '-1.421765'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '500'
         PlanPath: null
+        Vignette: null
         Published: true
     160:
         Code: 9
@@ -4152,12 +4152,12 @@
         CategorieId: 2
         GeoCoordinateX: '40.86483588'
         GeoCoordinateY: '0.778688192'
-        MinimumPrice: '306.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '372'
         PlanPath: null
+        Vignette: null
         Published: true
     161:
         Code: 90
@@ -4178,12 +4178,12 @@
         CategorieId: null
         GeoCoordinateX: '43.190284'
         GeoCoordinateY: '6.471419'
-        MinimumPrice: '324.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '400'
         PlanPath: null
+        Vignette: null
         Published: true
     162:
         Code: 91
@@ -4204,12 +4204,12 @@
         CategorieId: 2
         GeoCoordinateX: '44.9448477'
         GeoCoordinateY: '1.4416739'
-        MinimumPrice: '240.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '262'
         PlanPath: null
+        Vignette: null
         Published: true
     163:
         Code: 92
@@ -4230,12 +4230,12 @@
         CategorieId: 2
         GeoCoordinateX: '45.50097801'
         GeoCoordinateY: '-1.129317284'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '570'
         PlanPath: null
+        Vignette: null
         Published: true
     164:
         Code: 93
@@ -4256,12 +4256,12 @@
         CategorieId: null
         GeoCoordinateX: '43.51973054'
         GeoCoordinateY: '3.909483254'
-        MinimumPrice: '252.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '435'
         PlanPath: null
+        Vignette: null
         Published: true
     165:
         Code: 94
@@ -4282,12 +4282,12 @@
         CategorieId: 2
         GeoCoordinateX: '43.58432727'
         GeoCoordinateY: '6.689981818'
-        MinimumPrice: '162.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '100'
         PlanPath: null
+        Vignette: null
         Published: true
     166:
         Code: 95
@@ -4308,12 +4308,12 @@
         CategorieId: null
         GeoCoordinateX: '43.02830997'
         GeoCoordinateY: '10.53853869'
-        MinimumPrice: '276.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '885'
         PlanPath: null
+        Vignette: null
         Published: true
     167:
         Code: 96
@@ -4334,12 +4334,12 @@
         CategorieId: null
         GeoCoordinateX: '44.45909408'
         GeoCoordinateY: '4.341879487'
-        MinimumPrice: '246.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '110'
         PlanPath: null
+        Vignette: null
         Published: true
     168:
         Code: 97
@@ -4360,12 +4360,12 @@
         CategorieId: null
         GeoCoordinateX: '44.99907285'
         GeoCoordinateY: '3.219047785'
-        MinimumPrice: '138.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '90'
         PlanPath: null
+        Vignette: null
         Published: true
     169:
         Code: 98
@@ -4386,12 +4386,12 @@
         CategorieId: 3
         GeoCoordinateX: '43.11730606'
         GeoCoordinateY: '2.73617506'
-        MinimumPrice: '186.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '110'
         PlanPath: null
+        Vignette: null
         Published: true
     170:
         Code: 99
@@ -4412,12 +4412,12 @@
         CategorieId: null
         GeoCoordinateX: '48.63805601'
         GeoCoordinateY: '-2.455675006'
-        MinimumPrice: '228.00'
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: '488'
         PlanPath: null
+        Vignette: null
         Published: true
     171:
         Code: 997
@@ -4438,12 +4438,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     172:
         Code: 998
@@ -4464,12 +4464,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     173:
         Code: 999
@@ -4490,12 +4490,12 @@
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: ''
         PlanPath: null
+        Vignette: null
         Published: false
     174:
         Code: 179
@@ -4516,12 +4516,12 @@
         CategorieId: null
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     175:
         Code: 180
@@ -4542,12 +4542,12 @@
         CategorieId: 1
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     176:
         Code: 181
@@ -4568,12 +4568,12 @@
         CategorieId: null
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     177:
         Code: 182
@@ -4594,12 +4594,12 @@
         CategorieId: 4
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     178:
         Code: 183
@@ -4620,12 +4620,12 @@
         CategorieId: 3
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     179:
         Code: 184
@@ -4646,12 +4646,12 @@
         CategorieId: 3
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true
     180:
         Code: 185
@@ -4672,10 +4672,10 @@
         CategorieId: 2
         GeoCoordinateX: null
         GeoCoordinateY: null
-        MinimumPrice: null
         VideoPath: null
         Image360Path: null
         Description: null
         Capacite: null
         PlanPath: null
+        Vignette: null
         Published: true

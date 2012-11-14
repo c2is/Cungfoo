@@ -42,6 +42,14 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.etablissements',
             'required' => false,
         ));
+        $builder->add('dernieres_minutess', 'model', array(
+            'class' => 'Cungfoo\Model\DernieresMinutes',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'destination.dernieres_minutess',
+            'required' => false,
+        ));
         $builder->add('destinationI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\DestinationI18n',
             'languages' => array(

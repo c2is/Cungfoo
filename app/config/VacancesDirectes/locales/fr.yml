@@ -27,10 +27,13 @@ etablissement.type_hebergements: Liste des types d'hébergements
 date_search.date_debut:   Date début séjour
 date_search.date_fin:     Date fin de séjour
 date_search.destination:  Destination
+date_search.destination.empty_value: Destination ?
 date_search.ville:        Ville
+date_search.ville.empty_value: Ville ?
 date_search.camping:      Camping
-date_search.nb_adultes:   Adultes
-date_search.nb_enfants:   Enfants
+date_search.camping.empty_value: Camping ?
+date_search.nb_adultes:   Adulte(s)
+date_search.nb_enfants:   Enfant(s)
 date_search.date_debut.required:  La date de début de séjour est requise
 date_search.date_fin.required:    La dete de fin de séjour est requise
 date_search.destination.required: La destination est requise
@@ -51,6 +54,18 @@ date_search.button.submit: Rechercher
 
 header.information: Informations & réservations
 header.telephone: 0825 133 400 (0,15€/min)
+
+footer.contact: Contact
+footer.charte_qualite: Charte qualité
+footer.conditions_generales_de_location: Conditons générales de location
+footer.faq: FAQ
+footer.guide_pratique: Guide pratique
+footer.plan_du_site: Plan du site
+footer.credits: Crédits
+footer.mentions_legales: Mentions légales
+footer.transactions_securisees: Transactions sécurisées
+footer.cb_visa: CB visa
+footer.masterCard: MasterCard
 
 fiche.camping: Camping
 fiche.situer_carte: Situer sur la carte
@@ -92,3 +107,14 @@ fiche.reception: Réception
 fiche.arrivees_departs: Arrivées/Départs
 fiche.fax: Fax :
 fiche.tel: Tél :
+
+home.topcamping: Top camping
+home.vacances_directes_cest: Vacances directes c'est
+home.4_pays: 4 pays
+home.26_regions: 26 régions
+home.touristiques: touristiques
+home.destination: Destination
+home.destination_france: Destination France
+home.plus_de_regions: Plus de régions
+
+general.a_partir_de: à partir de
