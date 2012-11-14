@@ -110,6 +110,7 @@
         <column name="etablissement_id" type="integer" primaryKey="true" />
         <column name="type_hebergement_id" type="integer" primaryKey="true"/>
         <column name="minimum_price" type="varchar" />
+        <column name="minimum_price_discount_label" type="varchar" />
         <column name="minimum_price_start_date" type="date" />
         <column name="minimum_price_end_date" type="date" />
 
