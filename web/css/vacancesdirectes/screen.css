@@ -1815,17 +1815,43 @@ footer {
 form li {
   margin-bottom: 10px;
 }
-.stylish-select .newListSelected .selectedTxt:after,
-.stylish-select .newListSelected {
+#searchBloc {
+  color: #ffffff;
+  position: absolute;
+  z-index: 1;
+}
+#searchBloc .newListSelected {
   height: 27px;
   line-height: 27px;
   margin-right: 0;
   background-color: #ffffff;
 }
-#searchBloc {
+#searchBloc .newListSelected .selectedTxt:after {
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;
+}
+#searchBloc input,
+#searchBloc select,
+#searchBloc .newListSelected {
+  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+}
+#searchBloc input .selectedTxt,
+#searchBloc select .selectedTxt,
+#searchBloc .newListSelected .selectedTxt {
+  padding-left: 7px;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList li a,
+#searchBloc select .SSContainerDivWrapper ul.newList li a,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList li a {
+  background-color: #ffffff;
+  color: #8c8a8a;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
+#searchBloc select .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
+  background-color: #8c8a8a;
   color: #ffffff;
-  position: absolute;
-  z-index: 1;
 }
 #searchBloc #switchForm {
   margin: 0 0 20px 0;
@@ -1931,8 +1957,10 @@ form li {
   text-decoration: underline;
 }
 #searchBloc #searchBlocDate .toggleContainer {
-  padding-top: 10px;
   display: none;
+}
+#searchBloc #searchBlocDate .toggleContainer > *:last-child {
+  margin-bottom: 10px;
 }
 #searchBloc #searchBlocDate .toggleContainer label {
   font: 13px/15px Arial;
@@ -1943,6 +1971,10 @@ form li {
 }
 #searchBloc #searchBlocDate div.datepicker {
   right: 0;
+}
+#searchBloc #searchBlocDate div.datepicker .datepickerDays td a:hover,
+#searchBloc #searchBlocDate div.datepicker .datepickerDays td.datepickerSpecial a:hover {
+  background-color: #e6e5e5;
 }
 #searchBloc #searchBlocDate #datepickerCalendar {
   width: 362px;
@@ -1973,12 +2005,17 @@ form li {
 }
 #searchBloc #searchBlocDate #datepickerField span {
   height: 27px;
-  top: 2px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
 }
 #searchBloc #searchBlocDate #datepickerField input {
   height: 27px;
   line-height: 27px;
-  width: 248px;
+  width: 216px;
+  background-color: #ffffff;
+  padding: 0 7px;
+}
+#searchBloc #searchBlocDate .datepickerLegend {
+  display: none;
 }
 #searchBloc #searchBlocDate label {
   font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
@@ -2054,7 +2091,7 @@ form li {
 #searchBloc #searchBlocDate .switchSelect {
   width: 27px;
   height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px #464545;
   float: left;
   cursor: pointer;
 }

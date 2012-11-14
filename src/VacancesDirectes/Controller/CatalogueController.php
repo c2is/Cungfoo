@@ -15,7 +15,8 @@ use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\RegionQuery,
     Cungfoo\Model\VilleQuery;
 
-use VacancesDirectes\Lib\Listing;
+use VacancesDirectes\Lib\Listing,
+    VacancesDirectes\Lib\SearchEngine;
 
 class CatalogueController implements ControllerProviderInterface
 {
@@ -23,7 +24,16 @@ class CatalogueController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/{large}/{small}', function (Application $app, Request $request, $large, $small) {
+        $controllers->match('/{large}/{small}', function (Application $app, Request $request, $large, $small) {
+            // Formulaire de recherche
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
+            // Recherche
             $pays    = null;
             $region  = null;
             $ville   = null;
@@ -96,6 +106,7 @@ class CatalogueController implements ControllerProviderInterface
 
             $etabs = $searchQuery->find();
 
+            // Création de la liste
             $list = new Listing($app);
             $list
                 ->setEtablissements($etabs)
@@ -104,6 +115,7 @@ class CatalogueController implements ControllerProviderInterface
 
             return $app['twig']->render('Results\listing.twig', array(
                 'list' => $list->process(),
+                'searchForm' => $searchEngine->getView(),
             ));
         })
         ->value('small', null)
