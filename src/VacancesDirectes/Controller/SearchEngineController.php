@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\Request,
 
 use Cungfoo\Model;
 
+use VacancesDirectes\Lib\SearchEngine;
+
 use VacancesDirectes\Form\Type\Search\DateType,
     VacancesDirectes\Form\Data\Search\DateData;
 
@@ -24,30 +26,6 @@ class SearchEngineController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
-
-        $controllers->match('/', function (Request $request) use ($app)
-        {
-            /** Search form date */
-            $searchDateData = new DateData();
-            $searchDateForm = $app['form.factory']->create(new DateType($app), $searchDateData);
-            if ('POST' == $request->getMethod())
-            {
-                /** Manage search form date validation */
-                $searchDateForm->bind($request->get($searchDateForm->getName()));
-                if ($searchDateForm->isValid())
-                {
-                    return $app->redirect($app['url_generator']->generate('catalogue', array(
-                        'large' => $searchDateData->destination,
-                        'small' => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville
-                    )));
-                }
-            }
-
-            return $app['twig']->render('Form/search_engine.twig', array(
-                'searchDateForm' => $searchDateForm->createView(),
-            ));
-        })
-        ->bind('search_engine');
 
         $controllers->match('/destinations/getVilles', function (Request $request) use ($app)
         {

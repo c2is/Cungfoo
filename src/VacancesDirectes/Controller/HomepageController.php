@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-
-use VacancesDirectes\Form\Type\Search\DateType,
-    VacancesDirectes\Form\Data\Search\DateData;
+use VacancesDirectes\Lib\SearchEngine;
 
 class HomepageController implements ControllerProviderInterface
 {
@@ -26,6 +24,13 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
             $locale = $app['context']->get('language');
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
@@ -35,8 +40,9 @@ class HomepageController implements ControllerProviderInterface
             ;
 
             return $app['twig']->render('homepage.twig', array(
-                'locale'       => $locale,
-                'topCampings'   => $topCampings,
+                'searchForm'  => $searchEngine->getView(),
+                'locale'      => $locale,
+                'topCampings' => $topCampings,
             ));
         })
         ->bind('homepage');

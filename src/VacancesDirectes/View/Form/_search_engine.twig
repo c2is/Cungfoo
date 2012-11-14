@@ -4,14 +4,14 @@
         <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
         <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
     </ul>
-    <form id="searchBlocDate" method="post" action="{{ path(app.request.get('_route')) }}">
+    <form id="searchBlocDate" method="post">
         <fieldset>
-            {{ form_errors(searchDateForm) }}
+            {{ form_errors(searchForm) }}
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
-                        {{ form_widget(searchDateForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
-                        {{ form_widget(searchDateForm.dateFin, {attr: {readonly: 'readonly'}}) }}
+                        {{ form_widget(searchForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
+                        {{ form_widget(searchForm.dateFin, {attr: {readonly: 'readonly'}}) }}
                         <div id="datepickerField" class="clear">
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
                         </div>
@@ -20,30 +20,32 @@
                 </li>
                 <li id="SearchDate_selectContainer1" class="selectContainer clear">
                     <div class="selectContainer clear">
-                        {{ form_widget(searchDateForm.destination) }}
+                        {{ form_widget(searchForm.destination) }}
                     </div>
                 </li>
                 <li>
                     <div id="SearchDate_selectContainer2" class="selectContainer clear">
-                        {{ form_widget(searchDateForm.ville) }}
-                        {{ form_widget(searchDateForm.camping) }}
-                        <span class="left">ou</span>
-                        <div class="switchSelect" title=""></div>
+                        {{ form_widget(searchForm.ville) }}
+                        {{ form_widget(searchForm.camping) }}
+                        <div id="SearchDate_switch">
+                            <span class="left">ou</span>
+                            <div class="switchSelect" title=""></div>
+                        </div>
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchDateForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
+                    {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
-                        {{ form_widget(searchDateForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
+                        {{ form_widget(searchForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
                         <div class="spin-bt-up left">+</div>
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchDateForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
+                    {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
                         <div class="spin-bt-down left">-</div>
-                        {{ form_widget(searchDateForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
+                        {{ form_widget(searchForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
                         <div class="spin-bt-up left">+</div>
                     </div>
                 </li>
@@ -55,7 +57,7 @@
                 </li>
             </ol>
         </fieldset>
-        {{ form_rest(searchDateForm) }}
+        {{ form_rest(searchForm) }}
     </form>
     <form id="searchBlocTrajet" action="#_">
         <fieldset>
