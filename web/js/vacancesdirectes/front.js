@@ -793,13 +793,18 @@ function switchSelect(){
     $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
 }
 
+var toggleState = 0;
 function toggleSearchCriteria(){
     console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
         console.log("----------------- toggleSearchCriteria() CLICK -----------------");
+        toggleState = toggleState == 0 ? 1 : 0;
+        console.log(toggleState);
         e.preventDefault();
         var $button = $(this);
-        var $container = $button.next();
+        var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
+        $button.html(buttonText);
+        var $container = $button.prev();
         console.log($button);
         console.log($container);
         $container.stop().slideToggle(1000);

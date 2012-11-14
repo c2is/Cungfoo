@@ -136,7 +136,7 @@ header, section, footer {position:relative;}
 
 /* search */
 form li{margin-bottom:10px;}
-.stylish-select .newListSelected .selectedTxt:after,
+.stylish-select .newListSelected .selectedTxt:after{background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;}
 .stylish-select .newListSelected{height:27px;line-height:27px;margin-right:0;background-color:@colorBlanc;}
 #searchBloc{color:@colorBlanc;position:absolute;z-index:1;
   #switchForm{margin:0 0 20px 0;
@@ -173,7 +173,8 @@ form li{margin-bottom:10px;}
   }
   #searchBlocDate{
     a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
-    .toggleContainer{padding-top:10px;display:none;
+    .toggleContainer{display:none;
+      &>*:last-child{margin-bottom:10px;}
       label{font:13px/15px Arial;text-transform:none;}
     }
     p{margin-bottom:15px;}
@@ -196,8 +197,8 @@ form li{margin-bottom:10px;}
     .datepickerBorderBL,
     .datepickerBorderBR {height: 10px;}
     #datepickerField{width:248px;
-      span {height: 27px;top:2px;}
-      input {height: 27px;line-height: 27px;width:248px;}
+      span {height: 27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;}
+      input {height: 27px;line-height: 27px;width:216px;background-color:@colorBlanc;}
     }
     label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:65px;}
     .spinner{
@@ -229,7 +230,7 @@ form li{margin-bottom:10px;}
         span{height:27px;line-height:27px;margin-right:10px;}
       }
     }
-    .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;float:left;cursor:pointer;}
+    .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px @colorBgGrisF;float:left;cursor:pointer;}
     button[type=submit]{margin:0 auto;font-size:21px;}
   }
 
