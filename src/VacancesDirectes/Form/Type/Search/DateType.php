@@ -60,6 +60,7 @@ class DateType extends AppAwareType
             ->joinWithI18n($this->getApplication()['context']->get('language'))
             ->withColumn('VilleI18n.name', 'Name')
             ->select(array('Code', 'Name'))
+            ->orderByName()
             ->find()
         ;
 

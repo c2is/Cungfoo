@@ -50,14 +50,14 @@
                     </div>
                 </li>
                 <li>
-                    <a class="more" href="#">+ de critères</a>
+                    <a class="toggleButton" href="#">+ de critères</a>
                 </li>
                 <li>
                     <button type="submit" class="bt sombre big">Trouver</button>
                 </li>
             </ol>
+            {{ form_rest(searchForm) }}
         </fieldset>
-        {{ form_rest(searchForm) }}
     </form>
     <form id="searchBlocTrajet" action="#_">
         <fieldset>
