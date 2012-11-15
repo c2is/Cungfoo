@@ -633,7 +633,6 @@
         </behavior>
     </table>
 
-<<<<<<< HEAD
     <table name="portfolio_media">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
         <column name="name_origin" type="varchar"/>
