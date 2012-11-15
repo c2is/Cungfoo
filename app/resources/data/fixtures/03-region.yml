@@ -230,3 +230,17 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+    34:
+        Code: ILE
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
+    35:
+        Code: PYRO
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
