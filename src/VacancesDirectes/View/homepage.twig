@@ -3,25 +3,29 @@
 {% block title %}Homepage{% endblock %}
 
 {% block slider %}
-    <div id="slider" class="fixed-width clear">
-        <div id="sliderPhoto"></div>
-        <div id="sliderBackground"></div>
-        <div id="sliderStain"></div>
-        <ul>
-            {% for mea in mea %}
-                <li {% if loop.index != 1 %} style="display: none;" {% endif %}>
-                    <img src="{{ asset(mea.imageFondPath) }}" alt="{{ mea.titre }}"/>
-                    <span>{{ mea.titre }}</span>
-                    <span>{{ mea.accroche }}</span>
-                    <img src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}"/>
-                    <a href="{{ mea.lien }}" title="{{ mea.titre }}">
-                        {{ mea.titreLien }}
-                    </a>
-                    <span>{{ mea.prix }}</span>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <ul id="slider" class="fixed-width clear">
+        {% for mea in mea %}
+            <li {% if loop.index != 1 %} style="display: none;" {% endif %}>
+                <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
+                <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
+                <div class="sliderBackground">
+                    <!--<img src="{{ asset(mea.imageFondPath) }}" alt="{{ mea.titre }}"/>-->
+                </div>
+                <div class="sliderStainInfo">
+                    <div class="content">
+                        <p class="headline">{{ mea.titre }}</p>
+                        <p class="catchline">{{ mea.accroche }}</p>
+                        <button class="bt sombre big" type="submit">{{ mea.titreLien }}</button>
+                    </div>
+                </div>
+                <div class="sliderStainPrice">
+                    <div class="content">
+                        <p class="price">{{ mea.prix }}</p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
 
 {% block rightColumn %}

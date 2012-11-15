@@ -377,3 +377,90 @@
     126:
         Code: MTLV
         RegionId: 4
+    127:
+        Code: CLAO
+        RegionId: null
+    128:
+        Code: TOUQ
+        RegionId: null
+    129:
+        Code: MTMP
+        RegionId: null
+    130:
+        Code: CDIC
+        RegionId: null
+    131:
+        Code: STCH
+        RegionId: null
+    132:
+        Code: AUBE
+        RegionId: null
+    133:
+        Code: SIGN
+        RegionId: null
+    134:
+        Code: COLO
+        RegionId: null
+    135:
+        Code: EGLE
+        RegionId: null
+    136:
+        Code: FBRE
+        RegionId: null
+    137:
+        Code: BEZI
+        RegionId: null
+    138:
+        Code: CHEV
+        RegionId: null
+    139:
+        Code: CSTR
+        RegionId: null
+    140:
+        Code: ANGL
+        RegionId: null
+    141:
+        Code: ROQA
+        RegionId: null
+    142:
+        Code: AUBI
+        RegionId: null
+    143:
+        Code: LABE
+        RegionId: null
+    144:
+        Code: GRMA
+        RegionId: null
+    145:
+        Code: MUN
+        RegionId: null
+    146:
+        Code: TRO
+        RegionId: null
+    147:
+        Code: THON
+        RegionId: null
+    148:
+        Code: ONDR
+        RegionId: null
+    149:
+        Code: CANN
+        RegionId: null
+    150:
+        Code: MAR
+        RegionId: null
+    151:
+        Code: VILL
+        RegionId: null
+    152:
+        Code: VEN
+        RegionId: null
+    153:
+        Code: AMAN
+        RegionId: null
+    154:
+        Code: PASS
+        RegionId: null
+    155:
+        Code: PORT
+        RegionId: null

@@ -197,17 +197,17 @@
     14_de:
         Id: 14
         Locale: de
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_en:
         Id: 14
         Locale: en
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     14_fr:
         Id: 14
         Locale: fr
-        Name: Languedoc-Roussillon
+        Name: 'Languedoc-Roussillon '
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
     15_de:
         Id: 15
@@ -392,17 +392,17 @@
     27_de:
         Id: 27
         Locale: de
-        Name: 'Provence-Côte d''Azur'
+        Name: 'Provence-Côte d''Azur '
         Description: null
     27_en:
         Id: 27
         Locale: en
-        Name: 'Provence-Côte d''Azur'
+        Name: 'Provence-Côte d''Azur '
         Description: null
     27_fr:
         Id: 27
         Locale: fr
-        Name: 'Provence-Côte d''Azur'
+        Name: 'Provence-Côte d''Azur '
         Description: null
     28_de:
         Id: 28
@@ -493,4 +493,34 @@
         Id: 33
         Locale: fr
         Name: 'Pas de Calais'
+        Description: null
+    34_de:
+        Id: 34
+        Locale: de
+        Name: 'Ile de France'
+        Description: null
+    34_en:
+        Id: 34
+        Locale: en
+        Name: 'Ile de France'
+        Description: null
+    34_fr:
+        Id: 34
+        Locale: fr
+        Name: 'Ile de France'
+        Description: null
+    35_de:
+        Id: 35
+        Locale: de
+        Name: 'Pyrénées Orientales'
+        Description: null
+    35_en:
+        Id: 35
+        Locale: en
+        Name: 'Pyrénées Orientales'
+        Description: null
+    35_fr:
+        Id: 35
+        Locale: fr
+        Name: 'Pyrénées Orientales'
         Description: null
