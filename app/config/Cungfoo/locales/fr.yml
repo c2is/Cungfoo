@@ -133,6 +133,7 @@ etablissement.ouverture_camping: Ouverture du camping
 etablissement.arrivees_departs: Arrivées et départs
 etablissement.plan_path: Plan
 etablissement.published: Publié ?
+etablissement.vignette: Vignette
 
 list.actions: Actions
 
@@ -170,6 +171,7 @@ menu.cms: Cms
 menu.personnages: Personnages
 menu.avantages: Avantages
 menu.editos: Éditos
+menu.top_camping: Top campings
 menu.portfolio: Portfolio
 
 
@@ -222,6 +224,7 @@ region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) 
 region.pays: Pays
 region.pays.id: Code pays
 region.description: Description
+region.mea_home: Mise en avant sur la home
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -403,3 +406,23 @@ demande_identifiant.identifiant: Souhaitez-vous obtenir un identifiant pour une 
 This value should not be blank.: Cette valeur ne doit pas être vide.
 This value is not a valid email address.: Cette valeur n'est pas une adresse email valide.
 
+top_camping.crud.create: Création d'un top camping
+top_camping.crud.list: Liste des top campings
+top_camping.crud.update: Mettre à jour le top camping %name%
+top_camping.crud.view: Détails du top camping
+top_camping.id: Id
+top_camping.etablissement: Etablissement
+top_camping.sortable_rank: Ordre
+
+dernieres_minutes.crud.create: Création d'une dernières minutes
+dernieres_minutes.crud.list: Liste des dernières minutes
+dernieres_minutes.crud.update: Mettre à jour la dernières minutes %name%
+dernieres_minutes.crud.view: Détails d'une dernières minutes
+dernieres_minutes.id: Id
+dernieres_minutes.etablissements: Etablissement
+dernieres_minutes.destinations: Destination
+dernieres_minutes.active: Actif
+dernieres_minutes.day_range: Période
+dernieres_minutes.day_start: Jour de départ
+dernieres_minutes.day.range: Période
+dernieres_minutes.day.start: Jour de départ

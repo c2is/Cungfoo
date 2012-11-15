@@ -56,4 +56,62 @@ class Etablissement extends BaseEtablissement
             ->find()
         ;
     }
+
+    public function getMinimumPrice()
+    {
+        $minimalPrice = 9999;
+
+        foreach($this->getEtablissementTypeHebergements() as $type)
+        {
+            $min = $type->getMinimumPrice();
+
+            if( $min != '')
+            {
+                if(is_numeric($min))
+                {
+                    if($min < $minimalPrice)
+                    {
+                        $minimalPrice = $min;
+                    }
+                }
+            }
+        }
+
+        return $minimalPrice;
+    }
+
+    public function getMinimumPriceLabel()
+    {
+        $minimalPrice = 9999;
+
+        foreach ($this->getEtablissementTypeHebergements() as $type)
+        {
+            $min = $type->getMinimumPrice();
+
+            if ($min != '')
+            {
+                if (is_numeric($min))
+                {
+                    if ($min < $minimalPrice)
+                    {
+                        $minimalPrice = $min;
+                    }
+                }
+            }
+        }
+
+        if ($minimalPrice == 9999)
+        {
+            return null;
+        }
+
+        return \Cungfoo\Model\EtablissementTypeHebergementQuery::create()
+             ->select('MinimumPriceDiscountLabel')
+             ->filterByEtablissementId($this->getId())
+             ->filterByMinimumPrice($minimalPrice)
+             ->addAscendingOrderByColumn('minimum_price')
+             ->findOne()
+         ;
+    }
+
 }

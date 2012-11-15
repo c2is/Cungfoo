@@ -1,17 +1,8 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
-/*
-if (!fStartDate){
-    var linear ="";
-    var fStartDate ="";
-    var fEndDate ="";
-    var fHighSeasonStartDate ="",
-    var fHighSeasonEndDate ="",
-    var startHighSeasonDay = false,
-        endHighSeasonDay = false,
-}
-*/
+
+var
 //datepicker
-var startDate,
+    startDate,
     endDate,
     highSeasonStartDate,
     highSeasonEndDate,
@@ -20,7 +11,17 @@ var startDate,
     startHighSeasonDay = false,
     endHighSeasonDay = false,
     arrivalDay = false,
-    departureDay = false;
+    departureDay = false,
+//resultCrit
+    list = $('#results'),                                   //la liste a trier
+    items = list.find('.itemResult'),                       //les items de cette liste
+    itemsRanged = list.find('[data-ranged="true"]'),        //items dans la range de prix
+    itemsFiltered = list.find('[data-filtered="true"]'),    //items repondants aux criteres
+    minPrice,                                               //le prix minimum de la liste
+    maxPrice,                                               //le prix maximum de la liste
+    containerCrit = $('#formSearchRefined'),                //conteneur des criteres
+    nbVisible = 10,                                         //nombre d'items visible avant pagination
+    nbToShow = 5;                                           //nombre d'items a afficher si pagination existe
 
 
 /*--  DOMREADY  --*/
@@ -32,6 +33,9 @@ $(function() {
 
 // Test html5 form capacties andif do polyfills
     if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
+
+//
+    $('.cover').css({backgroundSize: "cover"});
 
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }
@@ -175,7 +179,9 @@ $(function() {
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             startDate = numDate(fStartDate),
             arrivalDate,
-            departureDate;
+            departureDate,
+            visibleMonths = 7,
+            displayMonths = 5;
 
         //console.log(fSeasonDates);
         //console.log(fHighSeasonDates);
@@ -193,7 +199,7 @@ $(function() {
             flat: true,
             date: '',
             current: '2013/07/01',
-            calendars: 7,
+            calendars: visibleMonths,
             mode: 'range',
             starts: 1,
             format:'Y/m/d',
@@ -292,7 +298,7 @@ $(function() {
                 marginLeft: direction + "175px"
             }, 500);
 
-            if (currentMonth >= 7 - 5 || currentMonth <= 0){
+            if (currentMonth >= visibleMonths - displayMonths || currentMonth <= 0){
                 currentButton.addClass('isFading').fadeOut(1000);
             }
             else {
@@ -339,10 +345,10 @@ $(function() {
                 currentDate = numDate(fCurrentDate),
                 startDate = numDate(fStartDate),
                 endDate = numDate(fEndDate),
-                fSeasonDates = [fStartDate,fEndDate],
-                startDate = numDate(fStartDate),
                 arrivalDate,
-                departureDate;
+                departureDate,
+                visibleMonths = 7,
+                displayMonths = 5;
 
             //console.log(fSeasonDates);
             //console.log(fHighSeasonDates);
@@ -360,7 +366,7 @@ $(function() {
                 flat: true,
                 date: '',
                 current: '2013/07/01',
-                calendars: 7,
+                calendars: visibleMonths,
                 mode: 'range',
                 starts: 1,
                 format:'Y/m/d',
@@ -452,7 +458,7 @@ $(function() {
                     marginLeft: direction + "175px"
                 }, 500);
 
-                if (currentMonth >= 7 - 5 || currentMonth <= 0){
+                if (currentMonth >= visibleMonths - displayMonths || currentMonth <= 0){
                     currentButton.addClass('isFading').fadeOut(1000);
                 }
                 else {
@@ -518,6 +524,192 @@ $(function() {
 
         }
 
+    if ($('#searchBlocDate #datepicker').length) {
+        var d = new Date(),
+            fCurrentDate = formatDate(d),
+            currentDate = numDate(fCurrentDate),
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            arrivalDate,
+            departureDate,
+            visibleMonths = 7,
+            displayMonths = 2;
+
+        //console.log(fSeasonDates);
+        //console.log(fHighSeasonDates);
+        //console.log(fCurrentDate);
+        //console.log(d);
+
+        if (currentDate > startDate){
+            fStartDate = fCurrentDate;
+        }
+        //console.log(currentDate);
+        //console.log(startDate);
+        //console.log(fStartDate);
+
+        $('#datepickerCalendar').DatePicker({
+            flat: true,
+            date: '',
+            current: '2013/07/01',
+            calendars: visibleMonths,
+            mode: 'range',
+            starts: 1,
+            format:'Y/m/d',
+            position: 'right',
+            onChange: function(formated, dates){
+                //console.log("################################## onChange:  ##################################");
+                //console.log(formated);
+                //console.log(dates);
+                arrivalDate = dates[0];
+                departureDate = dates[1];
+                //console.log(arrivalDate);
+                //console.log(departureDate);
+                var selectedDates  = new Array(),
+                    selectedDays = new Array();
+                firstRendering = false;
+                $.each(dates, function(index, value) {
+                    //console.log(index + ": " + value);
+                    selectedDates.push(writeDate(value));
+                    selectedDays.push($(this));
+                });
+                if (firstSelection) {
+                    unselectForbiddenDates(arrivalDate);
+                    firstSelection = false;
+                }
+                else {
+                    unselectForbiddenDates(departureDate);
+                    firstSelection = true;
+                }
+                //console.log(selectedDates)
+                $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
+                $('#datepicker input.hidden').each(function(index, value){
+                    $(this).val(selectedDates[index]);
+                });
+            },
+            onRender: function(date) {
+                //            //console.log("################################## onRender:  ##################################");
+
+                var renderDate = date,
+                    disabledDate,
+                    renderWeekDay = renderDate.getDay(),
+                    fRenderDate = formatDate(renderDate),
+                    renderDate = numDate(fRenderDate);
+
+                //            //console.log(renderDate);
+                //            //console.log(startDate);
+                //            //console.log(endDate);
+                //            //console.log(renderWeekDay);
+
+                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 ){
+                    //                    //console.log("DISABLED: " + renderDate);
+                    disabledDate = renderDate;
+                }
+
+                //            //console.log(disabledDate);
+                return {
+                    disabled: disabledDate != undefined,
+                }
+            }
+        });
+
+        var state = false;
+        $('#datepickerField').bind('click', function(){
+            $(this).toggleClass('opened');
+            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+            state = !state;
+            return false;
+        });
+        $('#datepickerCalendar .bt').bind('click', function(){
+            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+                $('#datepickerField').removeClass('opened');
+            });
+            state = !state;
+            return false;
+        });
+
+        var currentMonth = 0;
+        $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').bind('click', function(e){
+            //console.log("--- CHANGE MONTH ---");
+            var datepicker = $('.datepickerContainer');
+            var direction = $(this).parent().hasClass('datepickerGoPrev') ? "+=" : "-=";
+            var currentButton = $(this);
+            if (currentButton.hasClass('isFading')){
+                //console.log("is fading");
+                return false;
+            }
+            currentMonth = direction == "-=" ? currentMonth+1 : currentMonth-1;
+
+            datepicker.animate({
+                marginLeft: direction + "175px"
+            }, 500);
+
+            if (currentMonth >= visibleMonths - displayMonths || currentMonth <= 0){
+                currentButton.addClass('isFading').fadeOut(1000);
+            }
+            else {
+                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
+            }
+
+            console.log(currentMonth);
+            return false;
+        });
+        $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
+            return false;
+        });
+        $('#datepickerCalendar div.datepicker').css('position', 'absolute');
+        $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-5px');
+        $('.datepicker>.datepickerGoPrev a').hide();
+
+        var preselectedFDates = new Array(),
+            preselectedDates = new Array();
+        if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
+            $.each($('input.hidden'), function(i, item) {
+                //console.log(item.value);
+
+                var fDate = item.value.split("/").reverse().join('/');
+                //console.log(fDate);
+                preselectedFDates.push(fDate);
+                preselectedDates.push(item.value);
+            });
+            //console.log(preselectedDates);
+            $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
+            $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
+        }
+
+        //console.log("################################## switchLinear()  ##################################");
+        $('#searchContainer .searchBox').attr('id',linear);
+        $('#AchatLineaire_isBasseSaison').attr('class','clear ' + linear);
+        var titleText = "Recherche de linéaires";
+        var infoText = "La période choisie doit inlure au minimum 1 semaine.";
+        var legendText = "haute saison";
+
+        $('#' + linear + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
+        $('#' + linear + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
+        firstRendering = true;
+
+        //console.log("################################## initializeForbiddenDates()  ##################################");
+        //console.log(firstRendering);
+        var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
+
+        allSaturdays.removeClass('datepickerUnselectable');
+        if (firstRendering){
+            allSaturdays.each(function(index, value){
+                var td = $(this);
+                //            //console.log(endHighSeasonDay);
+
+                if (linear == "reservation"){
+                    var len = allSaturdays.length;
+                    if (index >= len - numMinWeeks) {
+                        td.addClass('datepickerUnselectable');
+                    }
+
+                }
+                //            //console.log(value);
+            });
+        }
+
+    }
+
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
         .wrap('<div class="viewport"><div class="overview"></div></div>');
@@ -530,10 +722,16 @@ $(function() {
     }
 
 //init Search
-    if ($('#searchBloc').length > 0) {
-        initSearchBloc();
+    if ($('#searchBlocDate').length > 0) {
+        countItem();
+        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
+        switchSelect();
+        toggleSearchCriteria();
     }
 
+    if ($('#results').length ){
+        initCritResult();
+    }
 });
 
 /*-- HEADREADY --*/
@@ -544,14 +742,78 @@ head.ready(function(){
 });
 
 /*--  FUNCTIONS  --*/
-function initSearchBloc() {
-    $("#nbAdults").SpinnerControl({
-        type:'range',
-        typedata:{ min:0, max:23, interval:1 },
-        defaultVal:2,
-        width:'50px'
+function countItem() {
+    //console.log("################################## countItem()  ##################################");
+    $('.spin-bt-down, .spin-bt-up').live('click', function(){
+        var $button = $(this);
+        var $input = $button.siblings(".spin-tb");
+        var oldValue = $input.val();
+        if ($button.hasClass('spin-bt-up')) {
+            if (oldValue < 10) {
+                var newVal = parseFloat(oldValue) + 1;
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            if ($input.attr('id') == 'SearchDate_nbAdultes' && oldValue > 1) {
+                var newVal = parseFloat(oldValue) - 1;
+            }
+            else if ($input.attr('id') == 'SearchDate_nbEnfants' && oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            }
+            else {
+                return false
+            }
+        }
+        $input.val(newVal);
+        return false;
     });
 }
+
+var selectNum = 0;
+function switchSelect(){
+    //console.log("################################## switchSelect()  ##################################");
+    $('.switchSelect').live('click', function(){
+        selectNum = selectNum == 0 ? 1 : 0;
+        var $button = $(this);
+        var $selects = $button.parent().siblings(".newListSelected");
+        //console.log($selects);
+        var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
+        $button.attr('title',$buttonTitle);
+        if(selectNum) {
+            $selects.eq(0).hide();
+            $selects.eq(1).show();
+        }
+        else {
+            $selects.eq(1).hide();
+            $selects.eq(0).show();
+        }
+        $('#SearchDate_isCamping').val(selectNum);
+        return false;
+    });
+    $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
+}
+
+var toggleState = 0;
+function toggleSearchCriteria(){
+    console.log("################################## toggleSearchCriteria()  ##################################");
+    $('.toggleButton').live('click', function(e){
+        console.log("----------------- toggleSearchCriteria() CLICK -----------------");
+        toggleState = toggleState == 0 ? 1 : 0;
+        console.log(toggleState);
+        e.preventDefault();
+        var $button = $(this);
+        var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
+        $button.html(buttonText);
+        var $container = $button.prev();
+        console.log($button);
+        console.log($container);
+        $container.stop().slideToggle(1000);
+    });
+}
+
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
@@ -982,4 +1244,232 @@ function initializeAllGmap() {
 
     proxInit();
     infoInit();
+}
+
+
+/*** FONCTIONS RESULTATS DE RECHERCHE ***/
+function initCritResult(){
+
+    $('.itemResult .linePrice :radio').change( function(){
+        var oCheck = $(this);
+        oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
+    });
+
+
+    if ( $('.formSearchRefined').length ) {
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+    }
+    if ( $('#results').length ) {
+        launchFilters();
+    }
+
+    $('.formSearchRefined .searchGlobalSubmit').click(function(e) {
+        critSelection();
+        displayResults();
+        e.preventDefault();
+    });
+
+    $('#formSearchRefined input:checkbox').change(function() {
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+    });
+}
+
+//launcher des filtres
+function launchFilters() {
+
+    console.log('/--- launchFilters ---/');
+
+    items.attr('data-filtered', false);
+
+    //attribution min/max pour le range slider
+    findMinMaxRange();
+
+    //creation du rangeSlider de prix
+    rangeSliderPrice();
+
+    //selection des criteres
+    if ( containerCrit.find('input:checked').length ) {
+        critSelection();
+    }
+
+}
+
+//attribution min/max prix pour le range slider
+function findMinMaxRange() {
+    var allPrices = [];
+    items.each(function() {
+        var itemPrice = parseInt($(this).find('.itemResultBottom label .price').text());
+        consoleLog(itemPrice);
+        allPrices.push(itemPrice);
+        $(this).attr('data-ranged', true);
+    });
+
+    //prix min
+    Array.min = function(array) {
+        return Math.min.apply(Math, array);
+    };
+    minPrice = Array.min(allPrices);
+
+    //prix max
+    Array.max = function(array) {
+        return Math.max.apply(Math, array);
+    };
+    maxPrice = Array.max(allPrices);
+
+    //items dans la range de prix
+    items = list.find('[data-ranged="true"]');
+
+    console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+}
+
+//creation du rangeSlider de prix
+function rangeSliderPrice() {
+    var $range = $("#noUiSlider"),
+        minScale = minPrice,
+        maxScale = maxPrice,
+        minStart = minPrice,
+        minStop = maxPrice;
+
+    var initRange = function(){
+        $range.empty().noUiSlider('init', {
+            'scale'		:		[minScale,maxScale],
+            'start'		:		[minStart,minStop],
+
+            change: function(){
+                var values = $(this).noUiSlider('value');
+                $(this).find('.noUi-lowerHandle .rangeBox').text(values[0] + "€");
+                $(this).find('.noUi-upperHandle .rangeBox').text(values[1] + "€");
+            },
+            end: function(type){
+                var values = $(this).noUiSlider('value');
+                valueMin = values[0];
+                valueMax = values[1];
+
+                items.each(function() {
+                    var originPrice = parseInt($(this).find('.itemResultBottom label .price').text());
+
+                    if ( parseInt(originPrice) >= parseInt(valueMin) && parseInt(originPrice) <= parseInt(valueMax) ) {
+                        $(this).attr('data-ranged', true);
+                    }else{
+                        $(this).attr('data-ranged', false);
+                    }
+                });
+                critSelection();
+                displayResults();
+                console.log('/--- rangeSliderPrice (event: change) ---/');
+            }
+        }).find('.noUi-handle div').each(function(index){
+                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+'</span>');
+            });
+    };
+
+    initRange.call();
+}
+
+//selection des criteres
+function critSelection() {
+
+    //init des tableaux
+    var arrayCrit = [];         //tableau des criteres
+    var arrayCritPlus = [];     //tableau des criteres cumulatifs
+
+    //remplissage de arrayCrit
+    $(containerCrit.find('.contentCrit input:checked')).each(function() {
+        arrayCrit.push($(this).attr('id'));
+    });
+
+    //remplissage de arrayCritPlus (cumulatifs)
+    $(containerCrit.find('.contentCritPlus input:checked')).each(function() {
+        arrayCritPlus.push($(this).attr('id'));
+    });
+    consoleLog(arrayCrit);
+    consoleLog(arrayCritPlus);
+
+    //si aucun critere n'est selectionne
+    if ( arrayCrit == 0 && arrayCritPlus == 0 ) {
+        items.attr('data-filtered', true);
+        console.log('aucun critere selectionne');
+    }else{
+        if ( arrayCrit == 0) {
+            console.log('aucun critere selectionner dans arrayCrit');
+        }else{
+            //boucle de comparaison pour arrayCrit
+            items.each(function() {
+                console.log('-------------------- UN ITEM (crit) ----------------------');
+
+                var itemToShow = $(this);
+
+                //creation des tableau a comparer (avec les valeurs separer par des virgules)
+                var dataCompareCrit = $(this).attr('data-crit').split(',');
+
+                //comparaison des criteres
+                jQuery.each(arrayCrit, function(i) {
+                    if ( jQuery.inArray(arrayCrit[i], dataCompareCrit) > -1 ) {
+                        console.log('critere present : '+this);
+                        itemToShow.attr('data-filtered', true);
+                        return false; //on sort de la boucle car au moins 1 critere est present
+                    }else{
+                        itemToShow.attr('data-filtered', false);
+                    }
+                });
+
+            });
+        }
+
+        if ( arrayCritPlus == 0 ) {
+            console.log('aucun critere selectionner dans arrayCritPlus');
+        }else{
+            //boucle de comparaison pour arrayCritPlus
+
+            /*  if ( arrayCritPlus == 0 ) {
+             itemsFiltered = items;
+             }*/
+            itemsFiltered.each(function() {
+                console.log('-------------------- UN ITEM (critPlus) ----------------------');
+
+                var itemToShow = $(this);
+
+                //creation des tableau a comparer (avec les valeurs separer par des virgules)
+                var dataCompareCritPlus = $(this).attr('data-critPlus').split(',');
+
+                //comparaison des criteresPlus
+                jQuery.each(arrayCritPlus, function(i) {
+                    if ( jQuery.inArray(arrayCritPlus[i], dataCompareCritPlus) > -1 ) {
+                        console.log('critere present : '+this);
+                        itemToShow.attr('data-filtered', true);
+                    }else{
+                        itemToShow.attr('data-filtered', false);
+                        console.log('criterePlus non present : '+this);
+                        return false; //on sort de la boucle car au moins 1 critere n'est pas present
+                    }
+                });
+            });
+        }
+    }
+
+    console.log('/--- critSelection ---/');
+}
+
+//gestion de l'affichage en fonction des criteres + rangeSlider
+function displayResults() {
+    var nbItemsDisplayed = 0;
+
+    items.each(function() {
+        var dataRanged = $(this).attr('data-ranged');
+        var dataFiltered = $(this).attr('data-filtered');
+
+        if ( dataFiltered == 'true' && dataRanged == 'true' ) {
+            $(this).fadeIn().next('.disclaim').fadeIn();
+            nbItemsDisplayed++;
+        }else{
+            $(this).fadeOut().next('.disclaim').fadeOut();
+        };
+    });
+
+    //mise a jour du nombre d'items affiches
+    $('#nbListResultats').text(nbItemsDisplayed);
+
+    console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
 }

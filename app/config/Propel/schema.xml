@@ -73,7 +73,6 @@
         <column name="categorie_id" type="integer"/>
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
-        <column name="minimum_price" type="varchar" />
         <column name="video_path" type="varchar" />
         <column name="image_360_path" type="varchar" />
         <column name="description" type="longvarchar" />
@@ -82,6 +81,7 @@
         <column name="ouverture_camping" type="longvarchar" />
         <column name="arrivees_departs" type="longvarchar" />
         <column name="plan_path" type="varchar" />
+        <column name="vignette" type="varchar" />
 
         <column name="published" type="boolean" />
 
@@ -102,19 +102,23 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
             <parameter name="crud_search" value="name, title" />
-            <parameter name="crud_type_file" value="plan_path" />
+            <parameter name="crud_type_file" value="plan_path, vignette" />
         </behavior>
     </table>
 
     <table name="etablissement_type_hebergement" isCrossRef="true">
         <column name="etablissement_id" type="integer" primaryKey="true" />
         <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+        <column name="minimum_price" type="varchar" />
+        <column name="minimum_price_discount_label" type="varchar" />
+        <column name="minimum_price_start_date" type="date" />
+        <column name="minimum_price_end_date" type="date" />
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="type_hebergement">
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
             <reference local="type_hebergement_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -298,6 +302,7 @@
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
+        <column name="mea_home" type="boolean" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
@@ -628,6 +633,7 @@
         </behavior>
     </table>
 
+<<<<<<< HEAD
     <table name="portfolio_media">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
         <column name="name_origin" type="varchar"/>
@@ -659,6 +665,57 @@
 
         <foreign-key foreignTable="portfolio_tag">
             <reference local="tag_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="top_camping">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="etablissement_id" type="integer" required="true"/>
+        <behavior name="sortable"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/top_camping" />
+        </behavior>
+
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="day_start" type="enum" valueSet="lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche" required="true"/>
+        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="active" type="boolean"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/dernieres_minutes" />
+        </behavior>
+    </table>
+
+    <table name="dernieres_minutes_etablissement" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes_destination" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
 

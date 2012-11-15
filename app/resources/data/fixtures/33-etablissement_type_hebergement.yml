@@ -1,1588 +1,3704 @@
 \Cungfoo\Model\EtablissementTypeHebergement:
-    112_1:
-        EtablissementId: 112
-        TypeHebergementId: 1
-    119_1:
-        EtablissementId: 119
-        TypeHebergementId: 1
-    173_1:
-        EtablissementId: 173
-        TypeHebergementId: 1
-    112_2:
-        EtablissementId: 112
-        TypeHebergementId: 2
-    119_2:
-        EtablissementId: 119
-        TypeHebergementId: 2
-    173_2:
-        EtablissementId: 173
-        TypeHebergementId: 2
-    112_3:
-        EtablissementId: 112
-        TypeHebergementId: 3
-    119_3:
-        EtablissementId: 119
-        TypeHebergementId: 3
-    173_3:
-        EtablissementId: 173
-        TypeHebergementId: 3
-    112_4:
-        EtablissementId: 112
-        TypeHebergementId: 4
-    119_4:
-        EtablissementId: 119
-        TypeHebergementId: 4
-    173_4:
-        EtablissementId: 173
-        TypeHebergementId: 4
-    112_5:
-        EtablissementId: 112
-        TypeHebergementId: 5
-    119_5:
-        EtablissementId: 119
-        TypeHebergementId: 5
-    173_5:
-        EtablissementId: 173
-        TypeHebergementId: 5
-    112_6:
-        EtablissementId: 112
-        TypeHebergementId: 6
-    119_6:
-        EtablissementId: 119
-        TypeHebergementId: 6
-    173_6:
-        EtablissementId: 173
-        TypeHebergementId: 6
-    112_7:
-        EtablissementId: 112
-        TypeHebergementId: 7
-    119_7:
-        EtablissementId: 119
-        TypeHebergementId: 7
-    173_7:
-        EtablissementId: 173
-        TypeHebergementId: 7
-    112_8:
-        EtablissementId: 112
-        TypeHebergementId: 8
-    119_8:
-        EtablissementId: 119
-        TypeHebergementId: 8
-    173_8:
-        EtablissementId: 173
-        TypeHebergementId: 8
-    8_9:
-        EtablissementId: 8
-        TypeHebergementId: 9
-    12_9:
-        EtablissementId: 12
-        TypeHebergementId: 9
-    20_9:
-        EtablissementId: 20
-        TypeHebergementId: 9
-    82_9:
-        EtablissementId: 82
-        TypeHebergementId: 9
-    83_9:
-        EtablissementId: 83
-        TypeHebergementId: 9
-    84_9:
-        EtablissementId: 84
-        TypeHebergementId: 9
-    85_9:
-        EtablissementId: 85
-        TypeHebergementId: 9
-    88_9:
-        EtablissementId: 88
-        TypeHebergementId: 9
-    90_9:
-        EtablissementId: 90
-        TypeHebergementId: 9
-    96_9:
-        EtablissementId: 96
-        TypeHebergementId: 9
-    100_9:
-        EtablissementId: 100
-        TypeHebergementId: 9
-    103_9:
-        EtablissementId: 103
-        TypeHebergementId: 9
-    105_9:
-        EtablissementId: 105
-        TypeHebergementId: 9
-    106_9:
-        EtablissementId: 106
-        TypeHebergementId: 9
-    114_9:
-        EtablissementId: 114
-        TypeHebergementId: 9
-    115_9:
-        EtablissementId: 115
-        TypeHebergementId: 9
-    119_9:
-        EtablissementId: 119
-        TypeHebergementId: 9
-    134_9:
-        EtablissementId: 134
-        TypeHebergementId: 9
-    144_9:
-        EtablissementId: 144
-        TypeHebergementId: 9
-    150_9:
-        EtablissementId: 150
-        TypeHebergementId: 9
-    154_9:
-        EtablissementId: 154
-        TypeHebergementId: 9
-    157_9:
-        EtablissementId: 157
-        TypeHebergementId: 9
-    159_9:
-        EtablissementId: 159
-        TypeHebergementId: 9
-    168_9:
-        EtablissementId: 168
-        TypeHebergementId: 9
-    169_9:
-        EtablissementId: 169
-        TypeHebergementId: 9
-    173_9:
-        EtablissementId: 173
-        TypeHebergementId: 9
-    119_10:
-        EtablissementId: 119
-        TypeHebergementId: 10
-    142_10:
-        EtablissementId: 142
-        TypeHebergementId: 10
-    173_10:
-        EtablissementId: 173
-        TypeHebergementId: 10
-    119_11:
-        EtablissementId: 119
-        TypeHebergementId: 11
-    142_11:
-        EtablissementId: 142
-        TypeHebergementId: 11
-    173_11:
-        EtablissementId: 173
-        TypeHebergementId: 11
-    84_12:
-        EtablissementId: 84
-        TypeHebergementId: 12
-    85_12:
-        EtablissementId: 85
-        TypeHebergementId: 12
-    106_12:
-        EtablissementId: 106
-        TypeHebergementId: 12
-    119_12:
-        EtablissementId: 119
-        TypeHebergementId: 12
-    173_12:
-        EtablissementId: 173
-        TypeHebergementId: 12
-    86_13:
-        EtablissementId: 86
-        TypeHebergementId: 13
-    119_13:
-        EtablissementId: 119
-        TypeHebergementId: 13
-    131_13:
-        EtablissementId: 131
-        TypeHebergementId: 13
-    173_13:
-        EtablissementId: 173
-        TypeHebergementId: 13
-    12_14:
-        EtablissementId: 12
-        TypeHebergementId: 14
-    14_14:
-        EtablissementId: 14
-        TypeHebergementId: 14
-    18_14:
-        EtablissementId: 18
-        TypeHebergementId: 14
-    23_14:
-        EtablissementId: 23
-        TypeHebergementId: 14
-    24_14:
-        EtablissementId: 24
-        TypeHebergementId: 14
-    27_14:
-        EtablissementId: 27
-        TypeHebergementId: 14
-    82_14:
-        EtablissementId: 82
-        TypeHebergementId: 14
-    83_14:
-        EtablissementId: 83
-        TypeHebergementId: 14
-    84_14:
-        EtablissementId: 84
-        TypeHebergementId: 14
-    86_14:
-        EtablissementId: 86
-        TypeHebergementId: 14
-    90_14:
-        EtablissementId: 90
-        TypeHebergementId: 14
-    94_14:
-        EtablissementId: 94
-        TypeHebergementId: 14
-    95_14:
-        EtablissementId: 95
-        TypeHebergementId: 14
-    96_14:
-        EtablissementId: 96
-        TypeHebergementId: 14
-    97_14:
-        EtablissementId: 97
-        TypeHebergementId: 14
-    98_14:
-        EtablissementId: 98
-        TypeHebergementId: 14
-    99_14:
-        EtablissementId: 99
-        TypeHebergementId: 14
-    112_14:
-        EtablissementId: 112
-        TypeHebergementId: 14
-    115_14:
-        EtablissementId: 115
-        TypeHebergementId: 14
-    119_14:
-        EtablissementId: 119
-        TypeHebergementId: 14
-    125_14:
-        EtablissementId: 125
-        TypeHebergementId: 14
-    144_14:
-        EtablissementId: 144
-        TypeHebergementId: 14
-    148_14:
-        EtablissementId: 148
-        TypeHebergementId: 14
-    150_14:
-        EtablissementId: 150
-        TypeHebergementId: 14
-    151_14:
-        EtablissementId: 151
-        TypeHebergementId: 14
-    152_14:
-        EtablissementId: 152
-        TypeHebergementId: 14
-    166_14:
-        EtablissementId: 166
-        TypeHebergementId: 14
-    169_14:
-        EtablissementId: 169
-        TypeHebergementId: 14
-    173_14:
-        EtablissementId: 173
-        TypeHebergementId: 14
-    92_15:
-        EtablissementId: 92
-        TypeHebergementId: 15
-    107_15:
-        EtablissementId: 107
-        TypeHebergementId: 15
-    114_15:
-        EtablissementId: 114
-        TypeHebergementId: 15
-    119_15:
-        EtablissementId: 119
-        TypeHebergementId: 15
-    146_15:
-        EtablissementId: 146
-        TypeHebergementId: 15
-    173_15:
-        EtablissementId: 173
-        TypeHebergementId: 15
-    20_16:
-        EtablissementId: 20
-        TypeHebergementId: 16
-    28_16:
-        EtablissementId: 28
-        TypeHebergementId: 16
-    82_16:
-        EtablissementId: 82
-        TypeHebergementId: 16
-    83_16:
-        EtablissementId: 83
-        TypeHebergementId: 16
-    85_16:
-        EtablissementId: 85
-        TypeHebergementId: 16
-    91_16:
-        EtablissementId: 91
-        TypeHebergementId: 16
-    100_16:
-        EtablissementId: 100
-        TypeHebergementId: 16
-    106_16:
-        EtablissementId: 106
-        TypeHebergementId: 16
-    108_16:
-        EtablissementId: 108
-        TypeHebergementId: 16
-    112_16:
-        EtablissementId: 112
-        TypeHebergementId: 16
-    119_16:
-        EtablissementId: 119
-        TypeHebergementId: 16
-    125_16:
-        EtablissementId: 125
-        TypeHebergementId: 16
-    145_16:
-        EtablissementId: 145
-        TypeHebergementId: 16
-    173_16:
-        EtablissementId: 173
-        TypeHebergementId: 16
-    84_17:
-        EtablissementId: 84
-        TypeHebergementId: 17
-    92_17:
-        EtablissementId: 92
-        TypeHebergementId: 17
-    119_17:
-        EtablissementId: 119
-        TypeHebergementId: 17
-    146_17:
-        EtablissementId: 146
-        TypeHebergementId: 17
-    173_17:
-        EtablissementId: 173
-        TypeHebergementId: 17
-    110_18:
-        EtablissementId: 110
-        TypeHebergementId: 18
-    119_18:
-        EtablissementId: 119
-        TypeHebergementId: 18
-    164_18:
-        EtablissementId: 164
-        TypeHebergementId: 18
-    173_18:
-        EtablissementId: 173
-        TypeHebergementId: 18
-    110_19:
-        EtablissementId: 110
-        TypeHebergementId: 19
-    112_19:
-        EtablissementId: 112
-        TypeHebergementId: 19
-    119_19:
-        EtablissementId: 119
-        TypeHebergementId: 19
-    164_19:
-        EtablissementId: 164
-        TypeHebergementId: 19
-    173_19:
-        EtablissementId: 173
-        TypeHebergementId: 19
-    21_20:
-        EtablissementId: 21
-        TypeHebergementId: 20
-    84_20:
-        EtablissementId: 84
-        TypeHebergementId: 20
-    89_20:
-        EtablissementId: 89
-        TypeHebergementId: 20
-    96_20:
-        EtablissementId: 96
-        TypeHebergementId: 20
-    119_20:
-        EtablissementId: 119
-        TypeHebergementId: 20
-    138_20:
-        EtablissementId: 138
-        TypeHebergementId: 20
-    150_20:
-        EtablissementId: 150
-        TypeHebergementId: 20
-    173_20:
-        EtablissementId: 173
-        TypeHebergementId: 20
-    1_21:
+    1_21____:
         EtablissementId: 1
         TypeHebergementId: 21
-    2_21:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    1_26____:
+        EtablissementId: 1
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    1_30____:
+        EtablissementId: 1
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    2_21____:
         EtablissementId: 2
         TypeHebergementId: 21
-    3_21:
-        EtablissementId: 3
-        TypeHebergementId: 21
-    6_21:
-        EtablissementId: 6
-        TypeHebergementId: 21
-    7_21:
-        EtablissementId: 7
-        TypeHebergementId: 21
-    8_21:
-        EtablissementId: 8
-        TypeHebergementId: 21
-    9_21:
-        EtablissementId: 9
-        TypeHebergementId: 21
-    10_21:
-        EtablissementId: 10
-        TypeHebergementId: 21
-    11_21:
-        EtablissementId: 11
-        TypeHebergementId: 21
-    13_21:
-        EtablissementId: 13
-        TypeHebergementId: 21
-    15_21:
-        EtablissementId: 15
-        TypeHebergementId: 21
-    16_21:
-        EtablissementId: 16
-        TypeHebergementId: 21
-    17_21:
-        EtablissementId: 17
-        TypeHebergementId: 21
-    18_21:
-        EtablissementId: 18
-        TypeHebergementId: 21
-    19_21:
-        EtablissementId: 19
-        TypeHebergementId: 21
-    20_21:
-        EtablissementId: 20
-        TypeHebergementId: 21
-    21_21:
-        EtablissementId: 21
-        TypeHebergementId: 21
-    22_21:
-        EtablissementId: 22
-        TypeHebergementId: 21
-    25_21:
-        EtablissementId: 25
-        TypeHebergementId: 21
-    26_21:
-        EtablissementId: 26
-        TypeHebergementId: 21
-    27_21:
-        EtablissementId: 27
-        TypeHebergementId: 21
-    28_21:
-        EtablissementId: 28
-        TypeHebergementId: 21
-    29_21:
-        EtablissementId: 29
-        TypeHebergementId: 21
-    30_21:
-        EtablissementId: 30
-        TypeHebergementId: 21
-    31_21:
-        EtablissementId: 31
-        TypeHebergementId: 21
-    32_21:
-        EtablissementId: 32
-        TypeHebergementId: 21
-    34_21:
-        EtablissementId: 34
-        TypeHebergementId: 21
-    37_21:
-        EtablissementId: 37
-        TypeHebergementId: 21
-    39_21:
-        EtablissementId: 39
-        TypeHebergementId: 21
-    50_21:
-        EtablissementId: 50
-        TypeHebergementId: 21
-    61_21:
-        EtablissementId: 61
-        TypeHebergementId: 21
-    72_21:
-        EtablissementId: 72
-        TypeHebergementId: 21
-    78_21:
-        EtablissementId: 78
-        TypeHebergementId: 21
-    79_21:
-        EtablissementId: 79
-        TypeHebergementId: 21
-    80_21:
-        EtablissementId: 80
-        TypeHebergementId: 21
-    81_21:
-        EtablissementId: 81
-        TypeHebergementId: 21
-    82_21:
-        EtablissementId: 82
-        TypeHebergementId: 21
-    83_21:
-        EtablissementId: 83
-        TypeHebergementId: 21
-    84_21:
-        EtablissementId: 84
-        TypeHebergementId: 21
-    85_21:
-        EtablissementId: 85
-        TypeHebergementId: 21
-    86_21:
-        EtablissementId: 86
-        TypeHebergementId: 21
-    87_21:
-        EtablissementId: 87
-        TypeHebergementId: 21
-    88_21:
-        EtablissementId: 88
-        TypeHebergementId: 21
-    89_21:
-        EtablissementId: 89
-        TypeHebergementId: 21
-    90_21:
-        EtablissementId: 90
-        TypeHebergementId: 21
-    91_21:
-        EtablissementId: 91
-        TypeHebergementId: 21
-    92_21:
-        EtablissementId: 92
-        TypeHebergementId: 21
-    93_21:
-        EtablissementId: 93
-        TypeHebergementId: 21
-    94_21:
-        EtablissementId: 94
-        TypeHebergementId: 21
-    95_21:
-        EtablissementId: 95
-        TypeHebergementId: 21
-    96_21:
-        EtablissementId: 96
-        TypeHebergementId: 21
-    97_21:
-        EtablissementId: 97
-        TypeHebergementId: 21
-    98_21:
-        EtablissementId: 98
-        TypeHebergementId: 21
-    99_21:
-        EtablissementId: 99
-        TypeHebergementId: 21
-    100_21:
-        EtablissementId: 100
-        TypeHebergementId: 21
-    101_21:
-        EtablissementId: 101
-        TypeHebergementId: 21
-    102_21:
-        EtablissementId: 102
-        TypeHebergementId: 21
-    103_21:
-        EtablissementId: 103
-        TypeHebergementId: 21
-    104_21:
-        EtablissementId: 104
-        TypeHebergementId: 21
-    105_21:
-        EtablissementId: 105
-        TypeHebergementId: 21
-    106_21:
-        EtablissementId: 106
-        TypeHebergementId: 21
-    107_21:
-        EtablissementId: 107
-        TypeHebergementId: 21
-    108_21:
-        EtablissementId: 108
-        TypeHebergementId: 21
-    109_21:
-        EtablissementId: 109
-        TypeHebergementId: 21
-    110_21:
-        EtablissementId: 110
-        TypeHebergementId: 21
-    111_21:
-        EtablissementId: 111
-        TypeHebergementId: 21
-    112_21:
-        EtablissementId: 112
-        TypeHebergementId: 21
-    113_21:
-        EtablissementId: 113
-        TypeHebergementId: 21
-    114_21:
-        EtablissementId: 114
-        TypeHebergementId: 21
-    116_21:
-        EtablissementId: 116
-        TypeHebergementId: 21
-    118_21:
-        EtablissementId: 118
-        TypeHebergementId: 21
-    119_21:
-        EtablissementId: 119
-        TypeHebergementId: 21
-    120_21:
-        EtablissementId: 120
-        TypeHebergementId: 21
-    121_21:
-        EtablissementId: 121
-        TypeHebergementId: 21
-    122_21:
-        EtablissementId: 122
-        TypeHebergementId: 21
-    123_21:
-        EtablissementId: 123
-        TypeHebergementId: 21
-    124_21:
-        EtablissementId: 124
-        TypeHebergementId: 21
-    125_21:
-        EtablissementId: 125
-        TypeHebergementId: 21
-    126_21:
-        EtablissementId: 126
-        TypeHebergementId: 21
-    127_21:
-        EtablissementId: 127
-        TypeHebergementId: 21
-    128_21:
-        EtablissementId: 128
-        TypeHebergementId: 21
-    129_21:
-        EtablissementId: 129
-        TypeHebergementId: 21
-    130_21:
-        EtablissementId: 130
-        TypeHebergementId: 21
-    131_21:
-        EtablissementId: 131
-        TypeHebergementId: 21
-    132_21:
-        EtablissementId: 132
-        TypeHebergementId: 21
-    133_21:
-        EtablissementId: 133
-        TypeHebergementId: 21
-    134_21:
-        EtablissementId: 134
-        TypeHebergementId: 21
-    137_21:
-        EtablissementId: 137
-        TypeHebergementId: 21
-    138_21:
-        EtablissementId: 138
-        TypeHebergementId: 21
-    139_21:
-        EtablissementId: 139
-        TypeHebergementId: 21
-    140_21:
-        EtablissementId: 140
-        TypeHebergementId: 21
-    141_21:
-        EtablissementId: 141
-        TypeHebergementId: 21
-    143_21:
-        EtablissementId: 143
-        TypeHebergementId: 21
-    145_21:
-        EtablissementId: 145
-        TypeHebergementId: 21
-    146_21:
-        EtablissementId: 146
-        TypeHebergementId: 21
-    149_21:
-        EtablissementId: 149
-        TypeHebergementId: 21
-    150_21:
-        EtablissementId: 150
-        TypeHebergementId: 21
-    151_21:
-        EtablissementId: 151
-        TypeHebergementId: 21
-    153_21:
-        EtablissementId: 153
-        TypeHebergementId: 21
-    154_21:
-        EtablissementId: 154
-        TypeHebergementId: 21
-    155_21:
-        EtablissementId: 155
-        TypeHebergementId: 21
-    156_21:
-        EtablissementId: 156
-        TypeHebergementId: 21
-    157_21:
-        EtablissementId: 157
-        TypeHebergementId: 21
-    158_21:
-        EtablissementId: 158
-        TypeHebergementId: 21
-    159_21:
-        EtablissementId: 159
-        TypeHebergementId: 21
-    162_21:
-        EtablissementId: 162
-        TypeHebergementId: 21
-    163_21:
-        EtablissementId: 163
-        TypeHebergementId: 21
-    164_21:
-        EtablissementId: 164
-        TypeHebergementId: 21
-    165_21:
-        EtablissementId: 165
-        TypeHebergementId: 21
-    167_21:
-        EtablissementId: 167
-        TypeHebergementId: 21
-    170_21:
-        EtablissementId: 170
-        TypeHebergementId: 21
-    173_21:
-        EtablissementId: 173
-        TypeHebergementId: 21
-    119_22:
-        EtablissementId: 119
-        TypeHebergementId: 22
-    140_22:
-        EtablissementId: 140
-        TypeHebergementId: 22
-    173_22:
-        EtablissementId: 173
-        TypeHebergementId: 22
-    7_23:
-        EtablissementId: 7
-        TypeHebergementId: 23
-    28_23:
-        EtablissementId: 28
-        TypeHebergementId: 23
-    84_23:
-        EtablissementId: 84
-        TypeHebergementId: 23
-    85_23:
-        EtablissementId: 85
-        TypeHebergementId: 23
-    89_23:
-        EtablissementId: 89
-        TypeHebergementId: 23
-    91_23:
-        EtablissementId: 91
-        TypeHebergementId: 23
-    96_23:
-        EtablissementId: 96
-        TypeHebergementId: 23
-    99_23:
-        EtablissementId: 99
-        TypeHebergementId: 23
-    100_23:
-        EtablissementId: 100
-        TypeHebergementId: 23
-    106_23:
-        EtablissementId: 106
-        TypeHebergementId: 23
-    110_23:
-        EtablissementId: 110
-        TypeHebergementId: 23
-    115_23:
-        EtablissementId: 115
-        TypeHebergementId: 23
-    119_23:
-        EtablissementId: 119
-        TypeHebergementId: 23
-    120_23:
-        EtablissementId: 120
-        TypeHebergementId: 23
-    143_23:
-        EtablissementId: 143
-        TypeHebergementId: 23
-    150_23:
-        EtablissementId: 150
-        TypeHebergementId: 23
-    164_23:
-        EtablissementId: 164
-        TypeHebergementId: 23
-    169_23:
-        EtablissementId: 169
-        TypeHebergementId: 23
-    173_23:
-        EtablissementId: 173
-        TypeHebergementId: 23
-    110_24:
-        EtablissementId: 110
-        TypeHebergementId: 24
-    119_24:
-        EtablissementId: 119
-        TypeHebergementId: 24
-    164_24:
-        EtablissementId: 164
-        TypeHebergementId: 24
-    173_24:
-        EtablissementId: 173
-        TypeHebergementId: 24
-    90_25:
-        EtablissementId: 90
-        TypeHebergementId: 25
-    119_25:
-        EtablissementId: 119
-        TypeHebergementId: 25
-    144_25:
-        EtablissementId: 144
-        TypeHebergementId: 25
-    173_25:
-        EtablissementId: 173
-        TypeHebergementId: 25
-    1_26:
-        EtablissementId: 1
-        TypeHebergementId: 26
-    5_26:
-        EtablissementId: 5
-        TypeHebergementId: 26
-    6_26:
-        EtablissementId: 6
-        TypeHebergementId: 26
-    9_26:
-        EtablissementId: 9
-        TypeHebergementId: 26
-    13_26:
-        EtablissementId: 13
-        TypeHebergementId: 26
-    15_26:
-        EtablissementId: 15
-        TypeHebergementId: 26
-    17_26:
-        EtablissementId: 17
-        TypeHebergementId: 26
-    19_26:
-        EtablissementId: 19
-        TypeHebergementId: 26
-    22_26:
-        EtablissementId: 22
-        TypeHebergementId: 26
-    28_26:
-        EtablissementId: 28
-        TypeHebergementId: 26
-    29_26:
-        EtablissementId: 29
-        TypeHebergementId: 26
-    30_26:
-        EtablissementId: 30
-        TypeHebergementId: 26
-    34_26:
-        EtablissementId: 34
-        TypeHebergementId: 26
-    50_26:
-        EtablissementId: 50
-        TypeHebergementId: 26
-    61_26:
-        EtablissementId: 61
-        TypeHebergementId: 26
-    72_26:
-        EtablissementId: 72
-        TypeHebergementId: 26
-    80_26:
-        EtablissementId: 80
-        TypeHebergementId: 26
-    82_26:
-        EtablissementId: 82
-        TypeHebergementId: 26
-    83_26:
-        EtablissementId: 83
-        TypeHebergementId: 26
-    84_26:
-        EtablissementId: 84
-        TypeHebergementId: 26
-    85_26:
-        EtablissementId: 85
-        TypeHebergementId: 26
-    86_26:
-        EtablissementId: 86
-        TypeHebergementId: 26
-    88_26:
-        EtablissementId: 88
-        TypeHebergementId: 26
-    89_26:
-        EtablissementId: 89
-        TypeHebergementId: 26
-    90_26:
-        EtablissementId: 90
-        TypeHebergementId: 26
-    91_26:
-        EtablissementId: 91
-        TypeHebergementId: 26
-    93_26:
-        EtablissementId: 93
-        TypeHebergementId: 26
-    94_26:
-        EtablissementId: 94
-        TypeHebergementId: 26
-    95_26:
-        EtablissementId: 95
-        TypeHebergementId: 26
-    96_26:
-        EtablissementId: 96
-        TypeHebergementId: 26
-    97_26:
-        EtablissementId: 97
-        TypeHebergementId: 26
-    98_26:
-        EtablissementId: 98
-        TypeHebergementId: 26
-    99_26:
-        EtablissementId: 99
-        TypeHebergementId: 26
-    101_26:
-        EtablissementId: 101
-        TypeHebergementId: 26
-    102_26:
-        EtablissementId: 102
-        TypeHebergementId: 26
-    104_26:
-        EtablissementId: 104
-        TypeHebergementId: 26
-    105_26:
-        EtablissementId: 105
-        TypeHebergementId: 26
-    106_26:
-        EtablissementId: 106
-        TypeHebergementId: 26
-    107_26:
-        EtablissementId: 107
-        TypeHebergementId: 26
-    109_26:
-        EtablissementId: 109
-        TypeHebergementId: 26
-    110_26:
-        EtablissementId: 110
-        TypeHebergementId: 26
-    111_26:
-        EtablissementId: 111
-        TypeHebergementId: 26
-    112_26:
-        EtablissementId: 112
-        TypeHebergementId: 26
-    113_26:
-        EtablissementId: 113
-        TypeHebergementId: 26
-    116_26:
-        EtablissementId: 116
-        TypeHebergementId: 26
-    117_26:
-        EtablissementId: 117
-        TypeHebergementId: 26
-    118_26:
-        EtablissementId: 118
-        TypeHebergementId: 26
-    119_26:
-        EtablissementId: 119
-        TypeHebergementId: 26
-    120_26:
-        EtablissementId: 120
-        TypeHebergementId: 26
-    121_26:
-        EtablissementId: 121
-        TypeHebergementId: 26
-    122_26:
-        EtablissementId: 122
-        TypeHebergementId: 26
-    124_26:
-        EtablissementId: 124
-        TypeHebergementId: 26
-    125_26:
-        EtablissementId: 125
-        TypeHebergementId: 26
-    127_26:
-        EtablissementId: 127
-        TypeHebergementId: 26
-    129_26:
-        EtablissementId: 129
-        TypeHebergementId: 26
-    131_26:
-        EtablissementId: 131
-        TypeHebergementId: 26
-    137_26:
-        EtablissementId: 137
-        TypeHebergementId: 26
-    139_26:
-        EtablissementId: 139
-        TypeHebergementId: 26
-    141_26:
-        EtablissementId: 141
-        TypeHebergementId: 26
-    143_26:
-        EtablissementId: 143
-        TypeHebergementId: 26
-    144_26:
-        EtablissementId: 144
-        TypeHebergementId: 26
-    145_26:
-        EtablissementId: 145
-        TypeHebergementId: 26
-    149_26:
-        EtablissementId: 149
-        TypeHebergementId: 26
-    151_26:
-        EtablissementId: 151
-        TypeHebergementId: 26
-    156_26:
-        EtablissementId: 156
-        TypeHebergementId: 26
-    158_26:
-        EtablissementId: 158
-        TypeHebergementId: 26
-    159_26:
-        EtablissementId: 159
-        TypeHebergementId: 26
-    163_26:
-        EtablissementId: 163
-        TypeHebergementId: 26
-    164_26:
-        EtablissementId: 164
-        TypeHebergementId: 26
-    165_26:
-        EtablissementId: 165
-        TypeHebergementId: 26
-    167_26:
-        EtablissementId: 167
-        TypeHebergementId: 26
-    170_26:
-        EtablissementId: 170
-        TypeHebergementId: 26
-    173_26:
-        EtablissementId: 173
-        TypeHebergementId: 26
-    112_27:
-        EtablissementId: 112
-        TypeHebergementId: 27
-    119_27:
-        EtablissementId: 119
-        TypeHebergementId: 27
-    173_27:
-        EtablissementId: 173
-        TypeHebergementId: 27
-    2_28:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    2_28____:
         EtablissementId: 2
         TypeHebergementId: 28
-    11_28:
-        EtablissementId: 11
-        TypeHebergementId: 28
-    110_28:
-        EtablissementId: 110
-        TypeHebergementId: 28
-    118_28:
-        EtablissementId: 118
-        TypeHebergementId: 28
-    119_28:
-        EtablissementId: 119
-        TypeHebergementId: 28
-    120_28:
-        EtablissementId: 120
-        TypeHebergementId: 28
-    127_28:
-        EtablissementId: 127
-        TypeHebergementId: 28
-    134_28:
-        EtablissementId: 134
-        TypeHebergementId: 28
-    164_28:
-        EtablissementId: 164
-        TypeHebergementId: 28
-    173_28:
-        EtablissementId: 173
-        TypeHebergementId: 28
-    10_29:
-        EtablissementId: 10
-        TypeHebergementId: 29
-    39_29:
-        EtablissementId: 39
-        TypeHebergementId: 29
-    50_29:
-        EtablissementId: 50
-        TypeHebergementId: 29
-    61_29:
-        EtablissementId: 61
-        TypeHebergementId: 29
-    79_29:
-        EtablissementId: 79
-        TypeHebergementId: 29
-    86_29:
-        EtablissementId: 86
-        TypeHebergementId: 29
-    87_29:
-        EtablissementId: 87
-        TypeHebergementId: 29
-    117_29:
-        EtablissementId: 117
-        TypeHebergementId: 29
-    119_29:
-        EtablissementId: 119
-        TypeHebergementId: 29
-    128_29:
-        EtablissementId: 128
-        TypeHebergementId: 29
-    173_29:
-        EtablissementId: 173
-        TypeHebergementId: 29
-    1_30:
-        EtablissementId: 1
-        TypeHebergementId: 30
-    3_30:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    3_21____:
+        EtablissementId: 3
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    3_30____:
         EtablissementId: 3
         TypeHebergementId: 30
-    6_30:
-        EtablissementId: 6
-        TypeHebergementId: 30
-    7_30:
-        EtablissementId: 7
-        TypeHebergementId: 30
-    10_30:
-        EtablissementId: 10
-        TypeHebergementId: 30
-    13_30:
-        EtablissementId: 13
-        TypeHebergementId: 30
-    15_30:
-        EtablissementId: 15
-        TypeHebergementId: 30
-    16_30:
-        EtablissementId: 16
-        TypeHebergementId: 30
-    17_30:
-        EtablissementId: 17
-        TypeHebergementId: 30
-    18_30:
-        EtablissementId: 18
-        TypeHebergementId: 30
-    19_30:
-        EtablissementId: 19
-        TypeHebergementId: 30
-    21_30:
-        EtablissementId: 21
-        TypeHebergementId: 30
-    22_30:
-        EtablissementId: 22
-        TypeHebergementId: 30
-    23_30:
-        EtablissementId: 23
-        TypeHebergementId: 30
-    24_30:
-        EtablissementId: 24
-        TypeHebergementId: 30
-    26_30:
-        EtablissementId: 26
-        TypeHebergementId: 30
-    28_30:
-        EtablissementId: 28
-        TypeHebergementId: 30
-    30_30:
-        EtablissementId: 30
-        TypeHebergementId: 30
-    31_30:
-        EtablissementId: 31
-        TypeHebergementId: 30
-    32_30:
-        EtablissementId: 32
-        TypeHebergementId: 30
-    37_30:
-        EtablissementId: 37
-        TypeHebergementId: 30
-    39_30:
-        EtablissementId: 39
-        TypeHebergementId: 30
-    50_30:
-        EtablissementId: 50
-        TypeHebergementId: 30
-    61_30:
-        EtablissementId: 61
-        TypeHebergementId: 30
-    78_30:
-        EtablissementId: 78
-        TypeHebergementId: 30
-    79_30:
-        EtablissementId: 79
-        TypeHebergementId: 30
-    80_30:
-        EtablissementId: 80
-        TypeHebergementId: 30
-    81_30:
-        EtablissementId: 81
-        TypeHebergementId: 30
-    82_30:
-        EtablissementId: 82
-        TypeHebergementId: 30
-    83_30:
-        EtablissementId: 83
-        TypeHebergementId: 30
-    84_30:
-        EtablissementId: 84
-        TypeHebergementId: 30
-    85_30:
-        EtablissementId: 85
-        TypeHebergementId: 30
-    86_30:
-        EtablissementId: 86
-        TypeHebergementId: 30
-    87_30:
-        EtablissementId: 87
-        TypeHebergementId: 30
-    88_30:
-        EtablissementId: 88
-        TypeHebergementId: 30
-    89_30:
-        EtablissementId: 89
-        TypeHebergementId: 30
-    91_30:
-        EtablissementId: 91
-        TypeHebergementId: 30
-    92_30:
-        EtablissementId: 92
-        TypeHebergementId: 30
-    93_30:
-        EtablissementId: 93
-        TypeHebergementId: 30
-    94_30:
-        EtablissementId: 94
-        TypeHebergementId: 30
-    95_30:
-        EtablissementId: 95
-        TypeHebergementId: 30
-    96_30:
-        EtablissementId: 96
-        TypeHebergementId: 30
-    97_30:
-        EtablissementId: 97
-        TypeHebergementId: 30
-    98_30:
-        EtablissementId: 98
-        TypeHebergementId: 30
-    99_30:
-        EtablissementId: 99
-        TypeHebergementId: 30
-    101_30:
-        EtablissementId: 101
-        TypeHebergementId: 30
-    102_30:
-        EtablissementId: 102
-        TypeHebergementId: 30
-    103_30:
-        EtablissementId: 103
-        TypeHebergementId: 30
-    104_30:
-        EtablissementId: 104
-        TypeHebergementId: 30
-    105_30:
-        EtablissementId: 105
-        TypeHebergementId: 30
-    106_30:
-        EtablissementId: 106
-        TypeHebergementId: 30
-    107_30:
-        EtablissementId: 107
-        TypeHebergementId: 30
-    108_30:
-        EtablissementId: 108
-        TypeHebergementId: 30
-    109_30:
-        EtablissementId: 109
-        TypeHebergementId: 30
-    110_30:
-        EtablissementId: 110
-        TypeHebergementId: 30
-    111_30:
-        EtablissementId: 111
-        TypeHebergementId: 30
-    112_30:
-        EtablissementId: 112
-        TypeHebergementId: 30
-    113_30:
-        EtablissementId: 113
-        TypeHebergementId: 30
-    114_30:
-        EtablissementId: 114
-        TypeHebergementId: 30
-    116_30:
-        EtablissementId: 116
-        TypeHebergementId: 30
-    117_30:
-        EtablissementId: 117
-        TypeHebergementId: 30
-    119_30:
-        EtablissementId: 119
-        TypeHebergementId: 30
-    121_30:
-        EtablissementId: 121
-        TypeHebergementId: 30
-    122_30:
-        EtablissementId: 122
-        TypeHebergementId: 30
-    123_30:
-        EtablissementId: 123
-        TypeHebergementId: 30
-    124_30:
-        EtablissementId: 124
-        TypeHebergementId: 30
-    126_30:
-        EtablissementId: 126
-        TypeHebergementId: 30
-    128_30:
-        EtablissementId: 128
-        TypeHebergementId: 30
-    129_30:
-        EtablissementId: 129
-        TypeHebergementId: 30
-    130_30:
-        EtablissementId: 130
-        TypeHebergementId: 30
-    131_30:
-        EtablissementId: 131
-        TypeHebergementId: 30
-    132_30:
-        EtablissementId: 132
-        TypeHebergementId: 30
-    133_30:
-        EtablissementId: 133
-        TypeHebergementId: 30
-    137_30:
-        EtablissementId: 137
-        TypeHebergementId: 30
-    139_30:
-        EtablissementId: 139
-        TypeHebergementId: 30
-    140_30:
-        EtablissementId: 140
-        TypeHebergementId: 30
-    141_30:
-        EtablissementId: 141
-        TypeHebergementId: 30
-    143_30:
-        EtablissementId: 143
-        TypeHebergementId: 30
-    145_30:
-        EtablissementId: 145
-        TypeHebergementId: 30
-    146_30:
-        EtablissementId: 146
-        TypeHebergementId: 30
-    148_30:
-        EtablissementId: 148
-        TypeHebergementId: 30
-    149_30:
-        EtablissementId: 149
-        TypeHebergementId: 30
-    150_30:
-        EtablissementId: 150
-        TypeHebergementId: 30
-    152_30:
-        EtablissementId: 152
-        TypeHebergementId: 30
-    153_30:
-        EtablissementId: 153
-        TypeHebergementId: 30
-    155_30:
-        EtablissementId: 155
-        TypeHebergementId: 30
-    156_30:
-        EtablissementId: 156
-        TypeHebergementId: 30
-    158_30:
-        EtablissementId: 158
-        TypeHebergementId: 30
-    159_30:
-        EtablissementId: 159
-        TypeHebergementId: 30
-    162_30:
-        EtablissementId: 162
-        TypeHebergementId: 30
-    163_30:
-        EtablissementId: 163
-        TypeHebergementId: 30
-    164_30:
-        EtablissementId: 164
-        TypeHebergementId: 30
-    165_30:
-        EtablissementId: 165
-        TypeHebergementId: 30
-    166_30:
-        EtablissementId: 166
-        TypeHebergementId: 30
-    167_30:
-        EtablissementId: 167
-        TypeHebergementId: 30
-    168_30:
-        EtablissementId: 168
-        TypeHebergementId: 30
-    170_30:
-        EtablissementId: 170
-        TypeHebergementId: 30
-    173_30:
-        EtablissementId: 173
-        TypeHebergementId: 30
-    112_31:
-        EtablissementId: 112
-        TypeHebergementId: 31
-    119_31:
-        EtablissementId: 119
-        TypeHebergementId: 31
-    173_31:
-        EtablissementId: 173
-        TypeHebergementId: 31
-    112_32:
-        EtablissementId: 112
-        TypeHebergementId: 32
-    119_32:
-        EtablissementId: 119
-        TypeHebergementId: 32
-    173_32:
-        EtablissementId: 173
-        TypeHebergementId: 32
-    112_33:
-        EtablissementId: 112
-        TypeHebergementId: 33
-    119_33:
-        EtablissementId: 119
-        TypeHebergementId: 33
-    173_33:
-        EtablissementId: 173
-        TypeHebergementId: 33
-    112_34:
-        EtablissementId: 112
-        TypeHebergementId: 34
-    119_34:
-        EtablissementId: 119
-        TypeHebergementId: 34
-    173_34:
-        EtablissementId: 173
-        TypeHebergementId: 34
-    112_35:
-        EtablissementId: 112
-        TypeHebergementId: 35
-    119_35:
-        EtablissementId: 119
-        TypeHebergementId: 35
-    173_35:
-        EtablissementId: 173
-        TypeHebergementId: 35
-    112_36:
-        EtablissementId: 112
-        TypeHebergementId: 36
-    119_36:
-        EtablissementId: 119
-        TypeHebergementId: 36
-    173_36:
-        EtablissementId: 173
-        TypeHebergementId: 36
-    112_37:
-        EtablissementId: 112
-        TypeHebergementId: 37
-    119_37:
-        EtablissementId: 119
-        TypeHebergementId: 37
-    173_37:
-        EtablissementId: 173
-        TypeHebergementId: 37
-    112_38:
-        EtablissementId: 112
-        TypeHebergementId: 38
-    119_38:
-        EtablissementId: 119
-        TypeHebergementId: 38
-    173_38:
-        EtablissementId: 173
-        TypeHebergementId: 38
-    112_39:
-        EtablissementId: 112
-        TypeHebergementId: 39
-    119_39:
-        EtablissementId: 119
-        TypeHebergementId: 39
-    173_39:
-        EtablissementId: 173
-        TypeHebergementId: 39
-    5_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    5_26____:
+        EtablissementId: 5
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    5_40____:
         EtablissementId: 5
         TypeHebergementId: 40
-    8_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    6_21____:
+        EtablissementId: 6
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    6_26____:
+        EtablissementId: 6
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    6_30____:
+        EtablissementId: 6
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    7_21____:
+        EtablissementId: 7
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    7_23____:
+        EtablissementId: 7
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    7_30____:
+        EtablissementId: 7
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    8_9____:
+        EtablissementId: 8
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    8_21____:
+        EtablissementId: 8
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    8_40____:
         EtablissementId: 8
         TypeHebergementId: 40
-    14_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    9_21____:
+        EtablissementId: 9
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    9_26____:
+        EtablissementId: 9
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    10_21____:
+        EtablissementId: 10
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    10_29____:
+        EtablissementId: 10
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    10_30____:
+        EtablissementId: 10
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    11_21____:
+        EtablissementId: 11
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    11_28____:
+        EtablissementId: 11
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    12_9____:
+        EtablissementId: 12
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    12_14____:
+        EtablissementId: 12
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    13_21____:
+        EtablissementId: 13
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    13_26____:
+        EtablissementId: 13
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    13_30____:
+        EtablissementId: 13
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    14_14____:
+        EtablissementId: 14
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    14_40____:
         EtablissementId: 14
         TypeHebergementId: 40
-    15_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    15_21____:
+        EtablissementId: 15
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    15_26____:
+        EtablissementId: 15
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    15_30____:
+        EtablissementId: 15
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    15_40____:
         EtablissementId: 15
         TypeHebergementId: 40
-    17_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    16_21____:
+        EtablissementId: 16
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    16_30____:
+        EtablissementId: 16
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    17_21____:
+        EtablissementId: 17
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    17_26____:
+        EtablissementId: 17
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    17_30____:
+        EtablissementId: 17
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    17_40____:
         EtablissementId: 17
         TypeHebergementId: 40
-    25_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    18_14____:
+        EtablissementId: 18
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    18_21____:
+        EtablissementId: 18
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    18_30____:
+        EtablissementId: 18
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    19_21____:
+        EtablissementId: 19
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    19_26____:
+        EtablissementId: 19
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    19_30____:
+        EtablissementId: 19
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    20_9____:
+        EtablissementId: 20
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    20_16____:
+        EtablissementId: 20
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    20_21____:
+        EtablissementId: 20
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    21_20____:
+        EtablissementId: 21
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    21_21____:
+        EtablissementId: 21
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    21_30____:
+        EtablissementId: 21
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    22_21____:
+        EtablissementId: 22
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    22_26____:
+        EtablissementId: 22
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    22_30____:
+        EtablissementId: 22
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    23_14____:
+        EtablissementId: 23
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    23_30____:
+        EtablissementId: 23
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    24_14____:
+        EtablissementId: 24
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    24_30____:
+        EtablissementId: 24
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    25_21____:
+        EtablissementId: 25
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    25_40____:
         EtablissementId: 25
         TypeHebergementId: 40
-    26_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    26_21____:
+        EtablissementId: 26
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    26_30____:
+        EtablissementId: 26
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    26_40____:
         EtablissementId: 26
         TypeHebergementId: 40
-    27_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    27_14____:
+        EtablissementId: 27
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    27_21____:
+        EtablissementId: 27
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    27_40____:
         EtablissementId: 27
         TypeHebergementId: 40
-    85_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    28_16____:
+        EtablissementId: 28
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    28_21____:
+        EtablissementId: 28
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    28_23____:
+        EtablissementId: 28
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    28_26____:
+        EtablissementId: 28
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    28_30____:
+        EtablissementId: 28
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    29_21____:
+        EtablissementId: 29
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    29_26____:
+        EtablissementId: 29
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    30_21____:
+        EtablissementId: 30
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    30_26____:
+        EtablissementId: 30
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    30_30____:
+        EtablissementId: 30
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    31_21____:
+        EtablissementId: 31
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    31_30____:
+        EtablissementId: 31
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    32_21____:
+        EtablissementId: 32
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    32_30____:
+        EtablissementId: 32
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    34_21____:
+        EtablissementId: 34
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    34_26____:
+        EtablissementId: 34
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    37_21____:
+        EtablissementId: 37
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    37_30____:
+        EtablissementId: 37
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    39_21____:
+        EtablissementId: 39
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    39_29____:
+        EtablissementId: 39
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    39_30____:
+        EtablissementId: 39
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    50_21____:
+        EtablissementId: 50
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    50_26____:
+        EtablissementId: 50
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    50_29____:
+        EtablissementId: 50
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    50_30____:
+        EtablissementId: 50
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    61_21____:
+        EtablissementId: 61
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    61_26____:
+        EtablissementId: 61
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    61_29____:
+        EtablissementId: 61
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    61_30____:
+        EtablissementId: 61
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    72_21____:
+        EtablissementId: 72
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    72_26____:
+        EtablissementId: 72
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    78_21____:
+        EtablissementId: 78
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    78_30____:
+        EtablissementId: 78
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    79_21____:
+        EtablissementId: 79
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    79_29____:
+        EtablissementId: 79
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    79_30____:
+        EtablissementId: 79
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    80_21____:
+        EtablissementId: 80
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    80_26____:
+        EtablissementId: 80
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    80_30____:
+        EtablissementId: 80
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    81_21____:
+        EtablissementId: 81
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    81_30____:
+        EtablissementId: 81
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_9____:
+        EtablissementId: 82
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_14____:
+        EtablissementId: 82
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_16____:
+        EtablissementId: 82
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_21____:
+        EtablissementId: 82
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_26____:
+        EtablissementId: 82
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    82_30____:
+        EtablissementId: 82
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_9____:
+        EtablissementId: 83
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_14____:
+        EtablissementId: 83
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_16____:
+        EtablissementId: 83
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_21____:
+        EtablissementId: 83
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_26____:
+        EtablissementId: 83
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    83_30____:
+        EtablissementId: 83
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_9____:
+        EtablissementId: 84
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_12____:
+        EtablissementId: 84
+        TypeHebergementId: 12
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_14____:
+        EtablissementId: 84
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_17____:
+        EtablissementId: 84
+        TypeHebergementId: 17
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_20____:
+        EtablissementId: 84
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_21____:
+        EtablissementId: 84
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_23____:
+        EtablissementId: 84
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_26____:
+        EtablissementId: 84
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    84_30____:
+        EtablissementId: 84
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_9____:
+        EtablissementId: 85
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_12____:
+        EtablissementId: 85
+        TypeHebergementId: 12
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_16____:
+        EtablissementId: 85
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_21____:
+        EtablissementId: 85
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_23____:
+        EtablissementId: 85
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_26____:
+        EtablissementId: 85
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_30____:
+        EtablissementId: 85
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_40____:
         EtablissementId: 85
         TypeHebergementId: 40
-    89_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    85_41____:
+        EtablissementId: 85
+        TypeHebergementId: 41
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_13____:
+        EtablissementId: 86
+        TypeHebergementId: 13
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_14____:
+        EtablissementId: 86
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_21____:
+        EtablissementId: 86
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_26____:
+        EtablissementId: 86
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_29____:
+        EtablissementId: 86
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    86_30____:
+        EtablissementId: 86
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    87_21____:
+        EtablissementId: 87
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    87_29____:
+        EtablissementId: 87
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    87_30____:
+        EtablissementId: 87
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    88_9____:
+        EtablissementId: 88
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    88_21____:
+        EtablissementId: 88
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    88_26____:
+        EtablissementId: 88
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    88_30____:
+        EtablissementId: 88
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_20____:
+        EtablissementId: 89
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_21____:
+        EtablissementId: 89
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_23____:
+        EtablissementId: 89
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_26____:
+        EtablissementId: 89
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_30____:
+        EtablissementId: 89
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    89_40____:
         EtablissementId: 89
         TypeHebergementId: 40
-    90_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_9____:
+        EtablissementId: 90
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_14____:
+        EtablissementId: 90
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_21____:
+        EtablissementId: 90
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_25____:
+        EtablissementId: 90
+        TypeHebergementId: 25
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_26____:
+        EtablissementId: 90
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    90_40____:
         EtablissementId: 90
         TypeHebergementId: 40
-    96_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    91_16____:
+        EtablissementId: 91
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    91_21____:
+        EtablissementId: 91
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    91_23____:
+        EtablissementId: 91
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    91_26____:
+        EtablissementId: 91
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    91_30____:
+        EtablissementId: 91
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    92_15____:
+        EtablissementId: 92
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    92_17____:
+        EtablissementId: 92
+        TypeHebergementId: 17
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    92_21____:
+        EtablissementId: 92
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    92_30____:
+        EtablissementId: 92
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    93_21____:
+        EtablissementId: 93
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    93_26____:
+        EtablissementId: 93
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    93_30____:
+        EtablissementId: 93
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    94_14____:
+        EtablissementId: 94
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    94_21____:
+        EtablissementId: 94
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    94_26____:
+        EtablissementId: 94
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    94_30____:
+        EtablissementId: 94
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    95_14____:
+        EtablissementId: 95
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    95_21____:
+        EtablissementId: 95
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    95_26____:
+        EtablissementId: 95
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    95_30____:
+        EtablissementId: 95
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_9____:
+        EtablissementId: 96
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_14____:
+        EtablissementId: 96
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_20____:
+        EtablissementId: 96
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_21____:
+        EtablissementId: 96
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_23____:
+        EtablissementId: 96
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_26____:
+        EtablissementId: 96
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_30____:
+        EtablissementId: 96
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    96_40____:
         EtablissementId: 96
         TypeHebergementId: 40
-    99_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    97_14____:
+        EtablissementId: 97
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    97_21____:
+        EtablissementId: 97
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    97_26____:
+        EtablissementId: 97
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    97_30____:
+        EtablissementId: 97
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    98_14____:
+        EtablissementId: 98
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    98_21____:
+        EtablissementId: 98
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    98_26____:
+        EtablissementId: 98
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    98_30____:
+        EtablissementId: 98
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_14____:
+        EtablissementId: 99
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_21____:
+        EtablissementId: 99
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_23____:
+        EtablissementId: 99
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_26____:
+        EtablissementId: 99
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_30____:
+        EtablissementId: 99
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    99_40____:
         EtablissementId: 99
         TypeHebergementId: 40
-    104_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    100_9____:
+        EtablissementId: 100
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    100_16____:
+        EtablissementId: 100
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    100_21____:
+        EtablissementId: 100
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    100_23____:
+        EtablissementId: 100
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    101_21____:
+        EtablissementId: 101
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    101_26____:
+        EtablissementId: 101
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    101_30____:
+        EtablissementId: 101
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    102_21____:
+        EtablissementId: 102
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    102_26____:
+        EtablissementId: 102
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    102_30____:
+        EtablissementId: 102
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    103_9____:
+        EtablissementId: 103
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    103_21____:
+        EtablissementId: 103
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    103_30____:
+        EtablissementId: 103
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    104_21____:
+        EtablissementId: 104
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    104_26____:
+        EtablissementId: 104
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    104_30____:
+        EtablissementId: 104
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    104_40____:
         EtablissementId: 104
         TypeHebergementId: 40
-    106_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    105_9____:
+        EtablissementId: 105
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    105_21____:
+        EtablissementId: 105
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    105_26____:
+        EtablissementId: 105
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    105_30____:
+        EtablissementId: 105
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_9____:
+        EtablissementId: 106
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_12____:
+        EtablissementId: 106
+        TypeHebergementId: 12
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_16____:
+        EtablissementId: 106
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_21____:
+        EtablissementId: 106
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_23____:
+        EtablissementId: 106
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_26____:
+        EtablissementId: 106
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_30____:
+        EtablissementId: 106
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_40____:
         EtablissementId: 106
         TypeHebergementId: 40
-    111_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    106_41____:
+        EtablissementId: 106
+        TypeHebergementId: 41
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    107_15____:
+        EtablissementId: 107
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    107_21____:
+        EtablissementId: 107
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    107_26____:
+        EtablissementId: 107
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    107_30____:
+        EtablissementId: 107
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    108_16____:
+        EtablissementId: 108
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    108_21____:
+        EtablissementId: 108
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    108_30____:
+        EtablissementId: 108
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    109_21____:
+        EtablissementId: 109
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    109_26____:
+        EtablissementId: 109
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    109_30____:
+        EtablissementId: 109
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_18____:
+        EtablissementId: 110
+        TypeHebergementId: 18
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_19____:
+        EtablissementId: 110
+        TypeHebergementId: 19
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_21____:
+        EtablissementId: 110
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_23____:
+        EtablissementId: 110
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_24____:
+        EtablissementId: 110
+        TypeHebergementId: 24
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_26____:
+        EtablissementId: 110
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_28____:
+        EtablissementId: 110
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    110_30____:
+        EtablissementId: 110
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    111_21____:
+        EtablissementId: 111
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    111_26____:
+        EtablissementId: 111
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    111_30____:
+        EtablissementId: 111
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    111_40____:
         EtablissementId: 111
         TypeHebergementId: 40
-    118_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_1____:
+        EtablissementId: 112
+        TypeHebergementId: 1
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_2____:
+        EtablissementId: 112
+        TypeHebergementId: 2
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_3____:
+        EtablissementId: 112
+        TypeHebergementId: 3
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_4____:
+        EtablissementId: 112
+        TypeHebergementId: 4
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_5____:
+        EtablissementId: 112
+        TypeHebergementId: 5
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_6____:
+        EtablissementId: 112
+        TypeHebergementId: 6
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_7____:
+        EtablissementId: 112
+        TypeHebergementId: 7
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_8____:
+        EtablissementId: 112
+        TypeHebergementId: 8
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_14____:
+        EtablissementId: 112
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_16____:
+        EtablissementId: 112
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_19____:
+        EtablissementId: 112
+        TypeHebergementId: 19
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    '112_21_270.00_Promotion basse saison 7=6 nuits_2012-12-22 00:00:00_2012-12-29 00:00:00':
+        EtablissementId: 112
+        TypeHebergementId: 21
+        MinimumPrice: '270.00'
+        MinimumPriceDiscountLabel: 'Promotion basse saison 7=6 nuits'
+        MinimumPriceStartDate: '2012-12-22 00:00:00'
+        MinimumPriceEndDate: '2012-12-29 00:00:00'
+    112_26____:
+        EtablissementId: 112
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_27____:
+        EtablissementId: 112
+        TypeHebergementId: 27
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_30____:
+        EtablissementId: 112
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_31____:
+        EtablissementId: 112
+        TypeHebergementId: 31
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_32____:
+        EtablissementId: 112
+        TypeHebergementId: 32
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_33____:
+        EtablissementId: 112
+        TypeHebergementId: 33
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_34____:
+        EtablissementId: 112
+        TypeHebergementId: 34
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_35____:
+        EtablissementId: 112
+        TypeHebergementId: 35
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_36____:
+        EtablissementId: 112
+        TypeHebergementId: 36
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_37____:
+        EtablissementId: 112
+        TypeHebergementId: 37
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_38____:
+        EtablissementId: 112
+        TypeHebergementId: 38
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    112_39____:
+        EtablissementId: 112
+        TypeHebergementId: 39
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    113_21____:
+        EtablissementId: 113
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    113_26____:
+        EtablissementId: 113
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    113_30____:
+        EtablissementId: 113
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    114_9____:
+        EtablissementId: 114
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    114_15____:
+        EtablissementId: 114
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    114_21____:
+        EtablissementId: 114
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    114_30____:
+        EtablissementId: 114
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    115_9____:
+        EtablissementId: 115
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    115_14____:
+        EtablissementId: 115
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    115_23____:
+        EtablissementId: 115
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    116_21____:
+        EtablissementId: 116
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    116_26____:
+        EtablissementId: 116
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    116_30____:
+        EtablissementId: 116
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    117_26____:
+        EtablissementId: 117
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    117_29____:
+        EtablissementId: 117
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    117_30____:
+        EtablissementId: 117
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    118_21____:
+        EtablissementId: 118
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    118_26____:
+        EtablissementId: 118
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    118_28____:
+        EtablissementId: 118
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    118_40____:
         EtablissementId: 118
         TypeHebergementId: 40
-    119_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_1____:
+        EtablissementId: 119
+        TypeHebergementId: 1
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_2____:
+        EtablissementId: 119
+        TypeHebergementId: 2
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_3____:
+        EtablissementId: 119
+        TypeHebergementId: 3
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_4____:
+        EtablissementId: 119
+        TypeHebergementId: 4
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_5____:
+        EtablissementId: 119
+        TypeHebergementId: 5
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_6____:
+        EtablissementId: 119
+        TypeHebergementId: 6
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_7____:
+        EtablissementId: 119
+        TypeHebergementId: 7
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_8____:
+        EtablissementId: 119
+        TypeHebergementId: 8
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_9____:
+        EtablissementId: 119
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_10____:
+        EtablissementId: 119
+        TypeHebergementId: 10
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_11____:
+        EtablissementId: 119
+        TypeHebergementId: 11
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_12____:
+        EtablissementId: 119
+        TypeHebergementId: 12
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_13____:
+        EtablissementId: 119
+        TypeHebergementId: 13
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_14____:
+        EtablissementId: 119
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_15____:
+        EtablissementId: 119
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_16____:
+        EtablissementId: 119
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_17____:
+        EtablissementId: 119
+        TypeHebergementId: 17
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_18____:
+        EtablissementId: 119
+        TypeHebergementId: 18
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_19____:
+        EtablissementId: 119
+        TypeHebergementId: 19
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_20____:
+        EtablissementId: 119
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_21____:
+        EtablissementId: 119
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_22____:
+        EtablissementId: 119
+        TypeHebergementId: 22
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_23____:
+        EtablissementId: 119
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_24____:
+        EtablissementId: 119
+        TypeHebergementId: 24
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_25____:
+        EtablissementId: 119
+        TypeHebergementId: 25
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_26____:
+        EtablissementId: 119
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_27____:
+        EtablissementId: 119
+        TypeHebergementId: 27
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_28____:
+        EtablissementId: 119
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_29____:
+        EtablissementId: 119
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_30____:
+        EtablissementId: 119
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_31____:
+        EtablissementId: 119
+        TypeHebergementId: 31
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_32____:
+        EtablissementId: 119
+        TypeHebergementId: 32
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_33____:
+        EtablissementId: 119
+        TypeHebergementId: 33
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_34____:
+        EtablissementId: 119
+        TypeHebergementId: 34
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_35____:
+        EtablissementId: 119
+        TypeHebergementId: 35
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_36____:
+        EtablissementId: 119
+        TypeHebergementId: 36
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_37____:
+        EtablissementId: 119
+        TypeHebergementId: 37
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_38____:
+        EtablissementId: 119
+        TypeHebergementId: 38
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_39____:
+        EtablissementId: 119
+        TypeHebergementId: 39
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_40____:
         EtablissementId: 119
         TypeHebergementId: 40
-    120_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    119_41____:
+        EtablissementId: 119
+        TypeHebergementId: 41
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    120_21____:
+        EtablissementId: 120
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    120_23____:
+        EtablissementId: 120
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    120_26____:
+        EtablissementId: 120
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    120_28____:
+        EtablissementId: 120
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    120_40____:
         EtablissementId: 120
         TypeHebergementId: 40
-    143_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    121_21____:
+        EtablissementId: 121
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    121_26____:
+        EtablissementId: 121
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    121_30____:
+        EtablissementId: 121
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    122_21____:
+        EtablissementId: 122
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    122_26____:
+        EtablissementId: 122
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    122_30____:
+        EtablissementId: 122
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    123_21____:
+        EtablissementId: 123
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    123_30____:
+        EtablissementId: 123
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    124_21____:
+        EtablissementId: 124
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    124_26____:
+        EtablissementId: 124
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    124_30____:
+        EtablissementId: 124
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    125_14____:
+        EtablissementId: 125
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    125_16____:
+        EtablissementId: 125
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    125_21____:
+        EtablissementId: 125
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    125_26____:
+        EtablissementId: 125
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    126_21____:
+        EtablissementId: 126
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    126_30____:
+        EtablissementId: 126
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    127_21____:
+        EtablissementId: 127
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    127_26____:
+        EtablissementId: 127
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    127_28____:
+        EtablissementId: 127
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    128_21____:
+        EtablissementId: 128
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    128_29____:
+        EtablissementId: 128
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    128_30____:
+        EtablissementId: 128
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    129_21____:
+        EtablissementId: 129
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    129_26____:
+        EtablissementId: 129
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    129_30____:
+        EtablissementId: 129
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    130_21____:
+        EtablissementId: 130
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    130_30____:
+        EtablissementId: 130
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    131_13____:
+        EtablissementId: 131
+        TypeHebergementId: 13
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    131_21____:
+        EtablissementId: 131
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    131_26____:
+        EtablissementId: 131
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    131_30____:
+        EtablissementId: 131
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    132_21____:
+        EtablissementId: 132
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    132_30____:
+        EtablissementId: 132
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    133_21____:
+        EtablissementId: 133
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    133_30____:
+        EtablissementId: 133
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    134_9____:
+        EtablissementId: 134
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    134_21____:
+        EtablissementId: 134
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    134_28____:
+        EtablissementId: 134
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    137_21____:
+        EtablissementId: 137
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    137_26____:
+        EtablissementId: 137
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    137_30____:
+        EtablissementId: 137
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    138_20____:
+        EtablissementId: 138
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    138_21____:
+        EtablissementId: 138
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    139_21____:
+        EtablissementId: 139
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    139_26____:
+        EtablissementId: 139
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    139_30____:
+        EtablissementId: 139
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    140_21____:
+        EtablissementId: 140
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    140_22____:
+        EtablissementId: 140
+        TypeHebergementId: 22
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    140_30____:
+        EtablissementId: 140
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    141_21____:
+        EtablissementId: 141
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    141_26____:
+        EtablissementId: 141
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    141_30____:
+        EtablissementId: 141
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    142_10____:
+        EtablissementId: 142
+        TypeHebergementId: 10
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    142_11____:
+        EtablissementId: 142
+        TypeHebergementId: 11
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    143_21____:
+        EtablissementId: 143
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    143_23____:
+        EtablissementId: 143
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    143_26____:
+        EtablissementId: 143
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    143_30____:
+        EtablissementId: 143
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    143_40____:
         EtablissementId: 143
         TypeHebergementId: 40
-    144_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    144_9____:
+        EtablissementId: 144
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    144_14____:
+        EtablissementId: 144
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    144_25____:
+        EtablissementId: 144
+        TypeHebergementId: 25
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    144_26____:
+        EtablissementId: 144
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    144_40____:
         EtablissementId: 144
         TypeHebergementId: 40
-    150_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    145_16____:
+        EtablissementId: 145
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    145_21____:
+        EtablissementId: 145
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    145_26____:
+        EtablissementId: 145
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    145_30____:
+        EtablissementId: 145
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    146_15____:
+        EtablissementId: 146
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    146_17____:
+        EtablissementId: 146
+        TypeHebergementId: 17
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    146_21____:
+        EtablissementId: 146
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    146_30____:
+        EtablissementId: 146
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    148_14____:
+        EtablissementId: 148
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    148_30____:
+        EtablissementId: 148
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    149_21____:
+        EtablissementId: 149
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    149_26____:
+        EtablissementId: 149
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    149_30____:
+        EtablissementId: 149
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_9____:
+        EtablissementId: 150
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_14____:
+        EtablissementId: 150
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_20____:
+        EtablissementId: 150
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_21____:
+        EtablissementId: 150
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_23____:
+        EtablissementId: 150
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_30____:
+        EtablissementId: 150
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    150_40____:
         EtablissementId: 150
         TypeHebergementId: 40
-    158_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    151_14____:
+        EtablissementId: 151
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    151_21____:
+        EtablissementId: 151
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    151_26____:
+        EtablissementId: 151
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    152_14____:
+        EtablissementId: 152
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    152_30____:
+        EtablissementId: 152
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    153_21____:
+        EtablissementId: 153
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    153_30____:
+        EtablissementId: 153
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    154_9____:
+        EtablissementId: 154
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    154_21____:
+        EtablissementId: 154
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    155_21____:
+        EtablissementId: 155
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    155_30____:
+        EtablissementId: 155
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    156_21____:
+        EtablissementId: 156
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    156_26____:
+        EtablissementId: 156
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    156_30____:
+        EtablissementId: 156
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    157_9____:
+        EtablissementId: 157
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    157_21____:
+        EtablissementId: 157
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    158_21____:
+        EtablissementId: 158
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    158_26____:
+        EtablissementId: 158
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    158_30____:
+        EtablissementId: 158
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    158_40____:
         EtablissementId: 158
         TypeHebergementId: 40
-    165_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    159_9____:
+        EtablissementId: 159
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    159_21____:
+        EtablissementId: 159
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    159_26____:
+        EtablissementId: 159
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    159_30____:
+        EtablissementId: 159
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    162_21____:
+        EtablissementId: 162
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    162_30____:
+        EtablissementId: 162
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    163_21____:
+        EtablissementId: 163
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    163_26____:
+        EtablissementId: 163
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    163_30____:
+        EtablissementId: 163
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_18____:
+        EtablissementId: 164
+        TypeHebergementId: 18
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_19____:
+        EtablissementId: 164
+        TypeHebergementId: 19
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_21____:
+        EtablissementId: 164
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_23____:
+        EtablissementId: 164
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_24____:
+        EtablissementId: 164
+        TypeHebergementId: 24
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_26____:
+        EtablissementId: 164
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_28____:
+        EtablissementId: 164
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    164_30____:
+        EtablissementId: 164
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    165_21____:
+        EtablissementId: 165
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    165_26____:
+        EtablissementId: 165
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    165_30____:
+        EtablissementId: 165
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    165_40____:
         EtablissementId: 165
         TypeHebergementId: 40
-    173_40:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    166_14____:
+        EtablissementId: 166
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    166_30____:
+        EtablissementId: 166
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    167_21____:
+        EtablissementId: 167
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    167_26____:
+        EtablissementId: 167
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    167_30____:
+        EtablissementId: 167
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    168_9____:
+        EtablissementId: 168
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    168_30____:
+        EtablissementId: 168
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    169_9____:
+        EtablissementId: 169
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    169_14____:
+        EtablissementId: 169
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    169_23____:
+        EtablissementId: 169
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    170_21____:
+        EtablissementId: 170
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    170_26____:
+        EtablissementId: 170
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    170_30____:
+        EtablissementId: 170
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_1____:
+        EtablissementId: 173
+        TypeHebergementId: 1
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_2____:
+        EtablissementId: 173
+        TypeHebergementId: 2
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_3____:
+        EtablissementId: 173
+        TypeHebergementId: 3
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_4____:
+        EtablissementId: 173
+        TypeHebergementId: 4
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_5____:
+        EtablissementId: 173
+        TypeHebergementId: 5
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_6____:
+        EtablissementId: 173
+        TypeHebergementId: 6
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_7____:
+        EtablissementId: 173
+        TypeHebergementId: 7
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_8____:
+        EtablissementId: 173
+        TypeHebergementId: 8
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_9____:
+        EtablissementId: 173
+        TypeHebergementId: 9
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_10____:
+        EtablissementId: 173
+        TypeHebergementId: 10
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_11____:
+        EtablissementId: 173
+        TypeHebergementId: 11
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_12____:
+        EtablissementId: 173
+        TypeHebergementId: 12
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_13____:
+        EtablissementId: 173
+        TypeHebergementId: 13
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_14____:
+        EtablissementId: 173
+        TypeHebergementId: 14
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_15____:
+        EtablissementId: 173
+        TypeHebergementId: 15
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_16____:
+        EtablissementId: 173
+        TypeHebergementId: 16
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_17____:
+        EtablissementId: 173
+        TypeHebergementId: 17
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_18____:
+        EtablissementId: 173
+        TypeHebergementId: 18
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_19____:
+        EtablissementId: 173
+        TypeHebergementId: 19
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_20____:
+        EtablissementId: 173
+        TypeHebergementId: 20
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_21____:
+        EtablissementId: 173
+        TypeHebergementId: 21
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_22____:
+        EtablissementId: 173
+        TypeHebergementId: 22
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_23____:
+        EtablissementId: 173
+        TypeHebergementId: 23
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_24____:
+        EtablissementId: 173
+        TypeHebergementId: 24
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_25____:
+        EtablissementId: 173
+        TypeHebergementId: 25
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_26____:
+        EtablissementId: 173
+        TypeHebergementId: 26
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_27____:
+        EtablissementId: 173
+        TypeHebergementId: 27
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_28____:
+        EtablissementId: 173
+        TypeHebergementId: 28
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_29____:
+        EtablissementId: 173
+        TypeHebergementId: 29
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_30____:
+        EtablissementId: 173
+        TypeHebergementId: 30
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_31____:
+        EtablissementId: 173
+        TypeHebergementId: 31
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_32____:
+        EtablissementId: 173
+        TypeHebergementId: 32
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_33____:
+        EtablissementId: 173
+        TypeHebergementId: 33
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_34____:
+        EtablissementId: 173
+        TypeHebergementId: 34
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_35____:
+        EtablissementId: 173
+        TypeHebergementId: 35
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_36____:
+        EtablissementId: 173
+        TypeHebergementId: 36
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_37____:
+        EtablissementId: 173
+        TypeHebergementId: 37
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_38____:
+        EtablissementId: 173
+        TypeHebergementId: 38
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_39____:
+        EtablissementId: 173
+        TypeHebergementId: 39
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_40____:
         EtablissementId: 173
         TypeHebergementId: 40
-    85_41:
-        EtablissementId: 85
-        TypeHebergementId: 41
-    106_41:
-        EtablissementId: 106
-        TypeHebergementId: 41
-    119_41:
-        EtablissementId: 119
-        TypeHebergementId: 41
-    173_41:
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null
+    173_41____:
         EtablissementId: 173
         TypeHebergementId: 41
+        MinimumPrice: null
+        MinimumPriceDiscountLabel: null
+        MinimumPriceStartDate: null
+        MinimumPriceEndDate: null

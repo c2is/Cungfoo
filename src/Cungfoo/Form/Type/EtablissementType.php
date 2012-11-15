@@ -58,7 +58,6 @@ class EtablissementType extends BaseEtablissementType
                         'closing_date',
                         'ville',
                         'categorie',
-                        'minimum_price',
                         'capacite',
                     )
                 ),
@@ -67,6 +66,7 @@ class EtablissementType extends BaseEtablissementType
                     'description'   => 'Données CMS',
                     'content'       => array(
                         'published',
+                        'vignette',
                         'geo_coordinate_x',
                         'geo_coordinate_y',
                         'video_path',

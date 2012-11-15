@@ -22,4 +22,14 @@ class Pays extends BasePays
     {
         return $this->getName();
     }
+
+    public function getRegionMeaHome()
+    {
+        return \Cungfoo\Model\RegionQuery::create()
+            ->joinWithI18n()
+            ->filterByPaysId($this->getId())
+            ->filterByMeaHome(1)
+            ->find()
+        ;
+    }
 }

@@ -1,0 +1,88 @@
+<div id="searchBloc" class="radiusBox fushia">
+    <ul id="switchForm" class="clear">
+        <li><a id="tabSearchBlocDate" class="active" href="#searchBlocDate"><span>Date</span></a></li>
+        <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
+        <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
+    </ul>
+    <form id="searchBlocDate" method="post">
+        <fieldset>
+            {{ form_errors(searchForm) }}
+            <ol>
+                <li>
+                    <div id="datepicker" class="clear">
+                        {{ form_widget(searchForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
+                        {{ form_widget(searchForm.dateFin, {attr: {readonly: 'readonly'}}) }}
+                        <div id="datepickerField" class="clear">
+                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+                        </div>
+                        <div id="datepickerCalendar"></div>
+                    </div>
+                </li>
+                <li id="SearchDate_selectContainer1" class="selectContainer clear">
+                    <div class="selectContainer clear">
+                        {{ form_widget(searchForm.destination) }}
+                    </div>
+                </li>
+                <li>
+                    <div id="SearchDate_selectContainer2" class="selectContainer clear">
+                        {{ form_widget(searchForm.ville) }}
+                        {{ form_widget(searchForm.camping) }}
+                        <div id="SearchDate_switch">
+                            <span class="left">ou</span>
+                            <div class="switchSelect" title=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
+                    <div class="spinner clear">
+                        <div class="spin-bt-down left">-</div>
+                        {{ form_widget(searchForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
+                        <div class="spin-bt-up left">+</div>
+                    </div>
+                </li>
+                <li>
+                    {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
+                    <div class="spinner clear">
+                        <div class="spin-bt-down left">-</div>
+                        {{ form_widget(searchForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
+                        <div class="spin-bt-up left">+</div>
+                    </div>
+                </li>
+                <li>
+                    <a class="toggleButton" href="#">+ de critères</a>
+                </li>
+                <li>
+                    <button type="submit" class="bt sombre big">Trouver</button>
+                </li>
+            </ol>
+            {{ form_rest(searchForm) }}
+        </fieldset>
+    </form>
+    <form id="searchBlocTrajet" action="#_">
+        <fieldset>
+
+        </fieldset>
+    </form>
+    <form id="searchBlocBudget" action="#_">
+        <fieldset>
+
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var fStartDate  = '2013/04/06',  // must be a saturday
+        fEndDate    = '2013/10/26',  // must be a saturday
+        linear      = "reservation",
+        numMinWeeks = 1;
+
+    var selectVille = {
+            'byPaysPath': "{{ path('search_engine_get_villes_by_destination') }}",
+            'emptyValue': "{{ 'date_search.ville.empty_value'|trans }}"
+        },
+        selectCamping = {
+            'byPaysPath': "{{ path('search_engine_get_campings_by_destination') }}",
+            'emptyValue': "{{ 'date_search.camping.empty_value'|trans }}"
+        };
+</script>

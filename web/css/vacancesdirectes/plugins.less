@@ -97,13 +97,16 @@
   .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:2;}
   ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;}
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;cursor:pointer;}
   .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;._verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
   .selectedTxt {width:@selectWidth - @selectHeight - 10;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;}
+  ul.newList li:first-child{display:none;}
+  ul.newList.optGroup li a {padding:0 8px 0 18px;}
+  ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
   .hiLite {background:#ED145B!important;color:#fff!important;}
   .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
   .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
@@ -127,7 +130,7 @@
   position: relative;
 }
 #datepickerField {
-  height: 23px;
+  height: 27px;
   overflow: hidden;
   position: relative;
   width: 260px;
@@ -173,7 +176,7 @@
   position: absolute;
   top: 23px;
   width: 886px;
-  z-index:1;
+  z-index:10;
   margin:5px 0;
 }
 #datepickerCalendar .datepickerGoPrev a,
@@ -432,16 +435,7 @@ th.datepickerWeek{display:none;}
   button.Zebra_DatePicker_Icon_Inside { margin: 0 5px 0 0; }
 }
 
-.SpinnerControl {overflow:auto;float:left;
-  .ValueDisplay {min-width:30px;border: 1px solid black;height: 29px;overflow:auto;font-family:Verdana;font-size:14px;line-height:29px;text-align:center;}
-  div {height:31px;line-height:31px;float:left;}
-  .LeftButton {width:30px;background:#adff2f;cursor:pointer;
-    &:hover {width:30px;background:green;cursor:pointer;}
-  }
-  .RightButton {width:30px;background: red;cursor:pointer;
-    &:hover {width:30px;background:#b22222;cursor:pointer;}
-  }
-}
+
 /*
 	STYLE SHEET FOR IHWY JQUERY LISTNAV PLUGIN V 2.0, 3/2/2009
 
@@ -483,3 +477,18 @@ th.datepickerWeek{display:none;}
 #demoFour a { display:block; text-align:center; width:85px; border:1px solid silver; padding:10px; margin:0 10px 10px 0; text-decoration:none }
 #demoFour a:hover { background-color:#eee }
 
+/** noUislider 2.5.5
+  ** @author: 		@leongersen
+ ** @repository:	https://github.com/leongersen/noUiSlider
+ **/
+.noUiSlider{width:400px;border:1px solid #ccc;height:8px;background:#eee;-webkit-touch-callout:none;
+  .noUi-handle{
+    > div {position:absolute;width:16px;height:16px;top:-5px;left:-8px;z-index:5;border:1px solid #ccc;background:#eee;}
+    > div:hover, > div.noUi-activeHandle {background:#ace;border-color:#369;}
+  }
+  .noUi-midBar{height:100%;z-index:0;background:#39c;-webkit-touch-callout:none;}
+  .rangeBox{display:block;margin-top:15px;}
+}
+@media (-webkit-min-device-pixel-ratio:1.2),-moz-touch-enabled,(max-device-width:1024px){
+  .noUi-handle > div {height:32px;width:32px;top:-13px;left:-16px;}
+}

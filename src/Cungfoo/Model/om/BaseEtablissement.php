@@ -21,6 +21,10 @@ use Cungfoo\Model\Baignade;
 use Cungfoo\Model\BaignadeQuery;
 use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
+use Cungfoo\Model\DernieresMinutes;
+use Cungfoo\Model\DernieresMinutesEtablissement;
+use Cungfoo\Model\DernieresMinutesEtablissementQuery;
+use Cungfoo\Model\DernieresMinutesQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
@@ -60,6 +64,8 @@ use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\SituationGeographiqueQuery;
 use Cungfoo\Model\Thematique;
 use Cungfoo\Model\ThematiqueQuery;
+use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
 use Cungfoo\Model\Ville;
@@ -208,12 +214,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $geo_coordinate_y;
 
     /**
-     * The value for the minimum_price field.
-     * @var        string
-     */
-    protected $minimum_price;
-
-    /**
      * The value for the video_path field.
      * @var        string
      */
@@ -242,6 +242,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        string
      */
     protected $plan_path;
+
+    /**
+     * The value for the vignette field.
+     * @var        string
+     */
+    protected $vignette;
 
     /**
      * The value for the published field.
@@ -338,6 +344,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collMultimediaEtablissementsPartial;
 
     /**
+     * @var        PropelObjectCollection|TopCamping[] Collection to store aggregation of TopCamping objects.
+     */
+    protected $collTopCampings;
+    protected $collTopCampingsPartial;
+
+    /**
+     * @var        PropelObjectCollection|DernieresMinutesEtablissement[] Collection to store aggregation of DernieresMinutesEtablissement objects.
+     */
+    protected $collDernieresMinutesEtablissements;
+    protected $collDernieresMinutesEtablissementsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -387,6 +405,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Event[] Collection to store aggregation of Event objects.
      */
     protected $collEvents;
+
+    /**
+     * @var        PropelObjectCollection|DernieresMinutes[] Collection to store aggregation of DernieresMinutes objects.
+     */
+    protected $collDernieresMinutess;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -474,6 +497,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $dernieresMinutessScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -535,6 +564,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $multimediaEtablissementsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $topCampingsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $dernieresMinutesEtablissementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -787,16 +828,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [minimum_price] column value.
-     *
-     * @return string
-     */
-    public function getMinimumPrice()
-    {
-        return $this->minimum_price;
-    }
-
-    /**
      * Get the [video_path] column value.
      *
      * @return string
@@ -844,6 +875,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getPlanPath()
     {
         return $this->plan_path;
+    }
+
+    /**
+     * Get the [vignette] column value.
+     *
+     * @return string
+     */
+    public function getVignette()
+    {
+        return $this->vignette;
     }
 
     /**
@@ -1342,27 +1383,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setGeoCoordinateY()
 
     /**
-     * Set the value of [minimum_price] column.
-     *
-     * @param string $v new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setMinimumPrice($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->minimum_price !== $v) {
-            $this->minimum_price = $v;
-            $this->modifiedColumns[] = EtablissementPeer::MINIMUM_PRICE;
-        }
-
-
-        return $this;
-    } // setMinimumPrice()
-
-    /**
      * Set the value of [video_path] column.
      *
      * @param string $v new value
@@ -1466,6 +1486,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         return $this;
     } // setPlanPath()
+
+    /**
+     * Set the value of [vignette] column.
+     *
+     * @param string $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setVignette($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->vignette !== $v) {
+            $this->vignette = $v;
+            $this->modifiedColumns[] = EtablissementPeer::VIGNETTE;
+        }
+
+
+        return $this;
+    } // setVignette()
 
     /**
      * Sets the value of the [published] column.
@@ -1593,12 +1634,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->categorie_id = ($row[$startcol + 16] !== null) ? (int) $row[$startcol + 16] : null;
             $this->geo_coordinate_x = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
             $this->geo_coordinate_y = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->minimum_price = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->video_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->description = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->video_path = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->image_360_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
             $this->published = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
             $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
             $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
@@ -1702,6 +1743,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collMultimediaEtablissements = null;
 
+            $this->collTopCampings = null;
+
+            $this->collDernieresMinutesEtablissements = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -1713,6 +1758,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collThematiques = null;
             $this->collPointInterets = null;
             $this->collEvents = null;
+            $this->collDernieresMinutess = null;
         } // if (deep)
     }
 
@@ -2047,6 +2093,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->dernieresMinutessScheduledForDeletion !== null) {
+                if (!$this->dernieresMinutessScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->dernieresMinutessScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    DernieresMinutesEtablissementQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->dernieresMinutessScheduledForDeletion = null;
+                }
+
+                foreach ($this->getDernieresMinutess() as $dernieresMinutes) {
+                    if ($dernieresMinutes->isModified()) {
+                        $dernieresMinutes->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     EtablissementTypeHebergementQuery::create()
@@ -2236,6 +2302,40 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->topCampingsScheduledForDeletion !== null) {
+                if (!$this->topCampingsScheduledForDeletion->isEmpty()) {
+                    TopCampingQuery::create()
+                        ->filterByPrimaryKeys($this->topCampingsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->topCampingsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collTopCampings !== null) {
+                foreach ($this->collTopCampings as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->dernieresMinutesEtablissementsScheduledForDeletion !== null) {
+                if (!$this->dernieresMinutesEtablissementsScheduledForDeletion->isEmpty()) {
+                    DernieresMinutesEtablissementQuery::create()
+                        ->filterByPrimaryKeys($this->dernieresMinutesEtablissementsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->dernieresMinutesEtablissementsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDernieresMinutesEtablissements !== null) {
+                foreach ($this->collDernieresMinutesEtablissements as $referrerFK) {
+                    if (!$referrerFK->isDeleted()) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementI18nsScheduledForDeletion !== null) {
                 if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
                     EtablissementI18nQuery::create()
@@ -2336,9 +2436,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) {
             $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
         }
-        if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
-        }
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`VIDEO_PATH`';
         }
@@ -2353,6 +2450,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`PLAN_PATH`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) {
+            $modifiedColumns[':p' . $index++]  = '`VIGNETTE`';
         }
         if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) {
             $modifiedColumns[':p' . $index++]  = '`PUBLISHED`';
@@ -2431,9 +2531,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     case '`GEO_COORDINATE_Y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE`':
-                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
-                        break;
                     case '`VIDEO_PATH`':
                         $stmt->bindValue($identifier, $this->video_path, PDO::PARAM_STR);
                         break;
@@ -2448,6 +2545,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`PLAN_PATH`':
                         $stmt->bindValue($identifier, $this->plan_path, PDO::PARAM_STR);
+                        break;
+                    case '`VIGNETTE`':
+                        $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
                         break;
                     case '`PUBLISHED`':
                         $stmt->bindValue($identifier, (int) $this->published, PDO::PARAM_INT);
@@ -2663,6 +2763,22 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collTopCampings !== null) {
+                    foreach ($this->collTopCampings as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
+                if ($this->collDernieresMinutesEtablissements !== null) {
+                    foreach ($this->collDernieresMinutesEtablissements as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -2764,22 +2880,22 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getGeoCoordinateY();
                 break;
             case 19:
-                return $this->getMinimumPrice();
-                break;
-            case 20:
                 return $this->getVideoPath();
                 break;
-            case 21:
+            case 20:
                 return $this->getImage360Path();
                 break;
-            case 22:
+            case 21:
                 return $this->getDescription();
                 break;
-            case 23:
+            case 22:
                 return $this->getCapacite();
                 break;
-            case 24:
+            case 23:
                 return $this->getPlanPath();
+                break;
+            case 24:
+                return $this->getVignette();
                 break;
             case 25:
                 return $this->getPublished();
@@ -2838,12 +2954,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[16] => $this->getCategorieId(),
             $keys[17] => $this->getGeoCoordinateX(),
             $keys[18] => $this->getGeoCoordinateY(),
-            $keys[19] => $this->getMinimumPrice(),
-            $keys[20] => $this->getVideoPath(),
-            $keys[21] => $this->getImage360Path(),
-            $keys[22] => $this->getDescription(),
-            $keys[23] => $this->getCapacite(),
-            $keys[24] => $this->getPlanPath(),
+            $keys[19] => $this->getVideoPath(),
+            $keys[20] => $this->getImage360Path(),
+            $keys[21] => $this->getDescription(),
+            $keys[22] => $this->getCapacite(),
+            $keys[23] => $this->getPlanPath(),
+            $keys[24] => $this->getVignette(),
             $keys[25] => $this->getPublished(),
             $keys[26] => $this->getCreatedAt(),
             $keys[27] => $this->getUpdatedAt(),
@@ -2887,6 +3003,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collMultimediaEtablissements) {
                 $result['MultimediaEtablissements'] = $this->collMultimediaEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collTopCampings) {
+                $result['TopCampings'] = $this->collTopCampings->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collDernieresMinutesEtablissements) {
+                $result['DernieresMinutesEtablissements'] = $this->collDernieresMinutesEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -2983,22 +3105,22 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setGeoCoordinateY($value);
                 break;
             case 19:
-                $this->setMinimumPrice($value);
-                break;
-            case 20:
                 $this->setVideoPath($value);
                 break;
-            case 21:
+            case 20:
                 $this->setImage360Path($value);
                 break;
-            case 22:
+            case 21:
                 $this->setDescription($value);
                 break;
-            case 23:
+            case 22:
                 $this->setCapacite($value);
                 break;
-            case 24:
+            case 23:
                 $this->setPlanPath($value);
+                break;
+            case 24:
+                $this->setVignette($value);
                 break;
             case 25:
                 $this->setPublished($value);
@@ -3052,12 +3174,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[16], $arr)) $this->setCategorieId($arr[$keys[16]]);
         if (array_key_exists($keys[17], $arr)) $this->setGeoCoordinateX($arr[$keys[17]]);
         if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateY($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setMinimumPrice($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setVideoPath($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setDescription($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
+        if (array_key_exists($keys[19], $arr)) $this->setVideoPath($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setImage360Path($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setDescription($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
         if (array_key_exists($keys[25], $arr)) $this->setPublished($arr[$keys[25]]);
         if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
         if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
@@ -3091,12 +3213,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
-        if ($this->isColumnModified(EtablissementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementPeer::MINIMUM_PRICE, $this->minimum_price);
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
         if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
+        if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) $criteria->add(EtablissementPeer::VIGNETTE, $this->vignette);
         if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) $criteria->add(EtablissementPeer::PUBLISHED, $this->published);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
@@ -3181,12 +3303,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
-        $copyObj->setMinimumPrice($this->getMinimumPrice());
         $copyObj->setVideoPath($this->getVideoPath());
         $copyObj->setImage360Path($this->getImage360Path());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setCapacite($this->getCapacite());
         $copyObj->setPlanPath($this->getPlanPath());
+        $copyObj->setVignette($this->getVignette());
         $copyObj->setPublished($this->getPublished());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -3261,6 +3383,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             foreach ($this->getMultimediaEtablissements() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addMultimediaEtablissement($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getTopCampings() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addTopCamping($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getDernieresMinutesEtablissements() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDernieresMinutesEtablissement($relObj->copy($deepCopy));
                 }
             }
 
@@ -3465,6 +3599,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('MultimediaEtablissement' == $relationName) {
             $this->initMultimediaEtablissements();
+        }
+        if ('TopCamping' == $relationName) {
+            $this->initTopCampings();
+        }
+        if ('DernieresMinutesEtablissement' == $relationName) {
+            $this->initDernieresMinutesEtablissements();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -5974,6 +6114,445 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collTopCampings collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addTopCampings()
+     */
+    public function clearTopCampings()
+    {
+        $this->collTopCampings = null; // important to set this to null since that means it is uninitialized
+        $this->collTopCampingsPartial = null;
+    }
+
+    /**
+     * reset is the collTopCampings collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialTopCampings($v = true)
+    {
+        $this->collTopCampingsPartial = $v;
+    }
+
+    /**
+     * Initializes the collTopCampings collection.
+     *
+     * By default this just sets the collTopCampings collection to an empty array (like clearcollTopCampings());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initTopCampings($overrideExisting = true)
+    {
+        if (null !== $this->collTopCampings && !$overrideExisting) {
+            return;
+        }
+        $this->collTopCampings = new PropelObjectCollection();
+        $this->collTopCampings->setModel('TopCamping');
+    }
+
+    /**
+     * Gets an array of TopCamping objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|TopCamping[] List of TopCamping objects
+     * @throws PropelException
+     */
+    public function getTopCampings($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingsPartial && !$this->isNew();
+        if (null === $this->collTopCampings || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collTopCampings) {
+                // return empty collection
+                $this->initTopCampings();
+            } else {
+                $collTopCampings = TopCampingQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collTopCampingsPartial && count($collTopCampings)) {
+                      $this->initTopCampings(false);
+
+                      foreach($collTopCampings as $obj) {
+                        if (false == $this->collTopCampings->contains($obj)) {
+                          $this->collTopCampings->append($obj);
+                        }
+                      }
+
+                      $this->collTopCampingsPartial = true;
+                    }
+
+                    return $collTopCampings;
+                }
+
+                if($partial && $this->collTopCampings) {
+                    foreach($this->collTopCampings as $obj) {
+                        if($obj->isNew()) {
+                            $collTopCampings[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collTopCampings = $collTopCampings;
+                $this->collTopCampingsPartial = false;
+            }
+        }
+
+        return $this->collTopCampings;
+    }
+
+    /**
+     * Sets a collection of TopCamping objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $topCampings A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setTopCampings(PropelCollection $topCampings, PropelPDO $con = null)
+    {
+        $this->topCampingsScheduledForDeletion = $this->getTopCampings(new Criteria(), $con)->diff($topCampings);
+
+        foreach ($this->topCampingsScheduledForDeletion as $topCampingRemoved) {
+            $topCampingRemoved->setEtablissement(null);
+        }
+
+        $this->collTopCampings = null;
+        foreach ($topCampings as $topCamping) {
+            $this->addTopCamping($topCamping);
+        }
+
+        $this->collTopCampings = $topCampings;
+        $this->collTopCampingsPartial = false;
+    }
+
+    /**
+     * Returns the number of related TopCamping objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related TopCamping objects.
+     * @throws PropelException
+     */
+    public function countTopCampings(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingsPartial && !$this->isNew();
+        if (null === $this->collTopCampings || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collTopCampings) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getTopCampings());
+                }
+                $query = TopCampingQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collTopCampings);
+        }
+    }
+
+    /**
+     * Method called to associate a TopCamping object to this object
+     * through the TopCamping foreign key attribute.
+     *
+     * @param    TopCamping $l TopCamping
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addTopCamping(TopCamping $l)
+    {
+        if ($this->collTopCampings === null) {
+            $this->initTopCampings();
+            $this->collTopCampingsPartial = true;
+        }
+        if (!in_array($l, $this->collTopCampings->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddTopCamping($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	TopCamping $topCamping The topCamping object to add.
+     */
+    protected function doAddTopCamping($topCamping)
+    {
+        $this->collTopCampings[]= $topCamping;
+        $topCamping->setEtablissement($this);
+    }
+
+    /**
+     * @param	TopCamping $topCamping The topCamping object to remove.
+     */
+    public function removeTopCamping($topCamping)
+    {
+        if ($this->getTopCampings()->contains($topCamping)) {
+            $this->collTopCampings->remove($this->collTopCampings->search($topCamping));
+            if (null === $this->topCampingsScheduledForDeletion) {
+                $this->topCampingsScheduledForDeletion = clone $this->collTopCampings;
+                $this->topCampingsScheduledForDeletion->clear();
+            }
+            $this->topCampingsScheduledForDeletion[]= $topCamping;
+            $topCamping->setEtablissement(null);
+        }
+    }
+
+    /**
+     * Clears out the collDernieresMinutesEtablissements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addDernieresMinutesEtablissements()
+     */
+    public function clearDernieresMinutesEtablissements()
+    {
+        $this->collDernieresMinutesEtablissements = null; // important to set this to null since that means it is uninitialized
+        $this->collDernieresMinutesEtablissementsPartial = null;
+    }
+
+    /**
+     * reset is the collDernieresMinutesEtablissements collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDernieresMinutesEtablissements($v = true)
+    {
+        $this->collDernieresMinutesEtablissementsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDernieresMinutesEtablissements collection.
+     *
+     * By default this just sets the collDernieresMinutesEtablissements collection to an empty array (like clearcollDernieresMinutesEtablissements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDernieresMinutesEtablissements($overrideExisting = true)
+    {
+        if (null !== $this->collDernieresMinutesEtablissements && !$overrideExisting) {
+            return;
+        }
+        $this->collDernieresMinutesEtablissements = new PropelObjectCollection();
+        $this->collDernieresMinutesEtablissements->setModel('DernieresMinutesEtablissement');
+    }
+
+    /**
+     * Gets an array of DernieresMinutesEtablissement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DernieresMinutesEtablissement[] List of DernieresMinutesEtablissement objects
+     * @throws PropelException
+     */
+    public function getDernieresMinutesEtablissements($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDernieresMinutesEtablissementsPartial && !$this->isNew();
+        if (null === $this->collDernieresMinutesEtablissements || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDernieresMinutesEtablissements) {
+                // return empty collection
+                $this->initDernieresMinutesEtablissements();
+            } else {
+                $collDernieresMinutesEtablissements = DernieresMinutesEtablissementQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDernieresMinutesEtablissementsPartial && count($collDernieresMinutesEtablissements)) {
+                      $this->initDernieresMinutesEtablissements(false);
+
+                      foreach($collDernieresMinutesEtablissements as $obj) {
+                        if (false == $this->collDernieresMinutesEtablissements->contains($obj)) {
+                          $this->collDernieresMinutesEtablissements->append($obj);
+                        }
+                      }
+
+                      $this->collDernieresMinutesEtablissementsPartial = true;
+                    }
+
+                    return $collDernieresMinutesEtablissements;
+                }
+
+                if($partial && $this->collDernieresMinutesEtablissements) {
+                    foreach($this->collDernieresMinutesEtablissements as $obj) {
+                        if($obj->isNew()) {
+                            $collDernieresMinutesEtablissements[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDernieresMinutesEtablissements = $collDernieresMinutesEtablissements;
+                $this->collDernieresMinutesEtablissementsPartial = false;
+            }
+        }
+
+        return $this->collDernieresMinutesEtablissements;
+    }
+
+    /**
+     * Sets a collection of DernieresMinutesEtablissement objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $dernieresMinutesEtablissements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setDernieresMinutesEtablissements(PropelCollection $dernieresMinutesEtablissements, PropelPDO $con = null)
+    {
+        $this->dernieresMinutesEtablissementsScheduledForDeletion = $this->getDernieresMinutesEtablissements(new Criteria(), $con)->diff($dernieresMinutesEtablissements);
+
+        foreach ($this->dernieresMinutesEtablissementsScheduledForDeletion as $dernieresMinutesEtablissementRemoved) {
+            $dernieresMinutesEtablissementRemoved->setEtablissement(null);
+        }
+
+        $this->collDernieresMinutesEtablissements = null;
+        foreach ($dernieresMinutesEtablissements as $dernieresMinutesEtablissement) {
+            $this->addDernieresMinutesEtablissement($dernieresMinutesEtablissement);
+        }
+
+        $this->collDernieresMinutesEtablissements = $dernieresMinutesEtablissements;
+        $this->collDernieresMinutesEtablissementsPartial = false;
+    }
+
+    /**
+     * Returns the number of related DernieresMinutesEtablissement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DernieresMinutesEtablissement objects.
+     * @throws PropelException
+     */
+    public function countDernieresMinutesEtablissements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDernieresMinutesEtablissementsPartial && !$this->isNew();
+        if (null === $this->collDernieresMinutesEtablissements || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDernieresMinutesEtablissements) {
+                return 0;
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getDernieresMinutesEtablissements());
+                }
+                $query = DernieresMinutesEtablissementQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collDernieresMinutesEtablissements);
+        }
+    }
+
+    /**
+     * Method called to associate a DernieresMinutesEtablissement object to this object
+     * through the DernieresMinutesEtablissement foreign key attribute.
+     *
+     * @param    DernieresMinutesEtablissement $l DernieresMinutesEtablissement
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addDernieresMinutesEtablissement(DernieresMinutesEtablissement $l)
+    {
+        if ($this->collDernieresMinutesEtablissements === null) {
+            $this->initDernieresMinutesEtablissements();
+            $this->collDernieresMinutesEtablissementsPartial = true;
+        }
+        if (!in_array($l, $this->collDernieresMinutesEtablissements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddDernieresMinutesEtablissement($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DernieresMinutesEtablissement $dernieresMinutesEtablissement The dernieresMinutesEtablissement object to add.
+     */
+    protected function doAddDernieresMinutesEtablissement($dernieresMinutesEtablissement)
+    {
+        $this->collDernieresMinutesEtablissements[]= $dernieresMinutesEtablissement;
+        $dernieresMinutesEtablissement->setEtablissement($this);
+    }
+
+    /**
+     * @param	DernieresMinutesEtablissement $dernieresMinutesEtablissement The dernieresMinutesEtablissement object to remove.
+     */
+    public function removeDernieresMinutesEtablissement($dernieresMinutesEtablissement)
+    {
+        if ($this->getDernieresMinutesEtablissements()->contains($dernieresMinutesEtablissement)) {
+            $this->collDernieresMinutesEtablissements->remove($this->collDernieresMinutesEtablissements->search($dernieresMinutesEtablissement));
+            if (null === $this->dernieresMinutesEtablissementsScheduledForDeletion) {
+                $this->dernieresMinutesEtablissementsScheduledForDeletion = clone $this->collDernieresMinutesEtablissements;
+                $this->dernieresMinutesEtablissementsScheduledForDeletion->clear();
+            }
+            $this->dernieresMinutesEtablissementsScheduledForDeletion[]= $dernieresMinutesEtablissement;
+            $dernieresMinutesEtablissement->setEtablissement(null);
+        }
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related DernieresMinutesEtablissements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|DernieresMinutesEtablissement[] List of DernieresMinutesEtablissement objects
+     */
+    public function getDernieresMinutesEtablissementsJoinDernieresMinutes($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = DernieresMinutesEtablissementQuery::create(null, $criteria);
+        $query->joinWith('DernieresMinutes', $join_behavior);
+
+        return $this->getDernieresMinutesEtablissements($query, $con);
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -7697,6 +8276,174 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collDernieresMinutess collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addDernieresMinutess()
+     */
+    public function clearDernieresMinutess()
+    {
+        $this->collDernieresMinutess = null; // important to set this to null since that means it is uninitialized
+        $this->collDernieresMinutessPartial = null;
+    }
+
+    /**
+     * Initializes the collDernieresMinutess collection.
+     *
+     * By default this just sets the collDernieresMinutess collection to an empty collection (like clearDernieresMinutess());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initDernieresMinutess()
+    {
+        $this->collDernieresMinutess = new PropelObjectCollection();
+        $this->collDernieresMinutess->setModel('DernieresMinutes');
+    }
+
+    /**
+     * Gets a collection of DernieresMinutes objects related by a many-to-many relationship
+     * to the current object by way of the dernieres_minutes_etablissement cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|DernieresMinutes[] List of DernieresMinutes objects
+     */
+    public function getDernieresMinutess($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collDernieresMinutess || null !== $criteria) {
+            if ($this->isNew() && null === $this->collDernieresMinutess) {
+                // return empty collection
+                $this->initDernieresMinutess();
+            } else {
+                $collDernieresMinutess = DernieresMinutesQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collDernieresMinutess;
+                }
+                $this->collDernieresMinutess = $collDernieresMinutess;
+            }
+        }
+
+        return $this->collDernieresMinutess;
+    }
+
+    /**
+     * Sets a collection of DernieresMinutes objects related by a many-to-many relationship
+     * to the current object by way of the dernieres_minutes_etablissement cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $dernieresMinutess A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     */
+    public function setDernieresMinutess(PropelCollection $dernieresMinutess, PropelPDO $con = null)
+    {
+        $this->clearDernieresMinutess();
+        $currentDernieresMinutess = $this->getDernieresMinutess();
+
+        $this->dernieresMinutessScheduledForDeletion = $currentDernieresMinutess->diff($dernieresMinutess);
+
+        foreach ($dernieresMinutess as $dernieresMinutes) {
+            if (!$currentDernieresMinutess->contains($dernieresMinutes)) {
+                $this->doAddDernieresMinutes($dernieresMinutes);
+            }
+        }
+
+        $this->collDernieresMinutess = $dernieresMinutess;
+    }
+
+    /**
+     * Gets the number of DernieresMinutes objects related by a many-to-many relationship
+     * to the current object by way of the dernieres_minutes_etablissement cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related DernieresMinutes objects
+     */
+    public function countDernieresMinutess($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collDernieresMinutess || null !== $criteria) {
+            if ($this->isNew() && null === $this->collDernieresMinutess) {
+                return 0;
+            } else {
+                $query = DernieresMinutesQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByEtablissement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collDernieresMinutess);
+        }
+    }
+
+    /**
+     * Associate a DernieresMinutes object to this object
+     * through the dernieres_minutes_etablissement cross reference table.
+     *
+     * @param  DernieresMinutes $dernieresMinutes The DernieresMinutesEtablissement object to relate
+     * @return void
+     */
+    public function addDernieresMinutes(DernieresMinutes $dernieresMinutes)
+    {
+        if ($this->collDernieresMinutess === null) {
+            $this->initDernieresMinutess();
+        }
+        if (!$this->collDernieresMinutess->contains($dernieresMinutes)) { // only add it if the **same** object is not already associated
+            $this->doAddDernieresMinutes($dernieresMinutes);
+
+            $this->collDernieresMinutess[]= $dernieresMinutes;
+        }
+    }
+
+    /**
+     * @param	DernieresMinutes $dernieresMinutes The dernieresMinutes object to add.
+     */
+    protected function doAddDernieresMinutes($dernieresMinutes)
+    {
+        $dernieresMinutesEtablissement = new DernieresMinutesEtablissement();
+        $dernieresMinutesEtablissement->setDernieresMinutes($dernieresMinutes);
+        $this->addDernieresMinutesEtablissement($dernieresMinutesEtablissement);
+    }
+
+    /**
+     * Remove a DernieresMinutes object to this object
+     * through the dernieres_minutes_etablissement cross reference table.
+     *
+     * @param DernieresMinutes $dernieresMinutes The DernieresMinutesEtablissement object to relate
+     * @return void
+     */
+    public function removeDernieresMinutes(DernieresMinutes $dernieresMinutes)
+    {
+        if ($this->getDernieresMinutess()->contains($dernieresMinutes)) {
+            $this->collDernieresMinutess->remove($this->collDernieresMinutess->search($dernieresMinutes));
+            if (null === $this->dernieresMinutessScheduledForDeletion) {
+                $this->dernieresMinutessScheduledForDeletion = clone $this->collDernieresMinutess;
+                $this->dernieresMinutessScheduledForDeletion->clear();
+            }
+            $this->dernieresMinutessScheduledForDeletion[]= $dernieresMinutes;
+        }
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -7720,12 +8467,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
-        $this->minimum_price = null;
         $this->video_path = null;
         $this->image_360_path = null;
         $this->description = null;
         $this->capacite = null;
         $this->plan_path = null;
+        $this->vignette = null;
         $this->published = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -7804,6 +8551,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collTopCampings) {
+                foreach ($this->collTopCampings as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collDernieresMinutesEtablissements) {
+                foreach ($this->collDernieresMinutesEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -7851,6 +8608,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if ($this->collEvents) {
                 foreach ($this->collEvents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collDernieresMinutess) {
+                foreach ($this->collDernieresMinutess as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -7904,6 +8666,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collMultimediaEtablissements->clearIterator();
         }
         $this->collMultimediaEtablissements = null;
+        if ($this->collTopCampings instanceof PropelCollection) {
+            $this->collTopCampings->clearIterator();
+        }
+        $this->collTopCampings = null;
+        if ($this->collDernieresMinutesEtablissements instanceof PropelCollection) {
+            $this->collDernieresMinutesEtablissements->clearIterator();
+        }
+        $this->collDernieresMinutesEtablissements = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }
@@ -7944,6 +8714,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEvents->clearIterator();
         }
         $this->collEvents = null;
+        if ($this->collDernieresMinutess instanceof PropelCollection) {
+            $this->collDernieresMinutess->clearIterator();
+        }
+        $this->collDernieresMinutess = null;
         $this->aVille = null;
         $this->aCategorie = null;
     }
@@ -8196,6 +8970,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         $this->uploadPlanPath($form);
 
+        if (!$form['vignette_deleted']->getData())
+        {
+            $this->resetModified(EtablissementPeer::VIGNETTE);
+        }
+
+        $this->uploadVignette($form);
+
         return $this->save($con);
     }
 
@@ -8226,6 +9007,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $image = uniqid().'.'.$form['plan_path']->getData()->guessExtension();
             $form['plan_path']->getData()->move($this->getUploadRootDir(), $image);
             $this->setPlanPath($this->getUploadDir() . '/' . $image);
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadVignette(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
+        {
+            $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
+            $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setVignette($this->getUploadDir() . '/' . $image);
         }
     }
 
