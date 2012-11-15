@@ -30,6 +30,8 @@ class DateType extends AppAwareType
             'required' => false,
         ));
 
+        $destinationCurrentChoice = $this->getApplication()['request']->get('SearchDate')['destination'];
+
         $destinationChoices = \Cungfoo\Model\RegionQuery::create()
             ->useI18nQuery($this->getApplication()['context']->get('language'), 'region_i18n')
                 ->withColumn('region_i18n.Name', 'Name')
@@ -54,13 +56,20 @@ class DateType extends AppAwareType
             'empty_value' => "date_search.destination.empty_value",
             'empty_data'  => null,
             'required'    => false,
+            'data' => $destinationCurrentChoice
         ));
+
+        $region = \Cungfoo\Model\RegionQuery::create()
+            ->filterByCode($destinationCurrentChoice)
+            ->findOne()
+        ;
 
         $villes = \Cungfoo\Model\VilleQuery::create()
             ->joinWithI18n($this->getApplication()['context']->get('language'))
             ->withColumn('VilleI18n.name', 'Name')
             ->select(array('Code', 'Name'))
-            ->orderByName()
+            ->filterByDestination($region, $destinationCurrentChoice)
+            ->orderBy('Name')
             ->find()
         ;
 
@@ -73,8 +82,9 @@ class DateType extends AppAwareType
         ));
 
         $campings = \Cungfoo\Model\EtablissementQuery::create()
-            ->orderByName()
             ->select(array('Code', 'Name'))
+            ->filterByDestination($region, $destinationCurrentChoice)
+            ->orderByName()
             ->find()
         ;
 

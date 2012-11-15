@@ -18,4 +18,20 @@ use Cungfoo\Model\om\BaseVilleQuery;
  */
 class VilleQuery extends BaseVilleQuery
 {
+    public function filterByDestination($isRegion, $code = null)
+    {
+        return $this
+            ->_if($code)
+                ->useRegionQuery()
+                    ->_if($isRegion)
+                        ->filterByCode($code)
+                    ->_else()
+                        ->usePaysQuery()
+                            ->filterByCode($code)
+                        ->endUse()
+                    ->_endif()
+                ->endUse()
+            ->_endif()
+        ;
+    }
 }
