@@ -10,12 +10,18 @@
             <img class="sliderPostmark" src="../web/images/vacancesdirectes/common/ui/postmark.png" alt="" />
             <div class="sliderBackground"></div>
             <div class="sliderStainInfo">
-                <p class="headline">L'Espagne</p>
-                <p class="catchline">Au mois de juillet pour 6 personnes</p>
-                <button class="bt sombre big" type="submit">Réserver</button>
+                <div class="content">
+                    <p class="headline">L'Espagne</p>
+                    <p class="catchline">Au mois de juillet pour 6 personnes</p>
+                    <button class="bt sombre big ib" type="submit">Réserver</button>
+                </div>
             </div>
             <div class="sliderStainPrice">
-                <p>À partir de <span class="price">112<span class="fine"></span>€</span> <span class="duration">la nuit</span></p>
+                <div class="content">
+                    <p>À partir de</p>
+                    <p class="price">112<span class="fine"></span>€</p>
+                    <p class="duration">la nuit</p>
+                </div>
             </div>
         </li>
     </ul>
