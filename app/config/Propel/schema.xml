@@ -684,4 +684,26 @@
         </foreign-key>
     </table>
 
+    <table name="mise_en_avant">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="image_fond_path" type="varchar"/>
+        <column name="titre" type="varchar"/>
+        <column name="accroche" type="varchar"/>
+        <column name="lien" type="varchar"/>
+        <column name="titre_lien" type="varchar"/>
+        <column name="prix" type="varchar"/>
+        <column name="illustration_path" type="varchar"/>
+        <column name="date_fin_validite" type="date"/>
+        <behavior name="sortable"/>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre, accroche, lien, titre_lien, prix" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/mise_en_avant" />
+            <parameter name="crud_type_file" value="image_fond_path, illustration_path" />
+        </behavior>
+    </table>
+
 </database>

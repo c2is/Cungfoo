@@ -94,3 +94,7 @@ crud:
             prefix: /dernieres_minutes
             model: \Cungfoo\Model\DernieresMinutes
             form: \Cungfoo\Form\Type\DernieresMinutesType
+        mise_en_avant:
+            prefix: /mise_en_avant
+            model: \Cungfoo\Model\MiseEnAvant
+            form: \Cungfoo\Form\Type\MiseEnAvantType
