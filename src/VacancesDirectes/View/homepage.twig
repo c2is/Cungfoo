@@ -36,6 +36,7 @@
         </div>
         {% if topCampings | length %}
         {% for camping in topCampings %}
+            {% if loop.index <= 3 %}
             <div class="element clear">
                 <div class="left">
                     <a href="#_" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
@@ -48,10 +49,11 @@
                     <a href="#_" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
                 </div>
             </div>
+            {% endif %}
         {% endfor %}
         {% endif %}
 
-        <a href="#_" class="bt link">Voir tous les agenda culturel et sorties (13)</a>
+        <a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
     </div>
 </div>
 <div class="ratio-33 left clear">

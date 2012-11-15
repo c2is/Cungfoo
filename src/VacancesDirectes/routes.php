@@ -25,6 +25,8 @@ $app->mount('/search_engine', new Controller\SearchEngineController());
 $app->mount('/catalogue',     new Controller\CatalogueController());
 $app->mount('/dispo',         new Controller\DispoController());
 
+$app->get('/top-campings.html', 'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
+
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])
     {
