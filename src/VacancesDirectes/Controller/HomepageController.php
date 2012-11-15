@@ -35,7 +35,6 @@ class HomepageController implements ControllerProviderInterface
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
-                ->limit(3)
                 ->find()
             ;
 
