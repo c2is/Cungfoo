@@ -652,6 +652,8 @@ textarea {
   overflow: hidden;
   padding: 0 23px 0 10px;
   position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .stylish-select ul.newList li:first-child {
   display: none;
@@ -754,7 +756,7 @@ textarea {
   left: 0;
   overflow: hidden;
   position: absolute;
-  top: 23px;
+  top: 18px;
   width: 886px;
   z-index: 10;
   margin: 5px 0;
@@ -1371,7 +1373,7 @@ footer {
   content: "";
   width: 40px;
   height: 29px;
-  background: transparent url("../../images/vacancesdirectes/common/ui/phone-icon.png") no-repeat 0px 0px;
+  background: transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;
   float: left;
   margin: 5px;
 }
@@ -1811,294 +1813,6 @@ footer {
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
 }
-/* search */
-form li {
-  margin-bottom: 10px;
-}
-#searchBloc {
-  color: #ffffff;
-  position: absolute;
-  z-index: 1;
-}
-#searchBloc .newListSelected {
-  height: 27px;
-  line-height: 27px;
-  margin-right: 0;
-  background-color: #ffffff;
-}
-#searchBloc .newListSelected .selectedTxt:after {
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;
-}
-#searchBloc input,
-#searchBloc select,
-#searchBloc .newListSelected {
-  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
-  color: #8c8a8a;
-  text-transform: uppercase;
-}
-#searchBloc input .selectedTxt,
-#searchBloc select .selectedTxt,
-#searchBloc .newListSelected .selectedTxt {
-  padding-left: 7px;
-}
-#searchBloc input .SSContainerDivWrapper ul.newList li a,
-#searchBloc select .SSContainerDivWrapper ul.newList li a,
-#searchBloc .newListSelected .SSContainerDivWrapper ul.newList li a {
-  background-color: #ffffff;
-  color: #8c8a8a;
-}
-#searchBloc input .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
-#searchBloc select .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
-#searchBloc .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
-  background-color: #8c8a8a;
-  color: #ffffff;
-}
-#searchBloc #switchForm {
-  margin: 0 0 20px 0;
-}
-#searchBloc #switchForm li {
-  display: inline;
-}
-#searchBloc #switchForm li a {
-  width: 82px;
-  height: 34px;
-  background-color: #ffffff;
-  float: left;
-  margin: 6px 1px 0 0;
-  position: relative;
-}
-#searchBloc #switchForm li a.active,
-#searchBloc #switchForm li a:hover {
-  background-color: #8c8a8a;
-}
-#searchBloc #switchForm li a.active:after,
-#searchBloc #switchForm li a:hover:after {
-  top: 100%;
-  border: solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(140, 138, 138, 0);
-  border-top-color: #8C8A8A;
-  border-width: 5px;
-  left: 50%;
-  margin-left: -5px;
-}
-#searchBloc #switchForm li a span {
-  width: 60px;
-  height: 34px;
-  display: block;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;
-  margin: -3px 11px 0;
-  position: relative;
-  text-indent: -9999px;
-}
-#searchBloc #switchForm li a#tabSearchBlocDate span {
-  background-position: 0px -240px;
-}
-#searchBloc #switchForm li a#tabSearchBlocTrajet span {
-  background-position: 0px -280px;
-}
-#searchBloc #switchForm li a#tabSearchBlocBudget span {
-  background-position: 0px -320px;
-}
-#searchBloc #switchForm li a.active,
-#searchBloc #switchForm li a:hover {
-  height: 40px;
-  margin-top: 0;
-  -webkit-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
-}
-#searchBloc #switchForm li a.active#tabSearchBlocDate span,
-#searchBloc #switchForm li a:hover#tabSearchBlocDate span {
-  background-position: -60px -240px;
-}
-#searchBloc #switchForm li a.active#tabSearchBlocTrajet span,
-#searchBloc #switchForm li a:hover#tabSearchBlocTrajet span {
-  background-position: -60px -280px;
-}
-#searchBloc #switchForm li a.active#tabSearchBlocBudget span,
-#searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
-  background-position: -60px -320px;
-}
-#searchBloc #switchForm li a.active span,
-#searchBloc #switchForm li a:hover span {
-  margin-top: 0;
-}
-#searchBloc #switchForm li a.active {
-  cursor: default;
-}
-#searchBloc #switchForm li:first-child a {
-  -webkit-border-radius: 10px 0 0 0;
-  border-radius: 10px 0 0 0;
-}
-#searchBloc #switchForm li:last-child a {
-  -webkit-border-radius: 0 10px 0 0;
-  border-radius: 0 10px 0 0;
-  margin-right: 0;
-}
-#searchBloc #switchForm li:first-child a.active,
-#searchBloc #switchForm li:first-child a:hover,
-#searchBloc #switchForm li:last-child a.active,
-#searchBloc #switchForm li:last-child a:hover {
-  -webkit-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
-}
-#searchBloc #switchForm li:nth-child(2),
-#searchBloc #switchForm li:nth-child(3) {
-  visibility: hidden;
-}
-#searchBloc #searchBlocDate a.toggleButton {
-  color: #ffffff;
-  font: bold 14px/16px 'PT Sans Narrow', Arial, sans-serif;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-#searchBloc #searchBlocDate .toggleContainer {
-  display: none;
-}
-#searchBloc #searchBlocDate .toggleContainer > *:last-child {
-  margin-bottom: 10px;
-}
-#searchBloc #searchBlocDate .toggleContainer label {
-  font: 13px/15px Arial;
-  text-transform: none;
-}
-#searchBloc #searchBlocDate p {
-  margin-bottom: 15px;
-}
-#searchBloc #searchBlocDate div.datepicker {
-  right: 0;
-}
-#searchBloc #searchBlocDate div.datepicker .datepickerDays td a:hover,
-#searchBloc #searchBlocDate div.datepicker .datepickerDays td.datepickerSpecial a:hover {
-  background-color: #e6e5e5;
-}
-#searchBloc #searchBlocDate #datepickerCalendar {
-  width: 362px;
-  top: 27px;
-  right: 0;
-  left: auto;
-}
-#searchBloc #searchBlocDate #datepickerCalendar .datepicker {
-  width: 362px !important;
-}
-#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
-#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
-#searchBloc #searchBlocDate .datepickerContainer {
-  top: 10px;
-}
-#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
-#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
-#searchBloc #searchBlocDate .datepickerBorderTL,
-#searchBloc #searchBlocDate .datepickerBorderT,
-#searchBloc #searchBlocDate .datepickerBorderTR,
-#searchBloc #searchBlocDate .datepickerBorderB,
-#searchBloc #searchBlocDate .datepickerBorderBL,
-#searchBloc #searchBlocDate .datepickerBorderBR {
-  height: 10px;
-}
-#searchBloc #searchBlocDate #datepickerField {
-  width: 248px;
-}
-#searchBloc #searchBlocDate #datepickerField span {
-  height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
-}
-#searchBloc #searchBlocDate #datepickerField input {
-  height: 27px;
-  line-height: 27px;
-  width: 216px;
-  background-color: #ffffff;
-  padding: 0 7px;
-}
-#searchBloc #searchBlocDate .datepickerLegend {
-  display: none;
-}
-#searchBloc #searchBlocDate label {
-  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
-  text-transform: uppercase;
-  margin-right: 10px;
-  width: 65px;
-}
-#searchBloc #searchBlocDate .spinner input {
-  width: 40px;
-  height: 27px;
-  border: 0 none;
-  color: #ed145b;
-  font: bold 24px/27px 'PT Sans Narrow', Arial, sans-serif;
-  text-align: center;
-}
-#searchBloc #searchBlocDate .spinner .spin-bt-down,
-#searchBloc #searchBlocDate .spinner .spin-bt-up {
-  width: 27px;
-  height: 27px;
-  background-color: #464545;
-  color: #ffffff;
-  font: bold 26px/27px 'PT Sans Narrow', Arial, sans-serif;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden;
-  border: 0 none;
-}
-#searchBloc #searchBlocDate .spinner .spin-bt-down:active,
-#searchBloc #searchBlocDate .spinner .spin-bt-up:active {
-  padding-right: 7px;
-}
-#searchBloc #searchBlocDate .spinner .spin-bt-down {
-  margin-right: 2px;
-}
-#searchBloc #searchBlocDate .spinner .spin-bt-up {
-  margin-left: 2px;
-}
-#searchBloc #searchBlocDate .selectContainer {
-  height: 27px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer1 select {
-  display: none;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected {
-  width: 248px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .selectedTxt {
-  width: 215px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .SSContainerDivWrapper {
-  min-width: 248px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 select {
-  display: none;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected {
-  width: 188px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .selectedTxt {
-  width: 154px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .SSContainerDivWrapper {
-  min-width: 188px;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch {
-  float: right;
-}
-#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch span {
-  height: 27px;
-  line-height: 27px;
-  margin-right: 10px;
-}
-#searchBloc #searchBlocDate .switchSelect {
-  width: 27px;
-  height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px #464545;
-  float: left;
-  cursor: pointer;
-}
-#searchBloc #searchBlocDate button[type=submit] {
-  margin: 0 auto;
-  font-size: 21px;
-}
 /* lang */
 #lang {
   width: 41px;
@@ -2240,6 +1954,9 @@ h6,
   -webkit-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
   box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
 }
+.boxborder.large {
+  border: 15px solid #ffffff;
+}
 .pathway {
   font: 11px/28px Arial, sans-serif;
   color: #8c8a8a;
@@ -2319,6 +2036,9 @@ h6,
   margin: 15px 0;
   position: relative;
 }
+.radiusBox.bgImg {
+  overflow: hidden;
+}
 .radiusBox.greyC {
   background-color: #e6e5e5;
 }
@@ -2371,6 +2091,9 @@ h6,
   padding: 15px 20px;
   margin: 15px 0;
   position: relative;
+}
+.radiusBox2.bgImg {
+  overflow: hidden;
 }
 .radiusBox2.greyC {
   background-color: #ffffff;
@@ -2551,14 +2274,50 @@ h6,
 .home #slider {
   position: relative;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
-  height: 170px;
+  height: 230px;
+  margin-top: 10px;
 }
-.home #slider #sliderBackground {
+.home #slider .sliderPhoto {
+  position: absolute;
+  top: -20px;
+  right: 350px;
+}
+.home #slider .sliderPhoto img {
+  transform: rotate(12deg);
+  z-index: 0;
+}
+.home #slider .sliderPostmark {
+  position: absolute;
+  top: 0;
+  right: 336px;
+  z-index: 1;
+}
+.home #slider .sliderBackground {
   position: absolute;
   bottom: 0;
+  left: 0;
   height: 70px;
   width: 976px;
   background-color: #ffffff;
+  z-index: 2;
+}
+.home #slider .sliderStainInfo {
+  position: absolute;
+  left: 80px;
+  top: -30px;
+  width: 256px;
+  height: 231px;
+  background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
+  z-index: 3;
+}
+.home #slider .sliderStainPrice {
+  position: absolute;
+  left: 230px;
+  top: 75px;
+  width: 256px;
+  height: 231px;
+  background: url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;
+  z-index: 4;
 }
 .home .locationForwards {
   position: relative;
@@ -2707,9 +2466,8 @@ h6,
 .home #searchBloc {
   margin-top: -191px;
 }
-.home #specialOffersBloc {
+.home #greyBoxes {
   margin-top: 180px;
-  z-index: 0;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -4432,6 +4190,365 @@ h6,
 .element .details .stain .price {
   font-size: 27px;
   font-weight: bold;
+}
+/* search */
+form li {
+  margin-bottom: 10px;
+}
+#searchBloc {
+  color: #ffffff;
+  position: absolute;
+  z-index: 1;
+  margin-top: -70px;
+}
+#searchBloc .newListSelected {
+  height: 27px;
+  line-height: 27px;
+  margin-right: 0;
+  background-color: #ffffff;
+}
+#searchBloc .newListSelected .selectedTxt:after {
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;
+}
+#searchBloc input,
+#searchBloc select,
+#searchBloc .newListSelected {
+  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+}
+#searchBloc input .selectedTxt,
+#searchBloc select .selectedTxt,
+#searchBloc .newListSelected .selectedTxt {
+  padding-left: 7px;
+}
+#searchBloc input .SSContainerDivWrapper .newListHover,
+#searchBloc select .SSContainerDivWrapper .newListHover,
+#searchBloc .newListSelected .SSContainerDivWrapper .newListHover {
+  background-color: #ccc!important;
+  color: #464545 !important;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList li a,
+#searchBloc select .SSContainerDivWrapper ul.newList li a,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList li a {
+  background-color: #ffffff;
+  color: #8c8a8a;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
+#searchBloc select .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
+  background-color: #8c8a8a;
+  color: #ffffff;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList li a.newListHover,
+#searchBloc select .SSContainerDivWrapper ul.newList li a.newListHover,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList li a.newListHover {
+  background-color: #e6e5e5 !important;
+  color: #464545 !important;
+}
+#searchBloc input .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover,
+#searchBloc select .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover,
+#searchBloc .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover {
+  background-color: #464545 !important;
+  color: #ffffff !important;
+}
+#searchBloc #switchForm {
+  margin: 0 0 20px 0;
+}
+#searchBloc #switchForm li {
+  display: inline;
+}
+#searchBloc #switchForm li a {
+  width: 82px;
+  height: 34px;
+  background-color: #ffffff;
+  float: left;
+  margin: 6px 1px 0 0;
+  position: relative;
+}
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  background-color: #8c8a8a;
+}
+#searchBloc #switchForm li a.active:after,
+#searchBloc #switchForm li a:hover:after {
+  top: 100%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-top-color: #8C8A8A;
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px;
+}
+#searchBloc #switchForm li a span {
+  width: 60px;
+  height: 34px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;
+  margin: -3px 11px 0;
+  position: relative;
+  text-indent: -9999px;
+}
+#searchBloc #switchForm li a#tabSearchBlocDate span {
+  background-position: 0px -240px;
+}
+#searchBloc #switchForm li a#tabSearchBlocTrajet span {
+  background-position: 0px -280px;
+}
+#searchBloc #switchForm li a#tabSearchBlocBudget span {
+  background-position: 0px -320px;
+}
+#searchBloc #switchForm li a.active,
+#searchBloc #switchForm li a:hover {
+  height: 40px;
+  margin-top: 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocDate span,
+#searchBloc #switchForm li a:hover#tabSearchBlocDate span {
+  background-position: -60px -240px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocTrajet span,
+#searchBloc #switchForm li a:hover#tabSearchBlocTrajet span {
+  background-position: -60px -280px;
+}
+#searchBloc #switchForm li a.active#tabSearchBlocBudget span,
+#searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
+  background-position: -60px -320px;
+}
+#searchBloc #switchForm li a.active span,
+#searchBloc #switchForm li a:hover span {
+  margin-top: 0;
+}
+#searchBloc #switchForm li a.active {
+  cursor: default;
+}
+#searchBloc #switchForm li:first-child a {
+  -webkit-border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 0;
+}
+#searchBloc #switchForm li:last-child a {
+  -webkit-border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;
+  margin-right: 0;
+}
+#searchBloc #switchForm li:first-child a.active,
+#searchBloc #switchForm li:first-child a:hover,
+#searchBloc #switchForm li:last-child a.active,
+#searchBloc #switchForm li:last-child a:hover {
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+#searchBloc #switchForm li:nth-child(2),
+#searchBloc #switchForm li:nth-child(3) {
+  visibility: hidden;
+}
+#searchBloc #searchBlocDate a.toggleButton {
+  color: #ffffff;
+  font: bold 14px/16px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+#searchBloc #searchBlocDate .toggleContainer {
+  display: none;
+}
+#searchBloc #searchBlocDate .toggleContainer > *:last-child {
+  margin-bottom: 10px;
+}
+#searchBloc #searchBlocDate .toggleContainer label {
+  font: 13px/15px Arial;
+  text-transform: none;
+}
+#searchBloc #searchBlocDate p {
+  margin-bottom: 15px;
+}
+#searchBloc #searchBlocDate div.datepicker {
+  right: 0;
+}
+#searchBloc #searchBlocDate div.datepicker .datepickerDays td a:hover,
+#searchBloc #searchBlocDate div.datepicker .datepickerDays td.datepickerSpecial a:hover {
+  background-color: #e6e5e5;
+}
+#searchBloc #searchBlocDate #datepickerCalendar {
+  width: 362px;
+  top: 22px;
+  right: 0;
+  left: auto;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepicker {
+  width: 362px !important;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerContainer {
+  top: 10px;
+}
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
+#searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
+#searchBloc #searchBlocDate .datepickerBorderTL,
+#searchBloc #searchBlocDate .datepickerBorderT,
+#searchBloc #searchBlocDate .datepickerBorderTR,
+#searchBloc #searchBlocDate .datepickerBorderB,
+#searchBloc #searchBlocDate .datepickerBorderBL,
+#searchBloc #searchBlocDate .datepickerBorderBR {
+  height: 10px;
+}
+#searchBloc #searchBlocDate #datepickerField {
+  width: 248px;
+}
+#searchBloc #searchBlocDate #datepickerField span {
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px #464545;
+}
+#searchBloc #searchBlocDate #datepickerField input {
+  height: 27px;
+  line-height: 27px;
+  width: 216px;
+  background-color: #ffffff;
+  padding: 0 7px;
+}
+#searchBloc #searchBlocDate .datepickerLegend {
+  display: none;
+}
+#searchBloc #searchBlocDate label {
+  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-right: 10px;
+  width: 65px;
+}
+#searchBloc #searchBlocDate .spinner input {
+  width: 40px;
+  height: 27px;
+  border: 0 none;
+  color: #ed145b;
+  font: bold 24px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down,
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
+  width: 27px;
+  height: 27px;
+  background-color: #464545;
+  color: #ffffff;
+  font: bold 26px/27px 'PT Sans Narrow', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  border: 0 none;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down:active,
+#searchBloc #searchBlocDate .spinner .spin-bt-up:active {
+  padding-right: 7px;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-down {
+  margin-right: 2px;
+}
+#searchBloc #searchBlocDate .spinner .spin-bt-up {
+  margin-left: 2px;
+}
+#searchBloc #searchBlocDate .selectContainer {
+  height: 27px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 select {
+  display: none;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected {
+  width: 248px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .selectedTxt {
+  width: 215px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer1 .newListSelected .SSContainerDivWrapper {
+  min-width: 248px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 select {
+  display: none;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected {
+  width: 188px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .selectedTxt {
+  width: 154px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .SSContainerDivWrapper {
+  min-width: 188px;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch {
+  float: right;
+}
+#searchBloc #searchBlocDate #SearchDate_selectContainer2 #SearchDate_switch span {
+  height: 27px;
+  line-height: 27px;
+  margin-right: 10px;
+}
+#searchBloc #searchBlocDate .switchSelect {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px #464545;
+  float: left;
+  cursor: pointer;
+}
+#searchBloc #searchBlocDate button[type=submit] {
+  margin: 0 auto;
+  font-size: 21px;
+}
+/* grey boxes */
+h3 {
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 22px;
+}
+p {
+  line-height: 11px;
+}
+#greyBoxes {
+  margin-top: 300px;
+}
+#insertInfo {
+  width: 288px;
+  color: #ffffff;
+  background: url("../../images/vacancesdirectes/common/pict/info-bloc.jpg") no-repeat 0 0 transparent;
+}
+#insertInfo h3 {
+  margin: 0 0 5px 60px;
+}
+#insertInfo .price {
+  font-size: 9px;
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+}
+#insertInfo .content {
+  width: 110px;
+  margin-left: 80px;
+}
+#insertInfo .content .tel {
+  position: relative;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0 5px;
+  width: 115px;
+}
+#insertInfo .content .tel:before {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -80px transparent;
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -43px;
+}
+#insertInfo .content .small {
+  margin: 20px 0 15px;
 }
 /* footer */
 /* footer */

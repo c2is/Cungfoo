@@ -12,8 +12,14 @@
 /* HOME */
 
   /* slider */
-  #slider{position:relative;font-family:@ptnarrow;height:170px;
-    #sliderBackground{position:absolute;bottom:0;height:70px;width:976px;background-color:@colorBlanc;}
+  #slider{position:relative;font-family:@ptnarrow;height:230px;margin-top:10px;
+    .sliderPhoto{position:absolute;top:-20px;right:350px;
+      img{transform:rotate(12deg);z-index:0;}
+    }
+    .sliderPostmark{position:absolute;top:0;right:336px;z-index:1;}
+    .sliderBackground{position:absolute;bottom:0;left:0;height:70px;width:976px;background-color:@colorBlanc;z-index:2}
+    .sliderStainInfo{position:absolute;left:80px;top:-30px;width:256px;height:231px;background:url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;z-index:3;}
+    .sliderStainPrice{position:absolute;left:230px;top:75px;width:256px;height:231px;background:url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;z-index:4;}
   }
 
   .locationForwards{position:relative;margin-bottom:24px;
@@ -65,7 +71,7 @@
     }
   }
   #searchBloc{margin-top:-191px;}
-  #specialOffersBloc{margin-top:180px;z-index:0;}
+  #greyBoxes{margin-top:180px;}
 
   #destinationsBloc{width:400px;height:253px;float:left;margin:0 24px 12px 0;background:url("../../images/vacancesdirectes/common/pict/destinations-bloc.jpg") no-repeat 0 0 transparent;padding-bottom:5px;
     h2{font:bold 24px/24px @ptnarrow;text-transform:uppercase;margin-bottom:45px;

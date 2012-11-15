@@ -163,6 +163,39 @@ $(function() {
         });
     }
 
+// slider
+    if ($('#slider').length){
+        $("#foo1").carouFredSel({
+            auto	: false,
+            onCreate: function( data ) {
+                var txt = "";
+                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+                $("#foo1_log").html("<p>Carousel created showing images:</p><ul>" + txt + "</ul>");
+            },
+            scroll	: {
+                onAfter	: function( data ) {
+                    var txt = "";
+                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+                    $("#foo1_log").html("<p>Now showing images:</p><ul>" + txt + "</ul>");
+                }
+            },
+            prev	: {
+                button	: "#foo1_prev",
+                onBefore: function() {
+                    $("#foo1_log").html("<p>Started scrolling to the <strong>left</strong>.</p>");
+                }
+            },
+            next	: {
+                button	: "#foo1_next",
+                onBefore: function() {
+                    $("#foo1_log").html("<p>Started scrolling to the <strong>right</strong>.</p>");
+                }
+            }
+        });
+    }
+
+
+
 // datepicker
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
@@ -267,12 +300,12 @@ $(function() {
         var state = false;
         $('#datepickerField').bind('click', function(){
             $(this).toggleClass('opened');
-            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+            $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+            $('#datepickerCalendar').stop().css({height: 0}, function(){
                 $('#datepickerField').removeClass('opened');
             });
             state = !state;
@@ -427,12 +460,12 @@ $(function() {
             var state = false;
             $('#datepickerField').bind('click', function(){
                 $(this).toggleClass('opened');
-                $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+                $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
                 state = !state;
                 return false;
             });
             $('#datepickerCalendar .bt').bind('click', function(){
-                $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+                $('#datepickerCalendar').stop().css({height: 0}, function(){
                     $('#datepickerField').removeClass('opened');
                 });
                 state = !state;
@@ -612,12 +645,12 @@ $(function() {
         var state = false;
         $('#datepickerField').bind('click', function(){
             $(this).toggleClass('opened');
-            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+            $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+            $('#datepickerCalendar').stop().css({height: 0}, function(){
                 $('#datepickerField').removeClass('opened');
             });
             state = !state;

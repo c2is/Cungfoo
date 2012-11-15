@@ -4,11 +4,22 @@
     include('includes/inc_header.php');
     include('includes/top.php'); ?>
 
-    <div id="slider" class="fixed-width clear">
-        <div id="sliderPhoto"></div>
-        <div id="sliderBackground"></div>
-        <div id="sliderStain"></div>
-    </div>
+    <ul id="slider" class="fixed-width clear">
+        <li>
+            <a class="sliderPhoto" href=""><img class="large boxborder" src="../web/images/vacancesdirectes/dyn/slider/photo-1.jpg" alt="Photo 1" /></a>
+            <img class="sliderPostmark" src="../web/images/vacancesdirectes/common/ui/postmark.png" alt="" />
+            <div class="sliderBackground"></div>
+            <div class="sliderStainInfo">
+                <p class="headline">L'Espagne</p>
+                <p class="catchline">Au mois de juillet pour 6 personnes</p>
+                <button class="bt sombre big" type="submit">Réserver</button>
+            </div>
+            <div class="sliderStainPrice">
+                <p>À partir de <span class="price">112<span class="fine"></span>€</span> <span class="duration">la nuit</span></p>
+            </div>
+        </li>
+    </ul>
+    <div class="pagination clear" id="foo3_pag"></div>
     <div id="wrap" class="fixed-width clear">
         <div class="column left">
             <div class="ratio-33 left">
@@ -53,7 +64,7 @@
                             <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
                     </div>
-                    <a href="#_" class="bt link">Voir tous les agenda culturel et sorties (13)</a>
+                    <a href="#_" class="bt link right">Voir tous les agenda culturel et sorties (13)</a>
                 </div>
             </div>
             <div class="ratio-33 left clear">
@@ -107,7 +118,7 @@
 					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
 						</div>
                     </div>
-                    <a href="#_" class="bt link left">Voir tous les agenda culturel et sorties (13)</a>
+                    <a href="#_" class="bt link right">Voir tous les agenda culturel et sorties (13)</a>
                 </div>
             </div>
         </div>
@@ -116,7 +127,9 @@
         <!-- colonne droite -->
         <aside class="column right">
             <?php include('blocs/search.php') ?>
-            <?php include('blocs/offreSpeciales.php') ?>
+            <div id="greyBoxes">
+                <?php include('blocs/ideesWeekend.php') ?>
+            </div>
         </aside>
         <!-- // colonne droite -->
 
