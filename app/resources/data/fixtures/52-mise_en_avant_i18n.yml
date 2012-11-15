@@ -1,0 +1,73 @@
+\Cungfoo\Model\MiseEnAvantI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Titre: 'L''espagne DE'
+        Accroche: 'Au mois de juillet pour 6 personnes DE'
+        Lien: null
+        TitreLien: 'Réserver DE'
+        Prix: 'A partir de 112€ la nuit DE'
+    1_en:
+        Id: 1
+        Locale: en
+        Titre: 'L''espagne EN'
+        Accroche: 'Au mois de juillet pour 6 personnes EN'
+        Lien: null
+        TitreLien: 'Réserver EN'
+        Prix: 'A partir de 112€ la nuit EN'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Titre: 'L''espagne'
+        Accroche: 'Au mois de juillet pour 6 personnes'
+        Lien: '#'
+        TitreLien: Réserver
+        Prix: 'A partir de 112€ la nuit'
+    2_de:
+        Id: 2
+        Locale: de
+        Titre: 'Le portugal DE'
+        Accroche: 'Au mois de juin pour 6 personnes DE'
+        Lien: null
+        TitreLien: 'Réserver DE'
+        Prix: 'A partir de 90€ la nuit DE'
+    2_en:
+        Id: 2
+        Locale: en
+        Titre: 'Le portugal EN'
+        Accroche: 'Au mois de juin pour 6 personnes EN'
+        Lien: null
+        TitreLien: 'Réserver EN'
+        Prix: 'A partir de 90€ la nuit EN'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Titre: 'Le portugal'
+        Accroche: 'Au mois de juin pour 6 personnes'
+        Lien: '#'
+        TitreLien: Réserver
+        Prix: 'A partir de 90€ la nuit'
+    3_de:
+        Id: 3
+        Locale: de
+        Titre: 'La france DE'
+        Accroche: 'Au mois de juillet pour 6 personnes DE'
+        Lien: null
+        TitreLien: 'Réserver DE'
+        Prix: 'A partir de 112€ la nuit DE'
+    3_en:
+        Id: 3
+        Locale: en
+        Titre: 'La france EN'
+        Accroche: 'Au mois de juillet pour 6 personnes EN'
+        Lien: null
+        TitreLien: 'Réserver EN'
+        Prix: 'A partir de 112€ la nuit EN'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Titre: 'La france'
+        Accroche: 'Au mois de juillet pour 6 personnes'
+        Lien: '#'
+        TitreLien: Réserver
+        Prix: 'A partir de 112€ la nuit'
