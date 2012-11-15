@@ -1275,8 +1275,15 @@ function initializeAllGmap() {
         type: 'poly'
     };
 
-    proxInit();
-    infoInit();
+    if ($('#proxMap').length) {
+        proxInit();
+    }
+    if ($('#infoMap').length) {
+        infoInit();
+    }
+    if ($('#resultMap').length) {
+        resultInit();
+    }
 }
 
 
