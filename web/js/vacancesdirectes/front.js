@@ -167,34 +167,48 @@ $(function() {
     }
 
 // slider
+
     if ($('#slider').length){
-        $("#foo1").carouFredSel({
+        $("#slider").carouFredSel({
             auto	: false,
+            items   : {
+                visible  : 1
+            },
             onCreate: function( data ) {
                 var txt = "";
-                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                $("#foo1_log").html("<p>Carousel created showing images:</p><ul>" + txt + "</ul>");
+//                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+                console.log("Carousel created showing images: <ul>" + txt + "</ul>");
             },
             scroll	: {
                 onAfter	: function( data ) {
                     var txt = "";
                     data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                    $("#foo1_log").html("<p>Now showing images:</p><ul>" + txt + "</ul>");
+                    console.log("Now showing images: <ul>" + txt + "</ul>");
                 }
             },
             prev	: {
-                button	: "#foo1_prev",
+                button	: "#sliderPrev",
                 onBefore: function() {
-                    $("#foo1_log").html("<p>Started scrolling to the <strong>left</strong>.</p>");
+                    console.log("Started scrolling to the left.");
                 }
             },
             next	: {
-                button	: "#foo1_next",
+                button	: "#sliderNext",
                 onBefore: function() {
-                    $("#foo1_log").html("<p>Started scrolling to the <strong>right</strong>.</p>");
+                    console.log("Started scrolling to the right.");
                 }
             }
         });
+    }
+
+    function fadeStains(s1,s2,direction){
+
+    }
+    function fadeStains(s1,s2,direction){
+
+    }
+    function slidePhoto(element,direction){
+
     }
 
 
