@@ -1324,6 +1324,15 @@ section,
 footer {
   position: relative;
 }
+header {
+  z-index: 30;
+}
+#slider {
+  z-index: 10;
+}
+#wrap {
+  z-index: 20;
+}
 .full-width {
   position: relative;
   min-width: 100%;
@@ -1948,6 +1957,9 @@ h6,
   font-size: 26px;
   margin: 15px 0;
 }
+.bt.ib {
+  display: inline-block;
+}
 .boxborder {
   margin: 0 25px 25px 5px;
   border: 5px solid #fff;
@@ -2279,7 +2291,7 @@ h6,
   position: relative;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   height: 230px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .home #slider .sliderPhoto {
   position: absolute;
@@ -2306,19 +2318,19 @@ h6,
   z-index: 2;
 }
 .home #slider .sliderStainInfo {
-  padding: 45px 50px 40px 30px;
   position: absolute;
-  left: 80px;
-  top: -30px;
-  width: 256px;
-  height: 146px;
+  left: 70px;
+  top: -55px;
+  width: 272px;
+  height: 272px;
   /* Centrer verticalement une ligne de texte */
 
-  line-height: 146px;
+  line-height: 272px;
   /* Centrer verticalement plusieurs lignes de texte */
 
   /* Centrer verticalement une image de taille variable */
 
+  text-align: center;
   background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
   z-index: 3;
 }
@@ -2334,19 +2346,19 @@ h6,
   width: 200px:height:145px;
 }
 .home #slider .sliderStainPrice {
-  padding: 45px 50px 40px 30px;
   position: absolute;
-  left: 230px;
-  top: 75px;
-  width: 168px;
-  height: 75px;
+  left: 220px;
+  top: 60px;
+  width: 188px;
+  height: 188px;
   /* Centrer verticalement une ligne de texte */
 
-  line-height: 75px;
+  line-height: 188px;
   /* Centrer verticalement plusieurs lignes de texte */
 
   /* Centrer verticalement une image de taille variable */
 
+  text-align: center;
   background: url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;
   z-index: 4;
 }
