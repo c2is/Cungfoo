@@ -2176,6 +2176,10 @@ h6,
   font-size: 27px;
   font-weight: bold;
 }
+.ie-lte8 .stain {
+  width: 70px;
+  min-width: 70px !important;
+}
 /* structure */
 #wrap {
   padding: 15px 0;
@@ -2302,22 +2306,60 @@ h6,
   z-index: 2;
 }
 .home #slider .sliderStainInfo {
+  padding: 45px 50px 40px 30px;
   position: absolute;
   left: 80px;
   top: -30px;
   width: 256px;
-  height: 231px;
+  height: 146px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 146px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
   background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
   z-index: 3;
 }
+.home #slider .sliderStainInfo > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.home #slider .sliderStainInfo > img {
+  vertical-align: middle;
+}
+.home #slider .sliderStainInfo .content {
+  width: 200px:height:145px;
+}
 .home #slider .sliderStainPrice {
+  padding: 45px 50px 40px 30px;
   position: absolute;
   left: 230px;
   top: 75px;
-  width: 256px;
-  height: 231px;
+  width: 168px;
+  height: 75px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 75px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
   background: url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;
   z-index: 4;
+}
+.home #slider .sliderStainPrice > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.home #slider .sliderStainPrice > img {
+  vertical-align: middle;
+}
+.home #slider .sliderStainPrice .content {
+  width: 200px:height:75px;
 }
 .home .locationForwards {
   position: relative;
@@ -3394,7 +3436,7 @@ h6,
 #tabProximite h3 {
   margin: 40px 0 20px;
 }
-#tabProximite .infoDestination {
+#tabProximite .itemResultPopDest {
   position: relative;
   margin: 40px 0;
   min-height: 175px;
@@ -3403,20 +3445,20 @@ h6,
   background-repeat: no-repeat;
   background-position: 15px 50%;
 }
-#tabProximite .infoDestination h3 {
+#tabProximite .itemResultPopDest h3 {
   margin-bottom: 10px;
 }
-#tabProximite .infoDestination .bt {
+#tabProximite .itemResultPopDest .bt {
   background: #8c8a8a;
   margin: 15px 0;
   text-align: center;
 }
-#tabProximite .infoDestination .iDestImg1 {
+#tabProximite .itemResultPopDest .iDestImg1 {
   position: absolute;
   left: 56px;
   top: 25px;
 }
-#tabProximite .infoDestination .iDestImg2 {
+#tabProximite .itemResultPopDest .iDestImg2 {
   position: absolute;
   left: 20px;
   top: 90px;
@@ -3469,8 +3511,167 @@ h6,
   margin-bottom: 5px;
 }
 /* page result */
-.itemResultBottom input[checked="checked"] + label {
+.itemResult {
+  border: 4px solid #8c8a8a;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.itemResult .itemResultTitle {
+  background: #8c8a8a;
+  font: bold 25px/18px 'PT Sans Narrow', Arial, sans-serif;
+  padding: 3px 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.itemResult .itemResultTitle .dates {
+  font: bold 16px/18px Arial, sans-serif;
+  text-transform: none;
+}
+.itemResult .itemResultTitle [type="checkbox"] {
+  float: right;
+}
+.itemResult .itemResultLeft {
+  padding: 10px 0 10px 10px;
+  float: left;
+  width: 175px;
+}
+.itemResult .itemResultLeft .boxborder {
+  margin: 0;
+}
+.itemResult .itemResultLeft .ratingFiche {
+  float: none;
+  margin: 0;
+  font-size: 11px;
+}
+.itemResult .itemResultLeft .ratingFiche .reviewCount {
+  margin-left: 0;
+}
+.itemResult .itemResultLeft .ratingFiche .review:first-child {
+  margin-left: 0px;
+}
+.itemResult .itemResultCenter {
+  padding: 10px;
+  float: left;
+  width: 200px;
+}
+.itemResult .itemResultCenter .bt {
+  display: inline-block;
+  margin-top: 10px;
+}
+.itemResult .itemResultCenter .pictos {
+  margin-top: 10px;
+}
+.itemResult .itemResultRight {
+  padding: 10px;
+  float: left;
+  width: 233px;
+  text-align: right;
+}
+.itemResult .itemResultBottom {
+  min-height: 100px;
+  clear: both;
+  background: #e6e5e5;
+  padding: 20px 10px;
+  position: relative;
+  -webkit-border-radius: 0 0 15px 15px;
+  border-radius: 0 0 15px 15px;
+}
+.itemResult .itemResultBottom .linePrice label {
+  float: left;
+  clear: left;
+  width: 345px;
+}
+.itemResult .itemResultBottom .linePrice .stain {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 355px;
+}
+.itemResult .itemResultBottom .linePrice a.bt {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  background-color: #ed145b;
+  color: #ffffff;
+}
+.itemResult .itemResultBottom .linePrice.checked label {
   font-weight: bold;
+}
+.itemResult .itemResultBottom .linePrice.checked .stain,
+.itemResult .itemResultBottom .linePrice.checked a.bt {
+  display: block;
+}
+.itemResult .itemResultBottom .stain {
+  display: block;
+  width: 131px;
+  height: 129px;
+  padding-top: 57px;
+}
+.itemResult .itemResultBottom .stain > * {
+  margin: 0;
+}
+.itemResult .itemResultBottom .stain span {
+  display: block;
+}
+.itemResult .itemResultBottom .stain .promo {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 64px;
+  height: 61px;
+  text-indent: -5px;
+  background-image: inherit;
+  background-position: 0 -262px;
+  font: bold 15px/61px Arial, sans-serif;
+}
+.itemResult .itemResultBottom .promotion a.bt {
+  background-color: #f58220;
+  color: #ffffff;
+}
+.itemResult .itemResultBottom .promotion .stain {
+  padding-top: 47px;
+  background-position: 0 -131px;
+}
+.itemResult .itemResultBottom .catalogue .stain {
+  padding-top: 39px;
+}
+.itemResult .infoDestination {
+  position: relative;
+  margin: 40px 0;
+  min-height: 175px;
+  padding: 10px 50px 10px 300px;
+  background-image: url(../../images/vacancesdirectes/common/images/infoDestStamp.png);
+  background-repeat: no-repeat;
+  background-position: 15px 50%;
+}
+.itemResult .infoDestination h3 {
+  margin-bottom: 10px;
+}
+.itemResult .infoDestination .bt {
+  background: #8c8a8a;
+  margin: 15px 0;
+  text-align: center;
+}
+.itemResult .infoDestination .iDestImg1 {
+  position: absolute;
+  left: 56px;
+  top: 25px;
+}
+.itemResult .infoDestination .iDestImg2 {
+  position: absolute;
+  left: 20px;
+  top: 90px;
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  -ms-transform: rotate(12deg);
+  -o-transform: rotate(12deg);
+  transform: rotate(12deg);
+}
+.itemResult.itemCatalogue .itemResultBottom .linePrice a.bt,
+.itemResult.itemCatalogue .itemResultBottom .linePrice .stain {
+  display: block;
 }
 .formSearchRefined {
   background: none repeat scroll 0 0 #F0F2F5;
