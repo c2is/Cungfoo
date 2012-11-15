@@ -109,7 +109,8 @@ fiche.arrivees_departs: Arrivées/Départs
 fiche.fax: Fax :
 fiche.tel: Tél :
 
-home.topcamping: Top camping
+home.topcamping: Top campings
+home.topcamping.link: Tous les top campings (%number%)
 home.vacances_directes_cest: Vacances directes c'est
 home.4_pays: 4 pays
 home.26_regions: 26 régions
