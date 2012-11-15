@@ -71,3 +71,27 @@
         Id: 6
         Locale: fr
         Name: Emplacements
+    7_de:
+        Id: 7
+        Locale: de
+        Name: Maisonnette
+    7_en:
+        Id: 7
+        Locale: en
+        Name: Maisonnette
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: Maisonnette
+    8_de:
+        Id: 8
+        Locale: de
+        Name: Tente
+    8_en:
+        Id: 8
+        Locale: en
+        Name: Tente
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: Tente
