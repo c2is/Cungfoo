@@ -2,6 +2,28 @@
 
 {% block title %}Homepage{% endblock %}
 
+{% block slider %}
+    <div id="slider" class="fixed-width clear">
+        <div id="sliderPhoto"></div>
+        <div id="sliderBackground"></div>
+        <div id="sliderStain"></div>
+        <ul>
+            {% for mea in mea %}
+                <li {% if loop.index != 1 %} style="display: none;" {% endif %}>
+                    <img src="{{ asset(mea.imageFondPath) }}" alt="{{ mea.titre }}"/>
+                    <span>{{ mea.titre }}</span>
+                    <span>{{ mea.accroche }}</span>
+                    <img src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}"/>
+                    <a href="{{ mea.lien }}" title="{{ mea.titre }}">
+                        {{ mea.titreLien }}
+                    </a>
+                    <span>{{ mea.prix }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
 {% endblock %}
