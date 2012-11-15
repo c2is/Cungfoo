@@ -267,6 +267,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.events',
             'required' => false,
         ));
+        $builder->add('dernieres_minutess', 'model', array(
+            'class' => 'Cungfoo\Model\DernieresMinutes',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.dernieres_minutess',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(

@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block title %}{% endblock %} - Vacances Directes CE</title>
+    <title>{% block title %}{% endblock %} - Vacances Directes</title>
 
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,8 +33,12 @@
             <a href="{{ path( 'homepage' ) }}" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
                 <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
             </a>
+            <h1 id="catchline">{{ "header.130_camping" | trans }}</h1>
         </div>
     </header>
+
+    {% block slider %}
+    {% endblock %}
 
     {% block content %}
     <div id="wrap" class="fixed-width clear">
@@ -46,14 +50,24 @@
             {% block rightColumn %}
             {% endblock %}
         </aside>
+            {% block columnClearboth %}
+            {% endblock %}
     </div>
     {% endblock %}
 
     <footer class="clear">
-        <div class="footer-link" class="full-width">
-            <span class="card transac">Transactions sécurisées</span>
-            <span class="card visa">CB Visa</span>
-            <span class="card master">MasterCard</span>
+        <div class="footer-links" class="full-width">
+            <a href="#_">{{ "footer.contact" | trans }}</a> -
+            <a href="#_">{{ "footer.charte_qualite" | trans }}</a> -
+            <a href="#_">{{ "footer.conditions_generales_de_location" | trans }}</a> -
+            <a href="#_">{{ "footer.faq" | trans }}</a> -
+            <a href="#_">{{ "footer.guide_pratique" | trans }}</a> -
+            <a href="#_">{{ "footer.plan_du_site" | trans }}</a> -
+            <a href="#_">{{ "footer.credits" | trans }}</a> -
+            <a href="#_">{{ "footer.mentions_legales" | trans }}</a>
+            <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>
+            <span class="card visa">{{ "footer.cb_visa" | trans }}</span>
+            <span class="card master">{{ "footer.masterCard" | trans }}</span>
         </div>
     </footer>
 

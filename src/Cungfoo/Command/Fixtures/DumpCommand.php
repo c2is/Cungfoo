@@ -75,6 +75,8 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\AvantageI18n",
         "\\Cungfoo\\Model\\Edito",
         "\\Cungfoo\\Model\\TopCamping",
+        "\\Cungfoo\\Model\\MiseEnAvant",
+        "\\Cungfoo\\Model\\MiseEnAvantI18n",
     );
 
     protected function configure()
@@ -138,13 +140,9 @@ class DumpCommand extends BaseCommand
                     {
                         $objectsArrayForYaml[sprintf('%s_%s', $value['Id'], $value['Locale'])] = $value;
                     }
-                    else if (isset($value['Id']))
+                    else
                     {
-                        $valueId = $value['Id'];
-                        unset($value['Id']);
-
-
-                        foreach ($value as $field)
+                        foreach ($value as &$field)
                         {
                             if ($field && is_string($field))
                             {
@@ -154,12 +152,23 @@ class DumpCommand extends BaseCommand
                                     $filesystem->copy($file, $fixturesDirectory.'/'.$field);
                                 }
                             }
+                            else if (is_object($field) && get_class($field) == "DateTime")
+                            {
+                                $field = $field->format('Y-m-d H:i:s');
+                            }
                         }
-                        $objectsArrayForYaml[$valueId] = $value;
-                    }
-                    else
-                    {
-                        $objectsArrayForYaml[implode('_', $value)] = $value;
+
+                        if (isset($value['Id']))
+                        {
+                            $valueId = $value['Id'];
+                            unset($value['Id']);
+
+                            $objectsArrayForYaml[$valueId] = $value;
+                        }
+                        else
+                        {
+                            $objectsArrayForYaml[implode('_', $value)] = $value;
+                        }
                     }
                 });
 

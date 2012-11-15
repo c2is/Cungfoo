@@ -302,6 +302,7 @@
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
+        <column name="mea_home" type="boolean" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
@@ -644,6 +645,65 @@
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="day_start" type="enum" valueSet="lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche" required="true"/>
+        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="active" type="boolean"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/dernieres_minutes" />
+        </behavior>
+    </table>
+
+    <table name="dernieres_minutes_etablissement" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="dernieres_minutes_destination" isCrossRef="true">
+        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
+            <reference local="dernieres_minutes_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="mise_en_avant">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="image_fond_path" type="varchar"/>
+        <column name="titre" type="varchar"/>
+        <column name="accroche" type="varchar"/>
+        <column name="lien" type="varchar"/>
+        <column name="titre_lien" type="varchar"/>
+        <column name="prix" type="varchar"/>
+        <column name="illustration_path" type="varchar"/>
+        <column name="date_fin_validite" type="date"/>
+        <behavior name="sortable"/>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre, accroche, lien, titre_lien, prix" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/mise_en_avant" />
+            <parameter name="crud_type_file" value="image_fond_path, illustration_path" />
+        </behavior>
     </table>
 
 </database>

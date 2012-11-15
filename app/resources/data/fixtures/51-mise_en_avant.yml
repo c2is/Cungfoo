@@ -1,0 +1,16 @@
+\Cungfoo\Model\MiseEnAvant:
+    1:
+        ImageFondPath: uploads/mise_en_avants/50a4c3feacdd9.jpeg
+        IllustrationPath: uploads/mise_en_avants/50a4c3fee073f.png
+        DateFinValidite: '2012-11-19 00:00:00'
+        SortableRank: 1
+    2:
+        ImageFondPath: uploads/mise_en_avants/50a4c4e410317.jpeg
+        IllustrationPath: uploads/mise_en_avants/50a4c4e44abc7.png
+        DateFinValidite: '2013-01-08 00:00:00'
+        SortableRank: 2
+    3:
+        ImageFondPath: uploads/mise_en_avants/50a4c53267b8e.jpeg
+        IllustrationPath: uploads/mise_en_avants/50a4c532afa70.png
+        DateFinValidite: '2012-11-29 00:00:00'
+        SortableRank: 3

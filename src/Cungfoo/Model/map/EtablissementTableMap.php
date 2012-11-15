@@ -92,6 +92,7 @@ class EtablissementTableMap extends TableMap
         $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'Personnages');
         $this->addRelation('MultimediaEtablissement', 'Cungfoo\\Model\\MultimediaEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'MultimediaEtablissements');
         $this->addRelation('TopCamping', 'Cungfoo\\Model\\TopCamping', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'TopCampings');
+        $this->addRelation('DernieresMinutesEtablissement', 'Cungfoo\\Model\\DernieresMinutesEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), null, null, 'DernieresMinutesEtablissements');
         $this->addRelation('EtablissementI18n', 'Cungfoo\\Model\\EtablissementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EtablissementI18ns');
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'TypeHebergements');
         $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), null, null, 'Destinations');
@@ -102,6 +103,7 @@ class EtablissementTableMap extends TableMap
         $this->addRelation('Thematique', 'Cungfoo\\Model\\Thematique', RelationMap::MANY_TO_MANY, array(), null, null, 'Thematiques');
         $this->addRelation('PointInteret', 'Cungfoo\\Model\\PointInteret', RelationMap::MANY_TO_MANY, array(), null, null, 'PointInterets');
         $this->addRelation('Event', 'Cungfoo\\Model\\Event', RelationMap::MANY_TO_MANY, array(), null, null, 'Events');
+        $this->addRelation('DernieresMinutes', 'Cungfoo\\Model\\DernieresMinutes', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'DernieresMinutess');
     } // buildRelations()
 
     /**

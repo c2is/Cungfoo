@@ -1,5 +1,61 @@
-.itemResultBottom{
-  input[checked="checked"] + label{font-weight:bold}
+.itemResult{border:4px solid @colorBgGrisM;._border-radius(15px);margin-bottom:15px;
+  .itemResultTitle{background:@colorBgGrisM;font:bold 25px/18px @ptnarrow;padding:3px 5px;color:@colorBlanc;text-transform:uppercase;
+    .dates{font:bold 16px/18px Arial, sans-serif;text-transform:none;}
+    [type="checkbox"]{float:right;}
+  }
+  .itemResultLeft{padding:10px 0 10px 10px;float:left;width:175px;
+    .boxborder{margin:0;}
+    .ratingFiche{float:none;margin:0;font-size:11px;
+      .reviewCount{margin-left:0;}
+      .review:first-child{margin-left:0px;}
+    }
+  }
+  .itemResultCenter{padding:10px;float:left;width:200px;
+    .bt{display:inline-block;margin-top:10px;}
+    .pictos{margin-top:10px;
+      img{}
+    }
+  }
+  .itemResultRight{padding:10px;float:left;width:233px;text-align:right;
+    img{}
+    .titDest{}
+    .bt{}
+  }
+  .itemResultBottom{min-height:100px;clear:both;background:@colorGris3;padding:20px 10px;position:relative;._border-radius(0 0 15px 15px);
+    .linePrice{
+      label{float:left;clear:left;width:345px;}
+      .stain{display:none;position:absolute;bottom:5px;left:355px;}
+      a.bt{display:none;position:absolute;bottom:35px;right:25px;background-color:@colorFushia;color:@colorBlanc;}
+      &.checked{
+        label{font-weight:bold;}
+        .stain, a.bt{display:block;}
+      }
+    }
+    .stain{display:block;width:131px;height:129px;padding-top:57px;
+      > * {margin:0;}
+      span{display:block;}
+      .promo{position:absolute;top:-10px;left:-10px;width:64px;height:61px;text-indent:-5px;background-image:inherit;background-position:0 -262px;font:bold 15px/61px Arial, sans-serif;}
+    }
+    .promotion{
+      a.bt{background-color:@colorOrange;color:@colorBlanc;}
+      .stain{padding-top:47px;background-position:0 -131px;}
+    }
+    .catalogue{
+      .stain{padding-top:39px;}
+    }
+  }
+  .infoDestination{position:relative;margin:40px 0;min-height:175px;padding:10px 50px 10px 300px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:15px 50%;
+    h3{margin-bottom:10px;}
+    .bt{background:@colorBgGrisM;margin:15px 0;text-align:center;}
+    .iDestImg1{position:absolute;left:56px;top:25px;}
+    .iDestImg2{position:absolute;left:20px;top:90px;._transform(rotate(12deg));}
+  }
+
+  &.itemCatalogue{
+    .itemResultBottom .linePrice{
+      a.bt, .stain{display:block;}
+    }
+  }
 }
 
 .formSearchRefined {background: none repeat scroll 0 0 #F0F2F5;margin: 10px auto;padding: 10px;

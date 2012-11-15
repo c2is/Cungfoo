@@ -39,10 +39,22 @@ class HomepageController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
+                ->find()
+            ;
+
+            $pays = \Cungfoo\Model\PaysQuery::create()
+                ->find()
+            ;
+
             return $app['twig']->render('homepage.twig', array(
                 'searchForm'  => $searchEngine->getView(),
                 'locale'      => $locale,
                 'topCampings' => $topCampings,
+                'pays'        => $pays,
+                'mea'         => $mea
             ));
         })
         ->bind('homepage');

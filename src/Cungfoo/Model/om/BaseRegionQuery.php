@@ -30,6 +30,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery orderByImageEncartPath($order = Criteria::ASC) Order by the image_encart_path column
  * @method RegionQuery orderByImageEncartPetitePath($order = Criteria::ASC) Order by the image_encart_petite_path column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
+ * @method RegionQuery orderByMeaHome($order = Criteria::ASC) Order by the mea_home column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
@@ -39,6 +40,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery groupByImageEncartPath() Group by the image_encart_path column
  * @method RegionQuery groupByImageEncartPetitePath() Group by the image_encart_petite_path column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
+ * @method RegionQuery groupByMeaHome() Group by the mea_home column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
  *
@@ -66,6 +68,7 @@ use Cungfoo\Model\Ville;
  * @method Region findOneByImageEncartPath(string $image_encart_path) Return the first Region filtered by the image_encart_path column
  * @method Region findOneByImageEncartPetitePath(string $image_encart_petite_path) Return the first Region filtered by the image_encart_petite_path column
  * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
+ * @method Region findOneByMeaHome(boolean $mea_home) Return the first Region filtered by the mea_home column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  *
@@ -75,6 +78,7 @@ use Cungfoo\Model\Ville;
  * @method array findByImageEncartPath(string $image_encart_path) Return Region objects filtered by the image_encart_path column
  * @method array findByImageEncartPetitePath(string $image_encart_petite_path) Return Region objects filtered by the image_encart_petite_path column
  * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
+ * @method array findByMeaHome(boolean $mea_home) Return Region objects filtered by the mea_home column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
  *
@@ -180,7 +184,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `CREATED_AT`, `UPDATED_AT` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -453,6 +457,33 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::PAYS_ID, $paysId, $comparison);
+    }
+
+    /**
+     * Filter the query on the mea_home column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMeaHome(true); // WHERE mea_home = true
+     * $query->filterByMeaHome('yes'); // WHERE mea_home = true
+     * </code>
+     *
+     * @param     boolean|string $meaHome The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function filterByMeaHome($meaHome = null, $comparison = null)
+    {
+        if (is_string($meaHome)) {
+            $mea_home = in_array(strtolower($meaHome), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(RegionPeer::MEA_HOME, $meaHome, $comparison);
     }
 
     /**
