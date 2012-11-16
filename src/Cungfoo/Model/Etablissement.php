@@ -114,4 +114,38 @@ class Etablissement extends BaseEtablissement
          ;
     }
 
+    public function getRandomPoi($number)
+    {
+        return PointInteretPeer::getForEtablissement($this, PointInteretPeer::RANDOM_SORT, $number);
+    }
+
+    public function getCountPoi()
+    {
+        return PointInteretPeer::getCountForEtablissement($this);
+    }
+
+    public function getPoiPrioritaire()
+    {
+        return PointInteretPeer::getForEtablissement($this, PointInteretPeer::RANDOM_SORT, 1);
+    }
+
+    public function getRandomEvents($number)
+    {
+        return EventPeer::getForEtablissement($this, EventPeer::RANDOM_SORT, $number);
+    }
+
+    public function getCountActivitesSportives()
+    {
+        return EventPeer::getCountForEtablissement($this, EventPeer::CATEGORY_SPORTIVE);
+    }
+
+    public function getCountEvenementsCulturels()
+    {
+        return EventPeer::getCountForEtablissement($this, EventPeer::CATEGORY_SPORTIVE, \Criteria::NOT_EQUAL);
+    }
+
+    public function getEventPrioritaire()
+    {
+        return EventPeer::getForEtablissement($this, EventPeer::SORT_BY_PRIORITY, 1);
+    }
 }
