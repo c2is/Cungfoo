@@ -172,6 +172,7 @@ menu.personnages: Personnages
 menu.avantages: Avantages
 menu.editos: Éditos
 menu.top_camping: Top campings
+menu.mise_en_avant: Mise en avant
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
