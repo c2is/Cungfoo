@@ -173,6 +173,7 @@ menu.avantages: Avantages
 menu.editos: Éditos
 menu.top_camping: Top campings
 menu.mise_en_avant: Mise en avant
+menu.dernieres_minutes: Dernières minutes
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements

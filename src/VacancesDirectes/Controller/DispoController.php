@@ -73,7 +73,6 @@ class DispoController implements ControllerProviderInterface
             $date = date('d/m/Y', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart()));
 
             $resalysFormatter = new ResalysFormatter($app, $date, $dernieresMinutes->getDayRange());
-            $resalysFormatter->process();
 
             $etabs = EtablissementQuery::create()
                 ->filterByCode(4)
@@ -88,7 +87,7 @@ class DispoController implements ControllerProviderInterface
             ;
 
             return $app['twig']->render('Results\listing.twig', array(
-                'list' => $list->process(),
+                'list'       => $resalysFormatter->process(),
                 'searchForm' => $searchEngine->getView(),
             ));
         })

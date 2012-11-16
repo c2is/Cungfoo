@@ -72,6 +72,9 @@ menu:
               mise_en_avant:
                   title:  menu.mise_en_avant
                   route:  mise_en_avant_crud_list
+              dernieres_minutes:
+                  title:  menu.dernieres_minutes
+                  route:  dernieres_minutes_crud_list
         viafrance:
             title: menu.viafrance
             items:

@@ -25,6 +25,7 @@ class ResalysFormatter
 
     public function process()
     {
+        $locale = $this->app['context']->get('language');
         $client = new DisponibiliteClient($this->app['config']->get('root_dir'));
         $client->addOptions(array(
             'start_date'  => $this->date,
@@ -37,26 +38,29 @@ class ResalysFormatter
 
         $client->parse();
 
+        $results = array(
+            'type'    => \VacancesDirectes\Lib\Listing::DISPO,
+            'element' => array()
+        );
+
         $etabs = array();
         if (property_exists($client->getData()['getProposals65']['fr'], 'proposal'))
         {
             foreach ($client->getData()['getProposals65']['fr']->{'proposal'} as $proposal)
             {
-                var_dump($proposal->{'etab_id'});die;
+                $etab = \Cungfoo\Model\EtablissementQuery::create()
+                    ->joinWithI18n($locale)
+                    ->filterByCode($proposal->{'etab_id'})
+                    ->findOne()
+                ;
+
+                if (!in_array($proposal->{'etab_id'}, $results['element']))
+                {
+                    $results['element'][$proposal->{'etab_id'}]['model'] = $etab;
+                }
+
+                $results['element'][$proposal->{'etab_id'}]['extra'][$proposal->{'adult_price'}] = $proposal;
             }
-        }
-
-        $results = array(
-            'type'    => VacancesDirectes\Lib\Listing::DISPO,
-            'element' => array()
-        );
-
-        foreach ($this->etablissements as $etablissement)
-        {
-            $results['element'][] = array(
-                'model' => $etablissement,
-                'extra' => 'extra',
-            );
         }
 
         return $results;
