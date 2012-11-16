@@ -59,13 +59,13 @@ abstract class BaseDernieresMinutesPeer
     const ACTIVE = 'dernieres_minutes.ACTIVE';
 
     /** The enumerated values for the DAY_START field */
-    const DAY_START_LUNDI = 'lundi';
-    const DAY_START_MARDI = 'mardi';
-    const DAY_START_MERCREDI = 'mercredi';
-    const DAY_START_JEUDI = 'jeudi';
-    const DAY_START_VENDREDI = 'vendredi';
-    const DAY_START_SAMEDI = 'samedi';
-    const DAY_START_DIMANCHE = 'dimanche';
+    const DAY_START_MONDAY = 'monday';
+    const DAY_START_TUESDAY = 'tuesday';
+    const DAY_START_WEDNESDAY = 'wednesday';
+    const DAY_START_THURSDAY = 'thursday';
+    const DAY_START_FRIDAY = 'friday';
+    const DAY_START_SATURDAY = 'saturday';
+    const DAY_START_SUNDAY = 'sunday';
 
     /** The enumerated values for the DAY_RANGE field */
     const DAY_RANGE_7 = '7';
@@ -117,13 +117,13 @@ abstract class BaseDernieresMinutesPeer
     /** The enumerated values for this table */
     protected static $enumValueSets = array(
         DernieresMinutesPeer::DAY_START => array(
-            DernieresMinutesPeer::DAY_START_LUNDI,
-            DernieresMinutesPeer::DAY_START_MARDI,
-            DernieresMinutesPeer::DAY_START_MERCREDI,
-            DernieresMinutesPeer::DAY_START_JEUDI,
-            DernieresMinutesPeer::DAY_START_VENDREDI,
-            DernieresMinutesPeer::DAY_START_SAMEDI,
-            DernieresMinutesPeer::DAY_START_DIMANCHE,
+            DernieresMinutesPeer::DAY_START_MONDAY,
+            DernieresMinutesPeer::DAY_START_TUESDAY,
+            DernieresMinutesPeer::DAY_START_WEDNESDAY,
+            DernieresMinutesPeer::DAY_START_THURSDAY,
+            DernieresMinutesPeer::DAY_START_FRIDAY,
+            DernieresMinutesPeer::DAY_START_SATURDAY,
+            DernieresMinutesPeer::DAY_START_SUNDAY,
         ),
         DernieresMinutesPeer::DAY_RANGE => array(
             DernieresMinutesPeer::DAY_RANGE_7,

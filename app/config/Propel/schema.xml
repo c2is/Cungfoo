@@ -649,7 +649,7 @@
 
     <table name="dernieres_minutes">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
-        <column name="day_start" type="enum" valueSet="lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche" required="true"/>
+        <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
         <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
         <column name="active" type="boolean"/>
 
