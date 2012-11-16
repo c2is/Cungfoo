@@ -2056,6 +2056,9 @@ h6,
 .radiusBox.fushia {
   background-color: #ed145b;
 }
+.radiusBox.yellow {
+  background-color: #ffd503;
+}
 .radiusBox .stamp {
   color: #ffffff;
   height: 38px;
@@ -2284,29 +2287,103 @@ h6,
   text-indent: -9999px;
   margin-top: 7px;
 }
-.home #slider {
+.home #sliderPrev,
+.home #sliderNext {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  width: 125px;
+  height: 100px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 100px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.home #sliderPrev > *,
+.home #sliderNext > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.home #sliderPrev > img,
+.home #sliderNext > img {
+  vertical-align: middle;
+}
+.home #sliderPrev {
+  left: 20px;
+}
+.home #sliderPrev:before {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/slider.png") 0 0px no-repeat transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -15px;
+  margin-left: -12px;
+  height: 30px;
+  width: 12px;
+}
+.home #sliderNext {
+  right: 20px;
+  left: auto;
+}
+.home #sliderNext:after {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/slider.png") -12px 0px no-repeat transparent;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -15px;
+  margin-right: -12px;
+  height: 30px;
+  width: 12px;
+}
+.home #sliderContainer {
   position: relative;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
+  width: 976px;
   height: 230px;
-  margin-top: 30px;
+  margin: 30px auto 0;
   z-index: 10;
 }
-.home #slider .sliderPhoto {
+.home #sliderContainer #sliderBackground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 976px;
+  background-color: #ffffff;
+  z-index: 2;
+  display: none;
+}
+.home #sliderContainer .caroufredsel_wrapper {
+  overflow: visible !important;
+}
+.home #sliderContainer .slide {
+  position: relative;
+  width: 976px;
+  height: 230px;
+  margin-bottom: 267px;
+}
+.home #sliderContainer .slide .sliderPhoto {
   position: absolute;
   top: -20px;
   right: 350px;
 }
-.home #slider .sliderPhoto img {
+.home #sliderContainer .slide .sliderPhoto img {
   transform: rotate(12deg);
   z-index: 0;
 }
-.home #slider .sliderPostmark {
+.home #sliderContainer .slide .sliderPostmark {
   position: absolute;
   top: -20px;
   right: 336px;
   z-index: 1;
 }
-.home #slider .sliderBackground {
+.home #sliderContainer .slide .sliderBackground {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2315,8 +2392,11 @@ h6,
   background-color: #ffffff;
   z-index: 2;
 }
-.home #slider .sliderStainInfo {
+.home #sliderContainer .slide .sliderStain {
   position: absolute;
+  text-align: center;
+}
+.home #sliderContainer .slide .sliderStain.first {
   left: 70px;
   top: -55px;
   width: 272px;
@@ -2328,35 +2408,33 @@ h6,
 
   /* Centrer verticalement une image de taille variable */
 
-  text-align: center;
   background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
   z-index: 3;
 }
-.home #slider .sliderStainInfo > * {
+.home #sliderContainer .slide .sliderStain.first > * {
   vertical-align: middle;
   display: inline-block;
   line-height: 15px;
 }
-.home #slider .sliderStainInfo > img {
+.home #sliderContainer .slide .sliderStain.first > img {
   vertical-align: middle;
 }
-.home #slider .sliderStainInfo .content {
+.home #sliderContainer .slide .sliderStain.first .content {
   width: 170px;
   color: #f58220;
 }
-.home #slider .sliderStainInfo .content .headline {
+.home #sliderContainer .slide .sliderStain.first .content .headline {
   font: bold 38px/38px 'PT Sans Narrow', Arial, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.home #slider .sliderStainInfo .content .catchline {
+.home #sliderContainer .slide .sliderStain.first .content .catchline {
   font: 14px/15px Arial;
   margin-bottom: 10px;
 }
-.home #slider .sliderStainPrice {
-  position: absolute;
+.home #sliderContainer .slide .sliderStain.second {
   left: 220px;
   top: 55px;
   width: 188px;
@@ -2368,30 +2446,50 @@ h6,
 
   /* Centrer verticalement une image de taille variable */
 
-  text-align: center;
   background: url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;
   z-index: 4;
 }
-.home #slider .sliderStainPrice > * {
+.home #sliderContainer .slide .sliderStain.second > * {
   vertical-align: middle;
   display: inline-block;
   line-height: 15px;
 }
-.home #slider .sliderStainPrice > img {
+.home #sliderContainer .slide .sliderStain.second > img {
   vertical-align: middle;
 }
-.home #slider .sliderStainPrice .content {
+.home #sliderContainer .slide .sliderStain.second .content {
   width: 90px;
   color: #ffffff;
 }
-.home #slider .sliderStainPrice .content p {
+.home #sliderContainer .slide .sliderStain.second .content p {
   font: bold 13px/15px Arial;
 }
-.home #slider .sliderStainPrice .content .price {
+.home #sliderContainer .slide .sliderStain.second .content .price {
   font: bold 37px/37px Arial;
 }
-.home #slider .sliderStainPrice .content .duration {
+.home #sliderContainer .slide .sliderStain.second .content .duration {
   margin-top: -10px;
+}
+.home .pagination {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-top: -64px;
+  padding-bottom: 30px;
+}
+.home .pagination a {
+  background: url("../../images/vacancesdirectes/common/sprites/slider.png") 0 -30px no-repeat transparent;
+  width: 24px;
+  height: 30px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+}
+.home .pagination a.selected {
+  background-position: 0px -60px;
+  cursor: default;
+}
+.home .pagination a span {
+  display: none;
 }
 .home .locationForwards {
   position: relative;
@@ -3468,7 +3566,7 @@ h6,
 #tabProximite h3 {
   margin: 40px 0 20px;
 }
-#tabProximite .itemResultPopDest {
+#tabProximite .infoDestination {
   position: relative;
   margin: 40px 0;
   min-height: 175px;
@@ -3477,20 +3575,20 @@ h6,
   background-repeat: no-repeat;
   background-position: 15px 50%;
 }
-#tabProximite .itemResultPopDest h3 {
+#tabProximite .infoDestination h3 {
   margin-bottom: 10px;
 }
-#tabProximite .itemResultPopDest .bt {
+#tabProximite .infoDestination .bt {
   background: #8c8a8a;
   margin: 15px 0;
   text-align: center;
 }
-#tabProximite .itemResultPopDest .iDestImg1 {
+#tabProximite .infoDestination .iDestImg1 {
   position: absolute;
   left: 56px;
   top: 25px;
 }
-#tabProximite .itemResultPopDest .iDestImg2 {
+#tabProximite .infoDestination .iDestImg2 {
   position: absolute;
   left: 20px;
   top: 90px;

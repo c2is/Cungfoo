@@ -167,38 +167,88 @@ $(function() {
     }
 
 // slider
-
+    var direction;
     if ($('#slider').length){
         $("#slider").carouFredSel({
-            auto	: false,
-            items   : {
-                visible  : 1
+            auto: {
+                delay: 5000,
+                timeoutDuration: 3000
+            },
+            direction:"down",
+            items: {
+                visible: 1
             },
             onCreate: function( data ) {
                 var txt = "";
 //                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
                 console.log("Carousel created showing images: <ul>" + txt + "</ul>");
             },
-            scroll	: {
+            scroll: {
                 onAfter	: function( data ) {
                     var txt = "";
-                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+//                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
                     console.log("Now showing images: <ul>" + txt + "</ul>");
                 }
             },
-            prev	: {
-                button	: "#sliderPrev",
-                onBefore: function() {
-                    console.log("Started scrolling to the left.");
+            prev: {
+                button: "#sliderPrev",
+                onBefore: function(data) {
+                    direction = "right";
+                    beforeSlide(data,direction);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data, direction);
                 }
             },
-            next	: {
-                button	: "#sliderNext",
-                onBefore: function() {
-                    console.log("Started scrolling to the right.");
+            next: {
+                button: "#sliderNext",
+                onBefore: function(data) {
+                    direction = "right";
+                    beforeSlide(data,direction);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data, direction);
+                }
+            },
+            pagination: {
+                container: "#slider_pag",
+                onBefore: function(data) {
+                    direction = "";
+                    beforeSlide(data,direction);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data, direction);
                 }
             }
+
+    });
+        $('#slider').children('li').each(function(){
+            console.log($(this));
         });
+
+    }
+
+    function beforeSlide(e,d){
+        console.log(e);
+        console.log(d);
+        $('.sliderBackground').hide();
+        $('#sliderBackground').show();
+        $('.sliderStain').stop().fadeOut(100);
+    }
+
+    function afterSlide(e,d){
+        console.log(e);
+        console.log(d);
+        $('.sliderBackground').show();
+        $('.sliderStain').stop().fadeIn(200);
+        $('#sliderBackground').hide();
+//                    $('.sliderStain').fadeIn(500);
+//                    $('.sliderStain').transition({
+//                        x: '+=500',
+//                        duration: 2000,
+//                        rotate: '+=180deg',
+//                        easing: 'snap'
+//                    });
     }
 
     function fadeStains(s1,s2,direction){
