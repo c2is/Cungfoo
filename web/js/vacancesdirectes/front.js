@@ -455,7 +455,7 @@ $(function() {
 
         //            //console.log(disabledDate);
                     return {
-                        disabled: disabledDate != undefined,
+                        disabled: disabledDate != undefined
                     }
                 }
             });
@@ -640,7 +640,7 @@ $(function() {
 
                 //            //console.log(disabledDate);
                 return {
-                    disabled: disabledDate != undefined,
+                    disabled: disabledDate != undefined
                 }
             }
         });
