@@ -294,7 +294,7 @@
         <?php if($page == 'home'){ echo '<h1 id="catchline">+ de 130 campings en France, Espagne, Italie & Portugal</h1>'; }?>
     </div>
 
-    <a id="sliderPrev" class="radiusBox yellow"><p></p></a>
+    <a id="sliderPrev" class="radiusBox yellow"></a>
     <div id="sliderContainer">
         <div id="sliderBackground"></div>
         <ul id="slider" class="fixed-width clear">
@@ -395,7 +395,7 @@
             </li>
         </ul>
     </div>
-    <a id="sliderNext" class="radiusBox yellow"><p></p></a>
+    <a id="sliderNext" class="radiusBox yellow"></a>
 
     <div class="pagination clear" id="slider_pag"></div>
 
