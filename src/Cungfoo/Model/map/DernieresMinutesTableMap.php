@@ -45,13 +45,13 @@ class DernieresMinutesTableMap extends TableMap
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('DAY_START', 'DayStart', 'ENUM', true, null, null);
         $this->getColumn('DAY_START', false)->setValueSet(array (
-  0 => 'lundi',
-  1 => 'mardi',
-  2 => 'mercredi',
-  3 => 'jeudi',
-  4 => 'vendredi',
-  5 => 'samedi',
-  6 => 'dimanche',
+  0 => 'monday',
+  1 => 'tuesday',
+  2 => 'wednesday',
+  3 => 'thursday',
+  4 => 'friday',
+  5 => 'saturday',
+  6 => 'sunday',
 ));
         $this->addColumn('DAY_RANGE', 'DayRange', 'ENUM', true, null, null);
         $this->getColumn('DAY_RANGE', false)->setValueSet(array (
