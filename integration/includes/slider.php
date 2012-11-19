@@ -101,4 +101,4 @@
 </div>
 <a id="sliderNext" class="radiusBox yellow"></a>
 
-<div class="pagination clear" id="slider_pag"></div>
+<div class="pagination clear" id="sliderPager"></div>
