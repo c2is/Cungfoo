@@ -873,6 +873,11 @@ $(function() {
 
     if ($('#results').length ){
         initCritResult();
+        $('.itemResultRight .bt').hover( function(){
+            $(this).next('.itemResultPopDest').fadeIn();
+        }/*, function(){
+            $(this).next('.itemResultPopDest').fadeOut();
+        }*/);
     }
 });
 

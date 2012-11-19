@@ -29,11 +29,11 @@ include('includes/top.php'); ?>
                     function resultInit() {
                         var resultMkrs = [
                             //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                            ['c2is', 45.764544, 4.846512, 1, '', markerBleu]
+                            ['c2is', 45.764544, 4.846512, 1, 'blocs/smallInfoBox.php?ID=12', markerBleu]
                         ];
                         var centerresultMkr = new google.maps.LatLng(45.764544,4.846512),
                                 mapOptions = {
-                                    zoom: 13,
+                                    zoom: 6,
                                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                                     center: centerresultMkr
                                 };
