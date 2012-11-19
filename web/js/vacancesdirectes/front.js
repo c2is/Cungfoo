@@ -403,7 +403,7 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
+            $(this).toggleClass('opened').next().toggleClass('opened');
             $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
@@ -563,7 +563,7 @@ $(function() {
 
             var state = false;
             $('#datepickerField').bind('click', function(){
-                $(this).toggleClass('opened');
+                $(this).toggleClass('opened').next().toggleClass('opened');
                 $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
                 state = !state;
                 return false;
@@ -748,7 +748,7 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
+            $(this).toggleClass('opened').next().toggleClass('opened');
             $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;

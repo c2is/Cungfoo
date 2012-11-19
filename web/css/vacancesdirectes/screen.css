@@ -761,6 +761,9 @@ textarea {
   z-index: 10;
   margin: 5px 0;
 }
+#datepickerCalendar.opened {
+  border: 1px solid #adadad;
+}
 #datepickerCalendar .datepickerGoPrev a,
 #datepickerCalendar .datepickerGoNext a {
   text-decoration: none;
@@ -781,7 +784,6 @@ textarea {
   bottom: 0;
   position: absolute;
   top: auto;
-  border: 1px solid #adadad;
   width: 886px !important;
   z-index: 0;
 }
@@ -4184,7 +4186,7 @@ h6,
 .ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input,
 .ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input {
   float: left;
-  margin: -4px 0 0;
+  margin: 0;
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   font-size: 14px;
   cursor: pointer;
@@ -4725,7 +4727,7 @@ form li {
 #searchBloc #searchBlocDate #datepickerCalendar {
   width: 362px;
   top: 22px;
-  right: 0;
+  right: 32px;
   left: auto;
 }
 #searchBloc #searchBlocDate #datepickerCalendar .datepicker {
