@@ -3,22 +3,23 @@
 {% block title %}Homepage{% endblock %}
 
 {% block slider %}
+<a id="sliderPrev" class="radiusBox yellow"></a>
+<div id="sliderContainer">
+    <div id="sliderBackground"></div>
     <ul id="slider" class="fixed-width clear">
         {% for mea in mea %}
-            <li {% if loop.index != 1 %} style="display: none;" {% endif %}>
+            <li class="slide"{% if loop.index != 1 %} style="display: none;" {% endif %}>
                 <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
                 <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
-                <div class="sliderBackground">
-                    <!--<img src="{{ asset(mea.imageFondPath) }}" alt="{{ mea.titre }}"/>-->
-                </div>
-                <div class="sliderStainInfo">
+                <div class="sliderBackground"></div>
+                <div class="sliderStain first">
                     <div class="content">
                         <p class="headline">{{ mea.titre }}</p>
                         <p class="catchline">{{ mea.accroche }}</p>
                         <button class="bt sombre big" type="submit">{{ mea.titreLien }}</button>
                     </div>
                 </div>
-                <div class="sliderStainPrice">
+                <div class="sliderStain second">
                     <div class="content">
                         <p class="price">{{ mea.prix }}</p>
                     </div>
@@ -26,6 +27,10 @@
             </li>
         {% endfor %}
     </ul>
+</div>
+<a id="sliderNext" class="radiusBox yellow"></a>
+
+<div class="pagination clear" id="sliderPager"></div>
 {% endblock %}
 
 {% block rightColumn %}
