@@ -40,15 +40,16 @@ class DispoListing extends AbstractListing
                     $results['element'][$proposal->{'etab_id'}]['model'] = $etab;
                 }
 
+                $startDate = \DateTime::createFromFormat('d/m/Y', $proposal->{'start_date'});
+                $now       = new \DateTime();
+                $interval = $now->diff($startDate);
+
                 $results['element'][$proposal->{'etab_id'}]['extra'][$proposal->{'proposal_key'}] = $proposal;
-                $results['element'][$proposal->{'etab_id'}]['start_date'] = $proposal->{'start_date'};
-                $results['element'][$proposal->{'etab_id'}]['end_date'] = $proposal->{'end_date'};
+                $results['element'][$proposal->{'etab_id'}]['start_date']     = $proposal->{'start_date'};
+                $results['element'][$proposal->{'etab_id'}]['end_date']       = $proposal->{'end_date'};
+                $results['element'][$proposal->{'etab_id'}]['days_countdown'] = $interval->format('%a');
             }
         }
-
-//echo "<pre>";
-  //      var_dump($results);die;
-
 
         return $results;
     }

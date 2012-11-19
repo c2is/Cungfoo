@@ -13,18 +13,19 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\DernieresMinutesQuery;
 
-use VacancesDirectes\Lib\SearchEngine,
+use VacancesDirectes\Lib\Listing,
+    VacancesDirectes\Lib\SearchEngine,
     VacancesDirectes\Lib\Listing\DispoListing;
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
-class DispoController implements ControllerProviderInterface
+class DernieresMinutesController implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{large}/{small}/{start_date}/{end_date}/{nb_adults}/{nb_children}', function (Application $app, Request $request, $large, $small, $start_date, $end_date, $nb_adults, $nb_children) {
+        $controllers->match('/', function (Application $app, Request $request) {
 
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
@@ -34,30 +35,29 @@ class DispoController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
+            $dernieresMinutes = DernieresMinutesQuery::create()
+                ->findOne()
+            ;
+
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
             $client->addOptions(array(
-                'start_date'    => $start_date,
-                'nb_days'       => $dernieresMinutes->getDayRange(),
-                'search_themes' => $large.','.$small,
-                'nb_adults'     => $nb_adults,
-                'languages'     => array($app['context']->getLanguage()),
-                'max_results'   => 5,
-                'etab_list'     => '5',
+                'start_date'  => date('d/m/Y', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())),
+                'nb_adults'   => 1,
+                'nb_days'     => $dernieresMinutes->getDayRange(),
+                'languages'   => array($app['context']->getLanguage()),
+                'max_results' => 5,
+                'etab_list'   => '5',
             ));
 
             $listing = new DispoListing($app);
-            $listing
-                ->setClient($client)
-                ->setType(DispoListing::DISPO)
-            ;
+            $listing->setClient($client);
 
             return $app['twig']->render('Results\listing.twig', array(
-                'list' => $list->process(),
+                'list'       => $listing->process(),
                 'searchForm' => $searchEngine->getView(),
             ));
         })
-        ->value('nb_children', null)
-        ->bind('dispo');
+        ->bind('dernieres_minutes');
 
         return $controllers;
     }

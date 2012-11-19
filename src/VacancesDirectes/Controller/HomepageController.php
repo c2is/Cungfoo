@@ -10,7 +10,13 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-use VacancesDirectes\Lib\SearchEngine;
+use Cungfoo\Model\EtablissementQuery,
+    Cungfoo\Model\DernieresMinutesQuery;
+
+use Resalys\Lib\Client\DisponibiliteClient;
+
+use VacancesDirectes\Lib\SearchEngine,
+    VacancesDirectes\Lib\Listing\DispoListing;
 
 class HomepageController implements ControllerProviderInterface
 {
@@ -48,12 +54,30 @@ class HomepageController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $dernieresMinutes = DernieresMinutesQuery::create()
+                ->findOne()
+            ;
+
+            $client = new DisponibiliteClient($app['config']->get('root_dir'));
+            $client->addOptions(array(
+                'start_date'  => date('d/m/Y', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())),
+                'nb_adults'   => 2,
+                'nb_days'     => $dernieresMinutes->getDayRange(),
+                'languages'   => array($app['context']->getLanguage()),
+                'max_results' => 5,
+                'etab_list'   => '5',
+            ));
+
+            $listing = new DispoListing($app);
+            $listing->setClient($client);
+
             return $app['twig']->render('homepage.twig', array(
-                'searchForm'  => $searchEngine->getView(),
-                'locale'      => $locale,
-                'topCampings' => $topCampings,
-                'pays'        => $pays,
-                'mea'         => $mea
+                'searchForm'        => $searchEngine->getView(),
+                'locale'            => $locale,
+                'topCampings'       => $topCampings,
+                'pays'              => $pays,
+                'mea'               => $mea,
+                'dernieres_minutes' => $listing->process(),
             ));
         })
         ->bind('homepage');

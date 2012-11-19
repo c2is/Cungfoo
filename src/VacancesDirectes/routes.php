@@ -18,14 +18,15 @@ use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 use VacancesDirectes\Controller;
 
-$app->mount('/',              new Controller\HomepageController());
-$app->mount('/menu',          new Controller\MenuController());
-$app->mount('/camping',       new Controller\CampingController());
-$app->mount('/search_engine', new Controller\SearchEngineController());
-$app->mount('/catalogue',     new Controller\CatalogueController());
-$app->mount('/dispo',         new Controller\DispoController());
+$app->mount('/',                  new Controller\HomepageController());
+$app->mount('/menu',              new Controller\MenuController());
+$app->mount('/camping',           new Controller\CampingController());
+$app->mount('/search_engine',     new Controller\SearchEngineController());
+$app->mount('/catalogue',         new Controller\CatalogueController());
+$app->mount('/dispo',             new Controller\DispoController());
+$app->mount('/dernieres-minutes', new Controller\DernieresMinutesController());
 
-$app->get('/top-campings.html', 'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
+$app->get('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])
