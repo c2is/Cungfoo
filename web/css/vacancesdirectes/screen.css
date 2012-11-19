@@ -1407,7 +1407,7 @@ footer {
   background: #464545;
   margin-top: 20px;
   height: 50px;
-  z-index: 11;
+  z-index: 30;
 }
 #nav .topnav {
   top: -7px;
@@ -2302,6 +2302,11 @@ h6,
 
   /* Centrer verticalement une image de taille variable */
 
+  font: Arial 13px/15px Arial;
+  color: #f58220;
+  text-align: center;
+  padding: 0 15px;
+  cursor: pointer;
 }
 .home #sliderPrev > *,
 .home #sliderNext > * {
@@ -2312,6 +2317,20 @@ h6,
 .home #sliderPrev > img,
 .home #sliderNext > img {
   vertical-align: middle;
+}
+.home #sliderPrev .headline,
+.home #sliderNext .headline {
+  font: bold 20px/22px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.home #sliderPrev .price,
+.home #sliderNext .price {
+  font: bold 20px/22px Arial;
+}
+.home #sliderPrev .duration,
+.home #sliderNext .duration {
+  margin-top: -5px;
 }
 .home #sliderPrev {
   left: 20px;
@@ -5174,10 +5193,10 @@ footer .footer-links .master {
   /* Styles */
 }
 /* Buttons previous and next for home slider ———– */
-@media only screen and (min-width: 1234px) {
+@media only screen and (max-width: 1240px) {
   #sliderPrev,
   #sliderNext {
-    display: none;
+    visibility: hidden;
   }
 }
 /*PRINT*/
