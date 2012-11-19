@@ -15,7 +15,9 @@ use Cungfoo\Model\EtablissementQuery,
 
 use VacancesDirectes\Lib\Listing,
     VacancesDirectes\Lib\SearchEngine,
-    VacancesDirectes\Lib\ResalysFormatter;
+    VacancesDirectes\Lib\Listing\DispoListing;
+
+use Resalys\Lib\Client\DisponibiliteClient;
 
 class DispoController implements ControllerProviderInterface
 {
@@ -56,7 +58,7 @@ class DispoController implements ControllerProviderInterface
         ->value('nb_children', null)
         ->bind('dispo');
 
-        $controllers->match('/dernieres-minutes.html', function (Application $app, Request $request) {
+        $controllers->match('/dernieres-minutes', function (Application $app, Request $request) {
 
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
@@ -72,27 +74,25 @@ class DispoController implements ControllerProviderInterface
 
             $date = date('d/m/Y', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart()));
 
-            $resalysFormatter = new ResalysFormatter($app, $date, $dernieresMinutes->getDayRange());
+            $client = new DisponibiliteClient($app['config']->get('root_dir'));
+            $client->addOptions(array(
+                'start_date'  => $date,
+                'nb_adults'   => 1,
+                'nb_days'     => $dernieresMinutes->getDayRange(),
+                'languages'   => array($app['context']->getLanguage()),
+                'max_results' => 5,
+                'etab_list'   => '5',
+            ));
 
-            $etabs = EtablissementQuery::create()
-                ->filterByCode(4)
-                ->find()
-            ;
-
-            // Création de la liste
-            $list = new Listing($app);
-            $list
-                ->setEtablissements($etabs)
-                ->setType(Listing::CATALOGUE)
-            ;
+            $listing = new DispoListing($app);
+            $listing->setClient($client);
 
             return $app['twig']->render('Results\listing.twig', array(
-                'list'       => $resalysFormatter->process(),
+                'list'       => $listing->process(),
                 'searchForm' => $searchEngine->getView(),
             ));
         })
-        ->value('nb_children', null)
-        ->bind('dispo');
+        ->bind('dispo_dernieres_minutes');
 
         return $controllers;
     }

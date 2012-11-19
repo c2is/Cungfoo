@@ -172,15 +172,17 @@ $(function() {
     if ($('#slider').length){
         $("#slider").carouFredSel({
             auto: {
-                play: false,
+                play: true,
                 delay: 5000,
                 timeoutDuration: 5000,
+                fx: "scroll",
+                easing: "swing",
                 onBefore: function(data) {
-                    direction = "right";
-                    beforeSlide(data,direction);
+                    direction = "next";
+                    beforeSlide(data);
                 },
                 onAfter	: function(data) {
-                    afterSlide(data, direction);
+                    afterSlide(data);
                 }
             },
             direction:"up",
@@ -188,121 +190,111 @@ $(function() {
                 visible: 1
             },
             onCreate: function( data ) {
-                var txt = "";
-//                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                console.log("Carousel created showing images: <ul>" + txt + "</ul>");
+                redefineSliderButtons();
             },
             scroll: {
-                onAfter	: function( data ) {
-                    var txt = "";
-//                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                    console.log("Now showing images: <ul>" + txt + "</ul>");
-                }
+
             },
             prev: {
                 button: "#sliderPrev",
+                fx: "scroll",
+                easing: "swing",
                 onBefore: function(data) {
                     direction = "prev";
-                    beforeSlide();
+                    beforeSlide(data);
                 },
                 onAfter	: function(data) {
-                    afterSlide();
+                    afterSlide(data);
                 }
             },
             next: {
                 button: "#sliderNext",
+                fx: "scroll",
+                easing: "swing",
                 onBefore: function(data) {
                     direction = "next";
-                    beforeSlide();
+                    beforeSlide(data);
                 },
                 onAfter	: function(data) {
-                    afterSlide();
+                    afterSlide(data);
                 }
             },
             pagination: {
-                container: "#slider_pag",
+                container: "#sliderPager",
+                keys: true,
+                fx: "scroll",
+                easing: "swing",
                 onBefore: function(data) {
-                    direction = "next";
-                    beforeSlide();
+                    direction = "page";
+                    beforeSlide(data);
                 },
                 onAfter	: function(data) {
-                    afterSlide();
+                    afterSlide(data);
                 }
             }
 
     });
+        var i = 1;
         $('#slider').children('li').each(function(){
-            console.log($(this));
+            $(this).attr('data-slide', i);
+            i++;
         });
 
     }
 
-    function beforeSlide(){
+    function beforeSlide(e){
+        e.items.old.removeClass( "active" );
+        if (direction ==  "page"){
+            var newSlide = e.items.new.attr('data-slide');
+            var oldSlide = e.items.old.attr('data-slide');
+            if (newSlide > oldSlide){
+                direction = "next";
+            } else {
+                direction = "prev";
+            }
+        }
+
+        $("#sliderPrev, #sliderNext").find('.content').fadeOut(600);
+
         $('.sliderBackground').hide();
         $('#sliderBackground').show();
         $('.sliderStain').stop().fadeOut(100);
-
         pos = $("#slider").triggerHandler("currentPosition");
-        redefineSliderButtons();
+        if(direction == "next"){
+            e.items.new.find('.sliderPostmark').show();
+            e.items.new.find('.sliderPhoto').show();
+            e.items.old.find('.sliderPostmark').fadeOut(300);
+            e.items.old.find('.sliderPhoto').fadeOut(500);
+        } else {
+            e.items.new.find('.sliderPostmark').hide();
+            e.items.new.find('.sliderPhoto').hide();
+            e.items.new.find('.sliderPostmark').fadeIn(300);
+            e.items.new.find('.sliderPhoto').fadeIn(500);
+        }
     }
 
-    function afterSlide(){
+    function afterSlide(e){
+        e.items.new.addClass( "active" );
         $('.sliderBackground').show();
         $('.sliderStain.first').stop().fadeIn(300);
-        $('.sliderStain.second').delay(300).fadeIn(300);
+        $('.sliderStain.second').delay(150).fadeIn(300);
         $('#sliderBackground').hide();
 
-
-
+        redefineSliderButtons();
     }
 
     function redefineSliderButtons(){
 
         console.log(direction);
 
-        var prevSlide;
-        var nextSlide;
-        var slidesNum = $('#slider').children('li').length-1;
-        if(direction == "prev"){
-            if(pos == 0){
-                prevSlide = slidesNum;
-                nextSlide = pos+1;
-            }
-            else if(pos == slidesNum){
-                prevSlide = pos-1;
-                nextSlide = 0;
-            }
-            else {
-                prevSlide = pos-1;
-                nextSlide = pos+1;
-            }
-        }
-        else {
-            if(pos == 0){
-                prevSlide = slidesNum;
-                nextSlide = pos+1;
-            }
-            else if(pos == slidesNum){
-                prevSlide = pos-1;
-                nextSlide = 0;
-            }
-            else {
-                prevSlide = pos-1;
-                nextSlide = pos+1;
-            }
-        }
+        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
+        var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
+        var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
 
-        console.log("total: " + slidesNum);
-        console.log("current: " + pos);
-        console.log("prev: " + prevSlide);
-        console.log("next: " + nextSlide);
-
-        var prevSlideTitle = $("#slider").children('li').eq(prevSlide).find('.headline').clone();
-        var prevSlidePrice = $("#slider").children('li').eq(prevSlide).find('.sliderStain.second').children(".content").clone();
-        var nextSlideTitle = $("#slider").children('li').eq(nextSlide).find('.headline').clone();
-        var nextSlidePrice = $("#slider").children('li').eq(nextSlide).find('.sliderStain.second').children(".content").clone();
         $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
         $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+        $("#sliderPrev, #sliderNext").find('.content').hide().fadeIn(300);
     }
 
 
@@ -372,7 +364,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -539,7 +531,7 @@ $(function() {
                     }
                     //console.log(selectedDates)
                     $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                    $('#datepicker input.hidden').each(function(index, value){
+                    $('#datepicker input[type=hidden]').each(function(index, value){
                         $(this).val(selectedDates[index]);
                     });
                 },
@@ -619,7 +611,7 @@ $(function() {
             var preselectedFDates = new Array(),
                 preselectedDates = new Array();
             if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-                $.each($('input.hidden'), function(i, item) {
+                $.each($('input[type=hidden]'), function(i, item) {
                     //console.log(item.value);
 
                     var fDate = item.value.split("/").reverse().join('/');
@@ -724,7 +716,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -805,7 +797,7 @@ $(function() {
         var preselectedFDates = new Array(),
             preselectedDates = new Array();
         if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-            $.each($('input.hidden'), function(i, item) {
+            $.each($('input[type=hidden]'), function(i, item) {
                 //console.log(item.value);
 
                 var fDate = item.value.split("/").reverse().join('/');
