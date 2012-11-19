@@ -4,28 +4,6 @@
     include('includes/inc_header.php');
     include('includes/top.php'); ?>
 
-    <ul id="slider" class="fixed-width clear">
-        <li>
-            <a class="sliderPhoto" href=""><img class="large boxborder" src="../web/images/vacancesdirectes/dyn/slider/photo-1.jpg" alt="Photo 1" /></a>
-            <img class="sliderPostmark" src="../web/images/vacancesdirectes/common/ui/postmark.png" alt="" />
-            <div class="sliderBackground"></div>
-            <div class="sliderStainInfo">
-                <div class="content">
-                    <p class="headline">L'Espagne</p>
-                    <p class="catchline">Au mois de juillet pour 6 personnes</p>
-                    <button class="bt sombre big ib" type="submit">Réserver</button>
-                </div>
-            </div>
-            <div class="sliderStainPrice">
-                <div class="content">
-                    <p>À partir de</p>
-                    <p class="price">112<span class="fine"></span>€</p>
-                    <p class="duration">la nuit</p>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <div class="pagination clear" id="foo3_pag"></div>
     <div id="wrap" class="fixed-width clear">
         <div class="column left">
             <div class="ratio-33 left">

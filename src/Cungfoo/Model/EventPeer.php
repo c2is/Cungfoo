@@ -19,4 +19,57 @@ use Cungfoo\Model\om\BaseEventPeer;
 class EventPeer extends BaseEventPeer
 {
     const CATEGORY_SPORTIVE = 'SPO';
+
+    const NO_SORT          = 0;
+    const RANDOM_SORT      = 1;
+    const SORT_BY_PRIORITY = 2;
+
+    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->useEtablissementEventQuery()
+                ->filterByEtablissementId($etab->getId())
+            ->endUse()
+            ->addAscendingOrderByColumn('RAND()')
+        ;
+
+        switch ($sort)
+        {
+            case self::RANDOM_SORT:
+                $query->addAscendingOrderByColumn('RAND()');
+                break;
+
+            case self::SORT_BY_PRIORITY:
+                $query->orderByPriority(\Criteria::ASC);
+                break;
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForEtablissement(Etablissement $etab, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->useEtablissementEventQuery()
+                ->filterByEtablissementId($etab->getId())
+            ->endUse()
+        ;
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        return $query->count();
+    }
 }

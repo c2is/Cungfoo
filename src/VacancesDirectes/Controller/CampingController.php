@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
+use Cungfoo\Model\EtablissementQuery,
+    Cungfoo\Model\PointInteretPeer,
+    Cungfoo\Model\EventPeer;
+
 class CampingController implements ControllerProviderInterface
 {
     /**
@@ -24,69 +28,14 @@ class CampingController implements ControllerProviderInterface
         {
             $locale = $app['context']->get('language');
 
-            $etab = \Cungfoo\Model\EtablissementQuery::create()
+            $etab = EtablissementQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByCode($idResalys)
                 ->findOne()
             ;
 
-            $region = \Cungfoo\Model\RegionQuery::create()
-                ->useVilleQuery()
-                    ->useEtablissementQuery()
-                        ->filterByCode($idResalys)
-                    ->endUse()
-                ->endUse()
-                ->findOne()
-            ;
-
-            $sitesAVisiter = \Cungfoo\Model\PointInteretQuery::create()
-                ->useEtablissementPointInteretQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->addAscendingOrderByColumn('RAND()')
-                ->limit(4)
-                ->find()
-            ;
-
-            $nbSiteAVisiter = \Cungfoo\Model\PointInteretQuery::create()
-                ->useEtablissementPointInteretQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->count()
-            ;
-
-            $nbActivitesSportives = \Cungfoo\Model\EventQuery::create()
-                ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE)
-                ->count()
-            ;
-
-            $events = \Cungfoo\Model\EventQuery::create()
-                ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->addAscendingOrderByColumn('RAND()')
-                ->limit(4)
-                ->find()
-            ;
-
-            $nbEvenementsCulturels = \Cungfoo\Model\EventQuery::create()
-                ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->filterByCategory(\Cungfoo\Model\EventPeer::CATEGORY_SPORTIVE, \Criteria::NOT_EQUAL)
-                ->count()
-            ;
-
-            $eventPrioritaire = \Cungfoo\Model\EventQuery::create()
-                ->useEtablissementEventQuery()
-                    ->filterByEtablissementId($etab->getId())
-                ->endUse()
-                ->orderByPriority(\Criteria::ASC)
-                ->findOne()
-            ;
+            $sitesAVisiter = PointInteretPeer::getForEtablissement($etab, PointInteretPeer::RANDOM_SORT, 4);
+            $events        = EventPeer::getForEtablissement($etab, EventPeer::RANDOM_SORT, 4);
 
             $personnages = \Cungfoo\Model\PersonnageQuery::create()
                 ->joinWithI18n($locale)
@@ -117,11 +66,6 @@ class CampingController implements ControllerProviderInterface
             return $app['twig']->render('Camping/camping.twig', array(
                 'locale'                  => $locale,
                 'etab'                    => $etab,
-                'region'                  => $region,
-                'nbSiteAVisiter'          => $nbSiteAVisiter,
-                'nbActivitesSportives'    => $nbActivitesSportives,
-                'nbEvenementsCulturels'   => $nbEvenementsCulturels,
-                'eventPrioritaire'        => $eventPrioritaire,
                 'personnages'             => $personnages,
                 'multimedia'              => $multimedia,
                 'tags'                    => $tags,
@@ -143,7 +87,7 @@ class CampingController implements ControllerProviderInterface
             ;
 
             return $app['twig']->render('Camping/camping.infobox.twig', array(
-                'etab'                    => $etab
+                'etab' => $etab
             ));
 
         })->bind('infobox_camping');

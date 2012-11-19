@@ -172,6 +172,8 @@ menu.personnages: Personnages
 menu.avantages: Avantages
 menu.editos: Éditos
 menu.top_camping: Top campings
+menu.mise_en_avant: Mise en avant
+menu.dernieres_minutes: Dernières minutes
 
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
@@ -434,3 +436,11 @@ mise_en_avant.date_fin_validite: Date de fin de validite
 mise_en_avant.illustration.path: Illustration
 mise_en_avant.date.fin.validite: Date de fin de validite
 mise_en_avant.sortable_rank: Ordre
+
+monday: lundi
+tuesday: mardi
+wednesday: mercredi
+thursday: jeudi
+friday: vendredi
+saturday: samedi
+sunday: dimanche

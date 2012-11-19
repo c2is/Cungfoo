@@ -18,4 +18,37 @@ use Cungfoo\Model\om\BasePointInteretPeer;
  */
 class PointInteretPeer extends BasePointInteretPeer
 {
+    const NO_SORT     = 0;
+    const RANDOM_SORT = 1;
+
+    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->filterByEtablissementId($etab->getId())
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForEtablissement(Etablissement $etab)
+    {
+        return PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->filterByEtablissementId($etab->getId())
+            ->endUse()
+            ->count()
+        ;
+    }
 }

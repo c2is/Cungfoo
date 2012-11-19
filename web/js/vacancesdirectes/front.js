@@ -167,35 +167,144 @@ $(function() {
     }
 
 // slider
+    var direction;
+    var pos;
     if ($('#slider').length){
-        $("#foo1").carouFredSel({
-            auto	: false,
+        $("#slider").carouFredSel({
+            auto: {
+                play: false,
+                delay: 5000,
+                timeoutDuration: 5000,
+                onBefore: function(data) {
+                    direction = "right";
+                    beforeSlide(data,direction);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data, direction);
+                }
+            },
+            direction:"up",
+            items: {
+                visible: 1
+            },
             onCreate: function( data ) {
                 var txt = "";
-                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                $("#foo1_log").html("<p>Carousel created showing images:</p><ul>" + txt + "</ul>");
+//                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+                console.log("Carousel created showing images: <ul>" + txt + "</ul>");
             },
-            scroll	: {
+            scroll: {
                 onAfter	: function( data ) {
                     var txt = "";
-                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
-                    $("#foo1_log").html("<p>Now showing images:</p><ul>" + txt + "</ul>");
+//                    data.items.visible.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
+                    console.log("Now showing images: <ul>" + txt + "</ul>");
                 }
             },
-            prev	: {
-                button	: "#foo1_prev",
-                onBefore: function() {
-                    $("#foo1_log").html("<p>Started scrolling to the <strong>left</strong>.</p>");
+            prev: {
+                button: "#sliderPrev",
+                onBefore: function(data) {
+                    direction = "prev";
+                    beforeSlide();
+                },
+                onAfter	: function(data) {
+                    afterSlide();
                 }
             },
-            next	: {
-                button	: "#foo1_next",
-                onBefore: function() {
-                    $("#foo1_log").html("<p>Started scrolling to the <strong>right</strong>.</p>");
+            next: {
+                button: "#sliderNext",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide();
+                },
+                onAfter	: function(data) {
+                    afterSlide();
+                }
+            },
+            pagination: {
+                container: "#slider_pag",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide();
+                },
+                onAfter	: function(data) {
+                    afterSlide();
                 }
             }
+
+    });
+        $('#slider').children('li').each(function(){
+            console.log($(this));
         });
+
     }
+
+    function beforeSlide(){
+        $('.sliderBackground').hide();
+        $('#sliderBackground').show();
+        $('.sliderStain').stop().fadeOut(100);
+
+        pos = $("#slider").triggerHandler("currentPosition");
+        redefineSliderButtons();
+    }
+
+    function afterSlide(){
+        $('.sliderBackground').show();
+        $('.sliderStain.first').stop().fadeIn(300);
+        $('.sliderStain.second').delay(300).fadeIn(300);
+        $('#sliderBackground').hide();
+
+
+
+    }
+
+    function redefineSliderButtons(){
+
+        console.log(direction);
+
+        var prevSlide;
+        var nextSlide;
+        var slidesNum = $('#slider').children('li').length-1;
+        if(direction == "prev"){
+            if(pos == 0){
+                prevSlide = slidesNum;
+                nextSlide = pos+1;
+            }
+            else if(pos == slidesNum){
+                prevSlide = pos-1;
+                nextSlide = 0;
+            }
+            else {
+                prevSlide = pos-1;
+                nextSlide = pos+1;
+            }
+        }
+        else {
+            if(pos == 0){
+                prevSlide = slidesNum;
+                nextSlide = pos+1;
+            }
+            else if(pos == slidesNum){
+                prevSlide = pos-1;
+                nextSlide = 0;
+            }
+            else {
+                prevSlide = pos-1;
+                nextSlide = pos+1;
+            }
+        }
+
+        console.log("total: " + slidesNum);
+        console.log("current: " + pos);
+        console.log("prev: " + prevSlide);
+        console.log("next: " + nextSlide);
+
+        var prevSlideTitle = $("#slider").children('li').eq(prevSlide).find('.headline').clone();
+        var prevSlidePrice = $("#slider").children('li').eq(prevSlide).find('.sliderStain.second').children(".content").clone();
+        var nextSlideTitle = $("#slider").children('li').eq(nextSlide).find('.headline').clone();
+        var nextSlidePrice = $("#slider").children('li').eq(nextSlide).find('.sliderStain.second').children(".content").clone();
+        $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
+        $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+    }
+
 
 
 
