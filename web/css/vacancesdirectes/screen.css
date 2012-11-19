@@ -731,7 +731,7 @@ textarea {
 #datepickerField span.date {
   cursor: pointer;
 }
-#datepicker input.hidden {
+#datepicker input[type=hidden] {
   display: none;
   width: 125px;
   margin: 0 10px 10px 0;
@@ -4721,10 +4721,6 @@ form li {
 }
 #searchBloc #searchBlocDate div.datepicker {
   right: 0;
-}
-#searchBloc #searchBlocDate div.datepicker .datepickerDays td a:hover,
-#searchBloc #searchBlocDate div.datepicker .datepickerDays td.datepickerSpecial a:hover {
-  background-color: #e6e5e5;
 }
 #searchBloc #searchBlocDate #datepickerCalendar {
   width: 362px;

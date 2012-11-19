@@ -364,7 +364,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -531,7 +531,7 @@ $(function() {
                     }
                     //console.log(selectedDates)
                     $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                    $('#datepicker input.hidden').each(function(index, value){
+                    $('#datepicker input[type=hidden]').each(function(index, value){
                         $(this).val(selectedDates[index]);
                     });
                 },
@@ -611,7 +611,7 @@ $(function() {
             var preselectedFDates = new Array(),
                 preselectedDates = new Array();
             if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-                $.each($('input.hidden'), function(i, item) {
+                $.each($('input[type=hidden]'), function(i, item) {
                     //console.log(item.value);
 
                     var fDate = item.value.split("/").reverse().join('/');
@@ -716,7 +716,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -797,7 +797,7 @@ $(function() {
         var preselectedFDates = new Array(),
             preselectedDates = new Array();
         if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-            $.each($('input.hidden'), function(i, item) {
+            $.each($('input[type=hidden]'), function(i, item) {
                 //console.log(item.value);
 
                 var fDate = item.value.split("/").reverse().join('/');
