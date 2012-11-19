@@ -9,7 +9,7 @@ class getFlowProposalsLoader extends AbstractLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {
-        foreach ($data->etabListFlowProposals as $etabTypeHeb)
+        foreach ($data->etabListFlowProposals->etabListFlowProposal as $etabTypeHeb)
         {
             $objectEtabTypeHeb = EtablissementTypeHebergementQuery::create()
                 ->useEtablissementQuery()
