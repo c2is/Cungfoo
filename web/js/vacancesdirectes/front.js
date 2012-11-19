@@ -191,6 +191,7 @@ $(function() {
                 var txt = "";
 //                data.items.each(function() { txt += "<li>" + $(this).attr("src").split("/").pop() + "</li>"; });
                 console.log("Carousel created showing images: <ul>" + txt + "</ul>");
+                redefineSliderButtons();
             },
             scroll: {
                 onAfter	: function( data ) {
@@ -231,8 +232,10 @@ $(function() {
             }
 
     });
+        var i = 1;
         $('#slider').children('li').each(function(){
-            console.log($(this));
+            $(this).addClass('slide-' + i);
+            i++;
         });
 
     }
@@ -243,16 +246,16 @@ $(function() {
         $('.sliderStain').stop().fadeOut(100);
 
         pos = $("#slider").triggerHandler("currentPosition");
-        redefineSliderButtons();
+
     }
 
     function afterSlide(){
         $('.sliderBackground').show();
         $('.sliderStain.first').stop().fadeIn(300);
-        $('.sliderStain.second').delay(300).fadeIn(300);
+        $('.sliderStain.second').delay(150).fadeIn(300);
         $('#sliderBackground').hide();
 
-
+        redefineSliderButtons();
 
     }
 
@@ -260,47 +263,11 @@ $(function() {
 
         console.log(direction);
 
-        var prevSlide;
-        var nextSlide;
-        var slidesNum = $('#slider').children('li').length-1;
-        if(direction == "prev"){
-            if(pos == 0){
-                prevSlide = slidesNum;
-                nextSlide = pos+1;
-            }
-            else if(pos == slidesNum){
-                prevSlide = pos-1;
-                nextSlide = 0;
-            }
-            else {
-                prevSlide = pos-1;
-                nextSlide = pos+1;
-            }
-        }
-        else {
-            if(pos == 0){
-                prevSlide = slidesNum;
-                nextSlide = pos+1;
-            }
-            else if(pos == slidesNum){
-                prevSlide = pos-1;
-                nextSlide = 0;
-            }
-            else {
-                prevSlide = pos-1;
-                nextSlide = pos+1;
-            }
-        }
+        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
+        var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
+        var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
 
-        console.log("total: " + slidesNum);
-        console.log("current: " + pos);
-        console.log("prev: " + prevSlide);
-        console.log("next: " + nextSlide);
-
-        var prevSlideTitle = $("#slider").children('li').eq(prevSlide).find('.headline').clone();
-        var prevSlidePrice = $("#slider").children('li').eq(prevSlide).find('.sliderStain.second').children(".content").clone();
-        var nextSlideTitle = $("#slider").children('li').eq(nextSlide).find('.headline').clone();
-        var nextSlidePrice = $("#slider").children('li').eq(nextSlide).find('.sliderStain.second').children(".content").clone();
         $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
         $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
     }
