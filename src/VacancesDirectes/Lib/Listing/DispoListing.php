@@ -40,9 +40,15 @@ class DispoListing extends AbstractListing
                     $results['element'][$proposal->{'etab_id'}]['model'] = $etab;
                 }
 
-                $results['element'][$proposal->{'etab_id'}]['extra'][$proposal->{'adult_price'}] = $proposal;
+                $results['element'][$proposal->{'etab_id'}]['extra'][$proposal->{'proposal_key'}] = $proposal;
+                $results['element'][$proposal->{'etab_id'}]['start_date'] = $proposal->{'start_date'};
+                $results['element'][$proposal->{'etab_id'}]['end_date'] = $proposal->{'end_date'};
             }
         }
+
+//echo "<pre>";
+  //      var_dump($results);die;
+
 
         return $results;
     }
