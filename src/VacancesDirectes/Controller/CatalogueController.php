@@ -15,7 +15,7 @@ use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\RegionQuery,
     Cungfoo\Model\VilleQuery;
 
-use VacancesDirectes\Lib\Listing,
+use VacancesDirectes\Lib\Listing\CatalogueListing,
     VacancesDirectes\Lib\SearchEngine;
 
 class CatalogueController implements ControllerProviderInterface
@@ -107,10 +107,10 @@ class CatalogueController implements ControllerProviderInterface
             $etabs = $searchQuery->find();
 
             // Création de la liste
-            $list = new Listing($app);
+            $list = new CatalogueListing($app);
             $list
-                ->setEtablissements($etabs)
-                ->setType(Listing::CATALOGUE)
+                ->setData($etabs)
+                ->setType(CatalogueListing::CATALOGUE)
             ;
 
             return $app['twig']->render('Results\listing.twig', array(
