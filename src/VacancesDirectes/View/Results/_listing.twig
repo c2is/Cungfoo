@@ -56,14 +56,18 @@
                 <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
                 Texte texte texte
 
-                <img height="101" width="101" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
-                {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
-                {{ etab.model.eventPrioritaire.strDate }}
-                <a class="button trans" href="#_">Plus d'événements</a>
+                {% if etab.model.eventPrioritaire %}
+                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
+                    {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
+                    {{ etab.model.eventPrioritaire.strDate }}
+                    <a class="button trans" href="#_">Plus d'événements</a>
+                {% endif %}
 
-                <img height="101" width="101" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
-                {{ etab.model.poiPrioritaire.name }}
-                <a class="button trans" href="#_">Plus de visites</a>
+                {% if etab.model.poiPrioritaire %}
+                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
+                    {{ etab.model.poiPrioritaire.name }}
+                    <a class="button trans" href="#_">Plus de visites</a>
+                {% endif %}
 
                 <h4>&Agrave; ne pas manquer</h4>
 
@@ -99,7 +103,7 @@
                 <div class="linePrice catalogue checked">
                     <span class="stain fushia cover">
                         <span class="apartirde">à partir de </span>
-                        <span class="price">{{ etab.model.minimumPrice }} €</span>
+                        <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
                     </span>
                     <a class="bt big" href="#_">Réserver</a>
                 </div>
