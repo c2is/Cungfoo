@@ -43,10 +43,9 @@ class DernieresMinutesController implements ControllerProviderInterface
             $searchParams
                 ->setDates(date('Y-m-d', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())))
                 ->setNbDays($dernieresMinutes->getDayRange())
-                ->addThemes($dernieresMinutes->getDestinationsCodes())
-                ->addEtabs($dernieresMinutes->getEtablissementsCodes())
+                ->addTheme($dernieresMinutes->getDestinationsCodes())
+                ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
-                ->setMaxResults(5)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));

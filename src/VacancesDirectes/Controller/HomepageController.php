@@ -63,6 +63,8 @@ class HomepageController implements ControllerProviderInterface
             $searchParams
                 ->setDates(date('Y-m-d', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())))
                 ->setNbDays($dernieresMinutes->getDayRange())
+                ->addTheme($dernieresMinutes->getDestinationsCodes())
+                ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
                 ->setMaxResults(5)
             ;
