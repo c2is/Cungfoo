@@ -222,7 +222,7 @@ include('includes/top.php'); ?>
                     <!-- item.bottom -->
                     <div class="itemResultBottom clear">
                         <div class="linePrice checked promotion">
-                            <label for="camp2-1"><input type="radio" id="camp2-1" name="camp1" checked="checked"> Familial (mobil-home 6 places) <span class="price">952€</span></label>
+                            <label for="camp2-1"><input type="radio" id="camp2-1" name="camp2" checked="checked"> Familial (mobil-home 6 places) <span class="price">952€</span></label>
                             <span class="stain fushia cover">
                                 <span class="promo">-20%</span>
                                 <span class="price">952€</span>
@@ -231,14 +231,14 @@ include('includes/top.php'); ?>
                             <a class="bt big" href="#_">Réserver</a>
                         </div>
                         <div class="linePrice">
-                            <label for="camp2-2"><input type="radio" id="camp2-2" name="camp1"> Vacancial (mobil-home 6 places) <span class="price">1141€</span></label>
+                            <label for="camp2-2"><input type="radio" id="camp2-2" name="camp2"> Vacancial (mobil-home 6 places) <span class="price">1141€</span></label>
                             <span class="stain fushia cover">
                                 <span class="price">1141€</span>
                             </span>
                             <a class="bt big" href="#_">Réserver</a>
                         </div>
                         <div class="linePrice">
-                            <label for="camp2-3"><input type="radio" id="camp2-3" name="camp1"> Special (mobil-home 8 places) <span class="price">1141€</span></label>
+                            <label for="camp2-3"><input type="radio" id="camp2-3" name="camp2"> Special (mobil-home 8 places) <span class="price">1141€</span></label>
                             <span class="stain fushia cover">
                                 <span class="price">1141€</span>
                             </span>
