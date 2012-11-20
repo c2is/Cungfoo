@@ -254,7 +254,9 @@ $(function() {
             }
         }
 
-        $("#sliderPrev, #sliderNext").find('.content').fadeOut(600);
+//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
+        $("#sliderPrev").animate({left:-125},100);
+        $("#sliderNext").animate({right:-125},100);
 
         $('.sliderBackground').hide();
         $('#sliderBackground').show();
@@ -294,7 +296,9 @@ $(function() {
 
         $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
         $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
-        $("#sliderPrev, #sliderNext").find('.content').hide().fadeIn(300);
+//        $("#sliderPrev, #sliderNext").find('.content').hide().fadeIn(300);
+        $("#sliderPrev").delay(300).animate({left:20},300);
+        $("#sliderNext").delay(300).animate({right:20},300);
     }
 
 
@@ -403,7 +407,7 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
+            $(this).toggleClass('opened').next().toggleClass('opened');
             $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
@@ -563,7 +567,7 @@ $(function() {
 
             var state = false;
             $('#datepickerField').bind('click', function(){
-                $(this).toggleClass('opened');
+                $(this).toggleClass('opened').next().toggleClass('opened');
                 $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
                 state = !state;
                 return false;
@@ -748,7 +752,7 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
+            $(this).toggleClass('opened').next().toggleClass('opened');
             $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
