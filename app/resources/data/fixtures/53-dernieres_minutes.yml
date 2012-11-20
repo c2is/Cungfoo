@@ -1,0 +1,5 @@
+\Cungfoo\Model\DernieresMinutes:
+    1:
+        DayStart: monday
+        DayRange: '7'
+        Active: true

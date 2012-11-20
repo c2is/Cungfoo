@@ -97,21 +97,21 @@
             <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
             <dd class="list">
                <ul>
-                   <li>{{ nbSiteAVisiter }} {{ "fiche.sites_a_visiter" | trans }}</li>
-                   <li>{{ nbActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>
-                   <li>{{ nbEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>
+                   <li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>
+                   <li>{{ etab.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>
+                   <li>{{ etab.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>
                </ul>
             </dd>
         </dl>
-        {% if eventPrioritaire | length %}
+        {% if etab.eventPrioritaire | length %}
         <dl>
             <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
-            <dd class="img"><img src="{{ eventPrioritaire.image }}" /></dd>
+            <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
             <dd class="list event">
-                <strong>{{ eventPrioritaire.name }}<br />
-                {{ eventPrioritaire.strDate }}</strong> {{ eventPrioritaire.address }}<br />
-                {{ eventPrioritaire.zipcode }} {{ eventPrioritaire.city }}<br />
-                {{ "fiche.distance_camping" | trans }} {{ eventPrioritaire.distanceCamping/100 }} {{ "fiche.km" | trans }}
+                <strong>{{ etab.eventPrioritaire.name }}<br />
+                {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
+                {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
+                {{ "fiche.distance_camping" | trans }} {{ etab.eventPrioritaire.distanceCamping/100 }} {{ "fiche.km" | trans }}
             </dd>
         </dl>
         {% endif %}
@@ -167,7 +167,7 @@
 <!-- tab Sur place -->
 <div id="tabSurplace" class="tabs">
     <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
-    <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
+    <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">
     <div class="colSurPlace clearboth">
         {% if etab.activites | length %}
         <dl>
@@ -282,11 +282,11 @@
     {% endif %}
 
     <div class="infoDestination bloc sombre">
-        <h3>{{ region.name }}</h3>
-        <p>{{ region.description }}</p>
+        <h3>{{ etab.ville.region.name }}</h3>
+        <p>{{ etab.ville.region.description }}</p>
 
-        <img class="iDestImg1 boxborder" src="{{ asset(region.imageEncartPath) }}" width="211" height="93" alt="{{ region.name }}">
-        <img class="iDestImg2 boxborder" src="{{ asset(region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ region.name }}">
+        <img class="iDestImg1 boxborder" src="{{ asset(etab.ville.region.imageEncartPath) }}" width="211" height="93" alt="{{ etab.ville.region.name }}">
+        <img class="iDestImg2 boxborder" src="{{ asset(etab.ville.region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ etab.ville.region.name }}">
     </div>
 
     <nav class="paginationTabs clear">

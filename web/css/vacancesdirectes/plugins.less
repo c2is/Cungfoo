@@ -103,7 +103,7 @@
   }
   .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
   ul.newList li a:focus {-moz-outline-style: none;}
-  .selectedTxt {width:@selectWidth - @selectHeight - 10;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;}
+  .selectedTxt {width:@selectWidth - @selectHeight - 10;overflow:hidden;padding:0 @selectHeight 0 10px;position:absolute;text-overflow:ellipsis;white-space:nowrap;}
   ul.newList li:first-child{display:none;}
   ul.newList.optGroup li a {padding:0 8px 0 18px;}
   ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
@@ -151,7 +151,7 @@
 #datepickerField span.date {
   cursor:pointer;
 }
-#datepicker input.hidden {
+#datepicker input[type=hidden] {
   display:none;
   width: 125px;
   margin:  0 10px 10px 0;
@@ -174,11 +174,12 @@
   left: 0;
   overflow: hidden;
   position: absolute;
-  top: 23px;
+  top: 18px;
   width: 886px;
   z-index:10;
   margin:5px 0;
 }
+#datepickerCalendar.opened {border: 1px solid #adadad;}
 #datepickerCalendar .datepickerGoPrev a,
 #datepickerCalendar .datepickerGoNext a { text-decoration: none; }
 #datepickerCalendar .datepickerGoPrev,
@@ -189,7 +190,6 @@
   bottom: 0;
   position: absolute;
   top: auto;
-  border: 1px solid #adadad;
   width:886px !important;
   z-index:0;
 }

@@ -75,6 +75,9 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\AvantageI18n",
         "\\Cungfoo\\Model\\Edito",
         "\\Cungfoo\\Model\\TopCamping",
+        "\\Cungfoo\\Model\\MiseEnAvant",
+        "\\Cungfoo\\Model\\MiseEnAvantI18n",
+        "\\Cungfoo\\Model\\DernieresMinutes",
         "\\Cungfoo\\Model\\PortfolioTag",
     );
 

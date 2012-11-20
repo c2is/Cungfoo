@@ -54,6 +54,11 @@ abstract class AbstractClient
         return $this->options;
     }
 
+    public function getData()
+    {
+        return $this->data;
+    }
+
     public function loadClientConfig($clientConfigFile)
     {
         $clientConfig = Yaml::parse($clientConfigFile);

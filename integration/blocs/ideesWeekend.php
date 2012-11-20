@@ -28,5 +28,5 @@
             <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
         </div>
     </div>
-    <a href="#_" class="bt link">Voir toutes les idées week-end (12)</a>
+    <a href="#_" class="bt link right">Voir toutes les idées week-end (12)</a>
 </div>

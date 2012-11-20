@@ -18,18 +18,18 @@
 <span class="infoComp">Comparateur</span>
 <div id="results" class="clear">
     {% for etab in list.element %}
-    <div id="etab1" class="itemResult itemCatalogue clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+    <div id="etab1" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
         <!-- item.title -->
         <div class="itemResultTitle">
             <input type="checkbox" name="compar" value="idCamp1">
-            {{ etab.model.name }} ******
+            {{ etab.model.name }} {{ etab.model.categorie.stars }}
             {% if list.type == 1 %}
-            <span class="dates">du 11/08/2012 au 28/08/2012</span>
+            <span class="dates">du {{ etab.start_date }} au {{ etab.end_date }}</span>
             {% endif %}
         </div>
         <!-- item.left -->
         <div class="itemResultLeft">
-            <img src="http://pimg.devlint.fr/135x98" alt="" class="boxborder">
+            <img src="{{ asset(etab.model.vignette) }}" alt="" class="boxborder">
         </div>
         <!-- item.center -->
         <div class="itemResultCenter">
@@ -48,44 +48,66 @@
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
-            <img width="75" height="77" alt="France &gt; Languedoc-Roussillon" src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png">
-            <span class="titDest">{{ etab.model.ville.region.pays }}<br>{{ etab.model.ville.region }}<br>{{ etab.model.ville }}</span>
             <span class="bt trans">En savoir plus <br>sur la destination</span>
 
             <div class="itemResultPopDest" style="display:none;">
                 <h3>{{ etab.model.ville }}</h3>
                 <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
                 <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                La ville de {{ etab.model.ville }}...
+                Texte texte texte
 
-                <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                Mozart - Les Noces de Figaro - Opéra - Montpellier
-                Du mercredi 20 juin 2012 au jeudi 28 juin 2012
-                <a class="button trans" href="#_">Plus d'événements</a>
+                {% if etab.model.eventPrioritaire %}
+                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
+                    {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
+                    {{ etab.model.eventPrioritaire.strDate }}
+                    <a class="button trans" href="#_">Plus d'événements</a>
+                {% endif %}
 
-                <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                Visitez le parc zoologique de Montpellier
-                <a class="button trans" href="#_">Plus de visites</a>
+                {% if etab.model.poiPrioritaire %}
+                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
+                    {{ etab.model.poiPrioritaire.name }}
+                    <a class="button trans" href="#_">Plus de visites</a>
+                {% endif %}
 
                 <h4>&Agrave; ne pas manquer</h4>
-                <a class="button trans" href="#_">14 sites à visiter</a>
-                <a class="button trans" href="#_">24 activités</a>
-                <a class="button trans" href="#_">14 événements</a>
+
+                <a class="button trans" href="#_">{{ etab.model.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</a>
+                <a class="button trans" href="#_">{{ etab.model.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</a>
+                <a class="button trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
 
                 <a class="button" href="#_">Découvrir {{ etab.model.ville }}</a>
             </div>
-
         </div>
         <!-- item.bottom -->
         <div class="itemResultBottom clear">
-            <div class="linePrice catalogue">
-                <span class="stain fushia cover">
-                    <span class="apartirde">à partir de </span>
-                    <span class="price">{{ etab.model.minimumPrice }}€</span>
-                </span>
-                <a class="bt big" href="#_">Réserver</a>
-            </div>
-
+            {% if list.type == 1 %}
+                {% for proposal in etab.extra %}
+                    {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
+                    <div class="linePrice {% if discount %}promotion{% endif %} {% if loop.first %}checked{% endif %}">
+                        <label for="{{ "camp" ~ etab.model.code }}-{{ loop.index }}"><input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loop.index }}" name="{{ "camp" ~ etab.model.code }}" {% if loop.first %}checked="checked"{% endif %}> {{ proposal.room_types.room_type.room_type_label }} <span class="price">{{ proposal.adult_price|number_format }} €</span></label>
+                        {% if discount %}
+                        <span class="stain fushia cover">
+                            <span class="promo">-{{ (proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts|number_format }}%</span>
+                            <span class="price">{{ proposal.adult_price|number_format }}€</span>
+                            <span class="aulieude">au lieu de {{ proposal.adult_price_without_discounts|number_format }} €</span>
+                        </span>
+                        {% else %}
+                        <span class="stain fushia cover">
+                            <span class="price">{{ proposal.adult_price|number_format }} €</span>
+                        </span>
+                        {% endif %}
+                        <a class="bt big" href="#_">Réserver</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="linePrice catalogue checked">
+                    <span class="stain fushia cover">
+                        <span class="apartirde">à partir de </span>
+                        <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
+                    </span>
+                    <a class="bt big" href="#_">Réserver</a>
+                </div>
+            {% endif %}
         </div>
     </div><!-- // .itemResult -->
     {% endfor %}

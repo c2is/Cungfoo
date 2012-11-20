@@ -1,17 +1,18 @@
 body{background:#f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 0 0;background-size:100% auto;color:@colorGris2;font:12px Arial, sans-serif;min-width:1000px;}
 body.popin{/*background:#fff;*/background-attachment:fixed;min-width:0;}
 header, section, footer {position:relative;}
+
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* header */
-#header{width:928px;margin:0 auto;font-family:@ptnarrow;
+#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:0;
   #logo{display:block;float:left;margin-bottom:25px;}
   #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin-top:80px;}
   #headerRight{float:right;}
   #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
     span{font-size:18px;line-height:19px;color:@colorGris2;
-      &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon.png") no-repeat 0px 0px;float:left;margin:5px;}
+      &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
       a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
     }
   }
@@ -21,7 +22,7 @@ header, section, footer {position:relative;}
 .home #telephone{clear:both;}
 
 /* nav */
-#nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;
+#nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
   .topnav{top:-7px;}
   .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-right:1px;
     &:hover, &.current{background:@colorFushia;
@@ -134,121 +135,6 @@ header, section, footer {position:relative;}
 //  .tab:nth-child(4) .subnav{display:block;}
 }
 
-/* search */
-form li{margin-bottom:10px;}
-#searchBloc{color:@colorBlanc;position:absolute;z-index:1;
-  .newListSelected{height:27px;line-height:27px;margin-right:0;background-color:@colorBlanc;
-    .selectedTxt:after{background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -81px transparent;}
-  }
-  input,
-  select,
-  .newListSelected{font:bold 17px/27px @ptnarrow;color:@colorBgGrisM;text-transform:uppercase;
-    .selectedTxt{padding-left:7px;}
-    .SSContainerDivWrapper{
-      ul.newList li a {background-color:@colorBlanc;color:@colorBgGrisM;}
-      ul.newList.optGroup li.optGroup-like a {background-color:@colorBgGrisM;color:@colorBlanc;}
-    }
-  }
-  #switchForm{margin:0 0 20px 0;
-    li{display:inline;
-      a{width:82px;height:34px;background-color:@colorBlanc;float:left;margin:6px 1px 0 0;position:relative;
-        &.active,
-        &:hover{background-color:@colorBgGrisM;}
-        &.active:after,
-        &:hover:after{top:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
-        span {width:60px;height:34px;display:block;background:url("../../images/vacancesdirectes/common/sprites/sprite-50.png") no-repeat 0 0 transparent;margin:-3px 11px 0;position:relative;text-indent:-9999px;}
-        &#tabSearchBlocDate span{background-position:0px -240px;}
-        &#tabSearchBlocTrajet span{background-position:0px -280px;}
-        &#tabSearchBlocBudget span{background-position:0px -320px;}
-        &.active,
-        &:hover{height:40px;margin-top:0;._border-radius(10px 10px 0 0);
-          &#tabSearchBlocDate span{background-position:-60px -240px;}
-          &#tabSearchBlocTrajet span{background-position:-60px -280px;}
-          &#tabSearchBlocBudget span{background-position:-60px -320px;}
-          span{margin-top:0;}
-        }
-        &.active{cursor:default;}
-
-      }
-      &:first-child a{._border-radius(10px 0 0 0);}
-      &:last-child a{._border-radius(0 10px 0 0);margin-right:0;}
-      &:first-child a.active,
-      &:first-child a:hover,
-      &:last-child a.active,
-      &:last-child a:hover{._border-radius(10px 10px 0 0);}
-
-      &:nth-child(2),                           // cache les 2 derniers onglets du moteur de recherche
-      &:nth-child(3){visibility:hidden;}        //
-    }
-  }
-  #searchBlocDate{
-    a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
-    .toggleContainer{display:none;
-      &>*:last-child{margin-bottom:10px;}
-      label{font:13px/15px Arial;text-transform:none;}
-    }
-    p{margin-bottom:15px;}
-    div.datepicker{right:0;}
-    div.datepicker .datepickerDays td a:hover, div.datepicker .datepickerDays td.datepickerSpecial a:hover{background-color:@colorGris3;}
-    #datepickerCalendar {width: 362px;top:27px;right:0;left:auto;}
-    #datepickerCalendar .datepicker {
-      width: 362px !important;
-    }
-    #datepickerCalendar .datepickerGoPrev,
-    #datepickerCalendar .datepickerGoNext,
-    .datepickerContainer {
-      top: 10px;
-    }
-    #datepickerCalendar .datepickerGoPrev,
-    #datepickerCalendar .datepickerGoNext,
-    .datepickerBorderTL,
-    .datepickerBorderT,
-    .datepickerBorderTR,
-    .datepickerBorderB,
-    .datepickerBorderBL,
-    .datepickerBorderBR {height: 10px;}
-    #datepickerField{width:248px;
-      span {height: 27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;}
-      input {height: 27px;line-height: 27px;width:216px;background-color:@colorBlanc;padding:0 7px;}
-    }
-    .datepickerLegend{display:none;}
-    label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:65px;}
-    .spinner{
-      input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
-      .spin-bt-down,
-      .spin-bt-up {width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 26px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;border:0 none;}
-      .spin-bt-down:active,
-      .spin-bt-up:active{padding-right:7px;}
-//      .spin-bt-down:hover,
-//      .spin-bt-up:hover{background-color:@colorBlanc;color:@colorBgGrisF;}
-      .spin-bt-down{margin-right:2px;}
-      .spin-bt-up{margin-left:2px;}
-    }
-    .selectContainer{height:27px;}
-    #SearchDate_selectContainer1{
-      select{display:none;}
-      .newListSelected{width:248px;
-        .selectedTxt{width:215px;}
-        .SSContainerDivWrapper{min-width:248px;}
-      }
-    }
-    #SearchDate_selectContainer2{
-      select{display:none;}
-      .newListSelected{width:188px;
-        .selectedTxt{width:154px;}
-        .SSContainerDivWrapper{min-width:188px;}
-      }
-      #SearchDate_switch{float:right;
-        span{height:27px;line-height:27px;margin-right:10px;}
-      }
-    }
-    .switchSelect{width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -54px @colorBgGrisF;float:left;cursor:pointer;}
-    button[type=submit]{margin:0 auto;font-size:21px;}
-  }
-
-
-}
-
 /* lang */
 #lang{width:41px;height:27px;background: url('../../images/vacancesdirectes/dyn/ui/lang-flag-fr.png') no-repeat 0px 0px;border-width:4px 6px;border-style:solid;border-color:#a7a9ac;position:relative;display:inline-block;text-indent:-9999px;float:right;margin-top:19px;
   &:after{width:12px;height:4px;content:"";background:url('../../images/vacancesdirectes/common/ui/lang-arrow.png') no-repeat 0px 0px;position:absolute;left:50%;bottom:-8px;margin-left:-6px;}
@@ -271,14 +157,18 @@ h6, .h6-like{color:@colorFushia;}
   &.gris2{background-color:@colorBgGrisC;color:@colorGris2;}
   &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
   &.fushia{background-color:@colorFushia;color:@colorBlanc;}
+  &.orange{background-color:@colorOrange;color:@colorBlanc;}
   &.trans{background:transparent;padding:0;}
   &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;}
   &.cfushia{color:@colorFushia;}
   &.big{padding:5px 10px;}
   &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
   &.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
+  &.ib{display:inline-block;}
 }
-.boxborder{margin:0 25px 25px 5px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22))}
+.boxborder{margin:0 25px 25px 5px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));
+  &.large{border:15px solid @colorBlanc;}
+}
 .pathway{font:11px/28px Arial,sans-serif;color:@colorBgGrisM;text-align:right;
   li{display:inline;
     &:last-child a{color:@colorFushia;}
@@ -297,9 +187,11 @@ h6, .h6-like{color:@colorFushia;}
   h2{color:@colorBlanc;._verticalCenter(40px);text-align:center;text-transform:uppercase;position:relative;display:inline-block;}
 }
 .radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgGrisC;}
   &.greyF{background-color:@colorBgGrisF;}
   &.fushia{background-color:@colorFushia;}
+  &.yellow{background-color:@colorJaune;}
   .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 30px;display:block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
@@ -309,6 +201,7 @@ h6, .h6-like{color:@colorFushia;}
   }
 }
 .radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
   &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
   &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
@@ -325,7 +218,7 @@ h6, .h6-like{color:@colorFushia;}
 .ie-lte8 .stain{width:70px;min-width:70px !important;}
 
 /* structure */
-#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;}
+#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;z-index:20;}
 .popin #wrap{width:646px;padding:0 15px;margin:0 auto;}
 .column{width:928px;margin:0 @gutter;position:relative;
   &.left{width:616px;margin:0 0 0 @gutter;}

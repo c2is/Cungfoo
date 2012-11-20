@@ -166,6 +166,144 @@ $(function() {
         });
     }
 
+// slider
+    var direction;
+    var pos;
+    if ($('#slider').length){
+        $("#slider").carouFredSel({
+            auto: {
+                play: true,
+                delay: 5000,
+                timeoutDuration: 5000,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            direction:"up",
+            items: {
+                visible: 1
+            },
+            onCreate: function( data ) {
+                redefineSliderButtons();
+            },
+            scroll: {
+
+            },
+            prev: {
+                button: "#sliderPrev",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "prev";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            next: {
+                button: "#sliderNext",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            pagination: {
+                container: "#sliderPager",
+                keys: true,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "page";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            }
+
+    });
+        var i = 1;
+        $('#slider').children('li').each(function(){
+            $(this).attr('data-slide', i);
+            i++;
+        });
+
+    }
+
+    function beforeSlide(e){
+        e.items.old.removeClass( "active" );
+        if (direction ==  "page"){
+            var newSlide = e.items.new.attr('data-slide');
+            var oldSlide = e.items.old.attr('data-slide');
+            if (newSlide > oldSlide){
+                direction = "next";
+            } else {
+                direction = "prev";
+            }
+        }
+
+//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
+        $("#sliderPrev").animate({left:-125},100);
+        $("#sliderNext").animate({right:-125},100);
+
+        $('.sliderBackground').hide();
+        $('#sliderBackground').show();
+        $('.sliderStain').stop().fadeOut(100);
+        pos = $("#slider").triggerHandler("currentPosition");
+        if(direction == "next"){
+            e.items.new.find('.sliderPostmark').show();
+            e.items.new.find('.sliderPhoto').show();
+            e.items.old.find('.sliderPostmark').fadeOut(300);
+            e.items.old.find('.sliderPhoto').fadeOut(500);
+        } else {
+            e.items.new.find('.sliderPostmark').hide();
+            e.items.new.find('.sliderPhoto').hide();
+            e.items.new.find('.sliderPostmark').fadeIn(300);
+            e.items.new.find('.sliderPhoto').fadeIn(500);
+        }
+    }
+
+    function afterSlide(e){
+        e.items.new.addClass( "active" );
+        $('.sliderBackground').show();
+        $('.sliderStain.first').stop().fadeIn(300);
+        $('.sliderStain.second').delay(150).fadeIn(300);
+        $('#sliderBackground').hide();
+
+        redefineSliderButtons();
+    }
+
+    function redefineSliderButtons(){
+
+        console.log(direction);
+
+        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
+        var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
+        var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
+
+        $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
+        $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+//        $("#sliderPrev, #sliderNext").find('.content').hide().fadeIn(300);
+        $("#sliderPrev").delay(300).animate({left:20},300);
+        $("#sliderNext").delay(300).animate({right:20},300);
+    }
+
+
+
+
 // datepicker
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
@@ -230,7 +368,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -269,13 +407,13 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
-            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+            $(this).toggleClass('opened').next().toggleClass('opened');
+            $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+            $('#datepickerCalendar').stop().css({height: 0}, function(){
                 $('#datepickerField').removeClass('opened');
             });
             state = !state;
@@ -397,7 +535,7 @@ $(function() {
                     }
                     //console.log(selectedDates)
                     $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                    $('#datepicker input.hidden').each(function(index, value){
+                    $('#datepicker input[type=hidden]').each(function(index, value){
                         $(this).val(selectedDates[index]);
                     });
                 },
@@ -429,13 +567,13 @@ $(function() {
 
             var state = false;
             $('#datepickerField').bind('click', function(){
-                $(this).toggleClass('opened');
-                $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+                $(this).toggleClass('opened').next().toggleClass('opened');
+                $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
                 state = !state;
                 return false;
             });
             $('#datepickerCalendar .bt').bind('click', function(){
-                $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+                $('#datepickerCalendar').stop().css({height: 0}, function(){
                     $('#datepickerField').removeClass('opened');
                 });
                 state = !state;
@@ -477,7 +615,7 @@ $(function() {
             var preselectedFDates = new Array(),
                 preselectedDates = new Array();
             if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-                $.each($('input.hidden'), function(i, item) {
+                $.each($('input[type=hidden]'), function(i, item) {
                     //console.log(item.value);
 
                     var fDate = item.value.split("/").reverse().join('/');
@@ -582,7 +720,7 @@ $(function() {
                 }
                 //console.log(selectedDates)
                 $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input.hidden').each(function(index, value){
+                $('#datepicker input[type=hidden]').each(function(index, value){
                     $(this).val(selectedDates[index]);
                 });
             },
@@ -614,13 +752,13 @@ $(function() {
 
         var state = false;
         $('#datepickerField').bind('click', function(){
-            $(this).toggleClass('opened');
-            $(this).next('#datepickerCalendar').stop().animate({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight}, 500);
+            $(this).toggleClass('opened').next().toggleClass('opened');
+            $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
             state = !state;
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().animate({height: 0}, 500, function(){
+            $('#datepickerCalendar').stop().css({height: 0}, function(){
                 $('#datepickerField').removeClass('opened');
             });
             state = !state;
@@ -663,7 +801,7 @@ $(function() {
         var preselectedFDates = new Array(),
             preselectedDates = new Array();
         if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-            $.each($('input.hidden'), function(i, item) {
+            $.each($('input[type=hidden]'), function(i, item) {
                 //console.log(item.value);
 
                 var fDate = item.value.split("/").reverse().join('/');
@@ -1242,8 +1380,15 @@ function initializeAllGmap() {
         type: 'poly'
     };
 
-    proxInit();
-    infoInit();
+    if ($('#proxMap').length) {
+        proxInit();
+    }
+    if ($('#infoMap').length) {
+        infoInit();
+    }
+    if ($('#resultMap').length) {
+        resultInit();
+    }
 }
 
 

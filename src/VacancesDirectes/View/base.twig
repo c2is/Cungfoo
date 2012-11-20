@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block title %}{% endblock %} - Vacances Directes CE</title>
+    <title>{% block title %}{% endblock %} - Vacances Directes</title>
 
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,7 +18,7 @@
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
-<body class="home">
+<body class="{% if app.request.get('_route') == 'homepage' %}home{% endif %}">
     <header class="clear">
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
@@ -33,8 +33,14 @@
             <a href="{{ path( 'homepage' ) }}" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
                 <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
             </a>
+            {% if app.request.get('_route') == 'homepage' %}
+            <h1 id="catchline">{{ "header.130_camping" | trans }}</h1>
+            {% endif %}
         </div>
     </header>
+
+    {% block slider %}
+    {% endblock %}
 
     {% block content %}
     <div id="wrap" class="fixed-width clear">
