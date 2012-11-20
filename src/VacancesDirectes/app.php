@@ -20,6 +20,8 @@ $app['config']->addParams(array(
 $app['twig.path'] = array(__DIR__.'/View');
 $app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');
 
+$app['twig']->getExtension('core')->setNumberFormat(0, '', '');
+
 /*  T R A N S L A T O R   M A N A G E R */
 $app['translator'] = $app->share($app->extend('translator',
     function($translator, $app) {
