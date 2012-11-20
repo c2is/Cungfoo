@@ -57,7 +57,7 @@ class DispoController implements ControllerProviderInterface
             ));
         })
         ->value('nb_children', 0)
-        ->value('nb_children', null)
+        ->value('small', null)
         ->bind('dispo');
 
         return $controllers;

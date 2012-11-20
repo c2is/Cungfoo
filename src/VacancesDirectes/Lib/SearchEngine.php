@@ -38,14 +38,20 @@ class SearchEngine
                     $dateDebut = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateDebut);
                     $dateFin = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateFin);
 
-                    $this->redirect = $this->app['url_generator']->generate('dispo', array(
+                    $urlParams = array(
                         'large'       => $searchDateData->destination,
-                        'small'       => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville,
                         'start_date'  => $dateDebut->format('Y-m-d'),
                         'end_date'    => $dateFin->format('Y-m-d'),
                         'nb_adults'   => $searchDateData->nbAdultes,
                         'nb_children' => $searchDateData->nbEnfants,
-                    ));
+                    );
+
+                    if ($searchDateData->camping || $searchDateData->ville)
+                    {
+                        $urlParams['small'] = $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville;
+                    }
+
+                    $this->redirect = $this->app['url_generator']->generate('dispo', $urlParams);
                 }
                 else
                 {

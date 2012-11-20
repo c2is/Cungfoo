@@ -25,8 +25,6 @@ $(function() {
         var selectedItem = select.val();
         var options = '';
 
-        console.log(empty);
-
         if (empty != undefined)
         {
             options = '<option value="">' + empty + '</option>'
