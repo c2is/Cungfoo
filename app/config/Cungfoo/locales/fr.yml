@@ -427,8 +427,6 @@ dernieres_minutes.day_range: Période
 dernieres_minutes.day_start: Jour de départ
 dernieres_minutes.day.range: Période
 dernieres_minutes.day.start: Jour de départ
-<<<<<<< HEAD
-=======
 
 mise_en_avant.crud.create: Création d'une mise en avant
 mise_en_avant.crud.list: Liste des mises en avant
@@ -456,4 +454,3 @@ thursday: jeudi
 friday: vendredi
 saturday: samedi
 sunday: dimanche
->>>>>>> origin/master
