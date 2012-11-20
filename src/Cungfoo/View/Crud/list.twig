@@ -2,12 +2,20 @@
 
 {% block javascripts %}{{ parent() }}
     <script type="text/javascript" src="{{ asset('js/cungfoo/confirm-bootstrap.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#list .line').bind('dblclick', function () {
+                console.log($('.edit', this).attr('href'));
+                window.location.href = $('.edit', this).attr('href');
+            });
+        });
+    </script>
 {% endblock %}
 
 {% block content %}
     {{ context | raw }}
     <h2>{{ (name ~ ".crud.list") | trans }}</h2>
-    <table class="table">
+    <table id="list" class="table table-striped ">
         <thead>
         <tr>
             {% for column_name in column_names %}
@@ -18,12 +26,12 @@
         </thead>
         <tbody>
         {% for line in lines %}
-        <tr>
+        <tr class="line">
             {% for column in line %}
             <td>{{ column | raw }}</td>
             {% endfor %}
             <td class="actions-item"><a href="{{ path('%s_crud_read' | format (name), {'id': line.id}) }}"><i class="icon-eye-open"></i></a></td>
-            <td class="actions-item"><a href="{{ path('%s_crud_update' | format (name), {'id': line.id}) }}"><i class="icon-edit"></i></a></td>
+            <td class="actions-item"><a class="edit" href="{{ path('%s_crud_update' | format (name), {'id': line.id}) }}"><i class="icon-edit"></i></a></td>
             <td class="actions-item"><a class="delete" href="{{ path('%s_crud_delete' | format (name), {'id': line.id}) }}"><i data-confirm-ok="{{ "crud.modal.delete.ok" | trans }}" data-confirm-cancel="{{ "crud.modal.delete.cancel" | trans }}" data-confirm-title="{{ "crud.modal.delete.title" | trans }}" data-confirm-message="{{ "crud.modal.delete.message" | trans  ({'%code%': line.id }) }}"  class="icon-remove-circle"></i></a></td>
         </tr>
         {% endfor %}
