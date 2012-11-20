@@ -13,6 +13,8 @@ class DispoListing extends AbstractListing
     public function setClient(DisponibiliteClient $client)
     {
         $this->client = $client;
+
+        return $this;
     }
 
     public function process()
