@@ -37,19 +37,25 @@ class DispoListing extends AbstractListing
                     ->findOne()
                 ;
 
-                if (!in_array($proposal->{'etab_id'}, $results['element']))
+                $key = sprintf("%s_%s_%s",
+                    $proposal->{'etab_id'},
+                    $proposal->{'start_date'},
+                    $proposal->{'end_date'}
+                );
+
+                if (!in_array($key, $results['element']))
                 {
-                    $results['element'][$proposal->{'etab_id'}]['model'] = $etab;
+                    $results['element'][$key]['model'] = $etab;
                 }
 
                 $startDate = \DateTime::createFromFormat('d/m/Y', $proposal->{'start_date'});
                 $now       = new \DateTime();
                 $interval = $now->diff($startDate);
 
-                $results['element'][$proposal->{'etab_id'}]['extra'][$proposal->{'proposal_key'}] = $proposal;
-                $results['element'][$proposal->{'etab_id'}]['start_date']     = $proposal->{'start_date'};
-                $results['element'][$proposal->{'etab_id'}]['end_date']       = $proposal->{'end_date'};
-                $results['element'][$proposal->{'etab_id'}]['days_countdown'] = $interval->format('%a');
+                $results['element'][$key]['extra'][$proposal->{'proposal_key'}] = $proposal;
+                $results['element'][$key]['start_date']     = $proposal->{'start_date'};
+                $results['element'][$key]['end_date']       = $proposal->{'end_date'};
+                $results['element'][$key]['days_countdown'] = $interval->format('%a');
             }
         }
 
