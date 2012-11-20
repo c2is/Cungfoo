@@ -15,6 +15,7 @@ use Cungfoo\Model\EtablissementQuery,
 
 use VacancesDirectes\Lib\Listing,
     VacancesDirectes\Lib\SearchEngine,
+    VacancesDirectes\Lib\SearchParams,
     VacancesDirectes\Lib\Listing\DispoListing;
 
 use Resalys\Lib\Client\DisponibiliteClient;
@@ -27,7 +28,6 @@ class DernieresMinutesController implements ControllerProviderInterface
 
         $controllers->match('/', function (Application $app, Request $request) {
 
-            // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();
             if ($searchEngine->getRedirect())
@@ -39,15 +39,16 @@ class DernieresMinutesController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $searchParams = new SearchParams($app);
+            $searchParams
+                ->setDates(date('Y-m-d', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())))
+                ->setNbDays($dernieresMinutes->getDayRange())
+                ->setNbAdults(1)
+                ->setMaxResults(5)
+            ;
+
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
-            $client->addOptions(array(
-                'start_date'  => date('d/m/Y', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())),
-                'nb_adults'   => 1,
-                'nb_days'     => $dernieresMinutes->getDayRange(),
-                'languages'   => array($app['context']->getLanguage()),
-                'max_results' => 5,
-                'etab_list'   => '5',
-            ));
+            $client->addOptions($searchParams->generate());
 
             $listing = new DispoListing($app);
             $listing->setClient($client);
