@@ -12,7 +12,7 @@
                         <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="" />
                         <input type="hidden" id="SearchDate_dateFin"  name="SearchDate[dateFin]" readonly="readonly" value="" />
                         <div id="datepickerField" class="clear">
-                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates de séjour" /><span class="date"></span>
                         </div>
                         <div id="datepickerCalendar">
 

@@ -37,11 +37,12 @@
             <?php include('blocs/search.php') ?>
             <div id="greyBoxes">
                 <?php include('blocs/infoResa.php') ?>
+                <?php include('blocs/ideesWeekend.php') ?>
                 <?php include('blocs/offresSpeciales.php') ?>
                 <?php include('blocs/dejaVu.php') ?>
                 <?php include('blocs/communaute.php') ?>
                 <?php include('blocs/vacancesReussies.php') ?>
-                <?php include('blocs/aimeriezAussi.php') ?>
+                <?php include('blocs/aimerezAussi.php') ?>
             </div>
         </aside>
     <!-- // colonne droite -->

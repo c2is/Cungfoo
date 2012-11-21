@@ -1,6 +1,6 @@
-<div id="alreadySeenBloc" class="clear radiusBox greyC">
+<div id="discoverBloc" class="clear radiusBox greyC">
     <div class="no stamp">
-        <h2>Vous avez déjà consulté</h2>
+        <h2>Vous aimerez aussi</h2>
     </div>
     <div class="element clear">
         <div class="left">

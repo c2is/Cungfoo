@@ -2,26 +2,26 @@
 
 var
 //datepicker
-    startDate,
-    endDate,
-    highSeasonStartDate,
-    highSeasonEndDate,
-    firstSelection = true,
-    firstRendering = true,
-    startHighSeasonDay = false,
-    endHighSeasonDay = false,
-    arrivalDay = false,
-    departureDay = false,
+    startDate,                                              // date de début de saison
+    endDate,                                                // date de fin de saison
+    highSeasonStartDate,                                    // date de début de haute saison
+    highSeasonEndDate,                                      // date de fin de haute saison
+    firstSelection = true,                                  // première sélection de dates dans le datepicker
+    firstRendering = true,                                  // initialisation du datepicker
+    startHighSeasonDay = false,                             // premier jour de la haute saison (lors du parcours de toutes les dates du datepicker)
+    endHighSeasonDay = false,                               // dernier jour de la haute saison (lors du parcours de toutes les dates du datepicker)
+    arrivalDay = false,                                     // date d'arrivée sélectionnée
+    departureDay = false,                                   // date de départ sélectionnée
 //resultCrit
-    list = $('#results'),                                   //la liste a trier
-    items = list.find('.itemResult'),                       //les items de cette liste
-    itemsRanged = list.find('[data-ranged="true"]'),        //items dans la range de prix
-    itemsFiltered = list.find('[data-filtered="true"]'),    //items repondants aux criteres
-    minPrice,                                               //le prix minimum de la liste
-    maxPrice,                                               //le prix maximum de la liste
-    containerCrit = $('#formSearchRefined'),                //conteneur des criteres
-    nbVisible = 10,                                         //nombre d'items visible avant pagination
-    nbToShow = 5;                                           //nombre d'items a afficher si pagination existe
+    list = $('#results'),                                   // la liste a trier
+    items = list.find('.itemResult'),                       // les items de cette liste
+    itemsRanged = list.find('[data-ranged="true"]'),        // items dans la range de prix
+    itemsFiltered = list.find('[data-filtered="true"]'),    // items repondants aux criteres
+    minPrice,                                               // le prix minimum de la liste
+    maxPrice,                                               // le prix maximum de la liste
+    containerCrit = $('#formSearchRefined'),                // conteneur des criteres
+    nbVisible = 10,                                         // nombre d'items visible avant pagination
+    nbToShow = 5;                                           // nombre d'items a afficher si pagination existe
 
 
 /*--  DOMREADY  --*/
@@ -166,7 +166,12 @@ $(function() {
         });
     }
 
-// slider
+    /*
+     *  ############################################################
+     *                          HOME SLIDER
+     * ############################################################
+     */
+
     var direction;
     var pos;
     if ($('#slider').length){
@@ -232,7 +237,6 @@ $(function() {
                     afterSlide(data);
                 }
             }
-
     });
         var i = 1;
         $('#slider').children('li').each(function(){
@@ -243,6 +247,7 @@ $(function() {
     }
 
     function beforeSlide(e){
+        consoleLog(e);
         e.items.old.removeClass( "active" );
         if (direction ==  "page"){
             var newSlide = e.items.new.attr('data-slide');
@@ -304,7 +309,12 @@ $(function() {
 
 
 
-// datepicker
+    /*
+     *  ############################################################
+     *                          DATEPICKER
+     * ############################################################
+     */
+
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -800,7 +810,7 @@ $(function() {
 
         var preselectedFDates = new Array(),
             preselectedDates = new Array();
-        if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
+        if ( $("#SearchDate_dateDebut").val() != '' && $("#SearchDate_dateFin").val() != '' ) {
             $.each($('input[type=hidden]'), function(i, item) {
                 //console.log(item.value);
 
@@ -815,14 +825,8 @@ $(function() {
         }
 
         //console.log("################################## switchLinear()  ##################################");
-        $('#searchContainer .searchBox').attr('id',linear);
-        $('#AchatLineaire_isBasseSaison').attr('class','clear ' + linear);
-        var titleText = "Recherche de linéaires";
-        var infoText = "La période choisie doit inlure au minimum 1 semaine.";
-        var legendText = "haute saison";
+        $('#searchBlocDate .searchBox').attr('id',linear);
 
-        $('#' + linear + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
-        $('#' + linear + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
         firstRendering = true;
 
         //console.log("################################## initializeForbiddenDates()  ##################################");
@@ -936,18 +940,15 @@ function switchSelect(){
 
 var toggleState = 0;
 function toggleSearchCriteria(){
-    console.log("################################## toggleSearchCriteria()  ##################################");
+//    console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-        console.log("----------------- toggleSearchCriteria() CLICK -----------------");
+//        console.log("----------------- toggleSearchCriteria() CLICK -----------------");
         toggleState = toggleState == 0 ? 1 : 0;
-        console.log(toggleState);
         e.preventDefault();
         var $button = $(this);
         var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
         $button.html(buttonText);
         var $container = $button.prev();
-        console.log($button);
-        console.log($container);
         $container.stop().slideToggle(1000);
     });
 }

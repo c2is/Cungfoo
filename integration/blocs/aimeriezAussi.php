@@ -1,1 +1,0 @@
-<p>{{ Bloc "Vous aimeriez aussi" }}</p>

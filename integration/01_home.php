@@ -21,10 +21,10 @@
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
 							<span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
+                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
-                    <div class="element clear radiusBox greyC">
+                    <div class="element promo clear radiusBox greyC">
                         <div class="left">
                             <a href="#_" class="linkBlock"><img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" /></a>
                             <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>
@@ -33,8 +33,8 @@
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
+                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span><br />au lieu de <span class="line-through">189<span class="fine">&nbsp;</span>€</span></span><span class="discount">-20%</span></a>
                     </div>
                     <div class="element clear">
                         <div class="left">
@@ -45,8 +45,8 @@
                             <span class="title">Nom camping ***</span>
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
-                            <a href="#_" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
 						</div>
+                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
                     <a href="#_" class="bt link right">Voir tous les agenda culturel et sorties (13)</a>
                 </div>
