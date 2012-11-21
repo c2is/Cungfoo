@@ -13,47 +13,27 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\DernieresMinutesQuery;
 
-use Resalys\Lib\Client\DisponibiliteClient;
-
-use VacancesDirectes\Lib\SearchEngine,
+use VacancesDirectes\Lib\Listing,
+    VacancesDirectes\Lib\SearchEngine,
     VacancesDirectes\Lib\SearchParams,
     VacancesDirectes\Lib\Listing\DispoListing;
 
-class HomepageController implements ControllerProviderInterface
+use Resalys\Lib\Client\DisponibiliteClient;
+
+class DernieresMinutesController implements ControllerProviderInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function connect(Application $app)
     {
-        // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/', function (Request $request) use ($app)
-        {
+        $controllers->match('/', function (Application $app, Request $request) {
+
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();
             if ($searchEngine->getRedirect())
             {
                 return $app->redirect($searchEngine->getRedirect());
             }
-
-            $locale = $app['context']->get('language');
-
-            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->find()
-            ;
-
-            $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
-                ->find()
-            ;
-
-            $pays = \Cungfoo\Model\PaysQuery::create()
-                ->find()
-            ;
 
             $dernieresMinutes = DernieresMinutesQuery::create()
                 ->findOne()
@@ -70,7 +50,6 @@ class HomepageController implements ControllerProviderInterface
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
-                ->setMaxResults(5)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
@@ -79,16 +58,12 @@ class HomepageController implements ControllerProviderInterface
             $listing = new DispoListing($app);
             $listing->setClient($client);
 
-            return $app['twig']->render('homepage.twig', array(
-                'searchForm'        => $searchEngine->getView(),
-                'locale'            => $locale,
-                'topCampings'       => $topCampings,
-                'pays'              => $pays,
-                'mea'               => $mea,
-                'dernieres_minutes' => $listing->process(),
+            return $app['twig']->render('Results\listing.twig', array(
+                'list'       => $listing->process(),
+                'searchForm' => $searchEngine->getView(),
             ));
         })
-        ->bind('homepage');
+        ->bind('dernieres_minutes');
 
         return $controllers;
     }

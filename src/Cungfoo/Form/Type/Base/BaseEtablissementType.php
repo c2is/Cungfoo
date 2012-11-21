@@ -104,12 +104,14 @@ class BaseEtablissementType extends AppAwareType
         $builder->add('opening_date', 'datetime', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'etablissement.opening_date',
             'required' => false,
         ));
         $builder->add('closing_date', 'datetime', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'etablissement.closing_date',
             'required' => false,
         ));
@@ -193,6 +195,12 @@ class BaseEtablissementType extends AppAwareType
             'constraints' => array(
             ),
             'label' => 'etablissement.published',
+            'required' => false,
+        ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.enabled',
             'required' => false,
         ));
         $builder->add('type_hebergements', 'model', array(

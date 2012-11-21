@@ -15,7 +15,7 @@ use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\RegionQuery,
     Cungfoo\Model\VilleQuery;
 
-use VacancesDirectes\Lib\Listing,
+use VacancesDirectes\Lib\Listing\CatalogueListing,
     VacancesDirectes\Lib\SearchEngine;
 
 class TopCampingController
@@ -42,10 +42,10 @@ class TopCampingController
         }
 
         // Création de la liste
-        $list = new Listing($app);
+        $list = new CatalogueListing($app);
         $list
-            ->setEtablissements($etabs)
-            ->setType(Listing::CATALOGUE)
+            ->setData($etabs)
+            ->setType(CatalogueListing::CATALOGUE)
         ;
 
         return $app['twig']->render('Results\listing.twig', array(

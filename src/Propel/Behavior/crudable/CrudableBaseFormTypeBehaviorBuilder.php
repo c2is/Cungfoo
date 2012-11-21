@@ -163,6 +163,11 @@ class {$this->getClassname()} extends AppAwareType
                 $options = array_merge($options, array('choices' => $choices));
             }
 
+            if (PropelTypes::DATE === $column->getType() || PropelTypes::TIMESTAMP === $column->getType())
+            {
+                $options = array_merge($options, array('widget' => 'single_text'));
+            }
+
             return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array('constraints' => $this->addConstraints($column)), $options));
         }
     }

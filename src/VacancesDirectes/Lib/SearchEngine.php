@@ -33,10 +33,33 @@ class SearchEngine
 
             if ($this->form->isValid())
             {
-                $this->redirect = $this->app['url_generator']->generate('catalogue', array(
-                    'large' => $searchDateData->destination,
-                    'small' => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville
-                ));
+                if ($searchDateData->dateDebut && $searchDateData->dateFin)
+                {
+                    $dateDebut = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateDebut);
+                    $dateFin = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateFin);
+
+                    $urlParams = array(
+                        'large'       => $searchDateData->destination,
+                        'start_date'  => $dateDebut->format('Y-m-d'),
+                        'end_date'    => $dateFin->format('Y-m-d'),
+                        'nb_adults'   => $searchDateData->nbAdultes,
+                        'nb_children' => $searchDateData->nbEnfants,
+                    );
+
+                    if ($searchDateData->camping || $searchDateData->ville)
+                    {
+                        $urlParams['small'] = $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville;
+                    }
+
+                    $this->redirect = $this->app['url_generator']->generate('dispo', $urlParams);
+                }
+                else
+                {
+                    $this->redirect = $this->app['url_generator']->generate('catalogue', array(
+                        'large' => $searchDateData->destination,
+                        'small' => $searchDateData->isCamping ? $searchDateData->camping : $searchDateData->ville
+                    ));
+                }
 
                 return true;
             }

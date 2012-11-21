@@ -25,6 +25,7 @@ use Cungfoo\Model\EditoQuery;
  * @method EditoQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method EditoQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EditoQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method EditoQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method EditoQuery groupById() Group by the id column
  * @method EditoQuery groupBySlug() Group by the slug column
@@ -32,6 +33,7 @@ use Cungfoo\Model\EditoQuery;
  * @method EditoQuery groupByDescription() Group by the description column
  * @method EditoQuery groupByCreatedAt() Group by the created_at column
  * @method EditoQuery groupByUpdatedAt() Group by the updated_at column
+ * @method EditoQuery groupByEnabled() Group by the enabled column
  *
  * @method EditoQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EditoQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -45,6 +47,7 @@ use Cungfoo\Model\EditoQuery;
  * @method Edito findOneByDescription(string $description) Return the first Edito filtered by the description column
  * @method Edito findOneByCreatedAt(string $created_at) Return the first Edito filtered by the created_at column
  * @method Edito findOneByUpdatedAt(string $updated_at) Return the first Edito filtered by the updated_at column
+ * @method Edito findOneByEnabled(boolean $enabled) Return the first Edito filtered by the enabled column
  *
  * @method array findById(int $id) Return Edito objects filtered by the id column
  * @method array findBySlug(string $slug) Return Edito objects filtered by the slug column
@@ -52,6 +55,7 @@ use Cungfoo\Model\EditoQuery;
  * @method array findByDescription(string $description) Return Edito objects filtered by the description column
  * @method array findByCreatedAt(string $created_at) Return Edito objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Edito objects filtered by the updated_at column
+ * @method array findByEnabled(boolean $enabled) Return Edito objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -155,7 +159,7 @@ abstract class BaseEditoQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SLUG`, `NAME`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT` FROM `edito` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `SLUG`, `NAME`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `edito` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -442,6 +446,33 @@ abstract class BaseEditoQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EditoPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the enabled column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEnabled(true); // WHERE enabled = true
+     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * </code>
+     *
+     * @param     boolean|string $enabled The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function filterByEnabled($enabled = null, $comparison = null)
+    {
+        if (is_string($enabled)) {
+            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(EditoPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

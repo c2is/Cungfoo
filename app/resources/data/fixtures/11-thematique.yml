@@ -1,15 +1,22 @@
 \Cungfoo\Model\Thematique:
     1:
         Code: NV12
+        Enabled: true
     2:
         Code: PAQU
+        Enabled: true
     3:
         Code: PDLE
+        Enabled: true
     4:
         Code: VAFA
+        Enabled: true
     5:
         Code: VACL
+        Enabled: true
     6:
         Code: VASE
+        Enabled: true
     7:
         Code: VADE
+        Enabled: true

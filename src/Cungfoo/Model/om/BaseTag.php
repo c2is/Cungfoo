@@ -78,6 +78,13 @@ abstract class BaseTag extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the enabled field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $enabled;
+
+    /**
      * @var        PropelObjectCollection|MultimediaEtablissementTag[] Collection to store aggregation of MultimediaEtablissementTag objects.
      */
     protected $collMultimediaEtablissementTags;
@@ -139,6 +146,27 @@ abstract class BaseTag extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $tagI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->enabled = false;
+    }
+
+    /**
+     * Initializes internal state of BaseTag object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -235,6 +263,16 @@ abstract class BaseTag extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [enabled] column value.
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -323,6 +361,35 @@ abstract class BaseTag extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [enabled] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return Tag The current object (for fluent API support)
+     */
+    public function setEnabled($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = TagPeer::ENABLED;
+        }
+
+
+        return $this;
+    } // setEnabled()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -332,6 +399,10 @@ abstract class BaseTag extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->enabled !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -358,6 +429,7 @@ abstract class BaseTag extends BaseObject implements Persistent
             $this->slug = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->enabled = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -366,7 +438,7 @@ abstract class BaseTag extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = TagPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = TagPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Tag object", $e);
@@ -660,6 +732,9 @@ abstract class BaseTag extends BaseObject implements Persistent
         if ($this->isColumnModified(TagPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(TagPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `tag` (%s) VALUES (%s)',
@@ -682,6 +757,9 @@ abstract class BaseTag extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -845,6 +923,9 @@ abstract class BaseTag extends BaseObject implements Persistent
             case 3:
                 return $this->getUpdatedAt();
                 break;
+            case 4:
+                return $this->getEnabled();
+                break;
             default:
                 return null;
                 break;
@@ -878,6 +959,7 @@ abstract class BaseTag extends BaseObject implements Persistent
             $keys[1] => $this->getSlug(),
             $keys[2] => $this->getCreatedAt(),
             $keys[3] => $this->getUpdatedAt(),
+            $keys[4] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMultimediaEtablissementTags) {
@@ -932,6 +1014,9 @@ abstract class BaseTag extends BaseObject implements Persistent
             case 3:
                 $this->setUpdatedAt($value);
                 break;
+            case 4:
+                $this->setEnabled($value);
+                break;
         } // switch()
     }
 
@@ -960,6 +1045,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setSlug($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setEnabled($arr[$keys[4]]);
     }
 
     /**
@@ -975,6 +1061,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         if ($this->isColumnModified(TagPeer::SLUG)) $criteria->add(TagPeer::SLUG, $this->slug);
         if ($this->isColumnModified(TagPeer::CREATED_AT)) $criteria->add(TagPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TagPeer::UPDATED_AT)) $criteria->add(TagPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(TagPeer::ENABLED)) $criteria->add(TagPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1041,6 +1128,7 @@ abstract class BaseTag extends BaseObject implements Persistent
         $copyObj->setSlug($this->getSlug());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1750,9 +1838,11 @@ abstract class BaseTag extends BaseObject implements Persistent
         $this->slug = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);

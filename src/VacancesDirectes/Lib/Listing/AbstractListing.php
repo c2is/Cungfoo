@@ -21,7 +21,7 @@ abstract class AbstractListing
         $this->app = $app;
     }
 
-    public function setData(\ArrayObject $data)
+    public function setData($data)
     {
         $this->data = $data;
 

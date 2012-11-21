@@ -36,13 +36,13 @@ abstract class BaseEditoPeer
     const TM_CLASS = 'EditoTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the ID field */
     const ID = 'edito.ID';
@@ -61,6 +61,9 @@ abstract class BaseEditoPeer
 
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'edito.UPDATED_AT';
+
+    /** the column name for the ENABLED field */
+    const ENABLED = 'edito.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -81,12 +84,12 @@ abstract class BaseEditoPeer
      * e.g. EditoPeer::$fieldNames[EditoPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'Name', 'Description', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'name', 'description', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (EditoPeer::ID, EditoPeer::SLUG, EditoPeer::NAME, EditoPeer::DESCRIPTION, EditoPeer::CREATED_AT, EditoPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'NAME', 'DESCRIPTION', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'name', 'description', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'Name', 'Description', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'name', 'description', 'createdAt', 'updatedAt', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (EditoPeer::ID, EditoPeer::SLUG, EditoPeer::NAME, EditoPeer::DESCRIPTION, EditoPeer::CREATED_AT, EditoPeer::UPDATED_AT, EditoPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'NAME', 'DESCRIPTION', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'name', 'description', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -96,12 +99,12 @@ abstract class BaseEditoPeer
      * e.g. EditoPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'Name' => 2, 'Description' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'name' => 2, 'description' => 3, 'createdAt' => 4, 'updatedAt' => 5, ),
-        BasePeer::TYPE_COLNAME => array (EditoPeer::ID => 0, EditoPeer::SLUG => 1, EditoPeer::NAME => 2, EditoPeer::DESCRIPTION => 3, EditoPeer::CREATED_AT => 4, EditoPeer::UPDATED_AT => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'name' => 2, 'description' => 3, 'created_at' => 4, 'updated_at' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'Name' => 2, 'Description' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Enabled' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'name' => 2, 'description' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_COLNAME => array (EditoPeer::ID => 0, EditoPeer::SLUG => 1, EditoPeer::NAME => 2, EditoPeer::DESCRIPTION => 3, EditoPeer::CREATED_AT => 4, EditoPeer::UPDATED_AT => 5, EditoPeer::ENABLED => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ENABLED' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'name' => 2, 'description' => 3, 'created_at' => 4, 'updated_at' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -181,6 +184,7 @@ abstract class BaseEditoPeer
             $criteria->addSelectColumn(EditoPeer::DESCRIPTION);
             $criteria->addSelectColumn(EditoPeer::CREATED_AT);
             $criteria->addSelectColumn(EditoPeer::UPDATED_AT);
+            $criteria->addSelectColumn(EditoPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.SLUG');
@@ -188,6 +192,7 @@ abstract class BaseEditoPeer
             $criteria->addSelectColumn($alias . '.DESCRIPTION');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

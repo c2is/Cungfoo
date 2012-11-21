@@ -56,6 +56,7 @@ class BaseMiseEnAvantType extends AppAwareType
         $builder->add('date_fin_validite', 'date', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'mise_en_avant.date_fin_validite',
             'required' => false,
         ));
@@ -63,6 +64,12 @@ class BaseMiseEnAvantType extends AppAwareType
             'constraints' => array(
             ),
             'label' => 'mise_en_avant.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'mise_en_avant.enabled',
             'required' => false,
         ));
         $builder->add('mise_en_avantI18ns', 'translation_collection', array(

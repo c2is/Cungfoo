@@ -3,22 +3,23 @@
 {% block title %}Homepage{% endblock %}
 
 {% block slider %}
+<a id="sliderPrev" class="radiusBox yellow"></a>
+<div id="sliderContainer">
+    <div id="sliderBackground"></div>
     <ul id="slider" class="fixed-width clear">
         {% for mea in mea %}
-            <li {% if loop.index != 1 %} style="display: none;" {% endif %}>
+            <li class="slide"{% if loop.index != 1 %} style="display: none;" {% endif %}>
                 <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
                 <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
-                <div class="sliderBackground">
-                    <!--<img src="{{ asset(mea.imageFondPath) }}" alt="{{ mea.titre }}"/>-->
-                </div>
-                <div class="sliderStainInfo">
+                <div class="sliderBackground"></div>
+                <div class="sliderStain first">
                     <div class="content">
                         <p class="headline">{{ mea.titre }}</p>
                         <p class="catchline">{{ mea.accroche }}</p>
                         <button class="bt sombre big" type="submit">{{ mea.titreLien }}</button>
                     </div>
                 </div>
-                <div class="sliderStainPrice">
+                <div class="sliderStain second">
                     <div class="content">
                         <p class="price">{{ mea.prix }}</p>
                     </div>
@@ -26,6 +27,10 @@
             </li>
         {% endfor %}
     </ul>
+</div>
+<a id="sliderNext" class="radiusBox yellow"></a>
+
+<div class="pagination clear" id="sliderPager"></div>
 {% endblock %}
 
 {% block rightColumn %}
@@ -66,52 +71,25 @@
         <div class="stamp grey">
             <h2>Dernières minutes</h2>
         </div>
-        <div class="element clear">
-            <div class="details left linkParent">
-                <span class="title">Nom camping ***</span>
-                <span class="region">Région</span>
-                <span class="period">Du 26/05/12 au 02/06/12</span>
-                <span class="counter">J -5</span>
-                <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+        {% for etab in dernieres_minutes.element %}
+            {% for proposal in etab.extra %}
+            <div class="element clear">
+                <div class="details left linkParent">
+                    <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
+                    <span class="region">{{ etab.model.ville.region }}</span>
+                    <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
+                    <span class="counter">J -{{ etab.days_countdown }}</span>
+                    {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
+                    {% if discount %}
+                        <span class="condition"><a href="#" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ au lieu de {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
+                    {% else %}
+                        <span class="condition"><a href="#" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div class="element clear">
-            <div class="details left linkParent">
-                <span class="title">Nom camping ***</span>
-                <span class="region">Région</span>
-                <span class="condition">Du 26/05/12 au 02/06/12</span>
-                <span class="counter">J -45</span>
-                <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
-            </div>
-        </div>
-        <div class="element clear">
-            <div class="details left linkParent">
-                <span class="title">Nom camping ***</span>
-                <span class="region">Région</span>
-                <span class="period">Du 26/05/12 au 02/06/12</span>
-                <span class="counter">J -20</span>
-                <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
-            </div>
-        </div>
-        <div class="element clear">
-            <div class="details left linkParent">
-                <span class="title">Nom camping ***</span>
-                <span class="region">Région</span>
-                <span class="period">Du 26/05/12 au 02/06/12</span>
-                <span class="counter">J -5</span>
-                <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
-            </div>
-        </div>
-        <div class="element last clear">
-            <div class="details left linkParent">
-                <span class="title">Nom camping ***</span>
-                <span class="region">Région</span>
-                <span class="period">Du 26/05/12 au 02/06/12</span>
-                <span class="counter">J -15</span>
-                <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
-            </div>
-        </div>
-        <a href="#_" class="bt link left">Voir tous les agenda culturel et sorties (13)</a>
+            {% endfor %}
+        {% endfor %}
+        <a href="{{ path('dernieres_minutes') }}" class="bt link left">Voir toutes les dernières minutes</a>
     </div>
 </div>
 {% endblock %}

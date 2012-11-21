@@ -43,6 +43,7 @@ class DernieresMinutesTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('DATE_START', 'DateStart', 'DATE', false, null, null);
         $this->addColumn('DAY_START', 'DayStart', 'ENUM', true, null, null);
         $this->getColumn('DAY_START', false)->setValueSet(array (
   0 => 'monday',
@@ -60,6 +61,7 @@ class DernieresMinutesTableMap extends TableMap
   2 => '21',
 ));
         $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
