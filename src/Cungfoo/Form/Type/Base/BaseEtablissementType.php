@@ -104,12 +104,14 @@ class BaseEtablissementType extends AppAwareType
         $builder->add('opening_date', 'datetime', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'etablissement.opening_date',
             'required' => false,
         ));
         $builder->add('closing_date', 'datetime', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'etablissement.closing_date',
             'required' => false,
         ));

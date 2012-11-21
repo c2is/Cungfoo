@@ -30,6 +30,7 @@ class BaseDernieresMinutesType extends AppAwareType
         $builder->add('date_start', 'date', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'dernieres_minutes.date_start',
             'required' => false,
         ));

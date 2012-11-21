@@ -56,6 +56,7 @@ class BaseMiseEnAvantType extends AppAwareType
         $builder->add('date_fin_validite', 'date', array(
             'constraints' => array(
             ),
+            'widget' => 'single_text',
             'label' => 'mise_en_avant.date_fin_validite',
             'required' => false,
         ));
