@@ -16,6 +16,15 @@
     margin: 0;
 }
 
+.pagination {
+    height: 40px;
+    margin: 1px 0;
+}
+
+.btn-group {
+    line-height: 65px;
+}
+
 .table th.actions-item {
     text-align: right;
 }
