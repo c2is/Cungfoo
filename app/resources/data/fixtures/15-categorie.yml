@@ -1,11 +1,16 @@
 \Cungfoo\Model\Categorie:
     1:
         Code: 5ETO
+        Enabled: true
     2:
         Code: 4ETO
+        Enabled: true
     3:
         Code: 3ETO
+        Enabled: true
     4:
         Code: 2ETO
+        Enabled: true
     5:
         Code: 1ETO
+        Enabled: true

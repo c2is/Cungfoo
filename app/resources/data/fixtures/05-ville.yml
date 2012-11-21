@@ -2,465 +2,620 @@
     1:
         Code: EYZ
         RegionId: null
+        Enabled: true
     2:
         Code: VIAS
         RegionId: 14
+        Enabled: true
     3:
         Code: GRAU
         RegionId: 14
+        Enabled: true
     4:
         Code: ARGE
         RegionId: null
+        Enabled: true
     5:
         Code: CROU
         RegionId: null
+        Enabled: true
     6:
         Code: LBAR
         RegionId: null
+        Enabled: true
     7:
         Code: FABR
         RegionId: null
+        Enabled: true
     8:
         Code: SERI
         RegionId: null
+        Enabled: true
     9:
         Code: AGDE
         RegionId: null
+        Enabled: true
     10:
         Code: LATT
         RegionId: null
+        Enabled: true
     11:
         Code: GLMO
         RegionId: null
+        Enabled: true
     12:
         Code: ALSA
         RegionId: null
+        Enabled: true
     13:
         Code: STCY
         RegionId: 14
+        Enabled: true
     14:
         Code: STMA
         RegionId: 14
+        Enabled: true
     15:
         Code: MEZE
         RegionId: 14
+        Enabled: true
     16:
         Code: CURB
         RegionId: 22
+        Enabled: true
     17:
         Code: STLV
         RegionId: null
+        Enabled: true
     18:
         Code: CAST
         RegionId: null
+        Enabled: true
     19:
         Code: NALP
         RegionId: null
+        Enabled: true
     20:
         Code: HYER
         RegionId: null
+        Enabled: true
     21:
         Code: LAMO
         RegionId: null
+        Enabled: true
     22:
         Code: GRIM
         RegionId: null
+        Enabled: true
     23:
         Code: STAY
         RegionId: null
+        Enabled: true
     24:
         Code: ANTI
         RegionId: null
+        Enabled: true
     25:
         Code: PORV
         RegionId: null
+        Enabled: true
     26:
         Code: PATA
         RegionId: null
+        Enabled: true
     27:
         Code: ESTA
         RegionId: null
+        Enabled: true
     28:
         Code: PALS
         RegionId: null
+        Enabled: true
     29:
         Code: CALO
         RegionId: null
+        Enabled: true
     30:
         Code: FREJ
         RegionId: null
+        Enabled: true
     31:
         Code: STPF
         RegionId: null
+        Enabled: true
     32:
         Code: LRSS
         RegionId: null
+        Enabled: true
     33:
         Code: GHIS
         RegionId: null
+        Enabled: true
     34:
         Code: LANO
         RegionId: null
+        Enabled: true
     35:
         Code: CAEM
         RegionId: null
+        Enabled: true
     36:
         Code: PALM
         RegionId: null
+        Enabled: true
     37:
         Code: BLAN
         RegionId: null
+        Enabled: true
     38:
         Code: VILA
         RegionId: null
+        Enabled: true
     39:
         Code: MTRO
         RegionId: null
+        Enabled: true
     40:
         Code: ALCO
         RegionId: null
+        Enabled: true
     41:
         Code: GRAD
         RegionId: null
+        Enabled: true
     42:
         Code: SOTO
         RegionId: null
+        Enabled: true
     43:
         Code: LIDO
         RegionId: null
+        Enabled: true
     44:
         Code: CECI
         RegionId: null
+        Enabled: true
     45:
         Code: SANV
         RegionId: null
+        Enabled: true
     46:
         Code: CADE
         RegionId: null
+        Enabled: true
     47:
         Code: STCA
         RegionId: null
+        Enabled: true
     48:
         Code: ERQU
         RegionId: null
+        Enabled: true
     49:
         Code: CALP
         RegionId: null
+        Enabled: true
     50:
         Code: BENO
         RegionId: null
+        Enabled: true
     51:
         Code: NEVE
         RegionId: null
+        Enabled: true
     52:
         Code: BEYN
         RegionId: null
+        Enabled: true
     53:
         Code: MURO
         RegionId: null
+        Enabled: true
     54:
         Code: QUIB
         RegionId: null
+        Enabled: true
     55:
         Code: STMN
         RegionId: null
+        Enabled: true
     56:
         Code: SOUI
         RegionId: null
+        Enabled: true
     57:
         Code: LEPA
         RegionId: 9
+        Enabled: true
     58:
         Code: RUYN
         RegionId: null
+        Enabled: true
     59:
         Code: PENE
         RegionId: null
+        Enabled: true
     60:
         Code: CADS
         RegionId: null
+        Enabled: true
     61:
         Code: LABA
         RegionId: null
+        Enabled: true
     62:
         Code: GUER
         RegionId: null
+        Enabled: true
     63:
         Code: PORN
         RegionId: null
+        Enabled: true
     64:
         Code: STJE
         RegionId: null
+        Enabled: true
     65:
         Code: STHI
         RegionId: null
+        Enabled: true
     66:
         Code: STGI
         RegionId: null
+        Enabled: true
     67:
         Code: STJU
         RegionId: null
+        Enabled: true
     68:
         Code: BREM
         RegionId: null
+        Enabled: true
     69:
         Code: AXLT
         RegionId: null
+        Enabled: true
     70:
         Code: ISI
         RegionId: null
+        Enabled: true
     71:
         Code: THOU
         RegionId: null
+        Enabled: true
     72:
         Code: CHAT
         RegionId: null
+        Enabled: true
     73:
         Code: VOGU
         RegionId: null
+        Enabled: true
     74:
         Code: LAGO
         RegionId: null
+        Enabled: true
     75:
         Code: TALM
         RegionId: null
+        Enabled: true
     76:
         Code: VALP
         RegionId: null
+        Enabled: true
     77:
         Code: OLON
         RegionId: 13
+        Enabled: true
     78:
         Code: LATH
         RegionId: null
+        Enabled: true
     79:
         Code: JARD
         RegionId: null
+        Enabled: true
     80:
         Code: DOUS
         RegionId: null
+        Enabled: true
     81:
         Code: LATR
         RegionId: null
+        Enabled: true
     82:
         Code: PATO
         RegionId: null
+        Enabled: true
     83:
         Code: WATT
         RegionId: null
+        Enabled: true
     84:
         Code: PUIL
         RegionId: null
+        Enabled: true
     85:
         Code: SUEV
         RegionId: null
+        Enabled: true
     86:
         Code: STDE
         RegionId: null
+        Enabled: true
     87:
         Code: LOIX
         RegionId: null
+        Enabled: true
     88:
         Code: STGE
         RegionId: null
+        Enabled: true
     89:
         Code: BOYA
         RegionId: null
+        Enabled: true
     90:
         Code: CHPL
         RegionId: null
+        Enabled: true
     91:
         Code: STLA
         RegionId: null
+        Enabled: true
     92:
         Code: LESM
         RegionId: null
+        Enabled: true
     93:
         Code: SOUL
         RegionId: null
+        Enabled: true
     94:
         Code: HOUR
         RegionId: null
+        Enabled: true
     95:
         Code: LACA
         RegionId: null
+        Enabled: true
     96:
         Code: LEGE
         RegionId: null
+        Enabled: true
     97:
         Code: SANG
         RegionId: null
+        Enabled: true
     98:
         Code: BISC
         RegionId: null
+        Enabled: true
     99:
         Code: MEZO
         RegionId: null
+        Enabled: true
     100:
         Code: AURE
         RegionId: null
+        Enabled: true
     101:
         Code: LIMI
         RegionId: null
+        Enabled: true
     102:
         Code: VIEL
         RegionId: null
+        Enabled: true
     103:
         Code: MESS
         RegionId: null
+        Enabled: true
     104:
         Code: SEIG
         RegionId: null
+        Enabled: true
     105:
         Code: BIDA
         RegionId: null
+        Enabled: true
     106:
         Code: AZUR
         RegionId: 6
+        Enabled: true
     107:
         Code: CARS
         RegionId: null
+        Enabled: true
     108:
         Code: JUVI
         RegionId: null
+        Enabled: true
     109:
         Code: SIGE
         RegionId: null
+        Enabled: true
     110:
         Code: MARI
         RegionId: null
+        Enabled: true
     111:
         Code: PLAT
         RegionId: null
+        Enabled: true
     112:
         Code: PLES
         RegionId: null
+        Enabled: true
     113:
         Code: PLOU
         RegionId: null
+        Enabled: true
     114:
         Code: NARB
         RegionId: null
+        Enabled: true
     115:
         Code: STCL
         RegionId: null
+        Enabled: true
     116:
         Code: CAMI
         RegionId: null
+        Enabled: true
     117:
         Code: PYLA
         RegionId: null
+        Enabled: true
     118:
         Code: STYV
         RegionId: null
+        Enabled: true
     119:
         Code: SETE
         RegionId: null
+        Enabled: true
     120:
         Code: CARN
         RegionId: 9
+        Enabled: true
     121:
         Code: PALA
         RegionId: 14
+        Enabled: true
     122:
         Code: TORP
         RegionId: 14
+        Enabled: true
     123:
         Code: CHOL
         RegionId: 10
+        Enabled: true
     124:
         Code: RUOM
         RegionId: 18
+        Enabled: true
     125:
         Code: AMDM
         RegionId: 7
+        Enabled: true
     126:
         Code: MTLV
         RegionId: 4
+        Enabled: true
     127:
         Code: CLAO
         RegionId: null
+        Enabled: true
     128:
         Code: TOUQ
         RegionId: null
+        Enabled: true
     129:
         Code: MTMP
         RegionId: null
+        Enabled: true
     130:
         Code: CDIC
         RegionId: null
+        Enabled: true
     131:
         Code: STCH
         RegionId: null
+        Enabled: true
     132:
         Code: AUBE
         RegionId: null
+        Enabled: true
     133:
         Code: SIGN
         RegionId: null
+        Enabled: true
     134:
         Code: COLO
         RegionId: null
+        Enabled: true
     135:
         Code: EGLE
         RegionId: null
+        Enabled: true
     136:
         Code: FBRE
         RegionId: null
+        Enabled: true
     137:
         Code: BEZI
         RegionId: null
+        Enabled: true
     138:
         Code: CHEV
         RegionId: null
+        Enabled: true
     139:
         Code: CSTR
         RegionId: null
+        Enabled: true
     140:
         Code: ANGL
         RegionId: null
+        Enabled: true
     141:
         Code: ROQA
         RegionId: null
+        Enabled: true
     142:
         Code: AUBI
         RegionId: null
+        Enabled: true
     143:
         Code: LABE
         RegionId: null
+        Enabled: true
     144:
         Code: GRMA
         RegionId: null
+        Enabled: true
     145:
         Code: MUN
         RegionId: null
+        Enabled: true
     146:
         Code: TRO
         RegionId: null
+        Enabled: true
     147:
         Code: THON
         RegionId: null
+        Enabled: true
     148:
         Code: ONDR
         RegionId: null
+        Enabled: true
     149:
         Code: CANN
         RegionId: null
+        Enabled: true
     150:
         Code: MAR
         RegionId: null
+        Enabled: true
     151:
         Code: VILL
         RegionId: null
+        Enabled: true
     152:
         Code: VEN
         RegionId: null
+        Enabled: true
     153:
         Code: AMAN
         RegionId: null
+        Enabled: true
     154:
         Code: PASS
         RegionId: null
+        Enabled: true
     155:
         Code: PORT
         RegionId: null
+        Enabled: true

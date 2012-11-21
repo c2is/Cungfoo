@@ -1,7 +1,10 @@
 \Cungfoo\Model\Destination:
     1:
         Code: MED
+        Enabled: true
     2:
         Code: ATL
+        Enabled: true
     3:
         Code: CAM
+        Enabled: true

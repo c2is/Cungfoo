@@ -6,6 +6,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     2:
         Code: PEDO
         ImagePath: .
@@ -13,6 +14,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     3:
         Code: CBRA
         ImagePath: .
@@ -20,6 +22,7 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        Enabled: true
     4:
         Code: GIRO
         ImagePath: .
@@ -27,6 +30,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     5:
         Code: ALJU
         ImagePath: .
@@ -34,6 +38,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     6:
         Code: LAND
         ImagePath: .
@@ -41,6 +46,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     7:
         Code: CDOR
         ImagePath: .
@@ -48,6 +54,7 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        Enabled: true
     8:
         Code: NORM
         ImagePath: .
@@ -55,6 +62,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     9:
         Code: BRET
         ImagePath: .
@@ -62,6 +70,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        Enabled: true
     10:
         Code: CHMA
         ImagePath: .
@@ -69,6 +78,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     11:
         Code: PBAS
         ImagePath: .
@@ -76,6 +86,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        Enabled: true
     12:
         Code: PLOI
         ImagePath: .
@@ -83,6 +94,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     13:
         Code: VEND
         ImagePath: .
@@ -90,6 +102,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     14:
         Code: LARO
         ImagePath: .
@@ -97,6 +110,7 @@
         ImageEncartPetitePath: uploads/regions/507829fb4777d.png
         PaysId: 1
         MeaHome: true
+        Enabled: true
     15:
         Code: GERS
         ImagePath: .
@@ -104,6 +118,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     16:
         Code: AUVE
         ImagePath: .
@@ -111,6 +126,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     17:
         Code: AVEY
         ImagePath: .
@@ -118,6 +134,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     18:
         Code: ARDE
         ImagePath: .
@@ -125,6 +142,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     19:
         Code: ARPY
         ImagePath: .
@@ -132,6 +150,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     20:
         Code: CTRO
         ImagePath: .
@@ -139,6 +158,7 @@
         ImageEncartPetitePath: null
         PaysId: 4
         MeaHome: null
+        Enabled: true
     21:
         Code: CORS
         ImagePath: .
@@ -146,6 +166,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        Enabled: true
     22:
         Code: DRHP
         ImagePath: .
@@ -153,6 +174,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     23:
         Code: IADR
         ImagePath: .
@@ -160,6 +182,7 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        Enabled: true
     24:
         Code: CAZA
         ImagePath: .
@@ -167,6 +190,7 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        Enabled: true
     25:
         Code: IMED
         ImagePath: .
@@ -174,6 +198,7 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        Enabled: true
     26:
         Code: ALP
         ImagePath: .
@@ -181,6 +206,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     27:
         Code: PCA
         ImagePath: .
@@ -188,6 +214,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        Enabled: true
     28:
         Code: VERD
         ImagePath: .
@@ -195,6 +222,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     29:
         Code: CTBR
         ImagePath: .
@@ -202,6 +230,7 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        Enabled: true
     30:
         Code: HERA
         ImagePath: .
@@ -209,6 +238,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     31:
         Code: AUDE
         ImagePath: .
@@ -216,6 +246,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     32:
         Code: TOSC
         ImagePath: .
@@ -223,6 +254,7 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        Enabled: true
     33:
         Code: PASD
         ImagePath: .
@@ -230,6 +262,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     34:
         Code: ILE
         ImagePath: .
@@ -237,6 +270,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true
     35:
         Code: PYRO
         ImagePath: .
@@ -244,3 +278,4 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        Enabled: true

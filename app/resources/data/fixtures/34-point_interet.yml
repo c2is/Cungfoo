@@ -9,6 +9,7 @@
         GeoCoordinateY: '-2.117444'
         DistanceCamping: '8616'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     2:
         Code: '66099'
         Address: ''
@@ -19,6 +20,7 @@
         GeoCoordinateY: '-2.123497'
         DistanceCamping: '13681'
         Image: 'http://viaimage.viafrance.com/images/evts/54202.jpg'
+        Enabled: true
     3:
         Code: '66091'
         Address: 'place de l''Eglise'
@@ -29,6 +31,7 @@
         GeoCoordinateY: '-2.181776'
         DistanceCamping: '16232'
         Image: 'http://viaimage.viafrance.com/images/evts/54194.jpg'
+        Enabled: true
     4:
         Code: '66100'
         Address: 'rue Louis Cristau'
@@ -39,6 +42,7 @@
         GeoCoordinateY: '-1.953350'
         DistanceCamping: '16975'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     5:
         Code: '56092'
         Address: 'place Formigé'
@@ -49,6 +53,7 @@
         GeoCoordinateY: '6.720581'
         DistanceCamping: '819'
         Image: 'http://viaimage.viafrance.com/images/evts/25220.jpg'
+        Enabled: true
     6:
         Code: '57973'
         Address: 'route des Combattants d''Afrique du Nord'
@@ -59,6 +64,7 @@
         GeoCoordinateY: '6.725976'
         DistanceCamping: '1162'
         Image: 'http://viaimage.viafrance.com/images/evts/46723.jpg'
+        Enabled: true
     7:
         Code: '58011'
         Address: 'route des Combattants d''Afrique du Nord'
@@ -69,6 +75,7 @@
         GeoCoordinateY: '6.725976'
         DistanceCamping: '1162'
         Image: 'http://viaimage.viafrance.com/images/evts/45421.jpg'
+        Enabled: true
     8:
         Code: '61615'
         Address: ''
@@ -79,6 +86,7 @@
         GeoCoordinateY: '6.738850'
         DistanceCamping: '1702'
         Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
+        Enabled: true
     9:
         Code: '91196'
         Address: ''
@@ -89,6 +97,7 @@
         GeoCoordinateY: '4.386054'
         DistanceCamping: '3353'
         Image: 'http://viaimage.viafrance.com/images/evts/104534.jpg'
+        Enabled: true
     10:
         Code: '90117'
         Address: 'chemin de la Vignasse'
@@ -99,6 +108,7 @@
         GeoCoordinateY: '4.315388'
         DistanceCamping: '4066'
         Image: 'http://viaimage.viafrance.com/images/evts/52348.jpg'
+        Enabled: true
     11:
         Code: '71708'
         Address: 'route Départementale 290'
@@ -109,6 +119,7 @@
         GeoCoordinateY: '4.416552'
         DistanceCamping: '5983'
         Image: 'http://viaimage.viafrance.com/images/evts/127921.jpg'
+        Enabled: true
     12:
         Code: '4811'
         Address: 'rue de L''avent'
@@ -119,6 +130,7 @@
         GeoCoordinateY: '4.412450'
         DistanceCamping: '11530'
         Image: 'http://viaimage.viafrance.com/images/evts/32294.jpg'
+        Enabled: true
     13:
         Code: '57654'
         Address: 'avenue de la Mer'
@@ -129,6 +141,7 @@
         GeoCoordinateY: '-4.106778'
         DistanceCamping: '578'
         Image: 'http://viaimage.viafrance.com/images/evts/40400.jpg'
+        Enabled: true
     14:
         Code: '55984'
         Address: 'avenue de la Mer'
@@ -139,6 +152,7 @@
         GeoCoordinateY: '-4.105584'
         DistanceCamping: '814'
         Image: 'http://viaimage.viafrance.com/images/evts/91582.jpg'
+        Enabled: true
     15:
         Code: '38111'
         Address: 'port de Plaisance'
@@ -149,6 +163,7 @@
         GeoCoordinateY: '-4.115098'
         DistanceCamping: '872'
         Image: 'http://viaimage.viafrance.com/images/evts/40400.jpg'
+        Enabled: true
     16:
         Code: '51116'
         Address: 'rue de l''Eglise'
@@ -159,6 +174,7 @@
         GeoCoordinateY: '-4.113516'
         DistanceCamping: '969'
         Image: 'http://viaimage.viafrance.com/images/evts/91582.jpg'
+        Enabled: true
     17:
         Code: '41694'
         Address: 'rue du Château'
@@ -169,6 +185,7 @@
         GeoCoordinateY: '2.942448'
         DistanceCamping: '1409'
         Image: 'http://viaimage.viafrance.com/images/evts/28474.jpg'
+        Enabled: true
     18:
         Code: '59976'
         Address: 'route de Besse'
@@ -179,6 +196,7 @@
         GeoCoordinateY: '2.974327'
         DistanceCamping: '4205'
         Image: 'http://viaimage.viafrance.com/images/evts/49426.jpg'
+        Enabled: true
     19:
         Code: '60429'
         Address: 'route départementale 639'
@@ -189,6 +207,7 @@
         GeoCoordinateY: '2.994085'
         DistanceCamping: '4733'
         Image: 'http://viaimage.viafrance.com/images/evts/47805.jpg'
+        Enabled: true
     20:
         Code: '78736'
         Address: 'Front de Neige'
@@ -199,6 +218,7 @@
         GeoCoordinateY: '2.853527'
         DistanceCamping: '8698'
         Image: 'http://viaimage.viafrance.com/images/evts/49425.jpg'
+        Enabled: true
     21:
         Code: '80707'
         Address: 'rue du Port'
@@ -209,6 +229,7 @@
         GeoCoordinateY: '3.050028'
         DistanceCamping: '2627'
         Image: 'http://viaimage.viafrance.com/images/evts/44105.jpg'
+        Enabled: true
     22:
         Code: '84181'
         Address: 'place Gambetta'
@@ -219,6 +240,7 @@
         GeoCoordinateY: '3.024362'
         DistanceCamping: '2906'
         Image: 'http://viaimage.viafrance.com/images/evts/17335.jpg'
+        Enabled: true
     23:
         Code: '61514'
         Address: ''
@@ -229,6 +251,7 @@
         GeoCoordinateY: '3.029014'
         DistanceCamping: '3889'
         Image: 'http://viaimage.viafrance.com/images/evts/42503.jpg'
+        Enabled: true
     24:
         Code: '58151'
         Address: 'rue Verdi'
@@ -239,6 +262,7 @@
         GeoCoordinateY: '3.031478'
         DistanceCamping: '4615'
         Image: 'http://viaimage.viafrance.com/images/evts/44334.jpg'
+        Enabled: true
     25:
         Code: '28263'
         Address: ''
@@ -249,6 +273,7 @@
         GeoCoordinateY: '-1.168428'
         DistanceCamping: '4760'
         Image: 'http://viaimage.viafrance.com/images/evts/69198.jpg'
+        Enabled: true
     26:
         Code: '60316'
         Address: 'rue Camile-Samson'
@@ -259,6 +284,7 @@
         GeoCoordinateY: '-1.208421'
         DistanceCamping: '12427'
         Image: 'http://viaimage.viafrance.com/images/evts/49421.jpg'
+        Enabled: true
     27:
         Code: '28260'
         Address: 'rue de la Gataudière'
@@ -269,6 +295,7 @@
         GeoCoordinateY: '-1.113081'
         DistanceCamping: '12689'
         Image: 'http://viaimage.viafrance.com/images/evts/47805.jpg'
+        Enabled: true
     28:
         Code: '29519'
         Address: ''
@@ -279,6 +306,7 @@
         GeoCoordinateY: '-1.174034'
         DistanceCamping: '14126'
         Image: 'http://viaimage.viafrance.com/images/evts/15256.jpg'
+        Enabled: true
     29:
         Code: '23150'
         Address: 'avenue de la Grande-Plage'
@@ -289,6 +317,7 @@
         GeoCoordinateY: '-1.432910'
         DistanceCamping: '13518'
         Image: 'http://viaimage.viafrance.com/images/evts/157213.jpg'
+        Enabled: true
     30:
         Code: '19215'
         Address: 'avenue du Golf'
@@ -299,6 +328,7 @@
         GeoCoordinateY: '-1.413838'
         DistanceCamping: '16598'
         Image: 'http://viaimage.viafrance.com/images/evts/61604.jpg'
+        Enabled: true
     31:
         Code: '53905'
         Address: 'avenue du Général-de-Gaulle'
@@ -309,6 +339,7 @@
         GeoCoordinateY: '-1.432538'
         DistanceCamping: '18727'
         Image: 'http://viaimage.viafrance.com/images/evts/26795.jpg'
+        Enabled: true
     32:
         Code: '57324'
         Address: 'allée du Bois de Boulogne'
@@ -319,6 +350,7 @@
         GeoCoordinateY: '-1.069956'
         DistanceCamping: '20627'
         Image: 'http://viaimage.viafrance.com/images/evts/44989.jpg'
+        Enabled: true
     33:
         Code: '65928'
         Address: 'quartier Le Capou'
@@ -329,6 +361,7 @@
         GeoCoordinateY: '6.728090'
         DistanceCamping: '2964'
         Image: 'http://viaimage.viafrance.com/images/evts/48364.jpg'
+        Enabled: true
     34:
         Code: '95693'
         Address: 'rue Martin Bidouré'
@@ -339,6 +372,7 @@
         GeoCoordinateY: '6.733871'
         DistanceCamping: '4408'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     35:
         Code: '45208'
         Address: Vieux-Port
@@ -349,6 +383,7 @@
         GeoCoordinateY: '6.764728'
         DistanceCamping: '4526'
         Image: 'http://viaimage.viafrance.com/images/evts/61989.jpg'
+        Enabled: true
     36:
         Code: '1299'
         Address: 'rue Henri-Vadon'
@@ -359,6 +394,7 @@
         GeoCoordinateY: '6.730175'
         DistanceCamping: '4587'
         Image: 'http://viaimage.viafrance.com/images/evts/45411.jpg'
+        Enabled: true
     37:
         Code: '92242'
         Address: 'avenue du Roi'
@@ -369,6 +405,7 @@
         GeoCoordinateY: '6.967936'
         DistanceCamping: '2411'
         Image: 'http://viaimage.viafrance.com/images/evts/71522.jpg'
+        Enabled: true
     38:
         Code: '1291'
         Address: 'avenue Georges-Pompidou'
@@ -379,6 +416,7 @@
         GeoCoordinateY: '6.985350'
         DistanceCamping: '4294'
         Image: 'http://viaimage.viafrance.com/images/evts/50312.jpg'
+        Enabled: true
     39:
         Code: '4480'
         Address: 'avenue Pierre-de-Coubertin'
@@ -389,6 +427,7 @@
         GeoCoordinateY: '6.965446'
         DistanceCamping: '4593'
         Image: 'http://viaimage.viafrance.com/images/evts/49418.jpg'
+        Enabled: true
     40:
         Code: '60560'
         Address: 'route de Cannes'
@@ -399,6 +438,7 @@
         GeoCoordinateY: '6.959534'
         DistanceCamping: '4670'
         Image: 'http://viaimage.viafrance.com/images/evts/27947.jpg'
+        Enabled: true
     41:
         Code: '91053'
         Address: 'Grotte Sainte-Marie-Madeleine'
@@ -409,6 +449,7 @@
         GeoCoordinateY: '5.756867'
         DistanceCamping: '6271'
         Image: 'http://viaimage.viafrance.com/images/evts/2423.jpg'
+        Enabled: true
     42:
         Code: '117637'
         Address: 'Montagne de Sainte Baume'
@@ -419,6 +460,7 @@
         GeoCoordinateY: '5.756380'
         DistanceCamping: '8640'
         Image: 'http://viaimage.viafrance.com/images/evts/49877.jpg'
+        Enabled: true
     43:
         Code: '8379'
         Address: 'place Jean Salusse'
@@ -429,6 +471,7 @@
         GeoCoordinateY: '5.863094'
         DistanceCamping: '10425'
         Image: 'http://viaimage.viafrance.com/images/evts/49439.jpg'
+        Enabled: true
     44:
         Code: '26177'
         Address: 'route départementale 1'
@@ -439,6 +482,7 @@
         GeoCoordinateY: '5.728921'
         DistanceCamping: '12987'
         Image: 'http://viaimage.viafrance.com/images/evts/127559.jpg'
+        Enabled: true
     45:
         Code: '94167'
         Address: 'quai Santa Maria'
@@ -449,6 +493,7 @@
         GeoCoordinateY: '3.036630'
         DistanceCamping: '1240'
         Image: 'http://viaimage.viafrance.com/images/evts/145218.jpg'
+        Enabled: true
     46:
         Code: '57821'
         Address: 'rue Fellini'
@@ -459,6 +504,7 @@
         GeoCoordinateY: '2.938941'
         DistanceCamping: '7902'
         Image: 'http://viaimage.viafrance.com/images/evts/101679.jpg'
+        Enabled: true
     47:
         Code: '51612'
         Address: 'boulevard du Port'
@@ -469,6 +515,7 @@
         GeoCoordinateY: '3.039345'
         DistanceCamping: '9233'
         Image: 'http://viaimage.viafrance.com/images/evts/127058.jpg'
+        Enabled: true
     48:
         Code: '63321'
         Address: 'Rue Jouy-d''Arnaud'
@@ -479,6 +526,7 @@
         GeoCoordinateY: '3.003125'
         DistanceCamping: '9579'
         Image: 'http://viaimage.viafrance.com/images/evts/7220.jpg'
+        Enabled: true
     49:
         Code: '55153'
         Address: 'route de Viuz'
@@ -489,6 +537,7 @@
         GeoCoordinateY: '6.291651'
         DistanceCamping: '5554'
         Image: 'http://viaimage.viafrance.com/images/evts/44083.jpg'
+        Enabled: true
     50:
         Code: '55156'
         Address: 'route du Piron'
@@ -499,6 +548,7 @@
         GeoCoordinateY: '6.149990'
         DistanceCamping: '9740'
         Image: 'http://viaimage.viafrance.com/images/evts/82035.jpg'
+        Enabled: true
     51:
         Code: '91195'
         Address: ''
@@ -509,6 +559,7 @@
         GeoCoordinateY: '6.304474'
         DistanceCamping: '11499'
         Image: 'http://viaimage.viafrance.com/images/evts/43216.jpg'
+        Enabled: true
     52:
         Code: '55160'
         Address: 'route de l''Eglise'
@@ -519,6 +570,7 @@
         GeoCoordinateY: '6.141550'
         DistanceCamping: '11844'
         Image: 'http://viaimage.viafrance.com/images/evts/115031.jpg'
+        Enabled: true
     53:
         Code: '227'
         Address: 'la Perrotine'
@@ -529,6 +581,7 @@
         GeoCoordinateY: '-1.242856'
         DistanceCamping: '476'
         Image: 'http://viaimage.viafrance.com/images/evts/67449.jpg'
+        Enabled: true
     54:
         Code: '104981'
         Address: ''
@@ -539,6 +592,7 @@
         GeoCoordinateY: '-1.213828'
         DistanceCamping: '4230'
         Image: 'http://viaimage.viafrance.com/images/evts/39963.jpg'
+        Enabled: true
     55:
         Code: '58611'
         Address: 'rue Pierre Loti'
@@ -549,6 +603,7 @@
         GeoCoordinateY: '-1.303976'
         DistanceCamping: '5299'
         Image: 'http://viaimage.viafrance.com/images/evts/19327.jpg'
+        Enabled: true
     56:
         Code: '58624'
         Address: 'place Camille Memain'
@@ -559,6 +614,7 @@
         GeoCoordinateY: '-1.305996'
         DistanceCamping: '5364'
         Image: 'http://viaimage.viafrance.com/images/evts/49448.jpg'
+        Enabled: true
     57:
         Code: '24824'
         Address: 'quai Arthur-Rimbaud'
@@ -569,6 +625,7 @@
         GeoCoordinateY: '3.036955'
         DistanceCamping: '1037'
         Image: 'http://viaimage.viafrance.com/images/evts/42240.jpg'
+        Enabled: true
     58:
         Code: '58117'
         Address: 'rue Camille Desmoulin'
@@ -579,6 +636,7 @@
         GeoCoordinateY: '2.999682'
         DistanceCamping: '2365'
         Image: 'http://viaimage.viafrance.com/images/evts/44285.jpg'
+        Enabled: true
     59:
         Code: '17615'
         Address: 'avenue François-Tubau'
@@ -589,6 +647,7 @@
         GeoCoordinateY: '2.918343'
         DistanceCamping: '10154'
         Image: 'http://viaimage.viafrance.com/images/evts/26513.jpg'
+        Enabled: true
     60:
         Code: '104576'
         Address: 'rue du Ballon'
@@ -599,6 +658,7 @@
         GeoCoordinateY: '7.180504'
         DistanceCamping: '2079'
         Image: 'http://viaimage.viafrance.com/images/evts/51713.jpg'
+        Enabled: true
     61:
         Code: '28417'
         Address: 'place Joffre'
@@ -609,6 +669,7 @@
         GeoCoordinateY: '7.101299'
         DistanceCamping: '5440'
         Image: 'http://viaimage.viafrance.com/images/evts/39043.jpg'
+        Enabled: true
     62:
         Code: '91040'
         Address: ''
@@ -619,6 +680,7 @@
         GeoCoordinateY: '7.189483'
         DistanceCamping: '5592'
         Image: 'http://viaimage.viafrance.com/images/evts/48879.jpg'
+        Enabled: true
     63:
         Code: '16892'
         Address: 'rue du 4-Février'
@@ -629,6 +691,7 @@
         GeoCoordinateY: '7.215265'
         DistanceCamping: '8814'
         Image: 'http://viaimage.viafrance.com/images/evts/12318.jpg'
+        Enabled: true
     64:
         Code: '61055'
         Address: 'Etang de Lacanau'
@@ -639,6 +702,7 @@
         GeoCoordinateY: '-1.117356'
         DistanceCamping: '3956'
         Image: 'http://viaimage.viafrance.com/images/evts/48622.jpg'
+        Enabled: true
     65:
         Code: '52480'
         Address: 'route du Baganais'
@@ -649,6 +713,7 @@
         GeoCoordinateY: '-1.167706'
         DistanceCamping: '4709'
         Image: 'http://viaimage.viafrance.com/images/evts/47792.jpg'
+        Enabled: true
     66:
         Code: '50155'
         Address: 'route D-207'
@@ -659,6 +724,7 @@
         GeoCoordinateY: '-1.125438'
         DistanceCamping: '5938'
         Image: 'http://viaimage.viafrance.com/images/evts/68834.jpg'
+        Enabled: true
     67:
         Code: '10461'
         Address: 'domaine des Bombannes'
@@ -669,6 +735,7 @@
         GeoCoordinateY: '-1.141757'
         DistanceCamping: '10937'
         Image: 'http://viaimage.viafrance.com/images/evts/40514.jpg'
+        Enabled: true
     68:
         Code: '17007'
         Address: 'avenue du Général-de-Gaulle'
@@ -679,6 +746,7 @@
         GeoCoordinateY: '-1.607676'
         DistanceCamping: '1932'
         Image: 'http://viaimage.viafrance.com/images/evts/157141.jpg'
+        Enabled: true
     69:
         Code: '31533'
         Address: 'Plage de la Chambre'
@@ -689,6 +757,7 @@
         GeoCoordinateY: '-1.573558'
         DistanceCamping: '3479'
         Image: 'http://viaimage.viafrance.com/images/evts/54020.jpg'
+        Enabled: true
     70:
         Code: '55180'
         Address: 'rue Pierre-de-Chevigné'
@@ -699,6 +768,7 @@
         GeoCoordinateY: '-1.566551'
         DistanceCamping: '4164'
         Image: 'http://viaimage.viafrance.com/images/evts/17440.jpg'
+        Enabled: true
     71:
         Code: '95277'
         Address: 'allée de l''Orée du Lac'
@@ -709,6 +779,7 @@
         GeoCoordinateY: '-1.552472'
         DistanceCamping: '4218'
         Image: 'http://viaimage.viafrance.com/images/evts/11862.jpg'
+        Enabled: true
     72:
         Code: '60303'
         Address: ''
@@ -719,6 +790,7 @@
         GeoCoordinateY: '9.512293'
         DistanceCamping: '16078'
         Image: 'http://viaimage.viafrance.com/images/evts/82301.jpg'
+        Enabled: true
     73:
         Code: '60548'
         Address: ''
@@ -729,6 +801,7 @@
         GeoCoordinateY: '9.331065'
         DistanceCamping: '17342'
         Image: 'http://viaimage.viafrance.com/images/evts/47758.jpg'
+        Enabled: true
     74:
         Code: '60300'
         Address: 'route départementale 268'
@@ -739,6 +812,7 @@
         GeoCoordinateY: '9.231445'
         DistanceCamping: '23242'
         Image: 'http://viaimage.viafrance.com/images/evts/24763.jpg'
+        Enabled: true
     75:
         Code: '105050'
         Address: ''
@@ -749,6 +823,7 @@
         GeoCoordinateY: '9.556117'
         DistanceCamping: '26819'
         Image: 'http://viaimage.viafrance.com/images/evts/68243.jpg'
+        Enabled: true
     76:
         Code: '56659'
         Address: 'avenue de l''Océan'
@@ -759,6 +834,7 @@
         GeoCoordinateY: '-1.431453'
         DistanceCamping: '22896'
         Image: 'http://viaimage.viafrance.com/images/evts/3445.jpg'
+        Enabled: true
     77:
         Code: '5117'
         Address: 'rue du Maroc'
@@ -769,6 +845,7 @@
         GeoCoordinateY: '-1.938205'
         DistanceCamping: '11305'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     78:
         Code: '22041'
         Address: ''
@@ -779,6 +856,7 @@
         GeoCoordinateY: '-1.938006'
         DistanceCamping: '11363'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     79:
         Code: '66102'
         Address: ''
@@ -789,6 +867,7 @@
         GeoCoordinateY: '-1.933684'
         DistanceCamping: '11512'
         Image: 'http://viaimage.viafrance.com/images/evts/49436.jpg'
+        Enabled: true
     80:
         Code: '71652'
         Address: ''
@@ -799,6 +878,7 @@
         GeoCoordinateY: '-1.541721'
         DistanceCamping: '2972'
         Image: 'http://viaimage.viafrance.com/images/evts/49435.jpg'
+        Enabled: true
     81:
         Code: '95724'
         Address: 'allée du Moura'
@@ -809,6 +889,7 @@
         GeoCoordinateY: '-1.544700'
         DistanceCamping: '3151'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     82:
         Code: '29149'
         Address: 'boulevard de la marine'
@@ -819,6 +900,7 @@
         GeoCoordinateY: '6.161805'
         DistanceCamping: '277'
         Image: 'http://viaimage.viafrance.com/images/evts/127057.jpg'
+        Enabled: true
     83:
         Code: '349'
         Address: 'quartier de l''Almanarre'
@@ -829,6 +911,7 @@
         GeoCoordinateY: '6.127331'
         DistanceCamping: '3316'
         Image: 'http://viaimage.viafrance.com/images/evts/157148.jpg'
+        Enabled: true
     84:
         Code: '58388'
         Address: 'avenue Ambroise Thomas'
@@ -839,6 +922,7 @@
         GeoCoordinateY: '6.134371'
         DistanceCamping: '3325'
         Image: 'http://viaimage.viafrance.com/images/evts/15591.jpg'
+        Enabled: true
     85:
         Code: '95642'
         Address: 'place de l''Europe'
@@ -849,6 +933,7 @@
         GeoCoordinateY: '6.147811'
         DistanceCamping: '3351'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     86:
         Code: '28238'
         Address: 'place Saint-Paul'
@@ -859,6 +944,7 @@
         GeoCoordinateY: '3.249817'
         DistanceCamping: null
         Image: 'http://viaimage.viafrance.com/images/evts/37145.jpg'
+        Enabled: true
     87:
         Code: '8482'
         Address: 'place de l''Eglise'
@@ -869,6 +955,7 @@
         GeoCoordinateY: '2.397903'
         DistanceCamping: null
         Image: 'http://viaimage.viafrance.com/images/evts/124348.jpg'
+        Enabled: true
     88:
         Code: '5611'
         Address: 'rue de l''Abbaye'
@@ -879,6 +966,7 @@
         GeoCoordinateY: '1.838230'
         DistanceCamping: null
         Image: 'http://viaimage.viafrance.com/images/evts/42521.jpg'
+        Enabled: true
     89:
         Code: '8514'
         Address: 'place Durand-de-Bredon'
@@ -889,6 +977,7 @@
         GeoCoordinateY: '1.084271'
         DistanceCamping: null
         Image: 'http://viaimage.viafrance.com/images/evts/40113.jpg'
+        Enabled: true
     90:
         Code: '6028'
         Address: 'quai Augustin-Descournut'
@@ -899,6 +988,7 @@
         GeoCoordinateY: '3.606009'
         DistanceCamping: '857'
         Image: 'http://viaimage.viafrance.com/images/evts/91989.jpg'
+        Enabled: true
     91:
         Code: '43446'
         Address: 'chemin des Aiguilles'
@@ -909,6 +999,7 @@
         GeoCoordinateY: '3.658316'
         DistanceCamping: '4593'
         Image: 'http://viaimage.viafrance.com/images/evts/127008.jpg'
+        Enabled: true
     92:
         Code: '90755'
         Address: 'chemin de la Poule d''eau'
@@ -919,6 +1010,7 @@
         GeoCoordinateY: '3.657884'
         DistanceCamping: '4952'
         Image: 'http://viaimage.viafrance.com/images/evts/104960.jpg'
+        Enabled: true
     93:
         Code: '65913'
         Address: 'boulevard Camille Blanc'
@@ -929,6 +1021,7 @@
         GeoCoordinateY: '3.664658'
         DistanceCamping: '5147'
         Image: 'http://viaimage.viafrance.com/images/evts/54154.jpg'
+        Enabled: true
     94:
         Code: '60968'
         Address: 'rue Léonce Mailho'
@@ -939,6 +1032,7 @@
         GeoCoordinateY: '-1.152978'
         DistanceCamping: '3060'
         Image: 'http://viaimage.viafrance.com/images/evts/71489.jpg'
+        Enabled: true
     95:
         Code: '1711'
         Address: 'rue Henri-Barbusse'
@@ -949,6 +1043,7 @@
         GeoCoordinateY: '-1.139995'
         DistanceCamping: '3128'
         Image: 'http://viaimage.viafrance.com/images/evts/60185.jpg'
+        Enabled: true
     96:
         Code: '3397'
         Address: 'rue Albert 1er'
@@ -959,6 +1054,7 @@
         GeoCoordinateY: '-1.151577'
         DistanceCamping: '3170'
         Image: 'http://viaimage.viafrance.com/images/evts/50281.jpg'
+        Enabled: true
     97:
         Code: '353'
         Address: 'rue Fleuriau'
@@ -969,6 +1065,7 @@
         GeoCoordinateY: '-1.151290'
         DistanceCamping: '3334'
         Image: 'http://viaimage.viafrance.com/images/evts/102862.jpg'
+        Enabled: true
     98:
         Code: '22373'
         Address: 'rue des Marais'
@@ -979,6 +1076,7 @@
         GeoCoordinateY: '-1.782585'
         DistanceCamping: '1895'
         Image: 'http://viaimage.viafrance.com/images/evts/44305.jpg'
+        Enabled: true
     99:
         Code: '22138'
         Address: 'rue Foch'
@@ -989,6 +1087,7 @@
         GeoCoordinateY: '-1.777073'
         DistanceCamping: '2891'
         Image: 'http://viaimage.viafrance.com/images/evts/86753.jpg'
+        Enabled: true
     100:
         Code: '95699'
         Address: 'place de la gare'
@@ -999,6 +1098,7 @@
         GeoCoordinateY: '-1.780701'
         DistanceCamping: '6384'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     101:
         Code: '28997'
         Address: 'rue du Maréchal-Leclerc'
@@ -1009,6 +1109,7 @@
         GeoCoordinateY: '-1.785531'
         DistanceCamping: '6512'
         Image: 'http://viaimage.viafrance.com/images/evts/13358.jpg'
+        Enabled: true
     102:
         Code: '56808'
         Address: 'quai Bonnelle'
@@ -1019,6 +1120,7 @@
         GeoCoordinateY: '-3.178866'
         DistanceCamping: '4401'
         Image: 'http://viaimage.viafrance.com/images/evts/42841.jpg'
+        Enabled: true
     103:
         Code: '71664'
         Address: 'Pointe des Poulains'
@@ -1029,6 +1131,7 @@
         GeoCoordinateY: '-3.249245'
         DistanceCamping: '6898'
         Image: 'http://viaimage.viafrance.com/images/evts/70487.jpg'
+        Enabled: true
     104:
         Code: '71733'
         Address: ''
@@ -1039,6 +1142,7 @@
         GeoCoordinateY: '-3.128465'
         DistanceCamping: '17973'
         Image: 'http://viaimage.viafrance.com/images/evts/58886.jpg'
+        Enabled: true
     105:
         Code: '90679'
         Address: 'avenue de Saint-Malo'
@@ -1049,6 +1153,7 @@
         GeoCoordinateY: '-3.134190'
         DistanceCamping: '21974'
         Image: 'http://viaimage.viafrance.com/images/evts/72597.jpg'
+        Enabled: true
     106:
         Code: '23276'
         Address: 'boulevard El-Burgo-de-Osma'
@@ -1059,6 +1164,7 @@
         GeoCoordinateY: '-1.130114'
         DistanceCamping: '15488'
         Image: 'http://viaimage.viafrance.com/images/evts/35525.jpg'
+        Enabled: true
     107:
         Code: '32004'
         Address: 'place Aliénor-d''Aquitaine'
@@ -1069,6 +1175,7 @@
         GeoCoordinateY: '-1.121698'
         DistanceCamping: '15660'
         Image: 'http://viaimage.viafrance.com/images/evts/42777.jpg'
+        Enabled: true
     108:
         Code: '16550'
         Address: ''
@@ -1079,6 +1186,7 @@
         GeoCoordinateY: '-1.173477'
         DistanceCamping: '23719'
         Image: 'http://viaimage.viafrance.com/images/evts/43940.jpg'
+        Enabled: true
     109:
         Code: '56671'
         Address: 'boulevard de la Falaise'
@@ -1089,6 +1197,7 @@
         GeoCoordinateY: '-0.957800'
         DistanceCamping: '24908'
         Image: 'http://viaimage.viafrance.com/images/evts/49426.jpg'
+        Enabled: true
     110:
         Code: '95640'
         Address: 'place Rhin et Danube'
@@ -1099,6 +1208,7 @@
         GeoCoordinateY: '-2.389625'
         DistanceCamping: '2147'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     111:
         Code: '60569'
         Address: 'domaine de Saint-Denac'
@@ -1109,6 +1219,7 @@
         GeoCoordinateY: '-2.336111'
         DistanceCamping: '3413'
         Image: 'http://viaimage.viafrance.com/images/evts/7220.jpg'
+        Enabled: true
     112:
         Code: '22369'
         Address: 'quai Rageot-de-la-Touche'
@@ -1119,6 +1230,7 @@
         GeoCoordinateY: '-2.411379'
         DistanceCamping: '3945'
         Image: 'http://viaimage.viafrance.com/images/evts/82375.jpg'
+        Enabled: true
     113:
         Code: '69530'
         Address: 'boulevard du Port'
@@ -1129,6 +1241,7 @@
         GeoCoordinateY: '-2.344086'
         DistanceCamping: '5803'
         Image: 'http://viaimage.viafrance.com/images/evts/145137.jpg'
+        Enabled: true
     114:
         Code: '68555'
         Address: 'route des Grottes'
@@ -1139,6 +1252,7 @@
         GeoCoordinateY: '1.030007'
         DistanceCamping: '4367'
         Image: 'http://viaimage.viafrance.com/images/evts/49426.jpg'
+        Enabled: true
     115:
         Code: '41324'
         Address: 'avenue Grottes'
@@ -1149,6 +1263,7 @@
         GeoCoordinateY: '1.026965'
         DistanceCamping: '4590'
         Image: 'http://viaimage.viafrance.com/images/evts/26529.jpg'
+        Enabled: true
     116:
         Code: '68558'
         Address: 'route départementale 32'
@@ -1159,6 +1274,7 @@
         GeoCoordinateY: '1.026766'
         DistanceCamping: '4605'
         Image: 'http://viaimage.viafrance.com/images/evts/49426.jpg'
+        Enabled: true
     117:
         Code: '362'
         Address: 'rue du Musée'
@@ -1169,6 +1285,7 @@
         GeoCoordinateY: '1.013459'
         DistanceCamping: '5653'
         Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
+        Enabled: true
     118:
         Code: '60489'
         Address: ''
@@ -1179,6 +1296,7 @@
         GeoCoordinateY: '6.152485'
         DistanceCamping: '14315'
         Image: 'http://viaimage.viafrance.com/images/evts/94426.jpg'
+        Enabled: true
     119:
         Code: '58329'
         Address: 'place Saint-Arnoux'
@@ -1189,6 +1307,7 @@
         GeoCoordinateY: '6.077618'
         DistanceCamping: '15204'
         Image: 'http://viaimage.viafrance.com/images/evts/62235.jpg'
+        Enabled: true
     120:
         Code: '58334'
         Address: 'rue Carnot'
@@ -1199,6 +1318,7 @@
         GeoCoordinateY: '6.080668'
         DistanceCamping: '15379'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     121:
         Code: '58333'
         Address: 'rue Colonel Roux'
@@ -1209,6 +1329,7 @@
         GeoCoordinateY: '6.079745'
         DistanceCamping: '15382'
         Image: 'http://viaimage.viafrance.com/images/evts/71474.jpg'
+        Enabled: true
     122:
         Code: '4096'
         Address: 'Mas de la Clape'
@@ -1219,6 +1340,7 @@
         GeoCoordinateY: '3.513445'
         DistanceCamping: '2574'
         Image: 'http://viaimage.viafrance.com/images/evts/53981.jpg'
+        Enabled: true
     123:
         Code: '40301'
         Address: 'quai Jean-Miquel'
@@ -1229,6 +1351,7 @@
         GeoCoordinateY: '3.511861'
         DistanceCamping: '2853'
         Image: 'http://viaimage.viafrance.com/images/evts/126931.jpg'
+        Enabled: true
     124:
         Code: '65992'
         Address: 'rue de la Fraternité'
@@ -1239,6 +1362,7 @@
         GeoCoordinateY: '3.468767'
         DistanceCamping: '3296'
         Image: 'http://viaimage.viafrance.com/images/evts/53977.jpg'
+        Enabled: true
     125:
         Code: '2164'
         Address: 'rue de l''Hôtel du Cheval Blanc'
@@ -1249,6 +1373,7 @@
         GeoCoordinateY: '3.468809'
         DistanceCamping: '3313'
         Image: 'http://viaimage.viafrance.com/images/evts/53975.jpg'
+        Enabled: true
     126:
         Code: '90974'
         Address: 'place de la Halle'
@@ -1259,6 +1384,7 @@
         GeoCoordinateY: '1.214630'
         DistanceCamping: '7782'
         Image: 'http://viaimage.viafrance.com/images/evts/53286.jpg'
+        Enabled: true
     127:
         Code: '90975'
         Address: 'La Roque-Gageac'
@@ -1269,6 +1395,7 @@
         GeoCoordinateY: '1.189403'
         DistanceCamping: '10894'
         Image: 'http://viaimage.viafrance.com/images/evts/53287.jpg'
+        Enabled: true
     128:
         Code: '60130'
         Address: 'Le Bourg'
@@ -1279,6 +1406,7 @@
         GeoCoordinateY: '1.184287'
         DistanceCamping: '11126'
         Image: 'http://viaimage.viafrance.com/images/evts/49416.jpg'
+        Enabled: true
     129:
         Code: '23291'
         Address: ''
@@ -1289,6 +1417,7 @@
         GeoCoordinateY: '1.143506'
         DistanceCamping: '12073'
         Image: 'http://viaimage.viafrance.com/images/evts/15484.jpg'
+        Enabled: true
     130:
         Code: '47469'
         Address: 'route des Mas'
@@ -1299,6 +1428,7 @@
         GeoCoordinateY: '3.117454'
         DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/31672.jpg'
+        Enabled: true
     131:
         Code: '28809'
         Address: 'rue Roger-David'
@@ -1309,6 +1439,7 @@
         GeoCoordinateY: '3.132030'
         DistanceCamping: '24979'
         Image: 'http://viaimage.viafrance.com/images/evts/157912.jpg'
+        Enabled: true
     132:
         Code: '47474'
         Address: 'avenue Fontaulé'
@@ -1319,6 +1450,7 @@
         GeoCoordinateY: '3.133504'
         DistanceCamping: '24985'
         Image: 'http://viaimage.viafrance.com/images/evts/157911.jpg'
+        Enabled: true
     133:
         Code: '61370'
         Address: 'avenue Déodat Alaus'
@@ -1329,6 +1461,7 @@
         GeoCoordinateY: '2.958496'
         DistanceCamping: '16311'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     134:
         Code: '28897'
         Address: 'route Départementale 529'
@@ -1339,6 +1472,7 @@
         GeoCoordinateY: '2.987895'
         DistanceCamping: '17632'
         Image: 'http://viaimage.viafrance.com/images/evts/53750.jpg'
+        Enabled: true
     135:
         Code: '58690'
         Address: 'avenue de Layoule'
@@ -1349,6 +1483,7 @@
         GeoCoordinateY: '2.580799'
         DistanceCamping: '21258'
         Image: 'http://viaimage.viafrance.com/images/evts/45056.jpg'
+        Enabled: true
     136:
         Code: '23738'
         Address: 'place Raynaldy'
@@ -1359,6 +1494,7 @@
         GeoCoordinateY: '2.576384'
         DistanceCamping: '21294'
         Image: 'http://viaimage.viafrance.com/images/evts/13219.jpg'
+        Enabled: true
     137:
         Code: '123355'
         Address: 'chemin de la Grande Cosse'
@@ -1369,6 +1505,7 @@
         GeoCoordinateY: '3.399802'
         DistanceCamping: '2589'
         Image: 'http://viaimage.viafrance.com/images/evts/146275.jpg'
+        Enabled: true
     138:
         Code: '54155'
         Address: 'voie Communale du Tricot et des Tots'
@@ -1379,6 +1516,7 @@
         GeoCoordinateY: '3.420289'
         DistanceCamping: '4116'
         Image: 'http://viaimage.viafrance.com/images/evts/38267.jpg'
+        Enabled: true
     139:
         Code: '105998'
         Address: 'rue du Lieutenant Panis'
@@ -1389,6 +1527,7 @@
         GeoCoordinateY: '3.295227'
         DistanceCamping: '7249'
         Image: 'http://viaimage.viafrance.com/images/evts/83027.jpg'
+        Enabled: true
     140:
         Code: '40299'
         Address: 'quai Le Moyne de Serigny'
@@ -1399,6 +1538,7 @@
         GeoCoordinateY: '-0.956827'
         DistanceCamping: '8974'
         Image: 'http://viaimage.viafrance.com/images/evts/127170.jpg'
+        Enabled: true
     141:
         Code: '58603'
         Address: 'avenue Rochambeau'
@@ -1409,6 +1549,7 @@
         GeoCoordinateY: '-0.965919'
         DistanceCamping: '9005'
         Image: 'http://viaimage.viafrance.com/images/evts/48046.jpg'
+        Enabled: true
     142:
         Code: '58596'
         Address: 'rue Audry-de-Puyravault'
@@ -1419,6 +1560,7 @@
         GeoCoordinateY: '-0.962334'
         DistanceCamping: '9066'
         Image: 'http://viaimage.viafrance.com/images/evts/48041.jpg'
+        Enabled: true
     143:
         Code: '27185'
         Address: 'place Colbert'
@@ -1429,6 +1571,7 @@
         GeoCoordinateY: '-0.962222'
         DistanceCamping: '9116'
         Image: 'http://viaimage.viafrance.com/images/evts/68419.jpg'
+        Enabled: true
     144:
         Code: '95522'
         Address: 'rue de Châtelet'
@@ -1439,6 +1582,7 @@
         GeoCoordinateY: '-2.186577'
         DistanceCamping: '5441'
         Image: 'http://viaimage.viafrance.com/images/evts/42854.jpg'
+        Enabled: true
     145:
         Code: '5974'
         Address: 'boulevard des Maréchaux'
@@ -1449,6 +1593,7 @@
         GeoCoordinateY: '-2.055967'
         DistanceCamping: '15497'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     146:
         Code: '66120'
         Address: 'allée des Douaniers'
@@ -1459,6 +1604,7 @@
         GeoCoordinateY: '-2.058014'
         DistanceCamping: '15880'
         Image: 'http://viaimage.viafrance.com/images/evts/37048.jpg'
+        Enabled: true
     147:
         Code: '53962'
         Address: 'boulevard Wilson'
@@ -1469,6 +1615,7 @@
         GeoCoordinateY: '-2.050738'
         DistanceCamping: '16126'
         Image: 'http://viaimage.viafrance.com/images/evts/57625.jpg'
+        Enabled: true
     148:
         Code: '92599'
         Address: 'rue du Petit-Bois'
@@ -1479,6 +1626,7 @@
         GeoCoordinateY: '-2.076257'
         DistanceCamping: '251'
         Image: 'http://viaimage.viafrance.com/images/evts/51785.jpg'
+        Enabled: true
     149:
         Code: '92601'
         Address: 'rue de la Gare'
@@ -1489,6 +1637,7 @@
         GeoCoordinateY: '-2.054559'
         DistanceCamping: '1430'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     150:
         Code: '28336'
         Address: 'Val Saint-Martin'
@@ -1499,6 +1648,7 @@
         GeoCoordinateY: '-2.091729'
         DistanceCamping: '1442'
         Image: 'http://viaimage.viafrance.com/images/evts/50483.jpg'
+        Enabled: true
     151:
         Code: '96714'
         Address: 'quai l''Herminier'
@@ -1509,6 +1659,7 @@
         GeoCoordinateY: '-2.100849'
         DistanceCamping: '2175'
         Image: 'http://viaimage.viafrance.com/images/evts/37044.jpg'
+        Enabled: true
     152:
         Code: '80390'
         Address: 'Sous le Roc'
@@ -1519,6 +1670,7 @@
         GeoCoordinateY: '1.302346'
         DistanceCamping: '1266'
         Image: 'http://viaimage.viafrance.com/images/evts/124313.jpg'
+        Enabled: true
     153:
         Code: '58244'
         Address: 'cour des Chanoines'
@@ -1529,6 +1681,7 @@
         GeoCoordinateY: '1.217632'
         DistanceCamping: '6853'
         Image: 'http://viaimage.viafrance.com/images/evts/49440.jpg'
+        Enabled: true
     154:
         Code: '58255'
         Address: 'rue Landry'
@@ -1539,6 +1692,7 @@
         GeoCoordinateY: '1.218120'
         DistanceCamping: '6866'
         Image: 'http://viaimage.viafrance.com/images/evts/40862.jpg'
+        Enabled: true
     155:
         Code: '58245'
         Address: 'rue Montaigne'
@@ -1549,6 +1703,7 @@
         GeoCoordinateY: '1.217629'
         DistanceCamping: '6881'
         Image: 'http://viaimage.viafrance.com/images/evts/49448.jpg'
+        Enabled: true
     156:
         Code: '95725'
         Address: 'avenue de la gare'
@@ -1559,6 +1714,7 @@
         GeoCoordinateY: '-1.051052'
         DistanceCamping: '29092'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     157:
         Code: '31775'
         Address: 'avenue des Salines'
@@ -1569,6 +1725,7 @@
         GeoCoordinateY: '-3.079104'
         DistanceCamping: '11219'
         Image: 'http://viaimage.viafrance.com/images/evts/150285.jpg'
+        Enabled: true
     158:
         Code: '60269'
         Address: 'route du Hahon - Fontainebleau'
@@ -1579,6 +1736,7 @@
         GeoCoordinateY: '-3.079406'
         DistanceCamping: '11884'
         Image: 'http://viaimage.viafrance.com/images/evts/48497.jpg'
+        Enabled: true
     159:
         Code: '56846'
         Address: 'rue de la République'
@@ -1589,6 +1747,7 @@
         GeoCoordinateY: '3.084775'
         DistanceCamping: '2792'
         Image: 'http://viaimage.viafrance.com/images/evts/76024.jpg'
+        Enabled: true
     160:
         Code: '71678'
         Address: 'place de l''Eglise'
@@ -1599,6 +1758,7 @@
         GeoCoordinateY: '3.086225'
         DistanceCamping: '2846'
         Image: 'http://viaimage.viafrance.com/images/evts/59077.jpg'
+        Enabled: true
     161:
         Code: '3539'
         Address: 'Mas du Pont-de-Rousty'
@@ -1609,6 +1769,7 @@
         GeoCoordinateY: '4.526850'
         DistanceCamping: '5967'
         Image: 'http://viaimage.viafrance.com/images/evts/42775.jpg'
+        Enabled: true
     162:
         Code: '28958'
         Address: ''
@@ -1619,6 +1780,7 @@
         GeoCoordinateY: '4.589456'
         DistanceCamping: '9300'
         Image: 'http://viaimage.viafrance.com/images/evts/27164.jpg'
+        Enabled: true
     163:
         Code: '18344'
         Address: 'avenue 1re-Division-France-Libre'
@@ -1629,6 +1791,7 @@
         GeoCoordinateY: '4.617656'
         DistanceCamping: '11613'
         Image: 'http://viaimage.viafrance.com/images/evts/42768.jpg'
+        Enabled: true
     164:
         Code: '56725'
         Address: 'rue du Grand-Prieuré'
@@ -1639,6 +1802,7 @@
         GeoCoordinateY: '4.621856'
         DistanceCamping: '11968'
         Image: 'http://viaimage.viafrance.com/images/evts/42782.jpg'
+        Enabled: true
     165:
         Code: '26653'
         Address: 'rue Fred-Scamaroni'
@@ -1649,6 +1813,7 @@
         GeoCoordinateY: '9.278497'
         DistanceCamping: '6225'
         Image: 'http://viaimage.viafrance.com/images/evts/49449.jpg'
+        Enabled: true
     166:
         Code: '92380'
         Address: 'place de la Mairie'
@@ -1659,6 +1824,7 @@
         GeoCoordinateY: '9.279085'
         DistanceCamping: '6263'
         Image: 'http://viaimage.viafrance.com/images/evts/48958.jpg'
+        Enabled: true
     167:
         Code: '60310'
         Address: 'place de la Marine'
@@ -1669,6 +1835,7 @@
         GeoCoordinateY: '9.276432'
         DistanceCamping: '7332'
         Image: 'http://viaimage.viafrance.com/images/evts/1074.jpg'
+        Enabled: true
     168:
         Code: '57444'
         Address: 'place de la Marine'
@@ -1679,6 +1846,7 @@
         GeoCoordinateY: '9.374256'
         DistanceCamping: '7872'
         Image: 'http://viaimage.viafrance.com/images/evts/49448.jpg'
+        Enabled: true
     169:
         Code: '8775'
         Address: 'place de l''Hôtel-de-Ville'
@@ -1689,6 +1857,7 @@
         GeoCoordinateY: '-3.747197'
         DistanceCamping: '7050'
         Image: 'http://viaimage.viafrance.com/images/evts/47096.jpg'
+        Enabled: true
     170:
         Code: '92251'
         Address: 'place de l''Hôtel-de-Ville'
@@ -1699,6 +1868,7 @@
         GeoCoordinateY: '-3.747197'
         DistanceCamping: '7050'
         Image: 'http://viaimage.viafrance.com/images/evts/71442.jpg'
+        Enabled: true
     171:
         Code: '28571'
         Address: ''
@@ -1709,6 +1879,7 @@
         GeoCoordinateY: '-3.742325'
         DistanceCamping: '7828'
         Image: 'http://viaimage.viafrance.com/images/evts/49440.jpg'
+        Enabled: true
     172:
         Code: '41474'
         Address: 'place de la Croix'
@@ -1719,6 +1890,7 @@
         GeoCoordinateY: '-3.917576'
         DistanceCamping: '12205'
         Image: 'http://viaimage.viafrance.com/images/evts/62728.jpg'
+        Enabled: true
     173:
         Code: '5884'
         Address: 'avenue de la Capitainerie'
@@ -1729,6 +1901,7 @@
         GeoCoordinateY: '-1.166923'
         DistanceCamping: '8606'
         Image: 'http://viaimage.viafrance.com/images/evts/99480.jpg'
+        Enabled: true
     174:
         Code: '23932'
         Address: 'rue Bauduère'
@@ -1739,6 +1912,7 @@
         GeoCoordinateY: '-1.145536'
         DistanceCamping: '8611'
         Image: 'http://viaimage.viafrance.com/images/evts/52282.jpg'
+        Enabled: true
     175:
         Code: '95643'
         Address: 'place Pierre Sémard'
@@ -1749,6 +1923,7 @@
         GeoCoordinateY: '-1.145592'
         DistanceCamping: '8612'
         Image: 'http://viaimage.viafrance.com/images/evts/46999.jpg'
+        Enabled: true
     176:
         Code: '63050'
         Address: 'place Bernard-Moitessier'
@@ -1759,6 +1934,7 @@
         GeoCoordinateY: '-1.152171'
         DistanceCamping: '8620'
         Image: 'http://viaimage.viafrance.com/images/evts/50283.jpg'
+        Enabled: true
     177:
         Code: '90816'
         Address: ''
@@ -1769,6 +1945,7 @@
         GeoCoordinateY: '-2.350575'
         DistanceCamping: '14891'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     178:
         Code: '60262'
         Address: 'route des Marais-Salants'
@@ -1779,6 +1956,7 @@
         GeoCoordinateY: '-2.459595'
         DistanceCamping: '16651'
         Image: 'http://viaimage.viafrance.com/images/evts/47462.jpg'
+        Enabled: true
     179:
         Code: '90809'
         Address: 'route des Marais-Salants'
@@ -1789,6 +1967,7 @@
         GeoCoordinateY: '-2.458479'
         DistanceCamping: '16667'
         Image: 'http://viaimage.viafrance.com/images/evts/115712.jpg'
+        Enabled: true
     180:
         Code: '24396'
         Address: 'avenue de Saint-Goustan'
@@ -1799,6 +1978,7 @@
         GeoCoordinateY: '-2.523728'
         DistanceCamping: '19584'
         Image: 'http://viaimage.viafrance.com/images/evts/13367.jpg'
+        Enabled: true
     181:
         Code: '57384'
         Address: 'rue Dames'
@@ -1809,6 +1989,7 @@
         GeoCoordinateY: '-1.332190'
         DistanceCamping: '1618'
         Image: 'http://viaimage.viafrance.com/images/evts/127860.jpg'
+        Enabled: true
     182:
         Code: '58608'
         Address: 'rue du Château'
@@ -1819,6 +2000,7 @@
         GeoCoordinateY: '-1.315663'
         DistanceCamping: '2464'
         Image: 'http://viaimage.viafrance.com/images/evts/86799.jpg'
+        Enabled: true
     183:
         Code: '27488'
         Address: 'place de l''Eglise'
@@ -1829,6 +2011,7 @@
         GeoCoordinateY: '-1.305744'
         DistanceCamping: '2869'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     184:
         Code: '90114'
         Address: 'route des Gorges'
@@ -1839,6 +2022,7 @@
         GeoCoordinateY: '4.492615'
         DistanceCamping: '11939'
         Image: 'http://viaimage.viafrance.com/images/evts/90946.jpg'
+        Enabled: true
     185:
         Code: '57817'
         Address: 'route de Kerlescan'
@@ -1849,6 +2033,7 @@
         GeoCoordinateY: '-3.069846'
         DistanceCamping: '277'
         Image: 'http://viaimage.viafrance.com/images/evts/43842.jpg'
+        Enabled: true
     186:
         Code: '57811'
         Address: Kergroix
@@ -1859,6 +2044,7 @@
         GeoCoordinateY: '-3.066249'
         DistanceCamping: '959'
         Image: 'http://viaimage.viafrance.com/images/evts/43838.jpg'
+        Enabled: true
     187:
         Code: '57803'
         Address: 'chemin du Tumulus'
@@ -1869,6 +2055,7 @@
         GeoCoordinateY: '-3.073319'
         DistanceCamping: '1004'
         Image: 'http://viaimage.viafrance.com/images/evts/43836.jpg'
+        Enabled: true
     188:
         Code: '25353'
         Address: 'rue du Ménec'
@@ -1879,6 +2066,7 @@
         GeoCoordinateY: '-3.082444'
         DistanceCamping: '1262'
         Image: 'http://viaimage.viafrance.com/images/evts/94419.jpg'
+        Enabled: true
     189:
         Code: '5283'
         Address: 'avenue Louis-Bréguet'
@@ -1889,6 +2077,7 @@
         GeoCoordinateY: '-1.182329'
         DistanceCamping: '8959'
         Image: 'http://viaimage.viafrance.com/images/evts/112578.jpg'
+        Enabled: true
     190:
         Code: '117621'
         Address: 'parc départemental de la Grande Corniche'
@@ -1899,6 +2088,7 @@
         GeoCoordinateY: '-1.157389'
         DistanceCamping: '9994'
         Image: 'http://viaimage.viafrance.com/images/evts/27667.jpg'
+        Enabled: true
     191:
         Code: '28460'
         Address: 'avenue de Biscarosse'
@@ -1909,6 +2099,7 @@
         GeoCoordinateY: '-1.207669'
         DistanceCamping: '16289'
         Image: 'http://viaimage.viafrance.com/images/evts/42077.jpg'
+        Enabled: true
     192:
         Code: '23288'
         Address: 'route de Cazaux'
@@ -1919,6 +2110,7 @@
         GeoCoordinateY: '-1.133221'
         DistanceCamping: '16633'
         Image: 'http://viaimage.viafrance.com/images/evts/94774.jpg'
+        Enabled: true
     193:
         Code: '57585'
         Address: 'place du Souvenir-Français'
@@ -1929,6 +2121,7 @@
         GeoCoordinateY: '6.621353'
         DistanceCamping: '3839'
         Image: 'http://viaimage.viafrance.com/images/evts/42788.jpg'
+        Enabled: true
     194:
         Code: '71694'
         Address: 'chemin du Château'
@@ -1939,6 +2132,7 @@
         GeoCoordinateY: '6.522125'
         DistanceCamping: '4787'
         Image: 'http://viaimage.viafrance.com/images/evts/49435.jpg'
+        Enabled: true
     195:
         Code: '57530'
         Address: 'rue Etienne-Berny'
@@ -1949,6 +2143,7 @@
         GeoCoordinateY: '6.637416'
         DistanceCamping: '4960'
         Image: 'http://viaimage.viafrance.com/images/evts/22240.jpg'
+        Enabled: true
     196:
         Code: '57567'
         Address: 'rue Portalet'
@@ -1959,6 +2154,7 @@
         GeoCoordinateY: '6.639093'
         DistanceCamping: '5010'
         Image: 'http://viaimage.viafrance.com/images/evts/72530.jpg'
+        Enabled: true
     197:
         Code: '41692'
         Address: ''
@@ -1969,6 +2165,7 @@
         GeoCoordinateY: '4.254967'
         DistanceCamping: '16539'
         Image: 'http://viaimage.viafrance.com/images/evts/27154.jpg'
+        Enabled: true
     198:
         Code: '28187'
         Address: 'la Citadelle'
@@ -1979,6 +2176,7 @@
         GeoCoordinateY: '-1.190489'
         DistanceCamping: '1107'
         Image: 'http://viaimage.viafrance.com/images/evts/127834.jpg'
+        Enabled: true
     199:
         Code: '56870'
         Address: 'Les Grissotières'
@@ -1989,6 +2187,7 @@
         GeoCoordinateY: '-1.273025'
         DistanceCamping: '7002'
         Image: 'http://viaimage.viafrance.com/images/evts/82717.jpg'
+        Enabled: true
     200:
         Code: '22001'
         Address: 'rue du 11 Novembre'
@@ -1999,6 +2198,7 @@
         GeoCoordinateY: '6.511040'
         DistanceCamping: '1602'
         Image: 'http://viaimage.viafrance.com/images/evts/127868.jpg'
+        Enabled: true
     201:
         Code: '60553'
         Address: 'place de l''Eglise'
@@ -2009,6 +2209,7 @@
         GeoCoordinateY: '6.513833'
         DistanceCamping: '1792'
         Image: 'http://viaimage.viafrance.com/images/evts/11839.jpg'
+        Enabled: true
     202:
         Code: '57336'
         Address: 'route D4805'
@@ -2019,6 +2220,7 @@
         GeoCoordinateY: '6.475836'
         DistanceCamping: '1949'
         Image: 'http://viaimage.viafrance.com/images/evts/27173.jpg'
+        Enabled: true
     203:
         Code: '65505'
         Address: 'route de la Palud'
@@ -2029,6 +2231,7 @@
         GeoCoordinateY: '6.504078'
         DistanceCamping: '2257'
         Image: 'http://viaimage.viafrance.com/images/evts/29643.jpg'
+        Enabled: true
     204:
         Code: '10356'
         Address: 'avenue du Palais-des-Expositions'
@@ -2039,6 +2242,7 @@
         GeoCoordinateY: '2.903238'
         DistanceCamping: '12242'
         Image: 'http://viaimage.viafrance.com/images/evts/50198.jpg'
+        Enabled: true
     205:
         Code: '1747'
         Address: 'avenue de Pérols'
@@ -2049,6 +2253,7 @@
         GeoCoordinateY: '3.921281'
         DistanceCamping: '2635'
         Image: 'http://viaimage.viafrance.com/images/evts/40694.jpg'
+        Enabled: true
     206:
         Code: '43448'
         Address: 'place de la Méditerranée'
@@ -2059,6 +2264,7 @@
         GeoCoordinateY: '3.932144'
         DistanceCamping: '3838'
         Image: 'http://viaimage.viafrance.com/images/evts/27731.jpg'
+        Enabled: true
     207:
         Code: '43449'
         Address: 'domaine de Maguelone'
@@ -2069,6 +2275,7 @@
         GeoCoordinateY: '3.886040'
         DistanceCamping: '4249'
         Image: 'http://viaimage.viafrance.com/images/evts/49431.jpg'
+        Enabled: true
     208:
         Code: '1397'
         Address: ''
@@ -2079,6 +2286,7 @@
         GeoCoordinateY: '3.951472'
         DistanceCamping: '5253'
         Image: 'http://viaimage.viafrance.com/images/evts/53804.jpg'
+        Enabled: true
     209:
         Code: '57203'
         Address: 'jetée Eyrac'
@@ -2089,6 +2297,7 @@
         GeoCoordinateY: '-1.163720'
         DistanceCamping: '9917'
         Image: 'http://viaimage.viafrance.com/images/evts/52956.jpg'
+        Enabled: true
     210:
         Code: '57198'
         Address: 'allée de la Chapelle'
@@ -2099,6 +2308,7 @@
         GeoCoordinateY: '-1.181084'
         DistanceCamping: '9939'
         Image: 'http://viaimage.viafrance.com/images/evts/41176.jpg'
+        Enabled: true
     211:
         Code: '24681'
         Address: 'boulevard de la Plage'
@@ -2109,6 +2319,7 @@
         GeoCoordinateY: '-1.164110'
         DistanceCamping: '10057'
         Image: 'http://viaimage.viafrance.com/images/evts/2181.jpg'
+        Enabled: true
     212:
         Code: '57193'
         Address: 'rue du Professeur-Jolyet'
@@ -2119,6 +2330,7 @@
         GeoCoordinateY: '-1.163817'
         DistanceCamping: '10069'
         Image: 'http://viaimage.viafrance.com/images/evts/43172.jpg'
+        Enabled: true
     213:
         Code: '50972'
         Address: 'rue du 19-Mars 1962'
@@ -2129,6 +2341,7 @@
         GeoCoordinateY: '-1.103846'
         DistanceCamping: '1073'
         Image: 'http://viaimage.viafrance.com/images/evts/36177.jpg'
+        Enabled: true
     214:
         Code: '60229'
         Address: ''
@@ -2139,6 +2352,7 @@
         GeoCoordinateY: '-1.026261'
         DistanceCamping: '6527'
         Image: 'http://viaimage.viafrance.com/images/evts/47412.jpg'
+        Enabled: true
     215:
         Code: '54138'
         Address: 'place de l''Eglise'
@@ -2149,6 +2363,7 @@
         GeoCoordinateY: '-1.224834'
         DistanceCamping: '10688'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     216:
         Code: '112710'
         Address: 'Utah Beach'
@@ -2159,6 +2374,7 @@
         GeoCoordinateY: '-1.173743'
         DistanceCamping: '11505'
         Image: 'http://viaimage.viafrance.com/images/evts/101755.jpg'
+        Enabled: true
     217:
         Code: '18227'
         Address: 'route de Montmeyan'
@@ -2169,6 +2385,7 @@
         GeoCoordinateY: '6.042911'
         DistanceCamping: '3865'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     218:
         Code: '18229'
         Address: 'place de la Mairie'
@@ -2179,6 +2396,7 @@
         GeoCoordinateY: '6.015598'
         DistanceCamping: '16422'
         Image: 'http://viaimage.viafrance.com/images/evts/32524.jpg'
+        Enabled: true
     219:
         Code: '65483'
         Address: Mairie
@@ -2189,6 +2407,7 @@
         GeoCoordinateY: '6.221406'
         DistanceCamping: '16910'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     220:
         Code: '65713'
         Address: 'Centre du village'
@@ -2199,6 +2418,7 @@
         GeoCoordinateY: '6.221755'
         DistanceCamping: '16916'
         Image: 'http://viaimage.viafrance.com/images/evts/104496.jpg'
+        Enabled: true
     221:
         Code: '15669'
         Address: 'rue de l''Eglise'
@@ -2209,6 +2429,7 @@
         GeoCoordinateY: '2.951019'
         DistanceCamping: '6799'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     222:
         Code: '64178'
         Address: 'avenue Mozart'
@@ -2219,6 +2440,7 @@
         GeoCoordinateY: '7.124917'
         DistanceCamping: '278'
         Image: 'http://viaimage.viafrance.com/images/evts/73983.jpg'
+        Enabled: true
     223:
         Code: '27800'
         Address: 'avenue de Mozart'
@@ -2229,6 +2451,7 @@
         GeoCoordinateY: '7.124965'
         DistanceCamping: '297'
         Image: 'http://viaimage.viafrance.com/images/evts/26061.jpg'
+        Enabled: true
     224:
         Code: '299'
         Address: 'chemin du Val-de-Pôme'
@@ -2239,6 +2462,7 @@
         GeoCoordinateY: '7.112876'
         DistanceCamping: '1448'
         Image: 'http://viaimage.viafrance.com/images/evts/53430.jpg'
+        Enabled: true
     225:
         Code: '91043'
         Address: 'chemin des Combes'
@@ -2249,6 +2473,7 @@
         GeoCoordinateY: '7.102309'
         DistanceCamping: '2442'
         Image: 'http://viaimage.viafrance.com/images/evts/91021.jpg'
+        Enabled: true
     226:
         Code: '1642'
         Address: 'rue de la Grange-aux-Dîmes'
@@ -2259,6 +2484,7 @@
         GeoCoordinateY: '1.517086'
         DistanceCamping: '8288'
         Image: 'http://viaimage.viafrance.com/images/evts/40010.jpg'
+        Enabled: true
     227:
         Code: '19977'
         Address: ''
@@ -2269,6 +2495,7 @@
         GeoCoordinateY: '1.442570'
         DistanceCamping: '9591'
         Image: 'http://viaimage.viafrance.com/images/evts/49435.jpg'
+        Enabled: true
     228:
         Code: '60514'
         Address: 'route de la Ferté Saint Cyr'
@@ -2279,6 +2506,7 @@
         GeoCoordinateY: '1.658292'
         DistanceCamping: '13909'
         Image: 'http://viaimage.viafrance.com/images/evts/27947.jpg'
+        Enabled: true
     229:
         Code: '57493'
         Address: 'place Saint Louis'
@@ -2289,6 +2517,7 @@
         GeoCoordinateY: '1.335618'
         DistanceCamping: '15591'
         Image: 'http://viaimage.viafrance.com/images/evts/46102.jpg'
+        Enabled: true
     230:
         Code: '57219'
         Address: ''
@@ -2299,6 +2528,7 @@
         GeoCoordinateY: '-1.410241'
         DistanceCamping: '3746'
         Image: 'http://viaimage.viafrance.com/images/evts/49436.jpg'
+        Enabled: true
     231:
         Code: '96118'
         Address: RD41
@@ -2309,6 +2539,7 @@
         GeoCoordinateY: '6.121009'
         DistanceCamping: '10315'
         Image: 'http://viaimage.viafrance.com/images/evts/61001.jpg'
+        Enabled: true
     232:
         Code: '29074'
         Address: 'route de la Passe'
@@ -2319,6 +2550,7 @@
         GeoCoordinateY: '-1.458357'
         DistanceCamping: '2593'
         Image: 'http://viaimage.viafrance.com/images/evts/100859.jpg'
+        Enabled: true
     233:
         Code: '31647'
         Address: 'place Eude-d''Aquitaine'
@@ -2329,6 +2561,7 @@
         GeoCoordinateY: '-1.368805'
         DistanceCamping: '5162'
         Image: 'http://viaimage.viafrance.com/images/evts/48879.jpg'
+        Enabled: true
     234:
         Code: '71698'
         Address: 'place de la République'
@@ -2339,6 +2572,7 @@
         GeoCoordinateY: '-1.368295'
         DistanceCamping: '5313'
         Image: 'http://viaimage.viafrance.com/images/evts/71547.jpg'
+        Enabled: true
     235:
         Code: '29072'
         Address: 'avenue Victor-Bouthillier'
@@ -2349,6 +2583,7 @@
         GeoCoordinateY: '-1.364723'
         DistanceCamping: '5318'
         Image: 'http://viaimage.viafrance.com/images/evts/127685.jpg'
+        Enabled: true
     236:
         Code: '23255'
         Address: 'avenue Beau-Rivage'
@@ -2359,6 +2594,7 @@
         GeoCoordinateY: '-1.566676'
         DistanceCamping: '2361'
         Image: 'http://viaimage.viafrance.com/images/evts/150278.jpg'
+        Enabled: true
     237:
         Code: '40955'
         Address: 'boulevard de l''Océan'
@@ -2369,6 +2605,7 @@
         GeoCoordinateY: '-1.547737'
         DistanceCamping: '13845'
         Image: 'http://viaimage.viafrance.com/images/evts/19327.jpg'
+        Enabled: true
     238:
         Code: '105846'
         Address: ''
@@ -2379,6 +2616,7 @@
         GeoCoordinateY: '-1.358567'
         DistanceCamping: '16109'
         Image: 'http://viaimage.viafrance.com/images/evts/127684.jpg'
+        Enabled: true
     239:
         Code: '104997'
         Address: 'chemin d''Ambrussum'
@@ -2389,6 +2627,7 @@
         GeoCoordinateY: '4.143163'
         DistanceCamping: '2396'
         Image: 'http://viaimage.viafrance.com/images/evts/95551.jpg'
+        Enabled: true
     240:
         Code: '65979'
         Address: 'place des Martyrs de la Résistance'
@@ -2399,6 +2638,7 @@
         GeoCoordinateY: '4.134184'
         DistanceCamping: '5343'
         Image: 'http://viaimage.viafrance.com/images/evts/61797.jpg'
+        Enabled: true
     241:
         Code: '65916'
         Address: 'cours Gabriel Péri'
@@ -2409,6 +2649,7 @@
         GeoCoordinateY: '4.133219'
         DistanceCamping: '5405'
         Image: 'http://viaimage.viafrance.com/images/evts/61794.jpg'
+        Enabled: true
     242:
         Code: '62284'
         Address: 'cours Gabriel Péri'
@@ -2419,6 +2660,7 @@
         GeoCoordinateY: '4.133219'
         DistanceCamping: '5405'
         Image: 'http://viaimage.viafrance.com/images/evts/61796.jpg'
+        Enabled: true
     243:
         Code: '90804'
         Address: ''
@@ -2429,6 +2671,7 @@
         GeoCoordinateY: '5.363910'
         DistanceCamping: '10708'
         Image: 'http://viaimage.viafrance.com/images/evts/72468.jpg'
+        Enabled: true
     244:
         Code: '56868'
         Address: 'avenue de la Clairette'
@@ -2439,6 +2682,7 @@
         GeoCoordinateY: '5.356225'
         DistanceCamping: '11330'
         Image: 'http://viaimage.viafrance.com/images/evts/47914.jpg'
+        Enabled: true
     245:
         Code: '90124'
         Address: ''
@@ -2449,6 +2693,7 @@
         GeoCoordinateY: '5.363157'
         DistanceCamping: '22538'
         Image: 'http://viaimage.viafrance.com/images/evts/44083.jpg'
+        Enabled: true
     246:
         Code: '24080'
         Address: 'Col de la Chau'
@@ -2459,6 +2704,7 @@
         GeoCoordinateY: '5.356982'
         DistanceCamping: '25855'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     247:
         Code: '5027'
         Address: 'route départementale 130'
@@ -2469,6 +2715,7 @@
         GeoCoordinateY: '1.718495'
         DistanceCamping: '6924'
         Image: 'http://viaimage.viafrance.com/images/evts/47802.jpg'
+        Enabled: true
     248:
         Code: '60124'
         Address: 'route départementale 38'
@@ -2479,6 +2726,7 @@
         GeoCoordinateY: '1.654725'
         DistanceCamping: '11563'
         Image: 'http://viaimage.viafrance.com/images/evts/42573.jpg'
+        Enabled: true
     249:
         Code: '59621'
         Address: 'La Veyrie'
@@ -2489,6 +2737,7 @@
         GeoCoordinateY: '1.656574'
         DistanceCamping: '11576'
         Image: 'http://viaimage.viafrance.com/images/evts/46400.jpg'
+        Enabled: true
     250:
         Code: '7001'
         Address: 'place de l''Eglise'
@@ -2499,6 +2748,7 @@
         GeoCoordinateY: '1.654635'
         DistanceCamping: '11627'
         Image: 'http://viaimage.viafrance.com/images/evts/42522.jpg'
+        Enabled: true
     251:
         Code: '44212'
         Address: 'route de Toulouse'
@@ -2509,6 +2759,7 @@
         GeoCoordinateY: '1.042951'
         DistanceCamping: '8989'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     252:
         Code: '61499'
         Address: 'place de l''Hôtel-de-Ville'
@@ -2519,6 +2770,7 @@
         GeoCoordinateY: '1.081868'
         DistanceCamping: '10280'
         Image: 'http://viaimage.viafrance.com/images/evts/86838.jpg'
+        Enabled: true
     253:
         Code: '61690'
         Address: 'rue Chanoine Dieuzaide'
@@ -2529,6 +2781,7 @@
         GeoCoordinateY: '0.930491'
         DistanceCamping: '22296'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     254:
         Code: '61662'
         Address: 'rue du village'
@@ -2539,6 +2792,7 @@
         GeoCoordinateY: '0.990672'
         DistanceCamping: '24705'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     255:
         Code: '40256'
         Address: 'route des Grands lacs'
@@ -2549,6 +2803,7 @@
         GeoCoordinateY: '-1.103781'
         DistanceCamping: '13668'
         Image: 'http://viaimage.viafrance.com/images/evts/15591.jpg'
+        Enabled: true
     256:
         Code: '60228'
         Address: 'route des Lacs'
@@ -2559,6 +2814,7 @@
         GeoCoordinateY: '-1.110562'
         DistanceCamping: '14528'
         Image: 'http://viaimage.viafrance.com/images/evts/48364.jpg'
+        Enabled: true
     257:
         Code: '54142'
         Address: 'avenue de la Mine'
@@ -2569,6 +2825,7 @@
         GeoCoordinateY: '-1.684554'
         DistanceCamping: '3114'
         Image: 'http://viaimage.viafrance.com/images/evts/74414.jpg'
+        Enabled: true
     258:
         Code: '29153'
         Address: 'port Bourgenay'
@@ -2579,6 +2836,7 @@
         GeoCoordinateY: '-1.676945'
         DistanceCamping: '3286'
         Image: 'http://viaimage.viafrance.com/images/evts/131369.jpg'
+        Enabled: true
     259:
         Code: '20779'
         Address: 'route du Tour-de-France'
@@ -2589,6 +2847,7 @@
         GeoCoordinateY: '-1.755770'
         DistanceCamping: '8174'
         Image: 'http://viaimage.viafrance.com/images/evts/12246.jpg'
+        Enabled: true
     260:
         Code: '58549'
         Address: 'rue de l''Amidonnerie'
@@ -2599,6 +2858,7 @@
         GeoCoordinateY: '-1.775452'
         DistanceCamping: '9890'
         Image: 'http://viaimage.viafrance.com/images/evts/49440.jpg'
+        Enabled: true
     261:
         Code: '34786'
         Address: Village
@@ -2609,6 +2869,7 @@
         GeoCoordinateY: '1.861928'
         DistanceCamping: '3088'
         Image: 'http://viaimage.viafrance.com/images/evts/72498.jpg'
+        Enabled: true
     262:
         Code: '11528'
         Address: 'Plateau de Bonascre'
@@ -2619,6 +2880,7 @@
         GeoCoordinateY: '1.814746'
         DistanceCamping: '3098'
         Image: 'http://viaimage.viafrance.com/images/evts/2534.jpg'
+        Enabled: true
     263:
         Code: '28885'
         Address: 'route des Forges'
@@ -2629,6 +2891,7 @@
         GeoCoordinateY: '1.890198'
         DistanceCamping: '6104'
         Image: 'http://viaimage.viafrance.com/images/evts/13218.jpg'
+        Enabled: true
     264:
         Code: '56712'
         Address: Montségur
@@ -2639,6 +2902,7 @@
         GeoCoordinateY: '1.833123'
         DistanceCamping: '16355'
         Image: 'http://viaimage.viafrance.com/images/evts/91001.jpg'
+        Enabled: true
     265:
         Code: '56875'
         Address: 'avenue Paul-Roullet'
@@ -2649,6 +2913,7 @@
         GeoCoordinateY: '-0.986271'
         DistanceCamping: '16338'
         Image: 'http://viaimage.viafrance.com/images/evts/47505.jpg'
+        Enabled: true
     266:
         Code: '51226'
         Address: 'Port de Port-Camargue'
@@ -2659,6 +2924,7 @@
         GeoCoordinateY: '4.132333'
         DistanceCamping: '1291'
         Image: 'http://viaimage.viafrance.com/images/evts/48876.jpg'
+        Enabled: true
     267:
         Code: '40254'
         Address: 'avenue du Palais-de-la-mer'
@@ -2669,6 +2935,7 @@
         GeoCoordinateY: '4.145577'
         DistanceCamping: '2263'
         Image: 'http://viaimage.viafrance.com/images/evts/25434.jpg'
+        Enabled: true
     268:
         Code: '105058'
         Address: 'rue de Dossenheim'
@@ -2679,6 +2946,7 @@
         GeoCoordinateY: '4.142254'
         DistanceCamping: '3159'
         Image: 'http://viaimage.viafrance.com/images/evts/52302.jpg'
+        Enabled: true
     269:
         Code: '90662'
         Address: 'route du Grau'
@@ -2689,6 +2957,7 @@
         GeoCoordinateY: '4.219812'
         DistanceCamping: '6212'
         Image: 'http://viaimage.viafrance.com/images/evts/86586.jpg'
+        Enabled: true
     270:
         Code: '15379'
         Address: 'rue Sétif'
@@ -2699,6 +2968,7 @@
         GeoCoordinateY: '3.258659'
         DistanceCamping: '9011'
         Image: 'http://viaimage.viafrance.com/images/evts/108628.jpg'
+        Enabled: true
     271:
         Code: '24042'
         Address: ''
@@ -2709,6 +2979,7 @@
         GeoCoordinateY: '5.823287'
         DistanceCamping: '10032'
         Image: 'http://viaimage.viafrance.com/images/evts/26145.jpg'
+        Enabled: true
     272:
         Code: '60549'
         Address: 'route du Golf'
@@ -2719,6 +2990,7 @@
         GeoCoordinateY: '5.570377'
         DistanceCamping: '11539'
         Image: 'http://viaimage.viafrance.com/images/evts/47770.jpg'
+        Enabled: true
     273:
         Code: '56418'
         Address: 'rue des Moulins'
@@ -2729,6 +3001,7 @@
         GeoCoordinateY: '5.636881'
         DistanceCamping: '12432'
         Image: 'http://viaimage.viafrance.com/images/evts/42441.jpg'
+        Enabled: true
     274:
         Code: '56416'
         Address: 'route Départementale-326'
@@ -2739,6 +3012,7 @@
         GeoCoordinateY: '5.867403'
         DistanceCamping: '13108'
         Image: 'http://viaimage.viafrance.com/images/evts/42440.jpg'
+        Enabled: true
     275:
         Code: '54109'
         Address: 'route de la Plage'
@@ -2749,6 +3023,7 @@
         GeoCoordinateY: '-1.453235'
         DistanceCamping: '14647'
         Image: 'http://viaimage.viafrance.com/images/evts/51781.jpg'
+        Enabled: true
     276:
         Code: '65474'
         Address: 'rue Carnot'
@@ -2759,6 +3034,7 @@
         GeoCoordinateY: '6.339712'
         DistanceCamping: '11524'
         Image: 'http://viaimage.viafrance.com/images/evts/53371.jpg'
+        Enabled: true
     277:
         Code: '57349'
         Address: 'route des Crètes Marc Robert'
@@ -2769,6 +3045,7 @@
         GeoCoordinateY: '6.382551'
         DistanceCamping: '12214'
         Image: 'http://viaimage.viafrance.com/images/evts/37096.jpg'
+        Enabled: true
     278:
         Code: '57566'
         Address: 'rue Joseph-Quaranta'
@@ -2779,6 +3056,7 @@
         GeoCoordinateY: '6.637972'
         DistanceCamping: '16128'
         Image: 'http://viaimage.viafrance.com/images/evts/56127.jpg'
+        Enabled: true
     279:
         Code: '9684'
         Address: 'place de l Abbaye'
@@ -2789,6 +3067,7 @@
         GeoCoordinateY: '1.476899'
         DistanceCamping: '135'
         Image: 'http://viaimage.viafrance.com/images/evts/51455.jpg'
+        Enabled: true
     280:
         Code: '45912'
         Address: 'avenue Jean Jaurès'
@@ -2799,6 +3078,7 @@
         GeoCoordinateY: '1.472022'
         DistanceCamping: '793'
         Image: 'http://viaimage.viafrance.com/images/evts/95811.jpg'
+        Enabled: true
     281:
         Code: '60586'
         Address: Lachapelle-Auzac
@@ -2809,6 +3089,7 @@
         GeoCoordinateY: '1.457861'
         DistanceCamping: '6401'
         Image: 'http://viaimage.viafrance.com/images/evts/15180.jpg'
+        Enabled: true
     282:
         Code: '44510'
         Address: 'route Départementale-247'
@@ -2819,6 +3100,7 @@
         GeoCoordinateY: '1.566818'
         DistanceCamping: '9872'
         Image: 'http://viaimage.viafrance.com/images/evts/28806.jpg'
+        Enabled: true
     283:
         Code: '44624'
         Address: 'chemin de la Diligence'
@@ -2829,6 +3111,7 @@
         GeoCoordinateY: '3.827570'
         DistanceCamping: '6645'
         Image: 'http://viaimage.viafrance.com/images/evts/48500.jpg'
+        Enabled: true
     284:
         Code: '15866'
         Address: 'place de la République'
@@ -2839,6 +3122,7 @@
         GeoCoordinateY: '6.695344'
         DistanceCamping: '4404'
         Image: 'http://viaimage.viafrance.com/images/evts/73979.jpg'
+        Enabled: true
     285:
         Code: '92240'
         Address: 'route de Bagnols-en-Forêt'
@@ -2849,6 +3133,7 @@
         GeoCoordinateY: '6.586959'
         DistanceCamping: '12958'
         Image: 'http://viaimage.viafrance.com/images/evts/27947.jpg'
+        Enabled: true
     286:
         Code: '6909'
         Address: 'Lieu dit Brovès en Seillans'
@@ -2859,6 +3144,7 @@
         GeoCoordinateY: '6.586407'
         DistanceCamping: '13643'
         Image: 'http://viaimage.viafrance.com/images/evts/67105.jpg'
+        Enabled: true
     287:
         Code: '8103'
         Address: ''
@@ -2869,6 +3155,7 @@
         GeoCoordinateY: '3.224447'
         DistanceCamping: '455'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     288:
         Code: '56308'
         Address: ''
@@ -2879,6 +3166,7 @@
         GeoCoordinateY: '3.169930'
         DistanceCamping: '3861'
         Image: 'http://viaimage.viafrance.com/images/evts/15870.jpg'
+        Enabled: true
     289:
         Code: '24139'
         Address: 'place d''Armes'
@@ -2889,6 +3177,7 @@
         GeoCoordinateY: '3.095489'
         DistanceCamping: '10431'
         Image: 'http://viaimage.viafrance.com/images/evts/42256.jpg'
+        Enabled: true
     290:
         Code: '24137'
         Address: 'place d''Armes'
@@ -2899,6 +3188,7 @@
         GeoCoordinateY: '3.095206'
         DistanceCamping: '10457'
         Image: 'http://viaimage.viafrance.com/images/evts/45601.jpg'
+        Enabled: true
     291:
         Code: '23689'
         Address: 'route départementale 613'
@@ -2909,6 +3199,7 @@
         GeoCoordinateY: '2.898668'
         DistanceCamping: '13228'
         Image: 'http://viaimage.viafrance.com/images/evts/48234.jpg'
+        Enabled: true
     292:
         Code: '95759'
         Address: ''
@@ -2919,6 +3210,7 @@
         GeoCoordinateY: '2.898834'
         DistanceCamping: '13248'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     293:
         Code: '56472'
         Address: 'route départementale 6009'
@@ -2929,6 +3221,7 @@
         GeoCoordinateY: '2.949686'
         DistanceCamping: '18356'
         Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
+        Enabled: true
     294:
         Code: '41699'
         Address: ''
@@ -2939,6 +3232,7 @@
         GeoCoordinateY: '2.974036'
         DistanceCamping: '19563'
         Image: 'http://viaimage.viafrance.com/images/evts/27162.jpg'
+        Enabled: true
     295:
         Code: '60909'
         Address: 'Les Tronchées'
@@ -2949,6 +3243,7 @@
         GeoCoordinateY: '-2.597381'
         DistanceCamping: '18248'
         Image: 'http://viaimage.viafrance.com/images/evts/47753.jpg'
+        Enabled: true
     296:
         Code: '57397'
         Address: 'rue de la Tour'
@@ -2959,6 +3254,7 @@
         GeoCoordinateY: '-2.727643'
         DistanceCamping: '23600'
         Image: 'http://viaimage.viafrance.com/images/evts/46840.jpg'
+        Enabled: true
     297:
         Code: '105997'
         Address: 'quai Armez'
@@ -2969,6 +3265,7 @@
         GeoCoordinateY: '-2.746544'
         DistanceCamping: '24871'
         Image: 'http://viaimage.viafrance.com/images/evts/60730.jpg'
+        Enabled: true
     298:
         Code: '22736'
         Address: 'rue Henri-de-Savournin'
@@ -2979,6 +3276,7 @@
         GeoCoordinateY: '5.363053'
         DistanceCamping: '5152'
         Image: 'http://viaimage.viafrance.com/images/evts/123937.jpg'
+        Enabled: true
     299:
         Code: '8312'
         Address: 'avenue Paul-Cézanne'
@@ -2989,6 +3287,7 @@
         GeoCoordinateY: '5.446280'
         DistanceCamping: '23306'
         Image: 'http://viaimage.viafrance.com/images/evts/44494.jpg'
+        Enabled: true
     300:
         Code: '318'
         Address: 'avenue Marcel-Pagnol'
@@ -2999,6 +3298,7 @@
         GeoCoordinateY: '5.422834'
         DistanceCamping: '23601'
         Image: 'http://viaimage.viafrance.com/images/evts/28396.jpg'
+        Enabled: true
     301:
         Code: '24784'
         Address: 'place des Martyrs-de-la-Résistance'
@@ -3009,6 +3309,7 @@
         GeoCoordinateY: '5.447505'
         DistanceCamping: '24079'
         Image: 'http://viaimage.viafrance.com/images/evts/13280.jpg'
+        Enabled: true
     302:
         Code: '82489'
         Address: 'allée des Sources'
@@ -3019,6 +3320,7 @@
         GeoCoordinateY: '3.675704'
         DistanceCamping: '9822'
         Image: 'http://viaimage.viafrance.com/images/evts/33466.jpg'
+        Enabled: true
     303:
         Code: '89911'
         Address: 'place Forte'
@@ -3029,6 +3331,7 @@
         GeoCoordinateY: '7.528252'
         DistanceCamping: '3768'
         Image: 'http://viaimage.viafrance.com/images/evts/49424.jpg'
+        Enabled: true
     304:
         Code: '21299'
         Address: 'place Porte-de-Belfort'
@@ -3039,6 +3342,7 @@
         GeoCoordinateY: '7.525867'
         DistanceCamping: '3973'
         Image: 'http://viaimage.viafrance.com/images/evts/31835.jpg'
+        Enabled: true
     305:
         Code: '57909'
         Address: 'rue de la Cigogne'
@@ -3049,6 +3353,7 @@
         GeoCoordinateY: '7.362741'
         DistanceCamping: '17098'
         Image: 'http://viaimage.viafrance.com/images/evts/44026.jpg'
+        Enabled: true
     306:
         Code: '57970'
         Address: 'quai de la Poissonnerie'
@@ -3059,6 +3364,7 @@
         GeoCoordinateY: '7.359826'
         DistanceCamping: '17214'
         Image: 'http://viaimage.viafrance.com/images/evts/44110.jpg'
+        Enabled: true
     307:
         Code: '106059'
         Address: 'canal du midi'
@@ -3069,6 +3375,7 @@
         GeoCoordinateY: '3.535711'
         DistanceCamping: '3738'
         Image: 'http://viaimage.viafrance.com/images/evts/42512.jpg'
+        Enabled: true
     308:
         Code: '28778'
         Address: 'rue des-Deux-Frères'
@@ -3079,6 +3386,7 @@
         GeoCoordinateY: '3.513050'
         DistanceCamping: '9057'
         Image: 'http://viaimage.viafrance.com/images/evts/52557.jpg'
+        Enabled: true
     309:
         Code: '63265'
         Address: 'route de l''aéroport'
@@ -3089,6 +3397,7 @@
         GeoCoordinateY: '9.466619'
         DistanceCamping: '10089'
         Image: 'http://viaimage.viafrance.com/images/evts/7220.jpg'
+        Enabled: true
     310:
         Code: '60301'
         Address: 'Hameau de Stretta'
@@ -3099,6 +3408,7 @@
         GeoCoordinateY: '9.308675'
         DistanceCamping: '18622'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     311:
         Code: '56392'
         Address: ''
@@ -3109,6 +3419,7 @@
         GeoCoordinateY: '9.326333'
         DistanceCamping: '20023'
         Image: 'http://viaimage.viafrance.com/images/evts/91582.jpg'
+        Enabled: true
     312:
         Code: '59752'
         Address: 'rue du Général de Carbuccia'
@@ -3119,6 +3430,7 @@
         GeoCoordinateY: '9.448692'
         DistanceCamping: '25227'
         Image: 'http://viaimage.viafrance.com/images/evts/91582.jpg'
+        Enabled: true
     313:
         Code: '65752'
         Address: 'Massif du Jaillet'
@@ -3129,6 +3441,7 @@
         GeoCoordinateY: '6.630955'
         DistanceCamping: '3813'
         Image: 'http://viaimage.viafrance.com/images/evts/127546.jpg'
+        Enabled: true
     314:
         Code: '60494'
         Address: 'avenue de la gare'
@@ -3139,6 +3452,7 @@
         GeoCoordinateY: '6.701970'
         DistanceCamping: '4471'
         Image: 'http://viaimage.viafrance.com/images/evts/49444.jpg'
+        Enabled: true
     315:
         Code: '27419'
         Address: 'place du Village'
@@ -3149,6 +3463,7 @@
         GeoCoordinateY: '6.618134'
         DistanceCamping: '7872'
         Image: 'http://viaimage.viafrance.com/images/evts/157187.jpg'
+        Enabled: true
     316:
         Code: '71714'
         Address: 'rue du Dr Charles Socquet'
@@ -3159,6 +3474,7 @@
         GeoCoordinateY: '6.617183'
         DistanceCamping: '7968'
         Image: 'http://viaimage.viafrance.com/images/evts/157183.jpg'
+        Enabled: true
     317:
         Code: '17647'
         Address: 'rue Balzac'
@@ -3169,6 +3485,7 @@
         GeoCoordinateY: '0.466896'
         DistanceCamping: '18252'
         Image: 'http://viaimage.viafrance.com/images/evts/12714.jpg'
+        Enabled: true
     318:
         Code: '2721'
         Address: 'route Départementale 7'
@@ -3179,6 +3496,7 @@
         GeoCoordinateY: '0.512599'
         DistanceCamping: '27195'
         Image: 'http://viaimage.viafrance.com/images/evts/48081.jpg'
+        Enabled: true
     319:
         Code: '71723'
         Address: 'route de la Palme'
@@ -3189,6 +3507,7 @@
         GeoCoordinateY: '3.057623'
         DistanceCamping: '815'
         Image: 'http://viaimage.viafrance.com/images/evts/103800.jpg'
+        Enabled: true
     320:
         Code: '96721'
         Address: 'port de Plaisance'
@@ -3199,6 +3518,7 @@
         GeoCoordinateY: '-1.507384'
         DistanceCamping: '6189'
         Image: 'http://viaimage.viafrance.com/images/evts/40759.jpg'
+        Enabled: true
     321:
         Code: '66012'
         Address: 'avenue de l''Adour'
@@ -3209,6 +3529,7 @@
         GeoCoordinateY: '-1.521653'
         DistanceCamping: '6795'
         Image: 'http://viaimage.viafrance.com/images/evts/54024.jpg'
+        Enabled: true
     322:
         Code: '56479'
         Address: 'chemin des Ecluses'
@@ -3219,6 +3540,7 @@
         GeoCoordinateY: '3.199763'
         DistanceCamping: '11883'
         Image: 'http://viaimage.viafrance.com/images/evts/44227.jpg'
+        Enabled: true
     323:
         Code: '58098'
         Address: 'quai du Port-neuf'
@@ -3229,6 +3551,7 @@
         GeoCoordinateY: '3.219497'
         DistanceCamping: '11889'
         Image: 'http://viaimage.viafrance.com/images/evts/42512.jpg'
+        Enabled: true
     324:
         Code: '65763'
         Address: 'boulevard Sadi-Carnot'
@@ -3239,6 +3562,7 @@
         GeoCoordinateY: '7.016651'
         DistanceCamping: '1032'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     325:
         Code: '65759'
         Address: 'rue Sainte-Catherine'
@@ -3249,6 +3573,7 @@
         GeoCoordinateY: '7.017823'
         DistanceCamping: '1098'
         Image: 'http://viaimage.viafrance.com/images/evts/18218.jpg'
+        Enabled: true
     326:
         Code: '102849'
         Address: 'boulevard Sadi Carnot'
@@ -3259,6 +3584,7 @@
         GeoCoordinateY: '7.019576'
         DistanceCamping: '1226'
         Image: 'http://viaimage.viafrance.com/images/evts/16471.jpg'
+        Enabled: true
     327:
         Code: '65760'
         Address: 'rue de Cannes'
@@ -3269,3 +3595,4 @@
         GeoCoordinateY: '7.019296'
         DistanceCamping: '1296'
         Image: 'http://viaimage.viafrance.com/images/evts/49448.jpg'
+        Enabled: true

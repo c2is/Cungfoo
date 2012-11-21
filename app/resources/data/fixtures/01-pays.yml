@@ -1,9 +1,13 @@
 \Cungfoo\Model\Pays:
     1:
         Code: FRA
+        Enabled: true
     2:
         Code: ITA
+        Enabled: true
     3:
         Code: ESP
+        Enabled: true
     4:
         Code: PRT
+        Enabled: true
