@@ -11,15 +11,21 @@
 
             $('.enabled').bind('click', function() {
                 var $this = $(this);
+
                 $.get($this.attr('href'), function(data) {
-                    $('i', $this).removeClass();
+                    var $icon = $('i', $this).removeClass();
+                    var $line = $this.parent('td').parent('tr');
+
                     if (data.enabled) {
-                        $('i', $this).addClass('icon-eye-open');
+                        $icon.addClass('icon-eye-open');
+                        $line.removeClass('disabled');
                     }
                     else {
-                        $('i', $this).addClass('icon-eye-close');
+                        $icon.addClass('icon-eye-close');
+                        $line.addClass('disabled');
                     }
                 });
+
                 return false;
             })
         });
@@ -53,7 +59,7 @@
         </thead>
         <tbody>
         {% for line in lines %}
-        <tr class="line">
+        <tr class="line{% if line.enabled != true %} disabled{% endif %}">
             {% for column_name,column in line %}
             {% if column_name != "enabled" %}
                 <td>{{ column | raw }}</td>
