@@ -27,6 +27,12 @@ class BaseDernieresMinutesType extends AppAwareType
             'label' => 'dernieres_minutes.id',
             'required' => false,
         ));
+        $builder->add('date_start', 'date', array(
+            'constraints' => array(
+            ),
+            'label' => 'dernieres_minutes.date_start',
+            'required' => false,
+        ));
         $builder->add('day_start', 'choice', array(
             'constraints' => array(
                 new Assert\NotBlank(),

@@ -26,11 +26,13 @@ use Cungfoo\Model\Etablissement;
  *
  *
  * @method DernieresMinutesQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method DernieresMinutesQuery orderByDateStart($order = Criteria::ASC) Order by the date_start column
  * @method DernieresMinutesQuery orderByDayStart($order = Criteria::ASC) Order by the day_start column
  * @method DernieresMinutesQuery orderByDayRange($order = Criteria::ASC) Order by the day_range column
  * @method DernieresMinutesQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method DernieresMinutesQuery groupById() Group by the id column
+ * @method DernieresMinutesQuery groupByDateStart() Group by the date_start column
  * @method DernieresMinutesQuery groupByDayStart() Group by the day_start column
  * @method DernieresMinutesQuery groupByDayRange() Group by the day_range column
  * @method DernieresMinutesQuery groupByActive() Group by the active column
@@ -50,11 +52,13 @@ use Cungfoo\Model\Etablissement;
  * @method DernieresMinutes findOne(PropelPDO $con = null) Return the first DernieresMinutes matching the query
  * @method DernieresMinutes findOneOrCreate(PropelPDO $con = null) Return the first DernieresMinutes matching the query, or a new DernieresMinutes object populated from the query conditions when no match is found
  *
+ * @method DernieresMinutes findOneByDateStart(string $date_start) Return the first DernieresMinutes filtered by the date_start column
  * @method DernieresMinutes findOneByDayStart(int $day_start) Return the first DernieresMinutes filtered by the day_start column
  * @method DernieresMinutes findOneByDayRange(int $day_range) Return the first DernieresMinutes filtered by the day_range column
  * @method DernieresMinutes findOneByActive(boolean $active) Return the first DernieresMinutes filtered by the active column
  *
  * @method array findById(int $id) Return DernieresMinutes objects filtered by the id column
+ * @method array findByDateStart(string $date_start) Return DernieresMinutes objects filtered by the date_start column
  * @method array findByDayStart(int $day_start) Return DernieresMinutes objects filtered by the day_start column
  * @method array findByDayRange(int $day_range) Return DernieresMinutes objects filtered by the day_range column
  * @method array findByActive(boolean $active) Return DernieresMinutes objects filtered by the active column
@@ -161,7 +165,7 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `DAY_START`, `DAY_RANGE`, `ACTIVE` FROM `dernieres_minutes` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `DATE_START`, `DAY_START`, `DAY_RANGE`, `ACTIVE` FROM `dernieres_minutes` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -275,6 +279,49 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DernieresMinutesPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the date_start column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDateStart('2011-03-14'); // WHERE date_start = '2011-03-14'
+     * $query->filterByDateStart('now'); // WHERE date_start = '2011-03-14'
+     * $query->filterByDateStart(array('max' => 'yesterday')); // WHERE date_start > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $dateStart The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DernieresMinutesQuery The current query, for fluid interface
+     */
+    public function filterByDateStart($dateStart = null, $comparison = null)
+    {
+        if (is_array($dateStart)) {
+            $useMinMax = false;
+            if (isset($dateStart['min'])) {
+                $this->addUsingAlias(DernieresMinutesPeer::DATE_START, $dateStart['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($dateStart['max'])) {
+                $this->addUsingAlias(DernieresMinutesPeer::DATE_START, $dateStart['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(DernieresMinutesPeer::DATE_START, $dateStart, $comparison);
     }
 
     /**

@@ -59,10 +59,14 @@ class HomepageController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
+            $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
+            $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
+
             $searchParams = new SearchParams($app);
             $searchParams
-                ->setDates(date('Y-m-d', strtotime('2013/07/20 next ' . $dernieresMinutes->getDayStart())))
-                ->setNbDays($dernieresMinutes->getDayRange())
+                ->setDates(date('Y-m-d', $startDate))
+                ->setNbDays(7)
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)

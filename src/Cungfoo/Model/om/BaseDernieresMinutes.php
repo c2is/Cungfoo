@@ -5,11 +5,13 @@ namespace Cungfoo\Model\om;
 use \BaseObject;
 use \BasePeer;
 use \Criteria;
+use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
 use \PropelCollection;
+use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
@@ -58,6 +60,12 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
      * @var        int
      */
     protected $id;
+
+    /**
+     * The value for the date_start field.
+     * @var        string
+     */
+    protected $date_start;
 
     /**
      * The value for the day_start field.
@@ -148,6 +156,43 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [optionally formatted] temporal [date_start] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getDateStart($format = null)
+    {
+        if ($this->date_start === null) {
+            return null;
+        }
+
+        if ($this->date_start === '0000-00-00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        } else {
+            try {
+                $dt = new DateTime($this->date_start);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->date_start, true), $x);
+            }
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        } elseif (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
+        }
+    }
+
+    /**
      * Get the [day_start] column value.
      *
      * @return int
@@ -215,6 +260,29 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
         return $this;
     } // setId()
+
+    /**
+     * Sets the value of [date_start] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return DernieresMinutes The current object (for fluent API support)
+     */
+    public function setDateStart($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->date_start !== null || $dt !== null) {
+            $currentDateAsString = ($this->date_start !== null && $tmpDt = new DateTime($this->date_start)) ? $tmpDt->format('Y-m-d') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->date_start = $newDateAsString;
+                $this->modifiedColumns[] = DernieresMinutesPeer::DATE_START;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setDateStart()
 
     /**
      * Set the value of [day_start] column.
@@ -330,9 +398,10 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->day_start = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->day_range = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
+            $this->date_start = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->day_start = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->day_range = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -341,7 +410,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = DernieresMinutesPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = DernieresMinutesPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DernieresMinutes object", $e);
@@ -636,6 +705,9 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         if ($this->isColumnModified(DernieresMinutesPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
+        if ($this->isColumnModified(DernieresMinutesPeer::DATE_START)) {
+            $modifiedColumns[':p' . $index++]  = '`DATE_START`';
+        }
         if ($this->isColumnModified(DernieresMinutesPeer::DAY_START)) {
             $modifiedColumns[':p' . $index++]  = '`DAY_START`';
         }
@@ -658,6 +730,9 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case '`DATE_START`':
+                        $stmt->bindValue($identifier, $this->date_start, PDO::PARAM_STR);
                         break;
                     case '`DAY_START`':
                         $stmt->bindValue($identifier, $this->day_start, PDO::PARAM_INT);
@@ -822,12 +897,15 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getDayStart();
+                return $this->getDateStart();
                 break;
             case 2:
-                return $this->getDayRange();
+                return $this->getDayStart();
                 break;
             case 3:
+                return $this->getDayRange();
+                break;
+            case 4:
                 return $this->getActive();
                 break;
             default:
@@ -860,9 +938,10 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         $keys = DernieresMinutesPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getDayStart(),
-            $keys[2] => $this->getDayRange(),
-            $keys[3] => $this->getActive(),
+            $keys[1] => $this->getDateStart(),
+            $keys[2] => $this->getDayStart(),
+            $keys[3] => $this->getDayRange(),
+            $keys[4] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collDernieresMinutesEtablissements) {
@@ -909,20 +988,23 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
+                $this->setDateStart($value);
+                break;
+            case 2:
                 $valueSet = DernieresMinutesPeer::getValueSet(DernieresMinutesPeer::DAY_START);
                 if (isset($valueSet[$value])) {
                     $value = $valueSet[$value];
                 }
                 $this->setDayStart($value);
                 break;
-            case 2:
+            case 3:
                 $valueSet = DernieresMinutesPeer::getValueSet(DernieresMinutesPeer::DAY_RANGE);
                 if (isset($valueSet[$value])) {
                     $value = $valueSet[$value];
                 }
                 $this->setDayRange($value);
                 break;
-            case 3:
+            case 4:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -950,9 +1032,10 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         $keys = DernieresMinutesPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setDayStart($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setDayRange($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setDateStart($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setDayStart($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setDayRange($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
     }
 
     /**
@@ -965,6 +1048,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         $criteria = new Criteria(DernieresMinutesPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(DernieresMinutesPeer::ID)) $criteria->add(DernieresMinutesPeer::ID, $this->id);
+        if ($this->isColumnModified(DernieresMinutesPeer::DATE_START)) $criteria->add(DernieresMinutesPeer::DATE_START, $this->date_start);
         if ($this->isColumnModified(DernieresMinutesPeer::DAY_START)) $criteria->add(DernieresMinutesPeer::DAY_START, $this->day_start);
         if ($this->isColumnModified(DernieresMinutesPeer::DAY_RANGE)) $criteria->add(DernieresMinutesPeer::DAY_RANGE, $this->day_range);
         if ($this->isColumnModified(DernieresMinutesPeer::ACTIVE)) $criteria->add(DernieresMinutesPeer::ACTIVE, $this->active);
@@ -1031,6 +1115,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setDateStart($this->getDateStart());
         $copyObj->setDayStart($this->getDayStart());
         $copyObj->setDayRange($this->getDayRange());
         $copyObj->setActive($this->getActive());
@@ -1929,6 +2014,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
+        $this->date_start = null;
         $this->day_start = null;
         $this->day_range = null;
         $this->active = null;
