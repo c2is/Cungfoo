@@ -268,6 +268,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the enabled field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $enabled;
+
+    /**
      * @var        Ville
      */
     protected $aVille;
@@ -582,6 +589,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->enabled = false;
+    }
+
+    /**
+     * Initializes internal state of BaseEtablissement object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -969,6 +997,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         } else {
             return $dt->format($format);
         }
+    }
+
+    /**
+     * Get the [enabled] column value.
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 
     /**
@@ -1584,6 +1622,35 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [enabled] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setEnabled($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = EtablissementPeer::ENABLED;
+        }
+
+
+        return $this;
+    } // setEnabled()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -1593,6 +1660,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->enabled !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1643,6 +1714,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->published = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
             $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
             $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
+            $this->enabled = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1651,7 +1723,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2463,6 +2535,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(EtablissementPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `etablissement` (%s) VALUES (%s)',
@@ -2557,6 +2632,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -2906,6 +2984,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             case 27:
                 return $this->getUpdatedAt();
                 break;
+            case 28:
+                return $this->getEnabled();
+                break;
             default:
                 return null;
                 break;
@@ -2963,6 +3044,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[25] => $this->getPublished(),
             $keys[26] => $this->getCreatedAt(),
             $keys[27] => $this->getUpdatedAt(),
+            $keys[28] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3131,6 +3213,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             case 27:
                 $this->setUpdatedAt($value);
                 break;
+            case 28:
+                $this->setEnabled($value);
+                break;
         } // switch()
     }
 
@@ -3183,6 +3268,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[25], $arr)) $this->setPublished($arr[$keys[25]]);
         if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
         if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setEnabled($arr[$keys[28]]);
     }
 
     /**
@@ -3222,6 +3308,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) $criteria->add(EtablissementPeer::PUBLISHED, $this->published);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(EtablissementPeer::ENABLED)) $criteria->add(EtablissementPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -3312,6 +3399,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setPublished($this->getPublished());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -8476,9 +8564,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->published = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);

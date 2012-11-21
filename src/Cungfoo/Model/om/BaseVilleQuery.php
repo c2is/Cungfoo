@@ -29,12 +29,14 @@ use Cungfoo\Model\VilleQuery;
  * @method VilleQuery orderByRegionId($order = Criteria::ASC) Order by the region_id column
  * @method VilleQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method VilleQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method VilleQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method VilleQuery groupById() Group by the id column
  * @method VilleQuery groupByCode() Group by the code column
  * @method VilleQuery groupByRegionId() Group by the region_id column
  * @method VilleQuery groupByCreatedAt() Group by the created_at column
  * @method VilleQuery groupByUpdatedAt() Group by the updated_at column
+ * @method VilleQuery groupByEnabled() Group by the enabled column
  *
  * @method VilleQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method VilleQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -59,12 +61,14 @@ use Cungfoo\Model\VilleQuery;
  * @method Ville findOneByRegionId(int $region_id) Return the first Ville filtered by the region_id column
  * @method Ville findOneByCreatedAt(string $created_at) Return the first Ville filtered by the created_at column
  * @method Ville findOneByUpdatedAt(string $updated_at) Return the first Ville filtered by the updated_at column
+ * @method Ville findOneByEnabled(boolean $enabled) Return the first Ville filtered by the enabled column
  *
  * @method array findById(int $id) Return Ville objects filtered by the id column
  * @method array findByCode(string $code) Return Ville objects filtered by the code column
  * @method array findByRegionId(int $region_id) Return Ville objects filtered by the region_id column
  * @method array findByCreatedAt(string $created_at) Return Ville objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Ville objects filtered by the updated_at column
+ * @method array findByEnabled(boolean $enabled) Return Ville objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -168,7 +172,7 @@ abstract class BaseVilleQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `REGION_ID`, `CREATED_AT`, `UPDATED_AT` FROM `ville` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `REGION_ID`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `ville` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -440,6 +444,33 @@ abstract class BaseVilleQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(VillePeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the enabled column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEnabled(true); // WHERE enabled = true
+     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * </code>
+     *
+     * @param     boolean|string $enabled The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return VilleQuery The current query, for fluid interface
+     */
+    public function filterByEnabled($enabled = null, $comparison = null)
+    {
+        if (is_string($enabled)) {
+            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(VillePeer::ENABLED, $enabled, $comparison);
     }
 
     /**

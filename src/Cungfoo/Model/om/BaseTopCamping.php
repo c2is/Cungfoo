@@ -64,6 +64,13 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     protected $sortable_rank;
 
     /**
+     * The value for the enabled field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $enabled;
+
+    /**
      * @var        Etablissement
      */
     protected $aEtablissement;
@@ -89,6 +96,27 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      * @var        array
      */
     protected $sortableQueries = array();
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->enabled = false;
+    }
+
+    /**
+     * Initializes internal state of BaseTopCamping object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -118,6 +146,16 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     public function getSortableRank()
     {
         return $this->sortable_rank;
+    }
+
+    /**
+     * Get the [enabled] column value.
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 
     /**
@@ -188,6 +226,35 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     } // setSortableRank()
 
     /**
+     * Sets the value of the [enabled] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return TopCamping The current object (for fluent API support)
+     */
+    public function setEnabled($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = TopCampingPeer::ENABLED;
+        }
+
+
+        return $this;
+    } // setEnabled()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -197,6 +264,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->enabled !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -222,6 +293,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->etablissement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->sortable_rank = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->enabled = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -230,7 +302,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = TopCampingPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = TopCampingPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TopCamping object", $e);
@@ -479,6 +551,9 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) {
             $modifiedColumns[':p' . $index++]  = '`SORTABLE_RANK`';
         }
+        if ($this->isColumnModified(TopCampingPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `top_camping` (%s) VALUES (%s)',
@@ -498,6 +573,9 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                         break;
                     case '`SORTABLE_RANK`':
                         $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
+                        break;
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -654,6 +732,9 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             case 2:
                 return $this->getSortableRank();
                 break;
+            case 3:
+                return $this->getEnabled();
+                break;
             default:
                 return null;
                 break;
@@ -686,6 +767,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getEtablissementId(),
             $keys[2] => $this->getSortableRank(),
+            $keys[3] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -734,6 +816,9 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             case 2:
                 $this->setSortableRank($value);
                 break;
+            case 3:
+                $this->setEnabled($value);
+                break;
         } // switch()
     }
 
@@ -761,6 +846,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setEtablissementId($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setSortableRank($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setEnabled($arr[$keys[3]]);
     }
 
     /**
@@ -775,6 +861,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(TopCampingPeer::ID)) $criteria->add(TopCampingPeer::ID, $this->id);
         if ($this->isColumnModified(TopCampingPeer::ETABLISSEMENT_ID)) $criteria->add(TopCampingPeer::ETABLISSEMENT_ID, $this->etablissement_id);
         if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) $criteria->add(TopCampingPeer::SORTABLE_RANK, $this->sortable_rank);
+        if ($this->isColumnModified(TopCampingPeer::ENABLED)) $criteria->add(TopCampingPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -840,6 +927,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
         $copyObj->setSortableRank($this->getSortableRank());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -957,9 +1045,11 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         $this->id = null;
         $this->etablissement_id = null;
         $this->sortable_rank = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);

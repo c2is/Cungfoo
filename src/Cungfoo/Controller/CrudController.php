@@ -7,6 +7,7 @@ use Silex\Application,
     Silex\ControllerProviderInterface;
 
 use Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpFoundation\Response,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
@@ -56,6 +57,7 @@ class CrudController implements ControllerProviderInterface
             ->generateRead($app, $controllers)
             ->generateUpdate($app, $controllers)
             ->generateDelete($app, $controllers)
+            ->generateEnabled($app, $controllers)
         ;
 
         return $controllers;
@@ -112,6 +114,28 @@ class CrudController implements ControllerProviderInterface
             })
             ->value('id', null)
             ->bind(sprintf('%s_crud_create', $this->modelName))
+        ;
+
+        return $this;
+    }
+
+    protected function generateEnabled(Application $app, ControllerCollection $controllers)
+    {
+        $controllers
+            ->match(sprintf('/%s/{id}/enabled', $this->prefix), function (Request $request, $id) use ($app)
+            {
+                $query  = new $this->queryClass();
+                $object = $query->findPk($id);
+                $object
+                    ->setEnabled(!$object->getEnabled())
+                    ->save()
+                ;
+
+                return new Response(json_encode(array('enabled' => $object->getEnabled())), 200, array (
+                    'Content-Type' => 'application/json',
+                ));
+            })
+            ->bind(sprintf('%s_crud_enabled', $this->modelName))
         ;
 
         return $this;

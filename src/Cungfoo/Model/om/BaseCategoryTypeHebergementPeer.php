@@ -37,13 +37,13 @@ abstract class BaseCategoryTypeHebergementPeer
     const TM_CLASS = 'CategoryTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'category_type_hebergement.ID';
@@ -56,6 +56,9 @@ abstract class BaseCategoryTypeHebergementPeer
 
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'category_type_hebergement.UPDATED_AT';
+
+    /** the column name for the ENABLED field */
+    const ENABLED = 'category_type_hebergement.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -83,12 +86,12 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[CategoryTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, CategoryTypeHebergementPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -98,12 +101,12 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::CREATED_AT => 2, CategoryTypeHebergementPeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Enabled' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::CREATED_AT => 2, CategoryTypeHebergementPeer::UPDATED_AT => 3, CategoryTypeHebergementPeer::ENABLED => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ENABLED' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -181,11 +184,13 @@ abstract class BaseCategoryTypeHebergementPeer
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::CODE);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::UPDATED_AT);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

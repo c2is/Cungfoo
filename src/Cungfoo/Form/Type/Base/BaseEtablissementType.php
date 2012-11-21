@@ -195,6 +195,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.published',
             'required' => false,
         ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.enabled',
+            'required' => false,
+        ));
         $builder->add('type_hebergements', 'model', array(
             'class' => 'Cungfoo\Model\TypeHebergement',
             'constraints' => array(

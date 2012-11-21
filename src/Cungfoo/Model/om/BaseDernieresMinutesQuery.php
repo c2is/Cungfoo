@@ -30,12 +30,14 @@ use Cungfoo\Model\Etablissement;
  * @method DernieresMinutesQuery orderByDayStart($order = Criteria::ASC) Order by the day_start column
  * @method DernieresMinutesQuery orderByDayRange($order = Criteria::ASC) Order by the day_range column
  * @method DernieresMinutesQuery orderByActive($order = Criteria::ASC) Order by the active column
+ * @method DernieresMinutesQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method DernieresMinutesQuery groupById() Group by the id column
  * @method DernieresMinutesQuery groupByDateStart() Group by the date_start column
  * @method DernieresMinutesQuery groupByDayStart() Group by the day_start column
  * @method DernieresMinutesQuery groupByDayRange() Group by the day_range column
  * @method DernieresMinutesQuery groupByActive() Group by the active column
+ * @method DernieresMinutesQuery groupByEnabled() Group by the enabled column
  *
  * @method DernieresMinutesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DernieresMinutesQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,12 +58,14 @@ use Cungfoo\Model\Etablissement;
  * @method DernieresMinutes findOneByDayStart(int $day_start) Return the first DernieresMinutes filtered by the day_start column
  * @method DernieresMinutes findOneByDayRange(int $day_range) Return the first DernieresMinutes filtered by the day_range column
  * @method DernieresMinutes findOneByActive(boolean $active) Return the first DernieresMinutes filtered by the active column
+ * @method DernieresMinutes findOneByEnabled(boolean $enabled) Return the first DernieresMinutes filtered by the enabled column
  *
  * @method array findById(int $id) Return DernieresMinutes objects filtered by the id column
  * @method array findByDateStart(string $date_start) Return DernieresMinutes objects filtered by the date_start column
  * @method array findByDayStart(int $day_start) Return DernieresMinutes objects filtered by the day_start column
  * @method array findByDayRange(int $day_range) Return DernieresMinutes objects filtered by the day_range column
  * @method array findByActive(boolean $active) Return DernieresMinutes objects filtered by the active column
+ * @method array findByEnabled(boolean $enabled) Return DernieresMinutes objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -165,7 +169,7 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `DATE_START`, `DAY_START`, `DAY_RANGE`, `ACTIVE` FROM `dernieres_minutes` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `DATE_START`, `DAY_START`, `DAY_RANGE`, `ACTIVE`, `ENABLED` FROM `dernieres_minutes` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -417,6 +421,33 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DernieresMinutesPeer::ACTIVE, $active, $comparison);
+    }
+
+    /**
+     * Filter the query on the enabled column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEnabled(true); // WHERE enabled = true
+     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * </code>
+     *
+     * @param     boolean|string $enabled The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DernieresMinutesQuery The current query, for fluid interface
+     */
+    public function filterByEnabled($enabled = null, $comparison = null)
+    {
+        if (is_string($enabled)) {
+            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DernieresMinutesPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

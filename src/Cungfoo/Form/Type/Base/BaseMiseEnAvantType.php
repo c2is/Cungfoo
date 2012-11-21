@@ -65,6 +65,12 @@ class BaseMiseEnAvantType extends AppAwareType
             'label' => 'mise_en_avant.sortable_rank',
             'required' => false,
         ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'mise_en_avant.enabled',
+            'required' => false,
+        ));
         $builder->add('mise_en_avantI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\MiseEnAvantI18n',
             'languages' => array(

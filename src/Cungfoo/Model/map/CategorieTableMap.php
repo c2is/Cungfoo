@@ -46,6 +46,7 @@ class CategorieTableMap extends TableMap
         $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

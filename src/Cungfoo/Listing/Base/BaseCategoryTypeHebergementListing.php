@@ -21,6 +21,7 @@ class BaseCategoryTypeHebergementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
+        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**

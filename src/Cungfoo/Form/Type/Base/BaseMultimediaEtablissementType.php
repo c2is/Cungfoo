@@ -47,6 +47,12 @@ class BaseMultimediaEtablissementType extends AppAwareType
             'label' => 'multimedia_etablissement.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'multimedia_etablissement.enabled',
+            'required' => false,
+        ));
         $builder->add('tags', 'model', array(
             'class' => 'Cungfoo\Model\Tag',
             'constraints' => array(

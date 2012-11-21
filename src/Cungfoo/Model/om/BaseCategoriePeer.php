@@ -38,13 +38,13 @@ abstract class BaseCategoriePeer
     const TM_CLASS = 'CategorieTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'categorie.ID';
@@ -57,6 +57,9 @@ abstract class BaseCategoriePeer
 
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'categorie.UPDATED_AT';
+
+    /** the column name for the ENABLED field */
+    const ENABLED = 'categorie.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -84,12 +87,12 @@ abstract class BaseCategoriePeer
      * e.g. CategoriePeer::$fieldNames[CategoriePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID, CategoriePeer::CODE, CategoriePeer::CREATED_AT, CategoriePeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID, CategoriePeer::CODE, CategoriePeer::CREATED_AT, CategoriePeer::UPDATED_AT, CategoriePeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -99,12 +102,12 @@ abstract class BaseCategoriePeer
      * e.g. CategoriePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID => 0, CategoriePeer::CODE => 1, CategoriePeer::CREATED_AT => 2, CategoriePeer::UPDATED_AT => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Enabled' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID => 0, CategoriePeer::CODE => 1, CategoriePeer::CREATED_AT => 2, CategoriePeer::UPDATED_AT => 3, CategoriePeer::ENABLED => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ENABLED' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -182,11 +185,13 @@ abstract class BaseCategoriePeer
             $criteria->addSelectColumn(CategoriePeer::CODE);
             $criteria->addSelectColumn(CategoriePeer::CREATED_AT);
             $criteria->addSelectColumn(CategoriePeer::UPDATED_AT);
+            $criteria->addSelectColumn(CategoriePeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

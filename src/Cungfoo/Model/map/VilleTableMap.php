@@ -47,6 +47,7 @@ class VilleTableMap extends TableMap
         $this->addForeignKey('REGION_ID', 'RegionId', 'INTEGER', 'region', 'ID', false, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

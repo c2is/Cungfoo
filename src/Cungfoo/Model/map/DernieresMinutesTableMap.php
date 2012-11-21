@@ -61,6 +61,7 @@ class DernieresMinutesTableMap extends TableMap
   2 => '21',
 ));
         $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

@@ -36,6 +36,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method PointInteretQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PointInteretQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method PointInteretQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method PointInteretQuery groupById() Group by the id column
  * @method PointInteretQuery groupByCode() Group by the code column
@@ -49,6 +50,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery groupByImage() Group by the image column
  * @method PointInteretQuery groupByCreatedAt() Group by the created_at column
  * @method PointInteretQuery groupByUpdatedAt() Group by the updated_at column
+ * @method PointInteretQuery groupByEnabled() Group by the enabled column
  *
  * @method PointInteretQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PointInteretQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -76,6 +78,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteret findOneByImage(string $image) Return the first PointInteret filtered by the image column
  * @method PointInteret findOneByCreatedAt(string $created_at) Return the first PointInteret filtered by the created_at column
  * @method PointInteret findOneByUpdatedAt(string $updated_at) Return the first PointInteret filtered by the updated_at column
+ * @method PointInteret findOneByEnabled(boolean $enabled) Return the first PointInteret filtered by the enabled column
  *
  * @method array findById(int $id) Return PointInteret objects filtered by the id column
  * @method array findByCode(string $code) Return PointInteret objects filtered by the code column
@@ -89,6 +92,7 @@ use Cungfoo\Model\PointInteretQuery;
  * @method array findByImage(string $image) Return PointInteret objects filtered by the image column
  * @method array findByCreatedAt(string $created_at) Return PointInteret objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return PointInteret objects filtered by the updated_at column
+ * @method array findByEnabled(boolean $enabled) Return PointInteret objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -192,7 +196,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `CREATED_AT`, `UPDATED_AT` FROM `point_interet` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `point_interet` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -653,6 +657,33 @@ abstract class BasePointInteretQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the enabled column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEnabled(true); // WHERE enabled = true
+     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * </code>
+     *
+     * @param     boolean|string $enabled The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByEnabled($enabled = null, $comparison = null)
+    {
+        if (is_string($enabled)) {
+            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

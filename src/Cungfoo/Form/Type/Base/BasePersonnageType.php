@@ -54,6 +54,12 @@ class BasePersonnageType extends AppAwareType
             'label' => 'personnage.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('enabled', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'personnage.enabled',
+            'required' => false,
+        ));
         $builder->add('personnageI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PersonnageI18n',
             'languages' => array(

@@ -196,6 +196,13 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the enabled field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $enabled;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -208,6 +215,27 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->enabled = false;
+    }
+
+    /**
+     * Initializes internal state of BaseDemandeIdentifiant object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -511,6 +539,16 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         } else {
             return $dt->format($format);
         }
+    }
+
+    /**
+     * Get the [enabled] column value.
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 
     /**
@@ -1075,6 +1113,35 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [enabled] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setEnabled($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::ENABLED;
+        }
+
+
+        return $this;
+    } // setEnabled()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -1084,6 +1151,10 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->enabled !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1131,6 +1202,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $this->identifiant = ($row[$startcol + 22] !== null) ? (boolean) $row[$startcol + 22] : null;
             $this->created_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
             $this->updated_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->enabled = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1139,7 +1211,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 25; // 25 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 26; // 26 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeIdentifiant object", $e);
@@ -1437,6 +1509,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `demande_identifiant` (%s) VALUES (%s)',
@@ -1522,6 +1597,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1732,6 +1810,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             case 24:
                 return $this->getUpdatedAt();
                 break;
+            case 25:
+                return $this->getEnabled();
+                break;
             default:
                 return null;
                 break;
@@ -1785,6 +1866,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $keys[22] => $this->getIdentifiant(),
             $keys[23] => $this->getCreatedAt(),
             $keys[24] => $this->getUpdatedAt(),
+            $keys[25] => $this->getEnabled(),
         );
 
         return $result;
@@ -1894,6 +1976,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             case 24:
                 $this->setUpdatedAt($value);
                 break;
+            case 25:
+                $this->setEnabled($value);
+                break;
         } // switch()
     }
 
@@ -1943,6 +2028,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if (array_key_exists($keys[22], $arr)) $this->setIdentifiant($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setCreatedAt($arr[$keys[23]]);
         if (array_key_exists($keys[24], $arr)) $this->setUpdatedAt($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setEnabled($arr[$keys[25]]);
     }
 
     /**
@@ -1979,6 +2065,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) $criteria->add(DemandeIdentifiantPeer::IDENTIFIANT, $this->identifiant);
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) $criteria->add(DemandeIdentifiantPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) $criteria->add(DemandeIdentifiantPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) $criteria->add(DemandeIdentifiantPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -2066,6 +2153,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $copyObj->setIdentifiant($this->getIdentifiant());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setEnabled($this->getEnabled());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -2142,9 +2230,11 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $this->identifiant = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);

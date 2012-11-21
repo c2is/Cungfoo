@@ -8,6 +8,20 @@
                 console.log($('.edit', this).attr('href'));
                 window.location.href = $('.edit', this).attr('href');
             });
+
+            $('.enabled').bind('click', function() {
+                var $this = $(this);
+                $.get($this.attr('href'), function(data) {
+                    $('i', $this).removeClass();
+                    if (data.enabled) {
+                        $('i', $this).addClass('icon-eye-open');
+                    }
+                    else {
+                        $('i', $this).addClass('icon-eye-close');
+                    }
+                });
+                return false;
+            })
         });
     </script>
 {% endblock %}
@@ -30,7 +44,9 @@
         <thead>
         <tr>
             {% for column_name in column_names %}
-            <th>{{ column_name | trans }}</th>
+            {% if column_name != name ~ ".enabled" %}
+                <th>{{ column_name | trans }}</th>
+            {% endif %}
             {% endfor %}
             <th class="actions-item" colspan="3">{{ 'list.actions' | trans }}</th>
         </tr>
@@ -38,11 +54,14 @@
         <tbody>
         {% for line in lines %}
         <tr class="line">
-            {% for column in line %}
-            <td>{{ column | raw }}</td>
+            {% for column_name,column in line %}
+            {% if column_name != "enabled" %}
+                <td>{{ column | raw }}</td>
+            {% endif %}
             {% endfor %}
             <td class="actions-item"><a class="edit" href="{{ path('%s_crud_update' | format (name), {'id': line.id}) }}"><i class="icon-edit"></i></a></td>
             <td class="actions-item"><a class="delete" href="{{ path('%s_crud_delete' | format (name), {'id': line.id}) }}"><i data-confirm-ok="{{ "crud.modal.delete.ok" | trans }}" data-confirm-cancel="{{ "crud.modal.delete.cancel" | trans }}" data-confirm-title="{{ "crud.modal.delete.title" | trans }}" data-confirm-message="{{ "crud.modal.delete.message" | trans  ({'%code%': line.id }) }}"  class="icon-remove-circle"></i></a></td>
+            <td class="actions-item"><a class="enabled" href="{{ path('%s_crud_enabled' | format (name), {'id': line.id}) }}"><i class="icon-eye-{% if line.enabled %}open{% else %}close{% endif %}"></i></a></td>
         </tr>
         {% endfor %}
         </tbody>
