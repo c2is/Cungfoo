@@ -10,8 +10,8 @@ include('includes/top.php'); ?>
             <span class="nbResult"><span class="nb">07</span>Résultat(s)</span>
             <div class="typeAff">
                 <span>Affichage résultats</span>
-                <button class="button picto active">Liste</button>
-                <button class="button picto">Carte</button>
+                <button id="list" class="button picto active">Liste</button>
+                <button id="map" class="button picto">Carte</button>
             </div>
             <div id="widgetRange">
                 Budget(s) proposé(s)

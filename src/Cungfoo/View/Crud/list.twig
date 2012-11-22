@@ -41,7 +41,7 @@
     <div class="row">
         <div class="span8">{{ context | raw }}</div>
         <div class="span4">
-            {% if paginator.nextPage != paginator.page or paginator.previousPage != paginator.page %}
+            {% if (paginator.nextPage != paginator.page or paginator.previousPage != paginator.page) and lines | length != 0 %}
             {% include 'Crud/paginator.twig'%}
             {% endif %}
         </div>
@@ -76,8 +76,7 @@
     <script type="text/javascript">
         $('.actions-item .delete').confirmModal();
     </script>
-    {% if paginator.nextPage != paginator.page or paginator.previousPage != paginator.page %}
-    <hr/>
+    {% if (paginator.nextPage != paginator.page or paginator.previousPage != paginator.page) and lines | length != 0 %}
     {% include 'Crud/paginator.twig'%}
     {% endif %}
 {% endblock %}

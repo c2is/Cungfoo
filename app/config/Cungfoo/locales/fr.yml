@@ -175,7 +175,7 @@ menu.editos: Éditos
 menu.top_camping: Top campings
 menu.mise_en_avant: Mise en avant
 menu.dernieres_minutes: Dernières minutes
-
+menu.vos_vacances: Vos vacances
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -439,6 +439,17 @@ mise_en_avant.date_fin_validite: Date de fin de validite
 mise_en_avant.illustration.path: Illustration
 mise_en_avant.date.fin.validite: Date de fin de validite
 mise_en_avant.sortable_rank: Ordre
+
+vos_vacances.crud.create: Création d'un encart vos vacances
+vos_vacances.crud.list: Liste des encarts vos vacances
+vos_vacances.crud.update: Mettre à jour l'encart vos vacances %name%
+vos_vacances.crud.view: Détails d'un encart vos vacances
+vos_vacances.id: Id
+vos_vacances.image_path: Image
+vos_vacances.titre: Titre
+vos_vacances.description: Description
+vos_vacances.age: Age
+vos_vacances.prenom: Prénom
 
 monday: lundi
 tuesday: mardi
