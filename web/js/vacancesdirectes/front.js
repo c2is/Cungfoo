@@ -32,7 +32,7 @@ $(function() {
     }
 
 // Test html5 form capacties andif do polyfills
-    if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
+    //if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 //
     $('.cover').css({backgroundSize: "cover"});
@@ -1395,6 +1395,14 @@ function initializeAllGmap() {
 
 /*** FONCTIONS RESULTATS DE RECHERCHE ***/
 function initCritResult(){
+
+    if(window.location.hash === '#carte') {
+        $('#map').trigger('click');
+    }
+
+    $('.typeAff').find('button').click( function(){
+       $(this).addClass('active').siblings('button').removeClass('active');
+    });
 
     $('.itemResult .linePrice :radio').change( function(){
         var oCheck = $(this);
