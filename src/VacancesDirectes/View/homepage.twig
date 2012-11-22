@@ -64,7 +64,7 @@
         {% endfor %}
         {% endif %}
 
-        <a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
+        <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
     </div>
 </div>
 <div class="ratio-33 left clear">
@@ -91,7 +91,7 @@
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link left">Voir toutes les dernières minutes</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">Voir toutes les dernières minutes</a>
     </div>
 </div>
 {% endblock %}
