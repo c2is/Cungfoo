@@ -29,6 +29,7 @@
             {% endfor %}
         </ul>
     </div>
+
     <a id="sliderNext" class="radiusBox yellow"></a>
 
     <div class="pagination clear" id="sliderPager"></div>
@@ -64,7 +65,7 @@
         {% endfor %}
         {% endif %}
 
-        <a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
+        <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
     </div>
 </div>
 <div class="ratio-33 left clear">
@@ -91,7 +92,7 @@
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link left">Voir toutes les dernières minutes</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">Voir toutes les dernières minutes</a>
     </div>
 </div>
 {% endblock %}
@@ -131,16 +132,13 @@
                 </div>
             </div>
         </div>
-        <div id="forwardBloc" class="radiusBox greyF">
-            <h4 id="forwardBlocTitle">Faire de vos
-                vacances
-                une aventure
-                humaine !</h4>
+        <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath) }})">
+            <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
             <div id="forwardBlocSubtitle">
-                Amélie
-                <span>10 ans</span>
+                {{ vosVacances.prenom }}
+                <span>{{ vosVacances.age }} {{ "ans" | trans }}</span>
             </div>
-            <div id="forwardBlocHeadline"><span>Je participe à toutes les activités du camping</span></div>
+            <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
         </div>
     </div>
 </div>

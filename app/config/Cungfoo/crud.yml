@@ -98,3 +98,7 @@ crud:
             prefix: /mise_en_avant
             model: \Cungfoo\Model\MiseEnAvant
             form: \Cungfoo\Form\Type\MiseEnAvantType
+        vos_vacances:
+            prefix: /vos_vacances
+            model: \Cungfoo\Model\VosVacances
+            form: \Cungfoo\Form\Type\VosVacancesType
