@@ -2266,3 +2266,133 @@ TextMorph.prototype.setOptions = function(options){
 /* backgroundSize: A jQuery cssHook adding support for "cover" and "contain" to IE6,7,8 */
 (function(e,t,n,r,i){var s=e("<div>")[0],o=/url\(["']?(.*?)["']?\)/,u=[],a={top:0,left:0,bottom:1,right:1,center:.5};if("backgroundSize"in s.style&&!e.debugBGS){return}e.cssHooks.backgroundSize={set:function(t,n){var r=!e.data(t,"bgsImg"),i,s,o;e.data(t,"bgsValue",n);if(r){u.push(t);e.refreshBackgroundDimensions(t,true);s=e("<div>").css({position:"absolute",zIndex:-1,top:0,right:0,left:0,bottom:0,overflow:"hidden"});o=e("<img>").css({position:"absolute"}).appendTo(s),s.prependTo(t);e.data(t,"bgsImg",o[0]);i=(e.css(t,"backgroundPosition")||e.css(t,"backgroundPositionX")+" "+e.css(t,"backgroundPositionY")).split(" ");e.data(t,"bgsPos",[a[i[0]]||parseFloat(i[0])/100,a[i[1]]||parseFloat(i[1])/100]);e.css(t,"zIndex")=="auto"&&(t.style.zIndex=0);e.css(t,"position")=="static"&&(t.style.position="relative");e.refreshBackgroundImage(t)}else{e.refreshBackground(t)}},get:function(t){return e.data(t,"bgsValue")||""}};e.cssHooks.backgroundImage={set:function(t,n){return e.data(t,"bgsImg")?e.refreshBackgroundImage(t,n):n}};e.refreshBackgroundDimensions=function(t,n){var r=e(t),i={width:r.innerWidth(),height:r.innerHeight()},s=e.data(t,"bgsDim"),o=!s||i.width!=s.width||i.height!=s.height;e.data(t,"bgsDim",i);if(o&&!n){e.refreshBackground(t)}};e.refreshBackgroundImage=function(t,n){var r=e.data(t,"bgsImg"),i=(o.exec(n||e.css(t,"backgroundImage"))||[])[1],s=r&&r.src,u=i!=s,a,f;if(u){r.style.height=r.style.width="auto";r.onload=function(){var n={width:r.width,height:r.height};if(n.width==1&&n.height==1){return}e.data(t,"bgsImgDim",n);e.data(t,"bgsConstrain",false);e.refreshBackground(t);r.style.visibility="visible";r.onload=null};r.style.visibility="hidden";r.src=i;if(r.readyState||r.complete){r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";r.src=i}t.style.backgroundImage="none"}};e.refreshBackground=function(t){var n=e.data(t,"bgsValue"),i=e.data(t,"bgsDim"),s=e.data(t,"bgsImgDim"),o=e(e.data(t,"bgsImg")),u=e.data(t,"bgsPos"),a=e.data(t,"bgsConstrain"),f,l=i.width/i.height,c=s.width/s.height,h;if(n=="contain"){if(c>l){e.data(t,"bgsConstrain",f="width");h=r.floor((i.height-i.width/c)*u[1]);o.css({top:h});if(f!=a){o.css({width:"100%",height:"auto",left:0})}}else{e.data(t,"bgsConstrain",f="height");h=r.floor((i.width-i.height*c)*u[0]);o.css({left:h});if(f!=a){o.css({height:"100%",width:"auto",top:0})}}}else if(n=="cover"){if(c>l){e.data(t,"bgsConstrain",f="height");h=r.floor((i.height*c-i.width)*u[0]);o.css({left:-h});if(f!=a){o.css({height:"100%",width:"auto",top:0})}}else{e.data(t,"bgsConstrain",f="width");h=r.floor((i.width/c-i.height)*u[1]);o.css({top:-h});if(f!=a){o.css({width:"100%",height:"auto",left:0})}}}};var f=e.event,l,c={_:0},h=0,p,d;l=f.special.throttledresize={setup:function(){e(this).on("resize",l.handler)},teardown:function(){e(this).off("resize",l.handler)},handler:function(t,n){var r=this,i=arguments;p=true;if(!d){e(c).animate(c,{duration:Infinity,step:function(){h++;if(h>l.threshold&&p||n){t.type="throttledresize";f.dispatch.apply(r,i);p=false;h=0}if(h>9){e(c).stop();d=false;h=0}}});d=true}},threshold:1};e(t).on("throttledresize",function(){e(u).each(function(){e.refreshBackgroundDimensions(this)})})})(jQuery,window,document,Math);
 
+/*!
+ /**
+ * Monkey patch jQuery 1.3.1+ to add support for setting or animating CSS
+ * scale and rotation independently.
+ * https://github.com/zachstronaut/jquery-animate-css-rotate-scale
+ * Released under dual MIT/GPL license just like jQuery.
+ * 2009-2012 Zachary Johnson www.zachstronaut.com
+ */
+(function ($) {
+    // Updated 2010.11.06
+    // Updated 2012.10.13 - Firefox 16 transform style returns a matrix rather than a string of transform functions.  This broke the features of this jQuery patch in Firefox 16.  It should be possible to parse the matrix for both scale and rotate (especially when scale is the same for both the X and Y axis), however the matrix does have disadvantages such as using its own units and also 45deg being indistinguishable from 45+360deg.  To get around these issues, this patch tracks internally the scale, rotation, and rotation units for any elements that are .scale()'ed, .rotate()'ed, or animated.  The major consequences of this are that 1. the scaled/rotated element will blow away any other transform rules applied to the same element (such as skew or translate), and 2. the scaled/rotated element is unaware of any preset scale or rotation initally set by page CSS rules.  You will have to explicitly set the starting scale/rotation value.
+
+    function initData($el) {
+        var _ARS_data = $el.data('_ARS_data');
+        if (!_ARS_data) {
+            _ARS_data = {
+                rotateUnits: 'deg',
+                scale: 1,
+                rotate: 0
+            };
+
+            $el.data('_ARS_data', _ARS_data);
+        }
+
+        return _ARS_data;
+    }
+
+    function setTransform($el, data) {
+        $el.css('transform', 'rotate(' + data.rotate + data.rotateUnits + ') scale(' + data.scale + ',' + data.scale + ')');
+    }
+
+    $.fn.rotate = function (val) {
+        var $self = $(this), m, data = initData($self);
+
+        if (typeof val == 'undefined') {
+            return data.rotate + data.rotateUnits;
+        }
+
+        m = val.toString().match(/^(-?\d+(\.\d+)?)(.+)?$/);
+        if (m) {
+            if (m[3]) {
+                data.rotateUnits = m[3];
+            }
+
+            data.rotate = m[1];
+
+            setTransform($self, data);
+        }
+
+        return this;
+    };
+
+    // Note that scale is unitless.
+    $.fn.scale = function (val) {
+        var $self = $(this), data = initData($self);
+
+        if (typeof val == 'undefined') {
+            return data.scale;
+        }
+
+        data.scale = val;
+
+        setTransform($self, data);
+
+        return this;
+    };
+
+    // fx.cur() must be monkey patched because otherwise it would always
+    // return 0 for current rotate and scale values
+    var curProxied = $.fx.prototype.cur;
+    $.fx.prototype.cur = function () {
+        if (this.prop == 'rotate') {
+            return parseFloat($(this.elem).rotate());
+
+        } else if (this.prop == 'scale') {
+            return parseFloat($(this.elem).scale());
+        }
+
+        return curProxied.apply(this, arguments);
+    };
+
+    $.fx.step.rotate = function (fx) {
+        var data = initData($(fx.elem));
+        $(fx.elem).rotate(fx.now + data.rotateUnits);
+    };
+
+    $.fx.step.scale = function (fx) {
+        $(fx.elem).scale(fx.now);
+    };
+
+    /*
+
+     Starting on line 3905 of jquery-1.3.2.js we have this code:
+
+     // We need to compute starting value
+     if ( unit != "px" ) {
+     self.style[ name ] = (end || 1) + unit;
+     start = ((end || 1) / e.cur(true)) * start;
+     self.style[ name ] = start + unit;
+     }
+
+     This creates a problem where we cannot give units to our custom animation
+     because if we do then this code will execute and because self.style[name]
+     does not exist where name is our custom animation's name then e.cur(true)
+     will likely return zero and create a divide by zero bug which will set
+     start to NaN.
+
+     The following monkey patch for animate() gets around this by storing the
+     units used in the rotation definition and then stripping the units off.
+
+     */
+
+    var animateProxied = $.fn.animate;
+    $.fn.animate = function (prop) {
+        if (typeof prop['rotate'] != 'undefined') {
+            var $self, data, m = prop['rotate'].toString().match(/^(([+-]=)?(-?\d+(\.\d+)?))(.+)?$/);
+            if (m && m[5]) {
+                $self = $(this);
+                data = initData($self);
+                data.rotateUnits = m[5];
+            }
+
+            prop['rotate'] = m[1];
+        }
+
+        return animateProxied.apply(this, arguments);
+    };
+})(jQuery);
+
+

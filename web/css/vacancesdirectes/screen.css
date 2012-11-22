@@ -2240,7 +2240,7 @@ h6,
 .element .fb-like {
   width: 109px;
   height: 20px;
-  margin: 10px 15px 0 5px;
+  margin: 10px 10px 0;
 }
 .element .view {
   margin: 0 15px 10px 5px;
@@ -2416,7 +2416,7 @@ h6,
 
 }
 .home .boxborder {
-  margin: 0 15px 5px 5px;
+  margin: 0 10px 5px;
   display: block;
 }
 .home #wrap a {
@@ -2429,10 +2429,16 @@ h6,
   text-indent: -9999px;
   margin-top: 7px;
 }
+.home #header {
+  margin-bottom: 300px;
+}
 .home #sliderWrapper {
   overflow: hidden;
-  padding-top: 300px;
-  margin-top: -300px;
+  padding-top: 30px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .home #sliderWrapper #sliderPrev,
 .home #sliderWrapper #sliderNext {
@@ -2512,7 +2518,7 @@ h6,
   font-family: 'PT Sans Narrow', Arial, sans-serif;
   width: 976px;
   height: 230px;
-  margin: 30px auto 0;
+  margin: 277px auto 0;
   z-index: 10;
 }
 .home #sliderWrapper #sliderContainer #sliderBackground {
@@ -2538,9 +2544,10 @@ h6,
   position: absolute;
   top: -20px;
   right: 350px;
+  text-indent: 90px;
+  transform: rotate(18deg);
 }
 .home #sliderWrapper #sliderContainer .slide .sliderPhoto img {
-  transform: rotate(12deg);
   z-index: 0;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderPostmark {
@@ -2814,7 +2821,6 @@ h6,
   height: 253px;
   float: left;
   margin: 0 0 12px 0;
-  background: url("../../images/vacancesdirectes/common/pict/forward-bloc.jpg") no-repeat 0 0 transparent;
   padding-bottom: 5px;
 }
 .home #forwardBloc #forwardBlocTitle {

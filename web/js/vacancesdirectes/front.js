@@ -177,7 +177,7 @@ $(function() {
     if ($('#slider').length){
         $("#slider").carouFredSel({
             auto: {
-                play: true,
+                play: false,
                 delay: 5000,
                 timeoutDuration: 5000,
                 fx: "scroll",
@@ -243,6 +243,9 @@ $(function() {
             $(this).attr('data-slide', i);
             i++;
         });
+        $('.sliderPhoto').eq(0).animate({
+            rotate: '12deg'
+        }, {queue: false, duration: 500});
 
     }
 
@@ -260,23 +263,36 @@ $(function() {
         }
 
 //        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
-        $("#sliderPrev").animate({left:-125},100);
-        $("#sliderNext").animate({right:-125},100);
+        $('#sliderPrev').animate({left:-125},100);
+        $('#sliderNext').animate({right:-125},100);
 
         $('.sliderBackground').hide();
         $('#sliderBackground').show();
-        $('.sliderStain').stop().fadeOut(100);
+        $('.sliderStain').hide();
         pos = $("#slider").triggerHandler("currentPosition");
         if(direction == "next"){
-            e.items.new.find('.sliderPostmark').show();
+            e.items.new.find('.sliderPostmark').hide();
             e.items.new.find('.sliderPhoto').show();
             e.items.old.find('.sliderPostmark').fadeOut(300);
             e.items.old.find('.sliderPhoto').fadeOut(500);
+
+            e.items.old.find('.sliderPhoto').animate({
+                rotate: '-54deg',
+                scale: '0.5'
+            }, {queue: false, duration: 500});
+            e.items.new.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+            e.items.new.find('.sliderPhoto').scale('1'); // rotates to 0deg
+            e.items.new.find('.sliderPostmark').fadeIn(3000);
         } else {
             e.items.new.find('.sliderPostmark').hide();
             e.items.new.find('.sliderPhoto').hide();
-            e.items.new.find('.sliderPostmark').fadeIn(300);
+            e.items.new.find('.sliderPostmark').fadeIn(3000);
             e.items.new.find('.sliderPhoto').fadeIn(500);
+
+            e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
+            e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
+            e.items.new.find('.sliderPhoto').rotate('-108deg');
+            e.items.new.find('.sliderPhoto').scale(0);
         }
     }
 
@@ -286,6 +302,14 @@ $(function() {
         $('.sliderStain.first').stop().fadeIn(300);
         $('.sliderStain.second').delay(150).fadeIn(300);
         $('#sliderBackground').hide();
+
+        e.items.old.find('.sliderPostmark').hide();
+        e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+        e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
+        e.items.new.find('.sliderPhoto').animate({
+            rotate: '12deg',
+            scale: '1'
+        }, {queue: false, duration: 500});
 
         redefineSliderButtons();
     }
