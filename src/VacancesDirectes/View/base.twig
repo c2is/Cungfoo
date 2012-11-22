@@ -37,10 +37,11 @@
             <h1 id="catchline">{{ "header.130_camping" | trans }}</h1>
             {% endif %}
         </div>
+
+        {% block slider %}
+        {% endblock %}
     </header>
 
-    {% block slider %}
-    {% endblock %}
 
     {% block content %}
     <div id="wrap" class="fixed-width clear">
