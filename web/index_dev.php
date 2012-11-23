@@ -21,12 +21,16 @@ ini_set('display_errors', 1);
 error_reporting(-1);
 DebugClassLoader::enable();
 ErrorHandler::register();
-if ('cli' !== php_sapi_name()) {
+if ('cli' !== php_sapi_name())
+{
     ExceptionHandler::register();
 }
 
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectes/app.php';
+
+// set environnement
+require __DIR__ . '/../app/config/dev.php';
 
 // created the context
 require __DIR__ . '/../src/VacancesDirectes/context.php';
@@ -34,7 +38,5 @@ require __DIR__ . '/../src/VacancesDirectes/context.php';
 // load routes code
 require __DIR__ . '/../src/VacancesDirectes/routes.php';
 
-// set environnement
-require __DIR__ . '/../app/config/dev.php';
 
 $app->run();
