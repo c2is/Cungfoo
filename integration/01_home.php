@@ -194,20 +194,35 @@
                 <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
                     <script>
                         function homeInit() {
+                            var homeMap;
+                            var markerController = new google.maps.MVCObject();
                             var homeMkrs = [
                                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
-                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, [{theme1: 1}, {theme2: 0}, {theme3: 0}, {theme4: 0}, {theme5: 0}, {theme6: 0}]]
-                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, [{theme1: 1}, {theme2: 1}, {theme3: 0}, {theme4: 0}, {theme5: 0}, {theme6: 0}]]
+                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['theme1', 'theme3']]
+                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['theme1', 'theme2']]
                             ];
                             var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
-                                    mapOptions = {
-                                        zoom: 7,
-                                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                        center: centerhomeMkr
-                                    };
+                                mapOptions = {
+                                    zoom: 7,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                    center: centerhomeMkr
+                                };
                             homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
                             setMarkers(homeMap, homeMkrs);
+                            
+                            $('#mapFilters').find('a').click( function(){
+                                var theme = this.id;
+                                //consoleLog(theme);
+                                for ( var i in aMarkers ){
+                                    var marker = aMarkers[i];
+                                    marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                                    //consoleLog($.inArray(theme, marker.filters));
+                                    //consoleLog(marker.filters);
+                                }
+                                return false;
+                            });
                         }
+
                     </script>
                 </div>
 

@@ -1315,7 +1315,8 @@ var map,
     shadow,
     shape,
     boxOptions,
-    ib;
+    ib,
+    aMarkers = [];
 
 function loadGmapScript() { // call at the end of the DOM ready
     //consoleLog('map');
@@ -1347,9 +1348,9 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 title: mkr[0],
                 zIndex: mkr[3],
                 idCamp: mkr[4],
-                filterNew: mkr[6],
-                filterAnimals: mkr[7]
+                filters: mkr[6]
             });
+            aMarkers.push(marker);
 
             if (marker.idCamp != ''){
                 google.maps.event.addListener(marker, "click", function (e) {
@@ -1423,12 +1424,6 @@ function initializeAllGmap() {
     }
     if ($('#homeMap').length) {
         homeInit();
-
-        $('#mapFilters').find('a').click( function(){
-            var theme = this.id;
-            consoleLog(theme);
-            return false;
-        });
     }
 }
 
