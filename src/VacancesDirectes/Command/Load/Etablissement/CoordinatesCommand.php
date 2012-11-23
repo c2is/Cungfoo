@@ -41,7 +41,7 @@ class CoordinatesCommand extends BaseCommand
 
             foreach ($etablissements as $etablissement)
             {
-                $json = json_decode(file_get_contents(sprintf('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false', urlencode($etablissement->getCity() . ',France'))), true);
+                $json = json_decode(file_get_contents(sprintf('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false', urlencode($etablissement->getCity()))), true);
                 if (count($json['results']) > 0)
                 {
                     $etablissement

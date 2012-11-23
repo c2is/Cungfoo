@@ -191,19 +191,51 @@
         </div>
         <div class="column clearboth">
             <div id="mapBloc" class="radiusBox greyC clear">
-                <div id="mapView" class="left">
+                <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
+                    <script>
+                        function homeInit() {
+                            var homeMap;
+                            var markerController = new google.maps.MVCObject();
+                            var homeMkrs = [
+                                //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
+                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['theme1', 'theme3']]
+                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['theme1', 'theme2']]
+                            ];
+                            var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
+                                mapOptions = {
+                                    zoom: 7,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                    center: centerhomeMkr
+                                };
+                            homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
+                            setMarkers(homeMap, homeMkrs);
+                            
+                            $('#mapFilters').find('a').click( function(){
+                                var theme = this.id;
+                                //consoleLog(theme);
+                                for ( var i in aMarkers ){
+                                    var marker = aMarkers[i];
+                                    marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                                    //consoleLog($.inArray(theme, marker.filters));
+                                    //consoleLog(marker.filters);
+                                }
+                                return false;
+                            });
+                        }
 
+                    </script>
                 </div>
+
                 <div id="mapContent" class="left">
                     <h2>Campings Vacances Directes</h2>
                     <h3>Filter par</h3>
                     <ul id="mapFilters">
-                        <li><a id="filterNew" href="#"><span>Nouveautés saison 2012</span></a></li>
-                        <li><a id="filterChildren" href="#"><span>Les enfants d'abord</span></a></li>
-                        <li><a id="filterWaterParks" href="#"><span>Parcs aquatiques</span></a></li>
-                        <li><a id="filterIndoorPools" href="#"><span>Piscines couvertes</span></a></li>
-                        <li><a id="filterWaterfront" href="#"><span>Les pieds dans l'eau</span></a></li>
-                        <li><a id="filterAnimals" href="#"><span>En vacances avec votre chien</span></a></li>
+                        <li><a id="theme1" href="#"><span>Nouveautés saison 2012</span></a></li>
+                        <li><a id="theme2" href="#"><span>Les enfants d'abord</span></a></li>
+                        <li><a id="theme3" href="#"><span>Parcs aquatiques</span></a></li>
+                        <li><a id="theme4" href="#"><span>Piscines couvertes</span></a></li>
+                        <li><a id="theme5" href="#"><span>Les pieds dans l'eau</span></a></li>
+                        <li><a id="theme6" href="#"><span>En vacances avec votre chien</span></a></li>
                     </ul>
                 </div>
             </div>

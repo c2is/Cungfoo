@@ -1,21 +1,21 @@
 \Cungfoo\Model\MiseEnAvant:
     1:
         ImageFondPath: uploads/mise_en_avants/50a4c3feacdd9.jpeg
-        Prix: 112
+        Prix: '112'
         IllustrationPath: uploads/mise_en_avants/50a50fc77cf03.jpeg
         DateFinValidite: '2012-11-15 00:00:00'
         SortableRank: 1
         Enabled: true
     2:
         ImageFondPath: uploads/mise_en_avants/50a4c4e410317.jpeg
-        Prix: 550
+        Prix: '550'
         IllustrationPath: uploads/mise_en_avants/50a51a6d57352.png
         DateFinValidite: '2013-01-08 00:00:00'
         SortableRank: 2
         Enabled: true
     3:
         ImageFondPath: uploads/mise_en_avants/50a4c53267b8e.jpeg
-        Prix: 250
+        Prix: '250'
         IllustrationPath: uploads/mise_en_avants/50a51aed0abc6.png
         DateFinValidite: '2012-11-29 00:00:00'
         SortableRank: 3

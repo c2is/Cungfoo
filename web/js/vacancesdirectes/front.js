@@ -316,7 +316,7 @@ $(function() {
 
     function redefineSliderButtons(){
 
-        console.log(direction);
+        //console.log(direction);
 
         var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
         var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
@@ -1315,7 +1315,8 @@ var map,
     shadow,
     shape,
     boxOptions,
-    ib;
+    ib,
+    aMarkers = [];
 
 function loadGmapScript() { // call at the end of the DOM ready
     //consoleLog('map');
@@ -1346,8 +1347,10 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 shape: shape,
                 title: mkr[0],
                 zIndex: mkr[3],
-                idCamp: mkr[4]
+                idCamp: mkr[4],
+                filters: mkr[6]
             });
+            aMarkers.push(marker);
 
             if (marker.idCamp != ''){
                 google.maps.event.addListener(marker, "click", function (e) {
@@ -1418,6 +1421,9 @@ function initializeAllGmap() {
     }
     if ($('#resultMap').length) {
         resultInit();
+    }
+    if ($('#homeMap').length) {
+        homeInit();
     }
 }
 
