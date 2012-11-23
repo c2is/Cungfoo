@@ -2167,10 +2167,11 @@ h6,
 .radiusBox2 .stamp span {
   margin-left: -6px;
 }
-.ie-lte8 .stain {
-  width: 70px;
-  min-width: 70px !important;
+/*.stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
+  &>span{margin-top:10px;}
+  .price{font-size:27px;font-weight:bold;}
 }
+.ie-lte8 .stain{width:70px;min-width:70px !important;}*/
 /* structure */
 #wrap {
   padding: 15px 0;
@@ -3747,6 +3748,8 @@ h6,
   -webkit-border-radius: 15px;
   border-radius: 15px;
   margin-bottom: 15px;
+  /*.ie-lte8 .stain{width:70px;min-width:70px !important;}*/
+
 }
 .itemResult .itemResultTitle {
   background: #8c8a8a;
@@ -3799,6 +3802,12 @@ h6,
   width: 233px;
   text-align: right;
 }
+.itemResult .itemResultPopDest {
+  position: absolute;
+  left: 0;
+  width: 300px;
+  background-color: #464545;
+}
 .itemResult .itemResultBottom {
   min-height: 100px;
   clear: both;
@@ -3835,6 +3844,42 @@ h6,
   display: block;
 }
 .itemResult .itemResultBottom .stain {
+  width: 90px;
+  height: 70px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 70px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  margin-left: -10px;
+  position: relative;
+  /*&>span{margin-top:10px;}*/
+
+}
+.itemResult .itemResultBottom .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 22px;
+}
+.itemResult .itemResultBottom .stain > img {
+  vertical-align: middle;
+}
+.itemResult .itemResultBottom .stain .price {
+  font-size: 27px;
+  font-weight: bold;
+}
+.itemResult .itemResultBottom .ie-lte8 .stain {
+  width: 70px;
+  min-width: 70px !important;
+}
+.itemResult .itemResultBottom .stain {
   display: block;
   width: 131px;
   height: 129px;
@@ -3867,6 +3912,39 @@ h6,
 }
 .itemResult .itemResultBottom .catalogue .stain {
   padding-top: 39px;
+}
+.itemResult .stain {
+  width: 90px;
+  height: 70px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 70px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  margin-left: -10px;
+  position: relative;
+}
+.itemResult .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 22px;
+}
+.itemResult .stain > img {
+  vertical-align: middle;
+}
+.itemResult .stain > span {
+  margin-top: 10px;
+}
+.itemResult .stain .price {
+  font-size: 27px;
+  font-weight: bold;
 }
 .itemResult .infoDestination {
   position: relative;
@@ -3948,6 +4026,280 @@ h6,
   color: #666666;
   font: bold 15px Arial, sans-serif;
   text-align: center;
+}
+/* page booking */
+.booking {
+  /* COMMON */
+
+  /* structure */
+
+  /* HOME */
+
+  /* SEARCH */
+
+}
+.booking #nav ul {
+  top: 0px;
+}
+.booking #nav ul li.tab {
+  height: 50px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.booking #nav ul li.tab a {
+  margin: 0;
+}
+.booking #nav ul li.tab:hover a#home:after {
+  content: '';
+}
+.booking #nav ul span {
+  margin-left: 5px;
+}
+.booking h1 {
+  margin: 10px 0 20px;
+}
+.booking h1 span {
+  color: #464545;
+}
+.booking iframe {
+  width: 100%;
+}
+.booking #basketContainer,
+.booking #confirmContainer,
+.booking #discoverContainer {
+  margin: 0;
+  width: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
+}
+.booking #discoverContainer {
+  margin: 0;
+  width: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
+}
+.booking #userBox {
+  float: right;
+}
+.booking #userBox span {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+.booking .column {
+  /*.clear>.left{width:468px;margin:0;}
+.clear>.right{width:436px;margin:0;}*/
+
+}
+.booking .column.left {
+  width: 468px;
+}
+.booking .column.right {
+  width: 436px;
+}
+.booking .error {
+  margin-bottom: 10px;
+  font: 12px Arial, sans-serif;
+  color: #f58220;
+}
+.booking .error li:before {
+  content: "-";
+  padding-right: 3px;
+}
+.booking #boxLogin #formLogin > .left {
+  width: 214px;
+  margin: 0;
+}
+.booking #boxLogin #formLogin > .right {
+  width: 164px;
+  margin-left: 50px;
+}
+.booking #boxLogin #formLogin label {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 2px 0;
+  display: block;
+}
+.booking #boxLogin #formLogin input {
+  margin: 0 0 15px 0;
+}
+.booking #boxLogin #formLogin input[type=submit] {
+  margin: 22px 0 32px;
+}
+.booking #boxDiscover table {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 428px;
+}
+.booking #boxDiscover table tr:first-child th {
+  border-bottom: 1px solid #c6c5c5;
+}
+.booking #boxDiscover table th,
+.booking #boxDiscover table td {
+  padding: 10px 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.booking #boxDiscover table th {
+  color: #464545;
+  font-size: 14px;
+  line-height: 13px;
+}
+.booking #boxDiscover table th span {
+  font-size: 11px;
+}
+.booking #boxDiscover table th:first-child {
+  width: 96px;
+  border-right: 1px solid #c6c5c5;
+  text-align: left;
+}
+.booking #boxDiscover table td {
+  width: 146px;
+  padding: 10px;
+}
+.booking #boxDiscover table .rubric {
+  display: block;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  padding: 0 10px;
+  -webkit-border-radius: 0 10px 0 10px;
+  border-radius: 0 10px 0 10px;
+  height: 32px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 32px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.booking #boxDiscover table .rubric > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.booking #boxDiscover table .rubric > img {
+  vertical-align: middle;
+}
+.booking #boxDiscover table .rubric.fushia {
+  background-color: #c60b46;
+}
+.booking #boxDiscover table .rubric.jaune {
+  background-color: #e8a713;
+}
+.booking #boxDiscover table .rubric.orange {
+  background-color: #f58220;
+}
+.booking #boxDiscover table .rubric.vert {
+  background-color: #8dc63f;
+}
+.booking #boxDiscover table .rubric.violet {
+  background-color: #9a4d9e;
+}
+.booking #boxEdito {
+  position: relative;
+}
+.booking #boxEdito h2 {
+  margin-left: 27px;
+}
+.booking #boxEdito h2:before {
+  content: url('../../images/vacancesdirectes/common/ui/edito-icon.png');
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: -27px;
+  top: 50%;
+  margin-top: -14px;
+}
+.booking #boxEdito:before {
+  content: url('../../images/vacancesdirectes/common/ui/open-quote.png');
+  width: 66px;
+  height: 122px;
+  position: absolute;
+  left: -5px;
+  top: 10px;
+  margin-top: 0px;
+}
+.booking #boxEdito:after {
+  content: url('../../images/vacancesdirectes/common/ui/close-quote.png');
+  width: 66px;
+  height: 122px;
+  position: absolute;
+  right: -5px;
+  bottom: 10px;
+  margin-top: 0px;
+}
+.booking .radiusBox h2 {
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+.booking .radiusBox#boxEdito h2 {
+  height: 24px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 24px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.booking .radiusBox#boxEdito h2 > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.booking .radiusBox#boxEdito h2 > img {
+  vertical-align: middle;
+}
+.booking .radiusBox .stamp {
+  margin: 0 0 20px 0;
+}
+.booking .radiusBox .stamp h2 {
+  margin: 0;
+}
+.booking #headerContainer #nav {
+  margin-left: -24px;
+  width: 976px;
+  height: auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.booking #headerContainer #nav ul {
+  width: 858px;
+  margin: 0 auto;
+  text-align: center;
+}
+.booking #headerContainer #nav ul li.tab {
+  width: 186px;
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
+}
+.booking #headerContainer #nav ul li.tab a {
+  text-decoration: underline;
+}
+.booking #headerContainer #nav ul li.tab a:hover {
+  text-decoration: none;
+}
+.booking #headerContainer #nav ul li.tab.current a {
+  text-decoration: none;
+}
+.booking #headerContainer #nav .topnavSub {
+  width: 100%;
+  background: #ed145b;
+  text-align: center;
+}
+.booking #headerContainer #nav .topnavSub li.tab {
+  float: none;
+  display: inline-block;
 }
 /* page CE */
 .ce {
