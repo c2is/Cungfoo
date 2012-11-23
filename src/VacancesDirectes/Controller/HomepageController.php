@@ -11,7 +11,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\EtablissementQuery,
-    Cungfoo\Model\DernieresMinutesQuery;
+    Cungfoo\Model\DernieresMinutesQuery,
+    Cungfoo\Model\VosVacancesQuery;
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
@@ -59,6 +60,10 @@ class HomepageController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $vosVacances = VosVacancesQuery::create()
+                ->findOne()
+            ;
+
             $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
             $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
             $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
@@ -85,6 +90,7 @@ class HomepageController implements ControllerProviderInterface
                 'topCampings'       => $topCampings,
                 'pays'              => $pays,
                 'mea'               => $mea,
+                'vosVacances'       => $vosVacances,
                 'dernieres_minutes' => $listing->process(),
             ));
         })
