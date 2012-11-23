@@ -96,7 +96,7 @@
                             <span class="price">{{ proposal.adult_price|number_format }} €</span>
                         </span>
                         {% endif %}
-                        <a class="bt big" href="#_">Réserver</a>
+                        <a class="bt big" href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}">Réserver</a>
                     </div>
                 {% endfor %}
             {% else %}

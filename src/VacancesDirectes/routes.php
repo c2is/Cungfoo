@@ -18,13 +18,17 @@ use Cungfoo\Lib\Crud\Router as CrudRouter;
 
 use VacancesDirectes\Controller;
 
-$app->mount('/',                  new Controller\HomepageController());
-$app->mount('/menu',              new Controller\MenuController());
-$app->mount('/camping',           new Controller\CampingController());
-$app->mount('/search_engine',     new Controller\SearchEngineController());
-$app->mount('/catalogue',         new Controller\CatalogueController());
-$app->mount('/dispo',             new Controller\DispoController());
-$app->mount('/dernieres-minutes', new Controller\DernieresMinutesController());
+use Resalys\Controller\WrapperController;
+
+$app->mount('/',                    new Controller\HomepageController());
+$app->mount('/menu',                new Controller\MenuController());
+$app->mount('/camping',             new Controller\CampingController());
+$app->mount('/search_engine',       new Controller\SearchEngineController());
+$app->mount('/catalogue',           new Controller\CatalogueController());
+$app->mount('/dispo',               new Controller\DispoController());
+$app->mount('/dernieres-minutes',   new Controller\DernieresMinutesController());
+$app->mount('/couloir-reservation', new Controller\CouloirController());
+$app->mount('/resalys',             new WrapperController());
 
 $app->get('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
