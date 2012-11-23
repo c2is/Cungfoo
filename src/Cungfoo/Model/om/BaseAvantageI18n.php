@@ -20,7 +20,7 @@ use Cungfoo\Model\AvantageQuery;
 /**
  * Base class that represents a row from the 'avantage_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -112,7 +112,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -122,7 +122,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -132,7 +132,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -142,7 +142,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -152,7 +152,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return AvantageI18n The current object (for fluent API support)
      */
@@ -177,7 +177,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return AvantageI18n The current object (for fluent API support)
      */
@@ -198,7 +198,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return AvantageI18n The current object (for fluent API support)
      */
@@ -219,7 +219,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     *
+     * 
      * @param string $v new value
      * @return AvantageI18n The current object (for fluent API support)
      */
@@ -533,16 +533,16 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':
+                    case '`DESCRIPTION`':						
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }

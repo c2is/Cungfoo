@@ -28,6 +28,9 @@
 
 @radius:4px;
 
+@arial:Arial, Helvetica, sans-serif;
+@ptnarrow: 'PT Sans Narrow', @arial;
+
 ._border-radius(@radius:@radius) {
   -webkit-border-radius:@radius;
   border-radius:@radius;
@@ -75,6 +78,7 @@
   &>img {vertical-align:middle;}
 }
 
+
 ._h3Decroch(@colorBg, @color){
   display:inline-block;position:relative;text-transform:uppercase;._border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
   &:after{content:"";position:absolute;top:100%;left:0;border-left:10px solid transparent;border-right:0 solid transparent;border-top:6px solid #23408f;z-index:1;}
@@ -91,7 +95,7 @@
   &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
 }
 
-@ptnarrow:'PT Sans Narrow', Arial, sans-serif;
+@ptnarrow:'PT Sans Narrow', @arial;
 
 /*GLOBAL RESET*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
@@ -171,7 +175,7 @@ textarea { overflow: auto;  resize: vertical; }
 .left{float:left;}
 .right{float:right;}
 
-body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px;}
+body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
 #homePage{margin:0;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
@@ -197,16 +201,16 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
         .titre{float:left;margin-bottom:10px;text-transform:uppercase;text-decoration:none;font:bold 23px/24px @ptnarrow;padding:7px 25px;._border-radius(0 0 10px 0);color:#fff;background-color:@colorRubricOrange;}
         .left{width:240px;}
         .right{width:504px;border-left:1px solid #ccc;}
-        .soustitre{display:block;margin:20px 40px 15px;text-align:center;font:16px/20px Arial, sans-serif;color:#28568a;}
+        .soustitre{display:block;margin:20px 40px 15px;text-align:center;font:16px/20px @arial;color:#28568a;}
         .promoPrix{display:block;width:209px;margin:0 auto;text-align:center;background:url(../../images/vacancesdirectes/common/pict/arrowLeftPopCE.png) no-repeat 0 0;font:bold 21px/28px @ptnarrow;color:#28568a;
           strong{color:@colorRubricOrange;font-size:30px;}
           em{color:@colorRubricOrange;}
         }
-        .titreDestination{._h3Decroch(@colorRubricOrange, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
+        .titreDestination{._h3Decroch(@colorRubricOrange, @colorBlanc);font:bold 10px @arial;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
           &:after{border-top-color:#763905;}
         }
         ul{margin:20px 0 0 16px;
-          li{float:left;width:155px;color:#28568a;font:10px/14px Arial, sans-serif;}
+          li{float:left;width:155px;color:#28568a;font:10px/14px @arial;}
         }
         p{margin:15px 0 -5px 16px;}
     }
@@ -216,7 +220,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
         strong{color:@colorRubricVert;}
         em{color:@colorRubricVert;}
       }
-      .titreDestination{._h3Decroch(@colorRubricVert, @colorBlanc);font:bold 10px Arial, sans-serif;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
+      .titreDestination{._h3Decroch(@colorRubricVert, @colorBlanc);font:bold 10px @arial;padding:5px 30px 5px 10px;margin:0 0 0 -10px;._border-radius(7px 0 7px 0);
         &:after{border-top-color:#3A5318;}
       }
     }
@@ -233,7 +237,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 
 /* warning / error */
 .warning{border:3px solid @colorFushia;margin:0 20px 25px;padding:10px;font-weight:bold;text-align:center;}
-.error{margin-bottom:10px;font:12px Arial, sans-serif;color:@colorRubricOrange;
+.error{margin-bottom:10px;font:12px @arial;color:@colorRubricOrange;
   li:before{content:"-";padding-right:3px;}
 }
 #forgetPassword .error{margin:-15px 0 20px;}
@@ -288,7 +292,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
 
 .anOccupant{background-color:@colorBgGrisC;border-radius:10px;padding:10px;margin:15px 0;position:relative;
   h3{._h3Decroch(@colorBgBleu2, @colorBlanc);background-image:none !important;
-    span{font:bold 13px arial;text-transform:none;}
+    span{font:bold 13px @arial;text-transform:none;}
   }
   h4{font:bold 16px @ptnarrow;margin:10px 0 20px;}
   .occupantFields{font:bold 16px/16px @ptnarrow;margin-right:15px;margin-bottom:15px;
@@ -389,7 +393,7 @@ body{background:#fff;color:@colorGris2;font:12px Arial, sans-serif;margin:0 24px
   #searchResult{
     .proposal{background-color:@colorBgGrisC;border-radius:10px;padding:10px;margin:15px 0;position:relative;
       h3{._h3Decroch(@colorBgBleu2, @colorBlanc);
-      span{margin:4px 0 0 25px;font:bold 15px Arial, sans-serif;text-transform:none;}
+      span{margin:4px 0 0 25px;font:bold 15px @arial;text-transform:none;}
       }
       img{float:left;margin:0 25px 25px 5px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));width:135px;height:98px;background:#fff;}
       .total{float:right; width:118px; height:119px; background:url(../../images/vacancesdirectes/common/sprites/spriteSplash.png); margin:-10px 20px 0px 0px; text-align:center; color:rgb(255, 255, 255); padding-top:36px;

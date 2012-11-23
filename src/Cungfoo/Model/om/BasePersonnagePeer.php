@@ -19,7 +19,7 @@ use Cungfoo\Model\map\PersonnageTableMap;
 /**
  * Base static class for performing query and update operations on the 'personnage' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -81,7 +81,7 @@ abstract class BasePersonnagePeer
 
 
     // i18n behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -385,7 +385,7 @@ abstract class BasePersonnagePeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -395,7 +395,7 @@ abstract class BasePersonnagePeer
     {
         PersonnagePeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to personnage
      * by a foreign key with ON DELETE CASCADE
@@ -444,7 +444,7 @@ abstract class BasePersonnagePeer
 
         return (int) $row[$startcol];
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -455,7 +455,7 @@ abstract class BasePersonnagePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = PersonnagePeer::getOMClass();
         // populate the object(s)
@@ -937,7 +937,7 @@ abstract class BasePersonnagePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             PersonnagePeer::clearRelatedInstancePool();
             $con->commit();

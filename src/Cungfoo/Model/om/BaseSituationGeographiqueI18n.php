@@ -20,7 +20,7 @@ use Cungfoo\Model\SituationGeographiqueQuery;
 /**
  * Base class that represents a row from the 'situation_geographique_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -106,7 +106,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -116,7 +116,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -126,7 +126,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -136,7 +136,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return SituationGeographiqueI18n The current object (for fluent API support)
      */
@@ -161,7 +161,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return SituationGeographiqueI18n The current object (for fluent API support)
      */
@@ -182,7 +182,7 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return SituationGeographiqueI18n The current object (for fluent API support)
      */
@@ -492,13 +492,13 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                 }

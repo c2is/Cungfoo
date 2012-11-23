@@ -20,7 +20,7 @@
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 10px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
@@ -360,7 +360,7 @@ textarea {
 body {
   background: #fff;
   color: #464545;
-  font: 12px Arial, sans-serif;
+  font: 12px Arial, Helvetica, sans-serif;
   margin: 0 24px;
 }
 #homePage {
@@ -425,7 +425,7 @@ body {
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionTitle h1 {
   color: #ffffff;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
@@ -444,7 +444,7 @@ body {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 18px;
   height: 27px;
@@ -472,7 +472,7 @@ body {
   margin-bottom: 10px;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 23px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 23px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 7px 25px;
   -webkit-border-radius: 0 0 10px 0;
   border-radius: 0 0 10px 0;
@@ -490,7 +490,7 @@ body {
   display: block;
   margin: 20px 40px 15px;
   text-align: center;
-  font: 16px/20px Arial, sans-serif;
+  font: 16px/20px Arial, Helvetica, sans-serif;
   color: #28568a;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp .promoPrix {
@@ -499,7 +499,7 @@ body {
   margin: 0 auto;
   text-align: center;
   background: url(../../images/vacancesdirectes/common/pict/arrowLeftPopCE.png) no-repeat 0 0;
-  font: bold 21px/28px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 21px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #28568a;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp .promoPrix strong {
@@ -517,10 +517,10 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #f58220;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
-  font: bold 10px Arial, sans-serif;
+  font: bold 10px Arial, Helvetica, sans-serif;
   padding: 5px 30px 5px 10px;
   margin: 0 0 0 -10px;
   -webkit-border-radius: 7px 0 7px 0;
@@ -546,7 +546,7 @@ body {
   float: left;
   width: 155px;
   color: #28568a;
-  font: 10px/14px Arial, sans-serif;
+  font: 10px/14px Arial, Helvetica, sans-serif;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionDetailsPopUp p {
   margin: 15px 0 -5px 16px;
@@ -571,10 +571,10 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #8dc63f;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
-  font: bold 10px Arial, sans-serif;
+  font: bold 10px Arial, Helvetica, sans-serif;
   padding: 5px 30px 5px 10px;
   margin: 0 0 0 -10px;
   -webkit-border-radius: 7px 0 7px 0;
@@ -601,7 +601,7 @@ body {
   vertical-align: bottom;
 }
 #homePage #searchResult .aProposalBlock .proposalDescriptionContent .price {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 44px;
   text-transform: uppercase;
@@ -614,7 +614,7 @@ body {
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 10px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
@@ -632,7 +632,7 @@ body {
 }
 .error {
   margin-bottom: 10px;
-  font: 12px Arial, sans-serif;
+  font: 12px Arial, Helvetica, sans-serif;
   color: #f58220;
 }
 .error li:before {
@@ -669,7 +669,7 @@ body {
   clear: both;
 }
 #reservationContener h2 {
-  font: bold 28px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 28px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin: 40px 0 20px;
   text-transform: uppercase;
 }
@@ -688,7 +688,7 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #009bc9;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
 }
@@ -732,7 +732,7 @@ body {
   padding-top: 36px;
 }
 #reservationContener .proposal .total .label {
-  font: bold 24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   width: 77px;
   height: 30px;
@@ -740,7 +740,7 @@ body {
   overflow: hidden;
 }
 #reservationContener .proposal .total .field {
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 #reservationContener .proposal .proposalDates,
@@ -806,7 +806,7 @@ body {
   color: #ffffff;
   height: 40px;
   text-align: center;
-  font: bold 24px/40px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/40px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 #reservationContener .proposals > .total div.label {
@@ -832,7 +832,7 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #009bc9;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
 }
@@ -870,7 +870,7 @@ body {
 #reservationContener #paiement .labelNote .label,
 #reservationContener #reservationSaved .labelNote .label {
   display: block;
-  font: bold 16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 #reservationContener #option .labelNote .field textarea,
 #reservationContener #paiement .labelNote .field textarea,
@@ -895,7 +895,7 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #009bc9;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
   background-image: none !important;
@@ -911,15 +911,15 @@ body {
   z-index: 1;
 }
 .anOccupant h3 span {
-  font: bold 13px arial;
+  font: bold 13px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 .anOccupant h4 {
-  font: bold 16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin: 10px 0 20px;
 }
 .anOccupant .occupantFields {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-right: 15px;
   margin-bottom: 15px;
 }
@@ -931,7 +931,7 @@ body {
   border: 0;
   padding: 4px 10px;
   color: #8c8a8a;
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-left: 10px;
 }
 .anOccupant .occupantFields .rsl-date-input a {
@@ -940,7 +940,7 @@ body {
   margin-left: 1px;
 }
 #customerAreaContener h2 {
-  font: bold 28px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 28px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin: 40px 0 20px;
   text-transform: uppercase;
 }
@@ -969,7 +969,7 @@ body {
 }
 #customerAreaContener .reservationList th {
   background: #009ab0;
-  font: bold 20px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 20px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: #ffffff;
   padding: 15px 10px;
@@ -987,7 +987,7 @@ body {
   height: 36px;
   text-align: center;
   color: #8c8a8a;
-  font: 16px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: 16px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 3px;
   vertical-align: middle;
 }
@@ -1056,14 +1056,14 @@ body {
   color: #ffffff;
   height: 40px;
   text-align: center;
-  font: bold 24px/40px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/40px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 #authentication .connectedAs,
 #forgetPassword .connectedAs,
 #authentication .formMessage,
 #forgetPassword .formMessage {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 25px;
 }
 #authentication .connectedAs .label,
@@ -1083,7 +1083,7 @@ body {
 }
 #authentication .aField,
 #forgetPassword .aField {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
@@ -1110,7 +1110,7 @@ body {
   border: 0;
   padding: 4px 10px;
   color: #8c8a8a;
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 #authentication #option,
 #forgetPassword #option {
@@ -1134,7 +1134,7 @@ body {
   border: 0;
   padding: 4px;
   color: #8c8a8a;
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 5px;
   margin-right: 50px;
 }
@@ -1146,13 +1146,13 @@ body {
 }
 #authentication h4,
 #forgetPassword h4 {
-  font: 24px/28px 'PT Sans Narrow', Arial, sans-serif;
+  font: 24px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 25px;
   color: #464545;
 }
 #authentication table,
 #forgetPassword table {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   width: 155px;
 }
 #authentication table label,
@@ -1173,7 +1173,7 @@ body {
   border: 0;
   padding: 4px 10px;
   color: #8c8a8a;
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 5px;
   margin-right: 50px;
 }
@@ -1218,7 +1218,7 @@ body {
   display: none;
 }
 #searchResultPage .searchResultTitle {
-  font: bold 28px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 28px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin: 40px 0 25px 20px;
   text-transform: uppercase;
 }
@@ -1272,7 +1272,7 @@ body {
   border-radius: 10px 0 10px 0;
   background-color: #009bc9;
   color: #ffffff;
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 10px;
   margin: 0 0 10px -20px;
 }
@@ -1288,7 +1288,7 @@ body {
 }
 #searchResultPage #searchResult .proposal h3 span {
   margin: 4px 0 0 25px;
-  font: bold 15px Arial, sans-serif;
+  font: bold 15px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 #searchResultPage #searchResult .proposal img {
@@ -1312,7 +1312,7 @@ body {
   padding-top: 36px;
 }
 #searchResultPage #searchResult .proposal .total .label {
-  font: bold 24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   width: 77px;
   height: 30px;
@@ -1320,7 +1320,7 @@ body {
   overflow: hidden;
 }
 #searchResultPage #searchResult .proposal .total .field {
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 #searchResultPage #searchResult .proposal .popinIframe {
@@ -1404,7 +1404,7 @@ body {
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px/22px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 16px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
