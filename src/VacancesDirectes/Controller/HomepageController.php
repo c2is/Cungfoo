@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\DernieresMinutesQuery,
     Cungfoo\Model\IdeeWeekendQuery,
+    Cungfoo\Model\ThematiqueQuery,
     Cungfoo\Model\VosVacancesQuery;
 
 use Resalys\Lib\Client\DisponibiliteClient;
@@ -44,35 +45,49 @@ class HomepageController implements ControllerProviderInterface
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByEnabled('1')
+                ->filterByEnabled(true)
                 ->find()
             ;
 
             $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
+                ->joinWithI18n($locale)
                 ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByEnabled('1')
+                ->filterByEnabled(true)
                 ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
                 ->find()
             ;
 
             $pays = \Cungfoo\Model\PaysQuery::create()
-                ->filterByEnabled('1')
+                ->filterByEnabled(true)
                 ->find()
             ;
 
             $dernieresMinutes = DernieresMinutesQuery::create()
-                ->filterByEnabled('1')
+                ->filterByEnabled(true)
                 ->findOne()
             ;
 
             $vosVacances = VosVacancesQuery::create()
-                ->filterByEnabled('1')
+                ->joinWithI18n($locale)
+                ->filterByEnabled(true)
                 ->findOne()
             ;
 
             $ideesweekend = IdeeWeekendQuery::create()
-                ->filterByHome('1')
-                ->filterByEnabled('1')
+                ->joinWithI18n($locale)
+                ->filterByHome(true)
+                ->filterByEnabled(true)
+                ->find()
+            ;
+
+            $thematiques = ThematiqueQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEnabled(true)
+                ->find()
+            ;
+
+            $etablissements = EtablissementQuery::create()
+                ->filterByEnabled(true)
                 ->find()
             ;
 
@@ -104,6 +119,8 @@ class HomepageController implements ControllerProviderInterface
                 'mea'               => $mea,
                 'vosVacances'       => $vosVacances,
                 'ideesweekend'      => $ideesweekend,
+                'thematiques'       => $thematiques,
+                'etablissements'    => $etablissements,
                 'dernieres_minutes' => $listing->process(),
             ));
         })

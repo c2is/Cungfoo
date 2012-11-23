@@ -2,7 +2,7 @@
     1:
         Highlight: false
         Prix: '152'
-        Home: false
+        Home: true
         Lien: '#'
         ImagePath: uploads/idee_weekends/50af3c56e5df0.png
         Enabled: true
