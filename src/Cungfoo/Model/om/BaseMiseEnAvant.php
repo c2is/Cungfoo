@@ -62,6 +62,12 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     protected $image_fond_path;
 
     /**
+     * The value for the prix field.
+     * @var        string
+     */
+    protected $prix;
+
+    /**
      * The value for the illustration_path field.
      * @var        string
      */
@@ -176,6 +182,16 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [prix] column value.
+     *
+     * @return string
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
      * Get the [illustration_path] column value.
      *
      * @return string
@@ -283,6 +299,27 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         return $this;
     } // setImageFondPath()
+
+    /**
+     * Set the value of [prix] column.
+     *
+     * @param string $v new value
+     * @return MiseEnAvant The current object (for fluent API support)
+     */
+    public function setPrix($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->prix !== $v) {
+            $this->prix = $v;
+            $this->modifiedColumns[] = MiseEnAvantPeer::PRIX;
+        }
+
+
+        return $this;
+    } // setPrix()
 
     /**
      * Set the value of [illustration_path] column.
@@ -416,10 +453,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->image_fond_path = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->illustration_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->date_fin_validite = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->sortable_rank = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->prix = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->illustration_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->date_fin_validite = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -428,7 +466,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MiseEnAvant object", $e);
@@ -677,6 +715,9 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_FOND_PATH`';
         }
+        if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) {
+            $modifiedColumns[':p' . $index++]  = '`PRIX`';
+        }
         if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`ILLUSTRATION_PATH`';
         }
@@ -705,6 +746,9 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                         break;
                     case '`IMAGE_FOND_PATH`':
                         $stmt->bindValue($identifier, $this->image_fond_path, PDO::PARAM_STR);
+                        break;
+                    case '`PRIX`':
+                        $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
                     case '`ILLUSTRATION_PATH`':
                         $stmt->bindValue($identifier, $this->illustration_path, PDO::PARAM_STR);
@@ -867,15 +911,18 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 return $this->getImageFondPath();
                 break;
             case 2:
-                return $this->getIllustrationPath();
+                return $this->getPrix();
                 break;
             case 3:
-                return $this->getDateFinValidite();
+                return $this->getIllustrationPath();
                 break;
             case 4:
-                return $this->getSortableRank();
+                return $this->getDateFinValidite();
                 break;
             case 5:
+                return $this->getSortableRank();
+                break;
+            case 6:
                 return $this->getEnabled();
                 break;
             default:
@@ -909,10 +956,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getImageFondPath(),
-            $keys[2] => $this->getIllustrationPath(),
-            $keys[3] => $this->getDateFinValidite(),
-            $keys[4] => $this->getSortableRank(),
-            $keys[5] => $this->getEnabled(),
+            $keys[2] => $this->getPrix(),
+            $keys[3] => $this->getIllustrationPath(),
+            $keys[4] => $this->getDateFinValidite(),
+            $keys[5] => $this->getSortableRank(),
+            $keys[6] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMiseEnAvantI18ns) {
@@ -959,15 +1007,18 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->setImageFondPath($value);
                 break;
             case 2:
-                $this->setIllustrationPath($value);
+                $this->setPrix($value);
                 break;
             case 3:
-                $this->setDateFinValidite($value);
+                $this->setIllustrationPath($value);
                 break;
             case 4:
-                $this->setSortableRank($value);
+                $this->setDateFinValidite($value);
                 break;
             case 5:
+                $this->setSortableRank($value);
+                break;
+            case 6:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -996,10 +1047,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setImageFondPath($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setIllustrationPath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setDateFinValidite($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setSortableRank($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[2], $arr)) $this->setPrix($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setIllustrationPath($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setDateFinValidite($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
     }
 
     /**
@@ -1013,6 +1065,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if ($this->isColumnModified(MiseEnAvantPeer::ID)) $criteria->add(MiseEnAvantPeer::ID, $this->id);
         if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) $criteria->add(MiseEnAvantPeer::IMAGE_FOND_PATH, $this->image_fond_path);
+        if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) $criteria->add(MiseEnAvantPeer::PRIX, $this->prix);
         if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) $criteria->add(MiseEnAvantPeer::ILLUSTRATION_PATH, $this->illustration_path);
         if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) $criteria->add(MiseEnAvantPeer::DATE_FIN_VALIDITE, $this->date_fin_validite);
         if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) $criteria->add(MiseEnAvantPeer::SORTABLE_RANK, $this->sortable_rank);
@@ -1081,6 +1134,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setImageFondPath($this->getImageFondPath());
+        $copyObj->setPrix($this->getPrix());
         $copyObj->setIllustrationPath($this->getIllustrationPath());
         $copyObj->setDateFinValidite($this->getDateFinValidite());
         $copyObj->setSortableRank($this->getSortableRank());
@@ -1383,6 +1437,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->image_fond_path = null;
+        $this->prix = null;
         $this->illustration_path = null;
         $this->date_fin_validite = null;
         $this->sortable_rank = null;
@@ -1977,30 +2032,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
          */
         public function setTitreLien($v)
         {    $this->getCurrentTranslation()->setTitreLien($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [prix] column value.
-         *
-         * @return string
-         */
-        public function getPrix()
-        {
-        return $this->getCurrentTranslation()->getPrix();
-    }
-
-
-        /**
-         * Set the value of [prix] column.
-         *
-         * @param string $v new value
-         * @return MiseEnAvantI18n The current object (for fluent API support)
-         */
-        public function setPrix($v)
-        {    $this->getCurrentTranslation()->setPrix($v);
 
         return $this;
     }

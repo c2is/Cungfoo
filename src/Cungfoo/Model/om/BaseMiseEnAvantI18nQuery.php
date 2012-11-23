@@ -28,7 +28,6 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18nQuery orderByAccroche($order = Criteria::ASC) Order by the accroche column
  * @method MiseEnAvantI18nQuery orderByLien($order = Criteria::ASC) Order by the lien column
  * @method MiseEnAvantI18nQuery orderByTitreLien($order = Criteria::ASC) Order by the titre_lien column
- * @method MiseEnAvantI18nQuery orderByPrix($order = Criteria::ASC) Order by the prix column
  *
  * @method MiseEnAvantI18nQuery groupById() Group by the id column
  * @method MiseEnAvantI18nQuery groupByLocale() Group by the locale column
@@ -36,7 +35,6 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18nQuery groupByAccroche() Group by the accroche column
  * @method MiseEnAvantI18nQuery groupByLien() Group by the lien column
  * @method MiseEnAvantI18nQuery groupByTitreLien() Group by the titre_lien column
- * @method MiseEnAvantI18nQuery groupByPrix() Group by the prix column
  *
  * @method MiseEnAvantI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method MiseEnAvantI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -55,7 +53,6 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18n findOneByAccroche(string $accroche) Return the first MiseEnAvantI18n filtered by the accroche column
  * @method MiseEnAvantI18n findOneByLien(string $lien) Return the first MiseEnAvantI18n filtered by the lien column
  * @method MiseEnAvantI18n findOneByTitreLien(string $titre_lien) Return the first MiseEnAvantI18n filtered by the titre_lien column
- * @method MiseEnAvantI18n findOneByPrix(string $prix) Return the first MiseEnAvantI18n filtered by the prix column
  *
  * @method array findById(int $id) Return MiseEnAvantI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return MiseEnAvantI18n objects filtered by the locale column
@@ -63,7 +60,6 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method array findByAccroche(string $accroche) Return MiseEnAvantI18n objects filtered by the accroche column
  * @method array findByLien(string $lien) Return MiseEnAvantI18n objects filtered by the lien column
  * @method array findByTitreLien(string $titre_lien) Return MiseEnAvantI18n objects filtered by the titre_lien column
- * @method array findByPrix(string $prix) Return MiseEnAvantI18n objects filtered by the prix column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +150,7 @@ abstract class BaseMiseEnAvantI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `TITRE`, `ACCROCHE`, `LIEN`, `TITRE_LIEN`, `PRIX` FROM `mise_en_avant_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `TITRE`, `ACCROCHE`, `LIEN`, `TITRE_LIEN` FROM `mise_en_avant_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -427,35 +423,6 @@ abstract class BaseMiseEnAvantI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MiseEnAvantI18nPeer::TITRE_LIEN, $titreLien, $comparison);
-    }
-
-    /**
-     * Filter the query on the prix column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPrix('fooValue');   // WHERE prix = 'fooValue'
-     * $query->filterByPrix('%fooValue%'); // WHERE prix LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prix The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MiseEnAvantI18nQuery The current query, for fluid interface
-     */
-    public function filterByPrix($prix = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prix)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prix)) {
-                $prix = str_replace('*', '%', $prix);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(MiseEnAvantI18nPeer::PRIX, $prix, $comparison);
     }
 
     /**

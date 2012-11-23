@@ -40,6 +40,12 @@ class BaseMiseEnAvantType extends AppAwareType
             'label' => 'mise_en_avant.image_fond_path_deleted',
             'required' => false,
         ));
+        $builder->add('prix', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'mise_en_avant.prix',
+            'required' => false,
+        ));
         $builder->add('illustration_path', 'cungfoo_file', array(
             'constraints' => array(
             ),
@@ -105,13 +111,6 @@ class BaseMiseEnAvantType extends AppAwareType
                 'titre_lien' => array(
                     'required' => false,
                     'label' => 'mise_en_avant.titre_lien',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'prix' => array(
-                    'required' => false,
-                    'label' => 'mise_en_avant.prix',
                     'type' => 'text',
                     'constraints' => array(
                     ),

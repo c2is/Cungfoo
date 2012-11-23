@@ -44,6 +44,7 @@ class MiseEnAvantTableMap extends TableMap
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('IMAGE_FOND_PATH', 'ImageFondPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('PRIX', 'Prix', 'VARCHAR', false, 255, null);
         $this->addColumn('ILLUSTRATION_PATH', 'IllustrationPath', 'VARCHAR', false, 255, null);
         $this->addColumn('DATE_FIN_VALIDITE', 'DateFinValidite', 'DATE', false, null, null);
         $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
@@ -69,7 +70,7 @@ class MiseEnAvantTableMap extends TableMap
     {
         return array(
             'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, accroche, lien, titre_lien, prix', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, accroche, lien, titre_lien', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/mise-en-avant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_fond_path, illustration_path', ),
         );
     } // getBehaviors()
