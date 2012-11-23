@@ -292,7 +292,7 @@ $(function() {
 
     function redefineSliderButtons(){
 
-        console.log(direction);
+        //console.log(direction);
 
         var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
         var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
@@ -1317,7 +1317,9 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 shape: shape,
                 title: mkr[0],
                 zIndex: mkr[3],
-                idCamp: mkr[4]
+                idCamp: mkr[4],
+                filterNew: mkr[6],
+                filterAnimals: mkr[7]
             });
 
             if (marker.idCamp != ''){
@@ -1389,6 +1391,15 @@ function initializeAllGmap() {
     }
     if ($('#resultMap').length) {
         resultInit();
+    }
+    if ($('#homeMap').length) {
+        homeInit();
+
+        $('#mapFilters').find('a').click( function(){
+            var theme = this.id;
+            consoleLog(theme);
+            return false;
+        });
     }
 }
 
