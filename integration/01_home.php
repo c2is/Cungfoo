@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <div id="forwardBloc" class="radiusBox greyF">
+            <div id="forwardBloc" class="radiusBox greyF" style="background:url('../web/images/vacancesdirectes/common/pict/forward-bloc.jpg') no-repeat 0 0 transparent;">
                 <h4 id="forwardBlocTitle">Faire de vos
                     vacances
                     une aventure

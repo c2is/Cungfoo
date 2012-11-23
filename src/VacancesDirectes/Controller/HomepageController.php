@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\EtablissementQuery,
-    Cungfoo\Model\DernieresMinutesQuery;
+    Cungfoo\Model\DernieresMinutesQuery,
+    Cungfoo\Model\IdeeWeekendQuery,
+    Cungfoo\Model\VosVacancesQuery;
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
@@ -42,21 +44,36 @@ class HomepageController implements ControllerProviderInterface
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
+                ->filterByEnabled('1')
                 ->find()
             ;
 
             $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
+                ->filterByEnabled('1')
                 ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
                 ->find()
             ;
 
             $pays = \Cungfoo\Model\PaysQuery::create()
+                ->filterByEnabled('1')
                 ->find()
             ;
 
             $dernieresMinutes = DernieresMinutesQuery::create()
+                ->filterByEnabled('1')
                 ->findOne()
+            ;
+
+            $vosVacances = VosVacancesQuery::create()
+                ->filterByEnabled('1')
+                ->findOne()
+            ;
+
+            $ideesweekend = IdeeWeekendQuery::create()
+                ->filterByHome('1')
+                ->filterByEnabled('1')
+                ->find()
             ;
 
             $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
@@ -85,6 +102,8 @@ class HomepageController implements ControllerProviderInterface
                 'topCampings'       => $topCampings,
                 'pays'              => $pays,
                 'mea'               => $mea,
+                'vosVacances'       => $vosVacances,
+                'ideesweekend'      => $ideesweekend,
                 'dernieres_minutes' => $listing->process(),
             ));
         })

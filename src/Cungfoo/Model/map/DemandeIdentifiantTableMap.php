@@ -88,7 +88,7 @@ class DemandeIdentifiantTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/demandes_identifiant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/demandes-identifiant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
 

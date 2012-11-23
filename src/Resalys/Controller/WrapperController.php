@@ -17,7 +17,8 @@ class WrapperController implements ControllerProviderInterface
     protected
         $app,
         $request,
-        $websiteUri
+        $websiteUri,
+        $specificFiles
     ;
 
     /**
@@ -28,12 +29,13 @@ class WrapperController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/wrapper', function (Request $request) use ($app)
+        $controllers->match('/wrapper/{specificFiles}', function (Request $request, $specificFiles) use ($app)
         {
             // define default class attributes
-            $this->app        = $app;
-            $this->request   = $request;
-            $this->websiteUri = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
+            $this->app           = $app;
+            $this->request       = $request;
+            $this->websiteUri    = rtrim($app['url_generator']->generate('homepage', array(), true), '/');
+            $this->specificFiles = $specificFiles;
 
             // get content of resalys modele
             $clientConfigurationFilename = sprintf('%s/app/config/Resalys/client.yml', $app['config']->get('root_dir'));
@@ -46,6 +48,7 @@ class WrapperController implements ControllerProviderInterface
 
             return new Response($iframe);
         })
+        ->value('specificFiles', 'iframe')
         ->bind('resalys_wrapper');
 
         return $controllers;
@@ -119,7 +122,7 @@ eof
             {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
             {frontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
-            {iframeJS: templatePath+"js/vacancesdirectes/iframe.js"}
+            {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
         );
     </script>
 
@@ -129,7 +132,7 @@ eof
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
 eof
-);
+, $this->specificFiles);
 
         $iframe = str_replace(array(
             '{_c2is.uri}',
@@ -138,7 +141,7 @@ eof
             '{_c2is.javascript.footer}',
         ), array(
             $this->websiteUri,
-            $this->getStylesheetTag('css/vacancesdirectes/iframe.css'),
+            $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles)),
             $javascriptHeader,
             $javascriptFooter,
         ), $iframe);

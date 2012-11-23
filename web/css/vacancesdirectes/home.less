@@ -1,7 +1,7 @@
 .home{
 
 /* COMMON */
-.boxborder{margin:0 15px 5px 5px;display:block;}
+.boxborder{margin:0 10px 5px;display:block;}
   #wrap a{text-decoration:none;}
   .fb-like{width:97px;height:20px;background:url("../../images/vacancesdirectes/dyn/ui/facebook-like-button.png") no-repeat 0 0 transparent;text-indent:-9999px;margin-top:7px;}
 
@@ -12,7 +12,8 @@
 /* HOME */
 
   /* slider */
-  #sliderWrapper{overflow:hidden;padding-top:300px;margin-top:-300px;
+  #header{margin-bottom:300px;}
+  #sliderWrapper{overflow:hidden;padding-top:30px;width:100%;position:absolute;top:0;left:0;
     #sliderPrev,
     #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(100px,15px);font:Arial 13px/15px Arial;color:@colorOrange;text-align:center;padding:0 15px;cursor:pointer;
       .headline{font:bold 20px/22px @ptnarrow;text-transform:uppercase;margin-bottom:5px;}
@@ -25,12 +26,12 @@
     #sliderNext{right:20px;left:auto;
       &:after{content:"";background: url("../../images/vacancesdirectes/common/sprites/slider.png") -12px 0px no-repeat transparent;position:absolute;right:0;top:50%;margin-top:-15px;margin-right:-12px;height:30px;width:12px;}
     }
-    #sliderContainer{position:relative;font-family:@ptnarrow;width:976px;height:230px;margin:30px auto 0;z-index:10;
+    #sliderContainer{position:relative;font-family:@ptnarrow;width:976px;height:230px;margin:277px auto 0;z-index:10;
       #sliderBackground{position:absolute;bottom:0;left:0;height:70px;width:976px;background-color:@colorBlanc;z-index:2;display:none;}
       .caroufredsel_wrapper{overflow:visible !important;}
       .slide{position:relative;width:976px;height:230px;margin-bottom:267px;
-        .sliderPhoto{position:absolute;top:-20px;right:350px;
-          img{transform:rotate(12deg);z-index:0;}
+        .sliderPhoto{position:absolute;top:-20px;right:350px;text-indent: 90px;transform:rotate(18deg);
+          img{z-index:0;}
         }
         .sliderPostmark{position:absolute;top:-20px;right:336px;z-index:1;}
         .sliderBackground{position:absolute;bottom:0;left:0;height:70px;width:976px;background-color:@colorBlanc;z-index:2}
@@ -120,7 +121,7 @@
       &:before{content:"";background:url("../../images/vacancesdirectes/common/ui/car.png") no-repeat 0 0 transparent;width:64px;height:37px;display:block;position:absolute;bottom:0;left:-10px;}
     }
   }
-  #forwardBloc{width:504px;height:253px;float:left;margin:0 0 12px 0;background:url("../../images/vacancesdirectes/common/pict/forward-bloc.jpg") no-repeat 0 0 transparent;padding-bottom:5px;
+  #forwardBloc{width:504px;height:253px;float:left;margin:0 0 12px 0;padding-bottom:5px;
     #forwardBlocTitle{width:120px;height:96px;color:@colorBlanc;position:absolute;top:12px;left:5px;text-align:center;line-height:24px;}
     #forwardBlocSubtitle{width:125px;color:@colorOrange;font:bold 42px/32px @ptnarrow;text-transform:uppercase;position:absolute;bottom:10px;left:5px;text-align:center;}
     #forwardBlocSubtitle span{font-size:30px;display:block;}

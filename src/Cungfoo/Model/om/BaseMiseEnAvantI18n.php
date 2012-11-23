@@ -83,12 +83,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     protected $titre_lien;
 
     /**
-     * The value for the prix field.
-     * @var        string
-     */
-    protected $prix;
-
-    /**
      * @var        MiseEnAvant
      */
     protected $aMiseEnAvant;
@@ -186,16 +180,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     public function getTitreLien()
     {
         return $this->titre_lien;
-    }
-
-    /**
-     * Get the [prix] column value.
-     *
-     * @return string
-     */
-    public function getPrix()
-    {
-        return $this->prix;
     }
 
     /**
@@ -329,27 +313,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     } // setTitreLien()
 
     /**
-     * Set the value of [prix] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
-     */
-    public function setPrix($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prix !== $v) {
-            $this->prix = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::PRIX;
-        }
-
-
-        return $this;
-    } // setPrix()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -391,7 +354,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $this->accroche = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->titre_lien = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->prix = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -400,7 +362,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MiseEnAvantI18n object", $e);
@@ -642,9 +604,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) {
             $modifiedColumns[':p' . $index++]  = '`TITRE_LIEN`';
         }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::PRIX)) {
-            $modifiedColumns[':p' . $index++]  = '`PRIX`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `mise_en_avant_i18n` (%s) VALUES (%s)',
@@ -673,9 +632,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                         break;
                     case '`TITRE_LIEN`':
                         $stmt->bindValue($identifier, $this->titre_lien, PDO::PARAM_STR);
-                        break;
-                    case '`PRIX`':
-                        $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -834,9 +790,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 5:
                 return $this->getTitreLien();
                 break;
-            case 6:
-                return $this->getPrix();
-                break;
             default:
                 return null;
                 break;
@@ -872,7 +825,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $keys[3] => $this->getAccroche(),
             $keys[4] => $this->getLien(),
             $keys[5] => $this->getTitreLien(),
-            $keys[6] => $this->getPrix(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aMiseEnAvant) {
@@ -930,9 +882,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 5:
                 $this->setTitreLien($value);
                 break;
-            case 6:
-                $this->setPrix($value);
-                break;
         } // switch()
     }
 
@@ -963,7 +912,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setAccroche($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setTitreLien($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setPrix($arr[$keys[6]]);
     }
 
     /**
@@ -981,7 +929,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantI18nPeer::ACCROCHE)) $criteria->add(MiseEnAvantI18nPeer::ACCROCHE, $this->accroche);
         if ($this->isColumnModified(MiseEnAvantI18nPeer::LIEN)) $criteria->add(MiseEnAvantI18nPeer::LIEN, $this->lien);
         if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) $criteria->add(MiseEnAvantI18nPeer::TITRE_LIEN, $this->titre_lien);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::PRIX)) $criteria->add(MiseEnAvantI18nPeer::PRIX, $this->prix);
 
         return $criteria;
     }
@@ -1058,7 +1005,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $copyObj->setAccroche($this->getAccroche());
         $copyObj->setLien($this->getLien());
         $copyObj->setTitreLien($this->getTitreLien());
-        $copyObj->setPrix($this->getPrix());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1178,7 +1124,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $this->accroche = null;
         $this->lien = null;
         $this->titre_lien = null;
-        $this->prix = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

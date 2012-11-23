@@ -83,18 +83,26 @@ crud:
             model: \Cungfoo\Model\Edito
             form: \Cungfoo\Form\Type\EditoType
         demande_identifiant:
-            prefix: /demandes_identifiant
+            prefix: /demandes-identifiant
             model: \Cungfoo\Model\DemandeIdentifiant
             form: \Cungfoo\Form\Type\DemandeIdentifiantType
         top_camping:
-            prefix: /top_camping
+            prefix: /top-camping
             model: \Cungfoo\Model\TopCamping
             form: \Cungfoo\Form\Type\TopCampingType
         dernieres_minutes:
-            prefix: /dernieres_minutes
+            prefix: /dernieres-minutes
             model: \Cungfoo\Model\DernieresMinutes
             form: \Cungfoo\Form\Type\DernieresMinutesType
         mise_en_avant:
-            prefix: /mise_en_avant
+            prefix: /mise-en-avant
             model: \Cungfoo\Model\MiseEnAvant
             form: \Cungfoo\Form\Type\MiseEnAvantType
+        vos_vacances:
+            prefix: /vos-vacances
+            model: \Cungfoo\Model\VosVacances
+            form: \Cungfoo\Form\Type\VosVacancesType
+        idee_weekend:
+            prefix: /idee-weekend
+            model: \Cungfoo\Model\IdeeWeekend
+            form: \Cungfoo\Form\Type\IdeeWeekendType

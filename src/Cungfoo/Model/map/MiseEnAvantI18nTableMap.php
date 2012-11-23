@@ -48,7 +48,6 @@ class MiseEnAvantI18nTableMap extends TableMap
         $this->addColumn('ACCROCHE', 'Accroche', 'VARCHAR', false, 255, null);
         $this->addColumn('LIEN', 'Lien', 'VARCHAR', false, 255, null);
         $this->addColumn('TITRE_LIEN', 'TitreLien', 'VARCHAR', false, 255, null);
-        $this->addColumn('PRIX', 'Prix', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

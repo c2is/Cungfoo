@@ -23,13 +23,13 @@
         "swiftmailer/swiftmailer": "dev-master",
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
-        "mageekguy/atoum": "dev-master",
+        "atoum/atoum": "dev-master",
         "kuikui/memcache-service-provider": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { 
+        "psr-0": {
             "": "src/"
-        }        
+        }
     }
 }

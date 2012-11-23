@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block title %}Homepage{% endblock %}
+{% block bodyClass %}home{% endblock %}
 
 {% block slider %}
 <div id="sliderWrapper">
@@ -9,7 +10,7 @@
         <div id="sliderBackground"></div>
         <ul id="slider" class="fixed-width clear">
             {% for mea in mea %}
-                <li class="slide"{% if loop.index != 1 %} style="display: none;" {% endif %}>
+                <li class="slide">
                     <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
                     <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
                     <div class="sliderBackground"></div>
@@ -22,21 +23,20 @@
                     </div>
                     <div class="sliderStain second">
                         <div class="content">
-                            <p class="price">{{ mea.prix }}</p>
+                            <p>{{ "general.a_partir_de" | trans }}</p>
+                            <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
+                            <p class="duration">{{ "general.la_nuit" | trans }}</p>
                         </div>
                     </div>
                 </li>
             {% endfor %}
         </ul>
     </div>
+
     <a id="sliderNext" class="radiusBox yellow"></a>
 
     <div class="pagination clear" id="sliderPager"></div>
 </div>
-{% endblock %}
-
-{% block rightColumn %}
-    {% include 'Form/_search_engine.twig' %}
 {% endblock %}
 
 {% block leftColumn %}
@@ -64,7 +64,7 @@
         {% endfor %}
         {% endif %}
 
-        <a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
+        <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
     </div>
 </div>
 <div class="ratio-33 left clear">
@@ -91,57 +91,78 @@
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link left">Voir toutes les dernières minutes</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">Voir toutes les dernières minutes</a>
     </div>
 </div>
 {% endblock %}
 
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+    <div id="greyBoxes">
+        <div id="weekendIdeasBloc" class="clear radiusBox greyC">
+            <div class="stamp fushia">
+                <h2>{{ "general.idees_week_end" | trans }}</h2>
+            </div>
+            {% for idee in ideesweekend %}
+                <div class="element {% if idee.prix == "" %} noprice {% endif %} clear">
+                    <div class="left">
+                        <a href="{{ idee.lien }}" class="linkBlock"><img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" /></a>
+                    </div>
+                    <div class="details left linkParent">
+                        <span class="title">{{ idee.titre }}</span>
+                    </div>
+                    {% if(idee.prix != "") %}
+                        <a href="{{ idee.lien }}" class="stain cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <a href="#_" class="bt link right">Voir toutes les idées week-end (12)</a>
+        </div>
+    </div>
+{% endblock %}
+
 {% block columnClearboth %}
 <div class="column clearboth clear">
-        <div id="destinationsBloc" class="radiusBox greyC">
-            <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
-            <div class="left">
-                <div id="national">
-                    <a class="country" href="#">{{ "home.destination_france" | trans }}</a>
-                    <ul>
-                        {% if pays | length %}
-                        {% for p in pays %}
-                            {% if p.code == 'FRA' %}
-                                {% for region in p.regionMeaHome %}
-                                    {% if loop.index <= 5 %}
-                                        <li>- <a class="region" href="#">{{region.name}}</a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                    </ul>
-                    <a class="bt link" href="#">{{ "home.plus_de_regions" | trans }}</a>
-                </div>
-            </div>
-            <div class="right">
-                <div id="international">
+    <div id="destinationsBloc" class="radiusBox greyC">
+        <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
+        <div class="left">
+            <div id="national">
+                <a class="country" href="#">{{ "home.destination_france" | trans }}</a>
+                <ul>
                     {% if pays | length %}
                     {% for p in pays %}
-                        {% if p.code != 'FRA' %}
-                            <a class="country" href="#">{{ "home.destination" | trans }} {{p.name}}</a>
+                        {% if p.code == 'FRA' %}
+                            {% for region in p.regionMeaHome %}
+                                {% if loop.index <= 5 %}
+                                    <li>- <a class="region" href="#">{{region.name}}</a></li>
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
                     {% endfor %}
                     {% endif %}
-                </div>
+                </ul>
+                <a class="bt link" href="#">{{ "home.plus_de_regions" | trans }}</a>
             </div>
         </div>
-        <div id="forwardBloc" class="radiusBox greyF">
-            <h4 id="forwardBlocTitle">Faire de vos
-                vacances
-                une aventure
-                humaine !</h4>
-            <div id="forwardBlocSubtitle">
-                Amélie
-                <span>10 ans</span>
+        <div class="right">
+            <div id="international">
+                {% if pays | length %}
+                {% for p in pays %}
+                    {% if p.code != 'FRA' %}
+                        <a class="country" href="#">{{ "home.destination" | trans }} {{p.name}}</a>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
             </div>
-            <div id="forwardBlocHeadline"><span>Je participe à toutes les activités du camping</span></div>
         </div>
+    </div>
+    <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath) }})">
+        <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
+        <div id="forwardBlocSubtitle">
+            {{ vosVacances.prenom }}
+            <span>{{ vosVacances.age }} {{ "ans" | trans }}</span>
+        </div>
+        <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
     </div>
 </div>
 {% endblock %}
