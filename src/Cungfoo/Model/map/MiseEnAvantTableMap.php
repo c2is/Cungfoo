@@ -70,7 +70,7 @@ class MiseEnAvantTableMap extends TableMap
         return array(
             'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, accroche, lien, titre_lien, prix', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/mise_en_avant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_fond_path, illustration_path', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/mise-en-avant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_fond_path, illustration_path', ),
         );
     } // getBehaviors()
 
