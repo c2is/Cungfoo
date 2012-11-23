@@ -173,7 +173,7 @@
                     var homeMkrs = [
                         //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
                         {% for etab in etablissements %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, [{{etab.thematiques.toArray('Code')|keys|join(',')}}]],
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
                         {% endfor %}
                     ];
                     var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
