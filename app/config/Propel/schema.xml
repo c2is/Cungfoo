@@ -629,7 +629,7 @@
         <behavior name="timestampable" />
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/demandes_identifiant" />
+            <parameter name="crud_prefix" value="/demandes-identifiant" />
         </behavior>
     </table>
 
@@ -639,7 +639,7 @@
         <behavior name="sortable"/>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/top_camping" />
+            <parameter name="crud_prefix" value="/top-camping" />
         </behavior>
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
@@ -655,7 +655,7 @@
         <column name="active" type="boolean"/>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/dernieres_minutes" />
+            <parameter name="crud_prefix" value="/dernieres-minutes" />
         </behavior>
     </table>
 
@@ -698,11 +698,11 @@
         <behavior name="sortable"/>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="titre, accroche, lien, titre_lien, prix" />
+            <parameter name="i18n_columns" value="titre, accroche, lien, titre_lien" />
         </behavior>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/mise_en_avant" />
+            <parameter name="crud_prefix" value="/mise-en-avant" />
             <parameter name="crud_type_file" value="image_fond_path, illustration_path" />
         </behavior>
     </table>
@@ -720,7 +720,26 @@
         </behavior>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/vos_vacances" />
+            <parameter name="crud_prefix" value="/vos-vacances" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
+    <table name="idee_weekend">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="titre" type="varchar"/>
+        <column name="highlight" type="boolean"/>
+        <column name="prix" type="varchar"/>
+        <column name="home" type="boolean"/>
+        <column name="lien" type="varchar"/>
+        <column name="image_path" type="varchar"/>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/idee-weekend" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>

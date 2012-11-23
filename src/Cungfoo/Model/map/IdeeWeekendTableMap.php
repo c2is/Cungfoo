@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'mise_en_avant' table.
+ * This class defines the structure of the 'idee_weekend' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class MiseEnAvantTableMap extends TableMap
+class IdeeWeekendTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.MiseEnAvantTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.IdeeWeekendTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,18 +36,18 @@ class MiseEnAvantTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('mise_en_avant');
-        $this->setPhpName('MiseEnAvant');
-        $this->setClassname('Cungfoo\\Model\\MiseEnAvant');
+        $this->setName('idee_weekend');
+        $this->setPhpName('IdeeWeekend');
+        $this->setClassname('Cungfoo\\Model\\IdeeWeekend');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('IMAGE_FOND_PATH', 'ImageFondPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('HIGHLIGHT', 'Highlight', 'BOOLEAN', false, 1, null);
         $this->addColumn('PRIX', 'Prix', 'VARCHAR', false, 255, null);
-        $this->addColumn('ILLUSTRATION_PATH', 'IllustrationPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('DATE_FIN_VALIDITE', 'DateFinValidite', 'DATE', false, null, null);
-        $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
+        $this->addColumn('HOME', 'Home', 'BOOLEAN', false, 1, null);
+        $this->addColumn('LIEN', 'Lien', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_PATH', 'ImagePath', 'VARCHAR', false, 255, null);
         $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -57,7 +57,7 @@ class MiseEnAvantTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('MiseEnAvantI18n', 'Cungfoo\\Model\\MiseEnAvantI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'MiseEnAvantI18ns');
+        $this->addRelation('IdeeWeekendI18n', 'Cungfoo\\Model\\IdeeWeekendI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'IdeeWeekendI18ns');
     } // buildRelations()
 
     /**
@@ -69,10 +69,9 @@ class MiseEnAvantTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, accroche, lien, titre_lien', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/mise-en-avant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_fond_path, illustration_path', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/idee-weekend', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
         );
     } // getBehaviors()
 
-} // MiseEnAvantTableMap
+} // IdeeWeekendTableMap

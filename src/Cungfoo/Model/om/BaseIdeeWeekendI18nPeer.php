@@ -9,68 +9,59 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\MiseEnAvantI18n;
-use Cungfoo\Model\MiseEnAvantI18nPeer;
-use Cungfoo\Model\MiseEnAvantPeer;
-use Cungfoo\Model\map\MiseEnAvantI18nTableMap;
+use Cungfoo\Model\IdeeWeekendI18n;
+use Cungfoo\Model\IdeeWeekendI18nPeer;
+use Cungfoo\Model\IdeeWeekendPeer;
+use Cungfoo\Model\map\IdeeWeekendI18nTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'mise_en_avant_i18n' table.
+ * Base static class for performing query and update operations on the 'idee_weekend_i18n' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseMiseEnAvantI18nPeer
+abstract class BaseIdeeWeekendI18nPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'mise_en_avant_i18n';
+    const TABLE_NAME = 'idee_weekend_i18n';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\MiseEnAvantI18n';
+    const OM_CLASS = 'Cungfoo\\Model\\IdeeWeekendI18n';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'MiseEnAvantI18nTableMap';
+    const TM_CLASS = 'IdeeWeekendI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the ID field */
-    const ID = 'mise_en_avant_i18n.ID';
+    const ID = 'idee_weekend_i18n.ID';
 
     /** the column name for the LOCALE field */
-    const LOCALE = 'mise_en_avant_i18n.LOCALE';
+    const LOCALE = 'idee_weekend_i18n.LOCALE';
 
     /** the column name for the TITRE field */
-    const TITRE = 'mise_en_avant_i18n.TITRE';
-
-    /** the column name for the ACCROCHE field */
-    const ACCROCHE = 'mise_en_avant_i18n.ACCROCHE';
-
-    /** the column name for the LIEN field */
-    const LIEN = 'mise_en_avant_i18n.LIEN';
-
-    /** the column name for the TITRE_LIEN field */
-    const TITRE_LIEN = 'mise_en_avant_i18n.TITRE_LIEN';
+    const TITRE = 'idee_weekend_i18n.TITRE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of MiseEnAvantI18n objects.
+     * An identiy map to hold any loaded instances of IdeeWeekendI18n objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array MiseEnAvantI18n[]
+     * @var        array IdeeWeekendI18n[]
      */
     public static $instances = array();
 
@@ -79,30 +70,30 @@ abstract class BaseMiseEnAvantI18nPeer
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. MiseEnAvantI18nPeer::$fieldNames[MiseEnAvantI18nPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. IdeeWeekendI18nPeer::$fieldNames[IdeeWeekendI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Accroche', 'Lien', 'TitreLien', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titreLien', ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID, MiseEnAvantI18nPeer::LOCALE, MiseEnAvantI18nPeer::TITRE, MiseEnAvantI18nPeer::ACCROCHE, MiseEnAvantI18nPeer::LIEN, MiseEnAvantI18nPeer::TITRE_LIEN, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACCROCHE', 'LIEN', 'TITRE_LIEN', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titre_lien', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID, IdeeWeekendI18nPeer::LOCALE, IdeeWeekendI18nPeer::TITRE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. MiseEnAvantI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. IdeeWeekendI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Accroche' => 3, 'Lien' => 4, 'TitreLien' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titreLien' => 5, ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID => 0, MiseEnAvantI18nPeer::LOCALE => 1, MiseEnAvantI18nPeer::TITRE => 2, MiseEnAvantI18nPeer::ACCROCHE => 3, MiseEnAvantI18nPeer::LIEN => 4, MiseEnAvantI18nPeer::TITRE_LIEN => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACCROCHE' => 3, 'LIEN' => 4, 'TITRE_LIEN' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titre_lien' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID => 0, IdeeWeekendI18nPeer::LOCALE => 1, IdeeWeekendI18nPeer::TITRE => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -117,10 +108,10 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = MiseEnAvantI18nPeer::getFieldNames($toType);
-        $key = isset(MiseEnAvantI18nPeer::$fieldKeys[$fromType][$name]) ? MiseEnAvantI18nPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = IdeeWeekendI18nPeer::getFieldNames($toType);
+        $key = isset(IdeeWeekendI18nPeer::$fieldKeys[$fromType][$name]) ? IdeeWeekendI18nPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(MiseEnAvantI18nPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(IdeeWeekendI18nPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -137,11 +128,11 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, MiseEnAvantI18nPeer::$fieldNames)) {
+        if (!array_key_exists($type, IdeeWeekendI18nPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return MiseEnAvantI18nPeer::$fieldNames[$type];
+        return IdeeWeekendI18nPeer::$fieldNames[$type];
     }
 
     /**
@@ -153,12 +144,12 @@ abstract class BaseMiseEnAvantI18nPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. MiseEnAvantI18nPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. IdeeWeekendI18nPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(MiseEnAvantI18nPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(IdeeWeekendI18nPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -176,19 +167,13 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::ID);
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::LOCALE);
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::TITRE);
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::ACCROCHE);
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::LIEN);
-            $criteria->addSelectColumn(MiseEnAvantI18nPeer::TITRE_LIEN);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::ID);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::LOCALE);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::TITRE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.TITRE');
-            $criteria->addSelectColumn($alias . '.ACCROCHE');
-            $criteria->addSelectColumn($alias . '.LIEN');
-            $criteria->addSelectColumn($alias . '.TITRE_LIEN');
         }
     }
 
@@ -208,21 +193,21 @@ abstract class BaseMiseEnAvantI18nPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(MiseEnAvantI18nPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(IdeeWeekendI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            MiseEnAvantI18nPeer::addSelectColumns($criteria);
+            IdeeWeekendI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -241,7 +226,7 @@ abstract class BaseMiseEnAvantI18nPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 MiseEnAvantI18n
+     * @return                 IdeeWeekendI18n
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -249,7 +234,7 @@ abstract class BaseMiseEnAvantI18nPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = MiseEnAvantI18nPeer::doSelect($critcopy, $con);
+        $objects = IdeeWeekendI18nPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -267,7 +252,7 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return MiseEnAvantI18nPeer::populateObjects(MiseEnAvantI18nPeer::doSelectStmt($criteria, $con));
+        return IdeeWeekendI18nPeer::populateObjects(IdeeWeekendI18nPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -285,16 +270,16 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            MiseEnAvantI18nPeer::addSelectColumns($criteria);
+            IdeeWeekendI18nPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -308,7 +293,7 @@ abstract class BaseMiseEnAvantI18nPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      MiseEnAvantI18n $obj A MiseEnAvantI18n object.
+     * @param      IdeeWeekendI18n $obj A IdeeWeekendI18n object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -317,7 +302,7 @@ abstract class BaseMiseEnAvantI18nPeer
             if ($key === null) {
                 $key = serialize(array((string) $obj->getId(), (string) $obj->getLocale()));
             } // if key === null
-            MiseEnAvantI18nPeer::$instances[$key] = $obj;
+            IdeeWeekendI18nPeer::$instances[$key] = $obj;
         }
     }
 
@@ -329,7 +314,7 @@ abstract class BaseMiseEnAvantI18nPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A MiseEnAvantI18n object or a primary key value.
+     * @param      mixed $value A IdeeWeekendI18n object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -337,17 +322,17 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof MiseEnAvantI18n) {
+            if (is_object($value) && $value instanceof IdeeWeekendI18n) {
                 $key = serialize(array((string) $value->getId(), (string) $value->getLocale()));
             } elseif (is_array($value) && count($value) === 2) {
                 // assume we've been passed a primary key
                 $key = serialize(array((string) $value[0], (string) $value[1]));
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or MiseEnAvantI18n object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or IdeeWeekendI18n object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(MiseEnAvantI18nPeer::$instances[$key]);
+            unset(IdeeWeekendI18nPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -358,14 +343,14 @@ abstract class BaseMiseEnAvantI18nPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   MiseEnAvantI18n Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   IdeeWeekendI18n Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(MiseEnAvantI18nPeer::$instances[$key])) {
-                return MiseEnAvantI18nPeer::$instances[$key];
+            if (isset(IdeeWeekendI18nPeer::$instances[$key])) {
+                return IdeeWeekendI18nPeer::$instances[$key];
             }
         }
 
@@ -379,11 +364,11 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function clearInstancePool()
     {
-        MiseEnAvantI18nPeer::$instances = array();
+        IdeeWeekendI18nPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to mise_en_avant_i18n
+     * Method to invalidate the instance pool of all tables related to idee_weekend_i18n
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
@@ -437,11 +422,11 @@ abstract class BaseMiseEnAvantI18nPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = MiseEnAvantI18nPeer::getOMClass();
+        $cls = IdeeWeekendI18nPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = MiseEnAvantI18nPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = MiseEnAvantI18nPeer::getInstanceFromPool($key))) {
+            $key = IdeeWeekendI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = IdeeWeekendI18nPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -450,7 +435,7 @@ abstract class BaseMiseEnAvantI18nPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                MiseEnAvantI18nPeer::addInstanceToPool($obj, $key);
+                IdeeWeekendI18nPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -464,21 +449,21 @@ abstract class BaseMiseEnAvantI18nPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (MiseEnAvantI18n object, last column rank)
+     * @return array (IdeeWeekendI18n object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = MiseEnAvantI18nPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = MiseEnAvantI18nPeer::getInstanceFromPool($key))) {
+        $key = IdeeWeekendI18nPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = IdeeWeekendI18nPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = MiseEnAvantI18nPeer::OM_CLASS;
+            $cls = IdeeWeekendI18nPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            MiseEnAvantI18nPeer::addInstanceToPool($obj, $key);
+            IdeeWeekendI18nPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -486,7 +471,7 @@ abstract class BaseMiseEnAvantI18nPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related MiseEnAvant table
+     * Returns the number of rows matching criteria, joining the related IdeeWeekend table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -494,7 +479,7 @@ abstract class BaseMiseEnAvantI18nPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinMiseEnAvant(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinIdeeWeekend(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -502,26 +487,26 @@ abstract class BaseMiseEnAvantI18nPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(MiseEnAvantI18nPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(IdeeWeekendI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            MiseEnAvantI18nPeer::addSelectColumns($criteria);
+            IdeeWeekendI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(MiseEnAvantI18nPeer::ID, MiseEnAvantPeer::ID, $join_behavior);
+        $criteria->addJoin(IdeeWeekendI18nPeer::ID, IdeeWeekendPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -537,61 +522,61 @@ abstract class BaseMiseEnAvantI18nPeer
 
 
     /**
-     * Selects a collection of MiseEnAvantI18n objects pre-filled with their MiseEnAvant objects.
+     * Selects a collection of IdeeWeekendI18n objects pre-filled with their IdeeWeekend objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of MiseEnAvantI18n objects.
+     * @return array           Array of IdeeWeekendI18n objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinMiseEnAvant(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinIdeeWeekend(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+            $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
         }
 
-        MiseEnAvantI18nPeer::addSelectColumns($criteria);
-        $startcol = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS;
-        MiseEnAvantPeer::addSelectColumns($criteria);
+        IdeeWeekendI18nPeer::addSelectColumns($criteria);
+        $startcol = IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS;
+        IdeeWeekendPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(MiseEnAvantI18nPeer::ID, MiseEnAvantPeer::ID, $join_behavior);
+        $criteria->addJoin(IdeeWeekendI18nPeer::ID, IdeeWeekendPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = MiseEnAvantI18nPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = MiseEnAvantI18nPeer::getInstanceFromPool($key1))) {
+            $key1 = IdeeWeekendI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = IdeeWeekendI18nPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
 
-                $cls = MiseEnAvantI18nPeer::getOMClass();
+                $cls = IdeeWeekendI18nPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                MiseEnAvantI18nPeer::addInstanceToPool($obj1, $key1);
+                IdeeWeekendI18nPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = MiseEnAvantPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = IdeeWeekendPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = MiseEnAvantPeer::getInstanceFromPool($key2);
+                $obj2 = IdeeWeekendPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = MiseEnAvantPeer::getOMClass();
+                    $cls = IdeeWeekendPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    MiseEnAvantPeer::addInstanceToPool($obj2, $key2);
+                    IdeeWeekendPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (MiseEnAvantI18n) to $obj2 (MiseEnAvant)
-                $obj2->addMiseEnAvantI18n($obj1);
+                // Add the $obj1 (IdeeWeekendI18n) to $obj2 (IdeeWeekend)
+                $obj2->addIdeeWeekendI18n($obj1);
 
             } // if joined row was not null
 
@@ -620,26 +605,26 @@ abstract class BaseMiseEnAvantI18nPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(MiseEnAvantI18nPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(IdeeWeekendI18nPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            MiseEnAvantI18nPeer::addSelectColumns($criteria);
+            IdeeWeekendI18nPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(MiseEnAvantI18nPeer::ID, MiseEnAvantPeer::ID, $join_behavior);
+        $criteria->addJoin(IdeeWeekendI18nPeer::ID, IdeeWeekendPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -654,12 +639,12 @@ abstract class BaseMiseEnAvantI18nPeer
     }
 
     /**
-     * Selects a collection of MiseEnAvantI18n objects pre-filled with all related objects.
+     * Selects a collection of IdeeWeekendI18n objects pre-filled with all related objects.
      *
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of MiseEnAvantI18n objects.
+     * @return array           Array of IdeeWeekendI18n objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -669,50 +654,50 @@ abstract class BaseMiseEnAvantI18nPeer
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+            $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
         }
 
-        MiseEnAvantI18nPeer::addSelectColumns($criteria);
-        $startcol2 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS;
+        IdeeWeekendI18nPeer::addSelectColumns($criteria);
+        $startcol2 = IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS;
 
-        MiseEnAvantPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + MiseEnAvantPeer::NUM_HYDRATE_COLUMNS;
+        IdeeWeekendPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + IdeeWeekendPeer::NUM_HYDRATE_COLUMNS;
 
-        $criteria->addJoin(MiseEnAvantI18nPeer::ID, MiseEnAvantPeer::ID, $join_behavior);
+        $criteria->addJoin(IdeeWeekendI18nPeer::ID, IdeeWeekendPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = MiseEnAvantI18nPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = MiseEnAvantI18nPeer::getInstanceFromPool($key1))) {
+            $key1 = IdeeWeekendI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = IdeeWeekendI18nPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
-                $cls = MiseEnAvantI18nPeer::getOMClass();
+                $cls = IdeeWeekendI18nPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                MiseEnAvantI18nPeer::addInstanceToPool($obj1, $key1);
+                IdeeWeekendI18nPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined MiseEnAvant rows
+            // Add objects for joined IdeeWeekend rows
 
-            $key2 = MiseEnAvantPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = IdeeWeekendPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = MiseEnAvantPeer::getInstanceFromPool($key2);
+                $obj2 = IdeeWeekendPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = MiseEnAvantPeer::getOMClass();
+                    $cls = IdeeWeekendPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    MiseEnAvantPeer::addInstanceToPool($obj2, $key2);
+                    IdeeWeekendPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (MiseEnAvantI18n) to the collection in $obj2 (MiseEnAvant)
-                $obj2->addMiseEnAvantI18n($obj1);
+                // Add the $obj1 (IdeeWeekendI18n) to the collection in $obj2 (IdeeWeekend)
+                $obj2->addIdeeWeekendI18n($obj1);
             } // if joined row not null
 
             $results[] = $obj1;
@@ -731,7 +716,7 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(MiseEnAvantI18nPeer::DATABASE_NAME)->getTable(MiseEnAvantI18nPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(IdeeWeekendI18nPeer::DATABASE_NAME)->getTable(IdeeWeekendI18nPeer::TABLE_NAME);
     }
 
     /**
@@ -739,9 +724,9 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseMiseEnAvantI18nPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseMiseEnAvantI18nPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new MiseEnAvantI18nTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseIdeeWeekendI18nPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseIdeeWeekendI18nPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new IdeeWeekendI18nTableMap());
       }
     }
 
@@ -753,13 +738,13 @@ abstract class BaseMiseEnAvantI18nPeer
      */
     public static function getOMClass()
     {
-        return MiseEnAvantI18nPeer::OM_CLASS;
+        return IdeeWeekendI18nPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a MiseEnAvantI18n or Criteria object.
+     * Performs an INSERT on the database, given a IdeeWeekendI18n or Criteria object.
      *
-     * @param      mixed $values Criteria or MiseEnAvantI18n object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or IdeeWeekendI18n object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -768,18 +753,18 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from MiseEnAvantI18n object
+            $criteria = $values->buildCriteria(); // build Criteria from IdeeWeekendI18n object
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -796,9 +781,9 @@ abstract class BaseMiseEnAvantI18nPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a MiseEnAvantI18n or Criteria object.
+     * Performs an UPDATE on the database, given a IdeeWeekendI18n or Criteria object.
      *
-     * @param      mixed $values Criteria or MiseEnAvantI18n object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or IdeeWeekendI18n object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -807,43 +792,43 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(MiseEnAvantI18nPeer::ID);
-            $value = $criteria->remove(MiseEnAvantI18nPeer::ID);
+            $comparison = $criteria->getComparison(IdeeWeekendI18nPeer::ID);
+            $value = $criteria->remove(IdeeWeekendI18nPeer::ID);
             if ($value) {
-                $selectCriteria->add(MiseEnAvantI18nPeer::ID, $value, $comparison);
+                $selectCriteria->add(IdeeWeekendI18nPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(MiseEnAvantI18nPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(IdeeWeekendI18nPeer::TABLE_NAME);
             }
 
-            $comparison = $criteria->getComparison(MiseEnAvantI18nPeer::LOCALE);
-            $value = $criteria->remove(MiseEnAvantI18nPeer::LOCALE);
+            $comparison = $criteria->getComparison(IdeeWeekendI18nPeer::LOCALE);
+            $value = $criteria->remove(IdeeWeekendI18nPeer::LOCALE);
             if ($value) {
-                $selectCriteria->add(MiseEnAvantI18nPeer::LOCALE, $value, $comparison);
+                $selectCriteria->add(IdeeWeekendI18nPeer::LOCALE, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(MiseEnAvantI18nPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(IdeeWeekendI18nPeer::TABLE_NAME);
             }
 
-        } else { // $values is MiseEnAvantI18n object
+        } else { // $values is IdeeWeekendI18n object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the mise_en_avant_i18n table.
+     * Deletes all rows from the idee_weekend_i18n table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -852,19 +837,19 @@ abstract class BaseMiseEnAvantI18nPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(MiseEnAvantI18nPeer::TABLE_NAME, $con, MiseEnAvantI18nPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(IdeeWeekendI18nPeer::TABLE_NAME, $con, IdeeWeekendI18nPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            MiseEnAvantI18nPeer::clearInstancePool();
-            MiseEnAvantI18nPeer::clearRelatedInstancePool();
+            IdeeWeekendI18nPeer::clearInstancePool();
+            IdeeWeekendI18nPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -875,9 +860,9 @@ abstract class BaseMiseEnAvantI18nPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a MiseEnAvantI18n or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a IdeeWeekendI18n or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or MiseEnAvantI18n object or primary key or array of primary keys
+     * @param      mixed $values Criteria or IdeeWeekendI18n object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -888,23 +873,23 @@ abstract class BaseMiseEnAvantI18nPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            MiseEnAvantI18nPeer::clearInstancePool();
+            IdeeWeekendI18nPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof MiseEnAvantI18n) { // it's a model object
+        } elseif ($values instanceof IdeeWeekendI18n) { // it's a model object
             // invalidate the cache for this single object
-            MiseEnAvantI18nPeer::removeInstanceFromPool($values);
+            IdeeWeekendI18nPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(MiseEnAvantI18nPeer::DATABASE_NAME);
+            $criteria = new Criteria(IdeeWeekendI18nPeer::DATABASE_NAME);
             // primary key is composite; we therefore, expect
             // the primary key passed to be an array of pkey values
             if (count($values) == count($values, COUNT_RECURSIVE)) {
@@ -912,16 +897,16 @@ abstract class BaseMiseEnAvantI18nPeer
                 $values = array($values);
             }
             foreach ($values as $value) {
-                $criterion = $criteria->getNewCriterion(MiseEnAvantI18nPeer::ID, $value[0]);
-                $criterion->addAnd($criteria->getNewCriterion(MiseEnAvantI18nPeer::LOCALE, $value[1]));
+                $criterion = $criteria->getNewCriterion(IdeeWeekendI18nPeer::ID, $value[0]);
+                $criterion->addAnd($criteria->getNewCriterion(IdeeWeekendI18nPeer::LOCALE, $value[1]));
                 $criteria->addOr($criterion);
                 // we can invalidate the cache for this single PK
-                MiseEnAvantI18nPeer::removeInstanceFromPool($value);
+                IdeeWeekendI18nPeer::removeInstanceFromPool($value);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria->setDbName(IdeeWeekendI18nPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -931,7 +916,7 @@ abstract class BaseMiseEnAvantI18nPeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            MiseEnAvantI18nPeer::clearRelatedInstancePool();
+            IdeeWeekendI18nPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -942,13 +927,13 @@ abstract class BaseMiseEnAvantI18nPeer
     }
 
     /**
-     * Validates all modified columns of given MiseEnAvantI18n object.
+     * Validates all modified columns of given IdeeWeekendI18n object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      MiseEnAvantI18n $obj The object to validate.
+     * @param      IdeeWeekendI18n $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -958,8 +943,8 @@ abstract class BaseMiseEnAvantI18nPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(MiseEnAvantI18nPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(MiseEnAvantI18nPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(IdeeWeekendI18nPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(IdeeWeekendI18nPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -975,7 +960,7 @@ abstract class BaseMiseEnAvantI18nPeer
 
         }
 
-        return BasePeer::doValidate(MiseEnAvantI18nPeer::DATABASE_NAME, MiseEnAvantI18nPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(IdeeWeekendI18nPeer::DATABASE_NAME, IdeeWeekendI18nPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -983,27 +968,27 @@ abstract class BaseMiseEnAvantI18nPeer
      * @param   int $id
      * @param   string $locale
      * @param      PropelPDO $con
-     * @return   MiseEnAvantI18n
+     * @return   IdeeWeekendI18n
      */
     public static function retrieveByPK($id, $locale, PropelPDO $con = null) {
         $_instancePoolKey = serialize(array((string) $id, (string) $locale));
-         if (null !== ($obj = MiseEnAvantI18nPeer::getInstanceFromPool($_instancePoolKey))) {
+         if (null !== ($obj = IdeeWeekendI18nPeer::getInstanceFromPool($_instancePoolKey))) {
              return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-        $criteria = new Criteria(MiseEnAvantI18nPeer::DATABASE_NAME);
-        $criteria->add(MiseEnAvantI18nPeer::ID, $id);
-        $criteria->add(MiseEnAvantI18nPeer::LOCALE, $locale);
-        $v = MiseEnAvantI18nPeer::doSelect($criteria, $con);
+        $criteria = new Criteria(IdeeWeekendI18nPeer::DATABASE_NAME);
+        $criteria->add(IdeeWeekendI18nPeer::ID, $id);
+        $criteria->add(IdeeWeekendI18nPeer::LOCALE, $locale);
+        $v = IdeeWeekendI18nPeer::doSelect($criteria, $con);
 
         return !empty($v) ? $v[0] : null;
     }
-} // BaseMiseEnAvantI18nPeer
+} // BaseIdeeWeekendI18nPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseMiseEnAvantI18nPeer::buildTableMap();
+BaseIdeeWeekendI18nPeer::buildTableMap();
 

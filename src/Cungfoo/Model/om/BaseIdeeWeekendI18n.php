@@ -11,31 +11,31 @@ use \Persistent;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\MiseEnAvant;
-use Cungfoo\Model\MiseEnAvantI18n;
-use Cungfoo\Model\MiseEnAvantI18nPeer;
-use Cungfoo\Model\MiseEnAvantI18nQuery;
-use Cungfoo\Model\MiseEnAvantQuery;
+use Cungfoo\Model\IdeeWeekend;
+use Cungfoo\Model\IdeeWeekendI18n;
+use Cungfoo\Model\IdeeWeekendI18nPeer;
+use Cungfoo\Model\IdeeWeekendI18nQuery;
+use Cungfoo\Model\IdeeWeekendQuery;
 
 /**
- * Base class that represents a row from the 'mise_en_avant_i18n' table.
+ * Base class that represents a row from the 'idee_weekend_i18n' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
+abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\MiseEnAvantI18nPeer';
+    const PEER = 'Cungfoo\\Model\\IdeeWeekendI18nPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        MiseEnAvantI18nPeer
+     * @var        IdeeWeekendI18nPeer
      */
     protected static $peer;
 
@@ -65,27 +65,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     protected $titre;
 
     /**
-     * The value for the accroche field.
-     * @var        string
+     * @var        IdeeWeekend
      */
-    protected $accroche;
-
-    /**
-     * The value for the lien field.
-     * @var        string
-     */
-    protected $lien;
-
-    /**
-     * The value for the titre_lien field.
-     * @var        string
-     */
-    protected $titre_lien;
-
-    /**
-     * @var        MiseEnAvant
-     */
-    protected $aMiseEnAvant;
+    protected $aIdeeWeekend;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -113,7 +95,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Initializes internal state of BaseMiseEnAvantI18n object.
+     * Initializes internal state of BaseIdeeWeekendI18n object.
      * @see        applyDefaults()
      */
     public function __construct()
@@ -153,40 +135,10 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [accroche] column value.
-     *
-     * @return string
-     */
-    public function getAccroche()
-    {
-        return $this->accroche;
-    }
-
-    /**
-     * Get the [lien] column value.
-     *
-     * @return string
-     */
-    public function getLien()
-    {
-        return $this->lien;
-    }
-
-    /**
-     * Get the [titre_lien] column value.
-     *
-     * @return string
-     */
-    public function getTitreLien()
-    {
-        return $this->titre_lien;
-    }
-
-    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
+     * @return IdeeWeekendI18n The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -196,11 +148,11 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::ID;
+            $this->modifiedColumns[] = IdeeWeekendI18nPeer::ID;
         }
 
-        if ($this->aMiseEnAvant !== null && $this->aMiseEnAvant->getId() !== $v) {
-            $this->aMiseEnAvant = null;
+        if ($this->aIdeeWeekend !== null && $this->aIdeeWeekend->getId() !== $v) {
+            $this->aIdeeWeekend = null;
         }
 
 
@@ -211,7 +163,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      * Set the value of [locale] column.
      *
      * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
+     * @return IdeeWeekendI18n The current object (for fluent API support)
      */
     public function setLocale($v)
     {
@@ -221,7 +173,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
         if ($this->locale !== $v) {
             $this->locale = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::LOCALE;
+            $this->modifiedColumns[] = IdeeWeekendI18nPeer::LOCALE;
         }
 
 
@@ -232,7 +184,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      * Set the value of [titre] column.
      *
      * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
+     * @return IdeeWeekendI18n The current object (for fluent API support)
      */
     public function setTitre($v)
     {
@@ -242,75 +194,12 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
         if ($this->titre !== $v) {
             $this->titre = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::TITRE;
+            $this->modifiedColumns[] = IdeeWeekendI18nPeer::TITRE;
         }
 
 
         return $this;
     } // setTitre()
-
-    /**
-     * Set the value of [accroche] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
-     */
-    public function setAccroche($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->accroche !== $v) {
-            $this->accroche = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::ACCROCHE;
-        }
-
-
-        return $this;
-    } // setAccroche()
-
-    /**
-     * Set the value of [lien] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
-     */
-    public function setLien($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->lien !== $v) {
-            $this->lien = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::LIEN;
-        }
-
-
-        return $this;
-    } // setLien()
-
-    /**
-     * Set the value of [titre_lien] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvantI18n The current object (for fluent API support)
-     */
-    public function setTitreLien($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->titre_lien !== $v) {
-            $this->titre_lien = $v;
-            $this->modifiedColumns[] = MiseEnAvantI18nPeer::TITRE_LIEN;
-        }
-
-
-        return $this;
-    } // setTitreLien()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -351,9 +240,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->titre = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->accroche = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->titre_lien = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -362,10 +248,10 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating MiseEnAvantI18n object", $e);
+            throw new PropelException("Error populating IdeeWeekendI18n object", $e);
         }
     }
 
@@ -385,8 +271,8 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
-        if ($this->aMiseEnAvant !== null && $this->id !== $this->aMiseEnAvant->getId()) {
-            $this->aMiseEnAvant = null;
+        if ($this->aIdeeWeekend !== null && $this->id !== $this->aIdeeWeekend->getId()) {
+            $this->aIdeeWeekend = null;
         }
     } // ensureConsistency
 
@@ -411,13 +297,13 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = MiseEnAvantI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = IdeeWeekendI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -427,7 +313,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aMiseEnAvant = null;
+            $this->aIdeeWeekend = null;
         } // if (deep)
     }
 
@@ -448,12 +334,12 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = MiseEnAvantI18nQuery::create()
+            $deleteQuery = IdeeWeekendI18nQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -491,7 +377,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -511,7 +397,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                MiseEnAvantI18nPeer::addInstanceToPool($this);
+                IdeeWeekendI18nPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -546,11 +432,11 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aMiseEnAvant !== null) {
-                if ($this->aMiseEnAvant->isModified() || $this->aMiseEnAvant->isNew()) {
-                    $affectedRows += $this->aMiseEnAvant->save($con);
+            if ($this->aIdeeWeekend !== null) {
+                if ($this->aIdeeWeekend->isModified() || $this->aIdeeWeekend->isNew()) {
+                    $affectedRows += $this->aIdeeWeekend->save($con);
                 }
-                $this->setMiseEnAvant($this->aMiseEnAvant);
+                $this->setIdeeWeekend($this->aIdeeWeekend);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -586,27 +472,18 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::ID)) {
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::LOCALE)) {
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE)) {
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::TITRE)) {
             $modifiedColumns[':p' . $index++]  = '`TITRE`';
-        }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::ACCROCHE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACCROCHE`';
-        }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::LIEN)) {
-            $modifiedColumns[':p' . $index++]  = '`LIEN`';
-        }
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) {
-            $modifiedColumns[':p' . $index++]  = '`TITRE_LIEN`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `mise_en_avant_i18n` (%s) VALUES (%s)',
+            'INSERT INTO `idee_weekend_i18n` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -623,15 +500,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                         break;
                     case '`TITRE`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
-                        break;
-                    case '`ACCROCHE`':
-                        $stmt->bindValue($identifier, $this->accroche, PDO::PARAM_STR);
-                        break;
-                    case '`LIEN`':
-                        $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
-                        break;
-                    case '`TITRE_LIEN`':
-                        $stmt->bindValue($identifier, $this->titre_lien, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -725,14 +593,14 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aMiseEnAvant !== null) {
-                if (!$this->aMiseEnAvant->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aMiseEnAvant->getValidationFailures());
+            if ($this->aIdeeWeekend !== null) {
+                if (!$this->aIdeeWeekend->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aIdeeWeekend->getValidationFailures());
                 }
             }
 
 
-            if (($retval = MiseEnAvantI18nPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = IdeeWeekendI18nPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
@@ -756,7 +624,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = MiseEnAvantI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = IdeeWeekendI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -781,15 +649,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getTitre();
                 break;
-            case 3:
-                return $this->getAccroche();
-                break;
-            case 4:
-                return $this->getLien();
-                break;
-            case 5:
-                return $this->getTitreLien();
-                break;
             default:
                 return null;
                 break;
@@ -813,22 +672,19 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['MiseEnAvantI18n'][serialize($this->getPrimaryKey())])) {
+        if (isset($alreadyDumpedObjects['IdeeWeekendI18n'][serialize($this->getPrimaryKey())])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['MiseEnAvantI18n'][serialize($this->getPrimaryKey())] = true;
-        $keys = MiseEnAvantI18nPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['IdeeWeekendI18n'][serialize($this->getPrimaryKey())] = true;
+        $keys = IdeeWeekendI18nPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getTitre(),
-            $keys[3] => $this->getAccroche(),
-            $keys[4] => $this->getLien(),
-            $keys[5] => $this->getTitreLien(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->aMiseEnAvant) {
-                $result['MiseEnAvant'] = $this->aMiseEnAvant->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            if (null !== $this->aIdeeWeekend) {
+                $result['IdeeWeekend'] = $this->aIdeeWeekend->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
         }
 
@@ -848,7 +704,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = MiseEnAvantI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = IdeeWeekendI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -873,15 +729,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 2:
                 $this->setTitre($value);
                 break;
-            case 3:
-                $this->setAccroche($value);
-                break;
-            case 4:
-                $this->setLien($value);
-                break;
-            case 5:
-                $this->setTitreLien($value);
-                break;
         } // switch()
     }
 
@@ -904,14 +751,11 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = MiseEnAvantI18nPeer::getFieldNames($keyType);
+        $keys = IdeeWeekendI18nPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setTitre($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setAccroche($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setTitreLien($arr[$keys[5]]);
     }
 
     /**
@@ -921,14 +765,11 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(MiseEnAvantI18nPeer::DATABASE_NAME);
+        $criteria = new Criteria(IdeeWeekendI18nPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::ID)) $criteria->add(MiseEnAvantI18nPeer::ID, $this->id);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::LOCALE)) $criteria->add(MiseEnAvantI18nPeer::LOCALE, $this->locale);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE)) $criteria->add(MiseEnAvantI18nPeer::TITRE, $this->titre);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::ACCROCHE)) $criteria->add(MiseEnAvantI18nPeer::ACCROCHE, $this->accroche);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::LIEN)) $criteria->add(MiseEnAvantI18nPeer::LIEN, $this->lien);
-        if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) $criteria->add(MiseEnAvantI18nPeer::TITRE_LIEN, $this->titre_lien);
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::ID)) $criteria->add(IdeeWeekendI18nPeer::ID, $this->id);
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::LOCALE)) $criteria->add(IdeeWeekendI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::TITRE)) $criteria->add(IdeeWeekendI18nPeer::TITRE, $this->titre);
 
         return $criteria;
     }
@@ -943,9 +784,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(MiseEnAvantI18nPeer::DATABASE_NAME);
-        $criteria->add(MiseEnAvantI18nPeer::ID, $this->id);
-        $criteria->add(MiseEnAvantI18nPeer::LOCALE, $this->locale);
+        $criteria = new Criteria(IdeeWeekendI18nPeer::DATABASE_NAME);
+        $criteria->add(IdeeWeekendI18nPeer::ID, $this->id);
+        $criteria->add(IdeeWeekendI18nPeer::LOCALE, $this->locale);
 
         return $criteria;
     }
@@ -992,7 +833,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of MiseEnAvantI18n (or compatible) type.
+     * @param object $copyObj An object of IdeeWeekendI18n (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -1002,9 +843,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setTitre($this->getTitre());
-        $copyObj->setAccroche($this->getAccroche());
-        $copyObj->setLien($this->getLien());
-        $copyObj->setTitreLien($this->getTitreLien());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1031,7 +869,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return MiseEnAvantI18n Clone of current object.
+     * @return IdeeWeekendI18n Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1051,25 +889,25 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return MiseEnAvantI18nPeer
+     * @return IdeeWeekendI18nPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new MiseEnAvantI18nPeer();
+            self::$peer = new IdeeWeekendI18nPeer();
         }
 
         return self::$peer;
     }
 
     /**
-     * Declares an association between this object and a MiseEnAvant object.
+     * Declares an association between this object and a IdeeWeekend object.
      *
-     * @param             MiseEnAvant $v
-     * @return MiseEnAvantI18n The current object (for fluent API support)
+     * @param             IdeeWeekend $v
+     * @return IdeeWeekendI18n The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setMiseEnAvant(MiseEnAvant $v = null)
+    public function setIdeeWeekend(IdeeWeekend $v = null)
     {
         if ($v === null) {
             $this->setId(NULL);
@@ -1077,12 +915,12 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $this->setId($v->getId());
         }
 
-        $this->aMiseEnAvant = $v;
+        $this->aIdeeWeekend = $v;
 
         // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the MiseEnAvant object, it will not be re-added.
+        // If this object has already been added to the IdeeWeekend object, it will not be re-added.
         if ($v !== null) {
-            $v->addMiseEnAvantI18n($this);
+            $v->addIdeeWeekendI18n($this);
         }
 
 
@@ -1091,26 +929,26 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
 
     /**
-     * Get the associated MiseEnAvant object
+     * Get the associated IdeeWeekend object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @return MiseEnAvant The associated MiseEnAvant object.
+     * @return IdeeWeekend The associated IdeeWeekend object.
      * @throws PropelException
      */
-    public function getMiseEnAvant(PropelPDO $con = null)
+    public function getIdeeWeekend(PropelPDO $con = null)
     {
-        if ($this->aMiseEnAvant === null && ($this->id !== null)) {
-            $this->aMiseEnAvant = MiseEnAvantQuery::create()->findPk($this->id, $con);
+        if ($this->aIdeeWeekend === null && ($this->id !== null)) {
+            $this->aIdeeWeekend = IdeeWeekendQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aMiseEnAvant->addMiseEnAvantI18ns($this);
+                $this->aIdeeWeekend->addIdeeWeekendI18ns($this);
              */
         }
 
-        return $this->aMiseEnAvant;
+        return $this->aIdeeWeekend;
     }
 
     /**
@@ -1121,9 +959,6 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->titre = null;
-        $this->accroche = null;
-        $this->lien = null;
-        $this->titre_lien = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1147,7 +982,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if ($deep) {
         } // if ($deep)
 
-        $this->aMiseEnAvant = null;
+        $this->aIdeeWeekend = null;
     }
 
     /**
@@ -1157,7 +992,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(MiseEnAvantI18nPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(IdeeWeekendI18nPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**

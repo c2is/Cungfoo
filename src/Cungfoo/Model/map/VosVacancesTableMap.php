@@ -67,7 +67,7 @@ class VosVacancesTableMap extends TableMap
     {
         return array(
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, description, prenom', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/vos_vacances', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/vos-vacances', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
         );
     } // getBehaviors()
 

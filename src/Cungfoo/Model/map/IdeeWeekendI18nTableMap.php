@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'mise_en_avant_i18n' table.
+ * This class defines the structure of the 'idee_weekend_i18n' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class MiseEnAvantI18nTableMap extends TableMap
+class IdeeWeekendI18nTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.MiseEnAvantI18nTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.IdeeWeekendI18nTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,18 +36,15 @@ class MiseEnAvantI18nTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('mise_en_avant_i18n');
-        $this->setPhpName('MiseEnAvantI18n');
-        $this->setClassname('Cungfoo\\Model\\MiseEnAvantI18n');
+        $this->setName('idee_weekend_i18n');
+        $this->setPhpName('IdeeWeekendI18n');
+        $this->setClassname('Cungfoo\\Model\\IdeeWeekendI18n');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'mise_en_avant', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'idee_weekend', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('TITRE', 'Titre', 'VARCHAR', false, 255, null);
-        $this->addColumn('ACCROCHE', 'Accroche', 'VARCHAR', false, 255, null);
-        $this->addColumn('LIEN', 'Lien', 'VARCHAR', false, 255, null);
-        $this->addColumn('TITRE_LIEN', 'TitreLien', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 
@@ -56,7 +53,7 @@ class MiseEnAvantI18nTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('MiseEnAvant', 'Cungfoo\\Model\\MiseEnAvant', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('IdeeWeekend', 'Cungfoo\\Model\\IdeeWeekend', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
-} // MiseEnAvantI18nTableMap
+} // IdeeWeekendI18nTableMap

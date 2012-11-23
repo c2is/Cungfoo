@@ -67,7 +67,7 @@ class TopCampingTableMap extends TableMap
     {
         return array(
             'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/top_camping', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/top-camping', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
 

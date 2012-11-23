@@ -176,6 +176,7 @@ menu.top_camping: Top campings
 menu.mise_en_avant: Mise en avant
 menu.dernieres_minutes: Dernières minutes
 menu.vos_vacances: Vos vacances
+menu.idee_weekend: Idées weekend
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -450,6 +451,18 @@ vos_vacances.titre: Titre
 vos_vacances.description: Description
 vos_vacances.age: Age
 vos_vacances.prenom: Prénom
+
+idee_weekend.crud.create: Création d'une idée weekend
+idee_weekend.crud.list: Liste des idée weekend
+idee_weekend.crud.update: Mettre à jour de l'idée weekend %name%
+idee_weekend.crud.view: Détails d'une idée weekend
+idee_weekend.id: Id
+idee_weekend.image_path: Image
+idee_weekend.titre: Titre
+idee_weekend.prix: Prix
+idee_weekend.lien: Lien
+idee_weekend.home: Mise en avant home
+idee_weekend.highlight: En couleur
 
 monday: lundi
 tuesday: mardi

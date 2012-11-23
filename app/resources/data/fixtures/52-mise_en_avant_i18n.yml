@@ -6,7 +6,6 @@
         Accroche: 'Au mois de juillet pour 6 personnes DE'
         Lien: null
         TitreLien: 'Réserver DE'
-        Prix: 'A partir de 112€ la nuit DE'
     1_en:
         Id: 1
         Locale: en
@@ -14,7 +13,6 @@
         Accroche: 'Au mois de juillet pour 6 personnes EN'
         Lien: null
         TitreLien: 'Réserver EN'
-        Prix: 'A partir de 112€ la nuit EN'
     1_fr:
         Id: 1
         Locale: fr
@@ -22,7 +20,6 @@
         Accroche: 'Au mois de juillet pour 6 personnes'
         Lien: '#'
         TitreLien: Réserver
-        Prix: 'A partir de 112€ la nuit'
     2_de:
         Id: 2
         Locale: de
@@ -30,7 +27,6 @@
         Accroche: 'Au mois de juin pour 6 personnes DE'
         Lien: null
         TitreLien: 'Réserver DE'
-        Prix: 'A partir de 90€ la nuit DE'
     2_en:
         Id: 2
         Locale: en
@@ -38,7 +34,6 @@
         Accroche: 'Au mois de juin pour 6 personnes EN'
         Lien: null
         TitreLien: 'Réserver EN'
-        Prix: 'A partir de 90€ la nuit EN'
     2_fr:
         Id: 2
         Locale: fr
@@ -46,7 +41,6 @@
         Accroche: 'Au mois de juin pour 6 personnes'
         Lien: '#'
         TitreLien: Réserver
-        Prix: 'A partir de 90€ la nuit'
     3_de:
         Id: 3
         Locale: de
@@ -54,7 +48,6 @@
         Accroche: 'Au mois de juillet pour 6 personnes DE'
         Lien: null
         TitreLien: 'Réserver DE'
-        Prix: 'A partir de 112€ la nuit DE'
     3_en:
         Id: 3
         Locale: en
@@ -62,7 +55,6 @@
         Accroche: 'Au mois de juillet pour 6 personnes EN'
         Lien: null
         TitreLien: 'Réserver EN'
-        Prix: 'A partir de 112€ la nuit EN'
     3_fr:
         Id: 3
         Locale: fr
@@ -70,4 +62,3 @@
         Accroche: 'Au mois de juillet pour 6 personnes'
         Lien: '#'
         TitreLien: Réserver
-        Prix: 'A partir de 112€ la nuit'

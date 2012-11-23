@@ -5,41 +5,39 @@ namespace Cungfoo\Model\om;
 use \BaseObject;
 use \BasePeer;
 use \Criteria;
-use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
 use \PropelCollection;
-use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\MiseEnAvant;
-use Cungfoo\Model\MiseEnAvantI18n;
-use Cungfoo\Model\MiseEnAvantI18nQuery;
-use Cungfoo\Model\MiseEnAvantPeer;
-use Cungfoo\Model\MiseEnAvantQuery;
+use Cungfoo\Model\IdeeWeekend;
+use Cungfoo\Model\IdeeWeekendI18n;
+use Cungfoo\Model\IdeeWeekendI18nQuery;
+use Cungfoo\Model\IdeeWeekendPeer;
+use Cungfoo\Model\IdeeWeekendQuery;
 
 /**
- * Base class that represents a row from the 'mise_en_avant' table.
+ * Base class that represents a row from the 'idee_weekend' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseMiseEnAvant extends BaseObject implements Persistent
+abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\MiseEnAvantPeer';
+    const PEER = 'Cungfoo\\Model\\IdeeWeekendPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        MiseEnAvantPeer
+     * @var        IdeeWeekendPeer
      */
     protected static $peer;
 
@@ -56,10 +54,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the image_fond_path field.
-     * @var        string
+     * The value for the highlight field.
+     * @var        boolean
      */
-    protected $image_fond_path;
+    protected $highlight;
 
     /**
      * The value for the prix field.
@@ -68,22 +66,22 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     protected $prix;
 
     /**
-     * The value for the illustration_path field.
-     * @var        string
+     * The value for the home field.
+     * @var        boolean
      */
-    protected $illustration_path;
+    protected $home;
 
     /**
-     * The value for the date_fin_validite field.
+     * The value for the lien field.
      * @var        string
      */
-    protected $date_fin_validite;
+    protected $lien;
 
     /**
-     * The value for the sortable_rank field.
-     * @var        int
+     * The value for the image_path field.
+     * @var        string
      */
-    protected $sortable_rank;
+    protected $image_path;
 
     /**
      * The value for the enabled field.
@@ -93,10 +91,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     protected $enabled;
 
     /**
-     * @var        PropelObjectCollection|MiseEnAvantI18n[] Collection to store aggregation of MiseEnAvantI18n objects.
+     * @var        PropelObjectCollection|IdeeWeekendI18n[] Collection to store aggregation of IdeeWeekendI18n objects.
      */
-    protected $collMiseEnAvantI18ns;
-    protected $collMiseEnAvantI18nsPartial;
+    protected $collIdeeWeekendI18ns;
+    protected $collIdeeWeekendI18nsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -112,14 +110,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
-    // sortable behavior
-
-    /**
-     * Queries to be executed in the save transaction
-     * @var        array
-     */
-    protected $sortableQueries = array();
-
     // i18n behavior
 
     /**
@@ -130,7 +120,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
     /**
      * Current translation objects
-     * @var        array[MiseEnAvantI18n]
+     * @var        array[IdeeWeekendI18n]
      */
     protected $currentTranslations;
 
@@ -138,7 +128,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $miseEnAvantI18nsScheduledForDeletion = null;
+    protected $ideeWeekendI18nsScheduledForDeletion = null;
 
     /**
      * Applies default values to this object.
@@ -152,7 +142,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     /**
-     * Initializes internal state of BaseMiseEnAvant object.
+     * Initializes internal state of BaseIdeeWeekend object.
      * @see        applyDefaults()
      */
     public function __construct()
@@ -172,13 +162,13 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_fond_path] column value.
+     * Get the [highlight] column value.
      *
-     * @return string
+     * @return boolean
      */
-    public function getImageFondPath()
+    public function getHighlight()
     {
-        return $this->image_fond_path;
+        return $this->highlight;
     }
 
     /**
@@ -192,60 +182,33 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [illustration_path] column value.
+     * Get the [home] column value.
+     *
+     * @return boolean
+     */
+    public function getHome()
+    {
+        return $this->home;
+    }
+
+    /**
+     * Get the [lien] column value.
      *
      * @return string
      */
-    public function getIllustrationPath()
+    public function getLien()
     {
-        return $this->illustration_path;
+        return $this->lien;
     }
 
     /**
-     * Get the [optionally formatted] temporal [date_fin_validite] column value.
+     * Get the [image_path] column value.
      *
-     *
-     * @param string $format The date/time format string (either date()-style or strftime()-style).
-     *				 If format is null, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
-     * @throws PropelException - if unable to parse/validate the date/time value.
+     * @return string
      */
-    public function getDateFinValidite($format = null)
+    public function getImagePath()
     {
-        if ($this->date_fin_validite === null) {
-            return null;
-        }
-
-        if ($this->date_fin_validite === '0000-00-00') {
-            // while technically this is not a default value of null,
-            // this seems to be closest in meaning.
-            return null;
-        } else {
-            try {
-                $dt = new DateTime($this->date_fin_validite);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->date_fin_validite, true), $x);
-            }
-        }
-
-        if ($format === null) {
-            // Because propel.useDateTimeClass is true, we return a DateTime object.
-            return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
-        }
-    }
-
-    /**
-     * Get the [sortable_rank] column value.
-     *
-     * @return int
-     */
-    public function getSortableRank()
-    {
-        return $this->sortable_rank;
+        return $this->image_path;
     }
 
     /**
@@ -262,7 +225,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -272,7 +235,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::ID;
+            $this->modifiedColumns[] = IdeeWeekendPeer::ID;
         }
 
 
@@ -280,31 +243,39 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [image_fond_path] column.
+     * Sets the value of the [highlight] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
      *
-     * @param string $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @param boolean|integer|string $v The new value
+     * @return IdeeWeekend The current object (for fluent API support)
      */
-    public function setImageFondPath($v)
+    public function setHighlight($v)
     {
         if ($v !== null) {
-            $v = (string) $v;
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
         }
 
-        if ($this->image_fond_path !== $v) {
-            $this->image_fond_path = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::IMAGE_FOND_PATH;
+        if ($this->highlight !== $v) {
+            $this->highlight = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::HIGHLIGHT;
         }
 
 
         return $this;
-    } // setImageFondPath()
+    } // setHighlight()
 
     /**
      * Set the value of [prix] column.
      *
      * @param string $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function setPrix($v)
     {
@@ -314,7 +285,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if ($this->prix !== $v) {
             $this->prix = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::PRIX;
+            $this->modifiedColumns[] = IdeeWeekendPeer::PRIX;
         }
 
 
@@ -322,69 +293,75 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     } // setPrix()
 
     /**
-     * Set the value of [illustration_path] column.
+     * Sets the value of the [home] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return IdeeWeekend The current object (for fluent API support)
+     */
+    public function setHome($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->home !== $v) {
+            $this->home = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::HOME;
+        }
+
+
+        return $this;
+    } // setHome()
+
+    /**
+     * Set the value of [lien] column.
      *
      * @param string $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @return IdeeWeekend The current object (for fluent API support)
      */
-    public function setIllustrationPath($v)
+    public function setLien($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->illustration_path !== $v) {
-            $this->illustration_path = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::ILLUSTRATION_PATH;
+        if ($this->lien !== $v) {
+            $this->lien = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::LIEN;
         }
 
 
         return $this;
-    } // setIllustrationPath()
+    } // setLien()
 
     /**
-     * Sets the value of [date_fin_validite] column to a normalized version of the date/time value specified.
+     * Set the value of [image_path] column.
      *
-     * @param mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as null.
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @param string $v new value
+     * @return IdeeWeekend The current object (for fluent API support)
      */
-    public function setDateFinValidite($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->date_fin_validite !== null || $dt !== null) {
-            $currentDateAsString = ($this->date_fin_validite !== null && $tmpDt = new DateTime($this->date_fin_validite)) ? $tmpDt->format('Y-m-d') : null;
-            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-            if ($currentDateAsString !== $newDateAsString) {
-                $this->date_fin_validite = $newDateAsString;
-                $this->modifiedColumns[] = MiseEnAvantPeer::DATE_FIN_VALIDITE;
-            }
-        } // if either are not null
-
-
-        return $this;
-    } // setDateFinValidite()
-
-    /**
-     * Set the value of [sortable_rank] column.
-     *
-     * @param int $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
-     */
-    public function setSortableRank($v)
+    public function setImagePath($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
-        if ($this->sortable_rank !== $v) {
-            $this->sortable_rank = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::SORTABLE_RANK;
+        if ($this->image_path !== $v) {
+            $this->image_path = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::IMAGE_PATH;
         }
 
 
         return $this;
-    } // setSortableRank()
+    } // setImagePath()
 
     /**
      * Sets the value of the [enabled] column.
@@ -394,7 +371,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
      *
      * @param boolean|integer|string $v The new value
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function setEnabled($v)
     {
@@ -408,7 +385,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if ($this->enabled !== $v) {
             $this->enabled = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::ENABLED;
+            $this->modifiedColumns[] = IdeeWeekendPeer::ENABLED;
         }
 
 
@@ -452,11 +429,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->image_fond_path = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->highlight = ($row[$startcol + 1] !== null) ? (boolean) $row[$startcol + 1] : null;
             $this->prix = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->illustration_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->date_fin_validite = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->home = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
+            $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->image_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
@@ -466,10 +443,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = IdeeWeekendPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating MiseEnAvant object", $e);
+            throw new PropelException("Error populating IdeeWeekend object", $e);
         }
     }
 
@@ -512,13 +489,13 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(IdeeWeekendPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = MiseEnAvantPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = IdeeWeekendPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -528,7 +505,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collMiseEnAvantI18ns = null;
+            $this->collIdeeWeekendI18ns = null;
 
         } // if (deep)
     }
@@ -550,19 +527,14 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = MiseEnAvantQuery::create()
+            $deleteQuery = IdeeWeekendQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
-            // sortable behavior
-
-            MiseEnAvantPeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
-            MiseEnAvantPeer::clearInstancePool();
-
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
@@ -598,22 +570,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(IdeeWeekendPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         $isInsert = $this->isNew();
         try {
             $ret = $this->preSave($con);
-            // sortable behavior
-            $this->processSortableQueries($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
-                // sortable behavior
-                if (!$this->isColumnModified(MiseEnAvantPeer::RANK_COL)) {
-                    $this->setSortableRank(MiseEnAvantQuery::create()->getMaxRank($con) + 1);
-                }
-
             } else {
                 $ret = $ret && $this->preUpdate($con);
             }
@@ -625,7 +590,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                MiseEnAvantPeer::addInstanceToPool($this);
+                IdeeWeekendPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -666,17 +631,17 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
-            if ($this->miseEnAvantI18nsScheduledForDeletion !== null) {
-                if (!$this->miseEnAvantI18nsScheduledForDeletion->isEmpty()) {
-                    MiseEnAvantI18nQuery::create()
-                        ->filterByPrimaryKeys($this->miseEnAvantI18nsScheduledForDeletion->getPrimaryKeys(false))
+            if ($this->ideeWeekendI18nsScheduledForDeletion !== null) {
+                if (!$this->ideeWeekendI18nsScheduledForDeletion->isEmpty()) {
+                    IdeeWeekendI18nQuery::create()
+                        ->filterByPrimaryKeys($this->ideeWeekendI18nsScheduledForDeletion->getPrimaryKeys(false))
                         ->delete($con);
-                    $this->miseEnAvantI18nsScheduledForDeletion = null;
+                    $this->ideeWeekendI18nsScheduledForDeletion = null;
                 }
             }
 
-            if ($this->collMiseEnAvantI18ns !== null) {
-                foreach ($this->collMiseEnAvantI18ns as $referrerFK) {
+            if ($this->collIdeeWeekendI18ns !== null) {
+                foreach ($this->collIdeeWeekendI18ns as $referrerFK) {
                     if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -703,36 +668,36 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = MiseEnAvantPeer::ID;
+        $this->modifiedColumns[] = IdeeWeekendPeer::ID;
         if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . MiseEnAvantPeer::ID . ')');
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . IdeeWeekendPeer::ID . ')');
         }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(MiseEnAvantPeer::ID)) {
+        if ($this->isColumnModified(IdeeWeekendPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`ID`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_FOND_PATH`';
+        if ($this->isColumnModified(IdeeWeekendPeer::HIGHLIGHT)) {
+            $modifiedColumns[':p' . $index++]  = '`HIGHLIGHT`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) {
+        if ($this->isColumnModified(IdeeWeekendPeer::PRIX)) {
             $modifiedColumns[':p' . $index++]  = '`PRIX`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`ILLUSTRATION_PATH`';
+        if ($this->isColumnModified(IdeeWeekendPeer::HOME)) {
+            $modifiedColumns[':p' . $index++]  = '`HOME`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) {
-            $modifiedColumns[':p' . $index++]  = '`DATE_FIN_VALIDITE`';
+        if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) {
+            $modifiedColumns[':p' . $index++]  = '`LIEN`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) {
-            $modifiedColumns[':p' . $index++]  = '`SORTABLE_RANK`';
+        if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::ENABLED)) {
+        if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `mise_en_avant` (%s) VALUES (%s)',
+            'INSERT INTO `idee_weekend` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -744,20 +709,20 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                     case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`IMAGE_FOND_PATH`':
-                        $stmt->bindValue($identifier, $this->image_fond_path, PDO::PARAM_STR);
+                    case '`HIGHLIGHT`':
+                        $stmt->bindValue($identifier, (int) $this->highlight, PDO::PARAM_INT);
                         break;
                     case '`PRIX`':
                         $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
-                    case '`ILLUSTRATION_PATH`':
-                        $stmt->bindValue($identifier, $this->illustration_path, PDO::PARAM_STR);
+                    case '`HOME`':
+                        $stmt->bindValue($identifier, (int) $this->home, PDO::PARAM_INT);
                         break;
-                    case '`DATE_FIN_VALIDITE`':
-                        $stmt->bindValue($identifier, $this->date_fin_validite, PDO::PARAM_STR);
+                    case '`LIEN`':
+                        $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
                         break;
-                    case '`SORTABLE_RANK`':
-                        $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
+                    case '`IMAGE_PATH`':
+                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -856,13 +821,13 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            if (($retval = MiseEnAvantPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = IdeeWeekendPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
 
-                if ($this->collMiseEnAvantI18ns !== null) {
-                    foreach ($this->collMiseEnAvantI18ns as $referrerFK) {
+                if ($this->collIdeeWeekendI18ns !== null) {
+                    foreach ($this->collIdeeWeekendI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -888,7 +853,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = MiseEnAvantPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = IdeeWeekendPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -908,19 +873,19 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getImageFondPath();
+                return $this->getHighlight();
                 break;
             case 2:
                 return $this->getPrix();
                 break;
             case 3:
-                return $this->getIllustrationPath();
+                return $this->getHome();
                 break;
             case 4:
-                return $this->getDateFinValidite();
+                return $this->getLien();
                 break;
             case 5:
-                return $this->getSortableRank();
+                return $this->getImagePath();
                 break;
             case 6:
                 return $this->getEnabled();
@@ -948,23 +913,23 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['MiseEnAvant'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['IdeeWeekend'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['MiseEnAvant'][$this->getPrimaryKey()] = true;
-        $keys = MiseEnAvantPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['IdeeWeekend'][$this->getPrimaryKey()] = true;
+        $keys = IdeeWeekendPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getImageFondPath(),
+            $keys[1] => $this->getHighlight(),
             $keys[2] => $this->getPrix(),
-            $keys[3] => $this->getIllustrationPath(),
-            $keys[4] => $this->getDateFinValidite(),
-            $keys[5] => $this->getSortableRank(),
+            $keys[3] => $this->getHome(),
+            $keys[4] => $this->getLien(),
+            $keys[5] => $this->getImagePath(),
             $keys[6] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->collMiseEnAvantI18ns) {
-                $result['MiseEnAvantI18ns'] = $this->collMiseEnAvantI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collIdeeWeekendI18ns) {
+                $result['IdeeWeekendI18ns'] = $this->collIdeeWeekendI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -984,7 +949,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = MiseEnAvantPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = IdeeWeekendPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -1004,19 +969,19 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setImageFondPath($value);
+                $this->setHighlight($value);
                 break;
             case 2:
                 $this->setPrix($value);
                 break;
             case 3:
-                $this->setIllustrationPath($value);
+                $this->setHome($value);
                 break;
             case 4:
-                $this->setDateFinValidite($value);
+                $this->setLien($value);
                 break;
             case 5:
-                $this->setSortableRank($value);
+                $this->setImagePath($value);
                 break;
             case 6:
                 $this->setEnabled($value);
@@ -1043,14 +1008,14 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = MiseEnAvantPeer::getFieldNames($keyType);
+        $keys = IdeeWeekendPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setImageFondPath($arr[$keys[1]]);
+        if (array_key_exists($keys[1], $arr)) $this->setHighlight($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setPrix($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setIllustrationPath($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setDateFinValidite($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
+        if (array_key_exists($keys[3], $arr)) $this->setHome($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setImagePath($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
     }
 
@@ -1061,15 +1026,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
+        $criteria = new Criteria(IdeeWeekendPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(MiseEnAvantPeer::ID)) $criteria->add(MiseEnAvantPeer::ID, $this->id);
-        if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) $criteria->add(MiseEnAvantPeer::IMAGE_FOND_PATH, $this->image_fond_path);
-        if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) $criteria->add(MiseEnAvantPeer::PRIX, $this->prix);
-        if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) $criteria->add(MiseEnAvantPeer::ILLUSTRATION_PATH, $this->illustration_path);
-        if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) $criteria->add(MiseEnAvantPeer::DATE_FIN_VALIDITE, $this->date_fin_validite);
-        if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) $criteria->add(MiseEnAvantPeer::SORTABLE_RANK, $this->sortable_rank);
-        if ($this->isColumnModified(MiseEnAvantPeer::ENABLED)) $criteria->add(MiseEnAvantPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(IdeeWeekendPeer::ID)) $criteria->add(IdeeWeekendPeer::ID, $this->id);
+        if ($this->isColumnModified(IdeeWeekendPeer::HIGHLIGHT)) $criteria->add(IdeeWeekendPeer::HIGHLIGHT, $this->highlight);
+        if ($this->isColumnModified(IdeeWeekendPeer::PRIX)) $criteria->add(IdeeWeekendPeer::PRIX, $this->prix);
+        if ($this->isColumnModified(IdeeWeekendPeer::HOME)) $criteria->add(IdeeWeekendPeer::HOME, $this->home);
+        if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) $criteria->add(IdeeWeekendPeer::LIEN, $this->lien);
+        if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) $criteria->add(IdeeWeekendPeer::IMAGE_PATH, $this->image_path);
+        if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) $criteria->add(IdeeWeekendPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1084,8 +1049,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
-        $criteria->add(MiseEnAvantPeer::ID, $this->id);
+        $criteria = new Criteria(IdeeWeekendPeer::DATABASE_NAME);
+        $criteria->add(IdeeWeekendPeer::ID, $this->id);
 
         return $criteria;
     }
@@ -1126,18 +1091,18 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of MiseEnAvant (or compatible) type.
+     * @param object $copyObj An object of IdeeWeekend (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setImageFondPath($this->getImageFondPath());
+        $copyObj->setHighlight($this->getHighlight());
         $copyObj->setPrix($this->getPrix());
-        $copyObj->setIllustrationPath($this->getIllustrationPath());
-        $copyObj->setDateFinValidite($this->getDateFinValidite());
-        $copyObj->setSortableRank($this->getSortableRank());
+        $copyObj->setHome($this->getHome());
+        $copyObj->setLien($this->getLien());
+        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1147,9 +1112,9 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getMiseEnAvantI18ns() as $relObj) {
+            foreach ($this->getIdeeWeekendI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addMiseEnAvantI18n($relObj->copy($deepCopy));
+                    $copyObj->addIdeeWeekendI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1172,7 +1137,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return MiseEnAvant Clone of current object.
+     * @return IdeeWeekend Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1192,12 +1157,12 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return MiseEnAvantPeer
+     * @return IdeeWeekendPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new MiseEnAvantPeer();
+            self::$peer = new IdeeWeekendPeer();
         }
 
         return self::$peer;
@@ -1214,40 +1179,40 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
-        if ('MiseEnAvantI18n' == $relationName) {
-            $this->initMiseEnAvantI18ns();
+        if ('IdeeWeekendI18n' == $relationName) {
+            $this->initIdeeWeekendI18ns();
         }
     }
 
     /**
-     * Clears out the collMiseEnAvantI18ns collection
+     * Clears out the collIdeeWeekendI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return void
-     * @see        addMiseEnAvantI18ns()
+     * @see        addIdeeWeekendI18ns()
      */
-    public function clearMiseEnAvantI18ns()
+    public function clearIdeeWeekendI18ns()
     {
-        $this->collMiseEnAvantI18ns = null; // important to set this to null since that means it is uninitialized
-        $this->collMiseEnAvantI18nsPartial = null;
+        $this->collIdeeWeekendI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collIdeeWeekendI18nsPartial = null;
     }
 
     /**
-     * reset is the collMiseEnAvantI18ns collection loaded partially
+     * reset is the collIdeeWeekendI18ns collection loaded partially
      *
      * @return void
      */
-    public function resetPartialMiseEnAvantI18ns($v = true)
+    public function resetPartialIdeeWeekendI18ns($v = true)
     {
-        $this->collMiseEnAvantI18nsPartial = $v;
+        $this->collIdeeWeekendI18nsPartial = $v;
     }
 
     /**
-     * Initializes the collMiseEnAvantI18ns collection.
+     * Initializes the collIdeeWeekendI18ns collection.
      *
-     * By default this just sets the collMiseEnAvantI18ns collection to an empty array (like clearcollMiseEnAvantI18ns());
+     * By default this just sets the collIdeeWeekendI18ns collection to an empty array (like clearcollIdeeWeekendI18ns());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -1256,177 +1221,177 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      *
      * @return void
      */
-    public function initMiseEnAvantI18ns($overrideExisting = true)
+    public function initIdeeWeekendI18ns($overrideExisting = true)
     {
-        if (null !== $this->collMiseEnAvantI18ns && !$overrideExisting) {
+        if (null !== $this->collIdeeWeekendI18ns && !$overrideExisting) {
             return;
         }
-        $this->collMiseEnAvantI18ns = new PropelObjectCollection();
-        $this->collMiseEnAvantI18ns->setModel('MiseEnAvantI18n');
+        $this->collIdeeWeekendI18ns = new PropelObjectCollection();
+        $this->collIdeeWeekendI18ns->setModel('IdeeWeekendI18n');
     }
 
     /**
-     * Gets an array of MiseEnAvantI18n objects which contain a foreign key that references this object.
+     * Gets an array of IdeeWeekendI18n objects which contain a foreign key that references this object.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
      * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this MiseEnAvant is new, it will return
+     * If this IdeeWeekend is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|MiseEnAvantI18n[] List of MiseEnAvantI18n objects
+     * @return PropelObjectCollection|IdeeWeekendI18n[] List of IdeeWeekendI18n objects
      * @throws PropelException
      */
-    public function getMiseEnAvantI18ns($criteria = null, PropelPDO $con = null)
+    public function getIdeeWeekendI18ns($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collMiseEnAvantI18nsPartial && !$this->isNew();
-        if (null === $this->collMiseEnAvantI18ns || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collMiseEnAvantI18ns) {
+        $partial = $this->collIdeeWeekendI18nsPartial && !$this->isNew();
+        if (null === $this->collIdeeWeekendI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collIdeeWeekendI18ns) {
                 // return empty collection
-                $this->initMiseEnAvantI18ns();
+                $this->initIdeeWeekendI18ns();
             } else {
-                $collMiseEnAvantI18ns = MiseEnAvantI18nQuery::create(null, $criteria)
-                    ->filterByMiseEnAvant($this)
+                $collIdeeWeekendI18ns = IdeeWeekendI18nQuery::create(null, $criteria)
+                    ->filterByIdeeWeekend($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collMiseEnAvantI18nsPartial && count($collMiseEnAvantI18ns)) {
-                      $this->initMiseEnAvantI18ns(false);
+                    if (false !== $this->collIdeeWeekendI18nsPartial && count($collIdeeWeekendI18ns)) {
+                      $this->initIdeeWeekendI18ns(false);
 
-                      foreach($collMiseEnAvantI18ns as $obj) {
-                        if (false == $this->collMiseEnAvantI18ns->contains($obj)) {
-                          $this->collMiseEnAvantI18ns->append($obj);
+                      foreach($collIdeeWeekendI18ns as $obj) {
+                        if (false == $this->collIdeeWeekendI18ns->contains($obj)) {
+                          $this->collIdeeWeekendI18ns->append($obj);
                         }
                       }
 
-                      $this->collMiseEnAvantI18nsPartial = true;
+                      $this->collIdeeWeekendI18nsPartial = true;
                     }
 
-                    return $collMiseEnAvantI18ns;
+                    return $collIdeeWeekendI18ns;
                 }
 
-                if($partial && $this->collMiseEnAvantI18ns) {
-                    foreach($this->collMiseEnAvantI18ns as $obj) {
+                if($partial && $this->collIdeeWeekendI18ns) {
+                    foreach($this->collIdeeWeekendI18ns as $obj) {
                         if($obj->isNew()) {
-                            $collMiseEnAvantI18ns[] = $obj;
+                            $collIdeeWeekendI18ns[] = $obj;
                         }
                     }
                 }
 
-                $this->collMiseEnAvantI18ns = $collMiseEnAvantI18ns;
-                $this->collMiseEnAvantI18nsPartial = false;
+                $this->collIdeeWeekendI18ns = $collIdeeWeekendI18ns;
+                $this->collIdeeWeekendI18nsPartial = false;
             }
         }
 
-        return $this->collMiseEnAvantI18ns;
+        return $this->collIdeeWeekendI18ns;
     }
 
     /**
-     * Sets a collection of MiseEnAvantI18n objects related by a one-to-many relationship
+     * Sets a collection of IdeeWeekendI18n objects related by a one-to-many relationship
      * to the current object.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param PropelCollection $miseEnAvantI18ns A Propel collection.
+     * @param PropelCollection $ideeWeekendI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
      */
-    public function setMiseEnAvantI18ns(PropelCollection $miseEnAvantI18ns, PropelPDO $con = null)
+    public function setIdeeWeekendI18ns(PropelCollection $ideeWeekendI18ns, PropelPDO $con = null)
     {
-        $this->miseEnAvantI18nsScheduledForDeletion = $this->getMiseEnAvantI18ns(new Criteria(), $con)->diff($miseEnAvantI18ns);
+        $this->ideeWeekendI18nsScheduledForDeletion = $this->getIdeeWeekendI18ns(new Criteria(), $con)->diff($ideeWeekendI18ns);
 
-        foreach ($this->miseEnAvantI18nsScheduledForDeletion as $miseEnAvantI18nRemoved) {
-            $miseEnAvantI18nRemoved->setMiseEnAvant(null);
+        foreach ($this->ideeWeekendI18nsScheduledForDeletion as $ideeWeekendI18nRemoved) {
+            $ideeWeekendI18nRemoved->setIdeeWeekend(null);
         }
 
-        $this->collMiseEnAvantI18ns = null;
-        foreach ($miseEnAvantI18ns as $miseEnAvantI18n) {
-            $this->addMiseEnAvantI18n($miseEnAvantI18n);
+        $this->collIdeeWeekendI18ns = null;
+        foreach ($ideeWeekendI18ns as $ideeWeekendI18n) {
+            $this->addIdeeWeekendI18n($ideeWeekendI18n);
         }
 
-        $this->collMiseEnAvantI18ns = $miseEnAvantI18ns;
-        $this->collMiseEnAvantI18nsPartial = false;
+        $this->collIdeeWeekendI18ns = $ideeWeekendI18ns;
+        $this->collIdeeWeekendI18nsPartial = false;
     }
 
     /**
-     * Returns the number of related MiseEnAvantI18n objects.
+     * Returns the number of related IdeeWeekendI18n objects.
      *
      * @param Criteria $criteria
      * @param boolean $distinct
      * @param PropelPDO $con
-     * @return int             Count of related MiseEnAvantI18n objects.
+     * @return int             Count of related IdeeWeekendI18n objects.
      * @throws PropelException
      */
-    public function countMiseEnAvantI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countIdeeWeekendI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collMiseEnAvantI18nsPartial && !$this->isNew();
-        if (null === $this->collMiseEnAvantI18ns || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collMiseEnAvantI18ns) {
+        $partial = $this->collIdeeWeekendI18nsPartial && !$this->isNew();
+        if (null === $this->collIdeeWeekendI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collIdeeWeekendI18ns) {
                 return 0;
             } else {
                 if($partial && !$criteria) {
-                    return count($this->getMiseEnAvantI18ns());
+                    return count($this->getIdeeWeekendI18ns());
                 }
-                $query = MiseEnAvantI18nQuery::create(null, $criteria);
+                $query = IdeeWeekendI18nQuery::create(null, $criteria);
                 if ($distinct) {
                     $query->distinct();
                 }
 
                 return $query
-                    ->filterByMiseEnAvant($this)
+                    ->filterByIdeeWeekend($this)
                     ->count($con);
             }
         } else {
-            return count($this->collMiseEnAvantI18ns);
+            return count($this->collIdeeWeekendI18ns);
         }
     }
 
     /**
-     * Method called to associate a MiseEnAvantI18n object to this object
-     * through the MiseEnAvantI18n foreign key attribute.
+     * Method called to associate a IdeeWeekendI18n object to this object
+     * through the IdeeWeekendI18n foreign key attribute.
      *
-     * @param    MiseEnAvantI18n $l MiseEnAvantI18n
-     * @return MiseEnAvant The current object (for fluent API support)
+     * @param    IdeeWeekendI18n $l IdeeWeekendI18n
+     * @return IdeeWeekend The current object (for fluent API support)
      */
-    public function addMiseEnAvantI18n(MiseEnAvantI18n $l)
+    public function addIdeeWeekendI18n(IdeeWeekendI18n $l)
     {
         if ($l && $locale = $l->getLocale()) {
             $this->setLocale($locale);
             $this->currentTranslations[$locale] = $l;
         }
-        if ($this->collMiseEnAvantI18ns === null) {
-            $this->initMiseEnAvantI18ns();
-            $this->collMiseEnAvantI18nsPartial = true;
+        if ($this->collIdeeWeekendI18ns === null) {
+            $this->initIdeeWeekendI18ns();
+            $this->collIdeeWeekendI18nsPartial = true;
         }
-        if (!in_array($l, $this->collMiseEnAvantI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddMiseEnAvantI18n($l);
+        if (!in_array($l, $this->collIdeeWeekendI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddIdeeWeekendI18n($l);
         }
 
         return $this;
     }
 
     /**
-     * @param	MiseEnAvantI18n $miseEnAvantI18n The miseEnAvantI18n object to add.
+     * @param	IdeeWeekendI18n $ideeWeekendI18n The ideeWeekendI18n object to add.
      */
-    protected function doAddMiseEnAvantI18n($miseEnAvantI18n)
+    protected function doAddIdeeWeekendI18n($ideeWeekendI18n)
     {
-        $this->collMiseEnAvantI18ns[]= $miseEnAvantI18n;
-        $miseEnAvantI18n->setMiseEnAvant($this);
+        $this->collIdeeWeekendI18ns[]= $ideeWeekendI18n;
+        $ideeWeekendI18n->setIdeeWeekend($this);
     }
 
     /**
-     * @param	MiseEnAvantI18n $miseEnAvantI18n The miseEnAvantI18n object to remove.
+     * @param	IdeeWeekendI18n $ideeWeekendI18n The ideeWeekendI18n object to remove.
      */
-    public function removeMiseEnAvantI18n($miseEnAvantI18n)
+    public function removeIdeeWeekendI18n($ideeWeekendI18n)
     {
-        if ($this->getMiseEnAvantI18ns()->contains($miseEnAvantI18n)) {
-            $this->collMiseEnAvantI18ns->remove($this->collMiseEnAvantI18ns->search($miseEnAvantI18n));
-            if (null === $this->miseEnAvantI18nsScheduledForDeletion) {
-                $this->miseEnAvantI18nsScheduledForDeletion = clone $this->collMiseEnAvantI18ns;
-                $this->miseEnAvantI18nsScheduledForDeletion->clear();
+        if ($this->getIdeeWeekendI18ns()->contains($ideeWeekendI18n)) {
+            $this->collIdeeWeekendI18ns->remove($this->collIdeeWeekendI18ns->search($ideeWeekendI18n));
+            if (null === $this->ideeWeekendI18nsScheduledForDeletion) {
+                $this->ideeWeekendI18nsScheduledForDeletion = clone $this->collIdeeWeekendI18ns;
+                $this->ideeWeekendI18nsScheduledForDeletion->clear();
             }
-            $this->miseEnAvantI18nsScheduledForDeletion[]= $miseEnAvantI18n;
-            $miseEnAvantI18n->setMiseEnAvant(null);
+            $this->ideeWeekendI18nsScheduledForDeletion[]= $ideeWeekendI18n;
+            $ideeWeekendI18n->setIdeeWeekend(null);
         }
     }
 
@@ -1436,11 +1401,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->image_fond_path = null;
+        $this->highlight = null;
         $this->prix = null;
-        $this->illustration_path = null;
-        $this->date_fin_validite = null;
-        $this->sortable_rank = null;
+        $this->home = null;
+        $this->lien = null;
+        $this->image_path = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1463,8 +1428,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collMiseEnAvantI18ns) {
-                foreach ($this->collMiseEnAvantI18ns as $o) {
+            if ($this->collIdeeWeekendI18ns) {
+                foreach ($this->collIdeeWeekendI18ns as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1474,10 +1439,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
-        if ($this->collMiseEnAvantI18ns instanceof PropelCollection) {
-            $this->collMiseEnAvantI18ns->clearIterator();
+        if ($this->collIdeeWeekendI18ns instanceof PropelCollection) {
+            $this->collIdeeWeekendI18ns->clearIterator();
         }
-        $this->collMiseEnAvantI18ns = null;
+        $this->collIdeeWeekendI18ns = null;
     }
 
     /**
@@ -1487,7 +1452,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(MiseEnAvantPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(IdeeWeekendPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**
@@ -1500,347 +1465,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
-    // sortable behavior
-
-    /**
-     * Wrap the getter for rank value
-     *
-     * @return    int
-     */
-    public function getRank()
-    {
-        return $this->sortable_rank;
-    }
-
-    /**
-     * Wrap the setter for rank value
-     *
-     * @param     int
-     * @return    MiseEnAvant
-     */
-    public function setRank($v)
-    {
-        return $this->setSortableRank($v);
-    }
-
-    /**
-     * Check if the object is first in the list, i.e. if it has 1 for rank
-     *
-     * @return    boolean
-     */
-    public function isFirst()
-    {
-        return $this->getSortableRank() == 1;
-    }
-
-    /**
-     * Check if the object is last in the list, i.e. if its rank is the highest rank
-     *
-     * @param     PropelPDO  $con      optional connection
-     *
-     * @return    boolean
-     */
-    public function isLast(PropelPDO $con = null)
-    {
-        return $this->getSortableRank() == MiseEnAvantQuery::create()->getMaxRank($con);
-    }
-
-    /**
-     * Get the next item in the list, i.e. the one for which rank is immediately higher
-     *
-     * @param     PropelPDO  $con      optional connection
-     *
-     * @return    MiseEnAvant
-     */
-    public function getNext(PropelPDO $con = null)
-    {
-
-        return MiseEnAvantQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
-    }
-
-    /**
-     * Get the previous item in the list, i.e. the one for which rank is immediately lower
-     *
-     * @param     PropelPDO  $con      optional connection
-     *
-     * @return    MiseEnAvant
-     */
-    public function getPrevious(PropelPDO $con = null)
-    {
-
-        return MiseEnAvantQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
-    }
-
-    /**
-     * Insert at specified rank
-     * The modifications are not persisted until the object is saved.
-     *
-     * @param     integer    $rank rank value
-     * @param     PropelPDO  $con      optional connection
-     *
-     * @return    MiseEnAvant the current object
-     *
-     * @throws    PropelException
-     */
-    public function insertAtRank($rank, PropelPDO $con = null)
-    {
-        $maxRank = MiseEnAvantQuery::create()->getMaxRank($con);
-        if ($rank < 1 || $rank > $maxRank + 1) {
-            throw new PropelException('Invalid rank ' . $rank);
-        }
-        // move the object in the list, at the given rank
-        $this->setSortableRank($rank);
-        if ($rank != $maxRank + 1) {
-            // Keep the list modification query for the save() transaction
-            $this->sortableQueries []= array(
-                'callable'  => array(self::PEER, 'shiftRank'),
-                'arguments' => array(1, $rank, null, )
-            );
-        }
-
-        return $this;
-    }
-
-    /**
-     * Insert in the last rank
-     * The modifications are not persisted until the object is saved.
-     *
-     * @param PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     *
-     * @throws    PropelException
-     */
-    public function insertAtBottom(PropelPDO $con = null)
-    {
-        $this->setSortableRank(MiseEnAvantQuery::create()->getMaxRank($con) + 1);
-
-        return $this;
-    }
-
-    /**
-     * Insert in the first rank
-     * The modifications are not persisted until the object is saved.
-     *
-     * @return    MiseEnAvant the current object
-     */
-    public function insertAtTop()
-    {
-        return $this->insertAtRank(1);
-    }
-
-    /**
-     * Move the object to a new rank, and shifts the rank
-     * Of the objects inbetween the old and new rank accordingly
-     *
-     * @param     integer   $newRank rank value
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     *
-     * @throws    PropelException
-     */
-    public function moveToRank($newRank, PropelPDO $con = null)
-    {
-        if ($this->isNew()) {
-            throw new PropelException('New objects cannot be moved. Please use insertAtRank() instead');
-        }
-        if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
-        }
-        if ($newRank < 1 || $newRank > MiseEnAvantQuery::create()->getMaxRank($con)) {
-            throw new PropelException('Invalid rank ' . $newRank);
-        }
-
-        $oldRank = $this->getSortableRank();
-        if ($oldRank == $newRank) {
-            return $this;
-        }
-
-        $con->beginTransaction();
-        try {
-            // shift the objects between the old and the new rank
-            $delta = ($oldRank < $newRank) ? -1 : 1;
-            MiseEnAvantPeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
-
-            // move the object to its new rank
-            $this->setSortableRank($newRank);
-            $this->save($con);
-
-            $con->commit();
-
-            return $this;
-        } catch (Exception $e) {
-            $con->rollback();
-            throw $e;
-        }
-    }
-
-    /**
-     * Exchange the rank of the object with the one passed as argument, and saves both objects
-     *
-     * @param     MiseEnAvant $object
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     *
-     * @throws Exception if the database cannot execute the two updates
-     */
-    public function swapWith($object, PropelPDO $con = null)
-    {
-        if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
-        }
-        $con->beginTransaction();
-        try {
-            $oldRank = $this->getSortableRank();
-            $newRank = $object->getSortableRank();
-            $this->setSortableRank($newRank);
-            $this->save($con);
-            $object->setSortableRank($oldRank);
-            $object->save($con);
-            $con->commit();
-
-            return $this;
-        } catch (Exception $e) {
-            $con->rollback();
-            throw $e;
-        }
-    }
-
-    /**
-     * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
-     *
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     */
-    public function moveUp(PropelPDO $con = null)
-    {
-        if ($this->isFirst()) {
-            return $this;
-        }
-        if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
-        }
-        $con->beginTransaction();
-        try {
-            $prev = $this->getPrevious($con);
-            $this->swapWith($prev, $con);
-            $con->commit();
-
-            return $this;
-        } catch (Exception $e) {
-            $con->rollback();
-            throw $e;
-        }
-    }
-
-    /**
-     * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
-     *
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     */
-    public function moveDown(PropelPDO $con = null)
-    {
-        if ($this->isLast($con)) {
-            return $this;
-        }
-        if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
-        }
-        $con->beginTransaction();
-        try {
-            $next = $this->getNext($con);
-            $this->swapWith($next, $con);
-            $con->commit();
-
-            return $this;
-        } catch (Exception $e) {
-            $con->rollback();
-            throw $e;
-        }
-    }
-
-    /**
-     * Move the object to the top of the list
-     *
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     */
-    public function moveToTop(PropelPDO $con = null)
-    {
-        if ($this->isFirst()) {
-            return $this;
-        }
-
-        return $this->moveToRank(1, $con);
-    }
-
-    /**
-     * Move the object to the bottom of the list
-     *
-     * @param     PropelPDO $con optional connection
-     *
-     * @return integer the old object's rank
-     */
-    public function moveToBottom(PropelPDO $con = null)
-    {
-        if ($this->isLast($con)) {
-            return false;
-        }
-        if ($con === null) {
-            $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
-        }
-        $con->beginTransaction();
-        try {
-            $bottom = MiseEnAvantQuery::create()->getMaxRank($con);
-            $res = $this->moveToRank($bottom, $con);
-            $con->commit();
-
-            return $res;
-        } catch (Exception $e) {
-            $con->rollback();
-            throw $e;
-        }
-    }
-
-    /**
-     * Removes the current object from the list.
-     * The modifications are not persisted until the object is saved.
-     *
-     * @param     PropelPDO $con optional connection
-     *
-     * @return    MiseEnAvant the current object
-     */
-    public function removeFromList(PropelPDO $con = null)
-    {
-        // Keep the list modification query for the save() transaction
-        $this->sortableQueries []= array(
-            'callable'  => array(self::PEER, 'shiftRank'),
-            'arguments' => array(-1, $this->getSortableRank() + 1, null)
-        );
-        // remove the object from the list
-        $this->setSortableRank(null);
-
-        return $this;
-    }
-
-    /**
-     * Execute queries that were saved to be run inside the save transaction
-     */
-    protected function processSortableQueries($con)
-    {
-        foreach ($this->sortableQueries as $query) {
-            $query['arguments'][]= $con;
-            call_user_func_array($query['callable'], $query['arguments']);
-        }
-        $this->sortableQueries = array();
-    }
-
     // i18n behavior
 
     /**
@@ -1848,7 +1472,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      *
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      *
-     * @return    MiseEnAvant The current object (for fluent API support)
+     * @return    IdeeWeekend The current object (for fluent API support)
      */
     public function setLocale($locale = 'fr')
     {
@@ -1873,12 +1497,12 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return MiseEnAvantI18n */
+     * @return IdeeWeekendI18n */
     public function getTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
-            if (null !== $this->collMiseEnAvantI18ns) {
-                foreach ($this->collMiseEnAvantI18ns as $translation) {
+            if (null !== $this->collIdeeWeekendI18ns) {
+                foreach ($this->collIdeeWeekendI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
 
@@ -1887,15 +1511,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 }
             }
             if ($this->isNew()) {
-                $translation = new MiseEnAvantI18n();
+                $translation = new IdeeWeekendI18n();
                 $translation->setLocale($locale);
             } else {
-                $translation = MiseEnAvantI18nQuery::create()
+                $translation = IdeeWeekendI18nQuery::create()
                     ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                     ->findOneOrCreate($con);
                 $this->currentTranslations[$locale] = $translation;
             }
-            $this->addMiseEnAvantI18n($translation);
+            $this->addIdeeWeekendI18n($translation);
         }
 
         return $this->currentTranslations[$locale];
@@ -1907,21 +1531,21 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return    MiseEnAvant The current object (for fluent API support)
+     * @return    IdeeWeekend The current object (for fluent API support)
      */
     public function removeTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
-            MiseEnAvantI18nQuery::create()
+            IdeeWeekendI18nQuery::create()
                 ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                 ->delete($con);
         }
         if (isset($this->currentTranslations[$locale])) {
             unset($this->currentTranslations[$locale]);
         }
-        foreach ($this->collMiseEnAvantI18ns as $key => $translation) {
+        foreach ($this->collIdeeWeekendI18ns as $key => $translation) {
             if ($translation->getLocale() == $locale) {
-                unset($this->collMiseEnAvantI18ns[$key]);
+                unset($this->collIdeeWeekendI18ns[$key]);
                 break;
             }
         }
@@ -1934,7 +1558,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      *
      * @param     PropelPDO $con an optional connection object
      *
-     * @return MiseEnAvantI18n */
+     * @return IdeeWeekendI18n */
     public function getCurrentTranslation(PropelPDO $con = null)
     {
         return $this->getTranslation($this->getLocale(), $con);
@@ -1956,82 +1580,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
          * Set the value of [titre] column.
          *
          * @param string $v new value
-         * @return MiseEnAvantI18n The current object (for fluent API support)
+         * @return IdeeWeekendI18n The current object (for fluent API support)
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [accroche] column value.
-         *
-         * @return string
-         */
-        public function getAccroche()
-        {
-        return $this->getCurrentTranslation()->getAccroche();
-    }
-
-
-        /**
-         * Set the value of [accroche] column.
-         *
-         * @param string $v new value
-         * @return MiseEnAvantI18n The current object (for fluent API support)
-         */
-        public function setAccroche($v)
-        {    $this->getCurrentTranslation()->setAccroche($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [lien] column value.
-         *
-         * @return string
-         */
-        public function getLien()
-        {
-        return $this->getCurrentTranslation()->getLien();
-    }
-
-
-        /**
-         * Set the value of [lien] column.
-         *
-         * @param string $v new value
-         * @return MiseEnAvantI18n The current object (for fluent API support)
-         */
-        public function setLien($v)
-        {    $this->getCurrentTranslation()->setLien($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [titre_lien] column value.
-         *
-         * @return string
-         */
-        public function getTitreLien()
-        {
-        return $this->getCurrentTranslation()->getTitreLien();
-    }
-
-
-        /**
-         * Set the value of [titre_lien] column.
-         *
-         * @param string $v new value
-         * @return MiseEnAvantI18n The current object (for fluent API support)
-         */
-        public function setTitreLien($v)
-        {    $this->getCurrentTranslation()->setTitreLien($v);
 
         return $this;
     }
@@ -2048,19 +1600,12 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_fond_path_deleted']->getData())
+        if (!$form['image_path_deleted']->getData())
         {
-            $this->resetModified(MiseEnAvantPeer::IMAGE_FOND_PATH);
+            $this->resetModified(IdeeWeekendPeer::IMAGE_PATH);
         }
 
-        $this->uploadImageFondPath($form);
-
-        if (!$form['illustration_path_deleted']->getData())
-        {
-            $this->resetModified(MiseEnAvantPeer::ILLUSTRATION_PATH);
-        }
-
-        $this->uploadIllustrationPath($form);
+        $this->uploadImagePath($form);
 
         return $this->save($con);
     }
@@ -2070,7 +1615,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function getUploadDir()
     {
-        return 'uploads/mise_en_avants';
+        return 'uploads/idee_weekends';
     }
 
     /**
@@ -2085,27 +1630,13 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImageFondPath(\Symfony\Component\Form\Form $form)
+    public function uploadImagePath(\Symfony\Component\Form\Form $form)
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_fond_path']->getData()))
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
         {
-            $image = uniqid().'.'.$form['image_fond_path']->getData()->guessExtension();
-            $form['image_fond_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageFondPath($this->getUploadDir() . '/' . $image);
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadIllustrationPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['illustration_path']->getData()))
-        {
-            $image = uniqid().'.'.$form['illustration_path']->getData()->guessExtension();
-            $form['illustration_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setIllustrationPath($this->getUploadDir() . '/' . $image);
+            $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+            $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImagePath($this->getUploadDir() . '/' . $image);
         }
     }
 

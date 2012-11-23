@@ -6,13 +6,13 @@ use Cungfoo\Lib\Listing\Listing,
     Cungfoo\Lib\Listing\Column;
 
 /**
- * Generated listing class for 'mise_en_avant' table.
+ * Generated listing class for 'idee_weekend' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Listing.Base
  */
-class BaseMiseEnAvantListing extends Listing
+class BaseIdeeWeekendListing extends Listing
 {
     /**
      * {@inheritdoc}
@@ -21,7 +21,7 @@ class BaseMiseEnAvantListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('prix'));
-        $this->addColumn(new Column\DateColumn('date_fin_validite'));
+        $this->addColumn(new Column\TextColumn('lien'));
         $this->addColumn(new Column\TextColumn('enabled'));
     }
 
@@ -30,7 +30,7 @@ class BaseMiseEnAvantListing extends Listing
      */
     public function getName()
     {
-        return 'MiseEnAvant';
+        return 'IdeeWeekend';
     }
 
-} // BaseMiseEnAvantListing
+} // BaseIdeeWeekendListing

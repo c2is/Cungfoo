@@ -78,6 +78,9 @@ menu:
               vos_vacances:
                   title:  menu.vos_vacances
                   route:  vos_vacances_crud_list
+              idee_weekend:
+                  title:  menu.idee_weekend
+                  route:  idee_weekend_crud_list
         viafrance:
             title: menu.viafrance
             items:
