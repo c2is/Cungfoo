@@ -35,8 +35,8 @@
         </div>
     </header>
 
-    <div id="wrap" class="fixed-width clear">
     {% block content %}
+    <div id="wrap" class="fixed-width clear">
         <div class="column left">
             {% block leftColumn %}
             {% endblock %}
@@ -47,24 +47,10 @@
         </aside>
             {% block columnClearboth %}
             {% endblock %}
-    {% endblock %}
     </div>
+    {% endblock %}
 
-    <footer class="clear">
-        <div class="footer-links" class="full-width">
-            <a href="#_">{{ "footer.contact" | trans }}</a> -
-            <a href="#_">{{ "footer.charte_qualite" | trans }}</a> -
-            <a href="#_">{{ "footer.conditions_generales_de_location" | trans }}</a> -
-            <a href="#_">{{ "footer.faq" | trans }}</a> -
-            <a href="#_">{{ "footer.guide_pratique" | trans }}</a> -
-            <a href="#_">{{ "footer.plan_du_site" | trans }}</a> -
-            <a href="#_">{{ "footer.credits" | trans }}</a> -
-            <a href="#_">{{ "footer.mentions_legales" | trans }}</a>
-            <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>
-            <span class="card visa">{{ "footer.cb_visa" | trans }}</span>
-            <span class="card master">{{ "footer.masterCard" | trans }}</span>
-        </div>
-    </footer>
+    {% include 'footer.twig' %}
 
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script>window.jQuery || document.write('<script src='+ templatePath + '"vendor/jquery-1.8.0.min.js">\x3C/script>')</script>
