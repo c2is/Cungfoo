@@ -1,6 +1,6 @@
 <?php
 $title = 'Vacances directes | Le mobil-home et vous';
-$page = 'ce';
+$page = 'booking';
 include('includes/inc_header.php');
 include('includes/booking-top.php'); ?>
 
