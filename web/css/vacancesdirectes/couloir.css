@@ -1,0 +1,705 @@
+/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+/*Variables*/
+/* Gris 1 */
+/* Gris 2 */
+/* Gris 3 */
+/* Gris 1 */
+/* bg gris sombre */
+/* bg gris */
+/* bg gris clair */
+/* bg blanc */
+/* bg bleu */
+/* bg bleu2 */
+/* border gris */
+/*Centrer verticalement une ligne de texte dans un conteneur de hauteur fixe*/
+/*Centrer verticalement plusieurs lignes de texte dans un conteneur de hauteur fixe*/
+/*Centrer verticalement une image de taille variable dans un conteneur de hauteur fixe*/
+.bt {
+  display: block;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  padding: 3px 10px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+}
+.bt.gris {
+  background-color: #e6e5e5;
+  color: #ed145b;
+}
+.bt.sombre {
+  background-color: #464545;
+  color: #ffffff;
+}
+.bt.fushia {
+  background-color: #ed145b;
+  color: #ffffff;
+}
+.bt.orange {
+  background-color: #f58220;
+  color: #ffffff;
+}
+.bt.trans {
+  background: transparent;
+  padding: 0;
+}
+.bt.cfushia {
+  color: #ed145b;
+}
+.bt.big {
+  padding: 5px 10px;
+}
+.bt.small {
+  padding: 1px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+/*GLOBAL RESET*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*HTML5 RESET*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+/*GLOBAL STYLING*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* *behavior: url(../js/libs/boxsizing.htc);*/
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+  color: #5f5f5f;
+}
+/*::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }*/
+/*LINKS*/
+a {
+  color: #464545;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+/*DEFAULT ELM*/
+b,
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: normal;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+/*FORMS*/
+legend {
+  border: 0;
+  *margin-left: -7px;
+}
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+table button,
+table input {
+  *overflow: auto;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: border-box;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+/*PLACEHOLDER*/
+::-webkit-input-placeholder {
+  color: #5f5f5f;
+}
+*:-moz-placeholder {
+  color: #5f5f5f;
+}
+*:-ms-placeholder {
+  color: #5f5f5f;
+}
+*.placeholder {
+  color: #5f5f5f;
+}
+/* :focus - lighten() for dark bg & light text || darken() for light bg & dark text */
+*:focus::-webkit-input-placeholder {
+  color: #dfdfdf;
+  -webkit-transition: all .5s ease;
+}
+*:focus:-moz-placeholder {
+  color: #dfdfdf;
+  transition: all .5s ease;
+}
+*:focus:-ms-placeholder {
+  color: #dfdfdf;
+  transition: all .5s ease;
+}
+/* MICRO CLEARFIX : http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clear:before,
+.clear:after,
+.bloc:before,
+.bloc:after {
+  content: "";
+  display: table;
+}
+.clear:after,
+.bloc:after {
+  clear: both;
+}
+.clear,
+.bloc {
+  zoom: 1;
+}
+/* + clearboth */
+.clearboth {
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+body {
+  background: #fff;
+  color: #464545;
+  font: 12px Arial, sans-serif;
+  margin: 0 24px;
+}
+#homePage {
+  margin: 0;
+}
+.full-width {
+  position: relative;
+  min-width: 100%;
+  float: left;
+  z-index: 0;
+}
+.fixed-width {
+  position: relative;
+  width: 976px;
+  margin: 0 auto;
+}
+/* packages */
+/* warning / error */
+.warning {
+  border: 3px solid #ed145b;
+  margin: 0 20px 25px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+.error {
+  margin-bottom: 10px;
+  font: 12px Arial, sans-serif;
+  color: #f58220;
+}
+.error li:before {
+  content: "-";
+  padding-right: 3px;
+}
+#forgetPassword .error {
+  margin: -15px 0 20px;
+}
+#authentication,
+#forgetPassword {
+  background-color: #e6e5e5;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 40px 0 15px;
+  position: relative;
+  overflow: hidden;
+}
+#authentication h3,
+#forgetPassword h3 {
+  background-color: #009ab0;
+  position: relative;
+  margin-bottom: 25px;
+  text-align: center;
+}
+#authentication h3:before,
+#forgetPassword h3:before {
+  content: url('../../images/vacancesdirectes/common/ui/stamp-left.png');
+  width: 12px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+#authentication h3:after,
+#forgetPassword h3:after {
+  content: url('../../images/vacancesdirectes/common/ui/stamp-right.png');
+  width: 12px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+#authentication h3 span,
+#forgetPassword h3 span {
+  color: #ffffff;
+  height: 40px;
+  text-align: center;
+  font: bold 24px/40px 'PT Sans Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+#authentication .connectedAs,
+#forgetPassword .connectedAs,
+#authentication .formMessage,
+#forgetPassword .formMessage {
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 25px;
+}
+#authentication .connectedAs .label,
+#forgetPassword .connectedAs .label,
+#authentication .formMessage .label,
+#forgetPassword .formMessage .label {
+  color: #464545;
+  opacity: .7;
+}
+#authentication .connectedAs .field,
+#forgetPassword .connectedAs .field,
+#authentication .formMessage .field,
+#forgetPassword .formMessage .field {
+  color: #ed145b;
+  font-size: 24px;
+  padding-left: 10px;
+}
+#authentication .aField,
+#forgetPassword .aField {
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+#authentication .aField label,
+#forgetPassword .aField label,
+#authentication .aField .label,
+#forgetPassword .aField .label {
+  display: block;
+  margin-bottom: 5px;
+}
+#authentication .aField label:after,
+#forgetPassword .aField label:after,
+#authentication .aField .label:after,
+#forgetPassword .aField .label:after {
+  content: ":";
+  padding-left: 3px;
+}
+#authentication .aField [type="text"],
+#forgetPassword .aField [type="text"],
+#authentication .aField [type="password"],
+#forgetPassword .aField [type="password"] {
+  width: 266px;
+  border: 0;
+  padding: 4px 10px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+}
+#authentication #option,
+#forgetPassword #option {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+#authentication #option p,
+#forgetPassword #option p {
+  margin: 0 !important;
+}
+#authentication #option .label,
+#forgetPassword #option .label {
+  display: inline-block;
+  margin-right: 15px;
+}
+#authentication #option select,
+#forgetPassword #option select {
+  width: 185px;
+  border: 0;
+  padding: 4px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+#authentication #address,
+#forgetPassword #address,
+#authentication #option,
+#forgetPassword #option {
+  margin-top: 25px;
+}
+#authentication h4,
+#forgetPassword h4 {
+  font: 24px/28px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 25px;
+  color: #464545;
+}
+#authentication table,
+#forgetPassword table {
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  width: 155px;
+}
+#authentication table label,
+#forgetPassword table label,
+#authentication table .label,
+#forgetPassword table .label {
+  display: block;
+  margin-bottom: 5px;
+  width: 150px;
+}
+#authentication table [type="text"],
+#forgetPassword table [type="text"],
+#authentication table [type="password"],
+#forgetPassword table [type="password"],
+#authentication table select,
+#forgetPassword table select {
+  width: 185px;
+  border: 0;
+  padding: 4px 10px;
+  color: #8c8a8a;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+#authentication table select,
+#forgetPassword table select {
+  padding: 4px;
+}
+#authentication table .rsl-date-input input,
+#forgetPassword table .rsl-date-input input {
+  width: 150px;
+  margin-right: 0;
+}
+#authentication table .rsl-date-input a,
+#forgetPassword table .rsl-date-input a {
+  background: #ffffff;
+  padding: 4px 9px;
+  margin-left: 1px;
+}
+#authentication .aBtField,
+#forgetPassword .aBtField {
+  clear: both;
+}
+#authentication [type="submit"],
+#forgetPassword [type="submit"],
+#authentication .okButton,
+#forgetPassword .okButton {
+  float: right;
+  margin: 0 14px 15px;
+  padding: 5px 35px;
+}
+#forgetPassword .aField label {
+  float: left;
+  padding: 7px 10px 0 0;
+  text-align: right;
+  padding-right: 10px;
+  width: 120px;
+}
+/* Stylish Select 0.4.9 */
+.stylish-select .SSContainerDivWrapper {
+  left: -9999px;
+}
+/* Vacances directes select style */
+.stylish-select .SSContainerDivWrapper {
+  margin: 0;
+  padding: 0;
+  min-width: 125px;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  z-index: 2;
+}
+.stylish-select ul.newList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+.stylish-select ul.newList * {
+  margin: 0;
+  padding: 0;
+}
+.stylish-select ul.newList a {
+  text-decoration: none;
+  display: block;
+  padding: 0 8px;
+  height: 23px;
+  line-height: 23px;
+  white-space: nowrap;
+}
+.stylish-select .newListSelected {
+  width: 125px;
+  height: 23px;
+  float: left;
+  margin-right: 10px;
+  background-color: #e6e5e5;
+  position: relative;
+  height: 23px;
+  line-height: 23px;
+}
+.stylish-select .newListSelected .selectedTxt:after {
+  content: "";
+  width: 27px;
+  height: 23px;
+  display: block;
+  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.stylish-select .newListSelected * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.stylish-select ul.newList li a:focus {
+  -moz-outline-style: none;
+}
+.stylish-select .selectedTxt {
+  width: 97px;
+  overflow: hidden;
+  padding: 0 23px 0 5px;
+  position: absolute;
+}
+.stylish-select .hiLite {
+  background: #ed145b !important;
+  color: #fff!important;
+}
+.stylish-select .newListHover {
+  background-color: #ccc!important;
+  color: #000!important;
+  cursor: default;
+}
+.stylish-select .newListDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListItemDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListOptionDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.stylish-select .newListSelHover,
+.stylish-select .newListSelFocus {
+  cursor: default;
+}
+.stylish-select .newListSelHover .selectedTxt:after,
+.stylish-select .newListSelFocus .selectedTxt:after {
+  background-position: 0 -46px;
+}
+.stylish-select .newListOptionTitle {
+  font-weight: bold;
+}
+.stylish-select .newListOptionTitle ul {
+  margin: 3px 0 0;
+}
+.stylish-select .newListOptionTitle li {
+  font-weight: normal;
+}
