@@ -102,3 +102,7 @@ crud:
             prefix: /vos_vacances
             model: \Cungfoo\Model\VosVacances
             form: \Cungfoo\Form\Type\VosVacancesType
+        idee_weekend:
+            prefix: /idee_weekend
+            model: \Cungfoo\Model\IdeeWeekend
+            form: \Cungfoo\Form\Type\IdeeWeekendType

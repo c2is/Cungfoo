@@ -725,4 +725,23 @@
         </behavior>
     </table>
 
+    <table name="idee_weekend">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="titre" type="varchar"/>
+        <column name="highlight" type="boolean"/>
+        <column name="prix" type="varchar"/>
+        <column name="home" type="boolean"/>
+        <column name="lien" type="varchar"/>
+        <column name="image_path" type="varchar"/>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/idee_weekend" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
 </database>
