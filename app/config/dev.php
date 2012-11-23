@@ -13,6 +13,7 @@ require __DIR__ . '/prod.php';
 
 // enable the debug mode
 $app['debug'] = true;
+$app['twig']->setCache(false);
 
 $app->register(new MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/../logs/cungfoo.log',
