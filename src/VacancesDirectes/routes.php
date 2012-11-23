@@ -30,7 +30,7 @@ $app->mount('/dernieres-minutes',   new Controller\DernieresMinutesController())
 $app->mount('/couloir-reservation', new Controller\CouloirController());
 $app->mount('/resalys',             new WrapperController());
 
-$app->get('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
+$app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])
