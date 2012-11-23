@@ -9,7 +9,7 @@
         <div id="sliderBackground"></div>
         <ul id="slider" class="fixed-width clear">
             {% for mea in mea %}
-                <li class="slide"{% if loop.index != 1 %} style="display: none;" {% endif %}>
+                <li class="slide">
                     <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
                     <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
                     <div class="sliderBackground"></div>
@@ -22,7 +22,9 @@
                     </div>
                     <div class="sliderStain second">
                         <div class="content">
-                            <p class="price">{{ mea.prix }}</p>
+                            <p>{{ "general.a_partir_de" | trans }}</p>
+                            <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
+                            <p class="duration">{{ "general.la_nuit" | trans }}</p>
                         </div>
                     </div>
                 </li>
@@ -34,10 +36,6 @@
 
     <div class="pagination clear" id="sliderPager"></div>
 </div>
-{% endblock %}
-
-{% block rightColumn %}
-    {% include 'Form/_search_engine.twig' %}
 {% endblock %}
 
 {% block leftColumn %}
@@ -97,6 +95,31 @@
 </div>
 {% endblock %}
 
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+    <div id="greyBoxes">
+        <div id="weekendIdeasBloc" class="clear radiusBox greyC">
+            <div class="stamp fushia">
+                <h2>{{ "general.idees_week_end" | trans }}</h2>
+            </div>
+            {% for idee in ideesweekend %}
+                <div class="element {% if idee.prix == "" %} noprice {% endif %} clear">
+                    <div class="left">
+                        <a href="{{ idee.lien }}" class="linkBlock"><img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" /></a>
+                    </div>
+                    <div class="details left linkParent">
+                        <span class="title">{{ idee.titre }}</span>
+                    </div>
+                    {% if(idee.prix != "") %}
+                        <a href="{{ idee.lien }}" class="stain cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <a href="#_" class="bt link right">Voir toutes les idées week-end (12)</a>
+        </div>
+    </div>
+{% endblock %}
+
 {% block columnClearboth %}
 <div class="column clearboth clear">
     <div id="destinationsBloc" class="radiusBox greyC">
@@ -121,7 +144,7 @@
             </div>
         </div>
         <div class="right">
-            <div id="international">u
+            <div id="international">
                 {% if pays | length %}
                 {% for p in pays %}
                     {% if p.code != 'FRA' %}
