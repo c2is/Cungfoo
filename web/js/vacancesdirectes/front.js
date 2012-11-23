@@ -594,7 +594,7 @@ $(function() {
 
         //            //console.log(disabledDate);
                     return {
-                        disabled: disabledDate != undefined,
+                        disabled: disabledDate != undefined
                     }
                 }
             });
@@ -779,7 +779,7 @@ $(function() {
 
                 //            //console.log(disabledDate);
                 return {
-                    disabled: disabledDate != undefined,
+                    disabled: disabledDate != undefined
                 }
             }
         });
@@ -897,6 +897,11 @@ $(function() {
 
     if ($('#results').length ){
         initCritResult();
+        $('.itemResultRight .bt').hover( function(){
+            $(this).next('.itemResultPopDest').fadeIn();
+        }/*, function(){
+            $(this).next('.itemResultPopDest').fadeOut();
+        }*/);
     }
 });
 
