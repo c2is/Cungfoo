@@ -21,7 +21,7 @@ use Cungfoo\Model\PointInteret;
 /**
  * Base class that represents a query for the 'etablissement_point_interet' table.
  *
- *
+ * 
  *
  * @method EtablissementPointInteretQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementPointInteretQuery orderByPointInteretId($order = Criteria::ASC) Order by the point_interet_id column
@@ -103,7 +103,7 @@ abstract class BaseEtablissementPointInteretQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
+     * @param array $key Primary key to use for the query 
                          A Primary key composition: [$etablissement_id, $point_interet_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -145,8 +145,8 @@ abstract class BaseEtablissementPointInteretQuery extends ModelCriteria
     {
         $sql = 'SELECT `ETABLISSEMENT_ID`, `POINT_INTERET_ID`, `DISTANCE` FROM `etablissement_point_interet` WHERE `ETABLISSEMENT_ID` = :p0 AND `POINT_INTERET_ID` = :p1';
         try {
-            $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
+            $stmt = $con->prepare($sql);			
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

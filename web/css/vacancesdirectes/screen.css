@@ -353,7 +353,7 @@ textarea {
   margin: 0 10px 3px 0;
 }
 .infoBox .title {
-  font: bold 16px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -927,7 +927,7 @@ div.datepicker th {
 .datepickerViewDays thead tr:first-child {
   background-color: #ed145b;
   text-transform: uppercase;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 .datepickerViewDays thead tr.datepickerDoW {
   background-color: #464545;
@@ -1065,7 +1065,7 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 }
 .datepickerInfo,
 .datepickerLegend {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 14px;
   position: absolute;
   left: 10px;
@@ -1313,7 +1313,7 @@ body {
   background: #f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 0 0;
   background-size: 100% auto;
   color: #464545;
-  font: 12px Arial, sans-serif;
+  font: 12px Arial, Helvetica, sans-serif;
   min-width: 1000px;
 }
 body.popin {
@@ -1341,7 +1341,7 @@ footer {
 #header {
   width: 928px;
   margin: 0 auto;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   z-index: 0;
 }
 #header #logo {
@@ -1351,7 +1351,7 @@ footer {
 }
 #header #catchline {
   color: #ffffff;
-  font: bold 24px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   text-align: center;
   margin-top: 80px;
@@ -1403,7 +1403,7 @@ footer {
 }
 /* nav */
 #nav {
-  font: bold 23px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   position: relative;
   background: #464545;
@@ -1477,7 +1477,7 @@ footer {
   margin-top: -7px;
 }
 #nav .tab > a small {
-  font: bold 15px Arial, sans-serif;
+  font: bold 15px Arial, Helvetica, sans-serif, sans-serif;
   color: #ed145b;
 }
 #nav .tab .subnav {
@@ -1497,15 +1497,15 @@ footer {
   cursor: default;
 }
 #nav .tab .subnav p {
-  font: 18px/19px Arial, sans-serif;
+  font: 18px/19px Arial, Helvetica, sans-serif, sans-serif;
 }
 #nav .tab .subnav .title {
-  font: bold 22px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
 #nav .tab .subnav .subtitle {
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
   text-transform: uppercase;
   margin: 3px 0 2px;
@@ -1526,7 +1526,7 @@ footer {
 }
 #nav .tab .subnav#destinations .ratio-33 .radiusBox,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 {
-  font: 12px/13px Arial, sans-serif;
+  font: 12px/13px Arial, Helvetica, sans-serif, sans-serif;
 }
 #nav .tab .subnav#destinations .ratio-33 .radiusBox .view,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 .view {
@@ -1544,7 +1544,7 @@ footer {
 }
 #nav .tab .subnav#destinations .ratio-33 .radiusBox .title,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 .title {
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
@@ -1642,7 +1642,7 @@ footer {
 
   /* Centrer verticalement une image de taille variable */
 
-  font: bold 15px Arial, sans-serif;
+  font: bold 15px Arial, Helvetica, sans-serif, sans-serif;
   color: #464545;
 }
 #nav .tab .subnav#destinations #campingsList-nav .ln-letter-count > * {
@@ -1670,7 +1670,7 @@ footer {
   left: -50px;
   height: 20px;
   width: 20px;
-  font: bold 17px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 17px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 #nav .tab .subnav#destinations ol#campingsList li.ln-separator {
   content: "";
@@ -1766,7 +1766,7 @@ footer {
   background-position: 0px -360px;
 }
 #nav .tab .subnav#locations .radiusBox2 .title {
-  font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
@@ -1787,7 +1787,7 @@ footer {
 }
 #nav .tab .subnav#locations .radiusBox,
 #nav .tab .subnav#locations .radiusBox2 {
-  font: 12px/13px Arial, sans-serif;
+  font: 12px/13px Arial, Helvetica, sans-serif, sans-serif;
 }
 #nav .tab .subnav#locations .radiusBox:last-child,
 #nav .tab .subnav#locations .radiusBox2:last-child {
@@ -1807,7 +1807,7 @@ footer {
   border-right: 0 none;
 }
 #nav .tab .subnav .proposals .proposalsDate .from {
-  font: bold 13px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 13px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
   display: block;
 }
@@ -1863,33 +1863,33 @@ h1,
 .h1-like {
   dismargin: 20px 0 0;
   color: #ed145b;
-  font: bold 30px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 30px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 h2,
 .h2-like {
   color: #464545;
-  font: bold 20px 'Arial', sans-serif;
+  font: bold 20px Arial, Helvetica, sans-serif;
   line-height: 22px;
 }
 h3,
 .h3-like {
   color: #5f5f5f;
-  font: bold 25px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 25px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 20px 0 5px;
 }
 h4,
 .h4-like {
   color: #ed145b;
-  font: bold 19px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 h5,
 .h5-like {
   color: #5f5f5f;
-  font: bold 16px/15px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -1902,7 +1902,7 @@ h6,
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 10px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
@@ -1969,7 +1969,7 @@ h6,
   border: 15px solid #ffffff;
 }
 .pathway {
-  font: 11px/28px Arial, sans-serif;
+  font: 11px/28px Arial, Helvetica, sans-serif, sans-serif;
   color: #8c8a8a;
   text-align: right;
 }
@@ -2078,7 +2078,7 @@ h6,
 }
 .radiusBox .stamp > h2 {
   text-transform: uppercase;
-  font: bold 22px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 .radiusBox .stamp.no {
   background: none;
@@ -2146,7 +2146,7 @@ h6,
   margin-top: 10px;
   display: inline-block;
   text-transform: uppercase;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
 }
@@ -2271,7 +2271,7 @@ h6,
   width: 48px;
   height: 48px;
   background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -391px transparent;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #f58220;
   font-size: 18px;
   font-weight: bold;
@@ -2455,7 +2455,7 @@ h6,
 
   /* Centrer verticalement une image de taille variable */
 
-  font: Arial 13px/15px Arial;
+  font: Arial, Helvetica, sans-serif 13px/15px Arial, Helvetica, sans-serif;
   color: #f58220;
   text-align: center;
   padding: 0 15px;
@@ -2473,13 +2473,13 @@ h6,
 }
 .home #sliderWrapper #sliderPrev .headline,
 .home #sliderWrapper #sliderNext .headline {
-  font: bold 20px/22px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 20px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
 .home #sliderWrapper #sliderPrev .price,
 .home #sliderWrapper #sliderNext .price {
-  font: bold 20px/22px Arial;
+  font: bold 20px/22px Arial, Helvetica, sans-serif;
 }
 .home #sliderWrapper #sliderPrev .duration,
 .home #sliderWrapper #sliderNext .duration {
@@ -2516,7 +2516,7 @@ h6,
 }
 .home #sliderWrapper #sliderContainer {
   position: relative;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   width: 976px;
   height: 230px;
   margin: 277px auto 0;
@@ -2598,14 +2598,14 @@ h6,
   color: #f58220;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first .content .headline {
-  font: bold 38px/38px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 38px/38px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first .content .catchline {
-  font: 14px/15px Arial;
+  font: 14px/15px Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.second {
@@ -2636,10 +2636,10 @@ h6,
   color: #ffffff;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.second .content p {
-  font: bold 13px/15px Arial;
+  font: bold 13px/15px Arial, Helvetica, sans-serif;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.second .content .price {
-  font: bold 37px/37px Arial;
+  font: bold 37px/37px Arial, Helvetica, sans-serif;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.second .content .duration {
   margin-top: -10px;
@@ -2753,7 +2753,7 @@ h6,
   padding-bottom: 5px;
 }
 .home #destinationsBloc h2 {
-  font: bold 24px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 45px;
 }
@@ -2779,7 +2779,7 @@ h6,
   bottom: 7px;
 }
 .home #destinationsBloc .country {
-  font: bold 18px/20px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 18px/20px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #5f5f5f;
   text-transform: uppercase;
   display: block;
@@ -2837,7 +2837,7 @@ h6,
 .home #forwardBloc #forwardBlocSubtitle {
   width: 125px;
   color: #f58220;
-  font: bold 42px/32px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 42px/32px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   position: absolute;
   bottom: 10px;
@@ -2890,7 +2890,7 @@ h6,
   width: 285px;
   height: 24px;
   color: #ffffff;
-  font: bold 24px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 .home #activitiesBloc .blueCloud {
@@ -2901,7 +2901,7 @@ h6,
 }
 .home #activitiesBloc .blueCloud span {
   color: #ffffff;
-  font: bold 15px/15px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 15px/15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 .home #activitiesBloc #activitiesBlocHeadline1 {
@@ -3020,7 +3020,7 @@ h6,
 .home #mapBloc #mapContent h2,
 .home #mapBloc #mapContent h3 {
   color: #ed145b;
-  font: bold 24px/24px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 .home #mapBloc #mapContent h3 {
@@ -3194,7 +3194,7 @@ h6,
   display: inline;
 }
 .tabControls li a {
-  font: bold 12px/35px Arial, sans-serif;
+  font: bold 12px/35px Arial, Helvetica, sans-serif;
   float: left;
   margin-right: 1px;
   background: #e6e5e5;
@@ -3285,7 +3285,7 @@ h6,
 }
 .tabCampDiapoOptions span {
   display: inline-block;
-  font: bold 15px/34px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 15px/34px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #464545;
   text-transform: uppercase;
 }
@@ -3295,7 +3295,7 @@ h6,
 }
 .tabCampDiapoOptions a {
   display: inline-block;
-  font: bold 15px/34px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 15px/34px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #464545;
   text-transform: uppercase;
   text-decoration: none;
@@ -3402,10 +3402,10 @@ h6,
   color: #fff;
 }
 .temoignFicheIt .perso {
-  font: bold 22px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 22px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 .temoignFicheIt .age {
-  font: bold 15px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 15px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 27px;
 }
 /*tabs pagination*/
@@ -3438,7 +3438,7 @@ h6,
 }
 .filterBy select {
   text-transform: uppercase;
-  font: bold 16px/20px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/20px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #999;
   width: 220px;
   margin-right: 5px;
@@ -3620,7 +3620,7 @@ h6,
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px/14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px/14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 20px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
@@ -3753,13 +3753,13 @@ h6,
 }
 .itemResult .itemResultTitle {
   background: #8c8a8a;
-  font: bold 25px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 25px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px;
   color: #ffffff;
   text-transform: uppercase;
 }
 .itemResult .itemResultTitle .dates {
-  font: bold 16px/18px Arial, sans-serif;
+  font: bold 16px/18px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 .itemResult .itemResultTitle [type="checkbox"] {
@@ -3900,7 +3900,7 @@ h6,
   text-indent: -5px;
   background-image: inherit;
   background-position: 0 -262px;
-  font: bold 15px/61px Arial, sans-serif;
+  font: bold 15px/61px Arial, Helvetica, sans-serif;
 }
 .itemResult .itemResultBottom .promotion a.bt {
   background-color: #f58220;
@@ -3991,14 +3991,14 @@ h6,
   border-top: 1px solid #999999;
   color: #666666;
   display: block;
-  font: bold 15px Arial, sans-serif;
+  font: bold 15px Arial, Helvetica, sans-serif, sans-serif;
   height: 30px;
   padding: 10px 0 0;
   width: 100%;
 }
 .formSearchRefined .criteres {
   color: #009BD9;
-  font: bold 11px Arial, sans-serif;
+  font: bold 11px Arial, Helvetica, sans-serif, sans-serif;
   margin: 10px 0 10px 10px;
 }
 .formSearchRefined fieldset {
@@ -4009,7 +4009,7 @@ h6,
 .formSearchRefined fieldset label {
   color: #999999;
   display: block;
-  font: 11px Arial, sans-serif;
+  font: 11px Arial, Helvetica, sans-serif, sans-serif;
   margin: 0 0 2px;
 }
 .formSearchRefined fieldset input[type="checkbox"] {
@@ -4019,12 +4019,12 @@ h6,
 }
 .formSearchRefined fieldset p {
   color: #666666;
-  font: bold 11px Arial, sans-serif;
+  font: bold 11px Arial, Helvetica, sans-serif, sans-serif;
   margin: 0 0 5px;
 }
 .formSearchRefined .title {
   color: #666666;
-  font: bold 15px Arial, sans-serif;
+  font: bold 15px Arial, Helvetica, sans-serif, sans-serif;
   text-align: center;
 }
 /* page booking */
@@ -4080,7 +4080,7 @@ h6,
   float: right;
 }
 .booking #userBox span {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -4100,7 +4100,7 @@ h6,
 }
 .booking .error {
   margin-bottom: 10px;
-  font: 12px Arial, sans-serif;
+  font: 12px Arial, Helvetica, sans-serif;
   color: #f58220;
 }
 .booking .error li:before {
@@ -4116,7 +4116,7 @@ h6,
   margin-left: 50px;
 }
 .booking #boxLogin #formLogin label {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   margin: 0 0 2px 0;
@@ -4129,7 +4129,7 @@ h6,
   margin: 22px 0 32px;
 }
 .booking #boxDiscover table {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -4166,7 +4166,7 @@ h6,
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 0 10px;
   -webkit-border-radius: 0 10px 0 10px;
   border-radius: 0 10px 0 10px;
@@ -4236,7 +4236,7 @@ h6,
   margin-top: 0px;
 }
 .booking .radiusBox h2 {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 0 0 20px 0;
   position: relative;
@@ -4358,7 +4358,7 @@ h6,
   float: right;
 }
 .ce #userBox span {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -4378,7 +4378,7 @@ h6,
 }
 .ce .error {
   margin-bottom: 10px;
-  font: 12px Arial, sans-serif;
+  font: 12px Arial, Helvetica, sans-serif, sans-serif;
   color: #f58220;
 }
 .ce .error li:before {
@@ -4394,7 +4394,7 @@ h6,
   margin-left: 50px;
 }
 .ce #boxLogin #formLogin label {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   margin: 0 0 2px 0;
@@ -4407,7 +4407,7 @@ h6,
   margin: 22px 0 32px;
 }
 .ce #boxDiscover table {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -4444,7 +4444,7 @@ h6,
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
-  font: bold 14px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 0 10px;
   -webkit-border-radius: 0 10px 0 10px;
   border-radius: 0 10px 0 10px;
@@ -4514,7 +4514,7 @@ h6,
   margin-top: 0px;
 }
 .ce .radiusBox h2 {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 0 0 20px 0;
   position: relative;
@@ -4618,7 +4618,7 @@ h6,
 .ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input {
   float: left;
   margin: 0;
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 14px;
   cursor: pointer;
 }
@@ -4650,7 +4650,7 @@ h6,
 .ce #searchContainerReservation .searchBlock legend,
 .ce #searchContainer .searchBlock h2,
 .ce #searchContainerReservation .searchBlock h2 {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: normal;
 }
@@ -4726,7 +4726,7 @@ h6,
   padding-bottom: 40px;
 }
 .ce #DemandeIdentifiant legend {
-  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 24px;
   text-transform: uppercase;
   color: #009ab0;
@@ -4737,7 +4737,7 @@ h6,
   color: #464545;
 }
 .ce #DemandeIdentifiant .field {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
@@ -4776,7 +4776,7 @@ h6,
   border: 0;
   padding: 4px 10px;
   color: #8c8a8a;
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 .ce #DemandeIdentifiant .field.horoInput label {
   float: left;
@@ -4789,11 +4789,11 @@ h6,
 }
 .ce #DemandeIdentifiant .field ul {
   color: #f58220;
-  font: normal 12px Arial, sans-serif;
+  font: normal 12px Arial, Helvetica, sans-serif, sans-serif;
   margin-top: 5px;
 }
 .ce #DemandeIdentifiant #DemandeIdentifiant_permanence_choices {
-  font: bold 16px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   float: left;
   margin-right: 15px;
 }
@@ -4978,7 +4978,7 @@ aside #searchBloc .newListSelected .selectedTxt:after {
 aside #searchBloc input,
 aside #searchBloc select,
 aside #searchBloc .newListSelected {
-  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #8c8a8a;
   text-transform: uppercase;
 }
@@ -5116,7 +5116,7 @@ aside #searchBloc #switchForm li:nth-child(3) {
 }
 aside #searchBloc #searchBlocDate a.toggleButton {
   color: #ffffff;
-  font: bold 14px/16px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 14px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -5127,7 +5127,7 @@ aside #searchBloc #searchBlocDate .toggleContainer > *:last-child {
   margin-bottom: 10px;
 }
 aside #searchBloc #searchBlocDate .toggleContainer label {
-  font: 13px/15px Arial;
+  font: 13px/15px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 aside #searchBloc #searchBlocDate p {
@@ -5178,7 +5178,7 @@ aside #searchBloc #searchBlocDate .datepickerLegend {
   display: none;
 }
 aside #searchBloc #searchBlocDate label {
-  font: bold 17px/27px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-right: 10px;
   width: 65px;
@@ -5188,7 +5188,7 @@ aside #searchBloc #searchBlocDate .spinner input {
   height: 27px;
   border: 0 none;
   color: #ed145b;
-  font: bold 24px/27px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 24px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-align: center;
 }
 aside #searchBloc #searchBlocDate .spinner .spin-bt-down,
@@ -5197,7 +5197,7 @@ aside #searchBloc #searchBlocDate .spinner .spin-bt-up {
   height: 27px;
   background-color: #464545;
   color: #ffffff;
-  font: bold 26px/27px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 26px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-align: center;
   cursor: pointer;
   overflow: hidden;
@@ -5295,7 +5295,7 @@ aside #greyBoxes #infoBloc .content .tel {
   display: block;
   margin: 10px 0 -5px;
   color: #ffffff;
-  font: bold 30px Arial;
+  font: bold 30px Arial, Helvetica, sans-serif;
 }
 aside #greyBoxes #infoBloc .content .tel:before {
   content: "";
@@ -5333,7 +5333,7 @@ aside #greyBoxes #weekendIdeasBloc .element .details {
   width: 132px;
 }
 aside #greyBoxes #weekendIdeasBloc .element .details .title {
-  font: bold 15px/17px Arial;
+  font: bold 15px/17px Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 aside #greyBoxes #specialOffersBloc .stamp {
@@ -5359,7 +5359,7 @@ aside #greyBoxes #specialOffersBloc .element .details {
   width: 132px;
 }
 aside #greyBoxes #specialOffersBloc .element .details .title {
-  font: bold 15px/17px Arial;
+  font: bold 15px/17px Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 aside #greyBoxes #alreadySeenBloc .element,
@@ -5377,7 +5377,7 @@ aside #greyBoxes #discoverBloc .element .boxborder {
   margin: 0 15px 5px 5px;
 }
 aside #greyBoxes #assetsBloc .asset {
-  font: 14px Arial;
+  font: 14px Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   height: 80px;
   /* Centrer verticalement une ligne de texte */
@@ -5582,7 +5582,7 @@ footer .footer-home #insertContest span {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  font: bold 20px/18px 'PT Sans Narrow', Arial, sans-serif;
+  font: bold 20px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   width: 90px;
 }
 footer .footer-home #insertContest img {

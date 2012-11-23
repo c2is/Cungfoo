@@ -20,7 +20,7 @@ use Cungfoo\Model\MiseEnAvantQuery;
 /**
  * Base class that represents a query for the 'mise_en_avant' table.
  *
- *
+ * 
  *
  * @method MiseEnAvantQuery orderById($order = Criteria::ASC) Order by the id column
  * @method MiseEnAvantQuery orderByImageFondPath($order = Criteria::ASC) Order by the image_fond_path column
@@ -113,7 +113,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   MiseEnAvant|MiseEnAvant[]|mixed the result, formatted by the current formatter
@@ -168,7 +168,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `IMAGE_FOND_PATH`, `PRIX`, `ILLUSTRATION_PATH`, `DATE_FIN_VALIDITE`, `SORTABLE_RANK`, `ENABLED` FROM `mise_en_avant` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -571,7 +571,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
     }
 
     // sortable behavior
-
+    
     /**
      * Filter the query based on a rank in the list
      *
@@ -584,7 +584,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
         return $this
             ->addUsingAlias(MiseEnAvantPeer::RANK_COL, $rank, Criteria::EQUAL);
     }
-
+    
     /**
      * Order the query based on the rank in the list.
      * Using the default $order, returns the item with the lowest rank first
@@ -607,7 +607,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
                 throw new PropelException('MiseEnAvantQuery::orderBy() only accepts "asc" or "desc" as argument');
         }
     }
-
+    
     /**
      * Get an item from the list based on its rank
      *
@@ -622,7 +622,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
             ->filterByRank($rank)
             ->findOne($con);
     }
-
+    
     /**
      * Returns the list of objects
      *
@@ -636,10 +636,10 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
             ->orderByRank()
             ->find($con);
     }
-
+    
     /**
      * Get the highest rank
-     *
+     * 
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -652,10 +652,10 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
         // shift the objects with a position lower than the one of object
         $this->addSelectColumn('MAX(' . MiseEnAvantPeer::RANK_COL . ')');
         $stmt = $this->doSelect($con);
-
+    
         return $stmt->fetchColumn();
     }
-
+    
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -671,7 +671,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-
+    
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -684,7 +684,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
                 }
             }
             $con->commit();
-
+    
             return true;
         } catch (PropelException $e) {
             $con->rollback();
@@ -693,7 +693,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
     }
 
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -706,12 +706,12 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'MiseEnAvantI18n';
-
+    
         return $this
             ->joinMiseEnAvantI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -727,10 +727,10 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('MiseEnAvantI18n');
         $this->with['MiseEnAvantI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *

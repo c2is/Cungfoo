@@ -3,26 +3,18 @@ $title = 'Vacances directes | Le mobil-home et vous';
 $page = 'booking';
 include('includes/inc_header.php');
 include('includes/booking-top.php'); ?>
-
+<link rel="stylesheet" href="../web/css/vacancesdirectes/couloir.css">
 <div id="wrap" class="fixed-width clear">
 
     <!-- colonne pleine largeur -->
     <div id="headerContainer" class="column">
-        <div id="userBox">
-            <span>M. CHAMALET - C2iS</span>
-            <a class="bt fushia small right" href="#">Déconnexion</a>
-        </div>
         <h1><span>Bienvenue dans l’espace </span>comité d’entreprise</h1>
-        <nav id="nav" class="clearboth">
+        <nav id="stepNav" class="clearboth">
             <ul class="topnav fixed-width clear">
-                <li class="tab current"><a href="#">Achats</a></li>
-                <li class="tab"><a href="#">Documents</a></li>
-                <li class="tab"><a href="#">Administration</a></li>
-            </ul>
-
-            <ul class="topnav topnavSub fixed-width clear">
-                <li class="tab current"><a href="">Coordonnées</a></li>
-                <li class="tab"><a href="">Suivi des achats</a></li>
+                <li class="tab current"><span>Détails du séjour</span></li>
+                <li class="tab"><span>Récaputulatif</span></li>
+                <li class="tab"><span>Paiement</span></li>
+                <li class="tab"><span>Confirmation</span></li>
             </ul>
         </nav>
 

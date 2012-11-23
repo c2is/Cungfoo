@@ -21,7 +21,7 @@ use Cungfoo\Model\Destination;
 /**
  * Base class that represents a query for the 'dernieres_minutes_destination' table.
  *
- *
+ * 
  *
  * @method DernieresMinutesDestinationQuery orderByDernieresMinutesId($order = Criteria::ASC) Order by the dernieres_minutes_id column
  * @method DernieresMinutesDestinationQuery orderByDestinationId($order = Criteria::ASC) Order by the destination_id column
@@ -99,7 +99,7 @@ abstract class BaseDernieresMinutesDestinationQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
+     * @param array $key Primary key to use for the query 
                          A Primary key composition: [$dernieres_minutes_id, $destination_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -141,8 +141,8 @@ abstract class BaseDernieresMinutesDestinationQuery extends ModelCriteria
     {
         $sql = 'SELECT `DERNIERES_MINUTES_ID`, `DESTINATION_ID` FROM `dernieres_minutes_destination` WHERE `DERNIERES_MINUTES_ID` = :p0 AND `DESTINATION_ID` = :p1';
         try {
-            $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
+            $stmt = $con->prepare($sql);			
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

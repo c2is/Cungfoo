@@ -18,7 +18,7 @@ use Cungfoo\Model\map\EtablissementTypeHebergementTableMap;
 /**
  * Base static class for performing query and update operations on the 'etablissement_type_hebergement' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -372,7 +372,7 @@ abstract class BaseEtablissementTypeHebergementPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -382,7 +382,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     {
         EtablissementTypeHebergementPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to etablissement_type_hebergement
      * by a foreign key with ON DELETE CASCADE
@@ -425,7 +425,7 @@ abstract class BaseEtablissementTypeHebergementPeer
 
         return array((int) $row[$startcol], (int) $row[$startcol + 1]);
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -436,7 +436,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = EtablissementTypeHebergementPeer::getOMClass();
         // populate the object(s)
@@ -902,7 +902,7 @@ abstract class BaseEtablissementTypeHebergementPeer
         if ($con === null) {
             $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-
+    
         $criteria->addJoin(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -953,7 +953,7 @@ abstract class BaseEtablissementTypeHebergementPeer
         if ($con === null) {
             $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-
+    
         $criteria->addJoin(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -1022,7 +1022,7 @@ abstract class BaseEtablissementTypeHebergementPeer
                 if ($key2 !== null) {
                     $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-
+    
                         $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1096,7 +1096,7 @@ abstract class BaseEtablissementTypeHebergementPeer
                 if ($key2 !== null) {
                     $obj2 = EtablissementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-
+    
                         $cls = EtablissementPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1323,7 +1323,7 @@ abstract class BaseEtablissementTypeHebergementPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             EtablissementTypeHebergementPeer::clearRelatedInstancePool();
             $con->commit();
