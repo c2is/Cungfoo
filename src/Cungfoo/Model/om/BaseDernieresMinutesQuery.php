@@ -23,7 +23,7 @@ use Cungfoo\Model\Etablissement;
 /**
  * Base class that represents a query for the 'dernieres_minutes' table.
  *
- *
+ * 
  *
  * @method DernieresMinutesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DernieresMinutesQuery orderByDateStart($order = Criteria::ASC) Order by the date_start column
@@ -116,7 +116,7 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   DernieresMinutes|DernieresMinutes[]|mixed the result, formatted by the current formatter
@@ -171,7 +171,7 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `DATE_START`, `DAY_START`, `DAY_RANGE`, `ACTIVE`, `ENABLED` FROM `dernieres_minutes` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

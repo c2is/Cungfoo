@@ -22,7 +22,7 @@ use Cungfoo\Model\DestinationQuery;
 /**
  * Base class that represents a row from the 'dernieres_minutes_destination' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
 
     /**
      * Get the [dernieres_minutes_id] column value.
-     *
+     * 
      * @return int
      */
     public function getDernieresMinutesId()
@@ -95,7 +95,7 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
 
     /**
      * Get the [destination_id] column value.
-     *
+     * 
      * @return int
      */
     public function getDestinationId()
@@ -105,7 +105,7 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
 
     /**
      * Set the value of [dernieres_minutes_id] column.
-     *
+     * 
      * @param int $v new value
      * @return DernieresMinutesDestination The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
 
     /**
      * Set the value of [destination_id] column.
-     *
+     * 
      * @param int $v new value
      * @return DernieresMinutesDestination The current object (for fluent API support)
      */
@@ -447,10 +447,10 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`DERNIERES_MINUTES_ID`':
+                    case '`DERNIERES_MINUTES_ID`':						
                         $stmt->bindValue($identifier, $this->dernieres_minutes_id, PDO::PARAM_INT);
                         break;
-                    case '`DESTINATION_ID`':
+                    case '`DESTINATION_ID`':						
                         $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                 }

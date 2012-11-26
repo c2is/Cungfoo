@@ -222,6 +222,7 @@
                                         //consoleLog(marker.filters);
                                     }
                                     $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+                                    ib.close();
                                     return false;
                                 })
                                 .eq(0).trigger('click');
