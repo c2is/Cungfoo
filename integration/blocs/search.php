@@ -12,7 +12,8 @@
                         <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="" />
                         <input type="hidden" id="SearchDate_dateFin"  name="SearchDate[dateFin]" readonly="readonly" value="" />
                         <div id="datepickerField" class="clear">
-                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates de séjour" /><span class="date"></span>
+                            <label for="datepickerInput">Date de début de séjour</label>
+                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Date de début de séjour" /><span class="date"></span>
                         </div>
                         <div id="datepickerCalendar">
 
@@ -20,7 +21,23 @@
                     </div>
                 </li>
                 <li>
+                    <div id="SearchDate_selectContainer0" class="selectContainer clear">
+                        <label for="SearchDate_duration">Nombre de jours</label>
+                        <select id="SearchDate_duration" name="SearchDate[destination]" >
+                            <option value="">Nombre de jours</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            <option value="3">7</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
                     <div id="SearchDate_selectContainer1" class="selectContainer clear">
+                        <label for="SearchDate_destination">Destination</label>
                         <select id="SearchDate_destination" name="SearchDate[destination]" >
                             <option value="">Destination</option>
                             <option value="1">Destination 1</option>
@@ -32,6 +49,7 @@
                 <li>
                     <div id="SearchDate_selectContainer2" class="selectContainer clear">
                         <input type="hidden" id="SearchDate_isCamping" value="0" />
+                        <label for="SearchDate_ville">Lieux de séjour</label>
                         <select id="SearchDate_ville" name="SearchDate[ville]">
                             <option value="">Lieux de séjour</option>
                             <option value="1" class="optGroup-like">Pays de séjour 1</option>
@@ -47,6 +65,7 @@
                             <option value="11">Lieu de séjour 2</option>
                             <option value="12">Lieu de séjour 3</option>
                         </select>
+                        <label for="SearchDate_camping">Campings</label>
                         <select id="SearchDate_camping" name="SearchDate[camping]">
                             <option value="">Campings</option>
                             <option value="1" class="optGroup-like">Pays de séjour 1</option>
@@ -128,6 +147,5 @@
 <script type="text/javascript">
     var fStartDate = '2013/04/06',                  // must be a saturday
         fEndDate = '2013/10/26',                // must be a saturday
-        linear = "reservation",
-        numMinWeeks = 1;
+        linear = "indiv";
 </script>

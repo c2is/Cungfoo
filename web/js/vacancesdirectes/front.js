@@ -700,10 +700,8 @@ $(function() {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
-            startDate = numDate(fStartDate),
-            endDate = numDate(fEndDate),
-            arrivalDate,
-            departureDate,
+            startDate = numDate(fStartDate)
+            arrivalDate
             visibleMonths = 7,
             displayMonths = 2;
 
@@ -724,42 +722,35 @@ $(function() {
             date: '',
             current: '2013/07/01',
             calendars: visibleMonths,
-            mode: 'range',
+            mode: 'single',
             starts: 1,
             format:'Y/m/d',
             position: 'right',
             onChange: function(formated, dates){
                 //console.log("################################## onChange:  ##################################");
-                //console.log(formated);
-                //console.log(dates);
-                arrivalDate = dates[0];
-                departureDate = dates[1];
-                //console.log(arrivalDate);
-                //console.log(departureDate);
-                var selectedDates  = new Array(),
-                    selectedDays = new Array();
+                console.log(formated);
+                console.log(dates);
+                arrivalDate = dates;
+                console.log(arrivalDate);
+
+                var selectedDate,
+                    selectedDay;
                 firstRendering = false;
-                $.each(dates, function(index, value) {
-                    //console.log(index + ": " + value);
-                    selectedDates.push(writeDate(value));
-                    selectedDays.push($(this));
-                });
-                if (firstSelection) {
-                    unselectForbiddenDates(arrivalDate);
-                    firstSelection = false;
-                }
-                else {
-                    unselectForbiddenDates(departureDate);
-                    firstSelection = true;
-                }
-                //console.log(selectedDates)
-                $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                $('#datepicker input[type=hidden]').each(function(index, value){
-                    $(this).val(selectedDates[index]);
-                });
+
+                selectedDate = writeDate(arrivalDate);
+
+
+//                unselectForbiddenDates(arrivalDate);
+                firstSelection = false;
+
+                console.log(selectedDate);
+                $('#datepickerInput').val('Du ' + selectedDate);
+                $('#datepicker input[type=hidden]').eq(0).val(selectedDate);
+
+                $('#datepickerField').trigger("click");
             },
             onRender: function(date) {
-                //            //console.log("################################## onRender:  ##################################");
+                //console.log("################################## onRender:  ##################################");
 
                 var renderDate = date,
                     disabledDate,
@@ -772,7 +763,7 @@ $(function() {
                 //            //console.log(endDate);
                 //            //console.log(renderWeekDay);
 
-                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 ){
+                if ( (renderDate < startDate || renderDate > endDate) || (renderWeekDay != 6 && renderWeekDay != 3) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
@@ -793,7 +784,7 @@ $(function() {
         });
         $('#datepickerCalendar .bt').bind('click', function(){
             $('#datepickerCalendar').stop().css({height: 0}, function(){
-                $('#datepickerField').removeClass('opened');
+                $('#datepickerField').removeClass('opened').next().removeClass('opened');
             });
             state = !state;
             return false;
@@ -832,21 +823,21 @@ $(function() {
         $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-5px');
         $('.datepicker>.datepickerGoPrev a').hide();
 
-        var preselectedFDates = new Array(),
-            preselectedDates = new Array();
-        if ( $("#SearchDate_dateDebut").val() != '' && $("#SearchDate_dateFin").val() != '' ) {
-            $.each($('input[type=hidden]'), function(i, item) {
-                //console.log(item.value);
-
-                var fDate = item.value.split("/").reverse().join('/');
-                //console.log(fDate);
-                preselectedFDates.push(fDate);
-                preselectedDates.push(item.value);
-            });
-            //console.log(preselectedDates);
-            $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
-            $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
-        }
+        var preselectedFDate,
+            preselectedDate;
+//        if ( $("#SearchDate_dateDebut").val() != '' && $("#SearchDate_dateFin").val() != '' ) {
+//            $.each($('input[type=hidden]'), function(i, item) {
+//                //console.log(item.value);
+//
+//                var fDate = item.value.split("/").reverse().join('/');
+//                //console.log(fDate);
+//                preselectedFDate = fDate;
+//                preselectedDate = item.value;
+//            });
+//            //console.log(preselectedDates);
+//            $('#datepickerInput').val('Du ' + preselectedDate);
+//            $('#datepickerCalendar').DatePickerSetDate(preselectedFDate);
+//        }
 
         //console.log("################################## switchLinear()  ##################################");
         $('#searchBlocDate .searchBox').attr('id',linear);
@@ -855,6 +846,7 @@ $(function() {
 
         //console.log("################################## initializeForbiddenDates()  ##################################");
         //console.log(firstRendering);
+        /*
         var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
 
         allSaturdays.removeClass('datepickerUnselectable');
@@ -873,7 +865,7 @@ $(function() {
                 //            //console.log(value);
             });
         }
-
+        */
     }
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
@@ -978,7 +970,7 @@ function toggleSearchCriteria(){
         var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
         $button.html(buttonText);
         var $container = $button.prev();
-        $container.stop().slideToggle(1000);
+        $container.stop().toggle();
     });
 }
 
@@ -1214,7 +1206,10 @@ function numDate(d){
 
 
 
-// slider
+/*-----------------------------------------------------------
+ FICHE CAMPING SLIDER
+ -----------------------------------------------------------*/
+
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
         btLeft = '<button class="prev">&lt;</button>',

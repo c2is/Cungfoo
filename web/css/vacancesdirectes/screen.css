@@ -2431,7 +2431,7 @@ h6,
   margin-top: 7px;
 }
 .home #header {
-  margin-bottom: 300px;
+  margin-bottom: 261px;
 }
 .home #sliderWrapper {
   overflow: hidden;
@@ -2519,7 +2519,7 @@ h6,
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   width: 976px;
   height: 230px;
-  margin: 277px auto 0;
+  margin: 240px auto 0;
   z-index: 10;
 }
 .home #sliderWrapper #sliderContainer #sliderBackground {
@@ -2739,10 +2739,10 @@ h6,
   font-size: 15px;
 }
 .home #searchBloc {
-  margin-top: -191px;
+  margin-top: -258px;
 }
 .home #greyBoxes {
-  margin-top: 180px;
+  margin-top: 144px;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -5167,6 +5167,13 @@ aside #searchBloc #switchForm li:nth-child(2),
 aside #searchBloc #switchForm li:nth-child(3) {
   visibility: hidden;
 }
+aside #searchBloc #searchBlocDate label {
+  display: none;
+}
+aside #searchBloc #searchBlocDate label[for="SearchDate_nbAdultes"],
+aside #searchBloc #searchBlocDate label[for="SearchDate_nbEnfants"] {
+  display: block;
+}
 aside #searchBloc #searchBlocDate a.toggleButton {
   color: #ffffff;
   font: bold 14px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -5197,6 +5204,9 @@ aside #searchBloc #searchBlocDate #datepickerCalendar {
 }
 aside #searchBloc #searchBlocDate #datepickerCalendar .datepicker {
   width: 362px !important;
+}
+aside #searchBloc #searchBlocDate #datepickerCalendar button {
+  display: none;
 }
 aside #searchBloc #searchBlocDate #datepickerCalendar .datepickerGoPrev,
 aside #searchBloc #searchBlocDate #datepickerCalendar .datepickerGoNext,
@@ -5322,7 +5332,7 @@ aside p {
   line-height: 11px;
 }
 aside #greyBoxes {
-  margin-top: 300px;
+  margin-top: 332px;
 }
 aside #greyBoxes #infoBloc {
   width: 288px;
@@ -5361,7 +5371,7 @@ aside #greyBoxes #infoBloc .content .tel:before {
   left: 62px;
 }
 aside #greyBoxes #infoBloc .content .small {
-  margin: 10px 0 15px;
+  margin: 10px 0 0px;
 }
 aside #greyBoxes #weekendIdeasBloc .stamp {
   margin-bottom: 10px;

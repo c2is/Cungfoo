@@ -182,9 +182,9 @@ h6, .h6-like{color:@colorFushia;}
 #homePage{margin:0;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
-.column{width:928px;position:relative;
-  &.left{width:616px;}
-  &.right{width:288px;}
+.column{width:928px;margin:0 @gutter;position:relative;
+  &.left{width:616px;margin:0 0 0 @gutter;}
+  &.right{width:288px;margin:0 @gutter 0 0;}
   .ratio-33{width:300px;margin-right:16px;
     &.clear{margin-right:0;}
   }
@@ -202,39 +202,15 @@ h6, .h6-like{color:@colorFushia;}
   }
 }
 
-.radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
-  &.bgImg{overflow:hidden;}
-  &.greyC{background-color:@colorBgGrisC;}
-  &.greyF{background-color:@colorBgGrisF;}
-  &.fushia{background-color:@colorFushia;}
-  &.yellow{background-color:@colorJaune;}
-  .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 20px;display:block;
-    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
-    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
-    &>h2{text-transform:uppercase;font: bold 22px @ptnarrow;}
-    &.no{background:none;padding:0;._verticalCenter(38px,22px);
-      &>h2{color:@colorGris1;}
-    }
-  }
-  &>h2{color:@colorGris1;
-    span{color:@colorBleu;}
-  }
+.aRoom,
+.proposal{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.aRoom{background-color:@colorBgGrisC;}
+  &.proposal{background-color:@colorFushia;}
 }
 
-.radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
-  &.bgImg{overflow:hidden;}
-  &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
-  &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
-  &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
-  .stamp{color:@colorBlanc;background:url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;._verticalCenter(38px);padding:0 30px;margin-top:10px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
-    &:before{content:"";}
-    &:after{content:""}
-    span{margin-left:-6px;}
-  }
-}
-
-#authenticationResa{
-
+#authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
+  h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
+  .authenticationChoice{background-color:@colorBlanc;color:@colorGris2;}
 }
 
 
