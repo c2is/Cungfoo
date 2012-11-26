@@ -35,7 +35,6 @@
         </div>
     </header>
 
-    {% block content %}
     <div id="wrap" class="fixed-width clear">
         <div id="headerContainer" class="column">
             <h1><span>Bienvenue dans l’espace </span>comité d’entreprise</h1>
@@ -48,19 +47,19 @@
                 </ul>
             </nav>
         </div>
-        <div class="column left">
-            {% block leftColumn %}
-            {% endblock %}
-        </div>
-        <aside class="column right">
-            {% block rightColumn %}
-            {% endblock %}
-        </aside>
+        {% block content %}
+            <div class="column left">
+                {% block leftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block rightColumn %}
+                {% endblock %}
+            </aside>
             {% block columnClearboth %}
             {% endblock %}
-    {% endblock %}
+        {% endblock %}
     </div>
-    {% endblock %}
 
     {% include 'footer.twig' %}
 

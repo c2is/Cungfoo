@@ -1,15 +1,13 @@
 {% extends 'couloir.twig' %}
 
 {% block content %}
-<div id="wrap" class="fixed-width clear">
-    <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-        specificFiles: 'couloir',
-        base_id: 'vacancesdirectes_preprod_v6_6',
-        webuser: 'web_fr',
-        tokens: 'ignore_token',
-        display: 'reservation_content',
-        actions: 'cancelReservation;buildProposalFromKey;chooseProposal',
-        proposal_key: proposalKey,
-    }) }}" width="960px" height="700px"></iframe>
-</div>
+<iframe id="frameResalys" src="{{ path('resalys_wrapper', {
+    specificFiles: 'couloir',
+    base_id: 'vacancesdirectes_preprod_v6_6',
+    webuser: 'web_fr',
+    tokens: 'ignore_token',
+    display: 'reservation_content',
+    actions: 'cancelReservation;buildProposalFromKey;chooseProposal',
+    proposal_key: proposalKey,
+}) }}" width="960px" height="700px"></iframe>
 {% endblock content %}
