@@ -63,7 +63,6 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         $this->addColumn('VIDEO_PATH', 'VideoPath', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_360_PATH', 'Image360Path', 'VARCHAR', false, 255, null);
-        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('CAPACITE', 'Capacite', 'VARCHAR', false, 255, null);
         $this->addColumn('PLAN_PATH', 'PlanPath', 'VARCHAR', false, 255, null);
         $this->addColumn('VIGNETTE', 'Vignette', 'VARCHAR', false, 255, null);
@@ -117,7 +116,7 @@ class EtablissementTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'plan_path, vignette', 'crud_search' => 'name, title', ),
         );
     } // getBehaviors()

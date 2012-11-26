@@ -226,12 +226,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $image_360_path;
 
     /**
-     * The value for the description field.
-     * @var        string
-     */
-    protected $description;
-
-    /**
      * The value for the capacite field.
      * @var        string
      */
@@ -876,16 +870,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [description] column value.
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Get the [capacite] column value.
      *
      * @return string
@@ -1463,27 +1447,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setImage360Path()
 
     /**
-     * Set the value of [description] column.
-     *
-     * @param string $v new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setDescription($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->description !== $v) {
-            $this->description = $v;
-            $this->modifiedColumns[] = EtablissementPeer::DESCRIPTION;
-        }
-
-
-        return $this;
-    } // setDescription()
-
-    /**
      * Set the value of [capacite] column.
      *
      * @param string $v new value
@@ -1707,14 +1670,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->geo_coordinate_y = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
             $this->video_path = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
             $this->image_360_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->published = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
-            $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
-            $this->enabled = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
+            $this->capacite = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->plan_path = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->vignette = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->published = ($row[$startcol + 24] !== null) ? (boolean) $row[$startcol + 24] : null;
+            $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
+            $this->enabled = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1723,7 +1685,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2514,9 +2476,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_360_PATH`';
         }
-        if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
-        }
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) {
             $modifiedColumns[':p' . $index++]  = '`CAPACITE`';
         }
@@ -2611,9 +2570,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`IMAGE_360_PATH`':
                         $stmt->bindValue($identifier, $this->image_360_path, PDO::PARAM_STR);
-                        break;
-                    case '`DESCRIPTION`':
-                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`CAPACITE`':
                         $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
@@ -2964,27 +2920,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getImage360Path();
                 break;
             case 21:
-                return $this->getDescription();
-                break;
-            case 22:
                 return $this->getCapacite();
                 break;
-            case 23:
+            case 22:
                 return $this->getPlanPath();
                 break;
-            case 24:
+            case 23:
                 return $this->getVignette();
                 break;
-            case 25:
+            case 24:
                 return $this->getPublished();
                 break;
-            case 26:
+            case 25:
                 return $this->getCreatedAt();
                 break;
-            case 27:
+            case 26:
                 return $this->getUpdatedAt();
                 break;
-            case 28:
+            case 27:
                 return $this->getEnabled();
                 break;
             default:
@@ -3037,14 +2990,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[18] => $this->getGeoCoordinateY(),
             $keys[19] => $this->getVideoPath(),
             $keys[20] => $this->getImage360Path(),
-            $keys[21] => $this->getDescription(),
-            $keys[22] => $this->getCapacite(),
-            $keys[23] => $this->getPlanPath(),
-            $keys[24] => $this->getVignette(),
-            $keys[25] => $this->getPublished(),
-            $keys[26] => $this->getCreatedAt(),
-            $keys[27] => $this->getUpdatedAt(),
-            $keys[28] => $this->getEnabled(),
+            $keys[21] => $this->getCapacite(),
+            $keys[22] => $this->getPlanPath(),
+            $keys[23] => $this->getVignette(),
+            $keys[24] => $this->getPublished(),
+            $keys[25] => $this->getCreatedAt(),
+            $keys[26] => $this->getUpdatedAt(),
+            $keys[27] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3193,27 +3145,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setImage360Path($value);
                 break;
             case 21:
-                $this->setDescription($value);
-                break;
-            case 22:
                 $this->setCapacite($value);
                 break;
-            case 23:
+            case 22:
                 $this->setPlanPath($value);
                 break;
-            case 24:
+            case 23:
                 $this->setVignette($value);
                 break;
-            case 25:
+            case 24:
                 $this->setPublished($value);
                 break;
-            case 26:
+            case 25:
                 $this->setCreatedAt($value);
                 break;
-            case 27:
+            case 26:
                 $this->setUpdatedAt($value);
                 break;
-            case 28:
+            case 27:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -3261,14 +3210,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateY($arr[$keys[18]]);
         if (array_key_exists($keys[19], $arr)) $this->setVideoPath($arr[$keys[19]]);
         if (array_key_exists($keys[20], $arr)) $this->setImage360Path($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setDescription($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setPublished($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
-        if (array_key_exists($keys[28], $arr)) $this->setEnabled($arr[$keys[28]]);
+        if (array_key_exists($keys[21], $arr)) $this->setCapacite($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setPlanPath($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setVignette($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setPublished($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setEnabled($arr[$keys[27]]);
     }
 
     /**
@@ -3301,7 +3249,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
-        if ($this->isColumnModified(EtablissementPeer::DESCRIPTION)) $criteria->add(EtablissementPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
         if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) $criteria->add(EtablissementPeer::VIGNETTE, $this->vignette);
@@ -3392,7 +3339,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
         $copyObj->setVideoPath($this->getVideoPath());
         $copyObj->setImage360Path($this->getImage360Path());
-        $copyObj->setDescription($this->getDescription());
         $copyObj->setCapacite($this->getCapacite());
         $copyObj->setPlanPath($this->getPlanPath());
         $copyObj->setVignette($this->getVignette());
@@ -8557,7 +8503,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->geo_coordinate_y = null;
         $this->video_path = null;
         $this->image_360_path = null;
-        $this->description = null;
         $this->capacite = null;
         $this->plan_path = null;
         $this->vignette = null;
@@ -9037,6 +8982,30 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
          */
         public function setArriveesDeparts($v)
         {    $this->getCurrentTranslation()->setArriveesDeparts($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return EtablissementI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
 
         return $this;
     }

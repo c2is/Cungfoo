@@ -46,6 +46,7 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'category_type_hebergement.category_type_hebergementI18ns',
             'columns' => array(

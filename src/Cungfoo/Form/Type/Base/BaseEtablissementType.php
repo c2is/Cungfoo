@@ -153,12 +153,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.image_360_path',
             'required' => false,
         ));
-        $builder->add('description', 'textarea', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.description',
-            'required' => false,
-        ));
         $builder->add('capacite', 'text', array(
             'constraints' => array(
             ),
@@ -289,6 +283,7 @@ class BaseEtablissementType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'etablissement.etablissementI18ns',
             'columns' => array(
@@ -316,6 +311,13 @@ class BaseEtablissementType extends AppAwareType
                 'arrivees_departs' => array(
                     'required' => false,
                     'label' => 'etablissement.arrivees_departs',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'etablissement.description',
                     'type' => 'textarea',
                     'constraints' => array(
                     ),

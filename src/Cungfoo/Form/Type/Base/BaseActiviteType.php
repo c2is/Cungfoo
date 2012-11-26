@@ -67,6 +67,7 @@ class BaseActiviteType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'activite.activiteI18ns',
             'columns' => array(

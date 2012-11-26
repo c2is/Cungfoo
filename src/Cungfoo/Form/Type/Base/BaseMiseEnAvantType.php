@@ -84,6 +84,7 @@ class BaseMiseEnAvantType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'mise_en_avant.mise_en_avantI18ns',
             'columns' => array(

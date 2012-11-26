@@ -28,6 +28,7 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery orderByOuvertureReception($order = Criteria::ASC) Order by the ouverture_reception column
  * @method EtablissementI18nQuery orderByOuvertureCamping($order = Criteria::ASC) Order by the ouverture_camping column
  * @method EtablissementI18nQuery orderByArriveesDeparts($order = Criteria::ASC) Order by the arrivees_departs column
+ * @method EtablissementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method EtablissementI18nQuery groupById() Group by the id column
  * @method EtablissementI18nQuery groupByLocale() Group by the locale column
@@ -35,6 +36,7 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery groupByOuvertureReception() Group by the ouverture_reception column
  * @method EtablissementI18nQuery groupByOuvertureCamping() Group by the ouverture_camping column
  * @method EtablissementI18nQuery groupByArriveesDeparts() Group by the arrivees_departs column
+ * @method EtablissementI18nQuery groupByDescription() Group by the description column
  *
  * @method EtablissementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -53,6 +55,7 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18n findOneByOuvertureReception(string $ouverture_reception) Return the first EtablissementI18n filtered by the ouverture_reception column
  * @method EtablissementI18n findOneByOuvertureCamping(string $ouverture_camping) Return the first EtablissementI18n filtered by the ouverture_camping column
  * @method EtablissementI18n findOneByArriveesDeparts(string $arrivees_departs) Return the first EtablissementI18n filtered by the arrivees_departs column
+ * @method EtablissementI18n findOneByDescription(string $description) Return the first EtablissementI18n filtered by the description column
  *
  * @method array findById(int $id) Return EtablissementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EtablissementI18n objects filtered by the locale column
@@ -60,6 +63,7 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method array findByOuvertureReception(string $ouverture_reception) Return EtablissementI18n objects filtered by the ouverture_reception column
  * @method array findByOuvertureCamping(string $ouverture_camping) Return EtablissementI18n objects filtered by the ouverture_camping column
  * @method array findByArriveesDeparts(string $arrivees_departs) Return EtablissementI18n objects filtered by the arrivees_departs column
+ * @method array findByDescription(string $description) Return EtablissementI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +154,7 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `COUNTRY`, `OUVERTURE_RECEPTION`, `OUVERTURE_CAMPING`, `ARRIVEES_DEPARTS` FROM `etablissement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `COUNTRY`, `OUVERTURE_RECEPTION`, `OUVERTURE_CAMPING`, `ARRIVEES_DEPARTS`, `DESCRIPTION` FROM `etablissement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -423,6 +427,35 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementI18nPeer::ARRIVEES_DEPARTS, $arriveesDeparts, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

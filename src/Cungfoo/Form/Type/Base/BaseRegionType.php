@@ -98,6 +98,7 @@ class BaseRegionType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'region.regionI18ns',
             'columns' => array(

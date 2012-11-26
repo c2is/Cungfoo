@@ -5,3 +5,5 @@ languages:
         title:  locale.english
     de:
         title:  locale.german
+    nl:
+        title:  locale.netherlands
