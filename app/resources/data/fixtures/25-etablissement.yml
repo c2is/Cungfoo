@@ -3875,10 +3875,10 @@
         Enabled: true
     150:
         Code: 80
-        Name: 'Marine '
+        Name: Marine
         Title: null
         Address1: '2196 Route de l''Espiguette'
-        Address2: ''
+        Address2: null
         Zip: '30240'
         City: 'LE GRAU-DU-ROI'
         Mail: test@resalys.com
