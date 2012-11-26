@@ -198,8 +198,9 @@
                             var markerController = new google.maps.MVCObject();
                             var homeMkrs = [
                                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
-                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['theme1', 'theme3']]
-                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['theme1', 'theme2']]
+                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
+                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
+                                ,['Lyon', 46.794544, 4.896512, 5, 'blocs/smallInfoBox.php?ID=12', markerVert, ['']]
                             ];
                             var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
                                 mapOptions = {
@@ -209,18 +210,22 @@
                                 };
                             homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
                             setMarkers(homeMap, homeMkrs);
-                            
-                            $('#mapFilters').find('a').click( function(){
-                                var theme = this.id;
-                                //consoleLog(theme);
-                                for ( var i in aMarkers ){
-                                    var marker = aMarkers[i];
-                                    marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                                    //consoleLog($.inArray(theme, marker.filters));
-                                    //consoleLog(marker.filters);
-                                }
-                                return false;
-                            });
+
+                            $('#mapFilters').find('a')
+                                .click( function(){
+                                    var theme = this.id;
+                                    //consoleLog(theme);
+                                    for ( var i in aMarkers ){
+                                        var marker = aMarkers[i];
+                                        marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                                        //consoleLog($.inArray(theme, marker.filters));
+                                        //consoleLog(marker.filters);
+                                    }
+                                    $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+                                    ib.close();
+                                    return false;
+                                })
+                                .eq(0).trigger('click');
                         }
 
                     </script>
@@ -230,12 +235,13 @@
                     <h2>Campings Vacances Directes</h2>
                     <h3>Filter par</h3>
                     <ul id="mapFilters">
-                        <li><a id="theme1" href="#"><span>Nouveautés saison 2012</span></a></li>
-                        <li><a id="theme2" href="#"><span>Les enfants d'abord</span></a></li>
-                        <li><a id="theme3" href="#"><span>Parcs aquatiques</span></a></li>
-                        <li><a id="theme4" href="#"><span>Piscines couvertes</span></a></li>
-                        <li><a id="theme5" href="#"><span>Les pieds dans l'eau</span></a></li>
-                        <li><a id="theme6" href="#"><span>En vacances avec votre chien</span></a></li>
+                        <li><a id="NV12" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/NV12.png)"><span>Nouveautés 2012</span></a></li>
+                        <li><a id="PAQU" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/PAQU.png)"><span>Parcs aquatiques</span></a></li>
+                        <li><a id="PDLE" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/PDLE.png)"><span>Pieds dans l'eau</span></a></li>
+                        <li><a id="VAFA" href="#"><span>Vacances farniente</span></a></li>
+                        <li><a id="VACL" href="#"><span>Vacances club</span></a></li>
+                        <li><a id="VASE" href="#"><span>Vacances sensations</span></a></li>
+                        <li><a id="VADE" href="#"><span>Vacances découverte</span></a></li>
                     </ul>
                 </div>
             </div>

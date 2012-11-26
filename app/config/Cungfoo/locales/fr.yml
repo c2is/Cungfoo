@@ -88,6 +88,7 @@ thematique.id: Id
 thematique.code: Code
 thematique.name: Nom
 thematique.etablissements: Établissements ayant cette thématique
+thematique.image_path: Picto
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
