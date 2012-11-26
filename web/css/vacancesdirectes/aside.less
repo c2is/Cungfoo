@@ -85,7 +85,8 @@ aside{
     #searchBlocDate{
       label{display:none;}
       label[for="SearchDate_nbAdultes"],
-      label[for="SearchDate_nbEnfants"] {display:block;}
+      label[for="SearchDate_nbEnfants"],
+      .toggleContainer label {display:inline;}
       a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
       .toggleContainer{display:none;
         &>*:last-child{margin-bottom:10px;}
@@ -117,7 +118,7 @@ aside{
         input {height: 27px;line-height: 27px;width:216px;background-color:@colorBlanc;padding:0 7px;}
       }
       .datepickerLegend{display:none;}
-      label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:65px;}
+      .spinner label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:65px;}
       .spinner{
         input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
         .spin-bt-down,

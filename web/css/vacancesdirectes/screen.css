@@ -5188,8 +5188,9 @@ aside #searchBloc #searchBlocDate label {
   display: none;
 }
 aside #searchBloc #searchBlocDate label[for="SearchDate_nbAdultes"],
-aside #searchBloc #searchBlocDate label[for="SearchDate_nbEnfants"] {
-  display: block;
+aside #searchBloc #searchBlocDate label[for="SearchDate_nbEnfants"],
+aside #searchBloc #searchBlocDate .toggleContainer label {
+  display: inline;
 }
 aside #searchBloc #searchBlocDate a.toggleButton {
   color: #ffffff;
@@ -5257,7 +5258,7 @@ aside #searchBloc #searchBlocDate #datepickerField input {
 aside #searchBloc #searchBlocDate .datepickerLegend {
   display: none;
 }
-aside #searchBloc #searchBlocDate label {
+aside #searchBloc #searchBlocDate .spinner label {
   font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-right: 10px;

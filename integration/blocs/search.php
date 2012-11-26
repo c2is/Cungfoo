@@ -82,16 +82,16 @@
                     </div>
                 </li>
                 <li>
-                    <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
                     <div class="spinner clear">
+                        <label for="SearchDate_nbAdultes" class="left">Adulte(s)</label>
                         <button class="spin-bt-down left">-</button>
                         <input class="spin-tb left" type="text" id="SearchDate_nbAdultes" value="2">
                         <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>
-                    <label for="SearchDate_nbEnfants" class="left">Enfant(s)</label>
                     <div class="spinner clear">
+                        <label for="SearchDate_nbEnfants" class="left">Enfant(s)</label>
                         <button  class="spin-bt-down left">-</button>
                         <input class="spin-tb left" type="text" id="SearchDate_nbEnfants" value="0">
                         <button class="spin-bt-up left">+</button>
