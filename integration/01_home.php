@@ -235,12 +235,13 @@
                     <h2>Campings Vacances Directes</h2>
                     <h3>Filter par</h3>
                     <ul id="mapFilters">
-                        <li><a id="theme1" href="#"><span>Nouveautés saison 2012</span></a></li>
-                        <li><a id="theme2" href="#"><span>Les enfants d'abord</span></a></li>
-                        <li><a id="theme3" href="#"><span>Parcs aquatiques</span></a></li>
-                        <li><a id="theme4" href="#"><span>Piscines couvertes</span></a></li>
-                        <li><a id="theme5" href="#"><span>Les pieds dans l'eau</span></a></li>
-                        <li><a id="theme6" href="#"><span>En vacances avec votre chien</span></a></li>
+                        <li><a id="NV12" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/NV12.png)"><span>Nouveautés 2012</span></a></li>
+                        <li><a id="PAQU" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/PAQU.png)"><span>Parcs aquatiques</span></a></li>
+                        <li><a id="PDLE" href="#" style="background-image:url(../web/images/vacancesdirectes/dyn/maphome/PDLE.png)"><span>Pieds dans l'eau</span></a></li>
+                        <li><a id="VAFA" href="#"><span>Vacances farniente</span></a></li>
+                        <li><a id="VACL" href="#"><span>Vacances club</span></a></li>
+                        <li><a id="VASE" href="#"><span>Vacances sensations</span></a></li>
+                        <li><a id="VADE" href="#"><span>Vacances découverte</span></a></li>
                     </ul>
                 </div>
             </div>
