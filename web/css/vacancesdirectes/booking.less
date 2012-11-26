@@ -1,5 +1,16 @@
 .booking{
 
+/* STEPS */
+  #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 0 -@gutter;z-index:30;
+    ul{width:858px;margin:0 auto;text-align:center;
+      li.tab{width:186px;margin:0 12px;float:none;display:inline-block;position:static;color:#fff;padding:0;
+        &.current{background:@colorFushia;}
+        span{position:relative;display:block;padding:0 10px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);}
+        &.current span{text-decoration:none;}
+      }
+    }
+  }
+
 /* COMMON */
   #nav ul{top:0px;
     li.tab{height:50px;._border-radius(0);
