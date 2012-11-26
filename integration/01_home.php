@@ -198,8 +198,8 @@
                             var markerController = new google.maps.MVCObject();
                             var homeMkrs = [
                                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
-                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['theme1', 'theme3']]
-                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['theme1', 'theme2']]
+                                ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
+                                ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
                                 ,['Lyon', 46.794544, 4.896512, 5, 'blocs/smallInfoBox.php?ID=12', markerVert, ['']]
                             ];
                             var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
