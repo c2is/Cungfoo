@@ -4027,6 +4027,8 @@ h6,
 }
 /* page booking */
 .booking {
+  /* STEPS */
+
   /* COMMON */
 
   /* structure */
@@ -4035,6 +4037,59 @@ h6,
 
   /* SEARCH */
 
+}
+.booking #stepNav {
+  width: 976px;
+  height: 50px;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  background: #464545;
+  margin: 20px 0 0 -24px;
+  z-index: 30;
+}
+.booking #stepNav ul {
+  width: 858px;
+  margin: 0 auto;
+  text-align: center;
+}
+.booking #stepNav ul li.tab {
+  width: 186px;
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
+  position: static;
+  color: #fff;
+  padding: 0;
+}
+.booking #stepNav ul li.tab.current {
+  background: #ed145b;
+}
+.booking #stepNav ul li.tab span {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.booking #stepNav ul li.tab span > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.booking #stepNav ul li.tab span > img {
+  vertical-align: middle;
+}
+.booking #stepNav ul li.tab.current span {
+  text-decoration: none;
 }
 .booking #nav ul {
   top: 0px;
