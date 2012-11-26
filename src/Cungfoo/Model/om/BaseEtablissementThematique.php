@@ -22,7 +22,7 @@ use Cungfoo\Model\ThematiqueQuery;
 /**
  * Base class that represents a row from the 'etablissement_thematique' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
 
     /**
      * Get the [thematique_id] column value.
-     *
+     * 
      * @return int
      */
     public function getThematiqueId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementThematique The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
 
     /**
      * Set the value of [thematique_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementThematique The current object (for fluent API support)
      */
@@ -447,10 +447,10 @@ abstract class BaseEtablissementThematique extends BaseObject implements Persist
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`THEMATIQUE_ID`':
+                    case '`THEMATIQUE_ID`':						
                         $stmt->bindValue($identifier, $this->thematique_id, PDO::PARAM_INT);
                         break;
                 }

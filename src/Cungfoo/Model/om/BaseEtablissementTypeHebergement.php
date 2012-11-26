@@ -24,7 +24,7 @@ use Cungfoo\Model\TypeHebergementQuery;
 /**
  * Base class that represents a row from the 'etablissement_type_hebergement' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -111,7 +111,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -121,7 +121,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [type_hebergement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getTypeHebergementId()
@@ -131,7 +131,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [minimum_price] column value.
-     *
+     * 
      * @return string
      */
     public function getMinimumPrice()
@@ -141,7 +141,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [minimum_price_discount_label] column value.
-     *
+     * 
      * @return string
      */
     public function getMinimumPriceDiscountLabel()
@@ -151,7 +151,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -188,7 +188,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -225,7 +225,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -250,7 +250,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [type_hebergement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -275,7 +275,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [minimum_price] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -296,7 +296,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Set the value of [minimum_price_discount_label] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
@@ -317,7 +317,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return EtablissementTypeHebergement The current object (for fluent API support)
@@ -340,7 +340,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
     /**
      * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return EtablissementTypeHebergement The current object (for fluent API support)
@@ -671,22 +671,22 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TYPE_HEBERGEMENT_ID`':
+                    case '`TYPE_HEBERGEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
                         break;
-                    case '`MINIMUM_PRICE`':
+                    case '`MINIMUM_PRICE`':						
                         $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_DISCOUNT_LABEL`':
+                    case '`MINIMUM_PRICE_DISCOUNT_LABEL`':						
                         $stmt->bindValue($identifier, $this->minimum_price_discount_label, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_START_DATE`':
+                    case '`MINIMUM_PRICE_START_DATE`':						
                         $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_END_DATE`':
+                    case '`MINIMUM_PRICE_END_DATE`':						
                         $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
                         break;
                 }

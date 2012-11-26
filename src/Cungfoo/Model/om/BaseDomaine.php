@@ -18,7 +18,7 @@ use Cungfoo\Model\DomaineQuery;
 /**
  * Base class that represents a row from the 'domaine' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -77,7 +77,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -87,7 +87,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -97,7 +97,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Get the [order] column value.
-     *
+     * 
      * @return int
      */
     public function getOrder()
@@ -107,7 +107,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Domaine The current object (for fluent API support)
      */
@@ -128,7 +128,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return Domaine The current object (for fluent API support)
      */
@@ -149,7 +149,7 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
     /**
      * Set the value of [order] column.
-     *
+     * 
      * @param int $v new value
      * @return Domaine The current object (for fluent API support)
      */
@@ -443,13 +443,13 @@ abstract class BaseDomaine extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`NAME`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`ORDER`':
+                    case '`ORDER`':						
                         $stmt->bindValue($identifier, $this->order, PDO::PARAM_INT);
                         break;
                 }

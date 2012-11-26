@@ -75,7 +75,9 @@
                         </select>
                         <div id="SearchDate_switch">
                             <span class="left">ou</span>
-                            <div class="switchSelect" title=""></div>
+                            <div class="switchSelect tooltip" title="">
+                                <span>Campings</span>
+                            </div>
                         </div>
                     </div>
                 </li>

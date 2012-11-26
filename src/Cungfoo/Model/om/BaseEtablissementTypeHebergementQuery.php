@@ -21,7 +21,7 @@ use Cungfoo\Model\TypeHebergement;
 /**
  * Base class that represents a query for the 'etablissement_type_hebergement' table.
  *
- *
+ * 
  *
  * @method EtablissementTypeHebergementQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementTypeHebergementQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
@@ -115,7 +115,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
+     * @param array $key Primary key to use for the query 
                          A Primary key composition: [$etablissement_id, $type_hebergement_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -157,8 +157,8 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
     {
         $sql = 'SELECT `ETABLISSEMENT_ID`, `TYPE_HEBERGEMENT_ID`, `MINIMUM_PRICE`, `MINIMUM_PRICE_DISCOUNT_LABEL`, `MINIMUM_PRICE_START_DATE`, `MINIMUM_PRICE_END_DATE` FROM `etablissement_type_hebergement` WHERE `ETABLISSEMENT_ID` = :p0 AND `TYPE_HEBERGEMENT_ID` = :p1';
         try {
-            $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
+            $stmt = $con->prepare($sql);			
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
