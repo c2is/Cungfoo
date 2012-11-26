@@ -67,6 +67,7 @@ class BaseServiceComplementaireType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'service_complementaire.service_complementaireI18ns',
             'columns' => array(

@@ -66,6 +66,7 @@ class BasePersonnageType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'personnage.personnageI18ns',
             'columns' => array(

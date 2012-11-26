@@ -54,6 +54,7 @@ class BaseSituationGeographiqueType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'situation_geographique.situation_geographiqueI18ns',
             'columns' => array(

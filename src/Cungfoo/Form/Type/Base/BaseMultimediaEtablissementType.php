@@ -67,6 +67,7 @@ class BaseMultimediaEtablissementType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'multimedia_etablissement.multimedia_etablissementI18ns',
             'columns' => array(

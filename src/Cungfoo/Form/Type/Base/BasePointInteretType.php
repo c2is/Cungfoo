@@ -102,6 +102,7 @@ class BasePointInteretType extends AppAwareType
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
+                3 => 'nl',
             ),
             'label' => 'point_interet.point_interetI18ns',
             'columns' => array(

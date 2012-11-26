@@ -48,6 +48,7 @@ class EtablissementI18nTableMap extends TableMap
         $this->addColumn('OUVERTURE_RECEPTION', 'OuvertureReception', 'LONGVARCHAR', false, null, null);
         $this->addColumn('OUVERTURE_CAMPING', 'OuvertureCamping', 'LONGVARCHAR', false, null, null);
         $this->addColumn('ARRIVEES_DEPARTS', 'ArriveesDeparts', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

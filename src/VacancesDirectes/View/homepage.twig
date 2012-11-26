@@ -165,5 +165,39 @@
         <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
     </div>
 </div>
+<div class="column clearboth">
+    <div id="mapBloc" class="radiusBox greyC clear">
+        <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
+            <script>
+                function homeInit() {
+                    var homeMkrs = [
+                        //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
+                        {% for etab in etablissements %}
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
+                        {% endfor %}
+                    ];
+                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
+                            mapOptions = {
+                                zoom: 7,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                center: centerhomeMkr
+                            };
+                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
+                    setMarkers(homeMap, homeMkrs);
+                }
+            </script>
+        </div>
+
+        <div id="mapContent" class="left">
+            <h2>Campings Vacances Directes</h2>
+            <h3>Filter par</h3>
+            <ul id="mapFilters">
+                {% for thematique in thematiques %}
+                    <li><a id="{{ thematique.code }}" href="#"><span>{{ thematique.name }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
 

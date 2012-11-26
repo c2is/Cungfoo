@@ -71,7 +71,6 @@ class EtablissementType extends BaseEtablissementType
                         'geo_coordinate_y',
                         'video_path',
                         'image_360_path',
-                        'description',
                         'etablissementI18ns',
                     )
                 ),

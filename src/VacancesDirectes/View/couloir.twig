@@ -35,20 +35,31 @@
         </div>
     </header>
 
-    {% block content %}
     <div id="wrap" class="fixed-width clear">
-        <div class="column left">
-            {% block leftColumn %}
-            {% endblock %}
+        <div id="headerContainer" class="column clear">
+            <h1><span>Bienvenue dans l’espace de </span>réservation</h1>
+            <nav id="stepNav" class="clearboth">
+                <ul class="topnav fixed-width clear">
+                    <li class="tab current"><span>Détails du séjour</span></li>
+                    <li class="tab"><span>Récaputulatif</span></li>
+                    <li class="tab"><span>Paiement</span></li>
+                    <li class="tab"><span>Confirmation</span></li>
+                </ul>
+            </nav>
         </div>
-        <aside class="column right">
-            {% block rightColumn %}
-            {% endblock %}
-        </aside>
+        {% block content %}
+            <div class="column left">
+                {% block leftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block rightColumn %}
+                {% endblock %}
+            </aside>
             {% block columnClearboth %}
             {% endblock %}
+        {% endblock %}
     </div>
-    {% endblock %}
 
     {% include 'footer.twig' %}
 
