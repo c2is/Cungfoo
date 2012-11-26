@@ -66,6 +66,12 @@ abstract class BaseThematique extends BaseObject implements Persistent
     protected $code;
 
     /**
+     * The value for the image_path field.
+     * @var        string
+     */
+    protected $image_path;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -186,6 +192,16 @@ abstract class BaseThematique extends BaseObject implements Persistent
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Get the [image_path] column value.
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->image_path;
     }
 
     /**
@@ -315,6 +331,27 @@ abstract class BaseThematique extends BaseObject implements Persistent
     } // setCode()
 
     /**
+     * Set the value of [image_path] column.
+     *
+     * @param string $v new value
+     * @return Thematique The current object (for fluent API support)
+     */
+    public function setImagePath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_path !== $v) {
+            $this->image_path = $v;
+            $this->modifiedColumns[] = ThematiquePeer::IMAGE_PATH;
+        }
+
+
+        return $this;
+    } // setImagePath()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -427,9 +464,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->enabled = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -438,7 +476,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = ThematiquePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = ThematiquePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Thematique object", $e);
@@ -726,6 +764,9 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if ($this->isColumnModified(ThematiquePeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
+        if ($this->isColumnModified(ThematiquePeer::IMAGE_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+        }
         if ($this->isColumnModified(ThematiquePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -751,6 +792,9 @@ abstract class BaseThematique extends BaseObject implements Persistent
                         break;
                     case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_PATH`':
+                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -918,12 +962,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getCreatedAt();
+                return $this->getImagePath();
                 break;
             case 3:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 4:
+                return $this->getUpdatedAt();
+                break;
+            case 5:
                 return $this->getEnabled();
                 break;
             default:
@@ -957,9 +1004,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
-            $keys[4] => $this->getEnabled(),
+            $keys[2] => $this->getImagePath(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
+            $keys[5] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementThematiques) {
@@ -1009,12 +1057,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setCreatedAt($value);
+                $this->setImagePath($value);
                 break;
             case 3:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 4:
+                $this->setUpdatedAt($value);
+                break;
+            case 5:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1043,9 +1094,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setEnabled($arr[$keys[4]]);
+        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
     }
 
     /**
@@ -1059,6 +1111,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
         if ($this->isColumnModified(ThematiquePeer::ID)) $criteria->add(ThematiquePeer::ID, $this->id);
         if ($this->isColumnModified(ThematiquePeer::CODE)) $criteria->add(ThematiquePeer::CODE, $this->code);
+        if ($this->isColumnModified(ThematiquePeer::IMAGE_PATH)) $criteria->add(ThematiquePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(ThematiquePeer::CREATED_AT)) $criteria->add(ThematiquePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ThematiquePeer::UPDATED_AT)) $criteria->add(ThematiquePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(ThematiquePeer::ENABLED)) $criteria->add(ThematiquePeer::ENABLED, $this->enabled);
@@ -1126,6 +1179,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setEnabled($this->getEnabled());
@@ -1836,6 +1890,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
+        $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->enabled = null;
@@ -2064,7 +2119,44 @@ abstract class BaseThematique extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['image_path_deleted']->getData())
+        {
+            $this->resetModified(ThematiquePeer::IMAGE_PATH);
+        }
+
+        $this->uploadImagePath($form);
+
         return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/thematiques';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImagePath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+            $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImagePath($this->getUploadDir() . '/' . $image);
+        }
     }
 
 }

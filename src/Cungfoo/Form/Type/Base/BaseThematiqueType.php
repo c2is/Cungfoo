@@ -34,6 +34,19 @@ class BaseThematiqueType extends AppAwareType
             'label' => 'thematique.code',
             'required' => false,
         ));
+        $builder->add('image_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'thematique.image_path',
+            'required' => false,
+        ));
+        $builder->add('image_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'thematique.image_path_deleted',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
