@@ -184,6 +184,20 @@
                             };
                     homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
                     setMarkers(homeMap, homeMkrs);
+
+                    $('#mapFilters').find('a')
+                        .click( function(){
+                            var theme = this.id;
+                            //consoleLog(theme);
+                            for ( var i in aMarkers ){
+                                var marker = aMarkers[i];
+                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                            }
+                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+                            ib.close();
+                            return false;
+                        })
+                        .eq(0).trigger('click');
                 }
             </script>
         </div>

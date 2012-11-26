@@ -153,19 +153,19 @@
       #mapFilters{
         li a{._verticalCenter(40px,13px);text-transform:uppercase;border-bottom:1px solid @colorBgGrisM;display:block;position:relative;padding-left:55px;font-size:11px;
           &:before{content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-60.png") no-repeat 0 0 transparent;width:50px;height:40px;display:block;position:absolute;bottom:0;left:0px;}
-          &#filterNew:before{background-position:0 0;}
+          &#NV12:before{background-position:0 0;}
           &#filterChildren:before{background-position:0 -40px;}
-          &#filterWaterParks:before{background-position:0 -80px;}
+          &#PAQU:before{background-position:0 -80px;}
           &#filterIndoorPools:before{background-position:0 -120px;}
-          &#filterWaterfront:before{background-position:0 -160px;}
+          &#PDLE:before{background-position:0 -160px;}
           &#filterAnimals:before{background-position:0 -200px;}
         }
-        li a:hover{color:@colorFushia;background-color:#cfcccc;
-          &#filterNew:before{background-position:-60px 0;}
+        li a:hover, li a.active{color:@colorFushia;background-color:#cfcccc;
+          &#NV12:before{background-position:-60px 0;}
           &#filterChildren:before{background-position:-60px -40px;}
-          &#filterWaterParks:before{background-position:-60px -80px;}
+          &#PAQU:before{background-position:-60px -80px;}
           &#filterIndoorPools:before{background-position:-60px -120px;}
-          &#filterWaterfront:before{background-position:-60px -160px;}
+          &#PDLE:before{background-position:-60px -160px;}
           &#filterAnimals:before{background-position:-60px -200px;}
         }
       }
