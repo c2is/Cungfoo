@@ -203,11 +203,11 @@
         </div>
 
         <div id="mapContent" class="left">
-            <h2>Campings Vacances Directes</h2>
-            <h3>Filter par</h3>
+            <h2>{{ "general.campings_vacances_directes" | trans }}</h2>
+            <h3>{{ "general.filter_par" | trans }}</h3>
             <ul id="mapFilters">
                 {% for thematique in thematiques %}
-                    <li><a id="{{ thematique.code }}" href="#"><span>{{ thematique.name }}</span></a></li>
+                    <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath) }})"><span>{{ thematique.name }}</span></a></li>
                 {% endfor %}
             </ul>
         </div>
