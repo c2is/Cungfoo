@@ -11,6 +11,10 @@
         Id: 1
         Locale: fr
         Name: 'Nouveautés 2012'
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: ''
     2_de:
         Id: 2
         Locale: de
@@ -23,6 +27,10 @@
         Id: 2
         Locale: fr
         Name: 'Parcs aquatiques'
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: ''
     3_de:
         Id: 3
         Locale: de
@@ -35,6 +43,10 @@
         Id: 3
         Locale: fr
         Name: 'Pieds dans l''eau'
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: ''
     4_de:
         Id: 4
         Locale: de
