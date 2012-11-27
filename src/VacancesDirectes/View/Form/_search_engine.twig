@@ -11,12 +11,18 @@
                 <li>
                     <div id="datepicker" class="clear">
                         {{ form_widget(searchForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
-                        {{ form_widget(searchForm.dateFin, {attr: {readonly: 'readonly'}}) }}
                         <div id="datepickerField" class="clear">
-                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Dates d'arrivée et de départ" /><span class="date"></span>
+                            <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="{{ "date_search.date_debut" | trans }}" /><span class="date"></span>
                         </div>
                         <div id="datepickerCalendar"></div>
                     </div>
+                </li>
+                <li>
+                <li>
+                    <div id="SearchDate_selectContainer0" class="selectContainer clear">
+                        {{ form_widget(searchForm.nbJours) }}
+                    </div>
+                </li>
                 </li>
                 <li id="SearchDate_selectContainer1" class="selectContainer clear">
                     <div class="selectContainer clear">

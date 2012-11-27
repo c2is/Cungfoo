@@ -33,15 +33,14 @@ class SearchEngine
 
             if ($this->form->isValid())
             {
-                if ($searchDateData->dateDebut && $searchDateData->dateFin)
+                if ($searchDateData->dateDebut && $searchDateData->nbJours)
                 {
                     $dateDebut = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateDebut);
-                    $dateFin = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateFin);
 
                     $urlParams = array(
                         'large'       => $searchDateData->destination,
                         'start_date'  => $dateDebut->format('Y-m-d'),
-                        'end_date'    => $dateFin->format('Y-m-d'),
+                        'nb_days'     => $searchDateData->nbJours,
                         'nb_adults'   => $searchDateData->nbAdultes,
                         'nb_children' => $searchDateData->nbEnfants,
                     );
