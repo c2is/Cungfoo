@@ -1354,7 +1354,12 @@ footer {
   font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 80px;
+  margin: 75px 30px 15px;
+  float: left;
+  width: 300px;
+}
+#header #catchline span {
+  text-align: left;
 }
 #header #headerRight {
   float: right;
@@ -1395,7 +1400,7 @@ footer {
   padding: 7px 12px;
   color: #fff;
   text-decoration: none;
-  margin: 20px 0 2px 15px;
+  margin: 10px 0 15px 15px;
 }
 /* specifs home */
 .home #telephone {
@@ -1423,7 +1428,19 @@ footer {
   -webkit-border-radius: 7px 7px 0 0;
   border-radius: 7px 7px 0 0;
   z-index: 50;
-  margin-right: 1px;
+  margin-left: 2px;
+}
+#nav .tab:first-child:after {
+  width: 0;
+  margin-left: 0;
+}
+#nav .tab:after {
+  content: "";
+  width: 2px;
+  height: 17px;
+  background-color: #8c8a8a;
+  float: left;
+  margin: -32px 0 0 -2px;
 }
 #nav .tab:hover,
 #nav .tab.current {
@@ -2298,7 +2315,7 @@ h6,
   padding: 20px 0;
 }
 .element .fb-like {
-  width: 109px;
+  width: 119px;
   height: 20px;
   margin: 10px 10px 0;
 }
@@ -2454,6 +2471,9 @@ h6,
 .element.noprice .details {
   margin: 0;
 }
+.stylish-select .selectedTxt {
+  padding-right: 27px;
+}
 .fine {
   font-size: 50%;
 }
@@ -2483,8 +2503,6 @@ h6,
   text-decoration: none;
 }
 .home .fb-like {
-  width: 97px;
-  height: 20px;
   background: url("../../images/vacancesdirectes/dyn/ui/facebook-like-button.png") no-repeat 0 0 transparent;
   text-indent: -9999px;
   margin-top: 7px;
@@ -2726,7 +2744,8 @@ h6,
 }
 .home .locationForwards {
   position: relative;
-  margin-bottom: 24px;
+  padding-bottom: 35px;
+  height: 602px;
 }
 .home .locationForwards .stamp {
   margin-bottom: 25px;
@@ -2748,6 +2767,11 @@ h6,
 }
 .home .locationForwards .stamp h2 > img {
   vertical-align: middle;
+}
+.home .locationForwards > .bt {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
 }
 .home .locationForwards h2 {
   margin-left: 27px;
@@ -2801,7 +2825,7 @@ h6,
   margin-top: -258px;
 }
 .home #greyBoxes {
-  margin-top: 144px;
+  margin-top: 129px;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -4108,6 +4132,16 @@ h6,
 .booking #stepNav ul li.tab.current span {
   text-decoration: none;
 }
+.booking #stepNav ul li.tab.current > span:after {
+  content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
+  height: 8px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  top: 24px;
+  width: 22px;
+  z-index: 50;
+}
 .booking #nav ul {
   top: 0px;
 }
@@ -4119,7 +4153,7 @@ h6,
 .booking #nav ul li.tab a {
   margin: 0;
 }
-.booking #nav ul li.tab:hover a#home:after {
+.booking #nav ul li.tab:hover > a#home:after {
   content: '';
 }
 .booking #nav ul span {
@@ -5297,6 +5331,18 @@ aside #searchBloc #searchBlocDate .spinner .spin-bt-up {
 aside #searchBloc #searchBlocDate .selectContainer {
   height: 27px;
 }
+aside #searchBloc #searchBlocDate #SearchDate_selectContainer0 select {
+  display: none;
+}
+aside #searchBloc #searchBlocDate #SearchDate_selectContainer0 .newListSelected {
+  width: 188px;
+}
+aside #searchBloc #searchBlocDate #SearchDate_selectContainer0 .newListSelected .selectedTxt {
+  width: 154px;
+}
+aside #searchBloc #searchBlocDate #SearchDate_selectContainer0 .newListSelected .SSContainerDivWrapper {
+  min-width: 188px;
+}
 aside #searchBloc #searchBlocDate #SearchDate_selectContainer1 select {
   display: none;
 }
@@ -5350,7 +5396,7 @@ aside p {
   line-height: 11px;
 }
 aside #greyBoxes {
-  margin-top: 332px;
+  margin-top: 317px;
 }
 aside #greyBoxes #infoBloc {
   width: 288px;
