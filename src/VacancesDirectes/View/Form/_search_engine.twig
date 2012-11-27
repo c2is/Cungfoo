@@ -52,16 +52,16 @@
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
+                        {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
                         <button  class="spin-bt-down left">-</button>
                         {{ form_widget(searchForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
                         <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
+                        {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
                         <button  class="spin-bt-down left">-</button>
                         {{ form_widget(searchForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
                         <button class="spin-bt-up left">+</button>

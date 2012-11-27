@@ -1,6 +1,7 @@
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 /*Variables*/
+/* Gris 0 */
 /* Gris 1 */
 /* Gris 2 */
 /* Gris 3 */
@@ -2248,6 +2249,17 @@ h6,
   -webkit-box-shadow: 0 10px 10px -12px #464545;
   box-shadow: 0 10px 10px -12px #464545;
 }
+label,
+input[type="radio"] {
+  vertical-align: middle;
+}
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 3px 5px 0 0;
+}
+input[type="radio"] {
+  height: auto;
+}
 /* structure */
 #wrap {
   padding: 15px 0;
@@ -2314,10 +2326,9 @@ h6,
   margin: 0;
   padding: 20px 0;
 }
-.element .fb-like {
+.element iframe {
   width: 119px;
   height: 20px;
-  margin: 10px 10px 0;
 }
 .element .view {
   margin: 0 15px 10px 5px;
@@ -2484,6 +2495,12 @@ h6,
 .multiple-background-true .cover {
   background-size: cover;
 }
+/* LOADING */
+#frameResalys {
+  margin: 0;
+  width: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;
+}
 /* page home */
 .home {
   /* COMMON */
@@ -2502,10 +2519,8 @@ h6,
 .home #wrap a {
   text-decoration: none;
 }
-.home .fb-like {
-  background: url("../../images/vacancesdirectes/dyn/ui/facebook-like-button.png") no-repeat 0 0 transparent;
-  text-indent: -9999px;
-  margin-top: 7px;
+.home .element iframe {
+  margin: 5px 0 0 10px;
 }
 .home #header {
   margin-bottom: 261px;
@@ -2517,6 +2532,7 @@ h6,
   position: absolute;
   top: 0;
   left: 0;
+  height: 500px;
 }
 .home #sliderWrapper #sliderPrev,
 .home #sliderWrapper #sliderNext {
@@ -2535,7 +2551,7 @@ h6,
   font: Arial, Helvetica, sans-serif 13px/15px Arial, Helvetica, sans-serif;
   color: #f58220;
   text-align: center;
-  padding: 0 15px;
+  padding: 0 5px;
   cursor: pointer;
 }
 .home #sliderWrapper #sliderPrev > *,
@@ -2548,18 +2564,25 @@ h6,
 .home #sliderWrapper #sliderNext > img {
   vertical-align: middle;
 }
-.home #sliderWrapper #sliderPrev .headline,
-.home #sliderWrapper #sliderNext .headline {
+.home #sliderWrapper #sliderPrev .content,
+.home #sliderWrapper #sliderNext .content {
+  width: 115px;
+}
+.home #sliderWrapper #sliderPrev .content .headline,
+.home #sliderWrapper #sliderNext .content .headline {
   font: bold 20px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.home #sliderWrapper #sliderPrev .price,
-.home #sliderWrapper #sliderNext .price {
+.home #sliderWrapper #sliderPrev .content .price,
+.home #sliderWrapper #sliderNext .content .price {
   font: bold 20px/22px Arial, Helvetica, sans-serif;
 }
-.home #sliderWrapper #sliderPrev .duration,
-.home #sliderWrapper #sliderNext .duration {
+.home #sliderWrapper #sliderPrev .content .duration,
+.home #sliderWrapper #sliderNext .content .duration {
   margin-top: -5px;
 }
 .home #sliderWrapper #sliderPrev {
@@ -4100,7 +4123,7 @@ h6,
   float: none;
   display: inline-block;
   position: static;
-  color: #fff;
+  color: #ffffff;
   padding: 0;
 }
 .booking #stepNav ul li.tab.current {
@@ -4152,6 +4175,9 @@ h6,
 }
 .booking #nav ul li.tab a {
   margin: 0;
+}
+.booking #nav ul li.tab a span {
+  vertical-align: baseline;
 }
 .booking #nav ul li.tab:hover > a#home:after {
   content: '';
@@ -4431,6 +4457,9 @@ h6,
 .ce #nav ul li.tab a {
   margin: 0;
 }
+.ce #nav ul li.tab a span {
+  vertical-align: baseline;
+}
 .ce #nav ul li.tab:hover a#home:after {
   content: '';
 }
@@ -4647,39 +4676,75 @@ h6,
 .ce .radiusBox .stamp h2 {
   margin: 0;
 }
-.ce #headerContainer #nav {
-  margin-left: -24px;
+.ce #stepNav {
   width: 976px;
-  height: auto;
-  font-size: 18px;
-  font-weight: bold;
+  height: 50px;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  background: #464545;
+  margin: 20px 0 0 -24px;
+  z-index: 30;
 }
-.ce #headerContainer #nav ul {
+.ce #stepNav ul {
   width: 858px;
   margin: 0 auto;
   text-align: center;
 }
-.ce #headerContainer #nav ul li.tab {
+.ce #stepNav ul li.tab {
   width: 186px;
   margin: 0 12px;
   float: none;
   display: inline-block;
+  position: static;
+  color: #ffffff;
+  padding: 0;
 }
-.ce #headerContainer #nav ul li.tab a {
-  text-decoration: underline;
+.ce #stepNav ul li.tab.current {
+  background: #ed145b;
 }
-.ce #headerContainer #nav ul li.tab a:hover {
+.ce #stepNav ul li.tab a {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.ce #stepNav ul li.tab a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.ce #stepNav ul li.tab a > img {
+  vertical-align: middle;
+}
+.ce #stepNav ul li.tab.current a {
   text-decoration: none;
 }
-.ce #headerContainer #nav ul li.tab.current a {
-  text-decoration: none;
+.ce #stepNav ul li.tab.current > a:after {
+  content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
+  height: 8px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  top: 24px;
+  width: 22px;
+  z-index: 50;
 }
-.ce #headerContainer #nav .topnavSub {
+.ce #stepNav .topnavSub {
   width: 100%;
   background: #ed145b;
   text-align: center;
 }
-.ce #headerContainer #nav .topnavSub li.tab {
+.ce #stepNav .topnavSub li.tab {
   float: none;
   display: inline-block;
 }
@@ -4720,15 +4785,9 @@ h6,
 .ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison label,
 .ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input,
 .ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input {
-  float: left;
-  margin: 0;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 14px;
   cursor: pointer;
-}
-.ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"],
-.ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input[type="radio"] {
-  margin: 0 5px 10px 10px;
 }
 .ce #searchContainer #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label,
 .ce #searchContainerReservation #searchForm #AchatLineaire_isBasseSaison input[type="radio"]:checked + label {

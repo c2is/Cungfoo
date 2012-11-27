@@ -1,6 +1,7 @@
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 /*Variables*/
+/* Gris 0 */
 /* Gris 1 */
 /* Gris 2 */
 /* Gris 3 */
@@ -27,6 +28,10 @@
   background-color: #e6e5e5;
   color: #ed145b;
 }
+.bt.gris2 {
+  background-color: #e6e5e5;
+  color: #464545;
+}
 .bt.sombre {
   background-color: #464545;
   color: #ffffff;
@@ -43,6 +48,12 @@
   background: transparent;
   padding: 0;
 }
+.bt.link {
+  background: transparent;
+  padding: 0;
+  text-decoration: underline !important;
+  border-radius: 0;
+}
 .bt.cfushia {
   color: #ed145b;
 }
@@ -54,6 +65,16 @@
   font-size: 12px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+.bt.full {
+  clear: both;
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+  margin: 15px 0;
+}
+.bt.ib {
+  display: inline-block;
 }
 /*GLOBAL RESET*/
 html,
@@ -401,6 +422,12 @@ h6,
 .h6-like {
   color: #ed145b;
 }
+body {
+  background: #fff;
+  color: #464545;
+  font: 12px Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 #homePage {
   margin: 0;
 }
@@ -434,6 +461,9 @@ h6,
 }
 .column .ratio-33.clear {
   margin-right: 0;
+}
+#reservationContener table {
+  width: 100%;
 }
 /* STEPS */
 #stepNav {
@@ -504,6 +534,11 @@ h6,
 .aRoom.proposal,
 .proposal.proposal {
   background-color: #ed145b;
+  color: #ffffff;
+}
+.aRoom.proposal input,
+.proposal.proposal input {
+  width: 200px;
 }
 #authentication {
   -webkit-border-radius: 10px;
@@ -526,6 +561,7 @@ h6,
 
   /* Centrer verticalement une image de taille variable */
 
+  padding-left: 10px;
 }
 #authentication h2 > * {
   vertical-align: middle;
@@ -535,11 +571,209 @@ h6,
 #authentication h2 > img {
   vertical-align: middle;
 }
-#authentication .authenticationChoice {
-  background-color: #ffffff;
+#authentication > div {
+  background-color: #e6e5e5;
   color: #464545;
 }
+#authentication > div > div {
+  padding: 10px;
+  clear: both;
+}
+#authentication > div .authenticationChoice {
+  background-color: #ffffff;
+  font: 12px Arial, Helvetica, sans-serif;
+}
+#authentication > div .authenticationChoice:nth-child(1) {
+  padding-bottom: 0;
+}
+#authentication > div .authenticationChoice:nth-child(2) {
+  padding-top: 0;
+}
+#authentication > div .authenticationChoice input[type="radio"]:checked + label {
+  font-weight: bold;
+}
+#authentication > div #existingCustomerLayer .aField,
+#authentication > div #newCustomerLayer .aField {
+  margin-bottom: 10px;
+}
+#authentication > div #existingCustomerLayer .label,
+#authentication > div #newCustomerLayer .label {
+  font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+  margin-right: 10px;
+  display: inline-block;
+  text-align: right;
+}
+#authentication > div #existingCustomerLayer input,
+#authentication > div #newCustomerLayer input {
+  background-color: #ffffff;
+  width: 216px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 7px;
+  border: 0 none;
+}
+#authentication > div #existingCustomerLayer input > *,
+#authentication > div #newCustomerLayer input > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#authentication > div #existingCustomerLayer input > img,
+#authentication > div #newCustomerLayer input > img {
+  vertical-align: middle;
+}
+#authentication > div #existingCustomerLayer textarea,
+#authentication > div #newCustomerLayer textarea {
+  background-color: #ffffff;
+  width: 216px;
+  height: 81px;
+  padding: 0 7px;
+  border: 0 none;
+}
+#authentication > div #newCustomerLayer .label {
+  width: 130px;
+}
+#authentication > div #newCustomerLayer #newAccount .aField {
+  width: 480px;
+}
+#authentication > div #newCustomerLayer #newAccount .aField input {
+  width: 320px;
+}
+#authentication > div #newCustomerLayer #address td {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+#authentication > div #newCustomerLayer #address td:last-child input {
+  margin-right: 0;
+}
+#authentication > div #newCustomerLayer #address input,
+#authentication > div #newCustomerLayer #address textarea {
+  width: 141px;
+  margin-right: 15px;
+}
+#authentication > div #newCustomerLayer #address textarea {
+  width: 141px;
+  height: 81px;
+}
+#authentication > div #existingCustomerLayer .aField {
+  width: 480px;
+  float: left;
+}
+#authentication > div #existingCustomerLayer .aField .label {
+  width: 130px;
+}
+#authentication > div #existingCustomerLayer .aField input {
+  width: 320px;
+}
+#authentication > div #existingCustomerLayer .loginLink {
+  float: right;
+}
 /* packages */
+#footerContener {
+  overflow: hidden;
+  margin-top: 20px;
+  clear: both;
+}
+#footerContener .mentions,
+#footerContener .footerNavigation {
+  display: none;
+}
+#footerContener .mentions.gauche,
+#footerContener .footerNavigation.gauche,
+#footerContener .mentions.droite,
+#footerContener .footerNavigation.droite,
+#footerContener .mentions.pageListe,
+#footerContener .footerNavigation.pageListe {
+  display: block;
+}
+#footerContener .mentions.gauche,
+#footerContener .footerNavigation.gauche {
+  float: left;
+}
+#footerContener .mentions.droite,
+#footerContener .footerNavigation.droite {
+  float: right;
+  margin-top: -14px;
+}
+#footerContener .footerNavigation.gauche a,
+#footerContener .footerNavigation.droite a {
+  display: block;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 14px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  padding: 3px 16px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  color: #ffffff;
+  background-image: url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');
+  background-repeat: no-repeat;
+  height: 28px;
+}
+#footerContener .footerNavigation.gauche a {
+  background-position: 5px 0;
+  padding-left: 25px;
+  background-color: #464545;
+}
+#footerContener .footerNavigation.droite a {
+  background-image: none;
+  padding-right: 25px;
+  background-color: #ed145b;
+}
+#footerContener .footerNavigation.pageListe {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  float: right;
+}
+#footerContener .footerNavigation.pageListe a,
+#footerContener .footerNavigation.pageListe b {
+  float: left;
+  padding: 0 10px;
+  line-height: 24px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+}
+#footerContener .footerNavigation.pageListe a:hover,
+#footerContener .footerNavigation.pageListe b:hover {
+  background-color: #f5f5f5;
+}
+#footerContener .footerNavigation.pageListe a:first-child,
+#footerContener .footerNavigation.pageListe b:first-child {
+  border-left-width: 1px;
+  -webkit-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+#footerContener .footerNavigation.pageListe a:last-child,
+#footerContener .footerNavigation.pageListe b:last-child {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+#footerContener .footerNavigation.pageListe b {
+  background-color: #f5f5f5;
+}
+label,
+input[type="radio"] {
+  vertical-align: middle;
+}
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 3px 5px 0 0;
+}
+input[type="radio"] {
+  height: auto;
+}
 /* Stylish Select 0.4.9 */
 .stylish-select .SSContainerDivWrapper {
   left: -9999px;

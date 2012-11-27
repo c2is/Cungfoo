@@ -13,7 +13,7 @@ include('includes/ce-top.php'); ?>
             <a class="bt fushia small right" href="#">Déconnexion</a>
         </div>
         <h1><span>Bienvenue dans l’espace </span>comité d’entreprise</h1>
-        <nav id="nav" class="clearboth">
+        <nav id="stepNav" class="clearboth">
             <ul class="topnav fixed-width clear">
                 <li class="tab current"><a href="#">Achats</a></li>
                 <li class="tab"><a href="#">Documents</a></li>
