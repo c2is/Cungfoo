@@ -6,6 +6,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     2:
         Code: PEDO
@@ -14,6 +17,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     3:
         Code: CBRA
@@ -22,6 +28,9 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     4:
         Code: GIRO
@@ -30,6 +39,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     5:
         Code: ALJU
@@ -38,6 +50,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     6:
         Code: LAND
@@ -46,6 +61,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     7:
         Code: CDOR
@@ -54,6 +72,9 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     8:
         Code: NORM
@@ -62,6 +83,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     9:
         Code: BRET
@@ -70,6 +94,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     10:
         Code: CHMA
@@ -78,6 +105,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     11:
         Code: PBAS
@@ -86,6 +116,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     12:
         Code: PLOI
@@ -94,6 +127,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     13:
         Code: VEND
@@ -102,6 +138,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     14:
         Code: LARO
@@ -110,6 +149,9 @@
         ImageEncartPetitePath: uploads/regions/507829fb4777d.png
         PaysId: 1
         MeaHome: true
+        CodeViafrance: R12
+        ImageDetail1: uploads/regions/50b4e2ea5fac0.jpeg
+        ImageDetail2: uploads/regions/50b4e2ea6b240.jpeg
         Enabled: true
     15:
         Code: GERS
@@ -118,6 +160,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     16:
         Code: AUVE
@@ -126,6 +171,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     17:
         Code: AVEY
@@ -134,6 +182,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     18:
         Code: ARDE
@@ -142,6 +193,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     19:
         Code: ARPY
@@ -150,6 +204,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     20:
         Code: CTRO
@@ -158,6 +215,9 @@
         ImageEncartPetitePath: null
         PaysId: 4
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     21:
         Code: CORS
@@ -166,6 +226,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     22:
         Code: DRHP
@@ -174,6 +237,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     23:
         Code: IADR
@@ -182,6 +248,9 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     24:
         Code: CAZA
@@ -190,6 +259,9 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     25:
         Code: IMED
@@ -198,6 +270,9 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     26:
         Code: ALP
@@ -206,6 +281,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     27:
         Code: PCA
@@ -214,6 +292,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: true
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     28:
         Code: VERD
@@ -222,6 +303,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     29:
         Code: CTBR
@@ -230,6 +314,9 @@
         ImageEncartPetitePath: null
         PaysId: 3
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     30:
         Code: HERA
@@ -238,6 +325,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     31:
         Code: AUDE
@@ -246,6 +336,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     32:
         Code: TOSC
@@ -254,6 +347,9 @@
         ImageEncartPetitePath: null
         PaysId: 2
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     33:
         Code: PASD
@@ -262,6 +358,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     34:
         Code: ILE
@@ -270,6 +369,9 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     35:
         Code: PYRO
@@ -278,4 +380,7 @@
         ImageEncartPetitePath: null
         PaysId: 1
         MeaHome: null
+        CodeViafrance: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
