@@ -10,8 +10,10 @@
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
+                        {{ form_label(searchForm.dateDebut) }}
                         {{ form_widget(searchForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
                         <div id="datepickerField" class="clear">
+                            <label for="datepickerInput">Date de début de séjour</label>
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="{{ "date_search.date_debut" | trans }}" /><span class="date"></span>
                         </div>
                         <div id="datepickerCalendar"></div>
@@ -20,42 +22,49 @@
                 <li>
                 <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
+                        {{ form_label(searchForm.nbJours) }}
                         {{ form_widget(searchForm.nbJours) }}
                     </div>
                 </li>
                 </li>
                 <li id="SearchDate_selectContainer1" class="selectContainer clear">
                     <div class="selectContainer clear">
+                        {{ form_label(searchForm.destination) }}
                         {{ form_widget(searchForm.destination) }}
                     </div>
                 </li>
                 <li>
                     <div id="SearchDate_selectContainer2" class="selectContainer clear">
+                        {{ form_label(searchForm.ville) }}
                         {{ form_widget(searchForm.ville) }}
+                        {{ form_label(searchForm.camping) }}
                         {{ form_widget(searchForm.camping) }}
                         <div id="SearchDate_switch">
                             <span class="left">ou</span>
-                            <div class="switchSelect" title=""></div>
+                            <div class="switchSelect tooltip" title="">
+                                <span>Campings</span>
+                            </div>
                         </div>
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
-                        <div class="spin-bt-down left">-</div>
+                        {{ form_label(searchForm.nbAdultes, '', {label_attr: {class: 'left'}}) }}
+                        <button  class="spin-bt-down left">-</button>
                         {{ form_widget(searchForm.nbAdultes, {attr: {class: 'spin-tb left'}}) }}
-                        <div class="spin-bt-up left">+</div>
+                        <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>
-                    {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
                     <div class="spinner clear">
-                        <div class="spin-bt-down left">-</div>
+                        {{ form_label(searchForm.nbEnfants, '', {label_attr: {class: 'left'}}) }}
+                        <button  class="spin-bt-down left">-</button>
                         {{ form_widget(searchForm.nbEnfants, {attr: {class: 'spin-tb left'}}) }}
-                        <div class="spin-bt-up left">+</div>
+                        <button class="spin-bt-up left">+</button>
                     </div>
                 </li>
                 <li>
+                    <div class="toggleContainer"></div>
                     <a class="toggleButton" href="#">+ de critères</a>
                 </li>
                 <li>

@@ -1,4 +1,4 @@
-<div id="infoBloc" class="radiusBox greyF">
+<div id="infoBloc" class="clear radiusBox greyF">
     <h3>Informations & réservations au</h3>
     <div class="content">
         <p>

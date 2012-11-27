@@ -13,7 +13,7 @@
     </div>
     <div class="element noprice clear">
         <div class="left">
-            <a href="#_" class="linkBlock"><img class="view" src="http://pimg.devlint.fr/96x66/e6e5e5/333/*" width="96" height="66" alt="" /></a>
+            <a href="#_" class="linkBlock"><img class="view" src="http://pimg.devlint.fr/96x86/e6e5e5/333/*" width="96" height="86" alt="" /></a>
         </div>
         <div class="details left linkParent">
             <span class="title">En juin, une nuit offerte</span>
@@ -21,7 +21,7 @@
     </div>
     <div class="element clear">
         <div class="left">
-            <a href="#_" class="linkBlock"><img class="view" src="http://pimg.devlint.fr/96x96/e6e5e5/333/*" width="96" height="96" alt="" /></a>
+            <a href="#_" class="linkBlock"><img class="view" src="http://pimg.devlint.fr/96x86/e6e5e5/333/*" width="96" height="86" alt="" /></a>
         </div>
         <div class="details left linkParent">
             <span class="title">Famille nombreuse idées week-end</span>

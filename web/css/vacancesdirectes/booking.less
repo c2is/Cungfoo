@@ -7,6 +7,7 @@
         &.current{background:@colorFushia;}
         span{position:relative;display:block;padding:0 10px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);}
         &.current span{text-decoration:none;}
+        &.current > span:after {content:url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");height:8px;left:50%;margin-left:-12px;position: absolute;top:24px;width:22px;z-index:50;}
       }
     }
   }
@@ -15,8 +16,7 @@
   #nav ul{top:0px;
     li.tab{height:50px;._border-radius(0);
       a{margin:0;}
-      &:hover a#home:after{content:'';}
-
+      &:hover > a#home:after{content:'';}
     }
     span {margin-left:5px;}
   }

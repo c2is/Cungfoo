@@ -8,7 +8,9 @@ header, section, footer {position:relative;}
 /* header */
 #header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:0;
   #logo{display:block;float:left;margin-bottom:25px;}
-  #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin-top:80px;}
+  #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin:75px 30px 15px;float:left;width:300px;
+    span{text-align:left;}
+  }
   #headerRight{float:right;}
   #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
     span{font-size:18px;line-height:19px;color:@colorGris2;
@@ -16,7 +18,7 @@ header, section, footer {position:relative;}
       a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
     }
   }
-  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:20px 0 2px 15px;}
+  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
 }
 /* specifs home */
 .home #telephone{clear:both;}
@@ -24,7 +26,9 @@ header, section, footer {position:relative;}
 /* nav */
 #nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
   .topnav{top:-7px;}
-  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-right:1px;
+  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
+    &:first-child:after{width:0;margin-left:0;}
+    &:after{content:"";width:2px;height:17px;background-color:@colorBgGrisM;float:left;margin:-32px 0 0 -2px;}
     &:hover,
     &.current{background:@colorFushia;
       small{color: #fff;}
@@ -223,6 +227,27 @@ h6, .h6-like{color:@colorFushia;}
 }
 .ie-lte8 .stain{width:70px;min-width:70px !important;}*/
 
+.tooltip {outline:none;position:relative;}
+.tooltip strong {line-height:30px;}
+.tooltip:hover {text-decoration:none;}
+.tooltip span {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);
+  z-index:10;display:none;
+  margin:0;
+  width:140px; line-height:16px;
+  right:-10px;bottom:-41px;
+}
+.tooltip span:after{bottom:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisM;border-width:5px;right:19px;margin-left:-5px;}
+.tooltip:hover span{
+  display:inline; position:absolute;}
+.callout {z-index:20;position:absolute;top:30px;border:0;left:50%;}
+
+/*CSS3 extras*/
+.tooltip span{
+  -moz-box-shadow: 0 10px 10px -12px @colorGris2;
+  -webkit-box-shadow: 0 10px 10px -12px @colorGris2;
+  box-shadow: 0 10px 10px -12px @colorGris2;
+}
+
 /* structure */
 #wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;z-index:20;}
 .popin #wrap{width:646px;padding:0 15px;margin:0 auto;}
@@ -243,7 +268,7 @@ h6, .h6-like{color:@colorFushia;}
   hr{height:0;border:5px solid #fff;margin:15px 0;}
 }
 .element{position:relative;margin:0;padding:20px 0;
-  .fb-like{width:109px;height:20px;margin:10px 10px 0;}
+  .fb-like{width:119px;height:20px;margin:10px 10px 0;}
   .view{margin:0 15px 10px 5px;}
   .details{font-size:13px;color:@colorGris1;margin-bottom:70px;
     .title, .region, .condition, .stain{display:block;}
@@ -271,6 +296,7 @@ h6, .h6-like{color:@colorFushia;}
     .details{margin:0;}
   }
 }
+.stylish-select .selectedTxt{padding-right:27px;}
 
 .fine{font-size: 50%;}
 .multiple-background-false .cover{
