@@ -51,7 +51,7 @@
             <div class="element clear">
                 <div class="left">
                     <a href="#_" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
-                    <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>
+                    <iframe src="//www.facebook.com/plugins/like.php?href={{ path('camping', {'idResalys': camping.etablissement.code}) }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>
                 </div>
                 <div class="details left linkParent">
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
@@ -94,11 +94,12 @@
         <a href="{{ path('dernieres_minutes') }}" class="bt link right">Voir toutes les dernières minutes</a>
     </div>
 </div>
+
 {% endblock %}
 
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
-    <div id="greyBoxes">
+    <div id="greyBoxes" class="clear">
         <div id="weekendIdeasBloc" class="clear radiusBox greyC">
             <div class="stamp fushia">
                 <h2>{{ "general.idees_week_end" | trans }}</h2>

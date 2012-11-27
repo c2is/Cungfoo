@@ -35,14 +35,13 @@
     <!-- colonne droite -->
         <aside class="column right">
             <?php include('blocs/search.php') ?>
-            <div id="greyBoxes">
-                <?php include('blocs/infoResa.php') ?>
-                <?php include('blocs/ideesWeekend.php') ?>
+            <div id="greyBoxes" class="clear">
                 <?php include('blocs/offresSpeciales.php') ?>
                 <?php include('blocs/dejaVu.php') ?>
                 <?php include('blocs/communaute.php') ?>
                 <?php include('blocs/vacancesReussies.php') ?>
                 <?php include('blocs/aimerezAussi.php') ?>
+                <?php include('blocs/infoResa.php') ?>
             </div>
         </aside>
     <!-- // colonne droite -->

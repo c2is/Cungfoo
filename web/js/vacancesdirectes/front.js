@@ -944,7 +944,8 @@ function switchSelect(){
         var $selects = $button.parent().siblings(".newListSelected");
         //console.log($selects);
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
-        $button.attr('title',$buttonTitle);
+        $button.children('span').text($buttonTitle);
+//        $button.attr('title',$buttonTitle);
         if(selectNum) {
             $selects.eq(0).hide();
             $selects.eq(1).show();
@@ -1206,9 +1207,11 @@ function numDate(d){
 
 
 
-/*-----------------------------------------------------------
- FICHE CAMPING SLIDER
- -----------------------------------------------------------*/
+/*
+ *  ############################################################
+ *                   FICHE CAMPING SLIDER
+ * ############################################################
+ */
 
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
