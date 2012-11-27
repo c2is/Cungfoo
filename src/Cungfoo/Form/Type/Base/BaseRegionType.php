@@ -86,6 +86,38 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.mea_home',
             'required' => false,
         ));
+        $builder->add('code_viafrance', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.code_viafrance',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.image_detail_1',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'region.image_detail_1_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'region.image_detail_2',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'region.image_detail_2_deleted',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
@@ -108,6 +140,13 @@ class BaseRegionType extends AppAwareType
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'introduction' => array(
+                    'required' => false,
+                    'label' => 'region.introduction',
+                    'type' => 'text',
+                    'constraints' => array(
                     ),
                 ),
                 'description' => array(

@@ -65,6 +65,12 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     protected $name;
 
     /**
+     * The value for the introduction field.
+     * @var        string
+     */
+    protected $introduction;
+
+    /**
      * The value for the description field.
      * @var        string
      */
@@ -138,6 +144,16 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Get the [introduction] column value.
+     *
+     * @return string
+     */
+    public function getIntroduction()
+    {
+        return $this->introduction;
     }
 
     /**
@@ -218,6 +234,27 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
     } // setName()
 
     /**
+     * Set the value of [introduction] column.
+     *
+     * @param string $v new value
+     * @return RegionI18n The current object (for fluent API support)
+     */
+    public function setIntroduction($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->introduction !== $v) {
+            $this->introduction = $v;
+            $this->modifiedColumns[] = RegionI18nPeer::INTRODUCTION;
+        }
+
+
+        return $this;
+    } // setIntroduction()
+
+    /**
      * Set the value of [description] column.
      *
      * @param string $v new value
@@ -277,7 +314,8 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->introduction = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->description = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -286,7 +324,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = RegionI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = RegionI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating RegionI18n object", $e);
@@ -519,6 +557,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
+        if ($this->isColumnModified(RegionI18nPeer::INTRODUCTION)) {
+            $modifiedColumns[':p' . $index++]  = '`INTRODUCTION`';
+        }
         if ($this->isColumnModified(RegionI18nPeer::DESCRIPTION)) {
             $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
@@ -541,6 +582,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                         break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`INTRODUCTION`':
+                        $stmt->bindValue($identifier, $this->introduction, PDO::PARAM_STR);
                         break;
                     case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
@@ -694,6 +738,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                 return $this->getName();
                 break;
             case 3:
+                return $this->getIntroduction();
+                break;
+            case 4:
                 return $this->getDescription();
                 break;
             default:
@@ -728,7 +775,8 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
-            $keys[3] => $this->getDescription(),
+            $keys[3] => $this->getIntroduction(),
+            $keys[4] => $this->getDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -778,6 +826,9 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
                 $this->setName($value);
                 break;
             case 3:
+                $this->setIntroduction($value);
+                break;
+            case 4:
                 $this->setDescription($value);
                 break;
         } // switch()
@@ -807,7 +858,8 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
+        if (array_key_exists($keys[3], $arr)) $this->setIntroduction($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setDescription($arr[$keys[4]]);
     }
 
     /**
@@ -822,6 +874,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionI18nPeer::ID)) $criteria->add(RegionI18nPeer::ID, $this->id);
         if ($this->isColumnModified(RegionI18nPeer::LOCALE)) $criteria->add(RegionI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(RegionI18nPeer::NAME)) $criteria->add(RegionI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(RegionI18nPeer::INTRODUCTION)) $criteria->add(RegionI18nPeer::INTRODUCTION, $this->introduction);
         if ($this->isColumnModified(RegionI18nPeer::DESCRIPTION)) $criteria->add(RegionI18nPeer::DESCRIPTION, $this->description);
 
         return $criteria;
@@ -896,6 +949,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
+        $copyObj->setIntroduction($this->getIntroduction());
         $copyObj->setDescription($this->getDescription());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1013,6 +1067,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->name = null;
+        $this->introduction = null;
         $this->description = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
