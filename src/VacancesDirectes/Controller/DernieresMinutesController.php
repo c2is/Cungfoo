@@ -58,8 +58,11 @@ class DernieresMinutesController implements ControllerProviderInterface
             $listing = new DispoListing($app);
             $listing->setClient($client);
 
+            $listingContent = $listing->process();
+
             return $app['twig']->render('Results\listing.twig', array(
-                'list'       => $listing->process(),
+                'list'       => $listingContent,
+                'firstEtab' => reset($listingContent['element']),
                 'searchForm' => $searchEngine->getView(),
             ));
         })
