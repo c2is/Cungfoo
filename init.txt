@@ -1,0 +1,17 @@
+Pour avoir accès aux commandes SQL depuis la console Git, ajouter
+
+D:\wamp\bin\mysql\mysql5.5.24\bin
+
+dans le path Windows (Touche Windows + Pause > Variables d'environnement > VariableS système)
+
+
+Redémarrer Wamp
+
+
+En cas d'erreur après un pull (SQL, Vendor, Model, ...),
+saisir la commande
+
+init.cmd
+
+dans la console Git
+
