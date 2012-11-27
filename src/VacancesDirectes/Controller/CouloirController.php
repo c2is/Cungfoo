@@ -26,8 +26,20 @@ class CouloirController implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers->match('/detail-sejour.html?k={proposalKey}', function (Request $request, $proposalKey) use ($app) {
+            $query = array(
+                "specificFiles"     => 'couloir',
+                "base_id"           => 'vacancesdirectes_preprod_v6_6',
+                "webuser"           => 'web_fr',
+                "tokens"            => 'ignore_token',
+                "display"           => 'reservation_content',
+                "actions"           => 'cancelReservation;buildProposalFromKey;chooseProposal',
+                "proposal_key"      => $proposalKey,
+            );
+
+            $query = array_merge($query, $request->request->all());
+
             return $app['twig']->render('Couloir\detail-sejour.twig', array(
-                'proposalKey' => $proposalKey,
+                'query' => $query,
             ));
         })
         ->bind('couloir_detail_sejour');
