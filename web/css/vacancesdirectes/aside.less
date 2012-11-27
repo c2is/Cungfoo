@@ -83,6 +83,9 @@ aside{
       }
     }
     #searchBlocDate{
+      label{display:none;}
+      label[for="SearchDate_nbAdultes"],
+      label[for="SearchDate_nbEnfants"] {display:block;}
       a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
       .toggleContainer{display:none;
         &>*:last-child{margin-bottom:10px;}
@@ -95,6 +98,7 @@ aside{
       #datepickerCalendar .datepicker {
         width: 362px !important;
       }
+      #datepickerCalendar button {display:none;}
       #datepickerCalendar .datepickerGoPrev,
       #datepickerCalendar .datepickerGoNext,
       .datepickerContainer {
@@ -152,7 +156,7 @@ aside{
   /* grey boxes */
   h2,h3{color:@colorBlanc;font-size:22px;line-height:22px;}
   p{line-height:11px;}
-  #greyBoxes{margin-top:300px;
+  #greyBoxes{margin-top:332px;
     #infoBloc{width:288px;color:@colorBlanc;background:url("../../images/vacancesdirectes/common/pict/info-bloc.jpg") no-repeat 0 0 transparent;
       h3{margin:0 0 60px 88px}
       .price{font-size:12px;color:@colorBlanc;}
@@ -160,7 +164,7 @@ aside{
         .tel{position:relative;font-size:17px;font-weight:bold;text-decoration:none;display:block;margin:10px 0 -5px;color:@colorBlanc;font:bold 30px @arial;
           &:before{content:"";background:url("../../images/vacancesdirectes/common/ui/phone-icon-sidebar.png") no-repeat 0 0 transparent;width:62px;height:46px;display:block;position:absolute;top:-50px;left:62px;}
         }
-        .small{margin:10px 0 15px;}
+        .small{margin:10px 0 0px;}
       }
     }
     #weekendIdeasBloc{

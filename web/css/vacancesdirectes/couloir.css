@@ -417,13 +417,16 @@ h6,
 }
 .column {
   width: 928px;
+  margin: 0 24px;
   position: relative;
 }
 .column.left {
   width: 616px;
+  margin: 0 0 0 24px;
 }
 .column.right {
   width: 288px;
+  margin: 0 24px 0 0;
 }
 .column .ratio-33 {
   width: 300px;
@@ -486,145 +489,55 @@ h6,
 #stepNav ul li.tab.current span {
   text-decoration: none;
 }
-.radiusBox {
+.aRoom,
+.proposal {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   padding: 15px 20px;
   margin: 15px 0;
   position: relative;
 }
-.radiusBox.bgImg {
-  overflow: hidden;
-}
-.radiusBox.greyC {
+.aRoom.aRoom,
+.proposal.aRoom {
   background-color: #e6e5e5;
 }
-.radiusBox.greyF {
-  background-color: #464545;
-}
-.radiusBox.fushia {
+.aRoom.proposal,
+.proposal.proposal {
   background-color: #ed145b;
 }
-.radiusBox.yellow {
-  background-color: #ffd503;
-}
-.radiusBox .stamp {
-  color: #ffffff;
-  height: 38px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 38px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  padding: 0 20px;
-  display: block;
-}
-.radiusBox .stamp > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.radiusBox .stamp > img {
-  vertical-align: middle;
-}
-.radiusBox .stamp:before {
-  content: url('../../images/vacancesdirectes/common/ui/stamp-left.png');
-}
-.radiusBox .stamp:after {
-  content: url('../../images/vacancesdirectes/common/ui/stamp-right.png');
-}
-.radiusBox .stamp > h2 {
-  text-transform: uppercase;
-  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-}
-.radiusBox .stamp.no {
-  background: none;
-  padding: 0;
-  height: 38px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 38px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-.radiusBox .stamp.no > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: 22px;
-}
-.radiusBox .stamp.no > img {
-  vertical-align: middle;
-}
-.radiusBox .stamp.no > h2 {
-  color: #5f5f5f;
-}
-.radiusBox > h2 {
-  color: #5f5f5f;
-}
-.radiusBox > h2 span {
-  color: #009ab0;
-}
-.radiusBox2 {
+#authentication {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  padding: 15px 20px;
   margin: 15px 0;
   position: relative;
-}
-.radiusBox2.bgImg {
-  overflow: hidden;
-}
-.radiusBox2.greyC {
   background-color: #ffffff;
-  border: 5px solid #e6e5e5;
+  border: 5px solid #8c8a8a;
 }
-.radiusBox2.greyF {
-  background-color: #ffffff;
-  border: 5px solid #464545;
-}
-.radiusBox2.fushia {
-  background-color: #ffffff;
-  border: 5px solid #ed145b;
-}
-.radiusBox2 .stamp {
+#authentication h2 {
+  background-color: #8c8a8a;
   color: #ffffff;
-  background: url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;
-  height: 38px;
+  text-transform: uppercase;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  height: 40px;
   /* Centrer verticalement une ligne de texte */
 
-  line-height: 38px;
+  line-height: 40px;
   /* Centrer verticalement plusieurs lignes de texte */
 
   /* Centrer verticalement une image de taille variable */
 
-  padding: 0 30px;
-  margin-top: 10px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: bold;
 }
-.radiusBox2 .stamp > * {
+#authentication h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-.radiusBox2 .stamp > img {
+#authentication h2 > img {
   vertical-align: middle;
 }
-.radiusBox2 .stamp:before {
-  content: "";
-}
-.radiusBox2 .stamp:after {
-  content: "";
-}
-.radiusBox2 .stamp span {
-  margin-left: -6px;
+#authentication .authenticationChoice {
+  background-color: #ffffff;
+  color: #464545;
 }
 /* packages */
 /* Stylish Select 0.4.9 */
