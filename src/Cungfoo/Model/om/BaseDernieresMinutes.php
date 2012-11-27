@@ -30,7 +30,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'dernieres_minutes' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -175,7 +175,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -185,7 +185,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [date_start] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -222,7 +222,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [day_start] column value.
-     * 
+     *
      * @return int
      * @throws PropelException - if the stored enum key is unknown.
      */
@@ -241,7 +241,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [day_range] column value.
-     * 
+     *
      * @return int
      * @throws PropelException - if the stored enum key is unknown.
      */
@@ -260,7 +260,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [active] column value.
-     * 
+     *
      * @return boolean
      */
     public function getActive()
@@ -270,7 +270,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Get the [enabled] column value.
-     * 
+     *
      * @return boolean
      */
     public function getEnabled()
@@ -280,7 +280,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return DernieresMinutes The current object (for fluent API support)
      */
@@ -301,7 +301,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Sets the value of [date_start] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return DernieresMinutes The current object (for fluent API support)
@@ -324,7 +324,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Set the value of [day_start] column.
-     * 
+     *
      * @param int $v new value
      * @return DernieresMinutes The current object (for fluent API support)
      * @throws PropelException - if the value is not accepted by this enum.
@@ -350,7 +350,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
 
     /**
      * Set the value of [day_range] column.
-     * 
+     *
      * @param int $v new value
      * @return DernieresMinutes The current object (for fluent API support)
      * @throws PropelException - if the value is not accepted by this enum.
@@ -380,7 +380,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DernieresMinutes The current object (for fluent API support)
      */
@@ -409,7 +409,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DernieresMinutes The current object (for fluent API support)
      */
@@ -803,16 +803,16 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`DATE_START`':						
+                    case '`DATE_START`':
                         $stmt->bindValue($identifier, $this->date_start, PDO::PARAM_STR);
                         break;
-                    case '`DAY_START`':						
+                    case '`DAY_START`':
                         $stmt->bindValue($identifier, $this->day_start, PDO::PARAM_INT);
                         break;
-                    case '`DAY_RANGE`':						
+                    case '`DAY_RANGE`':
                         $stmt->bindValue($identifier, $this->day_range, PDO::PARAM_INT);
                         break;
                     case '`ACTIVE`':
@@ -2189,7 +2189,7 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

@@ -22,7 +22,7 @@ use Cungfoo\Model\TagQuery;
 /**
  * Base class that represents a row from the 'multimedia_etablissement_tag' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
 
     /**
      * Get the [multimedia_etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getMultimediaEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
 
     /**
      * Get the [tag_id] column value.
-     * 
+     *
      * @return int
      */
     public function getTagId()
@@ -105,7 +105,7 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
 
     /**
      * Set the value of [multimedia_etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return MultimediaEtablissementTag The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
 
     /**
      * Set the value of [tag_id] column.
-     * 
+     *
      * @param int $v new value
      * @return MultimediaEtablissementTag The current object (for fluent API support)
      */
@@ -447,10 +447,10 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`MULTIMEDIA_ETABLISSEMENT_ID`':						
+                    case '`MULTIMEDIA_ETABLISSEMENT_ID`':
                         $stmt->bindValue($identifier, $this->multimedia_etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TAG_ID`':						
+                    case '`TAG_ID`':
                         $stmt->bindValue($identifier, $this->tag_id, PDO::PARAM_INT);
                         break;
                 }

@@ -20,16 +20,18 @@ use Cungfoo\Model\RegionI18nQuery;
 /**
  * Base class that represents a query for the 'region_i18n' table.
  *
- * 
+ *
  *
  * @method RegionI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method RegionI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method RegionI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
  * @method RegionI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method RegionI18nQuery groupById() Group by the id column
  * @method RegionI18nQuery groupByLocale() Group by the locale column
  * @method RegionI18nQuery groupByName() Group by the name column
+ * @method RegionI18nQuery groupByIntroduction() Group by the introduction column
  * @method RegionI18nQuery groupByDescription() Group by the description column
  *
  * @method RegionI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -46,11 +48,13 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18n findOneById(int $id) Return the first RegionI18n filtered by the id column
  * @method RegionI18n findOneByLocale(string $locale) Return the first RegionI18n filtered by the locale column
  * @method RegionI18n findOneByName(string $name) Return the first RegionI18n filtered by the name column
+ * @method RegionI18n findOneByIntroduction(string $introduction) Return the first RegionI18n filtered by the introduction column
  * @method RegionI18n findOneByDescription(string $description) Return the first RegionI18n filtered by the description column
  *
  * @method array findById(int $id) Return RegionI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return RegionI18n objects filtered by the locale column
  * @method array findByName(string $name) Return RegionI18n objects filtered by the name column
+ * @method array findByIntroduction(string $introduction) Return RegionI18n objects filtered by the introduction column
  * @method array findByDescription(string $description) Return RegionI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -102,7 +106,7 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$id, $locale]
      * @param     PropelPDO $con an optional connection object
      *
@@ -142,10 +146,10 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION` FROM `region_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `INTRODUCTION`, `DESCRIPTION` FROM `region_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {
@@ -328,6 +332,35 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the introduction column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByIntroduction('fooValue');   // WHERE introduction = 'fooValue'
+     * $query->filterByIntroduction('%fooValue%'); // WHERE introduction LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $introduction The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterByIntroduction($introduction = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($introduction)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $introduction)) {
+                $introduction = str_replace('*', '%', $introduction);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::INTRODUCTION, $introduction, $comparison);
     }
 
     /**

@@ -22,7 +22,7 @@ use Cungfoo\Model\ThematiqueQuery;
 /**
  * Base class that represents a query for the 'thematique' table.
  *
- * 
+ *
  *
  * @method ThematiqueQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ThematiqueQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -115,7 +115,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Thematique|Thematique[]|mixed the result, formatted by the current formatter
@@ -170,7 +170,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `thematique` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -637,7 +637,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -649,7 +649,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ThematiquePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -659,7 +659,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ThematiquePeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -669,7 +669,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ThematiquePeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -681,7 +681,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ThematiquePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -691,7 +691,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -702,7 +702,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -715,12 +715,12 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'ThematiqueI18n';
-    
+
         return $this
             ->joinThematiqueI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -736,10 +736,10 @@ abstract class BaseThematiqueQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('ThematiqueI18n');
         $this->with['ThematiqueI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

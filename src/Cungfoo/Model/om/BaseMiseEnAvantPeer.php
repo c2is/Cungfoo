@@ -17,7 +17,7 @@ use Cungfoo\Model\map\MiseEnAvantTableMap;
 /**
  * Base static class for performing query and update operations on the 'mise_en_avant' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -79,14 +79,14 @@ abstract class BaseMiseEnAvantPeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
     // sortable behavior
-    
+
     /**
      * rank column
      */
@@ -390,7 +390,7 @@ abstract class BaseMiseEnAvantPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -400,7 +400,7 @@ abstract class BaseMiseEnAvantPeer
     {
         MiseEnAvantPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to mise_en_avant
      * by a foreign key with ON DELETE CASCADE
@@ -446,7 +446,7 @@ abstract class BaseMiseEnAvantPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -457,7 +457,7 @@ abstract class BaseMiseEnAvantPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = MiseEnAvantPeer::getOMClass();
         // populate the object(s)
@@ -701,7 +701,7 @@ abstract class BaseMiseEnAvantPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             MiseEnAvantPeer::clearRelatedInstancePool();
             $con->commit();
@@ -804,10 +804,10 @@ abstract class BaseMiseEnAvantPeer
     }
 
     // sortable behavior
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -821,10 +821,10 @@ abstract class BaseMiseEnAvantPeer
         $c = new Criteria();
         $c->addSelectColumn('MAX(' . MiseEnAvantPeer::RANK_COL . ')');
         $stmt = MiseEnAvantPeer::doSelectStmt($c, $con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -838,13 +838,13 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         $c = new Criteria;
         $c->add(MiseEnAvantPeer::RANK_COL, $rank);
-    
+
         return MiseEnAvantPeer::doSelectOne($c, $con);
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -860,7 +860,7 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -873,14 +873,14 @@ abstract class BaseMiseEnAvantPeer
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Return an array of sortable objects ordered by position
      *
@@ -895,24 +895,24 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         if ($criteria === null) {
             $criteria = new Criteria();
         } elseif ($criteria instanceof Criteria) {
             $criteria = clone $criteria;
         }
-    
+
         $criteria->clearOrderByColumns();
-    
+
         if ($order == Criteria::ASC) {
             $criteria->addAscendingOrderByColumn(MiseEnAvantPeer::RANK_COL);
         } else {
             $criteria->addDescendingOrderByColumn(MiseEnAvantPeer::RANK_COL);
         }
-    
+
         return MiseEnAvantPeer::doSelect($criteria, $con);
     }
-    
+
     /**
      * Adds $delta to all Rank values that are >= $first and <= $last.
      * '$delta' can also be negative.
@@ -927,17 +927,17 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
-    
+
         $whereCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
         $criterion = $whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         if (null !== $last) {
             $criterion->addAnd($whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
         }
         $whereCriteria->add($criterion);
-    
+
         $valuesCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
         $valuesCriteria->add(MiseEnAvantPeer::RANK_COL, array('raw' => MiseEnAvantPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
-    
+
         BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
         MiseEnAvantPeer::clearInstancePool();
     }

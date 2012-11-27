@@ -20,7 +20,7 @@ use Cungfoo\Model\VosVacancesQuery;
 /**
  * Base class that represents a row from the 'vos_vacances_i18n' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -118,7 +118,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -128,7 +128,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     * 
+     *
      * @return string
      */
     public function getLocale()
@@ -138,7 +138,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Get the [titre] column value.
-     * 
+     *
      * @return string
      */
     public function getTitre()
@@ -148,7 +148,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     * 
+     *
      * @return string
      */
     public function getDescription()
@@ -158,7 +158,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Get the [prenom] column value.
-     * 
+     *
      * @return string
      */
     public function getPrenom()
@@ -168,7 +168,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return VosVacancesI18n The current object (for fluent API support)
      */
@@ -193,7 +193,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacancesI18n The current object (for fluent API support)
      */
@@ -214,7 +214,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [titre] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacancesI18n The current object (for fluent API support)
      */
@@ -235,7 +235,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacancesI18n The current object (for fluent API support)
      */
@@ -256,7 +256,7 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [prenom] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacancesI18n The current object (for fluent API support)
      */
@@ -574,19 +574,19 @@ abstract class BaseVosVacancesI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':						
+                    case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`TITRE`':						
+                    case '`TITRE`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':						
+                    case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`PRENOM`':						
+                    case '`PRENOM`':
                         $stmt->bindValue($identifier, $this->prenom, PDO::PARAM_STR);
                         break;
                 }
