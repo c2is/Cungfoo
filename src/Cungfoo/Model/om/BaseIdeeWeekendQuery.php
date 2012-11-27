@@ -20,7 +20,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
 /**
  * Base class that represents a query for the 'idee_weekend' table.
  *
- * 
+ *
  *
  * @method IdeeWeekendQuery orderById($order = Criteria::ASC) Order by the id column
  * @method IdeeWeekendQuery orderByHighlight($order = Criteria::ASC) Order by the highlight column
@@ -113,7 +113,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   IdeeWeekend|IdeeWeekend[]|mixed the result, formatted by the current formatter
@@ -168,7 +168,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ENABLED` FROM `idee_weekend` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -541,7 +541,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
     }
 
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -554,12 +554,12 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'IdeeWeekendI18n';
-    
+
         return $this
             ->joinIdeeWeekendI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -575,10 +575,10 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('IdeeWeekendI18n');
         $this->with['IdeeWeekendI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

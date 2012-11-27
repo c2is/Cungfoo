@@ -22,8 +22,12 @@ class DateType extends AppAwareType
             'required' => false,
         ));
 
-        $builder->add('dateFin', 'hidden', array(
-            'required' => false,
+        $builder->add('nbJours', 'choice', array(
+            'choices'     => array(7 => "7 jours", 14 => "14 jours", 21 => "21 jours"),
+            'label'       => 'date_search.nb_jours',
+            'empty_value' => "date_search.nb_jours.empty_value",
+            'empty_data'  => null,
+            'required'    => false,
         ));
 
         $builder->add('isCamping', 'hidden', array(
@@ -32,26 +36,16 @@ class DateType extends AppAwareType
 
         $destinationCurrentChoice = $this->getApplication()['request']->get('SearchDate')['destination'];
 
-        $destinationChoices = \Cungfoo\Model\RegionQuery::create()
-            ->useI18nQuery($this->getApplication()['context']->get('language'), 'region_i18n')
-                ->withColumn('region_i18n.Name', 'Name')
-            ->endUse()
-            ->usePaysQuery()
-                ->withColumn('pays.Code', 'PaysCode')
-                ->useI18nQuery($this->getApplication()['context']->get('language'), 'pays_i18n')
-                    ->withColumn('pays_i18n.Name', 'PaysName')
-                ->endUse()
-                ->withColumn('pays.Code', 'PaysCode')
-            ->endUse()
-            ->select(array('Code'))
-            ->orderBy('PaysName')
+        $region = \Cungfoo\Model\RegionQuery::create()
+            ->joinWithI18n($this->getApplication()['context']->get('language'))
+            ->withColumn('RegionI18n.name', 'Name')
+            ->select(array('Code', 'Name'))
             ->orderBy('Name')
             ->find()
-            ->toArray()
         ;
 
         $builder->add('destination', 'choice', array(
-            'choices'     => $this->formatForListDestination($destinationChoices),
+            'choices'     => $this->formatForList($region, 'Code', 'Name'),
             'label'       => 'date_search.destination',
             'empty_value' => "date_search.destination.empty_value",
             'empty_data'  => null,
@@ -123,25 +117,6 @@ class DateType extends AppAwareType
     public function getName()
     {
         return 'SearchDate';
-    }
-
-    protected function formatForListDestination($list)
-    {
-        $pays = array();
-
-        $choices = array();
-        foreach ($list as $item)
-        {
-            if (!in_array($item['PaysCode'], $pays))
-            {
-                $choices[$item['PaysCode']] = $item['PaysName'];
-                $pays[] = $item['PaysCode'];
-            }
-
-            $choices[$item['Code']] = $item['Name'];
-        }
-
-        return $choices;
     }
 
     protected function formatForList($list, $key, $value, $empty = null)

@@ -97,7 +97,7 @@ class HomepageController implements ControllerProviderInterface
 
             $searchParams = new SearchParams($app);
             $searchParams
-                ->setDates(date('Y-m-d', $startDate))
+                ->setStartDate(date('Y-m-d', $startDate))
                 ->setNbDays(7)
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())

@@ -28,7 +28,7 @@ use Cungfoo\Model\VilleQuery;
 /**
  * Base class that represents a row from the 'ville' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -70,6 +70,18 @@ abstract class BaseVille extends BaseObject implements Persistent
      * @var        int
      */
     protected $region_id;
+
+    /**
+     * The value for the image_detail_1 field.
+     * @var        string
+     */
+    protected $image_detail_1;
+
+    /**
+     * The value for the image_detail_2 field.
+     * @var        string
+     */
+    protected $image_detail_2;
 
     /**
      * The value for the created_at field.
@@ -122,13 +134,13 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[VilleI18n]
@@ -170,7 +182,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -180,7 +192,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return string
      */
     public function getCode()
@@ -190,7 +202,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [region_id] column value.
-     * 
+     *
      * @return int
      */
     public function getRegionId()
@@ -199,8 +211,28 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [image_detail_1] column value.
+     *
+     * @return string
+     */
+    public function getImageDetail1()
+    {
+        return $this->image_detail_1;
+    }
+
+    /**
+     * Get the [image_detail_2] column value.
+     *
+     * @return string
+     */
+    public function getImageDetail2()
+    {
+        return $this->image_detail_2;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -237,7 +269,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -274,7 +306,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Get the [enabled] column value.
-     * 
+     *
      * @return boolean
      */
     public function getEnabled()
@@ -284,7 +316,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -305,7 +337,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param string $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -326,7 +358,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Set the value of [region_id] column.
-     * 
+     *
      * @param int $v new value
      * @return Ville The current object (for fluent API support)
      */
@@ -350,8 +382,50 @@ abstract class BaseVille extends BaseObject implements Persistent
     } // setRegionId()
 
     /**
+     * Set the value of [image_detail_1] column.
+     *
+     * @param string $v new value
+     * @return Ville The current object (for fluent API support)
+     */
+    public function setImageDetail1($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_detail_1 !== $v) {
+            $this->image_detail_1 = $v;
+            $this->modifiedColumns[] = VillePeer::IMAGE_DETAIL_1;
+        }
+
+
+        return $this;
+    } // setImageDetail1()
+
+    /**
+     * Set the value of [image_detail_2] column.
+     *
+     * @param string $v new value
+     * @return Ville The current object (for fluent API support)
+     */
+    public function setImageDetail2($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_detail_2 !== $v) {
+            $this->image_detail_2 = $v;
+            $this->modifiedColumns[] = VillePeer::IMAGE_DETAIL_2;
+        }
+
+
+        return $this;
+    } // setImageDetail2()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Ville The current object (for fluent API support)
@@ -374,7 +448,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Ville The current object (for fluent API support)
@@ -401,7 +475,7 @@ abstract class BaseVille extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Ville The current object (for fluent API support)
      */
@@ -463,9 +537,11 @@ abstract class BaseVille extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->region_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->image_detail_1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->image_detail_2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -474,7 +550,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = VillePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Ville object", $e);
@@ -761,6 +837,12 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ($this->isColumnModified(VillePeer::REGION_ID)) {
             $modifiedColumns[':p' . $index++]  = '`REGION_ID`';
         }
+        if ($this->isColumnModified(VillePeer::IMAGE_DETAIL_1)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_1`';
+        }
+        if ($this->isColumnModified(VillePeer::IMAGE_DETAIL_2)) {
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_2`';
+        }
         if ($this->isColumnModified(VillePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
@@ -781,19 +863,25 @@ abstract class BaseVille extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`REGION_ID`':						
+                    case '`REGION_ID`':
                         $stmt->bindValue($identifier, $this->region_id, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`IMAGE_DETAIL_1`':
+                        $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE_DETAIL_2`':
+                        $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
+                        break;
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                     case '`ENABLED`':
@@ -971,12 +1059,18 @@ abstract class BaseVille extends BaseObject implements Persistent
                 return $this->getRegionId();
                 break;
             case 3:
-                return $this->getCreatedAt();
+                return $this->getImageDetail1();
                 break;
             case 4:
-                return $this->getUpdatedAt();
+                return $this->getImageDetail2();
                 break;
             case 5:
+                return $this->getCreatedAt();
+                break;
+            case 6:
+                return $this->getUpdatedAt();
+                break;
+            case 7:
                 return $this->getEnabled();
                 break;
             default:
@@ -1011,9 +1105,11 @@ abstract class BaseVille extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getRegionId(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getEnabled(),
+            $keys[3] => $this->getImageDetail1(),
+            $keys[4] => $this->getImageDetail2(),
+            $keys[5] => $this->getCreatedAt(),
+            $keys[6] => $this->getUpdatedAt(),
+            $keys[7] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -1069,12 +1165,18 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->setRegionId($value);
                 break;
             case 3:
-                $this->setCreatedAt($value);
+                $this->setImageDetail1($value);
                 break;
             case 4:
-                $this->setUpdatedAt($value);
+                $this->setImageDetail2($value);
                 break;
             case 5:
+                $this->setCreatedAt($value);
+                break;
+            case 6:
+                $this->setUpdatedAt($value);
+                break;
+            case 7:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1104,9 +1206,11 @@ abstract class BaseVille extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setRegionId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[3], $arr)) $this->setImageDetail1($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setImageDetail2($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
     }
 
     /**
@@ -1121,6 +1225,8 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ($this->isColumnModified(VillePeer::ID)) $criteria->add(VillePeer::ID, $this->id);
         if ($this->isColumnModified(VillePeer::CODE)) $criteria->add(VillePeer::CODE, $this->code);
         if ($this->isColumnModified(VillePeer::REGION_ID)) $criteria->add(VillePeer::REGION_ID, $this->region_id);
+        if ($this->isColumnModified(VillePeer::IMAGE_DETAIL_1)) $criteria->add(VillePeer::IMAGE_DETAIL_1, $this->image_detail_1);
+        if ($this->isColumnModified(VillePeer::IMAGE_DETAIL_2)) $criteria->add(VillePeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(VillePeer::CREATED_AT)) $criteria->add(VillePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(VillePeer::UPDATED_AT)) $criteria->add(VillePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(VillePeer::ENABLED)) $criteria->add(VillePeer::ENABLED, $this->enabled);
@@ -1189,6 +1295,8 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setRegionId($this->getRegionId());
+        $copyObj->setImageDetail1($this->getImageDetail1());
+        $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setEnabled($this->getEnabled());
@@ -1783,6 +1891,8 @@ abstract class BaseVille extends BaseObject implements Persistent
         $this->id = null;
         $this->code = null;
         $this->region_id = null;
+        $this->image_detail_1 = null;
+        $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->enabled = null;
@@ -1855,7 +1965,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1864,12 +1974,12 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = VillePeer::UPDATED_AT;
-    
+
         return $this;
     }
 
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -1880,10 +1990,10 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -1893,7 +2003,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -1908,7 +2018,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 foreach ($this->collVilleI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -1924,10 +2034,10 @@ abstract class BaseVille extends BaseObject implements Persistent
             }
             $this->addVilleI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -1952,10 +2062,10 @@ abstract class BaseVille extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -1966,33 +2076,81 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [name] column value.
-         * 
+         *
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-    
-    
+
+
         /**
          * Set the value of [name] column.
-         * 
+         *
          * @param string $v new value
          * @return VilleI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-    
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [introduction] column value.
+         *
+         * @return string
+         */
+        public function getIntroduction()
+        {
+        return $this->getCurrentTranslation()->getIntroduction();
+    }
+
+
+        /**
+         * Set the value of [introduction] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setIntroduction($v)
+        {    $this->getCurrentTranslation()->setIntroduction($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2003,7 +2161,65 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['image_detail_1_deleted']->getData())
+        {
+            $this->resetModified(VillePeer::IMAGE_DETAIL_1);
+        }
+
+        $this->uploadImageDetail1($form);
+
+        if (!$form['image_detail_2_deleted']->getData())
+        {
+            $this->resetModified(VillePeer::IMAGE_DETAIL_2);
+        }
+
+        $this->uploadImageDetail2($form);
+
         return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/villes';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageDetail1(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
+            $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageDetail1($this->getUploadDir() . '/' . $image);
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImageDetail2(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
+        {
+            $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
+            $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setImageDetail2($this->getUploadDir() . '/' . $image);
+        }
     }
 
 }

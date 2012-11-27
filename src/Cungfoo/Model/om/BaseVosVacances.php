@@ -22,7 +22,7 @@ use Cungfoo\Model\VosVacancesQuery;
 /**
  * Base class that represents a row from the 'vos_vacances' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -93,13 +93,13 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[VosVacancesI18n]
@@ -135,7 +135,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -145,7 +145,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [age] column value.
-     * 
+     *
      * @return string
      */
     public function getAge()
@@ -155,7 +155,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [image_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImagePath()
@@ -165,7 +165,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [enabled] column value.
-     * 
+     *
      * @return boolean
      */
     public function getEnabled()
@@ -175,7 +175,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -196,7 +196,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Set the value of [age] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -217,7 +217,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_path] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -242,7 +242,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -567,13 +567,13 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`AGE`':						
+                    case '`AGE`':
                         $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':						
+                    case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`ENABLED`':
@@ -1285,7 +1285,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     }
 
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -1296,10 +1296,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -1309,7 +1309,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -1324,7 +1324,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 foreach ($this->collVosVacancesI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -1340,10 +1340,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             }
             $this->addVosVacancesI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -1368,10 +1368,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -1382,81 +1382,81 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [titre] column value.
-         * 
+         *
          * @return string
          */
         public function getTitre()
         {
         return $this->getCurrentTranslation()->getTitre();
     }
-    
-    
+
+
         /**
          * Set the value of [titre] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [description] column value.
-         * 
+         *
          * @return string
          */
         public function getDescription()
         {
         return $this->getCurrentTranslation()->getDescription();
     }
-    
-    
+
+
         /**
          * Set the value of [description] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [prenom] column value.
-         * 
+         *
          * @return string
          */
         public function getPrenom()
         {
         return $this->getCurrentTranslation()->getPrenom();
     }
-    
-    
+
+
         /**
          * Set the value of [prenom] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setPrenom($v)
         {    $this->getCurrentTranslation()->setPrenom($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1471,12 +1471,12 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         {
             $this->resetModified(VosVacancesPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -1484,15 +1484,15 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return 'uploads/vos_vacancess';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

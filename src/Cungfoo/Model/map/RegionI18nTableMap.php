@@ -45,6 +45,7 @@ class RegionI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'region', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('INTRODUCTION', 'Introduction', 'VARCHAR', false, 255, null);
         $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()

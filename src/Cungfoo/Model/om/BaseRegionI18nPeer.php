@@ -17,7 +17,7 @@ use Cungfoo\Model\map\RegionI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'region_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -37,13 +37,13 @@ abstract class BaseRegionI18nPeer
     const TM_CLASS = 'RegionI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'region_i18n.ID';
@@ -53,6 +53,9 @@ abstract class BaseRegionI18nPeer
 
     /** the column name for the NAME field */
     const NAME = 'region_i18n.NAME';
+
+    /** the column name for the INTRODUCTION field */
+    const INTRODUCTION = 'region_i18n.INTRODUCTION';
 
     /** the column name for the DESCRIPTION field */
     const DESCRIPTION = 'region_i18n.DESCRIPTION';
@@ -76,12 +79,12 @@ abstract class BaseRegionI18nPeer
      * e.g. RegionI18nPeer::$fieldNames[RegionI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', ),
-        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID, RegionI18nPeer::LOCALE, RegionI18nPeer::NAME, RegionI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Introduction', 'Description', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'introduction', 'description', ),
+        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID, RegionI18nPeer::LOCALE, RegionI18nPeer::NAME, RegionI18nPeer::INTRODUCTION, RegionI18nPeer::DESCRIPTION, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'INTRODUCTION', 'DESCRIPTION', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'introduction', 'description', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -91,12 +94,12 @@ abstract class BaseRegionI18nPeer
      * e.g. RegionI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
-        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID => 0, RegionI18nPeer::LOCALE => 1, RegionI18nPeer::NAME => 2, RegionI18nPeer::DESCRIPTION => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Introduction' => 3, 'Description' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'introduction' => 3, 'description' => 4, ),
+        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID => 0, RegionI18nPeer::LOCALE => 1, RegionI18nPeer::NAME => 2, RegionI18nPeer::INTRODUCTION => 3, RegionI18nPeer::DESCRIPTION => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'INTRODUCTION' => 3, 'DESCRIPTION' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'introduction' => 3, 'description' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -173,11 +176,13 @@ abstract class BaseRegionI18nPeer
             $criteria->addSelectColumn(RegionI18nPeer::ID);
             $criteria->addSelectColumn(RegionI18nPeer::LOCALE);
             $criteria->addSelectColumn(RegionI18nPeer::NAME);
+            $criteria->addSelectColumn(RegionI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(RegionI18nPeer::DESCRIPTION);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.INTRODUCTION');
             $criteria->addSelectColumn($alias . '.DESCRIPTION');
         }
     }
@@ -361,7 +366,7 @@ abstract class BaseRegionI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -371,7 +376,7 @@ abstract class BaseRegionI18nPeer
     {
         RegionI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to region_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -414,7 +419,7 @@ abstract class BaseRegionI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -425,7 +430,7 @@ abstract class BaseRegionI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = RegionI18nPeer::getOMClass();
         // populate the object(s)
@@ -919,7 +924,7 @@ abstract class BaseRegionI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             RegionI18nPeer::clearRelatedInstancePool();
             $con->commit();

@@ -17,7 +17,7 @@ use Cungfoo\Model\map\TopCampingTableMap;
 /**
  * Base static class for performing query and update operations on the 'top_camping' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -70,7 +70,7 @@ abstract class BaseTopCampingPeer
 
 
     // sortable behavior
-    
+
     /**
      * rank column
      */
@@ -368,7 +368,7 @@ abstract class BaseTopCampingPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -378,7 +378,7 @@ abstract class BaseTopCampingPeer
     {
         TopCampingPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to top_camping
      * by a foreign key with ON DELETE CASCADE
@@ -421,7 +421,7 @@ abstract class BaseTopCampingPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -432,7 +432,7 @@ abstract class BaseTopCampingPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = TopCampingPeer::getOMClass();
         // populate the object(s)
@@ -914,7 +914,7 @@ abstract class BaseTopCampingPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TopCampingPeer::clearRelatedInstancePool();
             $con->commit();
@@ -1017,10 +1017,10 @@ abstract class BaseTopCampingPeer
     }
 
     // sortable behavior
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -1034,10 +1034,10 @@ abstract class BaseTopCampingPeer
         $c = new Criteria();
         $c->addSelectColumn('MAX(' . TopCampingPeer::RANK_COL . ')');
         $stmt = TopCampingPeer::doSelectStmt($c, $con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -1051,13 +1051,13 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $c = new Criteria;
         $c->add(TopCampingPeer::RANK_COL, $rank);
-    
+
         return TopCampingPeer::doSelectOne($c, $con);
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -1073,7 +1073,7 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -1086,14 +1086,14 @@ abstract class BaseTopCampingPeer
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Return an array of sortable objects ordered by position
      *
@@ -1108,24 +1108,24 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         if ($criteria === null) {
             $criteria = new Criteria();
         } elseif ($criteria instanceof Criteria) {
             $criteria = clone $criteria;
         }
-    
+
         $criteria->clearOrderByColumns();
-    
+
         if ($order == Criteria::ASC) {
             $criteria->addAscendingOrderByColumn(TopCampingPeer::RANK_COL);
         } else {
             $criteria->addDescendingOrderByColumn(TopCampingPeer::RANK_COL);
         }
-    
+
         return TopCampingPeer::doSelect($criteria, $con);
     }
-    
+
     /**
      * Adds $delta to all Rank values that are >= $first and <= $last.
      * '$delta' can also be negative.
@@ -1140,17 +1140,17 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
-    
+
         $whereCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
         $criterion = $whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         if (null !== $last) {
             $criterion->addAnd($whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
         }
         $whereCriteria->add($criterion);
-    
+
         $valuesCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
         $valuesCriteria->add(TopCampingPeer::RANK_COL, array('raw' => TopCampingPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
-    
+
         BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
         TopCampingPeer::clearInstancePool();
     }
