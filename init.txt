@@ -1,0 +1,13 @@
+Rajouter le chemin 
+
+D:\wamp\bin\mysql\mysql5.5.24\bin 
+
+dans le path Windows (touche Windows + Pause > Variables d'environnement > Variables Système) 
+pour avoir accès aux commandes SQL depuis la console Git.
+
+
+Redémarrer Wamp
+
+
+Depuis la console Git,
+en cas d'erreur (SQL, Propel, Vendor, ...), lancer la commance init.cmd
