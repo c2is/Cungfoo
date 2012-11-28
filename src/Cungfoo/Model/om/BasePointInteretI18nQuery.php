@@ -25,10 +25,12 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PointInteretI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method PointInteretI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method PointInteretI18nQuery orderByPresentation($order = Criteria::ASC) Order by the presentation column
  *
  * @method PointInteretI18nQuery groupById() Group by the id column
  * @method PointInteretI18nQuery groupByLocale() Group by the locale column
  * @method PointInteretI18nQuery groupByName() Group by the name column
+ * @method PointInteretI18nQuery groupByPresentation() Group by the presentation column
  *
  * @method PointInteretI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PointInteretI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +46,12 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18n findOneById(int $id) Return the first PointInteretI18n filtered by the id column
  * @method PointInteretI18n findOneByLocale(string $locale) Return the first PointInteretI18n filtered by the locale column
  * @method PointInteretI18n findOneByName(string $name) Return the first PointInteretI18n filtered by the name column
+ * @method PointInteretI18n findOneByPresentation(string $presentation) Return the first PointInteretI18n filtered by the presentation column
  *
  * @method array findById(int $id) Return PointInteretI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PointInteretI18n objects filtered by the locale column
  * @method array findByName(string $name) Return PointInteretI18n objects filtered by the name column
+ * @method array findByPresentation(string $presentation) Return PointInteretI18n objects filtered by the presentation column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +142,7 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `point_interet_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `PRESENTATION` FROM `point_interet_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +328,35 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the presentation column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPresentation('fooValue');   // WHERE presentation = 'fooValue'
+     * $query->filterByPresentation('%fooValue%'); // WHERE presentation LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $presentation The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretI18nQuery The current query, for fluid interface
+     */
+    public function filterByPresentation($presentation = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($presentation)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $presentation)) {
+                $presentation = str_replace('*', '%', $presentation);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretI18nPeer::PRESENTATION, $presentation, $comparison);
     }
 
     /**
