@@ -1,3 +1,6 @@
+# sera peut-être utilisé pour faire le lien entre les campings et les régions
+# actuellement, pour récupérer les campings d'une réégion, on récupère les viles de la région, et les campings de ces villes
+# cette liste d'identifiants fait la correspondance entre les IDs Resalys et Viafrance, pour éventuellement récupérer la "vraie" région d'un camping avec une requête à viafrance
 regions:
   ALP:
     departement: '73,74'

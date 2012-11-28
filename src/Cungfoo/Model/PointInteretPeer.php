@@ -51,4 +51,43 @@ class PointInteretPeer extends BasePointInteretPeer
             ->count()
         ;
     }
+
+    static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->filterByRegion($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForRegion(Region $region)
+    {
+        return PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->filterByRegion($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+            ->count()
+            ;
+    }
 }

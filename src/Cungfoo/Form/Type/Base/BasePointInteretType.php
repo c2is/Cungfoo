@@ -114,6 +114,13 @@ class BasePointInteretType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'presentation' => array(
+                    'required' => false,
+                    'label' => 'point_interet.presentation',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

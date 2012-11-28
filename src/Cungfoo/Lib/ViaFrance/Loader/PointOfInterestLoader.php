@@ -76,6 +76,7 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setGeoCoordinateY($place->attributes()->{'Y'})
                 ->setDistanceCamping($place->attributes()->{'DistanceXY'})
                 ->setImage($place->{'Image'})
+                ->setPresentation($place->{'Presentation'})
             ;
         }
         else
@@ -85,11 +86,13 @@ class PointOfInterestLoader extends AbstractLoader
                 return null;
             }
 
-            $defaultName = $poi->getName();
+            $defaultName            = $poi->getName();
+            $defaultPresentation    = $poi->getPresentation();
 
             $poi
                 ->setLocale($language)
                 ->setName(($place->{'Name'}) ? $place->{'Name'} : $defaultName)
+                ->setName(($place->{'Presentation'}) ? $place->{'Presentation'} : $defaultPresentation)
             ;
         }
 

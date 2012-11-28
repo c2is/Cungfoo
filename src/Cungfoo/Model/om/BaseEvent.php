@@ -2626,6 +2626,30 @@ abstract class BaseEvent extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [subtitle] column value.
+         *
+         * @return string
+         */
+        public function getSubtitle()
+        {
+        return $this->getCurrentTranslation()->getSubtitle();
+    }
+
+
+        /**
+         * Set the value of [subtitle] column.
+         *
+         * @param string $v new value
+         * @return EventI18n The current object (for fluent API support)
+         */
+        public function setSubtitle($v)
+        {    $this->getCurrentTranslation()->setSubtitle($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

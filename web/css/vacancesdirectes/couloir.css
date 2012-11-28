@@ -519,26 +519,20 @@ body {
 #stepNav ul li.tab.current span {
   text-decoration: none;
 }
-.aRoom,
-.proposal {
+.radiusBox {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   padding: 15px 20px;
   margin: 15px 0;
   position: relative;
 }
-.aRoom.aRoom,
-.proposal.aRoom {
+.radiusBox.greyC {
   background-color: #e6e5e5;
+  color: #464545;
 }
-.aRoom.proposal,
-.proposal.proposal {
+.radiusBox.fushia {
   background-color: #ed145b;
   color: #ffffff;
-}
-.aRoom.proposal input,
-.proposal.proposal input {
-  width: 200px;
 }
 #authentication {
   -webkit-border-radius: 10px;
@@ -596,6 +590,13 @@ body {
 #authentication > div #newCustomerLayer .aField {
   margin-bottom: 10px;
 }
+#authentication > div #existingCustomerLayer input,
+#authentication > div #newCustomerLayer input,
+#authentication > div #existingCustomerLayer textarea,
+#authentication > div #newCustomerLayer textarea {
+  font: bold 12px Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+}
 #authentication > div #existingCustomerLayer .label,
 #authentication > div #newCustomerLayer .label {
   font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -640,6 +641,7 @@ body {
 }
 #authentication > div #newCustomerLayer .label {
   width: 130px;
+  padding-top: 3px;
 }
 #authentication > div #newCustomerLayer #newAccount .aField {
   width: 480px;
@@ -650,6 +652,7 @@ body {
 #authentication > div #newCustomerLayer #address td {
   display: inline-block;
   margin-bottom: 10px;
+  float: left;
 }
 #authentication > div #newCustomerLayer #address td:last-child input {
   margin-right: 0;
@@ -663,6 +666,14 @@ body {
   width: 141px;
   height: 81px;
 }
+#authentication > div #newCustomerLayer #address .rsl-date-input {
+  position: relative;
+}
+#authentication > div #newCustomerLayer #address .rsl-date-input #date_sRowID_link {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
 #authentication > div #existingCustomerLayer .aField {
   width: 480px;
   float: left;
@@ -675,6 +686,153 @@ body {
 }
 #authentication > div #existingCustomerLayer .loginLink {
   float: right;
+}
+#reservation h2 {
+  color: #8c8a8a;
+  text-transform: uppercase;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  height: 40px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 40px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation h2 > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation h2 > img {
+  vertical-align: middle;
+}
+#reservation h2 small {
+  font: bold 17px Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+#reservation .price {
+  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+}
+#reservation .changeOccupantCount {
+  height: auto;
+  background-color: #464545;
+  padding: 10px 5px 0;
+  margin-bottom: 15px;
+}
+#reservation .changeOccupantCount > span {
+  margin: 0 5px 10px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  font: bold 17px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: inline-block;
+}
+#reservation .changeOccupantCount > span > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .changeOccupantCount > span > img {
+  vertical-align: middle;
+}
+#reservation .label {
+  font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+  display: inline-block;
+}
+#reservation .aRoom .addAction {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#reservation .aRoom tr {
+  font-weight: bold;
+}
+#reservation .aRoom tr.productsNotSelectedYet {
+  font-weight: normal;
+}
+#reservation .aRoom tr td {
+  height: 21px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 21px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation .aRoom tr td > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom tr td > img {
+  vertical-align: middle;
+}
+#reservation .aRoom tr td .control_checkbox {
+  margin-top: 0;
+}
+#reservation .aRoom tr td .hiddenIfCheckbox {
+  display: none;
+}
+#reservation .aRoom .anOccupant h3 {
+  background-image: none !important;
+  background-color: #ed145b;
+  color: #ffffff;
+  height: 40px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 40px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation .aRoom .anOccupant h3 > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom .anOccupant h3 > img {
+  vertical-align: middle;
+}
+#reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation .aRoom .anOccupant h3 .occupantHeaderLeft > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img {
+  vertical-align: middle;
+}
+#reservation .aRoom .anOccupant h3 .occupantHeaderLeft small {
+  font: bold 17px Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+#reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before {
+  content: "";
+  width: 20px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;
 }
 /* packages */
 #footerContener {
@@ -725,7 +883,6 @@ body {
 }
 #footerContener .footerNavigation.droite a {
   background-image: none;
-  padding-right: 25px;
   background-color: #ed145b;
 }
 #footerContener .footerNavigation.pageListe {
@@ -775,139 +932,271 @@ input[type="radio"] {
   height: auto;
 }
 /* Stylish Select 0.4.9 */
+#newCustomerLayer .SSContainerDivWrapper {
+  min-width: 141px;
+}
+#newCustomerLayer ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#newCustomerLayer ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#newCustomerLayer ul.newList a > img {
+  vertical-align: middle;
+}
+#newCustomerLayer .newListSelected {
+  width: 141px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+#newCustomerLayer .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#newCustomerLayer .newListSelected > img {
+  vertical-align: middle;
+}
+#newCustomerLayer .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
+}
+#newCustomerLayer .selectedTxt {
+  width: 107px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#newCustomerLayer .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#newCustomerLayer .selectedTxt > img {
+  vertical-align: middle;
+}
+#reservation .SSContainerDivWrapper {
+  min-width: 54px;
+}
+#reservation ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation ul.newList a > img {
+  vertical-align: middle;
+}
+#reservation .newListSelected {
+  width: 54px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 10px;
+}
+#reservation .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .newListSelected > img {
+  vertical-align: middle;
+}
+#reservation .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
+}
+#reservation .selectedTxt {
+  width: 20px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#reservation .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .selectedTxt > img {
+  vertical-align: middle;
+}
 .stylish-select .SSContainerDivWrapper {
   left: -9999px;
 }
-/* Vacances directes select style */
-.stylish-select .SSContainerDivWrapper {
+/*
+* Vacances directes select style
+---------------------------------------------------------*/
+.SSContainerDivWrapper {
   margin: 0;
   padding: 0;
-  min-width: 125px;
   position: absolute;
   top: 22px;
   left: 0;
   z-index: 2;
 }
-.stylish-select ul.newList {
+ul.newList {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: #464545;
   background: #fff;
   border: 1px solid #ccc;
   overflow: auto;
 }
-.stylish-select ul.newList * {
+ul.newList * {
   margin: 0;
   padding: 0;
 }
-.stylish-select ul.newList a {
+ul.newList a {
+  color: #464545;
   text-decoration: none;
   display: block;
   padding: 0 8px;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
   white-space: nowrap;
+  cursor: pointer;
 }
-.stylish-select ul.newList a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select ul.newList a > img {
-  vertical-align: middle;
-}
-.stylish-select .newListSelected {
-  width: 125px;
-  height: 23px;
+.newListSelected {
   float: left;
-  margin-right: 10px;
   background-color: #e6e5e5;
   position: relative;
-  height: 23px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 23px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
 }
-.stylish-select .newListSelected > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-.stylish-select .newListSelected > img {
-  vertical-align: middle;
-}
-.stylish-select .newListSelected .selectedTxt:after {
+.newListSelected .selectedTxt:after {
   content: "";
-  width: 27px;
-  height: 23px;
   display: block;
-  background: url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;
   position: absolute;
   top: 0;
   right: 0;
 }
-.stylish-select .newListSelected * {
+.newListSelected * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+  cursor: pointer;
 }
-.stylish-select ul.newList li a:focus {
+ul.newList li a:focus {
   -moz-outline-style: none;
 }
-.stylish-select .selectedTxt {
-  width: 97px;
+.selectedTxt {
   overflow: hidden;
-  padding: 0 23px 0 5px;
   position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0;
+  background-color: #ffffff;
 }
-.stylish-select .hiLite {
-  background: #ed145b !important;
-  color: #fff!important;
+ul.newList li:first-child {
+  display: none;
 }
-.stylish-select .newListHover {
-  background-color: #ccc!important;
-  color: #000!important;
-  cursor: default;
+ul.newList.optGroup li a {
+  padding: 0 8px 0 18px;
 }
-.stylish-select .newListDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListOptionDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.stylish-select .newListSelHover,
-.stylish-select .newListSelFocus {
-  cursor: default;
-}
-.stylish-select .newListSelHover .selectedTxt:after,
-.stylish-select .newListSelFocus .selectedTxt:after {
-  background-position: 0 -46px;
-}
-.stylish-select .newListOptionTitle {
+ul.newList.optGroup li.optGroup-like a {
+  padding: 0 8px;
   font-weight: bold;
 }
-.stylish-select .newListOptionTitle ul {
+.hiLite {
+  background: #ED145B!important;
+  color: #fff!important;
+}
+.newListHover {
+  background-color: #ccc!important;
+  color: #464545 !important;
+  cursor: default;
+}
+.newListDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.newListItemDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.newListOptionDisabled {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.newListSelHover,
+.newListSelFocus {
+  cursor: default;
+}
+.newListOptionTitle {
+  font-weight: bold;
+}
+.newListOptionTitle ul {
   margin: 3px 0 0;
 }
-.stylish-select .newListOptionTitle li {
+.newListOptionTitle li {
   font-weight: normal;
+}
+.newListSelected {
+  font: bold 12px/27px Arial, Helvetica, sans-serif;
+  color: #464545;
+  color: #8c8a8a;
+}
+.newListSelected .SSContainerDivWrapper .newListHover {
+  background-color: #ccc!important;
+  color: #464545 !important;
+}
+.newListSelected .SSContainerDivWrapper ul.newList li a {
+  background-color: #ffffff;
+  color: #8c8a8a;
+}
+.newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
+  background-color: #8c8a8a;
+  color: #ffffff;
+}
+.newListSelected .SSContainerDivWrapper ul.newList li a.newListHover {
+  background-color: #e6e5e5 !important;
+  color: #464545 !important;
+}
+.newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover {
+  background-color: #464545 !important;
+  color: #ffffff !important;
 }
