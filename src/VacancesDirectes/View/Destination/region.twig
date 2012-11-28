@@ -1,5 +1,17 @@
 {% extends "base.twig" %}
 
 {% block leftColumn %}
-    
+    {# Bloc titre + accroche + picto #}
+    {{region.name}} {# Titre ; dans la maquette, "LA BRETAGNE" #}
+    {{region.introduction}} {# Accroche ; dans la maquette, "LE GRAND AIR, CA VOUS GAGNE !" #}
+    {{region.description}} {# Description #}
+    <img src="{{asset(region.imagePath)}}" /> {# Picto région #}
+
+
+    {# Bloc POIs #}
+    {% for poi in sitesAVisiter %}
+        <img src="{% event.name %}" />
+        {% event.name %}
+        {% event.name %}
+    {% endfor %}
 {% endblock %}
