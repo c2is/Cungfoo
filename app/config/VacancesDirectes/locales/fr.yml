@@ -166,3 +166,24 @@ footer.newsletter.desc: Retrouvez les bons plans et les nouvelles offres Vacance
 footer.newsletter.entrer_son_email: ENTRER SON E-MAIL
 footer.site_mobile: Site mobile
 footer.site_mobile.desc: Retrouvez toutes les offres de Vacances Directes sur votre mobile.
+
+destination.retour: Retour
+destination.prefixe_titre: Vacances
+destination.suffixe_titre: en camping pas cher
+destination.pois_all: Tous les lieux
+destination.events_title: En ce moment
+destination.events_prefixe_subtitle: En
+destination.events_suffixe_subtitle: ...
+destination.campings_selection_title: Notre sélection de campings
+
+encart_vacances_directes.title: Vacances directes
+encart_vacances_directes.subtitle: Un séjour réussi
+encart_vacances_directes.item_1: Des ambassadeurs pour vous accueillir
+encart_vacances_directes.item_2: Un call center pour répondre à vos besoins
+encart_vacances_directes.item_2: Un site 100ù sécurisé
+encart_vacances_directes.item_2: Mobil-home sélection des plus grandes marques
+
+encart_informations.title: Informations & Réservations au
+encart_informations.price: (0,15 €/min)
+encart_informations.dates_1: Du lundi au vendredi de 9h-21h
+encart_informations.dates_2: Samedi de 10h - 18h

@@ -2492,6 +2492,30 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [presentation] column value.
+         *
+         * @return string
+         */
+        public function getPresentation()
+        {
+        return $this->getCurrentTranslation()->getPresentation();
+    }
+
+
+        /**
+         * Set the value of [presentation] column.
+         *
+         * @param string $v new value
+         * @return PointInteretI18n The current object (for fluent API support)
+         */
+        public function setPresentation($v)
+        {    $this->getCurrentTranslation()->setPresentation($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

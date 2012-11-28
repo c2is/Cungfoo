@@ -133,6 +133,13 @@ class BaseEventType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'subtitle' => array(
+                    'required' => false,
+                    'label' => 'event.subtitle',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));
