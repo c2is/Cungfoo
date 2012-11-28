@@ -15,15 +15,15 @@ class DestinationPaysController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{paysSlug}', function ($paysSlug) use ($app)
+        $controllers->match('/{codeResalys}', function ($codeResalys) use ($app)
         {
             $locale = $app['context']->get('language');
 
-            return $app['twig']->render('Destination/pays.twig', array(
+            return $app['twig']->render('Destination/detail.twig', array(
                 'locale' => $locale,
             ));
         })
-        ->bind('destination-pays');
+        ->bind('destination_pays');
 
         return $controllers;
     }
