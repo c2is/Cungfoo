@@ -2,7 +2,9 @@
 
 namespace VacancesDirectes\Controller;
 
-use Cungfoo\Model\RegionQuery;
+use Cungfoo\Model\RegionQuery,
+    Cungfoo\Model\PointInteretPeer,
+    Cungfoo\Model\EventPeer;
 
 use Silex\Application,
     Silex\ControllerCollection,
@@ -27,12 +29,12 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 4);
-            $events        = EventPeer::getForRegion($region, EventPeer::RANDOM_SORT, 4);
+            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
+            $events        = EventPeer::getForRegion($region, EventPeer::RANDOM_SORT, 5);
 
-            return $app['twig']->render('Destination/detail.twig', array(
+            return $app['twig']->render('Destination/region.twig', array(
                 'locale'        => $locale,
-                'item'          => $region,
+                'region'          => $region,
                 'sitesAVisiter' => $sitesAVisiter,
                 'events'        => $events,
             ));

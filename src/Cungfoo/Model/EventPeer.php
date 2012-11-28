@@ -72,4 +72,40 @@ class EventPeer extends BaseEventPeer
 
         return $query->count();
     }
+
+    static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->useEtablissementEventQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->filterByRegion($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        switch ($sort)
+        {
+            case self::RANDOM_SORT:
+                $query->addAscendingOrderByColumn('RAND()');
+                break;
+
+            case self::SORT_BY_PRIORITY:
+                $query->orderByPriority(\Criteria::ASC);
+                break;
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
 }
