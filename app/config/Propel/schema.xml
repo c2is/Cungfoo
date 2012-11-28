@@ -309,7 +309,6 @@
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
         <column name="mea_home" type="boolean" />
-        <column name="code_viafrance" type="varchar" />
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
@@ -334,7 +333,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="code_viafrance" type="varchar" />
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />

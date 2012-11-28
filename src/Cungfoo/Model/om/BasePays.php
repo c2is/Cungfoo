@@ -64,12 +64,6 @@ abstract class BasePays extends BaseObject implements Persistent
     protected $code;
 
     /**
-     * The value for the code_viafrance field.
-     * @var        string
-     */
-    protected $code_viafrance;
-
-    /**
      * The value for the image_detail_1 field.
      * @var        string
      */
@@ -191,16 +185,6 @@ abstract class BasePays extends BaseObject implements Persistent
     public function getCode()
     {
         return $this->code;
-    }
-
-    /**
-     * Get the [code_viafrance] column value.
-     *
-     * @return string
-     */
-    public function getCodeViafrance()
-    {
-        return $this->code_viafrance;
     }
 
     /**
@@ -348,27 +332,6 @@ abstract class BasePays extends BaseObject implements Persistent
 
         return $this;
     } // setCode()
-
-    /**
-     * Set the value of [code_viafrance] column.
-     *
-     * @param string $v new value
-     * @return Pays The current object (for fluent API support)
-     */
-    public function setCodeViafrance($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->code_viafrance !== $v) {
-            $this->code_viafrance = $v;
-            $this->modifiedColumns[] = PaysPeer::CODE_VIAFRANCE;
-        }
-
-
-        return $this;
-    } // setCodeViafrance()
 
     /**
      * Set the value of [image_detail_1] column.
@@ -525,12 +488,11 @@ abstract class BasePays extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->code_viafrance = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_detail_1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->image_detail_2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->image_detail_1 = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->image_detail_2 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -539,7 +501,7 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = PaysPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = PaysPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Pays object", $e);
@@ -807,9 +769,6 @@ abstract class BasePays extends BaseObject implements Persistent
         if ($this->isColumnModified(PaysPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
-        if ($this->isColumnModified(PaysPeer::CODE_VIAFRANCE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE_VIAFRANCE`';
-        }
         if ($this->isColumnModified(PaysPeer::IMAGE_DETAIL_1)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_1`';
         }
@@ -841,9 +800,6 @@ abstract class BasePays extends BaseObject implements Persistent
                         break;
                     case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
-                        break;
-                    case '`CODE_VIAFRANCE`':
-                        $stmt->bindValue($identifier, $this->code_viafrance, PDO::PARAM_STR);
                         break;
                     case '`IMAGE_DETAIL_1`':
                         $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
@@ -1017,21 +973,18 @@ abstract class BasePays extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getCodeViafrance();
-                break;
-            case 3:
                 return $this->getImageDetail1();
                 break;
-            case 4:
+            case 3:
                 return $this->getImageDetail2();
                 break;
-            case 5:
+            case 4:
                 return $this->getCreatedAt();
                 break;
-            case 6:
+            case 5:
                 return $this->getUpdatedAt();
                 break;
-            case 7:
+            case 6:
                 return $this->getEnabled();
                 break;
             default:
@@ -1065,12 +1018,11 @@ abstract class BasePays extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getCodeViafrance(),
-            $keys[3] => $this->getImageDetail1(),
-            $keys[4] => $this->getImageDetail2(),
-            $keys[5] => $this->getCreatedAt(),
-            $keys[6] => $this->getUpdatedAt(),
-            $keys[7] => $this->getEnabled(),
+            $keys[2] => $this->getImageDetail1(),
+            $keys[3] => $this->getImageDetail2(),
+            $keys[4] => $this->getCreatedAt(),
+            $keys[5] => $this->getUpdatedAt(),
+            $keys[6] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collRegions) {
@@ -1120,21 +1072,18 @@ abstract class BasePays extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setCodeViafrance($value);
-                break;
-            case 3:
                 $this->setImageDetail1($value);
                 break;
-            case 4:
+            case 3:
                 $this->setImageDetail2($value);
                 break;
-            case 5:
+            case 4:
                 $this->setCreatedAt($value);
                 break;
-            case 6:
+            case 5:
                 $this->setUpdatedAt($value);
                 break;
-            case 7:
+            case 6:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1163,12 +1112,11 @@ abstract class BasePays extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCodeViafrance($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImageDetail1($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImageDetail2($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
+        if (array_key_exists($keys[2], $arr)) $this->setImageDetail1($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setImageDetail2($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
     }
 
     /**
@@ -1182,7 +1130,6 @@ abstract class BasePays extends BaseObject implements Persistent
 
         if ($this->isColumnModified(PaysPeer::ID)) $criteria->add(PaysPeer::ID, $this->id);
         if ($this->isColumnModified(PaysPeer::CODE)) $criteria->add(PaysPeer::CODE, $this->code);
-        if ($this->isColumnModified(PaysPeer::CODE_VIAFRANCE)) $criteria->add(PaysPeer::CODE_VIAFRANCE, $this->code_viafrance);
         if ($this->isColumnModified(PaysPeer::IMAGE_DETAIL_1)) $criteria->add(PaysPeer::IMAGE_DETAIL_1, $this->image_detail_1);
         if ($this->isColumnModified(PaysPeer::IMAGE_DETAIL_2)) $criteria->add(PaysPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(PaysPeer::CREATED_AT)) $criteria->add(PaysPeer::CREATED_AT, $this->created_at);
@@ -1252,7 +1199,6 @@ abstract class BasePays extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
-        $copyObj->setCodeViafrance($this->getCodeViafrance());
         $copyObj->setImageDetail1($this->getImageDetail1());
         $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -1772,7 +1718,6 @@ abstract class BasePays extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
-        $this->code_viafrance = null;
         $this->image_detail_1 = null;
         $this->image_detail_2 = null;
         $this->created_at = null;

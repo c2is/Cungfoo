@@ -31,7 +31,6 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery orderByImageEncartPetitePath($order = Criteria::ASC) Order by the image_encart_petite_path column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
  * @method RegionQuery orderByMeaHome($order = Criteria::ASC) Order by the mea_home column
- * @method RegionQuery orderByCodeViafrance($order = Criteria::ASC) Order by the code_viafrance column
  * @method RegionQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
  * @method RegionQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -45,7 +44,6 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery groupByImageEncartPetitePath() Group by the image_encart_petite_path column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
  * @method RegionQuery groupByMeaHome() Group by the mea_home column
- * @method RegionQuery groupByCodeViafrance() Group by the code_viafrance column
  * @method RegionQuery groupByImageDetail1() Group by the image_detail_1 column
  * @method RegionQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
@@ -77,7 +75,6 @@ use Cungfoo\Model\Ville;
  * @method Region findOneByImageEncartPetitePath(string $image_encart_petite_path) Return the first Region filtered by the image_encart_petite_path column
  * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
  * @method Region findOneByMeaHome(boolean $mea_home) Return the first Region filtered by the mea_home column
- * @method Region findOneByCodeViafrance(string $code_viafrance) Return the first Region filtered by the code_viafrance column
  * @method Region findOneByImageDetail1(string $image_detail_1) Return the first Region filtered by the image_detail_1 column
  * @method Region findOneByImageDetail2(string $image_detail_2) Return the first Region filtered by the image_detail_2 column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
@@ -91,7 +88,6 @@ use Cungfoo\Model\Ville;
  * @method array findByImageEncartPetitePath(string $image_encart_petite_path) Return Region objects filtered by the image_encart_petite_path column
  * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
  * @method array findByMeaHome(boolean $mea_home) Return Region objects filtered by the mea_home column
- * @method array findByCodeViafrance(string $code_viafrance) Return Region objects filtered by the code_viafrance column
  * @method array findByImageDetail1(string $image_detail_1) Return Region objects filtered by the image_detail_1 column
  * @method array findByImageDetail2(string $image_detail_2) Return Region objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
@@ -200,7 +196,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `CODE_VIAFRANCE`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -500,35 +496,6 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::MEA_HOME, $meaHome, $comparison);
-    }
-
-    /**
-     * Filter the query on the code_viafrance column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByCodeViafrance('fooValue');   // WHERE code_viafrance = 'fooValue'
-     * $query->filterByCodeViafrance('%fooValue%'); // WHERE code_viafrance LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $codeViafrance The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByCodeViafrance($codeViafrance = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($codeViafrance)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $codeViafrance)) {
-                $codeViafrance = str_replace('*', '%', $codeViafrance);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::CODE_VIAFRANCE, $codeViafrance, $comparison);
     }
 
     /**

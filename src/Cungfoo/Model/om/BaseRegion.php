@@ -96,12 +96,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $mea_home;
 
     /**
-     * The value for the code_viafrance field.
-     * @var        string
-     */
-    protected $code_viafrance;
-
-    /**
      * The value for the image_detail_1 field.
      * @var        string
      */
@@ -278,16 +272,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getMeaHome()
     {
         return $this->mea_home;
-    }
-
-    /**
-     * Get the [code_viafrance] column value.
-     *
-     * @return string
-     */
-    public function getCodeViafrance()
-    {
-        return $this->code_viafrance;
     }
 
     /**
@@ -554,27 +538,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setMeaHome()
 
     /**
-     * Set the value of [code_viafrance] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setCodeViafrance($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->code_viafrance !== $v) {
-            $this->code_viafrance = $v;
-            $this->modifiedColumns[] = RegionPeer::CODE_VIAFRANCE;
-        }
-
-
-        return $this;
-    } // setCodeViafrance()
-
-    /**
      * Set the value of [image_detail_1] column.
      *
      * @param string $v new value
@@ -734,12 +697,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->image_encart_petite_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->pays_id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
             $this->mea_home = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
-            $this->code_viafrance = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->image_detail_1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->image_detail_2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->enabled = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
+            $this->image_detail_1 = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->image_detail_2 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->created_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->updated_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->enabled = ($row[$startcol + 11] !== null) ? (boolean) $row[$startcol + 11] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -748,7 +710,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 13; // 13 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -1047,9 +1009,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) {
             $modifiedColumns[':p' . $index++]  = '`MEA_HOME`';
         }
-        if ($this->isColumnModified(RegionPeer::CODE_VIAFRANCE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE_VIAFRANCE`';
-        }
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_1`';
         }
@@ -1096,9 +1055,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`MEA_HOME`':
                         $stmt->bindValue($identifier, (int) $this->mea_home, PDO::PARAM_INT);
-                        break;
-                    case '`CODE_VIAFRANCE`':
-                        $stmt->bindValue($identifier, $this->code_viafrance, PDO::PARAM_STR);
                         break;
                     case '`IMAGE_DETAIL_1`':
                         $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
@@ -1299,21 +1255,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getMeaHome();
                 break;
             case 7:
-                return $this->getCodeViafrance();
-                break;
-            case 8:
                 return $this->getImageDetail1();
                 break;
-            case 9:
+            case 8:
                 return $this->getImageDetail2();
                 break;
-            case 10:
+            case 9:
                 return $this->getCreatedAt();
                 break;
-            case 11:
+            case 10:
                 return $this->getUpdatedAt();
                 break;
-            case 12:
+            case 11:
                 return $this->getEnabled();
                 break;
             default:
@@ -1352,12 +1305,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $keys[4] => $this->getImageEncartPetitePath(),
             $keys[5] => $this->getPaysId(),
             $keys[6] => $this->getMeaHome(),
-            $keys[7] => $this->getCodeViafrance(),
-            $keys[8] => $this->getImageDetail1(),
-            $keys[9] => $this->getImageDetail2(),
-            $keys[10] => $this->getCreatedAt(),
-            $keys[11] => $this->getUpdatedAt(),
-            $keys[12] => $this->getEnabled(),
+            $keys[7] => $this->getImageDetail1(),
+            $keys[8] => $this->getImageDetail2(),
+            $keys[9] => $this->getCreatedAt(),
+            $keys[10] => $this->getUpdatedAt(),
+            $keys[11] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -1425,21 +1377,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setMeaHome($value);
                 break;
             case 7:
-                $this->setCodeViafrance($value);
-                break;
-            case 8:
                 $this->setImageDetail1($value);
                 break;
-            case 9:
+            case 8:
                 $this->setImageDetail2($value);
                 break;
-            case 10:
+            case 9:
                 $this->setCreatedAt($value);
                 break;
-            case 11:
+            case 10:
                 $this->setUpdatedAt($value);
                 break;
-            case 12:
+            case 11:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1473,12 +1422,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setImageEncartPetitePath($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setPaysId($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setMeaHome($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setCodeViafrance($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setImageDetail1($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setImageDetail2($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setEnabled($arr[$keys[12]]);
+        if (array_key_exists($keys[7], $arr)) $this->setImageDetail1($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setImageDetail2($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setCreatedAt($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setUpdatedAt($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setEnabled($arr[$keys[11]]);
     }
 
     /**
@@ -1497,7 +1445,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PETITE_PATH, $this->image_encart_petite_path);
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) $criteria->add(RegionPeer::PAYS_ID, $this->pays_id);
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) $criteria->add(RegionPeer::MEA_HOME, $this->mea_home);
-        if ($this->isColumnModified(RegionPeer::CODE_VIAFRANCE)) $criteria->add(RegionPeer::CODE_VIAFRANCE, $this->code_viafrance);
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) $criteria->add(RegionPeer::IMAGE_DETAIL_1, $this->image_detail_1);
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) $criteria->add(RegionPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
@@ -1572,7 +1519,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $copyObj->setImageEncartPetitePath($this->getImageEncartPetitePath());
         $copyObj->setPaysId($this->getPaysId());
         $copyObj->setMeaHome($this->getMeaHome());
-        $copyObj->setCodeViafrance($this->getCodeViafrance());
         $copyObj->setImageDetail1($this->getImageDetail1());
         $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2148,7 +2094,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->image_encart_petite_path = null;
         $this->pays_id = null;
         $this->mea_home = null;
-        $this->code_viafrance = null;
         $this->image_detail_1 = null;
         $this->image_detail_2 = null;
         $this->created_at = null;
