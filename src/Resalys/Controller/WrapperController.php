@@ -40,7 +40,15 @@ class WrapperController implements ControllerProviderInterface
             // get content of resalys modele
             $clientConfigurationFilename = sprintf('%s/app/config/Resalys/client.yml', $app['config']->get('root_dir'));
             $clientConfiguration = Yaml::parse($clientConfigurationFilename);
-            $iframe = file_get_contents(sprintf("%s?%s", $clientConfiguration['services']['modele']['location'], $this->request->getQueryString()));
+
+
+            $resalysUri = sprintf("%s?%s&%s",
+                $clientConfiguration['services']['modele']['location'],
+                $this->request->getQueryString(),
+                http_build_query($this->request->request->all())
+            );
+
+            $iframe = file_get_contents($resalysUri);
 
             // start replace functions
             $this->replaceC2isMarker($iframe);
@@ -153,6 +161,14 @@ eof
         $this->replaceBackButtonUri($iframe);
         $this->replaceWeekTimes($iframe);
         $this->replaceCampingFicheUri($iframe);
+
+        $resalysParameters = array('specificFiles' => $this->specificFiles);
+        $this->replaceString($iframe, '\/rsl\/clickbooking', $this->app['url_generator']->generate('resalys_wrapper', $resalysParameters, true));
+
+        if ($this->specificFiles == "couloir")
+        {
+            $this->replaceString($iframe, '{_c2is.proposalKey}', $this->request->get('proposal_key'));
+        }
 
         $this->replaceString($iframe, 'Choisir', 'Réserver');
         $this->replaceString($iframe, '<b><b>');
