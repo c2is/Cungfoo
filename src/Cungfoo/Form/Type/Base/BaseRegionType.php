@@ -86,12 +86,6 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.mea_home',
             'required' => false,
         ));
-        $builder->add('code_viafrance', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.code_viafrance',
-            'required' => false,
-        ));
         $builder->add('image_detail_1', 'cungfoo_file', array(
             'constraints' => array(
             ),

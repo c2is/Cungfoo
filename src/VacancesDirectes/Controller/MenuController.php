@@ -33,7 +33,9 @@ class MenuController implements ControllerProviderInterface
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
                 'etabByVilleOrder'          => $this->getEtablissementByVilleOrder($app['context']->get('language')),
                 'regionsByDestinations'     => $this->getRegionsByDestinations($app['context']->get('language')),
-                'regionsByForeignCountries' => $this->getRegionsByForeignCountries($app['context']->get('language')),
+                'regionEspagne' => $this->getRegionEspagne($app['context']->get('language')),
+                'regionItalie' => $this->getRegionItalie($app['context']->get('language')),
+                'regionPortugal' => $this->getRegionPortugal($app['context']->get('language')),
             ));
         })
         ->bind('menu_destinations');
@@ -144,26 +146,47 @@ class MenuController implements ControllerProviderInterface
         return $results;
     }
 
-    public function getRegionsByForeignCountries($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
+    public function getRegionEspagne($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
+        $results = array();
+
+        $arrayRegion = array('CTBR', 'CBRA', 'CAZA', 'CDOR');
+
+        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+
+        return $results;
+    }
+
+    public function getRegionItalie($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
+        $results = array();
+
+        $arrayRegion = array('IADR', 'IMED');
+
+        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+
+        return $results;
+    }
+
+    public function getRegionPortugal($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
+        $results = array();
+
+        $arrayRegion = array('CTRO');
+
+        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+
+        return $results;
+    }
+
+    public function getRegionsByForeignCountries($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null, $arrayRegion)
     {
         $results = array();
 
-        $pays = array(
-            'pays.espagne'  => array('CTBR', 'CBRA', 'CAZA', 'CDOR'),
-            'pays.italie'   => array('IADR', 'IMED'),
-            'pays.portugal' => array('CTRO'),
-        );
-
-        foreach ($pays as $label => $regions)
+        foreach ($arrayRegion as $region)
         {
-            foreach ($regions as $region)
-            {
-                $results[$label][] = \Cungfoo\Model\RegionQuery::create()
-                    ->filterByCode($region)
-                    ->joinWithI18n($locale)
-                    ->findOne()
-                ;
-            }
+            $results[] = \Cungfoo\Model\RegionQuery::create()
+                ->filterByCode($region)
+                ->joinWithI18n($locale)
+                ->findOne()
+            ;
         }
 
         return $results;
