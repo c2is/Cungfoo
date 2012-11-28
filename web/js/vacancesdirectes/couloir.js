@@ -12,13 +12,16 @@ $(function() {
     if(parentExists()){
         resize_myframe();
     }
-    if($('#authentication').length){
-        $('.authenticationChoice').click(function(e){
-            resize_myframe();
-        });
-        $('#returningCustomerYes').trigger("click");
-    }
 
+    if($('#newCustomerLayer').length){
+        $('#newCustomerLayer').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+        if($('#authentication').length){
+            $('.authenticationChoice').click(function(e){
+                resize_myframe();
+            });
+            $('#returningCustomerYes').trigger("click");
+        }
+    }
 
 
 });
