@@ -113,8 +113,11 @@ class CatalogueController implements ControllerProviderInterface
                 ->setType(CatalogueListing::CATALOGUE)
             ;
 
+            $listingContent = $list->process();
+
             return $app['twig']->render('Results\listing.twig', array(
-                'list' => $list->process(),
+                'list' => $listingContent,
+                'firstEtab' => reset($listingContent['element']),
                 'searchForm' => $searchEngine->getView(),
             ));
         })

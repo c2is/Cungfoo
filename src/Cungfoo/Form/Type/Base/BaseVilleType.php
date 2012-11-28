@@ -41,6 +41,32 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.region',
             'required' => false,
         ));
+        $builder->add('image_detail_1', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'ville.image_detail_1',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'ville.image_detail_1_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'ville.image_detail_2',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'ville.image_detail_2_deleted',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
@@ -63,6 +89,20 @@ class BaseVilleType extends AppAwareType
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'introduction' => array(
+                    'required' => false,
+                    'label' => 'ville.introduction',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'ville.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),

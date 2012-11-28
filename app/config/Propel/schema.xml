@@ -277,7 +277,11 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
         <column name="region_id" type="integer" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="region" onDelete="SETNULL">
@@ -285,11 +289,12 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/villes" />
+            <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
 
@@ -297,12 +302,16 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
         <column name="image_path" type="varchar" />
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
         <column name="mea_home" type="boolean" />
+        <column name="code_viafrance" type="varchar" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
@@ -310,12 +319,12 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,description" />
+            <parameter name="i18n_columns" value="name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
-            <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path" />
+            <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2" />
         </behavior>
     </table>
 
@@ -323,14 +332,20 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="code_viafrance" type="varchar" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/pays" />
+            <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
 

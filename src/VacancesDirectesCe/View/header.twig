@@ -10,7 +10,7 @@
 <h1><span>Bienvenue dans l’espace </span>partenaires</h1>
 
 {% if user %}
-<nav id="nav" class="clearboth">
+<nav id="stepNav" class="clearboth">
     <ul class="topnav fixed-width clear">
         <li class="tab{% if currentRoute in ['achat_achats', 'achat_panier', 'achat_confirmation_reservation', 'achat_recherche'] %} current{% endif %}"><a href="{{ path('achat_achats') }}">Achats</a></li>
         <li class="tab{% if currentRoute in ['reservation_panier', 'reservation_disponibilites', 'reservation_recherche', 'reservation_options', 'reservation_confirmation'] %} current{% endif %}"><a href="{{ path('reservation_recherche') }}">Réservations</a></li>

@@ -34,6 +34,38 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.code',
             'required' => false,
         ));
+        $builder->add('code_viafrance', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'pays.code_viafrance',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'pays.image_detail_1',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'pays.image_detail_1_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'pays.image_detail_2',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'pays.image_detail_2_deleted',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
@@ -56,6 +88,20 @@ class BasePaysType extends AppAwareType
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'introduction' => array(
+                    'required' => false,
+                    'label' => 'pays.introduction',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'pays.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),

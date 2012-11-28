@@ -39,13 +39,13 @@ abstract class BaseRegionPeer
     const TM_CLASS = 'RegionTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 10;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 10;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the ID field */
     const ID = 'region.ID';
@@ -67,6 +67,15 @@ abstract class BaseRegionPeer
 
     /** the column name for the MEA_HOME field */
     const MEA_HOME = 'region.MEA_HOME';
+
+    /** the column name for the CODE_VIAFRANCE field */
+    const CODE_VIAFRANCE = 'region.CODE_VIAFRANCE';
+
+    /** the column name for the IMAGE_DETAIL_1 field */
+    const IMAGE_DETAIL_1 = 'region.IMAGE_DETAIL_1';
+
+    /** the column name for the IMAGE_DETAIL_2 field */
+    const IMAGE_DETAIL_2 = 'region.IMAGE_DETAIL_2';
 
     /** the column name for the CREATED_AT field */
     const CREATED_AT = 'region.CREATED_AT';
@@ -103,12 +112,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[RegionPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'ImageEncartPath', 'ImageEncartPetitePath', 'PaysId', 'MeaHome', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'imageEncartPath', 'imageEncartPetitePath', 'paysId', 'meaHome', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::IMAGE_ENCART_PATH, RegionPeer::IMAGE_ENCART_PETITE_PATH, RegionPeer::PAYS_ID, RegionPeer::MEA_HOME, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, RegionPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'IMAGE_ENCART_PATH', 'IMAGE_ENCART_PETITE_PATH', 'PAYS_ID', 'MEA_HOME', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'image_encart_path', 'image_encart_petite_path', 'pays_id', 'mea_home', 'created_at', 'updated_at', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'ImageEncartPath', 'ImageEncartPetitePath', 'PaysId', 'MeaHome', 'CodeViafrance', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'imageEncartPath', 'imageEncartPetitePath', 'paysId', 'meaHome', 'codeViafrance', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::IMAGE_ENCART_PATH, RegionPeer::IMAGE_ENCART_PETITE_PATH, RegionPeer::PAYS_ID, RegionPeer::MEA_HOME, RegionPeer::CODE_VIAFRANCE, RegionPeer::IMAGE_DETAIL_1, RegionPeer::IMAGE_DETAIL_2, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, RegionPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'IMAGE_ENCART_PATH', 'IMAGE_ENCART_PETITE_PATH', 'PAYS_ID', 'MEA_HOME', 'CODE_VIAFRANCE', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'image_encart_path', 'image_encart_petite_path', 'pays_id', 'mea_home', 'code_viafrance', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -118,12 +127,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'ImageEncartPath' => 3, 'ImageEncartPetitePath' => 4, 'PaysId' => 5, 'MeaHome' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, 'Enabled' => 9, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'imageEncartPath' => 3, 'imageEncartPetitePath' => 4, 'paysId' => 5, 'meaHome' => 6, 'createdAt' => 7, 'updatedAt' => 8, 'enabled' => 9, ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::IMAGE_ENCART_PATH => 3, RegionPeer::IMAGE_ENCART_PETITE_PATH => 4, RegionPeer::PAYS_ID => 5, RegionPeer::MEA_HOME => 6, RegionPeer::CREATED_AT => 7, RegionPeer::UPDATED_AT => 8, RegionPeer::ENABLED => 9, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'IMAGE_ENCART_PATH' => 3, 'IMAGE_ENCART_PETITE_PATH' => 4, 'PAYS_ID' => 5, 'MEA_HOME' => 6, 'CREATED_AT' => 7, 'UPDATED_AT' => 8, 'ENABLED' => 9, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'image_encart_path' => 3, 'image_encart_petite_path' => 4, 'pays_id' => 5, 'mea_home' => 6, 'created_at' => 7, 'updated_at' => 8, 'enabled' => 9, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'ImageEncartPath' => 3, 'ImageEncartPetitePath' => 4, 'PaysId' => 5, 'MeaHome' => 6, 'CodeViafrance' => 7, 'ImageDetail1' => 8, 'ImageDetail2' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, 'Enabled' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'imageEncartPath' => 3, 'imageEncartPetitePath' => 4, 'paysId' => 5, 'meaHome' => 6, 'codeViafrance' => 7, 'imageDetail1' => 8, 'imageDetail2' => 9, 'createdAt' => 10, 'updatedAt' => 11, 'enabled' => 12, ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::IMAGE_ENCART_PATH => 3, RegionPeer::IMAGE_ENCART_PETITE_PATH => 4, RegionPeer::PAYS_ID => 5, RegionPeer::MEA_HOME => 6, RegionPeer::CODE_VIAFRANCE => 7, RegionPeer::IMAGE_DETAIL_1 => 8, RegionPeer::IMAGE_DETAIL_2 => 9, RegionPeer::CREATED_AT => 10, RegionPeer::UPDATED_AT => 11, RegionPeer::ENABLED => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'IMAGE_ENCART_PATH' => 3, 'IMAGE_ENCART_PETITE_PATH' => 4, 'PAYS_ID' => 5, 'MEA_HOME' => 6, 'CODE_VIAFRANCE' => 7, 'IMAGE_DETAIL_1' => 8, 'IMAGE_DETAIL_2' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, 'ENABLED' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'image_encart_path' => 3, 'image_encart_petite_path' => 4, 'pays_id' => 5, 'mea_home' => 6, 'code_viafrance' => 7, 'image_detail_1' => 8, 'image_detail_2' => 9, 'created_at' => 10, 'updated_at' => 11, 'enabled' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -204,6 +213,9 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn(RegionPeer::IMAGE_ENCART_PETITE_PATH);
             $criteria->addSelectColumn(RegionPeer::PAYS_ID);
             $criteria->addSelectColumn(RegionPeer::MEA_HOME);
+            $criteria->addSelectColumn(RegionPeer::CODE_VIAFRANCE);
+            $criteria->addSelectColumn(RegionPeer::IMAGE_DETAIL_1);
+            $criteria->addSelectColumn(RegionPeer::IMAGE_DETAIL_2);
             $criteria->addSelectColumn(RegionPeer::CREATED_AT);
             $criteria->addSelectColumn(RegionPeer::UPDATED_AT);
             $criteria->addSelectColumn(RegionPeer::ENABLED);
@@ -215,6 +227,9 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn($alias . '.IMAGE_ENCART_PETITE_PATH');
             $criteria->addSelectColumn($alias . '.PAYS_ID');
             $criteria->addSelectColumn($alias . '.MEA_HOME');
+            $criteria->addSelectColumn($alias . '.CODE_VIAFRANCE');
+            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_1');
+            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_2');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ENABLED');

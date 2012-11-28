@@ -2,8 +2,8 @@
 
 /* COMMON */
 .boxborder{margin:0 10px 5px;display:block;}
-  #wrap a{text-decoration:none;}
-  .fb-like{width:97px;height:20px;background:url("../../images/vacancesdirectes/dyn/ui/facebook-like-button.png") no-repeat 0 0 transparent;text-indent:-9999px;margin-top:7px;}
+#wrap a{text-decoration:none;}
+.element iframe{margin:5px 0 0 10px;}
 
 
 /* STRUCTURE */
@@ -13,12 +13,14 @@
 
   /* slider */
   #header{margin-bottom:261px;}
-  #sliderWrapper{overflow:hidden;padding-top:30px;width:100%;position:absolute;top:0;left:0;
+  #sliderWrapper{overflow:hidden;padding-top:30px;width:100%;position:absolute;top:0;left:0;height:500px;
     #sliderPrev,
-    #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(100px,15px);font:@arial 13px/15px @arial;color:@colorOrange;text-align:center;padding:0 15px;cursor:pointer;
-      .headline{font:bold 20px/22px @ptnarrow;text-transform:uppercase;margin-bottom:5px;}
-      .price{font:bold 20px/22px @arial;}
-      .duration{margin-top:-5px;}
+    #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(100px,15px);font:@arial 13px/15px @arial;color:@colorOrange;text-align:center;padding:0 5px;cursor:pointer;
+      .content{width:115px;
+        .headline{font:bold 20px/22px @ptnarrow;text-transform:uppercase;margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .price{font:bold 20px/22px @arial;}
+        .duration{margin-top:-5px;}
+      }
     }
     #sliderPrev{left:20px;
       &:before{content:"";background: url("../../images/vacancesdirectes/common/sprites/slider.png") 0 0px no-repeat transparent;position:absolute;left:0;top:50%;margin-top:-15px;margin-left:-12px;height:30px;width:12px;}
@@ -76,10 +78,11 @@
   }
 
 
-  .locationForwards{position:relative;margin-bottom:24px;
+  .locationForwards{position:relative;padding-bottom:35px;height:602px;
     .stamp{margin-bottom:25px;
       h2{._verticalCenter(40px);}
     }
+    &>.bt{position:absolute;bottom:15px;right:0;}
     h2{margin-left: 27px;position:relative;
       &:before{content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat transparent;width:40px;height:40px;position:absolute;top:0;left:-40px;}
     }
@@ -102,7 +105,7 @@
     }
   }
   #searchBloc{margin-top:-258px;}
-  #greyBoxes{margin-top:144px;}
+  #greyBoxes{margin-top:129px;}
 
   #destinationsBloc{width:400px;height:253px;float:left;margin:0 24px 12px 0;background:url("../../images/vacancesdirectes/common/pict/destinations-bloc.jpg") no-repeat 0 0 transparent;padding-bottom:5px;
     h2{font:bold 24px/24px @ptnarrow;text-transform:uppercase;margin-bottom:45px;

@@ -1,6 +1,7 @@
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 
 /*Variables*/
+@colorGris0: #8c8a8a; /* Gris 0 */
 @colorGris1: #5f5f5f; /* Gris 1 */
 @colorGris2: #464545; /* Gris 2 */
 @colorGris3: #e6e5e5; /* Gris 3 */
@@ -82,13 +83,17 @@
 
 .bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;._border-radius(7px);
   &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
+  &.gris2{background-color:@colorBgGrisC;color:@colorGris2;}
   &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
   &.fushia{background-color:@colorFushia;color:@colorBlanc;}
-  &.orange{background-color:@colorRubricOrange;color:@colorBlanc;}
+  &.orange{background-color:@colorOrange;color:@colorBlanc;}
   &.trans{background:transparent;padding:0;}
+  &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;}
   &.cfushia{color:@colorFushia;}
   &.big{padding:5px 10px;}
   &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
+  &.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
+  &.ib{display:inline-block;}
 }
 
 @ptnarrow:'PT Sans Narrow', @arial;
@@ -178,7 +183,7 @@ h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:upp
 h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
 h6, .h6-like{color:@colorFushia;}
 
-//body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
+body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 #homePage{margin:0;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
@@ -190,6 +195,9 @@ h6, .h6-like{color:@colorFushia;}
   }
 }
 
+#reservationContener{
+  table{width:100%}
+}
 
 /* STEPS */
 #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 0 -@gutter;z-index:30;
@@ -205,13 +213,52 @@ h6, .h6-like{color:@colorFushia;}
 .aRoom,
 .proposal{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.aRoom{background-color:@colorBgGrisC;}
-  &.proposal{background-color:@colorFushia;}
+  &.proposal{background-color:@colorFushia;color:@colorBlanc;
+    input{width:200px;}
+  }
 }
 
 #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
-  h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
-  .authenticationChoice{background-color:@colorBlanc;color:@colorGris2;}
+  h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
+  &>div{background-color:@colorBgGrisC;color:@colorGris2;
+    &>div{padding:10px;clear:both;}
+    .authenticationChoice{background-color:@colorBlanc;font:12px @arial;
+      &:nth-child(1){padding-bottom:0;}
+      &:nth-child(2){padding-top:0;}
+      input[type="radio"]:checked + label{ font-weight: bold; }
+    }
+    #existingCustomerLayer,
+    #newCustomerLayer{
+      .aField{margin-bottom:10px;}
+      .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;margin-right:10px;display:inline-block;text-align:right;}
+      input{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
+      textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+    }
+    #newCustomerLayer{
+      .label{width:130px;}
+      #newAccount{
+        .aField{width:480px;
+          input{width:320px;}
+        }
+      }
+      #address{
+        td{display:inline-block;margin-bottom:10px;
+          &:last-child input{margin-right:0;}
+        }
+        input,textarea{width:141px;margin-right:15px;}
+        textarea{width:141px;height:81px;}
+      }
+    }
+    #existingCustomerLayer{
+      .aField{width:480px;float:left;
+        .label{width:130px; }
+        input{width:320px;}
+      }
+      .loginLink{float:right;}
+    }
+  }
 }
+
 
 
 
@@ -455,33 +502,36 @@ h6, .h6-like{color:@colorFushia;}
 //  }
 //}
 //
-//#footerContener{overflow:hidden;margin-top:20px;clear:both;
-//  .mentions, .footerNavigation{display:none;
-//    &.gauche, &.droite, &.pageListe{display:block;}
-//    &.gauche{float:left;}
-//    &.droite{float:right;margin-top:-14px;}
-//  }
-//  .footerNavigation.gauche a,
-//  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);background-color:@colorBgGrisF;color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
-//  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;}
-//  .footerNavigation.droite a{background-position:90% 100%;padding-right:25px;}
-//  .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
-//    a, b{float:left;padding:0 10px;line-height:24px;text-decoration:none;border:1px solid #ddd;border-left-width:0;
-//      &:hover{background-color:#f5f5f5;}
-//      &:first-child{border-left-width: 1px;._border-radius(3px 0 0 3px);}
-//      &:last-child{
-//        -webkit-border-radius: 0 3px 3px 0;
-//        -moz-border-radius: 0 3px 3px 0;
-//        border-radius: 0 3px 3px 0;
-//      }
-//    }
-//    b{background-color: #f5f5f5;}
-//  }
+#footerContener{overflow:hidden;margin-top:20px;clear:both;
+  .mentions, .footerNavigation{display:none;
+    &.gauche, &.droite, &.pageListe{display:block;}
+    &.gauche{float:left;}
+    &.droite{float:right;margin-top:-14px;}
+  }
+  .footerNavigation.gauche a,
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
+  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
+  .footerNavigation.droite a{background-image:none;padding-right:25px;background-color:@colorFushia;}
+  .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
+    a, b{float:left;padding:0 10px;line-height:24px;text-decoration:none;border:1px solid #ddd;border-left-width:0;
+      &:hover{background-color:#f5f5f5;}
+      &:first-child{border-left-width: 1px;._border-radius(3px 0 0 3px);}
+      &:last-child{
+        -webkit-border-radius: 0 3px 3px 0;
+        -moz-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    b{background-color: #f5f5f5;}
+  }
 //  .mentions{clear:both;padding-bottom:15px;text-align:center;
 //    a{color:@colorBleuF;}
 //  }
-//}
+}
 
+label,input[type="radio"] {vertical-align:middle;}
+input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+input[type="radio"] {height:auto;}
 
 /* Stylish Select 0.4.9 */
 @selectWidth: 125px;

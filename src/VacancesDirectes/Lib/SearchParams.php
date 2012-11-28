@@ -16,7 +16,6 @@ class SearchParams
     protected $largeScope  = '';
     protected $smallScope  = '';
     protected $startDate   = '';
-    protected $endDate     = '';
     protected $nbDays      = '';
     protected $nbAdults    = '';
     protected $nbChildren  = '';
@@ -41,10 +40,9 @@ class SearchParams
         return $this;
     }
 
-    public function setDates($startDate, $endDate = '')
+    public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
-        $this->endDate = $endDate;
 
         return $this;
     }
@@ -105,14 +103,12 @@ class SearchParams
         ;
 
         $startDate = \DateTime::createFromFormat('Y-m-d', $this->startDate);
-        $endDate   = \DateTime::createFromFormat('Y-m-d', $this->endDate);
-        $nbDays    = ($this->nbDays != '') ? $this->nbDays : $endDate->diff($startDate)->format('%a');
 
         return array(
             'search_themes' => implode(',', $this->themes),
             'etab_list'     => implode(',', $this->etabs),
             'start_date'    => $startDate->format('d/m/Y'),
-            'nb_days'       => $nbDays,
+            'nb_days'       => $this->nbDays,
             'nb_adults'     => $this->nbAdults,
             'nb_children_1' => $this->nbChildren,
             'languages'     => array($this->app['context']->getLanguage()),

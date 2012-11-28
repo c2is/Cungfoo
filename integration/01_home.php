@@ -111,7 +111,7 @@
         <!-- colonne droite -->
         <aside class="column right">
             <?php include('blocs/search.php') ?>
-            <div id="greyBoxes">
+            <div id="greyBoxes" class="clear">
                 <?php include('blocs/ideesWeekend.php') ?>
             </div>
         </aside>

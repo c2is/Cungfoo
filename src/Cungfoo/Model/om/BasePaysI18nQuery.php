@@ -25,10 +25,14 @@ use Cungfoo\Model\PaysI18nQuery;
  * @method PaysI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PaysI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method PaysI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method PaysI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
+ * @method PaysI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method PaysI18nQuery groupById() Group by the id column
  * @method PaysI18nQuery groupByLocale() Group by the locale column
  * @method PaysI18nQuery groupByName() Group by the name column
+ * @method PaysI18nQuery groupByIntroduction() Group by the introduction column
+ * @method PaysI18nQuery groupByDescription() Group by the description column
  *
  * @method PaysI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PaysI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +48,14 @@ use Cungfoo\Model\PaysI18nQuery;
  * @method PaysI18n findOneById(int $id) Return the first PaysI18n filtered by the id column
  * @method PaysI18n findOneByLocale(string $locale) Return the first PaysI18n filtered by the locale column
  * @method PaysI18n findOneByName(string $name) Return the first PaysI18n filtered by the name column
+ * @method PaysI18n findOneByIntroduction(string $introduction) Return the first PaysI18n filtered by the introduction column
+ * @method PaysI18n findOneByDescription(string $description) Return the first PaysI18n filtered by the description column
  *
  * @method array findById(int $id) Return PaysI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PaysI18n objects filtered by the locale column
  * @method array findByName(string $name) Return PaysI18n objects filtered by the name column
+ * @method array findByIntroduction(string $introduction) Return PaysI18n objects filtered by the introduction column
+ * @method array findByDescription(string $description) Return PaysI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +146,7 @@ abstract class BasePaysI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `pays_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `INTRODUCTION`, `DESCRIPTION` FROM `pays_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +332,64 @@ abstract class BasePaysI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PaysI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the introduction column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByIntroduction('fooValue');   // WHERE introduction = 'fooValue'
+     * $query->filterByIntroduction('%fooValue%'); // WHERE introduction LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $introduction The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PaysI18nQuery The current query, for fluid interface
+     */
+    public function filterByIntroduction($introduction = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($introduction)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $introduction)) {
+                $introduction = str_replace('*', '%', $introduction);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PaysI18nPeer::INTRODUCTION, $introduction, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PaysI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PaysI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

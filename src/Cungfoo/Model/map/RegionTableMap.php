@@ -49,6 +49,9 @@ class RegionTableMap extends TableMap
         $this->addColumn('IMAGE_ENCART_PETITE_PATH', 'ImageEncartPetitePath', 'VARCHAR', false, 255, null);
         $this->addForeignKey('PAYS_ID', 'PaysId', 'INTEGER', 'pays', 'ID', false, null, null);
         $this->addColumn('MEA_HOME', 'MeaHome', 'BOOLEAN', false, 1, null);
+        $this->addColumn('CODE_VIAFRANCE', 'CodeViafrance', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_DETAIL_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
+        $this->addColumn('IMAGE_DETAIL_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
@@ -75,8 +78,8 @@ class RegionTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name,description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/regions', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path,image_encart_path,image_encart_petite_path', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name,introduction,description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/regions', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2', ),
         );
     } // getBehaviors()
 

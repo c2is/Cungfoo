@@ -25,12 +25,18 @@ use Cungfoo\Model\Region;
  *
  * @method PaysQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PaysQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method PaysQuery orderByCodeViafrance($order = Criteria::ASC) Order by the code_viafrance column
+ * @method PaysQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
+ * @method PaysQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method PaysQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PaysQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method PaysQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method PaysQuery groupById() Group by the id column
  * @method PaysQuery groupByCode() Group by the code column
+ * @method PaysQuery groupByCodeViafrance() Group by the code_viafrance column
+ * @method PaysQuery groupByImageDetail1() Group by the image_detail_1 column
+ * @method PaysQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method PaysQuery groupByCreatedAt() Group by the created_at column
  * @method PaysQuery groupByUpdatedAt() Group by the updated_at column
  * @method PaysQuery groupByEnabled() Group by the enabled column
@@ -51,12 +57,18 @@ use Cungfoo\Model\Region;
  * @method Pays findOneOrCreate(PropelPDO $con = null) Return the first Pays matching the query, or a new Pays object populated from the query conditions when no match is found
  *
  * @method Pays findOneByCode(string $code) Return the first Pays filtered by the code column
+ * @method Pays findOneByCodeViafrance(string $code_viafrance) Return the first Pays filtered by the code_viafrance column
+ * @method Pays findOneByImageDetail1(string $image_detail_1) Return the first Pays filtered by the image_detail_1 column
+ * @method Pays findOneByImageDetail2(string $image_detail_2) Return the first Pays filtered by the image_detail_2 column
  * @method Pays findOneByCreatedAt(string $created_at) Return the first Pays filtered by the created_at column
  * @method Pays findOneByUpdatedAt(string $updated_at) Return the first Pays filtered by the updated_at column
  * @method Pays findOneByEnabled(boolean $enabled) Return the first Pays filtered by the enabled column
  *
  * @method array findById(int $id) Return Pays objects filtered by the id column
  * @method array findByCode(string $code) Return Pays objects filtered by the code column
+ * @method array findByCodeViafrance(string $code_viafrance) Return Pays objects filtered by the code_viafrance column
+ * @method array findByImageDetail1(string $image_detail_1) Return Pays objects filtered by the image_detail_1 column
+ * @method array findByImageDetail2(string $image_detail_2) Return Pays objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Pays objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Pays objects filtered by the updated_at column
  * @method array findByEnabled(boolean $enabled) Return Pays objects filtered by the enabled column
@@ -163,7 +175,7 @@ abstract class BasePaysQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `pays` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CODE_VIAFRANCE`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `pays` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -306,6 +318,93 @@ abstract class BasePaysQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PaysPeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the code_viafrance column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCodeViafrance('fooValue');   // WHERE code_viafrance = 'fooValue'
+     * $query->filterByCodeViafrance('%fooValue%'); // WHERE code_viafrance LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $codeViafrance The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PaysQuery The current query, for fluid interface
+     */
+    public function filterByCodeViafrance($codeViafrance = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($codeViafrance)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $codeViafrance)) {
+                $codeViafrance = str_replace('*', '%', $codeViafrance);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PaysPeer::CODE_VIAFRANCE, $codeViafrance, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_detail_1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImageDetail1('fooValue');   // WHERE image_detail_1 = 'fooValue'
+     * $query->filterByImageDetail1('%fooValue%'); // WHERE image_detail_1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imageDetail1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PaysQuery The current query, for fluid interface
+     */
+    public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imageDetail1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imageDetail1)) {
+                $imageDetail1 = str_replace('*', '%', $imageDetail1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PaysPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_detail_2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImageDetail2('fooValue');   // WHERE image_detail_2 = 'fooValue'
+     * $query->filterByImageDetail2('%fooValue%'); // WHERE image_detail_2 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imageDetail2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PaysQuery The current query, for fluid interface
+     */
+    public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imageDetail2)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imageDetail2)) {
+                $imageDetail2 = str_replace('*', '%', $imageDetail2);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PaysPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**

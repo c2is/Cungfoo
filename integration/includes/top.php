@@ -291,7 +291,7 @@
         </div>
         <a href="01_home.php" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
             <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="Vacances directes | Le mobil-home et vous" /></a>
-        <?php if($page == 'home'){ echo '<h1 id="catchline">+ de 130 campings en France, Espagne, Italie & Portugal</h1>'; }?>
+        <?php if($page == 'home'){ echo '<h1 id="catchline"><span>+ de 130 campings en France, Espagne, Italie & Portugal</span></h1>'; }?>
     </div>
     <?php if($page == 'home'){ include('blocs/slider.php'); }?>
 </header>

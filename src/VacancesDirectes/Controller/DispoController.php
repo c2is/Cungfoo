@@ -25,7 +25,7 @@ class DispoController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{large}/{start_date}/{end_date}/{nb_adults}/{nb_children}/{small}', function (Application $app, Request $request, $large, $small, $start_date, $end_date, $nb_adults, $nb_children) {
+        $controllers->match('/{large}/{start_date}/{nb_days}/{nb_adults}/{nb_children}/{small}', function (Application $app, Request $request, $large, $small, $start_date, $nb_days, $nb_adults, $nb_children) {
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();
             if ($searchEngine->getRedirect())
@@ -37,7 +37,8 @@ class DispoController implements ControllerProviderInterface
             $searchParams
                 ->setLargeScope($large)
                 ->setSmallScope($small)
-                ->setDates($start_date, $end_date)
+                ->setStartDate($start_date)
+                ->setNbDays($nb_days)
                 ->setNbAdults($nb_adults)
                 ->setNbChildren($nb_children)
             ;
@@ -51,8 +52,11 @@ class DispoController implements ControllerProviderInterface
                 ->setType(DispoListing::DISPO)
             ;
 
+            $listingContent = $listing->process();
+
             return $app['twig']->render('Results\listing.twig', array(
-                'list'       => $listing->process(),
+                'list'       => $listingContent,
+                'firstEtab' => reset($listingContent['element']),
                 'searchForm' => $searchEngine->getView(),
             ));
         })
