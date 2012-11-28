@@ -34,12 +34,6 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.code',
             'required' => false,
         ));
-        $builder->add('code_viafrance', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'pays.code_viafrance',
-            'required' => false,
-        ));
         $builder->add('image_detail_1', 'cungfoo_file', array(
             'constraints' => array(
             ),

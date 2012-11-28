@@ -44,7 +44,6 @@ class PaysTableMap extends TableMap
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('CODE', 'Code', 'VARCHAR', true, 255, null);
-        $this->addColumn('CODE_VIAFRANCE', 'CodeViafrance', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_DETAIL_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_DETAIL_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);

@@ -212,11 +212,9 @@ pays.id: Id
 pays.code: Code
 pays.name: Nom
 pays.introduction: Introduction
-pays.description: Description (viafrance)
+pays.description: Description
 pays.image_detail_1: Image 1
 pays.image_detail_2: Image 2
-pays.code_viafrance: ID viafrance
-pays.code.viafrance: ID viafrance
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions
@@ -233,13 +231,11 @@ region.image_encart_petite_path: Image de l'encart (petite)
 region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) ?
 region.pays: Pays
 region.pays.id: Code pays
-region.description: Description (viafrance)
+region.description: Description
 region.mea_home: Mise en avant sur la home
 region.introduction: Introduction
 region.image_detail_1: Image 1
 region.image_detail_2: Image 2
-region.code_viafrance: ID viafrance
-region.code.viafrance: ID viafrance
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -291,7 +287,7 @@ ville.name: Nom
 ville.region: Région
 ville.region.id: Code région
 ville.introduction: Introduction
-ville.description: Description (viafrance)
+ville.description: Description
 ville.image_detail_1: Image 1
 ville.image_detail_2: Image 2
 
