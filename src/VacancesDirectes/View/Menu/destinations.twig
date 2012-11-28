@@ -1,68 +1,81 @@
-<div>
-    <div><a href="pays/1">{{ "pays.france" | trans }}</a></div>
-    <ul>
-    {% for destinationId, destination in regionsByDestinations %}
-        <li>
-            <div><a href="destination/{{ destinationId }}">{{ destination.label | trans }}</a></div>
-            <ul>
-            {% for region in destination.regions %}
-                <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
-            {% endfor %}
-            </ul>
-            <div><a href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a></div>
-        </li>
-    {% endfor %}
-    </ul>
-</div>
-
-
-{% for pays, regions in regionsByForeignCountries %}
-<div class="{{ regions[0].PaysId }}">
-    <div><a href="pays/{{ regions[0].PaysId }}">{{ pays | trans }}</a></div>
-    <ul>
-    {% for region in regions %}
-        <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
-    {% endfor %}
-    </ul>
-</div>
-{% endfor %}
-
-<ul>
-    <li>
-        <span>{{ "menu.libelle" | trans }}</span>
-        <ul>
-            {% for letter, etabs in etabByAlphabeticalOrder %}
-            <li>
-                <strong>{{ letter }}</strong>
-                <ul>
-                    {% for etab in etabs %}
-                    <li><a class="camping" href="{{ path('camping', {'idResalys': etab.Code}) }}">{{ etab.Name }}</a></li>
+<div id="destinations" class="subnav">
+    <div class="clear">
+        <div class="left ratio-33">
+            <div class="radiusBox greyC">
+                <div class="title">Tous nos campings</div>
+                <div id="campingsList-nav" class="stamp fushia"></div>
+                <div id="campingsList-search"></div>
+                <ol id="campingsList">
+                    {% for letter, etabs in etabByAlphabeticalOrder %}
+                        <li class="letter-first">{{ letter }}</li>
+                        {% for etab in etabs %}
+                            <li><a class="letter-{{ letter }}" href="{{ path('camping', {'idResalys': etab.Code}) }}">{{ etab.Name }}</a></li>
+                        {% endfor %}
+                        <li class="letter-last"></li>
                     {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </li>
-    <li>
-        <span>{{ "menu.localisation" | trans }}</span>
-        <ul>
-            {% for regionId, region in etabByVilleOrder %}
-            <li>
-                <a class="region" href="region/{{ regionId }}">{{ region.Name }}</a>
-                <ul>
-                    {% for villeId, ville in region.Villes %}
-                    <li>
-                        <a class="ville" href="ville/{{ villeId }}">{{ ville.Name }}</a>
+                </ol>
+            </div>
+        </div>
+        <div class="left ratio-33">
+            <div class="radiusBox2 greyC bgImg">
+                <div class="view">
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/france.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>{{ "pays.france" | trans }}</span></div>
+                </div>
+                {% for destinationId, destination in regionsByDestinations %}
+                    <div class="region">
+                        <div class="title">Destination {{ destination.label | trans }}</div>
                         <ul>
-                            {% for etab in ville.Etabs %}
-                            <li><a href="{{ path('camping', {'idResalys': etab.Code}) }}">{{ etab.Name }}</a></li>
+                            {% for region in destination.regions %}
+                                <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
                             {% endfor %}
+                            <a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a>
                         </ul>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </li>
-</ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="left ratio-33">
+            <div class="radiusBox2 greyC bgImg">
+                <div class="view">
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/spain.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>{{ "pays.espagne" | trans }}</span></div>
+                </div>
+                <div class="region">
+                    <ul>
+                        {% for region in regionEspagne %}
+                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="radiusBox2 greyC">
+                <div class="view">
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/italia.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>{{ "pays.italie" | trans }}</span></div>
+                </div>
+                <div class="region">
+                    <ul>
+                        {% for region in regionItalie %}
+                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="radiusBox2 greyC">
+                <div class="view">
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>{{ "pays.portugal" | trans }}</span></div>
+                </div>
+                <div class="region">
+                    <ul>
+                        {% for region in regionPortugal %}
+                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div><p>{{ "menu_destination.accroche" | trans }}</p></div>
+</div>

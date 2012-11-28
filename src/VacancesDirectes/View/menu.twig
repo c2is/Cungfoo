@@ -4,9 +4,7 @@
     <li class="tab current"><a id="home" href="{{ path( 'homepage' ) }}"><img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}"></a></li>
         {% for item in menu.items %}
             <li class="tab"><a>{{ item.title|trans }}</a>
-                <div class="subnav container_12">
-                    {{ render ( path ( item.route ) ) }}
-                </div>
+                {{ render ( path ( item.route ) ) }}
             </li>
         {% endfor %}
     </ul>
