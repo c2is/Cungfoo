@@ -1,0 +1,73 @@
+plein_activites:
+    0:
+        title: 'pactiv-1'
+        items:
+            0:
+                code: 'EQUI'
+                type: 'activite'
+            1:
+                code: 'MIGO'
+                type: 'activite'
+            2:
+                code: 'TOBO'
+                type: 'baignade'
+            3:
+                code: 'LOVP'
+                type: 'service_complementaire'
+            4:
+                code: 'PING'
+                type: 'activite'
+            5:
+                code: 'TEMU'
+                type: 'activite'
+            6:
+                code: 'PECH'
+                type: 'activite'
+    1:
+        title: 'pactiv-2'
+        items:
+            0:
+                code: 'EQUI'
+                type: 'activite'
+            1:
+                code: 'PAAQ'
+                type: 'baignade'
+            2:
+                code: 'PETG'
+                type: 'activite'
+            3:
+                code: 'GOLF'
+                type: 'activite'
+            4:
+                code: 'PECH'
+                type: 'activite'
+            5:
+                code: 'PISC'
+                type: 'baignade'
+            6:
+                code: 'TOBO'
+                type: 'baignade'
+    2:
+        title: 'pactiv-3'
+        items:
+            0:
+                code: 'SPAJ'
+                type: 'baignade'
+            1:
+                code: 'PAAQ'
+                type: 'baignade'
+            2:
+                code: 'LOVP'
+                type: 'service_complementaire'
+            3:
+                code: 'BAR'
+                type: 'service_complementaire'
+            4:
+                code: 'SNAC'
+                type: 'service_complementaire'
+            5:
+                code: 'REST'
+                type: 'service_complementaire'
+            6:
+                code: 'TOBO'
+                type: 'baignade'

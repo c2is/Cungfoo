@@ -20,6 +20,7 @@ use Resalys\Lib\Client\DisponibiliteClient;
 
 use VacancesDirectes\Lib\SearchEngine,
     VacancesDirectes\Lib\SearchParams,
+    VacancesDirectes\Lib\PleinActivite,
     VacancesDirectes\Lib\Listing\DispoListing;
 
 class HomepageController implements ControllerProviderInterface
@@ -34,6 +35,7 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
+
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();
             if ($searchEngine->getRedirect())
@@ -111,6 +113,8 @@ class HomepageController implements ControllerProviderInterface
             $listing = new DispoListing($app);
             $listing->setClient($client);
 
+            $pleinActivites = new PleinActivite($app);
+
             return $app['twig']->render('homepage.twig', array(
                 'searchForm'        => $searchEngine->getView(),
                 'locale'            => $locale,
@@ -122,6 +126,7 @@ class HomepageController implements ControllerProviderInterface
                 'thematiques'       => $thematiques,
                 'etablissements'    => $etablissements,
                 'dernieres_minutes' => $listing->process(),
+                'pleinActivites'    => $pleinActivites->process(),
             ));
         })
         ->bind('homepage');
