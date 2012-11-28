@@ -3,2067 +3,2584 @@
         Id: 1
         Locale: de
         Name: 'Umweltmuseum des bretonischen Moores der Vendée'
+        Presentation: null
     1_en:
         Id: 1
         Locale: en
         Name: 'Ecomuseum of the Marshes of Brittany and the Vendée'
+        Presentation: null
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Ecomusée du Marais Breton Vendéen'
+        Presentation: null
     2_fr:
         Id: 2
         Locale: fr
         Name: 'Le Gois'
+        Presentation: null
     3_fr:
         Id: 3
         Locale: fr
         Name: 'Musée des traditions de l''île de Noirmoutier'
+        Presentation: null
     4_fr:
         Id: 4
         Locale: fr
         Name: 'Maison des Ecrivains de la Mer'
+        Presentation: null
     5_fr:
         Id: 5
         Locale: fr
         Name: 'Cathédrale Saint-Léonce de Fréjus'
+        Presentation: null
     6_fr:
         Id: 6
         Locale: fr
         Name: 'Musée des Troupes de Marine'
+        Presentation: null
     7_fr:
         Id: 7
         Locale: fr
         Name: 'Mosquée Soudanaise - Missiri De Djenné'
+        Presentation: null
     8_fr:
         Id: 8
         Locale: fr
         Name: 'Parc zoologique de Fréjus'
+        Presentation: null
     9_de:
         Id: 9
         Locale: de
         Name: 'Schlund Gorges de l''Ardèche'
+        Presentation: null
     9_fr:
         Id: 9
         Locale: fr
         Name: 'Gorges de l''Ardèche'
+        Presentation: null
     10_de:
         Id: 10
         Locale: de
         Name: 'Musée Alphonse Daudet'
+        Presentation: null
     10_fr:
         Id: 10
         Locale: fr
         Name: 'Musée Alphonse Daudet'
+        Presentation: null
     11_fr:
         Id: 11
         Locale: fr
         Name: 'Pont d''Arc - Grotte Chauvet'
+        Presentation: null
     12_de:
         Id: 12
         Locale: de
         Name: 'Tropfsteinhöhle Aven d''Orgnac - Grotte und Regionales Museum der Vorgeschichte'
+        Presentation: null
     12_en:
         Id: 12
         Locale: en
         Name: 'Orgnac Grotto and Regional Museum of Prehistory'
+        Presentation: null
     12_fr:
         Id: 12
         Locale: fr
         Name: 'Aven d''Orgnac - Grand site de France- Grotte et Musée régional de la Préhistoire'
+        Presentation: null
     13_fr:
         Id: 13
         Locale: fr
         Name: 'Musée du Bord de la mer à Bénodet'
+        Presentation: null
     14_fr:
         Id: 14
         Locale: fr
         Name: 'Eglise Notre-Dame-de-la-Mer à Bénodet'
+        Presentation: null
     15_fr:
         Id: 15
         Locale: fr
         Name: 'Port de plaisance de Bénodet'
+        Presentation: null
     16_fr:
         Id: 16
         Locale: fr
         Name: 'Eglise Saint-Thomas à Bénodet'
+        Presentation: null
     17_de:
         Id: 17
         Locale: de
         Name: 'Schloss Murol'
+        Presentation: null
     17_en:
         Id: 17
         Locale: en
         Name: 'Murol castle'
+        Presentation: null
     17_fr:
         Id: 17
         Locale: fr
         Name: 'Château de Murol'
+        Presentation: null
     18_de:
         Id: 18
         Locale: de
         Name: 'Wohnhöhlen der Grotte von Jonas'
+        Presentation: null
     18_fr:
         Id: 18
         Locale: fr
         Name: 'Site troglodyte de Jonas'
+        Presentation: null
     19_de:
         Id: 19
         Locale: de
         Name: 'Saint-Nectaire aventures'
+        Presentation: null
     19_fr:
         Id: 19
         Locale: fr
         Name: 'Saint-Nectaire aventures'
+        Presentation: null
     20_de:
         Id: 20
         Locale: de
         Name: 'Perdrix Seilbahn'
+        Presentation: null
     20_en:
         Id: 20
         Locale: en
         Name: 'Perdrix Cableway'
+        Presentation: null
     20_fr:
         Id: 20
         Locale: fr
         Name: 'Téléphérique de la Perdrix'
+        Presentation: null
     21_fr:
         Id: 21
         Locale: fr
         Name: 'Port d''Argelès-sur-Mer'
+        Presentation: null
     22_fr:
         Id: 22
         Locale: fr
         Name: 'Place Gambetta'
+        Presentation: null
     23_de:
         Id: 23
         Locale: de
         Name: Aqualand
+        Presentation: null
     23_en:
         Id: 23
         Locale: en
         Name: Aqualand
+        Presentation: null
     23_fr:
         Id: 23
         Locale: fr
         Name: Aqualand
+        Presentation: null
     24_fr:
         Id: 24
         Locale: fr
         Name: 'Jardin des Plantes'
+        Presentation: null
     25_de:
         Id: 25
         Locale: de
         Name: 'Zoo de la Palmyre'
+        Presentation: null
     25_en:
         Id: 25
         Locale: en
         Name: 'Zoo de la Palmyre'
+        Presentation: null
     25_fr:
         Id: 25
         Locale: fr
         Name: 'Zoo de la Palmyre'
+        Presentation: null
     26_fr:
         Id: 26
         Locale: fr
         Name: 'Le P''tit Train de Saint-Trojan'
+        Presentation: null
     27_de:
         Id: 27
         Locale: de
         Name: 'Chateaubranche Aventure'
+        Presentation: null
     27_fr:
         Id: 27
         Locale: fr
         Name: 'Chateaubranche Aventure'
+        Presentation: null
     28_fr:
         Id: 28
         Locale: fr
         Name: 'Fort Louvois'
+        Presentation: null
     29_de:
         Id: 29
         Locale: de
         Name: 'Atlantic Park'
+        Presentation: null
     29_fr:
         Id: 29
         Locale: fr
         Name: 'Atlantic Park'
+        Presentation: null
     30_de:
         Id: 30
         Locale: de
         Name: 'Golfplatz von Hossegor'
+        Presentation: null
     30_fr:
         Id: 30
         Locale: fr
         Name: 'Golf d''Hossegor'
+        Presentation: null
     31_de:
         Id: 31
         Locale: de
         Name: 'Le Reptilarium'
+        Presentation: null
     31_fr:
         Id: 31
         Locale: fr
         Name: 'Le Reptilarium'
+        Presentation: null
     32_de:
         Id: 32
         Locale: de
         Name: 'Bois de Boulogne in Dax'
+        Presentation: null
     32_fr:
         Id: 32
         Locale: fr
         Name: 'Bois de Boulogne de Dax'
+        Presentation: null
     33_de:
         Id: 33
         Locale: de
         Name: 'Aqualand Fréjus'
+        Presentation: null
     33_en:
         Id: 33
         Locale: en
         Name: 'Aqualand Fréjus'
+        Presentation: null
     33_fr:
         Id: 33
         Locale: fr
         Name: 'Aqualand Fréjus'
+        Presentation: null
     34_fr:
         Id: 34
         Locale: fr
         Name: 'Gare TGV de Fréjus'
+        Presentation: null
     35_en:
         Id: 35
         Locale: en
         Name: 'Bonaparte garden'
+        Presentation: null
     35_fr:
         Id: 35
         Locale: fr
         Name: 'Jardin Bonaparte'
+        Presentation: null
     36_fr:
         Id: 36
         Locale: fr
         Name: 'Arènes de Fréjus'
+        Presentation: null
     37_de:
         Id: 37
         Locale: de
         Name: 'Royal Mougins Golf Club'
+        Presentation: null
     37_fr:
         Id: 37
         Locale: fr
         Name: 'Royal Mougins Golf Club'
+        Presentation: null
     38_fr:
         Id: 38
         Locale: fr
         Name: 'Salle de La Palestre'
+        Presentation: null
     39_fr:
         Id: 39
         Locale: fr
         Name: 'Stade Pierre-de-Coubertin de Cannes'
+        Presentation: null
     40_de:
         Id: 40
         Locale: de
         Name: 'Golfplatz von Saint-Donat'
+        Presentation: null
     40_fr:
         Id: 40
         Locale: fr
         Name: 'Golf de Saint-Donat'
+        Presentation: null
     41_de:
         Id: 41
         Locale: de
         Name: 'Grotte Sainte-Marie-Madeleine'
+        Presentation: null
     41_fr:
         Id: 41
         Locale: fr
         Name: 'Grotte Sainte-Marie-Madeleine'
+        Presentation: null
     42_fr:
         Id: 42
         Locale: fr
         Name: 'Montagne de Sainte Baume'
+        Presentation: null
     43_fr:
         Id: 43
         Locale: fr
         Name: 'Basilique Sainte-Marie-Madeleine de Saint-Maximin-la-Sainte-Baume'
+        Presentation: null
     44_de:
         Id: 44
         Locale: de
         Name: 'Parc Ok Corral'
+        Presentation: null
     44_en:
         Id: 44
         Locale: en
         Name: 'OK Corral park'
+        Presentation: null
     44_fr:
         Id: 44
         Locale: fr
         Name: 'Parc Ok Corral'
+        Presentation: null
     45_fr:
         Id: 45
         Locale: fr
         Name: 'Port de Canet-en-Roussillon'
+        Presentation: null
     46_fr:
         Id: 46
         Locale: fr
         Name: 'Bois des Chênes'
+        Presentation: null
     47_fr:
         Id: 47
         Locale: fr
         Name: 'Port de Port-Barcarès'
+        Presentation: null
     48_de:
         Id: 48
         Locale: de
         Name: 'Golfplatz Saint-Cyprien'
+        Presentation: null
     48_en:
         Id: 48
         Locale: en
         Name: 'Golf de Saint-Cyprien'
+        Presentation: null
     48_fr:
         Id: 48
         Locale: fr
         Name: 'Golf de Saint-Cyprien'
+        Presentation: null
     49_fr:
         Id: 49
         Locale: fr
         Name: 'Musée archéologique de Viuz-Faverges'
+        Presentation: null
     50_fr:
         Id: 50
         Locale: fr
         Name: 'Musée Paccard (musée de la Cloche)'
+        Presentation: null
     51_fr:
         Id: 51
         Locale: fr
         Name: 'Abbaye Notre Dame de Tamié'
+        Presentation: null
     52_fr:
         Id: 52
         Locale: fr
         Name: 'Ecomusée du Lac d''Annecy'
+        Presentation: null
     53_fr:
         Id: 53
         Locale: fr
         Name: 'Site ostréicole et naturel de Fort-Royer'
+        Presentation: null
     54_de:
         Id: 54
         Locale: de
         Name: 'Fort Boyard'
+        Presentation: null
     54_fr:
         Id: 54
         Locale: fr
         Name: 'Fort Boyard'
+        Presentation: null
     55_fr:
         Id: 55
         Locale: fr
         Name: 'Maison des Aïeules'
+        Presentation: null
     56_fr:
         Id: 56
         Locale: fr
         Name: 'Lanterne des Morts'
+        Presentation: null
     57_fr:
         Id: 57
         Locale: fr
         Name: 'Port de Saint-Cyprien - La Capitainerie'
+        Presentation: null
     58_fr:
         Id: 58
         Locale: fr
         Name: 'Château d''eau'
+        Presentation: null
     59_en:
         Id: 59
         Locale: en
         Name: 'Forteresse de Salses'
+        Presentation: null
     59_fr:
         Id: 59
         Locale: fr
         Name: 'Forteresse de Salses'
+        Presentation: null
     60_fr:
         Id: 60
         Locale: fr
         Name: 'Abri-Mémoire d''Uffholtz'
+        Presentation: null
     61_fr:
         Id: 61
         Locale: fr
         Name: 'Collégiale Saint-Thiébaut de Thann'
+        Presentation: null
     62_fr:
         Id: 62
         Locale: fr
         Name: 'Basilique Notre Dame de Thierenbach à Guebwiller'
+        Presentation: null
     63_fr:
         Id: 63
         Locale: fr
         Name: 'Musée Théodore Deck et des pays du Florival'
+        Presentation: null
     64_fr:
         Id: 64
         Locale: fr
         Name: 'Lac de Lacanau'
+        Presentation: null
     65_fr:
         Id: 65
         Locale: fr
         Name: 'Spa Lacanau - Vitalparc'
+        Presentation: null
     66_fr:
         Id: 66
         Locale: fr
         Name: 'Lac de Carcans-Maubuisson'
+        Presentation: null
     67_de:
         Id: 67
         Locale: de
         Name: 'Gebiet Bombannes - Domaine de Bombannes UCPA'
+        Presentation: null
     67_fr:
         Id: 67
         Locale: fr
         Name: 'Domaine de Bombannes UCPA'
+        Presentation: null
     68_fr:
         Id: 68
         Locale: fr
         Name: 'Musée municipal de Guéthary'
+        Presentation: null
     69_de:
         Id: 69
         Locale: de
         Name: 'Grotte de la Chambre d''amour'
+        Presentation: null
     69_fr:
         Id: 69
         Locale: fr
         Name: 'Grotte de la Chambre d''amour'
+        Presentation: null
     70_de:
         Id: 70
         Locale: de
         Name: 'Surf Training'
+        Presentation: null
     70_en:
         Id: 70
         Locale: en
         Name: 'Surf Training'
+        Presentation: null
     70_fr:
         Id: 70
         Locale: fr
         Name: 'Surf Training'
+        Presentation: null
     71_en:
         Id: 71
         Locale: en
         Name: 'Surfing School of France'
+        Presentation: null
     71_fr:
         Id: 71
         Locale: fr
         Name: 'Ecole du Surf Français'
+        Presentation: null
     72_de:
         Id: 72
         Locale: de
         Name: 'Antike Stätte und archäologisches Museum von Aléria'
+        Presentation: null
     72_en:
         Id: 72
         Locale: en
         Name: 'Antique site and Archeological Museum of Aléria'
+        Presentation: null
     72_fr:
         Id: 72
         Locale: fr
         Name: 'Site antique et musée archéologique d''Aléria'
+        Presentation: null
     73_de:
         Id: 73
         Locale: de
         Name: 'Corsica Forest'
+        Presentation: null
     73_fr:
         Id: 73
         Locale: fr
         Name: 'Corsica Forest'
+        Presentation: null
     74_de:
         Id: 74
         Locale: de
         Name: 'Aiguilles de Bavella'
+        Presentation: null
     74_fr:
         Id: 74
         Locale: fr
         Name: 'Aiguilles de Bavella'
+        Presentation: null
     75_fr:
         Id: 75
         Locale: fr
         Name: 'Centre de vacances naturiste Bagheera'
+        Presentation: null
     76_fr:
         Id: 76
         Locale: fr
         Name: 'Océafaunia - Parc animalier de Labenne'
+        Presentation: null
     77_de:
         Id: 77
         Locale: de
         Name: Fischerhaus
+        Presentation: null
     77_fr:
         Id: 77
         Locale: fr
         Name: 'Maison du Pêcheur'
+        Presentation: null
     78_fr:
         Id: 78
         Locale: fr
         Name: 'Eglise Sainte-Croix'
+        Presentation: null
     79_fr:
         Id: 79
         Locale: fr
         Name: 'La Tour Joséphine'
+        Presentation: null
     80_de:
         Id: 80
         Locale: de
         Name: 'Schloss Arcangues'
+        Presentation: null
     80_fr:
         Id: 80
         Locale: fr
         Name: 'Château d''Arcangues'
+        Presentation: null
     81_fr:
         Id: 81
         Locale: fr
         Name: 'Gare TGV de Biarritz'
+        Presentation: null
     82_fr:
         Id: 82
         Locale: fr
         Name: 'Port de Hyères'
+        Presentation: null
     83_fr:
         Id: 83
         Locale: fr
         Name: 'Site archéologique d''Olbia'
+        Presentation: null
     84_fr:
         Id: 84
         Locale: fr
         Name: 'Jardin Olbius-Riquier'
+        Presentation: null
     85_fr:
         Id: 85
         Locale: fr
         Name: 'Gare TGV d''Hyères'
+        Presentation: null
     86_fr:
         Id: 86
         Locale: fr
         Name: 'Abbatiale Saint-Austremoine'
+        Presentation: null
     87_de:
         Id: 87
         Locale: de
         Name: 'Abteikirche Sainte-Foy de Conques'
+        Presentation: null
     87_en:
         Id: 87
         Locale: en
         Name: 'Abbatiale Sainte-Foy de Conques'
+        Presentation: null
     87_fr:
         Id: 87
         Locale: fr
         Name: 'Abbatiale Sainte-Foy de Conques'
+        Presentation: null
     88_en:
         Id: 88
         Locale: en
         Name: 'Abbatiale Saint-Pierre de Beaulieu-sur-Dordogne'
+        Presentation: null
     88_fr:
         Id: 88
         Locale: fr
         Name: 'Abbatiale Saint-Pierre de Beaulieu-sur-Dordogne'
+        Presentation: null
     89_fr:
         Id: 89
         Locale: fr
         Name: 'Abbatiale Saint-Pierre de Moissac'
+        Presentation: null
     90_fr:
         Id: 90
         Locale: fr
         Name: 'Port de Mèze'
+        Presentation: null
     91_fr:
         Id: 91
         Locale: fr
         Name: 'Ferme-zoo de Bouzigues'
+        Presentation: null
     92_fr:
         Id: 92
         Locale: fr
         Name: 'Centre Balnéaire Raoul Fonquerne'
+        Presentation: null
     93_fr:
         Id: 93
         Locale: fr
         Name: 'Espace Georges Brassens à Sète'
+        Presentation: null
     94_fr:
         Id: 94
         Locale: fr
         Name: 'Piscine Lucien Maylin'
+        Presentation: null
     95_fr:
         Id: 95
         Locale: fr
         Name: 'Parc des expositions de La Rochelle'
+        Presentation: null
     96_de:
         Id: 96
         Locale: de
         Name: 'Naturgeschichtliches Museum von La Rochelle'
+        Presentation: null
     96_en:
         Id: 96
         Locale: en
         Name: 'Museum of natural history'
+        Presentation: null
     96_fr:
         Id: 96
         Locale: fr
         Name: 'Museum d''Histoire naturelle de La Rochelle'
+        Presentation: null
     97_fr:
         Id: 97
         Locale: fr
         Name: 'Musée du Nouveau Monde'
+        Presentation: null
     98_de:
         Id: 98
         Locale: de
         Name: 'Vogelwarte der Ile-d''Olonne'
+        Presentation: null
     98_fr:
         Id: 98
         Locale: fr
         Name: 'Observatoire des oiseaux de l''Ile-d''Olonne'
+        Presentation: null
     99_de:
         Id: 99
         Locale: de
         Name: 'Museum für volkstümliche Tradition'
+        Presentation: null
     99_en:
         Id: 99
         Locale: en
         Name: 'Museum of popular traditions'
+        Presentation: null
     99_fr:
         Id: 99
         Locale: fr
         Name: 'Musée des traditions populaires d''Olonne-sur-Mer'
+        Presentation: null
     100_fr:
         Id: 100
         Locale: fr
         Name: 'Gare TGV des Sables-d''Olonne'
+        Presentation: null
     101_de:
         Id: 101
         Locale: de
         Name: Muschelmuseum
+        Presentation: null
     101_fr:
         Id: 101
         Locale: fr
         Name: 'Muséum du coquillage'
+        Presentation: null
     102_de:
         Id: 102
         Locale: de
         Name: 'Insel Belle-Ile en Mer'
+        Presentation: null
     102_en:
         Id: 102
         Locale: en
         Name: Belle-Ile-en-Mer
+        Presentation: null
     102_fr:
         Id: 102
         Locale: fr
         Name: Belle-Ile-en-Mer
+        Presentation: null
     103_fr:
         Id: 103
         Locale: fr
         Name: 'Musée Sarah Bernhardt'
+        Presentation: null
     104_fr:
         Id: 104
         Locale: fr
         Name: 'Les Mégalithes de la presqu''île'
+        Presentation: null
     105_fr:
         Id: 105
         Locale: fr
         Name: 'Fort Penthièvre'
+        Presentation: null
     106_de:
         Id: 106
         Locale: de
         Name: 'Kunst- und Archäologiemuseum von Soulac-sur-Mer'
+        Presentation: null
     106_fr:
         Id: 106
         Locale: fr
         Name: 'Musée d''art et d''archéologie de Soulac-sur-Mer'
+        Presentation: null
     107_de:
         Id: 107
         Locale: de
         Name: 'Basilika Notre-Dame-de-la-fin-des-Terres'
+        Presentation: null
     107_fr:
         Id: 107
         Locale: fr
         Name: 'Basilique Notre-Dame-de-la-fin-des-Terres'
+        Presentation: null
     108_de:
         Id: 108
         Locale: de
         Name: 'Leuchtturm von Cordouan'
+        Presentation: null
     108_fr:
         Id: 108
         Locale: fr
         Name: 'Phare de Cordouan'
+        Presentation: null
     109_de:
         Id: 109
         Locale: de
         Name: 'Grotten von Régulus'
+        Presentation: null
     109_fr:
         Id: 109
         Locale: fr
         Name: 'Grottes municipales de Régulus'
+        Presentation: null
     110_fr:
         Id: 110
         Locale: fr
         Name: 'Gare TGV de La Baule'
+        Presentation: null
     111_de:
         Id: 111
         Locale: de
         Name: 'Golf International Barrière de la Baule'
+        Presentation: null
     111_fr:
         Id: 111
         Locale: fr
         Name: 'Golf International Barrière de la Baule'
+        Presentation: null
     112_de:
         Id: 112
         Locale: de
         Name: 'Strand von La Baule'
+        Presentation: null
     112_en:
         Id: 112
         Locale: en
         Name: 'La Baule beach'
+        Presentation: null
     112_fr:
         Id: 112
         Locale: fr
         Name: 'Plage de la Baule'
+        Presentation: null
     113_fr:
         Id: 113
         Locale: fr
         Name: 'Port de plaisance de Pornichet'
+        Presentation: null
     114_de:
         Id: 114
         Locale: de
         Name: 'Grotte von Font-de-Gaume'
+        Presentation: null
     114_fr:
         Id: 114
         Locale: fr
         Name: 'Grotte de Font-de-Gaume'
+        Presentation: null
     115_de:
         Id: 115
         Locale: de
         Name: 'Grotte des Combarelles'
+        Presentation: null
     115_fr:
         Id: 115
         Locale: fr
         Name: 'Grotte des Combarelles'
+        Presentation: null
     116_fr:
         Id: 116
         Locale: fr
         Name: 'Le gisement de la Ferrassie'
+        Presentation: null
     117_de:
         Id: 117
         Locale: de
         Name: 'Staatsmuseum der Vorgeschichte'
+        Presentation: null
     117_en:
         Id: 117
         Locale: en
         Name: 'Prehistory national museum'
+        Presentation: null
     117_fr:
         Id: 117
         Locale: fr
         Name: 'Musée national de Préhistoire'
+        Presentation: null
     118_fr:
         Id: 118
         Locale: fr
         Name: 'Sanctuaire Notre-Dame-du-Laus'
+        Presentation: null
     119_de:
         Id: 119
         Locale: de
         Name: 'Dom Notre-Dame de l''Assomption von Gap'
+        Presentation: null
     119_en:
         Id: 119
         Locale: en
         Name: 'Notre-Dame de l''Assomption Cathedral'
+        Presentation: null
     119_fr:
         Id: 119
         Locale: fr
         Name: 'Cathédrale Notre-Dame de l''Assomption de Gap'
+        Presentation: null
     120_de:
         Id: 120
         Locale: de
         Name: Franziskaner-Kirche
+        Presentation: null
     120_en:
         Id: 120
         Locale: en
         Name: 'Cordeliers Church'
+        Presentation: null
     120_fr:
         Id: 120
         Locale: fr
         Name: 'Eglise des Cordeliers'
+        Presentation: null
     121_fr:
         Id: 121
         Locale: fr
         Name: 'Hôtel de ville de Gap'
+        Presentation: null
     122_en:
         Id: 122
         Locale: en
         Name: 'Ephebe museum'
+        Presentation: null
     122_fr:
         Id: 122
         Locale: fr
         Name: 'Musée de l''Ephèbe'
+        Presentation: null
     123_fr:
         Id: 123
         Locale: fr
         Name: 'Port du Cap d''Agde'
+        Presentation: null
     124_en:
         Id: 124
         Locale: en
         Name: 'Agde Museum'
+        Presentation: null
     124_fr:
         Id: 124
         Locale: fr
         Name: 'Musée Agathois'
+        Presentation: null
     125_en:
         Id: 125
         Locale: en
         Name: 'Agde Cathedral'
+        Presentation: null
     125_fr:
         Id: 125
         Locale: fr
         Name: 'Cathédrale Saint-Etienne d''Agde'
+        Presentation: null
     126_de:
         Id: 126
         Locale: de
         Name: 'Wehrdorf Domme'
+        Presentation: null
     126_fr:
         Id: 126
         Locale: fr
         Name: 'Bastide de Domme'
+        Presentation: null
     127_fr:
         Id: 127
         Locale: fr
         Name: 'Village de La Roque-Gageac'
+        Presentation: null
     128_fr:
         Id: 128
         Locale: fr
         Name: 'La Dordogne en Gabares'
+        Presentation: null
     129_de:
         Id: 129
         Locale: de
         Name: Walnuss-Freilichtmuseum
+        Presentation: null
     129_fr:
         Id: 129
         Locale: fr
         Name: 'Ecomusée de la Noix'
+        Presentation: null
     130_de:
         Id: 130
         Locale: de
         Name: 'Musée Maillol'
+        Presentation: null
     130_fr:
         Id: 130
         Locale: fr
         Name: 'Musée Maillol'
+        Presentation: null
     131_de:
         Id: 131
         Locale: de
         Name: 'Marines Naturschutzgebiet von Cerbère'
+        Presentation: null
     131_fr:
         Id: 131
         Locale: fr
         Name: 'Réserve marine de Cerbère'
+        Presentation: null
     132_fr:
         Id: 132
         Locale: fr
         Name: 'Port de plaisance de Banyuls-sur-Mer'
+        Presentation: null
     133_de:
         Id: 133
         Locale: de
         Name: 'Museum des Landlebens/Museum der Steinbrucharbeiter und Steinmetze'
+        Presentation: null
     133_fr:
         Id: 133
         Locale: fr
         Name: 'Musée de la vie rurale/Musée des métiers de la pierre'
+        Presentation: null
     134_de:
         Id: 134
         Locale: de
         Name: 'Micropolis, La Cité des insectes'
+        Presentation: null
     134_en:
         Id: 134
         Locale: en
         Name: 'Micropolis, La Cité des insectes'
+        Presentation: null
     134_fr:
         Id: 134
         Locale: fr
         Name: 'Micropolis, La Cité des insectes'
+        Presentation: null
     135_fr:
         Id: 135
         Locale: fr
         Name: 'Berges de Layoule'
+        Presentation: null
     136_de:
         Id: 136
         Locale: de
         Name: 'Musée Fenaille'
+        Presentation: null
     136_fr:
         Id: 136
         Locale: fr
         Name: 'Musée Fenaille'
+        Presentation: null
     137_fr:
         Id: 137
         Locale: fr
         Name: 'Toboggans Aquatiques'
+        Presentation: null
     138_fr:
         Id: 138
         Locale: fr
         Name: Europark
+        Presentation: null
     139_fr:
         Id: 139
         Locale: fr
         Name: 'Palais de la maquette'
+        Presentation: null
     140_fr:
         Id: 140
         Locale: fr
         Name: 'Port de Rochefort'
+        Presentation: null
     141_fr:
         Id: 141
         Locale: fr
         Name: 'Musée de la Vieille Paroisse'
+        Presentation: null
     142_fr:
         Id: 142
         Locale: fr
         Name: 'Eglise Saint-Louis de Rochefort'
+        Presentation: null
     143_fr:
         Id: 143
         Locale: fr
         Name: 'Place Colbert'
+        Presentation: null
     144_en:
         Id: 144
         Locale: en
         Name: 'Emerald Coast'
+        Presentation: null
     144_fr:
         Id: 144
         Locale: fr
         Name: 'Côte d''Emeraude'
+        Presentation: null
     145_fr:
         Id: 145
         Locale: fr
         Name: 'Eglise Notre-Dame de Dinard'
+        Presentation: null
     146_fr:
         Id: 146
         Locale: fr
         Name: 'Pointe de la Malouine'
+        Presentation: null
     147_fr:
         Id: 147
         Locale: fr
         Name: 'Casino Barrière de Dinard'
+        Presentation: null
     148_fr:
         Id: 148
         Locale: fr
         Name: 'Minigolf du Port Chéri'
+        Presentation: null
     149_fr:
         Id: 149
         Locale: fr
         Name: 'Eglise du Clion'
+        Presentation: null
     150_fr:
         Id: 150
         Locale: fr
         Name: 'Pornic Aventure'
+        Presentation: null
     151_fr:
         Id: 151
         Locale: fr
         Name: 'Vieux port de Pornic'
+        Presentation: null
     152_fr:
         Id: 152
         Locale: fr
         Name: 'Réserve zoologique de Calviac'
+        Presentation: null
     153_fr:
         Id: 153
         Locale: fr
         Name: 'Chapelle des Pénitents Blancs'
+        Presentation: null
     154_fr:
         Id: 154
         Locale: fr
         Name: 'Le Présidial'
+        Presentation: null
     155_fr:
         Id: 155
         Locale: fr
         Name: 'Lanterne des Morts'
+        Presentation: null
     156_fr:
         Id: 156
         Locale: fr
         Name: 'Gare TGV de Dax'
+        Presentation: null
     157_fr:
         Id: 157
         Locale: fr
         Name: 'Casino Barrière de Carnac'
+        Presentation: null
     158_fr:
         Id: 158
         Locale: fr
         Name: 'Forêt Adrénaline'
+        Presentation: null
     159_de:
         Id: 159
         Locale: de
         Name: 'Königsschloss Collioure'
+        Presentation: null
     159_fr:
         Id: 159
         Locale: fr
         Name: 'Château Royal de Collioure'
+        Presentation: null
     160_fr:
         Id: 160
         Locale: fr
         Name: 'Eglise Notre-Dame-des-Anges'
+        Presentation: null
     161_fr:
         Id: 161
         Locale: fr
         Name: 'Musée de la Camargue'
+        Presentation: null
     162_de:
         Id: 162
         Locale: de
         Name: 'Regionaler Naturpark Camargue - Zugang Arles'
+        Presentation: null
     162_fr:
         Id: 162
         Locale: fr
         Name: 'Parc naturel régional de la Camargue - accès Arles'
+        Presentation: null
     163_en:
         Id: 163
         Locale: en
         Name: 'Arles Antique departmental Museum'
+        Presentation: null
     163_fr:
         Id: 163
         Locale: fr
         Name: 'Musée départemental Arles Antique'
+        Presentation: null
     164_fr:
         Id: 164
         Locale: fr
         Name: 'Les Thermes d''Arles'
+        Presentation: null
     165_fr:
         Id: 165
         Locale: fr
         Name: 'Centre culturel communal de Porto-Vecchio'
+        Presentation: null
     166_fr:
         Id: 166
         Locale: fr
         Name: 'Port de plaisance de Porto-Vecchio'
+        Presentation: null
     167_de:
         Id: 167
         Locale: de
         Name: 'Aquarium de la Poudrière'
+        Presentation: null
     167_fr:
         Id: 167
         Locale: fr
         Name: 'Aquarium de la Poudrière'
+        Presentation: null
     168_de:
         Id: 168
         Locale: de
         Name: Genueserturm
+        Presentation: null
     168_en:
         Id: 168
         Locale: en
         Name: 'Tour génoise'
+        Presentation: null
     168_fr:
         Id: 168
         Locale: fr
         Name: 'Tour génoise'
+        Presentation: null
     169_fr:
         Id: 169
         Locale: fr
         Name: 'Musée des Beaux-Arts de Pont-Aven'
+        Presentation: null
     170_fr:
         Id: 170
         Locale: fr
         Name: 'Port de Pont-Aven'
+        Presentation: null
     171_fr:
         Id: 171
         Locale: fr
         Name: 'Chapelle de Tremalo de Pont-Aven'
+        Presentation: null
     172_de:
         Id: 172
         Locale: de
         Name: 'Le Marinarium'
+        Presentation: null
     172_fr:
         Id: 172
         Locale: fr
         Name: 'Le Marinarium'
+        Presentation: null
     173_fr:
         Id: 173
         Locale: fr
         Name: 'Port de Plaisance de la Rochelle'
+        Presentation: null
     174_fr:
         Id: 174
         Locale: fr
         Name: 'Gare Sncf'
+        Presentation: null
     175_fr:
         Id: 175
         Locale: fr
         Name: 'Gare TGV de La Rochelle'
+        Presentation: null
     176_de:
         Id: 176
         Locale: de
         Name: 'Musée maritime de la Rochelle'
+        Presentation: null
     176_fr:
         Id: 176
         Locale: fr
         Name: 'Musée maritime de la Rochelle'
+        Presentation: null
     177_de:
         Id: 177
         Locale: de
         Name: 'Strohmuseum in Saint-Lyphard'
+        Presentation: null
     177_fr:
         Id: 177
         Locale: fr
         Name: 'Musée du Chaume de Saint-Lyphard'
+        Presentation: null
     178_de:
         Id: 178
         Locale: de
         Name: 'Salzgarten von Guérande - Marais salants de Guérande'
+        Presentation: null
     178_en:
         Id: 178
         Locale: en
         Name: 'Marais salants de Guérande'
+        Presentation: null
     178_fr:
         Id: 178
         Locale: fr
         Name: 'Marais salants de Guérande'
+        Presentation: null
     179_de:
         Id: 179
         Locale: de
         Name: 'Salzgarten von Guérande'
+        Presentation: null
     179_fr:
         Id: 179
         Locale: fr
         Name: 'Terre de Sel de Guérande'
+        Presentation: null
     180_de:
         Id: 180
         Locale: de
         Name: 'Océarium von Le Croisic'
+        Presentation: null
     180_en:
         Id: 180
         Locale: en
         Name: 'Océarium in Le Croisic'
+        Presentation: null
     180_fr:
         Id: 180
         Locale: fr
         Name: 'Océarium du Croisic'
+        Presentation: null
     181_fr:
         Id: 181
         Locale: fr
         Name: 'Eglise Saint Georges d''Oléron'
+        Presentation: null
     182_fr:
         Id: 182
         Locale: fr
         Name: 'Château de Bonnemie'
+        Presentation: null
     183_fr:
         Id: 183
         Locale: fr
         Name: 'Eglise Saint-Pierre'
+        Presentation: null
     184_de:
         Id: 184
         Locale: de
         Name: Lavendelmuseum
+        Presentation: null
     184_fr:
         Id: 184
         Locale: fr
         Name: 'Musée de la Lavande'
+        Presentation: null
     185_de:
         Id: 185
         Locale: de
         Name: 'Dolmen von Kercado'
+        Presentation: null
     185_fr:
         Id: 185
         Locale: fr
         Name: 'Dolmen de Kercado'
+        Presentation: null
     186_fr:
         Id: 186
         Locale: fr
         Name: 'Chapelle de Kergroix à Carnac'
+        Presentation: null
     187_fr:
         Id: 187
         Locale: fr
         Name: 'Chapelle et Tumulus Saint-Michel'
+        Presentation: null
     188_de:
         Id: 188
         Locale: de
         Name: 'Alignements von Carnac - Megalithenhaus'
+        Presentation: null
     188_fr:
         Id: 188
         Locale: fr
         Name: 'Alignements de Carnac - Maison des mégalithes'
+        Presentation: null
     189_de:
         Id: 189
         Locale: de
         Name: 'Historisches Stadtmuseum für Wasserflugzeuge'
+        Presentation: null
     189_fr:
         Id: 189
         Locale: fr
         Name: 'Musée municipal historique de l''hydraviation'
+        Presentation: null
     190_fr:
         Id: 190
         Locale: fr
         Name: 'Parc départemental de la Grande Corniche'
+        Presentation: null
     191_de:
         Id: 191
         Locale: de
         Name: 'Dune du Pyla - Wanderdüne'
+        Presentation: null
     191_en:
         Id: 191
         Locale: en
         Name: 'Dune du Pyla'
+        Presentation: null
     191_fr:
         Id: 191
         Locale: fr
         Name: 'Dune du Pyla'
+        Presentation: null
     192_fr:
         Id: 192
         Locale: fr
         Name: 'Zoo du Bassin d''Arcachon'
+        Presentation: null
     193_fr:
         Id: 193
         Locale: fr
         Name: 'Cimetière marin'
+        Presentation: null
     194_de:
         Id: 194
         Locale: de
         Name: 'Schloss Grimaud'
+        Presentation: null
     194_fr:
         Id: 194
         Locale: fr
         Name: 'Château de Grimaud'
+        Presentation: null
     195_fr:
         Id: 195
         Locale: fr
         Name: 'Maison des Papillons'
+        Presentation: null
     196_fr:
         Id: 196
         Locale: fr
         Name: 'Tour du Portalet'
+        Presentation: null
     197_fr:
         Id: 197
         Locale: fr
         Name: 'Parc naturel régional des Monts d''Ardèche'
+        Presentation: null
     198_fr:
         Id: 198
         Locale: fr
         Name: 'Citadelle du Château d''Oléron'
+        Presentation: null
     199_fr:
         Id: 199
         Locale: fr
         Name: 'Pôle Nature du Marais aux oiseaux'
+        Presentation: null
     200_fr:
         Id: 200
         Locale: fr
         Name: 'Centre-ville de Castellane'
+        Presentation: null
     201_fr:
         Id: 201
         Locale: fr
         Name: 'Aboard Rafting'
+        Presentation: null
     202_de:
         Id: 202
         Locale: de
         Name: 'Verdonschlucht - Gorges du Verdon'
+        Presentation: null
     202_en:
         Id: 202
         Locale: en
         Name: 'The Verdon Gorge'
+        Presentation: null
     202_fr:
         Id: 202
         Locale: fr
         Name: 'Gorges du Verdon'
+        Presentation: null
     203_de:
         Id: 203
         Locale: de
         Name: 'Citromuseum - Musée des Citroën'
+        Presentation: null
     203_fr:
         Id: 203
         Locale: fr
         Name: 'Citromuseum - Musée des Citroën'
+        Presentation: null
     204_fr:
         Id: 204
         Locale: fr
         Name: 'Parc des Expositions de Perpignan'
+        Presentation: null
     205_de:
         Id: 205
         Locale: de
         Name: 'Archäologiemuseum Henri Prades in Lattes'
+        Presentation: null
     205_fr:
         Id: 205
         Locale: fr
         Name: 'Musée archéologique Henri Prades de Lattes'
+        Presentation: null
     206_de:
         Id: 206
         Locale: de
         Name: 'Phare de la Méditerranée von Palavas-les-Flots'
+        Presentation: null
     206_fr:
         Id: 206
         Locale: fr
         Name: 'Phare de la Méditerranée de Palavas-les-Flots'
+        Presentation: null
     207_de:
         Id: 207
         Locale: de
         Name: 'Kathedrale von Maguelone'
+        Presentation: null
     207_fr:
         Id: 207
         Locale: fr
         Name: 'Cathédrale de Maguelone'
+        Presentation: null
     208_fr:
         Id: 208
         Locale: fr
         Name: 'Parc des expositions de Montpellier'
+        Presentation: null
     209_de:
         Id: 209
         Locale: de
         Name: 'Vogelinsel von Arcachon'
+        Presentation: null
     209_fr:
         Id: 209
         Locale: fr
         Name: 'Ile aux Oiseaux d''Arcachon'
+        Presentation: null
     210_fr:
         Id: 210
         Locale: fr
         Name: 'Eglise Notre-Dame et Chapelle des Marins d''Arcachon'
+        Presentation: null
     211_fr:
         Id: 211
         Locale: fr
         Name: 'Casino d''Arcachon - Château Deganne'
+        Presentation: null
     212_de:
         Id: 212
         Locale: de
         Name: 'Museum und Aquarium von Arcachon'
+        Presentation: null
     212_fr:
         Id: 212
         Locale: fr
         Name: 'Musée-aquarium d''Arcachon'
+        Presentation: null
     213_de:
         Id: 213
         Locale: de
         Name: 'Normandie Caramels'
+        Presentation: null
     213_en:
         Id: 213
         Locale: en
         Name: 'Normandie Caramels'
+        Presentation: null
     213_fr:
         Id: 213
         Locale: fr
         Name: 'Normandie Caramels'
+        Presentation: null
     214_de:
         Id: 214
         Locale: de
         Name: 'Deutscher Militärfriedhof in La Cambe'
+        Presentation: null
     214_fr:
         Id: 214
         Locale: fr
         Name: 'Cimetière militaire allemand à La Cambe'
+        Presentation: null
     215_de:
         Id: 215
         Locale: de
         Name: 'Museum der Besatzung'
+        Presentation: null
     215_fr:
         Id: 215
         Locale: fr
         Name: 'Musée de l''Occupation'
+        Presentation: null
     216_de:
         Id: 216
         Locale: de
         Name: 'Utah Beach'
+        Presentation: null
     216_en:
         Id: 216
         Locale: en
         Name: 'Utah Beach'
+        Presentation: null
     216_fr:
         Id: 216
         Locale: fr
         Name: 'Utah Beach'
+        Presentation: null
     217_de:
         Id: 217
         Locale: de
         Name: 'Prähistorisches Museum der Verdonschlucht'
+        Presentation: null
     217_fr:
         Id: 217
         Locale: fr
         Name: 'Musée de Préhistoire des Gorges du Verdon'
+        Presentation: null
     218_fr:
         Id: 218
         Locale: fr
         Name: 'Centre-ville de Tavernes'
+        Presentation: null
     219_de:
         Id: 219
         Locale: de
         Name: Fayence-Museum
+        Presentation: null
     219_fr:
         Id: 219
         Locale: fr
         Name: 'Musée de la faïence'
+        Presentation: null
     220_de:
         Id: 220
         Locale: de
         Name: 'Dorf Moustiers-Sainte-Marie'
+        Presentation: null
     220_fr:
         Id: 220
         Locale: fr
         Name: 'Village de Moustiers-Sainte-Marie'
+        Presentation: null
     221_fr:
         Id: 221
         Locale: fr
         Name: 'Eglise Saint-Jacques de Perpignan'
+        Presentation: null
     222_fr:
         Id: 222
         Locale: fr
         Name: 'La Ferme du Far West à Marineland'
+        Presentation: null
     223_de:
         Id: 223
         Locale: de
         Name: Marineland
+        Presentation: null
     223_en:
         Id: 223
         Locale: en
         Name: Marineland
+        Presentation: null
     223_fr:
         Id: 223
         Locale: fr
         Name: Marineland
+        Presentation: null
     224_de:
         Id: 224
         Locale: de
         Name: 'Staatsmuseum Fernand Léger'
+        Presentation: null
     224_fr:
         Id: 224
         Locale: fr
         Name: 'Musée national Fernand Léger'
+        Presentation: null
     225_de:
         Id: 225
         Locale: de
         Name: 'Glasfabrik von Biot'
+        Presentation: null
     225_fr:
         Id: 225
         Locale: fr
         Name: 'La Verrerie de Biot'
+        Presentation: null
     226_de:
         Id: 226
         Locale: de
         Name: 'Schloss Chambord'
+        Presentation: null
     226_en:
         Id: 226
         Locale: en
         Name: 'Chambord Castle'
+        Presentation: null
     226_fr:
         Id: 226
         Locale: fr
         Name: 'Château de Chambord'
+        Presentation: null
     227_de:
         Id: 227
         Locale: de
         Name: 'Schloss Talcy'
+        Presentation: null
     227_fr:
         Id: 227
         Locale: fr
         Name: 'Château de Talcy'
+        Presentation: null
     228_de:
         Id: 228
         Locale: de
         Name: 'Golflatz Prieuré de Ganay'
+        Presentation: null
     228_fr:
         Id: 228
         Locale: fr
         Name: 'Golf du prieuré de Ganay'
+        Presentation: null
     229_fr:
         Id: 229
         Locale: fr
         Name: 'Cathédrale Saint-Louis de Blois'
+        Presentation: null
     230_de:
         Id: 230
         Locale: de
         Name: 'Leuchtturm von Chassiron in Saint Denis-D''Oléron'
+        Presentation: null
     230_fr:
         Id: 230
         Locale: fr
         Name: 'Phare de Chassiron à Saint Denis-D''Oléron'
+        Presentation: null
     231_de:
         Id: 231
         Locale: de
         Name: Semnoz-Massiv
+        Presentation: null
     231_fr:
         Id: 231
         Locale: fr
         Name: 'Massif du Semnoz'
+        Presentation: null
     232_de:
         Id: 232
         Locale: de
         Name: 'Freilichtmuseum von Le Marais Salant'
+        Presentation: null
     232_fr:
         Id: 232
         Locale: fr
         Name: 'Ecomusée du Marais salant'
+        Presentation: null
     233_fr:
         Id: 233
         Locale: fr
         Name: 'Eglise de Saint-Martin-de-Ré'
+        Presentation: null
     234_fr:
         Id: 234
         Locale: fr
         Name: 'Citadelle et remparts'
+        Presentation: null
     235_fr:
         Id: 235
         Locale: fr
         Name: 'Musée Ernest Cognacq'
+        Presentation: null
     236_de:
         Id: 236
         Locale: de
         Name: 'Planète Schokoladenmuseum von Biarritz'
+        Presentation: null
     236_fr:
         Id: 236
         Locale: fr
         Name: 'Planète Musée du chocolat de Biarritz'
+        Presentation: null
     237_fr:
         Id: 237
         Locale: fr
         Name: 'Maison de Georges Clemenceau'
+        Presentation: null
     238_fr:
         Id: 238
         Locale: fr
         Name: 'Saint-Martin-de-Ré - Fortifications de Vauban'
+        Presentation: null
     239_fr:
         Id: 239
         Locale: fr
         Name: 'Site archéologique d''Ambrussum'
+        Presentation: null
     240_fr:
         Id: 240
         Locale: fr
         Name: 'Le Fonds Médard'
+        Presentation: null
     241_fr:
         Id: 241
         Locale: fr
         Name: 'La statue du Pescalune'
+        Presentation: null
     242_fr:
         Id: 242
         Locale: fr
         Name: 'Halles Couvertes'
+        Presentation: null
     243_fr:
         Id: 243
         Locale: fr
         Name: 'Le Train jaune des Pyrénées à Villefranche-de-Conflent'
+        Presentation: null
     244_fr:
         Id: 244
         Locale: fr
         Name: 'Cave de Die Jaillance'
+        Presentation: null
     245_de:
         Id: 245
         Locale: de
         Name: 'Prähistorisches Museum im Vercours'
+        Presentation: null
     245_fr:
         Id: 245
         Locale: fr
         Name: 'Musée de la Préhistoire du Vercors'
+        Presentation: null
     246_de:
         Id: 246
         Locale: de
         Name: 'Denkmal für den Widerstand im Vercors'
+        Presentation: null
     246_fr:
         Id: 246
         Locale: fr
         Name: 'Mémorial de la Résistance en Vercors'
+        Presentation: null
     247_de:
         Id: 247
         Locale: de
         Name: 'Golfplatz Le Coiroux'
+        Presentation: null
     247_fr:
         Id: 247
         Locale: fr
         Name: 'Golf du Coiroux'
+        Presentation: null
     248_de:
         Id: 248
         Locale: de
         Name: 'Dorf Collonges-la-Rouge'
+        Presentation: null
     248_fr:
         Id: 248
         Locale: fr
         Name: 'Village de Collonges-la-Rouge'
+        Presentation: null
     249_fr:
         Id: 249
         Locale: fr
         Name: 'La Grange aux Oies'
+        Presentation: null
     250_en:
         Id: 250
         Locale: en
         Name: 'Church of Saint-Pierre'
+        Presentation: null
     250_fr:
         Id: 250
         Locale: fr
         Name: 'Eglise Saint-Pierre de Collonges La Rouge'
+        Presentation: null
     251_de:
         Id: 251
         Locale: de
         Name: 'Musée de Cox'
+        Presentation: null
     251_fr:
         Id: 251
         Locale: fr
         Name: 'Musée de Cox'
+        Presentation: null
     252_de:
         Id: 252
         Locale: de
         Name: 'Europäisches Glockenmuseum'
+        Presentation: null
     252_fr:
         Id: 252
         Locale: fr
         Name: 'Musée européen d''Art Campanaire'
+        Presentation: null
     253_de:
         Id: 253
         Locale: de
         Name: Foie-Gras-Museum
+        Presentation: null
     253_fr:
         Id: 253
         Locale: fr
         Name: 'Musée du  foie gras'
+        Presentation: null
     254_de:
         Id: 254
         Locale: de
         Name: 'Musée de l''Actualité'
+        Presentation: null
     254_fr:
         Id: 254
         Locale: fr
         Name: 'Musée de l''Actualité'
+        Presentation: null
     255_de:
         Id: 255
         Locale: de
         Name: 'Parc de la Coccinelle'
+        Presentation: null
     255_fr:
         Id: 255
         Locale: fr
         Name: 'Parc de la Coccinelle'
+        Presentation: null
     256_de:
         Id: 256
         Locale: de
         Name: 'Park Aqualand Becken von Arcachon'
+        Presentation: null
     256_fr:
         Id: 256
         Locale: fr
         Name: 'Parc Aqualand Bassin d''Arcachon'
+        Presentation: null
     257_de:
         Id: 257
         Locale: de
         Name: 'Aquarium le Septième Continent'
+        Presentation: null
     257_fr:
         Id: 257
         Locale: fr
         Name: 'Aquarium le Septième Continent'
+        Presentation: null
     258_fr:
         Id: 258
         Locale: fr
         Name: 'Port Bourgenay'
+        Presentation: null
     259_de:
         Id: 259
         Locale: de
         Name: 'Parc zoologique des Sables-d''Olonne'
+        Presentation: null
     259_fr:
         Id: 259
         Locale: fr
         Name: 'Parc zoologique des Sables-d''Olonne'
+        Presentation: null
     260_fr:
         Id: 260
         Locale: fr
         Name: 'Chapelle Notre-Dame-de-Bonne-Espérance'
+        Presentation: null
     261_fr:
         Id: 261
         Locale: fr
         Name: 'Station de ski d''Ascou-Pailhères'
+        Presentation: null
     262_fr:
         Id: 262
         Locale: fr
         Name: 'Front de neige d''Ax-3-Domaines'
+        Presentation: null
     263_de:
         Id: 263
         Locale: de
         Name: 'Haus der Wölfe'
+        Presentation: null
     263_fr:
         Id: 263
         Locale: fr
         Name: 'La Maison des loups'
+        Presentation: null
     264_de:
         Id: 264
         Locale: de
         Name: 'Schloss Montségur'
+        Presentation: null
     264_en:
         Id: 264
         Locale: en
         Name: 'Château de Montségur'
+        Presentation: null
     264_fr:
         Id: 264
         Locale: fr
         Name: 'Château de Montségur'
+        Presentation: null
     265_fr:
         Id: 265
         Locale: fr
         Name: 'Parc de l''Estuaire à Saint-Georges-de-Didonne'
+        Presentation: null
     266_fr:
         Id: 266
         Locale: fr
         Name: 'Port de Port-Camargue'
+        Presentation: null
     267_de:
         Id: 267
         Locale: de
         Name: Seaquarium
+        Presentation: null
     267_fr:
         Id: 267
         Locale: fr
         Name: Seaquarium
+        Presentation: null
     268_de:
         Id: 268
         Locale: de
         Name: 'Centre Aqua Camargue'
+        Presentation: null
     268_fr:
         Id: 268
         Locale: fr
         Name: 'Centre Aqua Camargue'
+        Presentation: null
     269_en:
         Id: 269
         Locale: en
         Name: 'Compagnie des Salins du Midi'
+        Presentation: null
     269_fr:
         Id: 269
         Locale: fr
         Name: 'Compagnie des Salins du Midi'
+        Presentation: null
     270_fr:
         Id: 270
         Locale: fr
         Name: 'Conservatoire Béziers Méditerranée (Conservatoire à rayonnement intercommunal)'
+        Presentation: null
     271_de:
         Id: 271
         Locale: de
         Name: 'Bauernhof Ferme du Hérisson (ehemals Ferme de l''Aurochs)'
+        Presentation: null
     271_fr:
         Id: 271
         Locale: fr
         Name: 'Ferme du Hérisson (ex Ferme de l''aurochs)'
+        Presentation: null
     272_de:
         Id: 272
         Locale: de
         Name: 'Golfdomäne in Val de Sorne'
+        Presentation: null
     272_fr:
         Id: 272
         Locale: fr
         Name: 'Golf du domaine du Val de Sorne'
+        Presentation: null
     273_de:
         Id: 273
         Locale: de
         Name: 'Reculée de Baume-les-Messieurs'
+        Presentation: null
     273_en:
         Id: 273
         Locale: en
         Name: 'Reculée de Baume-les-Messieurs'
+        Presentation: null
     273_fr:
         Id: 273
         Locale: fr
         Name: 'Reculée de Baume-les-Messieurs'
+        Presentation: null
     274_de:
         Id: 274
         Locale: de
         Name: 'Wasserfälle des Hérisson in Ménétrux en Joux'
+        Presentation: null
     274_en:
         Id: 274
         Locale: en
         Name: 'Cascades du Hérisson de Ménétrux en Joux'
+        Presentation: null
     274_fr:
         Id: 274
         Locale: fr
         Name: 'Cascades du Hérisson de Ménétrux en Joux'
+        Presentation: null
     275_de:
         Id: 275
         Locale: de
         Name: 'Aquatic Landes'
+        Presentation: null
     275_fr:
         Id: 275
         Locale: fr
         Name: 'Aquatic Landes'
+        Presentation: null
     276_fr:
         Id: 276
         Locale: fr
         Name: 'Musee d''art et d''Histoire de Bormes-les-Mimosas'
+        Presentation: null
     277_en:
         Id: 277
         Locale: en
         Name: 'Massif des Maures'
+        Presentation: null
     277_fr:
         Id: 277
         Locale: fr
         Name: 'Massif des Maures'
+        Presentation: null
     278_fr:
         Id: 278
         Locale: fr
         Name: 'Lavoir Vasserot'
+        Presentation: null
     279_de:
         Id: 279
         Locale: de
         Name: Automatenmuseum
+        Presentation: null
     279_fr:
         Id: 279
         Locale: fr
         Name: 'Musée de l''Automate'
+        Presentation: null
     280_de:
         Id: 280
         Locale: de
         Name: 'Musée de la Vieille Prune - Distillerie Louis Roque'
+        Presentation: null
     280_fr:
         Id: 280
         Locale: fr
         Name: 'Musée de la Vieille Prune - Distillerie Louis Roque'
+        Presentation: null
     281_fr:
         Id: 281
         Locale: fr
         Name: 'Souillac Country Club'
+        Presentation: null
     282_de:
         Id: 282
         Locale: de
         Name: Préhistologia
+        Presentation: null
     282_en:
         Id: 282
         Locale: en
         Name: Préhistologia
+        Presentation: null
     282_fr:
         Id: 282
         Locale: fr
         Name: Préhistologia
+        Presentation: null
     283_de:
         Id: 283
         Locale: de
         Name: 'Abenteuerpark Les Rochers de Maguelone'
+        Presentation: null
     283_fr:
         Id: 283
         Locale: fr
         Name: 'Les Rochers de Maguelone'
+        Presentation: null
     284_fr:
         Id: 284
         Locale: fr
         Name: 'Centre-ville de Fayence'
+        Presentation: null
     285_de:
         Id: 285
         Locale: de
         Name: 'Golfdomäne von Saint- Endréol'
+        Presentation: null
     285_fr:
         Id: 285
         Locale: fr
         Name: 'Golf des Domaines de Saint- Endréol'
+        Presentation: null
     286_fr:
         Id: 286
         Locale: fr
         Name: 'Musée du Souvenir'
+        Presentation: null
     287_de:
         Id: 287
         Locale: de
         Name: 'Freiluftmuseum von La Margeride - Haute-Auvergne'
+        Presentation: null
     287_fr:
         Id: 287
         Locale: fr
         Name: 'Ecomusée de la Margeride - Haute-Auvergne'
+        Presentation: null
     288_de:
         Id: 288
         Locale: de
         Name: Garabit-Viadukt
+        Presentation: null
     288_fr:
         Id: 288
         Locale: fr
         Name: 'Viaduc de Garabit'
+        Presentation: null
     289_de:
         Id: 289
         Locale: de
         Name: 'Peterskathedrale von Saint-Flour'
+        Presentation: null
     289_en:
         Id: 289
         Locale: en
         Name: 'Saint Flour Cathedral'
+        Presentation: null
     289_fr:
         Id: 289
         Locale: fr
         Name: 'Cathédrale Saint-Pierre de Saint-Flour'
+        Presentation: null
     290_fr:
         Id: 290
         Locale: fr
         Name: 'Musée d''Art et d''Histoire Alfred Douët'
+        Presentation: null
     291_de:
         Id: 291
         Locale: de
         Name: 'Abtei Fontfroide'
+        Presentation: null
     291_fr:
         Id: 291
         Locale: fr
         Name: 'Abbaye de Fontfroide'
+        Presentation: null
     292_fr:
         Id: 292
         Locale: fr
         Name: 'Musée Gustave Fayet'
+        Presentation: null
     293_de:
         Id: 293
         Locale: de
         Name: 'Réserve africaine de Sigean'
+        Presentation: null
     293_fr:
         Id: 293
         Locale: fr
         Name: 'Réserve africaine de Sigean'
+        Presentation: null
     294_fr:
         Id: 294
         Locale: fr
         Name: 'Parc naturel régional de la Narbonnaise en Méditerranée'
+        Presentation: null
     295_fr:
         Id: 295
         Locale: fr
         Name: 'Indian Forest - Parcours acrobatiques de Morieux'
+        Presentation: null
     296_fr:
         Id: 296
         Locale: fr
         Name: 'Ruines de la Tour de Cesson'
+        Presentation: null
     297_fr:
         Id: 297
         Locale: fr
         Name: 'Juno Bravo - Bateau musée atelier du jouet en bois'
+        Presentation: null
     298_fr:
         Id: 298
         Locale: fr
         Name: 'Village de Lourmarin'
+        Presentation: null
     299_de:
         Id: 299
         Locale: de
         Name: 'Atelier Paul Cézanne - Atelier des Lauves'
+        Presentation: null
     299_en:
         Id: 299
         Locale: en
         Name: 'Paul Cézanne atelier'
+        Presentation: null
     299_fr:
         Id: 299
         Locale: fr
         Name: 'Atelier Paul Cézanne - Atelier des Lauves'
+        Presentation: null
     300_de:
         Id: 300
         Locale: de
         Name: Vasarely-Stiftung
+        Presentation: null
     300_en:
         Id: 300
         Locale: en
         Name: 'Vasarely Foundation'
+        Presentation: null
     300_fr:
         Id: 300
         Locale: fr
         Name: 'Fondation Vasarely'
+        Presentation: null
     301_de:
         Id: 301
         Locale: de
         Name: 'Kathedrale Saint-Sauveur'
+        Presentation: null
     301_en:
         Id: 301
         Locale: en
         Name: 'Cathédrale Saint-Sauveur'
+        Presentation: null
     301_fr:
         Id: 301
         Locale: fr
         Name: 'Cathédrale Saint-Sauveur'
+        Presentation: null
     302_fr:
         Id: 302
         Locale: fr
         Name: 'O''balia'
+        Presentation: null
     303_fr:
         Id: 303
         Locale: fr
         Name: 'Place forte de Neuf-Brisach - Fortifications de Vauban'
+        Presentation: null
     304_de:
         Id: 304
         Locale: de
         Name: Vauban-Museum
+        Presentation: null
     304_en:
         Id: 304
         Locale: en
         Name: 'Vauban Museum'
+        Presentation: null
     304_fr:
         Id: 304
         Locale: fr
         Name: 'Musée Vauban'
+        Presentation: null
     305_fr:
         Id: 305
         Locale: fr
         Name: 'Synagogue de Colmar'
+        Presentation: null
     306_en:
         Id: 306
         Locale: en
         Name: 'The Petite Venise in Colmar'
+        Presentation: null
     306_fr:
         Id: 306
         Locale: fr
         Name: 'La Petite Venise de Colmar'
+        Presentation: null
     307_fr:
         Id: 307
         Locale: fr
         Name: 'La pointe des Onglous - canal du Midi'
+        Presentation: null
     308_fr:
         Id: 308
         Locale: fr
         Name: 'Aquarium du Cap d''Agde'
+        Presentation: null
     309_en:
         Id: 309
         Locale: en
         Name: 'Bastia Golf Club'
+        Presentation: null
     309_fr:
         Id: 309
         Locale: fr
         Name: 'Bastia Golf Club'
+        Presentation: null
     310_fr:
         Id: 310
         Locale: fr
         Name: 'Maison natale de Pascal Paoli'
+        Presentation: null
     311_en:
         Id: 311
         Locale: en
         Name: 'Eglise San-Michele de Murato'
+        Presentation: null
     311_fr:
         Id: 311
         Locale: fr
         Name: 'Eglise San-Michele de Murato'
+        Presentation: null
     312_fr:
         Id: 312
         Locale: fr
         Name: 'Eglise Saint-Charles de Bastia'
+        Presentation: null
     313_fr:
         Id: 313
         Locale: fr
         Name: 'Télécabine du Jaillet'
+        Presentation: null
     314_fr:
         Id: 314
         Locale: fr
         Name: 'Tramway du Mont-Blanc'
+        Presentation: null
     315_fr:
         Id: 315
         Locale: fr
         Name: 'Eglise Saint-Jean-Baptiste de Megève'
+        Presentation: null
     316_fr:
         Id: 316
         Locale: fr
         Name: 'Musée du Haut Val d''Arly'
+        Presentation: null
     317_de:
         Id: 317
         Locale: de
         Name: 'Schloss Azay-le-Rideau'
+        Presentation: null
     317_en:
         Id: 317
         Locale: en
         Name: 'Azay-le-Rideau castle'
+        Presentation: null
     317_fr:
         Id: 317
         Locale: fr
         Name: 'Château d''Azay-le-Rideau'
+        Presentation: null
     318_de:
         Id: 318
         Locale: de
         Name: 'Schloss und Gärten Villandry'
+        Presentation: null
     318_fr:
         Id: 318
         Locale: fr
         Name: 'Château et Jardins de Villandry'
+        Presentation: null
     319_de:
         Id: 319
         Locale: de
         Name: Walmuseum
+        Presentation: null
     319_fr:
         Id: 319
         Locale: fr
         Name: 'Le musée de la Baleine'
+        Presentation: null
     320_fr:
         Id: 320
         Locale: fr
         Name: 'Port de plaisance d''Anglet'
+        Presentation: null
     321_de:
         Id: 321
         Locale: de
         Name: 'Ökologischer Park Izadia'
+        Presentation: null
     321_fr:
         Id: 321
         Locale: fr
         Name: 'Parc Ecologique Izadia'
+        Presentation: null
     322_de:
         Id: 322
         Locale: de
         Name: 'Schleusentreppe von Fonserannes'
+        Presentation: null
     322_en:
         Id: 322
         Locale: en
         Name: 'Fonserannes Lock'
+        Presentation: null
     322_fr:
         Id: 322
         Locale: fr
         Name: 'Les 9 écluses de Fonserannes'
+        Presentation: null
     323_de:
         Id: 323
         Locale: de
         Name: 'Ufer des Canal du Midi in Béziers'
+        Presentation: null
     323_fr:
         Id: 323
         Locale: fr
         Name: 'Bords du Canal du Midi à Béziers'
+        Presentation: null
     324_fr:
         Id: 324
         Locale: fr
         Name: 'Eglise Sainte-Philomène'
+        Presentation: null
     325_fr:
         Id: 325
         Locale: fr
         Name: 'Eglise Sainte-Catherine'
+        Presentation: null
     326_fr:
         Id: 326
         Locale: fr
         Name: 'Musée Bonnard'
+        Presentation: null
     327_fr:
         Id: 327
         Locale: fr
         Name: 'La Tour des Danys'
+        Presentation: null

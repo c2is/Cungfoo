@@ -237,26 +237,26 @@
         Id: 14
         Locale: de
         Name: Languedoc-Roussillon
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
-        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
+        Introduction: 'Le grand air, ça vous gagne ! DE'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. DE'
     14_en:
         Id: 14
         Locale: en
         Name: Languedoc-Roussillon
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
-        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
+        Introduction: 'Le grand air, ça vous gagne ! EN'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. EN'
     14_fr:
         Id: 14
         Locale: fr
         Name: Languedoc-Roussillon
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
-        Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mauris sem, ut cursus sapien. Morbi a nulla arcu. Duis ornare nibh nec neque gravida at convallis nulla laoreet. Sed quis magna ipsum, non lobortis risus. Nunc in tristique dolor.'
+        Introduction: 'Le grand air, ça vous gagne !'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations.'
     14_nl:
         Id: 14
         Locale: nl
-        Name: ''
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
-        Description: null
+        Name: Languedoc-Roussillon
+        Introduction: 'Le grand air, ça vous gagne ! NL'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. NL'
     15_de:
         Id: 15
         Locale: de
