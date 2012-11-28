@@ -470,7 +470,7 @@
         <column name="geo_coordinate_y" type="varchar" />
         <column name="distance_camping" type="varchar" />
         <column name="image" type="varchar" />
-        <column name="presentation" type="varchar" />
+        <column name="presentation" type="longvarchar" />
         <behavior name="timestampable" />
 
         <behavior name="i18n">
@@ -501,7 +501,7 @@
         <behavior name="timestampable" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name, str_date,subtitle" />
+            <parameter name="i18n_columns" value="name,str_date,subtitle" />
         </behavior>
 
         <behavior name="crudable">
