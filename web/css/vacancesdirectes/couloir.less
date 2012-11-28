@@ -215,6 +215,12 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
   &.fushia{background-color:@colorFushia;color:@colorBlanc;}
 }
 
+input,
+textarea{font:bold 12px @arial;color:@colorGris0;}
+input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
+textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+.label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
+
 #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
   h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
   &>div{background-color:@colorBgGrisC;color:@colorGris2;
@@ -227,11 +233,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
     #existingCustomerLayer,
     #newCustomerLayer{
       .aField{margin-bottom:10px;}
-      input,
-      textarea{font:bold 12px @arial;color:@colorGris0;}
-      .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;margin-right:10px;display:inline-block;text-align:right;}
-      input{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
-      textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+      .label{margin-right:10px;text-align:right;}
     }
     #newCustomerLayer{
       .label{width:130px;padding-top:3px;}
@@ -262,16 +264,15 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 }
 
 #reservation{
-  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
-    small{font:bold 17px @arial;text-transform:none;}
-  }
-  .price{font:bold 19px/18px @ptnarrow;}
-  .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;
-    &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-  }
-  .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
   .aRoom{
-    .addAction{position:absolute;top:0;right:0;}
+    h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
+      small{font:bold 17px @arial;text-transform:none;}
+    }
+    .price{font:bold 19px/18px @ptnarrow;}
+    .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
+      &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+      .addAction{position:relative;margin-right:5px;float:right;width:20px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+    }
     tr{font-weight:bold;
       &.productsNotSelectedYet{font-weight:normal;}
       td{._verticalCenter(21px);
@@ -279,16 +280,26 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
         .hiddenIfCheckbox{display:none;}
       }
     }
-    .anOccupant{
-      h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;._verticalCenter(40px);
+    .anOccupant{background-color:@colorBlanc;
+      h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;
         .occupantHeaderLeft{._verticalCenter(27px);
           small{font:bold 17px @arial;text-transform:none;}
-          &:before{content:"";width:20px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+          &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
         }
       }
+      .occupantFields{padding:10px 5px;
+        &>*{margin:0 5px 10px;}
+        input{border:1px solid @colorBorderGris;}
+      }
+      h4{display:none;}
     }
   }
+  #financialContener{
+    input{border:1px solid @colorBorderGris;}
+  }
 }
+
+
 
 
 
@@ -566,10 +577,11 @@ input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
 input[type="radio"] {height:auto;}
 
 /* Stylish Select 0.4.9 */
-#newCustomerLayer{
+#newCustomerLayer,
+#financialContener{
   ._stylish-select(141px,27px,0px,4);
 }
-#reservation{
+#reservation .aRoom{
   ._stylish-select(54px,27px,10px,5);
 }
 

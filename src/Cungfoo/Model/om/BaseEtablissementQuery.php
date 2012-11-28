@@ -45,7 +45,7 @@ use Cungfoo\Model\Ville;
 /**
  * Base class that represents a query for the 'etablissement' table.
  *
- *
+ * 
  *
  * @method EtablissementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EtablissementQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -282,7 +282,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Etablissement|Etablissement[]|mixed the result, formatted by the current formatter
@@ -337,7 +337,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `etablissement` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -2701,7 +2701,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -2713,7 +2713,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addUsingAlias(EtablissementPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -2723,7 +2723,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(EtablissementPeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -2733,7 +2733,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(EtablissementPeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -2745,7 +2745,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addUsingAlias(EtablissementPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -2755,7 +2755,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(EtablissementPeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *
@@ -2766,7 +2766,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(EtablissementPeer::CREATED_AT);
     }
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -2779,12 +2779,12 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'EtablissementI18n';
-
+    
         return $this
             ->joinEtablissementI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -2800,10 +2800,10 @@ abstract class BaseEtablissementQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('EtablissementI18n');
         $this->with['EtablissementI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *
@@ -2823,11 +2823,11 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     // crudable behavior
-
+    
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-
+    
         return $this
             ->_or()
             ->filterByName($term, \Criteria::LIKE)

@@ -14,7 +14,7 @@ $(function() {
     }
 
     if($('#newCustomerLayer').length){
-        $('#newCustomerLayer').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+        $('#newCustomerLayer').find('select').sSelect({ddMaxHeight: '300px'});
         if($('#authentication').length){
             $('.authenticationChoice').click(function(e){
                 resize_myframe();
@@ -23,7 +23,10 @@ $(function() {
         }
     }
     if($('#reservation').length){
-        $('.changeOccupantCount').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+        $('.changeOccupantCount').find('select').sSelect({ddMaxHeight: '300px'});
+    }
+    if($('#financialContener').length){
+        $('#client_due_type').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
 });
