@@ -2217,6 +2217,7 @@ h6,
   line-height: 16px;
   right: -10px;
   bottom: -41px;
+  white-space: nowrap;
 }
 .tooltip span:after {
   bottom: 100%;

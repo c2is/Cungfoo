@@ -76,6 +76,7 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setGeoCoordinateY($place->attributes()->{'Y'})
                 ->setDistanceCamping($place->attributes()->{'DistanceXY'})
                 ->setImage($place->{'Image'})
+                ->setPresentation($place->{'Presentation'})
             ;
         }
         else

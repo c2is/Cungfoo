@@ -22,7 +22,9 @@ $(function() {
             $('#returningCustomerYes').trigger("click");
         }
     }
-
+    if($('#reservation').length){
+        $('.changeOccupantCount').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+    }
 
 });
 
@@ -41,5 +43,5 @@ function resize_myframe() {
     var height = $('body').height();
     height += 70;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
-    consoleLog(height);
+//    consoleLog(height);
 }

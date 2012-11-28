@@ -65,6 +65,12 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     protected $name;
 
     /**
+     * The value for the presentation field.
+     * @var        string
+     */
+    protected $presentation;
+
+    /**
      * @var        PointInteret
      */
     protected $aPointInteret;
@@ -135,6 +141,16 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [presentation] column value.
+     *
+     * @return string
+     */
+    public function getPresentation()
+    {
+        return $this->presentation;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -202,6 +218,27 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     } // setName()
 
     /**
+     * Set the value of [presentation] column.
+     *
+     * @param string $v new value
+     * @return PointInteretI18n The current object (for fluent API support)
+     */
+    public function setPresentation($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->presentation !== $v) {
+            $this->presentation = $v;
+            $this->modifiedColumns[] = PointInteretI18nPeer::PRESENTATION;
+        }
+
+
+        return $this;
+    } // setPresentation()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -240,6 +277,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->presentation = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +286,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = PointInteretI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = PointInteretI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PointInteretI18n object", $e);
@@ -481,6 +519,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
+        if ($this->isColumnModified(PointInteretI18nPeer::PRESENTATION)) {
+            $modifiedColumns[':p' . $index++]  = '`PRESENTATION`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `point_interet_i18n` (%s) VALUES (%s)',
@@ -500,6 +541,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
                         break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`PRESENTATION`':
+                        $stmt->bindValue($identifier, $this->presentation, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,6 +693,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getName();
                 break;
+            case 3:
+                return $this->getPresentation();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +728,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
+            $keys[3] => $this->getPresentation(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPointInteret) {
@@ -729,6 +777,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             case 2:
                 $this->setName($value);
                 break;
+            case 3:
+                $this->setPresentation($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +807,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setPresentation($arr[$keys[3]]);
     }
 
     /**
@@ -770,6 +822,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretI18nPeer::ID)) $criteria->add(PointInteretI18nPeer::ID, $this->id);
         if ($this->isColumnModified(PointInteretI18nPeer::LOCALE)) $criteria->add(PointInteretI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(PointInteretI18nPeer::NAME)) $criteria->add(PointInteretI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(PointInteretI18nPeer::PRESENTATION)) $criteria->add(PointInteretI18nPeer::PRESENTATION, $this->presentation);
 
         return $criteria;
     }
@@ -843,6 +896,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
+        $copyObj->setPresentation($this->getPresentation());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -959,6 +1013,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->name = null;
+        $this->presentation = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

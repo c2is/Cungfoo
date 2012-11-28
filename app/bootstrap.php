@@ -29,7 +29,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\AssetExtension($app));
-
+    $twig->addExtension(new Twig_Extension_Debug());
     return $twig;
 }));
 

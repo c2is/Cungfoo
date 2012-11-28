@@ -71,6 +71,12 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     protected $str_date;
 
     /**
+     * The value for the subtitle field.
+     * @var        string
+     */
+    protected $subtitle;
+
+    /**
      * @var        Event
      */
     protected $aEvent;
@@ -148,6 +154,16 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     public function getStrDate()
     {
         return $this->str_date;
+    }
+
+    /**
+     * Get the [subtitle] column value.
+     *
+     * @return string
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
     }
 
     /**
@@ -239,6 +255,27 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     } // setStrDate()
 
     /**
+     * Set the value of [subtitle] column.
+     *
+     * @param string $v new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setSubtitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->subtitle !== $v) {
+            $this->subtitle = $v;
+            $this->modifiedColumns[] = EventI18nPeer::SUBTITLE;
+        }
+
+
+        return $this;
+    } // setSubtitle()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -278,6 +315,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->str_date = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->subtitle = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -286,7 +324,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EventI18n object", $e);
@@ -522,6 +560,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) {
             $modifiedColumns[':p' . $index++]  = '`STR_DATE`';
         }
+        if ($this->isColumnModified(EventI18nPeer::SUBTITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`SUBTITLE`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `event_i18n` (%s) VALUES (%s)',
@@ -544,6 +585,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                         break;
                     case '`STR_DATE`':
                         $stmt->bindValue($identifier, $this->str_date, PDO::PARAM_STR);
+                        break;
+                    case '`SUBTITLE`':
+                        $stmt->bindValue($identifier, $this->subtitle, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -696,6 +740,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 3:
                 return $this->getStrDate();
                 break;
+            case 4:
+                return $this->getSubtitle();
+                break;
             default:
                 return null;
                 break;
@@ -729,6 +776,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
             $keys[3] => $this->getStrDate(),
+            $keys[4] => $this->getSubtitle(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEvent) {
@@ -780,6 +828,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 3:
                 $this->setStrDate($value);
                 break;
+            case 4:
+                $this->setSubtitle($value);
+                break;
         } // switch()
     }
 
@@ -808,6 +859,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setStrDate($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSubtitle($arr[$keys[4]]);
     }
 
     /**
@@ -823,6 +875,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::LOCALE)) $criteria->add(EventI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(EventI18nPeer::NAME)) $criteria->add(EventI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) $criteria->add(EventI18nPeer::STR_DATE, $this->str_date);
+        if ($this->isColumnModified(EventI18nPeer::SUBTITLE)) $criteria->add(EventI18nPeer::SUBTITLE, $this->subtitle);
 
         return $criteria;
     }
@@ -897,6 +950,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
         $copyObj->setStrDate($this->getStrDate());
+        $copyObj->setSubtitle($this->getSubtitle());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1014,6 +1068,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $this->locale = null;
         $this->name = null;
         $this->str_date = null;
+        $this->subtitle = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

@@ -2,11 +2,19 @@
 
 namespace VacancesDirectes\Controller;
 
-use Cungfoo\Model\RegionQuery;
+use Symfony\Component\HttpFoundation\Request;
 
 use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
+
+use Cungfoo\Model\RegionQuery,
+    Cungfoo\Model\PointInteretPeer,
+    Cungfoo\Model\EventPeer,
+    Cungfoo\Model\EtablissementPeer;
+
+use VacancesDirectes\Lib\Listing\CatalogueListing,
+    VacancesDirectes\Lib\SearchEngine;
 
 class DestinationRegionController implements ControllerProviderInterface
 {
@@ -17,9 +25,17 @@ class DestinationRegionController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{codeResalys}', function ($codeResalys) use ($app)
+        $controllers->match('/{codeResalys}', function (Request $request, $codeResalys) use ($app)
         {
             $locale = $app['context']->get('language');
+
+            // Formulaire de recherche
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
 
             $region = RegionQuery::create()
                 ->joinWithI18n($locale)
@@ -27,14 +43,32 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 4);
-            $events        = EventPeer::getForRegion($region, EventPeer::RANDOM_SORT, 4);
+            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
+            $nbSitesAVisiter = PointInteretPeer::getCountForRegion($region);
+            $events        = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
+            $campings      = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
 
-            return $app['twig']->render('Destination/detail.twig', array(
-                'locale'        => $locale,
-                'item'          => $region,
-                'sitesAVisiter' => $sitesAVisiter,
-                'events'        => $events,
+            $listData = array();
+            for($i = 0; $i < 5; $i++)
+            {
+                $listData[] = $campings[$i];
+            }
+
+            $list = new CatalogueListing($app);
+            $list
+                ->setData($listData)
+                ->setType(CatalogueListing::CATALOGUE)
+            ;
+
+            return $app['twig']->render('Destination/region.twig', array(
+                'locale'            => $locale,
+                'region'            => $region,
+                'sitesAVisiter'     => $sitesAVisiter,
+                'nbSitesAVisiter'   => $nbSitesAVisiter,
+                'events'            => $events,
+                'campings'          => $campings,
+                'list'              => $list->process(),
+                'searchForm'        => $searchEngine->getView(),
             ));
         })
         ->bind('destination_region');

@@ -18,6 +18,9 @@ use Cungfoo\Model\om\BaseEtablissementPeer;
  */
 class EtablissementPeer extends BaseEtablissementPeer
 {
+    const NO_SORT     = 0;
+    const RANDOM_SORT = 1;
+
     public static function getNameOrderByName(\PropelPDO $con = null)
     {
         return \Cungfoo\Model\EtablissementQuery::create()
@@ -48,5 +51,25 @@ class EtablissementPeer extends BaseEtablissementPeer
             ->select(array('Id', 'Code', 'Region.Id', 'RegionI18n.Name', 'Ville.Id', 'VilleI18n.Name', 'Name'))
             ->find($con)
         ;
+    }
+
+    public static function getForRegion(Region $region, $sort = self::NO_SORT, $count = null) {
+        $query = EtablissementQuery::create()
+            ->useVilleQuery()
+                ->filterByRegion($region)
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
     }
 }
