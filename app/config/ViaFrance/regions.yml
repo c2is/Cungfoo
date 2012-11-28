@@ -1,0 +1,55 @@
+regions:
+  ALP:
+    departement: '73,74'
+  ALJU:
+    region: 'R01'
+    departement: '39'
+  ARDE:
+    departement: '07'
+  AUVE:
+    region: 'R03'
+  BRET:
+    region: 'R05'
+  CHMA:
+    departement: '17'
+  CORS:
+    region: 'R08'
+  PCA:
+    departement: '83'
+  GIRO:
+    departement: '33'
+  LAND:
+    departement: '40'
+  LARO:
+    region: 'R11'
+  ARPY:
+    region: 'R14'
+    departement: '09'
+  NORM:
+    region: 'R161'
+  PBAS:
+    departement: '64'
+  PLOI:
+    departement: '44'
+  PEDO:
+    departement: '24'
+  DRHP:
+    departement: '26,04'
+  VEND:
+    deaprtement: '85'
+  LOCH:
+    departement: '41'
+  GERS:
+    departement: '32'
+  AVEY:
+    departement: '12'
+  HERA:
+    departement: '34'
+  AUDE:
+    departement: '11'
+  PASD:
+    departement: '62'
+  ILE:
+    region: 'R12'
+  PYRO:
+    departement: '66'
