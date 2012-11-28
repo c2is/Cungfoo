@@ -86,11 +86,13 @@ class PointOfInterestLoader extends AbstractLoader
                 return null;
             }
 
-            $defaultName = $poi->getName();
+            $defaultName            = $poi->getName();
+            $defaultPresentation    = $poi->getPresentation();
 
             $poi
                 ->setLocale($language)
                 ->setName(($place->{'Name'}) ? $place->{'Name'} : $defaultName)
+                ->setName(($place->{'Presentation'}) ? $place->{'Presentation'} : $defaultPresentation)
             ;
         }
 

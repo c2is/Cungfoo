@@ -27,7 +27,7 @@
         {# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
         <img src="{{ event.image }}" />
         {{ event.name }} {# Titre #}
-        {#{{ event.subtitlte }}#} {# Texte #}
+        {{ event.subtitlte }} {# Texte #}
     {% endfor %}
 
 
@@ -41,7 +41,7 @@
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
 
-    {# Bloc "Vacances directes u nséjout réussi" #}
+    {# Bloc "Vacances directes un séjour réussi" #}
     {{ "encart_vacances_directes.title" | trans }}
     {{ "encart_vacances_directes.subtitle" | trans }}
     {{ "encart_vacances_directes.item_1" | trans }}
