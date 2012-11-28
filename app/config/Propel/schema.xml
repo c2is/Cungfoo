@@ -497,10 +497,11 @@
         <column name="distance_camping" type="varchar" />
         <column name="image" type="varchar" />
         <column name="priority" type="varchar" />
+        <column name="subtitle" type="varchar" />
         <behavior name="timestampable" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name, str_date" />
+            <parameter name="i18n_columns" value="name, str_date,subtitle" />
         </behavior>
 
         <behavior name="crudable">

@@ -26,11 +26,13 @@ use Cungfoo\Model\EventI18nQuery;
  * @method EventI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method EventI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EventI18nQuery orderByStrDate($order = Criteria::ASC) Order by the str_date column
+ * @method EventI18nQuery orderBySubtitle($order = Criteria::ASC) Order by the subtitle column
  *
  * @method EventI18nQuery groupById() Group by the id column
  * @method EventI18nQuery groupByLocale() Group by the locale column
  * @method EventI18nQuery groupByName() Group by the name column
  * @method EventI18nQuery groupByStrDate() Group by the str_date column
+ * @method EventI18nQuery groupBySubtitle() Group by the subtitle column
  *
  * @method EventI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EventI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -47,11 +49,13 @@ use Cungfoo\Model\EventI18nQuery;
  * @method EventI18n findOneByLocale(string $locale) Return the first EventI18n filtered by the locale column
  * @method EventI18n findOneByName(string $name) Return the first EventI18n filtered by the name column
  * @method EventI18n findOneByStrDate(string $str_date) Return the first EventI18n filtered by the str_date column
+ * @method EventI18n findOneBySubtitle(string $subtitle) Return the first EventI18n filtered by the subtitle column
  *
  * @method array findById(int $id) Return EventI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EventI18n objects filtered by the locale column
  * @method array findByName(string $name) Return EventI18n objects filtered by the name column
  * @method array findByStrDate(string $str_date) Return EventI18n objects filtered by the str_date column
+ * @method array findBySubtitle(string $subtitle) Return EventI18n objects filtered by the subtitle column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -142,7 +146,7 @@ abstract class BaseEventI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `STR_DATE` FROM `event_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `STR_DATE`, `SUBTITLE` FROM `event_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -357,6 +361,35 @@ abstract class BaseEventI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventI18nPeer::STR_DATE, $strDate, $comparison);
+    }
+
+    /**
+     * Filter the query on the subtitle column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySubtitle('fooValue');   // WHERE subtitle = 'fooValue'
+     * $query->filterBySubtitle('%fooValue%'); // WHERE subtitle LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $subtitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventI18nQuery The current query, for fluid interface
+     */
+    public function filterBySubtitle($subtitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($subtitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $subtitle)) {
+                $subtitle = str_replace('*', '%', $subtitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventI18nPeer::SUBTITLE, $subtitle, $comparison);
     }
 
     /**

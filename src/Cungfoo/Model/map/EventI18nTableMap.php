@@ -46,6 +46,7 @@ class EventI18nTableMap extends TableMap
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('STR_DATE', 'StrDate', 'VARCHAR', false, 255, null);
+        $this->addColumn('SUBTITLE', 'Subtitle', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 
