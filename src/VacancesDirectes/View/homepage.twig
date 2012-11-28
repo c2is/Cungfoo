@@ -166,6 +166,25 @@
         <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
     </div>
 </div>
+
+<div class="column clearboth clear">
+    <div id="activitiesBloc" class="radiusBox fushia">
+        <h2 id="activitiesBlocTitle">{{ "home.faites_le_plein_d_activites" | trans }}</h2>
+
+        {% for title, activite in pleinActivites %}
+            <div id="activitiesBlocHeadline{{ loop.index }}" class="blueCloud"><span>{{ title | trans }}&hellip;</span></div>
+        {% endfor %}
+
+        {% for activite in pleinActivites %}
+            <ul id="activities{{ loop.index }}" class="activities">
+                {% for model in activite %}
+                    <li><a href="#">{{ model.name | trans }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
 <div class="column clearboth">
     <div id="mapBloc" class="radiusBox greyC clear">
         <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
