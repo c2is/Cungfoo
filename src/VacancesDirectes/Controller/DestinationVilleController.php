@@ -15,7 +15,7 @@ class DestinationVilleController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{$villeSlug}', function ($villeSlug) use ($app)
+        $controllers->match('/{villeSlug}', function ($villeSlug) use ($app)
         {
             $locale = $app['context']->get('language');
 

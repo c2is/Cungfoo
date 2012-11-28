@@ -15,7 +15,7 @@ class DestinationPaysController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{$paysSlug}', function ($paysSlug) use ($app)
+        $controllers->match('/{paysSlug}', function ($paysSlug) use ($app)
         {
             $locale = $app['context']->get('language');
 
