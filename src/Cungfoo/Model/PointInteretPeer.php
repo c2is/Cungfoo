@@ -76,4 +76,18 @@ class PointInteretPeer extends BasePointInteretPeer
 
         return ($count == 1) ? $query->findOne() : $query->find();
     }
+
+    static public function getCountForRegion(Region $region)
+    {
+        return PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->filterByRegion($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+            ->count()
+            ;
+    }
 }
