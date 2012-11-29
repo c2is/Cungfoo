@@ -94,26 +94,3 @@
     </div><!-- // .itemResult -->
     {% endfor %}
 </div><!-- // #result -->
-
-{{ "listing_destination.campings_map_title" | trans }}
-{{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ region.name }}
-<div id="resultMap" class="gmap" style="width:616px;height:326px;">
-    <script>
-        function resultInit() {
-            var resultMkrs = [
-                //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                {% for etab in list.element %}
-                ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
-                {% endfor %}
-            ];
-            var centerresultMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
-                    mapOptions = {
-                        zoom: 6,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        center: centerresultMkr
-                    };
-            resultMap = new google.maps.Map(document.getElementById('resultMap'), mapOptions);
-            setMarkers(resultMap, resultMkrs);
-        }
-    </script>
-</div>

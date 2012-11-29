@@ -1985,7 +1985,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2120,7 +2120,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2135,12 +2135,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         {
             $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2148,7 +2148,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return 'uploads/service_complementaires';
     }
-
+    
     /**
      * @return string
      */
@@ -2156,7 +2156,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
