@@ -3,3 +3,4 @@
 mysql -uroot cungfoo < app/resources/data/sql/Cungfoo.Model.schema.sql
 ./console fixtures:load
 ./console cache:clear
+git checkout src/Cungfoo/Form src/Cungfoo/Listing src/Cungfoo/Model
