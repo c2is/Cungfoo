@@ -25,12 +25,12 @@ use Cungfoo\Model\TopCampingQuery;
  * @method TopCampingQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TopCampingQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method TopCampingQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
- * @method TopCampingQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method TopCampingQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method TopCampingQuery groupById() Group by the id column
  * @method TopCampingQuery groupByEtablissementId() Group by the etablissement_id column
  * @method TopCampingQuery groupBySortableRank() Group by the sortable_rank column
- * @method TopCampingQuery groupByEnabled() Group by the enabled column
+ * @method TopCampingQuery groupByActive() Group by the active column
  *
  * @method TopCampingQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TopCampingQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -45,12 +45,12 @@ use Cungfoo\Model\TopCampingQuery;
  *
  * @method TopCamping findOneByEtablissementId(int $etablissement_id) Return the first TopCamping filtered by the etablissement_id column
  * @method TopCamping findOneBySortableRank(int $sortable_rank) Return the first TopCamping filtered by the sortable_rank column
- * @method TopCamping findOneByEnabled(boolean $enabled) Return the first TopCamping filtered by the enabled column
+ * @method TopCamping findOneByActive(boolean $active) Return the first TopCamping filtered by the active column
  *
  * @method array findById(int $id) Return TopCamping objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return TopCamping objects filtered by the etablissement_id column
  * @method array findBySortableRank(int $sortable_rank) Return TopCamping objects filtered by the sortable_rank column
- * @method array findByEnabled(boolean $enabled) Return TopCamping objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return TopCamping objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +154,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ENABLED` FROM `top_camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ACTIVE` FROM `top_camping` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -355,15 +355,15 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -372,13 +372,13 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      *
      * @return TopCampingQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(TopCampingPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(TopCampingPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -593,6 +593,20 @@ abstract class BaseTopCampingQuery extends ModelCriteria
             $con->rollback();
             throw $e;
         }
+    }
+
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
     }
 
 }

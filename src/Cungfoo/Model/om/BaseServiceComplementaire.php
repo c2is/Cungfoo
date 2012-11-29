@@ -84,11 +84,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
-     * Note: this column has a database default value of: false
+     * The value for the active field.
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        PropelObjectCollection|EtablissementServiceComplementaire[] Collection to store aggregation of EtablissementServiceComplementaire objects.
@@ -152,27 +151,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      * @var		PropelObjectCollection
      */
     protected $serviceComplementaireI18nsScheduledForDeletion = null;
-
-    /**
-     * Applies default values to this object.
-     * This method should be called from the object's constructor (or
-     * equivalent initialization method).
-     * @see        __construct()
-     */
-    public function applyDefaultValues()
-    {
-        $this->enabled = false;
-    }
-
-    /**
-     * Initializes internal state of BaseServiceComplementaire object.
-     * @see        applyDefaults()
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->applyDefaultValues();
-    }
 
     /**
      * Get the [id] column value.
@@ -279,13 +257,13 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     /**
-     * Get the [enabled] column value.
+     * Get the [active] column value.
      *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
@@ -398,7 +376,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -407,7 +385,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      * @param boolean|integer|string $v The new value
      * @return ServiceComplementaire The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -417,14 +395,14 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = ServiceComplementairePeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = ServiceComplementairePeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -436,10 +414,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
-                return false;
-            }
-
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -467,7 +441,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -773,8 +747,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($this->isColumnModified(ServiceComplementairePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(ServiceComplementairePeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(ServiceComplementairePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -802,8 +776,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -971,7 +945,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 return $this->getUpdatedAt();
                 break;
             case 5:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1007,7 +981,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             $keys[2] => $this->getImagePath(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getEnabled(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementServiceComplementaires) {
@@ -1066,7 +1040,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 $this->setUpdatedAt($value);
                 break;
             case 5:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1097,7 +1071,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1114,7 +1088,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($this->isColumnModified(ServiceComplementairePeer::IMAGE_PATH)) $criteria->add(ServiceComplementairePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(ServiceComplementairePeer::CREATED_AT)) $criteria->add(ServiceComplementairePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ServiceComplementairePeer::UPDATED_AT)) $criteria->add(ServiceComplementairePeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(ServiceComplementairePeer::ENABLED)) $criteria->add(ServiceComplementairePeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(ServiceComplementairePeer::ACTIVE)) $criteria->add(ServiceComplementairePeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1182,7 +1156,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1893,11 +1867,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
-        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1982,6 +1955,18 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $this->modifiedColumns[] = ServiceComplementairePeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

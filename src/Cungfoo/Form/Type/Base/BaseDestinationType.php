@@ -34,10 +34,10 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.code',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'destination.enabled',
+            'label' => 'destination.active',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

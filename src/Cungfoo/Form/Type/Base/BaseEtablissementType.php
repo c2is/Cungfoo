@@ -191,10 +191,10 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.published',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'etablissement.enabled',
+            'label' => 'etablissement.active',
             'required' => false,
         ));
         $builder->add('type_hebergements', 'model', array(

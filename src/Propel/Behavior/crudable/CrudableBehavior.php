@@ -31,20 +31,6 @@ class CrudableBehavior extends Behavior
         return $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file');
     }
 
-    public function modifyTable()
-    {
-        if($this->getTable()->containsColumn('enabled'))
-        {
-            throw new Exception(sprintf("The enabled column is automatically added by Crudable Behavior. Please, remove the enabled column on the %s table.", $this->getTable()->getName()), 1);
-        }
-
-        $this->getTable()->addColumn(array(
-            'name'    => 'enabled',
-            'type'    => 'BOOLEAN',
-            'default' => true,
-        ));
-    }
-
     public function objectMethods($builder)
     {
         $this->builder = $builder;

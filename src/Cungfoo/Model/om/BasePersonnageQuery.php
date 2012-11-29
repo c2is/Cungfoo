@@ -30,7 +30,7 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method PersonnageQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PersonnageQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method PersonnageQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method PersonnageQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method PersonnageQuery groupById() Group by the id column
  * @method PersonnageQuery groupByEtablissementId() Group by the etablissement_id column
@@ -38,7 +38,7 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery groupByImagePath() Group by the image_path column
  * @method PersonnageQuery groupByCreatedAt() Group by the created_at column
  * @method PersonnageQuery groupByUpdatedAt() Group by the updated_at column
- * @method PersonnageQuery groupByEnabled() Group by the enabled column
+ * @method PersonnageQuery groupByActive() Group by the active column
  *
  * @method PersonnageQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PersonnageQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -64,7 +64,7 @@ use Cungfoo\Model\PersonnageQuery;
  * @method Personnage findOneByImagePath(string $image_path) Return the first Personnage filtered by the image_path column
  * @method Personnage findOneByCreatedAt(string $created_at) Return the first Personnage filtered by the created_at column
  * @method Personnage findOneByUpdatedAt(string $updated_at) Return the first Personnage filtered by the updated_at column
- * @method Personnage findOneByEnabled(boolean $enabled) Return the first Personnage filtered by the enabled column
+ * @method Personnage findOneByActive(boolean $active) Return the first Personnage filtered by the active column
  *
  * @method array findById(int $id) Return Personnage objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return Personnage objects filtered by the etablissement_id column
@@ -72,7 +72,7 @@ use Cungfoo\Model\PersonnageQuery;
  * @method array findByImagePath(string $image_path) Return Personnage objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Personnage objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Personnage objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Personnage objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Personnage objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -176,7 +176,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `AGE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `personnage` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `AGE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `personnage` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -480,15 +480,15 @@ abstract class BasePersonnageQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -497,13 +497,13 @@ abstract class BasePersonnageQuery extends ModelCriteria
      *
      * @return PersonnageQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(PersonnagePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(PersonnagePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -811,6 +811,20 @@ abstract class BasePersonnageQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(PersonnagePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

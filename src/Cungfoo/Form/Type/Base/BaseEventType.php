@@ -94,10 +94,10 @@ class BaseEventType extends AppAwareType
             'label' => 'event.priority',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'event.enabled',
+            'label' => 'event.active',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

@@ -48,7 +48,7 @@ class HomepageController implements ControllerProviderInterface
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
                 ->filterByEnabled(true)
-                ->find()
+                ->findActive()
             ;
 
             $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
@@ -56,12 +56,12 @@ class HomepageController implements ControllerProviderInterface
                 ->addAscendingOrderByColumn('sortable_rank')
                 ->filterByEnabled(true)
                 ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
-                ->find()
+                ->findActive()
             ;
 
             $pays = \Cungfoo\Model\PaysQuery::create()
                 ->filterByEnabled(true)
-                ->find()
+                ->findActive()
             ;
 
             $dernieresMinutes = DernieresMinutesQuery::create()
@@ -79,18 +79,18 @@ class HomepageController implements ControllerProviderInterface
                 ->joinWithI18n($locale)
                 ->filterByHome(true)
                 ->filterByEnabled(true)
-                ->find()
+                ->findActive()
             ;
 
             $thematiques = ThematiqueQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEnabled(true)
-                ->find()
+                ->findActive()
             ;
 
             $etablissements = EtablissementQuery::create()
                 ->filterByEnabled(true)
-                ->find()
+                ->findActive()
             ;
 
             $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');

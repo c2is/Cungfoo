@@ -47,10 +47,10 @@ class BaseServiceComplementaireType extends AppAwareType
             'label' => 'service_complementaire.image_path_deleted',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'service_complementaire.enabled',
+            'label' => 'service_complementaire.active',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(
