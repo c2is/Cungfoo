@@ -2,18 +2,18 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'les activitÃ©s du club enfant (5-12 ans) DE'
+        Name: 'les activités du club enfant (5-12 ans) DE'
         Description: ''
     1_en:
         Id: 1
         Locale: en
-        Name: 'les activitÃ©s du club enfant (5-12 ans) EN'
+        Name: 'les activités du club enfant (5-12 ans) EN'
         Description: ''
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'les activitÃ©s du club enfant (5-12 ans)'
-        Description: 'Desc. les activitÃ©s du club enfant (5-12 ans)'
+        Name: 'les activités du club enfant (5-12 ans)'
+        Description: 'Desc. les activités du club enfant (5-12 ans)'
     2_de:
         Id: 2
         Locale: de
@@ -32,33 +32,33 @@
     3_de:
         Id: 3
         Locale: de
-        Name: 'l''Ã©quitation DE'
+        Name: 'l''équitation DE'
         Description: ''
     3_en:
         Id: 3
         Locale: en
-        Name: 'l''Ã©quitation EN'
+        Name: 'l''équitation EN'
         Description: ''
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'l''Ã©quitation'
-        Description: 'Desc. l''Ã©quitation'
+        Name: 'l''équitation'
+        Description: 'Desc. l''équitation'
     4_de:
         Id: 4
         Locale: de
-        Name: 'la location des vÃ©los DE'
+        Name: 'la location des vélos DE'
         Description: ''
     4_en:
         Id: 4
         Locale: en
-        Name: 'la location des vÃ©los EN'
+        Name: 'la location des vélos EN'
         Description: ''
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'la location des vÃ©los'
-        Description: 'Desc. la location des vÃ©los'
+        Name: 'la location des vélos'
+        Description: 'Desc. la location des vélos'
     5_de:
         Id: 5
         Locale: de
@@ -92,33 +92,33 @@
     7_de:
         Id: 7
         Locale: de
-        Name: 'l''accÃ¨s direct Ã  la plage DE'
+        Name: 'l''accès direct à la plage DE'
         Description: ''
     7_en:
         Id: 7
         Locale: en
-        Name: 'l''accÃ¨s direct Ã  la plage EN'
+        Name: 'l''accès direct à la plage EN'
         Description: ''
     7_fr:
         Id: 7
         Locale: fr
-        Name: 'l''accÃ¨s direct Ã  la plage'
-        Description: 'Desc. l''accÃ¨s direct Ã  la plage'
+        Name: 'l''accès direct à la plage'
+        Description: 'Desc. l''accès direct à la plage'
     8_de:
         Id: 8
         Locale: de
-        Name: 'l''accÃ¨s au wifi dans tout le camping DE'
+        Name: 'l''accès au wifi dans tout le camping DE'
         Description: ''
     8_en:
         Id: 8
         Locale: en
-        Name: 'l''accÃ¨s au wifi dans tout le camping EN'
+        Name: 'l''accès au wifi dans tout le camping EN'
         Description: ''
     8_fr:
         Id: 8
         Locale: fr
-        Name: 'l''accÃ¨s au wifi dans tout le camping'
-        Description: 'Desc. l''accÃ¨s au wifi dans tout le camping'
+        Name: 'l''accès au wifi dans tout le camping'
+        Description: 'Desc. l''accès au wifi dans tout le camping'
     9_de:
         Id: 9
         Locale: de

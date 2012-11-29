@@ -26,12 +26,12 @@
     3_de:
         Id: 3
         Locale: de
-        Prenom: 'AmÃ©lie DE'
+        Prenom: 'Amélie DE'
     3_en:
         Id: 3
         Locale: en
-        Prenom: 'AmÃ©lie EN'
+        Prenom: 'Amélie EN'
     3_fr:
         Id: 3
         Locale: fr
-        Prenom: AmÃ©lie
+        Prenom: Amélie

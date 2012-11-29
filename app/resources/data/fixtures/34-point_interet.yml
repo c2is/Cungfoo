@@ -12,7 +12,7 @@
     2:
         Code: '66100'
         Address: 'rue Louis Cristau'
-        Address2: 'Ancienne galerie du Vieux M√¥le'
+        Address2: 'Ancienne galerie du Vieux MÙle'
         Zipcode: '85800'
         City: SAINT-GILLES-CROIX-DE-VIE
         GeoCoordinateX: '46.695850'
@@ -71,7 +71,7 @@
         Active: true
     8:
         Code: '57971'
-        Address: 'rue Jean-Jaur√®s'
+        Address: 'rue Jean-JaurËs'
         Address2: ''
         Zipcode: '83600'
         City: FREJUS
@@ -91,7 +91,7 @@
         Active: true
     10:
         Code: '71708'
-        Address: 'route D√©partementale 290'
+        Address: 'route DÈpartementale 290'
         Address2: ''
         Zipcode: '07150'
         City: 'VALLON-PONT-D ARC'
@@ -161,7 +161,7 @@
         Active: true
     17:
         Code: '41694'
-        Address: 'rue du Ch√¢teau'
+        Address: 'rue du Ch‚teau'
         Address2: ''
         Zipcode: '63790'
         City: MUROL
@@ -171,7 +171,7 @@
         Active: true
     18:
         Code: '60429'
-        Address: 'route d√©partementale 639'
+        Address: 'route dÈpartementale 639'
         Address2: ''
         Zipcode: '63710'
         City: 'SAINT NECTAIRE'
@@ -231,7 +231,7 @@
         Active: true
     24:
         Code: '56846'
-        Address: 'rue de la R√©publique'
+        Address: 'rue de la RÈpublique'
         Address2: ''
         Zipcode: '66190'
         City: COLLIOURE
@@ -252,7 +252,7 @@
     26:
         Code: '58697'
         Address: 'avenue de Paris'
-        Address2: Ancien-March√©
+        Address2: Ancien-MarchÈ
         Zipcode: '17200'
         City: ROYAN
         GeoCoordinateX: '45.626707'
@@ -301,7 +301,7 @@
         Active: true
     31:
         Code: '53905'
-        Address: 'avenue du G√©n√©ral-de-Gaulle'
+        Address: 'avenue du GÈnÈral-de-Gaulle'
         Address2: ''
         Zipcode: '40530'
         City: LABENNE
@@ -311,7 +311,7 @@
         Active: true
     32:
         Code: '57324'
-        Address: 'all√©e du Bois de Boulogne'
+        Address: 'allÈe du Bois de Boulogne'
         Address2: ''
         Zipcode: '40100'
         City: DAX
@@ -391,7 +391,7 @@
         Active: true
     40:
         Code: '26177'
-        Address: 'route d√©partementale 1'
+        Address: 'route dÈpartementale 1'
         Address2: ''
         Zipcode: '13780'
         City: 'CUGES LES PINS'
@@ -501,7 +501,7 @@
         Active: true
     51:
         Code: '58608'
-        Address: 'rue du Ch√¢teau'
+        Address: 'rue du Ch‚teau'
         Address2: ''
         Zipcode: '17310'
         City: 'SAINT-PIERRE-D OLERON'
@@ -571,7 +571,7 @@
         Active: true
     58:
         Code: '17615'
-        Address: 'avenue Fran√ßois-Tubau'
+        Address: 'avenue FranÁois-Tubau'
         Address2: 'Centre des monuments nationaux BP 35'
         Zipcode: '66600'
         City: SALSES
@@ -592,7 +592,7 @@
     60:
         Code: '91040'
         Address: ''
-        Address2: 'P√®lerinage Notre Dame De Thierenbach'
+        Address2: 'PËlerinage Notre Dame De Thierenbach'
         Zipcode: '68500'
         City: GUEBWILLER
         GeoCoordinateX: '47.881632'
@@ -611,7 +611,7 @@
         Active: true
     62:
         Code: '16892'
-        Address: 'rue du 4-F√©vrier'
+        Address: 'rue du 4-FÈvrier'
         Address2: ''
         Zipcode: '68500'
         City: GUEBWILLER
@@ -661,8 +661,8 @@
         Active: true
     67:
         Code: '17007'
-        Address: 'avenue du G√©n√©ral-de-Gaulle'
-        Address2: 'Vila Saraleguinea, Parc Municipal Andr√©-Narba√Øts'
+        Address: 'avenue du GÈnÈral-de-Gaulle'
+        Address2: 'Vila Saraleguinea, Parc Municipal AndrÈ-NarbaÔts'
         Zipcode: '64210'
         City: GUETHARY
         GeoCoordinateX: '43.421517'
@@ -681,7 +681,7 @@
         Active: true
     69:
         Code: '55180'
-        Address: 'rue Pierre-de-Chevign√©'
+        Address: 'rue Pierre-de-ChevignÈ'
         Address2: ''
         Zipcode: '64200'
         City: BIARRITZ
@@ -691,7 +691,7 @@
         Active: true
     70:
         Code: '95277'
-        Address: 'all√©e de l''Or√©e du Lac'
+        Address: 'allÈe de l''OrÈe du Lac'
         Address2: ''
         Zipcode: '64200'
         City: BIARRITZ
@@ -712,7 +712,7 @@
     72:
         Code: '60303'
         Address: ''
-        Address2: 'Al√©ria village'
+        Address2: 'AlÈria village'
         Zipcode: '20270'
         City: ALERIA
         GeoCoordinateX: '42.104083'
@@ -721,7 +721,7 @@
         Active: true
     73:
         Code: '60300'
-        Address: 'route d√©partementale 268'
+        Address: 'route dÈpartementale 268'
         Address2: ''
         Zipcode: '20124'
         City: ZONZA
@@ -741,7 +741,7 @@
         Active: true
     75:
         Code: '56659'
-        Address: 'avenue de l''Oc√©an'
+        Address: 'avenue de l''OcÈan'
         Address2: 'Lieu-dit Caupenne'
         Zipcode: '40530'
         City: LABENNE
@@ -781,7 +781,7 @@
         Active: true
     79:
         Code: '58393'
-        Address: 'place de la R√©publique'
+        Address: 'place de la RÈpublique'
         Address2: ''
         Zipcode: '83400'
         City: HYERES
@@ -831,7 +831,7 @@
         Active: true
     84:
         Code: '60968'
-        Address: 'rue L√©once Mailho'
+        Address: 'rue LÈonce Mailho'
         Address2: ''
         Zipcode: '17000'
         City: 'LA ROCHELLE'
@@ -1001,7 +1001,7 @@
         Active: true
     101:
         Code: '32004'
-        Address: 'place Ali√©nor-d''Aquitaine'
+        Address: 'place AliÈnor-d''Aquitaine'
         Address2: ''
         Zipcode: '33780'
         City: 'SOULAC SUR MER'
@@ -1021,7 +1021,7 @@
         Active: true
     103:
         Code: '90996'
-        Address: 'place de la Priaut√©'
+        Address: 'place de la PriautÈ'
         Address2: Talmont-sur-Gironde
         Zipcode: '17120'
         City: TALMONT
@@ -1081,7 +1081,7 @@
         Active: true
     109:
         Code: '362'
-        Address: 'rue du Mus√©e'
+        Address: 'rue du MusÈe'
         Address2: ''
         Zipcode: '24620'
         City: 'LES EYZIES-DE-TAYAC-SIREUIL'
@@ -1092,7 +1092,7 @@
     110:
         Code: '112619'
         Address: ''
-        Address2: 'sites pr√©historiques'
+        Address2: 'sites prÈhistoriques'
         Zipcode: '24620'
         City: 'LES EYZIES-DE-TAYAC-SIREUIL'
         GeoCoordinateX: '44.935881'
@@ -1111,7 +1111,7 @@
         Active: true
     112:
         Code: '90979'
-        Address: 'avenue de la Pr√©histoire'
+        Address: 'avenue de la PrÈhistoire'
         Address2: ''
         Zipcode: '24620'
         City: 'LES EYZIES-DE-TAYAC-SIREUIL'
@@ -1171,7 +1171,7 @@
         Active: true
     118:
         Code: '65992'
-        Address: 'rue de la Fraternit√©'
+        Address: 'rue de la FraternitÈ'
         Address2: ''
         Zipcode: '34300'
         City: AGDE
@@ -1181,7 +1181,7 @@
         Active: true
     119:
         Code: '2164'
-        Address: 'rue de l''H√¥tel du Cheval Blanc'
+        Address: 'rue de l''HÙtel du Cheval Blanc'
         Address2: ''
         Zipcode: '34300'
         City: AGDE
@@ -1252,7 +1252,7 @@
     126:
         Code: '47469'
         Address: 'route des Mas'
-        Address2: 'Vall√©e Roume'
+        Address2: 'VallÈe Roume'
         Zipcode: '66650'
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
@@ -1271,7 +1271,7 @@
         Active: true
     128:
         Code: '47474'
-        Address: 'avenue Fontaul√©'
+        Address: 'avenue FontaulÈ'
         Address2: ''
         Zipcode: '66650'
         City: BANYULS-SUR-MER
@@ -1291,8 +1291,8 @@
         Active: true
     130:
         Code: '61370'
-        Address: 'avenue D√©odat Alaus'
-        Address2: 'Le Ch√¢teau'
+        Address: 'avenue DÈodat Alaus'
+        Address2: 'Le Ch‚teau'
         Zipcode: '12620'
         City: 'SAINT BEAUZELY'
         GeoCoordinateX: '44.163394'
@@ -1321,7 +1321,7 @@
         Active: true
     133:
         Code: '28897'
-        Address: 'route D√©partementale 529'
+        Address: 'route DÈpartementale 529'
         Address2: 'Le Bourg'
         Zipcode: '12780'
         City: SAINT-LEONS
@@ -1351,8 +1351,8 @@
         Active: true
     136:
         Code: '28997'
-        Address: 'rue du Mar√©chal-Leclerc'
-        Address2: Port-de-P√™che
+        Address: 'rue du MarÈchal-Leclerc'
+        Address2: Port-de-PÍche
         Zipcode: '85100'
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497710'
@@ -1401,7 +1401,7 @@
         Active: true
     141:
         Code: '95522'
-        Address: 'rue de Ch√¢telet'
+        Address: 'rue de Ch‚telet'
         Address2: ''
         Zipcode: '22750'
         City: 'SAINT JACUT DE LA MER'
@@ -1411,7 +1411,7 @@
         Active: true
     142:
         Code: '66120'
-        Address: 'all√©e des Douaniers'
+        Address: 'allÈe des Douaniers'
         Address2: ''
         Zipcode: '35780'
         City: DINARD
@@ -1421,7 +1421,7 @@
         Active: true
     143:
         Code: '5974'
-        Address: 'boulevard des Mar√©chaux'
+        Address: 'boulevard des MarÈchaux'
         Address2: ''
         Zipcode: '35780'
         City: DINARD
@@ -1451,7 +1451,7 @@
         Active: true
     146:
         Code: '92597'
-        Address: 'La No√´veillard'
+        Address: 'La NoÎveillard'
         Address2: 'Port de Plaisance de Pornic'
         Zipcode: '44210'
         City: PORNIC
@@ -1461,7 +1461,7 @@
         Active: true
     147:
         Code: '5703'
-        Address: 'rue de l''Oc√©an'
+        Address: 'rue de l''OcÈan'
         Address2: ''
         Zipcode: '44210'
         City: PORNIC
@@ -1491,7 +1491,7 @@
         Active: true
     150:
         Code: '28622'
-        Address: 'route d√©partementale 56'
+        Address: 'route dÈpartementale 56'
         Address2: ''
         Zipcode: '24590'
         City: 'SALIGNAC EYVIGNES'
@@ -1591,7 +1591,7 @@
         Active: true
     160:
         Code: '8775'
-        Address: 'place de l''H√¥tel-de-Ville'
+        Address: 'place de l''HÙtel-de-Ville'
         Address2: ''
         Zipcode: '29930'
         City: PONT-AVEN
@@ -1601,7 +1601,7 @@
         Active: true
     161:
         Code: '92251'
-        Address: 'place de l''H√¥tel-de-Ville'
+        Address: 'place de l''HÙtel-de-Ville'
         Address2: ''
         Zipcode: '29930'
         City: PONT-AVEN
@@ -1631,7 +1631,7 @@
         Active: true
     164:
         Code: '448'
-        Address: 'rue Napol√©on'
+        Address: 'rue NapolÈon'
         Address2: ''
         Zipcode: '17123'
         City: 'ILE D AIX'
@@ -1681,7 +1681,7 @@
         Active: true
     169:
         Code: '41660'
-        Address: 'Ile de F√©drun'
+        Address: 'Ile de FÈdrun'
         Address2: ''
         Zipcode: '44720'
         City: 'SAINT JOACHIM'
@@ -1741,7 +1741,7 @@
         Active: true
     175:
         Code: '5283'
-        Address: 'avenue Louis-Br√©guet'
+        Address: 'avenue Louis-BrÈguet'
         Address2: ''
         Zipcode: '40600'
         City: BISCARROSSE
@@ -1751,7 +1751,7 @@
         Active: true
     176:
         Code: '117621'
-        Address: 'parc d√©partemental de la Grande Corniche'
+        Address: 'parc dÈpartemental de la Grande Corniche'
         Address2: ''
         Zipcode: '06320'
         City: 'LA TURBIE'
@@ -1772,7 +1772,7 @@
     178:
         Code: '23288'
         Address: 'route de Cazaux'
-        Address2: 'La B√©cassini√®re'
+        Address2: 'La BÈcassiniËre'
         Zipcode: '33260'
         City: 'LA TESTE-DE-BUCH'
         GeoCoordinateX: '44.610342'
@@ -1781,7 +1781,7 @@
         Active: true
     179:
         Code: '71694'
-        Address: 'chemin du Ch√¢teau'
+        Address: 'chemin du Ch‚teau'
         Address2: ''
         Zipcode: '83310'
         City: GRIMAUD
@@ -1791,7 +1791,7 @@
         Active: true
     180:
         Code: '57585'
-        Address: 'place du Souvenir-Fran√ßais'
+        Address: 'place du Souvenir-FranÁais'
         Address2: ''
         Zipcode: '83990'
         City: SAINT-TROPEZ
@@ -1861,7 +1861,7 @@
         Active: true
     187:
         Code: '56870'
-        Address: 'Les Grissoti√®res'
+        Address: 'Les GrissotiËres'
         Address2: ''
         Zipcode: '17550'
         City: 'DOLUS D OLERON'
@@ -1911,7 +1911,7 @@
         Active: true
     192:
         Code: '1747'
-        Address: 'avenue de P√©rols'
+        Address: 'avenue de PÈrols'
         Address2: 'BP 52'
         Zipcode: '34970'
         City: LATTES
@@ -1921,7 +1921,7 @@
         Active: true
     193:
         Code: '25335'
-        Address: 'avenue du Mar√©chal Leclerc'
+        Address: 'avenue du MarÈchal Leclerc'
         Address2: ''
         Zipcode: '77320'
         City: 'LA FERTE-GAUCHER'
@@ -1951,7 +1951,7 @@
         Active: true
     196:
         Code: '57203'
-        Address: 'jet√©e Eyrac'
+        Address: 'jetÈe Eyrac'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -2051,7 +2051,7 @@
         Active: true
     206:
         Code: '65513'
-        Address: 'place de la Lib√©ration'
+        Address: 'place de la LibÈration'
         Address2: 'Maison Gassendi'
         Zipcode: '83670'
         City: VARAGES
@@ -2101,8 +2101,8 @@
         Active: true
     211:
         Code: '2003'
-        Address: 'place Mari√©jol'
-        Address2: Ch√¢teau-Grimaldi
+        Address: 'place MariÈjol'
+        Address2: Ch‚teau-Grimaldi
         Zipcode: '06600'
         City: ANTIBES-JUAN-LES-PINS
         GeoCoordinateX: '43.580721'
@@ -2121,7 +2121,7 @@
         Active: true
     213:
         Code: '1642'
-        Address: 'rue de la Grange-aux-D√Æmes'
+        Address: 'rue de la Grange-aux-DÓmes'
         Address2: ''
         Zipcode: '41250'
         City: CHAMBORD
@@ -2132,7 +2132,7 @@
     214:
         Code: '19977'
         Address: ''
-        Address2: 'Ch√¢teau de Talcy'
+        Address2: 'Ch‚teau de Talcy'
         Zipcode: '41370'
         City: TALCY
         GeoCoordinateX: '47.768938'
@@ -2201,7 +2201,7 @@
         Active: true
     221:
         Code: '71698'
-        Address: 'place de la R√©publique'
+        Address: 'place de la RÈpublique'
         Address2: 'le bourg'
         Zipcode: '17410'
         City: SAINT-MARTIN-DE-RE
@@ -2231,7 +2231,7 @@
         Active: true
     224:
         Code: '40955'
-        Address: 'boulevard de l''Oc√©an'
+        Address: 'boulevard de l''OcÈan'
         Address2: ''
         Zipcode: '85520'
         City: 'SAINT VINCENT SUR JARD'
@@ -2271,7 +2271,7 @@
         Active: true
     228:
         Code: '65979'
-        Address: 'place des Martyrs de la R√©sistance'
+        Address: 'place des Martyrs de la RÈsistance'
         Address2: ''
         Zipcode: '34400'
         City: LUNEL
@@ -2281,7 +2281,7 @@
         Active: true
     229:
         Code: '62284'
-        Address: 'cours Gabriel P√©ri'
+        Address: 'cours Gabriel PÈri'
         Address2: ''
         Zipcode: '34400'
         City: LUNEL
@@ -2291,7 +2291,7 @@
         Active: true
     230:
         Code: '65916'
-        Address: 'cours Gabriel P√©ri'
+        Address: 'cours Gabriel PÈri'
         Address2: ''
         Zipcode: '34400'
         City: LUNEL
@@ -2341,7 +2341,7 @@
         Active: true
     235:
         Code: '5027'
-        Address: 'route d√©partementale 130'
+        Address: 'route dÈpartementale 130'
         Address2: 'Le Coiroux'
         Zipcode: '19190'
         City: AUBAZINE
@@ -2351,7 +2351,7 @@
         Active: true
     236:
         Code: '60124'
-        Address: 'route d√©partementale 38'
+        Address: 'route dÈpartementale 38'
         Address2: ''
         Zipcode: '19500'
         City: COLLONGES-LA-ROUGE
@@ -2362,7 +2362,7 @@
     237:
         Code: '59621'
         Address: 'La Veyrie'
-        Address2: '√† 150 m√®tres de l''√©glise'
+        Address2: '‡ 150 mËtres de l''Èglise'
         Zipcode: '19500'
         City: COLLONGES-LA-ROUGE
         GeoCoordinateX: '45.059539'
@@ -2371,7 +2371,7 @@
         Active: true
     238:
         Code: '59627'
-        Address: 'rue de la Barri√®re'
+        Address: 'rue de la BarriËre'
         Address2: ''
         Zipcode: '19500'
         City: COLLONGES-LA-ROUGE
@@ -2391,7 +2391,7 @@
         Active: true
     240:
         Code: '61499'
-        Address: 'place de l''H√¥tel-de-Ville'
+        Address: 'place de l''HÙtel-de-Ville'
         Address2: ''
         Zipcode: '32600'
         City: 'L ISLE JOURDAIN'
@@ -2491,7 +2491,7 @@
         Active: true
     250:
         Code: '56712'
-        Address: Monts√©gur
+        Address: MontsÈgur
         Address2: ''
         Zipcode: '09300'
         City: MONTSEGUR
@@ -2571,8 +2571,8 @@
         Active: true
     258:
         Code: '15379'
-        Address: 'rue S√©tif'
-        Address2: 'Ch√¢teau de la Gayonne'
+        Address: 'rue SÈtif'
+        Address2: 'Ch‚teau de la Gayonne'
         Zipcode: '34500'
         City: BEZIERS
         GeoCoordinateX: '43.333839'
@@ -2631,7 +2631,7 @@
         Active: true
     264:
         Code: '56416'
-        Address: 'route D√©partementale-326'
+        Address: 'route DÈpartementale-326'
         Address2: 'Lieu-Dit Val Dessus'
         Zipcode: '39130'
         City: 'MENETRUX EN JOUX'
@@ -2641,7 +2641,7 @@
         Active: true
     265:
         Code: '57349'
-        Address: 'route des Cr√®tes Marc Robert'
+        Address: 'route des CrËtes Marc Robert'
         Address2: ''
         Zipcode: '83680'
         City: 'LA GARDE-FREINET'
@@ -2681,7 +2681,7 @@
         Active: true
     269:
         Code: '45912'
-        Address: 'avenue Jean Jaur√®s'
+        Address: 'avenue Jean JaurËs'
         Address2: ''
         Zipcode: '46200'
         City: SOUILLAC
@@ -2701,7 +2701,7 @@
         Active: true
     271:
         Code: '44510'
-        Address: 'route D√©partementale-247'
+        Address: 'route DÈpartementale-247'
         Address2: ''
         Zipcode: '46200'
         City: LACAVE
@@ -2711,7 +2711,7 @@
         Active: true
     272:
         Code: '43448'
-        Address: 'place de la M√©diterran√©e'
+        Address: 'place de la MÈditerranÈe'
         Address2: ''
         Zipcode: '34250'
         City: 'PALAVAS LES FLOTS'
@@ -2741,7 +2741,7 @@
         Active: true
     275:
         Code: '15866'
-        Address: 'place de la R√©publique'
+        Address: 'place de la RÈpublique'
         Address2: ''
         Zipcode: '83440'
         City: FAYENCE
@@ -2761,7 +2761,7 @@
         Active: true
     277:
         Code: '92240'
-        Address: 'route de Bagnols-en-For√™t'
+        Address: 'route de Bagnols-en-ForÍt'
         Address2: ''
         Zipcode: '83920'
         City: 'LA MOTTE'
@@ -2771,7 +2771,7 @@
         Active: true
     278:
         Code: '56092'
-        Address: 'place Formig√©'
+        Address: 'place FormigÈ'
         Address2: Groupe-Episcopal
         Zipcode: '83600'
         City: FREJUS
@@ -2821,7 +2821,7 @@
         Active: true
     283:
         Code: '23689'
-        Address: 'route d√©partementale 613'
+        Address: 'route dÈpartementale 613'
         Address2: Route-des-abbayes
         Zipcode: '11100'
         City: NARBONNE
@@ -2832,7 +2832,7 @@
     284:
         Code: '95759'
         Address: ''
-        Address2: 'Abbaye de Fontfroide Route d√©partementale 613'
+        Address2: 'Abbaye de Fontfroide Route dÈpartementale 613'
         Zipcode: '11100'
         City: NARBONNE
         GeoCoordinateX: '43.128205'
@@ -2851,7 +2851,7 @@
         Active: true
     286:
         Code: '56472'
-        Address: 'route d√©partementale 6009'
+        Address: 'route dÈpartementale 6009'
         Address2: ''
         Zipcode: '11130'
         City: SIGEAN
@@ -2861,7 +2861,7 @@
         Active: true
     287:
         Code: '60909'
-        Address: 'Les Tronch√©es'
+        Address: 'Les TronchÈes'
         Address2: ''
         Zipcode: '22400'
         City: MORIEUX
@@ -2882,7 +2882,7 @@
     289:
         Code: '105997'
         Address: 'quai Armez'
-        Address2: 'Port du L√©gu√©'
+        Address2: 'Port du LÈguÈ'
         Zipcode: '22000'
         City: SAINT-BRIEUC
         GeoCoordinateX: '48.523740'
@@ -2902,7 +2902,7 @@
     291:
         Code: '40564'
         Address: 'route des Trois-Ilets'
-        Address2: 'Domaine Ch√¢teau Gaillard'
+        Address2: 'Domaine Ch‚teau Gaillard'
         Zipcode: '97229'
         City: 'LES TROIS ILETS'
         GeoCoordinateX: '43.120269'
@@ -2911,7 +2911,7 @@
         Active: true
     292:
         Code: '571'
-        Address: 'boulevard du Mar√©chal-Leclerc'
+        Address: 'boulevard du MarÈchal-Leclerc'
         Address2: ''
         Zipcode: '83000'
         City: TOULON
@@ -2921,7 +2921,7 @@
         Active: true
     293:
         Code: '21925'
-        Address: 'boulevard Mar√©chal-Leclerc'
+        Address: 'boulevard MarÈchal-Leclerc'
         Address2: ''
         Zipcode: '83000'
         City: TOULON
@@ -2941,7 +2941,7 @@
         Active: true
     295:
         Code: '29152'
-        Address: 'quai de la Vieille Jet√©e'
+        Address: 'quai de la Vieille JetÈe'
         Address2: ''
         Zipcode: '17200'
         City: ROYAN
@@ -2961,7 +2961,7 @@
         Active: true
     297:
         Code: '27846'
-        Address: 'avenue des Congr√®s'
+        Address: 'avenue des CongrËs'
         Address2: ''
         Zipcode: '17200'
         City: ROYAN
@@ -2971,7 +2971,7 @@
         Active: true
     298:
         Code: '4862'
-        Address: 'mont√©e du Fort Saint-Andr√©'
+        Address: 'montÈe du Fort Saint-AndrÈ'
         Address2: ''
         Zipcode: '30400'
         City: VILLENEUVE-LEZ-AVIGNON
@@ -2981,7 +2981,7 @@
         Active: true
     299:
         Code: '4579'
-        Address: 'rue de la R√©publique'
+        Address: 'rue de la RÈpublique'
         Address2: ''
         Zipcode: '30400'
         City: VILLENEUVE-LEZ-AVIGNON
@@ -2992,7 +2992,7 @@
     300:
         Code: '17492'
         Address: 'rue Victor-Hugo'
-        Address2: 'H√¥tel de Villeneuve-Esclapon'
+        Address2: 'HÙtel de Villeneuve-Esclapon'
         Zipcode: '84000'
         City: AVIGNON
         GeoCoordinateX: '43.947333'
@@ -3002,7 +3002,7 @@
     301:
         Code: '8501'
         Address: 'rue Joseph-Vernet'
-        Address2: 'H√¥tel Villeneuve-Martignan'
+        Address2: 'HÙtel Villeneuve-Martignan'
         Zipcode: '84000'
         City: AVIGNON
         GeoCoordinateX: '43.947001'
@@ -3161,7 +3161,7 @@
         Active: true
     317:
         Code: '18471'
-        Address: 'mont√©e des Lauriers'
+        Address: 'montÈe des Lauriers'
         Address2: 'Rue de Brouzen'
         Zipcode: '30100'
         City: ALES
@@ -3171,7 +3171,7 @@
         Active: true
     318:
         Code: '67854'
-        Address: 'd√©partementale 402'
+        Address: 'dÈpartementale 402'
         Address2: ''
         Zipcode: '83330'
         City: 'LE CASTELLET'
@@ -3201,7 +3201,7 @@
         Active: true
     321:
         Code: '113027'
-        Address: 'rue de l''Ancienne-Mairie-√†-l''Eglise'
+        Address: 'rue de l''Ancienne-Mairie-‡-l''Eglise'
         Address2: ''
         Zipcode: '13520'
         City: BAUX-DE-PROVENCE
@@ -3281,7 +3281,7 @@
         Active: true
     329:
         Code: '24418'
-        Address: 'domaine de S√©di√®res'
+        Address: 'domaine de SÈdiËres'
         Address2: ''
         Zipcode: '19320'
         City: CLERGOUX
@@ -3332,7 +3332,7 @@
     334:
         Code: '41322'
         Address: 'voie Domitienne'
-        Address2: Ens√©rune
+        Address2: EnsÈrune
         Zipcode: '34440'
         City: 'NISSAN LEZ ENSERUNE'
         GeoCoordinateX: '43.310211'
@@ -3371,7 +3371,7 @@
         Active: true
     338:
         Code: '82489'
-        Address: 'all√©e des Sources'
+        Address: 'allÈe des Sources'
         Address2: ''
         Zipcode: '34540'
         City: 'BALARUC LES BAINS'
@@ -3401,7 +3401,7 @@
         Active: true
     341:
         Code: '46268'
-        Address: 'avenue du Pr√©sident-Wilson'
+        Address: 'avenue du PrÈsident-Wilson'
         Address2: ''
         Zipcode: '34500'
         City: BEZIERS
@@ -3421,7 +3421,7 @@
         Active: true
     343:
         Code: '56460'
-        Address: 'avenue Ile-d''Am√©rique'
+        Address: 'avenue Ile-d''AmÈrique'
         Address2: ''
         Zipcode: '34300'
         City: AGDE
@@ -3481,7 +3481,7 @@
         Active: true
     349:
         Code: '57484'
-        Address: 'rue Ir√®ne Joliot-Curie'
+        Address: 'rue IrËne Joliot-Curie'
         Address2: ''
         Zipcode: '56000'
         City: VANNES
@@ -3531,7 +3531,7 @@
         Active: true
     354:
         Code: '57198'
-        Address: 'all√©e de la Chapelle'
+        Address: 'allÈe de la Chapelle'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -3561,7 +3561,7 @@
         Active: true
     357:
         Code: '114662'
-        Address: 'avenue Pierre Gu√©guin'
+        Address: 'avenue Pierre GuÈguin'
         Address2: ''
         Zipcode: '29900'
         City: CONCARNEAU
@@ -3571,7 +3571,7 @@
         Active: true
     358:
         Code: '22956'
-        Address: 'place de l''H√¥tel-de-Ville'
+        Address: 'place de l''HÙtel-de-Ville'
         Address2: ''
         Zipcode: '29900'
         City: CONCARNEAU
@@ -3581,7 +3581,7 @@
         Active: true
     359:
         Code: '65912'
-        Address: 'rue des 3 Journ√©es'
+        Address: 'rue des 3 JournÈes'
         Address2: ''
         Zipcode: '34200'
         City: SETE
@@ -3591,7 +3591,7 @@
         Active: true
     360:
         Code: '2627'
-        Address: 'quai Mar√©chal de Lattre de Tassigny'
+        Address: 'quai MarÈchal de Lattre de Tassigny'
         Address2: ''
         Zipcode: '34200'
         City: SETE
@@ -3612,7 +3612,7 @@
     362:
         Code: '65915'
         Address: ''
-        Address2: 'M√¥le Saint-Louis'
+        Address2: 'MÙle Saint-Louis'
         Zipcode: '34200'
         City: SETE
         GeoCoordinateX: '43.395644'
@@ -3621,7 +3621,7 @@
         Active: true
     363:
         Code: '63265'
-        Address: 'route de l''a√©roport'
+        Address: 'route de l''aÈroport'
         Address2: Castellarese
         Zipcode: '20290'
         City: BORGO
@@ -3671,7 +3671,7 @@
         Active: true
     368:
         Code: '90401'
-        Address: 'all√©e de l''Escalade'
+        Address: 'allÈe de l''Escalade'
         Address2: ''
         Zipcode: '74190'
         City: 'LE FAYET'
@@ -3711,7 +3711,7 @@
         Active: true
     372:
         Code: '16298'
-        Address: 'rue Fr√©d√©ric Japy'
+        Address: 'rue FrÈdÈric Japy'
         Address2: ''
         Zipcode: '90500'
         City: BEAUCOURT
@@ -3731,7 +3731,7 @@
         Active: true
     374:
         Code: '2806'
-        Address: 'rue du P√¢turage'
+        Address: 'rue du P‚turage'
         Address2: 'BP 2463'
         Zipcode: '68100'
         City: MULHOUSE
@@ -3751,7 +3751,7 @@
         Active: true
     376:
         Code: '2721'
-        Address: 'route D√©partementale 7'
+        Address: 'route DÈpartementale 7'
         Address2: ''
         Zipcode: '37510'
         City: VILLANDRY
@@ -3811,7 +3811,7 @@
         Active: true
     382:
         Code: '4578'
-        Address: 'place de la Cath√©drale'
+        Address: 'place de la CathÈdrale'
         Address2: ''
         Zipcode: '67000'
         City: STRASBOURG
@@ -3821,7 +3821,7 @@
         Active: true
     383:
         Code: '25465'
-        Address: 'place de la Cath√©drale'
+        Address: 'place de la CathÈdrale'
         Address2: ''
         Zipcode: '67000'
         City: STRASBOURG
@@ -3931,7 +3931,7 @@
         Active: true
     394:
         Code: '58488'
-        Address: 'rue de la R√©publique'
+        Address: 'rue de la RÈpublique'
         Address2: ''
         Zipcode: '83300'
         City: DRAGUIGNAN
@@ -3951,7 +3951,7 @@
         Active: true
     396:
         Code: '57515'
-        Address: 'parc Saint-Beno√Æt'
+        Address: 'parc Saint-BenoÓt'
         Address2: ''
         Zipcode: '04000'
         City: DIGNE-LES-BAINS
@@ -3961,7 +3961,7 @@
         Active: true
     397:
         Code: '57509'
-        Address: 'avenue Mar√©chal Juin'
+        Address: 'avenue MarÈchal Juin'
         Address2: ''
         Zipcode: '04000'
         City: DIGNE-LES-BAINS
@@ -3971,7 +3971,7 @@
         Active: true
     398:
         Code: '57501'
-        Address: 'parc St-Beno√Æt'
+        Address: 'parc St-BenoÓt'
         Address2: ''
         Zipcode: '04000'
         City: DIGNE-LES-BAINS
@@ -3981,7 +3981,7 @@
         Active: true
     399:
         Code: '27676'
-        Address: 'all√©e Fontainiers'
+        Address: 'allÈe Fontainiers'
         Address2: ''
         Zipcode: '04000'
         City: DIGNE-LES-BAINS

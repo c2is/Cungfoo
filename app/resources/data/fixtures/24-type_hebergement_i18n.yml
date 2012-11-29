@@ -2,7 +2,7 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Parcelle jusqu''Ã  100 mÂ²'
+        Name: 'Parcelle jusqu''à 100 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -10,7 +10,7 @@
     1_en:
         Id: 1
         Locale: en
-        Name: 'Parcelle jusqu''Ã  100 mÂ²'
+        Name: 'Parcelle jusqu''à 100 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -18,7 +18,7 @@
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Parcelle jusqu''Ã  100 mÂ²'
+        Name: 'Parcelle jusqu''à 100 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -26,7 +26,7 @@
     2_de:
         Id: 2
         Locale: de
-        Name: 'Parcelle de 101 Ã  110 mÂ²'
+        Name: 'Parcelle de 101 à 110 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -34,7 +34,7 @@
     2_en:
         Id: 2
         Locale: en
-        Name: 'Parcelle de 101 Ã  110 mÂ²'
+        Name: 'Parcelle de 101 à 110 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -42,7 +42,7 @@
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Parcelle de 101 Ã  110 mÂ²'
+        Name: 'Parcelle de 101 à 110 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -50,7 +50,7 @@
     3_de:
         Id: 3
         Locale: de
-        Name: 'Parcelle de 121 Ã  130 mÂ²'
+        Name: 'Parcelle de 121 à 130 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -58,7 +58,7 @@
     3_en:
         Id: 3
         Locale: en
-        Name: 'Parcelle de 121 Ã  130 mÂ²'
+        Name: 'Parcelle de 121 à 130 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -66,7 +66,7 @@
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'Parcelle de 121 Ã  130 mÂ²'
+        Name: 'Parcelle de 121 à 130 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -74,7 +74,7 @@
     4_de:
         Id: 4
         Locale: de
-        Name: 'Parcelle de 131 Ã  140 mÂ²'
+        Name: 'Parcelle de 131 à 140 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -82,7 +82,7 @@
     4_en:
         Id: 4
         Locale: en
-        Name: 'Parcelle de 131 Ã  140 mÂ²'
+        Name: 'Parcelle de 131 à 140 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -90,7 +90,7 @@
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'Parcelle de 131 Ã  140 mÂ²'
+        Name: 'Parcelle de 131 à 140 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -98,7 +98,7 @@
     5_de:
         Id: 5
         Locale: de
-        Name: 'Parcelle de 141 Ã  150 mÂ²'
+        Name: 'Parcelle de 141 à 150 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -106,7 +106,7 @@
     5_en:
         Id: 5
         Locale: en
-        Name: 'Parcelle de 141 Ã  150 mÂ²'
+        Name: 'Parcelle de 141 à 150 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -114,7 +114,7 @@
     5_fr:
         Id: 5
         Locale: fr
-        Name: 'Parcelle de 141 Ã  150 mÂ²'
+        Name: 'Parcelle de 141 à 150 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -122,7 +122,7 @@
     6_de:
         Id: 6
         Locale: de
-        Name: 'Parcelle de 151 Ã  160 mÂ²'
+        Name: 'Parcelle de 151 à 160 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -130,7 +130,7 @@
     6_en:
         Id: 6
         Locale: en
-        Name: 'Parcelle de 151 Ã  160 mÂ²'
+        Name: 'Parcelle de 151 à 160 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -138,7 +138,7 @@
     6_fr:
         Id: 6
         Locale: fr
-        Name: 'Parcelle de 151 Ã  160 mÂ²'
+        Name: 'Parcelle de 151 à 160 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -146,7 +146,7 @@
     7_de:
         Id: 7
         Locale: de
-        Name: 'Parcelle de 161 Ã  170 mÂ²'
+        Name: 'Parcelle de 161 à 170 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -154,7 +154,7 @@
     7_en:
         Id: 7
         Locale: en
-        Name: 'Parcelle de 161 Ã  170 mÂ²'
+        Name: 'Parcelle de 161 à 170 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -162,7 +162,7 @@
     7_fr:
         Id: 7
         Locale: fr
-        Name: 'Parcelle de 161 Ã  170 mÂ²'
+        Name: 'Parcelle de 161 à 170 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -170,7 +170,7 @@
     8_de:
         Id: 8
         Locale: de
-        Name: 'Parcelle de 171 Ã  180 mÂ²'
+        Name: 'Parcelle de 171 à 180 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -178,7 +178,7 @@
     8_en:
         Id: 8
         Locale: en
-        Name: 'Parcelle de 171 Ã  180 mÂ²'
+        Name: 'Parcelle de 171 à 180 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -186,7 +186,7 @@
     8_fr:
         Id: 8
         Locale: fr
-        Name: 'Parcelle de 171 Ã  180 mÂ²'
+        Name: 'Parcelle de 171 à 180 m²'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -506,7 +506,7 @@
     22_de:
         Id: 22
         Locale: de
-        Name: 'HÃ©lios (6 places, max. 5 adultes)'
+        Name: 'Hélios (6 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -514,7 +514,7 @@
     22_en:
         Id: 22
         Locale: en
-        Name: 'HÃ©lios (6 places, max. 5 adultes)'
+        Name: 'Hélios (6 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -522,7 +522,7 @@
     22_fr:
         Id: 22
         Locale: fr
-        Name: 'HÃ©lios (6 places, max. 5 adultes)'
+        Name: 'Hélios (6 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -554,7 +554,7 @@
     24_de:
         Id: 24
         Locale: de
-        Name: 'OcÃ©ane (4 places, max. 4 adultes)'
+        Name: 'Océane (4 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -562,7 +562,7 @@
     24_en:
         Id: 24
         Locale: en
-        Name: 'OcÃ©ane (4 places, max. 4 adultes)'
+        Name: 'Océane (4 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -570,7 +570,7 @@
     24_fr:
         Id: 24
         Locale: fr
-        Name: 'OcÃ©ane (4 places, max. 4 adultes)'
+        Name: 'Océane (4 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -602,7 +602,7 @@
     26_de:
         Id: 26
         Locale: de
-        Name: 'RÃ©sidential (5 places, max. 4 adultes)'
+        Name: 'Résidential (5 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -610,7 +610,7 @@
     26_en:
         Id: 26
         Locale: en
-        Name: 'RÃ©sidential (5 places, max. 4 adultes)'
+        Name: 'Résidential (5 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -618,7 +618,7 @@
     26_fr:
         Id: 26
         Locale: fr
-        Name: 'RÃ©sidential (5 places, max. 4 adultes)'
+        Name: 'Résidential (5 places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -626,7 +626,7 @@
     27_de:
         Id: 27
         Locale: de
-        Name: 'Salle de rÃ©ception'
+        Name: 'Salle de réception'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -634,7 +634,7 @@
     27_en:
         Id: 27
         Locale: en
-        Name: 'Salle de rÃ©ception'
+        Name: 'Salle de réception'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -642,7 +642,7 @@
     27_fr:
         Id: 27
         Locale: fr
-        Name: 'Salle de rÃ©ception'
+        Name: 'Salle de réception'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1082,7 +1082,7 @@
     46_de:
         Id: 46
         Locale: de
-        Name: 'Familial (5 places, max. 5 adultes) climatisÃ©'
+        Name: 'Familial (5 places, max. 5 adultes) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1090,7 +1090,7 @@
     46_en:
         Id: 46
         Locale: en
-        Name: 'Familial (5 places, max. 5 adultes) climatisÃ©'
+        Name: 'Familial (5 places, max. 5 adultes) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1098,7 +1098,7 @@
     46_fr:
         Id: 46
         Locale: fr
-        Name: 'Familial (5 places, max. 5 adultes) climatisÃ©'
+        Name: 'Familial (5 places, max. 5 adultes) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1106,7 +1106,7 @@
     47_de:
         Id: 47
         Locale: de
-        Name: 'Familial (6 places, max. 5 adultes) ClimatisÃ©'
+        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1114,7 +1114,7 @@
     47_en:
         Id: 47
         Locale: en
-        Name: 'Familial (6 places, max. 5 adultes) ClimatisÃ©'
+        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1122,7 +1122,7 @@
     47_fr:
         Id: 47
         Locale: fr
-        Name: 'Familial (6 places, max. 5 adultes) ClimatisÃ©'
+        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1154,7 +1154,7 @@
     49_de:
         Id: 49
         Locale: de
-        Name: 'Maisonnette (2 piÃ¨ces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1162,7 +1162,7 @@
     49_en:
         Id: 49
         Locale: en
-        Name: 'Maisonnette (2 piÃ¨ces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1170,7 +1170,7 @@
     49_fr:
         Id: 49
         Locale: fr
-        Name: 'Maisonnette (2 piÃ¨ces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1178,7 +1178,7 @@
     50_de:
         Id: 50
         Locale: de
-        Name: 'Maisonnette (2 piÃ¨ces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1186,7 +1186,7 @@
     50_en:
         Id: 50
         Locale: en
-        Name: 'Maisonnette (2 piÃ¨ces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1194,7 +1194,7 @@
     50_fr:
         Id: 50
         Locale: fr
-        Name: 'Maisonnette (2 piÃ¨ces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1202,7 +1202,7 @@
     51_de:
         Id: 51
         Locale: de
-        Name: 'Pagotel (5 places) climatisÃ©'
+        Name: 'Pagotel (5 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1210,7 +1210,7 @@
     51_en:
         Id: 51
         Locale: en
-        Name: 'Pagotel (5 places) climatisÃ©'
+        Name: 'Pagotel (5 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1218,7 +1218,7 @@
     51_fr:
         Id: 51
         Locale: fr
-        Name: 'Pagotel (5 places) climatisÃ©'
+        Name: 'Pagotel (5 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1226,7 +1226,7 @@
     52_de:
         Id: 52
         Locale: de
-        Name: 'RÃ©sidential (4 Places, max. 4 adultes)'
+        Name: 'Résidential (4 Places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1234,7 +1234,7 @@
     52_en:
         Id: 52
         Locale: en
-        Name: 'RÃ©sidential (4 Places, max. 4 adultes)'
+        Name: 'Résidential (4 Places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1242,7 +1242,7 @@
     52_fr:
         Id: 52
         Locale: fr
-        Name: 'RÃ©sidential (4 Places, max. 4 adultes)'
+        Name: 'Résidential (4 Places, max. 4 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1250,7 +1250,7 @@
     53_de:
         Id: 53
         Locale: de
-        Name: 'Spacial (7 places, max. 6 adultes) ClimatisÃ©'
+        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1258,7 +1258,7 @@
     53_en:
         Id: 53
         Locale: en
-        Name: 'Spacial (7 places, max. 6 adultes) ClimatisÃ©'
+        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1266,7 +1266,7 @@
     53_fr:
         Id: 53
         Locale: fr
-        Name: 'Spacial (7 places, max. 6 adultes) ClimatisÃ©'
+        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null

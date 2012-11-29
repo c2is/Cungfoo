@@ -2,27 +2,27 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Acc√®s direct √† la plage'
+        Name: 'AccËs direct ‡ la plage'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Acc√®s direct √† la plage'
+        Name: 'AccËs direct ‡ la plage'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Acc√®s direct √† la plage'
+        Name: 'AccËs direct ‡ la plage'
     2_de:
         Id: 2
         Locale: de
-        Name: 'Lac, rivi√®re ou plan d''eau √† proximit√©'
+        Name: 'Lac, riviËre ou plan d''eau ‡ proximitÈ'
     2_en:
         Id: 2
         Locale: en
-        Name: 'Lac, rivi√®re ou plan d''eau √† proximit√©'
+        Name: 'Lac, riviËre ou plan d''eau ‡ proximitÈ'
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Lac, rivi√®re ou plan d''eau √† proximit√©'
+        Name: 'Lac, riviËre ou plan d''eau ‡ proximitÈ'
     3_de:
         Id: 3
         Locale: de
@@ -38,27 +38,27 @@
     4_de:
         Id: 4
         Locale: de
-        Name: 'En r√©tro littoral <10km'
+        Name: 'En rÈtro littoral <10km'
     4_en:
         Id: 4
         Locale: en
-        Name: 'En r√©tro littoral <10km'
+        Name: 'En rÈtro littoral <10km'
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'En r√©tro littoral <10km'
+        Name: 'En rÈtro littoral <10km'
     5_de:
         Id: 5
         Locale: de
-        Name: 'Acc√®s mer <5km'
+        Name: 'AccËs mer <5km'
     5_en:
         Id: 5
         Locale: en
-        Name: 'Acc√®s mer <5km'
+        Name: 'AccËs mer <5km'
     5_fr:
         Id: 5
         Locale: fr
-        Name: 'Acc√®s mer <5km'
+        Name: 'AccËs mer <5km'
     6_de:
         Id: 6
         Locale: de
@@ -98,12 +98,12 @@
     9_de:
         Id: 9
         Locale: de
-        Name: 'Au bord d''une rivi√®re'
+        Name: 'Au bord d''une riviËre'
     9_en:
         Id: 9
         Locale: en
-        Name: 'Au bord d''une rivi√®re'
+        Name: 'Au bord d''une riviËre'
     9_fr:
         Id: 9
         Locale: fr
-        Name: 'Au bord d''une rivi√®re'
+        Name: 'Au bord d''une riviËre'
