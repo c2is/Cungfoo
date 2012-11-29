@@ -47,7 +47,7 @@ class TagTableMap extends TableMap
         $this->getColumn('SLUG', false)->setPrimaryString(true);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

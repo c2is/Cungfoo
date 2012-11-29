@@ -21,7 +21,8 @@ class BaseVosVacancesListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('age'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\BooleanColumn('image_path'));
+        $this->addColumn(new Column\BooleanColumn('active'));
     }
 
     /**

@@ -38,7 +38,10 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('video_path'));
         $this->addColumn(new Column\TextColumn('image_360_path'));
         $this->addColumn(new Column\TextColumn('capacite'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\BooleanColumn('plan_path'));
+        $this->addColumn(new Column\BooleanColumn('vignette'));
+        $this->addColumn(new Column\BooleanColumn('published'));
+        $this->addColumn(new Column\BooleanColumn('active'));
     }
 
     /**

@@ -83,6 +83,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
+     * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
@@ -172,6 +173,27 @@ abstract class BaseDestination extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $destinationI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseDestination object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -404,6 +426,10 @@ abstract class BaseDestination extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -2303,6 +2329,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
