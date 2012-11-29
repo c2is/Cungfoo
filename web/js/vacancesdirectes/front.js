@@ -897,11 +897,12 @@ $(function() {
 
     if ($('#results').length ){
         initCritResult();
-        /*$('.itemResultRight .bt').hover( function(){
+        $('.itemResultRight .bt').click( function(){
             $(this).next('.itemResultPopDest').fadeIn();
-        }, function(){
-            $(this).next('.itemResultPopDest').fadeOut();
-        });*/
+        });
+        $('.itemResult').mouseleave( function(){
+            $(this).find('.itemResultPopDest').fadeOut();
+        });
     }
 });
 

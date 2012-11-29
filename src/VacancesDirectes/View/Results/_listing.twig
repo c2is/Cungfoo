@@ -73,31 +73,37 @@
 
             <div class="itemResultPopDest" style="display:none;">
                 <h3>{{ etab.model.ville }}</h3>
-                <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                Texte texte texte
+                <img height="94" width="185" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
+                <img height="81" width="116" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
+                <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
 
+                <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}
-                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
                     {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
                     {{ etab.model.eventPrioritaire.strDate }}
-                    <a class="button trans" href="#_">Plus d'événements</a>
+                    <a class="bt trans" href="#_">Plus d'événements</a>
                 {% endif %}
+                </div>
 
+                <div class="infoPop">
                 {% if etab.model.poiPrioritaire %}
-                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
                     {{ etab.model.poiPrioritaire.name }}
-                    <a class="button trans" href="#_">Plus de visites</a>
+                    <a class="bt trans" href="#_">Plus de visites</a>
                 {% endif %}
+                </div>
 
-                <h4>&Agrave; ne pas manquer</h4>
+                <div class="imanqPop">
+                    <h4>&Agrave; ne pas manquer</h4>
 
-                <a class="button trans" href="#_">{{ etab.model.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</a>
-                <a class="button trans" href="#_">{{ etab.model.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</a>
-                <a class="button trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
+                </div>
 
-                <a class="button" href="#_">Découvrir {{ etab.model.ville }}</a>
-            </div>
+                <a class="bt big grisC" href="#_">Découvrir {{ etab.model.ville }}</a>
+            </div></div>
         </div>
         <!-- item.bottom -->
         <div class="itemResultBottom clear">
