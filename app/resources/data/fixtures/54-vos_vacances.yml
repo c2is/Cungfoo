@@ -2,3 +2,4 @@
     1:
         Age: '10'
         ImagePath: uploads/vos_vacancess/50ae495f96427.jpeg
+        Active: true
