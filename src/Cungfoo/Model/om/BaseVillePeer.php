@@ -19,7 +19,7 @@ use Cungfoo\Model\map\VilleTableMap;
 /**
  * Base static class for performing query and update operations on the 'ville' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -84,7 +84,7 @@ abstract class BaseVillePeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -390,7 +390,7 @@ abstract class BaseVillePeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -400,7 +400,7 @@ abstract class BaseVillePeer
     {
         VillePeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to ville
      * by a foreign key with ON DELETE CASCADE
@@ -449,7 +449,7 @@ abstract class BaseVillePeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -460,7 +460,7 @@ abstract class BaseVillePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = VillePeer::getOMClass();
         // populate the object(s)
@@ -942,7 +942,7 @@ abstract class BaseVillePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             VillePeer::clearRelatedInstancePool();
             $con->commit();

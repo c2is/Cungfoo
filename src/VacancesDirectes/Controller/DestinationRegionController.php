@@ -59,6 +59,7 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->setData($listData)
                 ->setType(CatalogueListing::CATALOGUE)
             ;
+            $listContent = $list->process();
 
             return $app['twig']->render('Destination/region.twig', array(
                 'locale'            => $locale,
@@ -67,7 +68,8 @@ class DestinationRegionController implements ControllerProviderInterface
                 'nbSitesAVisiter'   => $nbSitesAVisiter,
                 'events'            => $events,
                 'campings'          => $campings,
-                'list'              => $list->process(),
+                'list'              => $listContent,
+                'firstEtab'         => reset($listContent['element']),
                 'searchForm'        => $searchEngine->getView(),
             ));
         })
