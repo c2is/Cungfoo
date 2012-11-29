@@ -20,7 +20,7 @@ use Cungfoo\Model\VosVacancesQuery;
 /**
  * Base class that represents a query for the 'vos_vacances' table.
  *
- * 
+ *
  *
  * @method VosVacancesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VosVacancesQuery orderByAge($order = Criteria::ASC) Order by the age column
@@ -101,7 +101,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   VosVacances|VosVacances[]|mixed the result, formatted by the current formatter
@@ -156,7 +156,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `AGE`, `IMAGE_PATH`, `ENABLED` FROM `vos_vacances` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -446,7 +446,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
     }
 
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -459,12 +459,12 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'VosVacancesI18n';
-    
+
         return $this
             ->joinVosVacancesI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -480,10 +480,10 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('VosVacancesI18n');
         $this->with['VosVacancesI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

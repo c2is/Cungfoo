@@ -17,7 +17,7 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
 /**
  * Base class that represents a query for the 'demande_identifiant' table.
  *
- * 
+ *
  *
  * @method DemandeIdentifiantQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DemandeIdentifiantQuery orderBySocieteNom($order = Criteria::ASC) Order by the societe_nom column
@@ -182,7 +182,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   DemandeIdentifiant|DemandeIdentifiant[]|mixed the result, formatted by the current formatter
@@ -237,7 +237,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CLIENT_VC`, `CLIENT_VC_CODE`, `CLIENT_VD`, `CLIENT_VD_CODE`, `BROCHURE`, `IDENTIFIANT`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `demande_identifiant` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -1111,7 +1111,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -1123,7 +1123,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         return $this->addUsingAlias(DemandeIdentifiantPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -1133,7 +1133,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(DemandeIdentifiantPeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -1143,7 +1143,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DemandeIdentifiantPeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -1155,7 +1155,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         return $this->addUsingAlias(DemandeIdentifiantPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -1165,7 +1165,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(DemandeIdentifiantPeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *

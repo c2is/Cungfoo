@@ -20,7 +20,7 @@ use Cungfoo\Model\TopCampingQuery;
 /**
  * Base class that represents a query for the 'top_camping' table.
  *
- * 
+ *
  *
  * @method TopCampingQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TopCampingQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
@@ -101,7 +101,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   TopCamping|TopCamping[]|mixed the result, formatted by the current formatter
@@ -156,7 +156,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ENABLED` FROM `top_camping` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -474,7 +474,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     }
 
     // sortable behavior
-    
+
     /**
      * Filter the query based on a rank in the list
      *
@@ -487,7 +487,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         return $this
             ->addUsingAlias(TopCampingPeer::RANK_COL, $rank, Criteria::EQUAL);
     }
-    
+
     /**
      * Order the query based on the rank in the list.
      * Using the default $order, returns the item with the lowest rank first
@@ -510,7 +510,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
                 throw new PropelException('TopCampingQuery::orderBy() only accepts "asc" or "desc" as argument');
         }
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -525,7 +525,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
             ->filterByRank($rank)
             ->findOne($con);
     }
-    
+
     /**
      * Returns the list of objects
      *
@@ -539,10 +539,10 @@ abstract class BaseTopCampingQuery extends ModelCriteria
             ->orderByRank()
             ->find($con);
     }
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -555,10 +555,10 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         // shift the objects with a position lower than the one of object
         $this->addSelectColumn('MAX(' . TopCampingPeer::RANK_COL . ')');
         $stmt = $this->doSelect($con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -574,7 +574,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -587,7 +587,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();

@@ -27,14 +27,25 @@
         {# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
         <img src="{{ event.image }}" />
         {{ event.name }} {# Titre #}
-        {{ event.subtitlte }} {# Texte #}
+        {{ event.subtitle }} {# Texte #}
     {% endfor %}
 
 
-    {# Bloc "Notre sélection de campings" #}
+    {# Bloc "Notre sélection de campings" + GMap #}
     {{ "destination.campings_selection_title" | trans }}
-    {% include 'Results/_listing.twig' %}
+    {% include 'Results/_listing_destination.twig' %}
 
+
+    {# Photos #}
+    {{ destination.images_region_title }}
+    {% if region.imageDetail1 %}}
+    <img src="{{ asset(region.imageDetail1) }}" />
+    {% endif %}
+    {% if region.imageDetail2 %}
+    <img src="{{ asset(region.imageDetail2) }}" />
+    {% endif %}
+
+    <a href="#_">{{ "destination.retour_bottom" | trans }}</a>
 
 {% endblock %}
 

@@ -18,7 +18,7 @@ use Cungfoo\Model\map\CategorieTableMap;
 /**
  * Base static class for performing query and update operations on the 'categorie' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -74,7 +74,7 @@ abstract class BaseCategoriePeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -374,7 +374,7 @@ abstract class BaseCategoriePeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -384,7 +384,7 @@ abstract class BaseCategoriePeer
     {
         CategoriePeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to categorie
      * by a foreign key with ON DELETE CASCADE
@@ -433,7 +433,7 @@ abstract class BaseCategoriePeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -444,7 +444,7 @@ abstract class BaseCategoriePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = CategoriePeer::getOMClass();
         // populate the object(s)
@@ -688,7 +688,7 @@ abstract class BaseCategoriePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             CategoriePeer::clearRelatedInstancePool();
             $con->commit();
