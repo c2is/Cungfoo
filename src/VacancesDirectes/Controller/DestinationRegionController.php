@@ -43,10 +43,10 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
-            $nbSitesAVisiter = PointInteretPeer::getCountForRegion($region);
-            $events        = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
-            $campings      = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
+            $sitesAVisiter      = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
+            $nbSitesAVisiter    = PointInteretPeer::getCountForRegion($region);
+            $events             = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
+            $campings           = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
 
             $listData = array();
             for($i = 0; $i < 5; $i++)

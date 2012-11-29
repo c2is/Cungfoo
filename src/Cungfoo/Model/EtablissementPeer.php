@@ -53,11 +53,51 @@ class EtablissementPeer extends BaseEtablissementPeer
         ;
     }
 
+    public static function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null) {
+        $query = EtablissementQuery::create()
+            ->useVilleQuery()
+            ->useRegionQuery()
+            ->filterByPays($pays)
+            ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
     public static function getForRegion(Region $region, $sort = self::NO_SORT, $count = null) {
         $query = EtablissementQuery::create()
             ->useVilleQuery()
                 ->filterByRegion($region)
             ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    public static function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null) {
+        $query = EtablissementQuery::create()
+            ->filterByVille($ville)
         ;
 
         if ($sort == self::RANDOM_SORT)
