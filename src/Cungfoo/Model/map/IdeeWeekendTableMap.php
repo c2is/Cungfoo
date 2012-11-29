@@ -48,8 +48,7 @@ class IdeeWeekendTableMap extends TableMap
         $this->addColumn('HOME', 'Home', 'BOOLEAN', false, 1, null);
         $this->addColumn('LIEN', 'Lien', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_PATH', 'ImagePath', 'VARCHAR', false, 255, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
-        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

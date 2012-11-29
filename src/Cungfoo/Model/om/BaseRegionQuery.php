@@ -36,7 +36,6 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method RegionQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method RegionQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method RegionQuery groupById() Group by the id column
  * @method RegionQuery groupByCode() Group by the code column
@@ -50,7 +49,6 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
  * @method RegionQuery groupByActive() Group by the active column
- * @method RegionQuery groupByEnabled() Group by the enabled column
  *
  * @method RegionQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method RegionQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -82,7 +80,6 @@ use Cungfoo\Model\Ville;
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  * @method Region findOneByActive(boolean $active) Return the first Region filtered by the active column
- * @method Region findOneByEnabled(boolean $enabled) Return the first Region filtered by the enabled column
  *
  * @method array findById(int $id) Return Region objects filtered by the id column
  * @method array findByCode(string $code) Return Region objects filtered by the code column
@@ -96,7 +93,6 @@ use Cungfoo\Model\Ville;
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Region objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return Region objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -200,7 +196,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `region` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -671,33 +667,6 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(RegionPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

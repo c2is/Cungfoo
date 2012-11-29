@@ -37,13 +37,13 @@ abstract class BaseEventPeer
     const TM_CLASS = 'EventTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 16;
+    const NUM_COLUMNS = 15;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 16;
+    const NUM_HYDRATE_COLUMNS = 15;
 
     /** the column name for the ID field */
     const ID = 'event.ID';
@@ -90,9 +90,6 @@ abstract class BaseEventPeer
     /** the column name for the ACTIVE field */
     const ACTIVE = 'event.ACTIVE';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'event.ENABLED';
-
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -119,12 +116,12 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[EventPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Category', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'priority', 'createdAt', 'updatedAt', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CODE, EventPeer::CATEGORY, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::GEO_COORDINATE_X, EventPeer::GEO_COORDINATE_Y, EventPeer::DISTANCE_CAMPING, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, EventPeer::ACTIVE, EventPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'priority', 'created_at', 'updated_at', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Category', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'Priority', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'priority', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID, EventPeer::CODE, EventPeer::CATEGORY, EventPeer::ADDRESS, EventPeer::ADDRESS2, EventPeer::ZIPCODE, EventPeer::CITY, EventPeer::GEO_COORDINATE_X, EventPeer::GEO_COORDINATE_Y, EventPeer::DISTANCE_CAMPING, EventPeer::IMAGE, EventPeer::PRIORITY, EventPeer::CREATED_AT, EventPeer::UPDATED_AT, EventPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'PRIORITY', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'priority', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
     );
 
     /**
@@ -134,12 +131,12 @@ abstract class BaseEventPeer
      * e.g. EventPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Category' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'GeoCoordinateX' => 7, 'GeoCoordinateY' => 8, 'DistanceCamping' => 9, 'Image' => 10, 'Priority' => 11, 'CreatedAt' => 12, 'UpdatedAt' => 13, 'Active' => 14, 'Enabled' => 15, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geoCoordinateX' => 7, 'geoCoordinateY' => 8, 'distanceCamping' => 9, 'image' => 10, 'priority' => 11, 'createdAt' => 12, 'updatedAt' => 13, 'active' => 14, 'enabled' => 15, ),
-        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CODE => 1, EventPeer::CATEGORY => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::GEO_COORDINATE_X => 7, EventPeer::GEO_COORDINATE_Y => 8, EventPeer::DISTANCE_CAMPING => 9, EventPeer::IMAGE => 10, EventPeer::PRIORITY => 11, EventPeer::CREATED_AT => 12, EventPeer::UPDATED_AT => 13, EventPeer::ACTIVE => 14, EventPeer::ENABLED => 15, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'GEO_COORDINATE_X' => 7, 'GEO_COORDINATE_Y' => 8, 'DISTANCE_CAMPING' => 9, 'IMAGE' => 10, 'PRIORITY' => 11, 'CREATED_AT' => 12, 'UPDATED_AT' => 13, 'ACTIVE' => 14, 'ENABLED' => 15, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geo_coordinate_x' => 7, 'geo_coordinate_y' => 8, 'distance_camping' => 9, 'image' => 10, 'priority' => 11, 'created_at' => 12, 'updated_at' => 13, 'active' => 14, 'enabled' => 15, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Category' => 2, 'Address' => 3, 'Address2' => 4, 'Zipcode' => 5, 'City' => 6, 'GeoCoordinateX' => 7, 'GeoCoordinateY' => 8, 'DistanceCamping' => 9, 'Image' => 10, 'Priority' => 11, 'CreatedAt' => 12, 'UpdatedAt' => 13, 'Active' => 14, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geoCoordinateX' => 7, 'geoCoordinateY' => 8, 'distanceCamping' => 9, 'image' => 10, 'priority' => 11, 'createdAt' => 12, 'updatedAt' => 13, 'active' => 14, ),
+        BasePeer::TYPE_COLNAME => array (EventPeer::ID => 0, EventPeer::CODE => 1, EventPeer::CATEGORY => 2, EventPeer::ADDRESS => 3, EventPeer::ADDRESS2 => 4, EventPeer::ZIPCODE => 5, EventPeer::CITY => 6, EventPeer::GEO_COORDINATE_X => 7, EventPeer::GEO_COORDINATE_Y => 8, EventPeer::DISTANCE_CAMPING => 9, EventPeer::IMAGE => 10, EventPeer::PRIORITY => 11, EventPeer::CREATED_AT => 12, EventPeer::UPDATED_AT => 13, EventPeer::ACTIVE => 14, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY' => 2, 'ADDRESS' => 3, 'ADDRESS2' => 4, 'ZIPCODE' => 5, 'CITY' => 6, 'GEO_COORDINATE_X' => 7, 'GEO_COORDINATE_Y' => 8, 'DISTANCE_CAMPING' => 9, 'IMAGE' => 10, 'PRIORITY' => 11, 'CREATED_AT' => 12, 'UPDATED_AT' => 13, 'ACTIVE' => 14, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category' => 2, 'address' => 3, 'address2' => 4, 'zipcode' => 5, 'city' => 6, 'geo_coordinate_x' => 7, 'geo_coordinate_y' => 8, 'distance_camping' => 9, 'image' => 10, 'priority' => 11, 'created_at' => 12, 'updated_at' => 13, 'active' => 14, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
     );
 
     /**
@@ -228,7 +225,6 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn(EventPeer::CREATED_AT);
             $criteria->addSelectColumn(EventPeer::UPDATED_AT);
             $criteria->addSelectColumn(EventPeer::ACTIVE);
-            $criteria->addSelectColumn(EventPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
@@ -245,7 +241,6 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

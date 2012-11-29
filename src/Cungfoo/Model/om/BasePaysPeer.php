@@ -38,13 +38,13 @@ abstract class BasePaysPeer
     const TM_CLASS = 'PaysTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the ID field */
     const ID = 'pays.ID';
@@ -66,9 +66,6 @@ abstract class BasePaysPeer
 
     /** the column name for the ACTIVE field */
     const ACTIVE = 'pays.ACTIVE';
-
-    /** the column name for the ENABLED field */
-    const ENABLED = 'pays.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -96,12 +93,12 @@ abstract class BasePaysPeer
      * e.g. PaysPeer::$fieldNames[PaysPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (PaysPeer::ID, PaysPeer::CODE, PaysPeer::IMAGE_DETAIL_1, PaysPeer::IMAGE_DETAIL_2, PaysPeer::CREATED_AT, PaysPeer::UPDATED_AT, PaysPeer::ACTIVE, PaysPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PaysPeer::ID, PaysPeer::CODE, PaysPeer::IMAGE_DETAIL_1, PaysPeer::IMAGE_DETAIL_2, PaysPeer::CREATED_AT, PaysPeer::UPDATED_AT, PaysPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -111,12 +108,12 @@ abstract class BasePaysPeer
      * e.g. PaysPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImageDetail1' => 2, 'ImageDetail2' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, 'Enabled' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imageDetail1' => 2, 'imageDetail2' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, 'enabled' => 7, ),
-        BasePeer::TYPE_COLNAME => array (PaysPeer::ID => 0, PaysPeer::CODE => 1, PaysPeer::IMAGE_DETAIL_1 => 2, PaysPeer::IMAGE_DETAIL_2 => 3, PaysPeer::CREATED_AT => 4, PaysPeer::UPDATED_AT => 5, PaysPeer::ACTIVE => 6, PaysPeer::ENABLED => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_DETAIL_1' => 2, 'IMAGE_DETAIL_2' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, 'ENABLED' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_detail_1' => 2, 'image_detail_2' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, 'enabled' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImageDetail1' => 2, 'ImageDetail2' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imageDetail1' => 2, 'imageDetail2' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, ),
+        BasePeer::TYPE_COLNAME => array (PaysPeer::ID => 0, PaysPeer::CODE => 1, PaysPeer::IMAGE_DETAIL_1 => 2, PaysPeer::IMAGE_DETAIL_2 => 3, PaysPeer::CREATED_AT => 4, PaysPeer::UPDATED_AT => 5, PaysPeer::ACTIVE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_DETAIL_1' => 2, 'IMAGE_DETAIL_2' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_detail_1' => 2, 'image_detail_2' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -197,7 +194,6 @@ abstract class BasePaysPeer
             $criteria->addSelectColumn(PaysPeer::CREATED_AT);
             $criteria->addSelectColumn(PaysPeer::UPDATED_AT);
             $criteria->addSelectColumn(PaysPeer::ACTIVE);
-            $criteria->addSelectColumn(PaysPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
@@ -206,7 +202,6 @@ abstract class BasePaysPeer
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

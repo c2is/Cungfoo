@@ -38,13 +38,13 @@ abstract class BaseCategoriePeer
     const TM_CLASS = 'CategorieTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'categorie.ID';
@@ -60,9 +60,6 @@ abstract class BaseCategoriePeer
 
     /** the column name for the ACTIVE field */
     const ACTIVE = 'categorie.ACTIVE';
-
-    /** the column name for the ENABLED field */
-    const ENABLED = 'categorie.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -90,12 +87,12 @@ abstract class BaseCategoriePeer
      * e.g. CategoriePeer::$fieldNames[CategoriePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID, CategoriePeer::CODE, CategoriePeer::CREATED_AT, CategoriePeer::UPDATED_AT, CategoriePeer::ACTIVE, CategoriePeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID, CategoriePeer::CODE, CategoriePeer::CREATED_AT, CategoriePeer::UPDATED_AT, CategoriePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -105,12 +102,12 @@ abstract class BaseCategoriePeer
      * e.g. CategoriePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, 'Enabled' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID => 0, CategoriePeer::CODE => 1, CategoriePeer::CREATED_AT => 2, CategoriePeer::UPDATED_AT => 3, CategoriePeer::ACTIVE => 4, CategoriePeer::ENABLED => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, 'ENABLED' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (CategoriePeer::ID => 0, CategoriePeer::CODE => 1, CategoriePeer::CREATED_AT => 2, CategoriePeer::UPDATED_AT => 3, CategoriePeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -189,14 +186,12 @@ abstract class BaseCategoriePeer
             $criteria->addSelectColumn(CategoriePeer::CREATED_AT);
             $criteria->addSelectColumn(CategoriePeer::UPDATED_AT);
             $criteria->addSelectColumn(CategoriePeer::ACTIVE);
-            $criteria->addSelectColumn(CategoriePeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

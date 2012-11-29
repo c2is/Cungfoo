@@ -35,6 +35,7 @@ abstract class AbstractDatabaseFiller extends AbstractFiller
         switch($column->getType())
         {
             case 'text':
+            case 'boolean':
                 $cell->setText($info[0]['text']);
                 break;
 

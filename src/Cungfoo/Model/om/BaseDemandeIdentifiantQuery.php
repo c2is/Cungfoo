@@ -45,7 +45,6 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiantQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DemandeIdentifiantQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method DemandeIdentifiantQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method DemandeIdentifiantQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method DemandeIdentifiantQuery groupById() Group by the id column
  * @method DemandeIdentifiantQuery groupBySocieteNom() Group by the societe_nom column
@@ -73,7 +72,6 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiantQuery groupByCreatedAt() Group by the created_at column
  * @method DemandeIdentifiantQuery groupByUpdatedAt() Group by the updated_at column
  * @method DemandeIdentifiantQuery groupByActive() Group by the active column
- * @method DemandeIdentifiantQuery groupByEnabled() Group by the enabled column
  *
  * @method DemandeIdentifiantQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DemandeIdentifiantQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -107,7 +105,6 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiant findOneByCreatedAt(string $created_at) Return the first DemandeIdentifiant filtered by the created_at column
  * @method DemandeIdentifiant findOneByUpdatedAt(string $updated_at) Return the first DemandeIdentifiant filtered by the updated_at column
  * @method DemandeIdentifiant findOneByActive(boolean $active) Return the first DemandeIdentifiant filtered by the active column
- * @method DemandeIdentifiant findOneByEnabled(boolean $enabled) Return the first DemandeIdentifiant filtered by the enabled column
  *
  * @method array findById(int $id) Return DemandeIdentifiant objects filtered by the id column
  * @method array findBySocieteNom(string $societe_nom) Return DemandeIdentifiant objects filtered by the societe_nom column
@@ -135,7 +132,6 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method array findByCreatedAt(string $created_at) Return DemandeIdentifiant objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return DemandeIdentifiant objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return DemandeIdentifiant objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return DemandeIdentifiant objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -239,7 +235,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CLIENT_VC`, `CLIENT_VC_CODE`, `CLIENT_VD`, `CLIENT_VD_CODE`, `BROCHURE`, `IDENTIFIANT`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `demande_identifiant` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CLIENT_VC`, `CLIENT_VC_CODE`, `CLIENT_VD`, `CLIENT_VD_CODE`, `BROCHURE`, `IDENTIFIANT`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `demande_identifiant` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1096,33 +1092,6 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DemandeIdentifiantPeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeIdentifiantQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(DemandeIdentifiantPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

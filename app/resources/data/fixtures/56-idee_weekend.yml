@@ -5,25 +5,25 @@
         Home: true
         Lien: '#'
         ImagePath: uploads/idee_weekends/50af3c56e5df0.png
-        Enabled: true
+        Active: true
     2:
         Highlight: true
         Prix: null
         Home: true
         Lien: '#'
         ImagePath: uploads/idee_weekends/50af3cfa85bdd.png
-        Enabled: true
+        Active: true
     3:
         Highlight: false
         Prix: '324'
         Home: true
         Lien: '#'
         ImagePath: uploads/idee_weekends/50af3d1f91b61.png
-        Enabled: true
+        Active: true
     4:
         Highlight: true
         Prix: '255'
         Home: false
         Lien: '#'
         ImagePath: uploads/idee_weekends/50af3d6719ea2.png
-        Enabled: true
+        Active: true

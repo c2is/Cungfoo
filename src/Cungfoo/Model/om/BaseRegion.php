@@ -121,16 +121,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
-     * @var        boolean
-     */
-    protected $active;
-
-    /**
-     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        Pays
@@ -197,7 +191,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -382,16 +376,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getActive()
     {
         return $this->active;
-    }
-
-    /**
-     * Get the [enabled] column value.
-     *
-     * @return boolean
-     */
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
     /**
@@ -671,35 +655,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setActive()
 
     /**
-     * Sets the value of the [enabled] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setEnabled($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = RegionPeer::ENABLED;
-        }
-
-
-        return $this;
-    } // setEnabled()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -709,7 +664,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -747,7 +702,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->created_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->updated_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
             $this->active = ($row[$startcol + 11] !== null) ? (boolean) $row[$startcol + 11] : null;
-            $this->enabled = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -756,7 +710,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 13; // 13 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -1070,9 +1024,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
-        if ($this->isColumnModified(RegionPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `region` (%s) VALUES (%s)',
@@ -1119,9 +1070,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`ACTIVE`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
-                        break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1321,9 +1269,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
             case 11:
                 return $this->getActive();
                 break;
-            case 12:
-                return $this->getEnabled();
-                break;
             default:
                 return null;
                 break;
@@ -1365,7 +1310,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $keys[9] => $this->getCreatedAt(),
             $keys[10] => $this->getUpdatedAt(),
             $keys[11] => $this->getActive(),
-            $keys[12] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -1447,9 +1391,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
             case 11:
                 $this->setActive($value);
                 break;
-            case 12:
-                $this->setEnabled($value);
-                break;
         } // switch()
     }
 
@@ -1486,7 +1427,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (array_key_exists($keys[9], $arr)) $this->setCreatedAt($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setUpdatedAt($arr[$keys[10]]);
         if (array_key_exists($keys[11], $arr)) $this->setActive($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setEnabled($arr[$keys[12]]);
     }
 
     /**
@@ -1510,7 +1450,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) $criteria->add(RegionPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(RegionPeer::ACTIVE)) $criteria->add(RegionPeer::ACTIVE, $this->active);
-        if ($this->isColumnModified(RegionPeer::ENABLED)) $criteria->add(RegionPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1585,7 +1524,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
-        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -2161,7 +2099,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
-        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2428,7 +2365,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2443,40 +2380,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {
             $this->resetModified(RegionPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         if (!$form['image_encart_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
         }
-
+    
         $this->uploadImageEncartPath($form);
-
+        
         if (!$form['image_encart_petite_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
         }
-
+    
         $this->uploadImageEncartPetitePath($form);
-
+        
         if (!$form['image_detail_1_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_1);
         }
-
+    
         $this->uploadImageDetail1($form);
-
+        
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_2);
         }
-
+    
         $this->uploadImageDetail2($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2484,7 +2421,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return 'uploads/regions';
     }
-
+    
     /**
      * @return string
      */
@@ -2492,7 +2429,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2506,7 +2443,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImagePath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2520,7 +2457,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2534,7 +2471,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPetitePath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2548,7 +2485,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageDetail1($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

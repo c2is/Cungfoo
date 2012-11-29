@@ -53,12 +53,6 @@ class BaseAvantageType extends AppAwareType
             'label' => 'avantage.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'avantage.enabled',
-            'required' => false,
-        ));
         $builder->add('avantageI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\AvantageI18n',
             'languages' => array(

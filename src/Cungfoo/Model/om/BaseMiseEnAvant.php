@@ -87,16 +87,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
-     * @var        boolean
-     */
-    protected $active;
-
-    /**
-     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        PropelObjectCollection|MiseEnAvantI18n[] Collection to store aggregation of MiseEnAvantI18n objects.
@@ -154,7 +148,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -262,16 +256,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function getActive()
     {
         return $this->active;
-    }
-
-    /**
-     * Get the [enabled] column value.
-     *
-     * @return boolean
-     */
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
     /**
@@ -432,35 +416,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     } // setActive()
 
     /**
-     * Sets the value of the [enabled] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return MiseEnAvant The current object (for fluent API support)
-     */
-    public function setEnabled($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::ENABLED;
-        }
-
-
-        return $this;
-    } // setEnabled()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -470,7 +425,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -503,7 +458,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $this->date_fin_validite = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
             $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
-            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -512,7 +466,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MiseEnAvant object", $e);
@@ -776,9 +730,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `mise_en_avant` (%s) VALUES (%s)',
@@ -810,9 +761,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                         break;
                     case '`ACTIVE`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
-                        break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -977,9 +925,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             case 6:
                 return $this->getActive();
                 break;
-            case 7:
-                return $this->getEnabled();
-                break;
             default:
                 return null;
                 break;
@@ -1016,7 +961,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $keys[4] => $this->getDateFinValidite(),
             $keys[5] => $this->getSortableRank(),
             $keys[6] => $this->getActive(),
-            $keys[7] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMiseEnAvantI18ns) {
@@ -1077,9 +1021,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             case 6:
                 $this->setActive($value);
                 break;
-            case 7:
-                $this->setEnabled($value);
-                break;
         } // switch()
     }
 
@@ -1111,7 +1052,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setDateFinValidite($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
     }
 
     /**
@@ -1130,7 +1070,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) $criteria->add(MiseEnAvantPeer::DATE_FIN_VALIDITE, $this->date_fin_validite);
         if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) $criteria->add(MiseEnAvantPeer::SORTABLE_RANK, $this->sortable_rank);
         if ($this->isColumnModified(MiseEnAvantPeer::ACTIVE)) $criteria->add(MiseEnAvantPeer::ACTIVE, $this->active);
-        if ($this->isColumnModified(MiseEnAvantPeer::ENABLED)) $criteria->add(MiseEnAvantPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1200,7 +1139,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $copyObj->setDateFinValidite($this->getDateFinValidite());
         $copyObj->setSortableRank($this->getSortableRank());
         $copyObj->setActive($this->getActive());
-        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1504,7 +1442,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $this->date_fin_validite = null;
         $this->sortable_rank = null;
         $this->active = null;
-        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2112,7 +2049,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2127,19 +2064,19 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         {
             $this->resetModified(MiseEnAvantPeer::IMAGE_FOND_PATH);
         }
-
+    
         $this->uploadImageFondPath($form);
-
+        
         if (!$form['illustration_path_deleted']->getData())
         {
             $this->resetModified(MiseEnAvantPeer::ILLUSTRATION_PATH);
         }
-
+    
         $this->uploadIllustrationPath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2147,7 +2084,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return 'uploads/mise_en_avants';
     }
-
+    
     /**
      * @return string
      */
@@ -2155,7 +2092,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2169,7 +2106,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $this->setImageFondPath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

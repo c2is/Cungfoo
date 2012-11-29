@@ -88,12 +88,6 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.enabled',
-            'required' => false,
-        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(

@@ -37,13 +37,13 @@ abstract class BaseVosVacancesPeer
     const TM_CLASS = 'VosVacancesTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
     const ID = 'vos_vacances.ID';
@@ -56,9 +56,6 @@ abstract class BaseVosVacancesPeer
 
     /** the column name for the ACTIVE field */
     const ACTIVE = 'vos_vacances.ACTIVE';
-
-    /** the column name for the ENABLED field */
-    const ENABLED = 'vos_vacances.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -86,12 +83,12 @@ abstract class BaseVosVacancesPeer
      * e.g. VosVacancesPeer::$fieldNames[VosVacancesPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Age', 'ImagePath', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'age', 'imagePath', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID, VosVacancesPeer::AGE, VosVacancesPeer::IMAGE_PATH, VosVacancesPeer::ACTIVE, VosVacancesPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'AGE', 'IMAGE_PATH', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'age', 'image_path', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Age', 'ImagePath', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'age', 'imagePath', 'active', ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID, VosVacancesPeer::AGE, VosVacancesPeer::IMAGE_PATH, VosVacancesPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'AGE', 'IMAGE_PATH', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'age', 'image_path', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -101,12 +98,12 @@ abstract class BaseVosVacancesPeer
      * e.g. VosVacancesPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Age' => 1, 'ImagePath' => 2, 'Active' => 3, 'Enabled' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'age' => 1, 'imagePath' => 2, 'active' => 3, 'enabled' => 4, ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID => 0, VosVacancesPeer::AGE => 1, VosVacancesPeer::IMAGE_PATH => 2, VosVacancesPeer::ACTIVE => 3, VosVacancesPeer::ENABLED => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'AGE' => 1, 'IMAGE_PATH' => 2, 'ACTIVE' => 3, 'ENABLED' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'age' => 1, 'image_path' => 2, 'active' => 3, 'enabled' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Age' => 1, 'ImagePath' => 2, 'Active' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'age' => 1, 'imagePath' => 2, 'active' => 3, ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID => 0, VosVacancesPeer::AGE => 1, VosVacancesPeer::IMAGE_PATH => 2, VosVacancesPeer::ACTIVE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'AGE' => 1, 'IMAGE_PATH' => 2, 'ACTIVE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'age' => 1, 'image_path' => 2, 'active' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -184,13 +181,11 @@ abstract class BaseVosVacancesPeer
             $criteria->addSelectColumn(VosVacancesPeer::AGE);
             $criteria->addSelectColumn(VosVacancesPeer::IMAGE_PATH);
             $criteria->addSelectColumn(VosVacancesPeer::ACTIVE);
-            $criteria->addSelectColumn(VosVacancesPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.AGE');
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

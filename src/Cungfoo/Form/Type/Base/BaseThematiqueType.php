@@ -53,12 +53,6 @@ class BaseThematiqueType extends AppAwareType
             'label' => 'thematique.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'thematique.enabled',
-            'required' => false,
-        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(

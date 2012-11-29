@@ -70,12 +70,6 @@ class BaseIdeeWeekendType extends AppAwareType
             'label' => 'idee_weekend.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'idee_weekend.enabled',
-            'required' => false,
-        ));
         $builder->add('idee_weekendI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\IdeeWeekendI18n',
             'languages' => array(

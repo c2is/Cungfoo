@@ -1,13 +1,13 @@
 \Cungfoo\Model\Tag:
     1:
         Slug: camping
-        Enabled: true
+        Active: true
     2:
         Slug: locations
-        Enabled: true
+        Active: true
     3:
         Slug: activites
-        Enabled: true
+        Active: true
     4:
         Slug: regions
-        Enabled: true
+        Active: true

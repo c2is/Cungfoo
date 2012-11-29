@@ -45,8 +45,7 @@ class VosVacancesTableMap extends TableMap
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('AGE', 'Age', 'VARCHAR', false, 255, null);
         $this->addColumn('IMAGE_PATH', 'ImagePath', 'VARCHAR', false, 255, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
-        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

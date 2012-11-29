@@ -37,13 +37,13 @@ abstract class BaseTagPeer
     const TM_CLASS = 'TagTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'tag.ID';
@@ -59,9 +59,6 @@ abstract class BaseTagPeer
 
     /** the column name for the ACTIVE field */
     const ACTIVE = 'tag.ACTIVE';
-
-    /** the column name for the ENABLED field */
-    const ENABLED = 'tag.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -89,12 +86,12 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[TagPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'createdAt', 'updatedAt', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::SLUG, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, TagPeer::ACTIVE, TagPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'created_at', 'updated_at', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::SLUG, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, TagPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -104,12 +101,12 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, 'Enabled' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::SLUG => 1, TagPeer::CREATED_AT => 2, TagPeer::UPDATED_AT => 3, TagPeer::ACTIVE => 4, TagPeer::ENABLED => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, 'ENABLED' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::SLUG => 1, TagPeer::CREATED_AT => 2, TagPeer::UPDATED_AT => 3, TagPeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -188,14 +185,12 @@ abstract class BaseTagPeer
             $criteria->addSelectColumn(TagPeer::CREATED_AT);
             $criteria->addSelectColumn(TagPeer::UPDATED_AT);
             $criteria->addSelectColumn(TagPeer::ACTIVE);
-            $criteria->addSelectColumn(TagPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

@@ -73,12 +73,6 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'ville.enabled',
-            'required' => false,
-        ));
         $builder->add('villeI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\VilleI18n',
             'languages' => array(

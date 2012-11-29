@@ -29,7 +29,6 @@ use Cungfoo\Model\MiseEnAvantQuery;
  * @method MiseEnAvantQuery orderByDateFinValidite($order = Criteria::ASC) Order by the date_fin_validite column
  * @method MiseEnAvantQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method MiseEnAvantQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method MiseEnAvantQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method MiseEnAvantQuery groupById() Group by the id column
  * @method MiseEnAvantQuery groupByImageFondPath() Group by the image_fond_path column
@@ -38,7 +37,6 @@ use Cungfoo\Model\MiseEnAvantQuery;
  * @method MiseEnAvantQuery groupByDateFinValidite() Group by the date_fin_validite column
  * @method MiseEnAvantQuery groupBySortableRank() Group by the sortable_rank column
  * @method MiseEnAvantQuery groupByActive() Group by the active column
- * @method MiseEnAvantQuery groupByEnabled() Group by the enabled column
  *
  * @method MiseEnAvantQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method MiseEnAvantQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,7 +55,6 @@ use Cungfoo\Model\MiseEnAvantQuery;
  * @method MiseEnAvant findOneByDateFinValidite(string $date_fin_validite) Return the first MiseEnAvant filtered by the date_fin_validite column
  * @method MiseEnAvant findOneBySortableRank(int $sortable_rank) Return the first MiseEnAvant filtered by the sortable_rank column
  * @method MiseEnAvant findOneByActive(boolean $active) Return the first MiseEnAvant filtered by the active column
- * @method MiseEnAvant findOneByEnabled(boolean $enabled) Return the first MiseEnAvant filtered by the enabled column
  *
  * @method array findById(int $id) Return MiseEnAvant objects filtered by the id column
  * @method array findByImageFondPath(string $image_fond_path) Return MiseEnAvant objects filtered by the image_fond_path column
@@ -66,7 +63,6 @@ use Cungfoo\Model\MiseEnAvantQuery;
  * @method array findByDateFinValidite(string $date_fin_validite) Return MiseEnAvant objects filtered by the date_fin_validite column
  * @method array findBySortableRank(int $sortable_rank) Return MiseEnAvant objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return MiseEnAvant objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return MiseEnAvant objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -170,7 +166,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `IMAGE_FOND_PATH`, `PRIX`, `ILLUSTRATION_PATH`, `DATE_FIN_VALIDITE`, `SORTABLE_RANK`, `ACTIVE`, `ENABLED` FROM `mise_en_avant` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `IMAGE_FOND_PATH`, `PRIX`, `ILLUSTRATION_PATH`, `DATE_FIN_VALIDITE`, `SORTABLE_RANK`, `ACTIVE` FROM `mise_en_avant` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -482,33 +478,6 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MiseEnAvantPeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MiseEnAvantQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(MiseEnAvantPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

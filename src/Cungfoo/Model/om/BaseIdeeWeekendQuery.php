@@ -29,7 +29,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery orderByLien($order = Criteria::ASC) Order by the lien column
  * @method IdeeWeekendQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method IdeeWeekendQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method IdeeWeekendQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method IdeeWeekendQuery groupById() Group by the id column
  * @method IdeeWeekendQuery groupByHighlight() Group by the highlight column
@@ -38,7 +37,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery groupByLien() Group by the lien column
  * @method IdeeWeekendQuery groupByImagePath() Group by the image_path column
  * @method IdeeWeekendQuery groupByActive() Group by the active column
- * @method IdeeWeekendQuery groupByEnabled() Group by the enabled column
  *
  * @method IdeeWeekendQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method IdeeWeekendQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,7 +55,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekend findOneByLien(string $lien) Return the first IdeeWeekend filtered by the lien column
  * @method IdeeWeekend findOneByImagePath(string $image_path) Return the first IdeeWeekend filtered by the image_path column
  * @method IdeeWeekend findOneByActive(boolean $active) Return the first IdeeWeekend filtered by the active column
- * @method IdeeWeekend findOneByEnabled(boolean $enabled) Return the first IdeeWeekend filtered by the enabled column
  *
  * @method array findById(int $id) Return IdeeWeekend objects filtered by the id column
  * @method array findByHighlight(boolean $highlight) Return IdeeWeekend objects filtered by the highlight column
@@ -66,7 +63,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method array findByLien(string $lien) Return IdeeWeekend objects filtered by the lien column
  * @method array findByImagePath(string $image_path) Return IdeeWeekend objects filtered by the image_path column
  * @method array findByActive(boolean $active) Return IdeeWeekend objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return IdeeWeekend objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -170,7 +166,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ACTIVE`, `ENABLED` FROM `idee_weekend` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ACTIVE` FROM `idee_weekend` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -452,33 +448,6 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(IdeeWeekendPeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return IdeeWeekendQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(IdeeWeekendPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

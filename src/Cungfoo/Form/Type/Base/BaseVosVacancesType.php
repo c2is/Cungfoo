@@ -52,12 +52,6 @@ class BaseVosVacancesType extends AppAwareType
             'label' => 'vos_vacances.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'vos_vacances.enabled',
-            'required' => false,
-        ));
         $builder->add('vos_vacancesI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\VosVacancesI18n',
             'languages' => array(

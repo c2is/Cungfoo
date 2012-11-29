@@ -40,12 +40,6 @@ class BaseCategorieType extends AppAwareType
             'label' => 'categorie.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'categorie.enabled',
-            'required' => false,
-        ));
         $builder->add('categorieI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\CategorieI18n',
             'languages' => array(

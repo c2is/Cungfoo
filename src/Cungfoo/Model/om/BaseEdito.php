@@ -83,16 +83,10 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
-     * @var        boolean
-     */
-    protected $active;
-
-    /**
-     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -116,7 +110,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -251,16 +245,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function getActive()
     {
         return $this->active;
-    }
-
-    /**
-     * Get the [enabled] column value.
-     *
-     * @return boolean
-     */
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
     /**
@@ -423,35 +407,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
     } // setActive()
 
     /**
-     * Sets the value of the [enabled] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return Edito The current object (for fluent API support)
-     */
-    public function setEnabled($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = EditoPeer::ENABLED;
-        }
-
-
-        return $this;
-    } // setEnabled()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -461,7 +416,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -494,7 +449,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
-            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -503,7 +457,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = EditoPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = EditoPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Edito object", $e);
@@ -747,9 +701,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if ($this->isColumnModified(EditoPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
-        if ($this->isColumnModified(EditoPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `edito` (%s) VALUES (%s)',
@@ -781,9 +732,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
                         break;
                     case '`ACTIVE`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
-                        break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -940,9 +888,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
             case 6:
                 return $this->getActive();
                 break;
-            case 7:
-                return $this->getEnabled();
-                break;
             default:
                 return null;
                 break;
@@ -978,7 +923,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $keys[4] => $this->getCreatedAt(),
             $keys[5] => $this->getUpdatedAt(),
             $keys[6] => $this->getActive(),
-            $keys[7] => $this->getEnabled(),
         );
 
         return $result;
@@ -1034,9 +978,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
             case 6:
                 $this->setActive($value);
                 break;
-            case 7:
-                $this->setEnabled($value);
-                break;
         } // switch()
     }
 
@@ -1068,7 +1009,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
     }
 
     /**
@@ -1087,7 +1027,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if ($this->isColumnModified(EditoPeer::CREATED_AT)) $criteria->add(EditoPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EditoPeer::UPDATED_AT)) $criteria->add(EditoPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(EditoPeer::ACTIVE)) $criteria->add(EditoPeer::ACTIVE, $this->active);
-        if ($this->isColumnModified(EditoPeer::ENABLED)) $criteria->add(EditoPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1157,7 +1096,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
-        $copyObj->setEnabled($this->getEnabled());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -1216,7 +1154,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
-        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1289,7 +1226,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

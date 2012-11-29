@@ -48,8 +48,7 @@ class MiseEnAvantTableMap extends TableMap
         $this->addColumn('ILLUSTRATION_PATH', 'IllustrationPath', 'VARCHAR', false, 255, null);
         $this->addColumn('DATE_FIN_VALIDITE', 'DateFinValidite', 'DATE', false, null, null);
         $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
-        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

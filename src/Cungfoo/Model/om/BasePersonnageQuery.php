@@ -31,7 +31,6 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PersonnageQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method PersonnageQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method PersonnageQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method PersonnageQuery groupById() Group by the id column
  * @method PersonnageQuery groupByEtablissementId() Group by the etablissement_id column
@@ -40,7 +39,6 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery groupByCreatedAt() Group by the created_at column
  * @method PersonnageQuery groupByUpdatedAt() Group by the updated_at column
  * @method PersonnageQuery groupByActive() Group by the active column
- * @method PersonnageQuery groupByEnabled() Group by the enabled column
  *
  * @method PersonnageQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PersonnageQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -67,7 +65,6 @@ use Cungfoo\Model\PersonnageQuery;
  * @method Personnage findOneByCreatedAt(string $created_at) Return the first Personnage filtered by the created_at column
  * @method Personnage findOneByUpdatedAt(string $updated_at) Return the first Personnage filtered by the updated_at column
  * @method Personnage findOneByActive(boolean $active) Return the first Personnage filtered by the active column
- * @method Personnage findOneByEnabled(boolean $enabled) Return the first Personnage filtered by the enabled column
  *
  * @method array findById(int $id) Return Personnage objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return Personnage objects filtered by the etablissement_id column
@@ -76,7 +73,6 @@ use Cungfoo\Model\PersonnageQuery;
  * @method array findByCreatedAt(string $created_at) Return Personnage objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Personnage objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Personnage objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return Personnage objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -180,7 +176,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `AGE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `personnage` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `AGE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `personnage` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -508,33 +504,6 @@ abstract class BasePersonnageQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PersonnagePeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PersonnageQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(PersonnagePeer::ENABLED, $enabled, $comparison);
     }
 
     /**

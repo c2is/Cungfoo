@@ -26,13 +26,11 @@ use Cungfoo\Model\TopCampingQuery;
  * @method TopCampingQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method TopCampingQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method TopCampingQuery orderByActive($order = Criteria::ASC) Order by the active column
- * @method TopCampingQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method TopCampingQuery groupById() Group by the id column
  * @method TopCampingQuery groupByEtablissementId() Group by the etablissement_id column
  * @method TopCampingQuery groupBySortableRank() Group by the sortable_rank column
  * @method TopCampingQuery groupByActive() Group by the active column
- * @method TopCampingQuery groupByEnabled() Group by the enabled column
  *
  * @method TopCampingQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TopCampingQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -48,13 +46,11 @@ use Cungfoo\Model\TopCampingQuery;
  * @method TopCamping findOneByEtablissementId(int $etablissement_id) Return the first TopCamping filtered by the etablissement_id column
  * @method TopCamping findOneBySortableRank(int $sortable_rank) Return the first TopCamping filtered by the sortable_rank column
  * @method TopCamping findOneByActive(boolean $active) Return the first TopCamping filtered by the active column
- * @method TopCamping findOneByEnabled(boolean $enabled) Return the first TopCamping filtered by the enabled column
  *
  * @method array findById(int $id) Return TopCamping objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return TopCamping objects filtered by the etablissement_id column
  * @method array findBySortableRank(int $sortable_rank) Return TopCamping objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return TopCamping objects filtered by the active column
- * @method array findByEnabled(boolean $enabled) Return TopCamping objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -158,7 +154,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ACTIVE`, `ENABLED` FROM `top_camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ACTIVE` FROM `top_camping` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -383,33 +379,6 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TopCampingPeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
-     * Filter the query on the enabled column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
-     * </code>
-     *
-     * @param     boolean|string $enabled The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TopCampingQuery The current query, for fluid interface
-     */
-    public function filterByEnabled($enabled = null, $comparison = null)
-    {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(TopCampingPeer::ENABLED, $enabled, $comparison);
     }
 
     /**

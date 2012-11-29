@@ -118,12 +118,6 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.enabled',
-            'required' => false,
-        ));
         $builder->add('regionI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\RegionI18n',
             'languages' => array(

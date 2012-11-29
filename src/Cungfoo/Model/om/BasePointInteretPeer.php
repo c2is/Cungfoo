@@ -37,13 +37,13 @@ abstract class BasePointInteretPeer
     const TM_CLASS = 'PointInteretTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 14;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 14;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the ID field */
     const ID = 'point_interet.ID';
@@ -84,9 +84,6 @@ abstract class BasePointInteretPeer
     /** the column name for the ACTIVE field */
     const ACTIVE = 'point_interet.ACTIVE';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'point_interet.ENABLED';
-
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -113,12 +110,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[PointInteretPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'createdAt', 'updatedAt', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::GEO_COORDINATE_X, PointInteretPeer::GEO_COORDINATE_Y, PointInteretPeer::DISTANCE_CAMPING, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, PointInteretPeer::ACTIVE, PointInteretPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'created_at', 'updated_at', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::GEO_COORDINATE_X, PointInteretPeer::GEO_COORDINATE_Y, PointInteretPeer::DISTANCE_CAMPING, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, PointInteretPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -128,12 +125,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'GeoCoordinateX' => 6, 'GeoCoordinateY' => 7, 'DistanceCamping' => 8, 'Image' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, 'Active' => 12, 'Enabled' => 13, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geoCoordinateX' => 6, 'geoCoordinateY' => 7, 'distanceCamping' => 8, 'image' => 9, 'createdAt' => 10, 'updatedAt' => 11, 'active' => 12, 'enabled' => 13, ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::GEO_COORDINATE_X => 6, PointInteretPeer::GEO_COORDINATE_Y => 7, PointInteretPeer::DISTANCE_CAMPING => 8, PointInteretPeer::IMAGE => 9, PointInteretPeer::CREATED_AT => 10, PointInteretPeer::UPDATED_AT => 11, PointInteretPeer::ACTIVE => 12, PointInteretPeer::ENABLED => 13, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'GEO_COORDINATE_X' => 6, 'GEO_COORDINATE_Y' => 7, 'DISTANCE_CAMPING' => 8, 'IMAGE' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, 'ACTIVE' => 12, 'ENABLED' => 13, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geo_coordinate_x' => 6, 'geo_coordinate_y' => 7, 'distance_camping' => 8, 'image' => 9, 'created_at' => 10, 'updated_at' => 11, 'active' => 12, 'enabled' => 13, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'GeoCoordinateX' => 6, 'GeoCoordinateY' => 7, 'DistanceCamping' => 8, 'Image' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, 'Active' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geoCoordinateX' => 6, 'geoCoordinateY' => 7, 'distanceCamping' => 8, 'image' => 9, 'createdAt' => 10, 'updatedAt' => 11, 'active' => 12, ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::GEO_COORDINATE_X => 6, PointInteretPeer::GEO_COORDINATE_Y => 7, PointInteretPeer::DISTANCE_CAMPING => 8, PointInteretPeer::IMAGE => 9, PointInteretPeer::CREATED_AT => 10, PointInteretPeer::UPDATED_AT => 11, PointInteretPeer::ACTIVE => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'GEO_COORDINATE_X' => 6, 'GEO_COORDINATE_Y' => 7, 'DISTANCE_CAMPING' => 8, 'IMAGE' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, 'ACTIVE' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geo_coordinate_x' => 6, 'geo_coordinate_y' => 7, 'distance_camping' => 8, 'image' => 9, 'created_at' => 10, 'updated_at' => 11, 'active' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -220,7 +217,6 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn(PointInteretPeer::CREATED_AT);
             $criteria->addSelectColumn(PointInteretPeer::UPDATED_AT);
             $criteria->addSelectColumn(PointInteretPeer::ACTIVE);
-            $criteria->addSelectColumn(PointInteretPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
@@ -235,7 +231,6 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 

@@ -2,20 +2,20 @@
     1:
         EtablissementId: 2
         SortableRank: 4
-        Enabled: true
+        Active: true
     2:
         EtablissementId: 106
         SortableRank: 2
-        Enabled: true
+        Active: true
     3:
         EtablissementId: 8
         SortableRank: 3
-        Enabled: true
+        Active: true
     4:
         EtablissementId: 112
         SortableRank: 1
-        Enabled: true
+        Active: true
     5:
         EtablissementId: 28
         SortableRank: 5
-        Enabled: true
+        Active: true

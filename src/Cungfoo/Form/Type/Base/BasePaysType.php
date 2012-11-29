@@ -66,12 +66,6 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'pays.enabled',
-            'required' => false,
-        ));
         $builder->add('paysI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PaysI18n',
             'languages' => array(
