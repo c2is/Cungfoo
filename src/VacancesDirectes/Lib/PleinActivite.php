@@ -45,7 +45,6 @@ class PleinActivite
                 $objectActivites[] = $classQuery::create()
                     ->joinWithI18n($locale)
                     ->filterByCode($activite['code'])
-                    ->filterByEnabled(true)
                     ->findOne()
                 ;
             }
