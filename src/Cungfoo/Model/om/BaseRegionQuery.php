@@ -975,7 +975,7 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -984,7 +984,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 

@@ -47,49 +47,41 @@ class HomepageController implements ControllerProviderInterface
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByEnabled(true)
                 ->findActive()
             ;
 
             $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
                 ->joinWithI18n($locale)
                 ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByEnabled(true)
                 ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
                 ->findActive()
             ;
 
             $pays = \Cungfoo\Model\PaysQuery::create()
-                ->filterByEnabled(true)
                 ->findActive()
             ;
 
             $dernieresMinutes = DernieresMinutesQuery::create()
-                ->filterByEnabled(true)
                 ->findOne()
             ;
 
             $vosVacances = VosVacancesQuery::create()
                 ->joinWithI18n($locale)
-                ->filterByEnabled(true)
                 ->findOne()
             ;
 
             $ideesweekend = IdeeWeekendQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByHome(true)
-                ->filterByEnabled(true)
                 ->findActive()
             ;
 
             $thematiques = ThematiqueQuery::create()
                 ->joinWithI18n($locale)
-                ->filterByEnabled(true)
                 ->findActive()
             ;
 
             $etablissements = EtablissementQuery::create()
-                ->filterByEnabled(true)
                 ->findActive()
             ;
 
