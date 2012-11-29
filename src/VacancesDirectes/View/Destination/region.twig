@@ -8,8 +8,10 @@
     {{ "destination.prefixe_titre" | trans }} {{ region.name }} {{ "destination.suffixe_titre" | trans }} {# Titre #}
     {{ region.introduction }} {# Accroche #}
     {{ region.description }} {# Description #}
+    {{ region.imagePath }}
+    {% if region.imagePath %}
     <img src="{{ asset(region.imagePath) }}" /> {# Picto région #}
-
+    {% endif %}
 
     {# Bloc POIs #}
     {% for poi in sitesAVisiter %}
@@ -33,7 +35,10 @@
 
     {# Bloc "Notre sélection de campings" + GMap #}
     {{ "destination.campings_selection_title" | trans }}
-    {% include 'Results/_listing_destination.twig' %}
+    {% include 'Listing/_listing.twig' %}
+    {{ "listing_destination.campings_map_title" | trans }}
+    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ region.name }}
+    {% include 'Listing/_gmap.twig' %}
 
 
     {# Photos #}

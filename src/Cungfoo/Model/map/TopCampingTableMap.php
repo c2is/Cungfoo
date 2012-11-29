@@ -45,7 +45,7 @@ class TopCampingTableMap extends TableMap
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addForeignKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER', 'etablissement', 'ID', true, null, null);
         $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

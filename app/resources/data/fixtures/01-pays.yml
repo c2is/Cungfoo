@@ -3,15 +3,19 @@
         Code: FRA
         ImageDetail1: uploads/payss/50b4e3116e310.jpeg
         ImageDetail2: uploads/payss/50b4e31177f52.jpeg
+        Active: true
     2:
         Code: ITA
         ImageDetail1: null
         ImageDetail2: null
+        Active: true
     3:
         Code: ESP
         ImageDetail1: null
         ImageDetail2: null
+        Active: true
     4:
         Code: PRT
         ImageDetail1: null
         ImageDetail2: null
+        Active: true

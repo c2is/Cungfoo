@@ -85,6 +85,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
     /**
      * The value for the active field.
+     * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
@@ -151,6 +152,27 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      * @var		PropelObjectCollection
      */
     protected $serviceComplementaireI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseServiceComplementaire object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -414,6 +436,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1871,6 +1897,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1958,7 +1985,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2093,7 +2120,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2108,12 +2135,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         {
             $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2121,7 +2148,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return 'uploads/service_complementaires';
     }
-
+    
     /**
      * @return string
      */
@@ -2129,7 +2156,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

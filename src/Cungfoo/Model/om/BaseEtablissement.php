@@ -263,6 +263,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
+     * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
@@ -582,6 +583,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseEtablissement object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -1601,6 +1623,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -8487,6 +8513,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -8765,7 +8792,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -8996,7 +9023,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -9011,19 +9038,19 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         {
             $this->resetModified(EtablissementPeer::PLAN_PATH);
         }
-
+    
         $this->uploadPlanPath($form);
-
+        
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(EtablissementPeer::VIGNETTE);
         }
-
+    
         $this->uploadVignette($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -9031,7 +9058,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return 'uploads/etablissements';
     }
-
+    
     /**
      * @return string
      */
@@ -9039,7 +9066,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -9053,7 +9080,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->setPlanPath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

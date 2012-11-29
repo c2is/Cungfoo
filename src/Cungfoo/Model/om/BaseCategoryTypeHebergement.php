@@ -77,6 +77,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
     /**
      * The value for the active field.
+     * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
@@ -132,6 +133,27 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      * @var		PropelObjectCollection
      */
     protected $categoryTypeHebergementI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseCategoryTypeHebergement object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -364,6 +386,10 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1590,6 +1616,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1668,7 +1695,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -1803,7 +1830,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

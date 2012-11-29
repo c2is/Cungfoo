@@ -97,6 +97,7 @@ abstract class BaseVille extends BaseObject implements Persistent
 
     /**
      * The value for the active field.
+     * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
@@ -157,6 +158,27 @@ abstract class BaseVille extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $villeI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseVille object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -486,6 +508,10 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1873,6 +1899,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1952,7 +1979,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2135,7 +2162,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2150,19 +2177,19 @@ abstract class BaseVille extends BaseObject implements Persistent
         {
             $this->resetModified(VillePeer::IMAGE_DETAIL_1);
         }
-
+    
         $this->uploadImageDetail1($form);
-
+        
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(VillePeer::IMAGE_DETAIL_2);
         }
-
+    
         $this->uploadImageDetail2($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2170,7 +2197,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return 'uploads/villes';
     }
-
+    
     /**
      * @return string
      */
@@ -2178,7 +2205,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2192,7 +2219,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             $this->setImageDetail1($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

@@ -2,36 +2,48 @@
     1:
         Code: PING
         ImagePath: .
+        Active: true
     2:
         Code: CENF
         ImagePath: .
+        Active: true
     3:
         Code: PETG
         ImagePath: .
+        Active: true
     4:
         Code: CADO
         ImagePath: .
+        Active: true
     5:
         Code: TEMU
         ImagePath: .
+        Active: true
     6:
         Code: SAMU
         ImagePath: .
+        Active: true
     7:
         Code: DISC
         ImagePath: .
+        Active: true
     8:
         Code: MIGO
         ImagePath: .
+        Active: true
     9:
         Code: TENN
         ImagePath: .
+        Active: true
     10:
         Code: GOLF
         ImagePath: .
+        Active: true
     11:
         Code: EQUI
         ImagePath: .
+        Active: true
     12:
         Code: PECH
         ImagePath: .
+        Active: true
