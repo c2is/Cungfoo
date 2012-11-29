@@ -3864,6 +3864,71 @@ input[type="radio"] {
   margin-bottom: 5px;
 }
 /* page result */
+.nbResult {
+  font: 18px/0px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #ed145b;
+  width: 125px;
+  height: 98px;
+  float: left;
+  border-right: 1px solid #ed145b;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 22px;
+}
+.nbResult .nb {
+  display: block;
+  font: bold 45px Arial, sans-serif;
+}
+.typeAff {
+  float: left;
+  width: 143px;
+  height: 98px;
+  border-right: 1px solid #ed145b;
+  padding: 11px 0 0 23px;
+}
+.typeAff button {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #e6e5e5;
+}
+.typeAff button.active {
+  background-color: #ed145b;
+}
+#widgetRange {
+  float: left;
+  width: 326px;
+  margin: 10px 0 0 22px;
+  padding: 10px;
+  background: #e6e5e5;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font: bold 15px Arial;
+  color: #464545;
+}
+#widgetRange #noUiSlider {
+  width: 288px;
+  margin: 10px 6px;
+  color: #ed145b;
+  background: #bcb9b9;
+}
+#widgetRange .rangeBox {
+  width: 50px;
+  left: -16px;
+  position: absolute;
+  text-align: center;
+}
+#widgetRange .noUi-midBar {
+  background-color: #ed145b;
+}
+#filterTri {
+  clear: both;
+}
+.infoComp {
+  display: none;
+}
 .itemResult {
   border: 4px solid #8c8a8a;
   -webkit-border-radius: 15px;
@@ -3885,6 +3950,7 @@ input[type="radio"] {
 }
 .itemResult .itemResultTitle [type="checkbox"] {
   float: right;
+  display: none;
 }
 .itemResult .itemResultLeft {
   padding: 10px 0 10px 10px;
@@ -3898,6 +3964,7 @@ input[type="radio"] {
   float: none;
   margin: 0;
   font-size: 11px;
+  display: none;
 }
 .itemResult .itemResultLeft .ratingFiche .reviewCount {
   margin-left: 0;
@@ -4103,6 +4170,13 @@ input[type="radio"] {
 .itemResult.itemCatalogue .itemResultBottom .linePrice .stain {
   display: block;
 }
+/* bouton Afficher plus de resultats */
+#btPlusResults {
+  clear: both;
+  margin: 20px auto;
+  height: 43px;
+  font-size: 23px;
+}
 .formSearchRefined {
   background: none repeat scroll 0 0 #F0F2F5;
   margin: 10px auto;
@@ -4148,13 +4222,26 @@ input[type="radio"] {
   font: bold 15px Arial, Helvetica, sans-serif, sans-serif;
   text-align: center;
 }
+#resultMap {
+  opacity: 0;
+  position: absolute !important;
+  left: -999em;
+  top: -999em;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+#resultMap.active {
+  opacity: 1;
+  position: relative !important;
+  top: 0;
+  left: 0;
+}
 /* page booking */
 .booking {
   /* STEPS */
 
   /* COMMON */
-
-  /* structure */
 
   /* HOME */
 
@@ -4177,7 +4264,6 @@ input[type="radio"] {
   text-align: center;
 }
 .booking #stepNav ul li.tab {
-  width: 186px;
   margin: 0 12px;
   float: none;
   display: inline-block;
@@ -4191,7 +4277,7 @@ input[type="radio"] {
 .booking #stepNav ul li.tab span {
   position: relative;
   display: block;
-  padding: 0 10px;
+  padding: 0 15px;
   color: #ffffff;
   text-decoration: none;
   height: 50px;
@@ -4202,6 +4288,7 @@ input[type="radio"] {
 
   /* Centrer verticalement une image de taille variable */
 
+  float: left;
 }
 .booking #stepNav ul li.tab span > * {
   vertical-align: middle;
@@ -4223,6 +4310,14 @@ input[type="radio"] {
   top: 24px;
   width: 22px;
   z-index: 50;
+}
+.booking #stepNav ul li.tab.completed span:before {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;
+  width: 40px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
 }
 .booking #nav ul {
   top: 0px;
@@ -4275,17 +4370,6 @@ input[type="radio"] {
   text-transform: uppercase;
   display: block;
   margin-bottom: 3px;
-}
-.booking .column {
-  /*.clear>.left{width:468px;margin:0;}
-.clear>.right{width:436px;margin:0;}*/
-
-}
-.booking .column.left {
-  width: 468px;
-}
-.booking .column.right {
-  width: 436px;
 }
 .booking .error {
   margin-bottom: 10px;
