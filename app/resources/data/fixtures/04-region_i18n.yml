@@ -20,19 +20,19 @@
     2_de:
         Id: 2
         Locale: de
-        Name: PÃ©rigord/Dordogne
+        Name: Périgord/Dordogne
         Introduction: null
         Description: null
     2_en:
         Id: 2
         Locale: en
-        Name: PÃ©rigord/Dordogne
+        Name: Périgord/Dordogne
         Introduction: null
         Description: null
     2_fr:
         Id: 2
         Locale: fr
-        Name: PÃ©rigord/Dordogne
+        Name: Périgord/Dordogne
         Introduction: null
         Description: null
     3_de:
@@ -218,45 +218,45 @@
     13_de:
         Id: 13
         Locale: de
-        Name: VendÃ©e
+        Name: Vendée
         Introduction: null
         Description: null
     13_en:
         Id: 13
         Locale: en
-        Name: VendÃ©e
+        Name: Vendée
         Introduction: null
         Description: null
     13_fr:
         Id: 13
         Locale: fr
-        Name: VendÃ©e
+        Name: Vendée
         Introduction: null
         Description: null
     14_de:
         Id: 14
         Locale: de
         Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, Ã§a vous gagne ! DE'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses dÃ©sertiques, histoire millÃ©naire et architecture futuriste : la rÃ©gion Languedoc-Roussillon est une terre de contrastes et de sensations. DE'
+        Introduction: 'Le grand air, ça vous gagne ! DE'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. DE'
     14_en:
         Id: 14
         Locale: en
         Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, Ã§a vous gagne ! EN'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses dÃ©sertiques, histoire millÃ©naire et architecture futuriste : la rÃ©gion Languedoc-Roussillon est une terre de contrastes et de sensations. EN'
+        Introduction: 'Le grand air, ça vous gagne ! EN'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. EN'
     14_fr:
         Id: 14
         Locale: fr
         Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, Ã§a vous gagne !'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses dÃ©sertiques, histoire millÃ©naire et architecture futuriste : la rÃ©gion Languedoc-Roussillon est une terre de contrastes et de sensations.'
+        Introduction: 'Le grand air, ça vous gagne !'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations.'
     14_nl:
         Id: 14
         Locale: nl
         Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, Ã§a vous gagne ! NL'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses dÃ©sertiques, histoire millÃ©naire et architecture futuriste : la rÃ©gion Languedoc-Roussillon est une terre de contrastes et de sensations. NL'
+        Introduction: 'Le grand air, ça vous gagne ! NL'
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. NL'
     15_de:
         Id: 15
         Locale: de
@@ -314,37 +314,37 @@
     18_de:
         Id: 18
         Locale: de
-        Name: ArdÃ¨che
+        Name: Ardèche
         Introduction: null
         Description: null
     18_en:
         Id: 18
         Locale: en
-        Name: ArdÃ¨che
+        Name: Ardèche
         Introduction: null
         Description: null
     18_fr:
         Id: 18
         Locale: fr
-        Name: ArdÃ¨che
+        Name: Ardèche
         Introduction: null
         Description: null
     19_de:
         Id: 19
         Locale: de
-        Name: AriÃ¨ge/PyrÃ©nÃ©es
+        Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     19_en:
         Id: 19
         Locale: en
-        Name: AriÃ¨ge/PyrÃ©nÃ©es
+        Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     19_fr:
         Id: 19
         Locale: fr
-        Name: AriÃ¨ge/PyrÃ©nÃ©es
+        Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     20_de:
@@ -386,19 +386,19 @@
     22_de:
         Id: 22
         Locale: de
-        Name: DrÃ´me/Haute-Provence
+        Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     22_en:
         Id: 22
         Locale: en
-        Name: DrÃ´me/Haute-Provence
+        Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     22_fr:
         Id: 22
         Locale: fr
-        Name: DrÃ´me/Haute-Provence
+        Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     23_de:
@@ -440,19 +440,19 @@
     25_de:
         Id: 25
         Locale: de
-        Name: 'Italie mÃ©diterranÃ©enne'
+        Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     25_en:
         Id: 25
         Locale: en
-        Name: 'Italie mÃ©diterranÃ©enne'
+        Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     25_fr:
         Id: 25
         Locale: fr
-        Name: 'Italie mÃ©diterranÃ©enne'
+        Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     26_de:
@@ -476,19 +476,19 @@
     27_de:
         Id: 27
         Locale: de
-        Name: 'Provence-CÃ´te d''Azur '
+        Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     27_en:
         Id: 27
         Locale: en
-        Name: 'Provence-CÃ´te d''Azur '
+        Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     27_fr:
         Id: 27
         Locale: fr
-        Name: 'Provence-CÃ´te d''Azur '
+        Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     28_de:
@@ -530,19 +530,19 @@
     30_de:
         Id: 30
         Locale: de
-        Name: HÃ©rault
+        Name: Hérault
         Introduction: null
         Description: null
     30_en:
         Id: 30
         Locale: en
-        Name: HÃ©rault
+        Name: Hérault
         Introduction: null
         Description: null
     30_fr:
         Id: 30
         Locale: fr
-        Name: HÃ©rault
+        Name: Hérault
         Introduction: null
         Description: null
     31_de:
@@ -620,18 +620,18 @@
     35_de:
         Id: 35
         Locale: de
-        Name: 'PyrÃ©nÃ©es Orientales'
+        Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     35_en:
         Id: 35
         Locale: en
-        Name: 'PyrÃ©nÃ©es Orientales'
+        Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     35_fr:
         Id: 35
         Locale: fr
-        Name: 'PyrÃ©nÃ©es Orientales'
+        Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
