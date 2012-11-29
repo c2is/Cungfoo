@@ -10,19 +10,13 @@ include('includes/top.php'); ?>
             <span class="nbResult"><span class="nb">07</span>Résultat(s)</span>
             <div class="typeAff">
                 <span>Affichage résultats</span>
-                <button class="button picto active">Liste</button>
-                <button class="button picto">Carte</button>
+                <button id="btList" class="button picto active">Liste</button>
+                <button id="btMap" class="button picto">Carte</button>
             </div>
             <div id="widgetRange">
                 Budget(s) proposé(s)
                 <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
             </div>
-
-            <form id="filterTri" action="">
-                <fieldset>
-                    <label for="">Trier par</label>
-                </fieldset>
-            </form>
 
             <div id="resultMap" class="gmap" style="width:616px;height:326px;">
                 <script>
@@ -42,6 +36,12 @@ include('includes/top.php'); ?>
                     }
                 </script>
             </div>
+
+            <form id="filterTri" action="">
+                <fieldset>
+                    <label for="">Trier par</label>
+                </fieldset>
+            </form>
 
             <span class="infoComp">Comparateur</span>
 

@@ -15,13 +15,21 @@ var
 //resultCrit
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
-    itemsRanged = list.find('[data-ranged="true"]'),        // items dans la range de prix
-    itemsFiltered = list.find('[data-filtered="true"]'),    // items repondants aux criteres
     minPrice,                                               // le prix minimum de la liste
     maxPrice,                                               // le prix maximum de la liste
     containerCrit = $('#formSearchRefined'),                // conteneur des criteres
     nbVisible = 10,                                         // nombre d'items visible avant pagination
-    nbToShow = 5;                                           // nombre d'items a afficher si pagination existe
+    nbToShow = 5,                                           // nombre d'items a afficher si pagination existe
+//googlemap
+    map,
+    markerBleu,
+    markerVert,
+    markerFushia,
+    shadow,
+    shape,
+    boxOptions,
+    ib,
+    aMarkers = [];
 
 
 /*--  DOMREADY  --*/
@@ -889,11 +897,11 @@ $(function() {
 
     if ($('#results').length ){
         initCritResult();
-        $('.itemResultRight .bt').hover( function(){
+        /*$('.itemResultRight .bt').hover( function(){
             $(this).next('.itemResultPopDest').fadeIn();
-        }/*, function(){
+        }, function(){
             $(this).next('.itemResultPopDest').fadeOut();
-        }*/);
+        });*/
     }
 });
 
@@ -1306,16 +1314,6 @@ function tabs(tView, load) {
 /****
  * GMAP FUNCIONS
  */
-var map,
-    markerBleu,
-    markerVert,
-    markerFushia,
-    shadow,
-    shape,
-    boxOptions,
-    ib,
-    aMarkers = [];
-
 function loadGmapScript() { // call at the end of the DOM ready
     //consoleLog('map');
     var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
@@ -1428,28 +1426,25 @@ function initializeAllGmap() {
 
 /*** FONCTIONS RESULTATS DE RECHERCHE ***/
 function initCritResult(){
-
+// affichage carte
     if(window.location.hash === '#carte') {
-        $('#map').trigger('click');
+        $('#btMap').addClass('active').siblings('button').removeClass('active');
+        $('#resultMap').addClass('active');
     }
-
     $('.typeAff').find('button').click( function(){
-       $(this).addClass('active').siblings('button').removeClass('active');
+        $(this).addClass('active').siblings('button').removeClass('active');
+        if ( $(this).attr('id') == 'btMap' ) {
+            $('#resultMap').addClass('active');
+        } else {
+            $('#resultMap').removeClass('active');
+        }
     });
 
+// change on click
     $('.itemResult .linePrice :radio').change( function(){
         var oCheck = $(this);
         oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
     });
-
-
-    if ( $('.formSearchRefined').length ) {
-        var nbCritChecked = $('#formSearchRefined input:checked').length;
-        $('#nbCrit').text(nbCritChecked);
-    }
-    if ( $('#results').length ) {
-        launchFilters();
-    }
 
     $('.formSearchRefined .searchGlobalSubmit').click(function(e) {
         critSelection();
@@ -1461,14 +1456,51 @@ function initCritResult(){
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
     });
+
+    if ( $('.formSearchRefined').length ) {
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+    }
+    if ( $('#results').length ) {
+        launchFilters();
+    }
+
+    $('#btPlusResults').click( function() {
+        var nextItems = $('#results .nextItem');
+
+        if ( nextItems.length <= nbToShow ) {
+            $('#results .nextItem').fadeIn().removeClass('nextItem');
+            //nextItems.fadeIn().removeClass('nextItem');
+            $(tthis).hide();
+        }else if ( nextItems.length > nbToShow ) {
+            var nbDisclaim = 0;
+
+            $('#results .nextItem:lt('+nbToShow+')').each(function() {
+                if ( $(this).hasClass('disclaim') ) {
+                    nbDisclaim++;
+                };
+            });
+            nbToShow = nbToShow+nbDisclaim;
+            console.log('nbDisclaim = ' +nbDisclaim+' et nbToShow = '+nbToShow);
+
+            $('#results .nextItem:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
+        }
+        console.log('/--- listPagination : affichage des '+nbToShow+' items suivants ---/');
+    });
 }
 
 //launcher des filtres
 function launchFilters() {
-
-    console.log('/--- launchFilters ---/');
-
     items.attr('data-filtered', false);
+
+    //init du nombre de resultats
+    var nbResultsItems = items.length;
+    $('.nbResult .nb').text(nbResultsItems);
+
+    //identification des items pour le tri par pertinence
+    items.each(function(i) {
+        $(this).attr('data-pertinenceID', i);
+    });
 
     //attribution min/max pour le range slider
     findMinMaxRange();
@@ -1479,17 +1511,23 @@ function launchFilters() {
     //selection des criteres
     if ( containerCrit.find('input:checked').length ) {
         critSelection();
-    }
+    };
 
+    //gestion du tri par prix ou pertinence
+    orderList();
+
+    //Pagination de la liste de resultats
+    listPagination();
 }
 
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
     var allPrices = [];
     items.each(function() {
-        var itemPrice = parseInt($(this).find('.itemResultBottom label .price').text());
-        consoleLog(itemPrice);
-        allPrices.push(itemPrice);
+        $(this).find('.linePrice').each( function(){
+            var itemPrice = parseInt($(this).find('label .price').text());
+            allPrices.push(itemPrice);
+        });
         $(this).attr('data-ranged', true);
     });
 
@@ -1508,7 +1546,7 @@ function findMinMaxRange() {
     //items dans la range de prix
     items = list.find('[data-ranged="true"]');
 
-    console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+    //console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
 }
 
 //creation du rangeSlider de prix
@@ -1535,9 +1573,20 @@ function rangeSliderPrice() {
                 valueMax = values[1];
 
                 items.each(function() {
-                    var originPrice = parseInt($(this).find('.itemResultBottom label .price').text());
+                    $(this).find('.linePrice').each( function(){
+                        var originPriceLine = parseInt($(this).find('label .price').text());
+                        if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
+                            $(this).addClass('visiblePrice').fadeIn();
+                        }else{
+                            $(this).removeClass('visiblePrice').fadeOut();
+                        }
+                    });
 
-                    if ( parseInt(originPrice) >= parseInt(valueMin) && parseInt(originPrice) <= parseInt(valueMax) ) {
+                    $(this).find('.visiblePrice').eq(0).find('label').trigger('click');
+
+                    var nbVisiblePrice = $(this).find('.visiblePrice').length;
+                    consoleLog(nbVisiblePrice);
+                    if ( nbVisiblePrice > 0 ) {
                         $(this).attr('data-ranged', true);
                     }else{
                         $(this).attr('data-ranged', false);
@@ -1548,8 +1597,8 @@ function rangeSliderPrice() {
                 console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+'</span>');
-            });
+            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+        });
     };
 
     initRange.call();
@@ -1571,15 +1620,16 @@ function critSelection() {
     $(containerCrit.find('.contentCritPlus input:checked')).each(function() {
         arrayCritPlus.push($(this).attr('id'));
     });
-    consoleLog(arrayCrit);
-    consoleLog(arrayCritPlus);
 
     //si aucun critere n'est selectionne
     if ( arrayCrit == 0 && arrayCritPlus == 0 ) {
         items.attr('data-filtered', true);
+        items.attr('data-filteredPlus', true);
         console.log('aucun critere selectionne');
     }else{
         if ( arrayCrit == 0) {
+            items.attr('data-filtered', true);
+            items.attr('data-filteredPlus', true);
             console.log('aucun critere selectionner dans arrayCrit');
         }else{
             //boucle de comparaison pour arrayCrit
@@ -1599,21 +1649,18 @@ function critSelection() {
                         return false; //on sort de la boucle car au moins 1 critere est present
                     }else{
                         itemToShow.attr('data-filtered', false);
-                    }
+                    };
                 });
 
             });
-        }
+        };
 
         if ( arrayCritPlus == 0 ) {
+            items.attr('data-filteredPlus', true);
             console.log('aucun critere selectionner dans arrayCritPlus');
         }else{
             //boucle de comparaison pour arrayCritPlus
-
-            /*  if ( arrayCritPlus == 0 ) {
-             itemsFiltered = items;
-             }*/
-            itemsFiltered.each(function() {
+            items.each(function() {
                 console.log('-------------------- UN ITEM (critPlus) ----------------------');
 
                 var itemToShow = $(this);
@@ -1624,20 +1671,19 @@ function critSelection() {
                 //comparaison des criteresPlus
                 jQuery.each(arrayCritPlus, function(i) {
                     if ( jQuery.inArray(arrayCritPlus[i], dataCompareCritPlus) > -1 ) {
-                        console.log('critere present : '+this);
-                        itemToShow.attr('data-filtered', true);
+                        itemToShow.attr('data-filteredPlus', true);
                     }else{
-                        itemToShow.attr('data-filtered', false);
+                        itemToShow.attr('data-filteredPlus', false);
                         console.log('criterePlus non present : '+this);
                         return false; //on sort de la boucle car au moins 1 critere n'est pas present
-                    }
+                    };
                 });
             });
         }
-    }
+    };
 
     console.log('/--- critSelection ---/');
-}
+};
 
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
@@ -1646,8 +1692,9 @@ function displayResults() {
     items.each(function() {
         var dataRanged = $(this).attr('data-ranged');
         var dataFiltered = $(this).attr('data-filtered');
+        var dataFilteredPlus = $(this).attr('data-filteredPlus');
 
-        if ( dataFiltered == 'true' && dataRanged == 'true' ) {
+        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
             $(this).fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
         }else{
@@ -1655,8 +1702,106 @@ function displayResults() {
         };
     });
 
+    //gestion de la pagination
+    listPagination();
+
     //mise a jour du nombre d'items affiches
-    $('#nbListResultats').text(nbItemsDisplayed);
+    $('.nbResult .nb').text(nbItemsDisplayed);
 
     console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
-}
+};
+
+
+//gestion du tri par prix ou pertinence
+function orderList() {
+
+    $('#results .itemResult .priceFilter').each(function() {
+        var thisPrice = parseInt($(this).text());
+        $(this).attr('data-prix', thisPrice);
+    });
+
+    $('#selectFilter').change(function() {
+        var orderType = $('option:selected', this).attr('name');
+
+        switch (orderType) {
+            case 'prix_asc' :
+                $('#results li.itemResult').tsort('.priceBox .priceFilter', {
+                    data: 'prix',
+                    order: 'asc'
+                });
+                console.log('Cas 1 : prix_asc');
+                break;
+
+            case 'prix_desc' :
+                $('#results li.itemResult').tsort('.priceBox .priceFilter', {
+                    data: 'prix',
+                    order: 'desc'
+                });
+                console.log('Cas 2 : prix_desc');
+                break;
+            case 'pertinence' :
+                $('#results li.itemResult').tsort({
+                    data: 'pertinenceid',
+                    order: 'asc'
+                });
+                console.log('Cas 2 : pertinence');
+                break;
+        }
+
+        //on cache les pubs
+        $('#results .disclaim').hide();
+        console.log('/--- orderList : Change event ---/');
+        return false;
+    });
+    console.log('/--- orderList ---/');
+};
+
+//pagination liste de resultats
+function listPagination() {
+    var itemsPagination = $('#results .itemResult');
+    var nbResults = itemsPagination.length;
+    var btNext = $('#btPlusResults');
+
+    console.log('nb pagination : '+nbResults);
+
+    if ( nbResults > nbVisible ) {
+        $('#btPlusResults').show();
+
+        itemsPagination.each(function(i) {
+            $(this).attr('data-num', i);
+            if ( $(this).attr('data-num') < nbVisible ) {
+                $(this).show();
+            }else{
+                $(this).hide().addClass('nextItem').next('.disclaim').addClass('nextItem').hide();
+            }
+        })
+        console.log('/--- listPagination : superieur a '+nbVisible+' ---/');
+    }else{
+        btNext.hide();
+        console.log('/--- listPagination : inferieur a '+nbVisible+' ---/');
+    };
+
+
+    //contre-propositions
+    //contreProp();
+};
+
+//contre propositions
+/*
+function contreProp() {
+    var nbContreProp = 0;
+
+    //on compte le nombre de contre-proposition
+    items.each(function() {
+        if ( $(this).hasClass('isContrePro') ) {
+            nbContreProp++;
+        };
+    });
+
+    if (nbContreProp == 0) {
+        $('.contreProp').hide();
+    }else{
+        $('.contreProp').show();
+    };
+    console.log('/--- contreProp ---/');
+};*/
