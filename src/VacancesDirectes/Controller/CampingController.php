@@ -42,18 +42,18 @@ class CampingController implements ControllerProviderInterface
                 ->filterByEtablissementId($etab->getId())
                 ->orderByAge(\Criteria::ASC)
                 ->limit(3)
-                ->find()
+                ->findActive()
             ;
 
             $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEtablissementId($etab->getId())
-                ->find()
+                ->findActive()
             ;
 
             $tags = \Cungfoo\Model\TagQuery::create()
                 ->joinWithI18n($locale)
-                ->find()
+                ->findActive()
             ;
 
             $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
