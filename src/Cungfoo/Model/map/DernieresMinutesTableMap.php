@@ -61,7 +61,6 @@ class DernieresMinutesTableMap extends TableMap
   2 => '21',
 ));
         $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
-        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -85,6 +84,7 @@ class DernieresMinutesTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'active' => array('active_column' => 'active', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/dernieres-minutes', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()

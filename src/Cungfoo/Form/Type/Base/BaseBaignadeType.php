@@ -34,10 +34,10 @@ class BaseBaignadeType extends AppAwareType
             'label' => 'baignade.code',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'baignade.enabled',
+            'label' => 'baignade.active',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

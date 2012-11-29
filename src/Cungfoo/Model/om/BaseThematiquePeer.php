@@ -60,8 +60,8 @@ abstract class BaseThematiquePeer
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'thematique.UPDATED_AT';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'thematique.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'thematique.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -89,11 +89,11 @@ abstract class BaseThematiquePeer
      * e.g. ThematiquePeer::$fieldNames[ThematiquePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID, ThematiquePeer::CODE, ThematiquePeer::IMAGE_PATH, ThematiquePeer::CREATED_AT, ThematiquePeer::UPDATED_AT, ThematiquePeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID, ThematiquePeer::CODE, ThematiquePeer::IMAGE_PATH, ThematiquePeer::CREATED_AT, ThematiquePeer::UPDATED_AT, ThematiquePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -104,11 +104,11 @@ abstract class BaseThematiquePeer
      * e.g. ThematiquePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Enabled' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID => 0, ThematiquePeer::CODE => 1, ThematiquePeer::IMAGE_PATH => 2, ThematiquePeer::CREATED_AT => 3, ThematiquePeer::UPDATED_AT => 4, ThematiquePeer::ENABLED => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ENABLED' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'enabled' => 5, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID => 0, ThematiquePeer::CODE => 1, ThematiquePeer::IMAGE_PATH => 2, ThematiquePeer::CREATED_AT => 3, ThematiquePeer::UPDATED_AT => 4, ThematiquePeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -188,14 +188,14 @@ abstract class BaseThematiquePeer
             $criteria->addSelectColumn(ThematiquePeer::IMAGE_PATH);
             $criteria->addSelectColumn(ThematiquePeer::CREATED_AT);
             $criteria->addSelectColumn(ThematiquePeer::UPDATED_AT);
-            $criteria->addSelectColumn(ThematiquePeer::ENABLED);
+            $criteria->addSelectColumn(ThematiquePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 

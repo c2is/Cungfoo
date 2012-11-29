@@ -29,14 +29,14 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  * @method ServiceComplementaireQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ServiceComplementaireQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ServiceComplementaireQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method ServiceComplementaireQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method ServiceComplementaireQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method ServiceComplementaireQuery groupById() Group by the id column
  * @method ServiceComplementaireQuery groupByCode() Group by the code column
  * @method ServiceComplementaireQuery groupByImagePath() Group by the image_path column
  * @method ServiceComplementaireQuery groupByCreatedAt() Group by the created_at column
  * @method ServiceComplementaireQuery groupByUpdatedAt() Group by the updated_at column
- * @method ServiceComplementaireQuery groupByEnabled() Group by the enabled column
+ * @method ServiceComplementaireQuery groupByActive() Group by the active column
  *
  * @method ServiceComplementaireQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method ServiceComplementaireQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,14 +57,14 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  * @method ServiceComplementaire findOneByImagePath(string $image_path) Return the first ServiceComplementaire filtered by the image_path column
  * @method ServiceComplementaire findOneByCreatedAt(string $created_at) Return the first ServiceComplementaire filtered by the created_at column
  * @method ServiceComplementaire findOneByUpdatedAt(string $updated_at) Return the first ServiceComplementaire filtered by the updated_at column
- * @method ServiceComplementaire findOneByEnabled(boolean $enabled) Return the first ServiceComplementaire filtered by the enabled column
+ * @method ServiceComplementaire findOneByActive(boolean $active) Return the first ServiceComplementaire filtered by the active column
  *
  * @method array findById(int $id) Return ServiceComplementaire objects filtered by the id column
  * @method array findByCode(string $code) Return ServiceComplementaire objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return ServiceComplementaire objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return ServiceComplementaire objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return ServiceComplementaire objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return ServiceComplementaire objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return ServiceComplementaire objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -168,7 +168,7 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `service_complementaire` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `service_complementaire` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -429,15 +429,15 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -446,13 +446,13 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      *
      * @return ServiceComplementaireQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(ServiceComplementairePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(ServiceComplementairePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -701,6 +701,20 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ServiceComplementairePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

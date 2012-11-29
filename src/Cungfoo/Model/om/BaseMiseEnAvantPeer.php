@@ -63,8 +63,8 @@ abstract class BaseMiseEnAvantPeer
     /** the column name for the SORTABLE_RANK field */
     const SORTABLE_RANK = 'mise_en_avant.SORTABLE_RANK';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'mise_en_avant.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'mise_en_avant.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -99,11 +99,11 @@ abstract class BaseMiseEnAvantPeer
      * e.g. MiseEnAvantPeer::$fieldNames[MiseEnAvantPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageFondPath', 'Prix', 'IllustrationPath', 'DateFinValidite', 'SortableRank', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageFondPath', 'prix', 'illustrationPath', 'dateFinValidite', 'sortableRank', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID, MiseEnAvantPeer::IMAGE_FOND_PATH, MiseEnAvantPeer::PRIX, MiseEnAvantPeer::ILLUSTRATION_PATH, MiseEnAvantPeer::DATE_FIN_VALIDITE, MiseEnAvantPeer::SORTABLE_RANK, MiseEnAvantPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_FOND_PATH', 'PRIX', 'ILLUSTRATION_PATH', 'DATE_FIN_VALIDITE', 'SORTABLE_RANK', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_fond_path', 'prix', 'illustration_path', 'date_fin_validite', 'sortable_rank', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageFondPath', 'Prix', 'IllustrationPath', 'DateFinValidite', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageFondPath', 'prix', 'illustrationPath', 'dateFinValidite', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID, MiseEnAvantPeer::IMAGE_FOND_PATH, MiseEnAvantPeer::PRIX, MiseEnAvantPeer::ILLUSTRATION_PATH, MiseEnAvantPeer::DATE_FIN_VALIDITE, MiseEnAvantPeer::SORTABLE_RANK, MiseEnAvantPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_FOND_PATH', 'PRIX', 'ILLUSTRATION_PATH', 'DATE_FIN_VALIDITE', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'image_fond_path', 'prix', 'illustration_path', 'date_fin_validite', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -114,11 +114,11 @@ abstract class BaseMiseEnAvantPeer
      * e.g. MiseEnAvantPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageFondPath' => 1, 'Prix' => 2, 'IllustrationPath' => 3, 'DateFinValidite' => 4, 'SortableRank' => 5, 'Enabled' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageFondPath' => 1, 'prix' => 2, 'illustrationPath' => 3, 'dateFinValidite' => 4, 'sortableRank' => 5, 'enabled' => 6, ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID => 0, MiseEnAvantPeer::IMAGE_FOND_PATH => 1, MiseEnAvantPeer::PRIX => 2, MiseEnAvantPeer::ILLUSTRATION_PATH => 3, MiseEnAvantPeer::DATE_FIN_VALIDITE => 4, MiseEnAvantPeer::SORTABLE_RANK => 5, MiseEnAvantPeer::ENABLED => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_FOND_PATH' => 1, 'PRIX' => 2, 'ILLUSTRATION_PATH' => 3, 'DATE_FIN_VALIDITE' => 4, 'SORTABLE_RANK' => 5, 'ENABLED' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_fond_path' => 1, 'prix' => 2, 'illustration_path' => 3, 'date_fin_validite' => 4, 'sortable_rank' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageFondPath' => 1, 'Prix' => 2, 'IllustrationPath' => 3, 'DateFinValidite' => 4, 'SortableRank' => 5, 'Active' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageFondPath' => 1, 'prix' => 2, 'illustrationPath' => 3, 'dateFinValidite' => 4, 'sortableRank' => 5, 'active' => 6, ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID => 0, MiseEnAvantPeer::IMAGE_FOND_PATH => 1, MiseEnAvantPeer::PRIX => 2, MiseEnAvantPeer::ILLUSTRATION_PATH => 3, MiseEnAvantPeer::DATE_FIN_VALIDITE => 4, MiseEnAvantPeer::SORTABLE_RANK => 5, MiseEnAvantPeer::ACTIVE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_FOND_PATH' => 1, 'PRIX' => 2, 'ILLUSTRATION_PATH' => 3, 'DATE_FIN_VALIDITE' => 4, 'SORTABLE_RANK' => 5, 'ACTIVE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_fond_path' => 1, 'prix' => 2, 'illustration_path' => 3, 'date_fin_validite' => 4, 'sortable_rank' => 5, 'active' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -199,7 +199,7 @@ abstract class BaseMiseEnAvantPeer
             $criteria->addSelectColumn(MiseEnAvantPeer::ILLUSTRATION_PATH);
             $criteria->addSelectColumn(MiseEnAvantPeer::DATE_FIN_VALIDITE);
             $criteria->addSelectColumn(MiseEnAvantPeer::SORTABLE_RANK);
-            $criteria->addSelectColumn(MiseEnAvantPeer::ENABLED);
+            $criteria->addSelectColumn(MiseEnAvantPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.IMAGE_FOND_PATH');
@@ -207,7 +207,7 @@ abstract class BaseMiseEnAvantPeer
             $criteria->addSelectColumn($alias . '.ILLUSTRATION_PATH');
             $criteria->addSelectColumn($alias . '.DATE_FIN_VALIDITE');
             $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 

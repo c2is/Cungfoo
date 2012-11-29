@@ -29,14 +29,14 @@ use Cungfoo\Model\ThematiqueQuery;
  * @method ThematiqueQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ThematiqueQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ThematiqueQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method ThematiqueQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method ThematiqueQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method ThematiqueQuery groupById() Group by the id column
  * @method ThematiqueQuery groupByCode() Group by the code column
  * @method ThematiqueQuery groupByImagePath() Group by the image_path column
  * @method ThematiqueQuery groupByCreatedAt() Group by the created_at column
  * @method ThematiqueQuery groupByUpdatedAt() Group by the updated_at column
- * @method ThematiqueQuery groupByEnabled() Group by the enabled column
+ * @method ThematiqueQuery groupByActive() Group by the active column
  *
  * @method ThematiqueQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method ThematiqueQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,14 +57,14 @@ use Cungfoo\Model\ThematiqueQuery;
  * @method Thematique findOneByImagePath(string $image_path) Return the first Thematique filtered by the image_path column
  * @method Thematique findOneByCreatedAt(string $created_at) Return the first Thematique filtered by the created_at column
  * @method Thematique findOneByUpdatedAt(string $updated_at) Return the first Thematique filtered by the updated_at column
- * @method Thematique findOneByEnabled(boolean $enabled) Return the first Thematique filtered by the enabled column
+ * @method Thematique findOneByActive(boolean $active) Return the first Thematique filtered by the active column
  *
  * @method array findById(int $id) Return Thematique objects filtered by the id column
  * @method array findByCode(string $code) Return Thematique objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return Thematique objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Thematique objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Thematique objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Thematique objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Thematique objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -168,7 +168,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `thematique` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `thematique` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -429,15 +429,15 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -446,13 +446,13 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      *
      * @return ThematiqueQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(ThematiquePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(ThematiquePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -701,6 +701,20 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

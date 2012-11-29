@@ -47,10 +47,10 @@ class BaseEditoType extends AppAwareType
             'label' => 'edito.description',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'edito.enabled',
+            'label' => 'edito.active',
             'required' => false,
         ));
     }

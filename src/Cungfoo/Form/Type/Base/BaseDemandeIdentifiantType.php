@@ -164,10 +164,10 @@ class BaseDemandeIdentifiantType extends AppAwareType
             'label' => 'demande_identifiant.identifiant',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'demande_identifiant.enabled',
+            'label' => 'demande_identifiant.active',
             'required' => false,
         ));
     }

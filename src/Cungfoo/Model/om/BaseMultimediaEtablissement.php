@@ -86,11 +86,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
-     * Note: this column has a database default value of: false
+     * The value for the active field.
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        Etablissement
@@ -159,27 +158,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * @var		PropelObjectCollection
      */
     protected $multimediaEtablissementI18nsScheduledForDeletion = null;
-
-    /**
-     * Applies default values to this object.
-     * This method should be called from the object's constructor (or
-     * equivalent initialization method).
-     * @see        __construct()
-     */
-    public function applyDefaultValues()
-    {
-        $this->enabled = false;
-    }
-
-    /**
-     * Initializes internal state of BaseMultimediaEtablissement object.
-     * @see        applyDefaults()
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->applyDefaultValues();
-    }
 
     /**
      * Get the [id] column value.
@@ -286,13 +264,13 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     /**
-     * Get the [enabled] column value.
+     * Get the [active] column value.
      *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
@@ -409,7 +387,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -418,7 +396,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * @param boolean|integer|string $v The new value
      * @return MultimediaEtablissement The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -428,14 +406,14 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = MultimediaEtablissementPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = MultimediaEtablissementPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -447,10 +425,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
-                return false;
-            }
-
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -478,7 +452,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -800,8 +774,8 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if ($this->isColumnModified(MultimediaEtablissementPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(MultimediaEtablissementPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(MultimediaEtablissementPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -829,8 +803,8 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1010,7 +984,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 return $this->getUpdatedAt();
                 break;
             case 5:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1046,7 +1020,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $keys[2] => $this->getImagePath(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getEnabled(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1108,7 +1082,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 $this->setUpdatedAt($value);
                 break;
             case 5:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1139,7 +1113,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1156,7 +1130,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if ($this->isColumnModified(MultimediaEtablissementPeer::IMAGE_PATH)) $criteria->add(MultimediaEtablissementPeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(MultimediaEtablissementPeer::CREATED_AT)) $criteria->add(MultimediaEtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(MultimediaEtablissementPeer::UPDATED_AT)) $criteria->add(MultimediaEtablissementPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(MultimediaEtablissementPeer::ENABLED)) $criteria->add(MultimediaEtablissementPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(MultimediaEtablissementPeer::ACTIVE)) $criteria->add(MultimediaEtablissementPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1224,7 +1198,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1986,11 +1960,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
-        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -2076,6 +2049,18 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $this->modifiedColumns[] = MultimediaEtablissementPeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior
