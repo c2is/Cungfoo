@@ -59,7 +59,7 @@
         </thead>
         <tbody>
         {% for line in lines %}
-        <tr class="line{% if line.active != true %} disabled{% endif %}">
+        <tr class="line{% if line.active != 'Yes' %} disabled{% endif %}">
             {% for column_name,column in line %}
             {% if column_name != "active" %}
                 <td>{{ column | raw }}</td>
