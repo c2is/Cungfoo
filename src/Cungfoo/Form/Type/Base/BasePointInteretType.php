@@ -117,7 +117,7 @@ class BasePointInteretType extends AppAwareType
                 'presentation' => array(
                     'required' => false,
                     'label' => 'point_interet.presentation',
-                    'type' => 'text',
+                    'type' => 'textarea',
                     'constraints' => array(
                     ),
                 ),
