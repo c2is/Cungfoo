@@ -3,14 +3,11 @@
         EtablissementId: 106
         Age: '45'
         ImagePath: uploads/personnages/506ae37d15e6a.gif
-        Enabled: true
     2:
         EtablissementId: 106
         Age: '27'
         ImagePath: uploads/personnages/506bf37cdb8ab.gif
-        Enabled: true
     3:
         EtablissementId: 106
         Age: '10'
         ImagePath: uploads/personnages/506bfe953c109.gif
-        Enabled: true

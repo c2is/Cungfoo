@@ -24,7 +24,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     2:
         Code: 100
         Name: 'Pins Parasols '
@@ -50,7 +49,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     3:
         Code: 101
         Name: 'Plage Fleurie '
@@ -76,7 +74,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     4:
         Code: 102
         Name: 'Playa Montroig'
@@ -102,7 +99,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     5:
         Code: 103
         Name: 'Playa Tropicana '
@@ -128,7 +124,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     6:
         Code: 104
         Name: 'Port de plaisance'
@@ -154,7 +149,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     7:
         Code: 106
         Name: Ribeyre
@@ -180,7 +174,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     8:
         Code: 108
         Name: 'Roussillonnais '
@@ -206,7 +199,6 @@
         PlanPath: null
         Vignette: uploads/etablissements/50a27a4b65b8d.png
         Published: true
-        Enabled: true
     9:
         Code: 109
         Name: 'Sables de Cordouan '
@@ -232,7 +224,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     10:
         Code: 11
         Name: 'Azu''Rivage'
@@ -258,7 +249,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     11:
         Code: 110
         Name: 'Saint Aygulf Plage'
@@ -284,7 +274,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     12:
         Code: 111
         Name: 'Saint Louis'
@@ -310,7 +299,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     13:
         Code: 112
         Name: 'Domaine de la Sainte Baume'
@@ -336,7 +324,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     14:
         Code: 113
         Name: 'Sainte-Marie '
@@ -362,7 +349,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     15:
         Code: 114
         Name: 'Sen Yan '
@@ -388,7 +374,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     16:
         Code: 116
         Name: 'Ferme de la Serraz '
@@ -414,7 +399,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     17:
         Code: 117
         Name: 'Signol '
@@ -440,7 +424,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     18:
         Code: 118
         Name: 'Soleil '
@@ -466,7 +449,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     19:
         Code: 119
         Name: 'Soleil de la Méditerranée'
@@ -492,7 +474,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     20:
         Code: 12
         Name: 'Bahia Club'
@@ -518,7 +499,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     21:
         Code: 120
         Name: 'Sources '
@@ -544,7 +524,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     22:
         Code: 121
         Name: 'zz Talaris '
@@ -570,7 +549,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     23:
         Code: 122
         Name: 'Tamerici '
@@ -596,7 +574,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     24:
         Code: 123
         Name: 'Tenuta Primero '
@@ -622,7 +599,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     25:
         Code: 125
         Name: 'Ur Onea '
@@ -648,7 +624,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     26:
         Code: 126
         Name: 'Via Romana '
@@ -674,7 +649,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     27:
         Code: 127
         Name: 'Vieux Port '
@@ -700,7 +674,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     28:
         Code: 128
         Name: 'Vignes '
@@ -726,7 +699,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     29:
         Code: 129
         Name: 'Vilanova Park '
@@ -752,7 +724,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     30:
         Code: 130
         Name: Zagarella
@@ -778,7 +749,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     31:
         Code: 131
         Name: 'Ruisseau des Pyrénées'
@@ -804,7 +774,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     32:
         Code: 133
         Name: Masia
@@ -830,7 +799,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     33:
         Code: 134
         Name: Tamaris
@@ -856,7 +824,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     34:
         Code: 135
         Name: 'Playa Joyel'
@@ -882,7 +849,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     35:
         Code: 136
         Name: 'Grande Italia'
@@ -908,7 +874,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     36:
         Code: 137
         Name: 'Pearl Village Club'
@@ -934,7 +899,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     37:
         Code: 138
         Name: 'Pins Maritimes'
@@ -960,7 +924,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     38:
         Code: 139
         Name: 'zz Le Barralet'
@@ -986,7 +949,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     39:
         Code: 14
         Name: 'Beau Rivage '
@@ -1012,7 +974,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     40:
         Code: 140
         Name: 'zz Village Cavallino'
@@ -1038,7 +999,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     41:
         Code: 141
         Name: 'zz Aux Hamacs'
@@ -1064,7 +1024,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     42:
         Code: 142
         Name: 'zz Prat Dou Rey'
@@ -1090,7 +1049,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     43:
         Code: 143
         Name: 'zz Rouffiac'
@@ -1116,7 +1074,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     44:
         Code: 144
         Name: 'zz Séquoia Parc'
@@ -1142,7 +1099,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     45:
         Code: 145
         Name: 'zz Trémolat'
@@ -1168,7 +1124,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     46:
         Code: 146
         Name: 'zz L''Atlantique'
@@ -1194,7 +1149,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     47:
         Code: 147
         Name: 'zz Le Bahamas Beach'
@@ -1220,7 +1174,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     48:
         Code: 148
         Name: 'zz La Barque'
@@ -1246,7 +1199,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     49:
         Code: 149
         Name: 'zz Chanset'
@@ -1272,7 +1224,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     50:
         Code: 15
         Name: 'zz Beaulieu '
@@ -1298,7 +1249,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     51:
         Code: 150
         Name: 'zz Le Chêne Gris'
@@ -1324,7 +1274,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     52:
         Code: 151
         Name: 'zz Les Dauphins Bleus'
@@ -1350,7 +1299,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     53:
         Code: 152
         Name: 'zz Domaine de Beaulieu'
@@ -1376,7 +1324,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     54:
         Code: 153
         Name: 'zz Le Lamparo'
@@ -1402,7 +1349,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     55:
         Code: 154
         Name: 'zz Marmotel'
@@ -1428,7 +1374,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     56:
         Code: 155
         Name: 'zz Les Ondines'
@@ -1454,7 +1399,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     57:
         Code: 156
         Name: 'zz Pyla Camping'
@@ -1480,7 +1424,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     58:
         Code: 157
         Name: 'zz La Rotonde'
@@ -1506,7 +1449,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     59:
         Code: 158
         Name: 'zz Village Stoja'
@@ -1532,7 +1474,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     60:
         Code: 159
         Name: 'zz Le Tamarit Park'
@@ -1558,7 +1499,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     61:
         Code: 16
         Name: 'Bois Soleil'
@@ -1584,7 +1524,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     62:
         Code: 160
         Name: 'zz Le Trivoly'
@@ -1610,7 +1549,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     63:
         Code: 161
         Name: 'zz Almadies'
@@ -1636,7 +1574,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     64:
         Code: 162
         Name: 'zz Bois de Pleuven'
@@ -1662,7 +1599,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     65:
         Code: 163
         Name: 'zz Domaine de la Forêt'
@@ -1688,7 +1624,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     66:
         Code: 164
         Name: 'zz Le Lac'
@@ -1714,7 +1649,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     67:
         Code: 165
         Name: 'zz Rieu Montagné'
@@ -1740,7 +1674,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     68:
         Code: 166
         Name: 'zz Domaine des Bans'
@@ -1766,7 +1699,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     69:
         Code: 167
         Name: 'zz Douce Quiétude'
@@ -1792,7 +1724,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     70:
         Code: 168
         Name: 'zz Fleutron'
@@ -1818,7 +1749,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     71:
         Code: 169
         Name: 'zz Palmeraie'
@@ -1844,7 +1774,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     72:
         Code: 17
         Name: 'Bordenéo '
@@ -1870,7 +1799,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     73:
         Code: 170
         Name: 'zz Les Tours'
@@ -1896,7 +1824,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     74:
         Code: 171
         Name: 'zz Abri de Camargue'
@@ -1922,7 +1849,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     75:
         Code: 172
         Name: 'zz Domaine des Iscles'
@@ -1948,7 +1874,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     76:
         Code: 173
         Name: 'zz Lacs du Verdon'
@@ -1974,7 +1899,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     77:
         Code: 174
         Name: 'zz Les Pins Payrac'
@@ -2000,7 +1924,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     78:
         Code: 175
         Name: 'Domaine des Pins'
@@ -2026,7 +1949,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     79:
         Code: 176
         Name: 'Atlantic Club Montalivet'
@@ -2052,7 +1974,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     80:
         Code: 177
         Name: 'Ajoncs d''Or'
@@ -2078,7 +1999,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     81:
         Code: 178
         Name: 'Camping Les Biches'
@@ -2104,7 +2024,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     82:
         Code: 18
         Name: 'zz Bretonnière'
@@ -2130,7 +2049,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     83:
         Code: 19
         Name: California
@@ -2156,7 +2074,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     84:
         Code: 2
         Name: Mas
@@ -2182,7 +2099,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     85:
         Code: 20
         Name: Calypso
@@ -2208,7 +2124,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     86:
         Code: 21
         Name: 'Camping du Lac '
@@ -2234,7 +2149,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     87:
         Code: 22
         Name: 'Cap Agathois '
@@ -2260,7 +2174,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     88:
         Code: 23
         Name: Carbonnier
@@ -2286,7 +2199,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     89:
         Code: 24
         Name: 'Castell Mar'
@@ -2312,7 +2224,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     90:
         Code: 25
         Name: 'Castell Montgri '
@@ -2338,7 +2249,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     91:
         Code: 26
         Name: 'Caussanel '
@@ -2364,7 +2274,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     92:
         Code: 27
         Name: 'Cayola '
@@ -2390,7 +2299,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     93:
         Code: 28
         Name: Chaponnet
@@ -2416,7 +2324,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     94:
         Code: 29
         Name: 'Domaine des Charmilles'
@@ -2442,7 +2349,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     95:
         Code: 3
         Name: 'Cala Gogo'
@@ -2468,7 +2374,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     96:
         Code: 30
         Name: 'Château de Galinée '
@@ -2494,7 +2399,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     97:
         Code: 31
         Name: 'Chênaie '
@@ -2520,7 +2424,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     98:
         Code: 32
         Name: 'Domaine des Chênes Verts '
@@ -2546,7 +2449,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     99:
         Code: 33
         Name: 'Col Vert '
@@ -2572,7 +2474,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     100:
         Code: 34
         Name: 'Conguel '
@@ -2598,7 +2499,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     101:
         Code: 35
         Name: 'Coste Rouge '
@@ -2624,7 +2524,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     102:
         Code: 36
         Name: 'Côte d''Argent '
@@ -2650,7 +2549,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     103:
         Code: 37
         Name: 'Crin Blanc '
@@ -2676,7 +2574,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     104:
         Code: 38
         Name: 'Cupulatta '
@@ -2702,7 +2599,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     105:
         Code: 39
         Name: 'Cyprès '
@@ -2728,7 +2624,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     106:
         Code: 4
         Name: 'Petit Mousse'
@@ -2754,7 +2649,6 @@
         PlanPath: uploads/etablissements/5077c5b45766c.jpeg
         Vignette: uploads/etablissements/50a279ae83f08.png
         Published: true
-        Enabled: true
     107:
         Code: 40
         Name: 'Deux Fontaines '
@@ -2780,7 +2674,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     108:
         Code: 41
         Name: 'Deux Plages '
@@ -2806,7 +2699,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     109:
         Code: 42
         Name: 'Domaine d''Inly '
@@ -2832,7 +2724,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     110:
         Code: 43
         Name: 'Domaine d''Oléron '
@@ -2858,7 +2749,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     111:
         Code: 44
         Name: 'Domaine de Chaussy '
@@ -2884,7 +2774,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     112:
         Code: 45
         Name: 'Domaine de Kermario'
@@ -2910,7 +2799,6 @@
         PlanPath: null
         Vignette: uploads/etablissements/50a2797fa2b79.png
         Published: true
-        Enabled: true
     113:
         Code: 46
         Name: 'Domaine de la Rive'
@@ -2936,7 +2824,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     114:
         Code: 47
         Name: 'Domaine de Léveno '
@@ -2962,7 +2849,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     115:
         Code: 48
         Name: 'Domaine des Naïades'
@@ -2988,7 +2874,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     116:
         Code: 49
         Name: 'Domaine du Cros d''Auzon '
@@ -3014,7 +2899,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     117:
         Code: 5
         Name: 'Airotel Oléron'
@@ -3040,7 +2924,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     118:
         Code: 50
         Name: 'Domaine du Verdon '
@@ -3066,7 +2949,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     119:
         Code: 51
         Name: 'Dunes '
@@ -3092,7 +2974,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     120:
         Code: 52
         Name: 'Eden '
@@ -3118,7 +2999,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     121:
         Code: 53
         Name: 'Embruns '
@@ -3144,7 +3024,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     122:
         Code: 54
         Name: 'Eurolac '
@@ -3170,7 +3049,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     123:
         Code: 55
         Name: 'Fanal '
@@ -3196,7 +3074,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     124:
         Code: 56
         Name: 'Farigoulette '
@@ -3222,7 +3099,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     125:
         Code: 57
         Name: 'Fontaines '
@@ -3248,7 +3124,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     126:
         Code: 58
         Name: 'Frênes '
@@ -3274,7 +3149,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     127:
         Code: 59
         Name: 'Front de Mer'
@@ -3300,7 +3174,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     128:
         Code: 6
         Name: 'Aluna Vacances '
@@ -3326,7 +3199,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     129:
         Code: 60
         Name: 'Grand''Terre '
@@ -3352,7 +3224,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     130:
         Code: 61
         Name: 'Parc de la Grenouillère '
@@ -3378,7 +3249,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     131:
         Code: 63
         Name: 'Huttes '
@@ -3404,7 +3274,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     132:
         Code: 64
         Name: 'Idéal '
@@ -3430,7 +3299,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     133:
         Code: 65
         Name: Ilates
@@ -3456,7 +3324,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     134:
         Code: 66
         Name: 'zz Ilbarritz '
@@ -3482,7 +3349,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     135:
         Code: 67
         Name: 'Internacional de Calonge '
@@ -3508,7 +3374,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     136:
         Code: 68
         Name: 'Internacional Palamos '
@@ -3534,7 +3399,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     137:
         Code: 69
         Name: 'Jard '
@@ -3560,7 +3424,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     138:
         Code: 7
         Name: 'zz Amandiers'
@@ -3586,7 +3449,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     139:
         Code: 70
         Name: 'Lac Bleu '
@@ -3612,7 +3474,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     140:
         Code: 71
         Name: 'Domaine du Lac de Miel '
@@ -3638,7 +3499,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     141:
         Code: 72
         Name: 'Lac de Thoux St Cricq'
@@ -3664,7 +3524,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     142:
         Code: 73
         Name: 'zz Land''s Hause '
@@ -3690,7 +3549,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     143:
         Code: 74
         Name: 'Lou Broustaricq '
@@ -3716,7 +3574,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     144:
         Code: 75
         Name: 'Lou Pignada '
@@ -3742,7 +3599,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     145:
         Code: 76
         Name: 'Loubine '
@@ -3768,7 +3624,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     146:
         Code: 77
         Name: 'Loyada '
@@ -3794,7 +3649,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     147:
         Code: 78
         Name: 'zz Malazéou '
@@ -3820,7 +3674,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     148:
         Code: 79
         Name: 'Mare e Pineta '
@@ -3846,7 +3699,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     149:
         Code: 8
         Name: 'Sandaya Soulac Plage'
@@ -3872,7 +3724,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     150:
         Code: 80
         Name: Marine
@@ -3898,7 +3749,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     151:
         Code: 81
         Name: Marsouins
@@ -3924,7 +3774,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     152:
         Code: 82
         Name: 'Marze '
@@ -3950,7 +3799,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     153:
         Code: 83
         Name: 'Maïre '
@@ -3976,7 +3824,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     154:
         Code: 84
         Name: Moulin
@@ -4002,7 +3849,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     155:
         Code: 85
         Name: 'Camping Neptuno '
@@ -4028,7 +3874,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     156:
         Code: 86
         Name: Oasis
@@ -4054,7 +3899,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     157:
         Code: 87
         Name: 'Océano d''Or'
@@ -4080,7 +3924,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     158:
         Code: 88
         Name: 'Oyam '
@@ -4106,7 +3949,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     159:
         Code: 89
         Name: 'Oyats '
@@ -4132,7 +3974,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     160:
         Code: 9
         Name: Ametlla
@@ -4158,7 +3999,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     161:
         Code: 90
         Name: Pachacaïd
@@ -4184,7 +4024,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     162:
         Code: 91
         Name: 'Domaine de la Paille Basse'
@@ -4210,7 +4049,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     163:
         Code: 92
         Name: 'Palace '
@@ -4236,7 +4074,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     164:
         Code: 93
         Name: 'Palavas Camping'
@@ -4262,7 +4099,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     165:
         Code: 94
         Name: 'Parc '
@@ -4288,7 +4124,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     166:
         Code: 95
         Name: 'Park Albatros '
@@ -4314,7 +4149,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     167:
         Code: 96
         Name: 'Petit Bois (Ardèche)'
@@ -4340,7 +4174,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     168:
         Code: 97
         Name: 'Petit Bois (Cantal)'
@@ -4366,7 +4199,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     169:
         Code: 98
         Name: 'Pinada '
@@ -4392,7 +4224,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     170:
         Code: 99
         Name: 'Pins '
@@ -4418,7 +4249,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     171:
         Code: 997
         Name: 'z Semaines non prises Linéaire Liberté'
@@ -4444,7 +4274,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     172:
         Code: 998
         Name: 'zzz Fictif enregistrement package'
@@ -4470,7 +4299,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     173:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
@@ -4496,7 +4324,6 @@
         PlanPath: null
         Vignette: null
         Published: false
-        Enabled: true
     174:
         Code: 179
         Name: 'Aqua Viva'
@@ -4522,7 +4349,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     175:
         Code: 180
         Name: Arbousiers
@@ -4548,7 +4374,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     176:
         Code: 181
         Name: Aurilandes
@@ -4574,7 +4399,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     177:
         Code: 182
         Name: 'Baie du Kernic'
@@ -4600,7 +4424,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     178:
         Code: 183
         Name: 'Bois d’Amour'
@@ -4626,7 +4449,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     179:
         Code: 184
         Name: Ca’Savio
@@ -4652,7 +4474,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     180:
         Code: 185
         Name: Catalpas
@@ -4678,7 +4499,6 @@
         PlanPath: null
         Vignette: null
         Published: true
-        Enabled: true
     181:
         Code: 186
         Name: 'Chalets de l’Isard (Résidence)'
@@ -4704,7 +4524,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     182:
         Code: 187
         Name: 'Clos du Rocher (Résidence)'
@@ -4730,7 +4549,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     183:
         Code: 188
         Name: 'Club del Sole Spina'
@@ -4756,7 +4574,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     184:
         Code: 189
         Name: 'Côté Green (Résidence)'
@@ -4782,7 +4599,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     185:
         Code: 190
         Name: 'Côte des Roses'
@@ -4808,7 +4624,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     186:
         Code: 191
         Name: 'Côte Sauvage'
@@ -4834,7 +4649,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     187:
         Code: 192
         Name: 'Coteau de la Marine'
@@ -4860,7 +4674,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     188:
         Code: 193
         Name: Cypsela
@@ -4886,7 +4699,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     189:
         Code: 194
         Name: 'Demeures Torrellanes (Résidence)'
@@ -4912,7 +4724,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     190:
         Code: 195
         Name: 'Demeures de la Massane (Résidence)'
@@ -4938,7 +4749,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     191:
         Code: 196
         Name: 'Demeures du Ventoux'
@@ -4964,7 +4774,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     192:
         Code: 197
         Name: 'Domaine de Bacchus (Résidence)'
@@ -4990,7 +4799,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     193:
         Code: 198
         Name: 'Domaine de Manon (Résidence)'
@@ -5016,7 +4824,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     194:
         Code: 199
         Name: 'Domaine de la Corniche (Résidence)'
@@ -5042,7 +4849,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     195:
         Code: 200
         Name: 'Domaine des Iscles'
@@ -5068,7 +4874,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     196:
         Code: 201
         Name: 'Domaine du Bosquet (Résidence)'
@@ -5094,7 +4899,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     197:
         Code: 202
         Name: 'Domaine du Golf (Résidence)'
@@ -5120,7 +4924,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     198:
         Code: 203
         Name: 'Dune Blanche'
@@ -5146,7 +4949,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     199:
         Code: 204
         Name: 'Domaine d’Ensérune (Résidence)'
@@ -5172,7 +4974,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     200:
         Code: 205
         Name: Ensoya
@@ -5198,7 +4999,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     201:
         Code: 206
         Name: Europe
@@ -5224,7 +5024,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     202:
         Code: 207
         Name: 'Fonserane (Résidence)'
@@ -5250,7 +5049,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     203:
         Code: 208
         Name: 'Fontainebleau (Résidence)'
@@ -5276,7 +5074,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     204:
         Code: 209
         Name: 'Free Time'
@@ -5302,7 +5099,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     205:
         Code: 210
         Name: 'Hôtel du Golf (Hôtel)'
@@ -5328,7 +5124,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     206:
         Code: 211
         Name: 'Ile du Rhin'
@@ -5354,7 +5149,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     207:
         Code: 212
         Name: Interpals
@@ -5380,7 +5174,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     208:
         Code: 213
         Name: 'Isles de Sola (Résidence)'
@@ -5406,7 +5199,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     209:
         Code: 214
         Name: 'Ker Goh Lenn (Résidence)'
@@ -5432,7 +5224,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     210:
         Code: 215
         Name: Forêt
@@ -5458,7 +5249,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     211:
         Code: 216
         Name: 'Bois de Pleuven'
@@ -5484,7 +5274,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     212:
         Code: 217
         Name: Castellas
@@ -5510,7 +5299,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     213:
         Code: 218
         Name: Neptune
@@ -5536,7 +5324,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     214:
         Code: 219
         Name: 'Domaine d’Anghione'
@@ -5562,7 +5349,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     215:
         Code: 220
         Name: Phare
@@ -5588,7 +5374,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     216:
         Code: 221
         Name: '7 Fonts'
@@ -5614,7 +5399,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     217:
         Code: 222
         Name: Almadies
@@ -5640,7 +5424,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     218:
         Code: 223
         Name: Iles
@@ -5666,7 +5449,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     219:
         Code: 224
         Name: Lupins
@@ -5692,7 +5474,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     220:
         Code: 225
         Name: 'Mas des Cigales (Résidence)'
@@ -5718,7 +5499,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     221:
         Code: 226
         Name: 'Parc de la Fecht'
@@ -5744,7 +5524,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     222:
         Code: 227
         Name: 'Parc des Allais'
@@ -5770,7 +5549,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     223:
         Code: 228
         Name: 'Prés du Verdon'
@@ -5796,7 +5574,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     224:
         Code: 229
         Name: Rieumontagné
@@ -5822,7 +5599,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     225:
         Code: 230
         Name: 'Saint Clair (Résidence)'
@@ -5848,7 +5624,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     226:
         Code: 231
         Name: Tours
@@ -5874,7 +5649,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     227:
         Code: 232
         Name: 'Camping du Ried'
@@ -5900,7 +5674,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     228:
         Code: 233
         Name: 'Domaine de la Marina'
@@ -5926,7 +5699,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     229:
         Code: 234
         Name: 'Etangs Fleuris'
@@ -5952,7 +5724,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     230:
         Code: 235
         Name: Ravoire
@@ -5978,7 +5749,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     231:
         Code: 236
         Name: 'Saint Disdille'
@@ -6004,7 +5774,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     232:
         Code: 237
         Name: 'Mar i Sol'
@@ -6030,7 +5799,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     233:
         Code: 238
         Name: 'Lou Pignada Ondres'
@@ -6056,7 +5824,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     234:
         Code: 239
         Name: 'Palmira Beach'
@@ -6082,7 +5849,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     235:
         Code: 240
         Name: 'Etoile de Mer'
@@ -6108,7 +5874,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     236:
         Code: 241
         Name: Ranch
@@ -6134,7 +5899,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     237:
         Code: 242
         Name: Cadenières
@@ -6160,7 +5924,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     238:
         Code: 243
         Name: Pergola
@@ -6186,7 +5949,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     239:
         Code: 244
         Name: Hippocampe
@@ -6212,7 +5974,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     240:
         Code: 245
         Name: 'Vacances Directes'
@@ -6238,7 +5999,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     241:
         Code: 246
         Name: Tahiti
@@ -6264,7 +6024,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     242:
         Code: 247
         Name: Almafra
@@ -6290,7 +6049,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     243:
         Code: 248
         Name: 'Val d''aro'
@@ -6316,7 +6074,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     244:
         Code: 249
         Name: Adriano
@@ -6342,7 +6099,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     245:
         Code: 250
         Name: Cessenatico
@@ -6368,7 +6124,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     246:
         Code: 251
         Name: 'Marina (Italie)'
@@ -6394,7 +6149,6 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
     247:
         Code: 252
         Name: Gavina
@@ -6420,4 +6174,3 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Enabled: true
