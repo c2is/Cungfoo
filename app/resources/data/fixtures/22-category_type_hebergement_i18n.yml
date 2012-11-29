@@ -2,15 +2,15 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Salles de rÃ©ception'
+        Name: 'Salles de réception'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Salles de rÃ©ception'
+        Name: 'Salles de réception'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Salles de rÃ©ception'
+        Name: 'Salles de réception'
     2_de:
         Id: 2
         Locale: de
@@ -50,15 +50,15 @@
     5_de:
         Id: 5
         Locale: de
-        Name: GÃ®tes
+        Name: Gîtes
     5_en:
         Id: 5
         Locale: en
-        Name: GÃ®tes
+        Name: Gîtes
     5_fr:
         Id: 5
         Locale: fr
-        Name: GÃ®tes
+        Name: Gîtes
     6_de:
         Id: 6
         Locale: de

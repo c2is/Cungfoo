@@ -62,19 +62,19 @@
     4_de:
         Id: 4
         Locale: de
-        Name: 'ArgelÃ¨s/Mer (66)'
+        Name: 'Argelès/Mer (66)'
         Introduction: null
         Description: null
     4_en:
         Id: 4
         Locale: en
-        Name: 'ArgelÃ¨s/Mer (66)'
+        Name: 'Argelès/Mer (66)'
         Introduction: null
         Description: null
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'ArgelÃ¨s/Mer (66)'
+        Name: 'Argelès/Mer (66)'
         Introduction: null
         Description: null
     5_de:
@@ -98,19 +98,19 @@
     6_de:
         Id: 6
         Locale: de
-        Name: 'Le BarcarÃ¨s (66)'
+        Name: 'Le Barcarès (66)'
         Introduction: null
         Description: null
     6_en:
         Id: 6
         Locale: en
-        Name: 'Le BarcarÃ¨s (66)'
+        Name: 'Le Barcarès (66)'
         Introduction: null
         Description: null
     6_fr:
         Id: 6
         Locale: fr
-        Name: 'Le BarcarÃ¨s (66)'
+        Name: 'Le Barcarès (66)'
         Introduction: null
         Description: null
     7_de:
@@ -134,19 +134,19 @@
     8_de:
         Id: 8
         Locale: de
-        Name: 'SÃ©rignan (34)'
+        Name: 'Sérignan (34)'
         Introduction: null
         Description: null
     8_en:
         Id: 8
         Locale: en
-        Name: 'SÃ©rignan (34)'
+        Name: 'Sérignan (34)'
         Introduction: null
         Description: null
     8_fr:
         Id: 8
         Locale: fr
-        Name: 'SÃ©rignan (34)'
+        Name: 'Sérignan (34)'
         Introduction: null
         Description: null
     9_de:
@@ -260,19 +260,19 @@
     15_de:
         Id: 15
         Locale: de
-        Name: 'MÃ¨ze (34)'
+        Name: 'Mèze (34)'
         Introduction: null
         Description: null
     15_en:
         Id: 15
         Locale: en
-        Name: 'MÃ¨ze (34)'
+        Name: 'Mèze (34)'
         Introduction: null
         Description: null
     15_fr:
         Id: 15
         Locale: fr
-        Name: 'MÃ¨ze (34)'
+        Name: 'Mèze (34)'
         Introduction: null
         Description: null
     16_de:
@@ -350,37 +350,37 @@
     20_de:
         Id: 20
         Locale: de
-        Name: 'HyÃ¨res (83)'
+        Name: 'Hyères (83)'
         Introduction: null
         Description: null
     20_en:
         Id: 20
         Locale: en
-        Name: 'HyÃ¨res (83)'
+        Name: 'Hyères (83)'
         Introduction: null
         Description: null
     20_fr:
         Id: 20
         Locale: fr
-        Name: 'HyÃ¨res (83)'
+        Name: 'Hyères (83)'
         Introduction: null
         Description: null
     21_de:
         Id: 21
         Locale: de
-        Name: 'La MÃ´le (83)'
+        Name: 'La Môle (83)'
         Introduction: null
         Description: null
     21_en:
         Id: 21
         Locale: en
-        Name: 'La MÃ´le (83)'
+        Name: 'La Môle (83)'
         Introduction: null
         Description: null
     21_fr:
         Id: 21
         Locale: fr
-        Name: 'La MÃ´le (83)'
+        Name: 'La Môle (83)'
         Introduction: null
         Description: null
     22_de:
@@ -530,37 +530,37 @@
     30_de:
         Id: 30
         Locale: de
-        Name: 'FrÃ©jus (83)'
+        Name: 'Fréjus (83)'
         Introduction: null
         Description: null
     30_en:
         Id: 30
         Locale: en
-        Name: 'FrÃ©jus (83)'
+        Name: 'Fréjus (83)'
         Introduction: null
         Description: null
     30_fr:
         Id: 30
         Locale: fr
-        Name: 'FrÃ©jus (83)'
+        Name: 'Fréjus (83)'
         Introduction: null
         Description: null
     31_de:
         Id: 31
         Locale: de
-        Name: 'St Paul en ForÃªt (83)'
+        Name: 'St Paul en Forêt (83)'
         Introduction: null
         Description: null
     31_en:
         Id: 31
         Locale: en
-        Name: 'St Paul en ForÃªt (83)'
+        Name: 'St Paul en Forêt (83)'
         Introduction: null
         Description: null
     31_fr:
         Id: 31
         Locale: fr
-        Name: 'St Paul en ForÃªt (83)'
+        Name: 'St Paul en Forêt (83)'
         Introduction: null
         Description: null
     32_de:
@@ -872,37 +872,37 @@
     49_de:
         Id: 49
         Locale: de
-        Name: 'Calviac en PÃ©rigord (24)'
+        Name: 'Calviac en Périgord (24)'
         Introduction: null
         Description: null
     49_en:
         Id: 49
         Locale: en
-        Name: 'Calviac en PÃ©rigord (24)'
+        Name: 'Calviac en Périgord (24)'
         Introduction: null
         Description: null
     49_fr:
         Id: 49
         Locale: fr
-        Name: 'Calviac en PÃ©rigord (24)'
+        Name: 'Calviac en Périgord (24)'
         Introduction: null
         Description: null
     50_de:
         Id: 50
         Locale: de
-        Name: 'BÃ©nodet (29)'
+        Name: 'Bénodet (29)'
         Introduction: null
         Description: null
     50_en:
         Id: 50
         Locale: en
-        Name: 'BÃ©nodet (29)'
+        Name: 'Bénodet (29)'
         Introduction: null
         Description: null
     50_fr:
         Id: 50
         Locale: fr
-        Name: 'BÃ©nodet (29)'
+        Name: 'Bénodet (29)'
         Introduction: null
         Description: null
     51_de:
@@ -1052,19 +1052,19 @@
     59_de:
         Id: 59
         Locale: de
-        Name: 'PÃ©nestin (56)'
+        Name: 'Pénestin (56)'
         Introduction: null
         Description: null
     59_en:
         Id: 59
         Locale: en
-        Name: 'PÃ©nestin (56)'
+        Name: 'Pénestin (56)'
         Introduction: null
         Description: null
     59_fr:
         Id: 59
         Locale: fr
-        Name: 'PÃ©nestin (56)'
+        Name: 'Pénestin (56)'
         Introduction: null
         Description: null
     60_de:
@@ -1106,19 +1106,19 @@
     62_de:
         Id: 62
         Locale: de
-        Name: 'GuÃ©rande (44)'
+        Name: 'Guérande (44)'
         Introduction: null
         Description: null
     62_en:
         Id: 62
         Locale: en
-        Name: 'GuÃ©rande (44)'
+        Name: 'Guérande (44)'
         Introduction: null
         Description: null
     62_fr:
         Id: 62
         Locale: fr
-        Name: 'GuÃ©rande (44)'
+        Name: 'Guérande (44)'
         Introduction: null
         Description: null
     63_de:
@@ -1304,19 +1304,19 @@
     73_de:
         Id: 73
         Locale: de
-        Name: 'VÃ¶gue Gare (07)'
+        Name: 'Vögue Gare (07)'
         Introduction: null
         Description: null
     73_en:
         Id: 73
         Locale: en
-        Name: 'VÃ¶gue Gare (07)'
+        Name: 'Vögue Gare (07)'
         Introduction: null
         Description: null
     73_fr:
         Id: 73
         Locale: fr
-        Name: 'VÃ¶gue Gare (07)'
+        Name: 'Vögue Gare (07)'
         Introduction: null
         Description: null
     74_de:
@@ -1520,73 +1520,73 @@
     85_de:
         Id: 85
         Locale: de
-        Name: 'SuÃ¨vres (41)'
+        Name: 'Suèvres (41)'
         Introduction: null
         Description: null
     85_en:
         Id: 85
         Locale: en
-        Name: 'SuÃ¨vres (41)'
+        Name: 'Suèvres (41)'
         Introduction: null
         Description: null
     85_fr:
         Id: 85
         Locale: fr
-        Name: 'SuÃ¨vres (41)'
+        Name: 'Suèvres (41)'
         Introduction: null
         Description: null
     86_de:
         Id: 86
         Locale: de
-        Name: 'Saint Denis d''OlÃ©ron (17)'
+        Name: 'Saint Denis d''Oléron (17)'
         Introduction: null
         Description: null
     86_en:
         Id: 86
         Locale: en
-        Name: 'Saint Denis d''OlÃ©ron (17)'
+        Name: 'Saint Denis d''Oléron (17)'
         Introduction: null
         Description: null
     86_fr:
         Id: 86
         Locale: fr
-        Name: 'Saint Denis d''OlÃ©ron (17)'
+        Name: 'Saint Denis d''Oléron (17)'
         Introduction: null
         Description: null
     87_de:
         Id: 87
         Locale: de
-        Name: 'Loix en RÃ© (17)'
+        Name: 'Loix en Ré (17)'
         Introduction: null
         Description: null
     87_en:
         Id: 87
         Locale: en
-        Name: 'Loix en RÃ© (17)'
+        Name: 'Loix en Ré (17)'
         Introduction: null
         Description: null
     87_fr:
         Id: 87
         Locale: fr
-        Name: 'Loix en RÃ© (17)'
+        Name: 'Loix en Ré (17)'
         Introduction: null
         Description: null
     88_de:
         Id: 88
         Locale: de
-        Name: 'Saint Georges d''OlÃ©ron (17)'
+        Name: 'Saint Georges d''Oléron (17)'
         Introduction: null
         Description: null
     88_en:
         Id: 88
         Locale: en
-        Name: 'Saint Georges d''OlÃ©ron (17)'
+        Name: 'Saint Georges d''Oléron (17)'
         Introduction: null
         Description: null
     88_fr:
         Id: 88
         Locale: fr
-        Name: 'Saint Georges d''OlÃ©ron (17)'
+        Name: 'Saint Georges d''Oléron (17)'
         Introduction: null
         Description: null
     89_de:
@@ -1628,19 +1628,19 @@
     91_de:
         Id: 91
         Locale: de
-        Name: 'Saint Laurent de la PrÃ©e (17)'
+        Name: 'Saint Laurent de la Prée (17)'
         Introduction: null
         Description: null
     91_en:
         Id: 91
         Locale: en
-        Name: 'Saint Laurent de la PrÃ©e (17)'
+        Name: 'Saint Laurent de la Prée (17)'
         Introduction: null
         Description: null
     91_fr:
         Id: 91
         Locale: fr
-        Name: 'Saint Laurent de la PrÃ©e (17)'
+        Name: 'Saint Laurent de la Prée (17)'
         Introduction: null
         Description: null
     92_de:
@@ -1718,19 +1718,19 @@
     96_de:
         Id: 96
         Locale: de
-        Name: 'LÃ¨ge Cap Ferret (33)'
+        Name: 'Lège Cap Ferret (33)'
         Introduction: null
         Description: null
     96_en:
         Id: 96
         Locale: en
-        Name: 'LÃ¨ge Cap Ferret (33)'
+        Name: 'Lège Cap Ferret (33)'
         Introduction: null
         Description: null
     96_fr:
         Id: 96
         Locale: fr
-        Name: 'LÃ¨ge Cap Ferret (33)'
+        Name: 'Lège Cap Ferret (33)'
         Introduction: null
         Description: null
     97_de:
@@ -1772,19 +1772,19 @@
     99_de:
         Id: 99
         Locale: de
-        Name: 'MÃ©zos (40)'
+        Name: 'Mézos (40)'
         Introduction: null
         Description: null
     99_en:
         Id: 99
         Locale: en
-        Name: 'MÃ©zos (40)'
+        Name: 'Mézos (40)'
         Introduction: null
         Description: null
     99_fr:
         Id: 99
         Locale: fr
-        Name: 'MÃ©zos (40)'
+        Name: 'Mézos (40)'
         Introduction: null
         Description: null
     100_de:
@@ -2060,19 +2060,19 @@
     115_de:
         Id: 115
         Locale: de
-        Name: 'Saint ClÃ©ment des Baleines (17)'
+        Name: 'Saint Clément des Baleines (17)'
         Introduction: null
         Description: null
     115_en:
         Id: 115
         Locale: en
-        Name: 'Saint ClÃ©ment des Baleines (17)'
+        Name: 'Saint Clément des Baleines (17)'
         Introduction: null
         Description: null
     115_fr:
         Id: 115
         Locale: fr
-        Name: 'Saint ClÃ©ment des Baleines (17)'
+        Name: 'Saint Clément des Baleines (17)'
         Introduction: null
         Description: null
     116_de:
@@ -2132,19 +2132,19 @@
     119_de:
         Id: 119
         Locale: de
-        Name: 'SÃ¨te (34)'
+        Name: 'Sète (34)'
         Introduction: null
         Description: null
     119_en:
         Id: 119
         Locale: en
-        Name: 'SÃ¨te (34)'
+        Name: 'Sète (34)'
         Introduction: null
         Description: null
     119_fr:
         Id: 119
         Locale: fr
-        Name: 'SÃ¨te (34)'
+        Name: 'Sète (34)'
         Introduction: null
         Description: null
     120_de:
@@ -2204,19 +2204,19 @@
     123_de:
         Id: 123
         Locale: de
-        Name: 'Chateau d''OlÃ©ron (17)'
+        Name: 'Chateau d''Oléron (17)'
         Introduction: null
         Description: null
     123_en:
         Id: 123
         Locale: en
-        Name: 'Chateau d''OlÃ©ron (17)'
+        Name: 'Chateau d''Oléron (17)'
         Introduction: null
         Description: null
     123_fr:
         Id: 123
         Locale: fr
-        Name: 'Chateau d''OlÃ©ron (17)'
+        Name: 'Chateau d''Oléron (17)'
         Introduction: null
         Description: null
     124_de:
@@ -2438,37 +2438,37 @@
     136_de:
         Id: 136
         Locale: de
-        Name: 'FabrÃ¨gues (34)'
+        Name: 'Fabrègues (34)'
         Introduction: null
         Description: null
     136_en:
         Id: 136
         Locale: en
-        Name: 'FabrÃ¨gues (34)'
+        Name: 'Fabrègues (34)'
         Introduction: null
         Description: null
     136_fr:
         Id: 136
         Locale: fr
-        Name: 'FabrÃ¨gues (34)'
+        Name: 'Fabrègues (34)'
         Introduction: null
         Description: null
     137_de:
         Id: 137
         Locale: de
-        Name: 'BÃ©ziers (34)'
+        Name: 'Béziers (34)'
         Introduction: null
         Description: null
     137_en:
         Id: 137
         Locale: en
-        Name: 'BÃ©ziers (34)'
+        Name: 'Béziers (34)'
         Introduction: null
         Description: null
     137_fr:
         Id: 137
         Locale: fr
-        Name: 'BÃ©ziers (34)'
+        Name: 'Béziers (34)'
         Introduction: null
         Description: null
     138_de:
@@ -2528,19 +2528,19 @@
     141_de:
         Id: 141
         Locale: de
-        Name: 'La Roquette d''AnthÃ©ron (13)'
+        Name: 'La Roquette d''Anthéron (13)'
         Introduction: null
         Description: null
     141_en:
         Id: 141
         Locale: en
-        Name: 'La Roquette d''AnthÃ©ron (13)'
+        Name: 'La Roquette d''Anthéron (13)'
         Introduction: null
         Description: null
     141_fr:
         Id: 141
         Locale: fr
-        Name: 'La Roquette d''AnthÃ©ron (13)'
+        Name: 'La Roquette d''Anthéron (13)'
         Introduction: null
         Description: null
     142_de:
@@ -2744,19 +2744,19 @@
     153_de:
         Id: 153
         Locale: de
-        Name: 'St Aman des CÃ´ts (12)'
+        Name: 'St Aman des Côts (12)'
         Introduction: null
         Description: null
     153_en:
         Id: 153
         Locale: en
-        Name: 'St Aman des CÃ´ts (12)'
+        Name: 'St Aman des Côts (12)'
         Introduction: null
         Description: null
     153_fr:
         Id: 153
         Locale: fr
-        Name: 'St Aman des CÃ´ts (12)'
+        Name: 'St Aman des Côts (12)'
         Introduction: null
         Description: null
     154_de:

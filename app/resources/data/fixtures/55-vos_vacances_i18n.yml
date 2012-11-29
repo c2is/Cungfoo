@@ -3,17 +3,17 @@
         Id: 1
         Locale: de
         Titre: 'FAIRE DE VOS VACANCES UNE AVENTURE HUMAINE ! DE'
-        Description: 'Je participe Ã  toutes les activitÃ©s du camping DE'
-        Prenom: 'AmÃ©lie DE'
+        Description: 'Je participe à toutes les activités du camping DE'
+        Prenom: 'Amélie DE'
     1_en:
         Id: 1
         Locale: en
         Titre: 'FAIRE DE VOS VACANCES UNE AVENTURE HUMAINE ! EN'
-        Description: 'Je participe Ã  toutes les activitÃ©s du camping EN'
-        Prenom: 'AmÃ©lie EN'
+        Description: 'Je participe à toutes les activités du camping EN'
+        Prenom: 'Amélie EN'
     1_fr:
         Id: 1
         Locale: fr
         Titre: 'FAIRE DE VOS VACANCES UNE AVENTURE HUMAINE !'
-        Description: 'Je participe Ã  toutes les activitÃ©s du camping'
-        Prenom: AmÃ©lie
+        Description: 'Je participe à toutes les activités du camping'
+        Prenom: Amélie

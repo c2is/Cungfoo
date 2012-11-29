@@ -32,7 +32,7 @@
         Address1: '3360 Rue des Combattants d''Afrique du Nord'
         Address2: ''
         Zip: '83600'
-        City: FRÃ‰JUS
+        City: FRÉJUS
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -188,7 +188,7 @@
         Address1: 'Boulevard de la Mer'
         Address2: ''
         Zip: '66702'
-        City: ARGELÃˆS-SUR-MER
+        City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -289,7 +289,7 @@
         Code: 111
         Name: 'Saint Louis'
         Title: null
-        Address1: '2160 Avenue de la RÃ©publique'
+        Address1: '2160 Avenue de la République'
         Address2: ''
         Zip: '06550'
         City: 'LA ROQUETTE SUR SIAGNE'
@@ -370,7 +370,7 @@
         Address1: 'La Gare'
         Address2: ''
         Zip: '40170'
-        City: MÃ©zos
+        City: Mézos
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -422,7 +422,7 @@
         Address1: 'avenue des Albatros '
         Address2: Boyardville
         Zip: '17190'
-        City: 'ST-GEORGES-D''OLÃ‰RON'
+        City: 'ST-GEORGES-D''OLÉRON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -448,7 +448,7 @@
         Address1: 'Route du Littoral'
         Address2: ''
         Zip: '66702'
-        City: ARGELÃˆS-SUR-MER
+        City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -469,7 +469,7 @@
         Active: true
     19:
         Code: 119
-        Name: 'Soleil de la MÃ©diterranÃ©e'
+        Name: 'Soleil de la Méditerranée'
         Title: null
         Address1: '2 rue Ste Beuve'
         Address2: ''
@@ -500,7 +500,7 @@
         Address1: 'Chemin de l''Hourtou'
         Address2: ''
         Zip: '66420'
-        City: 'LE BARCARÃˆS'
+        City: 'LE BARCARÈS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -523,7 +523,7 @@
         Code: 120
         Name: 'Sources '
         Title: null
-        Address1: 'Route des CrÃªtes'
+        Address1: 'Route des Crêtes'
         Address2: ''
         Zip: '68700'
         City: WATTWILLER
@@ -549,8 +549,8 @@
         Code: 121
         Name: 'zz Talaris '
         Title: null
-        Address1: 'Route de l''OcÃ©an'
-        Address2: 'Lacanau OcÃ©an'
+        Address1: 'Route de l''Océan'
+        Address2: 'Lacanau Océan'
         Zip: '33680'
         City: LACANAU
         Mail: test@resalys.com
@@ -734,7 +734,7 @@
         Address1: 'AP 64.Ctra Arboc Km 2.5'
         Address2: ''
         Zip: '08800'
-        City: 'VILANOVA I LA GELTRÃš'
+        City: 'VILANOVA I LA GELTRÚ'
         Mail: test@resalys.com
         CountryCode: ES
         Phone1: 06.01.01.01.01
@@ -781,7 +781,7 @@
         Active: true
     31:
         Code: 131
-        Name: 'Ruisseau des PyrÃ©nÃ©es'
+        Name: 'Ruisseau des Pyrénées'
         Title: null
         Address1: 'Rue Burruntz'
         Address2: ''
@@ -838,7 +838,7 @@
         Address1: 'Rte de St Laurent'
         Address2: ''
         Zip: '66420'
-        City: 'LE BARCARÃˆS'
+        City: 'LE BARCARÈS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -913,7 +913,7 @@
         Code: 137
         Name: 'Pearl Village Club'
         Title: null
-        Address1: 'Route de Taxo Ã  la Mer'
+        Address1: 'Route de Taxo à la Mer'
         Address2: ''
         Zip: '66700'
         City: 'ARGELES SUR MER'
@@ -942,7 +942,7 @@
         Address1: '1633 boulevard de la Marine'
         Address2: ''
         Zip: '83400'
-        City: HYÃˆRES
+        City: HYÈRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -994,7 +994,7 @@
         Address1: 'Avenue de Montpellier'
         Address2: 'RD 613'
         Zip: '34140'
-        City: MÃˆZE
+        City: MÈZE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -1119,7 +1119,7 @@
         Active: true
     44:
         Code: 144
-        Name: 'zz SÃ©quoia Parc'
+        Name: 'zz Séquoia Parc'
         Title: null
         Address1: ''
         Address2: ''
@@ -1145,7 +1145,7 @@
         Active: true
     45:
         Code: 145
-        Name: 'zz TrÃ©molat'
+        Name: 'zz Trémolat'
         Title: null
         Address1: ''
         Address2: ''
@@ -1301,7 +1301,7 @@
         Active: true
     51:
         Code: 150
-        Name: 'zz Le ChÃªne Gris'
+        Name: 'zz Le Chêne Gris'
         Title: null
         Address1: ''
         Address2: ''
@@ -1665,7 +1665,7 @@
         Active: true
     65:
         Code: 163
-        Name: 'zz Domaine de la ForÃªt'
+        Name: 'zz Domaine de la Forêt'
         Title: null
         Address1: ''
         Address2: ''
@@ -1717,7 +1717,7 @@
         Active: true
     67:
         Code: 165
-        Name: 'zz Rieu MontagnÃ©'
+        Name: 'zz Rieu Montagné'
         Title: null
         Address1: ''
         Address2: ''
@@ -1769,7 +1769,7 @@
         Active: true
     69:
         Code: 167
-        Name: 'zz Douce QuiÃ©tude'
+        Name: 'zz Douce Quiétude'
         Title: null
         Address1: ''
         Address2: ''
@@ -1847,7 +1847,7 @@
         Active: true
     72:
         Code: 17
-        Name: 'BordenÃ©o '
+        Name: 'Bordenéo '
         Title: null
         Address1: 'Belle Ile en Mer'
         Address2: ''
@@ -2107,7 +2107,7 @@
         Active: true
     82:
         Code: 18
-        Name: 'zz BretonniÃ¨re'
+        Name: 'zz Bretonnière'
         Title: null
         Address1: ''
         Address2: ''
@@ -2136,7 +2136,7 @@
         Name: California
         Title: null
         Address1: Orouet
-        Address2: 'Chemin de la ParÃ©e Verte'
+        Address2: 'Chemin de la Parée Verte'
         Zip: '85160'
         City: 'ST JEAN DE MONTS'
         Mail: test@resalys.com
@@ -2239,7 +2239,7 @@
         Code: 22
         Name: 'Cap Agathois '
         Title: null
-        Address1: 'Route de SÃ¨te'
+        Address1: 'Route de Sète'
         Address2: ''
         Zip: '34300'
         City: AGDE
@@ -2369,7 +2369,7 @@
         Code: 27
         Name: 'Cayola '
         Title: null
-        Address1: 'CÃ´te Ouest'
+        Address1: 'Côte Ouest'
         Address2: ''
         Zip: '34450'
         City: VIAS
@@ -2421,10 +2421,10 @@
         Code: 29
         Name: 'Domaine des Charmilles'
         Title: null
-        Address1: '1541 Route de l''OcÃ©an'
+        Address1: '1541 Route de l''Océan'
         Address2: ''
         Zip: '17450'
-        City: 'ST LAURENT DE LA PRÃ‰E'
+        City: 'ST LAURENT DE LA PRÉE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2471,9 +2471,9 @@
         Active: true
     96:
         Code: 30
-        Name: 'ChÃ¢teau de GalinÃ©e '
+        Name: 'Château de Galinée '
         Title: null
-        Address1: 'GalinÃ©e Le Guildo'
+        Address1: 'Galinée Le Guildo'
         Address2: ''
         Zip: '22380'
         City: 'ST CAST LE GUILDO'
@@ -2497,9 +2497,9 @@
         Active: true
     97:
         Code: 31
-        Name: 'ChÃªnaie '
+        Name: 'Chênaie '
         Title: null
-        Address1: '36 Rue du PÃ¢tisseau'
+        Address1: '36 Rue du Pâtisseau'
         Address2: ''
         Zip: '44210'
         City: PORNIC
@@ -2523,12 +2523,12 @@
         Active: true
     98:
         Code: 32
-        Name: 'Domaine des ChÃªnes Verts '
+        Name: 'Domaine des Chênes Verts '
         Title: null
         Address1: 'Route de Sarlat'
         Address2: Souillac
         Zip: '24370'
-        City: 'CALVIAC EN PÃ‰RIGORD'
+        City: 'CALVIAC EN PÉRIGORD'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2606,7 +2606,7 @@
         Address1: 'Route de Collioure'
         Address2: ''
         Zip: '66700'
-        City: ARGELÃˆS-SUR-MER
+        City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2627,7 +2627,7 @@
         Active: true
     102:
         Code: 36
-        Name: 'CÃ´te d''Argent '
+        Name: 'Côte d''Argent '
         Title: null
         Address1: '134 Route Contaut'
         Address2: ''
@@ -2705,7 +2705,7 @@
         Active: true
     105:
         Code: 39
-        Name: 'CyprÃ¨s '
+        Name: 'Cyprès '
         Title: null
         Address1: '41, Rue du Pont Jaunay'
         Address2: BP644
@@ -2734,7 +2734,7 @@
         Name: 'Petit Mousse'
         Title: 'Le camping le petit-mousse, le paradis de l''eau'
         Address1: 'Impasse des Espargouls'
-        Address2: 'La Grande Cosse - CÃ´te Ouest'
+        Address2: 'La Grande Cosse - Côte Ouest'
         Zip: '34450'
         City: VIAS
         Mail: test@resalys.com
@@ -2814,7 +2814,7 @@
         Address1: 'Route de Couarne'
         Address2: 'BP 24'
         Zip: '56760'
-        City: PÃ‰NESTIN
+        City: PÉNESTIN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2835,12 +2835,12 @@
         Active: true
     110:
         Code: 43
-        Name: 'Domaine d''OlÃ©ron '
+        Name: 'Domaine d''Oléron '
         Title: null
-        Address1: 'Route de la JousseliniÃ¨re'
+        Address1: 'Route de la Jousselinière'
         Address2: ''
         Zip: '17190'
-        City: 'ST GEORGES D''OLÃ‰RON'
+        City: 'ST GEORGES D''OLÉRON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2939,12 +2939,12 @@
         Active: true
     114:
         Code: 47
-        Name: 'Domaine de LÃ©veno '
+        Name: 'Domaine de Léveno '
         Title: null
         Address1: 'Route de l''Etang de Sandun'
         Address2: ''
         Zip: '44350'
-        City: GUÃ‰RANDE
+        City: GUÉRANDE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2965,9 +2965,9 @@
         Active: true
     115:
         Code: 48
-        Name: 'Domaine des NaÃ¯ades'
+        Name: 'Domaine des Naïades'
         Title: null
-        Address1: 'St Pons les MÃ»res'
+        Address1: 'St Pons les Mûres'
         Address2: 'S T A C F'
         Zip: '83310'
         City: GRIMAUD
@@ -2994,9 +2994,9 @@
         Name: 'Domaine du Cros d''Auzon '
         Title: null
         Address1: 'Quartier de la Gare'
-        Address2: 'St Maurice d''ArdÃ¨che'
+        Address2: 'St Maurice d''Ardèche'
         Zip: '07200'
-        City: VOGÃœÃ‰
+        City: VOGÜÉ
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3017,12 +3017,12 @@
         Active: true
     117:
         Code: 5
-        Name: 'Airotel OlÃ©ron'
+        Name: 'Airotel Oléron'
         Title: null
         Address1: 'Domaine de Montravail'
-        Address2: '19 rue de la LibÃ©ration - BP 31'
+        Address2: '19 rue de la Libération - BP 31'
         Zip: '17480'
-        City: 'LE CHÃ‚TEAU D''OLÃ‰RON'
+        City: 'LE CHÂTEAU D''OLÉRON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3097,7 +3097,7 @@
         Code: 52
         Name: 'Eden '
         Title: null
-        Address1: 'AllÃ©e de Tournefort'
+        Address1: 'Allée de Tournefort'
         Address2: 'Route de Palavas'
         Zip: '34970'
         City: LATTES
@@ -3126,7 +3126,7 @@
         Address1: 'Avenue Edouard Branly'
         Address2: Claouey
         Zip: '33950'
-        City: LÃˆGE-CAP-FERRET
+        City: LÈGE-CAP-FERRET
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3251,7 +3251,7 @@
         Active: true
     126:
         Code: 58
-        Name: 'FrÃªnes '
+        Name: 'Frênes '
         Title: null
         Address1: 'Avenue du Pylone'
         Address2: 'La Brague'
@@ -3282,7 +3282,7 @@
         Address1: 'Avenue du Grau'
         Address2: ''
         Zip: '66700'
-        City: ARGELÃˆS-SUR-MER
+        City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3355,12 +3355,12 @@
         Active: true
     130:
         Code: 61
-        Name: 'Parc de la GrenouillÃ¨re '
+        Name: 'Parc de la Grenouillère '
         Title: null
-        Address1: 'La GrenouillÃ¨re'
+        Address1: 'La Grenouillère'
         Address2: 'RN 152'
         Zip: '41500'
-        City: SUÃˆVRES
+        City: SUÈVRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3383,10 +3383,10 @@
         Code: 63
         Name: 'Huttes '
         Title: null
-        Address1: '15 rue des SeuliÃ¨res'
+        Address1: '15 rue des Seulières'
         Address2: ''
         Zip: '17650'
-        City: 'ST DENIS D''OLÃ‰RON'
+        City: 'ST DENIS D''OLÉRON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3407,7 +3407,7 @@
         Active: true
     132:
         Code: 64
-        Name: 'IdÃ©al '
+        Name: 'Idéal '
         Title: null
         Address1: '715 Route de Chaparon'
         Address2: ''
@@ -3539,7 +3539,7 @@
         Code: 69
         Name: 'Jard '
         Title: null
-        Address1: '123 Bld MarÃ©chal de Lattre de Tassigny'
+        Address1: '123 Bld Maréchal de Lattre de Tassigny'
         Address2: ''
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
@@ -3669,10 +3669,10 @@
         Code: 73
         Name: 'zz Land''s Hause '
         Title: null
-        Address1: 'Rua JosÃ© Maria Custodio  '
+        Address1: 'Rua José Maria Custodio  '
         Address2: 'Burinhosa Pataias'
         Zip: '2446 '
-        City: NAZARÃ‰
+        City: NAZARÉ
         Mail: test@resalys.com
         CountryCode: PT
         Phone1: 06.01.01.01.01
@@ -3797,7 +3797,7 @@
         Active: true
     147:
         Code: 78
-        Name: 'zz MalazÃ©ou '
+        Name: 'zz Malazéou '
         Title: null
         Address1: 'RN 20'
         Address2: ''
@@ -3851,7 +3851,7 @@
         Code: 8
         Name: 'Sandaya Soulac Plage'
         Title: null
-        Address1: 'L''AmÃ©lie'
+        Address1: 'L''Amélie'
         Address2: ''
         Zip: '33780'
         City: SOULAC-SUR-MER
@@ -3906,7 +3906,7 @@
         Address1: 'Avenue de la Retirada 1939'
         Address2: ''
         Zip: '66702'
-        City: ARGELÃˆS-SUR-MER
+        City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -3953,12 +3953,12 @@
         Active: true
     153:
         Code: 83
-        Name: 'MaÃ¯re '
+        Name: 'Maïre '
         Title: null
         Address1: ''
         Address2: ''
         Zip: '34410'
-        City: SÃ‰RIGNAN
+        City: SÉRIGNAN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -4036,7 +4036,7 @@
         Address1: 'Route de St Laurent'
         Address2: ''
         Zip: '66420'
-        City: 'LE BARCARÃˆS'
+        City: 'LE BARCARÈS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -4057,9 +4057,9 @@
         Active: true
     157:
         Code: 87
-        Name: 'OcÃ©ano d''Or'
+        Name: 'Océano d''Or'
         Title: null
-        Address1: '84 Rue Georges ClÃ©menceau'
+        Address1: '84 Rue Georges Clémenceau'
         Address2: ''
         Zip: '85520'
         City: JARD-SUR-MER
@@ -4137,7 +4137,7 @@
         Code: 9
         Name: Ametlla
         Title: null
-        Address1: 'Apartat de Correus NÂ°240'
+        Address1: 'Apartat de Correus N°240'
         Address2: ''
         Zip: '43860'
         City: 'AMETLLA DE MAR - TARRAGONE'
@@ -4161,12 +4161,12 @@
         Active: true
     161:
         Code: 90
-        Name: PachacaÃ¯d
+        Name: Pachacaïd
         Title: null
         Address1: 'Route de Canadel'
         Address2: ''
         Zip: '83310'
-        City: 'LA MÃ”LE'
+        City: 'LA MÔLE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -4270,7 +4270,7 @@
         Address1: '408 Quartier Trestaure'
         Address2: ''
         Zip: '83440'
-        City: 'ST PAUL EN FORÃŠT'
+        City: 'ST PAUL EN FORÊT'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -4317,7 +4317,7 @@
         Active: true
     167:
         Code: 96
-        Name: 'Petit Bois (ArdÃ¨che)'
+        Name: 'Petit Bois (Ardèche)'
         Title: null
         Address1: '87 rue du Petit Bois'
         Address2: ''
@@ -4371,7 +4371,7 @@
         Code: 98
         Name: 'Pinada '
         Title: null
-        Address1: 'hameau villerouge la crÃ©made'
+        Address1: 'hameau villerouge la crémade'
         Address2: ''
         Zip: '11200'
         City: FABREZAN
@@ -4421,7 +4421,7 @@
         Active: true
     171:
         Code: 997
-        Name: 'z Semaines non prises LinÃ©aire LibertÃ©'
+        Name: 'z Semaines non prises Linéaire Liberté'
         Title: null
         Address1: ''
         Address2: ''
@@ -4473,7 +4473,7 @@
         Active: true
     173:
         Code: 999
-        Name: 'zzz Fictif pour copie paramÃ©trage'
+        Name: 'zzz Fictif pour copie paramétrage'
         Title: null
         Address1: ''
         Address2: ''
@@ -4553,7 +4553,7 @@
         Code: 181
         Name: Aurilandes
         Title: null
-        Address1: '1001 Promenade de lâ€™Etang'
+        Address1: '1001 Promenade de l’Etang'
         Address2: ''
         Zip: '40200'
         City: AUREILHAN
@@ -4579,7 +4579,7 @@
         Code: 182
         Name: 'Baie du Kernic'
         Title: null
-        Address1: 'Route de Pen An ThÃ©ven'
+        Address1: 'Route de Pen An Théven'
         Address2: ''
         Zip: '29430'
         City: PLOUESCAT
@@ -4603,9 +4603,9 @@
         Active: true
     178:
         Code: 183
-        Name: 'Bois dâ€™Amour'
+        Name: 'Bois d’Amour'
         Title: null
-        Address1: '10 allÃ©e Diane'
+        Address1: '10 allée Diane'
         Address2: ''
         Zip: '44500'
         City: 'LA BAULE'
@@ -4629,9 +4629,9 @@
         Active: true
     179:
         Code: 184
-        Name: Caâ€™Savio
+        Name: Ca’Savio
         Title: null
-        Address1: 'Via di Caâ€™Savio, 77'
+        Address1: 'Via di Ca’Savio, 77'
         Address2: ''
         Zip: '30013'
         City: CAVALLINO-TREPORTI
@@ -4657,7 +4657,7 @@
         Code: 185
         Name: Catalpas
         Title: null
-        Address1: '45 chemin dâ€™Enlias'
+        Address1: '45 chemin d’Enlias'
         Address2: ''
         Zip: '17110'
         City: 'ST GEORGES DE DIDONNE'
@@ -4681,7 +4681,7 @@
         Active: true
     181:
         Code: 186
-        Name: 'Chalets de lâ€™Isard (RÃ©sidence)'
+        Name: 'Chalets de l’Isard (Résidence)'
         Title: null
         Address1: ''
         Address2: ''
@@ -4707,7 +4707,7 @@
         Active: true
     182:
         Code: 187
-        Name: 'Clos du Rocher (RÃ©sidence)'
+        Name: 'Clos du Rocher (Résidence)'
         Title: null
         Address1: 'Avenue du Cingle'
         Address2: ''
@@ -4759,9 +4759,9 @@
         Active: true
     184:
         Code: 189
-        Name: 'CÃ´tÃ© Green (RÃ©sidence)'
+        Name: 'Côté Green (Résidence)'
         Title: null
-        Address1: '1213 AllÃ©e des Thermes'
+        Address1: '1213 Allée des Thermes'
         Address2: ''
         Zip: '34990'
         City: JUVIGNAC
@@ -4785,7 +4785,7 @@
         Active: true
     185:
         Code: 190
-        Name: 'CÃ´te des Roses'
+        Name: 'Côte des Roses'
         Title: null
         Address1: 'Route de Gruissan'
         Address2: ''
@@ -4811,9 +4811,9 @@
         Active: true
     186:
         Code: 191
-        Name: 'CÃ´te Sauvage'
+        Name: 'Côte Sauvage'
         Title: null
-        Address1: '336 rue de la ForÃªt'
+        Address1: '336 rue de la Forêt'
         Address2: ''
         Zip: '17590'
         City: 'ST CLEMENT DES BALEINES'
@@ -4889,9 +4889,9 @@
         Active: true
     189:
         Code: 194
-        Name: 'Demeures Torrellanes (RÃ©sidence)'
+        Name: 'Demeures Torrellanes (Résidence)'
         Title: null
-        Address1: 'Route dÃ©partementale 40'
+        Address1: 'Route départementale 40'
         Address2: ''
         Zip: '66200'
         City: 'LATOUR BAS ELNE'
@@ -4915,7 +4915,7 @@
         Active: true
     190:
         Code: 195
-        Name: 'Demeures de la Massane (RÃ©sidence)'
+        Name: 'Demeures de la Massane (Résidence)'
         Title: null
         Address1: 'Impasse Edmond Brazes'
         Address2: ''
@@ -4967,7 +4967,7 @@
         Active: true
     192:
         Code: 197
-        Name: 'Domaine de Bacchus (RÃ©sidence)'
+        Name: 'Domaine de Bacchus (Résidence)'
         Title: null
         Address1: ''
         Address2: ''
@@ -4993,9 +4993,9 @@
         Active: true
     193:
         Code: 198
-        Name: 'Domaine de Manon (RÃ©sidence)'
+        Name: 'Domaine de Manon (Résidence)'
         Title: null
-        Address1: 'Zone dâ€™activitÃ© de Signes'
+        Address1: 'Zone d’activité de Signes'
         Address2: 'Avenue de Paris'
         Zip: '83870'
         City: SIGNES
@@ -5019,7 +5019,7 @@
         Active: true
     194:
         Code: 199
-        Name: 'Domaine de la Corniche (RÃ©sidence)'
+        Name: 'Domaine de la Corniche (Résidence)'
         Title: null
         Address1: 'Route de la Corniche'
         Address2: ''
@@ -5047,7 +5047,7 @@
         Code: 200
         Name: 'Domaine des Iscles'
         Title: null
-        Address1: 'Route du Plan dâ€™Eau'
+        Address1: 'Route du Plan d’Eau'
         Address2: ''
         Zip: '13640'
         City: 'LA ROQUE D ANTHERON'
@@ -5071,7 +5071,7 @@
         Active: true
     196:
         Code: 201
-        Name: 'Domaine du Bosquet (RÃ©sidence)'
+        Name: 'Domaine du Bosquet (Résidence)'
         Title: null
         Address1: 'Lieu dit Lafont'
         Address2: 'Rue de la Vedrenne'
@@ -5097,10 +5097,10 @@
         Active: true
     197:
         Code: 202
-        Name: 'Domaine du Golf (RÃ©sidence)'
+        Name: 'Domaine du Golf (Résidence)'
         Title: null
         Address1: 'Lieu-dit Launac Le Vieux'
-        Address2: '1 chemin de lâ€™Aire'
+        Address2: '1 chemin de l’Aire'
         Zip: '34690'
         City: FABREGUES
         Mail: test@resalys.com
@@ -5125,7 +5125,7 @@
         Code: 203
         Name: 'Dune Blanche'
         Title: null
-        Address1: 'Route dâ€™Etaples'
+        Address1: 'Route d’Etaples'
         Address2: ''
         Zip: '62176'
         City: CAMIERS
@@ -5149,9 +5149,9 @@
         Active: true
     199:
         Code: 204
-        Name: 'Domaine dâ€™EnsÃ©rune (RÃ©sidence)'
+        Name: 'Domaine d’Ensérune (Résidence)'
         Title: null
-        Address1: 'Promenade de lâ€™ancien stade'
+        Address1: 'Promenade de l’ancien stade'
         Address2: ''
         Zip: '34440'
         City: COLOMBIERS
@@ -5227,7 +5227,7 @@
         Active: true
     202:
         Code: 207
-        Name: 'Fonserane (RÃ©sidence)'
+        Name: 'Fonserane (Résidence)'
         Title: null
         Address1: '190 Rue des Christols'
         Address2: ''
@@ -5253,7 +5253,7 @@
         Active: true
     203:
         Code: 208
-        Name: 'Fontainebleau (RÃ©sidence)'
+        Name: 'Fontainebleau (Résidence)'
         Title: null
         Address1: '196 Avenue de Stalingrad'
         Address2: ''
@@ -5305,7 +5305,7 @@
         Active: true
     205:
         Code: 210
-        Name: 'HÃ´tel du Golf (HÃ´tel)'
+        Name: 'Hôtel du Golf (Hôtel)'
         Title: null
         Address1: '38 Avenue des Hameaux du Golf'
         Address2: ''
@@ -5383,7 +5383,7 @@
         Active: true
     208:
         Code: 213
-        Name: 'Isles de Sola (RÃ©sidence)'
+        Name: 'Isles de Sola (Résidence)'
         Title: null
         Address1: '8 rue du Joncal'
         Address2: ''
@@ -5409,7 +5409,7 @@
         Active: true
     209:
         Code: 214
-        Name: 'Ker Goh Lenn (RÃ©sidence)'
+        Name: 'Ker Goh Lenn (Résidence)'
         Title: null
         Address1: 'Espace tertiaire Atlanparc'
         Address2: 'Rond-point Kerluhern'
@@ -5435,7 +5435,7 @@
         Active: true
     210:
         Code: 215
-        Name: ForÃªt
+        Name: Forêt
         Title: null
         Address1: 'Route de Biscarrosse'
         Address2: ''
@@ -5539,7 +5539,7 @@
         Active: true
     214:
         Code: 219
-        Name: 'Domaine dâ€™Anghione'
+        Name: 'Domaine d’Anghione'
         Title: null
         Address1: 'Route de la plage'
         Address2: ''
@@ -5620,7 +5620,7 @@
         Name: Almadies
         Title: null
         Address1: 'Route de la Roche sur Yon'
-        Address2: 'La CharriÃ¨re des Bandes'
+        Address2: 'La Charrière des Bandes'
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
         Mail: test@resalys.com
@@ -5695,7 +5695,7 @@
         Active: true
     220:
         Code: 225
-        Name: 'Mas des Cigales (RÃ©sidence)'
+        Name: 'Mas des Cigales (Résidence)'
         Title: null
         Address1: '384 rue des Romarins'
         Address2: ''
@@ -5773,9 +5773,9 @@
         Active: true
     223:
         Code: 228
-        Name: 'PrÃ©s du Verdon'
+        Name: 'Prés du Verdon'
         Title: null
-        Address1: 'Les PrÃ©s du Verdon'
+        Address1: 'Les Prés du Verdon'
         Address2: ''
         Zip: '04500'
         City: QUINSON
@@ -5799,7 +5799,7 @@
         Active: true
     224:
         Code: 229
-        Name: RieumontagnÃ©
+        Name: Rieumontagné
         Title: null
         Address1: 'Lac du Laouzas'
         Address2: ''
@@ -5825,7 +5825,7 @@
         Active: true
     225:
         Code: 230
-        Name: 'Saint Clair (RÃ©sidence)'
+        Name: 'Saint Clair (Résidence)'
         Title: null
         Address1: '4 impasse de la Misaine'
         Address2: ''
@@ -6114,7 +6114,7 @@
         Name: Ranch
         Title: null
         Address1: 'Chemin Saint Joseph'
-        Address2: 'L''AubarÃ¨de'
+        Address2: 'L''Aubarède'
         Zip: '06110'
         City: 'LE CANNET'
         Mail: test@resalys.com
@@ -6137,7 +6137,7 @@
         Active: true
     237:
         Code: 242
-        Name: CadeniÃ¨res
+        Name: Cadenières
         Title: null
         Address1: '1427 '
         Address2: 'RD 560'
