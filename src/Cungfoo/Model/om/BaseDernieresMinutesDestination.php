@@ -431,10 +431,10 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(DernieresMinutesDestinationPeer::DERNIERES_MINUTES_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`DERNIERES_MINUTES_ID`';
+            $modifiedColumns[':p' . $index++]  = '`dernieres_minutes_id`';
         }
         if ($this->isColumnModified(DernieresMinutesDestinationPeer::DESTINATION_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`DESTINATION_ID`';
+            $modifiedColumns[':p' . $index++]  = '`destination_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`DERNIERES_MINUTES_ID`':
+                    case '`dernieres_minutes_id`':
                         $stmt->bindValue($identifier, $this->dernieres_minutes_id, PDO::PARAM_INT);
                         break;
-                    case '`DESTINATION_ID`':
+                    case '`destination_id`':
                         $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
      * Get the associated DernieresMinutes object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return DernieresMinutes The associated DernieresMinutes object.
      * @throws PropelException
      */
-    public function getDernieresMinutes(PropelPDO $con = null)
+    public function getDernieresMinutes(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aDernieresMinutes === null && ($this->dernieres_minutes_id !== null)) {
+        if ($this->aDernieresMinutes === null && ($this->dernieres_minutes_id !== null) && $doQuery) {
             $this->aDernieresMinutes = DernieresMinutesQuery::create()->findPk($this->dernieres_minutes_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseDernieresMinutesDestination extends BaseObject implements Per
      * Get the associated Destination object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Destination The associated Destination object.
      * @throws PropelException
      */
-    public function getDestination(PropelPDO $con = null)
+    public function getDestination(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aDestination === null && ($this->destination_id !== null)) {
+        if ($this->aDestination === null && ($this->destination_id !== null) && $doQuery) {
             $this->aDestination = DestinationQuery::create()->findPk($this->destination_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

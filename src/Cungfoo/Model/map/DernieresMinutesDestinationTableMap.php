@@ -43,8 +43,8 @@ class DernieresMinutesDestinationTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('DERNIERES_MINUTES_ID', 'DernieresMinutesId', 'INTEGER' , 'dernieres_minutes', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('DESTINATION_ID', 'DestinationId', 'INTEGER' , 'destination', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('dernieres_minutes_id', 'DernieresMinutesId', 'INTEGER' , 'dernieres_minutes', 'id', true, null, null);
+        $this->addForeignPrimaryKey('destination_id', 'DestinationId', 'INTEGER' , 'destination', 'id', true, null, null);
         // validators
     } // initialize()
 

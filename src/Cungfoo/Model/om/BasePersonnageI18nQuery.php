@@ -138,7 +138,7 @@ abstract class BasePersonnageI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `PRENOM` FROM `personnage_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `id`, `locale`, `prenom` FROM `personnage_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

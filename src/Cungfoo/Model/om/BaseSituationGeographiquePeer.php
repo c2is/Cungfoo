@@ -45,20 +45,20 @@ abstract class BaseSituationGeographiquePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'situation_geographique.ID';
+    /** the column name for the id field */
+    const ID = 'situation_geographique.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'situation_geographique.CODE';
+    /** the column name for the code field */
+    const CODE = 'situation_geographique.code';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'situation_geographique.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'situation_geographique.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'situation_geographique.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'situation_geographique.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'situation_geographique.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'situation_geographique.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -186,11 +186,11 @@ abstract class BaseSituationGeographiquePeer
             $criteria->addSelectColumn(SituationGeographiquePeer::UPDATED_AT);
             $criteria->addSelectColumn(SituationGeographiquePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

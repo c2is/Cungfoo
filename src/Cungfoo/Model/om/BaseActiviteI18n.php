@@ -473,13 +473,13 @@ abstract class BaseActiviteI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(ActiviteI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(ActiviteI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
+            $modifiedColumns[':p' . $index++]  = '`locale`';
         }
         if ($this->isColumnModified(ActiviteI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
 
         $sql = sprintf(
@@ -492,13 +492,13 @@ abstract class BaseActiviteI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                 }
@@ -562,11 +562,11 @@ abstract class BaseActiviteI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -932,12 +932,13 @@ abstract class BaseActiviteI18n extends BaseObject implements Persistent
      * Get the associated Activite object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Activite The associated Activite object.
      * @throws PropelException
      */
-    public function getActivite(PropelPDO $con = null)
+    public function getActivite(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aActivite === null && ($this->id !== null)) {
+        if ($this->aActivite === null && ($this->id !== null) && $doQuery) {
             $this->aActivite = ActiviteQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

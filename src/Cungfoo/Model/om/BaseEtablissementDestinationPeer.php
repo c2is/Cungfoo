@@ -46,11 +46,11 @@ abstract class BaseEtablissementDestinationPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_destination.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_destination.etablissement_id';
 
-    /** the column name for the DESTINATION_ID field */
-    const DESTINATION_ID = 'etablissement_destination.DESTINATION_ID';
+    /** the column name for the destination_id field */
+    const DESTINATION_ID = 'etablissement_destination.destination_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseEtablissementDestinationPeer
             $criteria->addSelectColumn(EtablissementDestinationPeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementDestinationPeer::DESTINATION_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.DESTINATION_ID');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.destination_id');
         }
     }
 

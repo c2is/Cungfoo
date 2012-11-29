@@ -486,22 +486,25 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -523,22 +526,25 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -1435,82 +1441,82 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(DemandeIdentifiantPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_NOM)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_NOM`';
+            $modifiedColumns[':p' . $index++]  = '`societe_nom`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_ADRESSE_1)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_ADRESSE_1`';
+            $modifiedColumns[':p' . $index++]  = '`societe_adresse_1`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_ADRESSE_2)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_ADRESSE_2`';
+            $modifiedColumns[':p' . $index++]  = '`societe_adresse_2`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_ADRESSE_3)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_ADRESSE_3`';
+            $modifiedColumns[':p' . $index++]  = '`societe_adresse_3`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_ADRESSE_4)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_ADRESSE_4`';
+            $modifiedColumns[':p' . $index++]  = '`societe_adresse_4`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_TELEPHONE)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_TELEPHONE`';
+            $modifiedColumns[':p' . $index++]  = '`societe_telephone`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::SOCIETE_FAX)) {
-            $modifiedColumns[':p' . $index++]  = '`SOCIETE_FAX`';
+            $modifiedColumns[':p' . $index++]  = '`societe_fax`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CONTACT_PRENOM)) {
-            $modifiedColumns[':p' . $index++]  = '`CONTACT_PRENOM`';
+            $modifiedColumns[':p' . $index++]  = '`contact_prenom`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CONTACT_NOM)) {
-            $modifiedColumns[':p' . $index++]  = '`CONTACT_NOM`';
+            $modifiedColumns[':p' . $index++]  = '`contact_nom`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CONTACT_TELEPHONE)) {
-            $modifiedColumns[':p' . $index++]  = '`CONTACT_TELEPHONE`';
+            $modifiedColumns[':p' . $index++]  = '`contact_telephone`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CONTACT_MAIL)) {
-            $modifiedColumns[':p' . $index++]  = '`CONTACT_MAIL`';
+            $modifiedColumns[':p' . $index++]  = '`contact_mail`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE)) {
-            $modifiedColumns[':p' . $index++]  = '`PERMANENCE`';
+            $modifiedColumns[':p' . $index++]  = '`permanence`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_MATIN_DE)) {
-            $modifiedColumns[':p' . $index++]  = '`PERMANENCE_MATIN_DE`';
+            $modifiedColumns[':p' . $index++]  = '`permanence_matin_de`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_MATIN_A)) {
-            $modifiedColumns[':p' . $index++]  = '`PERMANENCE_MATIN_A`';
+            $modifiedColumns[':p' . $index++]  = '`permanence_matin_a`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE)) {
-            $modifiedColumns[':p' . $index++]  = '`PERMANENCE_APRES_MIDI_DE`';
+            $modifiedColumns[':p' . $index++]  = '`permanence_apres_midi_de`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A)) {
-            $modifiedColumns[':p' . $index++]  = '`PERMANENCE_APRES_MIDI_A`';
+            $modifiedColumns[':p' . $index++]  = '`permanence_apres_midi_a`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC)) {
-            $modifiedColumns[':p' . $index++]  = '`CLIENT_VC`';
+            $modifiedColumns[':p' . $index++]  = '`client_vc`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VC_CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CLIENT_VC_CODE`';
+            $modifiedColumns[':p' . $index++]  = '`client_vc_code`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD)) {
-            $modifiedColumns[':p' . $index++]  = '`CLIENT_VD`';
+            $modifiedColumns[':p' . $index++]  = '`client_vd`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CLIENT_VD_CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CLIENT_VD_CODE`';
+            $modifiedColumns[':p' . $index++]  = '`client_vd_code`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::BROCHURE)) {
-            $modifiedColumns[':p' . $index++]  = '`BROCHURE`';
+            $modifiedColumns[':p' . $index++]  = '`brochure`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) {
-            $modifiedColumns[':p' . $index++]  = '`IDENTIFIANT`';
+            $modifiedColumns[':p' . $index++]  = '`identifiant`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(DemandeIdentifiantPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -1523,82 +1529,82 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SOCIETE_NOM`':
+                    case '`societe_nom`':
                         $stmt->bindValue($identifier, $this->societe_nom, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_1`':
+                    case '`societe_adresse_1`':
                         $stmt->bindValue($identifier, $this->societe_adresse_1, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_2`':
+                    case '`societe_adresse_2`':
                         $stmt->bindValue($identifier, $this->societe_adresse_2, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_3`':
+                    case '`societe_adresse_3`':
                         $stmt->bindValue($identifier, $this->societe_adresse_3, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_4`':
+                    case '`societe_adresse_4`':
                         $stmt->bindValue($identifier, $this->societe_adresse_4, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_TELEPHONE`':
+                    case '`societe_telephone`':
                         $stmt->bindValue($identifier, $this->societe_telephone, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_FAX`':
+                    case '`societe_fax`':
                         $stmt->bindValue($identifier, $this->societe_fax, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_PRENOM`':
+                    case '`contact_prenom`':
                         $stmt->bindValue($identifier, $this->contact_prenom, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_NOM`':
+                    case '`contact_nom`':
                         $stmt->bindValue($identifier, $this->contact_nom, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_TELEPHONE`':
+                    case '`contact_telephone`':
                         $stmt->bindValue($identifier, $this->contact_telephone, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_MAIL`':
+                    case '`contact_mail`':
                         $stmt->bindValue($identifier, $this->contact_mail, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE`':
+                    case '`permanence`':
                         $stmt->bindValue($identifier, $this->permanence, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_MATIN_DE`':
+                    case '`permanence_matin_de`':
                         $stmt->bindValue($identifier, $this->permanence_matin_de, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_MATIN_A`':
+                    case '`permanence_matin_a`':
                         $stmt->bindValue($identifier, $this->permanence_matin_a, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_APRES_MIDI_DE`':
+                    case '`permanence_apres_midi_de`':
                         $stmt->bindValue($identifier, $this->permanence_apres_midi_de, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_APRES_MIDI_A`':
+                    case '`permanence_apres_midi_a`':
                         $stmt->bindValue($identifier, $this->permanence_apres_midi_a, PDO::PARAM_STR);
                         break;
-                    case '`CLIENT_VC`':
+                    case '`client_vc`':
                         $stmt->bindValue($identifier, (int) $this->client_vc, PDO::PARAM_INT);
                         break;
-                    case '`CLIENT_VC_CODE`':
+                    case '`client_vc_code`':
                         $stmt->bindValue($identifier, $this->client_vc_code, PDO::PARAM_STR);
                         break;
-                    case '`CLIENT_VD`':
+                    case '`client_vd`':
                         $stmt->bindValue($identifier, (int) $this->client_vd, PDO::PARAM_INT);
                         break;
-                    case '`CLIENT_VD_CODE`':
+                    case '`client_vd_code`':
                         $stmt->bindValue($identifier, $this->client_vd_code, PDO::PARAM_STR);
                         break;
-                    case '`BROCHURE`':
+                    case '`brochure`':
                         $stmt->bindValue($identifier, (int) $this->brochure, PDO::PARAM_INT);
                         break;
-                    case '`IDENTIFIANT`':
+                    case '`identifiant`':
                         $stmt->bindValue($identifier, (int) $this->identifiant, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -1669,11 +1675,11 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**

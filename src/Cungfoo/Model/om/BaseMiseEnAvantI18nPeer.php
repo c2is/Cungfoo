@@ -45,23 +45,23 @@ abstract class BaseMiseEnAvantI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'mise_en_avant_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'mise_en_avant_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'mise_en_avant_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'mise_en_avant_i18n.locale';
 
-    /** the column name for the TITRE field */
-    const TITRE = 'mise_en_avant_i18n.TITRE';
+    /** the column name for the titre field */
+    const TITRE = 'mise_en_avant_i18n.titre';
 
-    /** the column name for the ACCROCHE field */
-    const ACCROCHE = 'mise_en_avant_i18n.ACCROCHE';
+    /** the column name for the accroche field */
+    const ACCROCHE = 'mise_en_avant_i18n.accroche';
 
-    /** the column name for the LIEN field */
-    const LIEN = 'mise_en_avant_i18n.LIEN';
+    /** the column name for the lien field */
+    const LIEN = 'mise_en_avant_i18n.lien';
 
-    /** the column name for the TITRE_LIEN field */
-    const TITRE_LIEN = 'mise_en_avant_i18n.TITRE_LIEN';
+    /** the column name for the titre_lien field */
+    const TITRE_LIEN = 'mise_en_avant_i18n.titre_lien';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -183,12 +183,12 @@ abstract class BaseMiseEnAvantI18nPeer
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::LIEN);
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::TITRE_LIEN);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.TITRE');
-            $criteria->addSelectColumn($alias . '.ACCROCHE');
-            $criteria->addSelectColumn($alias . '.LIEN');
-            $criteria->addSelectColumn($alias . '.TITRE_LIEN');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.titre');
+            $criteria->addSelectColumn($alias . '.accroche');
+            $criteria->addSelectColumn($alias . '.lien');
+            $criteria->addSelectColumn($alias . '.titre_lien');
         }
     }
 

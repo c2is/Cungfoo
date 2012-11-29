@@ -165,7 +165,7 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `DATE_START`, `DAY_START`, `DAY_RANGE`, `ACTIVE` FROM `dernieres_minutes` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `date_start`, `day_start`, `day_range`, `active` FROM `dernieres_minutes` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

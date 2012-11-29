@@ -335,7 +335,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `published`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

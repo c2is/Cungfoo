@@ -76,12 +76,6 @@ class BaseEventType extends AppAwareType
             'label' => 'event.geo_coordinate_y',
             'required' => false,
         ));
-        $builder->add('distance_camping', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'event.distance_camping',
-            'required' => false,
-        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),

@@ -48,8 +48,9 @@ class DestinationVilleController implements ControllerProviderInterface
             $events             = EventPeer::getForVille($ville, EventPeer::SORT_BY_PRIORITY, 5);
             $campings           = EtablissementPeer::getForVille($ville, EtablissementPeer::RANDOM_SORT);
 
+            $nbCampinsg = count($campings);
             $listData = array();
-            for($i = 0; $i < 5; $i++)
+            for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
             {
                 $listData[] = $campings[$i];
             }

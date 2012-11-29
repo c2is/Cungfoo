@@ -46,11 +46,11 @@ abstract class BaseEtablissementThematiquePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_thematique.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_thematique.etablissement_id';
 
-    /** the column name for the THEMATIQUE_ID field */
-    const THEMATIQUE_ID = 'etablissement_thematique.THEMATIQUE_ID';
+    /** the column name for the thematique_id field */
+    const THEMATIQUE_ID = 'etablissement_thematique.thematique_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseEtablissementThematiquePeer
             $criteria->addSelectColumn(EtablissementThematiquePeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementThematiquePeer::THEMATIQUE_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.THEMATIQUE_ID');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.thematique_id');
         }
     }
 

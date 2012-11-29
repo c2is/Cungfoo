@@ -220,22 +220,25 @@ abstract class BaseJob extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->completed_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->completed_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->completed_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->completed_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -267,22 +270,25 @@ abstract class BaseJob extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -304,22 +310,25 @@ abstract class BaseJob extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -780,7 +789,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
             if ($this->collJobLogs !== null) {
                 foreach ($this->collJobLogs as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -813,31 +822,31 @@ abstract class BaseJob extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(JobPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(JobPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
         if ($this->isColumnModified(JobPeer::TYPE)) {
-            $modifiedColumns[':p' . $index++]  = '`TYPE`';
+            $modifiedColumns[':p' . $index++]  = '`type`';
         }
         if ($this->isColumnModified(JobPeer::PARAMS)) {
-            $modifiedColumns[':p' . $index++]  = '`PARAMS`';
+            $modifiedColumns[':p' . $index++]  = '`params`';
         }
         if ($this->isColumnModified(JobPeer::MESSAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`MESSAGE`';
+            $modifiedColumns[':p' . $index++]  = '`message`';
         }
         if ($this->isColumnModified(JobPeer::COMPLETED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`COMPLETED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`completed_at`';
         }
         if ($this->isColumnModified(JobPeer::STATUS)) {
-            $modifiedColumns[':p' . $index++]  = '`STATUS`';
+            $modifiedColumns[':p' . $index++]  = '`status`';
         }
         if ($this->isColumnModified(JobPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(JobPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
 
         $sql = sprintf(
@@ -850,31 +859,31 @@ abstract class BaseJob extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`NAME`':
+                    case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`TYPE`':
+                    case '`type`':
                         $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
                         break;
-                    case '`PARAMS`':
+                    case '`params`':
                         $stmt->bindValue($identifier, $this->params, PDO::PARAM_STR);
                         break;
-                    case '`MESSAGE`':
+                    case '`message`':
                         $stmt->bindValue($identifier, $this->message, PDO::PARAM_STR);
                         break;
-                    case '`COMPLETED_AT`':
+                    case '`completed_at`':
                         $stmt->bindValue($identifier, $this->completed_at, PDO::PARAM_STR);
                         break;
-                    case '`STATUS`':
+                    case '`status`':
                         $stmt->bindValue($identifier, $this->status, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -945,11 +954,11 @@ abstract class BaseJob extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1360,13 +1369,15 @@ abstract class BaseJob extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Job The current object (for fluent API support)
      * @see        addJobLogs()
      */
     public function clearJobLogs()
     {
         $this->collJobLogs = null; // important to set this to null since that means it is uninitialized
         $this->collJobLogsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1465,6 +1476,7 @@ abstract class BaseJob extends BaseObject implements Persistent
      *
      * @param PropelCollection $jobLogs A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Job The current object (for fluent API support)
      */
     public function setJobLogs(PropelCollection $jobLogs, PropelPDO $con = null)
     {
@@ -1481,6 +1493,8 @@ abstract class BaseJob extends BaseObject implements Persistent
 
         $this->collJobLogs = $jobLogs;
         $this->collJobLogsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1498,22 +1512,22 @@ abstract class BaseJob extends BaseObject implements Persistent
         if (null === $this->collJobLogs || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collJobLogs) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getJobLogs());
-                }
-                $query = JobLogQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByJob($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collJobLogs);
+
+            if($partial && !$criteria) {
+                return count($this->getJobLogs());
+            }
+            $query = JobLogQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByJob($this)
+                ->count($con);
         }
+
+        return count($this->collJobLogs);
     }
 
     /**
@@ -1547,6 +1561,7 @@ abstract class BaseJob extends BaseObject implements Persistent
 
     /**
      * @param	JobLog $jobLog The jobLog object to remove.
+     * @return Job The current object (for fluent API support)
      */
     public function removeJobLog($jobLog)
     {
@@ -1559,6 +1574,8 @@ abstract class BaseJob extends BaseObject implements Persistent
             $this->jobLogsScheduledForDeletion[]= $jobLog;
             $jobLog->setJob(null);
         }
+
+        return $this;
     }
 
     /**

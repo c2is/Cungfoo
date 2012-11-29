@@ -139,7 +139,7 @@ abstract class BaseEtablissementSituationGeographiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `SITUATION_GEOGRAPHIQUE_ID` FROM `etablissement_situation_geographique` WHERE `ETABLISSEMENT_ID` = :p0 AND `SITUATION_GEOGRAPHIQUE_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `situation_geographique_id` FROM `etablissement_situation_geographique` WHERE `etablissement_id` = :p0 AND `situation_geographique_id` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

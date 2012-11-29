@@ -44,14 +44,14 @@ abstract class BaseSitePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'site.ID';
+    /** the column name for the id field */
+    const ID = 'site.id';
 
-    /** the column name for the NAME field */
-    const NAME = 'site.NAME';
+    /** the column name for the name field */
+    const NAME = 'site.name';
 
-    /** the column name for the ORDER field */
-    const ORDER = 'site.ORDER';
+    /** the column name for the order field */
+    const ORDER = 'site.order';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -170,9 +170,9 @@ abstract class BaseSitePeer
             $criteria->addSelectColumn(SitePeer::NAME);
             $criteria->addSelectColumn(SitePeer::ORDER);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.ORDER');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.order');
         }
     }
 

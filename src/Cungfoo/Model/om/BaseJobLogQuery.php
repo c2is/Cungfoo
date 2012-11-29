@@ -162,7 +162,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `JOB_ID`, `LEVEL`, `MESSAGE`, `CREATED_AT`, `UPDATED_AT` FROM `job_log` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `job_id`, `level`, `message`, `created_at`, `updated_at` FROM `job_log` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

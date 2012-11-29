@@ -233,22 +233,25 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -270,22 +273,25 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -741,7 +747,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
             if ($this->collAvantages !== null) {
                 foreach ($this->collAvantages as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -758,7 +764,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
             if ($this->collPersonnageI18ns !== null) {
                 foreach ($this->collPersonnageI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -791,25 +797,25 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(PersonnagePeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(PersonnagePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(PersonnagePeer::AGE)) {
-            $modifiedColumns[':p' . $index++]  = '`AGE`';
+            $modifiedColumns[':p' . $index++]  = '`age`';
         }
         if ($this->isColumnModified(PersonnagePeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
         if ($this->isColumnModified(PersonnagePeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(PersonnagePeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(PersonnagePeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -822,25 +828,25 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`ETABLISSEMENT_ID`':
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`AGE`':
+                    case '`age`':
                         $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -911,11 +917,11 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1348,12 +1354,13 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1392,13 +1399,15 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Personnage The current object (for fluent API support)
      * @see        addAvantages()
      */
     public function clearAvantages()
     {
         $this->collAvantages = null; // important to set this to null since that means it is uninitialized
         $this->collAvantagesPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1497,6 +1506,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      *
      * @param PropelCollection $avantages A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Personnage The current object (for fluent API support)
      */
     public function setAvantages(PropelCollection $avantages, PropelPDO $con = null)
     {
@@ -1513,6 +1523,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
         $this->collAvantages = $avantages;
         $this->collAvantagesPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1530,22 +1542,22 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if (null === $this->collAvantages || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collAvantages) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getAvantages());
-                }
-                $query = AvantageQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByPersonnage($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collAvantages);
+
+            if($partial && !$criteria) {
+                return count($this->getAvantages());
+            }
+            $query = AvantageQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPersonnage($this)
+                ->count($con);
         }
+
+        return count($this->collAvantages);
     }
 
     /**
@@ -1579,6 +1591,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
     /**
      * @param	Avantage $avantage The avantage object to remove.
+     * @return Personnage The current object (for fluent API support)
      */
     public function removeAvantage($avantage)
     {
@@ -1591,6 +1604,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->avantagesScheduledForDeletion[]= $avantage;
             $avantage->setPersonnage(null);
         }
+
+        return $this;
     }
 
     /**
@@ -1599,13 +1614,15 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Personnage The current object (for fluent API support)
      * @see        addPersonnageI18ns()
      */
     public function clearPersonnageI18ns()
     {
         $this->collPersonnageI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collPersonnageI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1704,6 +1721,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      *
      * @param PropelCollection $personnageI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Personnage The current object (for fluent API support)
      */
     public function setPersonnageI18ns(PropelCollection $personnageI18ns, PropelPDO $con = null)
     {
@@ -1720,6 +1738,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
         $this->collPersonnageI18ns = $personnageI18ns;
         $this->collPersonnageI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1737,22 +1757,22 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if (null === $this->collPersonnageI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collPersonnageI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getPersonnageI18ns());
-                }
-                $query = PersonnageI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByPersonnage($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collPersonnageI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getPersonnageI18ns());
+            }
+            $query = PersonnageI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPersonnage($this)
+                ->count($con);
         }
+
+        return count($this->collPersonnageI18ns);
     }
 
     /**
@@ -1790,6 +1810,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
     /**
      * @param	PersonnageI18n $personnageI18n The personnageI18n object to remove.
+     * @return Personnage The current object (for fluent API support)
      */
     public function removePersonnageI18n($personnageI18n)
     {
@@ -1802,6 +1823,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->personnageI18nsScheduledForDeletion[]= $personnageI18n;
             $personnageI18n->setPersonnage(null);
         }
+
+        return $this;
     }
 
     /**

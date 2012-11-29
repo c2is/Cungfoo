@@ -143,7 +143,7 @@ abstract class BaseEtablissementPointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `POINT_INTERET_ID`, `DISTANCE` FROM `etablissement_point_interet` WHERE `ETABLISSEMENT_ID` = :p0 AND `POINT_INTERET_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `point_interet_id`, `distance` FROM `etablissement_point_interet` WHERE `etablissement_id` = :p0 AND `point_interet_id` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

@@ -45,20 +45,20 @@ abstract class BaseBaignadePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'baignade.ID';
+    /** the column name for the id field */
+    const ID = 'baignade.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'baignade.CODE';
+    /** the column name for the code field */
+    const CODE = 'baignade.code';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'baignade.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'baignade.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'baignade.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'baignade.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'baignade.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'baignade.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -186,11 +186,11 @@ abstract class BaseBaignadePeer
             $criteria->addSelectColumn(BaignadePeer::UPDATED_AT);
             $criteria->addSelectColumn(BaignadePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

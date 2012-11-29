@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\TopCamping;
 use Cungfoo\Model\TopCampingPeer;
+use Cungfoo\Model\TopCampingQuery;
 use Cungfoo\Model\map\TopCampingTableMap;
 
 /**
@@ -45,17 +46,17 @@ abstract class BaseTopCampingPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'top_camping.ID';
+    /** the column name for the id field */
+    const ID = 'top_camping.id';
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'top_camping.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'top_camping.etablissement_id';
 
-    /** the column name for the SORTABLE_RANK field */
-    const SORTABLE_RANK = 'top_camping.SORTABLE_RANK';
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'top_camping.sortable_rank';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'top_camping.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'top_camping.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -74,7 +75,7 @@ abstract class BaseTopCampingPeer
     /**
      * rank column
      */
-    const RANK_COL = 'top_camping.SORTABLE_RANK';
+    const RANK_COL = 'top_camping.sortable_rank';
 
     /**
      * holds an array of fieldnames
@@ -182,10 +183,10 @@ abstract class BaseTopCampingPeer
             $criteria->addSelectColumn(TopCampingPeer::SORTABLE_RANK);
             $criteria->addSelectColumn(TopCampingPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -1135,18 +1136,19 @@ abstract class BaseTopCampingPeer
      * @param      int $last  Last node to be shifted
      * @param      PropelPDO $con Connection to use.
      */
-    public static function shiftRank($delta, $first, $last = null, PropelPDO $con = null)
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
     {
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $whereCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
-        $criterion = $whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
-        if (null !== $last) {
-            $criterion->addAnd($whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
+        $whereCriteria = TopCampingQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         }
-        $whereCriteria->add($criterion);
+        if (null !== $last) {
+            $whereCriteria->addAnd(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
 
         $valuesCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
         $valuesCriteria->add(TopCampingPeer::RANK_COL, array('raw' => TopCampingPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);

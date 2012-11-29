@@ -168,22 +168,25 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->minimum_price_start_date);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->minimum_price_start_date);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -205,22 +208,25 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->minimum_price_end_date);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->minimum_price_end_date);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -643,22 +649,22 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`TYPE_HEBERGEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`type_hebergement_id`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE`';
+            $modifiedColumns[':p' . $index++]  = '`minimum_price`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_DISCOUNT_LABEL`';
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_discount_label`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_START_DATE`';
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_start_date`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`MINIMUM_PRICE_END_DATE`';
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_end_date`';
         }
 
         $sql = sprintf(
@@ -671,22 +677,22 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TYPE_HEBERGEMENT_ID`':
+                    case '`type_hebergement_id`':
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
                         break;
-                    case '`MINIMUM_PRICE`':
+                    case '`minimum_price`':
                         $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_DISCOUNT_LABEL`':
+                    case '`minimum_price_discount_label`':
                         $stmt->bindValue($identifier, $this->minimum_price_discount_label, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_START_DATE`':
+                    case '`minimum_price_start_date`':
                         $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
                         break;
-                    case '`MINIMUM_PRICE_END_DATE`':
+                    case '`minimum_price_end_date`':
                         $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
                         break;
                 }
@@ -750,11 +756,11 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1159,12 +1165,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1210,12 +1217,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * Get the associated TypeHebergement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return TypeHebergement The associated TypeHebergement object.
      * @throws PropelException
      */
-    public function getTypeHebergement(PropelPDO $con = null)
+    public function getTypeHebergement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aTypeHebergement === null && ($this->type_hebergement_id !== null)) {
+        if ($this->aTypeHebergement === null && ($this->type_hebergement_id !== null) && $doQuery) {
             $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->type_hebergement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

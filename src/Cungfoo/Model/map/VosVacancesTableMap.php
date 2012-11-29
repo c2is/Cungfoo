@@ -42,10 +42,10 @@ class VosVacancesTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('AGE', 'Age', 'VARCHAR', false, 255, null);
-        $this->addColumn('IMAGE_PATH', 'ImagePath', 'VARCHAR', false, 255, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('age', 'Age', 'VARCHAR', false, 255, null);
+        $this->addColumn('image_path', 'ImagePath', 'VARCHAR', false, 255, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -66,9 +66,25 @@ class VosVacancesTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'active' => array('active_column' => 'active', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'titre, description, prenom', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/vos-vacances', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'image_path', ),
+            'active' =>  array (
+  'active_column' => 'active',
+),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'titre, description, prenom',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/vos-vacances',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => 'image_path',
+),
         );
     } // getBehaviors()
 

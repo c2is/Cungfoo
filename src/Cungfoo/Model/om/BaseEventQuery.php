@@ -33,7 +33,6 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery orderByCity($order = Criteria::ASC) Order by the city column
  * @method EventQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EventQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
- * @method EventQuery orderByDistanceCamping($order = Criteria::ASC) Order by the distance_camping column
  * @method EventQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method EventQuery orderByPriority($order = Criteria::ASC) Order by the priority column
  * @method EventQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -49,7 +48,6 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery groupByCity() Group by the city column
  * @method EventQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EventQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
- * @method EventQuery groupByDistanceCamping() Group by the distance_camping column
  * @method EventQuery groupByImage() Group by the image column
  * @method EventQuery groupByPriority() Group by the priority column
  * @method EventQuery groupByCreatedAt() Group by the created_at column
@@ -79,7 +77,6 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOneByCity(string $city) Return the first Event filtered by the city column
  * @method Event findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Event filtered by the geo_coordinate_x column
  * @method Event findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Event filtered by the geo_coordinate_y column
- * @method Event findOneByDistanceCamping(string $distance_camping) Return the first Event filtered by the distance_camping column
  * @method Event findOneByImage(string $image) Return the first Event filtered by the image column
  * @method Event findOneByPriority(string $priority) Return the first Event filtered by the priority column
  * @method Event findOneByCreatedAt(string $created_at) Return the first Event filtered by the created_at column
@@ -95,7 +92,6 @@ use Cungfoo\Model\EventQuery;
  * @method array findByCity(string $city) Return Event objects filtered by the city column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Event objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Event objects filtered by the geo_coordinate_y column
- * @method array findByDistanceCamping(string $distance_camping) Return Event objects filtered by the distance_camping column
  * @method array findByImage(string $image) Return Event objects filtered by the image column
  * @method array findByPriority(string $priority) Return Event objects filtered by the priority column
  * @method array findByCreatedAt(string $created_at) Return Event objects filtered by the created_at column
@@ -204,7 +200,7 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `event` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `category`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `image`, `priority`, `created_at`, `updated_at`, `active` FROM `event` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -550,35 +546,6 @@ abstract class BaseEventQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventPeer::GEO_COORDINATE_Y, $geoCoordinateY, $comparison);
-    }
-
-    /**
-     * Filter the query on the distance_camping column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDistanceCamping('fooValue');   // WHERE distance_camping = 'fooValue'
-     * $query->filterByDistanceCamping('%fooValue%'); // WHERE distance_camping LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $distanceCamping The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EventQuery The current query, for fluid interface
-     */
-    public function filterByDistanceCamping($distanceCamping = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($distanceCamping)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $distanceCamping)) {
-                $distanceCamping = str_replace('*', '%', $distanceCamping);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EventPeer::DISTANCE_CAMPING, $distanceCamping, $comparison);
     }
 
     /**

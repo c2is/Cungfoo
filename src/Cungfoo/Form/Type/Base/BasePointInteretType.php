@@ -70,12 +70,6 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.geo_coordinate_y',
             'required' => false,
         ));
-        $builder->add('distance_camping', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.distance_camping',
-            'required' => false,
-        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),
