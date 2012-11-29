@@ -21,6 +21,7 @@ class EventLoader extends AbstractLoader
         $this->dbConnection->exec("TRUNCATE TABLE `etablissement_event`");
         $this->dbConnection->exec("TRUNCATE TABLE `event_i18n`");
         $this->dbConnection->exec("TRUNCATE TABLE `event`");
+        $this->dbConnection->exec("SET NAMES 'UTF8'");
     }
 
     public function close()
@@ -74,7 +75,6 @@ class EventLoader extends AbstractLoader
                 ->setPriority($event->{'Priority'})
                 ->setGeoCoordinateX($event->attributes()->{'X'})
                 ->setGeoCoordinateY($event->attributes()->{'Y'})
-                ->setDistanceCamping($event->attributes()->{'DistanceXY'})
                 ->setImage($event->{'Image1'})
             ;
 

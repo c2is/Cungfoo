@@ -17,7 +17,7 @@ use Cungfoo\Model\map\VosVacancesI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'vos_vacances_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,20 +45,20 @@ abstract class BaseVosVacancesI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'vos_vacances_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'vos_vacances_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'vos_vacances_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'vos_vacances_i18n.locale';
 
-    /** the column name for the TITRE field */
-    const TITRE = 'vos_vacances_i18n.TITRE';
+    /** the column name for the titre field */
+    const TITRE = 'vos_vacances_i18n.titre';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'vos_vacances_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'vos_vacances_i18n.description';
 
-    /** the column name for the PRENOM field */
-    const PRENOM = 'vos_vacances_i18n.PRENOM';
+    /** the column name for the prenom field */
+    const PRENOM = 'vos_vacances_i18n.prenom';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseVosVacancesI18nPeer
             $criteria->addSelectColumn(VosVacancesI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(VosVacancesI18nPeer::PRENOM);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.TITRE');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
-            $criteria->addSelectColumn($alias . '.PRENOM');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.titre');
+            $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.prenom');
         }
     }
 
@@ -366,7 +366,7 @@ abstract class BaseVosVacancesI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -376,7 +376,7 @@ abstract class BaseVosVacancesI18nPeer
     {
         VosVacancesI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to vos_vacances_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -419,7 +419,7 @@ abstract class BaseVosVacancesI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -430,7 +430,7 @@ abstract class BaseVosVacancesI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = VosVacancesI18nPeer::getOMClass();
         // populate the object(s)
@@ -924,7 +924,7 @@ abstract class BaseVosVacancesI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             VosVacancesI18nPeer::clearRelatedInstancePool();
             $con->commit();

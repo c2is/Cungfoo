@@ -22,7 +22,7 @@ use Cungfoo\Model\EventQuery;
 /**
  * Base class that represents a query for the 'event' table.
  *
- * 
+ *
  *
  * @method EventQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EventQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -33,12 +33,11 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery orderByCity($order = Criteria::ASC) Order by the city column
  * @method EventQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EventQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
- * @method EventQuery orderByDistanceCamping($order = Criteria::ASC) Order by the distance_camping column
  * @method EventQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method EventQuery orderByPriority($order = Criteria::ASC) Order by the priority column
  * @method EventQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EventQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method EventQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method EventQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method EventQuery groupById() Group by the id column
  * @method EventQuery groupByCode() Group by the code column
@@ -49,12 +48,11 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery groupByCity() Group by the city column
  * @method EventQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EventQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
- * @method EventQuery groupByDistanceCamping() Group by the distance_camping column
  * @method EventQuery groupByImage() Group by the image column
  * @method EventQuery groupByPriority() Group by the priority column
  * @method EventQuery groupByCreatedAt() Group by the created_at column
  * @method EventQuery groupByUpdatedAt() Group by the updated_at column
- * @method EventQuery groupByEnabled() Group by the enabled column
+ * @method EventQuery groupByActive() Group by the active column
  *
  * @method EventQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EventQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -79,12 +77,11 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOneByCity(string $city) Return the first Event filtered by the city column
  * @method Event findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Event filtered by the geo_coordinate_x column
  * @method Event findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Event filtered by the geo_coordinate_y column
- * @method Event findOneByDistanceCamping(string $distance_camping) Return the first Event filtered by the distance_camping column
  * @method Event findOneByImage(string $image) Return the first Event filtered by the image column
  * @method Event findOneByPriority(string $priority) Return the first Event filtered by the priority column
  * @method Event findOneByCreatedAt(string $created_at) Return the first Event filtered by the created_at column
  * @method Event findOneByUpdatedAt(string $updated_at) Return the first Event filtered by the updated_at column
- * @method Event findOneByEnabled(boolean $enabled) Return the first Event filtered by the enabled column
+ * @method Event findOneByActive(boolean $active) Return the first Event filtered by the active column
  *
  * @method array findById(int $id) Return Event objects filtered by the id column
  * @method array findByCode(string $code) Return Event objects filtered by the code column
@@ -95,12 +92,11 @@ use Cungfoo\Model\EventQuery;
  * @method array findByCity(string $city) Return Event objects filtered by the city column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Event objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Event objects filtered by the geo_coordinate_y column
- * @method array findByDistanceCamping(string $distance_camping) Return Event objects filtered by the distance_camping column
  * @method array findByImage(string $image) Return Event objects filtered by the image column
  * @method array findByPriority(string $priority) Return Event objects filtered by the priority column
  * @method array findByCreatedAt(string $created_at) Return Event objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Event objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Event objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Event objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -151,7 +147,7 @@ abstract class BaseEventQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Event|Event[]|mixed the result, formatted by the current formatter
@@ -204,9 +200,9 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `event` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `category`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `image`, `priority`, `created_at`, `updated_at`, `active` FROM `event` WHERE `id` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -553,35 +549,6 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the distance_camping column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDistanceCamping('fooValue');   // WHERE distance_camping = 'fooValue'
-     * $query->filterByDistanceCamping('%fooValue%'); // WHERE distance_camping LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $distanceCamping The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EventQuery The current query, for fluid interface
-     */
-    public function filterByDistanceCamping($distanceCamping = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($distanceCamping)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $distanceCamping)) {
-                $distanceCamping = str_replace('*', '%', $distanceCamping);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EventPeer::DISTANCE_CAMPING, $distanceCamping, $comparison);
-    }
-
-    /**
      * Filter the query on the image column
      *
      * Example usage:
@@ -726,15 +693,15 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -743,13 +710,13 @@ abstract class BaseEventQuery extends ModelCriteria
      *
      * @return EventQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(EventPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(EventPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -934,7 +901,7 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -946,7 +913,7 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addUsingAlias(EventPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -956,7 +923,7 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(EventPeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -966,7 +933,7 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(EventPeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -978,7 +945,7 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addUsingAlias(EventPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -988,7 +955,7 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(EventPeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -998,8 +965,22 @@ abstract class BaseEventQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(EventPeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -1012,12 +993,12 @@ abstract class BaseEventQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'EventI18n';
-    
+
         return $this
             ->joinEventI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -1033,10 +1014,10 @@ abstract class BaseEventQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('EventI18n');
         $this->with['EventI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

@@ -43,8 +43,8 @@ class EtablissementSituationGeographiqueTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('SITUATION_GEOGRAPHIQUE_ID', 'SituationGeographiqueId', 'INTEGER' , 'situation_geographique', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
+        $this->addForeignPrimaryKey('situation_geographique_id', 'SituationGeographiqueId', 'INTEGER' , 'situation_geographique', 'id', true, null, null);
         // validators
     } // initialize()
 

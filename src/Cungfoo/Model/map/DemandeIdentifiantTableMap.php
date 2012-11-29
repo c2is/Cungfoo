@@ -42,32 +42,32 @@ class DemandeIdentifiantTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('SOCIETE_NOM', 'SocieteNom', 'VARCHAR', true, 255, null);
-        $this->addColumn('SOCIETE_ADRESSE_1', 'SocieteAdresse1', 'VARCHAR', true, 255, null);
-        $this->addColumn('SOCIETE_ADRESSE_2', 'SocieteAdresse2', 'VARCHAR', false, 255, null);
-        $this->addColumn('SOCIETE_ADRESSE_3', 'SocieteAdresse3', 'VARCHAR', false, 255, null);
-        $this->addColumn('SOCIETE_ADRESSE_4', 'SocieteAdresse4', 'VARCHAR', false, 255, null);
-        $this->addColumn('SOCIETE_TELEPHONE', 'SocieteTelephone', 'VARCHAR', false, 255, null);
-        $this->addColumn('SOCIETE_FAX', 'SocieteFax', 'VARCHAR', false, 255, null);
-        $this->addColumn('CONTACT_PRENOM', 'ContactPrenom', 'VARCHAR', true, 255, null);
-        $this->addColumn('CONTACT_NOM', 'ContactNom', 'VARCHAR', true, 255, null);
-        $this->addColumn('CONTACT_TELEPHONE', 'ContactTelephone', 'VARCHAR', false, 255, null);
-        $this->addColumn('CONTACT_MAIL', 'ContactMail', 'VARCHAR', true, 255, null);
-        $this->addColumn('PERMANENCE', 'Permanence', 'VARCHAR', false, 255, null);
-        $this->addColumn('PERMANENCE_MATIN_DE', 'PermanenceMatinDe', 'VARCHAR', false, 255, null);
-        $this->addColumn('PERMANENCE_MATIN_A', 'PermanenceMatinA', 'VARCHAR', false, 255, null);
-        $this->addColumn('PERMANENCE_APRES_MIDI_DE', 'PermanenceApresMidiDe', 'VARCHAR', false, 255, null);
-        $this->addColumn('PERMANENCE_APRES_MIDI_A', 'PermanenceApresMidiA', 'VARCHAR', false, 255, null);
-        $this->addColumn('CLIENT_VC', 'ClientVc', 'BOOLEAN', false, 1, null);
-        $this->addColumn('CLIENT_VC_CODE', 'ClientVcCode', 'VARCHAR', false, 255, null);
-        $this->addColumn('CLIENT_VD', 'ClientVd', 'BOOLEAN', false, 1, null);
-        $this->addColumn('CLIENT_VD_CODE', 'ClientVdCode', 'VARCHAR', false, 255, null);
-        $this->addColumn('BROCHURE', 'Brochure', 'BOOLEAN', false, 1, null);
-        $this->addColumn('IDENTIFIANT', 'Identifiant', 'BOOLEAN', false, 1, null);
-        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('societe_nom', 'SocieteNom', 'VARCHAR', true, 255, null);
+        $this->addColumn('societe_adresse_1', 'SocieteAdresse1', 'VARCHAR', true, 255, null);
+        $this->addColumn('societe_adresse_2', 'SocieteAdresse2', 'VARCHAR', false, 255, null);
+        $this->addColumn('societe_adresse_3', 'SocieteAdresse3', 'VARCHAR', false, 255, null);
+        $this->addColumn('societe_adresse_4', 'SocieteAdresse4', 'VARCHAR', false, 255, null);
+        $this->addColumn('societe_telephone', 'SocieteTelephone', 'VARCHAR', false, 255, null);
+        $this->addColumn('societe_fax', 'SocieteFax', 'VARCHAR', false, 255, null);
+        $this->addColumn('contact_prenom', 'ContactPrenom', 'VARCHAR', true, 255, null);
+        $this->addColumn('contact_nom', 'ContactNom', 'VARCHAR', true, 255, null);
+        $this->addColumn('contact_telephone', 'ContactTelephone', 'VARCHAR', false, 255, null);
+        $this->addColumn('contact_mail', 'ContactMail', 'VARCHAR', true, 255, null);
+        $this->addColumn('permanence', 'Permanence', 'VARCHAR', false, 255, null);
+        $this->addColumn('permanence_matin_de', 'PermanenceMatinDe', 'VARCHAR', false, 255, null);
+        $this->addColumn('permanence_matin_a', 'PermanenceMatinA', 'VARCHAR', false, 255, null);
+        $this->addColumn('permanence_apres_midi_de', 'PermanenceApresMidiDe', 'VARCHAR', false, 255, null);
+        $this->addColumn('permanence_apres_midi_a', 'PermanenceApresMidiA', 'VARCHAR', false, 255, null);
+        $this->addColumn('client_vc', 'ClientVc', 'BOOLEAN', false, 1, null);
+        $this->addColumn('client_vc_code', 'ClientVcCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('client_vd', 'ClientVd', 'BOOLEAN', false, 1, null);
+        $this->addColumn('client_vd_code', 'ClientVdCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('brochure', 'Brochure', 'BOOLEAN', false, 1, null);
+        $this->addColumn('identifiant', 'Identifiant', 'BOOLEAN', false, 1, null);
+        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -87,8 +87,21 @@ class DemandeIdentifiantTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/demandes-identifiant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
+            'timestampable' =>  array (
+  'create_column' => 'created_at',
+  'update_column' => 'updated_at',
+  'disable_updated_at' => 'false',
+),
+            'active' =>  array (
+  'active_column' => 'active',
+),
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/demandes-identifiant',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => NULL,
+),
         );
     } // getBehaviors()
 

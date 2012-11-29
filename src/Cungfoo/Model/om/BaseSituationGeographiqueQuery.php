@@ -22,19 +22,19 @@ use Cungfoo\Model\SituationGeographiqueQuery;
 /**
  * Base class that represents a query for the 'situation_geographique' table.
  *
- * 
+ *
  *
  * @method SituationGeographiqueQuery orderById($order = Criteria::ASC) Order by the id column
  * @method SituationGeographiqueQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method SituationGeographiqueQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method SituationGeographiqueQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method SituationGeographiqueQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method SituationGeographiqueQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method SituationGeographiqueQuery groupById() Group by the id column
  * @method SituationGeographiqueQuery groupByCode() Group by the code column
  * @method SituationGeographiqueQuery groupByCreatedAt() Group by the created_at column
  * @method SituationGeographiqueQuery groupByUpdatedAt() Group by the updated_at column
- * @method SituationGeographiqueQuery groupByEnabled() Group by the enabled column
+ * @method SituationGeographiqueQuery groupByActive() Group by the active column
  *
  * @method SituationGeographiqueQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method SituationGeographiqueQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -54,13 +54,13 @@ use Cungfoo\Model\SituationGeographiqueQuery;
  * @method SituationGeographique findOneByCode(string $code) Return the first SituationGeographique filtered by the code column
  * @method SituationGeographique findOneByCreatedAt(string $created_at) Return the first SituationGeographique filtered by the created_at column
  * @method SituationGeographique findOneByUpdatedAt(string $updated_at) Return the first SituationGeographique filtered by the updated_at column
- * @method SituationGeographique findOneByEnabled(boolean $enabled) Return the first SituationGeographique filtered by the enabled column
+ * @method SituationGeographique findOneByActive(boolean $active) Return the first SituationGeographique filtered by the active column
  *
  * @method array findById(int $id) Return SituationGeographique objects filtered by the id column
  * @method array findByCode(string $code) Return SituationGeographique objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return SituationGeographique objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return SituationGeographique objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return SituationGeographique objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return SituationGeographique objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -111,7 +111,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   SituationGeographique|SituationGeographique[]|mixed the result, formatted by the current formatter
@@ -164,9 +164,9 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `situation_geographique` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `situation_geographique` WHERE `id` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -396,15 +396,15 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -413,13 +413,13 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
      *
      * @return SituationGeographiqueQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(SituationGeographiquePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(SituationGeographiquePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -604,7 +604,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -616,7 +616,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(SituationGeographiquePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -626,7 +626,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(SituationGeographiquePeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -636,7 +636,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(SituationGeographiquePeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -648,7 +648,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(SituationGeographiquePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -658,7 +658,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(SituationGeographiquePeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -668,8 +668,22 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(SituationGeographiquePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -682,12 +696,12 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'SituationGeographiqueI18n';
-    
+
         return $this
             ->joinSituationGeographiqueI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -703,10 +717,10 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('SituationGeographiqueI18n');
         $this->with['SituationGeographiqueI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

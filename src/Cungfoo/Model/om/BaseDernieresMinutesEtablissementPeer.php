@@ -18,7 +18,7 @@ use Cungfoo\Model\map\DernieresMinutesEtablissementTableMap;
 /**
  * Base static class for performing query and update operations on the 'dernieres_minutes_etablissement' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -46,11 +46,11 @@ abstract class BaseDernieresMinutesEtablissementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the DERNIERES_MINUTES_ID field */
-    const DERNIERES_MINUTES_ID = 'dernieres_minutes_etablissement.DERNIERES_MINUTES_ID';
+    /** the column name for the dernieres_minutes_id field */
+    const DERNIERES_MINUTES_ID = 'dernieres_minutes_etablissement.dernieres_minutes_id';
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'dernieres_minutes_etablissement.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'dernieres_minutes_etablissement.etablissement_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseDernieresMinutesEtablissementPeer
             $criteria->addSelectColumn(DernieresMinutesEtablissementPeer::DERNIERES_MINUTES_ID);
             $criteria->addSelectColumn(DernieresMinutesEtablissementPeer::ETABLISSEMENT_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.DERNIERES_MINUTES_ID');
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
+            $criteria->addSelectColumn($alias . '.dernieres_minutes_id');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
         }
     }
 
@@ -352,7 +352,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -362,7 +362,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
     {
         DernieresMinutesEtablissementPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to dernieres_minutes_etablissement
      * by a foreign key with ON DELETE CASCADE
@@ -405,7 +405,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
 
         return array((int) $row[$startcol], (int) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -416,7 +416,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = DernieresMinutesEtablissementPeer::getOMClass();
         // populate the object(s)
@@ -882,7 +882,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
         if ($con === null) {
             $con = Propel::getConnection(DernieresMinutesEtablissementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-    
+
         $criteria->addJoin(DernieresMinutesEtablissementPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -933,7 +933,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
         if ($con === null) {
             $con = Propel::getConnection(DernieresMinutesEtablissementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-    
+
         $criteria->addJoin(DernieresMinutesEtablissementPeer::DERNIERES_MINUTES_ID, DernieresMinutesPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -1002,7 +1002,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
                 if ($key2 !== null) {
                     $obj2 = EtablissementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-    
+
                         $cls = EtablissementPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1076,7 +1076,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
                 if ($key2 !== null) {
                     $obj2 = DernieresMinutesPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-    
+
                         $cls = DernieresMinutesPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1303,7 +1303,7 @@ abstract class BaseDernieresMinutesEtablissementPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             DernieresMinutesEtablissementPeer::clearRelatedInstancePool();
             $con->commit();

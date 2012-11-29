@@ -17,7 +17,7 @@ use Cungfoo\Model\map\JobLogTableMap;
 /**
  * Base static class for performing query and update operations on the 'job_log' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,25 +45,25 @@ abstract class BaseJobLogPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'job_log.ID';
+    /** the column name for the id field */
+    const ID = 'job_log.id';
 
-    /** the column name for the JOB_ID field */
-    const JOB_ID = 'job_log.JOB_ID';
+    /** the column name for the job_id field */
+    const JOB_ID = 'job_log.job_id';
 
-    /** the column name for the LEVEL field */
-    const LEVEL = 'job_log.LEVEL';
+    /** the column name for the level field */
+    const LEVEL = 'job_log.level';
 
-    /** the column name for the MESSAGE field */
-    const MESSAGE = 'job_log.MESSAGE';
+    /** the column name for the message field */
+    const MESSAGE = 'job_log.message';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'job_log.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'job_log.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'job_log.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'job_log.updated_at';
 
-    /** The enumerated values for the LEVEL field */
+    /** The enumerated values for the level field */
     const LEVEL_ERROR = 'error';
     const LEVEL_INFO = 'info';
 
@@ -218,12 +218,12 @@ abstract class BaseJobLogPeer
             $criteria->addSelectColumn(JobLogPeer::CREATED_AT);
             $criteria->addSelectColumn(JobLogPeer::UPDATED_AT);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.JOB_ID');
-            $criteria->addSelectColumn($alias . '.LEVEL');
-            $criteria->addSelectColumn($alias . '.MESSAGE');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.job_id');
+            $criteria->addSelectColumn($alias . '.level');
+            $criteria->addSelectColumn($alias . '.message');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
         }
     }
 
@@ -406,7 +406,7 @@ abstract class BaseJobLogPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -416,7 +416,7 @@ abstract class BaseJobLogPeer
     {
         JobLogPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to job_log
      * by a foreign key with ON DELETE CASCADE
@@ -459,7 +459,7 @@ abstract class BaseJobLogPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -470,7 +470,7 @@ abstract class BaseJobLogPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = JobLogPeer::getOMClass();
         // populate the object(s)
@@ -952,7 +952,7 @@ abstract class BaseJobLogPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             JobLogPeer::clearRelatedInstancePool();
             $con->commit();

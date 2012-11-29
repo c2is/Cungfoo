@@ -43,13 +43,14 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $sitesAVisiter = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
-            $nbSitesAVisiter = PointInteretPeer::getCountForRegion($region);
-            $events        = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
-            $campings      = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
+            $sitesAVisiter      = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
+            $nbSitesAVisiter    = PointInteretPeer::getCountForRegion($region);
+            $events             = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
+            $campings           = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
 
+            $nbCampinsg = count($campings);
             $listData = array();
-            for($i = 0; $i < 5; $i++)
+            for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
             {
                 $listData[] = $campings[$i];
             }
@@ -59,15 +60,17 @@ class DestinationRegionController implements ControllerProviderInterface
                 ->setData($listData)
                 ->setType(CatalogueListing::CATALOGUE)
             ;
+            $listContent = $list->process();
 
             return $app['twig']->render('Destination/region.twig', array(
                 'locale'            => $locale,
-                'region'            => $region,
+                'item'              => $region,
                 'sitesAVisiter'     => $sitesAVisiter,
                 'nbSitesAVisiter'   => $nbSitesAVisiter,
                 'events'            => $events,
                 'campings'          => $campings,
-                'list'              => $list->process(),
+                'list'              => $listContent,
+                'firstEtab'         => reset($listContent['element']),
                 'searchForm'        => $searchEngine->getView(),
             ));
         })

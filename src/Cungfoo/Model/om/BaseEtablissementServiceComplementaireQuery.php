@@ -21,7 +21,7 @@ use Cungfoo\Model\ServiceComplementaire;
 /**
  * Base class that represents a query for the 'etablissement_service_complementaire' table.
  *
- * 
+ *
  *
  * @method EtablissementServiceComplementaireQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementServiceComplementaireQuery orderByServiceComplementaireId($order = Criteria::ASC) Order by the service_complementaire_id column
@@ -99,7 +99,7 @@ abstract class BaseEtablissementServiceComplementaireQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$etablissement_id, $service_complementaire_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -139,10 +139,10 @@ abstract class BaseEtablissementServiceComplementaireQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `SERVICE_COMPLEMENTAIRE_ID` FROM `etablissement_service_complementaire` WHERE `ETABLISSEMENT_ID` = :p0 AND `SERVICE_COMPLEMENTAIRE_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `service_complementaire_id` FROM `etablissement_service_complementaire` WHERE `etablissement_id` = :p0 AND `service_complementaire_id` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

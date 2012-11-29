@@ -16,7 +16,7 @@ use Cungfoo\Model\map\DomaineTableMap;
 /**
  * Base static class for performing query and update operations on the 'domaine' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -44,14 +44,14 @@ abstract class BaseDomainePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'domaine.ID';
+    /** the column name for the id field */
+    const ID = 'domaine.id';
 
-    /** the column name for the NAME field */
-    const NAME = 'domaine.NAME';
+    /** the column name for the name field */
+    const NAME = 'domaine.name';
 
-    /** the column name for the ORDER field */
-    const ORDER = 'domaine.ORDER';
+    /** the column name for the order field */
+    const ORDER = 'domaine.order';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -170,9 +170,9 @@ abstract class BaseDomainePeer
             $criteria->addSelectColumn(DomainePeer::NAME);
             $criteria->addSelectColumn(DomainePeer::ORDER);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.ORDER');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.order');
         }
     }
 
@@ -355,7 +355,7 @@ abstract class BaseDomainePeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -365,7 +365,7 @@ abstract class BaseDomainePeer
     {
         DomainePeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to domaine
      * by a foreign key with ON DELETE CASCADE
@@ -408,7 +408,7 @@ abstract class BaseDomainePeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -419,7 +419,7 @@ abstract class BaseDomainePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = DomainePeer::getOMClass();
         // populate the object(s)
@@ -663,7 +663,7 @@ abstract class BaseDomainePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             DomainePeer::clearRelatedInstancePool();
             $con->commit();

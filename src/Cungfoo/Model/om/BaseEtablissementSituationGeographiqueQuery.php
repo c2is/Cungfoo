@@ -21,7 +21,7 @@ use Cungfoo\Model\SituationGeographique;
 /**
  * Base class that represents a query for the 'etablissement_situation_geographique' table.
  *
- * 
+ *
  *
  * @method EtablissementSituationGeographiqueQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementSituationGeographiqueQuery orderBySituationGeographiqueId($order = Criteria::ASC) Order by the situation_geographique_id column
@@ -99,7 +99,7 @@ abstract class BaseEtablissementSituationGeographiqueQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$etablissement_id, $situation_geographique_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -139,10 +139,10 @@ abstract class BaseEtablissementSituationGeographiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `SITUATION_GEOGRAPHIQUE_ID` FROM `etablissement_situation_geographique` WHERE `ETABLISSEMENT_ID` = :p0 AND `SITUATION_GEOGRAPHIQUE_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `situation_geographique_id` FROM `etablissement_situation_geographique` WHERE `etablissement_id` = :p0 AND `situation_geographique_id` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

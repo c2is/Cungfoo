@@ -22,7 +22,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'etablissement_destination' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Get the [etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Get the [destination_id] column value.
-     * 
+     *
      * @return int
      */
     public function getDestinationId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Set the value of [etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementDestination The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
     /**
      * Set the value of [destination_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementDestination The current object (for fluent API support)
      */
@@ -431,10 +431,10 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementDestinationPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementDestinationPeer::DESTINATION_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`DESTINATION_ID`';
+            $modifiedColumns[':p' . $index++]  = '`destination_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':						
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`DESTINATION_ID`':						
+                    case '`destination_id`':
                         $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseEtablissementDestination extends BaseObject implements Persis
      * Get the associated Destination object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Destination The associated Destination object.
      * @throws PropelException
      */
-    public function getDestination(PropelPDO $con = null)
+    public function getDestination(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aDestination === null && ($this->destination_id !== null)) {
+        if ($this->aDestination === null && ($this->destination_id !== null) && $doQuery) {
             $this->aDestination = DestinationQuery::create()->findPk($this->destination_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

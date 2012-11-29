@@ -17,7 +17,7 @@ use Cungfoo\Model\map\VilleI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'ville_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,20 +45,20 @@ abstract class BaseVilleI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'ville_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'ville_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'ville_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'ville_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'ville_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'ville_i18n.name';
 
-    /** the column name for the INTRODUCTION field */
-    const INTRODUCTION = 'ville_i18n.INTRODUCTION';
+    /** the column name for the introduction field */
+    const INTRODUCTION = 'ville_i18n.introduction';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'ville_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'ville_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseVilleI18nPeer
             $criteria->addSelectColumn(VilleI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(VilleI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.INTRODUCTION');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.introduction');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 
@@ -366,7 +366,7 @@ abstract class BaseVilleI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -376,7 +376,7 @@ abstract class BaseVilleI18nPeer
     {
         VilleI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to ville_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -419,7 +419,7 @@ abstract class BaseVilleI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -430,7 +430,7 @@ abstract class BaseVilleI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = VilleI18nPeer::getOMClass();
         // populate the object(s)
@@ -924,7 +924,7 @@ abstract class BaseVilleI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             VilleI18nPeer::clearRelatedInstancePool();
             $con->commit();

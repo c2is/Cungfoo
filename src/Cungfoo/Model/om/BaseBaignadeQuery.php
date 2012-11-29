@@ -22,19 +22,19 @@ use Cungfoo\Model\EtablissementBaignade;
 /**
  * Base class that represents a query for the 'baignade' table.
  *
- * 
+ *
  *
  * @method BaignadeQuery orderById($order = Criteria::ASC) Order by the id column
  * @method BaignadeQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method BaignadeQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method BaignadeQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method BaignadeQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method BaignadeQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method BaignadeQuery groupById() Group by the id column
  * @method BaignadeQuery groupByCode() Group by the code column
  * @method BaignadeQuery groupByCreatedAt() Group by the created_at column
  * @method BaignadeQuery groupByUpdatedAt() Group by the updated_at column
- * @method BaignadeQuery groupByEnabled() Group by the enabled column
+ * @method BaignadeQuery groupByActive() Group by the active column
  *
  * @method BaignadeQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BaignadeQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -54,13 +54,13 @@ use Cungfoo\Model\EtablissementBaignade;
  * @method Baignade findOneByCode(string $code) Return the first Baignade filtered by the code column
  * @method Baignade findOneByCreatedAt(string $created_at) Return the first Baignade filtered by the created_at column
  * @method Baignade findOneByUpdatedAt(string $updated_at) Return the first Baignade filtered by the updated_at column
- * @method Baignade findOneByEnabled(boolean $enabled) Return the first Baignade filtered by the enabled column
+ * @method Baignade findOneByActive(boolean $active) Return the first Baignade filtered by the active column
  *
  * @method array findById(int $id) Return Baignade objects filtered by the id column
  * @method array findByCode(string $code) Return Baignade objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return Baignade objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Baignade objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Baignade objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Baignade objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -111,7 +111,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Baignade|Baignade[]|mixed the result, formatted by the current formatter
@@ -164,9 +164,9 @@ abstract class BaseBaignadeQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `baignade` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `baignade` WHERE `id` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -396,15 +396,15 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -413,13 +413,13 @@ abstract class BaseBaignadeQuery extends ModelCriteria
      *
      * @return BaignadeQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(BaignadePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(BaignadePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -604,7 +604,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -616,7 +616,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addUsingAlias(BaignadePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -626,7 +626,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(BaignadePeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -636,7 +636,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(BaignadePeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -648,7 +648,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addUsingAlias(BaignadePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -658,7 +658,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(BaignadePeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -668,8 +668,22 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(BaignadePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -682,12 +696,12 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'BaignadeI18n';
-    
+
         return $this
             ->joinBaignadeI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -703,10 +717,10 @@ abstract class BaseBaignadeQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('BaignadeI18n');
         $this->with['BaignadeI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

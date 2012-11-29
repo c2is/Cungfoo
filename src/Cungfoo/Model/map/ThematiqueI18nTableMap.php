@@ -42,9 +42,9 @@ class ThematiqueI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'thematique', 'ID', true, null, null);
-        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'thematique', 'id', true, null, null);
+        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         // validators
     } // initialize()
 

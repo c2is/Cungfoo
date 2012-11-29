@@ -30,7 +30,7 @@ use Cungfoo\Model\TypeHebergementQuery;
 /**
  * Base class that represents a row from the 'type_hebergement' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -110,11 +110,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        CategoryTypeHebergement
@@ -153,13 +153,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[TypeHebergementI18n]
@@ -192,7 +192,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -207,7 +207,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -217,7 +217,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return string
      */
     public function getCode()
@@ -227,7 +227,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [category_type_hebergement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getCategoryTypeHebergementId()
@@ -237,7 +237,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [nombre_chambre] column value.
-     * 
+     *
      * @return int
      */
     public function getNombreChambre()
@@ -247,7 +247,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [nombre_place] column value.
-     * 
+     *
      * @return int
      */
     public function getNombrePlace()
@@ -257,7 +257,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [image_hebergement_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImageHebergementPath()
@@ -267,7 +267,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [image_composition_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImageCompositionPath()
@@ -277,7 +277,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -294,27 +294,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -331,37 +334,40 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -382,7 +388,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -403,7 +409,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [category_type_hebergement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -428,7 +434,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [nombre_chambre] column.
-     * 
+     *
      * @param int $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -449,7 +455,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [nombre_place] column.
-     * 
+     *
      * @param int $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -470,7 +476,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_hebergement_path] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -491,7 +497,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_composition_path] column.
-     * 
+     *
      * @param string $v new value
      * @return TypeHebergement The current object (for fluent API support)
      */
@@ -512,7 +518,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return TypeHebergement The current object (for fluent API support)
@@ -535,7 +541,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return TypeHebergement The current object (for fluent API support)
@@ -557,16 +563,16 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return TypeHebergement The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -576,14 +582,14 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = TypeHebergementPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -595,7 +601,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -630,7 +636,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->image_composition_path = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->created_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->updated_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->enabled = ($row[$startcol + 9] !== null) ? (boolean) $row[$startcol + 9] : null;
+            $this->active = ($row[$startcol + 9] !== null) ? (boolean) $row[$startcol + 9] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -888,7 +894,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             if ($this->collEtablissementTypeHebergements !== null) {
                 foreach ($this->collEtablissementTypeHebergements as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -905,7 +911,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             if ($this->collTypeHebergementI18ns !== null) {
                 foreach ($this->collTypeHebergementI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -938,34 +944,34 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TypeHebergementPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE`';
+            $modifiedColumns[':p' . $index++]  = '`code`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`CATEGORY_TYPE_HEBERGEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`category_type_hebergement_id`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) {
-            $modifiedColumns[':p' . $index++]  = '`NOMBRE_CHAMBRE`';
+            $modifiedColumns[':p' . $index++]  = '`nombre_chambre`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) {
-            $modifiedColumns[':p' . $index++]  = '`NOMBRE_PLACE`';
+            $modifiedColumns[':p' . $index++]  = '`nombre_place`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_HEBERGEMENT_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_hebergement_path`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_COMPOSITION_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_composition_path`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(TypeHebergementPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
-        if ($this->isColumnModified(TypeHebergementPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(TypeHebergementPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -978,35 +984,35 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`CATEGORY_TYPE_HEBERGEMENT_ID`':						
+                    case '`category_type_hebergement_id`':
                         $stmt->bindValue($identifier, $this->category_type_hebergement_id, PDO::PARAM_INT);
                         break;
-                    case '`NOMBRE_CHAMBRE`':						
+                    case '`nombre_chambre`':
                         $stmt->bindValue($identifier, $this->nombre_chambre, PDO::PARAM_INT);
                         break;
-                    case '`NOMBRE_PLACE`':						
+                    case '`nombre_place`':
                         $stmt->bindValue($identifier, $this->nombre_place, PDO::PARAM_INT);
                         break;
-                    case '`IMAGE_HEBERGEMENT_PATH`':						
+                    case '`image_hebergement_path`':
                         $stmt->bindValue($identifier, $this->image_hebergement_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_COMPOSITION_PATH`':						
+                    case '`image_composition_path`':
                         $stmt->bindValue($identifier, $this->image_composition_path, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1076,11 +1082,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1198,7 +1204,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 9:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1238,7 +1244,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $keys[6] => $this->getImageCompositionPath(),
             $keys[7] => $this->getCreatedAt(),
             $keys[8] => $this->getUpdatedAt(),
-            $keys[9] => $this->getEnabled(),
+            $keys[9] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -1312,7 +1318,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 9:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1347,7 +1353,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (array_key_exists($keys[6], $arr)) $this->setImageCompositionPath($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setCreatedAt($arr[$keys[7]]);
         if (array_key_exists($keys[8], $arr)) $this->setUpdatedAt($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setEnabled($arr[$keys[9]]);
+        if (array_key_exists($keys[9], $arr)) $this->setActive($arr[$keys[9]]);
     }
 
     /**
@@ -1368,7 +1374,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $this->image_composition_path);
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) $criteria->add(TypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TypeHebergementPeer::UPDATED_AT)) $criteria->add(TypeHebergementPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(TypeHebergementPeer::ENABLED)) $criteria->add(TypeHebergementPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(TypeHebergementPeer::ACTIVE)) $criteria->add(TypeHebergementPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1440,7 +1446,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $copyObj->setImageCompositionPath($this->getImageCompositionPath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1543,12 +1549,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * Get the associated CategoryTypeHebergement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return CategoryTypeHebergement The associated CategoryTypeHebergement object.
      * @throws PropelException
      */
-    public function getCategoryTypeHebergement(PropelPDO $con = null)
+    public function getCategoryTypeHebergement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aCategoryTypeHebergement === null && ($this->category_type_hebergement_id !== null)) {
+        if ($this->aCategoryTypeHebergement === null && ($this->category_type_hebergement_id !== null) && $doQuery) {
             $this->aCategoryTypeHebergement = CategoryTypeHebergementQuery::create()->findPk($this->category_type_hebergement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1587,13 +1594,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return TypeHebergement The current object (for fluent API support)
      * @see        addEtablissementTypeHebergements()
      */
     public function clearEtablissementTypeHebergements()
     {
         $this->collEtablissementTypeHebergements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementTypeHebergementsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1692,6 +1701,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissementTypeHebergements A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function setEtablissementTypeHebergements(PropelCollection $etablissementTypeHebergements, PropelPDO $con = null)
     {
@@ -1708,6 +1718,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
         $this->collEtablissementTypeHebergements = $etablissementTypeHebergements;
         $this->collEtablissementTypeHebergementsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1725,22 +1737,22 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (null === $this->collEtablissementTypeHebergements || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEtablissementTypeHebergements) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getEtablissementTypeHebergements());
-                }
-                $query = EtablissementTypeHebergementQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByTypeHebergement($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collEtablissementTypeHebergements);
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementTypeHebergements());
+            }
+            $query = EtablissementTypeHebergementQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTypeHebergement($this)
+                ->count($con);
         }
+
+        return count($this->collEtablissementTypeHebergements);
     }
 
     /**
@@ -1774,6 +1786,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * @param	EtablissementTypeHebergement $etablissementTypeHebergement The etablissementTypeHebergement object to remove.
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function removeEtablissementTypeHebergement($etablissementTypeHebergement)
     {
@@ -1786,6 +1799,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->etablissementTypeHebergementsScheduledForDeletion[]= $etablissementTypeHebergement;
             $etablissementTypeHebergement->setTypeHebergement(null);
         }
+
+        return $this;
     }
 
 
@@ -1819,13 +1834,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return TypeHebergement The current object (for fluent API support)
      * @see        addTypeHebergementI18ns()
      */
     public function clearTypeHebergementI18ns()
     {
         $this->collTypeHebergementI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collTypeHebergementI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1924,6 +1941,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      *
      * @param PropelCollection $typeHebergementI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function setTypeHebergementI18ns(PropelCollection $typeHebergementI18ns, PropelPDO $con = null)
     {
@@ -1940,6 +1958,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
         $this->collTypeHebergementI18ns = $typeHebergementI18ns;
         $this->collTypeHebergementI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1957,22 +1977,22 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (null === $this->collTypeHebergementI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collTypeHebergementI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getTypeHebergementI18ns());
-                }
-                $query = TypeHebergementI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByTypeHebergement($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collTypeHebergementI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getTypeHebergementI18ns());
+            }
+            $query = TypeHebergementI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTypeHebergement($this)
+                ->count($con);
         }
+
+        return count($this->collTypeHebergementI18ns);
     }
 
     /**
@@ -2010,6 +2030,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     /**
      * @param	TypeHebergementI18n $typeHebergementI18n The typeHebergementI18n object to remove.
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function removeTypeHebergementI18n($typeHebergementI18n)
     {
@@ -2022,6 +2043,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->typeHebergementI18nsScheduledForDeletion[]= $typeHebergementI18n;
             $typeHebergementI18n->setTypeHebergement(null);
         }
+
+        return $this;
     }
 
     /**
@@ -2030,13 +2053,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return TypeHebergement The current object (for fluent API support)
      * @see        addEtablissements()
      */
     public function clearEtablissements()
     {
         $this->collEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -2097,6 +2122,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function setEtablissements(PropelCollection $etablissements, PropelPDO $con = null)
     {
@@ -2112,6 +2138,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         }
 
         $this->collEtablissements = $etablissements;
+
+        return $this;
     }
 
     /**
@@ -2149,7 +2177,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * through the etablissement_type_hebergement cross reference table.
      *
      * @param  Etablissement $etablissement The EtablissementTypeHebergement object to relate
-     * @return void
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function addEtablissement(Etablissement $etablissement)
     {
@@ -2161,6 +2189,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             $this->collEtablissements[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**
@@ -2178,7 +2208,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * through the etablissement_type_hebergement cross reference table.
      *
      * @param Etablissement $etablissement The EtablissementTypeHebergement object to relate
-     * @return void
+     * @return TypeHebergement The current object (for fluent API support)
      */
     public function removeEtablissement(Etablissement $etablissement)
     {
@@ -2190,6 +2220,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**
@@ -2206,7 +2238,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $this->image_composition_path = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2285,7 +2317,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2294,12 +2326,24 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = TypeHebergementPeer::UPDATED_AT;
-    
+
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -2310,10 +2354,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -2323,7 +2367,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -2338,7 +2382,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 foreach ($this->collTypeHebergementI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -2354,10 +2398,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             $this->addTypeHebergementI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -2382,10 +2426,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -2396,129 +2440,129 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [name] column value.
-         * 
+         *
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-    
-    
+
+
         /**
          * Set the value of [name] column.
-         * 
+         *
          * @param string $v new value
          * @return TypeHebergementI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [surface] column value.
-         * 
+         *
          * @return string
          */
         public function getSurface()
         {
         return $this->getCurrentTranslation()->getSurface();
     }
-    
-    
+
+
         /**
          * Set the value of [surface] column.
-         * 
+         *
          * @param string $v new value
          * @return TypeHebergementI18n The current object (for fluent API support)
          */
         public function setSurface($v)
         {    $this->getCurrentTranslation()->setSurface($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [type_terrasse] column value.
-         * 
+         *
          * @return string
          */
         public function getTypeTerrasse()
         {
         return $this->getCurrentTranslation()->getTypeTerrasse();
     }
-    
-    
+
+
         /**
          * Set the value of [type_terrasse] column.
-         * 
+         *
          * @param string $v new value
          * @return TypeHebergementI18n The current object (for fluent API support)
          */
         public function setTypeTerrasse($v)
         {    $this->getCurrentTranslation()->setTypeTerrasse($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [description] column value.
-         * 
+         *
          * @return string
          */
         public function getDescription()
         {
         return $this->getCurrentTranslation()->getDescription();
     }
-    
-    
+
+
         /**
          * Set the value of [description] column.
-         * 
+         *
          * @param string $v new value
          * @return TypeHebergementI18n The current object (for fluent API support)
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [composition] column value.
-         * 
+         *
          * @return string
          */
         public function getComposition()
         {
         return $this->getCurrentTranslation()->getComposition();
     }
-    
-    
+
+
         /**
          * Set the value of [composition] column.
-         * 
+         *
          * @param string $v new value
          * @return TypeHebergementI18n The current object (for fluent API support)
          */
         public function setComposition($v)
         {    $this->getCurrentTranslation()->setComposition($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2533,19 +2577,19 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
         }
-    
+
         $this->uploadImageHebergementPath($form);
-        
+
         if (!$form['image_composition_path_deleted']->getData())
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
         }
-    
+
         $this->uploadImageCompositionPath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2553,15 +2597,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return 'uploads/type_hebergements';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2575,7 +2619,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->setImageHebergementPath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

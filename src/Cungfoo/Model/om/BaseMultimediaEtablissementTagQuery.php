@@ -21,7 +21,7 @@ use Cungfoo\Model\Tag;
 /**
  * Base class that represents a query for the 'multimedia_etablissement_tag' table.
  *
- * 
+ *
  *
  * @method MultimediaEtablissementTagQuery orderByMultimediaEtablissementId($order = Criteria::ASC) Order by the multimedia_etablissement_id column
  * @method MultimediaEtablissementTagQuery orderByTagId($order = Criteria::ASC) Order by the tag_id column
@@ -99,7 +99,7 @@ abstract class BaseMultimediaEtablissementTagQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$multimedia_etablissement_id, $tag_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -139,10 +139,10 @@ abstract class BaseMultimediaEtablissementTagQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `MULTIMEDIA_ETABLISSEMENT_ID`, `TAG_ID` FROM `multimedia_etablissement_tag` WHERE `MULTIMEDIA_ETABLISSEMENT_ID` = :p0 AND `TAG_ID` = :p1';
+        $sql = 'SELECT `multimedia_etablissement_id`, `tag_id` FROM `multimedia_etablissement_tag` WHERE `multimedia_etablissement_id` = :p0 AND `tag_id` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

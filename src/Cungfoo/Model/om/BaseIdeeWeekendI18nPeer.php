@@ -17,7 +17,7 @@ use Cungfoo\Model\map\IdeeWeekendI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'idee_weekend_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,14 +45,14 @@ abstract class BaseIdeeWeekendI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'idee_weekend_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'idee_weekend_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'idee_weekend_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'idee_weekend_i18n.locale';
 
-    /** the column name for the TITRE field */
-    const TITRE = 'idee_weekend_i18n.TITRE';
+    /** the column name for the titre field */
+    const TITRE = 'idee_weekend_i18n.titre';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -171,9 +171,9 @@ abstract class BaseIdeeWeekendI18nPeer
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LOCALE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::TITRE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.TITRE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.titre');
         }
     }
 
@@ -356,7 +356,7 @@ abstract class BaseIdeeWeekendI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -366,7 +366,7 @@ abstract class BaseIdeeWeekendI18nPeer
     {
         IdeeWeekendI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to idee_weekend_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -409,7 +409,7 @@ abstract class BaseIdeeWeekendI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -420,7 +420,7 @@ abstract class BaseIdeeWeekendI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = IdeeWeekendI18nPeer::getOMClass();
         // populate the object(s)
@@ -914,7 +914,7 @@ abstract class BaseIdeeWeekendI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             IdeeWeekendI18nPeer::clearRelatedInstancePool();
             $con->commit();

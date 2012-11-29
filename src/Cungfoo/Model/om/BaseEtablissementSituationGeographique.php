@@ -22,7 +22,7 @@ use Cungfoo\Model\SituationGeographiqueQuery;
 /**
  * Base class that represents a row from the 'etablissement_situation_geographique' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
 
     /**
      * Get the [etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
 
     /**
      * Get the [situation_geographique_id] column value.
-     * 
+     *
      * @return int
      */
     public function getSituationGeographiqueId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
 
     /**
      * Set the value of [etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementSituationGeographique The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
 
     /**
      * Set the value of [situation_geographique_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementSituationGeographique The current object (for fluent API support)
      */
@@ -431,10 +431,10 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementSituationGeographiquePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementSituationGeographiquePeer::SITUATION_GEOGRAPHIQUE_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`SITUATION_GEOGRAPHIQUE_ID`';
+            $modifiedColumns[':p' . $index++]  = '`situation_geographique_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':						
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`SITUATION_GEOGRAPHIQUE_ID`':						
+                    case '`situation_geographique_id`':
                         $stmt->bindValue($identifier, $this->situation_geographique_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseEtablissementSituationGeographique extends BaseObject impleme
      * Get the associated SituationGeographique object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return SituationGeographique The associated SituationGeographique object.
      * @throws PropelException
      */
-    public function getSituationGeographique(PropelPDO $con = null)
+    public function getSituationGeographique(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aSituationGeographique === null && ($this->situation_geographique_id !== null)) {
+        if ($this->aSituationGeographique === null && ($this->situation_geographique_id !== null) && $doQuery) {
             $this->aSituationGeographique = SituationGeographiqueQuery::create()->findPk($this->situation_geographique_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -16,7 +16,7 @@ use Cungfoo\Model\map\DemandeIdentifiantTableMap;
 /**
  * Base static class for performing query and update operations on the 'demande_identifiant' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -44,83 +44,83 @@ abstract class BaseDemandeIdentifiantPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 26;
 
-    /** the column name for the ID field */
-    const ID = 'demande_identifiant.ID';
+    /** the column name for the id field */
+    const ID = 'demande_identifiant.id';
 
-    /** the column name for the SOCIETE_NOM field */
-    const SOCIETE_NOM = 'demande_identifiant.SOCIETE_NOM';
+    /** the column name for the societe_nom field */
+    const SOCIETE_NOM = 'demande_identifiant.societe_nom';
 
-    /** the column name for the SOCIETE_ADRESSE_1 field */
-    const SOCIETE_ADRESSE_1 = 'demande_identifiant.SOCIETE_ADRESSE_1';
+    /** the column name for the societe_adresse_1 field */
+    const SOCIETE_ADRESSE_1 = 'demande_identifiant.societe_adresse_1';
 
-    /** the column name for the SOCIETE_ADRESSE_2 field */
-    const SOCIETE_ADRESSE_2 = 'demande_identifiant.SOCIETE_ADRESSE_2';
+    /** the column name for the societe_adresse_2 field */
+    const SOCIETE_ADRESSE_2 = 'demande_identifiant.societe_adresse_2';
 
-    /** the column name for the SOCIETE_ADRESSE_3 field */
-    const SOCIETE_ADRESSE_3 = 'demande_identifiant.SOCIETE_ADRESSE_3';
+    /** the column name for the societe_adresse_3 field */
+    const SOCIETE_ADRESSE_3 = 'demande_identifiant.societe_adresse_3';
 
-    /** the column name for the SOCIETE_ADRESSE_4 field */
-    const SOCIETE_ADRESSE_4 = 'demande_identifiant.SOCIETE_ADRESSE_4';
+    /** the column name for the societe_adresse_4 field */
+    const SOCIETE_ADRESSE_4 = 'demande_identifiant.societe_adresse_4';
 
-    /** the column name for the SOCIETE_TELEPHONE field */
-    const SOCIETE_TELEPHONE = 'demande_identifiant.SOCIETE_TELEPHONE';
+    /** the column name for the societe_telephone field */
+    const SOCIETE_TELEPHONE = 'demande_identifiant.societe_telephone';
 
-    /** the column name for the SOCIETE_FAX field */
-    const SOCIETE_FAX = 'demande_identifiant.SOCIETE_FAX';
+    /** the column name for the societe_fax field */
+    const SOCIETE_FAX = 'demande_identifiant.societe_fax';
 
-    /** the column name for the CONTACT_PRENOM field */
-    const CONTACT_PRENOM = 'demande_identifiant.CONTACT_PRENOM';
+    /** the column name for the contact_prenom field */
+    const CONTACT_PRENOM = 'demande_identifiant.contact_prenom';
 
-    /** the column name for the CONTACT_NOM field */
-    const CONTACT_NOM = 'demande_identifiant.CONTACT_NOM';
+    /** the column name for the contact_nom field */
+    const CONTACT_NOM = 'demande_identifiant.contact_nom';
 
-    /** the column name for the CONTACT_TELEPHONE field */
-    const CONTACT_TELEPHONE = 'demande_identifiant.CONTACT_TELEPHONE';
+    /** the column name for the contact_telephone field */
+    const CONTACT_TELEPHONE = 'demande_identifiant.contact_telephone';
 
-    /** the column name for the CONTACT_MAIL field */
-    const CONTACT_MAIL = 'demande_identifiant.CONTACT_MAIL';
+    /** the column name for the contact_mail field */
+    const CONTACT_MAIL = 'demande_identifiant.contact_mail';
 
-    /** the column name for the PERMANENCE field */
-    const PERMANENCE = 'demande_identifiant.PERMANENCE';
+    /** the column name for the permanence field */
+    const PERMANENCE = 'demande_identifiant.permanence';
 
-    /** the column name for the PERMANENCE_MATIN_DE field */
-    const PERMANENCE_MATIN_DE = 'demande_identifiant.PERMANENCE_MATIN_DE';
+    /** the column name for the permanence_matin_de field */
+    const PERMANENCE_MATIN_DE = 'demande_identifiant.permanence_matin_de';
 
-    /** the column name for the PERMANENCE_MATIN_A field */
-    const PERMANENCE_MATIN_A = 'demande_identifiant.PERMANENCE_MATIN_A';
+    /** the column name for the permanence_matin_a field */
+    const PERMANENCE_MATIN_A = 'demande_identifiant.permanence_matin_a';
 
-    /** the column name for the PERMANENCE_APRES_MIDI_DE field */
-    const PERMANENCE_APRES_MIDI_DE = 'demande_identifiant.PERMANENCE_APRES_MIDI_DE';
+    /** the column name for the permanence_apres_midi_de field */
+    const PERMANENCE_APRES_MIDI_DE = 'demande_identifiant.permanence_apres_midi_de';
 
-    /** the column name for the PERMANENCE_APRES_MIDI_A field */
-    const PERMANENCE_APRES_MIDI_A = 'demande_identifiant.PERMANENCE_APRES_MIDI_A';
+    /** the column name for the permanence_apres_midi_a field */
+    const PERMANENCE_APRES_MIDI_A = 'demande_identifiant.permanence_apres_midi_a';
 
-    /** the column name for the CLIENT_VC field */
-    const CLIENT_VC = 'demande_identifiant.CLIENT_VC';
+    /** the column name for the client_vc field */
+    const CLIENT_VC = 'demande_identifiant.client_vc';
 
-    /** the column name for the CLIENT_VC_CODE field */
-    const CLIENT_VC_CODE = 'demande_identifiant.CLIENT_VC_CODE';
+    /** the column name for the client_vc_code field */
+    const CLIENT_VC_CODE = 'demande_identifiant.client_vc_code';
 
-    /** the column name for the CLIENT_VD field */
-    const CLIENT_VD = 'demande_identifiant.CLIENT_VD';
+    /** the column name for the client_vd field */
+    const CLIENT_VD = 'demande_identifiant.client_vd';
 
-    /** the column name for the CLIENT_VD_CODE field */
-    const CLIENT_VD_CODE = 'demande_identifiant.CLIENT_VD_CODE';
+    /** the column name for the client_vd_code field */
+    const CLIENT_VD_CODE = 'demande_identifiant.client_vd_code';
 
-    /** the column name for the BROCHURE field */
-    const BROCHURE = 'demande_identifiant.BROCHURE';
+    /** the column name for the brochure field */
+    const BROCHURE = 'demande_identifiant.brochure';
 
-    /** the column name for the IDENTIFIANT field */
-    const IDENTIFIANT = 'demande_identifiant.IDENTIFIANT';
+    /** the column name for the identifiant field */
+    const IDENTIFIANT = 'demande_identifiant.identifiant';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'demande_identifiant.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'demande_identifiant.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'demande_identifiant.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'demande_identifiant.updated_at';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'demande_identifiant.ENABLED';
+    /** the column name for the active field */
+    const ACTIVE = 'demande_identifiant.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -141,11 +141,11 @@ abstract class BaseDemandeIdentifiantPeer
      * e.g. DemandeIdentifiantPeer::$fieldNames[DemandeIdentifiantPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'SocieteNom', 'SocieteAdresse1', 'SocieteAdresse2', 'SocieteAdresse3', 'SocieteAdresse4', 'SocieteTelephone', 'SocieteFax', 'ContactPrenom', 'ContactNom', 'ContactTelephone', 'ContactMail', 'Permanence', 'PermanenceMatinDe', 'PermanenceMatinA', 'PermanenceApresMidiDe', 'PermanenceApresMidiA', 'ClientVc', 'ClientVcCode', 'ClientVd', 'ClientVdCode', 'Brochure', 'Identifiant', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'societeNom', 'societeAdresse1', 'societeAdresse2', 'societeAdresse3', 'societeAdresse4', 'societeTelephone', 'societeFax', 'contactPrenom', 'contactNom', 'contactTelephone', 'contactMail', 'permanence', 'permanenceMatinDe', 'permanenceMatinA', 'permanenceApresMidiDe', 'permanenceApresMidiA', 'clientVc', 'clientVcCode', 'clientVd', 'clientVdCode', 'brochure', 'identifiant', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (DemandeIdentifiantPeer::ID, DemandeIdentifiantPeer::SOCIETE_NOM, DemandeIdentifiantPeer::SOCIETE_ADRESSE_1, DemandeIdentifiantPeer::SOCIETE_ADRESSE_2, DemandeIdentifiantPeer::SOCIETE_ADRESSE_3, DemandeIdentifiantPeer::SOCIETE_ADRESSE_4, DemandeIdentifiantPeer::SOCIETE_TELEPHONE, DemandeIdentifiantPeer::SOCIETE_FAX, DemandeIdentifiantPeer::CONTACT_PRENOM, DemandeIdentifiantPeer::CONTACT_NOM, DemandeIdentifiantPeer::CONTACT_TELEPHONE, DemandeIdentifiantPeer::CONTACT_MAIL, DemandeIdentifiantPeer::PERMANENCE, DemandeIdentifiantPeer::PERMANENCE_MATIN_DE, DemandeIdentifiantPeer::PERMANENCE_MATIN_A, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A, DemandeIdentifiantPeer::CLIENT_VC, DemandeIdentifiantPeer::CLIENT_VC_CODE, DemandeIdentifiantPeer::CLIENT_VD, DemandeIdentifiantPeer::CLIENT_VD_CODE, DemandeIdentifiantPeer::BROCHURE, DemandeIdentifiantPeer::IDENTIFIANT, DemandeIdentifiantPeer::CREATED_AT, DemandeIdentifiantPeer::UPDATED_AT, DemandeIdentifiantPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SOCIETE_NOM', 'SOCIETE_ADRESSE_1', 'SOCIETE_ADRESSE_2', 'SOCIETE_ADRESSE_3', 'SOCIETE_ADRESSE_4', 'SOCIETE_TELEPHONE', 'SOCIETE_FAX', 'CONTACT_PRENOM', 'CONTACT_NOM', 'CONTACT_TELEPHONE', 'CONTACT_MAIL', 'PERMANENCE', 'PERMANENCE_MATIN_DE', 'PERMANENCE_MATIN_A', 'PERMANENCE_APRES_MIDI_DE', 'PERMANENCE_APRES_MIDI_A', 'CLIENT_VC', 'CLIENT_VC_CODE', 'CLIENT_VD', 'CLIENT_VD_CODE', 'BROCHURE', 'IDENTIFIANT', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'societe_nom', 'societe_adresse_1', 'societe_adresse_2', 'societe_adresse_3', 'societe_adresse_4', 'societe_telephone', 'societe_fax', 'contact_prenom', 'contact_nom', 'contact_telephone', 'contact_mail', 'permanence', 'permanence_matin_de', 'permanence_matin_a', 'permanence_apres_midi_de', 'permanence_apres_midi_a', 'client_vc', 'client_vc_code', 'client_vd', 'client_vd_code', 'brochure', 'identifiant', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'SocieteNom', 'SocieteAdresse1', 'SocieteAdresse2', 'SocieteAdresse3', 'SocieteAdresse4', 'SocieteTelephone', 'SocieteFax', 'ContactPrenom', 'ContactNom', 'ContactTelephone', 'ContactMail', 'Permanence', 'PermanenceMatinDe', 'PermanenceMatinA', 'PermanenceApresMidiDe', 'PermanenceApresMidiA', 'ClientVc', 'ClientVcCode', 'ClientVd', 'ClientVdCode', 'Brochure', 'Identifiant', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'societeNom', 'societeAdresse1', 'societeAdresse2', 'societeAdresse3', 'societeAdresse4', 'societeTelephone', 'societeFax', 'contactPrenom', 'contactNom', 'contactTelephone', 'contactMail', 'permanence', 'permanenceMatinDe', 'permanenceMatinA', 'permanenceApresMidiDe', 'permanenceApresMidiA', 'clientVc', 'clientVcCode', 'clientVd', 'clientVdCode', 'brochure', 'identifiant', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DemandeIdentifiantPeer::ID, DemandeIdentifiantPeer::SOCIETE_NOM, DemandeIdentifiantPeer::SOCIETE_ADRESSE_1, DemandeIdentifiantPeer::SOCIETE_ADRESSE_2, DemandeIdentifiantPeer::SOCIETE_ADRESSE_3, DemandeIdentifiantPeer::SOCIETE_ADRESSE_4, DemandeIdentifiantPeer::SOCIETE_TELEPHONE, DemandeIdentifiantPeer::SOCIETE_FAX, DemandeIdentifiantPeer::CONTACT_PRENOM, DemandeIdentifiantPeer::CONTACT_NOM, DemandeIdentifiantPeer::CONTACT_TELEPHONE, DemandeIdentifiantPeer::CONTACT_MAIL, DemandeIdentifiantPeer::PERMANENCE, DemandeIdentifiantPeer::PERMANENCE_MATIN_DE, DemandeIdentifiantPeer::PERMANENCE_MATIN_A, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A, DemandeIdentifiantPeer::CLIENT_VC, DemandeIdentifiantPeer::CLIENT_VC_CODE, DemandeIdentifiantPeer::CLIENT_VD, DemandeIdentifiantPeer::CLIENT_VD_CODE, DemandeIdentifiantPeer::BROCHURE, DemandeIdentifiantPeer::IDENTIFIANT, DemandeIdentifiantPeer::CREATED_AT, DemandeIdentifiantPeer::UPDATED_AT, DemandeIdentifiantPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SOCIETE_NOM', 'SOCIETE_ADRESSE_1', 'SOCIETE_ADRESSE_2', 'SOCIETE_ADRESSE_3', 'SOCIETE_ADRESSE_4', 'SOCIETE_TELEPHONE', 'SOCIETE_FAX', 'CONTACT_PRENOM', 'CONTACT_NOM', 'CONTACT_TELEPHONE', 'CONTACT_MAIL', 'PERMANENCE', 'PERMANENCE_MATIN_DE', 'PERMANENCE_MATIN_A', 'PERMANENCE_APRES_MIDI_DE', 'PERMANENCE_APRES_MIDI_A', 'CLIENT_VC', 'CLIENT_VC_CODE', 'CLIENT_VD', 'CLIENT_VD_CODE', 'BROCHURE', 'IDENTIFIANT', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'societe_nom', 'societe_adresse_1', 'societe_adresse_2', 'societe_adresse_3', 'societe_adresse_4', 'societe_telephone', 'societe_fax', 'contact_prenom', 'contact_nom', 'contact_telephone', 'contact_mail', 'permanence', 'permanence_matin_de', 'permanence_matin_a', 'permanence_apres_midi_de', 'permanence_apres_midi_a', 'client_vc', 'client_vc_code', 'client_vd', 'client_vd_code', 'brochure', 'identifiant', 'created_at', 'updated_at', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, )
     );
 
@@ -156,11 +156,11 @@ abstract class BaseDemandeIdentifiantPeer
      * e.g. DemandeIdentifiantPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'SocieteNom' => 1, 'SocieteAdresse1' => 2, 'SocieteAdresse2' => 3, 'SocieteAdresse3' => 4, 'SocieteAdresse4' => 5, 'SocieteTelephone' => 6, 'SocieteFax' => 7, 'ContactPrenom' => 8, 'ContactNom' => 9, 'ContactTelephone' => 10, 'ContactMail' => 11, 'Permanence' => 12, 'PermanenceMatinDe' => 13, 'PermanenceMatinA' => 14, 'PermanenceApresMidiDe' => 15, 'PermanenceApresMidiA' => 16, 'ClientVc' => 17, 'ClientVcCode' => 18, 'ClientVd' => 19, 'ClientVdCode' => 20, 'Brochure' => 21, 'Identifiant' => 22, 'CreatedAt' => 23, 'UpdatedAt' => 24, 'Enabled' => 25, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'societeNom' => 1, 'societeAdresse1' => 2, 'societeAdresse2' => 3, 'societeAdresse3' => 4, 'societeAdresse4' => 5, 'societeTelephone' => 6, 'societeFax' => 7, 'contactPrenom' => 8, 'contactNom' => 9, 'contactTelephone' => 10, 'contactMail' => 11, 'permanence' => 12, 'permanenceMatinDe' => 13, 'permanenceMatinA' => 14, 'permanenceApresMidiDe' => 15, 'permanenceApresMidiA' => 16, 'clientVc' => 17, 'clientVcCode' => 18, 'clientVd' => 19, 'clientVdCode' => 20, 'brochure' => 21, 'identifiant' => 22, 'createdAt' => 23, 'updatedAt' => 24, 'enabled' => 25, ),
-        BasePeer::TYPE_COLNAME => array (DemandeIdentifiantPeer::ID => 0, DemandeIdentifiantPeer::SOCIETE_NOM => 1, DemandeIdentifiantPeer::SOCIETE_ADRESSE_1 => 2, DemandeIdentifiantPeer::SOCIETE_ADRESSE_2 => 3, DemandeIdentifiantPeer::SOCIETE_ADRESSE_3 => 4, DemandeIdentifiantPeer::SOCIETE_ADRESSE_4 => 5, DemandeIdentifiantPeer::SOCIETE_TELEPHONE => 6, DemandeIdentifiantPeer::SOCIETE_FAX => 7, DemandeIdentifiantPeer::CONTACT_PRENOM => 8, DemandeIdentifiantPeer::CONTACT_NOM => 9, DemandeIdentifiantPeer::CONTACT_TELEPHONE => 10, DemandeIdentifiantPeer::CONTACT_MAIL => 11, DemandeIdentifiantPeer::PERMANENCE => 12, DemandeIdentifiantPeer::PERMANENCE_MATIN_DE => 13, DemandeIdentifiantPeer::PERMANENCE_MATIN_A => 14, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE => 15, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A => 16, DemandeIdentifiantPeer::CLIENT_VC => 17, DemandeIdentifiantPeer::CLIENT_VC_CODE => 18, DemandeIdentifiantPeer::CLIENT_VD => 19, DemandeIdentifiantPeer::CLIENT_VD_CODE => 20, DemandeIdentifiantPeer::BROCHURE => 21, DemandeIdentifiantPeer::IDENTIFIANT => 22, DemandeIdentifiantPeer::CREATED_AT => 23, DemandeIdentifiantPeer::UPDATED_AT => 24, DemandeIdentifiantPeer::ENABLED => 25, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SOCIETE_NOM' => 1, 'SOCIETE_ADRESSE_1' => 2, 'SOCIETE_ADRESSE_2' => 3, 'SOCIETE_ADRESSE_3' => 4, 'SOCIETE_ADRESSE_4' => 5, 'SOCIETE_TELEPHONE' => 6, 'SOCIETE_FAX' => 7, 'CONTACT_PRENOM' => 8, 'CONTACT_NOM' => 9, 'CONTACT_TELEPHONE' => 10, 'CONTACT_MAIL' => 11, 'PERMANENCE' => 12, 'PERMANENCE_MATIN_DE' => 13, 'PERMANENCE_MATIN_A' => 14, 'PERMANENCE_APRES_MIDI_DE' => 15, 'PERMANENCE_APRES_MIDI_A' => 16, 'CLIENT_VC' => 17, 'CLIENT_VC_CODE' => 18, 'CLIENT_VD' => 19, 'CLIENT_VD_CODE' => 20, 'BROCHURE' => 21, 'IDENTIFIANT' => 22, 'CREATED_AT' => 23, 'UPDATED_AT' => 24, 'ENABLED' => 25, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'societe_nom' => 1, 'societe_adresse_1' => 2, 'societe_adresse_2' => 3, 'societe_adresse_3' => 4, 'societe_adresse_4' => 5, 'societe_telephone' => 6, 'societe_fax' => 7, 'contact_prenom' => 8, 'contact_nom' => 9, 'contact_telephone' => 10, 'contact_mail' => 11, 'permanence' => 12, 'permanence_matin_de' => 13, 'permanence_matin_a' => 14, 'permanence_apres_midi_de' => 15, 'permanence_apres_midi_a' => 16, 'client_vc' => 17, 'client_vc_code' => 18, 'client_vd' => 19, 'client_vd_code' => 20, 'brochure' => 21, 'identifiant' => 22, 'created_at' => 23, 'updated_at' => 24, 'enabled' => 25, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'SocieteNom' => 1, 'SocieteAdresse1' => 2, 'SocieteAdresse2' => 3, 'SocieteAdresse3' => 4, 'SocieteAdresse4' => 5, 'SocieteTelephone' => 6, 'SocieteFax' => 7, 'ContactPrenom' => 8, 'ContactNom' => 9, 'ContactTelephone' => 10, 'ContactMail' => 11, 'Permanence' => 12, 'PermanenceMatinDe' => 13, 'PermanenceMatinA' => 14, 'PermanenceApresMidiDe' => 15, 'PermanenceApresMidiA' => 16, 'ClientVc' => 17, 'ClientVcCode' => 18, 'ClientVd' => 19, 'ClientVdCode' => 20, 'Brochure' => 21, 'Identifiant' => 22, 'CreatedAt' => 23, 'UpdatedAt' => 24, 'Active' => 25, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'societeNom' => 1, 'societeAdresse1' => 2, 'societeAdresse2' => 3, 'societeAdresse3' => 4, 'societeAdresse4' => 5, 'societeTelephone' => 6, 'societeFax' => 7, 'contactPrenom' => 8, 'contactNom' => 9, 'contactTelephone' => 10, 'contactMail' => 11, 'permanence' => 12, 'permanenceMatinDe' => 13, 'permanenceMatinA' => 14, 'permanenceApresMidiDe' => 15, 'permanenceApresMidiA' => 16, 'clientVc' => 17, 'clientVcCode' => 18, 'clientVd' => 19, 'clientVdCode' => 20, 'brochure' => 21, 'identifiant' => 22, 'createdAt' => 23, 'updatedAt' => 24, 'active' => 25, ),
+        BasePeer::TYPE_COLNAME => array (DemandeIdentifiantPeer::ID => 0, DemandeIdentifiantPeer::SOCIETE_NOM => 1, DemandeIdentifiantPeer::SOCIETE_ADRESSE_1 => 2, DemandeIdentifiantPeer::SOCIETE_ADRESSE_2 => 3, DemandeIdentifiantPeer::SOCIETE_ADRESSE_3 => 4, DemandeIdentifiantPeer::SOCIETE_ADRESSE_4 => 5, DemandeIdentifiantPeer::SOCIETE_TELEPHONE => 6, DemandeIdentifiantPeer::SOCIETE_FAX => 7, DemandeIdentifiantPeer::CONTACT_PRENOM => 8, DemandeIdentifiantPeer::CONTACT_NOM => 9, DemandeIdentifiantPeer::CONTACT_TELEPHONE => 10, DemandeIdentifiantPeer::CONTACT_MAIL => 11, DemandeIdentifiantPeer::PERMANENCE => 12, DemandeIdentifiantPeer::PERMANENCE_MATIN_DE => 13, DemandeIdentifiantPeer::PERMANENCE_MATIN_A => 14, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_DE => 15, DemandeIdentifiantPeer::PERMANENCE_APRES_MIDI_A => 16, DemandeIdentifiantPeer::CLIENT_VC => 17, DemandeIdentifiantPeer::CLIENT_VC_CODE => 18, DemandeIdentifiantPeer::CLIENT_VD => 19, DemandeIdentifiantPeer::CLIENT_VD_CODE => 20, DemandeIdentifiantPeer::BROCHURE => 21, DemandeIdentifiantPeer::IDENTIFIANT => 22, DemandeIdentifiantPeer::CREATED_AT => 23, DemandeIdentifiantPeer::UPDATED_AT => 24, DemandeIdentifiantPeer::ACTIVE => 25, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SOCIETE_NOM' => 1, 'SOCIETE_ADRESSE_1' => 2, 'SOCIETE_ADRESSE_2' => 3, 'SOCIETE_ADRESSE_3' => 4, 'SOCIETE_ADRESSE_4' => 5, 'SOCIETE_TELEPHONE' => 6, 'SOCIETE_FAX' => 7, 'CONTACT_PRENOM' => 8, 'CONTACT_NOM' => 9, 'CONTACT_TELEPHONE' => 10, 'CONTACT_MAIL' => 11, 'PERMANENCE' => 12, 'PERMANENCE_MATIN_DE' => 13, 'PERMANENCE_MATIN_A' => 14, 'PERMANENCE_APRES_MIDI_DE' => 15, 'PERMANENCE_APRES_MIDI_A' => 16, 'CLIENT_VC' => 17, 'CLIENT_VC_CODE' => 18, 'CLIENT_VD' => 19, 'CLIENT_VD_CODE' => 20, 'BROCHURE' => 21, 'IDENTIFIANT' => 22, 'CREATED_AT' => 23, 'UPDATED_AT' => 24, 'ACTIVE' => 25, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'societe_nom' => 1, 'societe_adresse_1' => 2, 'societe_adresse_2' => 3, 'societe_adresse_3' => 4, 'societe_adresse_4' => 5, 'societe_telephone' => 6, 'societe_fax' => 7, 'contact_prenom' => 8, 'contact_nom' => 9, 'contact_telephone' => 10, 'contact_mail' => 11, 'permanence' => 12, 'permanence_matin_de' => 13, 'permanence_matin_a' => 14, 'permanence_apres_midi_de' => 15, 'permanence_apres_midi_a' => 16, 'client_vc' => 17, 'client_vc_code' => 18, 'client_vd' => 19, 'client_vd_code' => 20, 'brochure' => 21, 'identifiant' => 22, 'created_at' => 23, 'updated_at' => 24, 'active' => 25, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, )
     );
 
@@ -260,34 +260,34 @@ abstract class BaseDemandeIdentifiantPeer
             $criteria->addSelectColumn(DemandeIdentifiantPeer::IDENTIFIANT);
             $criteria->addSelectColumn(DemandeIdentifiantPeer::CREATED_AT);
             $criteria->addSelectColumn(DemandeIdentifiantPeer::UPDATED_AT);
-            $criteria->addSelectColumn(DemandeIdentifiantPeer::ENABLED);
+            $criteria->addSelectColumn(DemandeIdentifiantPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.SOCIETE_NOM');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_1');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_2');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_3');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_4');
-            $criteria->addSelectColumn($alias . '.SOCIETE_TELEPHONE');
-            $criteria->addSelectColumn($alias . '.SOCIETE_FAX');
-            $criteria->addSelectColumn($alias . '.CONTACT_PRENOM');
-            $criteria->addSelectColumn($alias . '.CONTACT_NOM');
-            $criteria->addSelectColumn($alias . '.CONTACT_TELEPHONE');
-            $criteria->addSelectColumn($alias . '.CONTACT_MAIL');
-            $criteria->addSelectColumn($alias . '.PERMANENCE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_MATIN_DE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_MATIN_A');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_APRES_MIDI_DE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_APRES_MIDI_A');
-            $criteria->addSelectColumn($alias . '.CLIENT_VC');
-            $criteria->addSelectColumn($alias . '.CLIENT_VC_CODE');
-            $criteria->addSelectColumn($alias . '.CLIENT_VD');
-            $criteria->addSelectColumn($alias . '.CLIENT_VD_CODE');
-            $criteria->addSelectColumn($alias . '.BROCHURE');
-            $criteria->addSelectColumn($alias . '.IDENTIFIANT');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.societe_nom');
+            $criteria->addSelectColumn($alias . '.societe_adresse_1');
+            $criteria->addSelectColumn($alias . '.societe_adresse_2');
+            $criteria->addSelectColumn($alias . '.societe_adresse_3');
+            $criteria->addSelectColumn($alias . '.societe_adresse_4');
+            $criteria->addSelectColumn($alias . '.societe_telephone');
+            $criteria->addSelectColumn($alias . '.societe_fax');
+            $criteria->addSelectColumn($alias . '.contact_prenom');
+            $criteria->addSelectColumn($alias . '.contact_nom');
+            $criteria->addSelectColumn($alias . '.contact_telephone');
+            $criteria->addSelectColumn($alias . '.contact_mail');
+            $criteria->addSelectColumn($alias . '.permanence');
+            $criteria->addSelectColumn($alias . '.permanence_matin_de');
+            $criteria->addSelectColumn($alias . '.permanence_matin_a');
+            $criteria->addSelectColumn($alias . '.permanence_apres_midi_de');
+            $criteria->addSelectColumn($alias . '.permanence_apres_midi_a');
+            $criteria->addSelectColumn($alias . '.client_vc');
+            $criteria->addSelectColumn($alias . '.client_vc_code');
+            $criteria->addSelectColumn($alias . '.client_vd');
+            $criteria->addSelectColumn($alias . '.client_vd_code');
+            $criteria->addSelectColumn($alias . '.brochure');
+            $criteria->addSelectColumn($alias . '.identifiant');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -470,7 +470,7 @@ abstract class BaseDemandeIdentifiantPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -480,7 +480,7 @@ abstract class BaseDemandeIdentifiantPeer
     {
         DemandeIdentifiantPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to demande_identifiant
      * by a foreign key with ON DELETE CASCADE
@@ -523,7 +523,7 @@ abstract class BaseDemandeIdentifiantPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -534,7 +534,7 @@ abstract class BaseDemandeIdentifiantPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = DemandeIdentifiantPeer::getOMClass();
         // populate the object(s)
@@ -778,7 +778,7 @@ abstract class BaseDemandeIdentifiantPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             DemandeIdentifiantPeer::clearRelatedInstancePool();
             $con->commit();

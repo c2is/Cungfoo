@@ -20,7 +20,7 @@ use Cungfoo\Model\MultimediaEtablissementI18nQuery;
 /**
  * Base class that represents a query for the 'multimedia_etablissement_i18n' table.
  *
- * 
+ *
  *
  * @method MultimediaEtablissementI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method MultimediaEtablissementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
@@ -98,7 +98,7 @@ abstract class BaseMultimediaEtablissementI18nQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$id, $locale]
      * @param     PropelPDO $con an optional connection object
      *
@@ -138,10 +138,10 @@ abstract class BaseMultimediaEtablissementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `TITRE` FROM `multimedia_etablissement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `id`, `locale`, `titre` FROM `multimedia_etablissement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {

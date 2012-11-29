@@ -20,7 +20,7 @@ use Cungfoo\Model\TopCampingQuery;
 /**
  * Base class that represents a row from the 'top_camping' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -64,11 +64,11 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     protected $sortable_rank;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        Etablissement
@@ -90,7 +90,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // sortable behavior
-    
+
     /**
      * Queries to be executed in the save transaction
      * @var        array
@@ -105,7 +105,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -120,7 +120,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -130,7 +130,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
     /**
      * Get the [etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEtablissementId()
@@ -140,7 +140,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
     /**
      * Get the [sortable_rank] column value.
-     * 
+     *
      * @return int
      */
     public function getSortableRank()
@@ -149,18 +149,18 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return TopCamping The current object (for fluent API support)
      */
@@ -181,7 +181,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
     /**
      * Set the value of [etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return TopCamping The current object (for fluent API support)
      */
@@ -206,7 +206,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
     /**
      * Set the value of [sortable_rank] column.
-     * 
+     *
      * @param int $v new value
      * @return TopCamping The current object (for fluent API support)
      */
@@ -226,16 +226,16 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     } // setSortableRank()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return TopCamping The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -245,14 +245,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = TopCampingPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = TopCampingPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -264,7 +264,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -293,7 +293,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->etablissement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->sortable_rank = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->enabled = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -397,7 +397,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             // sortable behavior
-            
+
             TopCampingPeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
             TopCampingPeer::clearInstancePool();
 
@@ -543,16 +543,16 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TopCampingPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(TopCampingPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) {
-            $modifiedColumns[':p' . $index++]  = '`SORTABLE_RANK`';
+            $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
         }
-        if ($this->isColumnModified(TopCampingPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(TopCampingPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -565,17 +565,17 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`ETABLISSEMENT_ID`':						
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`SORTABLE_RANK`':						
+                    case '`sortable_rank`':
                         $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -645,11 +645,11 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -733,7 +733,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 return $this->getSortableRank();
                 break;
             case 3:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -767,7 +767,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getEtablissementId(),
             $keys[2] => $this->getSortableRank(),
-            $keys[3] => $this->getEnabled(),
+            $keys[3] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -817,7 +817,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 $this->setSortableRank($value);
                 break;
             case 3:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -846,7 +846,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setEtablissementId($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setSortableRank($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setEnabled($arr[$keys[3]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
     }
 
     /**
@@ -861,7 +861,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($this->isColumnModified(TopCampingPeer::ID)) $criteria->add(TopCampingPeer::ID, $this->id);
         if ($this->isColumnModified(TopCampingPeer::ETABLISSEMENT_ID)) $criteria->add(TopCampingPeer::ETABLISSEMENT_ID, $this->etablissement_id);
         if ($this->isColumnModified(TopCampingPeer::SORTABLE_RANK)) $criteria->add(TopCampingPeer::SORTABLE_RANK, $this->sortable_rank);
-        if ($this->isColumnModified(TopCampingPeer::ENABLED)) $criteria->add(TopCampingPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(TopCampingPeer::ACTIVE)) $criteria->add(TopCampingPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -927,7 +927,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
         $copyObj->setSortableRank($this->getSortableRank());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1018,12 +1018,13 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1045,7 +1046,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         $this->id = null;
         $this->etablissement_id = null;
         $this->sortable_rank = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1093,7 +1094,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     }
 
     // sortable behavior
-    
+
     /**
      * Wrap the getter for rank value
      *
@@ -1103,7 +1104,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->sortable_rank;
     }
-    
+
     /**
      * Wrap the setter for rank value
      *
@@ -1114,7 +1115,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->setSortableRank($v);
     }
-    
+
     /**
      * Check if the object is first in the list, i.e. if it has 1 for rank
      *
@@ -1124,7 +1125,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->getSortableRank() == 1;
     }
-    
+
     /**
      * Check if the object is last in the list, i.e. if its rank is the highest rank
      *
@@ -1136,7 +1137,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->getSortableRank() == TopCampingQuery::create()->getMaxRank($con);
     }
-    
+
     /**
      * Get the next item in the list, i.e. the one for which rank is immediately higher
      *
@@ -1146,10 +1147,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      */
     public function getNext(PropelPDO $con = null)
     {
-    
+
         return TopCampingQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
     }
-    
+
     /**
      * Get the previous item in the list, i.e. the one for which rank is immediately lower
      *
@@ -1159,10 +1160,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      */
     public function getPrevious(PropelPDO $con = null)
     {
-    
+
         return TopCampingQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
     }
-    
+
     /**
      * Insert at specified rank
      * The modifications are not persisted until the object is saved.
@@ -1189,10 +1190,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 'arguments' => array(1, $rank, null, )
             );
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Insert in the last rank
      * The modifications are not persisted until the object is saved.
@@ -1206,10 +1207,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     public function insertAtBottom(PropelPDO $con = null)
     {
         $this->setSortableRank(TopCampingQuery::create()->getMaxRank($con) + 1);
-    
+
         return $this;
     }
-    
+
     /**
      * Insert in the first rank
      * The modifications are not persisted until the object is saved.
@@ -1220,7 +1221,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->insertAtRank(1);
     }
-    
+
     /**
      * Move the object to a new rank, and shifts the rank
      * Of the objects inbetween the old and new rank accordingly
@@ -1243,31 +1244,31 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($newRank < 1 || $newRank > TopCampingQuery::create()->getMaxRank($con)) {
             throw new PropelException('Invalid rank ' . $newRank);
         }
-    
+
         $oldRank = $this->getSortableRank();
         if ($oldRank == $newRank) {
             return $this;
         }
-    
+
         $con->beginTransaction();
         try {
             // shift the objects between the old and the new rank
             $delta = ($oldRank < $newRank) ? -1 : 1;
             TopCampingPeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
-    
+
             // move the object to its new rank
             $this->setSortableRank($newRank);
             $this->save($con);
-    
+
             $con->commit();
-    
+
             return $this;
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Exchange the rank of the object with the one passed as argument, and saves both objects
      *
@@ -1292,14 +1293,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $object->setSortableRank($oldRank);
             $object->save($con);
             $con->commit();
-    
+
             return $this;
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
      *
@@ -1320,14 +1321,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $prev = $this->getPrevious($con);
             $this->swapWith($prev, $con);
             $con->commit();
-    
+
             return $this;
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
      *
@@ -1348,14 +1349,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $next = $this->getNext($con);
             $this->swapWith($next, $con);
             $con->commit();
-    
+
             return $this;
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Move the object to the top of the list
      *
@@ -1368,10 +1369,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($this->isFirst()) {
             return $this;
         }
-    
+
         return $this->moveToRank(1, $con);
     }
-    
+
     /**
      * Move the object to the bottom of the list
      *
@@ -1392,14 +1393,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             $bottom = TopCampingQuery::create()->getMaxRank($con);
             $res = $this->moveToRank($bottom, $con);
             $con->commit();
-    
+
             return $res;
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Removes the current object from the list.
      * The modifications are not persisted until the object is saved.
@@ -1417,10 +1418,10 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         );
         // remove the object from the list
         $this->setSortableRank(null);
-    
+
         return $this;
     }
-    
+
     /**
      * Execute queries that were saved to be run inside the save transaction
      */
@@ -1433,8 +1434,20 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         $this->sortableQueries = array();
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

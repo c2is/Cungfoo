@@ -20,17 +20,17 @@ use Cungfoo\Model\TopCampingQuery;
 /**
  * Base class that represents a query for the 'top_camping' table.
  *
- * 
+ *
  *
  * @method TopCampingQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TopCampingQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method TopCampingQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
- * @method TopCampingQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method TopCampingQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method TopCampingQuery groupById() Group by the id column
  * @method TopCampingQuery groupByEtablissementId() Group by the etablissement_id column
  * @method TopCampingQuery groupBySortableRank() Group by the sortable_rank column
- * @method TopCampingQuery groupByEnabled() Group by the enabled column
+ * @method TopCampingQuery groupByActive() Group by the active column
  *
  * @method TopCampingQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TopCampingQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -45,12 +45,12 @@ use Cungfoo\Model\TopCampingQuery;
  *
  * @method TopCamping findOneByEtablissementId(int $etablissement_id) Return the first TopCamping filtered by the etablissement_id column
  * @method TopCamping findOneBySortableRank(int $sortable_rank) Return the first TopCamping filtered by the sortable_rank column
- * @method TopCamping findOneByEnabled(boolean $enabled) Return the first TopCamping filtered by the enabled column
+ * @method TopCamping findOneByActive(boolean $active) Return the first TopCamping filtered by the active column
  *
  * @method array findById(int $id) Return TopCamping objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return TopCamping objects filtered by the etablissement_id column
  * @method array findBySortableRank(int $sortable_rank) Return TopCamping objects filtered by the sortable_rank column
- * @method array findByEnabled(boolean $enabled) Return TopCamping objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return TopCamping objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -101,7 +101,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   TopCamping|TopCamping[]|mixed the result, formatted by the current formatter
@@ -154,9 +154,9 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ENABLED` FROM `top_camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `etablissement_id`, `sortable_rank`, `active` FROM `top_camping` WHERE `id` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -355,15 +355,15 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -372,13 +372,13 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      *
      * @return TopCampingQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(TopCampingPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(TopCampingPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -474,7 +474,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     }
 
     // sortable behavior
-    
+
     /**
      * Filter the query based on a rank in the list
      *
@@ -487,7 +487,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         return $this
             ->addUsingAlias(TopCampingPeer::RANK_COL, $rank, Criteria::EQUAL);
     }
-    
+
     /**
      * Order the query based on the rank in the list.
      * Using the default $order, returns the item with the lowest rank first
@@ -510,7 +510,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
                 throw new PropelException('TopCampingQuery::orderBy() only accepts "asc" or "desc" as argument');
         }
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -525,7 +525,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
             ->filterByRank($rank)
             ->findOne($con);
     }
-    
+
     /**
      * Returns the list of objects
      *
@@ -539,10 +539,10 @@ abstract class BaseTopCampingQuery extends ModelCriteria
             ->orderByRank()
             ->find($con);
     }
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -555,10 +555,10 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         // shift the objects with a position lower than the one of object
         $this->addSelectColumn('MAX(' . TopCampingPeer::RANK_COL . ')');
         $stmt = $this->doSelect($con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -574,7 +574,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -587,12 +587,26 @@ abstract class BaseTopCampingQuery extends ModelCriteria
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();
             throw $e;
         }
+    }
+
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
     }
 
 }

@@ -21,7 +21,7 @@ use Cungfoo\Model\EtablissementBaignadeQuery;
 /**
  * Base class that represents a query for the 'etablissement_baignade' table.
  *
- * 
+ *
  *
  * @method EtablissementBaignadeQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementBaignadeQuery orderByBaignadeId($order = Criteria::ASC) Order by the baignade_id column
@@ -99,7 +99,7 @@ abstract class BaseEtablissementBaignadeQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$etablissement_id, $baignade_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -139,10 +139,10 @@ abstract class BaseEtablissementBaignadeQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `BAIGNADE_ID` FROM `etablissement_baignade` WHERE `ETABLISSEMENT_ID` = :p0 AND `BAIGNADE_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `baignade_id` FROM `etablissement_baignade` WHERE `etablissement_id` = :p0 AND `baignade_id` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

@@ -17,7 +17,7 @@ use Cungfoo\Model\map\EtablissementI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'etablissement_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,26 +45,26 @@ abstract class BaseEtablissementI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'etablissement_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'etablissement_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'etablissement_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'etablissement_i18n.locale';
 
-    /** the column name for the COUNTRY field */
-    const COUNTRY = 'etablissement_i18n.COUNTRY';
+    /** the column name for the country field */
+    const COUNTRY = 'etablissement_i18n.country';
 
-    /** the column name for the OUVERTURE_RECEPTION field */
-    const OUVERTURE_RECEPTION = 'etablissement_i18n.OUVERTURE_RECEPTION';
+    /** the column name for the ouverture_reception field */
+    const OUVERTURE_RECEPTION = 'etablissement_i18n.ouverture_reception';
 
-    /** the column name for the OUVERTURE_CAMPING field */
-    const OUVERTURE_CAMPING = 'etablissement_i18n.OUVERTURE_CAMPING';
+    /** the column name for the ouverture_camping field */
+    const OUVERTURE_CAMPING = 'etablissement_i18n.ouverture_camping';
 
-    /** the column name for the ARRIVEES_DEPARTS field */
-    const ARRIVEES_DEPARTS = 'etablissement_i18n.ARRIVEES_DEPARTS';
+    /** the column name for the arrivees_departs field */
+    const ARRIVEES_DEPARTS = 'etablissement_i18n.arrivees_departs';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'etablissement_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'etablissement_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -187,13 +187,13 @@ abstract class BaseEtablissementI18nPeer
             $criteria->addSelectColumn(EtablissementI18nPeer::ARRIVEES_DEPARTS);
             $criteria->addSelectColumn(EtablissementI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.COUNTRY');
-            $criteria->addSelectColumn($alias . '.OUVERTURE_RECEPTION');
-            $criteria->addSelectColumn($alias . '.OUVERTURE_CAMPING');
-            $criteria->addSelectColumn($alias . '.ARRIVEES_DEPARTS');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.country');
+            $criteria->addSelectColumn($alias . '.ouverture_reception');
+            $criteria->addSelectColumn($alias . '.ouverture_camping');
+            $criteria->addSelectColumn($alias . '.arrivees_departs');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 
@@ -376,7 +376,7 @@ abstract class BaseEtablissementI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -386,7 +386,7 @@ abstract class BaseEtablissementI18nPeer
     {
         EtablissementI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to etablissement_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -429,7 +429,7 @@ abstract class BaseEtablissementI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -440,7 +440,7 @@ abstract class BaseEtablissementI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = EtablissementI18nPeer::getOMClass();
         // populate the object(s)
@@ -934,7 +934,7 @@ abstract class BaseEtablissementI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             EtablissementI18nPeer::clearRelatedInstancePool();
             $con->commit();

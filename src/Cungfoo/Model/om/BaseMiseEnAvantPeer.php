@@ -12,12 +12,13 @@ use \PropelPDO;
 use Cungfoo\Model\MiseEnAvant;
 use Cungfoo\Model\MiseEnAvantI18nPeer;
 use Cungfoo\Model\MiseEnAvantPeer;
+use Cungfoo\Model\MiseEnAvantQuery;
 use Cungfoo\Model\map\MiseEnAvantTableMap;
 
 /**
  * Base static class for performing query and update operations on the 'mise_en_avant' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,26 +46,26 @@ abstract class BaseMiseEnAvantPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'mise_en_avant.ID';
+    /** the column name for the id field */
+    const ID = 'mise_en_avant.id';
 
-    /** the column name for the IMAGE_FOND_PATH field */
-    const IMAGE_FOND_PATH = 'mise_en_avant.IMAGE_FOND_PATH';
+    /** the column name for the image_fond_path field */
+    const IMAGE_FOND_PATH = 'mise_en_avant.image_fond_path';
 
-    /** the column name for the PRIX field */
-    const PRIX = 'mise_en_avant.PRIX';
+    /** the column name for the prix field */
+    const PRIX = 'mise_en_avant.prix';
 
-    /** the column name for the ILLUSTRATION_PATH field */
-    const ILLUSTRATION_PATH = 'mise_en_avant.ILLUSTRATION_PATH';
+    /** the column name for the illustration_path field */
+    const ILLUSTRATION_PATH = 'mise_en_avant.illustration_path';
 
-    /** the column name for the DATE_FIN_VALIDITE field */
-    const DATE_FIN_VALIDITE = 'mise_en_avant.DATE_FIN_VALIDITE';
+    /** the column name for the date_fin_validite field */
+    const DATE_FIN_VALIDITE = 'mise_en_avant.date_fin_validite';
 
-    /** the column name for the SORTABLE_RANK field */
-    const SORTABLE_RANK = 'mise_en_avant.SORTABLE_RANK';
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'mise_en_avant.sortable_rank';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'mise_en_avant.ENABLED';
+    /** the column name for the active field */
+    const ACTIVE = 'mise_en_avant.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -79,18 +80,18 @@ abstract class BaseMiseEnAvantPeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
     // sortable behavior
-    
+
     /**
      * rank column
      */
-    const RANK_COL = 'mise_en_avant.SORTABLE_RANK';
+    const RANK_COL = 'mise_en_avant.sortable_rank';
 
     /**
      * holds an array of fieldnames
@@ -99,11 +100,11 @@ abstract class BaseMiseEnAvantPeer
      * e.g. MiseEnAvantPeer::$fieldNames[MiseEnAvantPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageFondPath', 'Prix', 'IllustrationPath', 'DateFinValidite', 'SortableRank', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageFondPath', 'prix', 'illustrationPath', 'dateFinValidite', 'sortableRank', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID, MiseEnAvantPeer::IMAGE_FOND_PATH, MiseEnAvantPeer::PRIX, MiseEnAvantPeer::ILLUSTRATION_PATH, MiseEnAvantPeer::DATE_FIN_VALIDITE, MiseEnAvantPeer::SORTABLE_RANK, MiseEnAvantPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_FOND_PATH', 'PRIX', 'ILLUSTRATION_PATH', 'DATE_FIN_VALIDITE', 'SORTABLE_RANK', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_fond_path', 'prix', 'illustration_path', 'date_fin_validite', 'sortable_rank', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageFondPath', 'Prix', 'IllustrationPath', 'DateFinValidite', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageFondPath', 'prix', 'illustrationPath', 'dateFinValidite', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID, MiseEnAvantPeer::IMAGE_FOND_PATH, MiseEnAvantPeer::PRIX, MiseEnAvantPeer::ILLUSTRATION_PATH, MiseEnAvantPeer::DATE_FIN_VALIDITE, MiseEnAvantPeer::SORTABLE_RANK, MiseEnAvantPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_FOND_PATH', 'PRIX', 'ILLUSTRATION_PATH', 'DATE_FIN_VALIDITE', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'image_fond_path', 'prix', 'illustration_path', 'date_fin_validite', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -114,11 +115,11 @@ abstract class BaseMiseEnAvantPeer
      * e.g. MiseEnAvantPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageFondPath' => 1, 'Prix' => 2, 'IllustrationPath' => 3, 'DateFinValidite' => 4, 'SortableRank' => 5, 'Enabled' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageFondPath' => 1, 'prix' => 2, 'illustrationPath' => 3, 'dateFinValidite' => 4, 'sortableRank' => 5, 'enabled' => 6, ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID => 0, MiseEnAvantPeer::IMAGE_FOND_PATH => 1, MiseEnAvantPeer::PRIX => 2, MiseEnAvantPeer::ILLUSTRATION_PATH => 3, MiseEnAvantPeer::DATE_FIN_VALIDITE => 4, MiseEnAvantPeer::SORTABLE_RANK => 5, MiseEnAvantPeer::ENABLED => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_FOND_PATH' => 1, 'PRIX' => 2, 'ILLUSTRATION_PATH' => 3, 'DATE_FIN_VALIDITE' => 4, 'SORTABLE_RANK' => 5, 'ENABLED' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_fond_path' => 1, 'prix' => 2, 'illustration_path' => 3, 'date_fin_validite' => 4, 'sortable_rank' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageFondPath' => 1, 'Prix' => 2, 'IllustrationPath' => 3, 'DateFinValidite' => 4, 'SortableRank' => 5, 'Active' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageFondPath' => 1, 'prix' => 2, 'illustrationPath' => 3, 'dateFinValidite' => 4, 'sortableRank' => 5, 'active' => 6, ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantPeer::ID => 0, MiseEnAvantPeer::IMAGE_FOND_PATH => 1, MiseEnAvantPeer::PRIX => 2, MiseEnAvantPeer::ILLUSTRATION_PATH => 3, MiseEnAvantPeer::DATE_FIN_VALIDITE => 4, MiseEnAvantPeer::SORTABLE_RANK => 5, MiseEnAvantPeer::ACTIVE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_FOND_PATH' => 1, 'PRIX' => 2, 'ILLUSTRATION_PATH' => 3, 'DATE_FIN_VALIDITE' => 4, 'SORTABLE_RANK' => 5, 'ACTIVE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_fond_path' => 1, 'prix' => 2, 'illustration_path' => 3, 'date_fin_validite' => 4, 'sortable_rank' => 5, 'active' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -199,15 +200,15 @@ abstract class BaseMiseEnAvantPeer
             $criteria->addSelectColumn(MiseEnAvantPeer::ILLUSTRATION_PATH);
             $criteria->addSelectColumn(MiseEnAvantPeer::DATE_FIN_VALIDITE);
             $criteria->addSelectColumn(MiseEnAvantPeer::SORTABLE_RANK);
-            $criteria->addSelectColumn(MiseEnAvantPeer::ENABLED);
+            $criteria->addSelectColumn(MiseEnAvantPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.IMAGE_FOND_PATH');
-            $criteria->addSelectColumn($alias . '.PRIX');
-            $criteria->addSelectColumn($alias . '.ILLUSTRATION_PATH');
-            $criteria->addSelectColumn($alias . '.DATE_FIN_VALIDITE');
-            $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.image_fond_path');
+            $criteria->addSelectColumn($alias . '.prix');
+            $criteria->addSelectColumn($alias . '.illustration_path');
+            $criteria->addSelectColumn($alias . '.date_fin_validite');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -390,7 +391,7 @@ abstract class BaseMiseEnAvantPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -400,7 +401,7 @@ abstract class BaseMiseEnAvantPeer
     {
         MiseEnAvantPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to mise_en_avant
      * by a foreign key with ON DELETE CASCADE
@@ -446,7 +447,7 @@ abstract class BaseMiseEnAvantPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -457,7 +458,7 @@ abstract class BaseMiseEnAvantPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = MiseEnAvantPeer::getOMClass();
         // populate the object(s)
@@ -701,7 +702,7 @@ abstract class BaseMiseEnAvantPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             MiseEnAvantPeer::clearRelatedInstancePool();
             $con->commit();
@@ -804,10 +805,10 @@ abstract class BaseMiseEnAvantPeer
     }
 
     // sortable behavior
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -821,10 +822,10 @@ abstract class BaseMiseEnAvantPeer
         $c = new Criteria();
         $c->addSelectColumn('MAX(' . MiseEnAvantPeer::RANK_COL . ')');
         $stmt = MiseEnAvantPeer::doSelectStmt($c, $con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -838,13 +839,13 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         $c = new Criteria;
         $c->add(MiseEnAvantPeer::RANK_COL, $rank);
-    
+
         return MiseEnAvantPeer::doSelectOne($c, $con);
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -860,7 +861,7 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -873,14 +874,14 @@ abstract class BaseMiseEnAvantPeer
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Return an array of sortable objects ordered by position
      *
@@ -895,24 +896,24 @@ abstract class BaseMiseEnAvantPeer
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME);
         }
-    
+
         if ($criteria === null) {
             $criteria = new Criteria();
         } elseif ($criteria instanceof Criteria) {
             $criteria = clone $criteria;
         }
-    
+
         $criteria->clearOrderByColumns();
-    
+
         if ($order == Criteria::ASC) {
             $criteria->addAscendingOrderByColumn(MiseEnAvantPeer::RANK_COL);
         } else {
             $criteria->addDescendingOrderByColumn(MiseEnAvantPeer::RANK_COL);
         }
-    
+
         return MiseEnAvantPeer::doSelect($criteria, $con);
     }
-    
+
     /**
      * Adds $delta to all Rank values that are >= $first and <= $last.
      * '$delta' can also be negative.
@@ -922,22 +923,23 @@ abstract class BaseMiseEnAvantPeer
      * @param      int $last  Last node to be shifted
      * @param      PropelPDO $con Connection to use.
      */
-    public static function shiftRank($delta, $first, $last = null, PropelPDO $con = null)
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
     {
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
-    
-        $whereCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
-        $criterion = $whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
-        if (null !== $last) {
-            $criterion->addAnd($whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
+
+        $whereCriteria = MiseEnAvantQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(MiseEnAvantPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         }
-        $whereCriteria->add($criterion);
-    
+        if (null !== $last) {
+            $whereCriteria->addAnd(MiseEnAvantPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
         $valuesCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
         $valuesCriteria->add(MiseEnAvantPeer::RANK_COL, array('raw' => MiseEnAvantPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
-    
+
         BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
         MiseEnAvantPeer::clearInstancePool();
     }

@@ -22,7 +22,7 @@ use Cungfoo\Model\VosVacancesQuery;
 /**
  * Base class that represents a row from the 'vos_vacances' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -66,11 +66,11 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     protected $image_path;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        PropelObjectCollection|VosVacancesI18n[] Collection to store aggregation of VosVacancesI18n objects.
@@ -93,13 +93,13 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[VosVacancesI18n]
@@ -120,7 +120,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -135,7 +135,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -145,7 +145,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [age] column value.
-     * 
+     *
      * @return string
      */
     public function getAge()
@@ -155,7 +155,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Get the [image_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImagePath()
@@ -164,18 +164,18 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -196,7 +196,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Set the value of [age] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -217,7 +217,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_path] column.
-     * 
+     *
      * @param string $v new value
      * @return VosVacances The current object (for fluent API support)
      */
@@ -237,16 +237,16 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     } // setImagePath()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return VosVacances The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -256,14 +256,14 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = VosVacancesPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = VosVacancesPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -275,7 +275,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -304,7 +304,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->age = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->enabled = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -512,7 +512,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
             if ($this->collVosVacancesI18ns !== null) {
                 foreach ($this->collVosVacancesI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -545,16 +545,16 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(VosVacancesPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(VosVacancesPeer::AGE)) {
-            $modifiedColumns[':p' . $index++]  = '`AGE`';
+            $modifiedColumns[':p' . $index++]  = '`age`';
         }
         if ($this->isColumnModified(VosVacancesPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
-        if ($this->isColumnModified(VosVacancesPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(VosVacancesPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -567,17 +567,17 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`AGE`':						
+                    case '`age`':
                         $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':						
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -647,11 +647,11 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -731,7 +731,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 return $this->getImagePath();
                 break;
             case 3:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -765,7 +765,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getAge(),
             $keys[2] => $this->getImagePath(),
-            $keys[3] => $this->getEnabled(),
+            $keys[3] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collVosVacancesI18ns) {
@@ -815,7 +815,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 $this->setImagePath($value);
                 break;
             case 3:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -844,7 +844,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setAge($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setEnabled($arr[$keys[3]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
     }
 
     /**
@@ -859,7 +859,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         if ($this->isColumnModified(VosVacancesPeer::ID)) $criteria->add(VosVacancesPeer::ID, $this->id);
         if ($this->isColumnModified(VosVacancesPeer::AGE)) $criteria->add(VosVacancesPeer::AGE, $this->age);
         if ($this->isColumnModified(VosVacancesPeer::IMAGE_PATH)) $criteria->add(VosVacancesPeer::IMAGE_PATH, $this->image_path);
-        if ($this->isColumnModified(VosVacancesPeer::ENABLED)) $criteria->add(VosVacancesPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(VosVacancesPeer::ACTIVE)) $criteria->add(VosVacancesPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -925,7 +925,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         $copyObj->setAge($this->getAge());
         $copyObj->setImagePath($this->getImagePath());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1012,13 +1012,15 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return VosVacances The current object (for fluent API support)
      * @see        addVosVacancesI18ns()
      */
     public function clearVosVacancesI18ns()
     {
         $this->collVosVacancesI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collVosVacancesI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1117,6 +1119,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      *
      * @param PropelCollection $vosVacancesI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return VosVacances The current object (for fluent API support)
      */
     public function setVosVacancesI18ns(PropelCollection $vosVacancesI18ns, PropelPDO $con = null)
     {
@@ -1133,6 +1136,8 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
         $this->collVosVacancesI18ns = $vosVacancesI18ns;
         $this->collVosVacancesI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1150,22 +1155,22 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         if (null === $this->collVosVacancesI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collVosVacancesI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getVosVacancesI18ns());
-                }
-                $query = VosVacancesI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByVosVacances($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collVosVacancesI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getVosVacancesI18ns());
+            }
+            $query = VosVacancesI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByVosVacances($this)
+                ->count($con);
         }
+
+        return count($this->collVosVacancesI18ns);
     }
 
     /**
@@ -1203,6 +1208,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * @param	VosVacancesI18n $vosVacancesI18n The vosVacancesI18n object to remove.
+     * @return VosVacances The current object (for fluent API support)
      */
     public function removeVosVacancesI18n($vosVacancesI18n)
     {
@@ -1215,6 +1221,8 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $this->vosVacancesI18nsScheduledForDeletion[]= $vosVacancesI18n;
             $vosVacancesI18n->setVosVacances(null);
         }
+
+        return $this;
     }
 
     /**
@@ -1225,7 +1233,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         $this->id = null;
         $this->age = null;
         $this->image_path = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1284,8 +1292,20 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -1296,10 +1316,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -1309,7 +1329,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -1324,7 +1344,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 foreach ($this->collVosVacancesI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -1340,10 +1360,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             }
             $this->addVosVacancesI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -1368,10 +1388,10 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -1382,81 +1402,81 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [titre] column value.
-         * 
+         *
          * @return string
          */
         public function getTitre()
         {
         return $this->getCurrentTranslation()->getTitre();
     }
-    
-    
+
+
         /**
          * Set the value of [titre] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [description] column value.
-         * 
+         *
          * @return string
          */
         public function getDescription()
         {
         return $this->getCurrentTranslation()->getDescription();
     }
-    
-    
+
+
         /**
          * Set the value of [description] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [prenom] column value.
-         * 
+         *
          * @return string
          */
         public function getPrenom()
         {
         return $this->getCurrentTranslation()->getPrenom();
     }
-    
-    
+
+
         /**
          * Set the value of [prenom] column.
-         * 
+         *
          * @param string $v new value
          * @return VosVacancesI18n The current object (for fluent API support)
          */
         public function setPrenom($v)
         {    $this->getCurrentTranslation()->setPrenom($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1471,12 +1491,12 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         {
             $this->resetModified(VosVacancesPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -1484,15 +1504,15 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return 'uploads/vos_vacancess';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

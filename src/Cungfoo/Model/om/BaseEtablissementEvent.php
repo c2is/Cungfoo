@@ -22,7 +22,7 @@ use Cungfoo\Model\EventQuery;
 /**
  * Base class that represents a row from the 'etablissement_event' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -91,7 +91,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [etablissement_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEtablissementId()
@@ -101,7 +101,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [event_id] column value.
-     * 
+     *
      * @return int
      */
     public function getEventId()
@@ -111,7 +111,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Get the [distance] column value.
-     * 
+     *
      * @return string
      */
     public function getDistance()
@@ -121,7 +121,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [etablissement_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -146,7 +146,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [event_id] column.
-     * 
+     *
      * @param int $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -171,7 +171,7 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [distance] column.
-     * 
+     *
      * @param string $v new value
      * @return EtablissementEvent The current object (for fluent API support)
      */
@@ -469,13 +469,13 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementEventPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementEventPeer::EVENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`EVENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`event_id`';
         }
         if ($this->isColumnModified(EtablissementEventPeer::DISTANCE)) {
-            $modifiedColumns[':p' . $index++]  = '`DISTANCE`';
+            $modifiedColumns[':p' . $index++]  = '`distance`';
         }
 
         $sql = sprintf(
@@ -488,13 +488,13 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':						
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`EVENT_ID`':						
+                    case '`event_id`':
                         $stmt->bindValue($identifier, $this->event_id, PDO::PARAM_INT);
                         break;
-                    case '`DISTANCE`':						
+                    case '`distance`':
                         $stmt->bindValue($identifier, $this->distance, PDO::PARAM_STR);
                         break;
                 }
@@ -558,11 +558,11 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -937,12 +937,13 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -988,12 +989,13 @@ abstract class BaseEtablissementEvent extends BaseObject implements Persistent
      * Get the associated Event object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Event The associated Event object.
      * @throws PropelException
      */
-    public function getEvent(PropelPDO $con = null)
+    public function getEvent(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEvent === null && ($this->event_id !== null)) {
+        if ($this->aEvent === null && ($this->event_id !== null) && $doQuery) {
             $this->aEvent = EventQuery::create()->findPk($this->event_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

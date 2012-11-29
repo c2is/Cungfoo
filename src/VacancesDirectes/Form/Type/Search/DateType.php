@@ -41,7 +41,7 @@ class DateType extends AppAwareType
             ->withColumn('RegionI18n.name', 'Name')
             ->select(array('Code', 'Name'))
             ->orderBy('Name')
-            ->find()
+            ->findActive()
         ;
 
         $builder->add('destination', 'choice', array(
@@ -64,7 +64,7 @@ class DateType extends AppAwareType
             ->select(array('Code', 'Name'))
             ->filterByDestination($region, $destinationCurrentChoice)
             ->orderBy('Name')
-            ->find()
+            ->findActive()
         ;
 
         $builder->add('ville', 'choice', array(
@@ -79,7 +79,7 @@ class DateType extends AppAwareType
             ->select(array('Code', 'Name'))
             ->filterByDestination($region, $destinationCurrentChoice)
             ->orderByName()
-            ->find()
+            ->findActive()
         ;
 
         $builder->add('camping', 'choice', array(

@@ -12,12 +12,13 @@ use \PropelPDO;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\TopCamping;
 use Cungfoo\Model\TopCampingPeer;
+use Cungfoo\Model\TopCampingQuery;
 use Cungfoo\Model\map\TopCampingTableMap;
 
 /**
  * Base static class for performing query and update operations on the 'top_camping' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,17 +46,17 @@ abstract class BaseTopCampingPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'top_camping.ID';
+    /** the column name for the id field */
+    const ID = 'top_camping.id';
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'top_camping.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'top_camping.etablissement_id';
 
-    /** the column name for the SORTABLE_RANK field */
-    const SORTABLE_RANK = 'top_camping.SORTABLE_RANK';
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'top_camping.sortable_rank';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'top_camping.ENABLED';
+    /** the column name for the active field */
+    const ACTIVE = 'top_camping.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -70,11 +71,11 @@ abstract class BaseTopCampingPeer
 
 
     // sortable behavior
-    
+
     /**
      * rank column
      */
-    const RANK_COL = 'top_camping.SORTABLE_RANK';
+    const RANK_COL = 'top_camping.sortable_rank';
 
     /**
      * holds an array of fieldnames
@@ -83,11 +84,11 @@ abstract class BaseTopCampingPeer
      * e.g. TopCampingPeer::$fieldNames[TopCampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'SortableRank', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'sortableRank', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID, TopCampingPeer::ETABLISSEMENT_ID, TopCampingPeer::SORTABLE_RANK, TopCampingPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'SORTABLE_RANK', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'sortable_rank', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID, TopCampingPeer::ETABLISSEMENT_ID, TopCampingPeer::SORTABLE_RANK, TopCampingPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -98,11 +99,11 @@ abstract class BaseTopCampingPeer
      * e.g. TopCampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'SortableRank' => 2, 'Enabled' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'sortableRank' => 2, 'enabled' => 3, ),
-        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID => 0, TopCampingPeer::ETABLISSEMENT_ID => 1, TopCampingPeer::SORTABLE_RANK => 2, TopCampingPeer::ENABLED => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'SORTABLE_RANK' => 2, 'ENABLED' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'sortable_rank' => 2, 'enabled' => 3, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'SortableRank' => 2, 'Active' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'sortableRank' => 2, 'active' => 3, ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID => 0, TopCampingPeer::ETABLISSEMENT_ID => 1, TopCampingPeer::SORTABLE_RANK => 2, TopCampingPeer::ACTIVE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'SORTABLE_RANK' => 2, 'ACTIVE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'sortable_rank' => 2, 'active' => 3, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -180,12 +181,12 @@ abstract class BaseTopCampingPeer
             $criteria->addSelectColumn(TopCampingPeer::ID);
             $criteria->addSelectColumn(TopCampingPeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(TopCampingPeer::SORTABLE_RANK);
-            $criteria->addSelectColumn(TopCampingPeer::ENABLED);
+            $criteria->addSelectColumn(TopCampingPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -368,7 +369,7 @@ abstract class BaseTopCampingPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -378,7 +379,7 @@ abstract class BaseTopCampingPeer
     {
         TopCampingPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to top_camping
      * by a foreign key with ON DELETE CASCADE
@@ -421,7 +422,7 @@ abstract class BaseTopCampingPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -432,7 +433,7 @@ abstract class BaseTopCampingPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = TopCampingPeer::getOMClass();
         // populate the object(s)
@@ -914,7 +915,7 @@ abstract class BaseTopCampingPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TopCampingPeer::clearRelatedInstancePool();
             $con->commit();
@@ -1017,10 +1018,10 @@ abstract class BaseTopCampingPeer
     }
 
     // sortable behavior
-    
+
     /**
      * Get the highest rank
-     * 
+     *
      * @param     PropelPDO optional connection
      *
      * @return    integer highest position
@@ -1034,10 +1035,10 @@ abstract class BaseTopCampingPeer
         $c = new Criteria();
         $c->addSelectColumn('MAX(' . TopCampingPeer::RANK_COL . ')');
         $stmt = TopCampingPeer::doSelectStmt($c, $con);
-    
+
         return $stmt->fetchColumn();
     }
-    
+
     /**
      * Get an item from the list based on its rank
      *
@@ -1051,13 +1052,13 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $c = new Criteria;
         $c->add(TopCampingPeer::RANK_COL, $rank);
-    
+
         return TopCampingPeer::doSelectOne($c, $con);
     }
-    
+
     /**
      * Reorder a set of sortable objects based on a list of id/position
      * Beware that there is no check made on the positions passed
@@ -1073,7 +1074,7 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         $con->beginTransaction();
         try {
             $ids = array_keys($order);
@@ -1086,14 +1087,14 @@ abstract class BaseTopCampingPeer
                 }
             }
             $con->commit();
-    
+
             return true;
         } catch (PropelException $e) {
             $con->rollback();
             throw $e;
         }
     }
-    
+
     /**
      * Return an array of sortable objects ordered by position
      *
@@ -1108,24 +1109,24 @@ abstract class BaseTopCampingPeer
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME);
         }
-    
+
         if ($criteria === null) {
             $criteria = new Criteria();
         } elseif ($criteria instanceof Criteria) {
             $criteria = clone $criteria;
         }
-    
+
         $criteria->clearOrderByColumns();
-    
+
         if ($order == Criteria::ASC) {
             $criteria->addAscendingOrderByColumn(TopCampingPeer::RANK_COL);
         } else {
             $criteria->addDescendingOrderByColumn(TopCampingPeer::RANK_COL);
         }
-    
+
         return TopCampingPeer::doSelect($criteria, $con);
     }
-    
+
     /**
      * Adds $delta to all Rank values that are >= $first and <= $last.
      * '$delta' can also be negative.
@@ -1135,22 +1136,23 @@ abstract class BaseTopCampingPeer
      * @param      int $last  Last node to be shifted
      * @param      PropelPDO $con Connection to use.
      */
-    public static function shiftRank($delta, $first, $last = null, PropelPDO $con = null)
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
     {
         if ($con === null) {
             $con = Propel::getConnection(TopCampingPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
-    
-        $whereCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
-        $criterion = $whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
-        if (null !== $last) {
-            $criterion->addAnd($whereCriteria->getNewCriterion(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
+
+        $whereCriteria = TopCampingQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(TopCampingPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         }
-        $whereCriteria->add($criterion);
-    
+        if (null !== $last) {
+            $whereCriteria->addAnd(TopCampingPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
         $valuesCriteria = new Criteria(TopCampingPeer::DATABASE_NAME);
         $valuesCriteria->add(TopCampingPeer::RANK_COL, array('raw' => TopCampingPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
-    
+
         BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
         TopCampingPeer::clearInstancePool();
     }

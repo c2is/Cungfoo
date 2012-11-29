@@ -42,7 +42,7 @@ class SearchEngineController implements ControllerProviderInterface
                 ->select(array('code', 'name'))
                 ->filterByDestination($region, $code)
                 ->orderBy('name')
-                ->find()
+                ->findActive()
             ;
 
             $response = new Response(json_encode($villes, true));
@@ -65,7 +65,7 @@ class SearchEngineController implements ControllerProviderInterface
                 ->select(array('code', 'name'))
                 ->filterByDestination($region, $code)
                 ->orderByName()
-                ->find()
+                ->findActive()
             ;
 
             $response = new Response(json_encode($campings, true));

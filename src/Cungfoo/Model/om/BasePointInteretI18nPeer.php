@@ -17,7 +17,7 @@ use Cungfoo\Model\map\PointInteretI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'point_interet_i18n' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,17 +45,17 @@ abstract class BasePointInteretI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'point_interet_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'point_interet_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'point_interet_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'point_interet_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'point_interet_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'point_interet_i18n.name';
 
-    /** the column name for the PRESENTATION field */
-    const PRESENTATION = 'point_interet_i18n.PRESENTATION';
+    /** the column name for the presentation field */
+    const PRESENTATION = 'point_interet_i18n.presentation';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -175,10 +175,10 @@ abstract class BasePointInteretI18nPeer
             $criteria->addSelectColumn(PointInteretI18nPeer::NAME);
             $criteria->addSelectColumn(PointInteretI18nPeer::PRESENTATION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.PRESENTATION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.presentation');
         }
     }
 
@@ -361,7 +361,7 @@ abstract class BasePointInteretI18nPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -371,7 +371,7 @@ abstract class BasePointInteretI18nPeer
     {
         PointInteretI18nPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to point_interet_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -414,7 +414,7 @@ abstract class BasePointInteretI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -425,7 +425,7 @@ abstract class BasePointInteretI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = PointInteretI18nPeer::getOMClass();
         // populate the object(s)
@@ -919,7 +919,7 @@ abstract class BasePointInteretI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             PointInteretI18nPeer::clearRelatedInstancePool();
             $con->commit();

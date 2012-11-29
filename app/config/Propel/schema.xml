@@ -86,6 +86,7 @@
         <column name="published" type="boolean" />
 
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
             <reference local="ville_id" foreign="id"></reference>
@@ -243,6 +244,7 @@
         <column name="composition" type="longvarchar" />
         <column name="image_composition_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="category_type_hebergement">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
@@ -263,6 +265,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -283,6 +286,7 @@
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="region" onDelete="SETNULL">
             <reference local="region_id" foreign="id"></reference>
@@ -312,6 +316,7 @@
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
             <reference local="pays_id" foreign="id"></reference>
@@ -336,6 +341,7 @@
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,introduction,description" />
@@ -352,6 +358,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -368,6 +375,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -384,6 +392,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -399,6 +408,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -414,6 +424,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -430,6 +441,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -447,6 +459,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -468,10 +481,10 @@
         <column name="city" type="varchar" />
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
-        <column name="distance_camping" type="varchar" />
         <column name="image" type="varchar" />
         <column name="presentation" type="longvarchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,presentation" />
@@ -494,11 +507,11 @@
         <column name="city" type="varchar" />
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
-        <column name="distance_camping" type="varchar" />
         <column name="image" type="varchar" />
         <column name="priority" type="varchar" />
         <column name="subtitle" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,str_date,subtitle" />
@@ -516,6 +529,7 @@
         <column name="age" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
@@ -538,6 +552,7 @@
         <column name="description" type="longvarchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="personnage" onDelete="CASCADE">
             <reference local="personnage_id" foreign="id"/>
@@ -559,6 +574,7 @@
         <column name="titre" type="varchar" required="true" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
@@ -592,6 +608,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="slug" type="varchar" required="true" primaryString="true"/>
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
@@ -608,6 +625,7 @@
         <column name="name" type="varchar" required="false"/>
         <column name="description" type="longvarchar" required="true"/>
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <unique name="unique_slug">
             <unique-column name="slug"/>
@@ -644,6 +662,7 @@
         <column name="brochure" type="boolean"/>
         <column name="identifiant" type="boolean"/>
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/demandes-identifiant" />
@@ -654,6 +673,7 @@
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
         <column name="etablissement_id" type="integer" required="true"/>
         <behavior name="sortable"/>
+        <behavior name="active" />
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/top-camping" />
@@ -670,6 +690,7 @@
         <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
         <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
         <column name="active" type="boolean"/>
+        <behavior name="active" />
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/dernieres-minutes" />
@@ -713,6 +734,7 @@
         <column name="illustration_path" type="varchar"/>
         <column name="date_fin_validite" type="date"/>
         <behavior name="sortable"/>
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="titre, accroche, lien, titre_lien" />
@@ -731,6 +753,7 @@
         <column name="prenom" type="varchar"/>
         <column name="age" type="varchar"/>
         <column name="image_path" type="varchar"/>
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="titre, description, prenom" />
@@ -750,6 +773,7 @@
         <column name="home" type="boolean"/>
         <column name="lien" type="varchar"/>
         <column name="image_path" type="varchar"/>
+        <behavior name="active" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="titre" />
