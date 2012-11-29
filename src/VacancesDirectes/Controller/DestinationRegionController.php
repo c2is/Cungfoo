@@ -48,8 +48,9 @@ class DestinationRegionController implements ControllerProviderInterface
             $events             = EventPeer::getForRegion($region, EventPeer::SORT_BY_PRIORITY, 5);
             $campings           = EtablissementPeer::getForRegion($region, EtablissementPeer::RANDOM_SORT);
 
+            $nbCampinsg = count($campings);
             $listData = array();
-            for($i = 0; $i < 5; $i++)
+            for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
             {
                 $listData[] = $campings[$i];
             }
@@ -63,7 +64,7 @@ class DestinationRegionController implements ControllerProviderInterface
 
             return $app['twig']->render('Destination/region.twig', array(
                 'locale'            => $locale,
-                'region'            => $region,
+                'item'              => $region,
                 'sitesAVisiter'     => $sitesAVisiter,
                 'nbSitesAVisiter'   => $nbSitesAVisiter,
                 'events'            => $events,
