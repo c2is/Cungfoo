@@ -48,8 +48,9 @@ class DestinationPaysController implements ControllerProviderInterface
             $events             = EventPeer::getForPays($pays, EventPeer::SORT_BY_PRIORITY, 5);
             $campings           = EtablissementPeer::getForPays($pays, EtablissementPeer::RANDOM_SORT);
 
+            $nbCampinsg = count($campings);die(var_dump($nbCampinsg));
             $listData = array();
-            for($i = 0; $i < 5; $i++)
+            for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
             {
                 $listData[] = $campings[$i];
             }
