@@ -45,6 +45,7 @@ class TopCampingTableMap extends TableMap
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addForeignKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER', 'etablissement', 'ID', true, null, null);
         $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
         $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -67,6 +68,7 @@ class TopCampingTableMap extends TableMap
     {
         return array(
             'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
+            'active' => array('active_column' => 'active', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/top-camping', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()

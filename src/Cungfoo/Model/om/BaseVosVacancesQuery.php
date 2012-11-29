@@ -25,11 +25,13 @@ use Cungfoo\Model\VosVacancesQuery;
  * @method VosVacancesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VosVacancesQuery orderByAge($order = Criteria::ASC) Order by the age column
  * @method VosVacancesQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
+ * @method VosVacancesQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method VosVacancesQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method VosVacancesQuery groupById() Group by the id column
  * @method VosVacancesQuery groupByAge() Group by the age column
  * @method VosVacancesQuery groupByImagePath() Group by the image_path column
+ * @method VosVacancesQuery groupByActive() Group by the active column
  * @method VosVacancesQuery groupByEnabled() Group by the enabled column
  *
  * @method VosVacancesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -45,11 +47,13 @@ use Cungfoo\Model\VosVacancesQuery;
  *
  * @method VosVacances findOneByAge(string $age) Return the first VosVacances filtered by the age column
  * @method VosVacances findOneByImagePath(string $image_path) Return the first VosVacances filtered by the image_path column
+ * @method VosVacances findOneByActive(boolean $active) Return the first VosVacances filtered by the active column
  * @method VosVacances findOneByEnabled(boolean $enabled) Return the first VosVacances filtered by the enabled column
  *
  * @method array findById(int $id) Return VosVacances objects filtered by the id column
  * @method array findByAge(string $age) Return VosVacances objects filtered by the age column
  * @method array findByImagePath(string $image_path) Return VosVacances objects filtered by the image_path column
+ * @method array findByActive(boolean $active) Return VosVacances objects filtered by the active column
  * @method array findByEnabled(boolean $enabled) Return VosVacances objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -154,7 +158,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `AGE`, `IMAGE_PATH`, `ENABLED` FROM `vos_vacances` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `AGE`, `IMAGE_PATH`, `ACTIVE`, `ENABLED` FROM `vos_vacances` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -329,6 +333,33 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return VosVacancesQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(VosVacancesPeer::ACTIVE, $active, $comparison);
+    }
+
+    /**
      * Filter the query on the enabled column
      *
      * Example usage:
@@ -443,6 +474,20 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
         }
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+    
+        return parent::find($con);
     }
 
     // i18n behavior

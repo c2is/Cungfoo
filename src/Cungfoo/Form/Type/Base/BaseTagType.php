@@ -34,6 +34,12 @@ class BaseTagType extends AppAwareType
             'label' => 'tag.slug',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'tag.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

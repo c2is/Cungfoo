@@ -196,6 +196,12 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -539,6 +545,16 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         } else {
             return $dt->format($format);
         }
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -1113,6 +1129,35 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -1202,7 +1247,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $this->identifiant = ($row[$startcol + 22] !== null) ? (boolean) $row[$startcol + 22] : null;
             $this->created_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
             $this->updated_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->enabled = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
+            $this->active = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
+            $this->enabled = ($row[$startcol + 26] !== null) ? (boolean) $row[$startcol + 26] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1211,7 +1257,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 26; // 26 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 27; // 27 = DemandeIdentifiantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeIdentifiant object", $e);
@@ -1509,6 +1555,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -1597,6 +1646,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -1811,6 +1863,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 25:
+                return $this->getActive();
+                break;
+            case 26:
                 return $this->getEnabled();
                 break;
             default:
@@ -1866,7 +1921,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $keys[22] => $this->getIdentifiant(),
             $keys[23] => $this->getCreatedAt(),
             $keys[24] => $this->getUpdatedAt(),
-            $keys[25] => $this->getEnabled(),
+            $keys[25] => $this->getActive(),
+            $keys[26] => $this->getEnabled(),
         );
 
         return $result;
@@ -1977,6 +2033,9 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 25:
+                $this->setActive($value);
+                break;
+            case 26:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -2028,7 +2087,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if (array_key_exists($keys[22], $arr)) $this->setIdentifiant($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setCreatedAt($arr[$keys[23]]);
         if (array_key_exists($keys[24], $arr)) $this->setUpdatedAt($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setEnabled($arr[$keys[25]]);
+        if (array_key_exists($keys[25], $arr)) $this->setActive($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setEnabled($arr[$keys[26]]);
     }
 
     /**
@@ -2065,6 +2125,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) $criteria->add(DemandeIdentifiantPeer::IDENTIFIANT, $this->identifiant);
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) $criteria->add(DemandeIdentifiantPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) $criteria->add(DemandeIdentifiantPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ACTIVE)) $criteria->add(DemandeIdentifiantPeer::ACTIVE, $this->active);
         if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) $criteria->add(DemandeIdentifiantPeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -2153,6 +2214,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $copyObj->setIdentifiant($this->getIdentifiant());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
         if ($makeNew) {
             $copyObj->setNew(true);
@@ -2230,6 +2292,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $this->identifiant = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -2288,6 +2351,18 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $this->modifiedColumns[] = DemandeIdentifiantPeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // crudable behavior

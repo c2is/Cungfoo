@@ -47,6 +47,12 @@ class BaseAvantageType extends AppAwareType
             'label' => 'avantage.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'avantage.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

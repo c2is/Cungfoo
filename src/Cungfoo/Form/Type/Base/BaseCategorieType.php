@@ -34,6 +34,12 @@ class BaseCategorieType extends AppAwareType
             'label' => 'categorie.code',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'categorie.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

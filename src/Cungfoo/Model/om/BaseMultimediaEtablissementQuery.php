@@ -30,6 +30,7 @@ use Cungfoo\Model\Tag;
  * @method MultimediaEtablissementQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method MultimediaEtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method MultimediaEtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method MultimediaEtablissementQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method MultimediaEtablissementQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method MultimediaEtablissementQuery groupById() Group by the id column
@@ -37,6 +38,7 @@ use Cungfoo\Model\Tag;
  * @method MultimediaEtablissementQuery groupByImagePath() Group by the image_path column
  * @method MultimediaEtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method MultimediaEtablissementQuery groupByUpdatedAt() Group by the updated_at column
+ * @method MultimediaEtablissementQuery groupByActive() Group by the active column
  * @method MultimediaEtablissementQuery groupByEnabled() Group by the enabled column
  *
  * @method MultimediaEtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -62,6 +64,7 @@ use Cungfoo\Model\Tag;
  * @method MultimediaEtablissement findOneByImagePath(string $image_path) Return the first MultimediaEtablissement filtered by the image_path column
  * @method MultimediaEtablissement findOneByCreatedAt(string $created_at) Return the first MultimediaEtablissement filtered by the created_at column
  * @method MultimediaEtablissement findOneByUpdatedAt(string $updated_at) Return the first MultimediaEtablissement filtered by the updated_at column
+ * @method MultimediaEtablissement findOneByActive(boolean $active) Return the first MultimediaEtablissement filtered by the active column
  * @method MultimediaEtablissement findOneByEnabled(boolean $enabled) Return the first MultimediaEtablissement filtered by the enabled column
  *
  * @method array findById(int $id) Return MultimediaEtablissement objects filtered by the id column
@@ -69,6 +72,7 @@ use Cungfoo\Model\Tag;
  * @method array findByImagePath(string $image_path) Return MultimediaEtablissement objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return MultimediaEtablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return MultimediaEtablissement objects filtered by the updated_at column
+ * @method array findByActive(boolean $active) Return MultimediaEtablissement objects filtered by the active column
  * @method array findByEnabled(boolean $enabled) Return MultimediaEtablissement objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -173,7 +177,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `multimedia_etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `multimedia_etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -445,6 +449,33 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MultimediaEtablissementPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return MultimediaEtablissementQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(MultimediaEtablissementPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -796,6 +827,20 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(MultimediaEtablissementPeer::CREATED_AT);
     }
+    // active behavior
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+    
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

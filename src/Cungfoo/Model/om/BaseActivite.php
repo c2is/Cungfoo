@@ -84,6 +84,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -279,6 +285,16 @@ abstract class BaseActivite extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
      * Get the [enabled] column value.
      *
      * @return boolean
@@ -398,6 +414,35 @@ abstract class BaseActivite extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return Activite The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = ActivitePeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -467,7 +512,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -476,7 +522,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = ActivitePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = ActivitePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Activite object", $e);
@@ -773,6 +819,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if ($this->isColumnModified(ActivitePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(ActivitePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(ActivitePeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -801,6 +850,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -971,6 +1023,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 5:
+                return $this->getActive();
+                break;
+            case 6:
                 return $this->getEnabled();
                 break;
             default:
@@ -1007,7 +1062,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
             $keys[2] => $this->getImagePath(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getEnabled(),
+            $keys[5] => $this->getActive(),
+            $keys[6] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementActivites) {
@@ -1066,6 +1122,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 5:
+                $this->setActive($value);
+                break;
+            case 6:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1097,7 +1156,8 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
     }
 
     /**
@@ -1114,6 +1174,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if ($this->isColumnModified(ActivitePeer::IMAGE_PATH)) $criteria->add(ActivitePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(ActivitePeer::CREATED_AT)) $criteria->add(ActivitePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ActivitePeer::UPDATED_AT)) $criteria->add(ActivitePeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(ActivitePeer::ACTIVE)) $criteria->add(ActivitePeer::ACTIVE, $this->active);
         if ($this->isColumnModified(ActivitePeer::ENABLED)) $criteria->add(ActivitePeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -1182,6 +1243,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1893,6 +1955,7 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1982,6 +2045,18 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $this->modifiedColumns[] = ActivitePeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

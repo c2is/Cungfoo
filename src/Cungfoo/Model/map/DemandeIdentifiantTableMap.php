@@ -67,6 +67,7 @@ class DemandeIdentifiantTableMap extends TableMap
         $this->addColumn('IDENTIFIANT', 'Identifiant', 'BOOLEAN', false, 1, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
         $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -88,6 +89,7 @@ class DemandeIdentifiantTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'active' => array('active_column' => 'active', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/demandes-identifiant', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()

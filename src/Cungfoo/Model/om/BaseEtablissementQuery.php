@@ -74,6 +74,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByPublished($order = Criteria::ASC) Order by the published column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method EtablissementQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method EtablissementQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method EtablissementQuery groupById() Group by the id column
@@ -103,6 +104,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByPublished() Group by the published column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
+ * @method EtablissementQuery groupByActive() Group by the active column
  * @method EtablissementQuery groupByEnabled() Group by the enabled column
  *
  * @method EtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -202,6 +204,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByPublished(boolean $published) Return the first Etablissement filtered by the published column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
+ * @method Etablissement findOneByActive(boolean $active) Return the first Etablissement filtered by the active column
  * @method Etablissement findOneByEnabled(boolean $enabled) Return the first Etablissement filtered by the enabled column
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
@@ -231,6 +234,7 @@ use Cungfoo\Model\Ville;
  * @method array findByPublished(boolean $published) Return Etablissement objects filtered by the published column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
+ * @method array findByActive(boolean $active) Return Etablissement objects filtered by the active column
  * @method array findByEnabled(boolean $enabled) Return Etablissement objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -335,7 +339,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1297,6 +1301,33 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -2765,6 +2796,20 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(EtablissementPeer::CREATED_AT);
     }
+    // active behavior
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+    
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

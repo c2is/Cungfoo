@@ -648,4 +648,18 @@ abstract class BaseDernieresMinutesQuery extends ModelCriteria
         return $this;
     }
 
+    // active behavior
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+    
+        return parent::find($con);
+    }
+
 }

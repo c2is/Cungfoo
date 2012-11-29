@@ -96,6 +96,12 @@ abstract class BaseVille extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -305,6 +311,16 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
      * Get the [enabled] column value.
      *
      * @return boolean
@@ -470,6 +486,35 @@ abstract class BaseVille extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return Ville The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = VillePeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -541,7 +586,8 @@ abstract class BaseVille extends BaseObject implements Persistent
             $this->image_detail_2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->enabled = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -550,7 +596,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = VillePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = VillePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Ville object", $e);
@@ -849,6 +895,9 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ($this->isColumnModified(VillePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(VillePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(VillePeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -883,6 +932,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -1071,6 +1123,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 7:
+                return $this->getActive();
+                break;
+            case 8:
                 return $this->getEnabled();
                 break;
             default:
@@ -1109,7 +1164,8 @@ abstract class BaseVille extends BaseObject implements Persistent
             $keys[4] => $this->getImageDetail2(),
             $keys[5] => $this->getCreatedAt(),
             $keys[6] => $this->getUpdatedAt(),
-            $keys[7] => $this->getEnabled(),
+            $keys[7] => $this->getActive(),
+            $keys[8] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegion) {
@@ -1177,6 +1233,9 @@ abstract class BaseVille extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 7:
+                $this->setActive($value);
+                break;
+            case 8:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1210,7 +1269,8 @@ abstract class BaseVille extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setImageDetail2($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
+        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setEnabled($arr[$keys[8]]);
     }
 
     /**
@@ -1229,6 +1289,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         if ($this->isColumnModified(VillePeer::IMAGE_DETAIL_2)) $criteria->add(VillePeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(VillePeer::CREATED_AT)) $criteria->add(VillePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(VillePeer::UPDATED_AT)) $criteria->add(VillePeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(VillePeer::ACTIVE)) $criteria->add(VillePeer::ACTIVE, $this->active);
         if ($this->isColumnModified(VillePeer::ENABLED)) $criteria->add(VillePeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -1299,6 +1360,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1895,6 +1957,7 @@ abstract class BaseVille extends BaseObject implements Persistent
         $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1976,6 +2039,18 @@ abstract class BaseVille extends BaseObject implements Persistent
         $this->modifiedColumns[] = VillePeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

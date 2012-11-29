@@ -47,6 +47,12 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'activite.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

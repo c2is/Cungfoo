@@ -126,6 +126,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -388,6 +394,16 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         } else {
             return $dt->format($format);
         }
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -657,6 +673,35 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = PointInteretPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -733,7 +778,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->image = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
             $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->enabled = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
+            $this->active = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
+            $this->enabled = ($row[$startcol + 13] !== null) ? (boolean) $row[$startcol + 13] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -742,7 +788,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 13; // 13 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 14; // 14 = PointInteretPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PointInteret object", $e);
@@ -1060,6 +1106,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(PointInteretPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(PointInteretPeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -1109,6 +1158,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -1300,6 +1352,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 12:
+                return $this->getActive();
+                break;
+            case 13:
                 return $this->getEnabled();
                 break;
             default:
@@ -1343,7 +1398,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $keys[9] => $this->getImage(),
             $keys[10] => $this->getCreatedAt(),
             $keys[11] => $this->getUpdatedAt(),
-            $keys[12] => $this->getEnabled(),
+            $keys[12] => $this->getActive(),
+            $keys[13] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementPointInterets) {
@@ -1423,6 +1479,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 12:
+                $this->setActive($value);
+                break;
+            case 13:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1461,7 +1520,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if (array_key_exists($keys[9], $arr)) $this->setImage($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
         if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setEnabled($arr[$keys[12]]);
+        if (array_key_exists($keys[12], $arr)) $this->setActive($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setEnabled($arr[$keys[13]]);
     }
 
     /**
@@ -1485,6 +1545,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretPeer::IMAGE)) $criteria->add(PointInteretPeer::IMAGE, $this->image);
         if ($this->isColumnModified(PointInteretPeer::CREATED_AT)) $criteria->add(PointInteretPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PointInteretPeer::UPDATED_AT)) $criteria->add(PointInteretPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(PointInteretPeer::ACTIVE)) $criteria->add(PointInteretPeer::ACTIVE, $this->active);
         if ($this->isColumnModified(PointInteretPeer::ENABLED)) $criteria->add(PointInteretPeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -1560,6 +1621,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $copyObj->setImage($this->getImage());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -2278,6 +2340,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $this->image = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -2367,6 +2430,18 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $this->modifiedColumns[] = PointInteretPeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

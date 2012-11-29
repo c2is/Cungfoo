@@ -37,13 +37,13 @@ abstract class BaseDestinationPeer
     const TM_CLASS = 'DestinationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the ID field */
     const ID = 'destination.ID';
@@ -56,6 +56,9 @@ abstract class BaseDestinationPeer
 
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'destination.UPDATED_AT';
+
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'destination.ACTIVE';
 
     /** the column name for the ENABLED field */
     const ENABLED = 'destination.ENABLED';
@@ -86,12 +89,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[DestinationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::ACTIVE, DestinationPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -101,12 +104,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Enabled' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'enabled' => 4, ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, DestinationPeer::ENABLED => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ENABLED' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'enabled' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, 'Enabled' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, 'enabled' => 5, ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, DestinationPeer::ACTIVE => 4, DestinationPeer::ENABLED => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, 'ENABLED' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, 'enabled' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -184,12 +187,14 @@ abstract class BaseDestinationPeer
             $criteria->addSelectColumn(DestinationPeer::CODE);
             $criteria->addSelectColumn(DestinationPeer::CREATED_AT);
             $criteria->addSelectColumn(DestinationPeer::UPDATED_AT);
+            $criteria->addSelectColumn(DestinationPeer::ACTIVE);
             $criteria->addSelectColumn(DestinationPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
             $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }

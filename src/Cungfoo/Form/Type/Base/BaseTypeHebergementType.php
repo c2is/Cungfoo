@@ -79,6 +79,12 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.image_composition_path_deleted',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

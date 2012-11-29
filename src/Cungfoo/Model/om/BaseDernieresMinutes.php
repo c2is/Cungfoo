@@ -2188,6 +2188,18 @@ abstract class BaseDernieresMinutes extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // crudable behavior
 
     /**

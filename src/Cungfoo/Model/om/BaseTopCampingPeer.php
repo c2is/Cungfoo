@@ -37,13 +37,13 @@ abstract class BaseTopCampingPeer
     const TM_CLASS = 'TopCampingTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'top_camping.ID';
@@ -53,6 +53,9 @@ abstract class BaseTopCampingPeer
 
     /** the column name for the SORTABLE_RANK field */
     const SORTABLE_RANK = 'top_camping.SORTABLE_RANK';
+
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'top_camping.ACTIVE';
 
     /** the column name for the ENABLED field */
     const ENABLED = 'top_camping.ENABLED';
@@ -83,12 +86,12 @@ abstract class BaseTopCampingPeer
      * e.g. TopCampingPeer::$fieldNames[TopCampingPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'SortableRank', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'sortableRank', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID, TopCampingPeer::ETABLISSEMENT_ID, TopCampingPeer::SORTABLE_RANK, TopCampingPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'SORTABLE_RANK', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'sortable_rank', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'SortableRank', 'Active', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'sortableRank', 'active', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID, TopCampingPeer::ETABLISSEMENT_ID, TopCampingPeer::SORTABLE_RANK, TopCampingPeer::ACTIVE, TopCampingPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'SORTABLE_RANK', 'ACTIVE', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'sortable_rank', 'active', 'enabled', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -98,12 +101,12 @@ abstract class BaseTopCampingPeer
      * e.g. TopCampingPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'SortableRank' => 2, 'Enabled' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'sortableRank' => 2, 'enabled' => 3, ),
-        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID => 0, TopCampingPeer::ETABLISSEMENT_ID => 1, TopCampingPeer::SORTABLE_RANK => 2, TopCampingPeer::ENABLED => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'SORTABLE_RANK' => 2, 'ENABLED' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'sortable_rank' => 2, 'enabled' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'SortableRank' => 2, 'Active' => 3, 'Enabled' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'sortableRank' => 2, 'active' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_COLNAME => array (TopCampingPeer::ID => 0, TopCampingPeer::ETABLISSEMENT_ID => 1, TopCampingPeer::SORTABLE_RANK => 2, TopCampingPeer::ACTIVE => 3, TopCampingPeer::ENABLED => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'SORTABLE_RANK' => 2, 'ACTIVE' => 3, 'ENABLED' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'sortable_rank' => 2, 'active' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -180,11 +183,13 @@ abstract class BaseTopCampingPeer
             $criteria->addSelectColumn(TopCampingPeer::ID);
             $criteria->addSelectColumn(TopCampingPeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(TopCampingPeer::SORTABLE_RANK);
+            $criteria->addSelectColumn(TopCampingPeer::ACTIVE);
             $criteria->addSelectColumn(TopCampingPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
             $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
             $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }

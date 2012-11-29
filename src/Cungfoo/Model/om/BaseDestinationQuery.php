@@ -30,12 +30,14 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method DestinationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DestinationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method DestinationQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method DestinationQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method DestinationQuery groupById() Group by the id column
  * @method DestinationQuery groupByCode() Group by the code column
  * @method DestinationQuery groupByCreatedAt() Group by the created_at column
  * @method DestinationQuery groupByUpdatedAt() Group by the updated_at column
+ * @method DestinationQuery groupByActive() Group by the active column
  * @method DestinationQuery groupByEnabled() Group by the enabled column
  *
  * @method DestinationQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -60,12 +62,14 @@ use Cungfoo\Model\EtablissementDestination;
  * @method Destination findOneByCode(string $code) Return the first Destination filtered by the code column
  * @method Destination findOneByCreatedAt(string $created_at) Return the first Destination filtered by the created_at column
  * @method Destination findOneByUpdatedAt(string $updated_at) Return the first Destination filtered by the updated_at column
+ * @method Destination findOneByActive(boolean $active) Return the first Destination filtered by the active column
  * @method Destination findOneByEnabled(boolean $enabled) Return the first Destination filtered by the enabled column
  *
  * @method array findById(int $id) Return Destination objects filtered by the id column
  * @method array findByCode(string $code) Return Destination objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return Destination objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Destination objects filtered by the updated_at column
+ * @method array findByActive(boolean $active) Return Destination objects filtered by the active column
  * @method array findByEnabled(boolean $enabled) Return Destination objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -170,7 +174,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `destination` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE`, `ENABLED` FROM `destination` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -399,6 +403,33 @@ abstract class BaseDestinationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DestinationPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -765,6 +796,20 @@ abstract class BaseDestinationQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
+    // active behavior
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+    
+        return parent::find($con);
+    }
+
     // i18n behavior
 
     /**

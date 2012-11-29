@@ -483,3 +483,11 @@ thursday: jeudi
 friday: vendredi
 saturday: samedi
 sunday: dimanche
+
+results.nbresults_title: Résultat(s)
+results.nbresults_subtitle: Affichage résultats
+results.list_button: Liste
+results.map_button: Carte
+results.slider_title: Budget(s) proposé(s)
+results.sort_title: Trier par
+results.list_title: Comparateur

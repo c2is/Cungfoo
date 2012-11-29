@@ -47,6 +47,12 @@ class BaseMultimediaEtablissementType extends AppAwareType
             'label' => 'multimedia_etablissement.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'multimedia_etablissement.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

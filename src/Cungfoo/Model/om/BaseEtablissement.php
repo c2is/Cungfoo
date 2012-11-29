@@ -262,6 +262,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -984,6 +990,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
      * Get the [enabled] column value.
      *
      * @return boolean
@@ -1585,6 +1601,35 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = EtablissementPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -1676,7 +1721,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->published = ($row[$startcol + 24] !== null) ? (boolean) $row[$startcol + 24] : null;
             $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
             $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->enabled = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
+            $this->active = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
+            $this->enabled = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1685,7 +1731,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2494,6 +2540,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(EtablissementPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(EtablissementPeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -2588,6 +2637,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -2938,6 +2990,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 27:
+                return $this->getActive();
+                break;
+            case 28:
                 return $this->getEnabled();
                 break;
             default:
@@ -2996,7 +3051,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[24] => $this->getPublished(),
             $keys[25] => $this->getCreatedAt(),
             $keys[26] => $this->getUpdatedAt(),
-            $keys[27] => $this->getEnabled(),
+            $keys[27] => $this->getActive(),
+            $keys[28] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3163,6 +3219,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 27:
+                $this->setActive($value);
+                break;
+            case 28:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -3216,7 +3275,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[24], $arr)) $this->setPublished($arr[$keys[24]]);
         if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
         if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setEnabled($arr[$keys[27]]);
+        if (array_key_exists($keys[27], $arr)) $this->setActive($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setEnabled($arr[$keys[28]]);
     }
 
     /**
@@ -3255,6 +3315,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) $criteria->add(EtablissementPeer::PUBLISHED, $this->published);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(EtablissementPeer::ACTIVE)) $criteria->add(EtablissementPeer::ACTIVE, $this->active);
         if ($this->isColumnModified(EtablissementPeer::ENABLED)) $criteria->add(EtablissementPeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -3345,6 +3406,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setPublished($this->getPublished());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -8509,6 +8571,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->published = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -8789,6 +8852,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->modifiedColumns[] = EtablissementPeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

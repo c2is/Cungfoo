@@ -84,6 +84,12 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     protected $image_path;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -209,6 +215,16 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     public function getImagePath()
     {
         return $this->image_path;
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -364,6 +380,35 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     } // setImagePath()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return IdeeWeekend The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -434,7 +479,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->home = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->image_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->enabled = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -443,7 +489,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = IdeeWeekendPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = IdeeWeekendPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating IdeeWeekend object", $e);
@@ -692,6 +738,9 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) {
             $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
         }
+        if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -723,6 +772,9 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                         break;
                     case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -888,6 +940,9 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 return $this->getImagePath();
                 break;
             case 6:
+                return $this->getActive();
+                break;
+            case 7:
                 return $this->getEnabled();
                 break;
             default:
@@ -925,7 +980,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $keys[3] => $this->getHome(),
             $keys[4] => $this->getLien(),
             $keys[5] => $this->getImagePath(),
-            $keys[6] => $this->getEnabled(),
+            $keys[6] => $this->getActive(),
+            $keys[7] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collIdeeWeekendI18ns) {
@@ -984,6 +1040,9 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 $this->setImagePath($value);
                 break;
             case 6:
+                $this->setActive($value);
+                break;
+            case 7:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1016,7 +1075,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setHome($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setImagePath($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setEnabled($arr[$keys[7]]);
     }
 
     /**
@@ -1034,6 +1094,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) $criteria->add(IdeeWeekendPeer::HOME, $this->home);
         if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) $criteria->add(IdeeWeekendPeer::LIEN, $this->lien);
         if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) $criteria->add(IdeeWeekendPeer::IMAGE_PATH, $this->image_path);
+        if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) $criteria->add(IdeeWeekendPeer::ACTIVE, $this->active);
         if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) $criteria->add(IdeeWeekendPeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -1103,6 +1164,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $copyObj->setHome($this->getHome());
         $copyObj->setLien($this->getLien());
         $copyObj->setImagePath($this->getImagePath());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1406,6 +1468,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $this->home = null;
         $this->lien = null;
         $this->image_path = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1463,6 +1526,18 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

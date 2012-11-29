@@ -191,6 +191,12 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.published',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

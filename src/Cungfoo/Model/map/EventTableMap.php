@@ -56,6 +56,7 @@ class EventTableMap extends TableMap
         $this->addColumn('PRIORITY', 'Priority', 'VARCHAR', false, 255, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
         $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -80,6 +81,7 @@ class EventTableMap extends TableMap
     {
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'active' => array('active_column' => 'active', ),
             'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name,str_date,subtitle', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/events', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );

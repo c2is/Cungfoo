@@ -41,6 +41,12 @@ class BaseTopCampingType extends AppAwareType
             'label' => 'top_camping.sortable_rank',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'top_camping.active',
+            'required' => false,
+        ));
         $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),

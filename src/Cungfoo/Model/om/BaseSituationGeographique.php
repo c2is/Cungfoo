@@ -78,6 +78,12 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -263,6 +269,16 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
     }
 
     /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
      * Get the [enabled] column value.
      *
      * @return boolean
@@ -361,6 +377,35 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return SituationGeographique The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = SituationGeographiquePeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -429,7 +474,8 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->enabled = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -438,7 +484,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = SituationGeographiquePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = SituationGeographiquePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating SituationGeographique object", $e);
@@ -732,6 +778,9 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         if ($this->isColumnModified(SituationGeographiquePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
+        if ($this->isColumnModified(SituationGeographiquePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+        }
         if ($this->isColumnModified(SituationGeographiquePeer::ENABLED)) {
             $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
@@ -757,6 +806,9 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
                         break;
                     case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                     case '`ENABLED`':
                         $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
@@ -924,6 +976,9 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
                 return $this->getUpdatedAt();
                 break;
             case 4:
+                return $this->getActive();
+                break;
+            case 5:
                 return $this->getEnabled();
                 break;
             default:
@@ -959,7 +1014,8 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getCreatedAt(),
             $keys[3] => $this->getUpdatedAt(),
-            $keys[4] => $this->getEnabled(),
+            $keys[4] => $this->getActive(),
+            $keys[5] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementSituationGeographiques) {
@@ -1015,6 +1071,9 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
                 $this->setUpdatedAt($value);
                 break;
             case 4:
+                $this->setActive($value);
+                break;
+            case 5:
                 $this->setEnabled($value);
                 break;
         } // switch()
@@ -1045,7 +1104,8 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setEnabled($arr[$keys[4]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
     }
 
     /**
@@ -1061,6 +1121,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         if ($this->isColumnModified(SituationGeographiquePeer::CODE)) $criteria->add(SituationGeographiquePeer::CODE, $this->code);
         if ($this->isColumnModified(SituationGeographiquePeer::CREATED_AT)) $criteria->add(SituationGeographiquePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(SituationGeographiquePeer::UPDATED_AT)) $criteria->add(SituationGeographiquePeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(SituationGeographiquePeer::ACTIVE)) $criteria->add(SituationGeographiquePeer::ACTIVE, $this->active);
         if ($this->isColumnModified(SituationGeographiquePeer::ENABLED)) $criteria->add(SituationGeographiquePeer::ENABLED, $this->enabled);
 
         return $criteria;
@@ -1128,6 +1189,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         $copyObj->setCode($this->getCode());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
         $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1838,6 +1900,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         $this->code = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1927,6 +1990,18 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         $this->modifiedColumns[] = SituationGeographiquePeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // i18n behavior

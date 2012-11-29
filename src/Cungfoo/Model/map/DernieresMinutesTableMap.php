@@ -85,6 +85,7 @@ class DernieresMinutesTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'active' => array('active_column' => 'active', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/dernieres-minutes', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
