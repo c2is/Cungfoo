@@ -15,8 +15,9 @@ class ActiveBehavior extends Behavior
         if (!$this->getTable()->containsColumn($this->getParameter('active_column')))
         {
             $this->getTable()->addColumn(array(
-                'name' => $this->getParameter('active_column'),
-                'type' => 'BOOLEAN'
+                'name'    => $this->getParameter('active_column'),
+                'type'    => 'BOOLEAN',
+                'default' => true,
             ));
         }
     }
