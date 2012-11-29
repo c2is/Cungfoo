@@ -39,7 +39,7 @@ header, section, footer {position:relative;}
       &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font:bold  15px @arial,sans-serif;color:@colorFushia;}
     }
-    .subnav{padding:18px;position:absolute;top:57px;left:0px;width:976px;background:@colorBgBlanc;float:none;box-shadow:0 10px 10px -12px @colorBgGrisF;z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;cursor:default;
+    .subnav{padding:18px;position:absolute;top:57px;left:0px;width:976px;background:@colorBgBlanc;float:none;._box-shadow(0 10px 10px -12px @colorBgGrisF);z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;cursor:default;
       p{font:18px/19px @arial,sans-serif;}
       .title{font:bold 22px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
       .subtitle{font:bold 18px @ptnarrow;color:@colorFushia;text-transform:uppercase;margin:3px 0 2px;}
@@ -195,9 +195,17 @@ h6, .h6-like{color:@colorFushia;}
 .radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgGrisC;}
-  &.greyF{background-color:@colorBgGrisF;}
-  &.fushia{background-color:@colorFushia;}
-  &.yellow{background-color:@colorJaune;}
+  &.greyF{background-color:@colorBgGrisF;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisF;border-width:18px;margin-top:-18px;margin-left:-18px;}
+  }
+  &.fushia{background-color:@colorFushia;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorFushia;border-width:18px;margin-top:-18px;margin-left:-18px;}
+    &.arrowBottom:after{top:100%;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color:@colorFushia;border-width:18px;margin-left:-18px;margin-bottom:-18px;}
+  }
+  &.yellow{background-color:@colorJaune;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorJaune;border-width:15px;margin-top:-15px;margin-left:-15px;}
+    &.arrowRight:after{left:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-left-color:@colorJaune;border-width:15px;margin-top:-15px;margin-right:-15px;}
+  }
   .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 20px;display:block;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
@@ -237,10 +245,10 @@ h6, .h6-like{color:@colorFushia;}
 .callout {z-index:20;position:absolute;top:30px;border:0;left:50%;}
 
 /*CSS3 extras*/
-.tooltip span{
-  -moz-box-shadow: 0 10px 10px -12px @colorGris2;
-  -webkit-box-shadow: 0 10px 10px -12px @colorGris2;
-  box-shadow: 0 10px 10px -12px @colorGris2;
+.tooltip span{._box-shadow(0 10px 10px -12px @colorGris2);
+//  -moz-box-shadow: 0 10px 10px -12px @colorGris2;
+//  -webkit-box-shadow: 0 10px 10px -12px @colorGris2;
+//  box-shadow: 0 10px 10px -12px @colorGris2;
 }
 
 label,input[type="radio"] {vertical-align:middle;}

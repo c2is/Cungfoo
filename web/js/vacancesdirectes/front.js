@@ -966,6 +966,7 @@ function toggleSearchCriteria(){
     $('.toggleButton').live('click', function(e){
 //        console.log("----------------- toggleSearchCriteria() CLICK -----------------");
         toggleState = toggleState == 0 ? 1 : 0;
+        $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
         var $button = $(this);
         var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
