@@ -189,7 +189,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY_TYPE_HEBERGEMENT_ID`, `NOMBRE_CHAMBRE`, `NOMBRE_PLACE`, `IMAGE_HEBERGEMENT_PATH`, `IMAGE_COMPOSITION_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `type_hebergement` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `category_type_hebergement_id`, `nombre_chambre`, `nombre_place`, `image_hebergement_path`, `image_composition_path`, `created_at`, `updated_at`, `active` FROM `type_hebergement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

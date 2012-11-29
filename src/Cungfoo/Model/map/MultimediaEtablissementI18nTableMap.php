@@ -42,9 +42,9 @@ class MultimediaEtablissementI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'multimedia_etablissement', 'ID', true, null, null);
-        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('TITRE', 'Titre', 'VARCHAR', true, 255, null);
+        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'multimedia_etablissement', 'id', true, null, null);
+        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('titre', 'Titre', 'VARCHAR', true, 255, null);
         // validators
     } // initialize()
 

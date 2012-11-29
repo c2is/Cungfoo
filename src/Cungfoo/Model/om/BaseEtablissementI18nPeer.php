@@ -45,26 +45,26 @@ abstract class BaseEtablissementI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'etablissement_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'etablissement_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'etablissement_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'etablissement_i18n.locale';
 
-    /** the column name for the COUNTRY field */
-    const COUNTRY = 'etablissement_i18n.COUNTRY';
+    /** the column name for the country field */
+    const COUNTRY = 'etablissement_i18n.country';
 
-    /** the column name for the OUVERTURE_RECEPTION field */
-    const OUVERTURE_RECEPTION = 'etablissement_i18n.OUVERTURE_RECEPTION';
+    /** the column name for the ouverture_reception field */
+    const OUVERTURE_RECEPTION = 'etablissement_i18n.ouverture_reception';
 
-    /** the column name for the OUVERTURE_CAMPING field */
-    const OUVERTURE_CAMPING = 'etablissement_i18n.OUVERTURE_CAMPING';
+    /** the column name for the ouverture_camping field */
+    const OUVERTURE_CAMPING = 'etablissement_i18n.ouverture_camping';
 
-    /** the column name for the ARRIVEES_DEPARTS field */
-    const ARRIVEES_DEPARTS = 'etablissement_i18n.ARRIVEES_DEPARTS';
+    /** the column name for the arrivees_departs field */
+    const ARRIVEES_DEPARTS = 'etablissement_i18n.arrivees_departs';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'etablissement_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'etablissement_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -187,13 +187,13 @@ abstract class BaseEtablissementI18nPeer
             $criteria->addSelectColumn(EtablissementI18nPeer::ARRIVEES_DEPARTS);
             $criteria->addSelectColumn(EtablissementI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.COUNTRY');
-            $criteria->addSelectColumn($alias . '.OUVERTURE_RECEPTION');
-            $criteria->addSelectColumn($alias . '.OUVERTURE_CAMPING');
-            $criteria->addSelectColumn($alias . '.ARRIVEES_DEPARTS');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.country');
+            $criteria->addSelectColumn($alias . '.ouverture_reception');
+            $criteria->addSelectColumn($alias . '.ouverture_camping');
+            $criteria->addSelectColumn($alias . '.arrivees_departs');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 

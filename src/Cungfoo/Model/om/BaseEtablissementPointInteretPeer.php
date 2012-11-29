@@ -46,14 +46,14 @@ abstract class BaseEtablissementPointInteretPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_point_interet.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_point_interet.etablissement_id';
 
-    /** the column name for the POINT_INTERET_ID field */
-    const POINT_INTERET_ID = 'etablissement_point_interet.POINT_INTERET_ID';
+    /** the column name for the point_interet_id field */
+    const POINT_INTERET_ID = 'etablissement_point_interet.point_interet_id';
 
-    /** the column name for the DISTANCE field */
-    const DISTANCE = 'etablissement_point_interet.DISTANCE';
+    /** the column name for the distance field */
+    const DISTANCE = 'etablissement_point_interet.distance';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -172,9 +172,9 @@ abstract class BaseEtablissementPointInteretPeer
             $criteria->addSelectColumn(EtablissementPointInteretPeer::POINT_INTERET_ID);
             $criteria->addSelectColumn(EtablissementPointInteretPeer::DISTANCE);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.POINT_INTERET_ID');
-            $criteria->addSelectColumn($alias . '.DISTANCE');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.point_interet_id');
+            $criteria->addSelectColumn($alias . '.distance');
         }
     }
 

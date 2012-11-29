@@ -45,20 +45,20 @@ abstract class BaseRegionI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'region_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'region_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'region_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'region_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'region_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'region_i18n.name';
 
-    /** the column name for the INTRODUCTION field */
-    const INTRODUCTION = 'region_i18n.INTRODUCTION';
+    /** the column name for the introduction field */
+    const INTRODUCTION = 'region_i18n.introduction';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'region_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'region_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseRegionI18nPeer
             $criteria->addSelectColumn(RegionI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(RegionI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.INTRODUCTION');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.introduction');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 

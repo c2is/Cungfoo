@@ -46,11 +46,11 @@ abstract class BaseMultimediaEtablissementTagPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the MULTIMEDIA_ETABLISSEMENT_ID field */
-    const MULTIMEDIA_ETABLISSEMENT_ID = 'multimedia_etablissement_tag.MULTIMEDIA_ETABLISSEMENT_ID';
+    /** the column name for the multimedia_etablissement_id field */
+    const MULTIMEDIA_ETABLISSEMENT_ID = 'multimedia_etablissement_tag.multimedia_etablissement_id';
 
-    /** the column name for the TAG_ID field */
-    const TAG_ID = 'multimedia_etablissement_tag.TAG_ID';
+    /** the column name for the tag_id field */
+    const TAG_ID = 'multimedia_etablissement_tag.tag_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseMultimediaEtablissementTagPeer
             $criteria->addSelectColumn(MultimediaEtablissementTagPeer::MULTIMEDIA_ETABLISSEMENT_ID);
             $criteria->addSelectColumn(MultimediaEtablissementTagPeer::TAG_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.MULTIMEDIA_ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.TAG_ID');
+            $criteria->addSelectColumn($alias . '.multimedia_etablissement_id');
+            $criteria->addSelectColumn($alias . '.tag_id');
         }
     }
 

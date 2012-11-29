@@ -59,89 +59,89 @@ abstract class BaseEtablissementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 28;
 
-    /** the column name for the ID field */
-    const ID = 'etablissement.ID';
+    /** the column name for the id field */
+    const ID = 'etablissement.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'etablissement.CODE';
+    /** the column name for the code field */
+    const CODE = 'etablissement.code';
 
-    /** the column name for the NAME field */
-    const NAME = 'etablissement.NAME';
+    /** the column name for the name field */
+    const NAME = 'etablissement.name';
 
-    /** the column name for the TITLE field */
-    const TITLE = 'etablissement.TITLE';
+    /** the column name for the title field */
+    const TITLE = 'etablissement.title';
 
-    /** the column name for the ADDRESS1 field */
-    const ADDRESS1 = 'etablissement.ADDRESS1';
+    /** the column name for the address1 field */
+    const ADDRESS1 = 'etablissement.address1';
 
-    /** the column name for the ADDRESS2 field */
-    const ADDRESS2 = 'etablissement.ADDRESS2';
+    /** the column name for the address2 field */
+    const ADDRESS2 = 'etablissement.address2';
 
-    /** the column name for the ZIP field */
-    const ZIP = 'etablissement.ZIP';
+    /** the column name for the zip field */
+    const ZIP = 'etablissement.zip';
 
-    /** the column name for the CITY field */
-    const CITY = 'etablissement.CITY';
+    /** the column name for the city field */
+    const CITY = 'etablissement.city';
 
-    /** the column name for the MAIL field */
-    const MAIL = 'etablissement.MAIL';
+    /** the column name for the mail field */
+    const MAIL = 'etablissement.mail';
 
-    /** the column name for the COUNTRY_CODE field */
-    const COUNTRY_CODE = 'etablissement.COUNTRY_CODE';
+    /** the column name for the country_code field */
+    const COUNTRY_CODE = 'etablissement.country_code';
 
-    /** the column name for the PHONE1 field */
-    const PHONE1 = 'etablissement.PHONE1';
+    /** the column name for the phone1 field */
+    const PHONE1 = 'etablissement.phone1';
 
-    /** the column name for the PHONE2 field */
-    const PHONE2 = 'etablissement.PHONE2';
+    /** the column name for the phone2 field */
+    const PHONE2 = 'etablissement.phone2';
 
-    /** the column name for the FAX field */
-    const FAX = 'etablissement.FAX';
+    /** the column name for the fax field */
+    const FAX = 'etablissement.fax';
 
-    /** the column name for the OPENING_DATE field */
-    const OPENING_DATE = 'etablissement.OPENING_DATE';
+    /** the column name for the opening_date field */
+    const OPENING_DATE = 'etablissement.opening_date';
 
-    /** the column name for the CLOSING_DATE field */
-    const CLOSING_DATE = 'etablissement.CLOSING_DATE';
+    /** the column name for the closing_date field */
+    const CLOSING_DATE = 'etablissement.closing_date';
 
-    /** the column name for the VILLE_ID field */
-    const VILLE_ID = 'etablissement.VILLE_ID';
+    /** the column name for the ville_id field */
+    const VILLE_ID = 'etablissement.ville_id';
 
-    /** the column name for the CATEGORIE_ID field */
-    const CATEGORIE_ID = 'etablissement.CATEGORIE_ID';
+    /** the column name for the categorie_id field */
+    const CATEGORIE_ID = 'etablissement.categorie_id';
 
-    /** the column name for the GEO_COORDINATE_X field */
-    const GEO_COORDINATE_X = 'etablissement.GEO_COORDINATE_X';
+    /** the column name for the geo_coordinate_x field */
+    const GEO_COORDINATE_X = 'etablissement.geo_coordinate_x';
 
-    /** the column name for the GEO_COORDINATE_Y field */
-    const GEO_COORDINATE_Y = 'etablissement.GEO_COORDINATE_Y';
+    /** the column name for the geo_coordinate_y field */
+    const GEO_COORDINATE_Y = 'etablissement.geo_coordinate_y';
 
-    /** the column name for the VIDEO_PATH field */
-    const VIDEO_PATH = 'etablissement.VIDEO_PATH';
+    /** the column name for the video_path field */
+    const VIDEO_PATH = 'etablissement.video_path';
 
-    /** the column name for the IMAGE_360_PATH field */
-    const IMAGE_360_PATH = 'etablissement.IMAGE_360_PATH';
+    /** the column name for the image_360_path field */
+    const IMAGE_360_PATH = 'etablissement.image_360_path';
 
-    /** the column name for the CAPACITE field */
-    const CAPACITE = 'etablissement.CAPACITE';
+    /** the column name for the capacite field */
+    const CAPACITE = 'etablissement.capacite';
 
-    /** the column name for the PLAN_PATH field */
-    const PLAN_PATH = 'etablissement.PLAN_PATH';
+    /** the column name for the plan_path field */
+    const PLAN_PATH = 'etablissement.plan_path';
 
-    /** the column name for the VIGNETTE field */
-    const VIGNETTE = 'etablissement.VIGNETTE';
+    /** the column name for the vignette field */
+    const VIGNETTE = 'etablissement.vignette';
 
-    /** the column name for the PUBLISHED field */
-    const PUBLISHED = 'etablissement.PUBLISHED';
+    /** the column name for the published field */
+    const PUBLISHED = 'etablissement.published';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'etablissement.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'etablissement.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'etablissement.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'etablissement.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'etablissement.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'etablissement.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -292,34 +292,34 @@ abstract class BaseEtablissementPeer
             $criteria->addSelectColumn(EtablissementPeer::UPDATED_AT);
             $criteria->addSelectColumn(EtablissementPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.TITLE');
-            $criteria->addSelectColumn($alias . '.ADDRESS1');
-            $criteria->addSelectColumn($alias . '.ADDRESS2');
-            $criteria->addSelectColumn($alias . '.ZIP');
-            $criteria->addSelectColumn($alias . '.CITY');
-            $criteria->addSelectColumn($alias . '.MAIL');
-            $criteria->addSelectColumn($alias . '.COUNTRY_CODE');
-            $criteria->addSelectColumn($alias . '.PHONE1');
-            $criteria->addSelectColumn($alias . '.PHONE2');
-            $criteria->addSelectColumn($alias . '.FAX');
-            $criteria->addSelectColumn($alias . '.OPENING_DATE');
-            $criteria->addSelectColumn($alias . '.CLOSING_DATE');
-            $criteria->addSelectColumn($alias . '.VILLE_ID');
-            $criteria->addSelectColumn($alias . '.CATEGORIE_ID');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_X');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_Y');
-            $criteria->addSelectColumn($alias . '.VIDEO_PATH');
-            $criteria->addSelectColumn($alias . '.IMAGE_360_PATH');
-            $criteria->addSelectColumn($alias . '.CAPACITE');
-            $criteria->addSelectColumn($alias . '.PLAN_PATH');
-            $criteria->addSelectColumn($alias . '.VIGNETTE');
-            $criteria->addSelectColumn($alias . '.PUBLISHED');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.title');
+            $criteria->addSelectColumn($alias . '.address1');
+            $criteria->addSelectColumn($alias . '.address2');
+            $criteria->addSelectColumn($alias . '.zip');
+            $criteria->addSelectColumn($alias . '.city');
+            $criteria->addSelectColumn($alias . '.mail');
+            $criteria->addSelectColumn($alias . '.country_code');
+            $criteria->addSelectColumn($alias . '.phone1');
+            $criteria->addSelectColumn($alias . '.phone2');
+            $criteria->addSelectColumn($alias . '.fax');
+            $criteria->addSelectColumn($alias . '.opening_date');
+            $criteria->addSelectColumn($alias . '.closing_date');
+            $criteria->addSelectColumn($alias . '.ville_id');
+            $criteria->addSelectColumn($alias . '.categorie_id');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_x');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_y');
+            $criteria->addSelectColumn($alias . '.video_path');
+            $criteria->addSelectColumn($alias . '.image_360_path');
+            $criteria->addSelectColumn($alias . '.capacite');
+            $criteria->addSelectColumn($alias . '.plan_path');
+            $criteria->addSelectColumn($alias . '.vignette');
+            $criteria->addSelectColumn($alias . '.published');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

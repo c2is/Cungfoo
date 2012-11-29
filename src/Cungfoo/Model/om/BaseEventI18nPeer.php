@@ -45,20 +45,20 @@ abstract class BaseEventI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'event_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'event_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'event_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'event_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'event_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'event_i18n.name';
 
-    /** the column name for the STR_DATE field */
-    const STR_DATE = 'event_i18n.STR_DATE';
+    /** the column name for the str_date field */
+    const STR_DATE = 'event_i18n.str_date';
 
-    /** the column name for the SUBTITLE field */
-    const SUBTITLE = 'event_i18n.SUBTITLE';
+    /** the column name for the subtitle field */
+    const SUBTITLE = 'event_i18n.subtitle';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseEventI18nPeer
             $criteria->addSelectColumn(EventI18nPeer::STR_DATE);
             $criteria->addSelectColumn(EventI18nPeer::SUBTITLE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.STR_DATE');
-            $criteria->addSelectColumn($alias . '.SUBTITLE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.str_date');
+            $criteria->addSelectColumn($alias . '.subtitle');
         }
     }
 

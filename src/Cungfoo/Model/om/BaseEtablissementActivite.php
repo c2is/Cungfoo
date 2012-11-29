@@ -431,10 +431,10 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementActivitePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementActivitePeer::ACTIVITE_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVITE_ID`';
+            $modifiedColumns[':p' . $index++]  = '`activite_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`ACTIVITE_ID`':
+                    case '`activite_id`':
                         $stmt->bindValue($identifier, $this->activite_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseEtablissementActivite extends BaseObject implements Persisten
      * Get the associated Activite object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Activite The associated Activite object.
      * @throws PropelException
      */
-    public function getActivite(PropelPDO $con = null)
+    public function getActivite(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aActivite === null && ($this->activite_id !== null)) {
+        if ($this->aActivite === null && ($this->activite_id !== null) && $doQuery) {
             $this->aActivite = ActiviteQuery::create()->findPk($this->activite_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

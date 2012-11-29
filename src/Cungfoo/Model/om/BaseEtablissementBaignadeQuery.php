@@ -139,7 +139,7 @@ abstract class BaseEtablissementBaignadeQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ETABLISSEMENT_ID`, `BAIGNADE_ID` FROM `etablissement_baignade` WHERE `ETABLISSEMENT_ID` = :p0 AND `BAIGNADE_ID` = :p1';
+        $sql = 'SELECT `etablissement_id`, `baignade_id` FROM `etablissement_baignade` WHERE `etablissement_id` = :p0 AND `baignade_id` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

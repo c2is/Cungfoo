@@ -473,13 +473,13 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
+            $modifiedColumns[':p' . $index++]  = '`locale`';
         }
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::TITRE)) {
-            $modifiedColumns[':p' . $index++]  = '`TITRE`';
+            $modifiedColumns[':p' . $index++]  = '`titre`';
         }
 
         $sql = sprintf(
@@ -492,13 +492,13 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`TITRE`':
+                    case '`titre`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
                         break;
                 }
@@ -562,11 +562,11 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -932,12 +932,13 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
      * Get the associated MultimediaEtablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return MultimediaEtablissement The associated MultimediaEtablissement object.
      * @throws PropelException
      */
-    public function getMultimediaEtablissement(PropelPDO $con = null)
+    public function getMultimediaEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aMultimediaEtablissement === null && ($this->id !== null)) {
+        if ($this->aMultimediaEtablissement === null && ($this->id !== null) && $doQuery) {
             $this->aMultimediaEtablissement = MultimediaEtablissementQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -46,20 +46,20 @@ abstract class BaseCategoriePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'categorie.ID';
+    /** the column name for the id field */
+    const ID = 'categorie.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'categorie.CODE';
+    /** the column name for the code field */
+    const CODE = 'categorie.code';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'categorie.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'categorie.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'categorie.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'categorie.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'categorie.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'categorie.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -187,11 +187,11 @@ abstract class BaseCategoriePeer
             $criteria->addSelectColumn(CategoriePeer::UPDATED_AT);
             $criteria->addSelectColumn(CategoriePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

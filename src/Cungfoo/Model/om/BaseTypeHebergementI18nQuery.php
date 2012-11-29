@@ -154,7 +154,7 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `SURFACE`, `TYPE_TERRASSE`, `DESCRIPTION`, `COMPOSITION` FROM `type_hebergement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `surface`, `type_terrasse`, `description`, `composition` FROM `type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

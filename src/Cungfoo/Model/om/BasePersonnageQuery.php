@@ -176,7 +176,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `AGE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `personnage` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `etablissement_id`, `age`, `image_path`, `created_at`, `updated_at`, `active` FROM `personnage` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

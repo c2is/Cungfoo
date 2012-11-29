@@ -42,10 +42,10 @@ class TopCampingTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER', 'etablissement', 'ID', true, null, null);
-        $this->addColumn('SORTABLE_RANK', 'SortableRank', 'INTEGER', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addForeignKey('etablissement_id', 'EtablissementId', 'INTEGER', 'etablissement', 'id', true, null, null);
+        $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -66,9 +66,21 @@ class TopCampingTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'sortable' => array('rank_column' => 'sortable_rank', 'use_scope' => 'false', 'scope_column' => 'sortable_scope', ),
-            'active' => array('active_column' => 'active', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/top-camping', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
+            'sortable' =>  array (
+  'rank_column' => 'sortable_rank',
+  'use_scope' => 'false',
+  'scope_column' => 'sortable_scope',
+),
+            'active' =>  array (
+  'active_column' => 'active',
+),
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/top-camping',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => NULL,
+),
         );
     } // getBehaviors()
 

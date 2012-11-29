@@ -171,7 +171,7 @@ abstract class BasePaysQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `pays` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `pays` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

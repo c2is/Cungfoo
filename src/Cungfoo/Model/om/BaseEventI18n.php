@@ -549,19 +549,19 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EventI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(EventI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
+            $modifiedColumns[':p' . $index++]  = '`locale`';
         }
         if ($this->isColumnModified(EventI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`STR_DATE`';
+            $modifiedColumns[':p' . $index++]  = '`str_date`';
         }
         if ($this->isColumnModified(EventI18nPeer::SUBTITLE)) {
-            $modifiedColumns[':p' . $index++]  = '`SUBTITLE`';
+            $modifiedColumns[':p' . $index++]  = '`subtitle`';
         }
 
         $sql = sprintf(
@@ -574,19 +574,19 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`STR_DATE`':
+                    case '`str_date`':
                         $stmt->bindValue($identifier, $this->str_date, PDO::PARAM_STR);
                         break;
-                    case '`SUBTITLE`':
+                    case '`subtitle`':
                         $stmt->bindValue($identifier, $this->subtitle, PDO::PARAM_STR);
                         break;
                 }
@@ -650,11 +650,11 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1040,12 +1040,13 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
      * Get the associated Event object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Event The associated Event object.
      * @throws PropelException
      */
-    public function getEvent(PropelPDO $con = null)
+    public function getEvent(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEvent === null && ($this->id !== null)) {
+        if ($this->aEvent === null && ($this->id !== null) && $doQuery) {
             $this->aEvent = EventQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

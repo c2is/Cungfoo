@@ -46,26 +46,26 @@ abstract class BasePaysPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'pays.ID';
+    /** the column name for the id field */
+    const ID = 'pays.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'pays.CODE';
+    /** the column name for the code field */
+    const CODE = 'pays.code';
 
-    /** the column name for the IMAGE_DETAIL_1 field */
-    const IMAGE_DETAIL_1 = 'pays.IMAGE_DETAIL_1';
+    /** the column name for the image_detail_1 field */
+    const IMAGE_DETAIL_1 = 'pays.image_detail_1';
 
-    /** the column name for the IMAGE_DETAIL_2 field */
-    const IMAGE_DETAIL_2 = 'pays.IMAGE_DETAIL_2';
+    /** the column name for the image_detail_2 field */
+    const IMAGE_DETAIL_2 = 'pays.image_detail_2';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'pays.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'pays.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'pays.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'pays.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'pays.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'pays.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -195,13 +195,13 @@ abstract class BasePaysPeer
             $criteria->addSelectColumn(PaysPeer::UPDATED_AT);
             $criteria->addSelectColumn(PaysPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_1');
-            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_2');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.image_detail_1');
+            $criteria->addSelectColumn($alias . '.image_detail_2');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

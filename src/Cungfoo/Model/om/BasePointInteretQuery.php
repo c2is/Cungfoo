@@ -32,7 +32,6 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery orderByCity($order = Criteria::ASC) Order by the city column
  * @method PointInteretQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method PointInteretQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
- * @method PointInteretQuery orderByDistanceCamping($order = Criteria::ASC) Order by the distance_camping column
  * @method PointInteretQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method PointInteretQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PointInteretQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
@@ -46,7 +45,6 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery groupByCity() Group by the city column
  * @method PointInteretQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method PointInteretQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
- * @method PointInteretQuery groupByDistanceCamping() Group by the distance_camping column
  * @method PointInteretQuery groupByImage() Group by the image column
  * @method PointInteretQuery groupByCreatedAt() Group by the created_at column
  * @method PointInteretQuery groupByUpdatedAt() Group by the updated_at column
@@ -74,7 +72,6 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteret findOneByCity(string $city) Return the first PointInteret filtered by the city column
  * @method PointInteret findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first PointInteret filtered by the geo_coordinate_x column
  * @method PointInteret findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first PointInteret filtered by the geo_coordinate_y column
- * @method PointInteret findOneByDistanceCamping(string $distance_camping) Return the first PointInteret filtered by the distance_camping column
  * @method PointInteret findOneByImage(string $image) Return the first PointInteret filtered by the image column
  * @method PointInteret findOneByCreatedAt(string $created_at) Return the first PointInteret filtered by the created_at column
  * @method PointInteret findOneByUpdatedAt(string $updated_at) Return the first PointInteret filtered by the updated_at column
@@ -88,7 +85,6 @@ use Cungfoo\Model\PointInteretQuery;
  * @method array findByCity(string $city) Return PointInteret objects filtered by the city column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return PointInteret objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return PointInteret objects filtered by the geo_coordinate_y column
- * @method array findByDistanceCamping(string $distance_camping) Return PointInteret objects filtered by the distance_camping column
  * @method array findByImage(string $image) Return PointInteret objects filtered by the image column
  * @method array findByCreatedAt(string $created_at) Return PointInteret objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return PointInteret objects filtered by the updated_at column
@@ -196,7 +192,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `point_interet` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `image`, `created_at`, `updated_at`, `active` FROM `point_interet` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -513,35 +509,6 @@ abstract class BasePointInteretQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretPeer::GEO_COORDINATE_Y, $geoCoordinateY, $comparison);
-    }
-
-    /**
-     * Filter the query on the distance_camping column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDistanceCamping('fooValue');   // WHERE distance_camping = 'fooValue'
-     * $query->filterByDistanceCamping('%fooValue%'); // WHERE distance_camping LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $distanceCamping The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PointInteretQuery The current query, for fluid interface
-     */
-    public function filterByDistanceCamping($distanceCamping = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($distanceCamping)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $distanceCamping)) {
-                $distanceCamping = str_replace('*', '%', $distanceCamping);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PointInteretPeer::DISTANCE_CAMPING, $distanceCamping, $comparison);
     }
 
     /**

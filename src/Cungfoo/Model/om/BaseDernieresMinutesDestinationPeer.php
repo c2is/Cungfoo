@@ -46,11 +46,11 @@ abstract class BaseDernieresMinutesDestinationPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the DERNIERES_MINUTES_ID field */
-    const DERNIERES_MINUTES_ID = 'dernieres_minutes_destination.DERNIERES_MINUTES_ID';
+    /** the column name for the dernieres_minutes_id field */
+    const DERNIERES_MINUTES_ID = 'dernieres_minutes_destination.dernieres_minutes_id';
 
-    /** the column name for the DESTINATION_ID field */
-    const DESTINATION_ID = 'dernieres_minutes_destination.DESTINATION_ID';
+    /** the column name for the destination_id field */
+    const DESTINATION_ID = 'dernieres_minutes_destination.destination_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseDernieresMinutesDestinationPeer
             $criteria->addSelectColumn(DernieresMinutesDestinationPeer::DERNIERES_MINUTES_ID);
             $criteria->addSelectColumn(DernieresMinutesDestinationPeer::DESTINATION_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.DERNIERES_MINUTES_ID');
-            $criteria->addSelectColumn($alias . '.DESTINATION_ID');
+            $criteria->addSelectColumn($alias . '.dernieres_minutes_id');
+            $criteria->addSelectColumn($alias . '.destination_id');
         }
     }
 

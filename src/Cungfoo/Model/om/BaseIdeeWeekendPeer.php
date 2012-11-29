@@ -45,26 +45,26 @@ abstract class BaseIdeeWeekendPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'idee_weekend.ID';
+    /** the column name for the id field */
+    const ID = 'idee_weekend.id';
 
-    /** the column name for the HIGHLIGHT field */
-    const HIGHLIGHT = 'idee_weekend.HIGHLIGHT';
+    /** the column name for the highlight field */
+    const HIGHLIGHT = 'idee_weekend.highlight';
 
-    /** the column name for the PRIX field */
-    const PRIX = 'idee_weekend.PRIX';
+    /** the column name for the prix field */
+    const PRIX = 'idee_weekend.prix';
 
-    /** the column name for the HOME field */
-    const HOME = 'idee_weekend.HOME';
+    /** the column name for the home field */
+    const HOME = 'idee_weekend.home';
 
-    /** the column name for the LIEN field */
-    const LIEN = 'idee_weekend.LIEN';
+    /** the column name for the lien field */
+    const LIEN = 'idee_weekend.lien';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'idee_weekend.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'idee_weekend.image_path';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'idee_weekend.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'idee_weekend.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -194,13 +194,13 @@ abstract class BaseIdeeWeekendPeer
             $criteria->addSelectColumn(IdeeWeekendPeer::IMAGE_PATH);
             $criteria->addSelectColumn(IdeeWeekendPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.HIGHLIGHT');
-            $criteria->addSelectColumn($alias . '.PRIX');
-            $criteria->addSelectColumn($alias . '.HOME');
-            $criteria->addSelectColumn($alias . '.LIEN');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.highlight');
+            $criteria->addSelectColumn($alias . '.prix');
+            $criteria->addSelectColumn($alias . '.home');
+            $criteria->addSelectColumn($alias . '.lien');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

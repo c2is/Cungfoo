@@ -45,14 +45,14 @@ abstract class BaseIdeeWeekendI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'idee_weekend_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'idee_weekend_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'idee_weekend_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'idee_weekend_i18n.locale';
 
-    /** the column name for the TITRE field */
-    const TITRE = 'idee_weekend_i18n.TITRE';
+    /** the column name for the titre field */
+    const TITRE = 'idee_weekend_i18n.titre';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -171,9 +171,9 @@ abstract class BaseIdeeWeekendI18nPeer
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LOCALE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::TITRE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.TITRE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.titre');
         }
     }
 

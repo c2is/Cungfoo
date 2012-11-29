@@ -196,7 +196,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `image_encart_path`, `image_encart_petite_path`, `pays_id`, `mea_home`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `region` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

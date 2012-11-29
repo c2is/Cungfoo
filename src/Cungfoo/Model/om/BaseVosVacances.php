@@ -512,7 +512,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
             if ($this->collVosVacancesI18ns !== null) {
                 foreach ($this->collVosVacancesI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -545,16 +545,16 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(VosVacancesPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(VosVacancesPeer::AGE)) {
-            $modifiedColumns[':p' . $index++]  = '`AGE`';
+            $modifiedColumns[':p' . $index++]  = '`age`';
         }
         if ($this->isColumnModified(VosVacancesPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
         if ($this->isColumnModified(VosVacancesPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -567,16 +567,16 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`AGE`':
+                    case '`age`':
                         $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -647,11 +647,11 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1012,13 +1012,15 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return VosVacances The current object (for fluent API support)
      * @see        addVosVacancesI18ns()
      */
     public function clearVosVacancesI18ns()
     {
         $this->collVosVacancesI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collVosVacancesI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1117,6 +1119,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
      *
      * @param PropelCollection $vosVacancesI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return VosVacances The current object (for fluent API support)
      */
     public function setVosVacancesI18ns(PropelCollection $vosVacancesI18ns, PropelPDO $con = null)
     {
@@ -1133,6 +1136,8 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
         $this->collVosVacancesI18ns = $vosVacancesI18ns;
         $this->collVosVacancesI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1150,22 +1155,22 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         if (null === $this->collVosVacancesI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collVosVacancesI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getVosVacancesI18ns());
-                }
-                $query = VosVacancesI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByVosVacances($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collVosVacancesI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getVosVacancesI18ns());
+            }
+            $query = VosVacancesI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByVosVacances($this)
+                ->count($con);
         }
+
+        return count($this->collVosVacancesI18ns);
     }
 
     /**
@@ -1203,6 +1208,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
 
     /**
      * @param	VosVacancesI18n $vosVacancesI18n The vosVacancesI18n object to remove.
+     * @return VosVacances The current object (for fluent API support)
      */
     public function removeVosVacancesI18n($vosVacancesI18n)
     {
@@ -1215,6 +1221,8 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
             $this->vosVacancesI18nsScheduledForDeletion[]= $vosVacancesI18n;
             $vosVacancesI18n->setVosVacances(null);
         }
+
+        return $this;
     }
 
     /**

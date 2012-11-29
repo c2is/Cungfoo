@@ -223,22 +223,25 @@ abstract class BaseThematique extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -260,22 +263,25 @@ abstract class BaseThematique extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -709,7 +715,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
             if ($this->collEtablissementThematiques !== null) {
                 foreach ($this->collEtablissementThematiques as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -726,7 +732,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
             if ($this->collThematiqueI18ns !== null) {
                 foreach ($this->collThematiqueI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -759,22 +765,22 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(ThematiquePeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(ThematiquePeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE`';
+            $modifiedColumns[':p' . $index++]  = '`code`';
         }
         if ($this->isColumnModified(ThematiquePeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
         if ($this->isColumnModified(ThematiquePeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(ThematiquePeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(ThematiquePeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -787,22 +793,22 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':
+                    case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -873,11 +879,11 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1278,13 +1284,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Thematique The current object (for fluent API support)
      * @see        addEtablissementThematiques()
      */
     public function clearEtablissementThematiques()
     {
         $this->collEtablissementThematiques = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementThematiquesPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1383,6 +1391,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissementThematiques A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Thematique The current object (for fluent API support)
      */
     public function setEtablissementThematiques(PropelCollection $etablissementThematiques, PropelPDO $con = null)
     {
@@ -1399,6 +1408,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
         $this->collEtablissementThematiques = $etablissementThematiques;
         $this->collEtablissementThematiquesPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1416,22 +1427,22 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if (null === $this->collEtablissementThematiques || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEtablissementThematiques) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getEtablissementThematiques());
-                }
-                $query = EtablissementThematiqueQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByThematique($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collEtablissementThematiques);
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementThematiques());
+            }
+            $query = EtablissementThematiqueQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByThematique($this)
+                ->count($con);
         }
+
+        return count($this->collEtablissementThematiques);
     }
 
     /**
@@ -1465,6 +1476,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * @param	EtablissementThematique $etablissementThematique The etablissementThematique object to remove.
+     * @return Thematique The current object (for fluent API support)
      */
     public function removeEtablissementThematique($etablissementThematique)
     {
@@ -1477,6 +1489,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $this->etablissementThematiquesScheduledForDeletion[]= $etablissementThematique;
             $etablissementThematique->setThematique(null);
         }
+
+        return $this;
     }
 
 
@@ -1510,13 +1524,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Thematique The current object (for fluent API support)
      * @see        addThematiqueI18ns()
      */
     public function clearThematiqueI18ns()
     {
         $this->collThematiqueI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collThematiqueI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1615,6 +1631,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      *
      * @param PropelCollection $thematiqueI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Thematique The current object (for fluent API support)
      */
     public function setThematiqueI18ns(PropelCollection $thematiqueI18ns, PropelPDO $con = null)
     {
@@ -1631,6 +1648,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
         $this->collThematiqueI18ns = $thematiqueI18ns;
         $this->collThematiqueI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1648,22 +1667,22 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if (null === $this->collThematiqueI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collThematiqueI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getThematiqueI18ns());
-                }
-                $query = ThematiqueI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByThematique($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collThematiqueI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getThematiqueI18ns());
+            }
+            $query = ThematiqueI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByThematique($this)
+                ->count($con);
         }
+
+        return count($this->collThematiqueI18ns);
     }
 
     /**
@@ -1701,6 +1720,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * @param	ThematiqueI18n $thematiqueI18n The thematiqueI18n object to remove.
+     * @return Thematique The current object (for fluent API support)
      */
     public function removeThematiqueI18n($thematiqueI18n)
     {
@@ -1713,6 +1733,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $this->thematiqueI18nsScheduledForDeletion[]= $thematiqueI18n;
             $thematiqueI18n->setThematique(null);
         }
+
+        return $this;
     }
 
     /**
@@ -1721,13 +1743,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Thematique The current object (for fluent API support)
      * @see        addEtablissements()
      */
     public function clearEtablissements()
     {
         $this->collEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1788,6 +1812,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Thematique The current object (for fluent API support)
      */
     public function setEtablissements(PropelCollection $etablissements, PropelPDO $con = null)
     {
@@ -1803,6 +1828,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
         }
 
         $this->collEtablissements = $etablissements;
+
+        return $this;
     }
 
     /**
@@ -1840,7 +1867,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      * through the etablissement_thematique cross reference table.
      *
      * @param  Etablissement $etablissement The EtablissementThematique object to relate
-     * @return void
+     * @return Thematique The current object (for fluent API support)
      */
     public function addEtablissement(Etablissement $etablissement)
     {
@@ -1852,6 +1879,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
             $this->collEtablissements[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**
@@ -1869,7 +1898,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      * through the etablissement_thematique cross reference table.
      *
      * @param Etablissement $etablissement The EtablissementThematique object to relate
-     * @return void
+     * @return Thematique The current object (for fluent API support)
      */
     public function removeEtablissement(Etablissement $etablissement)
     {
@@ -1881,6 +1910,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**

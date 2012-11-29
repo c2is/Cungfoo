@@ -154,7 +154,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `AGE`, `IMAGE_PATH`, `ACTIVE` FROM `vos_vacances` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `age`, `image_path`, `active` FROM `vos_vacances` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

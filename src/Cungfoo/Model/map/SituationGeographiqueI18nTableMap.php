@@ -42,9 +42,9 @@ class SituationGeographiqueI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'situation_geographique', 'ID', true, null, null);
-        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'situation_geographique', 'id', true, null, null);
+        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         // validators
     } // initialize()
 

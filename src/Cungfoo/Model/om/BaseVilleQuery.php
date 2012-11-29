@@ -180,7 +180,7 @@ abstract class BaseVilleQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `REGION_ID`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `ville` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `region_id`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `ville` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

@@ -44,83 +44,83 @@ abstract class BaseDemandeIdentifiantPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 26;
 
-    /** the column name for the ID field */
-    const ID = 'demande_identifiant.ID';
+    /** the column name for the id field */
+    const ID = 'demande_identifiant.id';
 
-    /** the column name for the SOCIETE_NOM field */
-    const SOCIETE_NOM = 'demande_identifiant.SOCIETE_NOM';
+    /** the column name for the societe_nom field */
+    const SOCIETE_NOM = 'demande_identifiant.societe_nom';
 
-    /** the column name for the SOCIETE_ADRESSE_1 field */
-    const SOCIETE_ADRESSE_1 = 'demande_identifiant.SOCIETE_ADRESSE_1';
+    /** the column name for the societe_adresse_1 field */
+    const SOCIETE_ADRESSE_1 = 'demande_identifiant.societe_adresse_1';
 
-    /** the column name for the SOCIETE_ADRESSE_2 field */
-    const SOCIETE_ADRESSE_2 = 'demande_identifiant.SOCIETE_ADRESSE_2';
+    /** the column name for the societe_adresse_2 field */
+    const SOCIETE_ADRESSE_2 = 'demande_identifiant.societe_adresse_2';
 
-    /** the column name for the SOCIETE_ADRESSE_3 field */
-    const SOCIETE_ADRESSE_3 = 'demande_identifiant.SOCIETE_ADRESSE_3';
+    /** the column name for the societe_adresse_3 field */
+    const SOCIETE_ADRESSE_3 = 'demande_identifiant.societe_adresse_3';
 
-    /** the column name for the SOCIETE_ADRESSE_4 field */
-    const SOCIETE_ADRESSE_4 = 'demande_identifiant.SOCIETE_ADRESSE_4';
+    /** the column name for the societe_adresse_4 field */
+    const SOCIETE_ADRESSE_4 = 'demande_identifiant.societe_adresse_4';
 
-    /** the column name for the SOCIETE_TELEPHONE field */
-    const SOCIETE_TELEPHONE = 'demande_identifiant.SOCIETE_TELEPHONE';
+    /** the column name for the societe_telephone field */
+    const SOCIETE_TELEPHONE = 'demande_identifiant.societe_telephone';
 
-    /** the column name for the SOCIETE_FAX field */
-    const SOCIETE_FAX = 'demande_identifiant.SOCIETE_FAX';
+    /** the column name for the societe_fax field */
+    const SOCIETE_FAX = 'demande_identifiant.societe_fax';
 
-    /** the column name for the CONTACT_PRENOM field */
-    const CONTACT_PRENOM = 'demande_identifiant.CONTACT_PRENOM';
+    /** the column name for the contact_prenom field */
+    const CONTACT_PRENOM = 'demande_identifiant.contact_prenom';
 
-    /** the column name for the CONTACT_NOM field */
-    const CONTACT_NOM = 'demande_identifiant.CONTACT_NOM';
+    /** the column name for the contact_nom field */
+    const CONTACT_NOM = 'demande_identifiant.contact_nom';
 
-    /** the column name for the CONTACT_TELEPHONE field */
-    const CONTACT_TELEPHONE = 'demande_identifiant.CONTACT_TELEPHONE';
+    /** the column name for the contact_telephone field */
+    const CONTACT_TELEPHONE = 'demande_identifiant.contact_telephone';
 
-    /** the column name for the CONTACT_MAIL field */
-    const CONTACT_MAIL = 'demande_identifiant.CONTACT_MAIL';
+    /** the column name for the contact_mail field */
+    const CONTACT_MAIL = 'demande_identifiant.contact_mail';
 
-    /** the column name for the PERMANENCE field */
-    const PERMANENCE = 'demande_identifiant.PERMANENCE';
+    /** the column name for the permanence field */
+    const PERMANENCE = 'demande_identifiant.permanence';
 
-    /** the column name for the PERMANENCE_MATIN_DE field */
-    const PERMANENCE_MATIN_DE = 'demande_identifiant.PERMANENCE_MATIN_DE';
+    /** the column name for the permanence_matin_de field */
+    const PERMANENCE_MATIN_DE = 'demande_identifiant.permanence_matin_de';
 
-    /** the column name for the PERMANENCE_MATIN_A field */
-    const PERMANENCE_MATIN_A = 'demande_identifiant.PERMANENCE_MATIN_A';
+    /** the column name for the permanence_matin_a field */
+    const PERMANENCE_MATIN_A = 'demande_identifiant.permanence_matin_a';
 
-    /** the column name for the PERMANENCE_APRES_MIDI_DE field */
-    const PERMANENCE_APRES_MIDI_DE = 'demande_identifiant.PERMANENCE_APRES_MIDI_DE';
+    /** the column name for the permanence_apres_midi_de field */
+    const PERMANENCE_APRES_MIDI_DE = 'demande_identifiant.permanence_apres_midi_de';
 
-    /** the column name for the PERMANENCE_APRES_MIDI_A field */
-    const PERMANENCE_APRES_MIDI_A = 'demande_identifiant.PERMANENCE_APRES_MIDI_A';
+    /** the column name for the permanence_apres_midi_a field */
+    const PERMANENCE_APRES_MIDI_A = 'demande_identifiant.permanence_apres_midi_a';
 
-    /** the column name for the CLIENT_VC field */
-    const CLIENT_VC = 'demande_identifiant.CLIENT_VC';
+    /** the column name for the client_vc field */
+    const CLIENT_VC = 'demande_identifiant.client_vc';
 
-    /** the column name for the CLIENT_VC_CODE field */
-    const CLIENT_VC_CODE = 'demande_identifiant.CLIENT_VC_CODE';
+    /** the column name for the client_vc_code field */
+    const CLIENT_VC_CODE = 'demande_identifiant.client_vc_code';
 
-    /** the column name for the CLIENT_VD field */
-    const CLIENT_VD = 'demande_identifiant.CLIENT_VD';
+    /** the column name for the client_vd field */
+    const CLIENT_VD = 'demande_identifiant.client_vd';
 
-    /** the column name for the CLIENT_VD_CODE field */
-    const CLIENT_VD_CODE = 'demande_identifiant.CLIENT_VD_CODE';
+    /** the column name for the client_vd_code field */
+    const CLIENT_VD_CODE = 'demande_identifiant.client_vd_code';
 
-    /** the column name for the BROCHURE field */
-    const BROCHURE = 'demande_identifiant.BROCHURE';
+    /** the column name for the brochure field */
+    const BROCHURE = 'demande_identifiant.brochure';
 
-    /** the column name for the IDENTIFIANT field */
-    const IDENTIFIANT = 'demande_identifiant.IDENTIFIANT';
+    /** the column name for the identifiant field */
+    const IDENTIFIANT = 'demande_identifiant.identifiant';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'demande_identifiant.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'demande_identifiant.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'demande_identifiant.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'demande_identifiant.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'demande_identifiant.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'demande_identifiant.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -262,32 +262,32 @@ abstract class BaseDemandeIdentifiantPeer
             $criteria->addSelectColumn(DemandeIdentifiantPeer::UPDATED_AT);
             $criteria->addSelectColumn(DemandeIdentifiantPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.SOCIETE_NOM');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_1');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_2');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_3');
-            $criteria->addSelectColumn($alias . '.SOCIETE_ADRESSE_4');
-            $criteria->addSelectColumn($alias . '.SOCIETE_TELEPHONE');
-            $criteria->addSelectColumn($alias . '.SOCIETE_FAX');
-            $criteria->addSelectColumn($alias . '.CONTACT_PRENOM');
-            $criteria->addSelectColumn($alias . '.CONTACT_NOM');
-            $criteria->addSelectColumn($alias . '.CONTACT_TELEPHONE');
-            $criteria->addSelectColumn($alias . '.CONTACT_MAIL');
-            $criteria->addSelectColumn($alias . '.PERMANENCE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_MATIN_DE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_MATIN_A');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_APRES_MIDI_DE');
-            $criteria->addSelectColumn($alias . '.PERMANENCE_APRES_MIDI_A');
-            $criteria->addSelectColumn($alias . '.CLIENT_VC');
-            $criteria->addSelectColumn($alias . '.CLIENT_VC_CODE');
-            $criteria->addSelectColumn($alias . '.CLIENT_VD');
-            $criteria->addSelectColumn($alias . '.CLIENT_VD_CODE');
-            $criteria->addSelectColumn($alias . '.BROCHURE');
-            $criteria->addSelectColumn($alias . '.IDENTIFIANT');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.societe_nom');
+            $criteria->addSelectColumn($alias . '.societe_adresse_1');
+            $criteria->addSelectColumn($alias . '.societe_adresse_2');
+            $criteria->addSelectColumn($alias . '.societe_adresse_3');
+            $criteria->addSelectColumn($alias . '.societe_adresse_4');
+            $criteria->addSelectColumn($alias . '.societe_telephone');
+            $criteria->addSelectColumn($alias . '.societe_fax');
+            $criteria->addSelectColumn($alias . '.contact_prenom');
+            $criteria->addSelectColumn($alias . '.contact_nom');
+            $criteria->addSelectColumn($alias . '.contact_telephone');
+            $criteria->addSelectColumn($alias . '.contact_mail');
+            $criteria->addSelectColumn($alias . '.permanence');
+            $criteria->addSelectColumn($alias . '.permanence_matin_de');
+            $criteria->addSelectColumn($alias . '.permanence_matin_a');
+            $criteria->addSelectColumn($alias . '.permanence_apres_midi_de');
+            $criteria->addSelectColumn($alias . '.permanence_apres_midi_a');
+            $criteria->addSelectColumn($alias . '.client_vc');
+            $criteria->addSelectColumn($alias . '.client_vc_code');
+            $criteria->addSelectColumn($alias . '.client_vd');
+            $criteria->addSelectColumn($alias . '.client_vd_code');
+            $criteria->addSelectColumn($alias . '.brochure');
+            $criteria->addSelectColumn($alias . '.identifiant');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

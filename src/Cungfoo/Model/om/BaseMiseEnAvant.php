@@ -220,22 +220,25 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->date_fin_validite);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->date_fin_validite, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->date_fin_validite);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->date_fin_validite, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -677,7 +680,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
             if ($this->collMiseEnAvantI18ns !== null) {
                 foreach ($this->collMiseEnAvantI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -710,25 +713,25 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(MiseEnAvantPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_FOND_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_fond_path`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) {
-            $modifiedColumns[':p' . $index++]  = '`PRIX`';
+            $modifiedColumns[':p' . $index++]  = '`prix`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`ILLUSTRATION_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`illustration_path`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) {
-            $modifiedColumns[':p' . $index++]  = '`DATE_FIN_VALIDITE`';
+            $modifiedColumns[':p' . $index++]  = '`date_fin_validite`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) {
-            $modifiedColumns[':p' . $index++]  = '`SORTABLE_RANK`';
+            $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -741,25 +744,25 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`IMAGE_FOND_PATH`':
+                    case '`image_fond_path`':
                         $stmt->bindValue($identifier, $this->image_fond_path, PDO::PARAM_STR);
                         break;
-                    case '`PRIX`':
+                    case '`prix`':
                         $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
-                    case '`ILLUSTRATION_PATH`':
+                    case '`illustration_path`':
                         $stmt->bindValue($identifier, $this->illustration_path, PDO::PARAM_STR);
                         break;
-                    case '`DATE_FIN_VALIDITE`':
+                    case '`date_fin_validite`':
                         $stmt->bindValue($identifier, $this->date_fin_validite, PDO::PARAM_STR);
                         break;
-                    case '`SORTABLE_RANK`':
+                    case '`sortable_rank`':
                         $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -830,11 +833,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1225,13 +1228,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return MiseEnAvant The current object (for fluent API support)
      * @see        addMiseEnAvantI18ns()
      */
     public function clearMiseEnAvantI18ns()
     {
         $this->collMiseEnAvantI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collMiseEnAvantI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1330,6 +1335,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      *
      * @param PropelCollection $miseEnAvantI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return MiseEnAvant The current object (for fluent API support)
      */
     public function setMiseEnAvantI18ns(PropelCollection $miseEnAvantI18ns, PropelPDO $con = null)
     {
@@ -1346,6 +1352,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         $this->collMiseEnAvantI18ns = $miseEnAvantI18ns;
         $this->collMiseEnAvantI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1363,22 +1371,22 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if (null === $this->collMiseEnAvantI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collMiseEnAvantI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getMiseEnAvantI18ns());
-                }
-                $query = MiseEnAvantI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByMiseEnAvant($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collMiseEnAvantI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getMiseEnAvantI18ns());
+            }
+            $query = MiseEnAvantI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByMiseEnAvant($this)
+                ->count($con);
         }
+
+        return count($this->collMiseEnAvantI18ns);
     }
 
     /**
@@ -1416,6 +1424,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
     /**
      * @param	MiseEnAvantI18n $miseEnAvantI18n The miseEnAvantI18n object to remove.
+     * @return MiseEnAvant The current object (for fluent API support)
      */
     public function removeMiseEnAvantI18n($miseEnAvantI18n)
     {
@@ -1428,6 +1437,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             $this->miseEnAvantI18nsScheduledForDeletion[]= $miseEnAvantI18n;
             $miseEnAvantI18n->setMiseEnAvant(null);
         }
+
+        return $this;
     }
 
     /**

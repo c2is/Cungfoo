@@ -168,7 +168,7 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `service_complementaire` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `created_at`, `updated_at`, `active` FROM `service_complementaire` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

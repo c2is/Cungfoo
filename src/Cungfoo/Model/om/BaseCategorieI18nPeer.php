@@ -45,14 +45,14 @@ abstract class BaseCategorieI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'categorie_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'categorie_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'categorie_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'categorie_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'categorie_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'categorie_i18n.name';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -171,9 +171,9 @@ abstract class BaseCategorieI18nPeer
             $criteria->addSelectColumn(CategorieI18nPeer::LOCALE);
             $criteria->addSelectColumn(CategorieI18nPeer::NAME);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
         }
     }
 
