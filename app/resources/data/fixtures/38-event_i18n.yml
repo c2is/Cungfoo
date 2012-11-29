@@ -3,25 +3,25 @@
         Id: 1
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     2_fr:
         Id: 2
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     3_fr:
         Id: 3
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 1 février 2013 au lundi 11 novembre 2013'
+        StrDate: 'Du vendredi 1 fÃ©vrier 2013 au lundi 11 novembre 2013'
         Subtitle: null
     4_fr:
         Id: 4
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     5_de:
         Id: 5
@@ -45,7 +45,7 @@
         Id: 6
         Locale: de
         Name: 'Festival international des jeux de Cannes'
-        StrDate: 'Vom Freitag, 1. März 2013 bis zum Sonntag, 3. März 2013'
+        StrDate: 'Vom Freitag, 1. MÃ¤rz 2013 bis zum Sonntag, 3. MÃ¤rz 2013'
         Subtitle: null
     6_en:
         Id: 6
@@ -87,13 +87,13 @@
         Id: 10
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 15 avril 2012 au dimanche 16 décembre 2012'
+        StrDate: 'Du dimanche 15 avril 2012 au dimanche 16 dÃ©cembre 2012'
         Subtitle: null
     11_fr:
         Id: 11
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     12_fr:
         Id: 12
@@ -152,7 +152,7 @@
     20_en:
         Id: 20
         Locale: en
-        Name: 'Courir à Clermont'
+        Name: 'Courir Ã  Clermont'
         StrDate: 'From Saturday, June 8 2013 to Sunday, June 9 2013'
         Subtitle: null
     20_fr:
@@ -218,14 +218,14 @@
     24_de:
         Id: 24
         Locale: de
-        Name: 'Festival international de carillon à Perpignan'
+        Name: 'Festival international de carillon Ã  Perpignan'
         StrDate: 'Vom Freitag, 19. Juli 2013 bis zum Freitag, 23. August 2013'
         Subtitle: null
     24_fr:
         Id: 24
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 19 juillet 2013 au vendredi 23 août 2013'
+        StrDate: 'Du vendredi 19 juillet 2013 au vendredi 23 aoÃ»t 2013'
         Subtitle: null
     25_fr:
         Id: 25
@@ -237,24 +237,24 @@
         Id: 26
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     27_fr:
         Id: 27
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     28_fr:
         Id: 28
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     29_fr:
         Id: 29
         Locale: fr
-        Name: 'Fêtes de Bayonne 2013'
+        Name: 'FÃªtes de Bayonne 2013'
         StrDate: 'Le dimanche 28 juillet 2013'
         Subtitle: null
     30_de:
@@ -266,14 +266,14 @@
     30_en:
         Id: 30
         Locale: en
-        Name: 'Féria de Dax 2013'
+        Name: 'FÃ©ria de Dax 2013'
         StrDate: 'From Wednesday, August 14 2013 to Sunday, August 18 2013'
         Subtitle: null
     30_fr:
         Id: 30
         Locale: fr
         Name: ''
-        StrDate: 'Du mercredi 14 août 2013 au dimanche 18 août 2013'
+        StrDate: 'Du mercredi 14 aoÃ»t 2013 au dimanche 18 aoÃ»t 2013'
         Subtitle: null
     31_de:
         Id: 31
@@ -320,13 +320,13 @@
     35_en:
         Id: 35
         Locale: en
-        Name: 'Tous à l''Opéra 2012'
+        Name: 'Tous Ã  l''OpÃ©ra 2012'
         StrDate: 'From Saturday, May 11 2013 to Sunday, May 12 2013'
         Subtitle: null
     35_fr:
         Id: 35
         Locale: fr
-        Name: 'Tous à l''Opéra 2013'
+        Name: 'Tous Ã  l''OpÃ©ra 2013'
         StrDate: 'Du samedi 11 mai 2013 au dimanche 12 mai 2013'
         Subtitle: null
     36_en:
@@ -338,7 +338,7 @@
     36_fr:
         Id: 36
         Locale: fr
-        Name: 'Salon des Energies renouvelables et de l''éco-construction'
+        Name: 'Salon des Energies renouvelables et de l''Ã©co-construction'
         StrDate: 'Du vendredi 13 septembre 2013 au mercredi 18 septembre 2013'
         Subtitle: null
     37_fr:
@@ -351,25 +351,25 @@
         Id: 38
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     39_fr:
         Id: 39
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     40_fr:
         Id: 40
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     41_fr:
         Id: 41
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     42_en:
         Id: 42
@@ -428,13 +428,13 @@
     47_de:
         Id: 47
         Locale: de
-        Name: 'Le Grand Pavois, salon nautique international à flot'
+        Name: 'Le Grand Pavois, salon nautique international Ã  flot'
         StrDate: 'Vom Mittwoch, 18. September 2013 bis zum Montag, 23. September 2013'
         Subtitle: null
     47_en:
         Id: 47
         Locale: en
-        Name: 'Le Grand Pavois, salon nautique international à flot'
+        Name: 'Le Grand Pavois, salon nautique international Ã  flot'
         StrDate: 'From Wednesday, September 18 2013 to Monday, September 23 2013'
         Subtitle: null
     47_fr:
@@ -447,7 +447,7 @@
         Id: 48
         Locale: de
         Name: ''
-        StrDate: 'Vom Montag, 25. Februar 2013 bis zum Montag, 18. März 2013'
+        StrDate: 'Vom Montag, 25. Februar 2013 bis zum Montag, 18. MÃ¤rz 2013'
         Subtitle: null
     48_en:
         Id: 48
@@ -459,12 +459,12 @@
         Id: 48
         Locale: fr
         Name: ''
-        StrDate: 'Du lundi 25 février 2013 au lundi 18 mars 2013'
+        StrDate: 'Du lundi 25 fÃ©vrier 2013 au lundi 18 mars 2013'
         Subtitle: null
     49_en:
         Id: 49
         Locale: en
-        Name: 'Festival international des Très courts à La Rochelle'
+        Name: 'Festival international des TrÃ¨s courts Ã  La Rochelle'
         StrDate: 'From Friday, April 26 2013 to Sunday, May 5 2013'
         Subtitle: null
     49_fr:
@@ -482,13 +482,13 @@
     51_de:
         Id: 51
         Locale: de
-        Name: 'Mondial de la bière Europe'
+        Name: 'Mondial de la biÃ¨re Europe'
         StrDate: 'Vom Donnerstag, 12. September 2013 bis zum Sonntag, 15. September 2013'
         Subtitle: null
     51_en:
         Id: 51
         Locale: en
-        Name: 'Mondial de la bière Strasbourg-Europe'
+        Name: 'Mondial de la biÃ¨re Strasbourg-Europe'
         StrDate: 'From Thursday, September 12 2013 to Sunday, September 15 2013'
         Subtitle: null
     51_fr:
@@ -507,7 +507,7 @@
         Id: 53
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 24 novembre 2012 au vendredi 28 décembre 2012'
+        StrDate: 'Du samedi 24 novembre 2012 au vendredi 28 dÃ©cembre 2012'
         Subtitle: null
     54_de:
         Id: 54
@@ -525,13 +525,13 @@
         Id: 54
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 11 août 2013 au mercredi 21 août 2013'
+        StrDate: 'Du dimanche 11 aoÃ»t 2013 au mercredi 21 aoÃ»t 2013'
         Subtitle: null
     55_fr:
         Id: 55
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     56_de:
         Id: 56
@@ -542,49 +542,49 @@
     56_en:
         Id: 56
         Locale: en
-        Name: 'Forêt domaniale de Lacanau'
+        Name: 'ForÃªt domaniale de Lacanau'
         StrDate: 'All year long'
         Subtitle: null
     56_fr:
         Id: 56
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     57_fr:
         Id: 57
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     58_fr:
         Id: 58
         Locale: fr
-        Name: 'Fêtes de Bayonne 2013'
+        Name: 'FÃªtes de Bayonne 2013'
         StrDate: 'Le mercredi 24 juillet 2013'
         Subtitle: null
     59_fr:
         Id: 59
         Locale: fr
-        Name: 'Fêtes de Bayonne 2013'
+        Name: 'FÃªtes de Bayonne 2013'
         StrDate: 'Le dimanche 28 juillet 2013'
         Subtitle: null
     60_de:
         Id: 60
         Locale: de
-        Name: 'Fêtes de Bayonne 2013'
+        Name: 'FÃªtes de Bayonne 2013'
         StrDate: 'Vom Mittwoch, 24. Juli 2013 bis zum Sonntag, 28. Juli 2013'
         Subtitle: null
     60_en:
         Id: 60
         Locale: en
-        Name: 'Fêtes de Bayonne'
+        Name: 'FÃªtes de Bayonne'
         StrDate: 'From Wednesday, July 24 2013 to Sunday, July 28 2013'
         Subtitle: null
     60_fr:
         Id: 60
         Locale: fr
-        Name: 'Fêtes de Bayonne 2013'
+        Name: 'FÃªtes de Bayonne 2013'
         StrDate: 'Du mercredi 24 juillet 2013 au dimanche 28 juillet 2013'
         Subtitle: null
     61_en:
@@ -609,19 +609,19 @@
         Id: 63
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 décembre 2013'
+        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 dÃ©cembre 2013'
         Subtitle: null
     64_fr:
         Id: 64
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     65_fr:
         Id: 65
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     66_fr:
         Id: 66
@@ -633,7 +633,7 @@
         Id: 67
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     68_de:
         Id: 68
@@ -651,7 +651,7 @@
         Id: 68
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     69_de:
         Id: 69
@@ -662,14 +662,14 @@
     69_en:
         Id: 69
         Locale: en
-        Name: 'Etang de Moliets-et-Maâ'
+        Name: 'Etang de Moliets-et-MaÃ¢'
         StrDate: 'All year long'
         Subtitle: null
     69_fr:
         Id: 69
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     70_en:
         Id: 70
@@ -686,13 +686,13 @@
     71_de:
         Id: 71
         Locale: de
-        Name: 'Tour de France à la voile'
+        Name: 'Tour de France Ã  la voile'
         StrDate: 'Vom Samstag, 29. Juni 2013 bis zum Freitag, 26. Juli 2013'
         Subtitle: null
     71_en:
         Id: 71
         Locale: en
-        Name: 'Tour de France à la voile'
+        Name: 'Tour de France Ã  la voile'
         StrDate: 'From Saturday, June 29 2013 to Friday, July 26 2013'
         Subtitle: null
     71_fr:
@@ -747,12 +747,12 @@
         Id: 75
         Locale: fr
         Name: 'Ligue des Champions 2012-2013'
-        StrDate: 'Le mardi 4 décembre 2012'
+        StrDate: 'Le mardi 4 dÃ©cembre 2012'
         Subtitle: null
     76_en:
         Id: 76
         Locale: en
-        Name: 'Figurations et défigurations'
+        Name: 'Figurations et dÃ©figurations'
         StrDate: 'From Sunday, April 29 2012 to Sunday, March 10 2013'
         Subtitle: null
     76_fr:
@@ -765,19 +765,19 @@
         Id: 77
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     78_fr:
         Id: 78
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 décembre 2013'
+        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 dÃ©cembre 2013'
         Subtitle: null
     79_fr:
         Id: 79
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     80_en:
         Id: 80
@@ -789,7 +789,7 @@
         Id: 80
         Locale: fr
         Name: ''
-        StrDate: 'Du mardi 14 février 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du mardi 14 fÃ©vrier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     81_en:
         Id: 81
@@ -806,7 +806,7 @@
     82_en:
         Id: 82
         Locale: en
-        Name: 'Trophée des sirènes'
+        Name: 'TrophÃ©e des sirÃ¨nes'
         StrDate: 'From Sunday, May 26 2013 to Tuesday, May 28 2013'
         Subtitle: null
     82_fr:
@@ -819,7 +819,7 @@
         Id: 83
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 1 décembre 2012 au dimanche 2 décembre 2012'
+        StrDate: 'Du samedi 1 dÃ©cembre 2012 au dimanche 2 dÃ©cembre 2012'
         Subtitle: null
     84_fr:
         Id: 84
@@ -843,13 +843,13 @@
         Id: 85
         Locale: fr
         Name: 'Patrimoine de l''Unesco'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     86_fr:
         Id: 86
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     87_fr:
         Id: 87
@@ -897,19 +897,19 @@
         Id: 94
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     95_fr:
         Id: 95
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     96_fr:
         Id: 96
         Locale: fr
         Name: 'Patrimoine mondial de l''Unesco'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     97_fr:
         Id: 97
@@ -945,7 +945,7 @@
         Id: 102
         Locale: fr
         Name: ''
-        StrDate: 'Du jeudi 13 décembre 2012 au samedi 13 avril 2013'
+        StrDate: 'Du jeudi 13 dÃ©cembre 2012 au samedi 13 avril 2013'
         Subtitle: null
     103_fr:
         Id: 103
@@ -963,31 +963,31 @@
         Id: 105
         Locale: fr
         Name: 'Les Plus Beaux Villages de France'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     106_fr:
         Id: 106
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     107_fr:
         Id: 107
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     108_fr:
         Id: 108
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     109_fr:
         Id: 109
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     110_de:
         Id: 110
@@ -1005,7 +1005,7 @@
         Id: 110
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     111_fr:
         Id: 111
@@ -1023,13 +1023,13 @@
         Id: 113
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     114_fr:
         Id: 114
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     115_de:
         Id: 115
@@ -1101,42 +1101,42 @@
         Id: 120
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     121_fr:
         Id: 121
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     122_fr:
         Id: 122
         Locale: fr
         Name: 'Patrimoine mondial de l''Unesco'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     123_fr:
         Id: 123
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     124_fr:
         Id: 124
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 22 décembre 2012 au dimanche 6 janvier 2013'
+        StrDate: 'Du samedi 22 dÃ©cembre 2012 au dimanche 6 janvier 2013'
         Subtitle: null
     125_de:
         Id: 125
         Locale: de
-        Name: 'Grand départ de la 100e édition du Tour de France en Corse, Tour de France 2013'
+        Name: 'Grand dÃ©part de la 100e Ã©dition du Tour de France en Corse, Tour de France 2013'
         StrDate: 'Samstag, 29. Juni 2013'
         Subtitle: null
     125_fr:
         Id: 125
         Locale: fr
-        Name: 'Grand départ de la 100e édition du Tour de France en Corse, Tour de France 2013'
+        Name: 'Grand dÃ©part de la 100e Ã©dition du Tour de France en Corse, Tour de France 2013'
         StrDate: 'Le samedi 29 juin 2013'
         Subtitle: null
     126_fr:
@@ -1149,13 +1149,13 @@
         Id: 127
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     128_fr:
         Id: 128
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     129_fr:
         Id: 129
@@ -1178,7 +1178,7 @@
     132_en:
         Id: 132
         Locale: en
-        Name: 'Rencontres du cinéma européen'
+        Name: 'Rencontres du cinÃ©ma europÃ©en'
         StrDate: 'From Thursday, March 28 2013 to Wednesday, April 3 2013'
         Subtitle: null
     132_fr:
@@ -1220,14 +1220,14 @@
     136_en:
         Id: 136
         Locale: en
-        Name: 'Festival Interceltique de Lorient, année des Asturies'
+        Name: 'Festival Interceltique de Lorient, annÃ©e des Asturies'
         StrDate: 'From Friday, August 2 2013 to Sunday, August 11 2013'
         Subtitle: null
     136_fr:
         Id: 136
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 2 août 2013 au dimanche 11 août 2013'
+        StrDate: 'Du vendredi 2 aoÃ»t 2013 au dimanche 11 aoÃ»t 2013'
         Subtitle: null
     137_fr:
         Id: 137
@@ -1239,13 +1239,13 @@
         Id: 138
         Locale: fr
         Name: ''
-        StrDate: 'Le mercredi 12 décembre 2012'
+        StrDate: 'Le mercredi 12 dÃ©cembre 2012'
         Subtitle: null
     139_fr:
         Id: 139
         Locale: fr
         Name: ''
-        StrDate: 'Le vendredi 8 février 2013'
+        StrDate: 'Le vendredi 8 fÃ©vrier 2013'
         Subtitle: null
     140_fr:
         Id: 140
@@ -1311,25 +1311,25 @@
         Id: 148
         Locale: fr
         Name: 'Les "Plus Beaux Villages de France"'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     149_fr:
         Id: 149
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     150_fr:
         Id: 150
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     151_fr:
         Id: 151
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     152_fr:
         Id: 152
@@ -1365,7 +1365,7 @@
         Id: 154
         Locale: de
         Name: 'EquiSud Salon du cheval de Montpellier'
-        StrDate: 'Vom Donnerstag, 7. März 2013 bis zum Sonntag, 10. März 2013'
+        StrDate: 'Vom Donnerstag, 7. MÃ¤rz 2013 bis zum Sonntag, 10. MÃ¤rz 2013'
         Subtitle: null
     154_en:
         Id: 154
@@ -1418,7 +1418,7 @@
     160_de:
         Id: 160
         Locale: de
-        Name: 'Fête de la Lavande'
+        Name: 'FÃªte de la Lavande'
         StrDate: 'Vom Montag, 1. Juli 2013 bis zum Mittwoch, 31. Juli 2013'
         Subtitle: null
     160_en:
@@ -1437,7 +1437,7 @@
         Id: 161
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     162_de:
         Id: 162
@@ -1454,7 +1454,7 @@
     163_de:
         Id: 163
         Locale: de
-        Name: 'Open de Nice Côte d''Azur'
+        Name: 'Open de Nice CÃ´te d''Azur'
         StrDate: 'Vom Montag, 20. Mai 2013 bis zum Sonntag, 26. Mai 2013'
         Subtitle: null
     163_en:
@@ -1527,25 +1527,25 @@
         Id: 169
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     170_de:
         Id: 170
         Locale: de
-        Name: 'Jazz in août - Festival de jazz de La Rochelle'
+        Name: 'Jazz in aoÃ»t - Festival de jazz de La Rochelle'
         StrDate: 'Vom Donnerstag, 15. August 2013 bis zum Samstag, 17. August 2013'
         Subtitle: null
     170_fr:
         Id: 170
         Locale: fr
         Name: 'Festival de jazz de La Rochelle'
-        StrDate: 'Du jeudi 15 août 2013 au samedi 17 août 2013'
+        StrDate: 'Du jeudi 15 aoÃ»t 2013 au samedi 17 aoÃ»t 2013'
         Subtitle: null
     171_fr:
         Id: 171
         Locale: fr
         Name: ''
-        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     172_fr:
         Id: 172
@@ -1569,25 +1569,25 @@
         Id: 175
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     176_fr:
         Id: 176
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     177_fr:
         Id: 177
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     178_fr:
         Id: 178
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     179_de:
         Id: 179
@@ -1611,7 +1611,7 @@
         Id: 180
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 4 février 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du samedi 4 fÃ©vrier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     181_fr:
         Id: 181
@@ -1641,7 +1641,7 @@
         Id: 185
         Locale: fr
         Name: ''
-        StrDate: 'Le samedi 8 décembre 2012'
+        StrDate: 'Le samedi 8 dÃ©cembre 2012'
         Subtitle: null
     186_fr:
         Id: 186
@@ -1689,24 +1689,24 @@
         Id: 192
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     193_fr:
         Id: 193
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     194_de:
         Id: 194
         Locale: de
-        Name: 'Fête des Gitans - Pèlerinage des Saintes-Maries-de-la-Mer'
+        Name: 'FÃªte des Gitans - PÃ¨lerinage des Saintes-Maries-de-la-Mer'
         StrDate: 'Vom Freitag, 24. Mai 2013 bis zum Samstag, 25. Mai 2013'
         Subtitle: null
     194_en:
         Id: 194
         Locale: en
-        Name: 'Fête des Gitans - Pèlerinage des Saintes-Maries-de-la-Mer'
+        Name: 'FÃªte des Gitans - PÃ¨lerinage des Saintes-Maries-de-la-Mer'
         StrDate: 'From Friday, May 24 2013 to Saturday, May 25 2013'
         Subtitle: null
     194_fr:
@@ -1737,13 +1737,13 @@
         Id: 198
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     199_fr:
         Id: 199
         Locale: fr
         Name: ''
-        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du jeudi 12 avril 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     200_de:
         Id: 200
@@ -1767,13 +1767,13 @@
         Id: 201
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 1 juin 2012 au mardi 31 décembre 2013'
+        StrDate: 'Du vendredi 1 juin 2012 au mardi 31 dÃ©cembre 2013'
         Subtitle: null
     202_fr:
         Id: 202
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     203_de:
         Id: 203
@@ -1791,25 +1791,25 @@
         Id: 203
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     204_fr:
         Id: 204
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     205_fr:
         Id: 205
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     206_fr:
         Id: 206
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     207_fr:
         Id: 207
@@ -1827,7 +1827,7 @@
         Id: 208
         Locale: fr
         Name: ''
-        StrDate: 'Du mercredi 1 février 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du mercredi 1 fÃ©vrier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     209_en:
         Id: 209
@@ -1839,7 +1839,7 @@
         Id: 209
         Locale: fr
         Name: ''
-        StrDate: 'Du mercredi 1 février 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du mercredi 1 fÃ©vrier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     210_fr:
         Id: 210
@@ -1851,19 +1851,19 @@
         Id: 211
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     212_fr:
         Id: 212
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     213_fr:
         Id: 213
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     214_fr:
         Id: 214
@@ -1881,13 +1881,13 @@
         Id: 216
         Locale: fr
         Name: ''
-        StrDate: 'Le mardi 11 décembre 2012'
+        StrDate: 'Le mardi 11 dÃ©cembre 2012'
         Subtitle: null
     217_fr:
         Id: 217
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     218_en:
         Id: 218
@@ -1898,7 +1898,7 @@
     218_fr:
         Id: 218
         Locale: fr
-        Name: 'Une manifestation culturelle inédite pour une année riche en évènements'
+        Name: 'Une manifestation culturelle inÃ©dite pour une annÃ©e riche en Ã©vÃ¨nements'
         StrDate: 'Du vendredi 17 juin 2011 au dimanche 3 mars 2013'
         Subtitle: null
     219_fr:
@@ -1911,19 +1911,19 @@
         Id: 220
         Locale: fr
         Name: 'Bretagne-Japon 2012'
-        StrDate: 'Du dimanche 1 avril 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 avril 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     221_fr:
         Id: 221
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 9 mars 2012 au vendredi 14 décembre 2012'
+        StrDate: 'Du vendredi 9 mars 2012 au vendredi 14 dÃ©cembre 2012'
         Subtitle: null
     222_fr:
         Id: 222
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 27 août 2011 au lundi 31 décembre 2012'
+        StrDate: 'Du samedi 27 aoÃ»t 2011 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     223_de:
         Id: 223
@@ -1971,25 +1971,25 @@
         Id: 228
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du dimanche 1 janvier 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     229_fr:
         Id: 229
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     230_fr:
         Id: 230
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 1 décembre 2012 au samedi 23 février 2013'
+        StrDate: 'Du samedi 1 dÃ©cembre 2012 au samedi 23 fÃ©vrier 2013'
         Subtitle: null
     231_fr:
         Id: 231
         Locale: fr
         Name: ''
-        StrDate: 'Le mercredi 19 décembre 2012'
+        StrDate: 'Le mercredi 19 dÃ©cembre 2012'
         Subtitle: null
     232_fr:
         Id: 232
@@ -2007,19 +2007,19 @@
         Id: 234
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     235_fr:
         Id: 235
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     236_fr:
         Id: 236
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     237_fr:
         Id: 237
@@ -2036,7 +2036,7 @@
     238_de:
         Id: 238
         Locale: de
-        Name: 'Cadavre exquis, suite méditerranéenne - Marseille - Provence 2013'
+        Name: 'Cadavre exquis, suite mÃ©diterranÃ©enne - Marseille - Provence 2013'
         StrDate: 'Vom Samstag, 12. Januar 2013 bis zum Samstag, 13. April 2013'
         Subtitle: null
     238_en:
@@ -2084,7 +2084,7 @@
     240_fr:
         Id: 240
         Locale: fr
-        Name: 'Festival de Pâques d''Aix-en-Provence 2013'
+        Name: 'Festival de PÃ¢ques d''Aix-en-Provence 2013'
         StrDate: 'Le mardi 2 avril 2013'
         Subtitle: null
     241_fr:
@@ -2103,25 +2103,25 @@
         Id: 243
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 1 décembre 2012 au dimanche 2 décembre 2012'
+        StrDate: 'Du samedi 1 dÃ©cembre 2012 au dimanche 2 dÃ©cembre 2012'
         Subtitle: null
     244_fr:
         Id: 244
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     245_fr:
         Id: 245
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     246_fr:
         Id: 246
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     247_fr:
         Id: 247
@@ -2181,7 +2181,7 @@
         Id: 254
         Locale: fr
         Name: ''
-        StrDate: 'Du vendredi 9 août 2013 au dimanche 18 août 2013'
+        StrDate: 'Du vendredi 9 aoÃ»t 2013 au dimanche 18 aoÃ»t 2013'
         Subtitle: null
     255_fr:
         Id: 255
@@ -2228,7 +2228,7 @@
     261_de:
         Id: 261
         Locale: de
-        Name: 'Pointe du Hoc, site du débarquement de Normandie à Cricqueville en Bessin'
+        Name: 'Pointe du Hoc, site du dÃ©barquement de Normandie Ã  Cricqueville en Bessin'
         StrDate: 'Das ganze Jahr'
         Subtitle: null
     261_en:
@@ -2241,7 +2241,7 @@
         Id: 261
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     262_fr:
         Id: 262
@@ -2253,19 +2253,19 @@
         Id: 263
         Locale: fr
         Name: ''
-        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 décembre 2013'
+        StrDate: 'Du dimanche 1 janvier 2012 au mardi 31 dÃ©cembre 2013'
         Subtitle: null
     264_fr:
         Id: 264
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     265_fr:
         Id: 265
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     266_fr:
         Id: 266
@@ -2289,49 +2289,49 @@
         Id: 269
         Locale: fr
         Name: ''
-        StrDate: 'Du jeudi 15 novembre 2012 au lundi 31 décembre 2012'
+        StrDate: 'Du jeudi 15 novembre 2012 au lundi 31 dÃ©cembre 2012'
         Subtitle: null
     270_fr:
         Id: 270
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     271_fr:
         Id: 271
         Locale: fr
         Name: 'Les Plus Beaux Villages de France'
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     272_fr:
         Id: 272
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     273_fr:
         Id: 273
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     274_fr:
         Id: 274
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 1 décembre 2012 au dimanche 31 mars 2013'
+        StrDate: 'Du samedi 1 dÃ©cembre 2012 au dimanche 31 mars 2013'
         Subtitle: null
     275_fr:
         Id: 275
         Locale: fr
         Name: ''
-        StrDate: 'Du samedi 1 décembre 2012 au dimanche 31 mars 2013'
+        StrDate: 'Du samedi 1 dÃ©cembre 2012 au dimanche 31 mars 2013'
         Subtitle: null
     276_fr:
         Id: 276
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     277_fr:
         Id: 277
@@ -2355,7 +2355,7 @@
         Id: 280
         Locale: fr
         Name: ''
-        StrDate: 'Toute l''année'
+        StrDate: 'Toute l''annÃ©e'
         Subtitle: null
     281_fr:
         Id: 281

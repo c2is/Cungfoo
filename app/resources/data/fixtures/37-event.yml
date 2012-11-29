@@ -2,7 +2,7 @@
     1:
         Code: '747455'
         Category: DET
-        Address: 'place de l''Hôtel-de-Ville'
+        Address: 'place de l''HÃ´tel-de-Ville'
         Address2: ''
         Zipcode: '85330'
         City: 'NOIRMOUTIER-EN-L ILE'
@@ -110,7 +110,7 @@
     10:
         Code: '775633'
         Category: DET
-        Address: 'rue de Lauzière'
+        Address: 'rue de LauziÃ¨re'
         Address2: ''
         Zipcode: '07200'
         City: SAINT-PRIVAT
@@ -134,7 +134,7 @@
     12:
         Code: '862025'
         Category: DET
-        Address: 'route des Gorges de l''Ardèche'
+        Address: 'route des Gorges de l''ArdÃ¨che'
         Address2: ''
         Zipcode: '07150'
         City: 'VALLON-PONT-D ARC'
@@ -290,8 +290,8 @@
     25:
         Code: '770390'
         Category: EXP
-        Address: 'place La Galiconnière'
-        Address2: 'Hôtel de Cheusses'
+        Address: 'place La GaliconniÃ¨re'
+        Address2: 'HÃ´tel de Cheusses'
         Zipcode: '17300'
         City: ROCHEFORT-SUR-MER
         GeoCoordinateX: '45.935071'
@@ -302,7 +302,7 @@
     26:
         Code: '757198'
         Category: DET
-        Address: 'route des Allées'
+        Address: 'route des AllÃ©es'
         Address2: ''
         Zipcode: '17310'
         City: 'SAINT-PIERRE-D OLERON'
@@ -338,7 +338,7 @@
     29:
         Code: '859250'
         Category: MUS
-        Address: 'place Saint-André'
+        Address: 'place Saint-AndrÃ©'
         Address2: ''
         Zipcode: '64100'
         City: BAYONNE
@@ -398,8 +398,8 @@
     34:
         Code: '779079'
         Category: SAL
-        Address: 'place Gabriel Péri'
-        Address2: 'avenue Général Leclerc'
+        Address: 'place Gabriel PÃ©ri'
+        Address2: 'avenue GÃ©nÃ©ral Leclerc'
         Zipcode: '83000'
         City: TOULON
         GeoCoordinateX: '43.126246'
@@ -434,7 +434,7 @@
     37:
         Code: '837450'
         Category: VIV
-        Address: 'chemin de Châteauvallon'
+        Address: 'chemin de ChÃ¢teauvallon'
         Address2: ''
         Zipcode: '83190'
         City: OLLIOULES
@@ -482,7 +482,7 @@
     41:
         Code: '467259'
         Category: DET
-        Address: 'avenue de la Côte d''Argent'
+        Address: 'avenue de la CÃ´te d''Argent'
         Address2: ''
         Zipcode: '40200'
         City: MIMIZAN
@@ -494,7 +494,7 @@
     42:
         Code: '789339'
         Category: FES
-        Address: 'rue Jean-Jaurès'
+        Address: 'rue Jean-JaurÃ¨s'
         Address2: ''
         Zipcode: '74000'
         City: ANNECY
@@ -506,7 +506,7 @@
     43:
         Code: '713078'
         Category: SPO
-        Address: 'place de l''Hôtel-de-Ville'
+        Address: 'place de l''HÃ´tel-de-Ville'
         Address2: ''
         Zipcode: '74000'
         City: ANNECY
@@ -530,7 +530,7 @@
     45:
         Code: '860198'
         Category: SPO
-        Address: 'place de l''Hôtel-de-Ville'
+        Address: 'place de l''HÃ´tel-de-Ville'
         Address2: ''
         Zipcode: '74000'
         City: ANNECY
@@ -626,7 +626,7 @@
     53:
         Code: '853545'
         Category: DET
-        Address: 'place de la Réunion'
+        Address: 'place de la RÃ©union'
         Address2: ''
         Zipcode: '68100'
         City: MULHOUSE
@@ -686,7 +686,7 @@
     58:
         Code: '792016'
         Category: FET
-        Address: 'place de la Liberté'
+        Address: 'place de la LibertÃ©'
         Address2: ''
         Zipcode: '64100'
         City: BAYONNE
@@ -698,7 +698,7 @@
     59:
         Code: '792065'
         Category: FET
-        Address: 'place de la Liberté'
+        Address: 'place de la LibertÃ©'
         Address2: ''
         Zipcode: '64100'
         City: BAYONNE
@@ -710,7 +710,7 @@
     60:
         Code: '650671'
         Category: FET
-        Address: 'place de la Liberté'
+        Address: 'place de la LibertÃ©'
         Address2: ''
         Zipcode: '64100'
         City: BAYONNE
@@ -759,7 +759,7 @@
         Code: '746556'
         Category: EXP
         Address: ''
-        Address2: 'Aléria village'
+        Address2: 'AlÃ©ria village'
         Zipcode: '20270'
         City: ALERIA
         GeoCoordinateX: '42.104083'
@@ -794,7 +794,7 @@
     67:
         Code: '439516'
         Category: DET
-        Address: 'allée de la voile'
+        Address: 'allÃ©e de la voile'
         Address2: 'Berges de Soustons'
         Zipcode: '40140'
         City: 'SOUSTONS-PORT-D ALBRET'
@@ -818,7 +818,7 @@
     69:
         Code: '484466'
         Category: DET
-        Address: 'avenue de l''Océan'
+        Address: 'avenue de l''OcÃ©an'
         Address2: ''
         Zipcode: '40660'
         City: 'MOLIETS ET MAA'
@@ -866,7 +866,7 @@
     73:
         Code: '665102'
         Category: SPO
-        Address: 'place de la Comédie'
+        Address: 'place de la ComÃ©die'
         Address2: ''
         Zipcode: '34000'
         City: MONTPELLIER
@@ -914,7 +914,7 @@
     77:
         Code: '751696'
         Category: DET
-        Address: 'promenade Clémenceau'
+        Address: 'promenade ClÃ©menceau'
         Address2: ''
         Zipcode: '85100'
         City: 'LES SABLES-D OLONNE'
@@ -962,7 +962,7 @@
     81:
         Code: '781318'
         Category: SPO
-        Address: 'port de la Trinité-sur-Mer'
+        Address: 'port de la TrinitÃ©-sur-Mer'
         Address2: ''
         Zipcode: '56470'
         City: 'LA TRINITE-SUR-MER'
@@ -1010,7 +1010,7 @@
     85:
         Code: '398531'
         Category: EXP
-        Address: 'place Aliénor-d''Aquitaine'
+        Address: 'place AliÃ©nor-d''Aquitaine'
         Address2: ''
         Zipcode: '33780'
         City: 'SOULAC SUR MER'
@@ -1022,7 +1022,7 @@
     86:
         Code: '382734'
         Category: DET
-        Address: 'avenue des Congrès'
+        Address: 'avenue des CongrÃ¨s'
         Address2: ''
         Zipcode: '17200'
         City: ROYAN
@@ -1034,7 +1034,7 @@
     87:
         Code: '858768'
         Category: SPO
-        Address: 'avenue Léo-Lagrange'
+        Address: 'avenue LÃ©o-Lagrange'
         Address2: ''
         Zipcode: '44600'
         City: SAINT-NAZAIRE
@@ -1083,7 +1083,7 @@
         Code: '826546'
         Category: SPO
         Address: ''
-        Address2: 'Stade de l''Idonnière'
+        Address2: 'Stade de l''IdonniÃ¨re'
         Zipcode: '85170'
         City: 'LE POIRE SUR VIE'
         GeoCoordinateX: '46.775653'
@@ -1095,7 +1095,7 @@
         Code: '826550'
         Category: SPO
         Address: ''
-        Address2: 'Stade de l''Idonnière'
+        Address2: 'Stade de l''IdonniÃ¨re'
         Zipcode: '85170'
         City: 'LE POIRE SUR VIE'
         GeoCoordinateX: '46.775653'
@@ -1107,7 +1107,7 @@
         Code: '826551'
         Category: SPO
         Address: ''
-        Address2: 'Stade de l''Idonnière'
+        Address2: 'Stade de l''IdonniÃ¨re'
         Zipcode: '85170'
         City: 'LE POIRE SUR VIE'
         GeoCoordinateX: '46.775653'
@@ -1118,7 +1118,7 @@
     94:
         Code: '298932'
         Category: DET
-        Address: 'route Départementale-704'
+        Address: 'route DÃ©partementale-704'
         Address2: ''
         Zipcode: '24290'
         City: MONTIGNAC
@@ -1166,7 +1166,7 @@
     98:
         Code: '761391'
         Category: SAL
-        Address: 'avenue du Maréchal-Foch'
+        Address: 'avenue du MarÃ©chal-Foch'
         Address2: ''
         Zipcode: '05000'
         City: GAP
@@ -1226,7 +1226,7 @@
     103:
         Code: '722332'
         Category: FET
-        Address: 'place Gabriel-Péri'
+        Address: 'place Gabriel-PÃ©ri'
         Address2: ''
         Zipcode: '34500'
         City: BEZIERS
@@ -1275,7 +1275,7 @@
         Code: '307654'
         Category: EXP
         Address: 'route des Mas'
-        Address2: 'Vallée Roume'
+        Address2: 'VallÃ©e Roume'
         Zipcode: '66650'
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
@@ -1322,7 +1322,7 @@
     111:
         Code: '861886'
         Category: VIV
-        Address: 'route Ménascle'
+        Address: 'route MÃ©nascle'
         Address2: ''
         Zipcode: '12100'
         City: 'SAINT GEORGES DE LUZENCON'
@@ -1334,7 +1334,7 @@
     112:
         Code: '792877'
         Category: EXP
-        Address: 'Musée Soulages'
+        Address: 'MusÃ©e Soulages'
         Address2: ''
         Zipcode: '12000'
         City: RODEZ
@@ -1346,7 +1346,7 @@
     113:
         Code: '383646'
         Category: DET
-        Address: 'route Départementale-992'
+        Address: 'route DÃ©partementale-992'
         Address2: 'Aire des Cazalous'
         Zipcode: '12100'
         City: MILLAU
@@ -1358,7 +1358,7 @@
     114:
         Code: '283477'
         Category: EXP
-        Address: 'rue Eugène Loup'
+        Address: 'rue EugÃ¨ne Loup'
         Address2: ''
         Zipcode: '12000'
         City: RODEZ
@@ -1538,7 +1538,7 @@
     129:
         Code: '462070'
         Category: FET
-        Address: 'rue Jean-Jaurès'
+        Address: 'rue Jean-JaurÃ¨s'
         Address2: ''
         Zipcode: '29390'
         City: SCAER
@@ -1610,7 +1610,7 @@
     135:
         Code: '840756'
         Category: DET
-        Address: 'rue Marceau Brès'
+        Address: 'rue Marceau BrÃ¨s'
         Address2: ''
         Zipcode: '26200'
         City: MONTELIMAR
@@ -1646,7 +1646,7 @@
     138:
         Code: '818727'
         Category: VIV
-        Address: 'avenue du Général-de-Gaulle'
+        Address: 'avenue du GÃ©nÃ©ral-de-Gaulle'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -1658,7 +1658,7 @@
     139:
         Code: '815001'
         Category: VIV
-        Address: 'avenue du Général-de-Gaulle'
+        Address: 'avenue du GÃ©nÃ©ral-de-Gaulle'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -1670,7 +1670,7 @@
     140:
         Code: '815000'
         Category: VIV
-        Address: 'avenue du Général-de-Gaulle'
+        Address: 'avenue du GÃ©nÃ©ral-de-Gaulle'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -1682,7 +1682,7 @@
     141:
         Code: '823322'
         Category: MUS
-        Address: 'avenue du Général-de-Gaulle'
+        Address: 'avenue du GÃ©nÃ©ral-de-Gaulle'
         Address2: ''
         Zipcode: '33120'
         City: ARCACHON
@@ -1910,7 +1910,7 @@
     160:
         Code: '593522'
         Category: FET
-        Address: 'place Frédéric-Mistral'
+        Address: 'place FrÃ©dÃ©ric-Mistral'
         Address2: ''
         Zipcode: '04210'
         City: VALENSOLE
@@ -1922,7 +1922,7 @@
     161:
         Code: '437037'
         Category: EXP
-        Address: 'place de l''Hôtel de Ville'
+        Address: 'place de l''HÃ´tel de Ville'
         Address2: ''
         Zipcode: '04100'
         City: MANOSQUE
@@ -1982,7 +1982,7 @@
     166:
         Code: '786273'
         Category: FET
-        Address: 'rue de la Grange-aux-Dîmes'
+        Address: 'rue de la Grange-aux-DÃ®mes'
         Address2: ''
         Zipcode: '41250'
         City: CHAMBORD
@@ -2054,7 +2054,7 @@
     172:
         Code: '829592'
         Category: SPO
-        Address: 'avenue du Maréchal Juin'
+        Address: 'avenue du MarÃ©chal Juin'
         Address2: ''
         Zipcode: '17000'
         City: 'LA ROCHELLE'
@@ -2066,7 +2066,7 @@
     173:
         Code: '829593'
         Category: SPO
-        Address: 'avenue du Maréchal Juin'
+        Address: 'avenue du MarÃ©chal Juin'
         Address2: ''
         Zipcode: '17000'
         City: 'LA ROCHELLE'
@@ -2078,7 +2078,7 @@
     174:
         Code: '860417'
         Category: MUS
-        Address: 'boulevard des Arènes'
+        Address: 'boulevard des ArÃ¨nes'
         Address2: ''
         Zipcode: '30000'
         City: NIMES
@@ -2126,7 +2126,7 @@
     178:
         Code: '406597'
         Category: DET
-        Address: 'place de la République'
+        Address: 'place de la RÃ©publique'
         Address2: ''
         Zipcode: '26150'
         City: DIE
@@ -2162,7 +2162,7 @@
     181:
         Code: '827173'
         Category: SPO
-        Address: 'rue Léon-Branchet'
+        Address: 'rue LÃ©on-Branchet'
         Address2: ''
         Zipcode: '19100'
         City: BRIVE-LA-GAILLARDE
@@ -2174,7 +2174,7 @@
     182:
         Code: '827174'
         Category: SPO
-        Address: 'rue Léon-Branchet'
+        Address: 'rue LÃ©on-Branchet'
         Address2: ''
         Zipcode: '19100'
         City: BRIVE-LA-GAILLARDE
@@ -2234,7 +2234,7 @@
     187:
         Code: '839889'
         Category: VIV
-        Address: 'rue Pierre-Bérégovoy'
+        Address: 'rue Pierre-BÃ©rÃ©govoy'
         Address2: ''
         Zipcode: '85000'
         City: 'LA ROCHE-SUR-YON'
@@ -2318,7 +2318,7 @@
     194:
         Code: '736000'
         Category: FET
-        Address: 'avenue de la République'
+        Address: 'avenue de la RÃ©publique'
         Address2: ''
         Zipcode: '13460'
         City: 'LES SAINTES-MARIES-DE-LA-MER'
@@ -2366,7 +2366,7 @@
     198:
         Code: '404744'
         Category: DET
-        Address: 'rue du Pré'
+        Address: 'rue du PrÃ©'
         Address2: ''
         Zipcode: '39200'
         City: SAINT-CLAUDE
@@ -2391,7 +2391,7 @@
         Code: '666877'
         Category: SAL
         Address: ''
-        Address2: 'Zone d''activités d''Iraty'
+        Address2: 'Zone d''activitÃ©s d''Iraty'
         Zipcode: '64200'
         City: BIARRITZ
         GeoCoordinateX: '43.465858'
@@ -2474,7 +2474,7 @@
     207:
         Code: '292225'
         Category: DET
-        Address: 'route Départementale-90'
+        Address: 'route DÃ©partementale-90'
         Address2: 'Le gouffre'
         Zipcode: '46500'
         City: PADIRAC
@@ -2570,7 +2570,7 @@
     215:
         Code: '792882'
         Category: SAL
-        Address: 'route Départementale-611'
+        Address: 'route DÃ©partementale-611'
         Address2: ''
         Zipcode: '11200'
         City: 'LEZIGNAN CORBIERES'
@@ -2606,7 +2606,7 @@
     218:
         Code: '755781'
         Category: FES
-        Address: 'rue des Lycéens-Martyrs'
+        Address: 'rue des LycÃ©ens-Martyrs'
         Address2: ''
         Zipcode: '22000'
         City: SAINT-BRIEUC
@@ -2690,7 +2690,7 @@
     225:
         Code: '860983'
         Category: EXP
-        Address: 'Hôtel des Porcelets'
+        Address: 'HÃ´tel des Porcelets'
         Address2: ''
         Zipcode: '13520'
         City: BAUX-DE-PROVENCE
@@ -2738,8 +2738,8 @@
     229:
         Code: '762923'
         Category: DET
-        Address: 'rue du Père-Ignace'
-        Address2: Saint-Martin-de-Ré
+        Address: 'rue du PÃ¨re-Ignace'
+        Address2: Saint-Martin-de-RÃ©
         Zipcode: '17590'
         City: ILE-DE-RE
         GeoCoordinateX: '46.158439'
@@ -2786,7 +2786,7 @@
     233:
         Code: '762820'
         Category: EXP
-        Address: 'rue de l’Estrangladou'
+        Address: 'rue de lâ€™Estrangladou'
         Address2: ''
         Zipcode: '30350'
         City: LEZAN
@@ -2822,7 +2822,7 @@
     236:
         Code: '761340'
         Category: EXP
-        Address: 'rue de l''Ancienne-Mairie-à-l''Eglise'
+        Address: 'rue de l''Ancienne-Mairie-Ã -l''Eglise'
         Address2: ''
         Zipcode: '13520'
         City: BAUX-DE-PROVENCE
@@ -2882,7 +2882,7 @@
     241:
         Code: '825768'
         Category: VIV
-        Address: 'quai de la République'
+        Address: 'quai de la RÃ©publique'
         Address2: ''
         Zipcode: '19000'
         City: TULLE
@@ -2894,7 +2894,7 @@
     242:
         Code: '825760'
         Category: VIV
-        Address: 'quai de la République'
+        Address: 'quai de la RÃ©publique'
         Address2: ''
         Zipcode: '19000'
         City: TULLE
@@ -2906,7 +2906,7 @@
     243:
         Code: '861855'
         Category: NEW
-        Address: 'place de la résistance'
+        Address: 'place de la rÃ©sistance'
         Address2: ''
         Zipcode: '62200'
         City: BOULOGNE-SUR-MER
@@ -2919,7 +2919,7 @@
         Code: '858192'
         Category: DET
         Address: ''
-        Address2: 'Château d''Hardelot'
+        Address2: 'ChÃ¢teau d''Hardelot'
         Zipcode: '62360'
         City: CONDETTE
         GeoCoordinateX: '50.645920'
@@ -2990,7 +2990,7 @@
     250:
         Code: '859659'
         Category: VIV
-        Address: 'place François-Mitterand'
+        Address: 'place FranÃ§ois-Mitterand'
         Address2: ''
         Zipcode: '13310'
         City: SAINT-MARTIN-DE-CRAU
@@ -3002,7 +3002,7 @@
     251:
         Code: '859997'
         Category: DET
-        Address: 'place François-Mitterand'
+        Address: 'place FranÃ§ois-Mitterand'
         Address2: ''
         Zipcode: '13310'
         City: SAINT-MARTIN-DE-CRAU
@@ -3014,7 +3014,7 @@
     252:
         Code: '860000'
         Category: DET
-        Address: 'place François-Mitterand'
+        Address: 'place FranÃ§ois-Mitterand'
         Address2: ''
         Zipcode: '13310'
         City: SAINT-MARTIN-DE-CRAU
@@ -3026,7 +3026,7 @@
     253:
         Code: '859641'
         Category: VIV
-        Address: 'place François-Mitterand'
+        Address: 'place FranÃ§ois-Mitterand'
         Address2: ''
         Zipcode: '13310'
         City: SAINT-MARTIN-DE-CRAU
@@ -3098,7 +3098,7 @@
     259:
         Code: '864464'
         Category: SAL
-        Address: 'place du Marché'
+        Address: 'place du MarchÃ©'
         Address2: ''
         Zipcode: '14330'
         City: 'LE MOLAY-LITTRY'
@@ -3110,7 +3110,7 @@
     260:
         Code: '864467'
         Category: SAL
-        Address: 'place du Marché'
+        Address: 'place du MarchÃ©'
         Address2: ''
         Zipcode: '14330'
         City: 'LE MOLAY-LITTRY'
@@ -3134,7 +3134,7 @@
     262:
         Code: '862033'
         Category: FES
-        Address: 'rue César-Campinchi'
+        Address: 'rue CÃ©sar-Campinchi'
         Address2: ''
         Zipcode: '20200'
         City: BASTIA
@@ -3170,7 +3170,7 @@
     265:
         Code: '469300'
         Category: DET
-        Address: 'route départementale'
+        Address: 'route dÃ©partementale'
         Address2: ''
         Zipcode: '30470'
         City: AIMARGUES
@@ -3242,7 +3242,7 @@
     271:
         Code: '434464'
         Category: DET
-        Address: 'place du Château-de-Castelnau'
+        Address: 'place du ChÃ¢teau-de-Castelnau'
         Address2: ''
         Zipcode: '12500'
         City: 'SAINT COME D OLT'
@@ -3254,7 +3254,7 @@
     272:
         Code: '371841'
         Category: DET
-        Address: 'place du Maréchal-Foch'
+        Address: 'place du MarÃ©chal-Foch'
         Address2: ''
         Zipcode: '64500'
         City: SAINT-JEAN-DE-LUZ
@@ -3266,7 +3266,7 @@
     273:
         Code: '858094'
         Category: DET
-        Address: 'place du Maréchal-Foch'
+        Address: 'place du MarÃ©chal-Foch'
         Address2: ''
         Zipcode: '64500'
         City: SAINT-JEAN-DE-LUZ
