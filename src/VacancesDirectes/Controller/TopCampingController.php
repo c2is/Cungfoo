@@ -32,7 +32,7 @@ class TopCampingController
 
         $topCampings = \Cungfoo\Model\TopCampingQuery::create()
             ->addAscendingOrderByColumn('sortable_rank')
-            ->find()
+            ->findActive()
         ;
 
         $etabs = array();

@@ -104,7 +104,7 @@ class CatalogueController implements ControllerProviderInterface
                 $searchQuery->filterById($camping->getId());
             }
 
-            $etabs = $searchQuery->find();
+            $etabs = $searchQuery->findActive();
 
             // Création de la liste
             $list = new CatalogueListing($app);

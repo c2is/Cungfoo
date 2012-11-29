@@ -149,7 +149,7 @@
         {% if etab.typeHebergements | length %}
         {% for hebergement in etab.typeHebergements %}
             <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
-                <img src="{{ asset(hebergement.imageHebergementPath) }}" width=181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
+                <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
                 <div style="overflow:hidden;">
                 <span class="h4-like">{{ hebergement.name | trans }}</span>
                 <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">{{ hebergement.composition | trans | nl2br }}</span>

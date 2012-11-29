@@ -5,7 +5,7 @@
 
 {% block slider %}
 <div id="sliderWrapper">
-    <a id="sliderPrev" class="radiusBox yellow"></a>
+    <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
     <div id="sliderContainer">
         <div id="sliderBackground"></div>
         <ul id="slider" class="fixed-width clear">
@@ -33,7 +33,7 @@
         </ul>
     </div>
 
-    <a id="sliderNext" class="radiusBox yellow"></a>
+    <a id="sliderNext" class="radiusBox yellow arrowRight"></a>
 
     <div class="pagination clear" id="sliderPager"></div>
 </div>
@@ -50,14 +50,14 @@
             {% if loop.index <= 3 %}
             <div class="element clear">
                 <div class="left">
-                    <a href="#_" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
+                    <a href="{{ path('camping', {'idResalys': camping.etablissement.code}) }}" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
                     <iframe src="//www.facebook.com/plugins/like.php?href={{ path('camping', {'idResalys': camping.etablissement.code}) }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>
                 </div>
                 <div class="details left linkParent">
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
                     <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
-                    <a href="#_" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
+                    <a href="{{ path('camping', {'idResalys': camping.etablissement.code}) }}" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
                 </div>
             </div>
             {% endif %}
@@ -128,14 +128,14 @@
         <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
         <div class="left">
             <div id="national">
-                <a class="country" href="#">{{ "home.destination_france" | trans }}</a>
+                <a class="country" href="{{ path('destination_pays', {'codeResalys': 'FRA'}) }}">{{ "home.destination_france" | trans }}</a>
                 <ul>
                     {% if pays | length %}
                     {% for p in pays %}
                         {% if p.code == 'FRA' %}
                             {% for region in p.regionMeaHome %}
                                 {% if loop.index <= 5 %}
-                                    <li>- <a class="region" href="#">{{region.name}}</a></li>
+                                    <li>- <a class="region" href="{{ path('destination_region', {'codeResalys': region.code}) }}">{{region.name}}</a></li>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
@@ -150,7 +150,7 @@
                 {% if pays | length %}
                 {% for p in pays %}
                     {% if p.code != 'FRA' %}
-                        <a class="country" href="#">{{ "home.destination" | trans }} {{p.name}}</a>
+                        <a class="country" href="{{ path('destination_pays', {'codeResalys': p.code}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
                     {% endif %}
                 {% endfor %}
                 {% endif %}

@@ -422,7 +422,7 @@ h6,
 .h6-like {
   color: #ed145b;
 }
-body {
+body.clear {
   background: #fff;
   color: #464545;
   font: 12px Arial, Helvetica, sans-serif;
@@ -482,7 +482,6 @@ body {
   text-align: center;
 }
 #stepNav ul li.tab {
-  width: 186px;
   margin: 0 12px;
   float: none;
   display: inline-block;
@@ -496,7 +495,7 @@ body {
 #stepNav ul li.tab span {
   position: relative;
   display: block;
-  padding: 0 10px;
+  padding: 0 15px;
   color: #ffffff;
   text-decoration: none;
   height: 50px;
@@ -533,6 +532,57 @@ body {
 .radiusBox.fushia {
   background-color: #ed145b;
   color: #ffffff;
+}
+.radiusBox.fushia.arrowLeft:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-right-color: #ed145b;
+  border-width: 18px;
+  margin-top: -18px;
+  margin-left: -18px;
+}
+.stain {
+  width: 131px;
+  height: 55px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 55px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -439px transparent;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
+  left: 130px;
+  bottom: 0px;
+  position: absolute;
+}
+.stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+.stain > img {
+  vertical-align: middle;
+}
+.stain > span {
+  margin-top: 15px;
+}
+.stain .price {
+  font-size: 27px;
+  font-weight: bold;
+  display: block;
+  margin: 8px 0 -8px;
+  letter-spacing: normal;
 }
 input,
 textarea {
@@ -616,17 +666,19 @@ textarea {
   padding: 10px;
   clear: both;
 }
-#authentication > div .authenticationChoice {
+#authentication > div .whiteBg {
   background-color: #ffffff;
-  font: 12px Arial, Helvetica, sans-serif;
 }
-#authentication > div .authenticationChoice:nth-child(1) {
-  padding-bottom: 0;
+#authentication > div .whiteBg .aField,
+#authentication > div .whiteBg .authenticationChoice {
+  font: normal 12px Arial, Helvetica, sans-serif;
+  text-transform: none;
+  display: block;
 }
-#authentication > div .authenticationChoice:nth-child(2) {
-  padding-top: 0;
-}
-#authentication > div .authenticationChoice input[type="radio"]:checked + label {
+#authentication > div .whiteBg .aField .field,
+#authentication > div .whiteBg .authenticationChoice .field,
+#authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
   font-weight: bold;
 }
 #authentication > div #existingCustomerLayer .aField,
@@ -664,14 +716,6 @@ textarea {
 #authentication > div #newCustomerLayer #address textarea {
   width: 141px;
   height: 81px;
-}
-#authentication > div #newCustomerLayer #address .rsl-date-input {
-  position: relative;
-}
-#authentication > div #newCustomerLayer #address .rsl-date-input #date_sRowID_link {
-  position: absolute;
-  top: 0;
-  right: 20px;
 }
 #authentication > div #existingCustomerLayer .aField {
   width: 480px;
@@ -713,6 +757,10 @@ textarea {
 }
 #reservation .aRoom .price {
   font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+#reservation .aRoom .action {
+  text-align: right;
 }
 #reservation .aRoom .changeOccupantCount {
   height: auto;
@@ -760,21 +808,7 @@ textarea {
   font-weight: normal;
 }
 #reservation .aRoom tr td {
-  height: 21px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 21px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#reservation .aRoom tr td > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#reservation .aRoom tr td > img {
+  height: 30px;
   vertical-align: middle;
 }
 #reservation .aRoom tr td .control_checkbox {
@@ -831,13 +865,297 @@ textarea {
 #reservation .aRoom .anOccupant .occupantFields input {
   border: 1px solid #c6c5c5;
 }
+#reservation .aRoom .anOccupant .occupantFields .control_text {
+  width: 150px;
+}
+#reservation .aRoom .anOccupant .occupantFields .control_date {
+  width: 120px;
+}
+#reservation .aRoom .anOccupant .occupantFields #date_sRowID_link {
+  right: 0 !important;
+}
 #reservation .aRoom .anOccupant h4 {
   display: none;
 }
 #reservation #financialContener input {
   border: 1px solid #c6c5c5;
 }
-/* packages */
+#reservation #financialContener .field {
+  margin-bottom: 10px;
+}
+#reservation #financialContener .field .newListSelected {
+  float: none;
+}
+#reservation #financialContener .field .newListSelected .selectedTxt {
+  border: 1px solid #c6c5c5;
+}
+.proposal {
+  font: normal 14px/17px Arial, Helvetica, sans-serif;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.proposal .proposalDates {
+  font: bold 18px/21px Arial, Helvetica, sans-serif;
+}
+.proposal img {
+  margin: 10px 0 8px;
+  border: 5px solid #fff;
+  -webkit-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
+  box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
+}
+.proposal .total span {
+  font: bold 16px/17px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+}
+.proposal .total span .price {
+  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.proposal table {
+  border-top: 7px solid #ffffff;
+  display: block;
+  margin: 10px 0;
+  padding-top: 10px;
+  text-align: left;
+}
+.rsl-date-input,
+.control_date {
+  position: relative;
+}
+.rsl-date-input #date_sRowID_link,
+.control_date #date_sRowID_link {
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+}
+.rsl-date-input #date_sRowID_link img,
+.control_date #date_sRowID_link img {
+  display: none;
+}
+label,
+input[type="radio"] {
+  vertical-align: middle;
+}
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 3px 5px 0 0;
+}
+input[type="radio"] {
+  height: auto;
+}
+/* Stylish Select 0.4.9 */
+#authentication #newCustomerLayer .SSContainerDivWrapper {
+  min-width: 141px;
+}
+#authentication #newCustomerLayer ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#authentication #newCustomerLayer ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#authentication #newCustomerLayer ul.newList a > img {
+  vertical-align: middle;
+}
+#authentication #newCustomerLayer .newListSelected {
+  width: 141px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+#authentication #newCustomerLayer .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#authentication #newCustomerLayer .newListSelected > img {
+  vertical-align: middle;
+}
+#authentication #newCustomerLayer .newListSelected .selectedTxt {
+  width: 107px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#authentication #newCustomerLayer .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#authentication #newCustomerLayer .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+#authentication #newCustomerLayer .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
+}
+#reservation .aRoom .SSContainerDivWrapper {
+  min-width: 54px;
+}
+#reservation .aRoom ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation .aRoom ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom ul.newList a > img {
+  vertical-align: middle;
+}
+#reservation .aRoom .newListSelected {
+  width: 54px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 10px;
+}
+#reservation .aRoom .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom .newListSelected > img {
+  vertical-align: middle;
+}
+#reservation .aRoom .newListSelected .selectedTxt {
+  width: 20px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#reservation .aRoom .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation .aRoom .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+#reservation .aRoom .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
+}
+#reservation #financialContener .SSContainerDivWrapper {
+  min-width: 216px;
+}
+#reservation #financialContener ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservation #financialContener ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation #financialContener ul.newList a > img {
+  vertical-align: middle;
+}
+#reservation #financialContener .newListSelected {
+  width: 216px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+#reservation #financialContener .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation #financialContener .newListSelected > img {
+  vertical-align: middle;
+}
+#reservation #financialContener .newListSelected .selectedTxt {
+  width: 182px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#reservation #financialContener .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservation #financialContener .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+#reservation #financialContener .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
+}
+#please_wait_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 35px #ffffff;
+  text-align: center;
+  font: normal 15px Arial, Helvetica, sans-serif;
+  padding: 100px 20px;
+  opacity: 0.8;
+}
 #footerContener {
   overflow: hidden;
   margin-top: 20px;
@@ -923,167 +1241,20 @@ textarea {
 #footerContener .footerNavigation.pageListe b {
   background-color: #f5f5f5;
 }
-label,
-input[type="radio"] {
-  vertical-align: middle;
+#footerContener .mentions {
+  clear: both;
+  padding-bottom: 15px;
+  text-align: center;
 }
-input[type="radio"] + label {
-  display: inline-block;
-  margin: 3px 5px 0 0;
-}
-input[type="radio"] {
-  height: auto;
-}
-/* Stylish Select 0.4.9 */
-#newCustomerLayer .SSContainerDivWrapper,
-#financialContener .SSContainerDivWrapper {
-  min-width: 141px;
-}
-#newCustomerLayer ul.newList a,
-#financialContener ul.newList a {
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#newCustomerLayer ul.newList a > *,
-#financialContener ul.newList a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#newCustomerLayer ul.newList a > img,
-#financialContener ul.newList a > img {
-  vertical-align: middle;
-}
-#newCustomerLayer .newListSelected,
-#financialContener .newListSelected {
-  width: 141px;
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  margin-right: 0px;
-}
-#newCustomerLayer .newListSelected > *,
-#financialContener .newListSelected > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#newCustomerLayer .newListSelected > img,
-#financialContener .newListSelected > img {
-  vertical-align: middle;
-}
-#newCustomerLayer .newListSelected .selectedTxt:after,
-#financialContener .newListSelected .selectedTxt:after {
-  width: 27px;
-  height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
-}
-#newCustomerLayer .selectedTxt,
-#financialContener .selectedTxt {
-  width: 107px;
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  padding: 0 27px 0 7px;
-}
-#newCustomerLayer .selectedTxt > *,
-#financialContener .selectedTxt > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#newCustomerLayer .selectedTxt > img,
-#financialContener .selectedTxt > img {
-  vertical-align: middle;
-}
-#reservation .aRoom .SSContainerDivWrapper {
-  min-width: 54px;
-}
-#reservation .aRoom ul.newList a {
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#reservation .aRoom ul.newList a > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#reservation .aRoom ul.newList a > img {
-  vertical-align: middle;
-}
-#reservation .aRoom .newListSelected {
-  width: 54px;
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  margin-right: 10px;
-}
-#reservation .aRoom .newListSelected > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#reservation .aRoom .newListSelected > img {
-  vertical-align: middle;
-}
-#reservation .aRoom .newListSelected .selectedTxt:after {
-  width: 27px;
-  height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
-}
-#reservation .aRoom .selectedTxt {
-  width: 20px;
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-  padding: 0 27px 0 7px;
-}
-#reservation .aRoom .selectedTxt > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: auto;
-}
-#reservation .aRoom .selectedTxt > img {
-  vertical-align: middle;
-}
-.stylish-select .SSContainerDivWrapper {
-  left: -9999px;
+#footerContener .mentions a {
+  color: #005ea6;
 }
 /*
 * Vacances directes select style
 ---------------------------------------------------------*/
+.stylish-select .SSContainerDivWrapper {
+  left: -9999px;
+}
 .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
