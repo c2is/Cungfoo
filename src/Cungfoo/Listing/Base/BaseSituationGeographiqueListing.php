@@ -21,7 +21,7 @@ class BaseSituationGeographiqueListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
-        $this->addColumn(new Column\BooleanColumn('active'));
+        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**

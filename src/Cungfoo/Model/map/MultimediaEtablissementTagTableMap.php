@@ -43,8 +43,8 @@ class MultimediaEtablissementTagTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('multimedia_etablissement_id', 'MultimediaEtablissementId', 'INTEGER' , 'multimedia_etablissement', 'id', true, null, null);
-        $this->addForeignPrimaryKey('tag_id', 'TagId', 'INTEGER' , 'tag', 'id', true, null, null);
+        $this->addForeignPrimaryKey('MULTIMEDIA_ETABLISSEMENT_ID', 'MultimediaEtablissementId', 'INTEGER' , 'multimedia_etablissement', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('TAG_ID', 'TagId', 'INTEGER' , 'tag', 'ID', true, null, null);
         // validators
     } // initialize()
 

@@ -20,7 +20,7 @@ use Cungfoo\Model\PointInteretQuery;
 /**
  * Base class that represents a row from the 'point_interet_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -112,7 +112,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -122,7 +122,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -132,7 +132,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -142,7 +142,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Get the [presentation] column value.
-     *
+     * 
      * @return string
      */
     public function getPresentation()
@@ -152,7 +152,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return PointInteretI18n The current object (for fluent API support)
      */
@@ -177,7 +177,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteretI18n The current object (for fluent API support)
      */
@@ -198,7 +198,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteretI18n The current object (for fluent API support)
      */
@@ -219,7 +219,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [presentation] column.
-     *
+     * 
      * @param string $v new value
      * @return PointInteretI18n The current object (for fluent API support)
      */
@@ -511,16 +511,16 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(PointInteretI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(PointInteretI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`locale`';
+            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
         if ($this->isColumnModified(PointInteretI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`name`';
+            $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
         if ($this->isColumnModified(PointInteretI18nPeer::PRESENTATION)) {
-            $modifiedColumns[':p' . $index++]  = '`presentation`';
+            $modifiedColumns[':p' . $index++]  = '`PRESENTATION`';
         }
 
         $sql = sprintf(
@@ -533,16 +533,16 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`locale`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`name`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`presentation`':
+                    case '`PRESENTATION`':						
                         $stmt->bindValue($identifier, $this->presentation, PDO::PARAM_STR);
                         break;
                 }
@@ -606,11 +606,11 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -986,13 +986,12 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
      * Get the associated PointInteret object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return PointInteret The associated PointInteret object.
      * @throws PropelException
      */
-    public function getPointInteret(PropelPDO $con = null, $doQuery = true)
+    public function getPointInteret(PropelPDO $con = null)
     {
-        if ($this->aPointInteret === null && ($this->id !== null) && $doQuery) {
+        if ($this->aPointInteret === null && ($this->id !== null)) {
             $this->aPointInteret = PointInteretQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

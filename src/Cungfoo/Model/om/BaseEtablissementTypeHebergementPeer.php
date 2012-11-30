@@ -18,7 +18,7 @@ use Cungfoo\Model\map\EtablissementTypeHebergementTableMap;
 /**
  * Base static class for performing query and update operations on the 'etablissement_type_hebergement' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -46,23 +46,23 @@ abstract class BaseEtablissementTypeHebergementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the etablissement_id field */
-    const ETABLISSEMENT_ID = 'etablissement_type_hebergement.etablissement_id';
+    /** the column name for the ETABLISSEMENT_ID field */
+    const ETABLISSEMENT_ID = 'etablissement_type_hebergement.ETABLISSEMENT_ID';
 
-    /** the column name for the type_hebergement_id field */
-    const TYPE_HEBERGEMENT_ID = 'etablissement_type_hebergement.type_hebergement_id';
+    /** the column name for the TYPE_HEBERGEMENT_ID field */
+    const TYPE_HEBERGEMENT_ID = 'etablissement_type_hebergement.TYPE_HEBERGEMENT_ID';
 
-    /** the column name for the minimum_price field */
-    const MINIMUM_PRICE = 'etablissement_type_hebergement.minimum_price';
+    /** the column name for the MINIMUM_PRICE field */
+    const MINIMUM_PRICE = 'etablissement_type_hebergement.MINIMUM_PRICE';
 
-    /** the column name for the minimum_price_discount_label field */
-    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.minimum_price_discount_label';
+    /** the column name for the MINIMUM_PRICE_DISCOUNT_LABEL field */
+    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.MINIMUM_PRICE_DISCOUNT_LABEL';
 
-    /** the column name for the minimum_price_start_date field */
-    const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.minimum_price_start_date';
+    /** the column name for the MINIMUM_PRICE_START_DATE field */
+    const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.MINIMUM_PRICE_START_DATE';
 
-    /** the column name for the minimum_price_end_date field */
-    const MINIMUM_PRICE_END_DATE = 'etablissement_type_hebergement.minimum_price_end_date';
+    /** the column name for the MINIMUM_PRICE_END_DATE field */
+    const MINIMUM_PRICE_END_DATE = 'etablissement_type_hebergement.MINIMUM_PRICE_END_DATE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -184,12 +184,12 @@ abstract class BaseEtablissementTypeHebergementPeer
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE);
         } else {
-            $criteria->addSelectColumn($alias . '.etablissement_id');
-            $criteria->addSelectColumn($alias . '.type_hebergement_id');
-            $criteria->addSelectColumn($alias . '.minimum_price');
-            $criteria->addSelectColumn($alias . '.minimum_price_discount_label');
-            $criteria->addSelectColumn($alias . '.minimum_price_start_date');
-            $criteria->addSelectColumn($alias . '.minimum_price_end_date');
+            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
+            $criteria->addSelectColumn($alias . '.TYPE_HEBERGEMENT_ID');
+            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE');
+            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_DISCOUNT_LABEL');
+            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_START_DATE');
+            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_END_DATE');
         }
     }
 
@@ -372,7 +372,7 @@ abstract class BaseEtablissementTypeHebergementPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -382,7 +382,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     {
         EtablissementTypeHebergementPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to etablissement_type_hebergement
      * by a foreign key with ON DELETE CASCADE
@@ -425,7 +425,7 @@ abstract class BaseEtablissementTypeHebergementPeer
 
         return array((int) $row[$startcol], (int) $row[$startcol + 1]);
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -436,7 +436,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = EtablissementTypeHebergementPeer::getOMClass();
         // populate the object(s)
@@ -902,7 +902,7 @@ abstract class BaseEtablissementTypeHebergementPeer
         if ($con === null) {
             $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-
+    
         $criteria->addJoin(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -953,7 +953,7 @@ abstract class BaseEtablissementTypeHebergementPeer
         if ($con === null) {
             $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
-
+    
         $criteria->addJoin(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -1022,7 +1022,7 @@ abstract class BaseEtablissementTypeHebergementPeer
                 if ($key2 !== null) {
                     $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-
+    
                         $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1096,7 +1096,7 @@ abstract class BaseEtablissementTypeHebergementPeer
                 if ($key2 !== null) {
                     $obj2 = EtablissementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
-
+    
                         $cls = EtablissementPeer::getOMClass();
 
                     $obj2 = new $cls();
@@ -1323,7 +1323,7 @@ abstract class BaseEtablissementTypeHebergementPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             EtablissementTypeHebergementPeer::clearRelatedInstancePool();
             $con->commit();

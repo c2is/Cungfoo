@@ -42,9 +42,9 @@ class TagI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'tag', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'tag', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         // validators
     } // initialize()
 

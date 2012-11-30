@@ -22,7 +22,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
 /**
  * Base class that represents a row from the 'idee_weekend' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -84,11 +84,11 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     protected $image_path;
 
     /**
-     * The value for the active field.
+     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $active;
+    protected $enabled;
 
     /**
      * @var        PropelObjectCollection|IdeeWeekendI18n[] Collection to store aggregation of IdeeWeekendI18n objects.
@@ -111,13 +111,13 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[IdeeWeekendI18n]
@@ -138,7 +138,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->active = false;
+        $this->enabled = false;
     }
 
     /**
@@ -153,7 +153,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -163,7 +163,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [highlight] column value.
-     *
+     * 
      * @return boolean
      */
     public function getHighlight()
@@ -173,7 +173,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [prix] column value.
-     *
+     * 
      * @return string
      */
     public function getPrix()
@@ -183,7 +183,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [home] column value.
-     *
+     * 
      * @return boolean
      */
     public function getHome()
@@ -193,7 +193,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [lien] column value.
-     *
+     * 
      * @return string
      */
     public function getLien()
@@ -203,7 +203,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Get the [image_path] column value.
-     *
+     * 
      * @return string
      */
     public function getImagePath()
@@ -212,18 +212,18 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [active] column value.
-     *
+     * Get the [enabled] column value.
+     * 
      * @return boolean
      */
-    public function getActive()
+    public function getEnabled()
     {
-        return $this->active;
+        return $this->enabled;
     }
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -248,7 +248,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -273,7 +273,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Set the value of [prix] column.
-     *
+     * 
      * @param string $v new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -298,7 +298,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -323,7 +323,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Set the value of [lien] column.
-     *
+     * 
      * @param string $v new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -344,7 +344,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_path] column.
-     *
+     * 
      * @param string $v new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
@@ -364,16 +364,16 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     } // setImagePath()
 
     /**
-     * Sets the value of the [active] column.
+     * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return IdeeWeekend The current object (for fluent API support)
      */
-    public function setActive($v)
+    public function setEnabled($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -383,14 +383,14 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             }
         }
 
-        if ($this->active !== $v) {
-            $this->active = $v;
-            $this->modifiedColumns[] = IdeeWeekendPeer::ACTIVE;
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = IdeeWeekendPeer::ENABLED;
         }
 
 
         return $this;
-    } // setActive()
+    } // setEnabled()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -402,7 +402,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->active !== false) {
+            if ($this->enabled !== false) {
                 return false;
             }
 
@@ -434,7 +434,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->home = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->image_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -642,7 +642,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
             if ($this->collIdeeWeekendI18ns !== null) {
                 foreach ($this->collIdeeWeekendI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -675,25 +675,25 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(IdeeWeekendPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::HIGHLIGHT)) {
-            $modifiedColumns[':p' . $index++]  = '`highlight`';
+            $modifiedColumns[':p' . $index++]  = '`HIGHLIGHT`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::PRIX)) {
-            $modifiedColumns[':p' . $index++]  = '`prix`';
+            $modifiedColumns[':p' . $index++]  = '`PRIX`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) {
-            $modifiedColumns[':p' . $index++]  = '`home`';
+            $modifiedColumns[':p' . $index++]  = '`HOME`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) {
-            $modifiedColumns[':p' . $index++]  = '`lien`';
+            $modifiedColumns[':p' . $index++]  = '`LIEN`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
         }
-        if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`active`';
+        if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
 
         $sql = sprintf(
@@ -706,26 +706,26 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`highlight`':
+                    case '`HIGHLIGHT`':
                         $stmt->bindValue($identifier, (int) $this->highlight, PDO::PARAM_INT);
                         break;
-                    case '`prix`':
+                    case '`PRIX`':						
                         $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
-                    case '`home`':
+                    case '`HOME`':
                         $stmt->bindValue($identifier, (int) $this->home, PDO::PARAM_INT);
                         break;
-                    case '`lien`':
+                    case '`LIEN`':						
                         $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
                         break;
-                    case '`image_path`':
+                    case '`IMAGE_PATH`':						
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`active`':
-                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -795,11 +795,11 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -888,7 +888,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 return $this->getImagePath();
                 break;
             case 6:
-                return $this->getActive();
+                return $this->getEnabled();
                 break;
             default:
                 return null;
@@ -925,7 +925,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $keys[3] => $this->getHome(),
             $keys[4] => $this->getLien(),
             $keys[5] => $this->getImagePath(),
-            $keys[6] => $this->getActive(),
+            $keys[6] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collIdeeWeekendI18ns) {
@@ -984,7 +984,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 $this->setImagePath($value);
                 break;
             case 6:
-                $this->setActive($value);
+                $this->setEnabled($value);
                 break;
         } // switch()
     }
@@ -1016,7 +1016,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setHome($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setImagePath($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
     }
 
     /**
@@ -1034,7 +1034,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) $criteria->add(IdeeWeekendPeer::HOME, $this->home);
         if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) $criteria->add(IdeeWeekendPeer::LIEN, $this->lien);
         if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) $criteria->add(IdeeWeekendPeer::IMAGE_PATH, $this->image_path);
-        if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) $criteria->add(IdeeWeekendPeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(IdeeWeekendPeer::ENABLED)) $criteria->add(IdeeWeekendPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1103,7 +1103,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $copyObj->setHome($this->getHome());
         $copyObj->setLien($this->getLien());
         $copyObj->setImagePath($this->getImagePath());
-        $copyObj->setActive($this->getActive());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1190,15 +1190,13 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return IdeeWeekend The current object (for fluent API support)
+     * @return void
      * @see        addIdeeWeekendI18ns()
      */
     public function clearIdeeWeekendI18ns()
     {
         $this->collIdeeWeekendI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collIdeeWeekendI18nsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1297,7 +1295,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      *
      * @param PropelCollection $ideeWeekendI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function setIdeeWeekendI18ns(PropelCollection $ideeWeekendI18ns, PropelPDO $con = null)
     {
@@ -1314,8 +1311,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
         $this->collIdeeWeekendI18ns = $ideeWeekendI18ns;
         $this->collIdeeWeekendI18nsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1333,22 +1328,22 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if (null === $this->collIdeeWeekendI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collIdeeWeekendI18ns) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getIdeeWeekendI18ns());
+                }
+                $query = IdeeWeekendI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getIdeeWeekendI18ns());
+                return $query
+                    ->filterByIdeeWeekend($this)
+                    ->count($con);
             }
-            $query = IdeeWeekendI18nQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByIdeeWeekend($this)
-                ->count($con);
+        } else {
+            return count($this->collIdeeWeekendI18ns);
         }
-
-        return count($this->collIdeeWeekendI18ns);
     }
 
     /**
@@ -1386,7 +1381,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * @param	IdeeWeekendI18n $ideeWeekendI18n The ideeWeekendI18n object to remove.
-     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function removeIdeeWeekendI18n($ideeWeekendI18n)
     {
@@ -1399,8 +1393,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->ideeWeekendI18nsScheduledForDeletion[]= $ideeWeekendI18n;
             $ideeWeekendI18n->setIdeeWeekend(null);
         }
-
-        return $this;
     }
 
     /**
@@ -1414,7 +1406,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $this->home = null;
         $this->lien = null;
         $this->image_path = null;
-        $this->active = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1473,20 +1465,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
-    // active behavior
-
-    /**
-     * return true is the object is active
-     *
-     * @return boolean
-     */
-    public function isActive()
-    {
-        return $this->getActive();
-    }
-
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -1497,10 +1477,10 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -1510,7 +1490,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -1525,7 +1505,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 foreach ($this->collIdeeWeekendI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -1541,10 +1521,10 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             }
             $this->addIdeeWeekendI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -1569,10 +1549,10 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -1583,33 +1563,33 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [titre] column value.
-         *
+         * 
          * @return string
          */
         public function getTitre()
         {
         return $this->getCurrentTranslation()->getTitre();
     }
-
-
+    
+    
         /**
          * Set the value of [titre] column.
-         *
+         * 
          * @param string $v new value
          * @return IdeeWeekendI18n The current object (for fluent API support)
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1624,12 +1604,12 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         {
             $this->resetModified(IdeeWeekendPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1637,15 +1617,15 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return 'uploads/idee_weekends';
     }
-
+    
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

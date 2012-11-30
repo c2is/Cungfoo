@@ -22,21 +22,21 @@ use Cungfoo\Model\ThematiqueQuery;
 /**
  * Base class that represents a query for the 'thematique' table.
  *
- *
+ * 
  *
  * @method ThematiqueQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ThematiqueQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method ThematiqueQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ThematiqueQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ThematiqueQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method ThematiqueQuery orderByActive($order = Criteria::ASC) Order by the active column
+ * @method ThematiqueQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
  *
  * @method ThematiqueQuery groupById() Group by the id column
  * @method ThematiqueQuery groupByCode() Group by the code column
  * @method ThematiqueQuery groupByImagePath() Group by the image_path column
  * @method ThematiqueQuery groupByCreatedAt() Group by the created_at column
  * @method ThematiqueQuery groupByUpdatedAt() Group by the updated_at column
- * @method ThematiqueQuery groupByActive() Group by the active column
+ * @method ThematiqueQuery groupByEnabled() Group by the enabled column
  *
  * @method ThematiqueQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method ThematiqueQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,14 +57,14 @@ use Cungfoo\Model\ThematiqueQuery;
  * @method Thematique findOneByImagePath(string $image_path) Return the first Thematique filtered by the image_path column
  * @method Thematique findOneByCreatedAt(string $created_at) Return the first Thematique filtered by the created_at column
  * @method Thematique findOneByUpdatedAt(string $updated_at) Return the first Thematique filtered by the updated_at column
- * @method Thematique findOneByActive(boolean $active) Return the first Thematique filtered by the active column
+ * @method Thematique findOneByEnabled(boolean $enabled) Return the first Thematique filtered by the enabled column
  *
  * @method array findById(int $id) Return Thematique objects filtered by the id column
  * @method array findByCode(string $code) Return Thematique objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return Thematique objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Thematique objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Thematique objects filtered by the updated_at column
- * @method array findByActive(boolean $active) Return Thematique objects filtered by the active column
+ * @method array findByEnabled(boolean $enabled) Return Thematique objects filtered by the enabled column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -115,7 +115,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Thematique|Thematique[]|mixed the result, formatted by the current formatter
@@ -168,9 +168,9 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `created_at`, `updated_at`, `active` FROM `thematique` WHERE `id` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `thematique` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -429,15 +429,15 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active column
+     * Filter the query on the enabled column
      *
      * Example usage:
      * <code>
-     * $query->filterByActive(true); // WHERE active = true
-     * $query->filterByActive('yes'); // WHERE active = true
+     * $query->filterByEnabled(true); // WHERE enabled = true
+     * $query->filterByEnabled('yes'); // WHERE enabled = true
      * </code>
      *
-     * @param     boolean|string $active The value to use as filter.
+     * @param     boolean|string $enabled The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -446,13 +446,13 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      *
      * @return ThematiqueQuery The current query, for fluid interface
      */
-    public function filterByActive($active = null, $comparison = null)
+    public function filterByEnabled($enabled = null, $comparison = null)
     {
-        if (is_string($active)) {
-            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($enabled)) {
+            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(ThematiquePeer::ACTIVE, $active, $comparison);
+        return $this->addUsingAlias(ThematiquePeer::ENABLED, $enabled, $comparison);
     }
 
     /**
@@ -637,7 +637,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -649,7 +649,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ThematiquePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -659,7 +659,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ThematiquePeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -669,7 +669,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ThematiquePeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -681,7 +681,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ThematiquePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -691,7 +691,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *
@@ -701,22 +701,8 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
-    // active behavior
-
-    /**
-     * return only active objects
-     *
-     * @return boolean
-     */
-    public function findActive($con = null)
-    {
-        $this->filterByActive(true);
-
-        return parent::find($con);
-    }
-
     // i18n behavior
-
+    
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -729,12 +715,12 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'ThematiqueI18n';
-
+    
         return $this
             ->joinThematiqueI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-
+    
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -750,10 +736,10 @@ abstract class BaseThematiqueQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('ThematiqueI18n');
         $this->with['ThematiqueI18n']->setIsWithOneToMany(false);
-
+    
         return $this;
     }
-
+    
     /**
      * Use the I18n relation query object
      *

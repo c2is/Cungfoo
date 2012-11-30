@@ -67,10 +67,10 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.image_detail_2_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'ville.active',
+            'label' => 'ville.enabled',
             'required' => false,
         ));
         $builder->add('villeI18ns', 'translation_collection', array(

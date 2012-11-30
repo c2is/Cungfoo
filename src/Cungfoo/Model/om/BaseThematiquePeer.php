@@ -17,7 +17,7 @@ use Cungfoo\Model\map\ThematiqueTableMap;
 /**
  * Base static class for performing query and update operations on the 'thematique' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,23 +45,23 @@ abstract class BaseThematiquePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the id field */
-    const ID = 'thematique.id';
+    /** the column name for the ID field */
+    const ID = 'thematique.ID';
 
-    /** the column name for the code field */
-    const CODE = 'thematique.code';
+    /** the column name for the CODE field */
+    const CODE = 'thematique.CODE';
 
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'thematique.image_path';
+    /** the column name for the IMAGE_PATH field */
+    const IMAGE_PATH = 'thematique.IMAGE_PATH';
 
-    /** the column name for the created_at field */
-    const CREATED_AT = 'thematique.created_at';
+    /** the column name for the CREATED_AT field */
+    const CREATED_AT = 'thematique.CREATED_AT';
 
-    /** the column name for the updated_at field */
-    const UPDATED_AT = 'thematique.updated_at';
+    /** the column name for the UPDATED_AT field */
+    const UPDATED_AT = 'thematique.UPDATED_AT';
 
-    /** the column name for the active field */
-    const ACTIVE = 'thematique.active';
+    /** the column name for the ENABLED field */
+    const ENABLED = 'thematique.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,7 +76,7 @@ abstract class BaseThematiquePeer
 
 
     // i18n behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -89,11 +89,11 @@ abstract class BaseThematiquePeer
      * e.g. ThematiquePeer::$fieldNames[ThematiquePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID, ThematiquePeer::CODE, ThematiquePeer::IMAGE_PATH, ThematiquePeer::CREATED_AT, ThematiquePeer::UPDATED_AT, ThematiquePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID, ThematiquePeer::CODE, ThematiquePeer::IMAGE_PATH, ThematiquePeer::CREATED_AT, ThematiquePeer::UPDATED_AT, ThematiquePeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'enabled', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -104,11 +104,11 @@ abstract class BaseThematiquePeer
      * e.g. ThematiquePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
-        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID => 0, ThematiquePeer::CODE => 1, ThematiquePeer::IMAGE_PATH => 2, ThematiquePeer::CREATED_AT => 3, ThematiquePeer::UPDATED_AT => 4, ThematiquePeer::ACTIVE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Enabled' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'enabled' => 5, ),
+        BasePeer::TYPE_COLNAME => array (ThematiquePeer::ID => 0, ThematiquePeer::CODE => 1, ThematiquePeer::IMAGE_PATH => 2, ThematiquePeer::CREATED_AT => 3, ThematiquePeer::UPDATED_AT => 4, ThematiquePeer::ENABLED => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ENABLED' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'enabled' => 5, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -188,14 +188,14 @@ abstract class BaseThematiquePeer
             $criteria->addSelectColumn(ThematiquePeer::IMAGE_PATH);
             $criteria->addSelectColumn(ThematiquePeer::CREATED_AT);
             $criteria->addSelectColumn(ThematiquePeer::UPDATED_AT);
-            $criteria->addSelectColumn(ThematiquePeer::ACTIVE);
+            $criteria->addSelectColumn(ThematiquePeer::ENABLED);
         } else {
-            $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.code');
-            $criteria->addSelectColumn($alias . '.image_path');
-            $criteria->addSelectColumn($alias . '.created_at');
-            $criteria->addSelectColumn($alias . '.updated_at');
-            $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.CODE');
+            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
+            $criteria->addSelectColumn($alias . '.CREATED_AT');
+            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 
@@ -378,7 +378,7 @@ abstract class BaseThematiquePeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -388,7 +388,7 @@ abstract class BaseThematiquePeer
     {
         ThematiquePeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to thematique
      * by a foreign key with ON DELETE CASCADE
@@ -434,7 +434,7 @@ abstract class BaseThematiquePeer
 
         return (int) $row[$startcol];
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -445,7 +445,7 @@ abstract class BaseThematiquePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = ThematiquePeer::getOMClass();
         // populate the object(s)
@@ -689,7 +689,7 @@ abstract class BaseThematiquePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             ThematiquePeer::clearRelatedInstancePool();
             $con->commit();

@@ -1,25 +1,25 @@
 \Cungfoo\Model\CategoryTypeHebergement:
     1:
         Code: SALL
-        Active: true
+        Enabled: true
     2:
         Code: MH
-        Active: true
+        Enabled: true
     3:
         Code: CHA
-        Active: true
+        Enabled: true
     4:
-        Code: CAR
-        Active: true
-    5:
-        Code: GITE
-        Active: true
-    6:
-        Code: EMP
-        Active: true
-    7:
         Code: MAIS
-        Active: true
+        Enabled: true
+    5:
+        Code: CAR
+        Enabled: true
+    6:
+        Code: GITE
+        Enabled: true
+    7:
+        Code: EMP
+        Enabled: true
     8:
         Code: TENT
-        Active: true
+        Enabled: true

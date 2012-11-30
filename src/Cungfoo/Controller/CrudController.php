@@ -57,7 +57,7 @@ class CrudController implements ControllerProviderInterface
             ->generateRead($app, $controllers)
             ->generateUpdate($app, $controllers)
             ->generateDelete($app, $controllers)
-            ->generateActive($app, $controllers)
+            ->generateEnabled($app, $controllers)
         ;
 
         return $controllers;
@@ -119,23 +119,23 @@ class CrudController implements ControllerProviderInterface
         return $this;
     }
 
-    protected function generateActive(Application $app, ControllerCollection $controllers)
+    protected function generateEnabled(Application $app, ControllerCollection $controllers)
     {
         $controllers
-            ->match(sprintf('/%s/{id}/active', $this->prefix), function (Request $request, $id) use ($app)
+            ->match(sprintf('/%s/{id}/enabled', $this->prefix), function (Request $request, $id) use ($app)
             {
                 $query  = new $this->queryClass();
                 $object = $query->findPk($id);
                 $object
-                    ->setActive(!$object->getActive())
+                    ->setEnabled(!$object->getEnabled())
                     ->save()
                 ;
 
-                return new Response(json_encode(array('active' => $object->isActive())), 200, array (
+                return new Response(json_encode(array('enabled' => $object->getEnabled())), 200, array (
                     'Content-Type' => 'application/json',
                 ));
             })
-            ->bind(sprintf('%s_crud_active', $this->modelName))
+            ->bind(sprintf('%s_crud_enabled', $this->modelName))
         ;
 
         return $this;

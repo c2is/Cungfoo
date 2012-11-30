@@ -42,13 +42,13 @@ class EtablissementI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'etablissement', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('country', 'Country', 'VARCHAR', false, 255, null);
-        $this->addColumn('ouverture_reception', 'OuvertureReception', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('ouverture_camping', 'OuvertureCamping', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('arrivees_departs', 'ArriveesDeparts', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'etablissement', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('COUNTRY', 'Country', 'VARCHAR', false, 255, null);
+        $this->addColumn('OUVERTURE_RECEPTION', 'OuvertureReception', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('OUVERTURE_CAMPING', 'OuvertureCamping', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('ARRIVEES_DEPARTS', 'ArriveesDeparts', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

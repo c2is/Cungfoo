@@ -1,6 +1,1 @@
-\Cungfoo\Model\DernieresMinutes:
-    1:
-        DateStart: '2013-07-20 00:00:00'
-        DayStart: wednesday
-        DayRange: '7'
-        Active: true
+\Cungfoo\Model\DernieresMinutes: {  }

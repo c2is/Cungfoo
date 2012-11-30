@@ -1,3 +1,42 @@
+<span class="nbResult"><span class="nb">{{ list.element | length }}</span>Résultat(s)</span>
+<div class="typeAff">
+    <span>Affichage résultats</span>
+    <button id="btList" class="button picto active">Liste</button>
+    <button id="btMap" class="button picto">Carte</button>
+</div>
+<div id="widgetRange">
+    Budget(s) proposé(s)
+    <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
+</div>
+
+<div id="resultMap" class="gmap" style="width:616px;height:573px;">
+    <script>
+        function resultInit() {
+            var resultMkrs = [
+                //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                {% for etab in list.element %}
+                    ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
+                {% endfor %}
+            ];
+            var centerresultMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
+                    mapOptions = {
+                        zoom: 6,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        center: centerresultMkr
+                    };
+            resultMap = new google.maps.Map(document.getElementById('resultMap'), mapOptions);
+            setMarkers(resultMap, resultMkrs);
+        }
+    </script>
+</div>
+
+<form id="filterTri" action="">
+    <fieldset>
+        <label for="">Trier par</label>
+    </fieldset>
+</form>
+
+<span class="infoComp">Comparateur</span>
 <div id="results" class="clear">
     {% for etab in list.element %}
     <div id="etab1" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
@@ -37,24 +76,30 @@
                 <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
                 <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
 
+                <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}
-                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
                     {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
                     {{ etab.model.eventPrioritaire.strDate }}
                     <a class="button trans" href="#_">{{ "general.plus_evenements" | trans }}</a>
                 {% endif %}
+                </div>
 
+                <div class="infoPop">
                 {% if etab.model.poiPrioritaire %}
-                    <img height="101" width="101" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
                     {{ etab.model.poiPrioritaire.name }}
                     <a class="button trans" href="#_">{{ "general.plus_visite" | trans }}</a>
                 {% endif %}
+                </div>
 
-                <h4>&Agrave; ne pas manquer</h4>
+                <div class="imanqPop">
+                    <h4>&Agrave; ne pas manquer</h4>
 
-                <a class="button trans" href="#_">{{ etab.model.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</a>
-                <a class="button trans" href="#_">{{ etab.model.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</a>
-                <a class="button trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</a>
+                    <a class="bt trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
+                </div>
 
                 <a class="button" href="#_">{{ "general.decouvrir" | trans }} {{ etab.model.ville }}</a>
             </div>

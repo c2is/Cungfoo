@@ -20,7 +20,7 @@ use Cungfoo\Model\RegionQuery;
 /**
  * Base class that represents a row from the 'region_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -118,7 +118,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -128,7 +128,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -138,7 +138,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -148,7 +148,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Get the [introduction] column value.
-     *
+     * 
      * @return string
      */
     public function getIntroduction()
@@ -158,7 +158,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -168,7 +168,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return RegionI18n The current object (for fluent API support)
      */
@@ -193,7 +193,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return RegionI18n The current object (for fluent API support)
      */
@@ -214,7 +214,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return RegionI18n The current object (for fluent API support)
      */
@@ -235,7 +235,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [introduction] column.
-     *
+     * 
      * @param string $v new value
      * @return RegionI18n The current object (for fluent API support)
      */
@@ -256,7 +256,7 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     *
+     * 
      * @param string $v new value
      * @return RegionI18n The current object (for fluent API support)
      */
@@ -549,19 +549,19 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(RegionI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(RegionI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`locale`';
+            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
         if ($this->isColumnModified(RegionI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`name`';
+            $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
         if ($this->isColumnModified(RegionI18nPeer::INTRODUCTION)) {
-            $modifiedColumns[':p' . $index++]  = '`introduction`';
+            $modifiedColumns[':p' . $index++]  = '`INTRODUCTION`';
         }
         if ($this->isColumnModified(RegionI18nPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`description`';
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
 
         $sql = sprintf(
@@ -574,19 +574,19 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`locale`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`name`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`introduction`':
+                    case '`INTRODUCTION`':						
                         $stmt->bindValue($identifier, $this->introduction, PDO::PARAM_STR);
                         break;
-                    case '`description`':
+                    case '`DESCRIPTION`':						
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }
@@ -650,11 +650,11 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1040,13 +1040,12 @@ abstract class BaseRegionI18n extends BaseObject implements Persistent
      * Get the associated Region object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Region The associated Region object.
      * @throws PropelException
      */
-    public function getRegion(PropelPDO $con = null, $doQuery = true)
+    public function getRegion(PropelPDO $con = null)
     {
-        if ($this->aRegion === null && ($this->id !== null) && $doQuery) {
+        if ($this->aRegion === null && ($this->id !== null)) {
             $this->aRegion = RegionQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

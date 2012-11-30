@@ -1,13 +1,1 @@
-\Cungfoo\Model\Tag:
-    1:
-        Slug: camping
-        Active: true
-    2:
-        Slug: locations
-        Active: true
-    3:
-        Slug: activites
-        Active: true
-    4:
-        Slug: regions
-        Active: true
+\Cungfoo\Model\Tag: {  }

@@ -43,9 +43,9 @@ class EtablissementPointInteretTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
-        $this->addForeignPrimaryKey('point_interet_id', 'PointInteretId', 'INTEGER' , 'point_interet', 'id', true, null, null);
-        $this->addColumn('distance', 'Distance', 'VARCHAR', false, 255, null);
+        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('POINT_INTERET_ID', 'PointInteretId', 'INTEGER' , 'point_interet', 'ID', true, null, null);
+        $this->addColumn('DISTANCE', 'Distance', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

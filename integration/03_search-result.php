@@ -18,7 +18,7 @@ include('includes/top.php'); ?>
                 <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
             </div>
 
-            <div id="resultMap" class="gmap" style="width:616px;height:326px;">
+            <div id="resultMap" class="gmap" style="width:616px;height:573px;">
                 <script>
                     function resultInit() {
                         var resultMkrs = [
@@ -87,31 +87,37 @@ include('includes/top.php'); ?>
                     <!-- item.right -->
                     <div class="itemResultRight">
                         <img width="75" height="77" alt="France &gt; Languedoc-Roussillon" src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png">
-                        <span class="titDest">France<br>Languedoc-roussilon<br>Palavs Les Flots</span>
+                        <span class="titDest"><a href="#_" title="France">France</a><br><a href="#_" title="Languedoc-roussilon">Languedoc-roussilon</a><br><a href="#_" class="ville" title="Palavas Les Flots">Palavas Les Flots</a></span>
                         <span class="bt trans">En savoir plus <br>sur la destination</span>
 
-                        <div class="itemResultPopDest" style="display:none;">
+                        <div class="itemResultPopDest" style="display:none;"><div>
                             <h3>Pavalas Les Flots</h3>
-                            <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                            <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                            La ville de Palalas Les Flots...
+                            <img height="94" width="185" alt="" src="http://pimg.devlint.fr/185x94/ccc/333/*" class="iDestImg1 boxborder">
+                            <img height="81" width="116" alt="" src="http://pimg.devlint.fr/116x81/ccc/333/*" class="iDestImg2 boxborder">
+                            <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Mozart - Les Noces de Figaro - Opéra - Montpellier
-                            Du mercredi 20 juin 2012 au jeudi 28 juin 2012
-                            <a class="button trans" href="#_">Plus d'événements</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Mozart - Les Noces de Figaro - Opéra - Montpellier<br>
+                                Du mercredi 20 juin 2012 au jeudi 28 juin 2012
+                                <a class="bt trans" href="#_">Plus d'événements</a>
+                            </div>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Visitez le parc zoologique de Montpellier
-                            <a class="button trans" href="#_">Plus de visites</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Visitez le parc zoologique de Montpellier
+                                <a class="bt trans" href="#_">Plus de visites</a>
+                            </div>
 
-                            <h4>&Agrave; ne pas manquer</h4>
-                            <a class="button trans" href="#_">14 sites à visiter</a>
-                            <a class="button trans" href="#_">24 activités</a>
-                            <a class="button trans" href="#_">14 événements</a>
+                            <div class="imanqPop">
+                                <h4>&Agrave; ne pas manquer</h4>
+                                <a class="bt trans" href="#_">14 sites à visiter</a>
+                                <a class="bt trans" href="#_">24 activités</a>
+                                <a class="bt trans" href="#_">14 événements</a>
+                            </div>
 
-                            <a class="button" href="#_">Découvrir Palavas Les Flots</a>
-                        </div>
+                            <a class="bt big grisC" href="#_">Découvrir Palavas Les Flots</a>
+                        </div></div>
 
                     </div>
                     <!-- item.bottom -->
@@ -193,28 +199,34 @@ include('includes/top.php'); ?>
                         <span class="titDest">France<br>Languedoc-roussilon<br>Palavs Les Flots</span>
                         <span class="bt trans">En savoir plus <br>sur la destination</span>
 
-                        <div class="itemResultPopDest" style="display:none;">
+                        <div class="itemResultPopDest" style="display:none;"><div>
                             <h3>Pavalas Les Flots</h3>
-                            <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                            <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                            La ville de Palalas Les Flots...
+                            <img height="94" width="185" alt="" src="http://pimg.devlint.fr/185x94/ccc/333/*" class="iDestImg1 boxborder">
+                            <img height="81" width="116" alt="" src="http://pimg.devlint.fr/116x81/ccc/333/*" class="iDestImg2 boxborder">
+                            <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Mozart - Les Noces de Figaro - Opéra - Montpellier
-                            Du mercredi 20 juin 2012 au jeudi 28 juin 2012
-                            <a class="button trans" href="#_">Plus d'événements</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Mozart - Les Noces de Figaro - Opéra - Montpellier<br>
+                                Du mercredi 20 juin 2012 au jeudi 28 juin 2012
+                                <a class="bt trans" href="#_">Plus d'événements</a>
+                            </div>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Visitez le parc zoologique de Montpellier
-                            <a class="button trans" href="#_">Plus de visites</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Visitez le parc zoologique de Montpellier
+                                <a class="bt trans" href="#_">Plus de visites</a>
+                            </div>
 
-                            <h4>&Agrave; ne pas manquer</h4>
-                            <a class="button trans" href="#_">14 sites à visiter</a>
-                            <a class="button trans" href="#_">24 activités</a>
-                            <a class="button trans" href="#_">14 événements</a>
+                            <div class="imanqPop">
+                                <h4>&Agrave; ne pas manquer</h4>
+                                <a class="bt trans" href="#_">14 sites à visiter</a>
+                                <a class="bt trans" href="#_">24 activités</a>
+                                <a class="bt trans" href="#_">14 événements</a>
+                            </div>
 
-                            <a class="button" href="#_">Découvrir Palavas Les Flots</a>
-                        </div>
+                            <a class="bt big grisC" href="#_">Découvrir Palavas Les Flots</a>
+                        </div></div>
 
                     </div>
                     <!-- item.bottom -->
@@ -290,28 +302,34 @@ include('includes/top.php'); ?>
                         <span class="titDest">France<br>Languedoc-roussilon<br>Palavs Les Flots</span>
                         <span class="bt trans">En savoir plus <br>sur la destination</span>
 
-                        <div class="itemResultPopDest" style="display:none;">
+                        <div class="itemResultPopDest" style="display:none;"><div>
                             <h3>Pavalas Les Flots</h3>
-                            <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                            <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                            La ville de Palalas Les Flots...
+                            <img height="94" width="185" alt="" src="http://pimg.devlint.fr/185x94/ccc/333/*" class="iDestImg1 boxborder">
+                            <img height="81" width="116" alt="" src="http://pimg.devlint.fr/116x81/ccc/333/*" class="iDestImg2 boxborder">
+                            <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Mozart - Les Noces de Figaro - Opéra - Montpellier
-                            Du mercredi 20 juin 2012 au jeudi 28 juin 2012
-                            <a class="button trans" href="#_">Plus d'événements</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Mozart - Les Noces de Figaro - Opéra - Montpellier<br>
+                                Du mercredi 20 juin 2012 au jeudi 28 juin 2012
+                                <a class="bt trans" href="#_">Plus d'événements</a>
+                            </div>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Visitez le parc zoologique de Montpellier
-                            <a class="button trans" href="#_">Plus de visites</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Visitez le parc zoologique de Montpellier
+                                <a class="bt trans" href="#_">Plus de visites</a>
+                            </div>
 
-                            <h4>&Agrave; ne pas manquer</h4>
-                            <a class="button trans" href="#_">14 sites à visiter</a>
-                            <a class="button trans" href="#_">24 activités</a>
-                            <a class="button trans" href="#_">14 événements</a>
+                            <div class="imanqPop">
+                                <h4>&Agrave; ne pas manquer</h4>
+                                <a class="bt trans" href="#_">14 sites à visiter</a>
+                                <a class="bt trans" href="#_">24 activités</a>
+                                <a class="bt trans" href="#_">14 événements</a>
+                            </div>
 
-                            <a class="button" href="#_">Découvrir Palavas Les Flots</a>
-                        </div>
+                            <a class="bt big grisC" href="#_">Découvrir Palavas Les Flots</a>
+                        </div></div>
 
                     </div>
                     <!-- item.bottom -->
@@ -388,28 +406,34 @@ include('includes/top.php'); ?>
                         <span class="titDest">France<br>Languedoc-roussilon<br>Palavs Les Flots</span>
                         <span class="bt trans">En savoir plus <br>sur la destination</span>
 
-                        <div class="itemResultPopDest" style="display:none;">
+                        <div class="itemResultPopDest" style="display:none;"><div>
                             <h3>Pavalas Les Flots</h3>
-                            <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                            <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                            La ville de Palalas Les Flots...
+                            <img height="94" width="185" alt="" src="http://pimg.devlint.fr/185x94/ccc/333/*" class="iDestImg1 boxborder">
+                            <img height="81" width="116" alt="" src="http://pimg.devlint.fr/116x81/ccc/333/*" class="iDestImg2 boxborder">
+                            <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Mozart - Les Noces de Figaro - Opéra - Montpellier
-                            Du mercredi 20 juin 2012 au jeudi 28 juin 2012
-                            <a class="button trans" href="#_">Plus d'événements</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Mozart - Les Noces de Figaro - Opéra - Montpellier<br>
+                                Du mercredi 20 juin 2012 au jeudi 28 juin 2012
+                                <a class="bt trans" href="#_">Plus d'événements</a>
+                            </div>
 
-                            <img height="101" width="101" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/101x101/ccc/333/*">
-                            Visitez le parc zoologique de Montpellier
-                            <a class="button trans" href="#_">Plus de visites</a>
+                            <div class="infoPop">
+                                <img height="66" width="67" class="left boxborder" alt="toto" src="http://pimg.devlint.fr/67x66/ccc/333/*">
+                                Visitez le parc zoologique de Montpellier
+                                <a class="bt trans" href="#_">Plus de visites</a>
+                            </div>
 
-                            <h4>&Agrave; ne pas manquer</h4>
-                            <a class="button trans" href="#_">14 sites à visiter</a>
-                            <a class="button trans" href="#_">24 activités</a>
-                            <a class="button trans" href="#_">14 événements</a>
+                            <div class="imanqPop">
+                                <h4>&Agrave; ne pas manquer</h4>
+                                <a class="bt trans" href="#_">14 sites à visiter</a>
+                                <a class="bt trans" href="#_">24 activités</a>
+                                <a class="bt trans" href="#_">14 événements</a>
+                            </div>
 
-                            <a class="button" href="#_">Découvrir Palavas Les Flots</a>
-                        </div>
+                            <a class="bt big grisC" href="#_">Découvrir Palavas Les Flots</a>
+                        </div></div>
 
                     </div>
                     <!-- item.bottom -->

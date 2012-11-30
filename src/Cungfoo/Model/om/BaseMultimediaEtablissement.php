@@ -30,7 +30,7 @@ use Cungfoo\Model\TagQuery;
 /**
  * Base class that represents a row from the 'multimedia_etablissement' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -86,11 +86,11 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     protected $updated_at;
 
     /**
-     * The value for the active field.
+     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $active;
+    protected $enabled;
 
     /**
      * @var        Etablissement
@@ -129,13 +129,13 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[MultimediaEtablissementI18n]
@@ -168,7 +168,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      */
     public function applyDefaultValues()
     {
-        $this->active = false;
+        $this->enabled = false;
     }
 
     /**
@@ -183,7 +183,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -193,7 +193,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -203,7 +203,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Get the [image_path] column value.
-     *
+     * 
      * @return string
      */
     public function getImagePath()
@@ -213,7 +213,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -230,30 +230,27 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->created_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->created_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -270,40 +267,37 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->updated_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->updated_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
-     * Get the [active] column value.
-     *
+     * Get the [enabled] column value.
+     * 
      * @return boolean
      */
-    public function getActive()
+    public function getEnabled()
     {
-        return $this->active;
+        return $this->enabled;
     }
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return MultimediaEtablissement The current object (for fluent API support)
      */
@@ -324,7 +318,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return MultimediaEtablissement The current object (for fluent API support)
      */
@@ -349,7 +343,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Set the value of [image_path] column.
-     *
+     * 
      * @param string $v new value
      * @return MultimediaEtablissement The current object (for fluent API support)
      */
@@ -370,7 +364,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return MultimediaEtablissement The current object (for fluent API support)
@@ -393,7 +387,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return MultimediaEtablissement The current object (for fluent API support)
@@ -415,16 +409,16 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [active] column.
+     * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return MultimediaEtablissement The current object (for fluent API support)
      */
-    public function setActive($v)
+    public function setEnabled($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -434,14 +428,14 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             }
         }
 
-        if ($this->active !== $v) {
-            $this->active = $v;
-            $this->modifiedColumns[] = MultimediaEtablissementPeer::ACTIVE;
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = MultimediaEtablissementPeer::ENABLED;
         }
 
 
         return $this;
-    } // setActive()
+    } // setEnabled()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -453,7 +447,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->active !== false) {
+            if ($this->enabled !== false) {
                 return false;
             }
 
@@ -484,7 +478,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -742,7 +736,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
             if ($this->collMultimediaEtablissementTags !== null) {
                 foreach ($this->collMultimediaEtablissementTags as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -759,7 +753,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
             if ($this->collMultimediaEtablissementI18ns !== null) {
                 foreach ($this->collMultimediaEtablissementI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -792,22 +786,22 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(MultimediaEtablissementPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(MultimediaEtablissementPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
+            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
         }
         if ($this->isColumnModified(MultimediaEtablissementPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
+            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
         }
         if ($this->isColumnModified(MultimediaEtablissementPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`created_at`';
+            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
         if ($this->isColumnModified(MultimediaEtablissementPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`updated_at`';
+            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(MultimediaEtablissementPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`active`';
+        if ($this->isColumnModified(MultimediaEtablissementPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
 
         $sql = sprintf(
@@ -820,23 +814,23 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`etablissement_id`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`image_path`':
+                    case '`IMAGE_PATH`':						
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`created_at`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`updated_at`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`active`':
-                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -906,11 +900,11 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1016,7 +1010,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 return $this->getUpdatedAt();
                 break;
             case 5:
-                return $this->getActive();
+                return $this->getEnabled();
                 break;
             default:
                 return null;
@@ -1052,7 +1046,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $keys[2] => $this->getImagePath(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getActive(),
+            $keys[5] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1114,7 +1108,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 $this->setUpdatedAt($value);
                 break;
             case 5:
-                $this->setActive($value);
+                $this->setEnabled($value);
                 break;
         } // switch()
     }
@@ -1145,7 +1139,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
     }
 
     /**
@@ -1162,7 +1156,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if ($this->isColumnModified(MultimediaEtablissementPeer::IMAGE_PATH)) $criteria->add(MultimediaEtablissementPeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(MultimediaEtablissementPeer::CREATED_AT)) $criteria->add(MultimediaEtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(MultimediaEtablissementPeer::UPDATED_AT)) $criteria->add(MultimediaEtablissementPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(MultimediaEtablissementPeer::ACTIVE)) $criteria->add(MultimediaEtablissementPeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(MultimediaEtablissementPeer::ENABLED)) $criteria->add(MultimediaEtablissementPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1230,7 +1224,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setActive($this->getActive());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1333,13 +1327,12 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
+    public function getEtablissement(PropelPDO $con = null)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1378,15 +1371,13 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return MultimediaEtablissement The current object (for fluent API support)
+     * @return void
      * @see        addMultimediaEtablissementTags()
      */
     public function clearMultimediaEtablissementTags()
     {
         $this->collMultimediaEtablissementTags = null; // important to set this to null since that means it is uninitialized
         $this->collMultimediaEtablissementTagsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1485,7 +1476,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      *
      * @param PropelCollection $multimediaEtablissementTags A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return MultimediaEtablissement The current object (for fluent API support)
      */
     public function setMultimediaEtablissementTags(PropelCollection $multimediaEtablissementTags, PropelPDO $con = null)
     {
@@ -1502,8 +1492,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
         $this->collMultimediaEtablissementTags = $multimediaEtablissementTags;
         $this->collMultimediaEtablissementTagsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1521,22 +1509,22 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if (null === $this->collMultimediaEtablissementTags || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collMultimediaEtablissementTags) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getMultimediaEtablissementTags());
+                }
+                $query = MultimediaEtablissementTagQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getMultimediaEtablissementTags());
+                return $query
+                    ->filterByMultimediaEtablissement($this)
+                    ->count($con);
             }
-            $query = MultimediaEtablissementTagQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByMultimediaEtablissement($this)
-                ->count($con);
+        } else {
+            return count($this->collMultimediaEtablissementTags);
         }
-
-        return count($this->collMultimediaEtablissementTags);
     }
 
     /**
@@ -1570,7 +1558,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * @param	MultimediaEtablissementTag $multimediaEtablissementTag The multimediaEtablissementTag object to remove.
-     * @return MultimediaEtablissement The current object (for fluent API support)
      */
     public function removeMultimediaEtablissementTag($multimediaEtablissementTag)
     {
@@ -1583,8 +1570,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $this->multimediaEtablissementTagsScheduledForDeletion[]= $multimediaEtablissementTag;
             $multimediaEtablissementTag->setMultimediaEtablissement(null);
         }
-
-        return $this;
     }
 
 
@@ -1618,15 +1603,13 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return MultimediaEtablissement The current object (for fluent API support)
+     * @return void
      * @see        addMultimediaEtablissementI18ns()
      */
     public function clearMultimediaEtablissementI18ns()
     {
         $this->collMultimediaEtablissementI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collMultimediaEtablissementI18nsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1725,7 +1708,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      *
      * @param PropelCollection $multimediaEtablissementI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return MultimediaEtablissement The current object (for fluent API support)
      */
     public function setMultimediaEtablissementI18ns(PropelCollection $multimediaEtablissementI18ns, PropelPDO $con = null)
     {
@@ -1742,8 +1724,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
         $this->collMultimediaEtablissementI18ns = $multimediaEtablissementI18ns;
         $this->collMultimediaEtablissementI18nsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1761,22 +1741,22 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         if (null === $this->collMultimediaEtablissementI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collMultimediaEtablissementI18ns) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getMultimediaEtablissementI18ns());
+                }
+                $query = MultimediaEtablissementI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getMultimediaEtablissementI18ns());
+                return $query
+                    ->filterByMultimediaEtablissement($this)
+                    ->count($con);
             }
-            $query = MultimediaEtablissementI18nQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByMultimediaEtablissement($this)
-                ->count($con);
+        } else {
+            return count($this->collMultimediaEtablissementI18ns);
         }
-
-        return count($this->collMultimediaEtablissementI18ns);
     }
 
     /**
@@ -1814,7 +1794,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     /**
      * @param	MultimediaEtablissementI18n $multimediaEtablissementI18n The multimediaEtablissementI18n object to remove.
-     * @return MultimediaEtablissement The current object (for fluent API support)
      */
     public function removeMultimediaEtablissementI18n($multimediaEtablissementI18n)
     {
@@ -1827,8 +1806,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             $this->multimediaEtablissementI18nsScheduledForDeletion[]= $multimediaEtablissementI18n;
             $multimediaEtablissementI18n->setMultimediaEtablissement(null);
         }
-
-        return $this;
     }
 
     /**
@@ -1837,15 +1814,13 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return MultimediaEtablissement The current object (for fluent API support)
+     * @return void
      * @see        addTags()
      */
     public function clearTags()
     {
         $this->collTags = null; // important to set this to null since that means it is uninitialized
         $this->collTagsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1906,7 +1881,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      *
      * @param PropelCollection $tags A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return MultimediaEtablissement The current object (for fluent API support)
      */
     public function setTags(PropelCollection $tags, PropelPDO $con = null)
     {
@@ -1922,8 +1896,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         }
 
         $this->collTags = $tags;
-
-        return $this;
     }
 
     /**
@@ -1961,7 +1933,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * through the multimedia_etablissement_tag cross reference table.
      *
      * @param  Tag $tag The MultimediaEtablissementTag object to relate
-     * @return MultimediaEtablissement The current object (for fluent API support)
+     * @return void
      */
     public function addTag(Tag $tag)
     {
@@ -1973,8 +1945,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
             $this->collTags[]= $tag;
         }
-
-        return $this;
     }
 
     /**
@@ -1992,7 +1962,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      * through the multimedia_etablissement_tag cross reference table.
      *
      * @param Tag $tag The MultimediaEtablissementTag object to relate
-     * @return MultimediaEtablissement The current object (for fluent API support)
+     * @return void
      */
     public function removeTag(Tag $tag)
     {
@@ -2004,8 +1974,6 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             }
             $this->tagsScheduledForDeletion[]= $tag;
         }
-
-        return $this;
     }
 
     /**
@@ -2018,7 +1986,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->active = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2097,7 +2065,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2106,24 +2074,12 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = MultimediaEtablissementPeer::UPDATED_AT;
-
+    
         return $this;
     }
 
-    // active behavior
-
-    /**
-     * return true is the object is active
-     *
-     * @return boolean
-     */
-    public function isActive()
-    {
-        return $this->getActive();
-    }
-
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -2134,10 +2090,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -2147,7 +2103,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -2162,7 +2118,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 foreach ($this->collMultimediaEtablissementI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -2178,10 +2134,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
             }
             $this->addMultimediaEtablissementI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -2206,10 +2162,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -2220,33 +2176,33 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [titre] column value.
-         *
+         * 
          * @return string
          */
         public function getTitre()
         {
         return $this->getCurrentTranslation()->getTitre();
     }
-
-
+    
+    
         /**
          * Set the value of [titre] column.
-         *
+         * 
          * @param string $v new value
          * @return MultimediaEtablissementI18n The current object (for fluent API support)
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2261,12 +2217,12 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         {
             $this->resetModified(MultimediaEtablissementPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2274,15 +2230,15 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return 'uploads/multimedia_etablissements';
     }
-
+    
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

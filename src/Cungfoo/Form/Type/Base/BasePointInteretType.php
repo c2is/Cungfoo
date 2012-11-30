@@ -70,16 +70,22 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.geo_coordinate_y',
             'required' => false,
         ));
+        $builder->add('distance_camping', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.distance_camping',
+            'required' => false,
+        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),
             'label' => 'point_interet.image',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'point_interet.active',
+            'label' => 'point_interet.enabled',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

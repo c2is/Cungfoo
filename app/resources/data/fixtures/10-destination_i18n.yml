@@ -2,27 +2,35 @@
     1_de:
         Id: 1
         Locale: de
-        Name: MÈditerranÈe
+        Name: 'Manche et C√¥te Atlantique'
     1_en:
         Id: 1
         Locale: en
-        Name: MÈditerranÈe
+        Name: 'Manche et C√¥te Atlantique'
     1_fr:
         Id: 1
         Locale: fr
-        Name: MÈditerranÈe
+        Name: 'Manche et C√¥te Atlantique'
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Manche et C√¥te Atlantique'
     2_de:
         Id: 2
         Locale: de
-        Name: 'Manche et CÙte Atlantique'
+        Name: M√©diterran√©e
     2_en:
         Id: 2
         Locale: en
-        Name: 'Manche et CÙte Atlantique'
+        Name: M√©diterran√©e
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Manche et CÙte Atlantique'
+        Name: M√©diterran√©e
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: M√©diterran√©e
     3_de:
         Id: 3
         Locale: de
@@ -34,4 +42,8 @@
     3_fr:
         Id: 3
         Locale: fr
+        Name: 'Campagne et Montagne'
+    3_nl:
+        Id: 3
+        Locale: nl
         Name: 'Campagne et Montagne'
