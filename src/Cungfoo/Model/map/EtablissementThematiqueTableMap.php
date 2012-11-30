@@ -43,8 +43,8 @@ class EtablissementThematiqueTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
-        $this->addForeignPrimaryKey('thematique_id', 'ThematiqueId', 'INTEGER' , 'thematique', 'id', true, null, null);
+        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('THEMATIQUE_ID', 'ThematiqueId', 'INTEGER' , 'thematique', 'ID', true, null, null);
         // validators
     } // initialize()
 

@@ -36,13 +36,9 @@ class BaseDemandeIdentifiantListing extends Listing
         $this->addColumn(new Column\TextColumn('permanence_matin_a'));
         $this->addColumn(new Column\TextColumn('permanence_apres_midi_de'));
         $this->addColumn(new Column\TextColumn('permanence_apres_midi_a'));
-        $this->addColumn(new Column\BooleanColumn('client_vc'));
         $this->addColumn(new Column\TextColumn('client_vc_code'));
-        $this->addColumn(new Column\BooleanColumn('client_vd'));
         $this->addColumn(new Column\TextColumn('client_vd_code'));
-        $this->addColumn(new Column\BooleanColumn('brochure'));
-        $this->addColumn(new Column\BooleanColumn('identifiant'));
-        $this->addColumn(new Column\BooleanColumn('active'));
+        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**

@@ -40,7 +40,7 @@ class Etablissement extends BaseEtablissement
                 ->endUse()
             ->endUse()
             ->distinct()
-            ->findActive()
+            ->find()
         ;
     }
 
@@ -53,7 +53,7 @@ class Etablissement extends BaseEtablissement
                 ->filterByEtablissementId($this->getId())
             ->endUse()
             ->distinct()
-            ->findActive()
+            ->find()
         ;
     }
 

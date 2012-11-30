@@ -46,10 +46,10 @@ class BaseVosVacancesType extends AppAwareType
             'label' => 'vos_vacances.image_path_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'vos_vacances.active',
+            'label' => 'vos_vacances.enabled',
             'required' => false,
         ));
         $builder->add('vos_vacancesI18ns', 'translation_collection', array(

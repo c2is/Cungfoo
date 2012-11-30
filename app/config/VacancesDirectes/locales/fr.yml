@@ -173,7 +173,6 @@ pactiv-2: Envie d'un petit break, de prendre l'air
 pactiv-3: Des vacances sous le signe de la détente et du bonheur
 
 destination.retour: Retour
-destination.retour_bottom: Retour à la liste
 destination.prefixe_titre: Vacances
 destination.suffixe_titre: en camping pas cher
 destination.pois_all: Tous les lieux
@@ -181,10 +180,6 @@ destination.events_title: En ce moment
 destination.events_prefixe_subtitle: En
 destination.events_suffixe_subtitle: ...
 destination.campings_selection_title: Notre sélection de campings
-destination.images_region_title: La région en image
-
-listing_destination.campings_map_title: Campings vacances directes
-listing_destination.campings_map_prefixe_subtitle: en
 
 encart_vacances_directes.title: Vacances directes
 encart_vacances_directes.subtitle: Un séjour réussi

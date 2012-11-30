@@ -42,11 +42,11 @@ class VosVacancesI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'vos_vacances', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('titre', 'Titre', 'VARCHAR', false, 255, null);
-        $this->addColumn('description', 'Description', 'VARCHAR', false, 255, null);
-        $this->addColumn('prenom', 'Prenom', 'VARCHAR', false, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'vos_vacances', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('TITRE', 'Titre', 'VARCHAR', false, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 255, null);
+        $this->addColumn('PRENOM', 'Prenom', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

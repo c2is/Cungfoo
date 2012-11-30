@@ -22,7 +22,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'etablissement_baignade' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
 
     /**
      * Get the [baignade_id] column value.
-     *
+     * 
      * @return int
      */
     public function getBaignadeId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementBaignade The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
 
     /**
      * Set the value of [baignade_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementBaignade The current object (for fluent API support)
      */
@@ -431,10 +431,10 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementBaignadePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
+            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
         }
         if ($this->isColumnModified(EtablissementBaignadePeer::BAIGNADE_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`baignade_id`';
+            $modifiedColumns[':p' . $index++]  = '`BAIGNADE_ID`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`etablissement_id`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`baignade_id`':
+                    case '`BAIGNADE_ID`':						
                         $stmt->bindValue($identifier, $this->baignade_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -883,13 +883,12 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
+    public function getEtablissement(PropelPDO $con = null)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -935,13 +934,12 @@ abstract class BaseEtablissementBaignade extends BaseObject implements Persisten
      * Get the associated Baignade object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Baignade The associated Baignade object.
      * @throws PropelException
      */
-    public function getBaignade(PropelPDO $con = null, $doQuery = true)
+    public function getBaignade(PropelPDO $con = null)
     {
-        if ($this->aBaignade === null && ($this->baignade_id !== null) && $doQuery) {
+        if ($this->aBaignade === null && ($this->baignade_id !== null)) {
             $this->aBaignade = BaignadeQuery::create()->findPk($this->baignade_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

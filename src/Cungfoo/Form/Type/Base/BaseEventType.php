@@ -76,6 +76,12 @@ class BaseEventType extends AppAwareType
             'label' => 'event.geo_coordinate_y',
             'required' => false,
         ));
+        $builder->add('distance_camping', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.distance_camping',
+            'required' => false,
+        ));
         $builder->add('image', 'text', array(
             'constraints' => array(
             ),
@@ -88,10 +94,10 @@ class BaseEventType extends AppAwareType
             'label' => 'event.priority',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'event.active',
+            'label' => 'event.enabled',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

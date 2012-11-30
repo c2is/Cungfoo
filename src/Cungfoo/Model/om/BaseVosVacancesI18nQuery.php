@@ -20,7 +20,7 @@ use Cungfoo\Model\VosVacancesI18nQuery;
 /**
  * Base class that represents a query for the 'vos_vacances_i18n' table.
  *
- *
+ * 
  *
  * @method VosVacancesI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VosVacancesI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
@@ -106,7 +106,7 @@ abstract class BaseVosVacancesI18nQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
+     * @param array $key Primary key to use for the query 
                          A Primary key composition: [$id, $locale]
      * @param     PropelPDO $con an optional connection object
      *
@@ -146,10 +146,10 @@ abstract class BaseVosVacancesI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `titre`, `description`, `prenom` FROM `vos_vacances_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `TITRE`, `DESCRIPTION`, `PRENOM` FROM `vos_vacances_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
-            $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
+            $stmt = $con->prepare($sql);			
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {

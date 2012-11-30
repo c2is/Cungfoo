@@ -2525,7 +2525,7 @@
         Country: France
         OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 DE"
         OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h DE"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. DE"
+        ArriveesDeparts: "- Les arrivÃ©es se font Ã  partir de 15h et jusqu'Ã  19h. A votre arrivÃ©e, adressez-vous directement Ã  l'accueil du camping Le Petit Mousse.\r\n- Les dÃ©parts se font aprÃ¨s inventaire de 8h Ã  10h. Attention, aucune arrivÃ©e et aucun dÃ©part le mardi. DE"
         Description: null
     106_en:
         Id: 106
@@ -2533,7 +2533,7 @@
         Country: France
         OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 EN"
         OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h EN"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. EN"
+        ArriveesDeparts: "- Les arrivÃ©es se font Ã  partir de 15h et jusqu'Ã  19h. A votre arrivÃ©e, adressez-vous directement Ã  l'accueil du camping Le Petit Mousse.\r\n- Les dÃ©parts se font aprÃ¨s inventaire de 8h Ã  10h. Attention, aucune arrivÃ©e et aucun dÃ©part le mardi. EN"
         Description: null
     106_fr:
         Id: 106
@@ -2541,7 +2541,7 @@
         Country: France
         OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7"
         OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi."
+        ArriveesDeparts: "- Les arrivÃ©es se font Ã  partir de 15h et jusqu'Ã  19h. A votre arrivÃ©e, adressez-vous directement Ã  l'accueil du camping Le Petit Mousse.\r\n- Les dÃ©parts se font aprÃ¨s inventaire de 8h Ã  10h. Attention, aucune arrivÃ©e et aucun dÃ©part le mardi."
         Description: null
     107_de:
         Id: 107
@@ -3582,7 +3582,7 @@
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 12/04/2013-29/09/2013
         ArriveesDeparts: null
-        Description: 'Im Herzen der Camargue gelegen und nicht weit vom größten Strand Europas, dem "Plage Espiguette", entfernt, lädt Sie der Campingplatz "La Marine" zu einem erholsamen und erlebnisreichen Urlaub ein. Es erwarten Sie verschiedenste Mobilhomes, umrahmt von einem herrlichen Pinienwald und viele Ausflugsmöglichkeiten in eine faszinierende Umgebung, wie beispielsweise ein Ausritt in die schöne Camargue.'
+        Description: 'Im Herzen der Camargue gelegen und nicht weit vom grÃ¶ÃŸten Strand Europas, dem "Plage Espiguette", entfernt, lÃ¤dt Sie der Campingplatz "La Marine" zu einem erholsamen und erlebnisreichen Urlaub ein. Es erwarten Sie verschiedenste Mobilhomes, umrahmt von einem herrlichen Pinienwald und viele AusflugsmÃ¶glichkeiten in eine faszinierende Umgebung, wie beispielsweise ein Ausritt in die schÃ¶ne Camargue.'
     150_en:
         Id: 150
         Locale: en
@@ -3598,7 +3598,7 @@
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 12/04/2013-29/09/2013
         ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2012, le mercredi et le samedi.'
-        Description: 'Au coeur de la Camargue, au grau-du-Roi, et situé sur la route de la plage de l''Espiguette, la plus grande plage d''Europe (navette), le camping la Marine vous invite à la détente autour de son espace piscine. Activités sportives, aquatiques, découverte de la Camargue et détente-relaxation seront au rendez-vous.'
+        Description: 'Au coeur de la Camargue, au grau-du-Roi, et situÃ© sur la route de la plage de l''Espiguette, la plus grande plage d''Europe (navette), le camping la Marine vous invite Ã  la dÃ©tente autour de son espace piscine. ActivitÃ©s sportives, aquatiques, dÃ©couverte de la Camargue et dÃ©tente-relaxation seront au rendez-vous.'
     150_nl:
         Id: 150
         Locale: nl

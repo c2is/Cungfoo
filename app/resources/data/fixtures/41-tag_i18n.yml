@@ -26,24 +26,24 @@
     3_de:
         Id: 3
         Locale: de
-        Name: Activités
+        Name: ActivitÃ©s
     3_en:
         Id: 3
         Locale: en
-        Name: Activités
+        Name: ActivitÃ©s
     3_fr:
         Id: 3
         Locale: fr
-        Name: Activités
+        Name: ActivitÃ©s
     4_de:
         Id: 4
         Locale: de
-        Name: Régions
+        Name: RÃ©gions
     4_en:
         Id: 4
         Locale: en
-        Name: Régions
+        Name: RÃ©gions
     4_fr:
         Id: 4
         Locale: fr
-        Name: Régions
+        Name: RÃ©gions

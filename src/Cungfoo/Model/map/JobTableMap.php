@@ -42,15 +42,15 @@ class JobTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
-        $this->addColumn('type', 'Type', 'VARCHAR', true, 50, null);
-        $this->addColumn('params', 'Params', 'CLOB', false, null, null);
-        $this->addColumn('message', 'Message', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('completed_at', 'CompletedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('status', 'Status', 'INTEGER', false, null, 2);
-        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', false, 255, null);
+        $this->addColumn('TYPE', 'Type', 'VARCHAR', true, 50, null);
+        $this->addColumn('PARAMS', 'Params', 'CLOB', false, null, null);
+        $this->addColumn('MESSAGE', 'Message', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('COMPLETED_AT', 'CompletedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('STATUS', 'Status', 'INTEGER', false, null, 2);
+        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
     } // initialize()
 
@@ -71,11 +71,7 @@ class JobTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' =>  array (
-  'create_column' => 'created_at',
-  'update_column' => 'updated_at',
-  'disable_updated_at' => 'false',
-),
+            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
         );
     } // getBehaviors()
 

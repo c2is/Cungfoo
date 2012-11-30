@@ -29,7 +29,7 @@ class Pays extends BasePays
             ->joinWithI18n()
             ->filterByPaysId($this->getId())
             ->filterByMeaHome(1)
-            ->findActive()
+            ->find()
         ;
     }
 }

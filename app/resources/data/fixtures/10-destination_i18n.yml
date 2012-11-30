@@ -2,27 +2,27 @@
     1_de:
         Id: 1
         Locale: de
-        Name: Méditerranée
+        Name: MÃ©diterranÃ©e
     1_en:
         Id: 1
         Locale: en
-        Name: Méditerranée
+        Name: MÃ©diterranÃ©e
     1_fr:
         Id: 1
         Locale: fr
-        Name: Méditerranée
+        Name: MÃ©diterranÃ©e
     2_de:
         Id: 2
         Locale: de
-        Name: 'Manche et Côte Atlantique'
+        Name: 'Manche et CÃ´te Atlantique'
     2_en:
         Id: 2
         Locale: en
-        Name: 'Manche et Côte Atlantique'
+        Name: 'Manche et CÃ´te Atlantique'
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Manche et Côte Atlantique'
+        Name: 'Manche et CÃ´te Atlantique'
     3_de:
         Id: 3
         Locale: de

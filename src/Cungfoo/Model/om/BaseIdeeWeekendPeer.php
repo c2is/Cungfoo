@@ -17,7 +17,7 @@ use Cungfoo\Model\map\IdeeWeekendTableMap;
 /**
  * Base static class for performing query and update operations on the 'idee_weekend' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,26 +45,26 @@ abstract class BaseIdeeWeekendPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the id field */
-    const ID = 'idee_weekend.id';
+    /** the column name for the ID field */
+    const ID = 'idee_weekend.ID';
 
-    /** the column name for the highlight field */
-    const HIGHLIGHT = 'idee_weekend.highlight';
+    /** the column name for the HIGHLIGHT field */
+    const HIGHLIGHT = 'idee_weekend.HIGHLIGHT';
 
-    /** the column name for the prix field */
-    const PRIX = 'idee_weekend.prix';
+    /** the column name for the PRIX field */
+    const PRIX = 'idee_weekend.PRIX';
 
-    /** the column name for the home field */
-    const HOME = 'idee_weekend.home';
+    /** the column name for the HOME field */
+    const HOME = 'idee_weekend.HOME';
 
-    /** the column name for the lien field */
-    const LIEN = 'idee_weekend.lien';
+    /** the column name for the LIEN field */
+    const LIEN = 'idee_weekend.LIEN';
 
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'idee_weekend.image_path';
+    /** the column name for the IMAGE_PATH field */
+    const IMAGE_PATH = 'idee_weekend.IMAGE_PATH';
 
-    /** the column name for the active field */
-    const ACTIVE = 'idee_weekend.active';
+    /** the column name for the ENABLED field */
+    const ENABLED = 'idee_weekend.ENABLED';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -79,7 +79,7 @@ abstract class BaseIdeeWeekendPeer
 
 
     // i18n behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -92,11 +92,11 @@ abstract class BaseIdeeWeekendPeer
      * e.g. IdeeWeekendPeer::$fieldNames[IdeeWeekendPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Highlight', 'Prix', 'Home', 'Lien', 'ImagePath', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'imagePath', 'active', ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID, IdeeWeekendPeer::HIGHLIGHT, IdeeWeekendPeer::PRIX, IdeeWeekendPeer::HOME, IdeeWeekendPeer::LIEN, IdeeWeekendPeer::IMAGE_PATH, IdeeWeekendPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'HIGHLIGHT', 'PRIX', 'HOME', 'LIEN', 'IMAGE_PATH', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'image_path', 'active', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Highlight', 'Prix', 'Home', 'Lien', 'ImagePath', 'Enabled', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'imagePath', 'enabled', ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID, IdeeWeekendPeer::HIGHLIGHT, IdeeWeekendPeer::PRIX, IdeeWeekendPeer::HOME, IdeeWeekendPeer::LIEN, IdeeWeekendPeer::IMAGE_PATH, IdeeWeekendPeer::ENABLED, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'HIGHLIGHT', 'PRIX', 'HOME', 'LIEN', 'IMAGE_PATH', 'ENABLED', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'image_path', 'enabled', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -107,11 +107,11 @@ abstract class BaseIdeeWeekendPeer
      * e.g. IdeeWeekendPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Highlight' => 1, 'Prix' => 2, 'Home' => 3, 'Lien' => 4, 'ImagePath' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'imagePath' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID => 0, IdeeWeekendPeer::HIGHLIGHT => 1, IdeeWeekendPeer::PRIX => 2, IdeeWeekendPeer::HOME => 3, IdeeWeekendPeer::LIEN => 4, IdeeWeekendPeer::IMAGE_PATH => 5, IdeeWeekendPeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'HIGHLIGHT' => 1, 'PRIX' => 2, 'HOME' => 3, 'LIEN' => 4, 'IMAGE_PATH' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'image_path' => 5, 'active' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Highlight' => 1, 'Prix' => 2, 'Home' => 3, 'Lien' => 4, 'ImagePath' => 5, 'Enabled' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'imagePath' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID => 0, IdeeWeekendPeer::HIGHLIGHT => 1, IdeeWeekendPeer::PRIX => 2, IdeeWeekendPeer::HOME => 3, IdeeWeekendPeer::LIEN => 4, IdeeWeekendPeer::IMAGE_PATH => 5, IdeeWeekendPeer::ENABLED => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'HIGHLIGHT' => 1, 'PRIX' => 2, 'HOME' => 3, 'LIEN' => 4, 'IMAGE_PATH' => 5, 'ENABLED' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'image_path' => 5, 'enabled' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -192,15 +192,15 @@ abstract class BaseIdeeWeekendPeer
             $criteria->addSelectColumn(IdeeWeekendPeer::HOME);
             $criteria->addSelectColumn(IdeeWeekendPeer::LIEN);
             $criteria->addSelectColumn(IdeeWeekendPeer::IMAGE_PATH);
-            $criteria->addSelectColumn(IdeeWeekendPeer::ACTIVE);
+            $criteria->addSelectColumn(IdeeWeekendPeer::ENABLED);
         } else {
-            $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.highlight');
-            $criteria->addSelectColumn($alias . '.prix');
-            $criteria->addSelectColumn($alias . '.home');
-            $criteria->addSelectColumn($alias . '.lien');
-            $criteria->addSelectColumn($alias . '.image_path');
-            $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.HIGHLIGHT');
+            $criteria->addSelectColumn($alias . '.PRIX');
+            $criteria->addSelectColumn($alias . '.HOME');
+            $criteria->addSelectColumn($alias . '.LIEN');
+            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
+            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 
@@ -383,7 +383,7 @@ abstract class BaseIdeeWeekendPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -393,7 +393,7 @@ abstract class BaseIdeeWeekendPeer
     {
         IdeeWeekendPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to idee_weekend
      * by a foreign key with ON DELETE CASCADE
@@ -439,7 +439,7 @@ abstract class BaseIdeeWeekendPeer
 
         return (int) $row[$startcol];
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -450,7 +450,7 @@ abstract class BaseIdeeWeekendPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = IdeeWeekendPeer::getOMClass();
         // populate the object(s)
@@ -694,7 +694,7 @@ abstract class BaseIdeeWeekendPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             IdeeWeekendPeer::clearRelatedInstancePool();
             $con->commit();

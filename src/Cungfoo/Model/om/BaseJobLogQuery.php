@@ -20,7 +20,7 @@ use Cungfoo\Model\JobLogQuery;
 /**
  * Base class that represents a query for the 'job_log' table.
  *
- *
+ * 
  *
  * @method JobLogQuery orderById($order = Criteria::ASC) Order by the id column
  * @method JobLogQuery orderByJobId($order = Criteria::ASC) Order by the job_id column
@@ -109,7 +109,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   JobLog|JobLog[]|mixed the result, formatted by the current formatter
@@ -162,9 +162,9 @@ abstract class BaseJobLogQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `job_id`, `level`, `message`, `created_at`, `updated_at` FROM `job_log` WHERE `id` = :p0';
+        $sql = 'SELECT `ID`, `JOB_ID`, `LEVEL`, `MESSAGE`, `CREATED_AT`, `UPDATED_AT` FROM `job_log` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -563,7 +563,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     }
 
     // timestampable behavior
-
+    
     /**
      * Filter by the latest updated
      *
@@ -575,7 +575,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     {
         return $this->addUsingAlias(JobLogPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by update date desc
      *
@@ -585,7 +585,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(JobLogPeer::UPDATED_AT);
     }
-
+    
     /**
      * Order by update date asc
      *
@@ -595,7 +595,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(JobLogPeer::UPDATED_AT);
     }
-
+    
     /**
      * Filter by the latest created
      *
@@ -607,7 +607,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     {
         return $this->addUsingAlias(JobLogPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-
+    
     /**
      * Order by create date desc
      *
@@ -617,7 +617,7 @@ abstract class BaseJobLogQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(JobLogPeer::CREATED_AT);
     }
-
+    
     /**
      * Order by create date asc
      *

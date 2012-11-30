@@ -22,7 +22,7 @@ use Cungfoo\Model\ServiceComplementaireQuery;
 /**
  * Base class that represents a row from the 'etablissement_service_complementaire' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -85,7 +85,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Get the [etablissement_id] column value.
-     *
+     * 
      * @return int
      */
     public function getEtablissementId()
@@ -95,7 +95,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Get the [service_complementaire_id] column value.
-     *
+     * 
      * @return int
      */
     public function getServiceComplementaireId()
@@ -105,7 +105,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Set the value of [etablissement_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementServiceComplementaire The current object (for fluent API support)
      */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
     /**
      * Set the value of [service_complementaire_id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementServiceComplementaire The current object (for fluent API support)
      */
@@ -431,10 +431,10 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementServiceComplementairePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
+            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
         }
         if ($this->isColumnModified(EtablissementServiceComplementairePeer::SERVICE_COMPLEMENTAIRE_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`service_complementaire_id`';
+            $modifiedColumns[':p' . $index++]  = '`SERVICE_COMPLEMENTAIRE_ID`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`etablissement_id`':
+                    case '`ETABLISSEMENT_ID`':						
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`service_complementaire_id`':
+                    case '`SERVICE_COMPLEMENTAIRE_ID`':						
                         $stmt->bindValue($identifier, $this->service_complementaire_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -883,13 +883,12 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
+    public function getEtablissement(PropelPDO $con = null)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -935,13 +934,12 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
      * Get the associated ServiceComplementaire object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return ServiceComplementaire The associated ServiceComplementaire object.
      * @throws PropelException
      */
-    public function getServiceComplementaire(PropelPDO $con = null, $doQuery = true)
+    public function getServiceComplementaire(PropelPDO $con = null)
     {
-        if ($this->aServiceComplementaire === null && ($this->service_complementaire_id !== null) && $doQuery) {
+        if ($this->aServiceComplementaire === null && ($this->service_complementaire_id !== null)) {
             $this->aServiceComplementaire = ServiceComplementaireQuery::create()->findPk($this->service_complementaire_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

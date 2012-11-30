@@ -34,10 +34,10 @@ class BaseSituationGeographiqueType extends AppAwareType
             'label' => 'situation_geographique.code',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'situation_geographique.active',
+            'label' => 'situation_geographique.enabled',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

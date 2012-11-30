@@ -18,7 +18,7 @@ use Cungfoo\Model\SiteQuery;
 /**
  * Base class that represents a row from the 'site' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -77,7 +77,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -87,7 +87,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -97,7 +97,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Get the [order] column value.
-     *
+     * 
      * @return int
      */
     public function getOrder()
@@ -107,7 +107,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Site The current object (for fluent API support)
      */
@@ -128,7 +128,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return Site The current object (for fluent API support)
      */
@@ -149,7 +149,7 @@ abstract class BaseSite extends BaseObject implements Persistent
 
     /**
      * Set the value of [order] column.
-     *
+     * 
      * @param int $v new value
      * @return Site The current object (for fluent API support)
      */
@@ -424,13 +424,13 @@ abstract class BaseSite extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(SitePeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(SitePeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`name`';
+            $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
         if ($this->isColumnModified(SitePeer::ORDER)) {
-            $modifiedColumns[':p' . $index++]  = '`order`';
+            $modifiedColumns[':p' . $index++]  = '`ORDER`';
         }
 
         $sql = sprintf(
@@ -443,13 +443,13 @@ abstract class BaseSite extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`name`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`order`':
+                    case '`ORDER`':						
                         $stmt->bindValue($identifier, $this->order, PDO::PARAM_INT);
                         break;
                 }
@@ -520,11 +520,11 @@ abstract class BaseSite extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**

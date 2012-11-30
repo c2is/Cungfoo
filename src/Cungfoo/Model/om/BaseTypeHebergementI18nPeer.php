@@ -17,7 +17,7 @@ use Cungfoo\Model\map\TypeHebergementI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'type_hebergement_i18n' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,26 +45,26 @@ abstract class BaseTypeHebergementI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the id field */
-    const ID = 'type_hebergement_i18n.id';
+    /** the column name for the ID field */
+    const ID = 'type_hebergement_i18n.ID';
 
-    /** the column name for the locale field */
-    const LOCALE = 'type_hebergement_i18n.locale';
+    /** the column name for the LOCALE field */
+    const LOCALE = 'type_hebergement_i18n.LOCALE';
 
-    /** the column name for the name field */
-    const NAME = 'type_hebergement_i18n.name';
+    /** the column name for the NAME field */
+    const NAME = 'type_hebergement_i18n.NAME';
 
-    /** the column name for the surface field */
-    const SURFACE = 'type_hebergement_i18n.surface';
+    /** the column name for the SURFACE field */
+    const SURFACE = 'type_hebergement_i18n.SURFACE';
 
-    /** the column name for the type_terrasse field */
-    const TYPE_TERRASSE = 'type_hebergement_i18n.type_terrasse';
+    /** the column name for the TYPE_TERRASSE field */
+    const TYPE_TERRASSE = 'type_hebergement_i18n.TYPE_TERRASSE';
 
-    /** the column name for the description field */
-    const DESCRIPTION = 'type_hebergement_i18n.description';
+    /** the column name for the DESCRIPTION field */
+    const DESCRIPTION = 'type_hebergement_i18n.DESCRIPTION';
 
-    /** the column name for the composition field */
-    const COMPOSITION = 'type_hebergement_i18n.composition';
+    /** the column name for the COMPOSITION field */
+    const COMPOSITION = 'type_hebergement_i18n.COMPOSITION';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -187,13 +187,13 @@ abstract class BaseTypeHebergementI18nPeer
             $criteria->addSelectColumn(TypeHebergementI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::COMPOSITION);
         } else {
-            $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.locale');
-            $criteria->addSelectColumn($alias . '.name');
-            $criteria->addSelectColumn($alias . '.surface');
-            $criteria->addSelectColumn($alias . '.type_terrasse');
-            $criteria->addSelectColumn($alias . '.description');
-            $criteria->addSelectColumn($alias . '.composition');
+            $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.LOCALE');
+            $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.SURFACE');
+            $criteria->addSelectColumn($alias . '.TYPE_TERRASSE');
+            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.COMPOSITION');
         }
     }
 
@@ -376,7 +376,7 @@ abstract class BaseTypeHebergementI18nPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -386,7 +386,7 @@ abstract class BaseTypeHebergementI18nPeer
     {
         TypeHebergementI18nPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to type_hebergement_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -429,7 +429,7 @@ abstract class BaseTypeHebergementI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -440,7 +440,7 @@ abstract class BaseTypeHebergementI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = TypeHebergementI18nPeer::getOMClass();
         // populate the object(s)
@@ -934,7 +934,7 @@ abstract class BaseTypeHebergementI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TypeHebergementI18nPeer::clearRelatedInstancePool();
             $con->commit();

@@ -2,15 +2,15 @@
     1_de:
         Id: 1
         Locale: de
-        Titre: 'SPÉCIAL PONT DE L''ASCENSION DE'
+        Titre: 'SPÃ‰CIAL PONT DE L''ASCENSION DE'
     1_en:
         Id: 1
         Locale: en
-        Titre: 'SPÉCIAL PONT DE L''ASCENSION EN'
+        Titre: 'SPÃ‰CIAL PONT DE L''ASCENSION EN'
     1_fr:
         Id: 1
         Locale: fr
-        Titre: 'SPÉCIAL PONT DE L''ASCENSION'
+        Titre: 'SPÃ‰CIAL PONT DE L''ASCENSION'
     2_de:
         Id: 2
         Locale: de
@@ -26,15 +26,15 @@
     3_de:
         Id: 3
         Locale: de
-        Titre: 'FAMILLE NOMBREUSE IDÉES WEEK-END DE'
+        Titre: 'FAMILLE NOMBREUSE IDÃ‰ES WEEK-END DE'
     3_en:
         Id: 3
         Locale: en
-        Titre: 'FAMILLE NOMBREUSE IDÉES WEEK-END EN'
+        Titre: 'FAMILLE NOMBREUSE IDÃ‰ES WEEK-END EN'
     3_fr:
         Id: 3
         Locale: fr
-        Titre: 'FAMILLE NOMBREUSE IDÉES WEEK-END'
+        Titre: 'FAMILLE NOMBREUSE IDÃ‰ES WEEK-END'
     4_de:
         Id: 4
         Locale: de

@@ -482,9 +482,24 @@ th.datepickerWeek{display:none;}
  ** @repository:	https://github.com/leongersen/noUiSlider
  **/
 .noUiSlider{width:400px;border:1px solid #ccc;height:8px;background:#eee;-webkit-touch-callout:none;
-  .noUi-handle{
-    > div {position:absolute;width:16px;height:16px;top:-5px;left:-8px;z-index:5;border:1px solid #ccc;background:#eee;}
-    > div:hover, > div.noUi-activeHandle {background:#ace;border-color:#369;}
+  .noUi-handle{cursor:pointer;
+    &:first-child{
+      > div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
+        border-bottom:12px solid transparent;
+        border-top:10px solid transparent;
+        border-right:18px solid @colorFushia;
+        border-radius:150px;
+      }
+    }
+    &:last-child{
+      > div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
+        border-bottom:12px solid transparent;
+        border-top:10px solid transparent;
+        border-left:18px solid @colorFushia;
+        border-radius:150px;
+      }
+    }
+    > div:hover, > div.noUi-activeHandle {}
   }
   .noUi-midBar{height:100%;z-index:0;background:#39c;-webkit-touch-callout:none;}
   .rangeBox{display:block;margin-top:15px;}

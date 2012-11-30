@@ -42,9 +42,9 @@ class DomaineTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
-        $this->addColumn('order', 'Order', 'INTEGER', false, null, null);
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('NAME', 'Name', 'VARCHAR', false, 255, null);
+        $this->addColumn('ORDER', 'Order', 'INTEGER', false, null, null);
         // validators
     } // initialize()
 

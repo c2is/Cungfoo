@@ -42,12 +42,12 @@ class TagTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('slug', 'Slug', 'VARCHAR', true, 255, null);
-        $this->getColumn('slug', false)->setPrimaryString(true);
-        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('SLUG', 'Slug', 'VARCHAR', true, 255, null);
+        $this->getColumn('SLUG', false)->setPrimaryString(true);
+        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -70,30 +70,9 @@ class TagTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' =>  array (
-  'create_column' => 'created_at',
-  'update_column' => 'updated_at',
-  'disable_updated_at' => 'false',
-),
-            'active' =>  array (
-  'active_column' => 'active',
-),
-            'i18n' =>  array (
-  'i18n_table' => '%TABLE%_i18n',
-  'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name',
-  'i18n_pk_name' => NULL,
-  'locale_column' => 'locale',
-  'default_locale' => 'fr',
-  'locale_alias' => '',
-),
-            'crudable' =>  array (
-  'route_prefix' => '/',
-  'crud_prefix' => '/tag-multimedias',
-  'crud_model' => NULL,
-  'crud_form' => NULL,
-  'crud_type_file' => NULL,
-),
+            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/tag-multimedias', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
 

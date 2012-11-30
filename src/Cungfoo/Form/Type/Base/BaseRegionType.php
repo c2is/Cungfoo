@@ -112,10 +112,10 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.image_detail_2_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'region.active',
+            'label' => 'region.enabled',
             'required' => false,
         ));
         $builder->add('regionI18ns', 'translation_collection', array(

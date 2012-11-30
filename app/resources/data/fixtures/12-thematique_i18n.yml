@@ -2,15 +2,15 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Nouveautés 2012'
+        Name: 'NouveautÃ©s 2012'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Nouveautés 2012'
+        Name: 'NouveautÃ©s 2012'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Nouveautés 2012'
+        Name: 'NouveautÃ©s 2012'
     1_nl:
         Id: 1
         Locale: nl
@@ -86,12 +86,12 @@
     7_de:
         Id: 7
         Locale: de
-        Name: 'Vacances découverte'
+        Name: 'Vacances dÃ©couverte'
     7_en:
         Id: 7
         Locale: en
-        Name: 'Vacances découverte'
+        Name: 'Vacances dÃ©couverte'
     7_fr:
         Id: 7
         Locale: fr
-        Name: 'Vacances découverte'
+        Name: 'Vacances dÃ©couverte'

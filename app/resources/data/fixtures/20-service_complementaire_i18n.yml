@@ -2,15 +2,15 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Name: 'SÃ©jour 3/4 nuits possible en haute saison'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Name: 'SÃ©jour 3/4 nuits possible en haute saison'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Name: 'SÃ©jour 3/4 nuits possible en haute saison'
     2_de:
         Id: 2
         Locale: de
@@ -26,39 +26,39 @@
     3_de:
         Id: 3
         Locale: de
-        Name: 'Chiens autorisés'
+        Name: 'Chiens autorisÃ©s'
     3_en:
         Id: 3
         Locale: en
-        Name: 'Chiens autorisés'
+        Name: 'Chiens autorisÃ©s'
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'Chiens autorisés'
+        Name: 'Chiens autorisÃ©s'
     4_de:
         Id: 4
         Locale: de
-        Name: 'Dépannage alimentation'
+        Name: 'DÃ©pannage alimentation'
     4_en:
         Id: 4
         Locale: en
-        Name: 'Dépannage alimentation'
+        Name: 'DÃ©pannage alimentation'
     4_fr:
         Id: 4
         Locale: fr
-        Name: 'Dépannage alimentation'
+        Name: 'DÃ©pannage alimentation'
     5_de:
         Id: 5
         Locale: de
-        Name: 'Location de vélos'
+        Name: 'Location de vÃ©los'
     5_en:
         Id: 5
         Locale: en
-        Name: 'Location de vélos'
+        Name: 'Location de vÃ©los'
     5_fr:
         Id: 5
         Locale: fr
-        Name: 'Location de vélos'
+        Name: 'Location de vÃ©los'
     6_de:
         Id: 6
         Locale: de
@@ -134,15 +134,15 @@
     12_de:
         Id: 12
         Locale: de
-        Name: 'Restauration à emporter'
+        Name: 'Restauration Ã  emporter'
     12_en:
         Id: 12
         Locale: en
-        Name: 'Restauration à emporter'
+        Name: 'Restauration Ã  emporter'
     12_fr:
         Id: 12
         Locale: fr
-        Name: 'Restauration à emporter'
+        Name: 'Restauration Ã  emporter'
     13_de:
         Id: 13
         Locale: de

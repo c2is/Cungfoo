@@ -42,13 +42,13 @@ class TypeHebergementI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'type_hebergement', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
-        $this->addColumn('surface', 'Surface', 'VARCHAR', false, 255, null);
-        $this->addColumn('type_terrasse', 'TypeTerrasse', 'VARCHAR', false, 255, null);
-        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('composition', 'Composition', 'LONGVARCHAR', false, null, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'type_hebergement', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('SURFACE', 'Surface', 'VARCHAR', false, 255, null);
+        $this->addColumn('TYPE_TERRASSE', 'TypeTerrasse', 'VARCHAR', false, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('COMPOSITION', 'Composition', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

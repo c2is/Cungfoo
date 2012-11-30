@@ -26,15 +26,15 @@
     3_de:
         Id: 3
         Locale: de
-        Name: 'Pétanque (Gratuit)'
+        Name: 'PÃ©tanque (Gratuit)'
     3_en:
         Id: 3
         Locale: en
-        Name: 'Pétanque (Gratuit)'
+        Name: 'PÃ©tanque (Gratuit)'
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'Pétanque (Gratuit)'
+        Name: 'PÃ©tanque (Gratuit)'
     4_de:
         Id: 4
         Locale: de
@@ -74,72 +74,72 @@
     7_de:
         Id: 7
         Locale: de
-        Name: 'Discothèque à proximité'
+        Name: 'DiscothÃ¨que Ã  proximitÃ©'
     7_en:
         Id: 7
         Locale: en
-        Name: 'Discothèque à proximité'
+        Name: 'DiscothÃ¨que Ã  proximitÃ©'
     7_fr:
         Id: 7
         Locale: fr
-        Name: 'Discothèque à proximité'
+        Name: 'DiscothÃ¨que Ã  proximitÃ©'
     8_de:
         Id: 8
         Locale: de
-        Name: 'Mini golf à proximité'
+        Name: 'Mini golf Ã  proximitÃ©'
     8_en:
         Id: 8
         Locale: en
-        Name: 'Mini golf à proximité'
+        Name: 'Mini golf Ã  proximitÃ©'
     8_fr:
         Id: 8
         Locale: fr
-        Name: 'Mini golf à proximité'
+        Name: 'Mini golf Ã  proximitÃ©'
     9_de:
         Id: 9
         Locale: de
-        Name: 'Tennis à proximité'
+        Name: 'Tennis Ã  proximitÃ©'
     9_en:
         Id: 9
         Locale: en
-        Name: 'Tennis à proximité'
+        Name: 'Tennis Ã  proximitÃ©'
     9_fr:
         Id: 9
         Locale: fr
-        Name: 'Tennis à proximité'
+        Name: 'Tennis Ã  proximitÃ©'
     10_de:
         Id: 10
         Locale: de
-        Name: 'Golf à proximité'
+        Name: 'Golf Ã  proximitÃ©'
     10_en:
         Id: 10
         Locale: en
-        Name: 'Golf à proximité'
+        Name: 'Golf Ã  proximitÃ©'
     10_fr:
         Id: 10
         Locale: fr
-        Name: 'Golf à proximité'
+        Name: 'Golf Ã  proximitÃ©'
     11_de:
         Id: 11
         Locale: de
-        Name: 'Equitation à proximité'
+        Name: 'Equitation Ã  proximitÃ©'
     11_en:
         Id: 11
         Locale: en
-        Name: 'Equitation à proximité'
+        Name: 'Equitation Ã  proximitÃ©'
     11_fr:
         Id: 11
         Locale: fr
-        Name: 'Equitation à proximité'
+        Name: 'Equitation Ã  proximitÃ©'
     12_de:
         Id: 12
         Locale: de
-        Name: 'Pêche à proximité'
+        Name: 'PÃªche Ã  proximitÃ©'
     12_en:
         Id: 12
         Locale: en
-        Name: 'Pêche à proximité'
+        Name: 'PÃªche Ã  proximitÃ©'
     12_fr:
         Id: 12
         Locale: fr
-        Name: 'Pêche à proximité'
+        Name: 'PÃªche Ã  proximitÃ©'

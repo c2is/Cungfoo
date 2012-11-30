@@ -26,27 +26,27 @@
     3_de:
         Id: 3
         Locale: de
-        Titre: 'Activités DE'
+        Titre: 'ActivitÃ©s DE'
     3_en:
         Id: 3
         Locale: en
-        Titre: 'Activités EN'
+        Titre: 'ActivitÃ©s EN'
     3_fr:
         Id: 3
         Locale: fr
-        Titre: 'Activités FR'
+        Titre: 'ActivitÃ©s FR'
     4_de:
         Id: 4
         Locale: de
-        Titre: 'Région DE'
+        Titre: 'RÃ©gion DE'
     4_en:
         Id: 4
         Locale: en
-        Titre: 'Région EN'
+        Titre: 'RÃ©gion EN'
     4_fr:
         Id: 4
         Locale: fr
-        Titre: 'Région FR'
+        Titre: 'RÃ©gion FR'
     5_de:
         Id: 5
         Locale: de
@@ -62,12 +62,12 @@
     6_de:
         Id: 6
         Locale: de
-        Titre: 'Activités régions DE'
+        Titre: 'ActivitÃ©s rÃ©gions DE'
     6_en:
         Id: 6
         Locale: en
-        Titre: 'Activités régions EN'
+        Titre: 'ActivitÃ©s rÃ©gions EN'
     6_fr:
         Id: 6
         Locale: fr
-        Titre: 'Activités régions FR'
+        Titre: 'ActivitÃ©s rÃ©gions FR'
