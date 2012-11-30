@@ -22,8 +22,8 @@ class GenerateCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         exec(
-            'export PHP_CLASSPATH='.$this->getApplication()->getRootDir().'/vendor/phing/phing/classes &&'
-            .$this->getApplication()->getRootDir().'/vendor/propel/propel1/generator/bin/propel-gen app/config/Propel main',
+            'export PHP_CLASSPATH='.$this->getProjectDirectory().'/vendor/phing/phing/classes &&'
+            .$this->getProjectDirectory().'/vendor/propel/propel1/generator/bin/propel-gen app/config/Propel main',
             $lines,
             $status
         );

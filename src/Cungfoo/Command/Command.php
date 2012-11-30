@@ -5,24 +5,16 @@ use Cungfoo\Console\Application;
 
 use Symfony\Component\Console\Helper\FormatterHelper;
 
+use Knp\Command\Command as BaseCommand;
+
 /**
  * Application aware command
  *
  * Provide a silex application in CLI context.
  */
-abstract class Command extends \Symfony\Component\Console\Command\Command
+abstract class Command extends BaseCommand
 {
     protected $formatterHelper = null;
-
-    /**
-     * Return the current silex application
-     *
-     * @return Silex\Application
-     */
-    public function getSilexApplication()
-    {
-        return $this->getApplication()->getSilexApplication();
-    }
 
     /**
      * Return an instance of FormatterHelper

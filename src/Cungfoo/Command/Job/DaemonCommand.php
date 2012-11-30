@@ -60,7 +60,7 @@ class DaemonCommand extends BaseCommand
                     $output->writeln(sprintf('<info>%s</info>', 'execution of the job'));
                     $idleJob->run(array(
                         'app' => $this->getSilexApplication(),
-                        'rootDir' => $this->getApplication()->getRootDir(),
+                        'rootDir' => $this->getProjectDirectory(),
                         'output' => $output
                     ));
                 }
