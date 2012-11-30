@@ -21,7 +21,6 @@ class EventLoader extends AbstractLoader
         $this->dbConnection->exec("TRUNCATE TABLE `etablissement_event`");
         $this->dbConnection->exec("TRUNCATE TABLE `event_i18n`");
         $this->dbConnection->exec("TRUNCATE TABLE `event`");
-        $this->dbConnection->exec("SET NAMES 'UTF8'");
     }
 
     public function close()
