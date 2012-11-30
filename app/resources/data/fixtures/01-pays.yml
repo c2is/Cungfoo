@@ -1,8 +1,8 @@
 \Cungfoo\Model\Pays:
     1:
         Code: FRA
-        ImageDetail1: uploads/payss/50b4e3116e310.jpeg
-        ImageDetail2: uploads/payss/50b4e31177f52.jpeg
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     2:
         Code: ITA

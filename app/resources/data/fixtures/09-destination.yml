@@ -1,9 +1,9 @@
 \Cungfoo\Model\Destination:
     1:
-        Code: MED
+        Code: ATL
         Enabled: true
     2:
-        Code: ATL
+        Code: MED
         Enabled: true
     3:
         Code: CAM

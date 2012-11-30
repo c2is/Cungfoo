@@ -23,6 +23,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    1_nl:
+        Id: 1
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     2_de:
         Id: 2
         Locale: de
@@ -42,6 +50,14 @@
     2_fr:
         Id: 2
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    2_nl:
+        Id: 2
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -71,6 +87,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    3_nl:
+        Id: 3
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     4_de:
         Id: 4
         Locale: de
@@ -90,6 +114,14 @@
     4_fr:
         Id: 4
         Locale: fr
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    4_nl:
+        Id: 4
+        Locale: nl
         Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
@@ -119,6 +151,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    5_nl:
+        Id: 5
+        Locale: nl
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     6_de:
         Id: 6
         Locale: de
@@ -138,6 +178,14 @@
     6_fr:
         Id: 6
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    6_nl:
+        Id: 6
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -167,6 +215,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    7_nl:
+        Id: 7
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     8_de:
         Id: 8
         Locale: de
@@ -186,6 +242,14 @@
     8_fr:
         Id: 8
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    8_nl:
+        Id: 8
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -215,6 +279,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    9_nl:
+        Id: 9
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     10_de:
         Id: 10
         Locale: de
@@ -234,6 +306,14 @@
     10_fr:
         Id: 10
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    10_nl:
+        Id: 10
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -263,6 +343,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    11_nl:
+        Id: 11
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     12_de:
         Id: 12
         Locale: de
@@ -282,6 +370,14 @@
     12_fr:
         Id: 12
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    12_nl:
+        Id: 12
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -311,6 +407,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    13_nl:
+        Id: 13
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     14_de:
         Id: 14
         Locale: de
@@ -330,6 +434,14 @@
     14_fr:
         Id: 14
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    14_nl:
+        Id: 14
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -359,6 +471,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    15_nl:
+        Id: 15
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     16_de:
         Id: 16
         Locale: de
@@ -378,6 +498,14 @@
     16_fr:
         Id: 16
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    16_nl:
+        Id: 16
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -407,6 +535,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    17_nl:
+        Id: 17
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     18_de:
         Id: 18
         Locale: de
@@ -426,6 +562,14 @@
     18_fr:
         Id: 18
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    18_nl:
+        Id: 18
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -455,6 +599,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    19_nl:
+        Id: 19
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     20_de:
         Id: 20
         Locale: de
@@ -474,6 +626,14 @@
     20_fr:
         Id: 20
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    20_nl:
+        Id: 20
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -503,6 +663,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    21_nl:
+        Id: 21
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     22_de:
         Id: 22
         Locale: de
@@ -522,6 +690,14 @@
     22_fr:
         Id: 22
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    22_nl:
+        Id: 22
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -551,6 +727,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    23_nl:
+        Id: 23
+        Locale: nl
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     24_de:
         Id: 24
         Locale: de
@@ -570,6 +754,14 @@
     24_fr:
         Id: 24
         Locale: fr
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    24_nl:
+        Id: 24
+        Locale: nl
         Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
@@ -599,6 +791,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    25_nl:
+        Id: 25
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     26_de:
         Id: 26
         Locale: de
@@ -618,6 +818,14 @@
     26_fr:
         Id: 26
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    26_nl:
+        Id: 26
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -647,6 +855,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    27_nl:
+        Id: 27
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     28_de:
         Id: 28
         Locale: de
@@ -666,6 +882,14 @@
     28_fr:
         Id: 28
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    28_nl:
+        Id: 28
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -695,6 +919,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    29_nl:
+        Id: 29
+        Locale: nl
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     30_de:
         Id: 30
         Locale: de
@@ -714,6 +946,14 @@
     30_fr:
         Id: 30
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    30_nl:
+        Id: 30
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -743,6 +983,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    31_nl:
+        Id: 31
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     32_de:
         Id: 32
         Locale: de
@@ -762,6 +1010,14 @@
     32_fr:
         Id: 32
         Locale: fr
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    32_nl:
+        Id: 32
+        Locale: nl
         Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
@@ -791,6 +1047,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    33_nl:
+        Id: 33
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     34_de:
         Id: 34
         Locale: de
@@ -810,6 +1074,14 @@
     34_fr:
         Id: 34
         Locale: fr
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    34_nl:
+        Id: 34
+        Locale: nl
         Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
@@ -839,6 +1111,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    35_nl:
+        Id: 35
+        Locale: nl
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     36_de:
         Id: 36
         Locale: de
@@ -858,6 +1138,14 @@
     36_fr:
         Id: 36
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    36_nl:
+        Id: 36
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -887,6 +1175,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    37_nl:
+        Id: 37
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     38_de:
         Id: 38
         Locale: de
@@ -906,6 +1202,14 @@
     38_fr:
         Id: 38
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    38_nl:
+        Id: 38
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -935,6 +1239,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    39_nl:
+        Id: 39
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     40_de:
         Id: 40
         Locale: de
@@ -954,6 +1266,14 @@
     40_fr:
         Id: 40
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    40_nl:
+        Id: 40
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -983,6 +1303,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    41_nl:
+        Id: 41
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     42_de:
         Id: 42
         Locale: de
@@ -1002,6 +1330,14 @@
     42_fr:
         Id: 42
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    42_nl:
+        Id: 42
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1031,6 +1367,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    43_nl:
+        Id: 43
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     44_de:
         Id: 44
         Locale: de
@@ -1050,6 +1394,14 @@
     44_fr:
         Id: 44
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    44_nl:
+        Id: 44
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1079,6 +1431,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    45_nl:
+        Id: 45
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     46_de:
         Id: 46
         Locale: de
@@ -1098,6 +1458,14 @@
     46_fr:
         Id: 46
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    46_nl:
+        Id: 46
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1127,6 +1495,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    47_nl:
+        Id: 47
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     48_de:
         Id: 48
         Locale: de
@@ -1146,6 +1522,14 @@
     48_fr:
         Id: 48
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    48_nl:
+        Id: 48
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1175,6 +1559,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    49_nl:
+        Id: 49
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     50_de:
         Id: 50
         Locale: de
@@ -1194,6 +1586,14 @@
     50_fr:
         Id: 50
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    50_nl:
+        Id: 50
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -1223,6 +1623,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    51_nl:
+        Id: 51
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     52_de:
         Id: 52
         Locale: de
@@ -1242,6 +1650,14 @@
     52_fr:
         Id: 52
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    52_nl:
+        Id: 52
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1271,6 +1687,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    53_nl:
+        Id: 53
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     54_de:
         Id: 54
         Locale: de
@@ -1290,6 +1714,14 @@
     54_fr:
         Id: 54
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    54_nl:
+        Id: 54
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1319,6 +1751,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    55_nl:
+        Id: 55
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     56_de:
         Id: 56
         Locale: de
@@ -1338,6 +1778,14 @@
     56_fr:
         Id: 56
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    56_nl:
+        Id: 56
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1367,6 +1815,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    57_nl:
+        Id: 57
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     58_de:
         Id: 58
         Locale: de
@@ -1386,6 +1842,14 @@
     58_fr:
         Id: 58
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    58_nl:
+        Id: 58
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1415,6 +1879,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    59_nl:
+        Id: 59
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     60_de:
         Id: 60
         Locale: de
@@ -1434,6 +1906,14 @@
     60_fr:
         Id: 60
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    60_nl:
+        Id: 60
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1463,6 +1943,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    61_nl:
+        Id: 61
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     62_de:
         Id: 62
         Locale: de
@@ -1482,6 +1970,14 @@
     62_fr:
         Id: 62
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    62_nl:
+        Id: 62
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1511,6 +2007,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    63_nl:
+        Id: 63
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     64_de:
         Id: 64
         Locale: de
@@ -1530,6 +2034,14 @@
     64_fr:
         Id: 64
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    64_nl:
+        Id: 64
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1559,6 +2071,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    65_nl:
+        Id: 65
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     66_de:
         Id: 66
         Locale: de
@@ -1578,6 +2098,14 @@
     66_fr:
         Id: 66
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    66_nl:
+        Id: 66
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1607,6 +2135,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    67_nl:
+        Id: 67
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     68_de:
         Id: 68
         Locale: de
@@ -1626,6 +2162,14 @@
     68_fr:
         Id: 68
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    68_nl:
+        Id: 68
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1655,6 +2199,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    69_nl:
+        Id: 69
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     70_de:
         Id: 70
         Locale: de
@@ -1674,6 +2226,14 @@
     70_fr:
         Id: 70
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    70_nl:
+        Id: 70
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1703,6 +2263,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    71_nl:
+        Id: 71
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     72_de:
         Id: 72
         Locale: de
@@ -1722,6 +2290,14 @@
     72_fr:
         Id: 72
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    72_nl:
+        Id: 72
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -1751,6 +2327,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    73_nl:
+        Id: 73
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     74_de:
         Id: 74
         Locale: de
@@ -1770,6 +2354,14 @@
     74_fr:
         Id: 74
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    74_nl:
+        Id: 74
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1799,6 +2391,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    75_nl:
+        Id: 75
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     76_de:
         Id: 76
         Locale: de
@@ -1818,6 +2418,14 @@
     76_fr:
         Id: 76
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    76_nl:
+        Id: 76
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -1847,6 +2455,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    77_nl:
+        Id: 77
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     78_de:
         Id: 78
         Locale: de
@@ -1866,6 +2482,14 @@
     78_fr:
         Id: 78
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    78_nl:
+        Id: 78
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -1895,6 +2519,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    79_nl:
+        Id: 79
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     80_de:
         Id: 80
         Locale: de
@@ -1914,6 +2546,14 @@
     80_fr:
         Id: 80
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    80_nl:
+        Id: 80
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -1943,6 +2583,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    81_nl:
+        Id: 81
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     82_de:
         Id: 82
         Locale: de
@@ -1962,6 +2610,14 @@
     82_fr:
         Id: 82
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    82_nl:
+        Id: 82
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -1991,6 +2647,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    83_nl:
+        Id: 83
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     84_de:
         Id: 84
         Locale: de
@@ -2010,6 +2674,14 @@
     84_fr:
         Id: 84
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    84_nl:
+        Id: 84
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2039,6 +2711,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    85_nl:
+        Id: 85
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     86_de:
         Id: 86
         Locale: de
@@ -2058,6 +2738,14 @@
     86_fr:
         Id: 86
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    86_nl:
+        Id: 86
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2087,10 +2775,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    87_nl:
+        Id: 87
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     88_de:
         Id: 88
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2098,7 +2794,7 @@
     88_en:
         Id: 88
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2106,7 +2802,15 @@
     88_fr:
         Id: 88
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    88_nl:
+        Id: 88
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2114,7 +2818,7 @@
     89_de:
         Id: 89
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2122,7 +2826,7 @@
     89_en:
         Id: 89
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2130,7 +2834,15 @@
     89_fr:
         Id: 89
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    89_nl:
+        Id: 89
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2138,7 +2850,7 @@
     90_de:
         Id: 90
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2146,7 +2858,7 @@
     90_en:
         Id: 90
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2154,7 +2866,15 @@
     90_fr:
         Id: 90
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    90_nl:
+        Id: 90
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2183,10 +2903,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    91_nl:
+        Id: 91
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     92_de:
         Id: 92
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2194,7 +2922,7 @@
     92_en:
         Id: 92
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2202,7 +2930,15 @@
     92_fr:
         Id: 92
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    92_nl:
+        Id: 92
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2226,6 +2962,14 @@
     93_fr:
         Id: 93
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    93_nl:
+        Id: 93
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2255,6 +2999,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    94_nl:
+        Id: 94
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     95_de:
         Id: 95
         Locale: de
@@ -2274,6 +3026,14 @@
     95_fr:
         Id: 95
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    95_nl:
+        Id: 95
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2303,6 +3063,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    96_nl:
+        Id: 96
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     97_de:
         Id: 97
         Locale: de
@@ -2327,10 +3095,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    97_nl:
+        Id: 97
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     98_de:
         Id: 98
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2338,7 +3114,7 @@
     98_en:
         Id: 98
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2346,7 +3122,15 @@
     98_fr:
         Id: 98
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    98_nl:
+        Id: 98
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2370,6 +3154,14 @@
     99_fr:
         Id: 99
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    99_nl:
+        Id: 99
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2399,6 +3191,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    100_nl:
+        Id: 100
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     101_de:
         Id: 101
         Locale: de
@@ -2418,6 +3218,14 @@
     101_fr:
         Id: 101
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    101_nl:
+        Id: 101
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2447,6 +3255,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    102_nl:
+        Id: 102
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     103_de:
         Id: 103
         Locale: de
@@ -2466,6 +3282,14 @@
     103_fr:
         Id: 103
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    103_nl:
+        Id: 103
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2495,6 +3319,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    104_nl:
+        Id: 104
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     105_de:
         Id: 105
         Locale: de
@@ -2519,29 +3351,45 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    105_nl:
+        Id: 105
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     106_de:
         Id: 106
         Locale: de
         Country: France
-        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 DE"
-        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h DE"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. DE"
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: null
     106_en:
         Id: 106
         Locale: en
         Country: France
-        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7 EN"
-        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h EN"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi. EN"
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: null
     106_fr:
         Id: 106
         Locale: fr
         Country: France
-        OuvertureReception: "Haute saison : 9h-10h / 14h-19h\r\nBasse saison : 8h-20h 7j/7"
-        OuvertureCamping: "Haute saison : 7h-24h\r\nBasse saison : 8h-22h"
-        ArriveesDeparts: "- Les arrivées se font à partir de 15h et jusqu'à 19h. A votre arrivée, adressez-vous directement à l'accueil du camping Le Petit Mousse.\r\n- Les départs se font après inventaire de 8h à 10h. Attention, aucune arrivée et aucun départ le mardi."
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    106_nl:
+        Id: 106
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: null
     107_de:
         Id: 107
@@ -2562,6 +3410,14 @@
     107_fr:
         Id: 107
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    107_nl:
+        Id: 107
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2591,6 +3447,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    108_nl:
+        Id: 108
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     109_de:
         Id: 109
         Locale: de
@@ -2610,6 +3474,14 @@
     109_fr:
         Id: 109
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    109_nl:
+        Id: 109
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2639,6 +3511,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    110_nl:
+        Id: 110
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     111_de:
         Id: 111
         Locale: de
@@ -2658,6 +3538,14 @@
     111_fr:
         Id: 111
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    111_nl:
+        Id: 111
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2687,6 +3575,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    112_nl:
+        Id: 112
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     113_de:
         Id: 113
         Locale: de
@@ -2706,6 +3602,14 @@
     113_fr:
         Id: 113
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    113_nl:
+        Id: 113
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2735,6 +3639,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    114_nl:
+        Id: 114
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     115_de:
         Id: 115
         Locale: de
@@ -2759,10 +3671,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    115_nl:
+        Id: 115
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     116_de:
         Id: 116
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2770,7 +3690,7 @@
     116_en:
         Id: 116
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2778,7 +3698,15 @@
     116_fr:
         Id: 116
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    116_nl:
+        Id: 116
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2802,6 +3730,14 @@
     117_fr:
         Id: 117
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    117_nl:
+        Id: 117
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2831,6 +3767,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    118_nl:
+        Id: 118
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     119_de:
         Id: 119
         Locale: de
@@ -2855,10 +3799,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    119_nl:
+        Id: 119
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     120_de:
         Id: 120
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2866,7 +3818,7 @@
     120_en:
         Id: 120
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2874,7 +3826,15 @@
     120_fr:
         Id: 120
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    120_nl:
+        Id: 120
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -2898,6 +3858,14 @@
     121_fr:
         Id: 121
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    121_nl:
+        Id: 121
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2927,6 +3895,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    122_nl:
+        Id: 122
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     123_de:
         Id: 123
         Locale: de
@@ -2946,6 +3922,14 @@
     123_fr:
         Id: 123
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    123_nl:
+        Id: 123
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -2975,6 +3959,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    124_nl:
+        Id: 124
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     125_de:
         Id: 125
         Locale: de
@@ -2994,6 +3986,14 @@
     125_fr:
         Id: 125
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    125_nl:
+        Id: 125
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3023,6 +4023,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    126_nl:
+        Id: 126
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     127_de:
         Id: 127
         Locale: de
@@ -3042,6 +4050,14 @@
     127_fr:
         Id: 127
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    127_nl:
+        Id: 127
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3071,6 +4087,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    128_nl:
+        Id: 128
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     129_de:
         Id: 129
         Locale: de
@@ -3090,6 +4114,14 @@
     129_fr:
         Id: 129
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    129_nl:
+        Id: 129
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3119,6 +4151,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    130_nl:
+        Id: 130
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     131_de:
         Id: 131
         Locale: de
@@ -3138,6 +4178,14 @@
     131_fr:
         Id: 131
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    131_nl:
+        Id: 131
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3167,6 +4215,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    132_nl:
+        Id: 132
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     133_de:
         Id: 133
         Locale: de
@@ -3186,6 +4242,14 @@
     133_fr:
         Id: 133
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    133_nl:
+        Id: 133
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3215,10 +4279,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    134_nl:
+        Id: 134
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     135_de:
         Id: 135
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3226,7 +4298,7 @@
     135_en:
         Id: 135
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3234,7 +4306,15 @@
     135_fr:
         Id: 135
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    135_nl:
+        Id: 135
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3242,7 +4322,7 @@
     136_de:
         Id: 136
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3250,7 +4330,7 @@
     136_en:
         Id: 136
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3258,7 +4338,15 @@
     136_fr:
         Id: 136
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    136_nl:
+        Id: 136
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3282,6 +4370,14 @@
     137_fr:
         Id: 137
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    137_nl:
+        Id: 137
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3311,6 +4407,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    138_nl:
+        Id: 138
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     139_de:
         Id: 139
         Locale: de
@@ -3330,6 +4434,14 @@
     139_fr:
         Id: 139
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    139_nl:
+        Id: 139
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3359,6 +4471,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    140_nl:
+        Id: 140
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     141_de:
         Id: 141
         Locale: de
@@ -3383,10 +4503,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    141_nl:
+        Id: 141
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     142_de:
         Id: 142
         Locale: de
-        Country: Portugal
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3394,7 +4522,7 @@
     142_en:
         Id: 142
         Locale: en
-        Country: Portugal
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3402,7 +4530,15 @@
     142_fr:
         Id: 142
         Locale: fr
-        Country: Portugal
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    142_nl:
+        Id: 142
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3426,6 +4562,14 @@
     143_fr:
         Id: 143
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    143_nl:
+        Id: 143
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3455,6 +4599,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    144_nl:
+        Id: 144
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     145_de:
         Id: 145
         Locale: de
@@ -3474,6 +4626,14 @@
     145_fr:
         Id: 145
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    145_nl:
+        Id: 145
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3503,6 +4663,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    146_nl:
+        Id: 146
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     147_de:
         Id: 147
         Locale: de
@@ -3527,10 +4695,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    147_nl:
+        Id: 147
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     148_de:
         Id: 148
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3538,7 +4714,7 @@
     148_en:
         Id: 148
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3546,7 +4722,15 @@
     148_fr:
         Id: 148
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    148_nl:
+        Id: 148
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3575,38 +4759,46 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    149_nl:
+        Id: 149
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     150_de:
         Id: 150
         Locale: de
-        Country: France
-        OuvertureReception: 8h-11h/15h-20h
-        OuvertureCamping: 12/04/2013-29/09/2013
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
         ArriveesDeparts: null
-        Description: 'Im Herzen der Camargue gelegen und nicht weit vom größten Strand Europas, dem "Plage Espiguette", entfernt, lädt Sie der Campingplatz "La Marine" zu einem erholsamen und erlebnisreichen Urlaub ein. Es erwarten Sie verschiedenste Mobilhomes, umrahmt von einem herrlichen Pinienwald und viele Ausflugsmöglichkeiten in eine faszinierende Umgebung, wie beispielsweise ein Ausritt in die schöne Camargue.'
+        Description: null
     150_en:
         Id: 150
         Locale: en
-        Country: France
-        OuvertureReception: 8h-11h/15h-20h
-        OuvertureCamping: 12/04/2013-29/09/2013
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
     150_fr:
         Id: 150
         Locale: fr
-        Country: France
-        OuvertureReception: 8h-11h/15h-20h
-        OuvertureCamping: 12/04/2013-29/09/2013
-        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2012, le mercredi et le samedi.'
-        Description: 'Au coeur de la Camargue, au grau-du-Roi, et situé sur la route de la plage de l''Espiguette, la plus grande plage d''Europe (navette), le camping la Marine vous invite à la détente autour de son espace piscine. Activités sportives, aquatiques, découverte de la Camargue et détente-relaxation seront au rendez-vous.'
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     150_nl:
         Id: 150
         Locale: nl
-        Country: null
-        OuvertureReception: 8h-11h/15h-20h
-        OuvertureCamping: 12/04/2013-29/09/2013
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
         ArriveesDeparts: null
-        Description: "Midden in de Camargue en langs de weg naar het strand van de Espiguette, het grootste strand van Europa (pendeldienst), biedt het vakantiepark annex camping la Marine u ontspanning rond het zwembad. U vindt mogelijkheden voor sport en watersport, u kunt de Camargue gaan verkennen en nu echt ontspannen. Verken de Camargue te paard, of maak 's ochtend in alle vroegte een wandeling, tenzij u natuurlijk liever wat gaat varen...in elk geval, volg de ingeving van uw hart en geniet ten volle van deze heel bijzondere streek.\r\nU dient uw eigen bedlinnen & handdoeken mee te nemen, eventueel kunt u bedlinnen ook ter plaatse huren of kopen."
+        Description: null
     151_de:
         Id: 151
         Locale: de
@@ -3631,10 +4823,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    151_nl:
+        Id: 151
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     152_de:
         Id: 152
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3642,7 +4842,7 @@
     152_en:
         Id: 152
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3650,7 +4850,15 @@
     152_fr:
         Id: 152
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    152_nl:
+        Id: 152
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3674,6 +4882,14 @@
     153_fr:
         Id: 153
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    153_nl:
+        Id: 153
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -3703,10 +4919,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    154_nl:
+        Id: 154
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     155_de:
         Id: 155
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3714,7 +4938,7 @@
     155_en:
         Id: 155
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3722,7 +4946,15 @@
     155_fr:
         Id: 155
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    155_nl:
+        Id: 155
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3751,10 +4983,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    156_nl:
+        Id: 156
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     157_de:
         Id: 157
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3762,7 +5002,7 @@
     157_en:
         Id: 157
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3770,7 +5010,15 @@
     157_fr:
         Id: 157
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    157_nl:
+        Id: 157
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3778,7 +5026,7 @@
     158_de:
         Id: 158
         Locale: de
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3786,7 +5034,7 @@
     158_en:
         Id: 158
         Locale: en
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3794,7 +5042,15 @@
     158_fr:
         Id: 158
         Locale: fr
-        Country: France
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    158_nl:
+        Id: 158
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3802,7 +5058,7 @@
     159_de:
         Id: 159
         Locale: de
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3810,7 +5066,7 @@
     159_en:
         Id: 159
         Locale: en
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3818,7 +5074,15 @@
     159_fr:
         Id: 159
         Locale: fr
-        Country: France
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    159_nl:
+        Id: 159
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3826,7 +5090,7 @@
     160_de:
         Id: 160
         Locale: de
-        Country: Espagne
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3834,7 +5098,7 @@
     160_en:
         Id: 160
         Locale: en
-        Country: Espagne
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3842,7 +5106,15 @@
     160_fr:
         Id: 160
         Locale: fr
-        Country: Espagne
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    160_nl:
+        Id: 160
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3850,7 +5122,7 @@
     161_de:
         Id: 161
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3858,7 +5130,7 @@
     161_en:
         Id: 161
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3866,7 +5138,15 @@
     161_fr:
         Id: 161
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    161_nl:
+        Id: 161
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3874,7 +5154,7 @@
     162_de:
         Id: 162
         Locale: de
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3882,7 +5162,7 @@
     162_en:
         Id: 162
         Locale: en
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3890,7 +5170,15 @@
     162_fr:
         Id: 162
         Locale: fr
-        Country: France
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    162_nl:
+        Id: 162
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3898,7 +5186,7 @@
     163_de:
         Id: 163
         Locale: de
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3906,7 +5194,7 @@
     163_en:
         Id: 163
         Locale: en
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3914,7 +5202,15 @@
     163_fr:
         Id: 163
         Locale: fr
-        Country: France
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    163_nl:
+        Id: 163
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3922,7 +5218,7 @@
     164_de:
         Id: 164
         Locale: de
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3930,7 +5226,7 @@
     164_en:
         Id: 164
         Locale: en
-        Country: France
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3938,7 +5234,15 @@
     164_fr:
         Id: 164
         Locale: fr
-        Country: France
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    164_nl:
+        Id: 164
+        Locale: nl
+        Country: ''
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3967,10 +5271,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    165_nl:
+        Id: 165
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     166_de:
         Id: 166
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3978,7 +5290,7 @@
     166_en:
         Id: 166
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -3986,7 +5298,15 @@
     166_fr:
         Id: 166
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    166_nl:
+        Id: 166
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4010,6 +5330,14 @@
     167_fr:
         Id: 167
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    167_nl:
+        Id: 167
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4039,6 +5367,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    168_nl:
+        Id: 168
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     169_de:
         Id: 169
         Locale: de
@@ -4058,6 +5394,14 @@
     169_fr:
         Id: 169
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    169_nl:
+        Id: 169
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4087,10 +5431,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    170_nl:
+        Id: 170
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     171_de:
         Id: 171
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4098,7 +5450,7 @@
     171_en:
         Id: 171
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4106,7 +5458,15 @@
     171_fr:
         Id: 171
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    171_nl:
+        Id: 171
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4114,7 +5474,7 @@
     172_de:
         Id: 172
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4122,7 +5482,7 @@
     172_en:
         Id: 172
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4130,7 +5490,15 @@
     172_fr:
         Id: 172
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    172_nl:
+        Id: 172
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4138,7 +5506,7 @@
     173_de:
         Id: 173
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4146,7 +5514,7 @@
     173_en:
         Id: 173
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4154,7 +5522,15 @@
     173_fr:
         Id: 173
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    173_nl:
+        Id: 173
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4178,6 +5554,14 @@
     174_fr:
         Id: 174
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    174_nl:
+        Id: 174
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4207,6 +5591,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    175_nl:
+        Id: 175
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     176_de:
         Id: 176
         Locale: de
@@ -4226,6 +5618,14 @@
     176_fr:
         Id: 176
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    176_nl:
+        Id: 176
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4255,6 +5655,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    177_nl:
+        Id: 177
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     178_de:
         Id: 178
         Locale: de
@@ -4279,10 +5687,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    178_nl:
+        Id: 178
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     179_de:
         Id: 179
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4290,7 +5706,7 @@
     179_en:
         Id: 179
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4298,7 +5714,15 @@
     179_fr:
         Id: 179
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    179_nl:
+        Id: 179
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4322,6 +5746,14 @@
     180_fr:
         Id: 180
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    180_nl:
+        Id: 180
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4351,6 +5783,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    181_nl:
+        Id: 181
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     182_de:
         Id: 182
         Locale: de
@@ -4375,10 +5815,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    182_nl:
+        Id: 182
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     183_de:
         Id: 183
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4386,7 +5834,7 @@
     183_en:
         Id: 183
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4394,7 +5842,15 @@
     183_fr:
         Id: 183
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    183_nl:
+        Id: 183
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4418,6 +5874,14 @@
     184_fr:
         Id: 184
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    184_nl:
+        Id: 184
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4447,6 +5911,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    185_nl:
+        Id: 185
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     186_de:
         Id: 186
         Locale: de
@@ -4466,6 +5938,14 @@
     186_fr:
         Id: 186
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    186_nl:
+        Id: 186
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4495,10 +5975,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    187_nl:
+        Id: 187
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     188_de:
         Id: 188
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4506,7 +5994,7 @@
     188_en:
         Id: 188
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4514,7 +6002,15 @@
     188_fr:
         Id: 188
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    188_nl:
+        Id: 188
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4538,6 +6034,14 @@
     189_fr:
         Id: 189
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    189_nl:
+        Id: 189
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4567,6 +6071,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    190_nl:
+        Id: 190
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     191_de:
         Id: 191
         Locale: de
@@ -4586,6 +6098,14 @@
     191_fr:
         Id: 191
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    191_nl:
+        Id: 191
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4615,6 +6135,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    192_nl:
+        Id: 192
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     193_de:
         Id: 193
         Locale: de
@@ -4634,6 +6162,14 @@
     193_fr:
         Id: 193
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    193_nl:
+        Id: 193
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4663,6 +6199,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    194_nl:
+        Id: 194
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     195_de:
         Id: 195
         Locale: de
@@ -4682,6 +6226,14 @@
     195_fr:
         Id: 195
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    195_nl:
+        Id: 195
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4711,6 +6263,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    196_nl:
+        Id: 196
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     197_de:
         Id: 197
         Locale: de
@@ -4730,6 +6290,14 @@
     197_fr:
         Id: 197
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    197_nl:
+        Id: 197
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4759,6 +6327,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    198_nl:
+        Id: 198
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     199_de:
         Id: 199
         Locale: de
@@ -4778,6 +6354,14 @@
     199_fr:
         Id: 199
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    199_nl:
+        Id: 199
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4807,6 +6391,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    200_nl:
+        Id: 200
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     201_de:
         Id: 201
         Locale: de
@@ -4826,6 +6418,14 @@
     201_fr:
         Id: 201
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    201_nl:
+        Id: 201
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4855,6 +6455,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    202_nl:
+        Id: 202
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     203_de:
         Id: 203
         Locale: de
@@ -4879,10 +6487,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    203_nl:
+        Id: 203
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     204_de:
         Id: 204
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4890,7 +6506,7 @@
     204_en:
         Id: 204
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4898,7 +6514,15 @@
     204_fr:
         Id: 204
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    204_nl:
+        Id: 204
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4922,6 +6546,14 @@
     205_fr:
         Id: 205
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    205_nl:
+        Id: 205
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -4951,10 +6583,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    206_nl:
+        Id: 206
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     207_de:
         Id: 207
         Locale: de
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4962,7 +6602,7 @@
     207_en:
         Id: 207
         Locale: en
-        Country: Espagne
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4970,7 +6610,15 @@
     207_fr:
         Id: 207
         Locale: fr
-        Country: Espagne
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    207_nl:
+        Id: 207
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -4999,10 +6647,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    208_nl:
+        Id: 208
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     209_de:
         Id: 209
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5010,7 +6666,7 @@
     209_en:
         Id: 209
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5018,7 +6674,15 @@
     209_fr:
         Id: 209
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    209_nl:
+        Id: 209
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5026,7 +6690,7 @@
     210_de:
         Id: 210
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5034,7 +6698,7 @@
     210_en:
         Id: 210
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5042,7 +6706,15 @@
     210_fr:
         Id: 210
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    210_nl:
+        Id: 210
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5066,6 +6738,14 @@
     211_fr:
         Id: 211
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    211_nl:
+        Id: 211
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5095,6 +6775,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    212_nl:
+        Id: 212
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     213_de:
         Id: 213
         Locale: de
@@ -5114,6 +6802,14 @@
     213_fr:
         Id: 213
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    213_nl:
+        Id: 213
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5143,6 +6839,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    214_nl:
+        Id: 214
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     215_de:
         Id: 215
         Locale: de
@@ -5167,10 +6871,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    215_nl:
+        Id: 215
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     216_de:
         Id: 216
         Locale: de
-        Country: France
+        Country: Portugal
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5178,7 +6890,7 @@
     216_en:
         Id: 216
         Locale: en
-        Country: France
+        Country: Portugal
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5186,7 +6898,15 @@
     216_fr:
         Id: 216
         Locale: fr
-        Country: France
+        Country: Portugal
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    216_nl:
+        Id: 216
+        Locale: nl
+        Country: Portugal
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5210,6 +6930,14 @@
     217_fr:
         Id: 217
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    217_nl:
+        Id: 217
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5239,6 +6967,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    218_nl:
+        Id: 218
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     219_de:
         Id: 219
         Locale: de
@@ -5258,6 +6994,14 @@
     219_fr:
         Id: 219
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    219_nl:
+        Id: 219
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5287,6 +7031,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    220_nl:
+        Id: 220
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     221_de:
         Id: 221
         Locale: de
@@ -5311,10 +7063,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    221_nl:
+        Id: 221
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     222_de:
         Id: 222
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5322,7 +7082,7 @@
     222_en:
         Id: 222
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5330,7 +7090,15 @@
     222_fr:
         Id: 222
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    222_nl:
+        Id: 222
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5354,6 +7122,14 @@
     223_fr:
         Id: 223
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    223_nl:
+        Id: 223
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5383,6 +7159,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    224_nl:
+        Id: 224
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     225_de:
         Id: 225
         Locale: de
@@ -5407,10 +7191,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    225_nl:
+        Id: 225
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     226_de:
         Id: 226
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5418,7 +7210,7 @@
     226_en:
         Id: 226
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5426,7 +7218,15 @@
     226_fr:
         Id: 226
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    226_nl:
+        Id: 226
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5450,6 +7250,14 @@
     227_fr:
         Id: 227
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    227_nl:
+        Id: 227
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5479,10 +7287,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    228_nl:
+        Id: 228
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     229_de:
         Id: 229
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5490,7 +7306,7 @@
     229_en:
         Id: 229
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5498,7 +7314,15 @@
     229_fr:
         Id: 229
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    229_nl:
+        Id: 229
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5522,6 +7346,14 @@
     230_fr:
         Id: 230
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    230_nl:
+        Id: 230
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5551,6 +7383,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    231_nl:
+        Id: 231
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     232_de:
         Id: 232
         Locale: de
@@ -5570,6 +7410,14 @@
     232_fr:
         Id: 232
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    232_nl:
+        Id: 232
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5599,10 +7447,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    233_nl:
+        Id: 233
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     234_de:
         Id: 234
         Locale: de
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5610,7 +7466,7 @@
     234_en:
         Id: 234
         Locale: en
-        Country: France
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5618,7 +7474,15 @@
     234_fr:
         Id: 234
         Locale: fr
-        Country: France
+        Country: Espagne
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    234_nl:
+        Id: 234
+        Locale: nl
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5642,6 +7506,14 @@
     235_fr:
         Id: 235
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    235_nl:
+        Id: 235
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5671,6 +7543,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    236_nl:
+        Id: 236
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     237_de:
         Id: 237
         Locale: de
@@ -5690,6 +7570,14 @@
     237_fr:
         Id: 237
         Locale: fr
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    237_nl:
+        Id: 237
+        Locale: nl
         Country: France
         OuvertureReception: null
         OuvertureCamping: null
@@ -5719,6 +7607,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    238_nl:
+        Id: 238
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     239_de:
         Id: 239
         Locale: de
@@ -5743,10 +7639,18 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    239_nl:
+        Id: 239
+        Locale: nl
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     240_de:
         Id: 240
         Locale: de
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5754,7 +7658,7 @@
     240_en:
         Id: 240
         Locale: en
-        Country: France
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5762,7 +7666,15 @@
     240_fr:
         Id: 240
         Locale: fr
-        Country: France
+        Country: Italie
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    240_nl:
+        Id: 240
+        Locale: nl
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5770,7 +7682,7 @@
     241_de:
         Id: 241
         Locale: de
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5778,7 +7690,7 @@
     241_en:
         Id: 241
         Locale: en
-        Country: Italie
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5786,7 +7698,15 @@
     241_fr:
         Id: 241
         Locale: fr
-        Country: Italie
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    241_nl:
+        Id: 241
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5794,7 +7714,7 @@
     242_de:
         Id: 242
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5802,7 +7722,7 @@
     242_en:
         Id: 242
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5810,7 +7730,15 @@
     242_fr:
         Id: 242
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    242_nl:
+        Id: 242
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5818,7 +7746,7 @@
     243_de:
         Id: 243
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5826,7 +7754,7 @@
     243_en:
         Id: 243
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5834,7 +7762,15 @@
     243_fr:
         Id: 243
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    243_nl:
+        Id: 243
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5842,7 +7778,7 @@
     244_de:
         Id: 244
         Locale: de
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5850,7 +7786,7 @@
     244_en:
         Id: 244
         Locale: en
-        Country: ''
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5858,7 +7794,15 @@
     244_fr:
         Id: 244
         Locale: fr
-        Country: ''
+        Country: France
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    244_nl:
+        Id: 244
+        Locale: nl
+        Country: France
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5882,6 +7826,14 @@
     245_fr:
         Id: 245
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    245_nl:
+        Id: 245
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null
@@ -5911,6 +7863,14 @@
         OuvertureCamping: null
         ArriveesDeparts: null
         Description: null
+    246_nl:
+        Id: 246
+        Locale: nl
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
     247_de:
         Id: 247
         Locale: de
@@ -5930,6 +7890,14 @@
     247_fr:
         Id: 247
         Locale: fr
+        Country: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
+        Description: null
+    247_nl:
+        Id: 247
+        Locale: nl
         Country: ''
         OuvertureReception: null
         OuvertureCamping: null

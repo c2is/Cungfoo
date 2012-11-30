@@ -9,16 +9,16 @@
         Code: CHA
         Enabled: true
     4:
-        Code: CAR
+        Code: MAIS
         Enabled: true
     5:
-        Code: GITE
+        Code: CAR
         Enabled: true
     6:
-        Code: EMP
+        Code: GITE
         Enabled: true
     7:
-        Code: MAIS
+        Code: EMP
         Enabled: true
     8:
         Code: TENT

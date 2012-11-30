@@ -11,6 +11,10 @@
         Id: 1
         Locale: fr
         Name: 'Toboggan aquatique'
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Toboggan aquatique'
     2_de:
         Id: 2
         Locale: de
@@ -22,6 +26,10 @@
     2_fr:
         Id: 2
         Locale: fr
+        Name: Piscine
+    2_nl:
+        Id: 2
+        Locale: nl
         Name: Piscine
     3_de:
         Id: 3
@@ -35,6 +43,10 @@
         Id: 3
         Locale: fr
         Name: 'Piscine couverte'
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: 'Piscine couverte'
     4_de:
         Id: 4
         Locale: de
@@ -47,6 +59,10 @@
         Id: 4
         Locale: fr
         Name: 'Parc aquatique'
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: 'Parc aquatique'
     5_de:
         Id: 5
         Locale: de
@@ -58,4 +74,8 @@
     5_fr:
         Id: 5
         Locale: fr
+        Name: 'Spa, Espace bien-être'
+    5_nl:
+        Id: 5
+        Locale: nl
         Name: 'Spa, Espace bien-être'

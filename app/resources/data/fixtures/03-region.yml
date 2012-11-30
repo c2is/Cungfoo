@@ -85,7 +85,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: true
+        MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
         Enabled: true
@@ -105,7 +105,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: true
+        MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
         Enabled: true
@@ -132,12 +132,12 @@
     14:
         Code: LARO
         ImagePath: .
-        ImageEncartPath: uploads/regions/507829fb46fad.png
-        ImageEncartPetitePath: uploads/regions/507829fb4777d.png
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: true
-        ImageDetail1: uploads/regions/50b62c749256a.jpeg
-        ImageDetail2: uploads/regions/50b62c749562a.jpeg
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
         Enabled: true
     15:
         Code: GERS
@@ -205,7 +205,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: true
+        MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
         Enabled: true
@@ -265,7 +265,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: true
+        MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
         Enabled: true
@@ -314,7 +314,7 @@
         ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
-        PaysId: 2
+        PaysId: null
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
@@ -334,13 +334,23 @@
         ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
-        PaysId: 1
+        PaysId: null
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
         Enabled: true
     35:
         Code: PYRO
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: null
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Enabled: true
+    36:
+        Code: AQUI
         ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
