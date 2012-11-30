@@ -1,24 +1,30 @@
-.nbResult{font:18px/0px @ptnarrow;color:@colorFushia;width:125px;height:98px;float:left;border-right: 1px solid @colorFushia;text-align:center;text-transform: uppercase;padding-top:22px;
+.nbResult{font:18px/0px @ptnarrow;color:@colorFushia;width:125px;height:98px;float:left;border-right: 1px solid @colorFushia;text-align:center;text-transform: uppercase;padding-top:22px;margin-bottom:30px;
   .nb{display:block;font:bold 45px Arial, sans-serif;}
 }
 .typeAff{float:left;width:143px;height:98px;border-right: 1px solid @colorFushia;padding:11px 0 0 23px;
+  span{font-weight:bold;color:@colorGris2;}
   button{width:50px;height:50px;border:0;._border-radius(5px);background-color:@colorBgGrisC;
     &.active{background-color:@colorFushia;}
   }
   #btList{}
   #btMap{}
 }
-#widgetRange{float:left;width:326px;margin:10px 0 0 22px;padding:10px;background:@colorBgGrisC;._border-radius(5px);font:bold 15px Arial;color:@colorGris2;
-  #noUiSlider{width:288px;margin:10px 6px;color:@colorFushia;background:#bcb9b9;}
-  .rangeBox{width:50px;left:-16px;position:absolute;text-align:center;}
+#widgetRange{float:left;width:326px;margin:10px 0 0 22px;padding:10px;background:@colorBgGrisC;._border-radius(5px);font:bold 15px Arial;color:#575757;height:82px;
+  #noUiSlider{width:288px;margin:10px 6px;color:@colorFushia;background:#bcb9b9;padding:0 10px;}
+  .noUi-handle{cursor:pointer;
+    &:first-child .rangeBox{left:-14px;}
+    &:last-child .rangeBox{left:-34px;}
+  }
+  .rangeBox{width:50px;position:absolute;text-align:center;}
   .noUi-midBar{background-color:@colorFushia;}
 }
 
-#filterTri{clear:both;}
+#filterTri{clear:both;display:none;}
 .infoComp{display:none;}
 
 .disclaim{display:none !important;}
 
+#results{clear:both;}
 .itemResult{position:relative;border:4px solid @colorBgGrisM;._border-radius(15px);margin-bottom:15px;
   .itemResultTitle{background:@colorBgGrisM;font:bold 25px/18px @ptnarrow;padding:3px 5px;color:@colorBlanc;text-transform:uppercase;
     .dates{font:bold 16px/18px @arial;text-transform:none;}

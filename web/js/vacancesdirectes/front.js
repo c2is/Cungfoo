@@ -1554,8 +1554,8 @@ function findMinMaxRange() {
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
-        minScale = minPrice,
-        maxScale = maxPrice,
+        minScale = minPrice-20,
+        maxScale = maxPrice+20,
         minStart = minPrice,
         minStop = maxPrice;
 
@@ -1584,7 +1584,11 @@ function rangeSliderPrice() {
                         }
                     });
 
-                    $(this).find('.visiblePrice').eq(0).find('label').trigger('click');
+                    //$(this).find('.visiblePrice').eq(0).find('label').trigger('focus');
+                    var oCheck = $(this).find('.visiblePrice').eq(0).find(':radio');
+                    oCheck.attr('checked', "checked");
+                    oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
+
 
                     var nbVisiblePrice = $(this).find('.visiblePrice').length;
                     consoleLog(nbVisiblePrice);
