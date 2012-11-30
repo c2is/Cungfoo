@@ -60,10 +60,10 @@ class BasePaysType extends AppAwareType
             'label' => 'pays.image_detail_2_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'pays.active',
+            'label' => 'pays.enabled',
             'required' => false,
         ));
         $builder->add('paysI18ns', 'translation_collection', array(

@@ -21,7 +21,6 @@ class PointOfInterestLoader extends AbstractLoader
         $this->dbConnection->exec("TRUNCATE TABLE `etablissement_point_interet`");
         $this->dbConnection->exec("TRUNCATE TABLE `point_interet_i18n`");
         $this->dbConnection->exec("TRUNCATE TABLE `point_interet`");
-        $this->dbConnection->exec("SET NAMES 'UTF8'");
     }
 
     public function close()
@@ -75,6 +74,7 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setCity($place->{'City'})
                 ->setGeoCoordinateX($place->attributes()->{'X'})
                 ->setGeoCoordinateY($place->attributes()->{'Y'})
+                ->setDistanceCamping($place->attributes()->{'DistanceXY'})
                 ->setImage($place->{'Image'})
                 ->setPresentation($place->{'Presentation'})
             ;

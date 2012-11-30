@@ -17,22 +17,34 @@
         Name: Loir-et-Cher
         Introduction: null
         Description: null
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: Loir-et-Cher
+        Introduction: null
+        Description: null
     2_de:
         Id: 2
         Locale: de
-        Name: Périgord/Dordogne
+        Name: PÃ©rigord/Dordogne
         Introduction: null
         Description: null
     2_en:
         Id: 2
         Locale: en
-        Name: Périgord/Dordogne
+        Name: PÃ©rigord/Dordogne
         Introduction: null
         Description: null
     2_fr:
         Id: 2
         Locale: fr
-        Name: Périgord/Dordogne
+        Name: PÃ©rigord/Dordogne
+        Introduction: null
+        Description: null
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: PÃ©rigord/Dordogne
         Introduction: null
         Description: null
     3_de:
@@ -50,6 +62,12 @@
     3_fr:
         Id: 3
         Locale: fr
+        Name: 'Costa Brava'
+        Introduction: null
+        Description: null
+    3_nl:
+        Id: 3
+        Locale: nl
         Name: 'Costa Brava'
         Introduction: null
         Description: null
@@ -71,6 +89,12 @@
         Name: Gironde
         Introduction: null
         Description: null
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: Gironde
+        Introduction: null
+        Description: null
     5_de:
         Id: 5
         Locale: de
@@ -86,6 +110,12 @@
     5_fr:
         Id: 5
         Locale: fr
+        Name: Alsace/Jura
+        Introduction: null
+        Description: null
+    5_nl:
+        Id: 5
+        Locale: nl
         Name: Alsace/Jura
         Introduction: null
         Description: null
@@ -107,6 +137,12 @@
         Name: Landes
         Introduction: null
         Description: null
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: Landes
+        Introduction: null
+        Description: null
     7_de:
         Id: 7
         Locale: de
@@ -122,6 +158,12 @@
     7_fr:
         Id: 7
         Locale: fr
+        Name: 'Costa Dorada'
+        Introduction: null
+        Description: null
+    7_nl:
+        Id: 7
+        Locale: nl
         Name: 'Costa Dorada'
         Introduction: null
         Description: null
@@ -143,6 +185,12 @@
         Name: Normandie
         Introduction: null
         Description: null
+    8_nl:
+        Id: 8
+        Locale: nl
+        Name: Normandie
+        Introduction: null
+        Description: null
     9_de:
         Id: 9
         Locale: de
@@ -158,6 +206,12 @@
     9_fr:
         Id: 9
         Locale: fr
+        Name: Bretagne
+        Introduction: null
+        Description: null
+    9_nl:
+        Id: 9
+        Locale: nl
         Name: Bretagne
         Introduction: null
         Description: null
@@ -179,6 +233,12 @@
         Name: Charente-Maritime
         Introduction: null
         Description: null
+    10_nl:
+        Id: 10
+        Locale: nl
+        Name: Charente-Maritime
+        Introduction: null
+        Description: null
     11_de:
         Id: 11
         Locale: de
@@ -194,6 +254,12 @@
     11_fr:
         Id: 11
         Locale: fr
+        Name: 'Pays basque'
+        Introduction: null
+        Description: null
+    11_nl:
+        Id: 11
+        Locale: nl
         Name: 'Pays basque'
         Introduction: null
         Description: null
@@ -215,48 +281,60 @@
         Name: 'Pays de Loire'
         Introduction: null
         Description: null
+    12_nl:
+        Id: 12
+        Locale: nl
+        Name: 'Pays de Loire'
+        Introduction: null
+        Description: null
     13_de:
         Id: 13
         Locale: de
-        Name: Vendée
+        Name: VendÃ©e
         Introduction: null
         Description: null
     13_en:
         Id: 13
         Locale: en
-        Name: Vendée
+        Name: VendÃ©e
         Introduction: null
         Description: null
     13_fr:
         Id: 13
         Locale: fr
-        Name: Vendée
+        Name: VendÃ©e
+        Introduction: null
+        Description: null
+    13_nl:
+        Id: 13
+        Locale: nl
+        Name: VendÃ©e
         Introduction: null
         Description: null
     14_de:
         Id: 14
         Locale: de
-        Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, ça vous gagne ! DE'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. DE'
+        Name: 'Languedoc-Roussillon '
+        Introduction: null
+        Description: null
     14_en:
         Id: 14
         Locale: en
-        Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, ça vous gagne ! EN'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. EN'
+        Name: 'Languedoc-Roussillon '
+        Introduction: null
+        Description: null
     14_fr:
         Id: 14
         Locale: fr
-        Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, ça vous gagne !'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations.'
+        Name: 'Languedoc-Roussillon '
+        Introduction: null
+        Description: null
     14_nl:
         Id: 14
         Locale: nl
-        Name: Languedoc-Roussillon
-        Introduction: 'Le grand air, ça vous gagne ! NL'
-        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations. NL'
+        Name: 'Languedoc-Roussillon '
+        Introduction: null
+        Description: null
     15_de:
         Id: 15
         Locale: de
@@ -272,6 +350,12 @@
     15_fr:
         Id: 15
         Locale: fr
+        Name: Gers
+        Introduction: null
+        Description: null
+    15_nl:
+        Id: 15
+        Locale: nl
         Name: Gers
         Introduction: null
         Description: null
@@ -293,6 +377,12 @@
         Name: Auvergne
         Introduction: null
         Description: null
+    16_nl:
+        Id: 16
+        Locale: nl
+        Name: Auvergne
+        Introduction: null
+        Description: null
     17_de:
         Id: 17
         Locale: de
@@ -311,40 +401,58 @@
         Name: Aveyron
         Introduction: null
         Description: null
+    17_nl:
+        Id: 17
+        Locale: nl
+        Name: Aveyron
+        Introduction: null
+        Description: null
     18_de:
         Id: 18
         Locale: de
-        Name: Ardèche
+        Name: ArdÃ¨che
         Introduction: null
         Description: null
     18_en:
         Id: 18
         Locale: en
-        Name: Ardèche
+        Name: ArdÃ¨che
         Introduction: null
         Description: null
     18_fr:
         Id: 18
         Locale: fr
-        Name: Ardèche
+        Name: ArdÃ¨che
+        Introduction: null
+        Description: null
+    18_nl:
+        Id: 18
+        Locale: nl
+        Name: ArdÃ¨che
         Introduction: null
         Description: null
     19_de:
         Id: 19
         Locale: de
-        Name: Ariège/Pyrénées
+        Name: AriÃ¨ge/PyrÃ©nÃ©es
         Introduction: null
         Description: null
     19_en:
         Id: 19
         Locale: en
-        Name: Ariège/Pyrénées
+        Name: AriÃ¨ge/PyrÃ©nÃ©es
         Introduction: null
         Description: null
     19_fr:
         Id: 19
         Locale: fr
-        Name: Ariège/Pyrénées
+        Name: AriÃ¨ge/PyrÃ©nÃ©es
+        Introduction: null
+        Description: null
+    19_nl:
+        Id: 19
+        Locale: nl
+        Name: AriÃ¨ge/PyrÃ©nÃ©es
         Introduction: null
         Description: null
     20_de:
@@ -362,6 +470,12 @@
     20_fr:
         Id: 20
         Locale: fr
+        Name: Centro
+        Introduction: null
+        Description: null
+    20_nl:
+        Id: 20
+        Locale: nl
         Name: Centro
         Introduction: null
         Description: null
@@ -383,22 +497,34 @@
         Name: Corse
         Introduction: null
         Description: null
+    21_nl:
+        Id: 21
+        Locale: nl
+        Name: Corse
+        Introduction: null
+        Description: null
     22_de:
         Id: 22
         Locale: de
-        Name: Drôme/Haute-Provence
+        Name: DrÃ´me/Haute-Provence
         Introduction: null
         Description: null
     22_en:
         Id: 22
         Locale: en
-        Name: Drôme/Haute-Provence
+        Name: DrÃ´me/Haute-Provence
         Introduction: null
         Description: null
     22_fr:
         Id: 22
         Locale: fr
-        Name: Drôme/Haute-Provence
+        Name: DrÃ´me/Haute-Provence
+        Introduction: null
+        Description: null
+    22_nl:
+        Id: 22
+        Locale: nl
+        Name: DrÃ´me/Haute-Provence
         Introduction: null
         Description: null
     23_de:
@@ -416,6 +542,12 @@
     23_fr:
         Id: 23
         Locale: fr
+        Name: 'Italie adriatique'
+        Introduction: null
+        Description: null
+    23_nl:
+        Id: 23
+        Locale: nl
         Name: 'Italie adriatique'
         Introduction: null
         Description: null
@@ -437,22 +569,34 @@
         Name: 'Costa del Azahar'
         Introduction: null
         Description: null
+    24_nl:
+        Id: 24
+        Locale: nl
+        Name: 'Costa del Azahar'
+        Introduction: null
+        Description: null
     25_de:
         Id: 25
         Locale: de
-        Name: 'Italie méditerranéenne'
+        Name: 'Italie mÃ©diterranÃ©enne'
         Introduction: null
         Description: null
     25_en:
         Id: 25
         Locale: en
-        Name: 'Italie méditerranéenne'
+        Name: 'Italie mÃ©diterranÃ©enne'
         Introduction: null
         Description: null
     25_fr:
         Id: 25
         Locale: fr
-        Name: 'Italie méditerranéenne'
+        Name: 'Italie mÃ©diterranÃ©enne'
+        Introduction: null
+        Description: null
+    25_nl:
+        Id: 25
+        Locale: nl
+        Name: 'Italie mÃ©diterranÃ©enne'
         Introduction: null
         Description: null
     26_de:
@@ -473,22 +617,34 @@
         Name: Alpes
         Introduction: null
         Description: null
+    26_nl:
+        Id: 26
+        Locale: nl
+        Name: Alpes
+        Introduction: null
+        Description: null
     27_de:
         Id: 27
         Locale: de
-        Name: 'Provence-Côte d''Azur '
+        Name: 'Provence-CÃ´te d''Azur '
         Introduction: null
         Description: null
     27_en:
         Id: 27
         Locale: en
-        Name: 'Provence-Côte d''Azur '
+        Name: 'Provence-CÃ´te d''Azur '
         Introduction: null
         Description: null
     27_fr:
         Id: 27
         Locale: fr
-        Name: 'Provence-Côte d''Azur '
+        Name: 'Provence-CÃ´te d''Azur '
+        Introduction: null
+        Description: null
+    27_nl:
+        Id: 27
+        Locale: nl
+        Name: 'Provence-CÃ´te d''Azur '
         Introduction: null
         Description: null
     28_de:
@@ -506,6 +662,12 @@
     28_fr:
         Id: 28
         Locale: fr
+        Name: Verdon
+        Introduction: null
+        Description: null
+    28_nl:
+        Id: 28
+        Locale: nl
         Name: Verdon
         Introduction: null
         Description: null
@@ -527,22 +689,34 @@
         Name: Cantabria
         Introduction: null
         Description: null
+    29_nl:
+        Id: 29
+        Locale: nl
+        Name: Cantabria
+        Introduction: null
+        Description: null
     30_de:
         Id: 30
         Locale: de
-        Name: Hérault
+        Name: HÃ©rault
         Introduction: null
         Description: null
     30_en:
         Id: 30
         Locale: en
-        Name: Hérault
+        Name: HÃ©rault
         Introduction: null
         Description: null
     30_fr:
         Id: 30
         Locale: fr
-        Name: Hérault
+        Name: HÃ©rault
+        Introduction: null
+        Description: null
+    30_nl:
+        Id: 30
+        Locale: nl
+        Name: HÃ©rault
         Introduction: null
         Description: null
     31_de:
@@ -560,6 +734,12 @@
     31_fr:
         Id: 31
         Locale: fr
+        Name: Aude
+        Introduction: null
+        Description: null
+    31_nl:
+        Id: 31
+        Locale: nl
         Name: Aude
         Introduction: null
         Description: null
@@ -581,6 +761,12 @@
         Name: Toscane
         Introduction: null
         Description: null
+    32_nl:
+        Id: 32
+        Locale: nl
+        Name: Toscane
+        Introduction: null
+        Description: null
     33_de:
         Id: 33
         Locale: de
@@ -596,6 +782,12 @@
     33_fr:
         Id: 33
         Locale: fr
+        Name: 'Pas de Calais'
+        Introduction: null
+        Description: null
+    33_nl:
+        Id: 33
+        Locale: nl
         Name: 'Pas de Calais'
         Introduction: null
         Description: null
@@ -617,21 +809,57 @@
         Name: 'Ile de France'
         Introduction: null
         Description: null
+    34_nl:
+        Id: 34
+        Locale: nl
+        Name: 'Ile de France'
+        Introduction: null
+        Description: null
     35_de:
         Id: 35
         Locale: de
-        Name: 'Pyrénées Orientales'
+        Name: 'PyrÃ©nÃ©es Orientales'
         Introduction: null
         Description: null
     35_en:
         Id: 35
         Locale: en
-        Name: 'Pyrénées Orientales'
+        Name: 'PyrÃ©nÃ©es Orientales'
         Introduction: null
         Description: null
     35_fr:
         Id: 35
         Locale: fr
-        Name: 'Pyrénées Orientales'
+        Name: 'PyrÃ©nÃ©es Orientales'
+        Introduction: null
+        Description: null
+    35_nl:
+        Id: 35
+        Locale: nl
+        Name: 'PyrÃ©nÃ©es Orientales'
+        Introduction: null
+        Description: null
+    36_de:
+        Id: 36
+        Locale: de
+        Name: Aquitaine
+        Introduction: null
+        Description: null
+    36_en:
+        Id: 36
+        Locale: en
+        Name: Aquitaine
+        Introduction: null
+        Description: null
+    36_fr:
+        Id: 36
+        Locale: fr
+        Name: Aquitaine
+        Introduction: null
+        Description: null
+    36_nl:
+        Id: 36
+        Locale: nl
+        Name: Aquitaine
         Introduction: null
         Description: null

@@ -18,7 +18,7 @@ include('includes/top.php'); ?>
                 <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
             </div>
 
-            <div id="resultMap" class="gmap" style="width:616px;height:326px;">
+            <div id="resultMap" class="gmap" style="width:616px;height:573px;">
                 <script>
                     function resultInit() {
                         var resultMkrs = [

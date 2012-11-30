@@ -42,10 +42,10 @@ class DernieresMinutesTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('date_start', 'DateStart', 'DATE', false, null, null);
-        $this->addColumn('day_start', 'DayStart', 'ENUM', true, null, null);
-        $this->getColumn('day_start', false)->setValueSet(array (
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('DATE_START', 'DateStart', 'DATE', false, null, null);
+        $this->addColumn('DAY_START', 'DayStart', 'ENUM', true, null, null);
+        $this->getColumn('DAY_START', false)->setValueSet(array (
   0 => 'monday',
   1 => 'tuesday',
   2 => 'wednesday',
@@ -54,13 +54,14 @@ class DernieresMinutesTableMap extends TableMap
   5 => 'saturday',
   6 => 'sunday',
 ));
-        $this->addColumn('day_range', 'DayRange', 'ENUM', true, null, null);
-        $this->getColumn('day_range', false)->setValueSet(array (
+        $this->addColumn('DAY_RANGE', 'DayRange', 'ENUM', true, null, null);
+        $this->getColumn('DAY_RANGE', false)->setValueSet(array (
   0 => '7',
   1 => '14',
   2 => '21',
 ));
-        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, null);
+        $this->addColumn('ENABLED', 'Enabled', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -84,16 +85,7 @@ class DernieresMinutesTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'active' =>  array (
-  'active_column' => 'active',
-),
-            'crudable' =>  array (
-  'route_prefix' => '/',
-  'crud_prefix' => '/dernieres-minutes',
-  'crud_model' => NULL,
-  'crud_form' => NULL,
-  'crud_type_file' => NULL,
-),
+            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/dernieres-minutes', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', ),
         );
     } // getBehaviors()
 

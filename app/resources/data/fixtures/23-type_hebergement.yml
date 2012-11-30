@@ -6,7 +6,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     2:
         Code: 110M
         CategoryTypeHebergementId: 2
@@ -14,7 +14,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     3:
         Code: 130M
         CategoryTypeHebergementId: 2
@@ -22,7 +22,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     4:
         Code: 140M
         CategoryTypeHebergementId: 2
@@ -30,7 +30,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     5:
         Code: 150M
         CategoryTypeHebergementId: 2
@@ -38,7 +38,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     6:
         Code: 160M
         CategoryTypeHebergementId: 2
@@ -46,7 +46,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     7:
         Code: 170M
         CategoryTypeHebergementId: 2
@@ -54,7 +54,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     8:
         Code: 180M
         CategoryTypeHebergementId: 2
@@ -62,15 +62,15 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     9:
         Code: AMI4
         CategoryTypeHebergementId: 2
-        NombreChambre: 2
-        NombrePlace: 4
-        ImageHebergementPath: uploads/type_hebergements/5077e9468b352.png
-        ImageCompositionPath: uploads/type_hebergements/5077e9468c0ca.png
-        Active: true
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
     10:
         Code: BT2L
         CategoryTypeHebergementId: 2
@@ -78,7 +78,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     11:
         Code: BT3
         CategoryTypeHebergementId: 2
@@ -86,391 +86,391 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
     12:
-        Code: CHA5
-        CategoryTypeHebergementId: 3
-        NombreChambre: 2
-        NombrePlace: 5
-        ImageHebergementPath: uploads/type_hebergements/5077efb19d428.png
-        ImageCompositionPath: uploads/type_hebergements/5077efb19db7e.png
-        Active: true
-    13:
-        Code: CON5
-        CategoryTypeHebergementId: 4
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    14:
-        Code: COR6
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    15:
-        Code: DOM5
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    16:
-        Code: DOM6
-        CategoryTypeHebergementId: 2
-        NombreChambre: 3
-        NombrePlace: 6
-        ImageHebergementPath: uploads/type_hebergements/5077f004bfd12.png
-        ImageCompositionPath: uploads/type_hebergements/5077f004c04d8.png
-        Active: true
-    17:
-        Code: DOML
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    18:
-        Code: EMPF
-        CategoryTypeHebergementId: 6
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    19:
-        Code: EMPL
-        CategoryTypeHebergementId: 6
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    20:
-        Code: EST5
-        CategoryTypeHebergementId: 4
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    21:
-        Code: FAM6
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    22:
-        Code: HEL6
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    23:
-        Code: LOG5
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    24:
-        Code: OCE4
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    25:
-        Code: OHA6
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    26:
-        Code: RES5
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    27:
-        Code: SALL
-        CategoryTypeHebergementId: 1
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    28:
-        Code: SPA6
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    29:
-        Code: SPA7
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    30:
-        Code: SPA8
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    31:
-        Code: TBIH
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    32:
-        Code: TBRA
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    33:
-        Code: TCOZ
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    34:
-        Code: TDA1
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    35:
-        Code: TDA2
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    36:
-        Code: TDIV
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    37:
-        Code: TGOU
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    38:
-        Code: TGWE
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    39:
-        Code: TTOM
-        CategoryTypeHebergementId: 5
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    40:
-        Code: VAC5
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    41:
-        Code: VAM5
-        CategoryTypeHebergementId: 2
-        NombreChambre: null
-        NombrePlace: null
-        ImageHebergementPath: null
-        ImageCompositionPath: null
-        Active: true
-    42:
         Code: CANA
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    43:
+        Enabled: true
+    13:
         Code: CH46
         CategoryTypeHebergementId: 3
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    44:
+        Enabled: true
+    14:
+        Code: CHA5
+        CategoryTypeHebergementId: 3
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    15:
         Code: CHA6
         CategoryTypeHebergementId: 3
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    45:
+        Enabled: true
+    16:
+        Code: CON5
+        CategoryTypeHebergementId: 5
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    17:
         Code: COR4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    46:
+        Enabled: true
+    18:
+        Code: COR6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    19:
+        Code: DOM5
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    20:
+        Code: DOM6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    21:
+        Code: DOML
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    22:
+        Code: EMPF
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    23:
+        Code: EMPL
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    24:
+        Code: EST5
+        CategoryTypeHebergementId: 5
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    25:
         Code: FAM5
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    47:
+        Enabled: true
+    26:
+        Code: FAM6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    27:
         Code: FAMC
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    48:
+        Enabled: true
+    28:
         Code: FAML
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    49:
+        Enabled: true
+    29:
+        Code: HEL6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    30:
+        Code: LOG5
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    31:
         Code: MAI
-        CategoryTypeHebergementId: 7
+        CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    50:
+        Enabled: true
+    32:
         Code: MAIS
-        CategoryTypeHebergementId: 7
+        CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    51:
+        Enabled: true
+    33:
+        Code: OCE4
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    34:
+        Code: OHA6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    35:
         Code: PAGO
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    52:
+        Enabled: true
+    36:
         Code: RES4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    53:
+        Enabled: true
+    37:
+        Code: RES5
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    38:
+        Code: SALL
+        CategoryTypeHebergementId: 1
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    39:
+        Code: SPA6
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    40:
+        Code: SPA7
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    41:
+        Code: SPA8
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    42:
         Code: SPAC
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    54:
+        Enabled: true
+    43:
         Code: SPAL
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    55:
+        Enabled: true
+    44:
         Code: STU
-        CategoryTypeHebergementId: 7
+        CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    56:
+        Enabled: true
+    45:
         Code: STUC
-        CategoryTypeHebergementId: 7
+        CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    57:
+        Enabled: true
+    46:
+        Code: TBIH
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    47:
+        Code: TBRA
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    48:
+        Code: TCOZ
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    49:
+        Code: TDA1
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    50:
+        Code: TDA2
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    51:
+        Code: TDIV
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    52:
         Code: TECL
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    58:
+        Enabled: true
+    53:
         Code: TECO
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
-    59:
+        Enabled: true
+    54:
         Code: TENM
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true
+    55:
+        Code: TGOU
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    56:
+        Code: TGWE
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    57:
+        Code: TTOM
+        CategoryTypeHebergementId: 6
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    58:
+        Code: VAC5
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
+    59:
+        Code: VAM5
+        CategoryTypeHebergementId: 2
+        NombreChambre: null
+        NombrePlace: null
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Enabled: true
     60:
         Code: YOUR
         CategoryTypeHebergementId: 8
@@ -478,4 +478,4 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Enabled: true

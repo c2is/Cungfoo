@@ -28,7 +28,7 @@ use Cungfoo\Model\EventQuery;
 /**
  * Base class that represents a row from the 'event' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -108,6 +108,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
     protected $geo_coordinate_y;
 
     /**
+     * The value for the distance_camping field.
+     * @var        string
+     */
+    protected $distance_camping;
+
+    /**
      * The value for the image field.
      * @var        string
      */
@@ -132,11 +138,11 @@ abstract class BaseEvent extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the active field.
+     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $active;
+    protected $enabled;
 
     /**
      * @var        PropelObjectCollection|EtablissementEvent[] Collection to store aggregation of EtablissementEvent objects.
@@ -170,13 +176,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[EventI18n]
@@ -209,7 +215,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->active = false;
+        $this->enabled = false;
     }
 
     /**
@@ -224,7 +230,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -234,7 +240,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     *
+     * 
      * @return string
      */
     public function getCode()
@@ -244,7 +250,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [category] column value.
-     *
+     * 
      * @return string
      */
     public function getCategory()
@@ -254,7 +260,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [address] column value.
-     *
+     * 
      * @return string
      */
     public function getAddress()
@@ -264,7 +270,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [address2] column value.
-     *
+     * 
      * @return string
      */
     public function getAddress2()
@@ -274,7 +280,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [zipcode] column value.
-     *
+     * 
      * @return string
      */
     public function getZipcode()
@@ -284,7 +290,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [city] column value.
-     *
+     * 
      * @return string
      */
     public function getCity()
@@ -294,7 +300,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_x] column value.
-     *
+     * 
      * @return string
      */
     public function getGeoCoordinateX()
@@ -304,7 +310,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_y] column value.
-     *
+     * 
      * @return string
      */
     public function getGeoCoordinateY()
@@ -313,8 +319,18 @@ abstract class BaseEvent extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [distance_camping] column value.
+     * 
+     * @return string
+     */
+    public function getDistanceCamping()
+    {
+        return $this->distance_camping;
+    }
+
+    /**
      * Get the [image] column value.
-     *
+     * 
      * @return string
      */
     public function getImage()
@@ -324,7 +340,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [priority] column value.
-     *
+     * 
      * @return string
      */
     public function getPriority()
@@ -334,7 +350,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -351,30 +367,27 @@ abstract class BaseEvent extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->created_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->created_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -391,40 +404,37 @@ abstract class BaseEvent extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->updated_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->updated_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
-     * Get the [active] column value.
-     *
+     * Get the [enabled] column value.
+     * 
      * @return boolean
      */
-    public function getActive()
+    public function getEnabled()
     {
-        return $this->active;
+        return $this->enabled;
     }
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -445,7 +455,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -466,7 +476,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [category] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -487,7 +497,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [address] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -508,7 +518,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [address2] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -529,7 +539,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [zipcode] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -550,7 +560,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [city] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -571,7 +581,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_x] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -592,7 +602,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_y] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -612,8 +622,29 @@ abstract class BaseEvent extends BaseObject implements Persistent
     } // setGeoCoordinateY()
 
     /**
+     * Set the value of [distance_camping] column.
+     * 
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setDistanceCamping($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->distance_camping !== $v) {
+            $this->distance_camping = $v;
+            $this->modifiedColumns[] = EventPeer::DISTANCE_CAMPING;
+        }
+
+
+        return $this;
+    } // setDistanceCamping()
+
+    /**
      * Set the value of [image] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -634,7 +665,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Set the value of [priority] column.
-     *
+     * 
      * @param string $v new value
      * @return Event The current object (for fluent API support)
      */
@@ -655,7 +686,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Event The current object (for fluent API support)
@@ -678,7 +709,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Event The current object (for fluent API support)
@@ -700,16 +731,16 @@ abstract class BaseEvent extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [active] column.
+     * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return Event The current object (for fluent API support)
      */
-    public function setActive($v)
+    public function setEnabled($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -719,14 +750,14 @@ abstract class BaseEvent extends BaseObject implements Persistent
             }
         }
 
-        if ($this->active !== $v) {
-            $this->active = $v;
-            $this->modifiedColumns[] = EventPeer::ACTIVE;
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = EventPeer::ENABLED;
         }
 
 
         return $this;
-    } // setActive()
+    } // setEnabled()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -738,7 +769,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->active !== false) {
+            if ($this->enabled !== false) {
                 return false;
             }
 
@@ -773,11 +804,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->city = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->geo_coordinate_x = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->geo_coordinate_y = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->image = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->priority = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->created_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->updated_at = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->active = ($row[$startcol + 13] !== null) ? (boolean) $row[$startcol + 13] : null;
+            $this->distance_camping = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->image = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->priority = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->created_at = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->updated_at = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->enabled = ($row[$startcol + 14] !== null) ? (boolean) $row[$startcol + 14] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -786,7 +818,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 14; // 14 = EventPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 15; // 15 = EventPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Event object", $e);
@@ -1019,7 +1051,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
             if ($this->collEtablissementEvents !== null) {
                 foreach ($this->collEtablissementEvents as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -1036,7 +1068,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
             if ($this->collEventI18ns !== null) {
                 foreach ($this->collEventI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -1069,46 +1101,49 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EventPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(EventPeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`code`';
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
         if ($this->isColumnModified(EventPeer::CATEGORY)) {
-            $modifiedColumns[':p' . $index++]  = '`category`';
+            $modifiedColumns[':p' . $index++]  = '`CATEGORY`';
         }
         if ($this->isColumnModified(EventPeer::ADDRESS)) {
-            $modifiedColumns[':p' . $index++]  = '`address`';
+            $modifiedColumns[':p' . $index++]  = '`ADDRESS`';
         }
         if ($this->isColumnModified(EventPeer::ADDRESS2)) {
-            $modifiedColumns[':p' . $index++]  = '`address2`';
+            $modifiedColumns[':p' . $index++]  = '`ADDRESS2`';
         }
         if ($this->isColumnModified(EventPeer::ZIPCODE)) {
-            $modifiedColumns[':p' . $index++]  = '`zipcode`';
+            $modifiedColumns[':p' . $index++]  = '`ZIPCODE`';
         }
         if ($this->isColumnModified(EventPeer::CITY)) {
-            $modifiedColumns[':p' . $index++]  = '`city`';
+            $modifiedColumns[':p' . $index++]  = '`CITY`';
         }
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_X)) {
-            $modifiedColumns[':p' . $index++]  = '`geo_coordinate_x`';
+            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_X`';
         }
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_Y)) {
-            $modifiedColumns[':p' . $index++]  = '`geo_coordinate_y`';
+            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
+        }
+        if ($this->isColumnModified(EventPeer::DISTANCE_CAMPING)) {
+            $modifiedColumns[':p' . $index++]  = '`DISTANCE_CAMPING`';
         }
         if ($this->isColumnModified(EventPeer::IMAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`image`';
+            $modifiedColumns[':p' . $index++]  = '`IMAGE`';
         }
         if ($this->isColumnModified(EventPeer::PRIORITY)) {
-            $modifiedColumns[':p' . $index++]  = '`priority`';
+            $modifiedColumns[':p' . $index++]  = '`PRIORITY`';
         }
         if ($this->isColumnModified(EventPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`created_at`';
+            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
         if ($this->isColumnModified(EventPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`updated_at`';
+            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(EventPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`active`';
+        if ($this->isColumnModified(EventPeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
 
         $sql = sprintf(
@@ -1121,47 +1156,50 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`code`':
+                    case '`CODE`':						
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`category`':
+                    case '`CATEGORY`':						
                         $stmt->bindValue($identifier, $this->category, PDO::PARAM_STR);
                         break;
-                    case '`address`':
+                    case '`ADDRESS`':						
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
-                    case '`address2`':
+                    case '`ADDRESS2`':						
                         $stmt->bindValue($identifier, $this->address2, PDO::PARAM_STR);
                         break;
-                    case '`zipcode`':
+                    case '`ZIPCODE`':						
                         $stmt->bindValue($identifier, $this->zipcode, PDO::PARAM_STR);
                         break;
-                    case '`city`':
+                    case '`CITY`':						
                         $stmt->bindValue($identifier, $this->city, PDO::PARAM_STR);
                         break;
-                    case '`geo_coordinate_x`':
+                    case '`GEO_COORDINATE_X`':						
                         $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
                         break;
-                    case '`geo_coordinate_y`':
+                    case '`GEO_COORDINATE_Y`':						
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
-                    case '`image`':
+                    case '`DISTANCE_CAMPING`':						
+                        $stmt->bindValue($identifier, $this->distance_camping, PDO::PARAM_STR);
+                        break;
+                    case '`IMAGE`':						
                         $stmt->bindValue($identifier, $this->image, PDO::PARAM_STR);
                         break;
-                    case '`priority`':
+                    case '`PRIORITY`':						
                         $stmt->bindValue($identifier, $this->priority, PDO::PARAM_STR);
                         break;
-                    case '`created_at`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`updated_at`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`active`':
-                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1231,11 +1269,11 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1341,19 +1379,22 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 return $this->getGeoCoordinateY();
                 break;
             case 9:
-                return $this->getImage();
+                return $this->getDistanceCamping();
                 break;
             case 10:
-                return $this->getPriority();
+                return $this->getImage();
                 break;
             case 11:
-                return $this->getCreatedAt();
+                return $this->getPriority();
                 break;
             case 12:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 13:
-                return $this->getActive();
+                return $this->getUpdatedAt();
+                break;
+            case 14:
+                return $this->getEnabled();
                 break;
             default:
                 return null;
@@ -1393,11 +1434,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $keys[6] => $this->getCity(),
             $keys[7] => $this->getGeoCoordinateX(),
             $keys[8] => $this->getGeoCoordinateY(),
-            $keys[9] => $this->getImage(),
-            $keys[10] => $this->getPriority(),
-            $keys[11] => $this->getCreatedAt(),
-            $keys[12] => $this->getUpdatedAt(),
-            $keys[13] => $this->getActive(),
+            $keys[9] => $this->getDistanceCamping(),
+            $keys[10] => $this->getImage(),
+            $keys[11] => $this->getPriority(),
+            $keys[12] => $this->getCreatedAt(),
+            $keys[13] => $this->getUpdatedAt(),
+            $keys[14] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementEvents) {
@@ -1468,19 +1510,22 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->setGeoCoordinateY($value);
                 break;
             case 9:
-                $this->setImage($value);
+                $this->setDistanceCamping($value);
                 break;
             case 10:
-                $this->setPriority($value);
+                $this->setImage($value);
                 break;
             case 11:
-                $this->setCreatedAt($value);
+                $this->setPriority($value);
                 break;
             case 12:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 13:
-                $this->setActive($value);
+                $this->setUpdatedAt($value);
+                break;
+            case 14:
+                $this->setEnabled($value);
                 break;
         } // switch()
     }
@@ -1515,11 +1560,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if (array_key_exists($keys[6], $arr)) $this->setCity($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setGeoCoordinateX($arr[$keys[7]]);
         if (array_key_exists($keys[8], $arr)) $this->setGeoCoordinateY($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setImage($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setPriority($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setCreatedAt($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setUpdatedAt($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setActive($arr[$keys[13]]);
+        if (array_key_exists($keys[9], $arr)) $this->setDistanceCamping($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setImage($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setPriority($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setCreatedAt($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setUpdatedAt($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setEnabled($arr[$keys[14]]);
     }
 
     /**
@@ -1540,11 +1586,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if ($this->isColumnModified(EventPeer::CITY)) $criteria->add(EventPeer::CITY, $this->city);
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_X)) $criteria->add(EventPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EventPeer::GEO_COORDINATE_Y)) $criteria->add(EventPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
+        if ($this->isColumnModified(EventPeer::DISTANCE_CAMPING)) $criteria->add(EventPeer::DISTANCE_CAMPING, $this->distance_camping);
         if ($this->isColumnModified(EventPeer::IMAGE)) $criteria->add(EventPeer::IMAGE, $this->image);
         if ($this->isColumnModified(EventPeer::PRIORITY)) $criteria->add(EventPeer::PRIORITY, $this->priority);
         if ($this->isColumnModified(EventPeer::CREATED_AT)) $criteria->add(EventPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EventPeer::UPDATED_AT)) $criteria->add(EventPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(EventPeer::ACTIVE)) $criteria->add(EventPeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(EventPeer::ENABLED)) $criteria->add(EventPeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1616,11 +1663,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $copyObj->setCity($this->getCity());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
+        $copyObj->setDistanceCamping($this->getDistanceCamping());
         $copyObj->setImage($this->getImage());
         $copyObj->setPriority($this->getPriority());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setActive($this->getActive());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1716,15 +1764,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Event The current object (for fluent API support)
+     * @return void
      * @see        addEtablissementEvents()
      */
     public function clearEtablissementEvents()
     {
         $this->collEtablissementEvents = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementEventsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1823,7 +1869,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissementEvents A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Event The current object (for fluent API support)
      */
     public function setEtablissementEvents(PropelCollection $etablissementEvents, PropelPDO $con = null)
     {
@@ -1840,8 +1885,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
         $this->collEtablissementEvents = $etablissementEvents;
         $this->collEtablissementEventsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1859,22 +1902,22 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if (null === $this->collEtablissementEvents || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEtablissementEvents) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementEvents());
+                }
+                $query = EtablissementEventQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getEtablissementEvents());
+                return $query
+                    ->filterByEvent($this)
+                    ->count($con);
             }
-            $query = EtablissementEventQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByEvent($this)
-                ->count($con);
+        } else {
+            return count($this->collEtablissementEvents);
         }
-
-        return count($this->collEtablissementEvents);
     }
 
     /**
@@ -1908,7 +1951,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * @param	EtablissementEvent $etablissementEvent The etablissementEvent object to remove.
-     * @return Event The current object (for fluent API support)
      */
     public function removeEtablissementEvent($etablissementEvent)
     {
@@ -1921,8 +1963,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->etablissementEventsScheduledForDeletion[]= $etablissementEvent;
             $etablissementEvent->setEvent(null);
         }
-
-        return $this;
     }
 
 
@@ -1956,15 +1996,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Event The current object (for fluent API support)
+     * @return void
      * @see        addEventI18ns()
      */
     public function clearEventI18ns()
     {
         $this->collEventI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collEventI18nsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -2063,7 +2101,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
      *
      * @param PropelCollection $eventI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Event The current object (for fluent API support)
      */
     public function setEventI18ns(PropelCollection $eventI18ns, PropelPDO $con = null)
     {
@@ -2080,8 +2117,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
         $this->collEventI18ns = $eventI18ns;
         $this->collEventI18nsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -2099,22 +2134,22 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if (null === $this->collEventI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEventI18ns) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEventI18ns());
+                }
+                $query = EventI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getEventI18ns());
+                return $query
+                    ->filterByEvent($this)
+                    ->count($con);
             }
-            $query = EventI18nQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByEvent($this)
-                ->count($con);
+        } else {
+            return count($this->collEventI18ns);
         }
-
-        return count($this->collEventI18ns);
     }
 
     /**
@@ -2152,7 +2187,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
     /**
      * @param	EventI18n $eventI18n The eventI18n object to remove.
-     * @return Event The current object (for fluent API support)
      */
     public function removeEventI18n($eventI18n)
     {
@@ -2165,8 +2199,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->eventI18nsScheduledForDeletion[]= $eventI18n;
             $eventI18n->setEvent(null);
         }
-
-        return $this;
     }
 
     /**
@@ -2175,15 +2207,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Event The current object (for fluent API support)
+     * @return void
      * @see        addEtablissements()
      */
     public function clearEtablissements()
     {
         $this->collEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -2244,7 +2274,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Event The current object (for fluent API support)
      */
     public function setEtablissements(PropelCollection $etablissements, PropelPDO $con = null)
     {
@@ -2260,8 +2289,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
         }
 
         $this->collEtablissements = $etablissements;
-
-        return $this;
     }
 
     /**
@@ -2299,7 +2326,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
      * through the etablissement_event cross reference table.
      *
      * @param  Etablissement $etablissement The EtablissementEvent object to relate
-     * @return Event The current object (for fluent API support)
+     * @return void
      */
     public function addEtablissement(Etablissement $etablissement)
     {
@@ -2311,8 +2338,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
 
             $this->collEtablissements[]= $etablissement;
         }
-
-        return $this;
     }
 
     /**
@@ -2330,7 +2355,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
      * through the etablissement_event cross reference table.
      *
      * @param Etablissement $etablissement The EtablissementEvent object to relate
-     * @return Event The current object (for fluent API support)
+     * @return void
      */
     public function removeEtablissement(Etablissement $etablissement)
     {
@@ -2342,8 +2367,6 @@ abstract class BaseEvent extends BaseObject implements Persistent
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
         }
-
-        return $this;
     }
 
     /**
@@ -2360,11 +2383,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $this->city = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
+        $this->distance_camping = null;
         $this->image = null;
         $this->priority = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->active = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2442,7 +2466,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2451,24 +2475,12 @@ abstract class BaseEvent extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = EventPeer::UPDATED_AT;
-
+    
         return $this;
     }
 
-    // active behavior
-
-    /**
-     * return true is the object is active
-     *
-     * @return boolean
-     */
-    public function isActive()
-    {
-        return $this->getActive();
-    }
-
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -2479,10 +2491,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -2492,7 +2504,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -2507,7 +2519,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 foreach ($this->collEventI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -2523,10 +2535,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
             }
             $this->addEventI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -2551,10 +2563,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -2565,81 +2577,81 @@ abstract class BaseEvent extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [name] column value.
-         *
+         * 
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-
-
+    
+    
         /**
          * Set the value of [name] column.
-         *
+         * 
          * @param string $v new value
          * @return EventI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-
+    
         return $this;
     }
-
-
+    
+    
         /**
          * Get the [str_date] column value.
-         *
+         * 
          * @return string
          */
         public function getStrDate()
         {
         return $this->getCurrentTranslation()->getStrDate();
     }
-
-
+    
+    
         /**
          * Set the value of [str_date] column.
-         *
+         * 
          * @param string $v new value
          * @return EventI18n The current object (for fluent API support)
          */
         public function setStrDate($v)
         {    $this->getCurrentTranslation()->setStrDate($v);
-
+    
         return $this;
     }
-
-
+    
+    
         /**
          * Get the [subtitle] column value.
-         *
+         * 
          * @return string
          */
         public function getSubtitle()
         {
         return $this->getCurrentTranslation()->getSubtitle();
     }
-
-
+    
+    
         /**
          * Set the value of [subtitle] column.
-         *
+         * 
          * @param string $v new value
          * @return EventI18n The current object (for fluent API support)
          */
         public function setSubtitle($v)
         {    $this->getCurrentTranslation()->setSubtitle($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

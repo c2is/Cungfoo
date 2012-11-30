@@ -8,7 +8,6 @@
 
     <div id="header" class="fixed-width clear">
         <div id="headerRight">
-            <a id="account" href="#">Mon compte</a>
             <div id="telephone">
                 <span>Informations & réservations
                     <a href="tel:+33825133400">0825 133 400 (0,15€/min)</a>

@@ -28,7 +28,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'baignade' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -78,11 +78,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the active field.
+     * The value for the enabled field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $active;
+    protected $enabled;
 
     /**
      * @var        PropelObjectCollection|EtablissementBaignade[] Collection to store aggregation of EtablissementBaignade objects.
@@ -116,13 +116,13 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-
+    
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-
+    
     /**
      * Current translation objects
      * @var        array[BaignadeI18n]
@@ -155,7 +155,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->active = false;
+        $this->enabled = false;
     }
 
     /**
@@ -170,7 +170,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -180,7 +180,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     *
+     * 
      * @return string
      */
     public function getCode()
@@ -190,7 +190,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -207,30 +207,27 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->created_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->created_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -247,40 +244,37 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->updated_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->updated_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
-     * Get the [active] column value.
-     *
+     * Get the [enabled] column value.
+     * 
      * @return boolean
      */
-    public function getActive()
+    public function getEnabled()
     {
-        return $this->active;
+        return $this->enabled;
     }
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return Baignade The current object (for fluent API support)
      */
@@ -301,7 +295,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     *
+     * 
      * @param string $v new value
      * @return Baignade The current object (for fluent API support)
      */
@@ -322,7 +316,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Baignade The current object (for fluent API support)
@@ -345,7 +339,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Baignade The current object (for fluent API support)
@@ -367,16 +361,16 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [active] column.
+     * Sets the value of the [enabled] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
+     * 
      * @param boolean|integer|string $v The new value
      * @return Baignade The current object (for fluent API support)
      */
-    public function setActive($v)
+    public function setEnabled($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -386,14 +380,14 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             }
         }
 
-        if ($this->active !== $v) {
-            $this->active = $v;
-            $this->modifiedColumns[] = BaignadePeer::ACTIVE;
+        if ($this->enabled !== $v) {
+            $this->enabled = $v;
+            $this->modifiedColumns[] = BaignadePeer::ENABLED;
         }
 
 
         return $this;
-    } // setActive()
+    } // setEnabled()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -405,7 +399,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->active !== false) {
+            if ($this->enabled !== false) {
                 return false;
             }
 
@@ -435,7 +429,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->enabled = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -677,7 +671,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             if ($this->collEtablissementBaignades !== null) {
                 foreach ($this->collEtablissementBaignades as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -694,7 +688,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             if ($this->collBaignadeI18ns !== null) {
                 foreach ($this->collBaignadeI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                    if (!$referrerFK->isDeleted()) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -727,19 +721,19 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(BaignadePeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(BaignadePeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`code`';
+            $modifiedColumns[':p' . $index++]  = '`CODE`';
         }
         if ($this->isColumnModified(BaignadePeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`created_at`';
+            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
         if ($this->isColumnModified(BaignadePeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`updated_at`';
+            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(BaignadePeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`active`';
+        if ($this->isColumnModified(BaignadePeer::ENABLED)) {
+            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
         }
 
         $sql = sprintf(
@@ -752,20 +746,20 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`code`':
+                    case '`CODE`':						
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`created_at`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`updated_at`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`active`':
-                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
+                    case '`ENABLED`':
+                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -835,11 +829,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -930,7 +924,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 4:
-                return $this->getActive();
+                return $this->getEnabled();
                 break;
             default:
                 return null;
@@ -965,7 +959,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getCreatedAt(),
             $keys[3] => $this->getUpdatedAt(),
-            $keys[4] => $this->getActive(),
+            $keys[4] => $this->getEnabled(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementBaignades) {
@@ -1021,7 +1015,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 4:
-                $this->setActive($value);
+                $this->setEnabled($value);
                 break;
         } // switch()
     }
@@ -1051,7 +1045,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
+        if (array_key_exists($keys[4], $arr)) $this->setEnabled($arr[$keys[4]]);
     }
 
     /**
@@ -1067,7 +1061,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if ($this->isColumnModified(BaignadePeer::CODE)) $criteria->add(BaignadePeer::CODE, $this->code);
         if ($this->isColumnModified(BaignadePeer::CREATED_AT)) $criteria->add(BaignadePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(BaignadePeer::UPDATED_AT)) $criteria->add(BaignadePeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(BaignadePeer::ACTIVE)) $criteria->add(BaignadePeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(BaignadePeer::ENABLED)) $criteria->add(BaignadePeer::ENABLED, $this->enabled);
 
         return $criteria;
     }
@@ -1134,7 +1128,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         $copyObj->setCode($this->getCode());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setActive($this->getActive());
+        $copyObj->setEnabled($this->getEnabled());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1230,15 +1224,13 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Baignade The current object (for fluent API support)
+     * @return void
      * @see        addEtablissementBaignades()
      */
     public function clearEtablissementBaignades()
     {
         $this->collEtablissementBaignades = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementBaignadesPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1337,7 +1329,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissementBaignades A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Baignade The current object (for fluent API support)
      */
     public function setEtablissementBaignades(PropelCollection $etablissementBaignades, PropelPDO $con = null)
     {
@@ -1354,8 +1345,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         $this->collEtablissementBaignades = $etablissementBaignades;
         $this->collEtablissementBaignadesPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1373,22 +1362,22 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if (null === $this->collEtablissementBaignades || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEtablissementBaignades) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getEtablissementBaignades());
+                }
+                $query = EtablissementBaignadeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getEtablissementBaignades());
+                return $query
+                    ->filterByBaignade($this)
+                    ->count($con);
             }
-            $query = EtablissementBaignadeQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByBaignade($this)
-                ->count($con);
+        } else {
+            return count($this->collEtablissementBaignades);
         }
-
-        return count($this->collEtablissementBaignades);
     }
 
     /**
@@ -1422,7 +1411,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * @param	EtablissementBaignade $etablissementBaignade The etablissementBaignade object to remove.
-     * @return Baignade The current object (for fluent API support)
      */
     public function removeEtablissementBaignade($etablissementBaignade)
     {
@@ -1435,8 +1423,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->etablissementBaignadesScheduledForDeletion[]= $etablissementBaignade;
             $etablissementBaignade->setBaignade(null);
         }
-
-        return $this;
     }
 
 
@@ -1470,15 +1456,13 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Baignade The current object (for fluent API support)
+     * @return void
      * @see        addBaignadeI18ns()
      */
     public function clearBaignadeI18ns()
     {
         $this->collBaignadeI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collBaignadeI18nsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1577,7 +1561,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      *
      * @param PropelCollection $baignadeI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Baignade The current object (for fluent API support)
      */
     public function setBaignadeI18ns(PropelCollection $baignadeI18ns, PropelPDO $con = null)
     {
@@ -1594,8 +1577,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         $this->collBaignadeI18ns = $baignadeI18ns;
         $this->collBaignadeI18nsPartial = false;
-
-        return $this;
     }
 
     /**
@@ -1613,22 +1594,22 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if (null === $this->collBaignadeI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collBaignadeI18ns) {
                 return 0;
-            }
+            } else {
+                if($partial && !$criteria) {
+                    return count($this->getBaignadeI18ns());
+                }
+                $query = BaignadeI18nQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
 
-            if($partial && !$criteria) {
-                return count($this->getBaignadeI18ns());
+                return $query
+                    ->filterByBaignade($this)
+                    ->count($con);
             }
-            $query = BaignadeI18nQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByBaignade($this)
-                ->count($con);
+        } else {
+            return count($this->collBaignadeI18ns);
         }
-
-        return count($this->collBaignadeI18ns);
     }
 
     /**
@@ -1666,7 +1647,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
     /**
      * @param	BaignadeI18n $baignadeI18n The baignadeI18n object to remove.
-     * @return Baignade The current object (for fluent API support)
      */
     public function removeBaignadeI18n($baignadeI18n)
     {
@@ -1679,8 +1659,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->baignadeI18nsScheduledForDeletion[]= $baignadeI18n;
             $baignadeI18n->setBaignade(null);
         }
-
-        return $this;
     }
 
     /**
@@ -1689,15 +1667,13 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Baignade The current object (for fluent API support)
+     * @return void
      * @see        addEtablissements()
      */
     public function clearEtablissements()
     {
         $this->collEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementsPartial = null;
-
-        return $this;
     }
 
     /**
@@ -1758,7 +1734,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Baignade The current object (for fluent API support)
      */
     public function setEtablissements(PropelCollection $etablissements, PropelPDO $con = null)
     {
@@ -1774,8 +1749,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         }
 
         $this->collEtablissements = $etablissements;
-
-        return $this;
     }
 
     /**
@@ -1813,7 +1786,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * through the etablissement_baignade cross reference table.
      *
      * @param  Etablissement $etablissement The EtablissementBaignade object to relate
-     * @return Baignade The current object (for fluent API support)
+     * @return void
      */
     public function addEtablissement(Etablissement $etablissement)
     {
@@ -1825,8 +1798,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             $this->collEtablissements[]= $etablissement;
         }
-
-        return $this;
     }
 
     /**
@@ -1844,7 +1815,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * through the etablissement_baignade cross reference table.
      *
      * @param Etablissement $etablissement The EtablissementBaignade object to relate
-     * @return Baignade The current object (for fluent API support)
+     * @return void
      */
     public function removeEtablissement(Etablissement $etablissement)
     {
@@ -1856,8 +1827,6 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
         }
-
-        return $this;
     }
 
     /**
@@ -1869,7 +1838,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         $this->code = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->active = null;
+        $this->enabled = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1947,7 +1916,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1956,24 +1925,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = BaignadePeer::UPDATED_AT;
-
+    
         return $this;
     }
 
-    // active behavior
-
-    /**
-     * return true is the object is active
-     *
-     * @return boolean
-     */
-    public function isActive()
-    {
-        return $this->getActive();
-    }
-
     // i18n behavior
-
+    
     /**
      * Sets the locale for translations
      *
@@ -1984,10 +1941,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-
+    
         return $this;
     }
-
+    
     /**
      * Gets the locale for translations
      *
@@ -1997,7 +1954,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-
+    
     /**
      * Returns the current translation for a given locale
      *
@@ -2012,7 +1969,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 foreach ($this->collBaignadeI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-
+    
                         return $translation;
                     }
                 }
@@ -2028,10 +1985,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             }
             $this->addBaignadeI18n($translation);
         }
-
+    
         return $this->currentTranslations[$locale];
     }
-
+    
     /**
      * Remove the translation for a given locale
      *
@@ -2056,10 +2013,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 break;
             }
         }
-
+    
         return $this;
     }
-
+    
     /**
      * Returns the current translation
      *
@@ -2070,33 +2027,33 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
+    
+    
         /**
          * Get the [name] column value.
-         *
+         * 
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-
-
+    
+    
         /**
          * Set the value of [name] column.
-         *
+         * 
          * @param string $v new value
          * @return BaignadeI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-
+    
         return $this;
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

@@ -42,11 +42,11 @@ class EventI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'event', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
-        $this->addColumn('str_date', 'StrDate', 'VARCHAR', false, 255, null);
-        $this->addColumn('subtitle', 'Subtitle', 'VARCHAR', false, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'event', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('STR_DATE', 'StrDate', 'VARCHAR', false, 255, null);
+        $this->addColumn('SUBTITLE', 'Subtitle', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

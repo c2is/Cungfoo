@@ -22,7 +22,7 @@ use Cungfoo\Model\JobQuery;
 /**
  * Base class that represents a row from the 'job_log' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -104,7 +104,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -114,7 +114,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Get the [job_id] column value.
-     *
+     * 
      * @return int
      */
     public function getJobId()
@@ -124,7 +124,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Get the [level] column value.
-     *
+     * 
      * @return int
      * @throws PropelException - if the stored enum key is unknown.
      */
@@ -143,7 +143,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Get the [message] column value.
-     *
+     * 
      * @return string
      */
     public function getMessage()
@@ -153,7 +153,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -170,30 +170,27 @@ abstract class BaseJobLog extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->created_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->created_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     *
+     * 
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -210,30 +207,27 @@ abstract class BaseJobLog extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        }
-
-        try {
-            $dt = new DateTime($this->updated_at);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+        } else {
+            try {
+                $dt = new DateTime($this->updated_at);
+            } catch (Exception $x) {
+                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
+            }
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
+        } elseif (strpos($format, '%') !== false) {
             return strftime($format, $dt->format('U'));
+        } else {
+            return $dt->format($format);
         }
-
-        return $dt->format($format);
-
     }
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return JobLog The current object (for fluent API support)
      */
@@ -254,7 +248,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Set the value of [job_id] column.
-     *
+     * 
      * @param int $v new value
      * @return JobLog The current object (for fluent API support)
      */
@@ -279,7 +273,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Set the value of [level] column.
-     *
+     * 
      * @param int $v new value
      * @return JobLog The current object (for fluent API support)
      * @throws PropelException - if the value is not accepted by this enum.
@@ -305,7 +299,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Set the value of [message] column.
-     *
+     * 
      * @param string $v new value
      * @return JobLog The current object (for fluent API support)
      */
@@ -326,7 +320,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return JobLog The current object (for fluent API support)
@@ -349,7 +343,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     *
+     * 
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return JobLog The current object (for fluent API support)
@@ -656,22 +650,22 @@ abstract class BaseJobLog extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(JobLogPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(JobLogPeer::JOB_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`job_id`';
+            $modifiedColumns[':p' . $index++]  = '`JOB_ID`';
         }
         if ($this->isColumnModified(JobLogPeer::LEVEL)) {
-            $modifiedColumns[':p' . $index++]  = '`level`';
+            $modifiedColumns[':p' . $index++]  = '`LEVEL`';
         }
         if ($this->isColumnModified(JobLogPeer::MESSAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`message`';
+            $modifiedColumns[':p' . $index++]  = '`MESSAGE`';
         }
         if ($this->isColumnModified(JobLogPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`created_at`';
+            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
         }
         if ($this->isColumnModified(JobLogPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`updated_at`';
+            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
 
         $sql = sprintf(
@@ -684,22 +678,22 @@ abstract class BaseJobLog extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`job_id`':
+                    case '`JOB_ID`':						
                         $stmt->bindValue($identifier, $this->job_id, PDO::PARAM_INT);
                         break;
-                    case '`level`':
+                    case '`LEVEL`':						
                         $stmt->bindValue($identifier, $this->level, PDO::PARAM_INT);
                         break;
-                    case '`message`':
+                    case '`MESSAGE`':						
                         $stmt->bindValue($identifier, $this->message, PDO::PARAM_STR);
                         break;
-                    case '`created_at`':
+                    case '`CREATED_AT`':						
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`updated_at`':
+                    case '`UPDATED_AT`':						
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
                 }
@@ -770,11 +764,11 @@ abstract class BaseJobLog extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1167,13 +1161,12 @@ abstract class BaseJobLog extends BaseObject implements Persistent
      * Get the associated Job object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Job The associated Job object.
      * @throws PropelException
      */
-    public function getJob(PropelPDO $con = null, $doQuery = true)
+    public function getJob(PropelPDO $con = null)
     {
-        if ($this->aJob === null && ($this->job_id !== null) && $doQuery) {
+        if ($this->aJob === null && ($this->job_id !== null)) {
             $this->aJob = JobQuery::create()->findPk($this->job_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1244,7 +1237,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-
+    
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1253,7 +1246,7 @@ abstract class BaseJobLog extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = JobLogPeer::UPDATED_AT;
-
+    
         return $this;
     }
 

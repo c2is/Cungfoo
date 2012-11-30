@@ -17,7 +17,7 @@ use Cungfoo\Model\DomaineQuery;
 /**
  * Base class that represents a query for the 'domaine' table.
  *
- *
+ * 
  *
  * @method DomaineQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DomaineQuery orderByName($order = Criteria::ASC) Order by the name column
@@ -90,7 +90,7 @@ abstract class BaseDomaineQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query
+     * @param mixed $key Primary key to use for the query 
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Domaine|Domaine[]|mixed the result, formatted by the current formatter
@@ -143,9 +143,9 @@ abstract class BaseDomaineQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `name`, `order` FROM `domaine` WHERE `id` = :p0';
+        $sql = 'SELECT `ID`, `NAME`, `ORDER` FROM `domaine` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);
+            $stmt = $con->prepare($sql);			
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

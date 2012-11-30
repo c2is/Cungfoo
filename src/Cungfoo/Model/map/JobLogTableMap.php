@@ -42,16 +42,16 @@ class JobLogTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('job_id', 'JobId', 'INTEGER', 'job', 'id', true, null, null);
-        $this->addColumn('level', 'Level', 'ENUM', true, null, null);
-        $this->getColumn('level', false)->setValueSet(array (
+        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
+        $this->addForeignKey('JOB_ID', 'JobId', 'INTEGER', 'job', 'ID', true, null, null);
+        $this->addColumn('LEVEL', 'Level', 'ENUM', true, null, null);
+        $this->getColumn('LEVEL', false)->setValueSet(array (
   0 => 'error',
   1 => 'info',
 ));
-        $this->addColumn('message', 'Message', 'CLOB', false, null, null);
-        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('MESSAGE', 'Message', 'CLOB', false, null, null);
+        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         // validators
     } // initialize()
 
@@ -72,11 +72,7 @@ class JobLogTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' =>  array (
-  'create_column' => 'created_at',
-  'update_column' => 'updated_at',
-  'disable_updated_at' => 'false',
-),
+            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
         );
     } // getBehaviors()
 

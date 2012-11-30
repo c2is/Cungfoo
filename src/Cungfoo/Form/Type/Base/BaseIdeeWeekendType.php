@@ -64,10 +64,10 @@ class BaseIdeeWeekendType extends AppAwareType
             'label' => 'idee_weekend.image_path_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
+        $builder->add('enabled', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'idee_weekend.active',
+            'label' => 'idee_weekend.enabled',
             'required' => false,
         ));
         $builder->add('idee_weekendI18ns', 'translation_collection', array(

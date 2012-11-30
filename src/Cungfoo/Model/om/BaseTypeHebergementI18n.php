@@ -20,7 +20,7 @@ use Cungfoo\Model\TypeHebergementQuery;
 /**
  * Base class that represents a row from the 'type_hebergement_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -130,7 +130,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -140,7 +140,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -150,7 +150,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     *
+     * 
      * @return string
      */
     public function getName()
@@ -160,7 +160,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [surface] column value.
-     *
+     * 
      * @return string
      */
     public function getSurface()
@@ -170,7 +170,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [type_terrasse] column value.
-     *
+     * 
      * @return string
      */
     public function getTypeTerrasse()
@@ -180,7 +180,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -190,7 +190,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [composition] column value.
-     *
+     * 
      * @return string
      */
     public function getComposition()
@@ -200,7 +200,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -225,7 +225,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -246,7 +246,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -267,7 +267,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [surface] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -288,7 +288,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [type_terrasse] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -309,7 +309,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -330,7 +330,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [composition] column.
-     *
+     * 
      * @param string $v new value
      * @return TypeHebergementI18n The current object (for fluent API support)
      */
@@ -625,25 +625,25 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TypeHebergementI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`locale`';
+            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`name`';
+            $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::SURFACE)) {
-            $modifiedColumns[':p' . $index++]  = '`surface`';
+            $modifiedColumns[':p' . $index++]  = '`SURFACE`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::TYPE_TERRASSE)) {
-            $modifiedColumns[':p' . $index++]  = '`type_terrasse`';
+            $modifiedColumns[':p' . $index++]  = '`TYPE_TERRASSE`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`description`';
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::COMPOSITION)) {
-            $modifiedColumns[':p' . $index++]  = '`composition`';
+            $modifiedColumns[':p' . $index++]  = '`COMPOSITION`';
         }
 
         $sql = sprintf(
@@ -656,25 +656,25 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`locale`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`name`':
+                    case '`NAME`':						
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`surface`':
+                    case '`SURFACE`':						
                         $stmt->bindValue($identifier, $this->surface, PDO::PARAM_STR);
                         break;
-                    case '`type_terrasse`':
+                    case '`TYPE_TERRASSE`':						
                         $stmt->bindValue($identifier, $this->type_terrasse, PDO::PARAM_STR);
                         break;
-                    case '`description`':
+                    case '`DESCRIPTION`':						
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`composition`':
+                    case '`COMPOSITION`':						
                         $stmt->bindValue($identifier, $this->composition, PDO::PARAM_STR);
                         break;
                 }
@@ -738,11 +738,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1148,13 +1148,12 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
      * Get the associated TypeHebergement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return TypeHebergement The associated TypeHebergement object.
      * @throws PropelException
      */
-    public function getTypeHebergement(PropelPDO $con = null, $doQuery = true)
+    public function getTypeHebergement(PropelPDO $con = null)
     {
-        if ($this->aTypeHebergement === null && ($this->id !== null) && $doQuery) {
+        if ($this->aTypeHebergement === null && ($this->id !== null)) {
             $this->aTypeHebergement = TypeHebergementQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

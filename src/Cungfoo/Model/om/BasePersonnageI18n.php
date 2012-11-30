@@ -20,7 +20,7 @@ use Cungfoo\Model\PersonnageQuery;
 /**
  * Base class that represents a row from the 'personnage_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -106,7 +106,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -116,7 +116,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -126,7 +126,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [prenom] column value.
-     *
+     * 
      * @return string
      */
     public function getPrenom()
@@ -136,7 +136,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -161,7 +161,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -182,7 +182,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [prenom] column.
-     *
+     * 
      * @param string $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -473,13 +473,13 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(PersonnageI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(PersonnageI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`locale`';
+            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
         if ($this->isColumnModified(PersonnageI18nPeer::PRENOM)) {
-            $modifiedColumns[':p' . $index++]  = '`prenom`';
+            $modifiedColumns[':p' . $index++]  = '`PRENOM`';
         }
 
         $sql = sprintf(
@@ -492,13 +492,13 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`locale`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`prenom`':
+                    case '`PRENOM`':						
                         $stmt->bindValue($identifier, $this->prenom, PDO::PARAM_STR);
                         break;
                 }
@@ -562,11 +562,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -932,13 +932,12 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
      * Get the associated Personnage object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Personnage The associated Personnage object.
      * @throws PropelException
      */
-    public function getPersonnage(PropelPDO $con = null, $doQuery = true)
+    public function getPersonnage(PropelPDO $con = null)
     {
-        if ($this->aPersonnage === null && ($this->id !== null) && $doQuery) {
+        if ($this->aPersonnage === null && ($this->id !== null)) {
             $this->aPersonnage = PersonnageQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

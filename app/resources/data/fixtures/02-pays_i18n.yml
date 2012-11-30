@@ -3,25 +3,25 @@
         Id: 1
         Locale: de
         Name: France
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+        Introduction: null
         Description: null
     1_en:
         Id: 1
         Locale: en
         Name: France
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+        Introduction: null
         Description: null
     1_fr:
         Id: 1
         Locale: fr
         Name: France
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+        Introduction: null
         Description: null
     1_nl:
         Id: 1
         Locale: nl
-        Name: ''
-        Introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+        Name: France
+        Introduction: null
         Description: null
     2_de:
         Id: 2
@@ -38,6 +38,12 @@
     2_fr:
         Id: 2
         Locale: fr
+        Name: Italie
+        Introduction: null
+        Description: null
+    2_nl:
+        Id: 2
+        Locale: nl
         Name: Italie
         Introduction: null
         Description: null
@@ -59,6 +65,12 @@
         Name: Espagne
         Introduction: null
         Description: null
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: Espagne
+        Introduction: null
+        Description: null
     4_de:
         Id: 4
         Locale: de
@@ -74,6 +86,12 @@
     4_fr:
         Id: 4
         Locale: fr
+        Name: Portugal
+        Introduction: null
+        Description: null
+    4_nl:
+        Id: 4
+        Locale: nl
         Name: Portugal
         Introduction: null
         Description: null

@@ -42,12 +42,12 @@ class MiseEnAvantI18nTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'mise_en_avant', 'id', true, null, null);
-        $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('titre', 'Titre', 'VARCHAR', false, 255, null);
-        $this->addColumn('accroche', 'Accroche', 'VARCHAR', false, 255, null);
-        $this->addColumn('lien', 'Lien', 'VARCHAR', false, 255, null);
-        $this->addColumn('titre_lien', 'TitreLien', 'VARCHAR', false, 255, null);
+        $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'mise_en_avant', 'ID', true, null, null);
+        $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('TITRE', 'Titre', 'VARCHAR', false, 255, null);
+        $this->addColumn('ACCROCHE', 'Accroche', 'VARCHAR', false, 255, null);
+        $this->addColumn('LIEN', 'Lien', 'VARCHAR', false, 255, null);
+        $this->addColumn('TITRE_LIEN', 'TitreLien', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

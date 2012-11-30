@@ -21,7 +21,7 @@ use Cungfoo\Model\Thematique;
 /**
  * Base class that represents a query for the 'etablissement_thematique' table.
  *
- *
+ * 
  *
  * @method EtablissementThematiqueQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementThematiqueQuery orderByThematiqueId($order = Criteria::ASC) Order by the thematique_id column
@@ -99,7 +99,7 @@ abstract class BaseEtablissementThematiqueQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
+     * @param array $key Primary key to use for the query 
                          A Primary key composition: [$etablissement_id, $thematique_id]
      * @param     PropelPDO $con an optional connection object
      *
@@ -139,10 +139,10 @@ abstract class BaseEtablissementThematiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `etablissement_id`, `thematique_id` FROM `etablissement_thematique` WHERE `etablissement_id` = :p0 AND `thematique_id` = :p1';
+        $sql = 'SELECT `ETABLISSEMENT_ID`, `THEMATIQUE_ID` FROM `etablissement_thematique` WHERE `ETABLISSEMENT_ID` = :p0 AND `THEMATIQUE_ID` = :p1';
         try {
-            $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
+            $stmt = $con->prepare($sql);			
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {

@@ -17,7 +17,7 @@ use Cungfoo\Model\map\EventI18nTableMap;
 /**
  * Base static class for performing query and update operations on the 'event_i18n' table.
  *
- *
+ * 
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -45,20 +45,20 @@ abstract class BaseEventI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the id field */
-    const ID = 'event_i18n.id';
+    /** the column name for the ID field */
+    const ID = 'event_i18n.ID';
 
-    /** the column name for the locale field */
-    const LOCALE = 'event_i18n.locale';
+    /** the column name for the LOCALE field */
+    const LOCALE = 'event_i18n.LOCALE';
 
-    /** the column name for the name field */
-    const NAME = 'event_i18n.name';
+    /** the column name for the NAME field */
+    const NAME = 'event_i18n.NAME';
 
-    /** the column name for the str_date field */
-    const STR_DATE = 'event_i18n.str_date';
+    /** the column name for the STR_DATE field */
+    const STR_DATE = 'event_i18n.STR_DATE';
 
-    /** the column name for the subtitle field */
-    const SUBTITLE = 'event_i18n.subtitle';
+    /** the column name for the SUBTITLE field */
+    const SUBTITLE = 'event_i18n.SUBTITLE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseEventI18nPeer
             $criteria->addSelectColumn(EventI18nPeer::STR_DATE);
             $criteria->addSelectColumn(EventI18nPeer::SUBTITLE);
         } else {
-            $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.locale');
-            $criteria->addSelectColumn($alias . '.name');
-            $criteria->addSelectColumn($alias . '.str_date');
-            $criteria->addSelectColumn($alias . '.subtitle');
+            $criteria->addSelectColumn($alias . '.ID');
+            $criteria->addSelectColumn($alias . '.LOCALE');
+            $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.STR_DATE');
+            $criteria->addSelectColumn($alias . '.SUBTITLE');
         }
     }
 
@@ -366,7 +366,7 @@ abstract class BaseEventI18nPeer
 
         return null; // just to be explicit
     }
-
+    
     /**
      * Clear the instance pool.
      *
@@ -376,7 +376,7 @@ abstract class BaseEventI18nPeer
     {
         EventI18nPeer::$instances = array();
     }
-
+    
     /**
      * Method to invalidate the instance pool of all tables related to event_i18n
      * by a foreign key with ON DELETE CASCADE
@@ -419,7 +419,7 @@ abstract class BaseEventI18nPeer
 
         return array((int) $row[$startcol], (string) $row[$startcol + 1]);
     }
-
+    
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -430,7 +430,7 @@ abstract class BaseEventI18nPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-
+    
         // set the class once to avoid overhead in the loop
         $cls = EventI18nPeer::getOMClass();
         // populate the object(s)
@@ -924,7 +924,7 @@ abstract class BaseEventI18nPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-
+            
             $affectedRows += BasePeer::doDelete($criteria, $con);
             EventI18nPeer::clearRelatedInstancePool();
             $con->commit();

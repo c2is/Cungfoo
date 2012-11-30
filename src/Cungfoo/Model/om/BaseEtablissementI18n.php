@@ -20,7 +20,7 @@ use Cungfoo\Model\EtablissementQuery;
 /**
  * Base class that represents a row from the 'etablissement_i18n' table.
  *
- *
+ * 
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -130,7 +130,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     *
+     * 
      * @return int
      */
     public function getId()
@@ -140,7 +140,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     *
+     * 
      * @return string
      */
     public function getLocale()
@@ -150,7 +150,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [country] column value.
-     *
+     * 
      * @return string
      */
     public function getCountry()
@@ -160,7 +160,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [ouverture_reception] column value.
-     *
+     * 
      * @return string
      */
     public function getOuvertureReception()
@@ -170,7 +170,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [ouverture_camping] column value.
-     *
+     * 
      * @return string
      */
     public function getOuvertureCamping()
@@ -180,7 +180,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [arrivees_departs] column value.
-     *
+     * 
      * @return string
      */
     public function getArriveesDeparts()
@@ -190,7 +190,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -200,7 +200,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     *
+     * 
      * @param int $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -225,7 +225,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -246,7 +246,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [country] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -267,7 +267,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [ouverture_reception] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -288,7 +288,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [ouverture_camping] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -309,7 +309,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [arrivees_departs] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -330,7 +330,7 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     *
+     * 
      * @param string $v new value
      * @return EtablissementI18n The current object (for fluent API support)
      */
@@ -625,25 +625,25 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`id`';
+            $modifiedColumns[':p' . $index++]  = '`ID`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`locale`';
+            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::COUNTRY)) {
-            $modifiedColumns[':p' . $index++]  = '`country`';
+            $modifiedColumns[':p' . $index++]  = '`COUNTRY`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_RECEPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`ouverture_reception`';
+            $modifiedColumns[':p' . $index++]  = '`OUVERTURE_RECEPTION`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::OUVERTURE_CAMPING)) {
-            $modifiedColumns[':p' . $index++]  = '`ouverture_camping`';
+            $modifiedColumns[':p' . $index++]  = '`OUVERTURE_CAMPING`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::ARRIVEES_DEPARTS)) {
-            $modifiedColumns[':p' . $index++]  = '`arrivees_departs`';
+            $modifiedColumns[':p' . $index++]  = '`ARRIVEES_DEPARTS`';
         }
         if ($this->isColumnModified(EtablissementI18nPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`description`';
+            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
         }
 
         $sql = sprintf(
@@ -656,25 +656,25 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`id`':
+                    case '`ID`':						
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`locale`':
+                    case '`LOCALE`':						
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`country`':
+                    case '`COUNTRY`':						
                         $stmt->bindValue($identifier, $this->country, PDO::PARAM_STR);
                         break;
-                    case '`ouverture_reception`':
+                    case '`OUVERTURE_RECEPTION`':						
                         $stmt->bindValue($identifier, $this->ouverture_reception, PDO::PARAM_STR);
                         break;
-                    case '`ouverture_camping`':
+                    case '`OUVERTURE_CAMPING`':						
                         $stmt->bindValue($identifier, $this->ouverture_camping, PDO::PARAM_STR);
                         break;
-                    case '`arrivees_departs`':
+                    case '`ARRIVEES_DEPARTS`':						
                         $stmt->bindValue($identifier, $this->arrivees_departs, PDO::PARAM_STR);
                         break;
-                    case '`description`':
+                    case '`DESCRIPTION`':						
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }
@@ -738,11 +738,11 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
+        } else {
+            $this->validationFailures = $res;
+
+            return false;
         }
-
-        $this->validationFailures = $res;
-
-        return false;
     }
 
     /**
@@ -1148,13 +1148,12 @@ abstract class BaseEtablissementI18n extends BaseObject implements Persistent
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
+    public function getEtablissement(PropelPDO $con = null)
     {
-        if ($this->aEtablissement === null && ($this->id !== null) && $doQuery) {
+        if ($this->aEtablissement === null && ($this->id !== null)) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
