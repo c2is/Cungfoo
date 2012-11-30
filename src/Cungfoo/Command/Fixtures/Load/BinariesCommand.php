@@ -45,7 +45,7 @@ class BinariesCommand extends BaseCommand
             }
 
             // load binaries fixtures
-            $fixturesDirectory  = sprintf('%s/%s/uploads', $this->getApplication()->getRootDir(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR));
+            $fixturesDirectory  = sprintf('%s/%s/uploads', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR));
             $uploadsDirectory   = $this->getSilexApplication()['config']->get('web_dir') . '/uploads';
             $command = sprintf('cp -rf %s/* %s', escapeshellarg($fixturesDirectory), escapeshellarg($uploadsDirectory));
             exec($command);

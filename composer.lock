@@ -1,5 +1,5 @@
 {
-    "hash": "8fc0df0662a319180a9102a3320cfa3f",
+    "hash": "b5cdccb3a14a2e4d3f08fd74c2e97c08",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -62,6 +62,48 @@
                 "atoum",
                 "test",
                 "unit testing"
+            ]
+        },
+        {
+            "name": "knplabs/console-service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/ConsoleServiceProvider",
+                "reference": "2c01c4d4f9e34940a135083c99b1e30656913087"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/KnpLabs/ConsoleServiceProvider/archive/2c01c4d4f9e34940a135083c99b1e30656913087.zip",
+                "reference": "2c01c4d4f9e34940a135083c99b1e30656913087",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "2.1.*"
+            },
+            "time": "1349644794",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Knp\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs",
+                    "homepage": "http://knplabs.com"
+                }
+            ],
+            "description": "console service provider for Silex",
+            "homepage": "http://knplabs.com",
+            "keywords": [
+                "silex",
+                "console"
             ]
         },
         {
@@ -1693,6 +1735,7 @@
         "swiftmailer/swiftmailer": 20,
         "propel/propel-service-provider": 20,
         "atoum/atoum": 20,
-        "kuikui/memcache-service-provider": 20
+        "kuikui/memcache-service-provider": 20,
+        "knplabs/console-service-provider": 20
     }
 }

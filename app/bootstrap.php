@@ -46,6 +46,13 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true)
 ));
 
+/* C O N S O L E */
+$app->register(new Knp\Provider\ConsoleServiceProvider(), array(
+    'console.name'              => 'Cungfoo',
+    'console.version'           => '1.0.0',
+    'console.project_directory' => __DIR__.'/..'
+));
+
 /* H T T P   C A C H E */
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
     'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache',
