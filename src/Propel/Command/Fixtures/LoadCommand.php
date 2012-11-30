@@ -47,14 +47,14 @@ EOT
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $absoluteFixturesPath = $this->getApplication()->getRootDir().DIRECTORY_SEPARATOR;
+        $absoluteFixturesPath = $this->getProjectDirectory().DIRECTORY_SEPARATOR;
         if (!is_null($input->getOption('dir')))
         {
             $absoluteFixturesPath .= $input->getOption('dir');
         }
         else
         {
-            $absoluteFixturesPath .= $this->fixturesDir;   
+            $absoluteFixturesPath .= $this->fixturesDir;
         }
 
         if (!$absoluteFixturesPath || !file_exists($absoluteFixturesPath))
@@ -78,7 +78,7 @@ EOT
             return true;
         }
 
-        $loader = new YamlDataLoader($this->getApplication()->getRootDir());
+        $loader = new YamlDataLoader($this->getProjectDirectory());
 
         try
         {

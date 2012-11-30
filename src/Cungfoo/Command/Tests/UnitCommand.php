@@ -20,8 +20,8 @@ class UnitCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $atoum     = $this->getApplication()->getRootDir().'/vendor/bin/atoum';
-        $unitTests = $this->getApplication()->getRootDir().'/tests';
+        $atoum     = $this->getProjectDirectory().'/vendor/bin/atoum';
+        $unitTests = $this->getProjectDirectory().'/tests';
 
         passthru(sprintf('%s -d %s', $atoum, $unitTests), $status);
 

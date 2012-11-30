@@ -34,7 +34,7 @@ class PointOfInterestCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $client = new PointOfInterestClient();
-        $client->loadConfig($this->getApplication()->getRootDir().'/app/config/ViaFrance/client.yml');
+        $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
 
         $loader = new PointOfInterestLoader();
 
