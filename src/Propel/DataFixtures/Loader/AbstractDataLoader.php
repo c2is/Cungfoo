@@ -55,6 +55,8 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
         $this->loadMapBuilders($connectionName);
         $this->con = Propel::getConnection($connectionName);
 
+        $failedFiles = array();
+
         try
         {
             $this->con->beginTransaction();
@@ -62,13 +64,25 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements DataLoa
             $datas = array();
             foreach ($files as $file)
             {
-                $content = $this->transformDataToArray($file);
-
-                if (count($content) > 0)
+                try
                 {
-                    $datas = array_merge_recursive($datas, $content);
-                    $nbFiles++;
+                    $content = $this->transformDataToArray($file);
+                    if (count($content) > 0)
+                    {
+                        $datas = array_merge_recursive($datas, $content);
+                        $nbFiles++;
+                    }
                 }
+                catch(\Exception $e)
+                {
+                    $failedFiles[] = $file;
+                }
+
+            }
+
+            if (count($failedFiles) > 0)
+            {
+                throw new \Exception(sprintf("Wrong file format for : %s", implode("\n", $failedFiles)));
             }
 
             $this->deleteCurrentData($datas);
