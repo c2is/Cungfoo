@@ -1,0 +1,33 @@
+\Cungfoo\Model\Activite:
+    keyField: code
+    values:
+        CADO:
+            keywords: 'adolescent, animation, activité, sport, jeux, détente'
+            description: 'Les ados seront accueillis au club par des animateurs qui proposeront des activités ludiques et sportives'
+        CENF:
+            keywords: 'enfant, jeux, activité, chasse au trésor, sport, club'
+            description: 'les enfants seront accueillis au club par les animateurs du camping pour des activités sportives, ludiques et amusantes'
+        DISC:
+            keywords: 'discothèque, danse, soirée, animation'
+            description: 'Retrouvez à proximité du camping une discothèque qui vous fera danser jusqu''au bout de la nuit !'
+        EQUI:
+            keywords: 'équitation, cheval, poney, randonnée, centre équestre'
+            description: 'Balade à cheval ou à dos de poney, profitez du centre équestre pour vos vacances'
+        GOLF:
+            keywords: 'golf, green, parcours, 9 trous, 18 trous, club, tee'
+            description: 'un parcours de golf, pour les initiés ou non, pour des vacances originales'
+        MIGO:
+            keywords: 'mini golf, parcours, jeu, famille, amis'
+            description: 'Retrouve- vous en famille ou entre amis pour une partie de mini golf : obstacles, contournements et autres saltos n''auront plus de secrets !'
+        PECH:
+            keywords: 'pêche, poisson, canne à pêche, casier, crustacés, eau douce, eau de mer, rivière, lac'
+            description: 'Pêche à pied, en étang ou en rivière... détendez vous !'
+        SAMU:
+            keywords: 'salle de sport, musculation, fitness, remise en forme'
+            description: 'Soyez en forme, profitez de la salle de musculation et du fitness…'
+        TEMU:
+            keywords: 'sport, basket, football, handball, volleyball'
+            description: 'Un terrain multisports pour profiter d''un maximum d''activités sportives (foot, basket, hand et volley)'
+        TENN:
+            keywords: 'tennis, raquette, balle'
+            description: 'Pratiquez le tennis, pour des vacances placées sous le signe du sport'

@@ -1,0 +1,33 @@
+\Cungfoo\Model\ServiceComplementaire:
+    keyField: code
+    values:
+        ANIM:
+            keywords: 'chien, meilleur ami de l''homme'
+            description: 'Votre chien est le bienvenu sur ce camping'
+        BAR:
+            keywords: 'bar, cocktail, boire un verre, amis, apéro'
+            description: 'Retrouvez vous en famille ou entre amis autour d''un cocktail'
+        LOVP:
+            keywords: 'vélos, VTT, VTC, pistes cyclables, randonnée'
+            description: 'Partez à l''assaut des paysages les plus insolites en vélo, pour des vacances sportives !'
+        NAVG:
+            keywords: 'navette, plage, bus, car'
+            description: 'Profitez de la navette gratuite qui vous emmènera jusqu''à la plage'
+        NAVP:
+            keywords: 'navette, plage, bus, car'
+            description: 'Profitez de la navette qui vous emmènera jusqu''à la plage'
+        RAE:
+            keywords: 'restaurant, snack, plats à emporter, petite restauration'
+            description: 'Ne pensez à rien, profitez des plats à emporter et de la restauration rapide'
+        REST:
+            keywords: 'restaurant, repas, formule, diner, déjeuner, souper, petit déjeuner'
+            description: 'Un petit resto ? Profitez du restaurant du camping pour un déjeuner calme ou un diner animé'
+        S34N:
+            keywords: 'court séjour, juillet, aout, pas cher, haute saison'
+            description: 'A vous les courts séjours, même en juillet et août, profitez-en !'
+        SNAC:
+            keywords: 'snack, restauration rapide, plats à emporter, hamburger, frites'
+            description: 'Ne faites pas à manger, ce soir c''est direction le snack pour toute la famille'
+        WIFI:
+            keywords: 'wifi, internet, connexion'
+            description: 'Accèdez au wifi sur ce camping'
