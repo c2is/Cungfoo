@@ -45,6 +45,8 @@ class BaignadeI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('ID', 'Id', 'INTEGER' , 'baignade', 'ID', true, null, null);
         $this->addPrimaryKey('LOCALE', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 255, null);
+        $this->addColumn('KEYWORDS', 'Keywords', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

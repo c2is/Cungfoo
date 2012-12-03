@@ -85,7 +85,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: true
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -105,7 +105,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: true
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -135,7 +135,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: true
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -205,7 +205,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: true
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -265,7 +265,7 @@
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: true
         ImageDetail1: null
         ImageDetail2: null
         Active: true

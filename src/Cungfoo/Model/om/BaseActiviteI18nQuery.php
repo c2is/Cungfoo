@@ -25,10 +25,14 @@ use Cungfoo\Model\ActiviteI18nQuery;
  * @method ActiviteI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ActiviteI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method ActiviteI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method ActiviteI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method ActiviteI18nQuery orderByKeywords($order = Criteria::ASC) Order by the keywords column
  *
  * @method ActiviteI18nQuery groupById() Group by the id column
  * @method ActiviteI18nQuery groupByLocale() Group by the locale column
  * @method ActiviteI18nQuery groupByName() Group by the name column
+ * @method ActiviteI18nQuery groupByDescription() Group by the description column
+ * @method ActiviteI18nQuery groupByKeywords() Group by the keywords column
  *
  * @method ActiviteI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method ActiviteI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +48,14 @@ use Cungfoo\Model\ActiviteI18nQuery;
  * @method ActiviteI18n findOneById(int $id) Return the first ActiviteI18n filtered by the id column
  * @method ActiviteI18n findOneByLocale(string $locale) Return the first ActiviteI18n filtered by the locale column
  * @method ActiviteI18n findOneByName(string $name) Return the first ActiviteI18n filtered by the name column
+ * @method ActiviteI18n findOneByDescription(string $description) Return the first ActiviteI18n filtered by the description column
+ * @method ActiviteI18n findOneByKeywords(string $keywords) Return the first ActiviteI18n filtered by the keywords column
  *
  * @method array findById(int $id) Return ActiviteI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return ActiviteI18n objects filtered by the locale column
  * @method array findByName(string $name) Return ActiviteI18n objects filtered by the name column
+ * @method array findByDescription(string $description) Return ActiviteI18n objects filtered by the description column
+ * @method array findByKeywords(string $keywords) Return ActiviteI18n objects filtered by the keywords column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +146,7 @@ abstract class BaseActiviteI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `activite_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION`, `KEYWORDS` FROM `activite_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +332,64 @@ abstract class BaseActiviteI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ActiviteI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ActiviteI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(ActiviteI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the keywords column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByKeywords('fooValue');   // WHERE keywords = 'fooValue'
+     * $query->filterByKeywords('%fooValue%'); // WHERE keywords LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $keywords The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ActiviteI18nQuery The current query, for fluid interface
+     */
+    public function filterByKeywords($keywords = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($keywords)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $keywords)) {
+                $keywords = str_replace('*', '%', $keywords);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(ActiviteI18nPeer::KEYWORDS, $keywords, $comparison);
     }
 
     /**

@@ -1,0 +1,15 @@
+\Cungfoo\Model\Thematique:
+    keyField: code
+    values:
+        VACL:
+            keywords: 'club, animation, demi pension, convivialité, groupe'
+            description: 'Des vacancespour un esprit club où animations et convivialité seront au rendez-vous'
+        VADE:
+            keywords: 'découverte, visites, musées, paysages'
+            description: 'Découverte, musées, paysages et visites, autant d''atouts pour des vacances placées sous le signe de la découverte'
+        VAFA:
+            keywords: 'détente, farniente, repos, relax'
+            description: 'Des vacances les doigts de pieds en éventail : détente, farniente et repos seront au rendez vous'
+        VASE:
+            keywords: 'sensation fortes, sport extrême, originalité, vacances autrement'
+            description: 'Amateurs de sensations fortes, profitez des sports en eaux vives pour des vacances rythmées'

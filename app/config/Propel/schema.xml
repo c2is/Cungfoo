@@ -373,12 +373,14 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" />
+        <column name="keywords" type="varchar" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name, description, keywords" />
         </behavior>
 
         <behavior name="crudable">
@@ -407,11 +409,13 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" />
+        <column name="keywords" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name, description, keywords" />
         </behavior>
 
         <behavior name="crudable">
@@ -423,11 +427,13 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" />
+        <column name="keywords" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name, description, keywords" />
         </behavior>
 
         <behavior name="crudable">
@@ -439,12 +445,14 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" />
+        <column name="keywords" type="varchar" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name, description, keywords" />
         </behavior>
 
         <behavior name="crudable">
@@ -457,12 +465,14 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="description" type="varchar" />
+        <column name="keywords" type="varchar" />
         <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name, description, keywords" />
         </behavior>
 
         <behavior name="crudable">
@@ -776,7 +786,7 @@
         <column name="home" type="boolean"/>
         <column name="lien" type="varchar"/>
         <column name="image_path" type="varchar"/>
-        
+
         <behavior name="active" />
 
         <behavior name="i18n">

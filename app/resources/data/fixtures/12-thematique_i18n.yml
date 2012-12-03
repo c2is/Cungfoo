@@ -3,111 +3,167 @@
         Id: 1
         Locale: de
         Name: 'Nouveautés 2012'
+        Description: null
+        Keywords: null
     1_en:
         Id: 1
         Locale: en
         Name: 'Nouveautés 2012'
+        Description: null
+        Keywords: null
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Nouveautés 2012'
+        Description: null
+        Keywords: null
     1_nl:
         Id: 1
         Locale: nl
         Name: 'Nouveautés 2012'
+        Description: null
+        Keywords: null
     2_de:
         Id: 2
         Locale: de
         Name: 'Parcs aquatiques'
+        Description: null
+        Keywords: null
     2_en:
         Id: 2
         Locale: en
         Name: 'Parcs aquatiques'
+        Description: null
+        Keywords: null
     2_fr:
         Id: 2
         Locale: fr
         Name: 'Parcs aquatiques'
+        Description: null
+        Keywords: null
     2_nl:
         Id: 2
         Locale: nl
         Name: 'Parcs aquatiques'
+        Description: null
+        Keywords: null
     3_de:
         Id: 3
         Locale: de
         Name: 'Pieds dans l''eau'
+        Description: null
+        Keywords: null
     3_en:
         Id: 3
         Locale: en
         Name: 'Pieds dans l''eau'
+        Description: null
+        Keywords: null
     3_fr:
         Id: 3
         Locale: fr
         Name: 'Pieds dans l''eau'
+        Description: null
+        Keywords: null
     3_nl:
         Id: 3
         Locale: nl
         Name: 'Pieds dans l''eau'
+        Description: null
+        Keywords: null
     4_de:
         Id: 4
         Locale: de
         Name: 'Vacances farniente'
+        Description: null
+        Keywords: null
     4_en:
         Id: 4
         Locale: en
         Name: 'Vacances farniente'
+        Description: null
+        Keywords: null
     4_fr:
         Id: 4
         Locale: fr
         Name: 'Vacances farniente'
+        Description: 'Des vacances les doigts de pieds en éventail : détente, farniente et repos seront au rendez vous'
+        Keywords: 'détente, farniente, repos, relax'
     4_nl:
         Id: 4
         Locale: nl
         Name: 'Vacances farniente'
+        Description: null
+        Keywords: null
     5_de:
         Id: 5
         Locale: de
         Name: 'Vacances club'
+        Description: null
+        Keywords: null
     5_en:
         Id: 5
         Locale: en
         Name: 'Vacances club'
+        Description: null
+        Keywords: null
     5_fr:
         Id: 5
         Locale: fr
         Name: 'Vacances club'
+        Description: 'Des vacancespour un esprit club où animations et convivialité seront au rendez-vous'
+        Keywords: 'club, animation, demi pension, convivialité, groupe'
     5_nl:
         Id: 5
         Locale: nl
         Name: 'Vacances club'
+        Description: null
+        Keywords: null
     6_de:
         Id: 6
         Locale: de
         Name: 'Vacances sensations'
+        Description: null
+        Keywords: null
     6_en:
         Id: 6
         Locale: en
         Name: 'Vacances sensations'
+        Description: null
+        Keywords: null
     6_fr:
         Id: 6
         Locale: fr
         Name: 'Vacances sensations'
+        Description: 'Amateurs de sensations fortes, profitez des sports en eaux vives pour des vacances rythmées'
+        Keywords: 'sensation fortes, sport extrême, originalité, vacances autrement'
     6_nl:
         Id: 6
         Locale: nl
         Name: 'Vacances sensations'
+        Description: null
+        Keywords: null
     7_de:
         Id: 7
         Locale: de
         Name: 'Vacances découverte'
+        Description: null
+        Keywords: null
     7_en:
         Id: 7
         Locale: en
         Name: 'Vacances découverte'
+        Description: null
+        Keywords: null
     7_fr:
         Id: 7
         Locale: fr
         Name: 'Vacances découverte'
+        Description: 'Découverte, musées, paysages et visites, autant d''atouts pour des vacances placées sous le signe de la découverte'
+        Keywords: 'découverte, visites, musées, paysages'
     7_nl:
         Id: 7
         Locale: nl
         Name: 'Vacances découverte'
+        Description: null
+        Keywords: null

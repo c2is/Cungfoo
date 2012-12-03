@@ -343,4 +343,10 @@
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
     </nav>
 </div>
+<iframe id="frameResalys" src="{{ path('resalys_wrapper', {
+    webuser: resalysParameters.web_user[locale],
+    display: 'semainier',
+    etab_id:etab.code,
+    campaign_code: resalysParameters.campaign_code
+}) }}" width="960px" height="700px"></iframe>
 {% endblock %}
