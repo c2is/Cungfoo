@@ -1,0 +1,2969 @@
+/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+
+/*Variables*/
+@colorGris0: #8c8a8a; /* Gris 0 */
+@colorGris1: #5f5f5f; /* Gris 1 */
+@colorGris2: #464545; /* Gris 2 */
+@colorGris3: #e6e5e5; /* Gris 3 */
+@colorBlanc: #fff; /* Gris 1 */
+@colorFushia: #ed145b;
+@colorVert: #b0c700;
+@colorBleu: #009ab0;
+@colorBleuF: #005ea6;
+@colorBleuFB: #00549e;
+@colorOrange: #f58220;
+@colorJaune: #ffd503;
+
+@colorRubricFushia: #c60b46;
+@colorRubricJaune: #e8a713;
+@colorRubricOrange: #f58220;
+@colorRubricVert: #8dc63f;
+@colorRubricViolet: #9a4d9e;
+
+@colorBgGrisF: #464545; /* bg gris sombre */
+@colorBgGrisM: #8c8a8a; /* bg gris moyen sombre */
+@colorBgGrisM2: #b2b1b1; /* bg gris moyen clair */
+@colorBgGrisC: #e6e5e5; /* bg gris clair */
+
+
+@colorBgBlanc: #ffffff; /* bg blanc */
+@colorBgBleu: #009ab0; /* bg bleu */
+
+@colorBorderGris: #c6c5c5; /* border gris */
+
+@radius:4px;
+@gutter:24px;
+
+@arial:Arial, Helvetica, sans-serif;
+@ptnarrow: 'PT Sans Narrow', @arial;
+
+._border-radius(@radius:@radius) {
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+._box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
+  -webkit-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+._text-shadow(@blur:10px, @horz:0px, @vert:0px, @rgba:rgba(0,0,0,0.7), @offx:0, @offy:0, @hex:#666) {
+  text-shadow: @horz @vert @blur @rgba;
+//filter: glow(color=@hex,strength=@blur);
+//filter: dropshadow(color=@hex, offx=@offx, offy=@offy);
+}
+._transition(@transition) {
+  -webkit-transition:@transition;
+  -o-transition:@transition;
+  transition:@transition;
+}
+._transform(@transform) {
+  -webkit-transform:@transform;
+  -moz-transform:@transform;
+  -ms-transform:@transform;
+  -o-transform:@transform;
+  transform:@transform;
+}
+/* Centrer verticalement dans un conteneur de hauteur fixe */
+._verticalCenter(@height, @lineHeight:auto) {
+  height: @height;                                                            /* Centrer verticalement une ligne de texte */
+  line-height: @height;
+  &>* {vertical-align:middle;display:inline-block;line-height:@lineHeight;}   /* Centrer verticalement plusieurs lignes de texte */
+  &>img {vertical-align:middle;}                                              /* Centrer verticalement une image de taille variable */
+}
+
+
+//  LESS Hat 1.0.3
+//  CSSHat.com
+//  2012
+//  Petr Brzek & Jan Kuca
+
+
+//  TABLE OF MIXINS:
+//    .animation
+//    .animation-delay
+//    .animation-direction
+//    .animation-duration
+//    .animation-timing-function
+//    .animation-iteration-count
+//    .animation-name
+//    .animation-play-state
+//    .keyframes - in future
+//    .appearance
+//    .backface-visibility
+//    .background-clip
+//    .background-origin
+//    .background-size
+//    .border-radius
+//    .border-top-left-radius
+//    .border-top-right-radius
+//    .border-bottom-left-radius
+//    .border-bottom-right-radius
+//    .border-image
+//    .box-shadow
+//    .box-sizing
+//    .columns
+//    .column-count
+//    .column-gap
+//    .column-rule
+//    .column-width
+//    .font-face
+//    .gradient
+//    .opacity
+//    .perspective
+//    .perspective-origin
+//    .size
+//    .transform
+//    .transform-origin
+//    .transform-style
+//    .translate
+//    .translate3d
+//    .translateX
+//    .translateY
+//    .translateZ
+//    .scale
+//    .scale3d
+//    .scaleX
+//    .scaleY
+//    .scaleZ
+//    .rotate
+//    .rotate3d
+//    .rotateX
+//    .rotateY
+//    .rotateZ
+//    .skew
+//    .skewX
+//    .skewY
+//    .transition
+//    .transition-property
+//    .transition-duration
+//    .transition-timing-function
+//    .transition-delay
+//    .user-select
+
+
+//  @GlobalConfig
+
+// Config supported browsers for your project
+
+@w3c: true; // Unprefixed W3C syntax
+@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android
+@moz: true; //  Firefox 4+
+@opera: true; // Opera 10.5+
+@ms: true;  // IE 10+
+@oldWebkit: true; // iOS4, Safari 4, Chrome < 6. Old webkit gradient syntax
+
+// Signals
+
+@webkitSignal: 1;
+@mozSignal: 2;
+@operaSignal: 3;
+@msSignal: 4;
+@w3cSignal: 5;
+
+
+// .animation
+
+.animation(@arguments: none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation(~"yourAnimation1 6s backwards 2s, yourAnimation2 3s linear alternate infinite"); }
+
+
+//  .animation-delay
+
+.animation-delay(@arguments: 0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-delay: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-delay: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-delay: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-delay: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-delay: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-delay(1s);  }
+//  element{  .animation-delay(~"750ms, 2s"); // For multiple animation-direction  }
+
+
+//  .animation-direction
+
+.animation-direction(@arguments: normal){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-direction: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-direction: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-direction: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-direction: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-direction: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-direction();  }
+//  element{  .animation-direction(~"normal, alternate");  }
+
+
+//  .animation-duration
+
+.animation-duration(@arguments: 0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-duration: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-duration: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-duration: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-duration: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-duration: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-duration(2s); }
+
+
+//  .animation-timing-function
+
+.animation-timing-function(@arguments: ease){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-timing-function: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-timing-function: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-timing-function: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-timing-function: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-timing-function: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-timing-function(ease-in-out);  }
+
+
+//  .animation-iteration-count
+
+.animation-iteration-count(@arguments: 0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-iteration-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-iteration-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-iteration-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-iteration-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-iteration-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-iteration-count(3);  }
+
+
+//  .animation-name
+
+.animation-name(@arguments: none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-name: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-name: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-name: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-name: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-name: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-name(myReallyCoolAnimationName);  }
+
+
+//  .animation-play-state
+
+.animation-play-state(@arguments: running){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-play-state: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-play-state: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-animation-play-state: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-animation-play-state: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { animation-play-state: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .animation-play-state(paused);  }
+
+
+//  .appearance
+
+.appearance(@argument:none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @argument) when (@signal = 1) { -webkit-appearance: @argument;}
+    .inception (@signal, @argument) when (@signal = 2) { -moz-appearance: @argument;}
+    .inception (@signal, @argument) when (@signal = 5) { appearance: @argument;}
+    .inception (@signal, @argument) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @argument);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .appearance(button);  }
+
+
+//  .backface-visibility
+
+.backface-visibility(@argument:visible){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @argument) when (@signal = 1) { -webkit-backface-visibility: @argument;}
+    .inception (@signal, @argument) when (@signal = 2) { -moz-backface-visibility: @argument;}
+    .inception (@signal, @argument) when (@signal = 5) { backface-visibility: @argument;}
+    .inception (@signal, @argument) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @argument);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .backface-visibility(hidden);  }
+
+
+//  .background-clip
+
+.background-clip(@arguments:border-box){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-clip: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-background-clip: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { background-clip: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .background-clip(padding-box); }
+
+
+//  .background-origin
+
+.background-origin(@arguments:padding-box){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-background-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { background-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .background-origin(content-box); }
+
+
+//  .background-size
+
+.background-size(@arguments:auto){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-size: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-background-size: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { background-size: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .background-size(~"auto, 100%"); }
+
+
+// .border-radius
+
+.border-radius(@arguments:0) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-radius: @arguments; -webkit-background-clip: padding-box;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius: @arguments; -moz-background-clip: padding;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-radius: @arguments; background-clip: padding-box; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-radius(10px); //  all corner rounded }
+//  element{  .border-radius(~"10px / 20px"); //  horizontal and vertical rounded differently  }
+//  element{  .border-radius(~"0 10px 0 0"); // only top right corner rounded  }
+
+
+// .border-top-left-radius
+
+.border-top-left-radius(@arguments:0) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-top-left-radius: @arguments; -webkit-background-clip: padding-box;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-topleft: @arguments; -moz-background-clip: padding;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-top-left-radius: @arguments; background-clip: padding-box; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-top-left-radius(10px); }
+
+
+// .border-top-right-radius
+
+.border-top-right-radius(@arguments:0) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-top-right-radius: @arguments; -webkit-background-clip: padding-box;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-topright: @arguments; -moz-background-clip: padding;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-top-right-radius: @arguments; background-clip: padding-box; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-top-right-radius(10px);  }
+
+
+// .border-bottom-left-radius
+
+.border-bottom-left-radius(@arguments:0) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-bottom-left-radius: @arguments; -webkit-background-clip: padding-box;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-bottomleft: @arguments; -moz-background-clip: padding;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-bottom-left-radius: @arguments; background-clip: padding-box; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-bottom-left-radius(10px);  }
+
+
+// .border-bottom-right-radius
+
+.border-bottom-right-radius(@arguments:0) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-bottom-right-radius: @arguments; -webkit-background-clip: padding-box;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-bottomright: @arguments; -moz-background-clip: padding;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-bottom-right-radius: @arguments; background-clip: padding-box; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-bottom-right-radius(10px); }
+
+
+// .border-image
+
+.border-image(@arguments:none) {
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-image: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-border-image: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-border-image: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { border-image: @arguments; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .border-image(url(border.png) 30 30 round);  }
+
+
+//  .box-shadow
+
+.box-shadow(@arguments:none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-box-shadow: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-box-shadow: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { box-shadow: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red"); }
+
+
+//  .box-sizing
+
+.box-sizing(@arguments:content-box){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-box-sizing: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-box-sizing: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { box-sizing: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .box-sizing(border-box); }
+
+
+//  .columns
+
+  .columns(@arguments:auto auto){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-columns: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-columns: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { columns: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .columns(100px 3);  }
+
+
+//  .column-count
+
+.column-count(@arguments:auto){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-column-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { column-count: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .column-count(3);  }
+
+
+//  .column-gap
+
+.column-gap(@arguments:normal){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-gap: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-column-gap: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { column-gap: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .column-gap(40px); }
+
+
+//  .column-rule
+
+  .column-rule(@arguments:medium none black){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-rule: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-column-rule: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { column-rule: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .column-rule(3px outset #ff00ff);  }
+
+
+//  .column-width
+
+.column-width(@arguments:auto){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-width: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-column-width: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { column-width: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .column-width(100px);  }
+
+
+//  .font-face
+
+.font-face(@fontname, @fontfile) {
+
+  font-family: "@{fontname}";
+  src: url("@{fontfile}-webfont.eot");
+  src: url("@{fontfile}-webfont.eot?#iefix") format("embedded-opentype"),
+  url("@{fontfile}-webfont.woff") format("woff"),
+  url("@{fontfile}-webfont.ttf") format("truetype"),
+  url("@{fontfile}-webfont.svg#@{fontname}") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//  element{  .font-face(ZendaRegular, zenda-webfont); }
+
+
+//  .gradient
+
+.gradient(@arguments:none){
+
+//  Local config for disabling properties
+
+  @svg: true; //  SVG gradient for IE9
+  @mozLocal: true; //  Firefox 4+
+  @oldWebkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @operaLocal: true; // Opera 10.5+
+  @w3cLocal: true; // Unprefixed W3C syntax
+
+  @gradientSVG: ~`(function(){function G(a){var b="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",c,d,e,f,g,h,i,j,k=0,l=0,m="",n=[];if(!a)return a;do c=a.charCodeAt(k++),d=a.charCodeAt(k++),e=a.charCodeAt(k++),j=c<<16|d<<8|e,f=j>>18&63,g=j>>12&63,h=j>>6&63,i=j&63,n[l++]=b.charAt(f)+b.charAt(g)+b.charAt(h)+b.charAt(i);while(k<a.length);m=n.join("");var o=a.length%3;return(o?m.slice(0,o-3):m)+"===".slice(o||3)}var a="@{arguments}",b=null,c=!0,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,f=/top/,g=/right/,h=/bottom/,i=/left/,j=/to\s*top/,k=/to\s*right/,l=/to\s*bottom/,m=/to\s*left/,n=/45deg/,o=/-45deg/,p=/\d*deg/;for(var q=0;q<e;q++){if(/linear/.test(d[q])){d[q]=d[q].replace(/linear-gradient\s*\(/,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">');if(f.test(d[q])&&!j.test(d[q])||l.test(d[q])||/180deg/.test(d[q])){var r=null;l.test(d[q])?r=l:/180deg/.test(d[q])?r=/180deg/:r=f,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">')}else if(g.test(d[q])&&!k.test(d[q])||m.test(d[q])||/270deg/.test(d[q])){var r=null;m.test(d[q])?r=m:/270deg/.test(d[q])?r=/270deg/:r=g,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="100%" y1="0%" x2="0%" y2="0%">')}else if(h.test(d[q])&&!l.test(d[q])||j.test(d[q])||/[^\d]0deg/.test(d[q])){var r=null;j.test(d[q])?r=j:/0deg/.test(d[q])?r=/0deg/:r=h,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="0%" y2="0%">')}else if(i.test(d[q])&&!m.test(d[q])||k.test(d[q])||/90deg/.test(d[q])){var r=null;k.test(d[q])?r=k:/90deg/.test(d[q])?r=/90deg/:r=i,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">')}else n.test(d[q])&&!o.test(d[q])?d[q]=d[q].replace(n,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">'):o.test(d[q])?d[q]=d[q].replace(o,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="100%">'):c=!1}try{"".trim(),b=!0}catch(s){b=!1}b&&(d[q]=d[q].trim());if(/linear/.test(d[q])||/radial/.test(d[q])){d[q]=d[q].slice(0,-1),d[q]="url(data:image/svg+xml;base64--"+d[q]+'</linearGradient><rect x="0" y="0" width="1" height="1" fill="url(***)" /></svg>)';var t=d.join("@@@"),u=t.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,v=t.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,w=[],x=[];for(var y=0;y<u.length;y++)w[y]=u[y].replace(/,/g,"--");for(var z=0;z<v.length;z++)x[z]=v[z].replace(/,/g,"--");for(var A=0;A<u.length;A++)t=t.replace(u[A],w[A]);for(var B=0;B<v.length;B++)t=t.replace(v[B],x[B]);var C=t.split(",");for(var D=0;D<C.length;D++){C[D]=C[D].replace(/(#\w{3,6})\s*(\d*%*)/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/rgba/g,"rgb").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/hsla/g,"hsl").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/\*\*\*/,"#grad-ucgg-generated");try{"".trim(),b=!0}catch(s){b=!1}b&&(C[D]=C[D].trim())}C=C.toString().replace(/,/g,"").replace(/--/g,",").replace(/(rgb?\(\d+,\s*\d+,\s*\d+),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)").replace(/(hsl?\(\d+,\s*\d+%,\s*\d+%),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)")}}/radial/.test(C)&&(/((ellipse).*(center)|(circle).*(center))/g.test(C)?C=C.replace(/<\/linearGradient>/g,"</radialGradient>").replace(/radial-gradient[^<]+/g,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><radialGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="75%">').replace(/<rect x=\S+\d\S+ y=\S+\d\S+ width=\S+\d\S+ height=\S+\d\S+ fill=\S+\w\S+ \/>/g,'<rect x="-50" y="-50" width="101" height="101" fill="url(#grad-ucgg-generated)" />'):C=!1);var E=null;try{C=C.split("@@@");var F=0;for(F;F<C.length;F++)E=C[F].match(/<\?xml.*<\/svg>/),E=G(E.join("")),C[F]=C[F].replace(/(<\?xml.*<\/svg>)/,E)}catch(s){}return c?C:C=!1,C?C.toString():C}())`;
+  @gradientMoz: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-moz-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d}())`;
+  @gradientOldWebkit: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C;a="@{arguments}",g=null,f=!0,i=a.split(/,(?=\s*(?:linear|radial))/g),j=i.length,C=/top/,v=/right/,c=/bottom/,p=/left/,B=/to\s*top/,A=/to\s*right/,y=/to\s*bottom/,z=/to\s*left/,d=/45deg/,e=/-45deg/,b=/\d*deg/,m=0;while(m<j){/linear/.test(i[m])&&(i[m]=i[m].replace(/linear-gradient\s*\(/,"-webkit-gradient(linear, "),C.test(i[m])&&!B.test(i[m])||y.test(i[m])||/180deg/.test(i[m])?(w=null,y.test(i[m])?w=y:/180deg/.test(i[m])?w=/180deg/:w=C,i[m]=i[m].replace(w,"left top, left bottom")):v.test(i[m])&&!A.test(i[m])||z.test(i[m])||/270deg/.test(i[m])?(w=null,z.test(i[m])?w=z:/270deg/.test(i[m])?w=/270deg/:w=v,i[m]=i[m].replace(w,"right top, left top")):c.test(i[m])&&!y.test(i[m])||B.test(i[m])||/[^\d]0deg/.test(i[m])?(w=null,B.test(i[m])?w=B:/0deg/.test(i[m])?w=/0deg/:w=c,i[m]=i[m].replace(w,"left bottom, left top")):p.test(i[m])&&!z.test(i[m])||A.test(i[m])||/90deg/.test(i[m])?(w=null,A.test(i[m])?w=A:/90deg/.test(i[m])?w=/90deg/:w=p,i[m]=i[m].replace(w,"left top, right top")):d.test(i[m])&&!e.test(i[m])?i[m]=i[m].replace(d,"left bottom, right top"):e.test(i[m])?i[m]=i[m].replace(e,"left top, right bottom"):f=!1),x=i.toString(),t=x.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,k=x.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,u=[],l=[],n=0;while(n<t.length)u[n]=t[n].replace(/,/g,"--"),n++;r=0;while(r<k.length)l[r]=k[r].replace(/,/g,"--"),r++;o=0;while(o<t.length)x=x.replace(t[o],u[o]),o++;s=0;while(s<k.length)x=x.replace(k[s],l[s]),s++;h=x.split(","),q=0;while(q<h.length){h[q]=h[q].replace(/(#\w{3,6})\s*(\d*%*)/g,"color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,"color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,"color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g,"color-stop($2,$1)");try{"".trim(),g=!0}catch(D){g=!1}g&&(h[q]=h[q].trim()),q++}m++}return/radial/.test(h)&&(/((ellipse).*(center)|(circle).*(center))/g.test(h)&&/color-stop\(\s*\d*%/g.test(h)?h=h.join(",").replace(/radial-gradient\(.*?color/g,"-webkit-gradient(radial, center center, 0px, center center, 100%, color"):h=!1),f?h:h=!1,h?h.toString():h}())`;
+  @gradientWebkit: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-webkit-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-webkit-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d}())`;
+  @gradientOpera: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-o-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-o-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d})()`;
+  @gradientW3C: ~`(function(){var a,b,c,d,e;a="@{arguments}",b=null,c=a.split(/,(?=\s*(?:linear|radial))/g),d=c.length,e=0;while(e<d){try{"".trim(),b=!0}catch(f){b=!1}b&&(c[e]=c[e].trim()),e++}return c}())`;
+
+  .result(@arguments, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { background-image: @arguments; }
+  .result(@arguments, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+  .result(@arguments, @boolean, @localBoolean, @property) when (@boolean = true) and (@localBoolean = true) and (isstring(@property)) { background-image: @arguments; }
+  .result(@arguments, @boolean, @localBoolean, @property) when not (@boolean = true), not (@localBoolean = true), not (isstring(@property)) { }
+
+  .result(@gradientSVG, @svg, @svg, @gradientSVG);
+// --  this comment must be here because of LESS bug
+  .result(@gradientMoz, @moz, @mozLocal);
+// --
+  .result(@gradientOldWebkit, @oldWebkit, @oldWebkitLocal, @gradientOldWebkit);
+// --
+  .result(@gradientWebkit, @webkit, @webkitLocal);
+// --
+  .result(@gradientOpera, @opera, @operaLocal);
+// --
+  .result(@gradientW3C, @w3c, @w3cLocal);
+}
+
+//    element{  .gradient(~"linear-gradient(right, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");  }
+
+
+//  .opacity
+
+.opacity(@arguments:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-opacity: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-opacity: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { opacity: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .opacity(.5); }
+
+
+//  .perspective
+
+.perspective(@arguments:none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-perspective: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-perspective: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { perspective: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .perspective(350px);  }
+
+
+//  .perspective-origin
+
+  .perspective-origin(@arguments:50% 50%){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-perspective-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-perspective-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { perspective-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .perspective-origin(top left); }
+
+
+//  .size
+
+.size(@square){
+  width: @square;
+  height: @square;
+}
+
+.size(@width, @height){
+  width: @width;
+  height: @height;
+}
+
+//  element{  .size(10px);  //  render width:10px; height:10px; }
+//  element{  .size(10px, 20px);  //  render width:10px; height: 20px;  }
+
+
+//  .transform
+
+.transform(@arguments:none){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transform(~"scale(.5) translate(10px, 20px)"); }
+
+
+//  .transform-origin
+
+  .transform-origin(@arguments:50% 50% 0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transform-origin(20% 40%);  }
+
+
+//  .transform-style
+
+.transform-style(@arguments:flat){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transform-style(preserve-3d); }
+
+
+//  .translate
+
+.translate(@x:0, @y:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translate(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translate(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translate(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translate(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: translate(@x, @y);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .translate(100px);  }
+//  element{  .translate(100px, 50px);  }
+
+
+//  .translate3d
+
+.translate3d(@x:0, @y:0, @z:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translate3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translate3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translate3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translate3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: translate3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .translate3d(10px, 20px, 30px); }
+
+
+//  .translateX
+
+.translateX(@x:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateX(@x);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateX(@x);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateX(@x);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateX(@x);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: translateX(@x);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .translateX(10px);  }
+
+
+//  .translateY
+
+.translateY(@y:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateY(@y);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateY(@y);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateY(@y);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateY(@y);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: translateY(@y);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .translateY(15px);  }
+
+
+//  .translateZ
+
+.translateZ(@z:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@z);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .translateZ(32px);  }
+
+
+//  .scale
+
+.scale(@x:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale(@x);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale(@x);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale(@x);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scale(@x);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scale(@x);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+.scale(@x:0, @y:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scale(@x, @y);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scale(@x, @y);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .scale(2);  }
+//  element{  .scale(2, 1); }
+
+
+//  .scale3d
+
+.scale3d(@x:1, @y:1, @z:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scale3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scale3d(@x, @y, @z);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .scale3d(1, 2, 1);  }
+
+
+//  .scaleX
+
+.scaleX(@x:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@x);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@x);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@x);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleX(@x);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scaleX(@x);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .scaleX(1.5); }
+
+
+//  .scaleY
+
+.scaleY(@y:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@y);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@y);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@y);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleX(@y);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scaleX(@y);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .scaleX(1.5); }
+
+
+//  .scaleZ
+
+.scaleZ(@z:1){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@z);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@z);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .scaleZ(2.7); }
+
+
+//  .rotate
+
+.rotate(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotate(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: rotate(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .rotate(45deg);  }
+
+
+//  .rotate3d
+
+.rotate3d(@x:0, @y:0, @z: 0, @angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate3d(@x, @y, @z, @angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate3d(@x, @y, @z, @angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate3d(@x, @y, @z, @angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotate3d(@x, @y, @z, @angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: rotate3d(@x, @y, @z, @angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .rotate3d(1, 2.0, 3.0, 10deg);  }
+
+
+//  .rotateX
+
+.rotateX(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: rotateX(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .rotateX(63deg);  }
+
+
+//  .rotateY
+
+.rotateY(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: rotateY(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .rotateY(24deg);  }
+
+
+//  .rotateZ
+
+.rotateZ(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateZ(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateZ(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateZ(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateZ(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: rotateZ(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .rotateZ(280deg);  }
+
+
+//  .skew
+
+.skew(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skew(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skew(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skew(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skew(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: skew(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .skew(20deg);  }
+
+
+//  .skewX
+
+.skewX(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skewX(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: skewX(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .skewX(24deg);  }
+
+
+//  .skewY
+
+.skewY(@angle:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skewY(@angle);}
+    .inception (@signal, @arguments) when (@signal = 5) { transform: skewY(@angle);}
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .skewY(36deg);  }
+
+
+//  .transition
+
+.transition(@arguments:all){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  @transitionWebkit: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-webkit-"+c[h]))}return e.join(",")}())`;
+  @transitionMoz: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-moz-"+c[h]))}return e.join(",")}())`;
+  @transitionOpera: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-o-"+c[h]))}return e.join(",")}())`;
+  @transitionMs: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-ms-"+c[h]))}return e.join(",")}())`;
+  @transitionW3C: ~`(function(){var a,b,c;a="@{arguments}".split(","),c=!1,b=a.length;for(var d=0;d<b;d++){try{"".trim(),c=!0}catch(e){c=!1}a[d]=c?a[d].trim():a[d]}return a.join(",")}())`;
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition: @transitionWebkit; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @transitionMoz; }
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transition: @transitionOpera; }
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transition: @transitionMs; }
+    .inception (@signal, @arguments) when (@signal = 5) { transition: @transitionW3C; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//   element{  .transition(~"transform 1s ease-in-out, border-radius 2s 1s linear");  }
+
+
+//  .transition-property
+
+.transition-property(@arguments:all){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  @transitionWebkit: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-webkit-"+c[h]))}return e.join(",")}())`;
+  @transitionMoz: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-moz-"+c[h]))}return e.join(",")}())`;
+  @transitionOpera: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-o-"+c[h]))}return e.join(",")}())`;
+  @transitionMs: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-ms-"+c[h]))}return e.join(",")}())`;
+  @transitionW3C: ~`(function(){var a,b,c;a="@{arguments}".split(","),c=!1,b=a.length;for(var d=0;d<b;d++){try{"".trim(),c=!0}catch(e){c=!1}a[d]=c?a[d].trim():a[d]}return a.join(",")}())`;
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-property: @transitionWebkit; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @transitionMoz; }
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transition-property: @transitionOpera; }
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-transition-property: @transitionMs; }
+    .inception (@signal, @arguments) when (@signal = 5) { transition-property: @transitionW3C; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transition-property(width);  }
+
+
+//  .transition-duration
+
+.transition-duration(@arguments:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-duration: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-duration: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transition-duration: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 5) { transition-duration: @arguments; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transition-duration(250ms);  }
+
+
+//  .transition-timing-function
+
+.transition-timing-function(@arguments:ease){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-timing-function: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-timing-function: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transition-timing-function: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 5) { transition-timing-function: @arguments; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transition-timing-function(cubic-bezier(0,0,1,1));  }
+
+
+//  .transition-delay
+
+.transition-delay(@arguments:0){
+
+//  Local config for disabling properties
+
+  @w3cLocal: true; // Unprefixed W3C syntax
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @operaLocal: true; // Opera 10.5+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-delay: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-delay: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 3) { -o-transition-delay: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 5) { transition-delay: @arguments; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @operaSignal, @opera, @operaLocal);
+// --
+  .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+//  element{  .transition-delay(2s);  }
+
+
+//  .user-select
+
+.user-select(@arguments:auto){
+
+//  Local config for disabling properties
+
+  @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+  @mozLocal: true; //  Firefox 4+
+  @msLocal: true;  // IE 10+
+
+  .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) { -webkit-user-select: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 2) { -moz-user-select: @arguments; }
+    .inception (@signal, @arguments) when (@signal = 4) { -ms-user-select: @arguments; }
+    .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+  .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+// --  this comment must be here because of LESS bug
+  .result(@arguments, @mozSignal, @moz, @mozLocal);
+// --
+  .result(@arguments, @msSignal, @ms, @msLocal);
+}
+
+//   element{  .user-select(text);  }
+
+/*
+ * ##################################################
+ *                   GLOBAL RESET
+ * ##################################################
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary,time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;	border-spacing: 0;}
+
+/*HTML5 RESET*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/*GLOBAL STYLING*/
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing: border-box;/* *behavior: url(../js/libs/boxsizing.htc);*/}
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+button, input, select, textarea { font-family: sans-serif; color: @colorGris1; }
+
+/*::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }*/
+
+/*LINKS*/
+a { color: @colorGris2; text-decoration: underline;  }
+a:hover { text-decoration: none; }
+
+/*DEFAULT ELM*/
+b, strong { font-weight: bold; }
+em {font-style:normal;}
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; -ms-interpolation-mode: bicubic; }
+svg:not(:root) { overflow: hidden; }
+
+/*FORMS*/
+legend { border: 0; *margin-left: -7px; }
+//label{cursor:pointer;}
+button, input { line-height: normal; *overflow: visible; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto;  resize: vertical; }
+
+/*PLACEHOLDER*/
+::-webkit-input-placeholder { color:@colorGris1; }
+*:-moz-placeholder { color:@colorGris1; }
+*:-ms-placeholder { color:@colorGris1; }
+*.placeholder { color:@colorGris1; }
+/* :focus - lighten() for dark bg & light text || darken() for light bg & dark text */
+*:focus::-webkit-input-placeholder{color:lighten(@colorGris1, 50%);-webkit-transition:all .5s ease;}
+*:focus:-moz-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
+*:focus:-ms-placeholder{color:lighten(@colorGris1, 50%);transition:all .5s ease;}
+
+/* MICRO CLEARFIX : http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clear:before, .clear:after, .bloc:before, .bloc:after{content:"";display:table;}
+.clear:after, .bloc:after{clear:both;}
+.clear, .bloc{zoom:1;}
+/* + clearboth */
+.clearboth{clear:both;}
+
+/* LINK PARENT */
+.linkParent {cursor: pointer;}
+
+
+/*PRINT*/
+@media print {
+    * { position: static !important; float: none !important; background: transparent !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    h2, h3 { page-break-after: avoid; }
+    .noprint{display:none;}
+}
+
+/*
+ * ##################################################
+ *                      LAYOUT
+ * ##################################################
+ */
+
+body{background:#f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 0 0;background-size:100% auto;color:@colorGris2;font:12px @arial;min-width:1000px;}
+body.popin{/*background:#fff;*/background-attachment:fixed;min-width:0;}
+header, section, footer {position:relative;}
+
+.full-width{position:relative;min-width:100%;float:left;z-index:0;}
+.fixed-width{position:relative;width:976px;margin:0 auto;}
+
+/* header */
+#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:0;
+  #logo{display:block;float:left;margin-bottom:25px;}
+  #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin:75px 30px 15px;float:left;width:300px;
+    span{text-align:left;}
+  }
+  #headerRight{float:right;}
+  #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
+    span{font-size:18px;line-height:19px;color:@colorGris2;
+      &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
+      a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
+    }
+  }
+  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
+}
+/* specifs home */
+.home #telephone{clear:both;}
+
+/* nav */
+#nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
+  .topnav{top:-7px;}
+  .tab{position:static;color:#fff;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
+    &:first-child:after{width:0;margin-left:0;}
+    &:after{content:"";width:2px;height:17px;background-color:@colorBgGrisM;float:left;margin:-32px 0 0 -2px;}
+    &:hover,
+    &.current{background:@colorFushia;
+      small{color: #fff;}
+      &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+    }
+    &:hover .subnav{display:block;}
+    &>a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);
+      &#home img{width:27px;height:27px;margin-top:-7px;}
+      small {font:bold  15px @arial,sans-serif;color:@colorFushia;}
+    }
+    .subnav{padding:18px;position:absolute;top:57px;left:0px;width:976px;background:@colorBgBlanc;float:none;._box-shadow(0 10px 10px -12px @colorBgGrisF);z-index:20; text-transform:none;z-index:40;display:none;color:@colorGris1;cursor:default;
+      p{font:18px/19px @arial,sans-serif;}
+      .title{font:bold 22px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+      .subtitle{font:bold 18px @ptnarrow;color:@colorFushia;text-transform:uppercase;margin:3px 0 2px;}
+      .type{margin:10px 20px;}
+      .objective{margin:10px;}
+      &#destinations{
+        .ratio-33{width:300px;margin-left:16px;
+          &:first-child{width:308px;margin-left:0;}
+          .radiusBox,
+          .radiusBox2{font:12px/13px @arial,sans-serif;
+            .view{width:290px;height:90px;margin:-15px -20px 15px;._border-radius(6px 6px 0 0);
+              .bg{position:absolute;top:0;left:0;}
+            }
+            .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+            .region{
+              .link{padding-bottom:5px;border-bottom:7px solid @colorBorderGris;}
+              &:last-child .link{padding-bottom:0;border-bottom:0 none;}
+            }
+            a{text-decoration:none;}
+            .link{text-align:right;}
+          }
+          .radiusBox{height:511px;
+            .title{position:relative;display:inline;
+              &:after{content:url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');position:absolute;bottom:0px;right:-56px;width:46px;height:56px;}
+            }
+          }
+        }
+        #campingsList-nav {background-color:@colorFushia;padding:0 20px;margin:10px -20px 10px 40px;
+          &:after{content:"";}
+          span{margin-right:-6px;}
+          .ln-letters{margin-top:-4px;
+            a{padding:0;border:0 none;width:16px;._verticalCenter(16px);text-align:center;position:relative;
+              &.all{position:absolute;top:-38px;left:-50px;width:288px;height:30px;background-color:transparent;border:0 none;text-indent:-9999px;}
+            }
+          }
+          .ln-letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px @arial,sans-serif;color:@colorGris2;}
+        }
+        ol#campingsList{overflow-x:hidden;height:390px;
+          li{position:relative;margin-left:50px;
+            &:before{content:"- ";}
+            .ln-letter{position:absolute;top:-5px;left:-50px;height:20px;width:20px;font:bold 17px @ptnarrow;}
+            &.ln-separator{content:"";position:relative;margin:6px 0 6px -50px;height:1px;width:276px;background-color:@colorBorderGris}
+            .ln-letter:before,
+            &.ln-separator:before{content:"";}
+          }
+        }
+      }
+      &#locations{
+        .radiusBox{margin-right:20px;padding:10px;
+          &.capacity{width:135px;font-size:13px;text-align:center;
+            .view{display:block;width:100px;height:50px;margin:0 auto;}
+          }
+          &.exclusively{width:320px;margin-top:-22px;
+            .view{background:width:50px;height:100px;}
+            .content{font-size:18px;position:absolute;top:60px;left:70px;width:200px;._verticalCenter(50px, 20px);}
+          }
+          .stamp{position:absolute;top:10px;right:0;
+            &:after{content:"";}
+            span{margin-right:-6px;}
+          }
+        }
+        .radiusBox2{margin-right:12px;height:130px;
+          .view{width:216px;height:120px;background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;margin:-15px -20px 15px;._border-radius(6px);
+            &#mobilhome{background-position:0px 0px;}
+            &#cottage{background-position:0px -120px;}
+            &#chalet{background-position:0px -240px;}
+            &#caravan{background-position:0px -360px;}
+          }
+          .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+          .stain{position:absolute;bottom:0;right:10px;height:50px;
+            &>*{line-height:16px;}
+            span{margin-top:-6px;}
+            .price{font-size:22px;}
+          }
+        }
+        .radiusBox,
+        .radiusBox2{font:12px/13px @arial,sans-serif;
+          &:last-child{margin-right:0;}
+        }
+      }
+      &#deals{}
+      .proposals{padding:0 20px;
+        .title{margin:0;}
+        .proposalsDate{padding:0 20px;border-right:7px solid @colorBgGrisC;
+          &:last-child{border-right:0 none;}
+          .from{font:bold 13px @ptnarrow; color:@colorFushia;display:block;}
+          .bt{display:inline;}
+        }
+      }
+      &#holiday{}
+      &#weekends{
+        .radiusBox{
+          .title{color:@colorOrange;}
+        }
+      }
+    }
+  }
+//  .tab:nth-child(4) .subnav{display:block;}
+}
+
+/* lang */
+#lang{width:41px;height:27px;background: url('../../images/vacancesdirectes/dyn/ui/lang-flag-fr.png') no-repeat 0px 0px;border-width:4px 6px;border-style:solid;border-color:#a7a9ac;position:relative;display:inline-block;text-indent:-9999px;float:right;margin-top:19px;
+  &:after{width:12px;height:4px;content:"";background:url('../../images/vacancesdirectes/common/ui/lang-arrow.png') no-repeat 0px 0px;position:absolute;left:50%;bottom:-8px;margin-left:-6px;}
+}
+.ie-lte7 #lang{display:inline;}
+
+/* generic */
+.left{float:left;}
+.right{float:right;}
+.h1-like, .h2-like, .h3-like, .h4-like, .h5-like, .h6-like{display:block;}
+h1, .h1-like{dismargin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
+h2, .h2-like{color:@colorGris2;font:bold 20px @arial;line-height:22px;}
+h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
+h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+h6, .h6-like{color:@colorFushia;}
+
+.bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;._border-radius(7px);
+  &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
+  &.gris2{background-color:@colorBgGrisC;color:@colorGris2;}
+  &.grisC{background-color:@colorGris0;color:@colorBlanc;}
+  &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
+  &.fushia{background-color:@colorFushia;color:@colorBlanc;}
+  &.orange{background-color:@colorOrange;color:@colorBlanc;}
+  &.trans{background:transparent;padding:0;}
+  &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;}
+  &.cfushia{color:@colorFushia;}
+  &.big{padding:5px 10px;}
+  &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
+  &.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
+  &.ib{display:inline-block;}
+}
+.boxborder{margin:0 25px 25px 5px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));
+  &.large{border:15px solid @colorBlanc;}
+}
+.pathway{font:11px/28px @arial,sans-serif;color:@colorBgGrisM;text-align:right;
+  li{display:inline;
+    &:last-child a{color:@colorFushia;}
+  }
+  a{text-decoration:none;color:inherit;
+    &:hover{text-decoration:underline;}
+  }
+}
+.stamp{position:relative;text-align:center;
+  &.blue{background-color:@colorBgBleu;}
+  &.grey{background-color:@colorBgGrisM;}
+  &.fushia{background-color:@colorFushia;}
+  &.orange{background-color:@colorOrange;}
+  &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
+  &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right-blanc.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
+
+  h2{color:@colorBlanc;text-align:center;text-transform:uppercase;position:relative;display:inline-block;}
+}
+.radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.bgImg{overflow:hidden;}
+  &.greyC{background-color:@colorBgGrisC;}
+  &.greyF{background-color:@colorBgGrisF;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisF;border-width:18px;margin-top:-18px;margin-left:-18px;}
+  }
+  &.fushia{background-color:@colorFushia;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorFushia;border-width:18px;margin-top:-18px;margin-left:-18px;}
+    &.arrowBottom:after{top:100%;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color:@colorFushia;border-width:18px;margin-left:-18px;margin-bottom:-18px;}
+  }
+  &.yellow{background-color:@colorJaune;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorJaune;border-width:15px;margin-top:-15px;margin-left:-15px;}
+    &.arrowRight:after{left:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-left-color:@colorJaune;border-width:15px;margin-top:-15px;margin-right:-15px;}
+  }
+  .stamp{color:@colorBlanc;._verticalCenter(38px);padding:0 20px;display:block;
+    &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
+    &>h2{text-transform:uppercase;font: bold 22px @ptnarrow;}
+    &.no{background:none;padding:0;._verticalCenter(38px,22px);
+      &>h2{color:@colorGris1;}
+    }
+  }
+  &>h2{color:@colorGris1;
+    span{color:@colorBleu;}
+  }
+}
+.radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.bgImg{overflow:hidden;}
+  &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
+  &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
+  &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
+  .stamp{color:@colorBlanc;background:url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;._verticalCenter(38px);padding:0 30px;margin-top:10px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
+    &:before{content:"";}
+    &:after{content:""}
+    span{margin-left:-6px;}
+  }
+}
+/*.stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
+  &>span{margin-top:10px;}
+  .price{font-size:27px;font-weight:bold;}
+}
+.ie-lte8 .stain{width:70px;min-width:70px !important;}*/
+
+.tooltip {outline:none;position:relative;}
+.tooltip strong {line-height:30px;}
+.tooltip:hover {text-decoration:none;}
+.tooltip span {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:140px; line-height:16px;right:-10px;bottom:-41px;white-space:nowrap;}
+.tooltip span:after{bottom:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisM;border-width:5px;right:19px;margin-left:-5px;}
+.tooltip:hover span{
+  display:inline; position:absolute;}
+.callout {z-index:20;position:absolute;top:30px;border:0;left:50%;}
+
+/*CSS3 extras*/
+.tooltip span{._box-shadow(0 10px 10px -12px @colorGris2);
+//  -moz-box-shadow: 0 10px 10px -12px @colorGris2;
+//  -webkit-box-shadow: 0 10px 10px -12px @colorGris2;
+//  box-shadow: 0 10px 10px -12px @colorGris2;
+}
+
+label,input[type="radio"] {vertical-align:middle;}
+input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+input[type="radio"] {height:auto;}
+
+/* structure */
+#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;z-index:20;}
+.popin #wrap{width:646px;padding:0 15px;margin:0 auto;}
+.column{width:928px;margin:0 @gutter;position:relative;
+  &.left{width:616px;margin:0 0 0 @gutter;}
+  &.right{width:288px;margin:0 @gutter 0 0;}
+  .ratio-33{width:300px;margin-right:16px;
+    &.clear{margin-right:0;}
+  }
+}
+
+.bloc{clear:both;._border-radius(7px);padding:10px 15px;
+  h3, .h3-like{margin-top:10px !important;}
+  &.gris{background-color:@colorBgGrisC;}
+  &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;
+    h3, p, .bt{color:@colorBlanc !important;}
+  }
+  hr{height:0;border:5px solid #fff;margin:15px 0;}
+}
+.element{position:relative;margin:0;padding:20px 0;
+  iframe{width:119px;height:20px;}
+  .view{margin:0 15px 10px 5px;}
+  .details{font-size:13px;color:@colorGris1;margin-bottom:70px;
+    .title, .region, .condition, .stain{display:block;}
+    .title{font-weight:bold;}
+    .period{font-style:italic;}
+    .condition{
+      .price{color:@colorOrange;font-weight:bold;}
+    }
+    .counter{width:48px;height:48px;background:url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -391px transparent;font-family:@ptnarrow;color:@colorOrange;font-size:18px;font-weight:bold;text-transform:uppercase;position:absolute;top:0;right:-8px;text-align:center;._verticalCenter(48px);}
+
+  }
+  .stain{width:90px;._verticalCenter(70px,12px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;left:130px;bottom:20px;position:absolute;
+    &>span{margin-top:5px;}
+    .price{font-size:27px;font-weight:bold;display:block;margin:8px 0 -8px;letter-spacing:normal;}
+  }
+  &.promo{
+    .details{margin-bottom:90px;}
+    .stain{background-position:0 -90px;._verticalCenter(70px,10px);font-size:9px;
+      &>span{margin-top:10px;position:relative;z-index:2;}
+      .line-through{text-decoration:line-through;}
+      .discount{font-size:14px;font-weight:bold;width:68px;._verticalCenter(61px);background:url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -262px transparent;margin:0;position:absolute;top:-20px;left:-30px;z-index:1;}
+    }
+  }
+  &.noprice{
+    .details{margin:0;}
+  }
+}
+.stylish-select .selectedTxt{padding-right:27px;}
+
+.fine{font-size: 50%;}
+.multiple-background-false .cover{
+  min-height: 100%;
+  min-width: 100%;
+}
+.multiple-background-true .cover{
+  background-size: cover;
+}
+
+/* LOADING */
+#frameResalys{margin:0;width:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;}
+
+/*
+ * ##################################################
+ *                      BOOKING
+ * ##################################################
+ */
+
+.booking{
+
+/* STEPS */
+  #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 20px -@gutter;z-index:30;
+    ul{width:858px;margin:0 auto;text-align:center;
+      li.tab{margin:0 12px;float:none;display:inline-block;position:static;color:@colorBlanc;padding:0;
+        &.current{background:@colorFushia;}
+        span{position:relative;display:block;padding:0 15px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);float:left;}
+        &.current span{text-decoration:none;}
+        &.current > span:after {content:url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");height:8px;left:50%;margin-left:-12px;position: absolute;top:24px;width:22px;z-index:50;}
+        &.completed span:before {content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;width:40px;height:50px;float:left;margin-right:10px;}
+      }
+    }
+  }
+
+/* COMMON */
+  #nav ul{top:0px;
+    li.tab{height:50px;._border-radius(0);
+      a{margin:0;
+        span{vertical-align:baseline;}
+      }
+      &:hover > a#home:after{content:'';}
+    }
+    span {margin-left:5px;}
+  }
+
+
+  h1 {margin:10px 0 20px;}
+  h1 span {color:@colorBgGrisF;}
+  iframe{width:100%;}
+// All the divs around Resalys pages :
+  #basketContainer, #confirmContainer, #discoverContainer{margin:0;width:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;}
+  #discoverContainer{margin:0;width:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;}
+
+  #userBox{float:right;
+    span{font-family:@ptnarrow;font-size:20px;font-weight:bold;text-transform:uppercase;display:block;margin-bottom:3px;}
+  }
+
+  .error{margin-bottom:10px;font:12px @arial;color:@colorRubricOrange;
+    li:before{content:"-";padding-right:3px;}
+  }
+
+/* HOME */
+
+  #boxLogin{
+    #formLogin{
+      >.left{width:214px;margin:0;}
+      >.right{width:164px;margin-left:50px;}
+      label{font-family:@ptnarrow;font-size:16px;font-weight:bold;margin:0 0 2px 0;display:block;}
+      input{margin:0 0 15px 0;
+        &[type=submit]{margin:22px 0 32px;}
+      }
+    }
+  }
+  #boxDiscover{
+    table{font-family:@ptnarrow;font-size:16px;font-weight:bold;color:@colorBlanc;width:428px;
+      tr:first-child th{border-bottom:1px solid @colorBorderGris;}
+      th, td{padding:10px 0;text-transform:uppercase;text-align:center;}
+      th{color:@colorGris2;font-size:14px;line-height:13px;
+        span{font-size:11px;}
+        &:first-child{width:96px;border-right:1px solid @colorBorderGris;text-align:left;}
+      }
+      td{width:146px;padding:10px;}
+      .rubric{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:0 10px;._border-radius(0 10px 0 10px);._verticalCenter(32px,);
+        &.fushia{background-color:@colorRubricFushia;}
+        &.jaune{background-color:@colorRubricJaune;}
+        &.orange{background-color:@colorRubricOrange;}
+        &.vert{background-color:@colorRubricVert;}
+        &.violet{background-color:@colorRubricViolet;}
+      }
+    }
+  }
+  #boxEdito{position:relative;
+    h2{margin-left: 27px;
+      &:before{content:url('../../images/vacancesdirectes/common/ui/edito-icon.png');width:27px;height:27px;position:absolute;left:-27px;top:50%;margin-top:-14px;}
+    }
+    &:before{content:url('../../images/vacancesdirectes/common/ui/open-quote.png');width:66px;height:122px;position:absolute;left:-5px;top:10px;margin-top:0px;}
+    &:after{content:url('../../images/vacancesdirectes/common/ui/close-quote.png');width:66px;height:122px;position:absolute;right:-5px;bottom:10px;margin-top:0px;}
+  }
+  .radiusBox{
+    h2{font-family:@ptnarrow;text-transform:uppercase;margin:0 0 20px 0;position:relative;}
+    &#boxEdito h2{._verticalCenter(24px);}
+    .stamp{margin:0 0 20px 0;
+      h2{margin:0;}
+    }
+  }
+
+/* SEARCH */
+  #headerContainer #nav{margin-left:-@gutter;width:976px;height:auto;font-size:18px;font-weight:bold;
+    ul{width:858px;margin:0 auto;text-align:center;
+      li.tab{width:186px;margin:0 12px;float:none;display:inline-block;
+        a{text-decoration:underline;
+          &:hover{text-decoration:none;}
+        }
+        &.current a{text-decoration:none;}
+      }
+    }
+    .topnavSub{width:100%;background:@colorFushia;text-align:center;
+      li.tab{float:none;display:inline-block;}
+    }
+  }
+
+}
+
+/*
+ * ##################################################
+ *                      COULOIR
+ * ##################################################
+ */
+
+.stain{width:131px;._verticalCenter(55px);background:url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -439px transparent;text-align:center;font-size:10px;color:@colorBlanc;left:130px;bottom:0px;position:absolute;
+  &>span{margin-top:15px;}
+  .price{font-size:27px;font-weight:bold;display:block;margin:8px 0 -8px;letter-spacing:normal;}
+}
+
+input,
+textarea{font:bold 12px @arial;color:@colorGris0;}
+input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
+textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+.label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
+
+#authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
+  h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
+  &>div{background-color:@colorBgGrisC;color:@colorGris2;
+    &>div{padding:10px;clear:both;}
+    .whiteBg{background-color:@colorBgBlanc;
+      .aField,
+      .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;
+        .field,
+        input[type="radio"]:checked + label{ font-weight: bold; }
+      }
+    }
+    #existingCustomerLayer,
+    #newCustomerLayer{
+      .aField{margin-bottom:10px;}
+      .label{margin-right:10px;text-align:right;}
+    }
+    #newCustomerLayer{
+      .label{width:130px;padding-top:3px;}
+      #newAccount{
+        .aField{width:480px;
+          input{width:320px;}
+        }
+      }
+      #address{
+        td{display:inline-block;margin-bottom:10px;float:left;
+          &:last-child > *{margin-right:0;}
+        }
+        input,textarea{width:141px;margin-right:15px;}
+        textarea{width:141px;height:81px;}
+      }
+    }
+    #existingCustomerLayer{
+      .aField{width:480px;float:left;
+        .label{width:130px;}
+        input{width:320px;}
+      }
+      .loginLink{float:right;}
+    }
+  }
+}
+
+#reservation{
+  .aRoom{
+    h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
+      small{font:bold 17px @arial;text-transform:none;}
+    }
+    .price{font:bold 19px/18px @ptnarrow;text-align:right;}
+    .action{text-align:right;}
+    .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
+      &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+      .addAction{position:relative;margin-right:5px;float:right;width:20px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+    }
+    tr{font-weight:bold;
+      &.productsNotSelectedYet{font-weight:normal;}
+      td{height:30px;vertical-align:middle;
+        .control_checkbox{margin-top:0;}
+        .hiddenIfCheckbox{display:none;}
+      }
+    }
+    .anOccupant{background-color:@colorBlanc;
+      h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;
+        .occupantHeaderLeft{._verticalCenter(27px);
+          small{font:bold 17px @arial;text-transform:none;}
+          &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
+        }
+      }
+      .occupantFields{padding:10px 5px;
+        &>*{margin:0 5px 10px;}
+        input{border:1px solid @colorBorderGris;}
+        .control_text{width:150px;}
+        .control_date{width:120px;}
+        #date_sRowID_link{right:0 !important;}
+      }
+      h4{display:none;}
+    }
+  }
+  #financialContener{
+    input{border:1px solid @colorBorderGris;}
+    .field{margin-bottom:10px;
+      .newListSelected{float:none;
+        .selectedTxt{border: 1px solid @colorBorderGris;}
+      }
+    }
+  }
+}
+#reservationContener{
+  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
+  p{margin-bottom:10px;}
+  table{width:100%}
+
+// step 2
+  #option{
+    h2 + p{font-weight:bold;}
+    .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+    .field textarea{width:423px;height:54px;}
+    .criteria{margin-bottom:10px;clear:both;
+      .label{float:left;._verticalCenter(27px);}
+      input{width:125px;}
+    }
+    .aField{
+      input[type="checkbox"]{margin-top:1px;}
+      label{font-style:italic;font-weight:bold;
+        a{color:@colorFushia;}
+      }
+    }
+  }
+  #paiement{
+    table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+      th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+      td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+        &:nth-child(1){font-weight:bold;}
+        &.amount{width:125px;text-align:right;}
+      }
+    }
+  }
+
+  .rsl-date-input,
+  .control_date {position:relative;
+    #date_sRowID_link{position:absolute;top:-7px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+      img{display:none;}
+    }
+  }
+
+  label,input[type="radio"] {vertical-align:middle;}
+  input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+  input[type="radio"] {height:auto;}
+
+}
+
+// box fushia in sidebar
+.proposal{font:normal 14px/17px @arial;padding-bottom:60px;text-align:center;color:@colorBlanc;
+  .proposalDates{font:bold 18px/21px @arial;}
+  .proposalPicture{margin:10px 0 8px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));}
+  .total{
+    span{font:bold 16px/17px @ptnarrow;
+      .price{font:bold 19px/18px @ptnarrow;margin:0;}
+    }
+  }
+  table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;}
+}
+
+/* Stylish Select 0.4.9 */
+
+// step 1
+#authentication #newCustomerLayer{
+  ._stylish-select(141px,27px,0px,4);
+}
+#reservation .aRoom{
+  ._stylish-select(54px,27px,10px,5);
+}
+#reservation #financialContener{
+  ._stylish-select(216px,27px,0px,4);
+}
+
+// step 2
+#option {
+  ._stylish-select(141px,27px,0px,4);
+}
+
+#please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 35px @colorBgBlanc;text-align:center;font:normal 15px @arial;padding:100px 20px;opacity:0.8;}
+
+#footerContener{overflow:hidden;margin-top:20px;clear:both;
+  .mentions, .footerNavigation{display:none;
+    &.gauche, &.droite, &.pageListe{display:block;}
+    &.gauche{float:left;}
+    &.droite{float:right;margin-top:-14px;}
+  }
+  .footerNavigation.gauche a,
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
+  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
+  .footerNavigation.droite a{background-image:none;background-color:@colorFushia;}
+  .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
+    a, b{float:left;padding:0 10px;line-height:24px;text-decoration:none;border:1px solid #ddd;border-left-width:0;
+      &:hover{background-color:#f5f5f5;}
+      &:first-child{border-left-width: 1px;._border-radius(3px 0 0 3px);}
+      &:last-child{
+        -webkit-border-radius: 0 3px 3px 0;
+        -moz-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    b{background-color: #f5f5f5;}
+  }
+  .mentions{clear:both;padding-bottom:15px;text-align:center;
+    a{color:@colorBleuF;}
+  }
+}
+
+
+
+/*
+* Vacances directes select style
+---------------------------------------------------------*/
+
+// Stylish Select
+.stylish-select .SSContainerDivWrapper {
+  left:-9999px;
+}
+
+._stylish-select(@selectWidth,@selectHeight,@marginRight,@spriteNumber){
+  .SSContainerDivWrapper {min-width:@selectWidth;}
+  ul.newList a {._verticalCenter(@selectHeight);}
+  .newListSelected {width:@selectWidth;._verticalCenter(@selectHeight);margin-right:@marginRight;
+    .selectedTxt {width:@selectWidth - @selectHeight - 7px;._verticalCenter(@selectHeight);padding:0 @selectHeight 0 7px;}
+    .selectedTxt:after{width:27px;height:@selectHeight;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -@selectHeight*@spriteNumber transparent;}
+  }
+}
+
+.SSContainerDivWrapper {margin:0;padding:0;position:absolute;top:22px;left:0;z-index:2;}
+ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
+ul.newList * {margin:0;padding:0;}
+ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;white-space:nowrap;cursor:pointer;}
+.newListSelected {float:left;background-color:@colorBgGrisC;position:relative;
+  .selectedTxt:after{content:"";display:block;position:absolute;top:0;right:0;}
+}
+.newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
+ul.newList li a:focus {-moz-outline-style: none;}
+.selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
+ul.newList li:first-child{display:none;}
+ul.newList.optGroup li a {padding:0 8px 0 18px;}
+ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
+.hiLite {background:#ED145B!important;color:#fff!important;}
+.newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
+.newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+.newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+.newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+
+.newListSelHover,
+.newListSelFocus {cursor:default;}
+
+.newListOptionTitle {font-weight:bold;}
+
+.newListOptionTitle ul {margin:3px 0 0;}
+
+.newListOptionTitle li {font-weight:normal;}
+.newListSelected{font:bold 12px/27px @arial;color:@colorGris2;color:@colorBgGrisM;
+  .SSContainerDivWrapper{
+    .newListHover {background-color:#ccc!important;color:@colorGris2!important;}
+    ul.newList li a {background-color:@colorBlanc;color:@colorBgGrisM;}
+    ul.newList.optGroup li.optGroup-like a {background-color:@colorBgGrisM;color:@colorBlanc;}
+    ul.newList li a.newListHover {background-color:@colorBgGrisC!important;color:@colorGris2!important;}
+    ul.newList.optGroup li.optGroup-like a.newListHover {background-color:@colorGris2!important;color:@colorBlanc!important;}
+  }
+}

@@ -462,9 +462,6 @@ body.clear {
 .column .ratio-33.clear {
   margin-right: 0;
 }
-#reservationContener table {
-  width: 100%;
-}
 /* STEPS */
 #stepNav {
   width: 976px;
@@ -705,7 +702,7 @@ textarea {
   margin-bottom: 10px;
   float: left;
 }
-#authentication > div #newCustomerLayer #address td:last-child input {
+#authentication > div #newCustomerLayer #address td:last-child > * {
   margin-right: 0;
 }
 #authentication > div #newCustomerLayer #address input,
@@ -889,6 +886,139 @@ textarea {
 #reservation #financialContener .field .newListSelected .selectedTxt {
   border: 1px solid #c6c5c5;
 }
+#reservationContener h2 {
+  color: #8c8a8a;
+  text-transform: uppercase;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  height: 40px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 40px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservationContener h2 > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservationContener h2 > img {
+  vertical-align: middle;
+}
+#reservationContener p {
+  margin-bottom: 10px;
+}
+#reservationContener table {
+  width: 100%;
+}
+#reservationContener #option h2 + p {
+  font-weight: bold;
+}
+#reservationContener #option .label {
+  vertical-align: top;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  margin-right: 5px;
+}
+#reservationContener #option .field textarea {
+  width: 423px;
+  height: 54px;
+}
+#reservationContener #option .criteria {
+  margin-bottom: 10px;
+  clear: both;
+}
+#reservationContener #option .criteria .label {
+  float: left;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservationContener #option .criteria .label > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservationContener #option .criteria .label > img {
+  vertical-align: middle;
+}
+#reservationContener #option .criteria input {
+  width: 125px;
+}
+#reservationContener #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
+  min-width: 146px;
+}
+#reservationContener #option .aField input[type="checkbox"] {
+  margin-top: 1px;
+}
+#reservationContener #option .aField label {
+  font-style: italic;
+  font-weight: bold;
+}
+#reservationContener #option .aField label a {
+  color: #ed145b;
+}
+#reservationContener #paiement table {
+  display: block;
+  background-color: #ffffff;
+  margin: 10px 0;
+}
+#reservationContener #paiement table th {
+  background-color: #464545;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #464545;
+}
+#reservationContener #paiement table td {
+  margin: 10px 0;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #464545;
+}
+#reservationContener #paiement table td:nth-child(1) {
+  font-weight: bold;
+}
+#reservationContener #paiement table td.amount {
+  width: 125px;
+  text-align: right;
+}
+#reservationContener .rsl-date-input,
+#reservationContener .control_date {
+  position: relative;
+}
+#reservationContener .rsl-date-input #date_sRowID_link,
+#reservationContener .control_date #date_sRowID_link {
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+}
+#reservationContener .rsl-date-input #date_sRowID_link img,
+#reservationContener .control_date #date_sRowID_link img {
+  display: none;
+}
+#reservationContener label,
+#reservationContener input[type="radio"] {
+  vertical-align: middle;
+}
+#reservationContener input[type="radio"] + label {
+  display: inline-block;
+  margin: 3px 5px 0 0;
+}
+#reservationContener input[type="radio"] {
+  height: auto;
+}
 .proposal {
   font: normal 14px/17px Arial, Helvetica, sans-serif;
   padding-bottom: 60px;
@@ -897,7 +1027,7 @@ textarea {
 .proposal .proposalDates {
   font: bold 18px/21px Arial, Helvetica, sans-serif;
 }
-.proposal img {
+.proposal .proposalPicture {
   margin: 10px 0 8px;
   border: 5px solid #fff;
   -webkit-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
@@ -916,34 +1046,6 @@ textarea {
   margin: 10px 0;
   padding-top: 10px;
   text-align: left;
-}
-.rsl-date-input,
-.control_date {
-  position: relative;
-}
-.rsl-date-input #date_sRowID_link,
-.control_date #date_sRowID_link {
-  position: absolute;
-  top: -7px;
-  right: 15px;
-  width: 27px;
-  height: 27px;
-  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
-}
-.rsl-date-input #date_sRowID_link img,
-.control_date #date_sRowID_link img {
-  display: none;
-}
-label,
-input[type="radio"] {
-  vertical-align: middle;
-}
-input[type="radio"] + label {
-  display: inline-block;
-  margin: 3px 5px 0 0;
-}
-input[type="radio"] {
-  height: auto;
 }
 /* Stylish Select 0.4.9 */
 #authentication #newCustomerLayer .SSContainerDivWrapper {
@@ -1140,6 +1242,72 @@ input[type="radio"] {
   vertical-align: middle;
 }
 #reservation #financialContener .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
+}
+#option .SSContainerDivWrapper {
+  min-width: 141px;
+}
+#option ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#option ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#option ul.newList a > img {
+  vertical-align: middle;
+}
+#option .newListSelected {
+  width: 141px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+#option .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#option .newListSelected > img {
+  vertical-align: middle;
+}
+#option .newListSelected .selectedTxt {
+  width: 107px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+#option .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#option .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+#option .newListSelected .selectedTxt:after {
   width: 27px;
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
