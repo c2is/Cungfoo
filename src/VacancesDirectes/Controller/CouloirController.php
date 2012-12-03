@@ -42,6 +42,7 @@ class CouloirController implements ControllerProviderInterface
                 'query' => $query,
             ));
         })
+        ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
 
         $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
@@ -61,6 +62,7 @@ class CouloirController implements ControllerProviderInterface
                 'query' => $query,
             ));
         })
+        ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
 
         return $controllers;
