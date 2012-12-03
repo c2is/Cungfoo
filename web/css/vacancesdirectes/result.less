@@ -2,16 +2,18 @@
   .nb{display:block;font:bold 45px Arial, sans-serif;}
 }
 .typeAff{float:left;width:143px;height:98px;border-right: 1px solid @colorFushia;padding:11px 0 0 23px;
-  span{font-weight:bold;color:@colorGris2;}
-  button{width:50px;height:50px;border:0;._border-radius(5px);background-color:@colorBgGrisC;
-    &.active{background-color:@colorFushia;}
+  span{font-weight:bold;color:@colorGris2;display:block;padding-right:15px;margin-bottom:5px;}
+  button{width:50px;height:50px;border:0;text-indent:-999em;}
+  #btList{background:url(../../images/vacancesdirectes/common/sprites/switchListMap.png) no-repeat 0 100%;
+      &.active{background-position:0 0;}
   }
-  #btList{}
-  #btMap{}
+  #btMap{background:url(../../images/vacancesdirectes/common/sprites/switchListMap.png) no-repeat 100% 0;
+      &.active{background-position:100% 100%}
+  }
 }
 #widgetRange{float:left;width:326px;margin:10px 0 0 22px;padding:10px;background:@colorBgGrisC;._border-radius(5px);font:bold 15px Arial;color:#575757;height:82px;
   #noUiSlider{width:288px;margin:10px 6px;color:@colorFushia;background:#bcb9b9;padding:0 10px;}
-  .noUi-handle{cursor:pointer;
+  .noUi-handle{cursor:pointer;z-index:1 !important;
     &:first-child .rangeBox{left:-14px;}
     &:last-child .rangeBox{left:-34px;}
   }
@@ -71,6 +73,7 @@
     .bt.big{font-weight:bold;margin:20px auto;display:inline-block;padding:7px 15px;}
   }
   .itemResultBottom{min-height:100px;clear:both;background:@colorGris3;padding:20px 10px;position:relative;._border-radius(0 0 15px 15px);
+    [type="radio"]{vertical-align:-2px;}
     .linePrice{
       label{float:left;clear:left;width:345px;}
       .stain{display:none;position:absolute;bottom:5px;left:355px;}
@@ -128,7 +131,7 @@
   .title{color: #666666;font: bold 15px @arial,sans-serif;text-align: center;}
 }
 
-#resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;
+#resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;border:10px solid @colorBgGrisC;._border-radius(8px);margin:10px 0;
   ._transition(opacity .5s);
 }
 #resultMap.active{opacity:1;position:relative !important;top:0;left:0;}

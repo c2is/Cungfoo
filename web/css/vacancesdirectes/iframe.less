@@ -19,7 +19,7 @@
 @colorBgGrisF:#464545; /* bg gris sombre */
 @colorBgGrisM:#8c8a8a; /* bg gris */
 @colorBgGrisC:#e6e5e5; /* bg gris clair */
-
+@colorBgFushia: #ed145b;
 @colorBgBlanc:#ffffff; /* bg blanc */
 @colorBgBleu:#009ab0; /* bg bleu */
 @colorBgBleu2:#009bc9; /* bg bleu2 */
@@ -479,4 +479,56 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
   .newListOptionTitle {font-weight:bold;}
   .newListOptionTitle ul {margin:3px 0 0;}
   .newListOptionTitle li {font-weight:normal;}
+}
+
+
+/* SEMAINIER */
+#semainier{margin:0;
+  h1{font:bold 25px/24px @ptnarrow;margin-bottom:10px;}
+  #semainierContener{background-color:@colorBgFushia;color:#fff;._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+    .semainierType{margin-bottom:10px;display:none;
+      span{border:1px solid #fff;._border-radius(5px);color:#fff;display:inline-block;font-size:12px;padding:6px 5px 4px;font-weight:bold;
+        a{color:#fff;text-decoration:none;}
+        &.selected{background:#fff;color:@colorFushia;display:block;}
+      }
+    }
+    table.aSemainier{width:100%;background:#ffffff;
+      tr:nth-child(2){font-size:10px;font-weight:bold;text-transform:uppercase;}
+      td{color:#464545;padding:8px 9px;border:1px solid #e1e1e1;
+        &.reserver{text-align:center;
+          .orderPrice{color:@colorFushia;font:bold 19px/19px Arial;}
+          .orderLink{color:@colorFushia;font:14px/18px @ptnarrow;}
+        }
+      }
+      .semainier_table-line1{background-color:#8c8a8a;
+        td{padding:16px 0 12px;text-transform:uppercase;color:#fff;font-weight:bold;font-size:11px;text-align:center;border-color:#8C8A8A;}
+      }
+      tr:last-child{background-color:@colorBgFushia;
+        td{border-color:@colorBgFushia;}
+        a{color:@colorBlanc;font:13px @ptnarrow;text-transform:uppercase;}
+        .monthNavigationPrevious{float:left;
+          &:before{content:'<<';}
+        }
+        .monthNavigationNext{float:right;
+          &:after{content:'>>';}
+        }
+      }
+    }
+    .monthList{text-align:center;
+      li{background:#e6e5e5;border-radius:5px 5px 0 0;display:inline-block;padding:4px 10px 1px;text-transform:uppercase;
+        a{text-decoration:none;color:#464545;font:bold 11px Arial;}
+        &.on{background:#8c8a8a;
+          a{color:#fff;}
+        }
+      }
+    }
+    .pNbr{overflow:hidden;margin-bottom:10px;
+      .number{float:left;border-right:1px solid #fff;font:bold 35px Arial;padding:0px 5px 0px 0px;}
+      .titre{float:left;border-left:1px solid #fff;margin-left:-1px;padding:0px 0px 4px 10px;
+        strong{font:bold 16px Arial;display:block;}
+        em{font:italic 13px Arial;display:block;margin-bottom:10px;}
+      }
+      select{text-transform:uppercase;font:12px Arial;color:#606060;width:300px;padding:3px 0;}
+    }
+  }
 }

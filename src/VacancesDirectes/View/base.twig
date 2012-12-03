@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css') }}">
 
     <script src="{{ asset('vendor/head.extended.js') }}"></script>
-    <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
+    <script>
+        var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
+        var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
+    </script>
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
     <header class="clear">
@@ -72,7 +75,7 @@
     </script>
 
     <!-- Prompt IE 6 users to install Chrome Frame -->
-    <!--[if lt IE 7 ]>
+    <!--[if lte IE 8 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
