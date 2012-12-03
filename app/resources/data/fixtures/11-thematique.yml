@@ -1,15 +1,15 @@
 \Cungfoo\Model\Thematique:
     1:
         Code: NV12
-        ImagePath: .
+        ImagePath: uploads/thematiques/50bc67dd5d63c.png
         Active: true
     2:
         Code: PAQU
-        ImagePath: .
+        ImagePath: uploads/thematiques/50bc67e7515fe.png
         Active: true
     3:
         Code: PDLE
-        ImagePath: .
+        ImagePath: uploads/thematiques/50bc67f0efaae.png
         Active: true
     4:
         Code: VAFA
