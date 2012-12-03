@@ -279,6 +279,7 @@ function addLinkBlock(){
                 //if height of list is greater then max height, set list height to max height value
                 if (newUlHeight > parseInt(opts.ddMaxHeight)){
                     newUlHeight = parseInt(opts.ddMaxHeight);
+                    $containerDivWrapper.addClass('maxHeight');
                 }
 
                 containerPosY = containerPosY-scrollTop;
