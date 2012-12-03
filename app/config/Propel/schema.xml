@@ -55,6 +55,7 @@
     <table name="etablissement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="integer" required="true" />
+        <column name="slug" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="title" type="varchar" />
         <column name="address1" type="varchar" />
@@ -279,6 +280,7 @@
     <table name="ville">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
+        <column name="slug" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
@@ -293,7 +295,7 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,introduction,description" />
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
@@ -305,6 +307,7 @@
     <table name="region">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
+        <column name="slug" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
@@ -323,7 +326,7 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,introduction,description" />
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
@@ -335,6 +338,7 @@
     <table name="pays">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
+        <column name="slug" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
@@ -344,7 +348,7 @@
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,introduction,description" />
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
