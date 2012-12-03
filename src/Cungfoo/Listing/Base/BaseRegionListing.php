@@ -21,6 +21,13 @@ class BaseRegionListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
+        $this->addColumn(new Column\TextColumn('image_path'));
+        $this->addColumn(new Column\TextColumn('image_encart_path'));
+        $this->addColumn(new Column\TextColumn('image_encart_petite_path'));
+        $this->addColumn(new Column\TextColumn('mea_home'));
+        $this->addColumn(new Column\TextColumn('image_detail_1'));
+        $this->addColumn(new Column\TextColumn('image_detail_2'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

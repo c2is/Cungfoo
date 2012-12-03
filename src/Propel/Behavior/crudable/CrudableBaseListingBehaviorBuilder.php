@@ -98,6 +98,11 @@ class {$this->getClassname()} extends Listing
                 }
             }
 
+            if ($column->getType() == PropelTypes::BOOLEAN)
+            {
+                $columnsRender .= $this->generateColumn($column->getName(), 'Text');
+            }
+
         }
 
         $script .= "

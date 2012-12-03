@@ -20,8 +20,11 @@ class BaseMiseEnAvantListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('image_fond_path'));
         $this->addColumn(new Column\TextColumn('prix'));
+        $this->addColumn(new Column\TextColumn('illustration_path'));
         $this->addColumn(new Column\DateColumn('date_fin_validite'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**
