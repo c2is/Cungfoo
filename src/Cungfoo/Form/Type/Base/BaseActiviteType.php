@@ -79,6 +79,20 @@ class BaseActiviteType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'activite.description',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'keywords' => array(
+                    'required' => false,
+                    'label' => 'activite.keywords',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

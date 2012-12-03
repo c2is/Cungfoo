@@ -25,10 +25,14 @@ use Cungfoo\Model\BaignadeI18nQuery;
  * @method BaignadeI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method BaignadeI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method BaignadeI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method BaignadeI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method BaignadeI18nQuery orderByKeywords($order = Criteria::ASC) Order by the keywords column
  *
  * @method BaignadeI18nQuery groupById() Group by the id column
  * @method BaignadeI18nQuery groupByLocale() Group by the locale column
  * @method BaignadeI18nQuery groupByName() Group by the name column
+ * @method BaignadeI18nQuery groupByDescription() Group by the description column
+ * @method BaignadeI18nQuery groupByKeywords() Group by the keywords column
  *
  * @method BaignadeI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BaignadeI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +48,14 @@ use Cungfoo\Model\BaignadeI18nQuery;
  * @method BaignadeI18n findOneById(int $id) Return the first BaignadeI18n filtered by the id column
  * @method BaignadeI18n findOneByLocale(string $locale) Return the first BaignadeI18n filtered by the locale column
  * @method BaignadeI18n findOneByName(string $name) Return the first BaignadeI18n filtered by the name column
+ * @method BaignadeI18n findOneByDescription(string $description) Return the first BaignadeI18n filtered by the description column
+ * @method BaignadeI18n findOneByKeywords(string $keywords) Return the first BaignadeI18n filtered by the keywords column
  *
  * @method array findById(int $id) Return BaignadeI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BaignadeI18n objects filtered by the locale column
  * @method array findByName(string $name) Return BaignadeI18n objects filtered by the name column
+ * @method array findByDescription(string $description) Return BaignadeI18n objects filtered by the description column
+ * @method array findByKeywords(string $keywords) Return BaignadeI18n objects filtered by the keywords column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +146,7 @@ abstract class BaseBaignadeI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `NAME` FROM `baignade_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION`, `KEYWORDS` FROM `baignade_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +332,64 @@ abstract class BaseBaignadeI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BaignadeI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BaignadeI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BaignadeI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the keywords column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByKeywords('fooValue');   // WHERE keywords = 'fooValue'
+     * $query->filterByKeywords('%fooValue%'); // WHERE keywords LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $keywords The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BaignadeI18nQuery The current query, for fluid interface
+     */
+    public function filterByKeywords($keywords = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($keywords)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $keywords)) {
+                $keywords = str_replace('*', '%', $keywords);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BaignadeI18nPeer::KEYWORDS, $keywords, $comparison);
     }
 
     /**
