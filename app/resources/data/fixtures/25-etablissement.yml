@@ -1,6 +1,7 @@
 \Cungfoo\Model\Etablissement:
     1:
         Code: 10
+        Slug: amiaux
         Name: Amiaux
         Title: null
         Address1: '223 Route de N.D. de Monts'
@@ -27,6 +28,7 @@
         Active: true
     2:
         Code: 100
+        Slug: pins-parasols
         Name: 'Pins Parasols '
         Title: null
         Address1: '3360 Rue des Combattants d''Afrique du Nord'
@@ -53,6 +55,7 @@
         Active: true
     3:
         Code: 101
+        Slug: plage-fleurie
         Name: 'Plage Fleurie '
         Title: null
         Address1: 'Les Mazes'
@@ -79,6 +82,7 @@
         Active: true
     4:
         Code: 102
+        Slug: playa-montroig
         Name: 'Playa Montroig'
         Title: null
         Address1: 'Apartado de Correos 3'
@@ -105,6 +109,7 @@
         Active: true
     5:
         Code: 103
+        Slug: playa-tropicana
         Name: 'Playa Tropicana '
         Title: null
         Address1: 'camino de l''attall s/n'
@@ -131,6 +136,7 @@
         Active: true
     6:
         Code: 104
+        Slug: port-de-plaisance
         Name: 'Port de plaisance'
         Title: null
         Address1: 'Prad Poullou'
@@ -157,6 +163,7 @@
         Active: true
     7:
         Code: 106
+        Slug: ribeyre
         Name: Ribeyre
         Title: null
         Address1: 'Route de Jassat'
@@ -183,6 +190,7 @@
         Active: true
     8:
         Code: 108
+        Slug: roussillonnais
         Name: Roussillonnais
         Title: null
         Address1: 'Boulevard de la Mer'
@@ -209,6 +217,7 @@
         Active: true
     9:
         Code: 109
+        Slug: sables-de-cordouan
         Name: 'Sables de Cordouan '
         Title: null
         Address1: '2344 Route de la Fouasse'
@@ -235,6 +244,7 @@
         Active: true
     10:
         Code: 11
+        Slug: azu-rivage
         Name: 'Azu''Rivage'
         Title: null
         Address1: '720 Route des Campings'
@@ -261,6 +271,7 @@
         Active: true
     11:
         Code: 110
+        Slug: saint-aygulf-plage
         Name: 'Saint Aygulf Plage'
         Title: null
         Address1: '270 Boulevard Salvarelli'
@@ -287,6 +298,7 @@
         Active: true
     12:
         Code: 111
+        Slug: saint-louis
         Name: 'Saint Louis'
         Title: null
         Address1: '2160 Avenue de la République'
@@ -313,6 +325,7 @@
         Active: true
     13:
         Code: 112
+        Slug: domaine-de-la-sainte-baume
         Name: 'Domaine de la Sainte Baume'
         Title: null
         Address1: 'Quartier Delvieux Sud'
@@ -339,6 +352,7 @@
         Active: true
     14:
         Code: 113
+        Slug: sainte-marie
         Name: 'Sainte-Marie '
         Title: null
         Address1: 'Rue des Clauses'
@@ -365,6 +379,7 @@
         Active: true
     15:
         Code: 114
+        Slug: sen-yan
         Name: 'Sen Yan '
         Title: null
         Address1: 'La Gare'
@@ -391,6 +406,7 @@
         Active: true
     16:
         Code: 116
+        Slug: ferme-de-la-serraz
         Name: 'Ferme de la Serraz '
         Title: null
         Address1: 'Rue de la Poste'
@@ -417,6 +433,7 @@
         Active: true
     17:
         Code: 117
+        Slug: signol
         Name: 'Signol '
         Title: null
         Address1: 'avenue des Albatros '
@@ -443,6 +460,7 @@
         Active: true
     18:
         Code: 118
+        Slug: soleil
         Name: 'Soleil '
         Title: null
         Address1: 'Route du Littoral'
@@ -469,6 +487,7 @@
         Active: true
     19:
         Code: 119
+        Slug: soleil-de-la-mediterranee
         Name: 'Soleil de la Méditerranée'
         Title: null
         Address1: '2 rue Ste Beuve'
@@ -495,6 +514,7 @@
         Active: true
     20:
         Code: 12
+        Slug: bahia-club
         Name: 'Bahia Club'
         Title: null
         Address1: 'Chemin de l''Hourtou'
@@ -521,6 +541,7 @@
         Active: true
     21:
         Code: 120
+        Slug: sources
         Name: 'Sources '
         Title: null
         Address1: 'Route des Crêtes'
@@ -547,6 +568,7 @@
         Active: true
     22:
         Code: 121
+        Slug: zz-talaris
         Name: 'zz Talaris '
         Title: null
         Address1: 'Route de l''Océan'
@@ -573,6 +595,7 @@
         Active: true
     23:
         Code: 122
+        Slug: tamerici
         Name: 'Tamerici '
         Title: null
         Address1: 'Via della Cecinella 5'
@@ -599,6 +622,7 @@
         Active: true
     24:
         Code: 123
+        Slug: tenuta-primero
         Name: 'Tenuta Primero '
         Title: null
         Address1: 'Via Monfalcone 14'
@@ -625,6 +649,7 @@
         Active: true
     25:
         Code: 125
+        Slug: ur-onea
         Name: 'Ur Onea '
         Title: null
         Address1: 'Rue de la Chapelle'
@@ -651,6 +676,7 @@
         Active: true
     26:
         Code: 126
+        Slug: via-romana
         Name: 'Via Romana '
         Title: null
         Address1: 'Casamozza di Fium''Orbu'
@@ -677,6 +703,7 @@
         Active: true
     27:
         Code: 127
+        Slug: vieux-port
         Name: 'Vieux Port '
         Title: null
         Address1: 'Route Plage Sud'
@@ -703,6 +730,7 @@
         Active: true
     28:
         Code: 128
+        Slug: vignes
         Name: 'Vignes '
         Title: null
         Address1: '1545 Route du Cap de l''Homy'
@@ -729,6 +757,7 @@
         Active: true
     29:
         Code: 129
+        Slug: vilanova-park
         Name: 'Vilanova Park '
         Title: null
         Address1: 'AP 64.Ctra Arboc Km 2.5'
@@ -755,6 +784,7 @@
         Active: true
     30:
         Code: 130
+        Slug: zagarella
         Name: Zagarella
         Title: null
         Address1: 'Rue des Sables'
@@ -781,6 +811,7 @@
         Active: true
     31:
         Code: 131
+        Slug: ruisseau-des-pyrenees
         Name: 'Ruisseau des Pyrénées'
         Title: null
         Address1: 'Rue Burruntz'
@@ -807,6 +838,7 @@
         Active: true
     32:
         Code: 133
+        Slug: masia
         Name: Masia
         Title: null
         Address1: 'C/Colon,44'
@@ -833,6 +865,7 @@
         Active: true
     33:
         Code: 134
+        Slug: tamaris
         Name: Tamaris
         Title: null
         Address1: 'Rte de St Laurent'
@@ -859,6 +892,7 @@
         Active: true
     34:
         Code: 135
+        Slug: playa-joyel
         Name: 'Playa Joyel'
         Title: null
         Address1: 'Playa De Ris'
@@ -885,6 +919,7 @@
         Active: true
     35:
         Code: 136
+        Slug: grande-italia
         Name: 'Grande Italia'
         Title: null
         Address1: 'Zona Demaniale 10/I'
@@ -911,6 +946,7 @@
         Active: true
     36:
         Code: 137
+        Slug: pearl-village-club
         Name: 'Pearl Village Club'
         Title: null
         Address1: 'Route de Taxo à la Mer'
@@ -937,6 +973,7 @@
         Active: true
     37:
         Code: 138
+        Slug: pins-maritimes
         Name: 'Pins Maritimes'
         Title: null
         Address1: '1633 boulevard de la Marine'
@@ -963,6 +1000,7 @@
         Active: true
     38:
         Code: 139
+        Slug: zz-le-barralet
         Name: 'zz Le Barralet'
         Title: null
         Address1: ''
@@ -989,6 +1027,7 @@
         Active: true
     39:
         Code: 14
+        Slug: beau-rivage
         Name: 'Beau Rivage '
         Title: null
         Address1: 'Avenue de Montpellier'
@@ -1015,6 +1054,7 @@
         Active: true
     40:
         Code: 140
+        Slug: zz-village-cavallino
         Name: 'zz Village Cavallino'
         Title: null
         Address1: ''
@@ -1041,6 +1081,7 @@
         Active: true
     41:
         Code: 141
+        Slug: zz-aux-hamacs
         Name: 'zz Aux Hamacs'
         Title: null
         Address1: ''
@@ -1067,6 +1108,7 @@
         Active: true
     42:
         Code: 142
+        Slug: zz-prat-dou-rey
         Name: 'zz Prat Dou Rey'
         Title: null
         Address1: ''
@@ -1093,6 +1135,7 @@
         Active: true
     43:
         Code: 143
+        Slug: zz-rouffiac
         Name: 'zz Rouffiac'
         Title: null
         Address1: ''
@@ -1119,6 +1162,7 @@
         Active: true
     44:
         Code: 144
+        Slug: zz-sequoia-parc
         Name: 'zz Séquoia Parc'
         Title: null
         Address1: ''
@@ -1145,6 +1189,7 @@
         Active: true
     45:
         Code: 145
+        Slug: zz-tremolat
         Name: 'zz Trémolat'
         Title: null
         Address1: ''
@@ -1171,6 +1216,7 @@
         Active: true
     46:
         Code: 146
+        Slug: zz-l-atlantique
         Name: 'zz L''Atlantique'
         Title: null
         Address1: ''
@@ -1197,6 +1243,7 @@
         Active: true
     47:
         Code: 147
+        Slug: zz-le-bahamas-beach
         Name: 'zz Le Bahamas Beach'
         Title: null
         Address1: ''
@@ -1223,6 +1270,7 @@
         Active: true
     48:
         Code: 148
+        Slug: zz-la-barque
         Name: 'zz La Barque'
         Title: null
         Address1: ''
@@ -1249,6 +1297,7 @@
         Active: true
     49:
         Code: 149
+        Slug: zz-chanset
         Name: 'zz Chanset'
         Title: null
         Address1: ''
@@ -1275,6 +1324,7 @@
         Active: true
     50:
         Code: 15
+        Slug: zz-beaulieu
         Name: 'zz Beaulieu '
         Title: null
         Address1: '3 Rue du Treuil Gras'
@@ -1301,6 +1351,7 @@
         Active: true
     51:
         Code: 150
+        Slug: zz-le-chene-gris
         Name: 'zz Le Chêne Gris'
         Title: null
         Address1: ''
@@ -1327,6 +1378,7 @@
         Active: true
     52:
         Code: 151
+        Slug: zz-les-dauphins-bleus
         Name: 'zz Les Dauphins Bleus'
         Title: null
         Address1: ''
@@ -1353,6 +1405,7 @@
         Active: true
     53:
         Code: 152
+        Slug: zz-domaine-de-beaulieu
         Name: 'zz Domaine de Beaulieu'
         Title: null
         Address1: ''
@@ -1379,6 +1432,7 @@
         Active: true
     54:
         Code: 153
+        Slug: zz-le-lamparo
         Name: 'zz Le Lamparo'
         Title: null
         Address1: ''
@@ -1405,6 +1459,7 @@
         Active: true
     55:
         Code: 154
+        Slug: zz-marmotel
         Name: 'zz Marmotel'
         Title: null
         Address1: ''
@@ -1431,6 +1486,7 @@
         Active: true
     56:
         Code: 155
+        Slug: zz-les-ondines
         Name: 'zz Les Ondines'
         Title: null
         Address1: ''
@@ -1457,6 +1513,7 @@
         Active: true
     57:
         Code: 156
+        Slug: zz-pyla-camping
         Name: 'zz Pyla Camping'
         Title: null
         Address1: ''
@@ -1483,6 +1540,7 @@
         Active: true
     58:
         Code: 157
+        Slug: zz-la-rotonde
         Name: 'zz La Rotonde'
         Title: null
         Address1: ''
@@ -1509,6 +1567,7 @@
         Active: true
     59:
         Code: 158
+        Slug: zz-village-stoja
         Name: 'zz Village Stoja'
         Title: null
         Address1: ''
@@ -1535,6 +1594,7 @@
         Active: true
     60:
         Code: 159
+        Slug: zz-le-tamarit-park
         Name: 'zz Le Tamarit Park'
         Title: null
         Address1: ''
@@ -1561,6 +1621,7 @@
         Active: true
     61:
         Code: 16
+        Slug: bois-soleil
         Name: 'Bois Soleil'
         Title: null
         Address1: '94 Chemin des Barres'
@@ -1587,6 +1648,7 @@
         Active: true
     62:
         Code: 160
+        Slug: zz-le-trivoly
         Name: 'zz Le Trivoly'
         Title: null
         Address1: ''
@@ -1613,6 +1675,7 @@
         Active: true
     63:
         Code: 161
+        Slug: zz-almadies
         Name: 'zz Almadies'
         Title: null
         Address1: ''
@@ -1639,6 +1702,7 @@
         Active: true
     64:
         Code: 162
+        Slug: zz-bois-de-pleuven
         Name: 'zz Bois de Pleuven'
         Title: null
         Address1: ''
@@ -1665,6 +1729,7 @@
         Active: true
     65:
         Code: 163
+        Slug: zz-domaine-de-la-foret
         Name: 'zz Domaine de la Forêt'
         Title: null
         Address1: ''
@@ -1691,6 +1756,7 @@
         Active: true
     66:
         Code: 164
+        Slug: zz-le-lac
         Name: 'zz Le Lac'
         Title: null
         Address1: ''
@@ -1717,6 +1783,7 @@
         Active: true
     67:
         Code: 165
+        Slug: zz-rieu-montagne
         Name: 'zz Rieu Montagné'
         Title: null
         Address1: ''
@@ -1743,6 +1810,7 @@
         Active: true
     68:
         Code: 166
+        Slug: zz-domaine-des-bans
         Name: 'zz Domaine des Bans'
         Title: null
         Address1: ''
@@ -1769,6 +1837,7 @@
         Active: true
     69:
         Code: 167
+        Slug: zz-douce-quietude
         Name: 'zz Douce Quiétude'
         Title: null
         Address1: ''
@@ -1795,6 +1864,7 @@
         Active: true
     70:
         Code: 168
+        Slug: zz-fleutron
         Name: 'zz Fleutron'
         Title: null
         Address1: ''
@@ -1821,6 +1891,7 @@
         Active: true
     71:
         Code: 169
+        Slug: zz-palmeraie
         Name: 'zz Palmeraie'
         Title: null
         Address1: ''
@@ -1847,6 +1918,7 @@
         Active: true
     72:
         Code: 17
+        Slug: bordeneo
         Name: 'Bordenéo '
         Title: null
         Address1: 'Belle Ile en Mer'
@@ -1873,6 +1945,7 @@
         Active: true
     73:
         Code: 170
+        Slug: zz-les-tours
         Name: 'zz Les Tours'
         Title: null
         Address1: ''
@@ -1899,6 +1972,7 @@
         Active: true
     74:
         Code: 171
+        Slug: zz-abri-de-camargue
         Name: 'zz Abri de Camargue'
         Title: null
         Address1: ''
@@ -1925,6 +1999,7 @@
         Active: true
     75:
         Code: 172
+        Slug: zz-domaine-des-iscles
         Name: 'zz Domaine des Iscles'
         Title: null
         Address1: ''
@@ -1951,6 +2026,7 @@
         Active: true
     76:
         Code: 173
+        Slug: zz-lacs-du-verdon
         Name: 'zz Lacs du Verdon'
         Title: null
         Address1: ''
@@ -1977,6 +2053,7 @@
         Active: true
     77:
         Code: 174
+        Slug: zz-les-pins-payrac
         Name: 'zz Les Pins Payrac'
         Title: null
         Address1: ''
@@ -2003,6 +2080,7 @@
         Active: true
     78:
         Code: 175
+        Slug: domaine-des-pins
         Name: 'Domaine des Pins'
         Title: null
         Address1: '151 Avenue de la Faye'
@@ -2029,6 +2107,7 @@
         Active: true
     79:
         Code: 176
+        Slug: atlantic-club-montalivet
         Name: 'Atlantic Club Montalivet'
         Title: null
         Address1: '47 Avenue de l''Europe'
@@ -2055,6 +2134,7 @@
         Active: true
     80:
         Code: 177
+        Slug: ajoncs-d-or
         Name: 'Ajoncs d''Or'
         Title: null
         Address1: 'Chemin du Rocher'
@@ -2081,6 +2161,7 @@
         Active: true
     81:
         Code: 178
+        Slug: camping-les-biches
         Name: 'Camping Les Biches'
         Title: null
         Address1: 'Route de Notre Dame de Riez'
@@ -2107,6 +2188,7 @@
         Active: true
     82:
         Code: 179
+        Slug: aqua-viva
         Name: 'Aqua Viva'
         Title: null
         Address1: 'Route de Souillac'
@@ -2133,6 +2215,7 @@
         Active: true
     83:
         Code: 18
+        Slug: zz-bretonniere
         Name: 'zz Bretonnière'
         Title: null
         Address1: ''
@@ -2159,6 +2242,7 @@
         Active: true
     84:
         Code: 180
+        Slug: arbousiers
         Name: Arbousiers
         Title: null
         Address1: 'Chemin des Arbousiers'
@@ -2185,6 +2269,7 @@
         Active: true
     85:
         Code: 181
+        Slug: aurilandes
         Name: Aurilandes
         Title: null
         Address1: '1001 Promenade de l’Etang'
@@ -2211,6 +2296,7 @@
         Active: true
     86:
         Code: 182
+        Slug: baie-du-kernic
         Name: 'Baie du Kernic'
         Title: null
         Address1: 'Route de Pen An Théven'
@@ -2237,6 +2323,7 @@
         Active: true
     87:
         Code: 183
+        Slug: bois-d-amour
         Name: 'Bois d’Amour'
         Title: null
         Address1: '10 allée Diane'
@@ -2263,6 +2350,7 @@
         Active: true
     88:
         Code: 184
+        Slug: ca-savio
         Name: Ca’Savio
         Title: null
         Address1: 'Via di Ca’Savio, 77'
@@ -2289,6 +2377,7 @@
         Active: true
     89:
         Code: 185
+        Slug: catalpas
         Name: Catalpas
         Title: null
         Address1: '45 chemin d’Enlias'
@@ -2315,6 +2404,7 @@
         Active: true
     90:
         Code: 186
+        Slug: chalets-de-l-isard-residence
         Name: 'Chalets de l’Isard (Résidence)'
         Title: null
         Address1: ''
@@ -2341,6 +2431,7 @@
         Active: true
     91:
         Code: 187
+        Slug: clos-du-rocher-residence
         Name: 'Clos du Rocher (Résidence)'
         Title: null
         Address1: 'Avenue du Cingle'
@@ -2367,6 +2458,7 @@
         Active: true
     92:
         Code: 188
+        Slug: club-del-sole-spina
         Name: 'Club del Sole Spina'
         Title: null
         Address1: 'Via Del Campeggio, 99'
@@ -2393,6 +2485,7 @@
         Active: true
     93:
         Code: 189
+        Slug: cote-green-residence
         Name: 'Côté Green (Résidence)'
         Title: null
         Address1: '1213 Allée des Thermes'
@@ -2419,6 +2512,7 @@
         Active: true
     94:
         Code: 19
+        Slug: california
         Name: California
         Title: null
         Address1: Orouet
@@ -2445,6 +2539,7 @@
         Active: true
     95:
         Code: 190
+        Slug: cote-des-roses
         Name: 'Côte des Roses'
         Title: null
         Address1: 'Route de Gruissan'
@@ -2471,6 +2566,7 @@
         Active: true
     96:
         Code: 191
+        Slug: cote-sauvage
         Name: 'Côte Sauvage'
         Title: null
         Address1: '336 rue de la Forêt'
@@ -2497,6 +2593,7 @@
         Active: true
     97:
         Code: 192
+        Slug: coteau-de-la-marine
         Name: 'Coteau de la Marine'
         Title: null
         Address1: 'Coteau de la Marine'
@@ -2523,6 +2620,7 @@
         Active: true
     98:
         Code: 193
+        Slug: cypsela
         Name: Cypsela
         Title: null
         Address1: 'C/ Rodors 7'
@@ -2549,6 +2647,7 @@
         Active: true
     99:
         Code: 194
+        Slug: demeures-torrellanes-residence
         Name: 'Demeures Torrellanes (Résidence)'
         Title: null
         Address1: 'Route départementale 40'
@@ -2575,6 +2674,7 @@
         Active: true
     100:
         Code: 195
+        Slug: demeures-de-la-massane-residence
         Name: 'Demeures de la Massane (Résidence)'
         Title: null
         Address1: 'Impasse Edmond Brazes'
@@ -2601,6 +2701,7 @@
         Active: true
     101:
         Code: 196
+        Slug: demeures-du-ventoux
         Name: 'Demeures du Ventoux'
         Title: null
         Address1: '2015 avenue Majoral Jouve'
@@ -2627,6 +2728,7 @@
         Active: true
     102:
         Code: 197
+        Slug: domaine-de-bacchus-residence
         Name: 'Domaine de Bacchus (Résidence)'
         Title: null
         Address1: ''
@@ -2653,6 +2755,7 @@
         Active: true
     103:
         Code: 198
+        Slug: domaine-de-manon-residence
         Name: 'Domaine de Manon (Résidence)'
         Title: null
         Address1: 'Zone d’activité de Signes'
@@ -2679,6 +2782,7 @@
         Active: true
     104:
         Code: 199
+        Slug: domaine-de-la-corniche-residence
         Name: 'Domaine de la Corniche (Résidence)'
         Title: null
         Address1: 'Route de la Corniche'
@@ -2705,6 +2809,7 @@
         Active: true
     105:
         Code: 2
+        Slug: mas
         Name: Mas
         Title: null
         Address1: Sireuil
@@ -2731,6 +2836,7 @@
         Active: true
     106:
         Code: 20
+        Slug: calypso
         Name: Calypso
         Title: null
         Address1: 'Boulevard de la Plage'
@@ -2757,6 +2863,7 @@
         Active: true
     107:
         Code: 200
+        Slug: domaine-des-iscles
         Name: 'Domaine des Iscles'
         Title: null
         Address1: 'Route du Plan d’Eau'
@@ -2783,6 +2890,7 @@
         Active: true
     108:
         Code: 201
+        Slug: domaine-du-bosquet-residence
         Name: 'Domaine du Bosquet (Résidence)'
         Title: null
         Address1: 'Lieu dit Lafont'
@@ -2809,6 +2917,7 @@
         Active: true
     109:
         Code: 202
+        Slug: domaine-du-golf-residence
         Name: 'Domaine du Golf (Résidence)'
         Title: null
         Address1: 'Lieu-dit Launac Le Vieux'
@@ -2835,6 +2944,7 @@
         Active: true
     110:
         Code: 203
+        Slug: dune-blanche
         Name: 'Dune Blanche'
         Title: null
         Address1: 'Route d’Etaples'
@@ -2861,6 +2971,7 @@
         Active: true
     111:
         Code: 204
+        Slug: domaine-d-enserune-residence
         Name: 'Domaine d’Ensérune (Résidence)'
         Title: null
         Address1: 'Promenade de l’ancien stade'
@@ -2887,6 +2998,7 @@
         Active: true
     112:
         Code: 205
+        Slug: ensoya
         Name: Ensoya
         Title: null
         Address1: '54 rue de Perpignan'
@@ -2913,6 +3025,7 @@
         Active: true
     113:
         Code: 206
+        Slug: europe
         Name: Europe
         Title: null
         Address1: '31 route de Frontignan'
@@ -2939,6 +3052,7 @@
         Active: true
     114:
         Code: 207
+        Slug: fonserane-residence
         Name: 'Fonserane (Résidence)'
         Title: null
         Address1: '190 Rue des Christols'
@@ -2965,6 +3079,7 @@
         Active: true
     115:
         Code: 208
+        Slug: fontainebleau-residence
         Name: 'Fontainebleau (Résidence)'
         Title: null
         Address1: '196 Avenue de Stalingrad'
@@ -2991,6 +3106,7 @@
         Active: true
     116:
         Code: 209
+        Slug: free-time
         Name: 'Free Time'
         Title: null
         Address1: 'Via dei Cipressi'
@@ -3017,6 +3133,7 @@
         Active: true
     117:
         Code: 21
+        Slug: camping-du-lac
         Name: 'Camping du Lac '
         Title: null
         Address1: 'Le Fangeas Soulier'
@@ -3043,6 +3160,7 @@
         Active: true
     118:
         Code: 210
+        Slug: hotel-du-golf-hotel
         Name: 'Hôtel du Golf (Hôtel)'
         Title: null
         Address1: '38 Avenue des Hameaux du Golf'
@@ -3069,6 +3187,7 @@
         Active: true
     119:
         Code: 211
+        Slug: ile-du-rhin
         Name: 'Ile du Rhin'
         Title: null
         Address1: 'Zone touristique Ile du Rhin'
@@ -3095,6 +3214,7 @@
         Active: true
     120:
         Code: 212
+        Slug: interpals
         Name: Interpals
         Title: null
         Address1: 'Avenue Mediterranania km 4,5'
@@ -3121,6 +3241,7 @@
         Active: true
     121:
         Code: 213
+        Slug: isles-de-sola-residence
         Name: 'Isles de Sola (Résidence)'
         Title: null
         Address1: '8 rue du Joncal'
@@ -3147,6 +3268,7 @@
         Active: true
     122:
         Code: 214
+        Slug: ker-goh-lenn-residence
         Name: 'Ker Goh Lenn (Résidence)'
         Title: null
         Address1: 'Espace tertiaire Atlanparc'
@@ -3173,6 +3295,7 @@
         Active: true
     123:
         Code: 215
+        Slug: foret
         Name: Forêt
         Title: null
         Address1: 'Route de Biscarrosse'
@@ -3199,6 +3322,7 @@
         Active: true
     124:
         Code: 216
+        Slug: bois-de-pleuven
         Name: 'Bois de Pleuven'
         Title: null
         Address1: 'Bois de Pleuven'
@@ -3225,6 +3349,7 @@
         Active: true
     125:
         Code: 217
+        Slug: castellas
         Name: Castellas
         Title: null
         Address1: 'RN 112'
@@ -3251,6 +3376,7 @@
         Active: true
     126:
         Code: 218
+        Slug: neptune
         Name: Neptune
         Title: null
         Address1: 'Avenue de la Retirada plage Nord'
@@ -3277,6 +3403,7 @@
         Active: true
     127:
         Code: 219
+        Slug: domaine-d-anghione
         Name: 'Domaine d’Anghione'
         Title: null
         Address1: 'Route de la plage'
@@ -3303,6 +3430,7 @@
         Active: true
     128:
         Code: 22
+        Slug: cap-agathois
         Name: 'Cap Agathois '
         Title: null
         Address1: 'Route de Sète'
@@ -3329,6 +3457,7 @@
         Active: true
     129:
         Code: 220
+        Slug: phare
         Name: Phare
         Title: null
         Address1: '2 rue de la Mer'
@@ -3355,6 +3484,7 @@
         Active: true
     130:
         Code: 221
+        Slug: 7-fonts
         Name: '7 Fonts'
         Title: null
         Address1: 'RN 112'
@@ -3381,6 +3511,7 @@
         Active: true
     131:
         Code: 222
+        Slug: almadies
         Name: Almadies
         Title: null
         Address1: 'Route de la Roche sur Yon'
@@ -3407,6 +3538,7 @@
         Active: true
     132:
         Code: 223
+        Slug: iles
         Name: Iles
         Title: null
         Address1: '245 route des Lacs'
@@ -3433,6 +3565,7 @@
         Active: true
     133:
         Code: 224
+        Slug: lupins
         Name: Lupins
         Title: null
         Address1: '1 rue de la gare'
@@ -3459,6 +3592,7 @@
         Active: true
     134:
         Code: 225
+        Slug: mas-des-cigales-residence
         Name: 'Mas des Cigales (Résidence)'
         Title: null
         Address1: '384 rue des Romarins'
@@ -3485,6 +3619,7 @@
         Active: true
     135:
         Code: 226
+        Slug: parc-de-la-fecht
         Name: 'Parc de la Fecht'
         Title: null
         Address1: 'Route de Gunsbach'
@@ -3511,6 +3646,7 @@
         Active: true
     136:
         Code: 227
+        Slug: parc-des-allais
         Name: 'Parc des Allais'
         Title: null
         Address1: 'Les Allais'
@@ -3537,6 +3673,7 @@
         Active: true
     137:
         Code: 228
+        Slug: pres-du-verdon
         Name: 'Prés du Verdon'
         Title: null
         Address1: 'Les Prés du Verdon'
@@ -3563,6 +3700,7 @@
         Active: true
     138:
         Code: 229
+        Slug: rieumontagne
         Name: Rieumontagné
         Title: null
         Address1: 'Lac du Laouzas'
@@ -3589,6 +3727,7 @@
         Active: true
     139:
         Code: 23
+        Slug: carbonnier
         Name: Carbonnier
         Title: null
         Address1: ''
@@ -3615,6 +3754,7 @@
         Active: true
     140:
         Code: 230
+        Slug: saint-clair-residence
         Name: 'Saint Clair (Résidence)'
         Title: null
         Address1: '4 impasse de la Misaine'
@@ -3641,6 +3781,7 @@
         Active: true
     141:
         Code: 231
+        Slug: tours
         Name: Tours
         Title: null
         Address1: 'Les Tours'
@@ -3667,6 +3808,7 @@
         Active: true
     142:
         Code: 232
+        Slug: camping-du-ried
         Name: 'Camping du Ried'
         Title: null
         Address1: '1 rue du camping'
@@ -3693,6 +3835,7 @@
         Active: true
     143:
         Code: 233
+        Slug: domaine-de-la-marina
         Name: 'Domaine de la Marina'
         Title: null
         Address1: 'Route plage sud'
@@ -3719,6 +3862,7 @@
         Active: true
     144:
         Code: 234
+        Slug: etangs-fleuris
         Name: 'Etangs Fleuris'
         Title: null
         Address1: 'Route de la Couture '
@@ -3745,6 +3889,7 @@
         Active: true
     145:
         Code: 235
+        Slug: ravoire
         Name: Ravoire
         Title: null
         Address1: 'Route de le ravoire'
@@ -3771,6 +3916,7 @@
         Active: true
     146:
         Code: 236
+        Slug: saint-disdille
         Name: 'Saint Disdille'
         Title: null
         Address1: '117 Avenue Saint Disdille'
@@ -3797,6 +3943,7 @@
         Active: true
     147:
         Code: 237
+        Slug: mar-i-sol
         Name: 'Mar i Sol'
         Title: null
         Address1: 'Boulevard de le plage'
@@ -3823,6 +3970,7 @@
         Active: true
     148:
         Code: 238
+        Slug: lou-pignada-ondres
         Name: 'Lou Pignada Ondres'
         Title: null
         Address1: '741 Avenue de la Plage'
@@ -3849,6 +3997,7 @@
         Active: true
     149:
         Code: 239
+        Slug: palmira-beach
         Name: 'Palmira Beach'
         Title: null
         Address1: 'Avenue du Port'
@@ -3875,6 +4024,7 @@
         Active: true
     150:
         Code: 24
+        Slug: castell-mar
         Name: 'Castell Mar'
         Title: null
         Address1: 'Platja de la Rubina'
@@ -3901,6 +4051,7 @@
         Active: true
     151:
         Code: 240
+        Slug: etoile-de-mer
         Name: 'Etoile de Mer'
         Title: null
         Address1: 'La Pagesse'
@@ -3927,6 +4078,7 @@
         Active: true
     152:
         Code: 241
+        Slug: ranch
         Name: Ranch
         Title: null
         Address1: 'Chemin Saint Joseph'
@@ -3953,6 +4105,7 @@
         Active: true
     153:
         Code: 242
+        Slug: cadenieres
         Name: Cadenières
         Title: null
         Address1: '1427 '
@@ -3979,6 +4132,7 @@
         Active: true
     154:
         Code: 243
+        Slug: pergola
         Name: Pergola
         Title: null
         Address1: '1 rue des vernois'
@@ -4005,6 +4159,7 @@
         Active: true
     155:
         Code: 244
+        Slug: hippocampe
         Name: Hippocampe
         Title: null
         Address1: 'Quartier La Croix'
@@ -4031,6 +4186,7 @@
         Active: true
     156:
         Code: 245
+        Slug: vacances-directes
         Name: 'Vacances Directes'
         Title: null
         Address1: ''
@@ -4057,6 +4213,7 @@
         Active: true
     157:
         Code: 246
+        Slug: tahiti
         Name: Tahiti
         Title: null
         Address1: 'Viale Libia 133'
@@ -4083,6 +4240,7 @@
         Active: true
     158:
         Code: 247
+        Slug: almafra
         Name: Almafra
         Title: null
         Address1: ''
@@ -4109,6 +4267,7 @@
         Active: true
     159:
         Code: 248
+        Slug: val-d-aro
         Name: 'Val d''aro'
         Title: null
         Address1: ''
@@ -4135,6 +4294,7 @@
         Active: true
     160:
         Code: 249
+        Slug: adriano
         Name: Adriano
         Title: null
         Address1: ''
@@ -4161,6 +4321,7 @@
         Active: true
     161:
         Code: 25
+        Slug: castell-montgri
         Name: 'Castell Montgri '
         Title: null
         Address1: 'Ctra. Torroella-Estartit Km 4,700'
@@ -4187,6 +4348,7 @@
         Active: true
     162:
         Code: 250
+        Slug: cessenatico
         Name: Cessenatico
         Title: null
         Address1: ''
@@ -4213,6 +4375,7 @@
         Active: true
     163:
         Code: 251
+        Slug: marina-italie
         Name: 'Marina (Italie)'
         Title: null
         Address1: ''
@@ -4239,6 +4402,7 @@
         Active: true
     164:
         Code: 252
+        Slug: gavina
         Name: Gavina
         Title: null
         Address1: ''
@@ -4265,6 +4429,7 @@
         Active: true
     165:
         Code: 26
+        Slug: caussanel
         Name: 'Caussanel '
         Title: null
         Address1: ' Lac de Pareloup'
@@ -4291,6 +4456,7 @@
         Active: true
     166:
         Code: 27
+        Slug: cayola
         Name: 'Cayola '
         Title: null
         Address1: 'Côte Ouest'
@@ -4317,6 +4483,7 @@
         Active: true
     167:
         Code: 28
+        Slug: chaponnet
         Name: Chaponnet
         Title: null
         Address1: '16 Rue du Chaponnet'
@@ -4343,6 +4510,7 @@
         Active: true
     168:
         Code: 29
+        Slug: domaine-des-charmilles
         Name: 'Domaine des Charmilles'
         Title: null
         Address1: '1541 Route de l''Océan'
@@ -4369,6 +4537,7 @@
         Active: true
     169:
         Code: 3
+        Slug: cala-gogo
         Name: 'Cala Gogo'
         Title: null
         Address1: 'Avenue Armand Lanoux'
@@ -4395,6 +4564,7 @@
         Active: true
     170:
         Code: 30
+        Slug: chateau-de-galinee
         Name: 'Château de Galinée '
         Title: null
         Address1: 'Galinée Le Guildo'
@@ -4421,6 +4591,7 @@
         Active: true
     171:
         Code: 31
+        Slug: chenaie
         Name: 'Chênaie '
         Title: null
         Address1: '36 Rue du Pâtisseau'
@@ -4447,6 +4618,7 @@
         Active: true
     172:
         Code: 32
+        Slug: domaine-des-chenes-verts
         Name: 'Domaine des Chênes Verts '
         Title: null
         Address1: 'Route de Sarlat'
@@ -4473,6 +4645,7 @@
         Active: true
     173:
         Code: 33
+        Slug: col-vert
         Name: 'Col Vert '
         Title: null
         Address1: '1548 Route de l''Etang'
@@ -4499,6 +4672,7 @@
         Active: true
     174:
         Code: 34
+        Slug: conguel
         Name: 'Conguel '
         Title: null
         Address1: 'Boulevard de la Teignouse'
@@ -4525,6 +4699,7 @@
         Active: true
     175:
         Code: 35
+        Slug: coste-rouge
         Name: 'Coste Rouge '
         Title: null
         Address1: 'Route de Collioure'
@@ -4551,6 +4726,7 @@
         Active: true
     176:
         Code: 36
+        Slug: cote-d-argent
         Name: 'Côte d''Argent '
         Title: null
         Address1: '134 Route Contaut'
@@ -4577,6 +4753,7 @@
         Active: true
     177:
         Code: 37
+        Slug: crin-blanc
         Name: 'Crin Blanc '
         Title: null
         Address1: 'Hameau de Saliers'
@@ -4603,6 +4780,7 @@
         Active: true
     178:
         Code: 38
+        Slug: cupulatta
         Name: 'Cupulatta '
         Title: null
         Address1: 'Hameau de Cupulatta'
@@ -4629,6 +4807,7 @@
         Active: true
     179:
         Code: 39
+        Slug: cypres
         Name: 'Cyprès '
         Title: null
         Address1: '41, Rue du Pont Jaunay'
@@ -4655,6 +4834,7 @@
         Active: true
     180:
         Code: 4
+        Slug: petit-mousse
         Name: 'Petit Mousse'
         Title: null
         Address1: 'Impasse des Espargouls'
@@ -4681,6 +4861,7 @@
         Active: true
     181:
         Code: 40
+        Slug: deux-fontaines
         Name: 'Deux Fontaines '
         Title: null
         Address1: Raguenes
@@ -4707,6 +4888,7 @@
         Active: true
     182:
         Code: 41
+        Slug: deux-plages
         Name: 'Deux Plages '
         Title: null
         Address1: 'Avenue d''Angoulins'
@@ -4733,6 +4915,7 @@
         Active: true
     183:
         Code: 42
+        Slug: domaine-d-inly
         Name: 'Domaine d''Inly '
         Title: null
         Address1: 'Route de Couarne'
@@ -4759,6 +4942,7 @@
         Active: true
     184:
         Code: 43
+        Slug: domaine-d-oleron
         Name: 'Domaine d''Oléron '
         Title: null
         Address1: 'Route de la Jousselinière'
@@ -4785,6 +4969,7 @@
         Active: true
     185:
         Code: 44
+        Slug: domaine-de-chaussy
         Name: 'Domaine de Chaussy '
         Title: null
         Address1: 'Quartier Le Petit Chaussy'
@@ -4811,6 +4996,7 @@
         Active: true
     186:
         Code: 45
+        Slug: domaine-de-kermario
         Name: 'Domaine de Kermario'
         Title: null
         Address1: '1 Chemin de Kerluir'
@@ -4837,6 +5023,7 @@
         Active: true
     187:
         Code: 46
+        Slug: domaine-de-la-rive
         Name: 'Domaine de la Rive'
         Title: null
         Address1: 'Route de Bordeaux'
@@ -4863,6 +5050,7 @@
         Active: true
     188:
         Code: 47
+        Slug: domaine-de-leveno
         Name: 'Domaine de Léveno '
         Title: null
         Address1: 'Route de l''Etang de Sandun'
@@ -4889,6 +5077,7 @@
         Active: true
     189:
         Code: 48
+        Slug: domaine-des-naiades
         Name: 'Domaine des Naïades'
         Title: null
         Address1: 'St Pons les Mûres'
@@ -4915,6 +5104,7 @@
         Active: true
     190:
         Code: 49
+        Slug: domaine-du-cros-d-auzon
         Name: 'Domaine du Cros d''Auzon '
         Title: null
         Address1: 'Quartier de la Gare'
@@ -4941,6 +5131,7 @@
         Active: true
     191:
         Code: 5
+        Slug: airotel-oleron
         Name: 'Airotel Oléron'
         Title: null
         Address1: 'Domaine de Montravail'
@@ -4967,6 +5158,7 @@
         Active: true
     192:
         Code: 50
+        Slug: domaine-du-verdon
         Name: 'Domaine du Verdon '
         Title: null
         Address1: 'La Salaou'
@@ -4993,6 +5185,7 @@
         Active: true
     193:
         Code: 51
+        Slug: dunes
         Name: 'Dunes '
         Title: null
         Address1: 'Voie de Barcelone'
@@ -5019,6 +5212,7 @@
         Active: true
     194:
         Code: 52
+        Slug: eden
         Name: 'Eden '
         Title: null
         Address1: 'Allée de Tournefort'
@@ -5045,6 +5239,7 @@
         Active: true
     195:
         Code: 53
+        Slug: embruns
         Name: 'Embruns '
         Title: null
         Address1: 'Avenue Edouard Branly'
@@ -5071,6 +5266,7 @@
         Active: true
     196:
         Code: 54
+        Slug: eurolac
         Name: 'Eurolac '
         Title: null
         Address1: 'Promenade de l''Etang'
@@ -5097,6 +5293,7 @@
         Active: true
     197:
         Code: 55
+        Slug: fanal
         Name: 'Fanal '
         Title: null
         Address1: 'Rue du Fanal'
@@ -5123,6 +5320,7 @@
         Active: true
     198:
         Code: 56
+        Slug: farigoulette
         Name: 'Farigoulette '
         Title: null
         Address1: 'Lac de St Laurent'
@@ -5149,6 +5347,7 @@
         Active: true
     199:
         Code: 57
+        Slug: fontaines
         Name: 'Fontaines '
         Title: null
         Address1: 'Route de St Nazaire'
@@ -5175,6 +5374,7 @@
         Active: true
     200:
         Code: 58
+        Slug: frenes
         Name: 'Frênes '
         Title: null
         Address1: 'Avenue du Pylone'
@@ -5201,6 +5401,7 @@
         Active: true
     201:
         Code: 59
+        Slug: front-de-mer
         Name: 'Front de Mer'
         Title: null
         Address1: 'Avenue du Grau'
@@ -5227,6 +5428,7 @@
         Active: true
     202:
         Code: 6
+        Slug: aluna-vacances
         Name: 'Aluna Vacances '
         Title: null
         Address1: 'Route de Lagorce'
@@ -5253,6 +5455,7 @@
         Active: true
     203:
         Code: 60
+        Slug: grand-terre
         Name: 'Grand''Terre '
         Title: null
         Address1: 'La Grande Terre'
@@ -5279,6 +5482,7 @@
         Active: true
     204:
         Code: 61
+        Slug: parc-de-la-grenouillere
         Name: 'Parc de la Grenouillère '
         Title: null
         Address1: 'La Grenouillère'
@@ -5305,6 +5509,7 @@
         Active: true
     205:
         Code: 63
+        Slug: huttes
         Name: 'Huttes '
         Title: null
         Address1: '15 rue des Seulières'
@@ -5331,6 +5536,7 @@
         Active: true
     206:
         Code: 64
+        Slug: ideal
         Name: 'Idéal '
         Title: null
         Address1: '715 Route de Chaparon'
@@ -5357,6 +5563,7 @@
         Active: true
     207:
         Code: 65
+        Slug: ilates
         Name: Ilates
         Title: null
         Address1: 'Route du Grouin'
@@ -5383,6 +5590,7 @@
         Active: true
     208:
         Code: 66
+        Slug: zz-ilbarritz
         Name: 'zz Ilbarritz '
         Title: null
         Address1: 'Avenue de Biarritz'
@@ -5409,6 +5617,7 @@
         Active: true
     209:
         Code: 67
+        Slug: internacional-de-calonge
         Name: 'Internacional de Calonge '
         Title: null
         Address1: 'Ctra Palamos A St Feliu Km 7.6'
@@ -5435,6 +5644,7 @@
         Active: true
     210:
         Code: 68
+        Slug: internacional-palamos
         Name: 'Internacional Palamos '
         Title: null
         Address1: 'Cami Cap de Planes'
@@ -5461,6 +5671,7 @@
         Active: true
     211:
         Code: 69
+        Slug: jard
         Name: 'Jard '
         Title: null
         Address1: '123 Bld Maréchal de Lattre de Tassigny'
@@ -5487,6 +5698,7 @@
         Active: true
     212:
         Code: 7
+        Slug: zz-amandiers
         Name: 'zz Amandiers'
         Title: null
         Address1: 'Rue du Stade'
@@ -5513,6 +5725,7 @@
         Active: true
     213:
         Code: 70
+        Slug: lac-bleu
         Name: 'Lac Bleu '
         Title: null
         Address1: 'Quartier La Touche'
@@ -5539,6 +5752,7 @@
         Active: true
     214:
         Code: 71
+        Slug: domaine-du-lac-de-miel
         Name: 'Domaine du Lac de Miel '
         Title: null
         Address1: ''
@@ -5565,6 +5779,7 @@
         Active: true
     215:
         Code: 72
+        Slug: lac-de-thoux-st-cricq
         Name: 'Lac de Thoux St Cricq'
         Title: null
         Address1: 'lieu dit lannes'
@@ -5591,6 +5806,7 @@
         Active: true
     216:
         Code: 73
+        Slug: zz-land-s-hause
         Name: 'zz Land''s Hause '
         Title: null
         Address1: 'Rua José Maria Custodio  '
@@ -5617,6 +5833,7 @@
         Active: true
     217:
         Code: 74
+        Slug: lou-broustaricq
         Name: 'Lou Broustaricq '
         Title: null
         Address1: '2315 Route de Langeot'
@@ -5643,6 +5860,7 @@
         Active: true
     218:
         Code: 75
+        Slug: lou-pignada
         Name: 'Lou Pignada '
         Title: null
         Address1: 'Route d''Azur'
@@ -5669,6 +5887,7 @@
         Active: true
     219:
         Code: 76
+        Slug: loubine
         Name: 'Loubine '
         Title: null
         Address1: '1 Route de la Mer'
@@ -5695,6 +5914,7 @@
         Active: true
     220:
         Code: 77
+        Slug: loyada
         Name: 'Loyada '
         Title: null
         Address1: '111 Rue de la Source'
@@ -5721,6 +5941,7 @@
         Active: true
     221:
         Code: 78
+        Slug: zz-malazeou
         Name: 'zz Malazéou '
         Title: null
         Address1: 'RN 20'
@@ -5747,6 +5968,7 @@
         Active: true
     222:
         Code: 79
+        Slug: mare-e-pineta
         Name: 'Mare e Pineta '
         Title: null
         Address1: 'Viale delle Acacie, 67'
@@ -5773,6 +5995,7 @@
         Active: true
     223:
         Code: 8
+        Slug: sandaya-soulac-plage
         Name: 'Sandaya Soulac Plage'
         Title: null
         Address1: 'L''Amélie'
@@ -5799,6 +6022,7 @@
         Active: true
     224:
         Code: 80
+        Slug: marine
         Name: 'Marine '
         Title: null
         Address1: '2196 Route de l''Espiguette'
@@ -5825,6 +6049,7 @@
         Active: true
     225:
         Code: 81
+        Slug: marsouins
         Name: Marsouins
         Title: null
         Address1: 'Avenue de la Retirada 1939'
@@ -5851,6 +6076,7 @@
         Active: true
     226:
         Code: 82
+        Slug: marze
         Name: 'Marze '
         Title: null
         Address1: 'Str. Prov. N 158 Km 30.200'
@@ -5877,6 +6103,7 @@
         Active: true
     227:
         Code: 83
+        Slug: maire
         Name: 'Maïre '
         Title: null
         Address1: ''
@@ -5903,6 +6130,7 @@
         Active: true
     228:
         Code: 84
+        Slug: moulin
         Name: Moulin
         Title: null
         Address1: '3 chemin du camping'
@@ -5929,6 +6157,7 @@
         Active: true
     229:
         Code: 85
+        Slug: camping-neptuno
         Name: 'Camping Neptuno '
         Title: null
         Address1: 'Rodors 23'
@@ -5955,6 +6184,7 @@
         Active: true
     230:
         Code: 86
+        Slug: oasis
         Name: Oasis
         Title: null
         Address1: 'Route de St Laurent'
@@ -5981,6 +6211,7 @@
         Active: true
     231:
         Code: 87
+        Slug: oceano-d-or
         Name: 'Océano d''Or'
         Title: null
         Address1: '84 Rue Georges Clémenceau'
@@ -6007,6 +6238,7 @@
         Active: true
     232:
         Code: 88
+        Slug: oyam
         Name: 'Oyam '
         Title: null
         Address1: 'Rue Oyamburua'
@@ -6033,6 +6265,7 @@
         Active: true
     233:
         Code: 89
+        Slug: oyats
         Name: 'Oyats '
         Title: null
         Address1: 'Route de la Plage des Casernes'
@@ -6059,6 +6292,7 @@
         Active: true
     234:
         Code: 9
+        Slug: ametlla
         Name: Ametlla
         Title: null
         Address1: 'Apartat de Correus N°240'
@@ -6085,6 +6319,7 @@
         Active: true
     235:
         Code: 90
+        Slug: pachacaid
         Name: Pachacaïd
         Title: null
         Address1: 'Route de Canadel'
@@ -6111,6 +6346,7 @@
         Active: true
     236:
         Code: 91
+        Slug: domaine-de-la-paille-basse
         Name: 'Domaine de la Paille Basse'
         Title: null
         Address1: 'la paille basse'
@@ -6137,6 +6373,7 @@
         Active: true
     237:
         Code: 92
+        Slug: palace
         Name: 'Palace '
         Title: null
         Address1: '65 Boulevard Marsan de Montbrun'
@@ -6163,6 +6400,7 @@
         Active: true
     238:
         Code: 93
+        Slug: palavas-camping
         Name: 'Palavas Camping'
         Title: null
         Address1: 'Route de Maguelone'
@@ -6189,6 +6427,7 @@
         Active: true
     239:
         Code: 94
+        Slug: parc
         Name: 'Parc '
         Title: null
         Address1: '408 Quartier Trestaure'
@@ -6215,6 +6454,7 @@
         Active: true
     240:
         Code: 95
+        Slug: park-albatros
         Name: 'Park Albatros '
         Title: null
         Address1: 'Loc. Pineta di T. Nuova'
@@ -6241,6 +6481,7 @@
         Active: true
     241:
         Code: 96
+        Slug: petit-bois-ardeche
         Name: 'Petit Bois (Ardèche)'
         Title: null
         Address1: '87 rue du Petit Bois'
@@ -6267,6 +6508,7 @@
         Active: true
     242:
         Code: 97
+        Slug: petit-bois-cantal
         Name: 'Petit Bois (Cantal)'
         Title: null
         Address1: 'Le bourg'
@@ -6293,6 +6535,7 @@
         Active: true
     243:
         Code: 98
+        Slug: pinada
         Name: 'Pinada '
         Title: null
         Address1: 'hameau villerouge la crémade'
@@ -6319,6 +6562,7 @@
         Active: true
     244:
         Code: 99
+        Slug: pins
         Name: 'Pins '
         Title: null
         Address1: 'Lieu dit Le Guen'
@@ -6345,6 +6589,7 @@
         Active: true
     245:
         Code: 997
+        Slug: z-semaines-non-prises-lineaire-liberte
         Name: 'z Semaines non prises Linéaire Liberté'
         Title: null
         Address1: ''
@@ -6371,6 +6616,7 @@
         Active: true
     246:
         Code: 998
+        Slug: zzz-fictif-enregistrement-package
         Name: 'zzz Fictif enregistrement package'
         Title: null
         Address1: ''
@@ -6397,6 +6643,7 @@
         Active: true
     247:
         Code: 999
+        Slug: zzz-fictif-pour-copie-parametrage
         Name: 'zzz Fictif pour copie paramétrage'
         Title: null
         Address1: ''

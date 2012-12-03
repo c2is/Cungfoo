@@ -153,5 +153,3 @@ include('includes/booking-top.php'); ?>
                 numMinWeeks = 6;                       // minimum number of weeks selectable (for linear mini)
     </script>
 
-<?php include('includes/bottom.php'); ?>
-<?php include('includes/inc_footer.php'); ?>

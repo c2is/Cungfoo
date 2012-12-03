@@ -28,6 +28,9 @@ $(function() {
     if($('#financialContener').length){
         $('#client_due_type').find('select').sSelect({ddMaxHeight: '300px'});
     }
+    if($('#option').length){
+        $('#option').find('select').sSelect({ddMaxHeight: '300px'});
+    }
 
 });
 
