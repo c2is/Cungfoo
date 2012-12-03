@@ -1527,7 +1527,7 @@ function findMinMaxRange() {
     var allPrices = [];
     items.each(function() {
         $(this).find('.linePrice').each( function(){
-            var itemPrice = parseInt($(this).find('label .price').text());
+            var itemPrice = parseInt($(this).find('.stain .price').text());
             allPrices.push(itemPrice);
         });
         $(this).attr('data-ranged', true);
@@ -1576,7 +1576,7 @@ function rangeSliderPrice() {
 
                 items.each(function() {
                     $(this).find('.linePrice').each( function(){
-                        var originPriceLine = parseInt($(this).find('label .price').text());
+                        var originPriceLine = parseInt($(this).find('.stain .price').text());
                         if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
                             $(this).addClass('visiblePrice').fadeIn();
                         }else{
