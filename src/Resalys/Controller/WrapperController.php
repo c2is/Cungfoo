@@ -163,7 +163,7 @@ eof
         $this->replaceCampingFicheUri($iframe);
 
         $resalysParameters = array('specificFiles' => $this->specificFiles);
-        $this->replaceString($iframe, '\/rsl\/clickbooking', $this->app['url_generator']->generate('resalys_wrapper', $resalysParameters, true));
+        $this->replaceString($iframe, '\'\/rsl\/clickbooking\'', "'" . $this->app['url_generator']->generate('resalys_wrapper', $resalysParameters, true) . "'");
 
         if ($this->specificFiles == "couloir")
         {

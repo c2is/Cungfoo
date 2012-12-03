@@ -1,0 +1,18 @@
+\Cungfoo\Model\Baignade:
+    keyField: code
+    values:
+        PAAQ:
+            keywords: 'espace aquatique, jeux d''eau, piscine, baignade, famille, enfants'
+            description: 'Un espace aquatique pour profiter des joies des jeux d''eau en famille'
+        PCOU:
+            keywords: 'piscine couverte, abri, jeu, famille, baignade'
+            description: 'A l''abri, profitez de la piscine couverte du camping pour des moments de baignade en famille'
+        PISC:
+            keywords: 'piscine, jeu d''eau, baignade, sport, natation'
+            description: 'Rendez-vous au bord de la piscine pour des instants de détente dans l''eau : jouez, nagez, plongez !'
+        SPAJ:
+            keywords: 'spa, massage, bien être, détente'
+            description: 'Ressourcez-vous au sein de l''espace bien être'
+        TOBO:
+            keywords: 'toboggan, glissade, pentagliss, baignade, aquatique'
+            description: 'Et hop, une glissade sur le toboggan aquatique de la piscine : amusement garanti !'

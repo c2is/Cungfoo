@@ -1,0 +1,24 @@
+\Cungfoo\Model\SituationGeographique:
+    keyField: code
+    values:
+        AMON:
+            keywords: 'montagne, randonnée, vélo, marche à pied, GR, volcans, rafting'
+            description: 'Ressourcez-vous en montagne : randonnées, rafting, marche à pied ou VTT'
+        BOLA:
+            keywords: 'lac, pêche, plage de lac, randonnée, voile, planche à voile, pédalo'
+            description: 'Profitez du calme paisible des lacs pour vous détendre et découvrir de nouvelles activités sportives'
+        BORI:
+            keywords: 'rivière, randonnée, canyoning, rafting'
+            description: 'La rivière et ses richesses vous attendent : sports nautiques, randonnées…'
+        CAMO:
+            keywords: 'campagne, vert, nature, dépaysement'
+            description: 'Profitez du dépaysement de la campagne et passez des vacances en pleine nature'
+        M10K:
+            keywords: 'mer, plage, littoral, océan, méditerranée, atlantique, chateaux de sable'
+            description: 'Des vacances à la mer, en famille ou entre amis, direction la plage'
+        M2K:
+            keywords: 'mer, plage, littoral, océan, méditerranée, atlantique, chateaux de sable'
+            description: 'des vacances à la mer, en famille ou entre amis, direction la plage'
+        MDIR:
+            keywords: 'pieds dans l''eau, mer, plage, littoral, océan, méditerranée, atlantique, chateaux de sable'
+            description: 'des vacances à la mer, en famille ou entre amis, direction la plage'
