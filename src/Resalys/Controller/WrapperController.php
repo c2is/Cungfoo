@@ -51,6 +51,7 @@ class WrapperController implements ControllerProviderInterface
             $iframe = file_get_contents($resalysUri);
 
             // start replace functions
+            $this->replaceC2isLabelFunction($iframe, $app);
             $this->replaceC2isMarker($iframe);
             $this->replaceSpecifics($iframe);
 
@@ -105,6 +106,19 @@ class WrapperController implements ControllerProviderInterface
             {
                 $newUri = str_replace($match[1], $match[2], $match[3]);
                 $iframe = str_replace($match[0], $newUri, $iframe);
+            }
+        }
+    }
+
+    protected function replaceC2isLabelFunction(&$iframe, $app)
+    {
+        $matches = null;
+
+        if (preg_match_all('"{_c2is.label, \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
+        {
+            foreach ($matches as $match)
+            {
+                $iframe = str_replace($match[0], $app['translator']->trans($match[1]), $iframe);
             }
         }
     }
@@ -164,6 +178,7 @@ eof
 
         $resalysParameters = array('specificFiles' => $this->specificFiles);
         $this->replaceString($iframe, '\'\/rsl\/clickbooking\'', "'" . $this->app['url_generator']->generate('resalys_wrapper', $resalysParameters, true) . "'");
+        $this->replaceString($iframe, '"/rsl/clickbooking', '"' . $this->app['url_generator']->generate('resalys_wrapper', $resalysParameters, true));
 
         if ($this->specificFiles == "couloir")
         {

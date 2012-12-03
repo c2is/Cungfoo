@@ -52,6 +52,49 @@ class PointInteretPeer extends BasePointInteretPeer
         ;
     }
 
+    static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->useRegionQuery()
+                            ->filterByPays($pays)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForPays(Pays $pays)
+    {
+        return PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->useVilleQuery()
+                        ->useRegionQuery()
+                            ->filterByPays($pays)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+            ->count()
+            ;
+    }
+
     static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
     {
         $query = PointInteretQuery::create()
@@ -85,6 +128,41 @@ class PointInteretPeer extends BasePointInteretPeer
                     ->useVilleQuery()
                         ->filterByRegion($region)
                     ->endUse()
+                ->endUse()
+            ->endUse()
+            ->count()
+            ;
+    }
+
+    static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByVille($ville)
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForVille(Ville $ville)
+    {
+        return PointInteretQuery::create()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByVille($ville)
                 ->endUse()
             ->endUse()
             ->count()

@@ -3,15 +3,14 @@
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    <a href=="#_">{{ "destination.retour" | trans }}</a>
+    <a href="#">{{ "destination.retour" | trans }}</a>
 
     {# Bloc titre + accroche + picto #}
     {{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }} {# Titre #}
     {{ item.introduction }} {# Accroche #}
     {{ item.description }} {# Description #}
-    {{ item.imagePath }}
-    {% if item.imagePath %}
-    <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
+    {% if item['imagePath'] is defined %}
+        <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
     {% endif %}
 
 {% endblock %}
