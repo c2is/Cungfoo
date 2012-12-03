@@ -20,7 +20,7 @@ use Cungfoo\Model\EditoQuery;
 /**
  * Base class that represents a row from the 'edito' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -82,11 +82,11 @@ abstract class BaseEdito extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -110,7 +110,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -125,7 +125,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -135,7 +135,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [slug] column value.
-     * 
+     *
      * @return string
      */
     public function getSlug()
@@ -145,7 +145,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -155,7 +155,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [description] column value.
-     * 
+     *
      * @return string
      */
     public function getDescription()
@@ -165,7 +165,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -202,7 +202,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -238,18 +238,18 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -270,7 +270,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [slug] column.
-     * 
+     *
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -291,7 +291,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     * 
+     *
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -312,7 +312,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Set the value of [description] column.
-     * 
+     *
      * @param string $v new value
      * @return Edito The current object (for fluent API support)
      */
@@ -333,7 +333,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Edito The current object (for fluent API support)
@@ -356,7 +356,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Edito The current object (for fluent API support)
@@ -378,16 +378,16 @@ abstract class BaseEdito extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Edito The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -397,14 +397,14 @@ abstract class BaseEdito extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = EditoPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = EditoPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -416,7 +416,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -448,7 +448,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->enabled = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -698,8 +698,8 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if ($this->isColumnModified(EditoPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(EditoPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(EditoPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -712,26 +712,26 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SLUG`':						
+                    case '`SLUG`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':						
+                    case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':						
+                    case '`DESCRIPTION`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -886,7 +886,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 6:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -922,7 +922,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $keys[3] => $this->getDescription(),
             $keys[4] => $this->getCreatedAt(),
             $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getEnabled(),
+            $keys[6] => $this->getActive(),
         );
 
         return $result;
@@ -976,7 +976,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 6:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1008,7 +1008,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setEnabled($arr[$keys[6]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
     }
 
     /**
@@ -1026,7 +1026,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if ($this->isColumnModified(EditoPeer::DESCRIPTION)) $criteria->add(EditoPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EditoPeer::CREATED_AT)) $criteria->add(EditoPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EditoPeer::UPDATED_AT)) $criteria->add(EditoPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(EditoPeer::ENABLED)) $criteria->add(EditoPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(EditoPeer::ACTIVE)) $criteria->add(EditoPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1095,7 +1095,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $copyObj->setDescription($this->getDescription());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -1153,7 +1153,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $this->description = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1200,7 +1200,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1209,8 +1209,20 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = EditoPeer::UPDATED_AT;
-    
+
         return $this;
+    }
+
+    // active behavior
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // crudable behavior

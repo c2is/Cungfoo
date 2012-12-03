@@ -100,8 +100,6 @@ class {$this->getClassname()} extends Listing
 
         }
 
-        $columnsRender .= $this->generateColumn('enabled', 'Text');
-
         $script .= "
     /**
      * {@inheritdoc}

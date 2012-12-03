@@ -62,7 +62,7 @@ class DestinationRegionController implements ControllerProviderInterface
             ;
             $listContent = $list->process();
 
-            return $app['twig']->render('Destination/region.twig', array(
+            return $app['twig']->render('Destination/detail.twig', array(
                 'locale'            => $locale,
                 'item'              => $region,
                 'sitesAVisiter'     => $sitesAVisiter,
@@ -72,6 +72,7 @@ class DestinationRegionController implements ControllerProviderInterface
                 'list'              => $listContent,
                 'firstEtab'         => reset($listContent['element']),
                 'searchForm'        => $searchEngine->getView(),
+                'imagesTitle'       => $app['translator']->trans('destination.images_region_title'),
             ));
         })
         ->bind('destination_region');

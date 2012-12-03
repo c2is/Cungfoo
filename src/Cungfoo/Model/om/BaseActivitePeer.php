@@ -17,7 +17,7 @@ use Cungfoo\Model\map\ActiviteTableMap;
 /**
  * Base static class for performing query and update operations on the 'activite' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -60,8 +60,8 @@ abstract class BaseActivitePeer
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'activite.UPDATED_AT';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'activite.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'activite.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,7 +76,7 @@ abstract class BaseActivitePeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -89,11 +89,11 @@ abstract class BaseActivitePeer
      * e.g. ActivitePeer::$fieldNames[ActivitePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (ActivitePeer::ID, ActivitePeer::CODE, ActivitePeer::IMAGE_PATH, ActivitePeer::CREATED_AT, ActivitePeer::UPDATED_AT, ActivitePeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (ActivitePeer::ID, ActivitePeer::CODE, ActivitePeer::IMAGE_PATH, ActivitePeer::CREATED_AT, ActivitePeer::UPDATED_AT, ActivitePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'created_at', 'updated_at', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -104,11 +104,11 @@ abstract class BaseActivitePeer
      * e.g. ActivitePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Enabled' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_COLNAME => array (ActivitePeer::ID => 0, ActivitePeer::CODE => 1, ActivitePeer::IMAGE_PATH => 2, ActivitePeer::CREATED_AT => 3, ActivitePeer::UPDATED_AT => 4, ActivitePeer::ENABLED => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ENABLED' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'enabled' => 5, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (ActivitePeer::ID => 0, ActivitePeer::CODE => 1, ActivitePeer::IMAGE_PATH => 2, ActivitePeer::CREATED_AT => 3, ActivitePeer::UPDATED_AT => 4, ActivitePeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
@@ -188,14 +188,14 @@ abstract class BaseActivitePeer
             $criteria->addSelectColumn(ActivitePeer::IMAGE_PATH);
             $criteria->addSelectColumn(ActivitePeer::CREATED_AT);
             $criteria->addSelectColumn(ActivitePeer::UPDATED_AT);
-            $criteria->addSelectColumn(ActivitePeer::ENABLED);
+            $criteria->addSelectColumn(ActivitePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 
@@ -378,7 +378,7 @@ abstract class BaseActivitePeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -388,7 +388,7 @@ abstract class BaseActivitePeer
     {
         ActivitePeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to activite
      * by a foreign key with ON DELETE CASCADE
@@ -434,7 +434,7 @@ abstract class BaseActivitePeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -445,7 +445,7 @@ abstract class BaseActivitePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = ActivitePeer::getOMClass();
         // populate the object(s)
@@ -689,7 +689,7 @@ abstract class BaseActivitePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             ActivitePeer::clearRelatedInstancePool();
             $con->commit();

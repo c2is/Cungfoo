@@ -20,7 +20,7 @@ use Cungfoo\Model\PersonnageQuery;
 /**
  * Base class that represents a row from the 'personnage_i18n' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -106,7 +106,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -116,7 +116,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     * 
+     *
      * @return string
      */
     public function getLocale()
@@ -126,7 +126,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Get the [prenom] column value.
-     * 
+     *
      * @return string
      */
     public function getPrenom()
@@ -136,7 +136,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -161,7 +161,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     * 
+     *
      * @param string $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -182,7 +182,7 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [prenom] column.
-     * 
+     *
      * @param string $v new value
      * @return PersonnageI18n The current object (for fluent API support)
      */
@@ -492,13 +492,13 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':						
+                    case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`PRENOM`':						
+                    case '`PRENOM`':
                         $stmt->bindValue($identifier, $this->prenom, PDO::PARAM_STR);
                         break;
                 }

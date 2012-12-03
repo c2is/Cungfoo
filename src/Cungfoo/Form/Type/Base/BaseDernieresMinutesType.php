@@ -68,12 +68,6 @@ class BaseDernieresMinutesType extends AppAwareType
             'label' => 'dernieres_minutes.active',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'dernieres_minutes.enabled',
-            'required' => false,
-        ));
         $builder->add('etablissements', 'model', array(
             'class' => 'Cungfoo\Model\Etablissement',
             'constraints' => array(

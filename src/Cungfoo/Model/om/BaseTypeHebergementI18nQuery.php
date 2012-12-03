@@ -20,7 +20,7 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
 /**
  * Base class that represents a query for the 'type_hebergement_i18n' table.
  *
- * 
+ *
  *
  * @method TypeHebergementI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method TypeHebergementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
@@ -114,7 +114,7 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query 
+     * @param array $key Primary key to use for the query
                          A Primary key composition: [$id, $locale]
      * @param     PropelPDO $con an optional connection object
      *
@@ -156,8 +156,8 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
     {
         $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `SURFACE`, `TYPE_TERRASSE`, `DESCRIPTION`, `COMPOSITION` FROM `type_hebergement_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
-            $stmt = $con->prepare($sql);			
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);			
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
             $stmt->bindValue(':p1', $key[1], PDO::PARAM_STR);
             $stmt->execute();
         } catch (Exception $e) {

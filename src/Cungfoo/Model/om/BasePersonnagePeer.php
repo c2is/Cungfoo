@@ -19,7 +19,7 @@ use Cungfoo\Model\map\PersonnageTableMap;
 /**
  * Base static class for performing query and update operations on the 'personnage' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -65,8 +65,8 @@ abstract class BasePersonnagePeer
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'personnage.UPDATED_AT';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'personnage.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'personnage.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -81,7 +81,7 @@ abstract class BasePersonnagePeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -94,11 +94,11 @@ abstract class BasePersonnagePeer
      * e.g. PersonnagePeer::$fieldNames[PersonnagePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'Age', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'age', 'imagePath', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID, PersonnagePeer::ETABLISSEMENT_ID, PersonnagePeer::AGE, PersonnagePeer::IMAGE_PATH, PersonnagePeer::CREATED_AT, PersonnagePeer::UPDATED_AT, PersonnagePeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'AGE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'age', 'image_path', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'Age', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'age', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID, PersonnagePeer::ETABLISSEMENT_ID, PersonnagePeer::AGE, PersonnagePeer::IMAGE_PATH, PersonnagePeer::CREATED_AT, PersonnagePeer::UPDATED_AT, PersonnagePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'AGE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'age', 'image_path', 'created_at', 'updated_at', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -109,11 +109,11 @@ abstract class BasePersonnagePeer
      * e.g. PersonnagePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'Age' => 2, 'ImagePath' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Enabled' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'age' => 2, 'imagePath' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'enabled' => 6, ),
-        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID => 0, PersonnagePeer::ETABLISSEMENT_ID => 1, PersonnagePeer::AGE => 2, PersonnagePeer::IMAGE_PATH => 3, PersonnagePeer::CREATED_AT => 4, PersonnagePeer::UPDATED_AT => 5, PersonnagePeer::ENABLED => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'AGE' => 2, 'IMAGE_PATH' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ENABLED' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'age' => 2, 'image_path' => 3, 'created_at' => 4, 'updated_at' => 5, 'enabled' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'Age' => 2, 'ImagePath' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'age' => 2, 'imagePath' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, ),
+        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID => 0, PersonnagePeer::ETABLISSEMENT_ID => 1, PersonnagePeer::AGE => 2, PersonnagePeer::IMAGE_PATH => 3, PersonnagePeer::CREATED_AT => 4, PersonnagePeer::UPDATED_AT => 5, PersonnagePeer::ACTIVE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'AGE' => 2, 'IMAGE_PATH' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'age' => 2, 'image_path' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -194,7 +194,7 @@ abstract class BasePersonnagePeer
             $criteria->addSelectColumn(PersonnagePeer::IMAGE_PATH);
             $criteria->addSelectColumn(PersonnagePeer::CREATED_AT);
             $criteria->addSelectColumn(PersonnagePeer::UPDATED_AT);
-            $criteria->addSelectColumn(PersonnagePeer::ENABLED);
+            $criteria->addSelectColumn(PersonnagePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
@@ -202,7 +202,7 @@ abstract class BasePersonnagePeer
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 
@@ -385,7 +385,7 @@ abstract class BasePersonnagePeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -395,7 +395,7 @@ abstract class BasePersonnagePeer
     {
         PersonnagePeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to personnage
      * by a foreign key with ON DELETE CASCADE
@@ -444,7 +444,7 @@ abstract class BasePersonnagePeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -455,7 +455,7 @@ abstract class BasePersonnagePeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = PersonnagePeer::getOMClass();
         // populate the object(s)
@@ -937,7 +937,7 @@ abstract class BasePersonnagePeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             PersonnagePeer::clearRelatedInstancePool();
             $con->commit();

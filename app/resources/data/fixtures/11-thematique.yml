@@ -2,28 +2,21 @@
     1:
         Code: NV12
         ImagePath: .
-        Enabled: true
     2:
         Code: PAQU
         ImagePath: .
-        Enabled: true
     3:
         Code: PDLE
         ImagePath: .
-        Enabled: true
     4:
         Code: VAFA
         ImagePath: .
-        Enabled: true
     5:
         Code: VACL
         ImagePath: .
-        Enabled: true
     6:
         Code: VASE
         ImagePath: .
-        Enabled: true
     7:
         Code: VADE
         ImagePath: .
-        Enabled: true

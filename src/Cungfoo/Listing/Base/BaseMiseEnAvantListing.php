@@ -22,7 +22,6 @@ class BaseMiseEnAvantListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('prix'));
         $this->addColumn(new Column\DateColumn('date_fin_validite'));
-        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**

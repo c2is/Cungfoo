@@ -18,7 +18,7 @@ use Cungfoo\Model\map\DernieresMinutesTableMap;
 /**
  * Base static class for performing query and update operations on the 'dernieres_minutes' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -38,13 +38,13 @@ abstract class BaseDernieresMinutesPeer
     const TM_CLASS = 'DernieresMinutesTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'dernieres_minutes.ID';
@@ -60,9 +60,6 @@ abstract class BaseDernieresMinutesPeer
 
     /** the column name for the ACTIVE field */
     const ACTIVE = 'dernieres_minutes.ACTIVE';
-
-    /** the column name for the ENABLED field */
-    const ENABLED = 'dernieres_minutes.ENABLED';
 
     /** The enumerated values for the DAY_START field */
     const DAY_START_MONDAY = 'monday';
@@ -97,12 +94,12 @@ abstract class BaseDernieresMinutesPeer
      * e.g. DernieresMinutesPeer::$fieldNames[DernieresMinutesPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'DateStart', 'DayStart', 'DayRange', 'Active', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateStart', 'dayStart', 'dayRange', 'active', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (DernieresMinutesPeer::ID, DernieresMinutesPeer::DATE_START, DernieresMinutesPeer::DAY_START, DernieresMinutesPeer::DAY_RANGE, DernieresMinutesPeer::ACTIVE, DernieresMinutesPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'ACTIVE', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'date_start', 'day_start', 'day_range', 'active', 'enabled', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'DateStart', 'DayStart', 'DayRange', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateStart', 'dayStart', 'dayRange', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DernieresMinutesPeer::ID, DernieresMinutesPeer::DATE_START, DernieresMinutesPeer::DAY_START, DernieresMinutesPeer::DAY_RANGE, DernieresMinutesPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'date_start', 'day_start', 'day_range', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -112,12 +109,12 @@ abstract class BaseDernieresMinutesPeer
      * e.g. DernieresMinutesPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateStart' => 1, 'DayStart' => 2, 'DayRange' => 3, 'Active' => 4, 'Enabled' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateStart' => 1, 'dayStart' => 2, 'dayRange' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_COLNAME => array (DernieresMinutesPeer::ID => 0, DernieresMinutesPeer::DATE_START => 1, DernieresMinutesPeer::DAY_START => 2, DernieresMinutesPeer::DAY_RANGE => 3, DernieresMinutesPeer::ACTIVE => 4, DernieresMinutesPeer::ENABLED => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_START' => 1, 'DAY_START' => 2, 'DAY_RANGE' => 3, 'ACTIVE' => 4, 'ENABLED' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_start' => 1, 'day_start' => 2, 'day_range' => 3, 'active' => 4, 'enabled' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateStart' => 1, 'DayStart' => 2, 'DayRange' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateStart' => 1, 'dayStart' => 2, 'dayRange' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (DernieresMinutesPeer::ID => 0, DernieresMinutesPeer::DATE_START => 1, DernieresMinutesPeer::DAY_START => 2, DernieresMinutesPeer::DAY_RANGE => 3, DernieresMinutesPeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_START' => 1, 'DAY_START' => 2, 'DAY_RANGE' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_start' => 1, 'day_start' => 2, 'day_range' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /** The enumerated values for this table */
@@ -237,14 +234,12 @@ abstract class BaseDernieresMinutesPeer
             $criteria->addSelectColumn(DernieresMinutesPeer::DAY_START);
             $criteria->addSelectColumn(DernieresMinutesPeer::DAY_RANGE);
             $criteria->addSelectColumn(DernieresMinutesPeer::ACTIVE);
-            $criteria->addSelectColumn(DernieresMinutesPeer::ENABLED);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.DATE_START');
             $criteria->addSelectColumn($alias . '.DAY_START');
             $criteria->addSelectColumn($alias . '.DAY_RANGE');
             $criteria->addSelectColumn($alias . '.ACTIVE');
-            $criteria->addSelectColumn($alias . '.ENABLED');
         }
     }
 
@@ -427,7 +422,7 @@ abstract class BaseDernieresMinutesPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -437,7 +432,7 @@ abstract class BaseDernieresMinutesPeer
     {
         DernieresMinutesPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to dernieres_minutes
      * by a foreign key with ON DELETE CASCADE
@@ -486,7 +481,7 @@ abstract class BaseDernieresMinutesPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -497,7 +492,7 @@ abstract class BaseDernieresMinutesPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = DernieresMinutesPeer::getOMClass();
         // populate the object(s)
@@ -741,7 +736,7 @@ abstract class BaseDernieresMinutesPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             DernieresMinutesPeer::clearRelatedInstancePool();
             $con->commit();
