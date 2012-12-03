@@ -1,11 +1,16 @@
 \Cungfoo\Model\Categorie:
     1:
         Code: 5ETO
+        Active: true
     2:
         Code: 4ETO
+        Active: true
     3:
         Code: 3ETO
+        Active: true
     4:
         Code: 2ETO
+        Active: true
     5:
         Code: 1ETO
+        Active: true
