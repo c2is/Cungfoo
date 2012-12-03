@@ -47,10 +47,10 @@ class BaseThematiqueType extends AppAwareType
             'label' => 'thematique.image_path_deleted',
             'required' => false,
         ));
-        $builder->add('enabled', 'checkbox', array(
+        $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'thematique.enabled',
+            'label' => 'thematique.active',
             'required' => false,
         ));
         $builder->add('etablissements', 'model', array(

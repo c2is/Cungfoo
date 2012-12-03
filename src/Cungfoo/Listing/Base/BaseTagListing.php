@@ -21,7 +21,6 @@ class BaseTagListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('slug'));
-        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**

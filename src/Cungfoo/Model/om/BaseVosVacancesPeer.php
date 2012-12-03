@@ -17,7 +17,7 @@ use Cungfoo\Model\map\VosVacancesTableMap;
 /**
  * Base static class for performing query and update operations on the 'vos_vacances' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -54,8 +54,8 @@ abstract class BaseVosVacancesPeer
     /** the column name for the IMAGE_PATH field */
     const IMAGE_PATH = 'vos_vacances.IMAGE_PATH';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'vos_vacances.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'vos_vacances.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -70,7 +70,7 @@ abstract class BaseVosVacancesPeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -83,11 +83,11 @@ abstract class BaseVosVacancesPeer
      * e.g. VosVacancesPeer::$fieldNames[VosVacancesPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Age', 'ImagePath', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'age', 'imagePath', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID, VosVacancesPeer::AGE, VosVacancesPeer::IMAGE_PATH, VosVacancesPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'AGE', 'IMAGE_PATH', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'age', 'image_path', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Age', 'ImagePath', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'age', 'imagePath', 'active', ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID, VosVacancesPeer::AGE, VosVacancesPeer::IMAGE_PATH, VosVacancesPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'AGE', 'IMAGE_PATH', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'age', 'image_path', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -98,11 +98,11 @@ abstract class BaseVosVacancesPeer
      * e.g. VosVacancesPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Age' => 1, 'ImagePath' => 2, 'Enabled' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'age' => 1, 'imagePath' => 2, 'enabled' => 3, ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID => 0, VosVacancesPeer::AGE => 1, VosVacancesPeer::IMAGE_PATH => 2, VosVacancesPeer::ENABLED => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'AGE' => 1, 'IMAGE_PATH' => 2, 'ENABLED' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'age' => 1, 'image_path' => 2, 'enabled' => 3, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Age' => 1, 'ImagePath' => 2, 'Active' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'age' => 1, 'imagePath' => 2, 'active' => 3, ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesPeer::ID => 0, VosVacancesPeer::AGE => 1, VosVacancesPeer::IMAGE_PATH => 2, VosVacancesPeer::ACTIVE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'AGE' => 1, 'IMAGE_PATH' => 2, 'ACTIVE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'age' => 1, 'image_path' => 2, 'active' => 3, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
@@ -180,12 +180,12 @@ abstract class BaseVosVacancesPeer
             $criteria->addSelectColumn(VosVacancesPeer::ID);
             $criteria->addSelectColumn(VosVacancesPeer::AGE);
             $criteria->addSelectColumn(VosVacancesPeer::IMAGE_PATH);
-            $criteria->addSelectColumn(VosVacancesPeer::ENABLED);
+            $criteria->addSelectColumn(VosVacancesPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.AGE');
             $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 
@@ -368,7 +368,7 @@ abstract class BaseVosVacancesPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -378,7 +378,7 @@ abstract class BaseVosVacancesPeer
     {
         VosVacancesPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to vos_vacances
      * by a foreign key with ON DELETE CASCADE
@@ -424,7 +424,7 @@ abstract class BaseVosVacancesPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -435,7 +435,7 @@ abstract class BaseVosVacancesPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = VosVacancesPeer::getOMClass();
         // populate the object(s)
@@ -679,7 +679,7 @@ abstract class BaseVosVacancesPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             VosVacancesPeer::clearRelatedInstancePool();
             $con->commit();

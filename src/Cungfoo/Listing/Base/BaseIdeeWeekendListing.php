@@ -22,7 +22,6 @@ class BaseIdeeWeekendListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('prix'));
         $this->addColumn(new Column\TextColumn('lien'));
-        $this->addColumn(new Column\TextColumn('enabled'));
     }
 
     /**
