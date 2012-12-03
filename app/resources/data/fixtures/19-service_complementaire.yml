@@ -2,39 +2,52 @@
     1:
         Code: S34N
         ImagePath: .
+        Active: true
     2:
         Code: WIFI
         ImagePath: .
+        Active: true
     3:
         Code: ANIM
         ImagePath: .
+        Active: true
     4:
         Code: DEPA
         ImagePath: .
+        Active: true
     5:
         Code: LOVP
         ImagePath: .
+        Active: true
     6:
         Code: TVBA
         ImagePath: .
+        Active: true
     7:
         Code: NAVG
         ImagePath: .
+        Active: true
     8:
         Code: NAVP
         ImagePath: .
+        Active: true
     9:
         Code: BAR
         ImagePath: .
+        Active: true
     10:
         Code: SNAC
         ImagePath: .
+        Active: true
     11:
         Code: WIFP
         ImagePath: .
+        Active: true
     12:
         Code: RAE
         ImagePath: .
+        Active: true
     13:
         Code: REST
         ImagePath: .
+        Active: true

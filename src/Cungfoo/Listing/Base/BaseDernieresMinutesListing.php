@@ -21,6 +21,7 @@ class BaseDernieresMinutesListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\DateColumn('date_start'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

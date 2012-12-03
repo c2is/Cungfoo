@@ -1,0 +1,13 @@
+{% extends 'base.twig' %}
+
+{% block bodyClass %}result{% endblock %}
+
+{% block leftColumn %}
+    {% include 'Listing/_filters.twig' %}
+    {% include 'Listing/_gmap.twig' %}
+    {% include 'Listing/_listing.twig' %}
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+{% endblock %}

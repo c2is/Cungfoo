@@ -29,6 +29,7 @@ class BasePointInteretListing extends Listing
         $this->addColumn(new Column\TextColumn('geo_coordinate_y'));
         $this->addColumn(new Column\TextColumn('distance_camping'));
         $this->addColumn(new Column\TextColumn('image'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**
