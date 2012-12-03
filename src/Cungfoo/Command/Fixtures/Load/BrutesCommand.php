@@ -38,6 +38,7 @@ class BrutesCommand extends BaseCommand
         try
         {
             $this->loadPhotosCamping($input, $output, $con);
+            $this->loadPhotosHebergement($input, $output, $con);
         }
         catch (\Exception $exception)
         {
@@ -103,6 +104,75 @@ class BrutesCommand extends BaseCommand
                 $output->writeln(sprintf('Erreur de lecture du fichier %s' , $fileToLoad));
             }
             fclose($handle);
+        }
+    }
+
+     protected function loadPhotosHebergement($input, $output, $con)
+    {
+        $fileToLoad = sprintf('%s/%s/hebergements.csv', $this->getProjectDirectory(), trim($input->getOption('directory')));
+
+        $handle = @fopen($fileToLoad, "r");
+        if ($handle)
+        {
+            $content = array();
+            while (($buffer = fgets($handle)) !== false)
+            {
+                list($idHebergement, $description, $imgPath) = split("\t", trim($buffer, "\n"));
+
+                $content[$idHebergement][] = array(
+                    "desc" => $description,
+                    "img" => $imgPath
+                );
+            }
+            if (!feof($handle))
+            {
+                $output->writeln(sprintf('Erreur de lecture du fichier %s' , $fileToLoad));
+            }
+            fclose($handle);
+
+            if (count($content))
+            {
+                $unsetType = array();
+
+                $etabs = \Cungfoo\Model\EtablissementQuery::create()
+                    ->find()
+                ;
+
+                foreach ($etabs as $etab)
+                {
+                    foreach ($etab->getTypeHebergements() as $typeHebergement)
+                    {
+                        if (!isset($content[$typeHebergement->getCode()]))
+                        {
+                            $unsetType[$typeHebergement->getCode()] = true;
+                            continue;
+                        }
+
+                        foreach ($content[$typeHebergement->getCode()] as $item)
+                        {
+                            $multimedia = new \Cungfoo\Model\MultimediaEtablissement();
+                            $multimedia
+                                ->setEtablissementId($etab->getId())
+                                ->setImagePath(sprintf('uploads/multimedia_etablissements/%s.jpg', $item['img']))
+                                ->setTitre($item['desc'])
+                                ->save()
+                            ;
+
+                            $tagMultimedia = new \Cungfoo\Model\MultimediaEtablissementTag();
+                            $tagMultimedia
+                                ->setMultimediaEtablissementId($multimedia->getId())
+                                ->setTagId(2)
+                                ->save()
+                            ;
+                        }
+                    }
+                }
+
+                if (count($unsetType))
+                {
+                    $output->writeln(sprintf('<info>%s</info> Type(s) etablissement non géré(s) : <comment>%s</comment>', $this->getName(), implode(',', array_keys($unsetType))));
+                }
+            }
         }
     }
 }
