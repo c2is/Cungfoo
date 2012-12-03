@@ -1317,8 +1317,6 @@ function tabs(tView, load) {
  * GMAP FUNCIONS
  */
 function loadGmapScript() { // call at the end of the DOM ready
-    //consoleLog('map');
-    var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "http://maps.googleapis.com/maps/api/js?key="+sGoogleApiKey+"&sensor=true&callback=loadPluginsGmap";
