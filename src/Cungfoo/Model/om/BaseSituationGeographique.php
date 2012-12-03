@@ -2064,6 +2064,54 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
         return $this;
     }
 
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return SituationGeographiqueI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [keywords] column value.
+         *
+         * @return string
+         */
+        public function getKeywords()
+        {
+        return $this->getCurrentTranslation()->getKeywords();
+    }
+
+
+        /**
+         * Set the value of [keywords] column.
+         *
+         * @param string $v new value
+         * @return SituationGeographiqueI18n The current object (for fluent API support)
+         */
+        public function setKeywords($v)
+        {    $this->getCurrentTranslation()->setKeywords($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

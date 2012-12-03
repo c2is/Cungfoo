@@ -79,6 +79,20 @@ class BaseServiceComplementaireType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'service_complementaire.description',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'keywords' => array(
+                    'required' => false,
+                    'label' => 'service_complementaire.keywords',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

@@ -9,6 +9,9 @@ activite.id: Id
 activite.code: Code
 activite.name: Nom
 activite.image_path: Image
+activite.description: Description
+activite.keywords: Mots clés
+activite.image.path: Image
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
@@ -69,6 +72,8 @@ situation_geographique.crud.view: Détails de la situation géographique %name%
 situation_geographique.id: Id
 situation_geographique.code: Code
 situation_geographique.name: Nom
+situation_geographique.description: Description
+situation_geographique.keywords: Mots clés
 situation_geographique.etablissements: Établissements ayant cette situation géographique
 
 baignade.crud.create: Création d'une baignade
@@ -79,6 +84,8 @@ baignade.id: Id
 baignade.code: Code
 baignade.name: Nom
 baignade.etablissements: Établissements ayant cette baignade
+baignade.description: Description
+baignade.keywords: Mots clés
 
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
@@ -86,9 +93,12 @@ thematique.crud.update: Mettre à jour la thématique %name%
 thematique.crud.view: Détails de la thématique %name%
 thematique.id: Id
 thematique.code: Code
-thematique.name: Nom
+thematique.name: Nom.
+thematique.description: Description
+thematique.keywords: Mots clés
 thematique.etablissements: Établissements ayant cette thématique
 thematique.image_path: Picto
+thematique.image.path: Picto
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
@@ -195,7 +205,10 @@ service_complementaire.etablissements: Établissements ayant ce service complém
 service_complementaire.id: Id
 service_complementaire.code: Code
 service_complementaire.name: Nom
+service_complementaire.description: Description
+service_complementaire.keywords: Mots clés
 service_complementaire.image_path: Image
+service_complementaire.image.path: Image
 
 security.username: Nom d'utilisateur
 security.password: Mot de passe
