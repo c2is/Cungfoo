@@ -37,13 +37,13 @@ abstract class BaseServiceComplementaireI18nPeer
     const TM_CLASS = 'ServiceComplementaireI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'service_complementaire_i18n.ID';
@@ -53,6 +53,12 @@ abstract class BaseServiceComplementaireI18nPeer
 
     /** the column name for the NAME field */
     const NAME = 'service_complementaire_i18n.NAME';
+
+    /** the column name for the DESCRIPTION field */
+    const DESCRIPTION = 'service_complementaire_i18n.DESCRIPTION';
+
+    /** the column name for the KEYWORDS field */
+    const KEYWORDS = 'service_complementaire_i18n.KEYWORDS';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,12 +79,12 @@ abstract class BaseServiceComplementaireI18nPeer
      * e.g. ServiceComplementaireI18nPeer::$fieldNames[ServiceComplementaireI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID, ServiceComplementaireI18nPeer::LOCALE, ServiceComplementaireI18nPeer::NAME, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID, ServiceComplementaireI18nPeer::LOCALE, ServiceComplementaireI18nPeer::NAME, ServiceComplementaireI18nPeer::DESCRIPTION, ServiceComplementaireI18nPeer::KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -88,12 +94,12 @@ abstract class BaseServiceComplementaireI18nPeer
      * e.g. ServiceComplementaireI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID => 0, ServiceComplementaireI18nPeer::LOCALE => 1, ServiceComplementaireI18nPeer::NAME => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID => 0, ServiceComplementaireI18nPeer::LOCALE => 1, ServiceComplementaireI18nPeer::NAME => 2, ServiceComplementaireI18nPeer::DESCRIPTION => 3, ServiceComplementaireI18nPeer::KEYWORDS => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -170,10 +176,14 @@ abstract class BaseServiceComplementaireI18nPeer
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::ID);
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::LOCALE);
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::NAME);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
             $criteria->addSelectColumn($alias . '.NAME');
+            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.KEYWORDS');
         }
     }
 

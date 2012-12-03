@@ -79,6 +79,20 @@ class BaseThematiqueType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'thematique.description',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'keywords' => array(
+                    'required' => false,
+                    'label' => 'thematique.keywords',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));
