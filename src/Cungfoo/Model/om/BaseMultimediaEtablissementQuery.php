@@ -23,21 +23,21 @@ use Cungfoo\Model\Tag;
 /**
  * Base class that represents a query for the 'multimedia_etablissement' table.
  *
- * 
+ *
  *
  * @method MultimediaEtablissementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method MultimediaEtablissementQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method MultimediaEtablissementQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method MultimediaEtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method MultimediaEtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method MultimediaEtablissementQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method MultimediaEtablissementQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method MultimediaEtablissementQuery groupById() Group by the id column
  * @method MultimediaEtablissementQuery groupByEtablissementId() Group by the etablissement_id column
  * @method MultimediaEtablissementQuery groupByImagePath() Group by the image_path column
  * @method MultimediaEtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method MultimediaEtablissementQuery groupByUpdatedAt() Group by the updated_at column
- * @method MultimediaEtablissementQuery groupByEnabled() Group by the enabled column
+ * @method MultimediaEtablissementQuery groupByActive() Group by the active column
  *
  * @method MultimediaEtablissementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method MultimediaEtablissementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -62,14 +62,14 @@ use Cungfoo\Model\Tag;
  * @method MultimediaEtablissement findOneByImagePath(string $image_path) Return the first MultimediaEtablissement filtered by the image_path column
  * @method MultimediaEtablissement findOneByCreatedAt(string $created_at) Return the first MultimediaEtablissement filtered by the created_at column
  * @method MultimediaEtablissement findOneByUpdatedAt(string $updated_at) Return the first MultimediaEtablissement filtered by the updated_at column
- * @method MultimediaEtablissement findOneByEnabled(boolean $enabled) Return the first MultimediaEtablissement filtered by the enabled column
+ * @method MultimediaEtablissement findOneByActive(boolean $active) Return the first MultimediaEtablissement filtered by the active column
  *
  * @method array findById(int $id) Return MultimediaEtablissement objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return MultimediaEtablissement objects filtered by the etablissement_id column
  * @method array findByImagePath(string $image_path) Return MultimediaEtablissement objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return MultimediaEtablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return MultimediaEtablissement objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return MultimediaEtablissement objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return MultimediaEtablissement objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -120,7 +120,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   MultimediaEtablissement|MultimediaEtablissement[]|mixed the result, formatted by the current formatter
@@ -173,9 +173,9 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `multimedia_etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `multimedia_etablissement` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -448,15 +448,15 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -465,13 +465,13 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
      *
      * @return MultimediaEtablissementQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(MultimediaEtablissementPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(MultimediaEtablissementPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -732,7 +732,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -744,7 +744,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addUsingAlias(MultimediaEtablissementPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -754,7 +754,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(MultimediaEtablissementPeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -764,7 +764,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(MultimediaEtablissementPeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -776,7 +776,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addUsingAlias(MultimediaEtablissementPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -786,7 +786,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(MultimediaEtablissementPeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -796,8 +796,22 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(MultimediaEtablissementPeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -810,12 +824,12 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'MultimediaEtablissementI18n';
-    
+
         return $this
             ->joinMultimediaEtablissementI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -831,10 +845,10 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('MultimediaEtablissementI18n');
         $this->with['MultimediaEtablissementI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

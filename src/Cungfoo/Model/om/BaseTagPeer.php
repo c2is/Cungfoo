@@ -17,7 +17,7 @@ use Cungfoo\Model\map\TagTableMap;
 /**
  * Base static class for performing query and update operations on the 'tag' table.
  *
- * 
+ *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
@@ -57,8 +57,8 @@ abstract class BaseTagPeer
     /** the column name for the UPDATED_AT field */
     const UPDATED_AT = 'tag.UPDATED_AT';
 
-    /** the column name for the ENABLED field */
-    const ENABLED = 'tag.ENABLED';
+    /** the column name for the ACTIVE field */
+    const ACTIVE = 'tag.ACTIVE';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,7 +73,7 @@ abstract class BaseTagPeer
 
 
     // i18n behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -86,11 +86,11 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[TagPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'CreatedAt', 'UpdatedAt', 'Enabled', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'createdAt', 'updatedAt', 'enabled', ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::SLUG, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, TagPeer::ENABLED, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'CREATED_AT', 'UPDATED_AT', 'ENABLED', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'created_at', 'updated_at', 'enabled', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Slug', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'slug', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID, TagPeer::SLUG, TagPeer::CREATED_AT, TagPeer::UPDATED_AT, TagPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SLUG', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'slug', 'created_at', 'updated_at', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
@@ -101,11 +101,11 @@ abstract class BaseTagPeer
      * e.g. TagPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Enabled' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'enabled' => 4, ),
-        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::SLUG => 1, TagPeer::CREATED_AT => 2, TagPeer::UPDATED_AT => 3, TagPeer::ENABLED => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ENABLED' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'created_at' => 2, 'updated_at' => 3, 'enabled' => 4, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Slug' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'slug' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (TagPeer::ID => 0, TagPeer::SLUG => 1, TagPeer::CREATED_AT => 2, TagPeer::UPDATED_AT => 3, TagPeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SLUG' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'slug' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
@@ -184,13 +184,13 @@ abstract class BaseTagPeer
             $criteria->addSelectColumn(TagPeer::SLUG);
             $criteria->addSelectColumn(TagPeer::CREATED_AT);
             $criteria->addSelectColumn(TagPeer::UPDATED_AT);
-            $criteria->addSelectColumn(TagPeer::ENABLED);
+            $criteria->addSelectColumn(TagPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.CREATED_AT');
             $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ENABLED');
+            $criteria->addSelectColumn($alias . '.ACTIVE');
         }
     }
 
@@ -373,7 +373,7 @@ abstract class BaseTagPeer
 
         return null; // just to be explicit
     }
-    
+
     /**
      * Clear the instance pool.
      *
@@ -383,7 +383,7 @@ abstract class BaseTagPeer
     {
         TagPeer::$instances = array();
     }
-    
+
     /**
      * Method to invalidate the instance pool of all tables related to tag
      * by a foreign key with ON DELETE CASCADE
@@ -429,7 +429,7 @@ abstract class BaseTagPeer
 
         return (int) $row[$startcol];
     }
-    
+
     /**
      * The returned array will contain objects of the default type or
      * objects that inherit from the default.
@@ -440,7 +440,7 @@ abstract class BaseTagPeer
     public static function populateObjects(PDOStatement $stmt)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = TagPeer::getOMClass();
         // populate the object(s)
@@ -684,7 +684,7 @@ abstract class BaseTagPeer
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            
+
             $affectedRows += BasePeer::doDelete($criteria, $con);
             TagPeer::clearRelatedInstancePool();
             $con->commit();

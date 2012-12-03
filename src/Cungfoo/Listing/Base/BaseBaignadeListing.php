@@ -21,7 +21,7 @@ class BaseBaignadeListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

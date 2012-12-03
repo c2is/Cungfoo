@@ -1,1 +1,73 @@
-\Cungfoo\Model\MultimediaEtablissementI18n: {  }
+\Cungfoo\Model\MultimediaEtablissementI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Titre: 'Camping DE'
+    1_en:
+        Id: 1
+        Locale: en
+        Titre: 'Camping EN'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Titre: 'Camping FR'
+    2_de:
+        Id: 2
+        Locale: de
+        Titre: 'Location DE'
+    2_en:
+        Id: 2
+        Locale: en
+        Titre: 'Location EN'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Titre: 'Location FR'
+    3_de:
+        Id: 3
+        Locale: de
+        Titre: 'Activités DE'
+    3_en:
+        Id: 3
+        Locale: en
+        Titre: 'Activités EN'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Titre: 'Activités FR'
+    4_de:
+        Id: 4
+        Locale: de
+        Titre: 'Région DE'
+    4_en:
+        Id: 4
+        Locale: en
+        Titre: 'Région EN'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Titre: 'Région FR'
+    5_de:
+        Id: 5
+        Locale: de
+        Titre: 'Camping location DE'
+    5_en:
+        Id: 5
+        Locale: en
+        Titre: 'Camping location EN'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Titre: 'Camping location FR'
+    6_de:
+        Id: 6
+        Locale: de
+        Titre: 'Activités régions DE'
+    6_en:
+        Id: 6
+        Locale: en
+        Titre: 'Activités régions EN'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Titre: 'Activités régions FR'

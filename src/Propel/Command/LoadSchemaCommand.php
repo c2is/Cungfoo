@@ -24,7 +24,7 @@ class LoadSchemaCommand extends Command
     {
         $utils = new Utils();
         $connexion = $utils->getPropelConnexion($this->getSilexApplication()['propel.config_file']);
-        
+
         $cmd = sprintf("mysql -u%s -p'%s' %s < %s/app/resources/data/sql/Cungfoo.Model.schema.sql",
             $connexion['user'],
             $connexion['password'],

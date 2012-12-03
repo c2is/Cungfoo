@@ -21,7 +21,9 @@ class BaseVilleListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\TextColumn('image_detail_1'));
+        $this->addColumn(new Column\TextColumn('image_detail_2'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

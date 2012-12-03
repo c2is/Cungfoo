@@ -62,7 +62,7 @@ class DestinationVilleController implements ControllerProviderInterface
             ;
             $listContent = $list->process();
 
-            return $app['twig']->render('Destination/pays.twig', array(
+            return $app['twig']->render('Destination/detail.twig', array(
                 'locale'            => $locale,
                 'item'              => $ville,
                 'sitesAVisiter'     => $sitesAVisiter,
@@ -72,6 +72,8 @@ class DestinationVilleController implements ControllerProviderInterface
                 'list'              => $listContent,
                 'firstEtab'         => reset($listContent['element']),
                 'searchForm'        => $searchEngine->getView(),
+                'imagesTitle'       => $app['translator']->trans('destination.images_ville_title'),
+
             ));
         })
         ->bind('destination_ville');

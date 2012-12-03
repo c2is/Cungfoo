@@ -71,7 +71,7 @@
 
     <div id="lastLocations" class="locationForwards clear">
         <div class="stamp grey">
-            <h2>Dernières minutes</h2>
+            <h2>{{ "home.dernieres_minutes" | trans }}</h2>
         </div>
         {% for etab in dernieres_minutes.element %}
             {% for proposal in etab.extra %}
@@ -83,15 +83,15 @@
                     <span class="counter">J -{{ etab.days_countdown }}</span>
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     {% if discount %}
-                        <span class="condition"><a href="#" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ au lieu de {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
+                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
                     {% else %}
-                        <span class="condition"><a href="#" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
+                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
                     {% endif %}
                 </div>
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link right">Voir toutes les dernières minutes</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.dernieres_minutes.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
     </div>
 </div>
 
@@ -117,7 +117,7 @@
                     {% endif %}
                 </div>
             {% endfor %}
-            <a href="#_" class="bt link right">Voir toutes les idées week-end (12)</a>
+            <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a>
         </div>
     </div>
 {% endblock %}

@@ -20,7 +20,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
 /**
  * Base class that represents a query for the 'idee_weekend' table.
  *
- * 
+ *
  *
  * @method IdeeWeekendQuery orderById($order = Criteria::ASC) Order by the id column
  * @method IdeeWeekendQuery orderByHighlight($order = Criteria::ASC) Order by the highlight column
@@ -28,7 +28,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery orderByHome($order = Criteria::ASC) Order by the home column
  * @method IdeeWeekendQuery orderByLien($order = Criteria::ASC) Order by the lien column
  * @method IdeeWeekendQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
- * @method IdeeWeekendQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method IdeeWeekendQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method IdeeWeekendQuery groupById() Group by the id column
  * @method IdeeWeekendQuery groupByHighlight() Group by the highlight column
@@ -36,7 +36,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery groupByHome() Group by the home column
  * @method IdeeWeekendQuery groupByLien() Group by the lien column
  * @method IdeeWeekendQuery groupByImagePath() Group by the image_path column
- * @method IdeeWeekendQuery groupByEnabled() Group by the enabled column
+ * @method IdeeWeekendQuery groupByActive() Group by the active column
  *
  * @method IdeeWeekendQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method IdeeWeekendQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -54,7 +54,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekend findOneByHome(boolean $home) Return the first IdeeWeekend filtered by the home column
  * @method IdeeWeekend findOneByLien(string $lien) Return the first IdeeWeekend filtered by the lien column
  * @method IdeeWeekend findOneByImagePath(string $image_path) Return the first IdeeWeekend filtered by the image_path column
- * @method IdeeWeekend findOneByEnabled(boolean $enabled) Return the first IdeeWeekend filtered by the enabled column
+ * @method IdeeWeekend findOneByActive(boolean $active) Return the first IdeeWeekend filtered by the active column
  *
  * @method array findById(int $id) Return IdeeWeekend objects filtered by the id column
  * @method array findByHighlight(boolean $highlight) Return IdeeWeekend objects filtered by the highlight column
@@ -62,7 +62,7 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method array findByHome(boolean $home) Return IdeeWeekend objects filtered by the home column
  * @method array findByLien(string $lien) Return IdeeWeekend objects filtered by the lien column
  * @method array findByImagePath(string $image_path) Return IdeeWeekend objects filtered by the image_path column
- * @method array findByEnabled(boolean $enabled) Return IdeeWeekend objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return IdeeWeekend objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -113,7 +113,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   IdeeWeekend|IdeeWeekend[]|mixed the result, formatted by the current formatter
@@ -166,9 +166,9 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ENABLED` FROM `idee_weekend` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ACTIVE` FROM `idee_weekend` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -424,15 +424,15 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -441,13 +441,13 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      *
      * @return IdeeWeekendQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(IdeeWeekendPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(IdeeWeekendPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -540,8 +540,22 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -554,12 +568,12 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'IdeeWeekendI18n';
-    
+
         return $this
             ->joinIdeeWeekendI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -575,10 +589,10 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('IdeeWeekendI18n');
         $this->with['IdeeWeekendI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

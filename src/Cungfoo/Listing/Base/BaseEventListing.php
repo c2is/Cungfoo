@@ -31,7 +31,7 @@ class BaseEventListing extends Listing
         $this->addColumn(new Column\TextColumn('distance_camping'));
         $this->addColumn(new Column\TextColumn('image'));
         $this->addColumn(new Column\TextColumn('priority'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

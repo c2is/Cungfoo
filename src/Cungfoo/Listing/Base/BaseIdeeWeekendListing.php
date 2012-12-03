@@ -20,9 +20,12 @@ class BaseIdeeWeekendListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('highlight'));
         $this->addColumn(new Column\TextColumn('prix'));
+        $this->addColumn(new Column\TextColumn('home'));
         $this->addColumn(new Column\TextColumn('lien'));
-        $this->addColumn(new Column\TextColumn('enabled'));
+        $this->addColumn(new Column\TextColumn('image_path'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

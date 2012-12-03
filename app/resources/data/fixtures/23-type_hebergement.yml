@@ -6,7 +6,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     2:
         Code: 110M
         CategoryTypeHebergementId: 2
@@ -14,7 +14,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     3:
         Code: 130M
         CategoryTypeHebergementId: 2
@@ -22,7 +22,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     4:
         Code: 140M
         CategoryTypeHebergementId: 2
@@ -30,7 +30,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     5:
         Code: 150M
         CategoryTypeHebergementId: 2
@@ -38,7 +38,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     6:
         Code: 160M
         CategoryTypeHebergementId: 2
@@ -46,7 +46,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     7:
         Code: 170M
         CategoryTypeHebergementId: 2
@@ -54,7 +54,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     8:
         Code: 180M
         CategoryTypeHebergementId: 2
@@ -62,7 +62,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     9:
         Code: AMI4
         CategoryTypeHebergementId: 2
@@ -70,7 +70,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     10:
         Code: BT2L
         CategoryTypeHebergementId: 2
@@ -78,7 +78,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     11:
         Code: BT3
         CategoryTypeHebergementId: 2
@@ -86,7 +86,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     12:
         Code: CANA
         CategoryTypeHebergementId: 8
@@ -94,7 +94,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     13:
         Code: CH46
         CategoryTypeHebergementId: 3
@@ -102,7 +102,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     14:
         Code: CHA5
         CategoryTypeHebergementId: 3
@@ -110,7 +110,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     15:
         Code: CHA6
         CategoryTypeHebergementId: 3
@@ -118,7 +118,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     16:
         Code: CON5
         CategoryTypeHebergementId: 5
@@ -126,7 +126,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     17:
         Code: COR4
         CategoryTypeHebergementId: 2
@@ -134,7 +134,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     18:
         Code: COR6
         CategoryTypeHebergementId: 2
@@ -142,7 +142,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     19:
         Code: DOM5
         CategoryTypeHebergementId: 2
@@ -150,7 +150,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     20:
         Code: DOM6
         CategoryTypeHebergementId: 2
@@ -158,7 +158,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     21:
         Code: DOML
         CategoryTypeHebergementId: 2
@@ -166,7 +166,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     22:
         Code: EMPF
         CategoryTypeHebergementId: 7
@@ -174,7 +174,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     23:
         Code: EMPL
         CategoryTypeHebergementId: 7
@@ -182,7 +182,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     24:
         Code: EST5
         CategoryTypeHebergementId: 5
@@ -190,7 +190,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     25:
         Code: FAM5
         CategoryTypeHebergementId: 2
@@ -198,7 +198,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     26:
         Code: FAM6
         CategoryTypeHebergementId: 2
@@ -206,7 +206,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     27:
         Code: FAMC
         CategoryTypeHebergementId: 2
@@ -214,7 +214,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     28:
         Code: FAML
         CategoryTypeHebergementId: 2
@@ -222,7 +222,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     29:
         Code: HEL6
         CategoryTypeHebergementId: 2
@@ -230,7 +230,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     30:
         Code: LOG5
         CategoryTypeHebergementId: 2
@@ -238,7 +238,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     31:
         Code: MAI
         CategoryTypeHebergementId: 4
@@ -246,7 +246,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     32:
         Code: MAIS
         CategoryTypeHebergementId: 4
@@ -254,7 +254,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     33:
         Code: OCE4
         CategoryTypeHebergementId: 2
@@ -262,7 +262,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     34:
         Code: OHA6
         CategoryTypeHebergementId: 2
@@ -270,7 +270,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     35:
         Code: PAGO
         CategoryTypeHebergementId: 8
@@ -278,7 +278,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     36:
         Code: RES4
         CategoryTypeHebergementId: 2
@@ -286,7 +286,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     37:
         Code: RES5
         CategoryTypeHebergementId: 2
@@ -294,7 +294,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     38:
         Code: SALL
         CategoryTypeHebergementId: 1
@@ -302,7 +302,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     39:
         Code: SPA6
         CategoryTypeHebergementId: 2
@@ -310,7 +310,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     40:
         Code: SPA7
         CategoryTypeHebergementId: 2
@@ -318,7 +318,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     41:
         Code: SPA8
         CategoryTypeHebergementId: 2
@@ -326,7 +326,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     42:
         Code: SPAC
         CategoryTypeHebergementId: 2
@@ -334,7 +334,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     43:
         Code: SPAL
         CategoryTypeHebergementId: 2
@@ -342,7 +342,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     44:
         Code: STU
         CategoryTypeHebergementId: 4
@@ -350,7 +350,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     45:
         Code: STUC
         CategoryTypeHebergementId: 4
@@ -358,7 +358,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     46:
         Code: TBIH
         CategoryTypeHebergementId: 6
@@ -366,7 +366,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     47:
         Code: TBRA
         CategoryTypeHebergementId: 6
@@ -374,7 +374,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     48:
         Code: TCOZ
         CategoryTypeHebergementId: 6
@@ -382,7 +382,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     49:
         Code: TDA1
         CategoryTypeHebergementId: 6
@@ -390,7 +390,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     50:
         Code: TDA2
         CategoryTypeHebergementId: 6
@@ -398,7 +398,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     51:
         Code: TDIV
         CategoryTypeHebergementId: 6
@@ -406,7 +406,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     52:
         Code: TECL
         CategoryTypeHebergementId: 8
@@ -414,7 +414,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     53:
         Code: TECO
         CategoryTypeHebergementId: 8
@@ -422,7 +422,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     54:
         Code: TENM
         CategoryTypeHebergementId: 8
@@ -430,7 +430,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     55:
         Code: TGOU
         CategoryTypeHebergementId: 6
@@ -438,7 +438,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     56:
         Code: TGWE
         CategoryTypeHebergementId: 6
@@ -446,7 +446,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     57:
         Code: TTOM
         CategoryTypeHebergementId: 6
@@ -454,7 +454,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     58:
         Code: VAC5
         CategoryTypeHebergementId: 2
@@ -462,7 +462,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     59:
         Code: VAM5
         CategoryTypeHebergementId: 2
@@ -470,7 +470,7 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true
     60:
         Code: YOUR
         CategoryTypeHebergementId: 8
@@ -478,4 +478,4 @@
         NombrePlace: null
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Enabled: true
+        Active: true

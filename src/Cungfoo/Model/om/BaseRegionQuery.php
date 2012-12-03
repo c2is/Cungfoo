@@ -22,7 +22,7 @@ use Cungfoo\Model\Ville;
 /**
  * Base class that represents a query for the 'region' table.
  *
- * 
+ *
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionQuery orderByCode($order = Criteria::ASC) Order by the code column
@@ -35,7 +35,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method RegionQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method RegionQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method RegionQuery groupById() Group by the id column
  * @method RegionQuery groupByCode() Group by the code column
@@ -48,7 +48,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
- * @method RegionQuery groupByEnabled() Group by the enabled column
+ * @method RegionQuery groupByActive() Group by the active column
  *
  * @method RegionQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method RegionQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -79,7 +79,7 @@ use Cungfoo\Model\Ville;
  * @method Region findOneByImageDetail2(string $image_detail_2) Return the first Region filtered by the image_detail_2 column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
- * @method Region findOneByEnabled(boolean $enabled) Return the first Region filtered by the enabled column
+ * @method Region findOneByActive(boolean $active) Return the first Region filtered by the active column
  *
  * @method array findById(int $id) Return Region objects filtered by the id column
  * @method array findByCode(string $code) Return Region objects filtered by the code column
@@ -92,7 +92,7 @@ use Cungfoo\Model\Ville;
  * @method array findByImageDetail2(string $image_detail_2) Return Region objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Region objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Region objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -143,7 +143,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Region|Region[]|mixed the result, formatted by the current formatter
@@ -196,9 +196,9 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `region` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `IMAGE_ENCART_PATH`, `IMAGE_ENCART_PETITE_PATH`, `PAYS_ID`, `MEA_HOME`, `IMAGE_DETAIL_1`, `IMAGE_DETAIL_2`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `region` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -643,15 +643,15 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -660,13 +660,13 @@ abstract class BaseRegionQuery extends ModelCriteria
      *
      * @return RegionQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(RegionPeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(RegionPeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -910,7 +910,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -922,7 +922,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addUsingAlias(RegionPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -932,7 +932,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(RegionPeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -942,7 +942,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(RegionPeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -954,7 +954,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addUsingAlias(RegionPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -964,7 +964,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(RegionPeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -974,8 +974,22 @@ abstract class BaseRegionQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -988,12 +1002,12 @@ abstract class BaseRegionQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'RegionI18n';
-    
+
         return $this
             ->joinRegionI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -1009,10 +1023,10 @@ abstract class BaseRegionQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('RegionI18n');
         $this->with['RegionI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

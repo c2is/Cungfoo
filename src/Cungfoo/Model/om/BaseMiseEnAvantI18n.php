@@ -20,7 +20,7 @@ use Cungfoo\Model\MiseEnAvantQuery;
 /**
  * Base class that represents a row from the 'mise_en_avant_i18n' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -124,7 +124,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -134,7 +134,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [locale] column value.
-     * 
+     *
      * @return string
      */
     public function getLocale()
@@ -144,7 +144,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [titre] column value.
-     * 
+     *
      * @return string
      */
     public function getTitre()
@@ -154,7 +154,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [accroche] column value.
-     * 
+     *
      * @return string
      */
     public function getAccroche()
@@ -164,7 +164,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [lien] column value.
-     * 
+     *
      * @return string
      */
     public function getLien()
@@ -174,7 +174,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Get the [titre_lien] column value.
-     * 
+     *
      * @return string
      */
     public function getTitreLien()
@@ -184,7 +184,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -209,7 +209,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [locale] column.
-     * 
+     *
      * @param string $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -230,7 +230,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [titre] column.
-     * 
+     *
      * @param string $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -251,7 +251,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [accroche] column.
-     * 
+     *
      * @param string $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -272,7 +272,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [lien] column.
-     * 
+     *
      * @param string $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -293,7 +293,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
 
     /**
      * Set the value of [titre_lien] column.
-     * 
+     *
      * @param string $v new value
      * @return MiseEnAvantI18n The current object (for fluent API support)
      */
@@ -615,22 +615,22 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':						
+                    case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`TITRE`':						
+                    case '`TITRE`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
                         break;
-                    case '`ACCROCHE`':						
+                    case '`ACCROCHE`':
                         $stmt->bindValue($identifier, $this->accroche, PDO::PARAM_STR);
                         break;
-                    case '`LIEN`':						
+                    case '`LIEN`':
                         $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
                         break;
-                    case '`TITRE_LIEN`':						
+                    case '`TITRE_LIEN`':
                         $stmt->bindValue($identifier, $this->titre_lien, PDO::PARAM_STR);
                         break;
                 }

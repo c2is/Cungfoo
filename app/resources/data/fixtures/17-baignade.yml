@@ -1,16 +1,16 @@
 \Cungfoo\Model\Baignade:
     1:
         Code: TOBO
-        Enabled: true
+        Active: true
     2:
         Code: PISC
-        Enabled: true
+        Active: true
     3:
         Code: PCOU
-        Enabled: true
+        Active: true
     4:
         Code: PAAQ
-        Enabled: true
+        Active: true
     5:
         Code: SPAJ
-        Enabled: true
+        Active: true

@@ -28,7 +28,7 @@ use Cungfoo\Model\ThematiqueQuery;
 /**
  * Base class that represents a row from the 'thematique' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -84,11 +84,11 @@ abstract class BaseThematique extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        PropelObjectCollection|EtablissementThematique[] Collection to store aggregation of EtablissementThematique objects.
@@ -122,13 +122,13 @@ abstract class BaseThematique extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[ThematiqueI18n]
@@ -161,7 +161,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -176,7 +176,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -186,7 +186,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return string
      */
     public function getCode()
@@ -196,7 +196,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Get the [image_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImagePath()
@@ -206,7 +206,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -243,7 +243,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -279,18 +279,18 @@ abstract class BaseThematique extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Thematique The current object (for fluent API support)
      */
@@ -311,7 +311,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param string $v new value
      * @return Thematique The current object (for fluent API support)
      */
@@ -332,7 +332,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Thematique The current object (for fluent API support)
      */
@@ -353,7 +353,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Thematique The current object (for fluent API support)
@@ -376,7 +376,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Thematique The current object (for fluent API support)
@@ -398,16 +398,16 @@ abstract class BaseThematique extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Thematique The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -417,14 +417,14 @@ abstract class BaseThematique extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = ThematiquePeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = ThematiquePeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -436,7 +436,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -467,7 +467,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->enabled = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -773,8 +773,8 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if ($this->isColumnModified(ThematiquePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(ThematiquePeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(ThematiquePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -787,23 +787,23 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':						
+                    case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -971,7 +971,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 5:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1007,7 +1007,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
             $keys[2] => $this->getImagePath(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getEnabled(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementThematiques) {
@@ -1066,7 +1066,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 5:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1097,7 +1097,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setEnabled($arr[$keys[5]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1114,7 +1114,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
         if ($this->isColumnModified(ThematiquePeer::IMAGE_PATH)) $criteria->add(ThematiquePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(ThematiquePeer::CREATED_AT)) $criteria->add(ThematiquePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ThematiquePeer::UPDATED_AT)) $criteria->add(ThematiquePeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(ThematiquePeer::ENABLED)) $criteria->add(ThematiquePeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(ThematiquePeer::ACTIVE)) $criteria->add(ThematiquePeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1182,7 +1182,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
         $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1893,7 +1893,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
         $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1971,7 +1971,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -1980,12 +1980,24 @@ abstract class BaseThematique extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = ThematiquePeer::UPDATED_AT;
-    
+
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -1996,10 +2008,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -2009,7 +2021,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -2024,7 +2036,7 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 foreach ($this->collThematiqueI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -2040,10 +2052,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
             }
             $this->addThematiqueI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -2068,10 +2080,10 @@ abstract class BaseThematique extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -2082,33 +2094,33 @@ abstract class BaseThematique extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [name] column value.
-         * 
+         *
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-    
-    
+
+
         /**
          * Set the value of [name] column.
-         * 
+         *
          * @param string $v new value
          * @return ThematiqueI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2123,12 +2135,12 @@ abstract class BaseThematique extends BaseObject implements Persistent
         {
             $this->resetModified(ThematiquePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2136,15 +2148,15 @@ abstract class BaseThematique extends BaseObject implements Persistent
     {
         return 'uploads/thematiques';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

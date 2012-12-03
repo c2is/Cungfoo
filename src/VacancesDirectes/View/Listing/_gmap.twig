@@ -1,10 +1,10 @@
-<div id="resultMap" class="gmap" style="width:616px;height:326px;">
+<div id="resultMap" class="gmap" style="width:616px;height:573px;">
     <script>
         function resultInit() {
             var resultMkrs = [
                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                 {% for etab in list.element %}
-                ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
+                    ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
                 {% endfor %}
             ];
             var centerresultMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),

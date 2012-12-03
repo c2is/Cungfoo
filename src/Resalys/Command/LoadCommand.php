@@ -36,7 +36,7 @@ class LoadCommand extends BaseCommand
         try
         {
             $clientClassName = sprintf('Resalys\Lib\Client\%sClient', ucfirst(strtolower($input->getArgument('type'))));
-            $client = new $clientClassName($this->getApplication()->getRootDir());
+            $client = new $clientClassName($this->getProjectDirectory());
 
             if ($languageCode = $input->getOption('language_code'))
             {

@@ -1,1 +1,37 @@
-\Cungfoo\Model\PersonnageI18n: {  }
+\Cungfoo\Model\PersonnageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Prenom: 'Roger DE'
+    1_en:
+        Id: 1
+        Locale: en
+        Prenom: 'Roger EN'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Prenom: Roger
+    2_de:
+        Id: 2
+        Locale: de
+        Prenom: 'Simon DE'
+    2_en:
+        Id: 2
+        Locale: en
+        Prenom: 'Simon EN'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Prenom: Simon
+    3_de:
+        Id: 3
+        Locale: de
+        Prenom: 'Amélie DE'
+    3_en:
+        Id: 3
+        Locale: en
+        Prenom: 'Amélie EN'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Prenom: Amélie

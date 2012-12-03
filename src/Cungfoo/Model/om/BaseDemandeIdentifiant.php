@@ -20,7 +20,7 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
 /**
  * Base class that represents a row from the 'demande_identifiant' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -196,11 +196,11 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -224,7 +224,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -239,7 +239,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -249,7 +249,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_nom] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteNom()
@@ -259,7 +259,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_adresse_1] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteAdresse1()
@@ -269,7 +269,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_adresse_2] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteAdresse2()
@@ -279,7 +279,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_adresse_3] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteAdresse3()
@@ -289,7 +289,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_adresse_4] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteAdresse4()
@@ -299,7 +299,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_telephone] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteTelephone()
@@ -309,7 +309,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [societe_fax] column value.
-     * 
+     *
      * @return string
      */
     public function getSocieteFax()
@@ -319,7 +319,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [contact_prenom] column value.
-     * 
+     *
      * @return string
      */
     public function getContactPrenom()
@@ -329,7 +329,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [contact_nom] column value.
-     * 
+     *
      * @return string
      */
     public function getContactNom()
@@ -339,7 +339,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [contact_telephone] column value.
-     * 
+     *
      * @return string
      */
     public function getContactTelephone()
@@ -349,7 +349,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [contact_mail] column value.
-     * 
+     *
      * @return string
      */
     public function getContactMail()
@@ -359,7 +359,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [permanence] column value.
-     * 
+     *
      * @return string
      */
     public function getPermanence()
@@ -369,7 +369,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [permanence_matin_de] column value.
-     * 
+     *
      * @return string
      */
     public function getPermanenceMatinDe()
@@ -379,7 +379,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [permanence_matin_a] column value.
-     * 
+     *
      * @return string
      */
     public function getPermanenceMatinA()
@@ -389,7 +389,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [permanence_apres_midi_de] column value.
-     * 
+     *
      * @return string
      */
     public function getPermanenceApresMidiDe()
@@ -399,7 +399,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [permanence_apres_midi_a] column value.
-     * 
+     *
      * @return string
      */
     public function getPermanenceApresMidiA()
@@ -409,7 +409,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [client_vc] column value.
-     * 
+     *
      * @return boolean
      */
     public function getClientVc()
@@ -419,7 +419,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [client_vc_code] column value.
-     * 
+     *
      * @return string
      */
     public function getClientVcCode()
@@ -429,7 +429,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [client_vd] column value.
-     * 
+     *
      * @return boolean
      */
     public function getClientVd()
@@ -439,7 +439,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [client_vd_code] column value.
-     * 
+     *
      * @return string
      */
     public function getClientVdCode()
@@ -449,7 +449,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [brochure] column value.
-     * 
+     *
      * @return boolean
      */
     public function getBrochure()
@@ -459,7 +459,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [identifiant] column value.
-     * 
+     *
      * @return boolean
      */
     public function getIdentifiant()
@@ -469,7 +469,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -506,7 +506,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -542,18 +542,18 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -574,7 +574,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_nom] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -595,7 +595,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_adresse_1] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -616,7 +616,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_adresse_2] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -637,7 +637,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_adresse_3] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -658,7 +658,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_adresse_4] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -679,7 +679,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_telephone] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -700,7 +700,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [societe_fax] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -721,7 +721,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [contact_prenom] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -742,7 +742,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [contact_nom] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -763,7 +763,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [contact_telephone] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -784,7 +784,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [contact_mail] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -805,7 +805,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [permanence] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -826,7 +826,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [permanence_matin_de] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -847,7 +847,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [permanence_matin_a] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -868,7 +868,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [permanence_apres_midi_de] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -889,7 +889,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [permanence_apres_midi_a] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -914,7 +914,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -939,7 +939,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [client_vc_code] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -964,7 +964,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -989,7 +989,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Set the value of [client_vd_code] column.
-     * 
+     *
      * @param string $v new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -1014,7 +1014,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -1043,7 +1043,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
@@ -1068,7 +1068,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return DemandeIdentifiant The current object (for fluent API support)
@@ -1091,7 +1091,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return DemandeIdentifiant The current object (for fluent API support)
@@ -1113,16 +1113,16 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return DemandeIdentifiant The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -1132,14 +1132,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = DemandeIdentifiantPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -1151,7 +1151,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -1202,7 +1202,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $this->identifiant = ($row[$startcol + 22] !== null) ? (boolean) $row[$startcol + 22] : null;
             $this->created_at = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
             $this->updated_at = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->enabled = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
+            $this->active = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1509,8 +1509,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -1523,67 +1523,67 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SOCIETE_NOM`':						
+                    case '`SOCIETE_NOM`':
                         $stmt->bindValue($identifier, $this->societe_nom, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_1`':						
+                    case '`SOCIETE_ADRESSE_1`':
                         $stmt->bindValue($identifier, $this->societe_adresse_1, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_2`':						
+                    case '`SOCIETE_ADRESSE_2`':
                         $stmt->bindValue($identifier, $this->societe_adresse_2, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_3`':						
+                    case '`SOCIETE_ADRESSE_3`':
                         $stmt->bindValue($identifier, $this->societe_adresse_3, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_ADRESSE_4`':						
+                    case '`SOCIETE_ADRESSE_4`':
                         $stmt->bindValue($identifier, $this->societe_adresse_4, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_TELEPHONE`':						
+                    case '`SOCIETE_TELEPHONE`':
                         $stmt->bindValue($identifier, $this->societe_telephone, PDO::PARAM_STR);
                         break;
-                    case '`SOCIETE_FAX`':						
+                    case '`SOCIETE_FAX`':
                         $stmt->bindValue($identifier, $this->societe_fax, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_PRENOM`':						
+                    case '`CONTACT_PRENOM`':
                         $stmt->bindValue($identifier, $this->contact_prenom, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_NOM`':						
+                    case '`CONTACT_NOM`':
                         $stmt->bindValue($identifier, $this->contact_nom, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_TELEPHONE`':						
+                    case '`CONTACT_TELEPHONE`':
                         $stmt->bindValue($identifier, $this->contact_telephone, PDO::PARAM_STR);
                         break;
-                    case '`CONTACT_MAIL`':						
+                    case '`CONTACT_MAIL`':
                         $stmt->bindValue($identifier, $this->contact_mail, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE`':						
+                    case '`PERMANENCE`':
                         $stmt->bindValue($identifier, $this->permanence, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_MATIN_DE`':						
+                    case '`PERMANENCE_MATIN_DE`':
                         $stmt->bindValue($identifier, $this->permanence_matin_de, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_MATIN_A`':						
+                    case '`PERMANENCE_MATIN_A`':
                         $stmt->bindValue($identifier, $this->permanence_matin_a, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_APRES_MIDI_DE`':						
+                    case '`PERMANENCE_APRES_MIDI_DE`':
                         $stmt->bindValue($identifier, $this->permanence_apres_midi_de, PDO::PARAM_STR);
                         break;
-                    case '`PERMANENCE_APRES_MIDI_A`':						
+                    case '`PERMANENCE_APRES_MIDI_A`':
                         $stmt->bindValue($identifier, $this->permanence_apres_midi_a, PDO::PARAM_STR);
                         break;
                     case '`CLIENT_VC`':
                         $stmt->bindValue($identifier, (int) $this->client_vc, PDO::PARAM_INT);
                         break;
-                    case '`CLIENT_VC_CODE`':						
+                    case '`CLIENT_VC_CODE`':
                         $stmt->bindValue($identifier, $this->client_vc_code, PDO::PARAM_STR);
                         break;
                     case '`CLIENT_VD`':
                         $stmt->bindValue($identifier, (int) $this->client_vd, PDO::PARAM_INT);
                         break;
-                    case '`CLIENT_VD_CODE`':						
+                    case '`CLIENT_VD_CODE`':
                         $stmt->bindValue($identifier, $this->client_vd_code, PDO::PARAM_STR);
                         break;
                     case '`BROCHURE`':
@@ -1592,14 +1592,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                     case '`IDENTIFIANT`':
                         $stmt->bindValue($identifier, (int) $this->identifiant, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1811,7 +1811,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 25:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1866,7 +1866,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $keys[22] => $this->getIdentifiant(),
             $keys[23] => $this->getCreatedAt(),
             $keys[24] => $this->getUpdatedAt(),
-            $keys[25] => $this->getEnabled(),
+            $keys[25] => $this->getActive(),
         );
 
         return $result;
@@ -1977,7 +1977,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 25:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -2028,7 +2028,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if (array_key_exists($keys[22], $arr)) $this->setIdentifiant($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setCreatedAt($arr[$keys[23]]);
         if (array_key_exists($keys[24], $arr)) $this->setUpdatedAt($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setEnabled($arr[$keys[25]]);
+        if (array_key_exists($keys[25], $arr)) $this->setActive($arr[$keys[25]]);
     }
 
     /**
@@ -2065,7 +2065,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeIdentifiantPeer::IDENTIFIANT)) $criteria->add(DemandeIdentifiantPeer::IDENTIFIANT, $this->identifiant);
         if ($this->isColumnModified(DemandeIdentifiantPeer::CREATED_AT)) $criteria->add(DemandeIdentifiantPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeIdentifiantPeer::UPDATED_AT)) $criteria->add(DemandeIdentifiantPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(DemandeIdentifiantPeer::ENABLED)) $criteria->add(DemandeIdentifiantPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(DemandeIdentifiantPeer::ACTIVE)) $criteria->add(DemandeIdentifiantPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -2153,7 +2153,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $copyObj->setIdentifiant($this->getIdentifiant());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -2230,7 +2230,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $this->identifiant = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2277,7 +2277,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2286,12 +2286,24 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = DemandeIdentifiantPeer::UPDATED_AT;
-    
+
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

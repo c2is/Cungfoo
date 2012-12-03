@@ -1,42 +1,3 @@
-<span class="nbResult"><span class="nb">{{ list.element | length }}</span>Résultat(s)</span>
-<div class="typeAff">
-    <span>Affichage résultats</span>
-    <button id="btList" class="button picto active">Liste</button>
-    <button id="btMap" class="button picto">Carte</button>
-</div>
-<div id="widgetRange">
-    Budget(s) proposé(s)
-    <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
-</div>
-
-<div id="resultMap" class="gmap" style="width:616px;height:573px;">
-    <script>
-        function resultInit() {
-            var resultMkrs = [
-                //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                {% for etab in list.element %}
-                    ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
-                {% endfor %}
-            ];
-            var centerresultMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
-                    mapOptions = {
-                        zoom: 6,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        center: centerresultMkr
-                    };
-            resultMap = new google.maps.Map(document.getElementById('resultMap'), mapOptions);
-            setMarkers(resultMap, resultMkrs);
-        }
-    </script>
-</div>
-
-<form id="filterTri" action="">
-    <fieldset>
-        <label for="">Trier par</label>
-    </fieldset>
-</form>
-
-<span class="infoComp">Comparateur</span>
 <div id="results" class="clear">
     {% for etab in list.element %}
     <div id="etab1" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
@@ -65,24 +26,23 @@
                 <img src="{{ asset('images/vacancesdirectes/dyn/results/picto.png') }}" alt="">
             </div>
 
-            <a class="bt sombre" href="{{ path('camping', { 'idResalys' : etab.model.code }) }}">Découvrir le camping</a>
+            <a class="bt sombre" href="{{ path('camping', { 'idResalys' : etab.model.code }) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
-            <span class="bt trans">En savoir plus <br>sur la destination</span>
+            <span class="bt trans">{{ "general.en_savoir_plus" | trans }}<br>{{ "general.sur_la_destination" | trans }}</span>
 
             <div class="itemResultPopDest" style="display:none;">
                 <h3>{{ etab.model.ville }}</h3>
-                <img height="94" width="185" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                <img height="81" width="116" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
-                <p>La ville de Palalas Les Flots, station balnéaire du sud de la France, est heureuse de vous accueillir sur ses plages ensoleillées.</p>
+                <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
+                <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
 
                 <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}
                     <img height="66" width="67" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
                     {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
                     {{ etab.model.eventPrioritaire.strDate }}
-                    <a class="bt trans" href="#_">Plus d'événements</a>
+                    <a class="button trans" href="#_">{{ "general.plus_evenements" | trans }}</a>
                 {% endif %}
                 </div>
 
@@ -90,7 +50,7 @@
                 {% if etab.model.poiPrioritaire %}
                     <img height="66" width="67" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
                     {{ etab.model.poiPrioritaire.name }}
-                    <a class="bt trans" href="#_">Plus de visites</a>
+                    <a class="button trans" href="#_">{{ "general.plus_visite" | trans }}</a>
                 {% endif %}
                 </div>
 
@@ -102,8 +62,8 @@
                     <a class="bt trans" href="#_">{{ etab.model.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</a>
                 </div>
 
-                <a class="bt big grisC" href="#_">Découvrir {{ etab.model.ville }}</a>
-            </div></div>
+                <a class="button" href="#_">{{ "general.decouvrir" | trans }} {{ etab.model.ville }}</a>
+            </div>
         </div>
         <!-- item.bottom -->
         <div class="itemResultBottom clear">
@@ -123,16 +83,16 @@
                             <span class="price">{{ proposal.adult_price|number_format }} €</span>
                         </span>
                         {% endif %}
-                        <a class="bt big" href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}">Réserver</a>
+                        <a class="bt big" href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}">{{ "general.reserver" | trans }}</a>
                     </div>
                 {% endfor %}
             {% else %}
                 <div class="linePrice catalogue checked">
                     <span class="stain fushia cover">
-                        <span class="apartirde">à partir de </span>
+                        <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
                         <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
                     </span>
-                    <a class="bt big" href="#_">Réserver</a>
+                    <a class="bt big" href="#_">{{ "general.reserver" | trans }}</a>
                 </div>
             {% endif %}
         </div>

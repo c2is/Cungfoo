@@ -1,28 +1,28 @@
 \Cungfoo\Model\SituationGeographique:
     1:
         Code: MDIR
-        Enabled: true
+        Active: true
     2:
         Code: PEAU
-        Enabled: true
+        Active: true
     3:
         Code: CAMO
-        Enabled: true
+        Active: true
     4:
         Code: M10K
-        Enabled: true
+        Active: true
     5:
         Code: M5K
-        Enabled: true
+        Active: true
     6:
         Code: M2K
-        Enabled: true
+        Active: true
     7:
         Code: AMON
-        Enabled: true
+        Active: true
     8:
         Code: BOLA
-        Enabled: true
+        Active: true
     9:
         Code: BORI
-        Enabled: true
+        Active: true

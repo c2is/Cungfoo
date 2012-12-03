@@ -99,7 +99,7 @@ class DumpCommand extends BaseCommand
 
         $utils = new \Cungfoo\Lib\Utils();
 
-        $fixturesDirectory = realpath(sprintf('%s/%s', $this->getApplication()->getRootDir(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
+        $fixturesDirectory = realpath(sprintf('%s/%s', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
 
         if (!is_dir($fixturesDirectory))
         {
@@ -151,7 +151,7 @@ class DumpCommand extends BaseCommand
                         {
                             if ($field && is_string($field))
                             {
-                                $file = $this->getApplication()->getRootDir().'/web/'.$field;
+                                $file = $this->getProjectDirectory().'/web/'.$field;
                                 if ($field != '.' && file_exists($file))
                                 {
                                     $filesystem->copy($file, $fixturesDirectory.'/'.$field);

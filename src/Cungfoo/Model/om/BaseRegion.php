@@ -28,7 +28,7 @@ use Cungfoo\Model\VilleQuery;
 /**
  * Base class that represents a row from the 'region' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -120,11 +120,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        Pays
@@ -158,13 +158,13 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[RegionI18n]
@@ -191,7 +191,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -206,7 +206,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -216,7 +216,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return string
      */
     public function getCode()
@@ -226,7 +226,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [image_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImagePath()
@@ -236,7 +236,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [image_encart_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImageEncartPath()
@@ -246,7 +246,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [image_encart_petite_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImageEncartPetitePath()
@@ -256,7 +256,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [pays_id] column value.
-     * 
+     *
      * @return int
      */
     public function getPaysId()
@@ -266,7 +266,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [mea_home] column value.
-     * 
+     *
      * @return boolean
      */
     public function getMeaHome()
@@ -276,7 +276,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [image_detail_1] column value.
-     * 
+     *
      * @return string
      */
     public function getImageDetail1()
@@ -286,7 +286,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [image_detail_2] column value.
-     * 
+     *
      * @return string
      */
     public function getImageDetail2()
@@ -296,7 +296,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -333,7 +333,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -369,18 +369,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -401,7 +401,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -422,7 +422,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -443,7 +443,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_encart_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -464,7 +464,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_encart_petite_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -485,7 +485,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [pays_id] column.
-     * 
+     *
      * @param int $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -514,7 +514,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Region The current object (for fluent API support)
      */
@@ -539,7 +539,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_detail_1] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -560,7 +560,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_detail_2] column.
-     * 
+     *
      * @param string $v new value
      * @return Region The current object (for fluent API support)
      */
@@ -581,7 +581,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Region The current object (for fluent API support)
@@ -604,7 +604,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Region The current object (for fluent API support)
@@ -626,16 +626,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Region The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -645,14 +645,14 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = RegionPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = RegionPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -664,7 +664,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -701,7 +701,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->image_detail_2 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->created_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->updated_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->enabled = ($row[$startcol + 11] !== null) ? (boolean) $row[$startcol + 11] : null;
+            $this->active = ($row[$startcol + 11] !== null) ? (boolean) $row[$startcol + 11] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1021,8 +1021,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(RegionPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(RegionPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -1035,41 +1035,41 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':						
+                    case '`IMAGE_PATH`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_ENCART_PATH`':						
+                    case '`IMAGE_ENCART_PATH`':
                         $stmt->bindValue($identifier, $this->image_encart_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_ENCART_PETITE_PATH`':						
+                    case '`IMAGE_ENCART_PETITE_PATH`':
                         $stmt->bindValue($identifier, $this->image_encart_petite_path, PDO::PARAM_STR);
                         break;
-                    case '`PAYS_ID`':						
+                    case '`PAYS_ID`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
                         break;
                     case '`MEA_HOME`':
                         $stmt->bindValue($identifier, (int) $this->mea_home, PDO::PARAM_INT);
                         break;
-                    case '`IMAGE_DETAIL_1`':						
+                    case '`IMAGE_DETAIL_1`':
                         $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_DETAIL_2`':						
+                    case '`IMAGE_DETAIL_2`':
                         $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1267,7 +1267,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 11:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1309,7 +1309,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $keys[8] => $this->getImageDetail2(),
             $keys[9] => $this->getCreatedAt(),
             $keys[10] => $this->getUpdatedAt(),
-            $keys[11] => $this->getEnabled(),
+            $keys[11] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -1389,7 +1389,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 11:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1426,7 +1426,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (array_key_exists($keys[8], $arr)) $this->setImageDetail2($arr[$keys[8]]);
         if (array_key_exists($keys[9], $arr)) $this->setCreatedAt($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setUpdatedAt($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setEnabled($arr[$keys[11]]);
+        if (array_key_exists($keys[11], $arr)) $this->setActive($arr[$keys[11]]);
     }
 
     /**
@@ -1449,7 +1449,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) $criteria->add(RegionPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) $criteria->add(RegionPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(RegionPeer::ENABLED)) $criteria->add(RegionPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(RegionPeer::ACTIVE)) $criteria->add(RegionPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1523,7 +1523,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -2098,7 +2098,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2168,7 +2168,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -2177,12 +2177,24 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = RegionPeer::UPDATED_AT;
-    
+
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -2193,10 +2205,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -2206,7 +2218,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -2221,7 +2233,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 foreach ($this->collRegionI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -2237,10 +2249,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
             $this->addRegionI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -2265,10 +2277,10 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -2279,81 +2291,81 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [name] column value.
-         * 
+         *
          * @return string
          */
         public function getName()
         {
         return $this->getCurrentTranslation()->getName();
     }
-    
-    
+
+
         /**
          * Set the value of [name] column.
-         * 
+         *
          * @param string $v new value
          * @return RegionI18n The current object (for fluent API support)
          */
         public function setName($v)
         {    $this->getCurrentTranslation()->setName($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [introduction] column value.
-         * 
+         *
          * @return string
          */
         public function getIntroduction()
         {
         return $this->getCurrentTranslation()->getIntroduction();
     }
-    
-    
+
+
         /**
          * Set the value of [introduction] column.
-         * 
+         *
          * @param string $v new value
          * @return RegionI18n The current object (for fluent API support)
          */
         public function setIntroduction($v)
         {    $this->getCurrentTranslation()->setIntroduction($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [description] column value.
-         * 
+         *
          * @return string
          */
         public function getDescription()
         {
         return $this->getCurrentTranslation()->getDescription();
     }
-    
-    
+
+
         /**
          * Set the value of [description] column.
-         * 
+         *
          * @param string $v new value
          * @return RegionI18n The current object (for fluent API support)
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2368,40 +2380,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {
             $this->resetModified(RegionPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         if (!$form['image_encart_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
         }
-    
+
         $this->uploadImageEncartPath($form);
-        
+
         if (!$form['image_encart_petite_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
         }
-    
+
         $this->uploadImageEncartPetitePath($form);
-        
+
         if (!$form['image_detail_1_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_1);
         }
-    
+
         $this->uploadImageDetail1($form);
-        
+
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_2);
         }
-    
+
         $this->uploadImageDetail2($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2409,15 +2421,15 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return 'uploads/regions';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2431,7 +2443,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImagePath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2445,7 +2457,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2459,7 +2471,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPetitePath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2473,7 +2485,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageDetail1($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

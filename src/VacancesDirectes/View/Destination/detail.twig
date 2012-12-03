@@ -1,6 +1,7 @@
-{% extends "base.twig" %}
+{% extends "Destination/base.twig" %}
 
-{% block leftColumn %}
+{% block topLeftColumn %}
+
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
     <a href=="#_">{{ "destination.retour" | trans }}</a>
 
@@ -13,6 +14,16 @@
     <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
     {% endif %}
 
+{% endblock %}
+
+{% block topRightColumn %}
+
+    {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block topWideColumn %}
+
     {# Bloc POIs #}
     {% for poi in sitesAVisiter %}
         {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
@@ -21,6 +32,8 @@
         {{ poi.presentation }} {# Texte #}
     {% endfor %}
     <a href=="#_">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a>
+
+
 
     {# Bloc Evenements #}
     {{ "destination.events_title" | trans }}
@@ -32,30 +45,17 @@
         {{ event.subtitle }} {# Texte #}
     {% endfor %}
 
+{% endblock %}
 
-    {# Bloc "Notre sélection de campings" + GMap #}
+{% block bottomLeftColumn %}
+
+    {# Bloc "Notre sélection de campings" #}
     {{ "destination.campings_selection_title" | trans }}
     {% include 'Listing/_listing.twig' %}
-    {{ "listing_destination.campings_map_title" | trans }}
-    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}
-    {% include 'Listing/_gmap.twig' %}
-
-
-    {# Photos #}
-    {{ destination.images_region_title }}
-    {% if item.imageDetail1 %}}
-    <img src="{{ asset(item.imageDetail1) }}" />
-    {% endif %}
-    {% if item.imageDetail2 %}
-    <img src="{{ asset(item.imageDetail2) }}" />
-    {% endif %}
-
-    <a href="#_">{{ "destination.retour_bottom" | trans }}</a>
 
 {% endblock %}
 
-{% block rightColumn %}
-    {% include 'Form/_search_engine.twig' %}
+{% block bottomRightColumn %}
 
     {# Bloc "Vacances directes un séjour réussi" #}
     {{ "encart_vacances_directes.title" | trans }}
@@ -71,4 +71,26 @@
     {{ "encart_informations.price" | trans }}
     {{ "encart_informations.dates_1" | trans }}
     {{ "encart_informations.dates_2" | trans }}
+
+{% endblock %}
+
+{% block bottomWideColumn %}
+
+    {# Bloc GMap #}
+    {{ "listing_destination.campings_map_title" | trans }}
+    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}
+    {% include 'Listing/_gmap.twig' %}
+
+
+    {# Photos #}
+    {{ imagesTitle }}
+    {% if item.imageDetail1 %}}
+    <img src="{{ asset(item.imageDetail1) }}" />
+    {% endif %}
+    {% if item.imageDetail2 %}
+    <img src="{{ asset(item.imageDetail2) }}" />
+    {% endif %}
+
+    <a href="#_">{{ "destination.retour_bottom" | trans }}</a>
+
 {% endblock %}

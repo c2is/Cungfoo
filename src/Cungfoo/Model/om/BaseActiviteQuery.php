@@ -22,21 +22,21 @@ use Cungfoo\Model\EtablissementActivite;
 /**
  * Base class that represents a query for the 'activite' table.
  *
- * 
+ *
  *
  * @method ActiviteQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ActiviteQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method ActiviteQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ActiviteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ActiviteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method ActiviteQuery orderByEnabled($order = Criteria::ASC) Order by the enabled column
+ * @method ActiviteQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method ActiviteQuery groupById() Group by the id column
  * @method ActiviteQuery groupByCode() Group by the code column
  * @method ActiviteQuery groupByImagePath() Group by the image_path column
  * @method ActiviteQuery groupByCreatedAt() Group by the created_at column
  * @method ActiviteQuery groupByUpdatedAt() Group by the updated_at column
- * @method ActiviteQuery groupByEnabled() Group by the enabled column
+ * @method ActiviteQuery groupByActive() Group by the active column
  *
  * @method ActiviteQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method ActiviteQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,14 +57,14 @@ use Cungfoo\Model\EtablissementActivite;
  * @method Activite findOneByImagePath(string $image_path) Return the first Activite filtered by the image_path column
  * @method Activite findOneByCreatedAt(string $created_at) Return the first Activite filtered by the created_at column
  * @method Activite findOneByUpdatedAt(string $updated_at) Return the first Activite filtered by the updated_at column
- * @method Activite findOneByEnabled(boolean $enabled) Return the first Activite filtered by the enabled column
+ * @method Activite findOneByActive(boolean $active) Return the first Activite filtered by the active column
  *
  * @method array findById(int $id) Return Activite objects filtered by the id column
  * @method array findByCode(string $code) Return Activite objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return Activite objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Activite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Activite objects filtered by the updated_at column
- * @method array findByEnabled(boolean $enabled) Return Activite objects filtered by the enabled column
+ * @method array findByActive(boolean $active) Return Activite objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -115,7 +115,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
      * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param mixed $key Primary key to use for the query 
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   Activite|Activite[]|mixed the result, formatted by the current formatter
@@ -168,9 +168,9 @@ abstract class BaseActiviteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ENABLED` FROM `activite` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `activite` WHERE `ID` = :p0';
         try {
-            $stmt = $con->prepare($sql);			
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -429,15 +429,15 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the enabled column
+     * Filter the query on the active column
      *
      * Example usage:
      * <code>
-     * $query->filterByEnabled(true); // WHERE enabled = true
-     * $query->filterByEnabled('yes'); // WHERE enabled = true
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
      * </code>
      *
-     * @param     boolean|string $enabled The value to use as filter.
+     * @param     boolean|string $active The value to use as filter.
      *              Non-boolean arguments are converted using the following rules:
      *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
@@ -446,13 +446,13 @@ abstract class BaseActiviteQuery extends ModelCriteria
      *
      * @return ActiviteQuery The current query, for fluid interface
      */
-    public function filterByEnabled($enabled = null, $comparison = null)
+    public function filterByActive($active = null, $comparison = null)
     {
-        if (is_string($enabled)) {
-            $enabled = in_array(strtolower($enabled), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(ActivitePeer::ENABLED, $enabled, $comparison);
+        return $this->addUsingAlias(ActivitePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -637,7 +637,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     // timestampable behavior
-    
+
     /**
      * Filter by the latest updated
      *
@@ -649,7 +649,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ActivitePeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by update date desc
      *
@@ -659,7 +659,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ActivitePeer::UPDATED_AT);
     }
-    
+
     /**
      * Order by update date asc
      *
@@ -669,7 +669,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ActivitePeer::UPDATED_AT);
     }
-    
+
     /**
      * Filter by the latest created
      *
@@ -681,7 +681,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addUsingAlias(ActivitePeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
-    
+
     /**
      * Order by create date desc
      *
@@ -691,7 +691,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addDescendingOrderByColumn(ActivitePeer::CREATED_AT);
     }
-    
+
     /**
      * Order by create date asc
      *
@@ -701,8 +701,22 @@ abstract class BaseActiviteQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(ActivitePeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
     // i18n behavior
-    
+
     /**
      * Adds a JOIN clause to the query using the i18n relation
      *
@@ -715,12 +729,12 @@ abstract class BaseActiviteQuery extends ModelCriteria
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $relationName = $relationAlias ? $relationAlias : 'ActiviteI18n';
-    
+
         return $this
             ->joinActiviteI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
-    
+
     /**
      * Adds a JOIN clause to the query and hydrates the related I18n object.
      * Shortcut for $c->joinI18n($locale)->with()
@@ -736,10 +750,10 @@ abstract class BaseActiviteQuery extends ModelCriteria
             ->joinI18n($locale, null, $joinType)
             ->with('ActiviteI18n');
         $this->with['ActiviteI18n']->setIsWithOneToMany(false);
-    
+
         return $this;
     }
-    
+
     /**
      * Use the I18n relation query object
      *

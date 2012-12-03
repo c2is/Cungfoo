@@ -3,19 +3,19 @@
         Code: FRA
         ImageDetail1: null
         ImageDetail2: null
-        Enabled: true
+        Active: true
     2:
         Code: ITA
         ImageDetail1: null
         ImageDetail2: null
-        Enabled: true
+        Active: true
     3:
         Code: ESP
         ImageDetail1: null
         ImageDetail2: null
-        Enabled: true
+        Active: true
     4:
         Code: PRT
         ImageDetail1: null
         ImageDetail2: null
-        Enabled: true
+        Active: true

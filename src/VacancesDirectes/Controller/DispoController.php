@@ -54,7 +54,7 @@ class DispoController implements ControllerProviderInterface
 
             $listingContent = $listing->process();
 
-            return $app['twig']->render('Results\listing.twig', array(
+            return $app['twig']->render('Research\dispo.twig', array(
                 'list'       => $listingContent,
                 'firstEtab' => reset($listingContent['element']),
                 'searchForm' => $searchEngine->getView(),

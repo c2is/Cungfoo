@@ -124,6 +124,9 @@ home.destination: Destination
 home.destination_france: Destination France
 home.plus_de_regions: Plus de régions
 home.faites_le_plein_d_activites: Faites le plein d'activités
+home.dernieres_minutes: Dernières minutes
+home.dernieres_minutes.link: Voir toutes les dernières minutes (%number%)
+home.idees_weekend.link: Voir toutes les idées week-end (%number%)
 
 general.a_partir_de: à partir de
 general.jouer: Jouer
@@ -133,6 +136,12 @@ general.idees_week_end: Idées week-end
 general.filter_par: Filtrer par
 general.campings_vacances_directes: Campings Vacances Directes
 general.decouvrir_le_camping: Découvrir le camping
+general.au_lieu_de: au lieu de
+general.sur_la_destination: sur la destination
+general.plus_visites: Plus de visites
+general.plus_evenements: Plus d'événements
+general.decouvrir: Découvrir
+general.reserver: Réserver
 
 footer.nous_joindre: Nous joindre
 footer.contact.tel: 0825 133 400

@@ -74,7 +74,7 @@ use Cungfoo\Model\VilleQuery;
 /**
  * Base class that represents a row from the 'etablissement' table.
  *
- * 
+ *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -262,11 +262,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
-     * The value for the enabled field.
+     * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
-    protected $enabled;
+    protected $active;
 
     /**
      * @var        Ville
@@ -427,13 +427,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $alreadyInValidation = false;
 
     // i18n behavior
-    
+
     /**
      * Current locale
      * @var        string
      */
     protected $currentLocale = 'fr';
-    
+
     /**
      * Current translation objects
      * @var        array[EtablissementI18n]
@@ -592,7 +592,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
-        $this->enabled = false;
+        $this->active = false;
     }
 
     /**
@@ -607,7 +607,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [id] column value.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -617,7 +617,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [code] column value.
-     * 
+     *
      * @return int
      */
     public function getCode()
@@ -627,7 +627,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [name] column value.
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -637,7 +637,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [title] column value.
-     * 
+     *
      * @return string
      */
     public function getTitle()
@@ -647,7 +647,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [address1] column value.
-     * 
+     *
      * @return string
      */
     public function getAddress1()
@@ -657,7 +657,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [address2] column value.
-     * 
+     *
      * @return string
      */
     public function getAddress2()
@@ -667,7 +667,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [zip] column value.
-     * 
+     *
      * @return string
      */
     public function getZip()
@@ -677,7 +677,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [city] column value.
-     * 
+     *
      * @return string
      */
     public function getCity()
@@ -687,7 +687,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [mail] column value.
-     * 
+     *
      * @return string
      */
     public function getMail()
@@ -697,7 +697,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [country_code] column value.
-     * 
+     *
      * @return string
      */
     public function getCountryCode()
@@ -707,7 +707,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [phone1] column value.
-     * 
+     *
      * @return string
      */
     public function getPhone1()
@@ -717,7 +717,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [phone2] column value.
-     * 
+     *
      * @return string
      */
     public function getPhone2()
@@ -727,7 +727,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [fax] column value.
-     * 
+     *
      * @return string
      */
     public function getFax()
@@ -737,7 +737,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [opening_date] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -774,7 +774,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [closing_date] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -811,7 +811,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [ville_id] column value.
-     * 
+     *
      * @return int
      */
     public function getVilleId()
@@ -821,7 +821,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [categorie_id] column value.
-     * 
+     *
      * @return int
      */
     public function getCategorieId()
@@ -831,7 +831,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_x] column value.
-     * 
+     *
      * @return string
      */
     public function getGeoCoordinateX()
@@ -841,7 +841,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [geo_coordinate_y] column value.
-     * 
+     *
      * @return string
      */
     public function getGeoCoordinateY()
@@ -851,7 +851,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [video_path] column value.
-     * 
+     *
      * @return string
      */
     public function getVideoPath()
@@ -861,7 +861,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [image_360_path] column value.
-     * 
+     *
      * @return string
      */
     public function getImage360Path()
@@ -871,7 +871,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [capacite] column value.
-     * 
+     *
      * @return string
      */
     public function getCapacite()
@@ -881,7 +881,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [plan_path] column value.
-     * 
+     *
      * @return string
      */
     public function getPlanPath()
@@ -891,7 +891,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [vignette] column value.
-     * 
+     *
      * @return string
      */
     public function getVignette()
@@ -901,7 +901,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [published] column value.
-     * 
+     *
      * @return boolean
      */
     public function getPublished()
@@ -911,7 +911,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -948,7 +948,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Get the [optionally formatted] temporal [updated_at] column value.
-     * 
+     *
      *
      * @param string $format The date/time format string (either date()-style or strftime()-style).
      *				 If format is null, then the raw DateTime object will be returned.
@@ -984,18 +984,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [enabled] column value.
-     * 
+     * Get the [active] column value.
+     *
      * @return boolean
      */
-    public function getEnabled()
+    public function getActive()
     {
-        return $this->enabled;
+        return $this->active;
     }
 
     /**
      * Set the value of [id] column.
-     * 
+     *
      * @param int $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1016,7 +1016,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [code] column.
-     * 
+     *
      * @param int $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1037,7 +1037,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [name] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1058,7 +1058,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [title] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1079,7 +1079,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [address1] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1100,7 +1100,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [address2] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1121,7 +1121,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [zip] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1142,7 +1142,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [city] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1163,7 +1163,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [mail] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1184,7 +1184,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [country_code] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1205,7 +1205,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [phone1] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1226,7 +1226,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [phone2] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1247,7 +1247,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [fax] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1268,7 +1268,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [opening_date] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Etablissement The current object (for fluent API support)
@@ -1291,7 +1291,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [closing_date] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Etablissement The current object (for fluent API support)
@@ -1314,7 +1314,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [ville_id] column.
-     * 
+     *
      * @param int $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1339,7 +1339,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [categorie_id] column.
-     * 
+     *
      * @param int $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1364,7 +1364,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_x] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1385,7 +1385,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [geo_coordinate_y] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1406,7 +1406,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [video_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1427,7 +1427,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [image_360_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1448,7 +1448,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [capacite] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1469,7 +1469,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [plan_path] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1490,7 +1490,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Set the value of [vignette] column.
-     * 
+     *
      * @param string $v new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1515,7 +1515,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Etablissement The current object (for fluent API support)
      */
@@ -1540,7 +1540,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Etablissement The current object (for fluent API support)
@@ -1563,7 +1563,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
     /**
      * Sets the value of [updated_at] column to a normalized version of the date/time value specified.
-     * 
+     *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
      * @return Etablissement The current object (for fluent API support)
@@ -1585,16 +1585,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
-     * Sets the value of the [enabled] column.
+     * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
      *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * 
+     *
      * @param boolean|integer|string $v The new value
      * @return Etablissement The current object (for fluent API support)
      */
-    public function setEnabled($v)
+    public function setActive($v)
     {
         if ($v !== null) {
             if (is_string($v)) {
@@ -1604,14 +1604,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
         }
 
-        if ($this->enabled !== $v) {
-            $this->enabled = $v;
-            $this->modifiedColumns[] = EtablissementPeer::ENABLED;
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = EtablissementPeer::ACTIVE;
         }
 
 
         return $this;
-    } // setEnabled()
+    } // setActive()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -1623,7 +1623,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
-            if ($this->enabled !== false) {
+            if ($this->active !== false) {
                 return false;
             }
 
@@ -1676,7 +1676,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->published = ($row[$startcol + 24] !== null) ? (boolean) $row[$startcol + 24] : null;
             $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
             $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->enabled = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
+            $this->active = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -2494,8 +2494,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
         }
-        if ($this->isColumnModified(EtablissementPeer::ENABLED)) {
-            $modifiedColumns[':p' . $index++]  = '`ENABLED`';
+        if ($this->isColumnModified(EtablissementPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
         }
 
         $sql = sprintf(
@@ -2508,89 +2508,89 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':						
+                    case '`ID`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':						
+                    case '`CODE`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_INT);
                         break;
-                    case '`NAME`':						
+                    case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`TITLE`':						
+                    case '`TITLE`':
                         $stmt->bindValue($identifier, $this->title, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS1`':						
+                    case '`ADDRESS1`':
                         $stmt->bindValue($identifier, $this->address1, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS2`':						
+                    case '`ADDRESS2`':
                         $stmt->bindValue($identifier, $this->address2, PDO::PARAM_STR);
                         break;
-                    case '`ZIP`':						
+                    case '`ZIP`':
                         $stmt->bindValue($identifier, $this->zip, PDO::PARAM_STR);
                         break;
-                    case '`CITY`':						
+                    case '`CITY`':
                         $stmt->bindValue($identifier, $this->city, PDO::PARAM_STR);
                         break;
-                    case '`MAIL`':						
+                    case '`MAIL`':
                         $stmt->bindValue($identifier, $this->mail, PDO::PARAM_STR);
                         break;
-                    case '`COUNTRY_CODE`':						
+                    case '`COUNTRY_CODE`':
                         $stmt->bindValue($identifier, $this->country_code, PDO::PARAM_STR);
                         break;
-                    case '`PHONE1`':						
+                    case '`PHONE1`':
                         $stmt->bindValue($identifier, $this->phone1, PDO::PARAM_STR);
                         break;
-                    case '`PHONE2`':						
+                    case '`PHONE2`':
                         $stmt->bindValue($identifier, $this->phone2, PDO::PARAM_STR);
                         break;
-                    case '`FAX`':						
+                    case '`FAX`':
                         $stmt->bindValue($identifier, $this->fax, PDO::PARAM_STR);
                         break;
-                    case '`OPENING_DATE`':						
+                    case '`OPENING_DATE`':
                         $stmt->bindValue($identifier, $this->opening_date, PDO::PARAM_STR);
                         break;
-                    case '`CLOSING_DATE`':						
+                    case '`CLOSING_DATE`':
                         $stmt->bindValue($identifier, $this->closing_date, PDO::PARAM_STR);
                         break;
-                    case '`VILLE_ID`':						
+                    case '`VILLE_ID`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
                         break;
-                    case '`CATEGORIE_ID`':						
+                    case '`CATEGORIE_ID`':
                         $stmt->bindValue($identifier, $this->categorie_id, PDO::PARAM_INT);
                         break;
-                    case '`GEO_COORDINATE_X`':						
+                    case '`GEO_COORDINATE_X`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
                         break;
-                    case '`GEO_COORDINATE_Y`':						
+                    case '`GEO_COORDINATE_Y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
-                    case '`VIDEO_PATH`':						
+                    case '`VIDEO_PATH`':
                         $stmt->bindValue($identifier, $this->video_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_360_PATH`':						
+                    case '`IMAGE_360_PATH`':
                         $stmt->bindValue($identifier, $this->image_360_path, PDO::PARAM_STR);
                         break;
-                    case '`CAPACITE`':						
+                    case '`CAPACITE`':
                         $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
                         break;
-                    case '`PLAN_PATH`':						
+                    case '`PLAN_PATH`':
                         $stmt->bindValue($identifier, $this->plan_path, PDO::PARAM_STR);
                         break;
-                    case '`VIGNETTE`':						
+                    case '`VIGNETTE`':
                         $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
                         break;
                     case '`PUBLISHED`':
                         $stmt->bindValue($identifier, (int) $this->published, PDO::PARAM_INT);
                         break;
-                    case '`CREATED_AT`':						
+                    case '`CREATED_AT`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':						
+                    case '`UPDATED_AT`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ENABLED`':
-                        $stmt->bindValue($identifier, (int) $this->enabled, PDO::PARAM_INT);
+                    case '`ACTIVE`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -2938,7 +2938,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getUpdatedAt();
                 break;
             case 27:
-                return $this->getEnabled();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -2996,7 +2996,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[24] => $this->getPublished(),
             $keys[25] => $this->getCreatedAt(),
             $keys[26] => $this->getUpdatedAt(),
-            $keys[27] => $this->getEnabled(),
+            $keys[27] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3163,7 +3163,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setUpdatedAt($value);
                 break;
             case 27:
-                $this->setEnabled($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -3216,7 +3216,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[24], $arr)) $this->setPublished($arr[$keys[24]]);
         if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
         if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setEnabled($arr[$keys[27]]);
+        if (array_key_exists($keys[27], $arr)) $this->setActive($arr[$keys[27]]);
     }
 
     /**
@@ -3255,7 +3255,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) $criteria->add(EtablissementPeer::PUBLISHED, $this->published);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(EtablissementPeer::ENABLED)) $criteria->add(EtablissementPeer::ENABLED, $this->enabled);
+        if ($this->isColumnModified(EtablissementPeer::ACTIVE)) $criteria->add(EtablissementPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -3345,7 +3345,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setPublished($this->getPublished());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setEnabled($this->getEnabled());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -8509,7 +8509,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->published = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->enabled = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -8778,7 +8778,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // timestampable behavior
-    
+
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
@@ -8787,12 +8787,24 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function keepUpdateDateUnchanged()
     {
         $this->modifiedColumns[] = EtablissementPeer::UPDATED_AT;
-    
+
         return $this;
     }
 
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+
     // i18n behavior
-    
+
     /**
      * Sets the locale for translations
      *
@@ -8803,10 +8815,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function setLocale($locale = 'fr')
     {
         $this->currentLocale = $locale;
-    
+
         return $this;
     }
-    
+
     /**
      * Gets the locale for translations
      *
@@ -8816,7 +8828,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->currentLocale;
     }
-    
+
     /**
      * Returns the current translation for a given locale
      *
@@ -8831,7 +8843,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 foreach ($this->collEtablissementI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
-    
+
                         return $translation;
                     }
                 }
@@ -8847,10 +8859,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             $this->addEtablissementI18n($translation);
         }
-    
+
         return $this->currentTranslations[$locale];
     }
-    
+
     /**
      * Remove the translation for a given locale
      *
@@ -8875,10 +8887,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 break;
             }
         }
-    
+
         return $this;
     }
-    
+
     /**
      * Returns the current translation
      *
@@ -8889,129 +8901,129 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-    
-    
+
+
         /**
          * Get the [country] column value.
-         * 
+         *
          * @return string
          */
         public function getCountry()
         {
         return $this->getCurrentTranslation()->getCountry();
     }
-    
-    
+
+
         /**
          * Set the value of [country] column.
-         * 
+         *
          * @param string $v new value
          * @return EtablissementI18n The current object (for fluent API support)
          */
         public function setCountry($v)
         {    $this->getCurrentTranslation()->setCountry($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [ouverture_reception] column value.
-         * 
+         *
          * @return string
          */
         public function getOuvertureReception()
         {
         return $this->getCurrentTranslation()->getOuvertureReception();
     }
-    
-    
+
+
         /**
          * Set the value of [ouverture_reception] column.
-         * 
+         *
          * @param string $v new value
          * @return EtablissementI18n The current object (for fluent API support)
          */
         public function setOuvertureReception($v)
         {    $this->getCurrentTranslation()->setOuvertureReception($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [ouverture_camping] column value.
-         * 
+         *
          * @return string
          */
         public function getOuvertureCamping()
         {
         return $this->getCurrentTranslation()->getOuvertureCamping();
     }
-    
-    
+
+
         /**
          * Set the value of [ouverture_camping] column.
-         * 
+         *
          * @param string $v new value
          * @return EtablissementI18n The current object (for fluent API support)
          */
         public function setOuvertureCamping($v)
         {    $this->getCurrentTranslation()->setOuvertureCamping($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [arrivees_departs] column value.
-         * 
+         *
          * @return string
          */
         public function getArriveesDeparts()
         {
         return $this->getCurrentTranslation()->getArriveesDeparts();
     }
-    
-    
+
+
         /**
          * Set the value of [arrivees_departs] column.
-         * 
+         *
          * @param string $v new value
          * @return EtablissementI18n The current object (for fluent API support)
          */
         public function setArriveesDeparts($v)
         {    $this->getCurrentTranslation()->setArriveesDeparts($v);
-    
+
         return $this;
     }
-    
-    
+
+
         /**
          * Get the [description] column value.
-         * 
+         *
          * @return string
          */
         public function getDescription()
         {
         return $this->getCurrentTranslation()->getDescription();
     }
-    
-    
+
+
         /**
          * Set the value of [description] column.
-         * 
+         *
          * @param string $v new value
          * @return EtablissementI18n The current object (for fluent API support)
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
-    
+
         return $this;
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -9026,19 +9038,19 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         {
             $this->resetModified(EtablissementPeer::PLAN_PATH);
         }
-    
+
         $this->uploadPlanPath($form);
-        
+
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(EtablissementPeer::VIGNETTE);
         }
-    
+
         $this->uploadVignette($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -9046,15 +9058,15 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return 'uploads/etablissements';
     }
-    
+
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../D:\wamp\www\c2is\Cungfoo\web/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -9068,7 +9080,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->setPlanPath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
