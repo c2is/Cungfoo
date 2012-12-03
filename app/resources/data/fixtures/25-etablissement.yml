@@ -183,10 +183,10 @@
         Active: true
     8:
         Code: 108
-        Name: 'Roussillonnais '
+        Name: Roussillonnais
         Title: null
         Address1: 'Boulevard de la Mer'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -204,8 +204,8 @@
         Image360Path: null
         Capacite: '706'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50bc68b978869.png
+        Published: false
         Active: true
     9:
         Code: 109
@@ -570,7 +570,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     23:
         Code: 122
         Name: 'Tamerici '
@@ -986,7 +986,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     39:
         Code: 14
         Name: 'Beau Rivage '
@@ -1038,7 +1038,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     41:
         Code: 141
         Name: 'zz Aux Hamacs'
@@ -1064,7 +1064,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     42:
         Code: 142
         Name: 'zz Prat Dou Rey'
@@ -1090,7 +1090,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     43:
         Code: 143
         Name: 'zz Rouffiac'
@@ -1116,7 +1116,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     44:
         Code: 144
         Name: 'zz Séquoia Parc'
@@ -1142,7 +1142,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     45:
         Code: 145
         Name: 'zz Trémolat'
@@ -1168,7 +1168,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     46:
         Code: 146
         Name: 'zz L''Atlantique'
@@ -1194,7 +1194,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     47:
         Code: 147
         Name: 'zz Le Bahamas Beach'
@@ -1220,7 +1220,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     48:
         Code: 148
         Name: 'zz La Barque'
@@ -1246,7 +1246,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     49:
         Code: 149
         Name: 'zz Chanset'
@@ -1272,7 +1272,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     50:
         Code: 15
         Name: 'zz Beaulieu '
@@ -1298,7 +1298,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     51:
         Code: 150
         Name: 'zz Le Chêne Gris'
@@ -1324,7 +1324,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     52:
         Code: 151
         Name: 'zz Les Dauphins Bleus'
@@ -1350,7 +1350,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     53:
         Code: 152
         Name: 'zz Domaine de Beaulieu'
@@ -1376,7 +1376,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     54:
         Code: 153
         Name: 'zz Le Lamparo'
@@ -1402,7 +1402,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     55:
         Code: 154
         Name: 'zz Marmotel'
@@ -1428,7 +1428,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     56:
         Code: 155
         Name: 'zz Les Ondines'
@@ -1454,7 +1454,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     57:
         Code: 156
         Name: 'zz Pyla Camping'
@@ -1480,7 +1480,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     58:
         Code: 157
         Name: 'zz La Rotonde'
@@ -1506,7 +1506,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     59:
         Code: 158
         Name: 'zz Village Stoja'
@@ -1532,7 +1532,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     60:
         Code: 159
         Name: 'zz Le Tamarit Park'
@@ -1558,7 +1558,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     61:
         Code: 16
         Name: 'Bois Soleil'
@@ -1610,7 +1610,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     63:
         Code: 161
         Name: 'zz Almadies'
@@ -1636,7 +1636,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     64:
         Code: 162
         Name: 'zz Bois de Pleuven'
@@ -1662,7 +1662,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     65:
         Code: 163
         Name: 'zz Domaine de la Forêt'
@@ -1688,7 +1688,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     66:
         Code: 164
         Name: 'zz Le Lac'
@@ -1714,7 +1714,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     67:
         Code: 165
         Name: 'zz Rieu Montagné'
@@ -1740,7 +1740,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     68:
         Code: 166
         Name: 'zz Domaine des Bans'
@@ -1766,7 +1766,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     69:
         Code: 167
         Name: 'zz Douce Quiétude'
@@ -1792,7 +1792,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     70:
         Code: 168
         Name: 'zz Fleutron'
@@ -1818,7 +1818,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     71:
         Code: 169
         Name: 'zz Palmeraie'
@@ -1844,7 +1844,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     72:
         Code: 17
         Name: 'Bordenéo '
@@ -1896,7 +1896,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     74:
         Code: 171
         Name: 'zz Abri de Camargue'
@@ -1922,7 +1922,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     75:
         Code: 172
         Name: 'zz Domaine des Iscles'
@@ -1948,7 +1948,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     76:
         Code: 173
         Name: 'zz Lacs du Verdon'
@@ -1974,7 +1974,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     77:
         Code: 174
         Name: 'zz Les Pins Payrac'
@@ -2000,7 +2000,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     78:
         Code: 175
         Name: 'Domaine des Pins'
@@ -2156,7 +2156,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     84:
         Code: 180
         Name: Arbousiers
@@ -2734,7 +2734,7 @@
         Name: Calypso
         Title: null
         Address1: 'Boulevard de la Plage'
-        Address2: ''
+        Address2: null
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
@@ -2752,8 +2752,8 @@
         Image360Path: null
         Capacite: '308'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50bc681ddda54.png
+        Published: false
         Active: true
     107:
         Code: 200
@@ -2890,14 +2890,14 @@
         Name: Ensoya
         Title: null
         Address1: '54 rue de Perpignan'
-        Address2: ''
+        Address2: null
         Zip: '11130'
         City: SIGEAN
-        Mail: ''
+        Mail: null
         CountryCode: FR
-        Phone1: ''
-        Phone2: ''
-        Fax: ''
+        Phone1: null
+        Phone2: null
+        Fax: null
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
@@ -2906,10 +2906,10 @@
         GeoCoordinateY: '2.979255'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50bc680fbc8b5.png
+        Published: false
         Active: true
     113:
         Code: 206
@@ -5406,7 +5406,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     209:
         Code: 67
         Name: 'Internacional de Calonge '
@@ -5510,7 +5510,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     213:
         Code: 70
         Name: 'Lac Bleu '
@@ -5614,7 +5614,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     217:
         Code: 74
         Name: 'Lou Broustaricq '
@@ -5744,7 +5744,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     222:
         Code: 79
         Name: 'Mare e Pineta '
@@ -6394,7 +6394,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     247:
         Code: 999
         Name: 'zzz Fictif pour copie paramétrage'
@@ -6420,4 +6420,4 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
