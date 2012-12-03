@@ -196,10 +196,6 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
   }
 }
 
-#reservationContener{
-  table{width:100%}
-}
-
 /* STEPS */
 #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 0 -@gutter;z-index:30;
   ul{width:858px;margin:0 auto;text-align:center;
@@ -254,7 +250,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
       }
       #address{
         td{display:inline-block;margin-bottom:10px;float:left;
-          &:last-child input{margin-right:0;}
+          &:last-child > *{margin-right:0;}
         }
         input,textarea{width:141px;margin-right:15px;}
         textarea{width:141px;height:81px;}
@@ -314,30 +310,68 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     }
   }
 }
+#reservationContener{
+  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
+  p{margin-bottom:10px;}
+  table{width:100%}
 
+// step 2
+  #option{
+    h2 + p{font-weight:bold;}
+    .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+    .field textarea{width:423px;height:54px;}
+    .criteria{margin-bottom:10px;clear:both;
+      .label{float:left;._verticalCenter(27px);}
+      input{width:125px;}
+    }
+    select[name="stat_ORIG_combo"] + .newListSelected{
+      .SSContainerDivWrapper{min-width:146px;}
+    }
+    .aField{
+      input[type="checkbox"]{margin-top:1px;}
+      label{font-style:italic;font-weight:bold;
+        a{color:@colorFushia;}
+      }
+    }
+  }
+  #paiement{
+    table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+      th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+      td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+        &:nth-child(1){font-weight:bold;}
+        &.amount{width:125px;text-align:right;}
+      }
+    }
+  }
+
+  .rsl-date-input,
+  .control_date {position:relative;
+    #date_sRowID_link{position:absolute;top:-7px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+      img{display:none;}
+    }
+  }
+
+  label,input[type="radio"] {vertical-align:middle;}
+  input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+  input[type="radio"] {height:auto;}
+
+}
+
+// box fushia in sidebar
 .proposal{font:normal 14px/17px @arial;padding-bottom:60px;text-align:center;
   .proposalDates{font:bold 18px/21px @arial;}
-  img{margin:10px 0 8px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));}
+  .proposalPicture{margin:10px 0 8px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));}
   .total{
     span{font:bold 16px/17px @ptnarrow;
       .price{font:bold 19px/18px @ptnarrow;margin:0;}
     }
   }
-  table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0; padding-top:10px;text-align:left;}
+  table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;}
 }
-
-.rsl-date-input,
-.control_date {position:relative;
-  #date_sRowID_link{position:absolute;top:-7px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
-    img{display:none;}
-  }
-}
-
-label,input[type="radio"] {vertical-align:middle;}
-input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
-input[type="radio"] {height:auto;}
 
 /* Stylish Select 0.4.9 */
+
+// step 1
 #authentication #newCustomerLayer{
   ._stylish-select(141px,27px,0px,4);
 }
@@ -346,6 +380,11 @@ input[type="radio"] {height:auto;}
 }
 #reservation #financialContener{
   ._stylish-select(216px,27px,0px,4);
+}
+
+// step 2
+#option {
+  ._stylish-select(141px,27px,0px,4);
 }
 
 #please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 35px @colorBgBlanc;text-align:center;font:normal 15px @arial;padding:100px 20px;opacity:0.8;}
