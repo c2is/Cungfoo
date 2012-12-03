@@ -63,6 +63,8 @@ class CampingController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            $resalysParameters = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Resalys/parameters.yml', $app['config']->get('config_dir')));
+
             return $app['twig']->render('Camping/camping.twig', array(
                 'locale'                  => $locale,
                 'etab'                    => $etab,
@@ -71,7 +73,8 @@ class CampingController implements ControllerProviderInterface
                 'tags'                    => $tags,
                 'personnageAleatoire'     => $personnageAleatoire,
                 'sitesAVisiter'           => $sitesAVisiter,
-                'events'                  => $events
+                'events'                  => $events,
+                'resalysParameters'       => $resalysParameters,
             ));
         })
         ->bind('camping');
