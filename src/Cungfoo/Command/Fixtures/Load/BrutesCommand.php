@@ -93,7 +93,7 @@ class BrutesCommand extends BaseCommand
 
                 $tagMultimedia = new \Cungfoo\Model\MultimediaEtablissementTag();
                 $tagMultimedia
-                    ->setMultimediaEtablissementId($camping->getId())
+                    ->setMultimediaEtablissementId($multimedia->getId())
                     ->setTagId($tag)
                     ->save()
                 ;
