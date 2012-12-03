@@ -125,8 +125,8 @@ home.destination_france: Destination France
 home.plus_de_regions: Plus de régions
 home.faites_le_plein_d_activites: Faites le plein d'activités
 home.dernieres_minutes: Dernières minutes
-home.dernieres_minutes.link: Voir toutes les dernières minutes
-home.idees_weekend.link: Voir toutes les idées week-end
+home.dernieres_minutes.link: Voir toutes les dernières minutes (%number%)
+home.idees_weekend.link: Voir toutes les idées week-end (%number%)
 
 general.a_partir_de: à partir de
 general.jouer: Jouer

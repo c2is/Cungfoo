@@ -2,7 +2,7 @@
     1:
         ImageFondPath: uploads/mise_en_avants/50a4c3feacdd9.jpeg
         IllustrationPath: uploads/mise_en_avants/50a50fc77cf03.jpeg
-        DateFinValidite: '2012-11-15 00:00:00'
+        DateFinValidite: '2013-11-15 00:00:00'
         SortableRank: 1
     2:
         ImageFondPath: uploads/mise_en_avants/50a4c4e410317.jpeg
@@ -12,5 +12,5 @@
     3:
         ImageFondPath: uploads/mise_en_avants/50a4c53267b8e.jpeg
         IllustrationPath: uploads/mise_en_avants/50a51aed0abc6.png
-        DateFinValidite: '2012-11-29 00:00:00'
+        DateFinValidite: '2013-11-29 00:00:00'
         SortableRank: 3
