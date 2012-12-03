@@ -1,1 +1,25 @@
-\Cungfoo\Model\MultimediaEtablissementTag: {  }
+\Cungfoo\Model\MultimediaEtablissementTag:
+    1_1:
+        MultimediaEtablissementId: 1
+        TagId: 1
+    5_1:
+        MultimediaEtablissementId: 5
+        TagId: 1
+    2_2:
+        MultimediaEtablissementId: 2
+        TagId: 2
+    5_2:
+        MultimediaEtablissementId: 5
+        TagId: 2
+    3_3:
+        MultimediaEtablissementId: 3
+        TagId: 3
+    6_3:
+        MultimediaEtablissementId: 6
+        TagId: 3
+    4_4:
+        MultimediaEtablissementId: 4
+        TagId: 4
+    6_4:
+        MultimediaEtablissementId: 6
+        TagId: 4

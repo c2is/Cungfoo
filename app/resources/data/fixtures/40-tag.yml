@@ -1,1 +1,9 @@
-\Cungfoo\Model\Tag: {  }
+\Cungfoo\Model\Tag:
+    1:
+        Slug: camping
+    2:
+        Slug: locations
+    3:
+        Slug: activites
+    4:
+        Slug: regions
