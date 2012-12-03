@@ -45,7 +45,7 @@ class CouloirController implements ControllerProviderInterface
         ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
 
-        $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+        $controllers->match('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
             $query = array(
                 "specificFiles"     => 'couloir',
                 "base_id"           => 'vacancesdirectes_preprod_v6_6',
@@ -54,6 +54,8 @@ class CouloirController implements ControllerProviderInterface
                 "display"           => 'cart_payment',
                 "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
                 "proposal_key"      => $proposalKey,
+                "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
+                "backLink"          => $app['url_generator']->generate('couloir_recapitulatif', array('display' => 'cart_payment'), true),
             );
 
             $query = array_merge($query, $request->request->all());
@@ -64,6 +66,24 @@ class CouloirController implements ControllerProviderInterface
         })
         ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
+
+        $controllers->get('/confirmation', function (Request $request) use ($app) {
+            $query = array(
+                "specificFiles"     => 'couloir',
+                "base_id"           => 'vacancesdirectes_preprod_v6_6',
+                "webuser"           => 'web_fr',
+                "tokens"            => 'ignore_token',
+                "display"           => 'cart_payment',
+                "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
+            );
+
+            $query = array_merge($query, $request->request->all());
+
+            return $app['twig']->render('Couloir\detail-sejour.twig', array(
+                'query' => $query,
+            ));
+        })
+        ->bind('couloir_confirmation');
 
         return $controllers;
     }
