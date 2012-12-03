@@ -1917,6 +1917,30 @@ abstract class BasePays extends BaseObject implements Persistent
 
 
         /**
+         * Get the [slug] column value.
+         *
+         * @return string
+         */
+        public function getSlug()
+        {
+        return $this->getCurrentTranslation()->getSlug();
+    }
+
+
+        /**
+         * Set the value of [slug] column.
+         *
+         * @param string $v new value
+         * @return PaysI18n The current object (for fluent API support)
+         */
+        public function setSlug($v)
+        {    $this->getCurrentTranslation()->setSlug($v);
+
+        return $this;
+    }
+
+
+        /**
          * Get the [name] column value.
          *
          * @return string
