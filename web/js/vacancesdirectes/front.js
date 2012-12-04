@@ -1317,8 +1317,6 @@ function tabs(tView, load) {
  * GMAP FUNCIONS
  */
 function loadGmapScript() { // call at the end of the DOM ready
-    //consoleLog('map');
-    var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "http://maps.googleapis.com/maps/api/js?key="+sGoogleApiKey+"&sensor=true&callback=loadPluginsGmap";
@@ -1527,7 +1525,7 @@ function findMinMaxRange() {
     var allPrices = [];
     items.each(function() {
         $(this).find('.linePrice').each( function(){
-            var itemPrice = parseInt($(this).find('label .price').text());
+            var itemPrice = parseInt($(this).find('.stain .price').text());
             allPrices.push(itemPrice);
         });
         $(this).attr('data-ranged', true);
@@ -1576,7 +1574,7 @@ function rangeSliderPrice() {
 
                 items.each(function() {
                     $(this).find('.linePrice').each( function(){
-                        var originPriceLine = parseInt($(this).find('label .price').text());
+                        var originPriceLine = parseInt($(this).find('.stain .price').text());
                         if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
                             $(this).addClass('visiblePrice').fadeIn();
                         }else{

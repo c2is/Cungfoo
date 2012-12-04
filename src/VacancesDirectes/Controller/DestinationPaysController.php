@@ -8,8 +8,7 @@ use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
-use Cungfoo\Model\Pays,
-    Cungfoo\Model\PaysQuery,
+use Cungfoo\Model\PaysQuery,
     Cungfoo\Model\PointInteretPeer,
     Cungfoo\Model\EventPeer,
     Cungfoo\Model\EtablissementPeer;
@@ -26,27 +25,7 @@ class DestinationPaysController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->convert('pays', function($pays) use ($app)
-        {
-            $locale = $app['context']->get('language');
-
-            $paysObject = PaysQuery::create()
-                ->joinWithI18n($locale)
-                ->usePaysI18nQuery()
-                    ->filterBySlug($pays)
-                ->endUse()
-                ->findOne()
-            ;
-
-            if (!$paysObject)
-            {
-
-            }
-
-            return $paysObject;
-        });
-
-        $controllers->match('/', function (Request $request, Pays $pays) use ($app)
+        $controllers->match('/{codeResalys}', function (Request $request, $codeResalys) use ($app)
         {
             $locale = $app['context']->get('language');
 
@@ -58,12 +37,18 @@ class DestinationPaysController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
+            $pays = PaysQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByCode($codeResalys)
+                ->findOne()
+            ;
+
             $sitesAVisiter      = PointInteretPeer::getForPays($pays, PointInteretPeer::RANDOM_SORT, 5);
             $nbSitesAVisiter    = PointInteretPeer::getCountForPays($pays);
             $events             = EventPeer::getForPays($pays, EventPeer::SORT_BY_PRIORITY, 5);
             $campings           = EtablissementPeer::getForPays($pays, EtablissementPeer::RANDOM_SORT);
 
-            $nbCampinsg = count($campings);
+            $nbCampinsg = count($campings);die(var_dump($nbCampinsg));
             $listData = array();
             for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
             {
@@ -75,7 +60,6 @@ class DestinationPaysController implements ControllerProviderInterface
                 ->setData($listData)
                 ->setType(CatalogueListing::CATALOGUE)
             ;
-
             $listContent = $list->process();
 
             return $app['twig']->render('Destination/detail.twig', array(

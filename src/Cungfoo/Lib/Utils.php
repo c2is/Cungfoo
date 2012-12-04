@@ -43,51 +43,35 @@ class Utils
     {
         $dms = array();
 
-        if (!is_float($latitude) || !is_float($longitude))
+        if(!is_float($latitude) || !is_float($longitude))
         {
             throw new \Exception("float are required");
         }
 
-        $arrayLat = explode(".", $latitude);
+        $arrayLat = explode(".",$latitude);
         $arrayLng = explode(".", $longitude);
 
         $minutesLat = abs(($latitude - $arrayLat[0])) * 60.0;
-        $arrayMinutesLat = explode(".", $minutesLat);
+        $arrayMinutesLat = explode(".",$minutesLat);
         $secondsLat = ($minutesLat - $arrayMinutesLat[0]) * 60.0;
 
         $minutesLng = abs(($longitude - $arrayLng[0])) * 60.0;
-        $arrayMinutesLng = explode(".", $minutesLng);
+        $arrayMinutesLng = explode(".",$minutesLng);
         $secondsLng = ($minutesLng - $arrayMinutesLng[0]) * 60.0;
 
         $dms = array(
             "latitude" => array(
-                "d" => (int) $arrayLat[0],
-                "m" => (int) $arrayMinutesLat[0],
-                "s" => (float) round($secondsLat, 3)
+                "d" => (int)$arrayLat[0],
+                "m" => (int)$arrayMinutesLat[0],
+                "s" => (float)round($secondsLat,3)
             ),
             "longitude" => array(
-                "d" => (int) $arrayLng[0],
-                "m" => (int) $arrayMinutesLng[0],
-                "s" => (float) round($secondsLng, 3)
+                "d" => (int)$arrayLng[0],
+                "m" => (int)$arrayMinutesLng[0],
+                "s" => (float)round($secondsLng,3)
             )
         );
 
         return $dms;
-    }
-
-    public function slugify($string)
-    {
-      $string = preg_replace('~[^\\pL\d]+~u', '-', $string);
-      $string = trim($string, '-');
-      $string = iconv('utf-8', 'us-ascii//TRANSLIT', $string);
-      $string = strtolower($string);
-      $string = preg_replace('~[^-\w]+~', '', $string);
-
-      if (empty($string))
-      {
-        return 'n-a';
-      }
-
-      return $string;
     }
 }

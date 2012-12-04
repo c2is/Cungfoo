@@ -2299,7 +2299,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2530,7 +2530,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2545,19 +2545,19 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
         }
-    
+
         $this->uploadImageHebergementPath($form);
-        
+
         if (!$form['image_composition_path_deleted']->getData())
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
         }
-    
+
         $this->uploadImageCompositionPath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2565,7 +2565,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return 'uploads/type_hebergements';
     }
-    
+
     /**
      * @return string
      */
@@ -2573,7 +2573,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2587,7 +2587,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->setImageHebergementPath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
