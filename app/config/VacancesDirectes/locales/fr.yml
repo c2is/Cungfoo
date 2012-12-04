@@ -1,3 +1,11 @@
+seo:
+    title:
+        default: "Location mobil home Espagne, France, Italie"
+        camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+    meta:
+        default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
+        camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances Directes."
+
 pays.france: France
 pays.espagne: Espagne
 pays.italie: Italie
