@@ -8,7 +8,10 @@ use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
-use Cungfoo\Model\RegionQuery,
+use Cungfoo\Model\Pays,
+    Cungfoo\Model\PaysQuery,
+    Cungfoo\Model\Region,
+    Cungfoo\Model\RegionQuery,
     Cungfoo\Model\PointInteretPeer,
     Cungfoo\Model\EventPeer,
     Cungfoo\Model\EtablissementPeer;
@@ -25,7 +28,47 @@ class DestinationRegionController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/{codeResalys}', function (Request $request, $codeResalys) use ($app)
+        $controllers->convert('pays', function($pays) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $paysObject = PaysQuery::create()
+                ->joinWithI18n($locale)
+                ->usePaysI18nQuery()
+                    ->filterBySlug($pays)
+                ->endUse()
+                ->findOne()
+            ;
+
+            if (!$paysObject)
+            {
+                $app->abort(404, "$pays does not exist.");
+            }
+
+            return $paysObject;
+        });
+
+        $controllers->convert('region', function($region) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $regionObject = RegionQuery::create()
+                ->joinWithI18n($locale)
+                ->useRegionI18nQuery()
+                    ->filterBySlug($region)
+                ->endUse()
+                ->findOne()
+            ;
+
+            if (!$regionObject)
+            {
+                $app->abort(404, "$region does not exist.");
+            }
+
+            return $regionObject;
+        });
+
+        $controllers->match('/', function (Request $request, Pays $pays, Region $region) use ($app)
         {
             $locale = $app['context']->get('language');
 
@@ -36,12 +79,6 @@ class DestinationRegionController implements ControllerProviderInterface
             {
                 return $app->redirect($searchEngine->getRedirect());
             }
-
-            $region = RegionQuery::create()
-                ->joinWithI18n($locale)
-                ->filterByCode($codeResalys)
-                ->findOne()
-            ;
 
             $sitesAVisiter      = PointInteretPeer::getForRegion($region, PointInteretPeer::RANDOM_SORT, 5);
             $nbSitesAVisiter    = PointInteretPeer::getCountForRegion($region);
