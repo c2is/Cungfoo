@@ -357,7 +357,6 @@ $(function() {
             highSeasonEndDate = numDate(fHighSeasonEndDate),
             fSeasonDates = [fStartDate,fEndDate],
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
-            startDate = numDate(fStartDate),
             arrivalDate,
             departureDate,
             visibleMonths = 7,

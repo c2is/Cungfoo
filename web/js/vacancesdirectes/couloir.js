@@ -13,6 +13,7 @@ $(function() {
         resize_myframe();
     }
 
+    // selects
     if($('#newCustomerLayer').length){
         $('#newCustomerLayer').find('select').sSelect({ddMaxHeight: '300px'});
         if($('#authentication').length){
@@ -33,6 +34,33 @@ $(function() {
     }
     if($('#customerAreaContener').length){
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
+    }
+
+    // datepickers
+    if($('#datepicker').length){
+        var d = new Date(),
+            thisYear = d.getFullYear(),
+            birthdayYear = thisYear-18;
+
+        $('#datepicker').DatePicker({
+            flat: true,
+            format:'Y/m/d',
+            date: $('#inputDate').val(),
+            current: birthdayYear,
+            calendars: 1,
+            starts: 1,
+            view: 'years',
+            position: 'bottom',
+            onBeforeShow: function(){
+                $('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
+            },
+            onChange: function(formated, dates){
+                $('#inputDate').val(formated);
+                if ($('#closeOnSelect input').attr('checked')) {
+                    $('#inputDate').DatePickerHide();
+                }
+            }
+        });
     }
 
 
