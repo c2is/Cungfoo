@@ -647,6 +647,10 @@
             <unique-column name="slug"/>
         </unique>
 
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, description" />
+        </behavior>
+
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/editos" />
             <parameter name="crud_type_richtext" value="description" />

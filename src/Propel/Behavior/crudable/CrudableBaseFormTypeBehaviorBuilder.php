@@ -366,10 +366,17 @@ class {$this->getClassname()} extends AppAwareType
             $i18nColumns = array();
             foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn)
             {
+                $columnType = $this->getColumnType($i18nColumn);
+
+                if (in_array($i18nColumn->getName(), $richtextFields))
+                {
+                    $columnType = 'textrich';
+                }
+
                 $i18nColumns[$i18nColumn->getName()] = array(
                     'required'      => false,
                     'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'          => $this->getColumnType($i18nColumn),
+                    'type'          => $columnType,
                     'constraints'   => $this->addConstraints($i18nColumn),
                 );
             }
