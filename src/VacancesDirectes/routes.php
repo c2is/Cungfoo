@@ -30,7 +30,7 @@ $app->mount('/dernieres-minutes',   new Controller\DernieresMinutesController())
 $app->mount('/couloir-reservation', new Controller\CouloirController());
 $app->mount('/resalys',             new WrapperController());
 $app->mount('/destinations/camping-{pays}', new Controller\DestinationPaysController());
-$app->mount('/regions',             new Controller\DestinationRegionController());
+$app->mount('/destinations/camping-{pays}/{region}', new Controller\DestinationRegionController());
 $app->mount('/villes',              new Controller\DestinationVilleController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
