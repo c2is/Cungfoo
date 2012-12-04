@@ -211,6 +211,7 @@ class DestinationController implements ControllerProviderInterface
 
         return $app['twig']->render('Destination/detail.twig', array(
             'locale'            => $locale,
+            'destination'       => $destination,
             'item'              => $item,
             'sitesAVisiter'     => $sitesAVisiter,
             'nbSitesAVisiter'   => $nbSitesAVisiter,
