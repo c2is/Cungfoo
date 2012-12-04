@@ -1003,6 +1003,9 @@ h4 {
   width: 125px;
   text-align: right;
 }
+#reservationContener.confirmation td {
+  height: 27px;
+}
 #reservationContener.confirmation #authentication,
 #reservationContener.confirmation #occupant {
   font-weight: bold;
@@ -1016,6 +1019,7 @@ h4 {
   color: inherit;
   text-transform: inherit;
   font: inherit;
+  display: table-cell;
 }
 #reservationContener.confirmation #authentication #address,
 #reservationContener.confirmation #occupant #address,
@@ -1026,15 +1030,20 @@ h4 {
 #reservationContener.confirmation #option {
   font-weight: bold;
 }
+#reservationContener.confirmation #option .label,
+#reservationContener.confirmation #option .field {
+  width: 276px;
+}
 #reservationContener.confirmation #option .label {
   vertical-align: top;
   font: inherit;
   color: inherit;
   text-transform: inherit;
-  margin-right: 5px;
+  margin-right: 20px;
 }
 #reservationContener.confirmation #option .field {
-  color: #464545;
+  color: #8c8a8a;
+  display: inline-block;
 }
 #reservationContener.confirmation #option .criteria {
   margin-bottom: 10px;
@@ -1075,30 +1084,42 @@ h4 {
 #reservationContener.confirmation #option .aField label a {
   color: #ed145b;
 }
-#reservationContener.confirmation #paiement table {
+#reservationContener.confirmation #paiement table.paymentList {
   display: block;
   background-color: #ffffff;
   margin: 10px 0;
 }
-#reservationContener.confirmation #paiement table th {
+#reservationContener.confirmation #paiement table.paymentList th {
   background-color: #464545;
   color: #ffffff;
   padding: 10px;
   text-align: center;
   border: 1px solid #464545;
 }
-#reservationContener.confirmation #paiement table td {
+#reservationContener.confirmation #paiement table.paymentList td {
   margin: 10px 0;
   padding: 10px;
   text-align: left;
   border: 1px solid #464545;
 }
-#reservationContener.confirmation #paiement table td:nth-child(1) {
+#reservationContener.confirmation #paiement table.paymentList td:nth-child(1) {
   font-weight: bold;
 }
-#reservationContener.confirmation #paiement table td.amount {
+#reservationContener.confirmation #paiement table.paymentList td.amount {
   width: 125px;
   text-align: right;
+}
+#reservationContener.confirmation #paiement table#payment_layer_cc {
+  font-weight: bold;
+}
+#reservationContener.confirmation #paiement table#payment_layer_cc td {
+  color: #8c8a8a;
+}
+#reservationContener.confirmation #paiement table#payment_layer_cc td.label {
+  color: inherit;
+  text-transform: inherit;
+  font: inherit;
+  display: table-cell;
 }
 #reservationContener .rsl-date-input,
 #reservationContener .control_date {

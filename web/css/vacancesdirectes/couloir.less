@@ -356,10 +356,11 @@ h4{font-size:15px;line-height:17px;}
 
   // step 4
   &.confirmation{
+    td{height:27px;}
     #authentication,
     #occupant{font-weight:bold;
       td{color:@colorGris0;
-        &.label{color:inherit;text-transform:inherit;font:inherit;}
+        &.label{color:inherit;text-transform:inherit;font:inherit;display:table-cell;}
       }
       #address,
       #occupant_address{
@@ -367,8 +368,10 @@ h4{font-size:15px;line-height:17px;}
       }
     }
     #option{font-weight:bold;
-      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
-      .field{color:@colorGris2;}
+      .label,
+      .field{width:276px;}
+      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:20px;}
+      .field{color:@colorGris0;display:inline-block;}
       .criteria{margin-bottom:10px;clear:both;
         .label{float:left;._verticalCenter(27px);}
         input{width:125px;}
@@ -384,11 +387,16 @@ h4{font-size:15px;line-height:17px;}
       }
     }
     #paiement{
-      table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+      table.paymentList{display:block;background-color:@colorBgBlanc;margin:10px 0;
         th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
         td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
           &:nth-child(1){font-weight:bold;}
           &.amount{width:125px;text-align:right;}
+        }
+      }
+      table#payment_layer_cc{font-weight:bold;
+        td{color:@colorGris0;
+          &.label{color:inherit;text-transform:inherit;font:inherit;display:table-cell;}
         }
       }
     }
