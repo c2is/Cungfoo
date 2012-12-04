@@ -49,7 +49,7 @@ class EtablissementPeer extends BaseEtablissementPeer
                 ->endUse()
             ->endUse()
             ->select(array('Id', 'Code', 'Region.Id', 'RegionI18n.Name', 'Ville.Id', 'VilleI18n.Name', 'Name'))
-            ->find($con)
+            ->findActive($con)
         ;
     }
 
@@ -57,9 +57,9 @@ class EtablissementPeer extends BaseEtablissementPeer
     {
         $query = EtablissementQuery::create()
             ->useVilleQuery()
-            ->useRegionQuery()
-            ->filterByPays($pays)
-            ->endUse()
+                ->useRegionQuery()
+                    ->filterByPays($pays)
+                ->endUse()
             ->endUse()
         ;
 
@@ -73,7 +73,7 @@ class EtablissementPeer extends BaseEtablissementPeer
             $query->limit($count);
         }
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     public static function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
@@ -94,7 +94,7 @@ class EtablissementPeer extends BaseEtablissementPeer
             $query->limit($count);
         }
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     public static function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null)
@@ -113,6 +113,6 @@ class EtablissementPeer extends BaseEtablissementPeer
             $query->limit($count);
         }
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 }

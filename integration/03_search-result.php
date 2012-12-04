@@ -22,8 +22,11 @@ include('includes/top.php'); ?>
                 <script>
                     function resultInit() {
                         var resultMkrs = [
-                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
-                            ['c2is', 45.764544, 4.846512, 1, 'blocs/smallInfoBox.php?ID=12', markerBleu]
+                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, ['filtres plus'], ['filtres ou'], ['prix']]
+                             ['Palavas Camping 1', 43.519863, 3.90937, 2, '', markerFushia, ['SRV1','SRV3','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['952', '1141', '1141']]
+                            ,['Palavas Camping 2', 43.558998, 3.719444, 2, '', markerVert, ['SRV2','SRV6','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['852', '1000', '1041']]
+                            ,['Palavas Camping 3', 43.649491, 4.025002, 2, '', markerBleu, ['SRV4','SRV5','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['852', '1000', '1041']]
+                            ,['Palavas Camping 4', 43.667375, 3.621254, 2, '', markerFushia, ['SRV1','SRV3','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['952', '1141', '1141']]
                         ];
                         var centerresultMkr = new google.maps.LatLng(45.764544,4.846512),
                                 mapOptions = {
