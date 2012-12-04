@@ -128,7 +128,7 @@
         <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
         <div class="left">
             <div id="national">
-                <a class="country" href="{{ path('destination_pays', {'codeResalys': 'FRA'}) }}">{{ "home.destination_france" | trans }}</a>
+                <a class="country" href="{{ path('destination_pays', {'pays': 'france'}) }}">{{ "home.destination_france" | trans }}</a>
                 <ul>
                     {% if pays | length %}
                     {% for p in pays %}
@@ -150,7 +150,7 @@
                 {% if pays | length %}
                 {% for p in pays %}
                     {% if p.code != 'FRA' %}
-                        <a class="country" href="{{ path('destination_pays', {'codeResalys': p.code}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
+                        <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
                     {% endif %}
                 {% endfor %}
                 {% endif %}
