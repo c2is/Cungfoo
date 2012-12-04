@@ -40,10 +40,10 @@
             <h1><span>Bienvenue dans l’espace de </span>réservation</h1>
             <nav id="stepNav" class="clearboth">
                 <ul class="topnav fixed-width clear">
-                    <li class="tab{% if app.request.get('_route') == 'couloir_detail_sejour' %} current{% endif %}"><span>Détails du séjour</span></li>
-                    <li class="tab{% if app.request.get('_route') == 'couloir_recapitulatif' %} current{% endif %}"><span>Récapitulatif</span></li>
-                    <li class="tab"><span>Paiement</span></li>
-                    <li class="tab"><span>Confirmation</span></li>
+                    <li class="tab{% if step == 1 %} current{% elseif step > 1%} completed{% endif %}"><span>Détails du séjour</span></li>
+                    <li class="tab{% if step == 2 %} current{% elseif step > 2%} completed{% endif %}"><span>Récapitulatif</span></li>
+                    <li class="tab{% if step == 3 %} current{% elseif step > 3%} completed{% endif %}"><span>Paiement</span></li>
+                    <li class="tab{% if step == 4 %} current{% endif %}"><span>Confirmation</span></li>
                 </ul>
             </nav>
         </div>
