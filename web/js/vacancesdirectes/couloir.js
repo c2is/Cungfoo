@@ -16,12 +16,6 @@ $(function() {
     // selects
     if($('#newCustomerLayer').length){
         $('#newCustomerLayer').find('select').sSelect({ddMaxHeight: '300px'});
-        if($('#authentication').length){
-            $('.authenticationChoice').click(function(e){
-                resize_myframe();
-            });
-            $('#returningCustomerYes').trigger("click");
-        }
     }
     if($('#reservation').length){
         $('.changeOccupantCount').find('select').sSelect({ddMaxHeight: '300px'});
@@ -63,6 +57,31 @@ $(function() {
         });
     }
 
+    // radio buttons
+    if($('#reservationContener.detail').length){
+        var checked;
+        if($('#authentication').length){
+            $('.authenticationChoice').click(function(e){
+                resize_myframe();
+            });
+            if(checked != undefined){
+                $('#returningCustomerYes').trigger("click");
+
+            }
+            else{
+                if($('#returningCustomerYes').is(':checked')) {
+                    checked = true
+                    $('#existingCustomerLayer').show();
+                    $('#newCustomerLayer').hide();
+                }
+                else if($('#returningCustomerNo').is(':checked')) {
+                    checked = false;
+                    $('#existingCustomerLayer').hide();
+                    $('#newCustomerLayer').show();
+                }
+            }
+        }
+    }
 
 });
 
