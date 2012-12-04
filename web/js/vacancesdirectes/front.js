@@ -1345,7 +1345,9 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 title: mkr[0],
                 zIndex: mkr[3],
                 idCamp: mkr[4],
-                filters: mkr[6]
+                filters: mkr[6],
+                filtersOr: mkr[7],
+                prices: mkr[8]
             });
             aMarkers.push(marker);
 
@@ -1418,6 +1420,9 @@ function initializeAllGmap() {
     }
     if ($('#resultMap').length) {
         resultInit();
+    }
+    if ($('#destiMap').length) {
+        destiInit();
     }
     if ($('#homeMap').length) {
         homeInit();

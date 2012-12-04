@@ -85,6 +85,17 @@ class WrapperController implements ControllerProviderInterface
         );
     }
 
+    protected function getStylesheetPrintTag($url)
+    {
+        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="print">',
+            $this->request->getScheme(),
+            $this->request->getHttpHost(),
+            $asset
+        );
+    }
+
     protected function getJavscriptTag($url)
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
@@ -159,11 +170,13 @@ eof
         $iframe = str_replace(array(
             '{_c2is.uri}',
             '{_c2is.stylesheet}',
+            '{_c2is.stylesheet_print}',
             '{_c2is.javascript.header}',
             '{_c2is.javascript.footer}',
         ), array(
             $this->websiteUri,
             $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles)),
+            $this->getStylesheetPrintTag('css/vacancesdirectes/print.css'),
             $javascriptHeader,
             $javascriptFooter,
         ), $iframe);

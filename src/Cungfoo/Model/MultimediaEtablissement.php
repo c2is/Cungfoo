@@ -20,6 +20,10 @@ class MultimediaEtablissement extends BaseMultimediaEtablissement
 {
     public function __toString()
     {
+        if( $this->getTitre() == null)
+        {
+            return "";
+        }
         return $this->getTitre();
     }
 
