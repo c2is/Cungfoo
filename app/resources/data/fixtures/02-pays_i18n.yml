@@ -2,112 +2,96 @@
     1_de:
         Id: 1
         Locale: de
-        Slug: france
         Name: France
         Introduction: null
         Description: null
     1_en:
         Id: 1
         Locale: en
-        Slug: france
         Name: France
         Introduction: null
         Description: null
     1_fr:
         Id: 1
         Locale: fr
-        Slug: france
         Name: France
         Introduction: null
         Description: null
     1_nl:
         Id: 1
         Locale: nl
-        Slug: france
         Name: France
         Introduction: null
         Description: null
     2_de:
         Id: 2
         Locale: de
-        Slug: italie
         Name: Italie
         Introduction: null
         Description: null
     2_en:
         Id: 2
         Locale: en
-        Slug: italie
         Name: Italie
         Introduction: null
         Description: null
     2_fr:
         Id: 2
         Locale: fr
-        Slug: italie
         Name: Italie
         Introduction: null
         Description: null
     2_nl:
         Id: 2
         Locale: nl
-        Slug: italie
         Name: Italie
         Introduction: null
         Description: null
     3_de:
         Id: 3
         Locale: de
-        Slug: espagne
         Name: Espagne
         Introduction: null
         Description: null
     3_en:
         Id: 3
         Locale: en
-        Slug: espagne
         Name: Espagne
         Introduction: null
         Description: null
     3_fr:
         Id: 3
         Locale: fr
-        Slug: espagne
         Name: Espagne
         Introduction: null
         Description: null
     3_nl:
         Id: 3
         Locale: nl
-        Slug: espagne
         Name: Espagne
         Introduction: null
         Description: null
     4_de:
         Id: 4
         Locale: de
-        Slug: portugal
         Name: Portugal
         Introduction: null
         Description: null
     4_en:
         Id: 4
         Locale: en
-        Slug: portugal
         Name: Portugal
         Introduction: null
         Description: null
     4_fr:
         Id: 4
         Locale: fr
-        Slug: portugal
         Name: Portugal
         Introduction: null
         Description: null
     4_nl:
         Id: 4
         Locale: nl
-        Slug: portugal
         Name: Portugal
         Introduction: null
         Description: null

@@ -2,1008 +2,864 @@
     1_de:
         Id: 1
         Locale: de
-        Slug: loir-et-cher
         Name: Loir-et-Cher
         Introduction: null
         Description: null
     1_en:
         Id: 1
         Locale: en
-        Slug: loir-et-cher
         Name: Loir-et-Cher
         Introduction: null
         Description: null
     1_fr:
         Id: 1
         Locale: fr
-        Slug: loir-et-cher
         Name: Loir-et-Cher
         Introduction: null
         Description: null
     1_nl:
         Id: 1
         Locale: nl
-        Slug: loir-et-cher
         Name: Loir-et-Cher
         Introduction: null
         Description: null
     2_de:
         Id: 2
         Locale: de
-        Slug: perigord-dordogne
         Name: Périgord/Dordogne
         Introduction: null
         Description: null
     2_en:
         Id: 2
         Locale: en
-        Slug: perigord-dordogne
         Name: Périgord/Dordogne
         Introduction: null
         Description: null
     2_fr:
         Id: 2
         Locale: fr
-        Slug: perigord-dordogne
         Name: Périgord/Dordogne
         Introduction: null
         Description: null
     2_nl:
         Id: 2
         Locale: nl
-        Slug: perigord-dordogne
         Name: Périgord/Dordogne
         Introduction: null
         Description: null
     3_de:
         Id: 3
         Locale: de
-        Slug: costa-brava
         Name: 'Costa Brava'
         Introduction: null
         Description: null
     3_en:
         Id: 3
         Locale: en
-        Slug: costa-brava
         Name: 'Costa Brava'
         Introduction: null
         Description: null
     3_fr:
         Id: 3
         Locale: fr
-        Slug: costa-brava
         Name: 'Costa Brava'
         Introduction: null
         Description: null
     3_nl:
         Id: 3
         Locale: nl
-        Slug: costa-brava
         Name: 'Costa Brava'
         Introduction: null
         Description: null
     4_de:
         Id: 4
         Locale: de
-        Slug: gironde
         Name: Gironde
         Introduction: null
         Description: null
     4_en:
         Id: 4
         Locale: en
-        Slug: gironde
         Name: Gironde
         Introduction: null
         Description: null
     4_fr:
         Id: 4
         Locale: fr
-        Slug: gironde
         Name: Gironde
         Introduction: null
         Description: null
     4_nl:
         Id: 4
         Locale: nl
-        Slug: gironde
         Name: Gironde
         Introduction: null
         Description: null
     5_de:
         Id: 5
         Locale: de
-        Slug: alsace-jura
         Name: Alsace/Jura
         Introduction: null
         Description: null
     5_en:
         Id: 5
         Locale: en
-        Slug: alsace-jura
         Name: Alsace/Jura
         Introduction: null
         Description: null
     5_fr:
         Id: 5
         Locale: fr
-        Slug: alsace-jura
         Name: Alsace/Jura
         Introduction: null
         Description: null
     5_nl:
         Id: 5
         Locale: nl
-        Slug: alsace-jura
         Name: Alsace/Jura
         Introduction: null
         Description: null
     6_de:
         Id: 6
         Locale: de
-        Slug: landes
         Name: Landes
         Introduction: null
         Description: null
     6_en:
         Id: 6
         Locale: en
-        Slug: landes
         Name: Landes
         Introduction: null
         Description: null
     6_fr:
         Id: 6
         Locale: fr
-        Slug: landes
         Name: Landes
         Introduction: null
         Description: null
     6_nl:
         Id: 6
         Locale: nl
-        Slug: landes
         Name: Landes
         Introduction: null
         Description: null
     7_de:
         Id: 7
         Locale: de
-        Slug: costa-dorada
         Name: 'Costa Dorada'
         Introduction: null
         Description: null
     7_en:
         Id: 7
         Locale: en
-        Slug: costa-dorada
         Name: 'Costa Dorada'
         Introduction: null
         Description: null
     7_fr:
         Id: 7
         Locale: fr
-        Slug: costa-dorada
         Name: 'Costa Dorada'
         Introduction: null
         Description: null
     7_nl:
         Id: 7
         Locale: nl
-        Slug: costa-dorada
         Name: 'Costa Dorada'
         Introduction: null
         Description: null
     8_de:
         Id: 8
         Locale: de
-        Slug: normandie
         Name: Normandie
         Introduction: null
         Description: null
     8_en:
         Id: 8
         Locale: en
-        Slug: normandie
         Name: Normandie
         Introduction: null
         Description: null
     8_fr:
         Id: 8
         Locale: fr
-        Slug: normandie
         Name: Normandie
         Introduction: null
         Description: null
     8_nl:
         Id: 8
         Locale: nl
-        Slug: normandie
         Name: Normandie
         Introduction: null
         Description: null
     9_de:
         Id: 9
         Locale: de
-        Slug: bretagne
         Name: Bretagne
         Introduction: null
         Description: null
     9_en:
         Id: 9
         Locale: en
-        Slug: bretagne
         Name: Bretagne
         Introduction: null
         Description: null
     9_fr:
         Id: 9
         Locale: fr
-        Slug: bretagne
         Name: Bretagne
         Introduction: null
         Description: null
     9_nl:
         Id: 9
         Locale: nl
-        Slug: bretagne
         Name: Bretagne
         Introduction: null
         Description: null
     10_de:
         Id: 10
         Locale: de
-        Slug: charente-maritime
         Name: Charente-Maritime
         Introduction: null
         Description: null
     10_en:
         Id: 10
         Locale: en
-        Slug: charente-maritime
         Name: Charente-Maritime
         Introduction: null
         Description: null
     10_fr:
         Id: 10
         Locale: fr
-        Slug: charente-maritime
         Name: Charente-Maritime
         Introduction: null
         Description: null
     10_nl:
         Id: 10
         Locale: nl
-        Slug: charente-maritime
         Name: Charente-Maritime
         Introduction: null
         Description: null
     11_de:
         Id: 11
         Locale: de
-        Slug: pays-basque
         Name: 'Pays basque'
         Introduction: null
         Description: null
     11_en:
         Id: 11
         Locale: en
-        Slug: pays-basque
         Name: 'Pays basque'
         Introduction: null
         Description: null
     11_fr:
         Id: 11
         Locale: fr
-        Slug: pays-basque
         Name: 'Pays basque'
         Introduction: null
         Description: null
     11_nl:
         Id: 11
         Locale: nl
-        Slug: pays-basque
         Name: 'Pays basque'
         Introduction: null
         Description: null
     12_de:
         Id: 12
         Locale: de
-        Slug: pays-de-loire
         Name: 'Pays de Loire'
         Introduction: null
         Description: null
     12_en:
         Id: 12
         Locale: en
-        Slug: pays-de-loire
         Name: 'Pays de Loire'
         Introduction: null
         Description: null
     12_fr:
         Id: 12
         Locale: fr
-        Slug: pays-de-loire
         Name: 'Pays de Loire'
         Introduction: null
         Description: null
     12_nl:
         Id: 12
         Locale: nl
-        Slug: pays-de-loire
         Name: 'Pays de Loire'
         Introduction: null
         Description: null
     13_de:
         Id: 13
         Locale: de
-        Slug: vendee
         Name: Vendée
         Introduction: null
         Description: null
     13_en:
         Id: 13
         Locale: en
-        Slug: vendee
         Name: Vendée
         Introduction: null
         Description: null
     13_fr:
         Id: 13
         Locale: fr
-        Slug: vendee
         Name: Vendée
         Introduction: null
         Description: null
     13_nl:
         Id: 13
         Locale: nl
-        Slug: vendee
         Name: Vendée
         Introduction: null
         Description: null
     14_de:
         Id: 14
         Locale: de
-        Slug: languedoc-roussillon
         Name: 'Languedoc-Roussillon '
         Introduction: null
         Description: null
     14_en:
         Id: 14
         Locale: en
-        Slug: languedoc-roussillon
         Name: 'Languedoc-Roussillon '
         Introduction: null
         Description: null
     14_fr:
         Id: 14
         Locale: fr
-        Slug: languedoc-roussillon
         Name: 'Languedoc-Roussillon '
         Introduction: null
         Description: null
     14_nl:
         Id: 14
         Locale: nl
-        Slug: languedoc-roussillon
         Name: 'Languedoc-Roussillon '
         Introduction: null
         Description: null
     15_de:
         Id: 15
         Locale: de
-        Slug: gers
         Name: Gers
         Introduction: null
         Description: null
     15_en:
         Id: 15
         Locale: en
-        Slug: gers
         Name: Gers
         Introduction: null
         Description: null
     15_fr:
         Id: 15
         Locale: fr
-        Slug: gers
         Name: Gers
         Introduction: null
         Description: null
     15_nl:
         Id: 15
         Locale: nl
-        Slug: gers
         Name: Gers
         Introduction: null
         Description: null
     16_de:
         Id: 16
         Locale: de
-        Slug: auvergne
         Name: Auvergne
         Introduction: null
         Description: null
     16_en:
         Id: 16
         Locale: en
-        Slug: auvergne
         Name: Auvergne
         Introduction: null
         Description: null
     16_fr:
         Id: 16
         Locale: fr
-        Slug: auvergne
         Name: Auvergne
         Introduction: null
         Description: null
     16_nl:
         Id: 16
         Locale: nl
-        Slug: auvergne
         Name: Auvergne
         Introduction: null
         Description: null
     17_de:
         Id: 17
         Locale: de
-        Slug: aveyron
         Name: Aveyron
         Introduction: null
         Description: null
     17_en:
         Id: 17
         Locale: en
-        Slug: aveyron
         Name: Aveyron
         Introduction: null
         Description: null
     17_fr:
         Id: 17
         Locale: fr
-        Slug: aveyron
         Name: Aveyron
         Introduction: null
         Description: null
     17_nl:
         Id: 17
         Locale: nl
-        Slug: aveyron
         Name: Aveyron
         Introduction: null
         Description: null
     18_de:
         Id: 18
         Locale: de
-        Slug: ardeche
         Name: Ardèche
         Introduction: null
         Description: null
     18_en:
         Id: 18
         Locale: en
-        Slug: ardeche
         Name: Ardèche
         Introduction: null
         Description: null
     18_fr:
         Id: 18
         Locale: fr
-        Slug: ardeche
         Name: Ardèche
         Introduction: null
         Description: null
     18_nl:
         Id: 18
         Locale: nl
-        Slug: ardeche
         Name: Ardèche
         Introduction: null
         Description: null
     19_de:
         Id: 19
         Locale: de
-        Slug: ariege-pyrenees
         Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     19_en:
         Id: 19
         Locale: en
-        Slug: ariege-pyrenees
         Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     19_fr:
         Id: 19
         Locale: fr
-        Slug: ariege-pyrenees
         Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     19_nl:
         Id: 19
         Locale: nl
-        Slug: ariege-pyrenees
         Name: Ariège/Pyrénées
         Introduction: null
         Description: null
     20_de:
         Id: 20
         Locale: de
-        Slug: centro
         Name: Centro
         Introduction: null
         Description: null
     20_en:
         Id: 20
         Locale: en
-        Slug: centro
         Name: Centro
         Introduction: null
         Description: null
     20_fr:
         Id: 20
         Locale: fr
-        Slug: centro
         Name: Centro
         Introduction: null
         Description: null
     20_nl:
         Id: 20
         Locale: nl
-        Slug: centro
         Name: Centro
         Introduction: null
         Description: null
     21_de:
         Id: 21
         Locale: de
-        Slug: corse
         Name: Corse
         Introduction: null
         Description: null
     21_en:
         Id: 21
         Locale: en
-        Slug: corse
         Name: Corse
         Introduction: null
         Description: null
     21_fr:
         Id: 21
         Locale: fr
-        Slug: corse
         Name: Corse
         Introduction: null
         Description: null
     21_nl:
         Id: 21
         Locale: nl
-        Slug: corse
         Name: Corse
         Introduction: null
         Description: null
     22_de:
         Id: 22
         Locale: de
-        Slug: drome-haute-provence
         Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     22_en:
         Id: 22
         Locale: en
-        Slug: drome-haute-provence
         Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     22_fr:
         Id: 22
         Locale: fr
-        Slug: drome-haute-provence
         Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     22_nl:
         Id: 22
         Locale: nl
-        Slug: drome-haute-provence
         Name: Drôme/Haute-Provence
         Introduction: null
         Description: null
     23_de:
         Id: 23
         Locale: de
-        Slug: italie-adriatique
         Name: 'Italie adriatique'
         Introduction: null
         Description: null
     23_en:
         Id: 23
         Locale: en
-        Slug: italie-adriatique
         Name: 'Italie adriatique'
         Introduction: null
         Description: null
     23_fr:
         Id: 23
         Locale: fr
-        Slug: italie-adriatique
         Name: 'Italie adriatique'
         Introduction: null
         Description: null
     23_nl:
         Id: 23
         Locale: nl
-        Slug: italie-adriatique
         Name: 'Italie adriatique'
         Introduction: null
         Description: null
     24_de:
         Id: 24
         Locale: de
-        Slug: costa-del-azahar
         Name: 'Costa del Azahar'
         Introduction: null
         Description: null
     24_en:
         Id: 24
         Locale: en
-        Slug: costa-del-azahar
         Name: 'Costa del Azahar'
         Introduction: null
         Description: null
     24_fr:
         Id: 24
         Locale: fr
-        Slug: costa-del-azahar
         Name: 'Costa del Azahar'
         Introduction: null
         Description: null
     24_nl:
         Id: 24
         Locale: nl
-        Slug: costa-del-azahar
         Name: 'Costa del Azahar'
         Introduction: null
         Description: null
     25_de:
         Id: 25
         Locale: de
-        Slug: italie-mediterraneenne
         Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     25_en:
         Id: 25
         Locale: en
-        Slug: italie-mediterraneenne
         Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     25_fr:
         Id: 25
         Locale: fr
-        Slug: italie-mediterraneenne
         Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     25_nl:
         Id: 25
         Locale: nl
-        Slug: italie-mediterraneenne
         Name: 'Italie méditerranéenne'
         Introduction: null
         Description: null
     26_de:
         Id: 26
         Locale: de
-        Slug: alpes
         Name: Alpes
         Introduction: null
         Description: null
     26_en:
         Id: 26
         Locale: en
-        Slug: alpes
         Name: Alpes
         Introduction: null
         Description: null
     26_fr:
         Id: 26
         Locale: fr
-        Slug: alpes
         Name: Alpes
         Introduction: null
         Description: null
     26_nl:
         Id: 26
         Locale: nl
-        Slug: alpes
         Name: Alpes
         Introduction: null
         Description: null
     27_de:
         Id: 27
         Locale: de
-        Slug: provence-cote-d-azur
         Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     27_en:
         Id: 27
         Locale: en
-        Slug: provence-cote-d-azur
         Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     27_fr:
         Id: 27
         Locale: fr
-        Slug: provence-cote-d-azur
         Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     27_nl:
         Id: 27
         Locale: nl
-        Slug: provence-cote-d-azur
         Name: 'Provence-Côte d''Azur '
         Introduction: null
         Description: null
     28_de:
         Id: 28
         Locale: de
-        Slug: verdon
         Name: Verdon
         Introduction: null
         Description: null
     28_en:
         Id: 28
         Locale: en
-        Slug: verdon
         Name: Verdon
         Introduction: null
         Description: null
     28_fr:
         Id: 28
         Locale: fr
-        Slug: verdon
         Name: Verdon
         Introduction: null
         Description: null
     28_nl:
         Id: 28
         Locale: nl
-        Slug: verdon
         Name: Verdon
         Introduction: null
         Description: null
     29_de:
         Id: 29
         Locale: de
-        Slug: cantabria
         Name: Cantabria
         Introduction: null
         Description: null
     29_en:
         Id: 29
         Locale: en
-        Slug: cantabria
         Name: Cantabria
         Introduction: null
         Description: null
     29_fr:
         Id: 29
         Locale: fr
-        Slug: cantabria
         Name: Cantabria
         Introduction: null
         Description: null
     29_nl:
         Id: 29
         Locale: nl
-        Slug: cantabria
         Name: Cantabria
         Introduction: null
         Description: null
     30_de:
         Id: 30
         Locale: de
-        Slug: herault
         Name: Hérault
         Introduction: null
         Description: null
     30_en:
         Id: 30
         Locale: en
-        Slug: herault
         Name: Hérault
         Introduction: null
         Description: null
     30_fr:
         Id: 30
         Locale: fr
-        Slug: herault
         Name: Hérault
         Introduction: null
         Description: null
     30_nl:
         Id: 30
         Locale: nl
-        Slug: herault
         Name: Hérault
         Introduction: null
         Description: null
     31_de:
         Id: 31
         Locale: de
-        Slug: aude
         Name: Aude
         Introduction: null
         Description: null
     31_en:
         Id: 31
         Locale: en
-        Slug: aude
         Name: Aude
         Introduction: null
         Description: null
     31_fr:
         Id: 31
         Locale: fr
-        Slug: aude
         Name: Aude
         Introduction: null
         Description: null
     31_nl:
         Id: 31
         Locale: nl
-        Slug: aude
         Name: Aude
         Introduction: null
         Description: null
     32_de:
         Id: 32
         Locale: de
-        Slug: toscane
         Name: Toscane
         Introduction: null
         Description: null
     32_en:
         Id: 32
         Locale: en
-        Slug: toscane
         Name: Toscane
         Introduction: null
         Description: null
     32_fr:
         Id: 32
         Locale: fr
-        Slug: toscane
         Name: Toscane
         Introduction: null
         Description: null
     32_nl:
         Id: 32
         Locale: nl
-        Slug: toscane
         Name: Toscane
         Introduction: null
         Description: null
     33_de:
         Id: 33
         Locale: de
-        Slug: pas-de-calais
         Name: 'Pas de Calais'
         Introduction: null
         Description: null
     33_en:
         Id: 33
         Locale: en
-        Slug: pas-de-calais
         Name: 'Pas de Calais'
         Introduction: null
         Description: null
     33_fr:
         Id: 33
         Locale: fr
-        Slug: pas-de-calais
         Name: 'Pas de Calais'
         Introduction: null
         Description: null
     33_nl:
         Id: 33
         Locale: nl
-        Slug: pas-de-calais
         Name: 'Pas de Calais'
         Introduction: null
         Description: null
     34_de:
         Id: 34
         Locale: de
-        Slug: ile-de-france
         Name: 'Ile de France'
         Introduction: null
         Description: null
     34_en:
         Id: 34
         Locale: en
-        Slug: ile-de-france
         Name: 'Ile de France'
         Introduction: null
         Description: null
     34_fr:
         Id: 34
         Locale: fr
-        Slug: ile-de-france
         Name: 'Ile de France'
         Introduction: null
         Description: null
     34_nl:
         Id: 34
         Locale: nl
-        Slug: ile-de-france
         Name: 'Ile de France'
         Introduction: null
         Description: null
     35_de:
         Id: 35
         Locale: de
-        Slug: pyrenees-orientales
         Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     35_en:
         Id: 35
         Locale: en
-        Slug: pyrenees-orientales
         Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     35_fr:
         Id: 35
         Locale: fr
-        Slug: pyrenees-orientales
         Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     35_nl:
         Id: 35
         Locale: nl
-        Slug: pyrenees-orientales
         Name: 'Pyrénées Orientales'
         Introduction: null
         Description: null
     36_de:
         Id: 36
         Locale: de
-        Slug: aquitaine
         Name: Aquitaine
         Introduction: null
         Description: null
     36_en:
         Id: 36
         Locale: en
-        Slug: aquitaine
         Name: Aquitaine
         Introduction: null
         Description: null
     36_fr:
         Id: 36
         Locale: fr
-        Slug: aquitaine
         Name: Aquitaine
         Introduction: null
         Description: null
     36_nl:
         Id: 36
         Locale: nl
-        Slug: aquitaine
         Name: Aquitaine
         Introduction: null
         Description: null

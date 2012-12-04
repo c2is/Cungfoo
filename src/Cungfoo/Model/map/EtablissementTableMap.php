@@ -44,7 +44,6 @@ class EtablissementTableMap extends TableMap
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('CODE', 'Code', 'INTEGER', true, null, null);
-        $this->addColumn('SLUG', 'Slug', 'VARCHAR', true, 255, null);
         $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('TITLE', 'Title', 'VARCHAR', false, 255, null);
         $this->addColumn('ADDRESS1', 'Address1', 'VARCHAR', false, 255, null);

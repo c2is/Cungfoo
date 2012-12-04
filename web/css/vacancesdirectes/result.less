@@ -2,16 +2,18 @@
   .nb{display:block;font:bold 45px Arial, sans-serif;}
 }
 .typeAff{float:left;width:143px;height:98px;border-right: 1px solid @colorFushia;padding:11px 0 0 23px;
-  span{font-weight:bold;color:@colorGris2;}
-  button{width:50px;height:50px;border:0;._border-radius(5px);background-color:@colorBgGrisC;
-    &.active{background-color:@colorFushia;}
+  span{font-weight:bold;color:@colorGris2;display:block;padding-right:15px;margin-bottom:5px;}
+  button{width:50px;height:50px;border:0;text-indent:-999em;}
+  #btList{background:url(../../images/vacancesdirectes/common/sprites/switchListMap.png) no-repeat 0 100%;
+      &.active{background-position:0 0;}
   }
-  #btList{}
-  #btMap{}
+  #btMap{background:url(../../images/vacancesdirectes/common/sprites/switchListMap.png) no-repeat 100% 0;
+      &.active{background-position:100% 100%}
+  }
 }
 #widgetRange{float:left;width:326px;margin:10px 0 0 22px;padding:10px;background:@colorBgGrisC;._border-radius(5px);font:bold 15px Arial;color:#575757;height:82px;
   #noUiSlider{width:288px;margin:10px 6px;color:@colorFushia;background:#bcb9b9;padding:0 10px;}
-  .noUi-handle{cursor:pointer;
+  .noUi-handle{cursor:pointer;z-index:1 !important;
     &:first-child .rangeBox{left:-14px;}
     &:last-child .rangeBox{left:-34px;}
   }
@@ -53,7 +55,9 @@
     span.bt{clear:both;display:block;margin-top:15px;font-weight:normal;line-height:1em;cursor:pointer;}
   }
   .itemResultPopDest{position:absolute;left:100%;padding-left:20px;z-index:9;top:-4px;
-    > div{width:300px;background-color:@colorBgGrisF;._border-radius(10px);padding:10px 30px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:50% 70px;text-align:center;color:@colorBlanc;}
+    > div{width:300px;background-color:@colorBgGrisF;._border-radius(10px);padding:10px 30px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:50% 70px;text-align:center;color:@colorBlanc;
+      &:before{content:'';left:-15px;border:solid transparent;height:0;width:0;position:absolute;pointer-events:none;border-right-color:@colorBgGrisF;border-width:18px;top:128px;}
+    }
     h3{margin-bottom:10px;color:@colorBlanc;font:21px/21px @ptnarrow;}
     h4{font-weight:normal;color:@colorBlanc;text-align:left;}
     p{margin-bottom:27px;text-align:left;}
@@ -71,6 +75,7 @@
     .bt.big{font-weight:bold;margin:20px auto;display:inline-block;padding:7px 15px;}
   }
   .itemResultBottom{min-height:100px;clear:both;background:@colorGris3;padding:20px 10px;position:relative;._border-radius(0 0 15px 15px);
+    [type="radio"]{vertical-align:-2px;}
     .linePrice{
       label{float:left;clear:left;width:345px;}
       .stain{display:none;position:absolute;bottom:5px;left:355px;}
@@ -128,7 +133,7 @@
   .title{color: #666666;font: bold 15px @arial,sans-serif;text-align: center;}
 }
 
-#resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;
+#resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;border:10px solid @colorBgGrisC;._border-radius(8px);margin:10px 0;
   ._transition(opacity .5s);
 }
 #resultMap.active{opacity:1;position:relative !important;top:0;left:0;}

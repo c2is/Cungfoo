@@ -2182,7 +2182,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2294,30 +2294,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
 
         /**
-         * Get the [slug] column value.
-         *
-         * @return string
-         */
-        public function getSlug()
-        {
-        return $this->getCurrentTranslation()->getSlug();
-    }
-
-
-        /**
-         * Set the value of [slug] column.
-         *
-         * @param string $v new value
-         * @return RegionI18n The current object (for fluent API support)
-         */
-        public function setSlug($v)
-        {    $this->getCurrentTranslation()->setSlug($v);
-
-        return $this;
-    }
-
-
-        /**
          * Get the [name] column value.
          *
          * @return string
@@ -2389,7 +2365,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2404,40 +2380,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {
             $this->resetModified(RegionPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         if (!$form['image_encart_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
         }
-    
+
         $this->uploadImageEncartPath($form);
-        
+
         if (!$form['image_encart_petite_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
         }
-    
+
         $this->uploadImageEncartPetitePath($form);
-        
+
         if (!$form['image_detail_1_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_1);
         }
-    
+
         $this->uploadImageDetail1($form);
-        
+
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_2);
         }
-    
+
         $this->uploadImageDetail2($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2445,7 +2421,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return 'uploads/regions';
     }
-    
+
     /**
      * @return string
      */
@@ -2453,7 +2429,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2467,7 +2443,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImagePath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2481,7 +2457,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2495,7 +2471,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageEncartPetitePath($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2509,7 +2485,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->setImageDetail1($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

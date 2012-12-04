@@ -45,7 +45,7 @@ class CouloirController implements ControllerProviderInterface
         ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
 
-        $controllers->match('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+        $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
             $query = array(
                 "specificFiles"     => 'couloir',
                 "base_id"           => 'vacancesdirectes_preprod_v6_6',
@@ -66,24 +66,6 @@ class CouloirController implements ControllerProviderInterface
         })
         ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
-
-        $controllers->get('/confirmation', function (Request $request) use ($app) {
-            $query = array(
-                "specificFiles"     => 'couloir',
-                "base_id"           => 'vacancesdirectes_preprod_v6_6',
-                "webuser"           => 'web_fr',
-                "tokens"            => 'ignore_token',
-                "display"           => 'cart_payment',
-                "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
-            );
-
-            $query = array_merge($query, $request->request->all());
-
-            return $app['twig']->render('Couloir\detail-sejour.twig', array(
-                'query' => $query,
-            ));
-        })
-        ->bind('couloir_confirmation');
 
         return $controllers;
     }

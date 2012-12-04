@@ -20,7 +20,6 @@ class BaseEtablissementListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('slug'));
         $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('title'));
         $this->addColumn(new Column\TextColumn('address1'));
