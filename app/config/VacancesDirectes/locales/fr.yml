@@ -4,11 +4,15 @@ seo:
         pays: "Camping %pays% pas cher | Vacances Directes"
         region: "Location mobil home %region% pas cher, camping %region%"
         camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+        dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
+        dispo: "Résultat de recherche location camping, mobil home"
     meta:
         default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
         region: "Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping)."
         camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances Directes."
+        dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières disponibilités en camping proposées par Vacances Directes et réserver en ligne."
+        dispo: "Listing - Campings"
 
 pays.france: France
 pays.espagne: Espagne
@@ -19,6 +23,13 @@ destination.mediterranee: Méditerannée
 destination.atlantique: Atlantique
 destination.montagne: Montagne
 destination.campagne: Campagne
+destination.images_pays_title: Le pays en image
+destination.images_region_title: La région en image
+destination.images_ville_title: La ville en image
+destination.retour_bottom: Retour à la liste
+
+listing_destination.campings_map_title: Campings Vacances Directes
+listing_destination.campings_map_prefixe_subtitle: en
 
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
