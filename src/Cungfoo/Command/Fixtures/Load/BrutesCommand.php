@@ -143,7 +143,7 @@ class BrutesCommand extends BaseCommand
         }
 
         $region
-            ->setImagePath(sprintf('uploads/multimedia_etablissements/%s.jpg', $img))
+            ->setImagePath(sprintf('uploads/multimedia_etablissements/%s', $img))
             ->save()
         ;
     }
