@@ -23,6 +23,13 @@ destination.mediterranee: Méditerannée
 destination.atlantique: Atlantique
 destination.montagne: Montagne
 destination.campagne: Campagne
+destination.images_pays_title: Le pays en image
+destination.images_region_title: La région en image
+destination.images_ville_title: La ville en image
+destination.retour_bottom: Retour à la liste
+
+listing_destination.campings_map_title: Campings Vacances Directes
+listing_destination.campings_map_prefixe_subtitle: en
 
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
