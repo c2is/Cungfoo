@@ -1421,6 +1421,9 @@ function initializeAllGmap() {
     if ($('#resultMap').length) {
         resultInit();
     }
+    if ($('#destiMap').length) {
+        destiInit();
+    }
     if ($('#homeMap').length) {
         homeInit();
     }
