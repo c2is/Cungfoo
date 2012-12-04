@@ -37,22 +37,19 @@ abstract class BasePaysI18nPeer
     const TM_CLASS = 'PaysI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the ID field */
     const ID = 'pays_i18n.ID';
 
     /** the column name for the LOCALE field */
     const LOCALE = 'pays_i18n.LOCALE';
-
-    /** the column name for the SLUG field */
-    const SLUG = 'pays_i18n.SLUG';
 
     /** the column name for the NAME field */
     const NAME = 'pays_i18n.NAME';
@@ -82,12 +79,12 @@ abstract class BasePaysI18nPeer
      * e.g. PaysI18nPeer::$fieldNames[PaysI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Introduction', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', ),
-        BasePeer::TYPE_COLNAME => array (PaysI18nPeer::ID, PaysI18nPeer::LOCALE, PaysI18nPeer::SLUG, PaysI18nPeer::NAME, PaysI18nPeer::INTRODUCTION, PaysI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'INTRODUCTION', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Introduction', 'Description', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'introduction', 'description', ),
+        BasePeer::TYPE_COLNAME => array (PaysI18nPeer::ID, PaysI18nPeer::LOCALE, PaysI18nPeer::NAME, PaysI18nPeer::INTRODUCTION, PaysI18nPeer::DESCRIPTION, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'INTRODUCTION', 'DESCRIPTION', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'introduction', 'description', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -97,12 +94,12 @@ abstract class BasePaysI18nPeer
      * e.g. PaysI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Introduction' => 4, 'Description' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_COLNAME => array (PaysI18nPeer::ID => 0, PaysI18nPeer::LOCALE => 1, PaysI18nPeer::SLUG => 2, PaysI18nPeer::NAME => 3, PaysI18nPeer::INTRODUCTION => 4, PaysI18nPeer::DESCRIPTION => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Introduction' => 3, 'Description' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'introduction' => 3, 'description' => 4, ),
+        BasePeer::TYPE_COLNAME => array (PaysI18nPeer::ID => 0, PaysI18nPeer::LOCALE => 1, PaysI18nPeer::NAME => 2, PaysI18nPeer::INTRODUCTION => 3, PaysI18nPeer::DESCRIPTION => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'INTRODUCTION' => 3, 'DESCRIPTION' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'introduction' => 3, 'description' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -178,14 +175,12 @@ abstract class BasePaysI18nPeer
         if (null === $alias) {
             $criteria->addSelectColumn(PaysI18nPeer::ID);
             $criteria->addSelectColumn(PaysI18nPeer::LOCALE);
-            $criteria->addSelectColumn(PaysI18nPeer::SLUG);
             $criteria->addSelectColumn(PaysI18nPeer::NAME);
             $criteria->addSelectColumn(PaysI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(PaysI18nPeer::DESCRIPTION);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.INTRODUCTION');
             $criteria->addSelectColumn($alias . '.DESCRIPTION');

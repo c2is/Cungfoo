@@ -49,7 +49,6 @@ use Cungfoo\Model\Ville;
  *
  * @method EtablissementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EtablissementQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method EtablissementQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method EtablissementQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EtablissementQuery orderByTitle($order = Criteria::ASC) Order by the title column
  * @method EtablissementQuery orderByAddress1($order = Criteria::ASC) Order by the address1 column
@@ -79,7 +78,6 @@ use Cungfoo\Model\Ville;
  *
  * @method EtablissementQuery groupById() Group by the id column
  * @method EtablissementQuery groupByCode() Group by the code column
- * @method EtablissementQuery groupBySlug() Group by the slug column
  * @method EtablissementQuery groupByName() Group by the name column
  * @method EtablissementQuery groupByTitle() Group by the title column
  * @method EtablissementQuery groupByAddress1() Group by the address1 column
@@ -179,7 +177,6 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneOrCreate(PropelPDO $con = null) Return the first Etablissement matching the query, or a new Etablissement object populated from the query conditions when no match is found
  *
  * @method Etablissement findOneByCode(int $code) Return the first Etablissement filtered by the code column
- * @method Etablissement findOneBySlug(string $slug) Return the first Etablissement filtered by the slug column
  * @method Etablissement findOneByName(string $name) Return the first Etablissement filtered by the name column
  * @method Etablissement findOneByTitle(string $title) Return the first Etablissement filtered by the title column
  * @method Etablissement findOneByAddress1(string $address1) Return the first Etablissement filtered by the address1 column
@@ -209,7 +206,6 @@ use Cungfoo\Model\Ville;
  *
  * @method array findById(int $id) Return Etablissement objects filtered by the id column
  * @method array findByCode(int $code) Return Etablissement objects filtered by the code column
- * @method array findBySlug(string $slug) Return Etablissement objects filtered by the slug column
  * @method array findByName(string $name) Return Etablissement objects filtered by the name column
  * @method array findByTitle(string $title) Return Etablissement objects filtered by the title column
  * @method array findByAddress1(string $address1) Return Etablissement objects filtered by the address1 column
@@ -339,7 +335,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `SLUG`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `CODE`, `NAME`, `TITLE`, `ADDRESS1`, `ADDRESS2`, `ZIP`, `CITY`, `MAIL`, `COUNTRY_CODE`, `PHONE1`, `PHONE2`, `FAX`, `OPENING_DATE`, `CLOSING_DATE`, `VILLE_ID`, `CATEGORIE_ID`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `VIDEO_PATH`, `IMAGE_360_PATH`, `CAPACITE`, `PLAN_PATH`, `VIGNETTE`, `PUBLISHED`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `etablissement` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -494,35 +490,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::CODE, $code, $comparison);
-    }
-
-    /**
-     * Filter the query on the slug column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
-     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $slug The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterBySlug($slug = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($slug)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $slug)) {
-                $slug = str_replace('*', '%', $slug);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::SLUG, $slug, $comparison);
     }
 
     /**

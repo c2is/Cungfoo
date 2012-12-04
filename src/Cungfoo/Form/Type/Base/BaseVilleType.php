@@ -83,14 +83,6 @@ class BaseVilleType extends AppAwareType
             ),
             'label' => 'ville.villeI18ns',
             'columns' => array(
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'ville.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
                 'name' => array(
                     'required' => false,
                     'label' => 'ville.name',

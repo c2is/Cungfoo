@@ -17,6 +17,9 @@
     <!--<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>-->
 
     <script src="../web/vendor/head.extended.js"></script>
-    <script>var templatePath = '../web/';</script><!-- templatePath : chemin du template en absolue -->
+    <script>
+        var templatePath = '../web/';<!-- templatePath : chemin du template en absolue -->
+        var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
+    </script>
 </head>
 <body <?php if($page !=''){ echo 'class="'.$page.'"'; } ?> >
