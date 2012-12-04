@@ -1,22 +1,6 @@
 <div id="destinations" class="subnav">
     <div class="clear">
         <div class="left ratio-33">
-            <div class="radiusBox greyC">
-                <div class="title">Tous nos campings</div>
-                <div id="campingsList-nav" class="stamp fushia"></div>
-                <div id="campingsList-search"></div>
-                <ol id="campingsList">
-                    {% for letter, etabs in etabByAlphabeticalOrder %}
-                        <li class="letter-first">{{ letter }}</li>
-                        {% for etab in etabs %}
-                            <li><a class="letter-{{ letter }}" href="{{ path('camping', {'idResalys': etab.Code}) }}">{{ etab.Name }}</a></li>
-                        {% endfor %}
-                        <li class="letter-last"></li>
-                    {% endfor %}
-                </ol>
-            </div>
-        </div>
-        <div class="left ratio-33">
             <div class="radiusBox2 greyC bgImg">
                 <div class="view">
                     <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/france.jpg') }}" alt="" />
@@ -74,6 +58,20 @@
                         {% endfor %}
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="left ratio-33">
+            <div class="radiusBox greyC">
+                <div class="title">Tous nos campings</div>
+                <ol id="campingsList">
+                    {% for letter, etabs in etabByAlphabeticalOrder %}
+                        <li class="letter-first">{{ letter }}</li>
+                        {% for etab in etabs %}
+                            <li><a class="letter-{{ letter }}" href="{{ path('camping', {'idResalys': etab.Code}) }}">- {{ etab.Name }}</a></li>
+                        {% endfor %}
+                        <li class="letter-last"></li>
+                    {% endfor %}
+                </ol>
             </div>
         </div>
     </div>
