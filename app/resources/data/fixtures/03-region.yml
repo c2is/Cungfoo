@@ -318,7 +318,7 @@
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
-        Active: true
+        Active: false
     33:
         Code: PASD
         ImagePath: uploads/regions/pas-de-calais.jpg
@@ -338,7 +338,7 @@
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
-        Active: true
+        Active: false
     35:
         Code: PYRO
         ImagePath: uploads/regions/pyrenees-oriental.jpg
@@ -348,7 +348,7 @@
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null
-        Active: true
+        Active: false
     36:
         Code: AQUI
         ImagePath: uploads/regions/aquitaine.jpg
