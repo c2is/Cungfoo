@@ -34,26 +34,34 @@ $(function() {
     if($('#datepicker').length){
         var d = new Date(),
             thisYear = d.getFullYear(),
-            birthdayYear = thisYear-18;
+            thisMonth = d.getMonth()+1,
+            thisDay = d.getDate(),
+            fThisMonth = ((''+thisMonth).length<2 ? '0' : '') + thisMonth,
+            fThisDay = ((''+thisDay).length<2 ? '0' : '') + thisDay,
+            birthdayDate = fThisDay + '/' + fThisMonth + '/' + thisYear;
 
-        $('#datepicker').DatePicker({
-            flat: true,
-            format:'Y/m/d',
-            date: $('#inputDate').val(),
-            current: birthdayYear,
+        console.log(birthdayDate);
+
+        $('#reservation_content_date_creation').DatePicker({
+            flat: false,
+            format:'d/m/Y',
+//            date: $('#inputDate').val(),
+            date: '',
+            current: birthdayDate,
             calendars: 1,
             starts: 1,
             view: 'years',
-            position: 'bottom',
-            onBeforeShow: function(){
-                $('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
-            },
+//            onBeforeShow: function(){
+//                $('#reservation_content_date_creation').DatePickerSetDate($('#reservation_content_date_creation').val(), true);
+//            },
             onChange: function(formated, dates){
-                $('#inputDate').val(formated);
-                if ($('#closeOnSelect input').attr('checked')) {
-                    $('#inputDate').DatePickerHide();
+                console.log(formated)
+                if(!isNaN(formated.split('/').join(''))){
+                    $('#reservation_content_date_creation').val(formated);
+                    $('#reservation_content_date_creation').DatePickerHide();
                 }
             }
+
         });
     }
 
