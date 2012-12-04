@@ -1497,6 +1497,7 @@ function initCritResult(){
 
 //launcher des filtres
 function launchFilters() {
+    openCrit();
     items.attr('data-filtered', false);
 
     //init du nombre de resultats
@@ -1524,6 +1525,11 @@ function launchFilters() {
 
     //Pagination de la liste de resultats
     listPagination();
+}
+function openCrit() {
+    $('.formSearchRefined .sectionTitle').click(function() {
+        $(this).toggleClass('open').next('fieldset').fadeToggle();
+    });
 }
 
 //attribution min/max prix pour le range slider
