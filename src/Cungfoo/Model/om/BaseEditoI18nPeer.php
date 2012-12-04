@@ -37,22 +37,19 @@ abstract class BaseEditoI18nPeer
     const TM_CLASS = 'EditoI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the ID field */
     const ID = 'edito_i18n.ID';
 
     /** the column name for the LOCALE field */
     const LOCALE = 'edito_i18n.LOCALE';
-
-    /** the column name for the SLUG field */
-    const SLUG = 'edito_i18n.SLUG';
 
     /** the column name for the NAME field */
     const NAME = 'edito_i18n.NAME';
@@ -79,12 +76,12 @@ abstract class BaseEditoI18nPeer
      * e.g. EditoI18nPeer::$fieldNames[EditoI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'description', ),
-        BasePeer::TYPE_COLNAME => array (EditoI18nPeer::ID, EditoI18nPeer::LOCALE, EditoI18nPeer::SLUG, EditoI18nPeer::NAME, EditoI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', ),
+        BasePeer::TYPE_COLNAME => array (EditoI18nPeer::ID, EditoI18nPeer::LOCALE, EditoI18nPeer::NAME, EditoI18nPeer::DESCRIPTION, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -94,12 +91,12 @@ abstract class BaseEditoI18nPeer
      * e.g. EditoI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Description' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'description' => 4, ),
-        BasePeer::TYPE_COLNAME => array (EditoI18nPeer::ID => 0, EditoI18nPeer::LOCALE => 1, EditoI18nPeer::SLUG => 2, EditoI18nPeer::NAME => 3, EditoI18nPeer::DESCRIPTION => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'DESCRIPTION' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'description' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
+        BasePeer::TYPE_COLNAME => array (EditoI18nPeer::ID => 0, EditoI18nPeer::LOCALE => 1, EditoI18nPeer::NAME => 2, EditoI18nPeer::DESCRIPTION => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -175,13 +172,11 @@ abstract class BaseEditoI18nPeer
         if (null === $alias) {
             $criteria->addSelectColumn(EditoI18nPeer::ID);
             $criteria->addSelectColumn(EditoI18nPeer::LOCALE);
-            $criteria->addSelectColumn(EditoI18nPeer::SLUG);
             $criteria->addSelectColumn(EditoI18nPeer::NAME);
             $criteria->addSelectColumn(EditoI18nPeer::DESCRIPTION);
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.DESCRIPTION');
         }

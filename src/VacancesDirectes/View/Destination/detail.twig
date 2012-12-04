@@ -1,5 +1,25 @@
 {% extends "Destination/base.twig" %}
 
+{% block title %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.title.region" | trans ({'%region%': item}) }}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.title.pays" | trans ({'%pays%': item}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.meta.pays" | trans  ({'%pays%': item})}}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
@@ -12,11 +32,9 @@
     </ol>
 
     {# Bloc titre + accroche + picto #}
-    {{ item.imagePath }}
-    {% if item.imagePath %}
-    <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}" /> {# Picto région #}
+    {% if item['imagePath'] is defined %}
+        <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}"> {# Picto région #}
     {% endif %}
-
     <h1>{{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }}</h1> {# Titre #}
     <h2>{{ item.introduction }}</h2> {# Accroche #}
     <p>{{ item.description }}</p> {# Description #}
@@ -106,7 +124,26 @@
     {# Bloc GMap #}
     {{ "listing_destination.campings_map_title" | trans }}
     {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}
-    {% include 'Listing/_gmap.twig' %}
+    <div id="destiMap" class="gmap" style="width:616px;height:573px;">
+        <script>
+            function destiInit() {
+                var destiMkrs = [
+                    //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                    {% for etab in list.element %}
+                        ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
+                    {% endfor %}
+                ];
+                var centerDestiMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
+                        mapOptions = {
+                            zoom: 6,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            center: centerDestiMkr
+                        };
+                destiMap = new google.maps.Map(document.getElementById('destiMap'), mapOptions);
+                setMarkers(destiMap, destiMkrs);
+            }
+        </script>
+    </div>
 
 
     {# Photos #}

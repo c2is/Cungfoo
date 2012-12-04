@@ -1,5 +1,8 @@
 {% extends "base.twig" %}
 
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{% endblock %}
+{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%categorie%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
+
 {% block bodyClass %} fiche{% endblock %}
 
 {% block leftColumn %}
