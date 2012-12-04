@@ -225,7 +225,7 @@ input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:2
 textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
 .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
 h4{font-size:15px;line-height:17px;}
-
+.bold{font-weight:bold;}
 
 #reservationContener{
   h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
@@ -233,117 +233,163 @@ h4{font-size:15px;line-height:17px;}
   table{width:100%}
 
   // step 1
-  #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
-    h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
-    &>div{background-color:@colorBgGrisC;color:@colorGris2;
-      &>div{padding:10px;clear:both;}
-      .whiteBg{background-color:@colorBgBlanc;
-        .aField,
-        .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;
-          .field,
-          input[type="radio"]:checked + label{ font-weight: bold; }
+  &.detail{
+    #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
+      h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
+      &>div{background-color:@colorBgGrisC;color:@colorGris2;
+        &>div{padding:10px;clear:both;}
+        .whiteBg{background-color:@colorBgBlanc;
+          .aField,
+          .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;
+            .field,
+            input[type="radio"]:checked + label{ font-weight: bold; }
+          }
         }
-      }
-      #existingCustomerLayer,
-      #newCustomerLayer{
-        .aField{margin-bottom:10px;}
-        .label{margin-right:10px;text-align:right;}
-      }
-      #newCustomerLayer{
-        .label{width:130px;padding-top:3px;}
-        #newAccount{
-          .aField{width:480px;
+        #existingCustomerLayer,
+        #newCustomerLayer{
+          .aField{margin-bottom:10px;}
+          .label{margin-right:10px;text-align:right;}
+        }
+        #newCustomerLayer{
+          .label{width:130px;padding-top:3px;}
+          #newAccount{
+            .aField{width:480px;
+              input{width:320px;}
+            }
+          }
+          #address{
+            td{display:inline-block;margin-bottom:10px;float:left;
+              &:last-child > *{margin-right:0;}
+            }
+            input,textarea,.newListSelected{width:141px;margin-right:15px;}
+            textarea{width:141px;height:81px;}
+          }
+        }
+        #existingCustomerLayer{
+          .aField{width:480px;float:left;
+            .label{width:130px;}
             input{width:320px;}
           }
+          .loginLink{float:right;}
         }
-        #address{
-          td{display:inline-block;margin-bottom:10px;float:left;
-            &:last-child > *{margin-right:0;}
-          }
-          input,textarea,.newListSelected{width:141px;margin-right:15px;}
-          textarea{width:141px;height:81px;}
-        }
-      }
-      #existingCustomerLayer{
-        .aField{width:480px;float:left;
-          .label{width:130px;}
-          input{width:320px;}
-        }
-        .loginLink{float:right;}
       }
     }
-  }
-
-  #reservation{
-    .aRoom{
-      h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
-        small{font:bold 17px @arial;text-transform:none;}
-      }
-      .price{font:bold 19px/18px @ptnarrow;text-align:right;}
-      .action{text-align:right;}
-      .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
-        &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-        .addAction{position:relative;margin-right:5px;float:right;width:20px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
-      }
-      tr{font-weight:bold;
-        &.productsNotSelectedYet{font-weight:normal;}
-        td{height:30px;vertical-align:middle;
-          .control_checkbox{margin-top:0;}
-          .hiddenIfCheckbox{display:none;}
+    #reservation{
+      .aRoom{
+        h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
+          small{font:bold 17px @arial;text-transform:none;}
         }
-      }
-      .anOccupant{background-color:@colorBlanc;
-        h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;
-          .occupantHeaderLeft{._verticalCenter(27px);
-            small{font:bold 17px @arial;text-transform:none;}
-            &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
+        .price{font:bold 19px/18px @ptnarrow;text-align:right;}
+        .action{text-align:right;}
+        .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
+          &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+          .addAction{position:relative;margin-right:5px;float:right;width:20px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+        }
+        tr{font-weight:bold;
+          &.productsNotSelectedYet{font-weight:normal;}
+          td{height:30px;vertical-align:middle;
+            .control_checkbox{margin-top:0;}
+            .hiddenIfCheckbox{display:none;}
           }
         }
-        .occupantFields{padding:10px 5px;
-          &>*{margin:0 5px 10px;}
-          input{border:1px solid @colorBorderGris;}
-          .control_text{width:150px;}
-          .control_date{width:120px;}
-          #date_sRowID_link{right:0 !important;}
+        .anOccupant{background-color:@colorBlanc;
+          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;
+            .occupantHeaderLeft{._verticalCenter(27px);
+              small{font:bold 17px @arial;text-transform:none;}
+              &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
+            }
+          }
+          .occupantFields{padding:10px 5px;
+            &>*{margin:0 5px 10px;}
+            input{border:1px solid @colorBorderGris;}
+            .control_text{width:150px;}
+            .control_date{width:120px;}
+            #date_sRowID_link{right:0 !important;}
+          }
+          h4{display:none;}
         }
-        h4{display:none;}
       }
-    }
-    #financialContener{
-      input{border:1px solid @colorBorderGris;}
-      .field{margin-bottom:10px;
-        .newListSelected{float:none;
-          .selectedTxt{border: 1px solid @colorBorderGris;}
+      #financialContener{
+        input{border:1px solid @colorBorderGris;}
+        .field{margin-bottom:10px;
+          .newListSelected{float:none;
+            .selectedTxt{border: 1px solid @colorBorderGris;}
+          }
         }
       }
     }
   }
 
   // step 2
-  #option{
-    h2 + p{font-weight:bold;}
-    .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
-    .field textarea{width:423px;height:54px;}
-    .criteria{margin-bottom:10px;clear:both;
-      .label{float:left;._verticalCenter(27px);}
-      input{width:125px;}
+  &.summary{
+    #option{
+      h2 + p{font-weight:bold;}
+      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+      .field textarea{width:423px;height:54px;}
+      .criteria{margin-bottom:10px;clear:both;
+        .label{float:left;._verticalCenter(27px);}
+        input{width:125px;}
+      }
+      select[name="stat_ORIG_combo"] + .newListSelected{
+        .SSContainerDivWrapper{min-width:146px;}
+      }
+      .aField{
+        input[type="checkbox"]{margin-top:1px;}
+        label{font-style:italic;font-weight:bold;
+          a{color:@colorFushia;}
+        }
+      }
     }
-    select[name="stat_ORIG_combo"] + .newListSelected{
-      .SSContainerDivWrapper{min-width:146px;}
-    }
-    .aField{
-      input[type="checkbox"]{margin-top:1px;}
-      label{font-style:italic;font-weight:bold;
-        a{color:@colorFushia;}
+    #paiement{
+      table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+        td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+          &:nth-child(1){font-weight:bold;}
+          &.amount{width:125px;text-align:right;}
+        }
       }
     }
   }
-  #paiement{
-    table{display:block;background-color:@colorBgBlanc;margin:10px 0;
-      th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
-      td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
-        &:nth-child(1){font-weight:bold;}
-        &.amount{width:125px;text-align:right;}
+
+  // step 3
+  /* --> payment.css */
+
+  // step 4
+  &.confirmation{
+    #authentication,
+    #occupant{font-weight:bold;
+      td{color:@colorGris0;
+        &.label{color:inherit;text-transform:inherit;font:inherit;}
+      }
+      #address,
+      #occupant_address{
+        margin:10px 0;
+      }
+    }
+    #option{font-weight:bold;
+      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+      .field{color:@colorGris2;}
+      .criteria{margin-bottom:10px;clear:both;
+        .label{float:left;._verticalCenter(27px);}
+        input{width:125px;}
+      }
+      select[name="stat_ORIG_combo"] + .newListSelected{
+        .SSContainerDivWrapper{min-width:146px;}
+      }
+      .aField{
+        input[type="checkbox"]{margin-top:1px;}
+        label{font-style:italic;font-weight:bold;
+          a{color:@colorFushia;}
+        }
+      }
+    }
+    #paiement{
+      table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+        td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+          &:nth-child(1){font-weight:bold;}
+          &.amount{width:125px;text-align:right;}
+        }
       }
     }
   }

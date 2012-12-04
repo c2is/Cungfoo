@@ -628,6 +628,13 @@ h4 {
   font-size: 15px;
   line-height: 17px;
 }
+.bold {
+  font-weight: bold;
+}
+#reservationContener {
+  /* --> payment.css */
+
+}
 #reservationContener h2 {
   color: #8c8a8a;
   text-transform: uppercase;
@@ -655,7 +662,7 @@ h4 {
 #reservationContener table {
   width: 100%;
 }
-#reservationContener #authentication {
+#reservationContener.detail #authentication {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 15px 0;
@@ -663,7 +670,7 @@ h4 {
   background-color: #ffffff;
   border: 5px solid #8c8a8a;
 }
-#reservationContener #authentication h2 {
+#reservationContener.detail #authentication h2 {
   background-color: #8c8a8a;
   color: #ffffff;
   text-transform: uppercase;
@@ -678,88 +685,88 @@ h4 {
 
   padding-left: 10px;
 }
-#reservationContener #authentication h2 > * {
+#reservationContener.detail #authentication h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#reservationContener #authentication h2 > img {
+#reservationContener.detail #authentication h2 > img {
   vertical-align: middle;
 }
-#reservationContener #authentication > div {
+#reservationContener.detail #authentication > div {
   background-color: #e6e5e5;
   color: #464545;
 }
-#reservationContener #authentication > div > div {
+#reservationContener.detail #authentication > div > div {
   padding: 10px;
   clear: both;
 }
-#reservationContener #authentication > div .whiteBg {
+#reservationContener.detail #authentication > div .whiteBg {
   background-color: #ffffff;
 }
-#reservationContener #authentication > div .whiteBg .aField,
-#reservationContener #authentication > div .whiteBg .authenticationChoice {
+#reservationContener.detail #authentication > div .whiteBg .aField,
+#reservationContener.detail #authentication > div .whiteBg .authenticationChoice {
   font: normal 12px Arial, Helvetica, sans-serif;
   text-transform: none;
   display: block;
 }
-#reservationContener #authentication > div .whiteBg .aField .field,
-#reservationContener #authentication > div .whiteBg .authenticationChoice .field,
-#reservationContener #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
-#reservationContener #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
+#reservationContener.detail #authentication > div .whiteBg .aField .field,
+#reservationContener.detail #authentication > div .whiteBg .authenticationChoice .field,
+#reservationContener.detail #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#reservationContener.detail #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
   font-weight: bold;
 }
-#reservationContener #authentication > div #existingCustomerLayer .aField,
-#reservationContener #authentication > div #newCustomerLayer .aField {
+#reservationContener.detail #authentication > div #existingCustomerLayer .aField,
+#reservationContener.detail #authentication > div #newCustomerLayer .aField {
   margin-bottom: 10px;
 }
-#reservationContener #authentication > div #existingCustomerLayer .label,
-#reservationContener #authentication > div #newCustomerLayer .label {
+#reservationContener.detail #authentication > div #existingCustomerLayer .label,
+#reservationContener.detail #authentication > div #newCustomerLayer .label {
   margin-right: 10px;
   text-align: right;
 }
-#reservationContener #authentication > div #newCustomerLayer .label {
+#reservationContener.detail #authentication > div #newCustomerLayer .label {
   width: 130px;
   padding-top: 3px;
 }
-#reservationContener #authentication > div #newCustomerLayer #newAccount .aField {
+#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField {
   width: 480px;
 }
-#reservationContener #authentication > div #newCustomerLayer #newAccount .aField input {
+#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input {
   width: 320px;
 }
-#reservationContener #authentication > div #newCustomerLayer #address td {
+#reservationContener.detail #authentication > div #newCustomerLayer #address td {
   display: inline-block;
   margin-bottom: 10px;
   float: left;
 }
-#reservationContener #authentication > div #newCustomerLayer #address td:last-child > * {
+#reservationContener.detail #authentication > div #newCustomerLayer #address td:last-child > * {
   margin-right: 0;
 }
-#reservationContener #authentication > div #newCustomerLayer #address input,
-#reservationContener #authentication > div #newCustomerLayer #address textarea,
-#reservationContener #authentication > div #newCustomerLayer #address .newListSelected {
+#reservationContener.detail #authentication > div #newCustomerLayer #address input,
+#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
+#reservationContener.detail #authentication > div #newCustomerLayer #address .newListSelected {
   width: 141px;
   margin-right: 15px;
 }
-#reservationContener #authentication > div #newCustomerLayer #address textarea {
+#reservationContener.detail #authentication > div #newCustomerLayer #address textarea {
   width: 141px;
   height: 81px;
 }
-#reservationContener #authentication > div #existingCustomerLayer .aField {
+#reservationContener.detail #authentication > div #existingCustomerLayer .aField {
   width: 480px;
   float: left;
 }
-#reservationContener #authentication > div #existingCustomerLayer .aField .label {
+#reservationContener.detail #authentication > div #existingCustomerLayer .aField .label {
   width: 130px;
 }
-#reservationContener #authentication > div #existingCustomerLayer .aField input {
+#reservationContener.detail #authentication > div #existingCustomerLayer .aField input {
   width: 320px;
 }
-#reservationContener #authentication > div #existingCustomerLayer .loginLink {
+#reservationContener.detail #authentication > div #existingCustomerLayer .loginLink {
   float: right;
 }
-#reservationContener #reservation .aRoom h2 {
+#reservationContener.detail #reservation .aRoom h2 {
   color: #8c8a8a;
   text-transform: uppercase;
   font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -772,33 +779,33 @@ h4 {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener #reservation .aRoom h2 > * {
+#reservationContener.detail #reservation .aRoom h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#reservationContener #reservation .aRoom h2 > img {
+#reservationContener.detail #reservation .aRoom h2 > img {
   vertical-align: middle;
 }
-#reservationContener #reservation .aRoom h2 small {
+#reservationContener.detail #reservation .aRoom h2 small {
   font: bold 17px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#reservationContener #reservation .aRoom .price {
+#reservationContener.detail #reservation .aRoom .price {
   font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-align: right;
 }
-#reservationContener #reservation .aRoom .action {
+#reservationContener.detail #reservation .aRoom .action {
   text-align: right;
 }
-#reservationContener #reservation .aRoom .changeOccupantCount {
+#reservationContener.detail #reservation .aRoom .changeOccupantCount {
   height: auto;
   background-color: #464545;
   padding: 10px 5px 0;
   margin-bottom: 15px;
   position: relative;
 }
-#reservationContener #reservation .aRoom .changeOccupantCount > span {
+#reservationContener.detail #reservation .aRoom .changeOccupantCount > span {
   margin: 0 5px 10px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -813,15 +820,15 @@ h4 {
   text-transform: uppercase;
   display: inline-block;
 }
-#reservationContener #reservation .aRoom .changeOccupantCount > span > * {
+#reservationContener.detail #reservation .aRoom .changeOccupantCount > span > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#reservationContener #reservation .aRoom .changeOccupantCount > span > img {
+#reservationContener.detail #reservation .aRoom .changeOccupantCount > span > img {
   vertical-align: middle;
 }
-#reservationContener #reservation .aRoom .changeOccupantCount .addAction {
+#reservationContener.detail #reservation .aRoom .changeOccupantCount .addAction {
   position: relative;
   margin-right: 5px;
   float: right;
@@ -830,32 +837,32 @@ h4 {
   text-indent: -9999px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;
 }
-#reservationContener #reservation .aRoom tr {
+#reservationContener.detail #reservation .aRoom tr {
   font-weight: bold;
 }
-#reservationContener #reservation .aRoom tr.productsNotSelectedYet {
+#reservationContener.detail #reservation .aRoom tr.productsNotSelectedYet {
   font-weight: normal;
 }
-#reservationContener #reservation .aRoom tr td {
+#reservationContener.detail #reservation .aRoom tr td {
   height: 30px;
   vertical-align: middle;
 }
-#reservationContener #reservation .aRoom tr td .control_checkbox {
+#reservationContener.detail #reservation .aRoom tr td .control_checkbox {
   margin-top: 0;
 }
-#reservationContener #reservation .aRoom tr td .hiddenIfCheckbox {
+#reservationContener.detail #reservation .aRoom tr td .hiddenIfCheckbox {
   display: none;
 }
-#reservationContener #reservation .aRoom .anOccupant {
+#reservationContener.detail #reservation .aRoom .anOccupant {
   background-color: #ffffff;
 }
-#reservationContener #reservation .aRoom .anOccupant h3 {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 {
   background-image: none !important;
   background-color: #ed145b;
   color: #ffffff;
   padding: 5px 0;
 }
-#reservationContener #reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -865,19 +872,19 @@ h4 {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > * {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#reservationContener #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img {
   vertical-align: middle;
 }
-#reservationContener #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small {
   font: bold 17px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#reservationContener #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before {
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before {
   content: "";
   width: 27px;
   height: 27px;
@@ -885,58 +892,58 @@ h4 {
   float: left;
   margin: 0 10px;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields {
   padding: 10px 5px;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields > * {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields > * {
   margin: 0 5px 10px;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields input {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields input {
   border: 1px solid #c6c5c5;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields .control_text {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields .control_text {
   width: 150px;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields .control_date {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields .control_date {
   width: 120px;
 }
-#reservationContener #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link {
+#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link {
   right: 0 !important;
 }
-#reservationContener #reservation .aRoom .anOccupant h4 {
+#reservationContener.detail #reservation .aRoom .anOccupant h4 {
   display: none;
 }
-#reservationContener #reservation #financialContener input {
+#reservationContener.detail #reservation #financialContener input {
   border: 1px solid #c6c5c5;
 }
-#reservationContener #reservation #financialContener .field {
+#reservationContener.detail #reservation #financialContener .field {
   margin-bottom: 10px;
 }
-#reservationContener #reservation #financialContener .field .newListSelected {
+#reservationContener.detail #reservation #financialContener .field .newListSelected {
   float: none;
 }
-#reservationContener #reservation #financialContener .field .newListSelected .selectedTxt {
+#reservationContener.detail #reservation #financialContener .field .newListSelected .selectedTxt {
   border: 1px solid #c6c5c5;
 }
-#reservationContener #option h2 + p {
+#reservationContener.summary #option h2 + p {
   font-weight: bold;
 }
-#reservationContener #option .label {
+#reservationContener.summary #option .label {
   vertical-align: top;
   font: inherit;
   color: inherit;
   text-transform: inherit;
   margin-right: 5px;
 }
-#reservationContener #option .field textarea {
+#reservationContener.summary #option .field textarea {
   width: 423px;
   height: 54px;
 }
-#reservationContener #option .criteria {
+#reservationContener.summary #option .criteria {
   margin-bottom: 10px;
   clear: both;
 }
-#reservationContener #option .criteria .label {
+#reservationContener.summary #option .criteria .label {
   float: left;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -947,52 +954,149 @@ h4 {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener #option .criteria .label > * {
+#reservationContener.summary #option .criteria .label > * {
   vertical-align: middle;
   display: inline-block;
   line-height: auto;
 }
-#reservationContener #option .criteria .label > img {
+#reservationContener.summary #option .criteria .label > img {
   vertical-align: middle;
 }
-#reservationContener #option .criteria input {
+#reservationContener.summary #option .criteria input {
   width: 125px;
 }
-#reservationContener #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
+#reservationContener.summary #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
   min-width: 146px;
 }
-#reservationContener #option .aField input[type="checkbox"] {
+#reservationContener.summary #option .aField input[type="checkbox"] {
   margin-top: 1px;
 }
-#reservationContener #option .aField label {
+#reservationContener.summary #option .aField label {
   font-style: italic;
   font-weight: bold;
 }
-#reservationContener #option .aField label a {
+#reservationContener.summary #option .aField label a {
   color: #ed145b;
 }
-#reservationContener #paiement table {
+#reservationContener.summary #paiement table {
   display: block;
   background-color: #ffffff;
   margin: 10px 0;
 }
-#reservationContener #paiement table th {
+#reservationContener.summary #paiement table th {
   background-color: #464545;
   color: #ffffff;
   padding: 10px;
   text-align: center;
   border: 1px solid #464545;
 }
-#reservationContener #paiement table td {
+#reservationContener.summary #paiement table td {
   margin: 10px 0;
   padding: 10px;
   text-align: left;
   border: 1px solid #464545;
 }
-#reservationContener #paiement table td:nth-child(1) {
+#reservationContener.summary #paiement table td:nth-child(1) {
   font-weight: bold;
 }
-#reservationContener #paiement table td.amount {
+#reservationContener.summary #paiement table td.amount {
+  width: 125px;
+  text-align: right;
+}
+#reservationContener.confirmation #authentication,
+#reservationContener.confirmation #occupant {
+  font-weight: bold;
+}
+#reservationContener.confirmation #authentication td,
+#reservationContener.confirmation #occupant td {
+  color: #8c8a8a;
+}
+#reservationContener.confirmation #authentication td.label,
+#reservationContener.confirmation #occupant td.label {
+  color: inherit;
+  text-transform: inherit;
+  font: inherit;
+}
+#reservationContener.confirmation #authentication #address,
+#reservationContener.confirmation #occupant #address,
+#reservationContener.confirmation #authentication #occupant_address,
+#reservationContener.confirmation #occupant #occupant_address {
+  margin: 10px 0;
+}
+#reservationContener.confirmation #option {
+  font-weight: bold;
+}
+#reservationContener.confirmation #option .label {
+  vertical-align: top;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  margin-right: 5px;
+}
+#reservationContener.confirmation #option .field {
+  color: #464545;
+}
+#reservationContener.confirmation #option .criteria {
+  margin-bottom: 10px;
+  clear: both;
+}
+#reservationContener.confirmation #option .criteria .label {
+  float: left;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#reservationContener.confirmation #option .criteria .label > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: auto;
+}
+#reservationContener.confirmation #option .criteria .label > img {
+  vertical-align: middle;
+}
+#reservationContener.confirmation #option .criteria input {
+  width: 125px;
+}
+#reservationContener.confirmation #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
+  min-width: 146px;
+}
+#reservationContener.confirmation #option .aField input[type="checkbox"] {
+  margin-top: 1px;
+}
+#reservationContener.confirmation #option .aField label {
+  font-style: italic;
+  font-weight: bold;
+}
+#reservationContener.confirmation #option .aField label a {
+  color: #ed145b;
+}
+#reservationContener.confirmation #paiement table {
+  display: block;
+  background-color: #ffffff;
+  margin: 10px 0;
+}
+#reservationContener.confirmation #paiement table th {
+  background-color: #464545;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #464545;
+}
+#reservationContener.confirmation #paiement table td {
+  margin: 10px 0;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #464545;
+}
+#reservationContener.confirmation #paiement table td:nth-child(1) {
+  font-weight: bold;
+}
+#reservationContener.confirmation #paiement table td.amount {
   width: 125px;
   text-align: right;
 }
