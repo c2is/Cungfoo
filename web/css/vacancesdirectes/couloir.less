@@ -283,7 +283,7 @@ h4{font-size:15px;line-height:17px;}
         .action{text-align:right;}
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-          .addAction{position:relative;margin-right:5px;float:right;width:20px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
         }
         tr{font-weight:bold;
           &.productsNotSelectedYet{font-weight:normal;}
@@ -293,11 +293,12 @@ h4{font-size:15px;line-height:17px;}
           }
         }
         .anOccupant{background-color:@colorBlanc;
-          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;
+          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;position:relative;
             .occupantHeaderLeft{._verticalCenter(27px);
               small{font:bold 17px @arial;text-transform:none;}
               &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
             }
+            .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
           .occupantFields{padding:10px 5px;
             &>*{margin:0 5px 10px;}
@@ -404,7 +405,7 @@ h4{font-size:15px;line-height:17px;}
 
   .rsl-date-input,
   .control_date {position:relative;
-    #date_sRowID_link{position:absolute;top:-7px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+    #date_sRowID_link{position:absolute;top:-6px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
       img{display:none;}
     }
   }

@@ -828,11 +828,12 @@ h4 {
 #reservationContener.detail #reservation .aRoom .changeOccupantCount > span > img {
   vertical-align: middle;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount .addAction {
-  position: relative;
-  margin-right: 5px;
-  float: right;
-  width: 20px;
+#reservationContener.detail #reservation .aRoom .changeOccupantCount .addAction a {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 27px;
   height: 27px;
   text-indent: -9999px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;
@@ -861,6 +862,7 @@ h4 {
   background-color: #ed145b;
   color: #ffffff;
   padding: 5px 0;
+  position: relative;
 }
 #reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
   height: 27px;
@@ -889,6 +891,18 @@ h4 {
   width: 27px;
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;
+  float: left;
+  margin: 0 10px;
+}
+#reservationContener.detail #reservation .aRoom .anOccupant h3 .deleteAction a {
+  position: absolute;
+  top: 6px;
+  right: -3px;
+  display: block;
+  text-indent: -9999px;
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;
   float: left;
   margin: 0 10px;
 }
@@ -1128,7 +1142,7 @@ h4 {
 #reservationContener .rsl-date-input #date_sRowID_link,
 #reservationContener .control_date #date_sRowID_link {
   position: absolute;
-  top: -7px;
+  top: -6px;
   right: 15px;
   width: 27px;
   height: 27px;
