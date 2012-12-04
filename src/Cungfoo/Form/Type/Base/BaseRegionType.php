@@ -128,6 +128,14 @@ class BaseRegionType extends AppAwareType
             ),
             'label' => 'region.regionI18ns',
             'columns' => array(
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'region.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
                 'name' => array(
                     'required' => false,
                     'label' => 'region.name',

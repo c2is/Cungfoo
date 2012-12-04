@@ -51,19 +51,22 @@ abstract class BaseEtablissementPeer
     const TM_CLASS = 'EtablissementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 28;
+    const NUM_COLUMNS = 29;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 28;
+    const NUM_HYDRATE_COLUMNS = 29;
 
     /** the column name for the ID field */
     const ID = 'etablissement.ID';
 
     /** the column name for the CODE field */
     const CODE = 'etablissement.CODE';
+
+    /** the column name for the SLUG field */
+    const SLUG = 'etablissement.SLUG';
 
     /** the column name for the NAME field */
     const NAME = 'etablissement.NAME';
@@ -169,12 +172,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[EtablissementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Name', 'Title', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'OpeningDate', 'ClosingDate', 'VilleId', 'CategorieId', 'GeoCoordinateX', 'GeoCoordinateY', 'VideoPath', 'Image360Path', 'Capacite', 'PlanPath', 'Vignette', 'Published', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'openingDate', 'closingDate', 'villeId', 'categorieId', 'geoCoordinateX', 'geoCoordinateY', 'videoPath', 'image360Path', 'capacite', 'planPath', 'vignette', 'published', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::CODE, EtablissementPeer::NAME, EtablissementPeer::TITLE, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::OPENING_DATE, EtablissementPeer::CLOSING_DATE, EtablissementPeer::VILLE_ID, EtablissementPeer::CATEGORIE_ID, EtablissementPeer::GEO_COORDINATE_X, EtablissementPeer::GEO_COORDINATE_Y, EtablissementPeer::VIDEO_PATH, EtablissementPeer::IMAGE_360_PATH, EtablissementPeer::CAPACITE, EtablissementPeer::PLAN_PATH, EtablissementPeer::VIGNETTE, EtablissementPeer::PUBLISHED, EtablissementPeer::CREATED_AT, EtablissementPeer::UPDATED_AT, EtablissementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'NAME', 'TITLE', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'OPENING_DATE', 'CLOSING_DATE', 'VILLE_ID', 'CATEGORIE_ID', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'VIDEO_PATH', 'IMAGE_360_PATH', 'CAPACITE', 'PLAN_PATH', 'VIGNETTE', 'PUBLISHED', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'opening_date', 'closing_date', 'ville_id', 'categorie_id', 'geo_coordinate_x', 'geo_coordinate_y', 'video_path', 'image_360_path', 'capacite', 'plan_path', 'vignette', 'published', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Slug', 'Name', 'Title', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'OpeningDate', 'ClosingDate', 'VilleId', 'CategorieId', 'GeoCoordinateX', 'GeoCoordinateY', 'VideoPath', 'Image360Path', 'Capacite', 'PlanPath', 'Vignette', 'Published', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'openingDate', 'closingDate', 'villeId', 'categorieId', 'geoCoordinateX', 'geoCoordinateY', 'videoPath', 'image360Path', 'capacite', 'planPath', 'vignette', 'published', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::CODE, EtablissementPeer::SLUG, EtablissementPeer::NAME, EtablissementPeer::TITLE, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::OPENING_DATE, EtablissementPeer::CLOSING_DATE, EtablissementPeer::VILLE_ID, EtablissementPeer::CATEGORIE_ID, EtablissementPeer::GEO_COORDINATE_X, EtablissementPeer::GEO_COORDINATE_Y, EtablissementPeer::VIDEO_PATH, EtablissementPeer::IMAGE_360_PATH, EtablissementPeer::CAPACITE, EtablissementPeer::PLAN_PATH, EtablissementPeer::VIGNETTE, EtablissementPeer::PUBLISHED, EtablissementPeer::CREATED_AT, EtablissementPeer::UPDATED_AT, EtablissementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'SLUG', 'NAME', 'TITLE', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'OPENING_DATE', 'CLOSING_DATE', 'VILLE_ID', 'CATEGORIE_ID', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'VIDEO_PATH', 'IMAGE_360_PATH', 'CAPACITE', 'PLAN_PATH', 'VIGNETTE', 'PUBLISHED', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'opening_date', 'closing_date', 'ville_id', 'categorie_id', 'geo_coordinate_x', 'geo_coordinate_y', 'video_path', 'image_360_path', 'capacite', 'plan_path', 'vignette', 'published', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, )
     );
 
     /**
@@ -184,12 +187,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Name' => 2, 'Title' => 3, 'Address1' => 4, 'Address2' => 5, 'Zip' => 6, 'City' => 7, 'Mail' => 8, 'CountryCode' => 9, 'Phone1' => 10, 'Phone2' => 11, 'Fax' => 12, 'OpeningDate' => 13, 'ClosingDate' => 14, 'VilleId' => 15, 'CategorieId' => 16, 'GeoCoordinateX' => 17, 'GeoCoordinateY' => 18, 'VideoPath' => 19, 'Image360Path' => 20, 'Capacite' => 21, 'PlanPath' => 22, 'Vignette' => 23, 'Published' => 24, 'CreatedAt' => 25, 'UpdatedAt' => 26, 'Active' => 27, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'name' => 2, 'title' => 3, 'address1' => 4, 'address2' => 5, 'zip' => 6, 'city' => 7, 'mail' => 8, 'countryCode' => 9, 'phone1' => 10, 'phone2' => 11, 'fax' => 12, 'openingDate' => 13, 'closingDate' => 14, 'villeId' => 15, 'categorieId' => 16, 'geoCoordinateX' => 17, 'geoCoordinateY' => 18, 'videoPath' => 19, 'image360Path' => 20, 'capacite' => 21, 'planPath' => 22, 'vignette' => 23, 'published' => 24, 'createdAt' => 25, 'updatedAt' => 26, 'active' => 27, ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::CODE => 1, EtablissementPeer::NAME => 2, EtablissementPeer::TITLE => 3, EtablissementPeer::ADDRESS1 => 4, EtablissementPeer::ADDRESS2 => 5, EtablissementPeer::ZIP => 6, EtablissementPeer::CITY => 7, EtablissementPeer::MAIL => 8, EtablissementPeer::COUNTRY_CODE => 9, EtablissementPeer::PHONE1 => 10, EtablissementPeer::PHONE2 => 11, EtablissementPeer::FAX => 12, EtablissementPeer::OPENING_DATE => 13, EtablissementPeer::CLOSING_DATE => 14, EtablissementPeer::VILLE_ID => 15, EtablissementPeer::CATEGORIE_ID => 16, EtablissementPeer::GEO_COORDINATE_X => 17, EtablissementPeer::GEO_COORDINATE_Y => 18, EtablissementPeer::VIDEO_PATH => 19, EtablissementPeer::IMAGE_360_PATH => 20, EtablissementPeer::CAPACITE => 21, EtablissementPeer::PLAN_PATH => 22, EtablissementPeer::VIGNETTE => 23, EtablissementPeer::PUBLISHED => 24, EtablissementPeer::CREATED_AT => 25, EtablissementPeer::UPDATED_AT => 26, EtablissementPeer::ACTIVE => 27, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'NAME' => 2, 'TITLE' => 3, 'ADDRESS1' => 4, 'ADDRESS2' => 5, 'ZIP' => 6, 'CITY' => 7, 'MAIL' => 8, 'COUNTRY_CODE' => 9, 'PHONE1' => 10, 'PHONE2' => 11, 'FAX' => 12, 'OPENING_DATE' => 13, 'CLOSING_DATE' => 14, 'VILLE_ID' => 15, 'CATEGORIE_ID' => 16, 'GEO_COORDINATE_X' => 17, 'GEO_COORDINATE_Y' => 18, 'VIDEO_PATH' => 19, 'IMAGE_360_PATH' => 20, 'CAPACITE' => 21, 'PLAN_PATH' => 22, 'VIGNETTE' => 23, 'PUBLISHED' => 24, 'CREATED_AT' => 25, 'UPDATED_AT' => 26, 'ACTIVE' => 27, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'name' => 2, 'title' => 3, 'address1' => 4, 'address2' => 5, 'zip' => 6, 'city' => 7, 'mail' => 8, 'country_code' => 9, 'phone1' => 10, 'phone2' => 11, 'fax' => 12, 'opening_date' => 13, 'closing_date' => 14, 'ville_id' => 15, 'categorie_id' => 16, 'geo_coordinate_x' => 17, 'geo_coordinate_y' => 18, 'video_path' => 19, 'image_360_path' => 20, 'capacite' => 21, 'plan_path' => 22, 'vignette' => 23, 'published' => 24, 'created_at' => 25, 'updated_at' => 26, 'active' => 27, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Slug' => 2, 'Name' => 3, 'Title' => 4, 'Address1' => 5, 'Address2' => 6, 'Zip' => 7, 'City' => 8, 'Mail' => 9, 'CountryCode' => 10, 'Phone1' => 11, 'Phone2' => 12, 'Fax' => 13, 'OpeningDate' => 14, 'ClosingDate' => 15, 'VilleId' => 16, 'CategorieId' => 17, 'GeoCoordinateX' => 18, 'GeoCoordinateY' => 19, 'VideoPath' => 20, 'Image360Path' => 21, 'Capacite' => 22, 'PlanPath' => 23, 'Vignette' => 24, 'Published' => 25, 'CreatedAt' => 26, 'UpdatedAt' => 27, 'Active' => 28, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'countryCode' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'openingDate' => 14, 'closingDate' => 15, 'villeId' => 16, 'categorieId' => 17, 'geoCoordinateX' => 18, 'geoCoordinateY' => 19, 'videoPath' => 20, 'image360Path' => 21, 'capacite' => 22, 'planPath' => 23, 'vignette' => 24, 'published' => 25, 'createdAt' => 26, 'updatedAt' => 27, 'active' => 28, ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::CODE => 1, EtablissementPeer::SLUG => 2, EtablissementPeer::NAME => 3, EtablissementPeer::TITLE => 4, EtablissementPeer::ADDRESS1 => 5, EtablissementPeer::ADDRESS2 => 6, EtablissementPeer::ZIP => 7, EtablissementPeer::CITY => 8, EtablissementPeer::MAIL => 9, EtablissementPeer::COUNTRY_CODE => 10, EtablissementPeer::PHONE1 => 11, EtablissementPeer::PHONE2 => 12, EtablissementPeer::FAX => 13, EtablissementPeer::OPENING_DATE => 14, EtablissementPeer::CLOSING_DATE => 15, EtablissementPeer::VILLE_ID => 16, EtablissementPeer::CATEGORIE_ID => 17, EtablissementPeer::GEO_COORDINATE_X => 18, EtablissementPeer::GEO_COORDINATE_Y => 19, EtablissementPeer::VIDEO_PATH => 20, EtablissementPeer::IMAGE_360_PATH => 21, EtablissementPeer::CAPACITE => 22, EtablissementPeer::PLAN_PATH => 23, EtablissementPeer::VIGNETTE => 24, EtablissementPeer::PUBLISHED => 25, EtablissementPeer::CREATED_AT => 26, EtablissementPeer::UPDATED_AT => 27, EtablissementPeer::ACTIVE => 28, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'SLUG' => 2, 'NAME' => 3, 'TITLE' => 4, 'ADDRESS1' => 5, 'ADDRESS2' => 6, 'ZIP' => 7, 'CITY' => 8, 'MAIL' => 9, 'COUNTRY_CODE' => 10, 'PHONE1' => 11, 'PHONE2' => 12, 'FAX' => 13, 'OPENING_DATE' => 14, 'CLOSING_DATE' => 15, 'VILLE_ID' => 16, 'CATEGORIE_ID' => 17, 'GEO_COORDINATE_X' => 18, 'GEO_COORDINATE_Y' => 19, 'VIDEO_PATH' => 20, 'IMAGE_360_PATH' => 21, 'CAPACITE' => 22, 'PLAN_PATH' => 23, 'VIGNETTE' => 24, 'PUBLISHED' => 25, 'CREATED_AT' => 26, 'UPDATED_AT' => 27, 'ACTIVE' => 28, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'country_code' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'opening_date' => 14, 'closing_date' => 15, 'ville_id' => 16, 'categorie_id' => 17, 'geo_coordinate_x' => 18, 'geo_coordinate_y' => 19, 'video_path' => 20, 'image_360_path' => 21, 'capacite' => 22, 'plan_path' => 23, 'vignette' => 24, 'published' => 25, 'created_at' => 26, 'updated_at' => 27, 'active' => 28, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, )
     );
 
     /**
@@ -265,6 +268,7 @@ abstract class BaseEtablissementPeer
         if (null === $alias) {
             $criteria->addSelectColumn(EtablissementPeer::ID);
             $criteria->addSelectColumn(EtablissementPeer::CODE);
+            $criteria->addSelectColumn(EtablissementPeer::SLUG);
             $criteria->addSelectColumn(EtablissementPeer::NAME);
             $criteria->addSelectColumn(EtablissementPeer::TITLE);
             $criteria->addSelectColumn(EtablissementPeer::ADDRESS1);
@@ -294,6 +298,7 @@ abstract class BaseEtablissementPeer
         } else {
             $criteria->addSelectColumn($alias . '.ID');
             $criteria->addSelectColumn($alias . '.CODE');
+            $criteria->addSelectColumn($alias . '.SLUG');
             $criteria->addSelectColumn($alias . '.NAME');
             $criteria->addSelectColumn($alias . '.TITLE');
             $criteria->addSelectColumn($alias . '.ADDRESS1');
