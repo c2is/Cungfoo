@@ -2032,7 +2032,7 @@ TextMorph.prototype.setOptions = function(options){
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  *
- */
+
 
 (function($) {
     $.fn.listnav = function(options) {
@@ -2255,7 +2255,7 @@ TextMorph.prototype.setOptions = function(options){
         prefixes: []
     };
 })(jQuery);
-
+*/
 
 /** noUislider 2.5.5
  ** No copyrights or licenses. Do what you like. Feel free to share this code, or build upon it.

@@ -698,7 +698,7 @@ h4 {
   color: #464545;
 }
 #reservationContener.detail #authentication > div > div {
-  padding: 10px;
+  padding: 15px 20px;
   clear: both;
 }
 #reservationContener.detail #authentication > div .whiteBg {
@@ -709,6 +709,13 @@ h4 {
   font: normal 12px Arial, Helvetica, sans-serif;
   text-transform: none;
   display: block;
+  margin: 0;
+}
+#reservationContener.detail #authentication > div .whiteBg .aField .label,
+#reservationContener.detail #authentication > div .whiteBg .authenticationChoice .label {
+  font: inherit;
+  text-transform: inherit;
+  color: inherit;
 }
 #reservationContener.detail #authentication > div .whiteBg .aField .field,
 #reservationContener.detail #authentication > div .whiteBg .authenticationChoice .field,
@@ -726,14 +733,17 @@ h4 {
   text-align: right;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer .label {
-  width: 130px;
+  width: 124px;
   padding-top: 3px;
 }
+#reservationContener.detail #authentication > div #newCustomerLayer .loginLink {
+  margin-top: 15px;
+}
 #reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField {
-  width: 480px;
+  width: 460px;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input {
-  width: 320px;
+  width: 300px;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #address td {
   display: inline-block;
@@ -1090,6 +1100,7 @@ h4 {
 }
 #reservationContener.confirmation #option .aField input[type="checkbox"] {
   margin-top: 1px;
+  margin-left: -1px;
 }
 #reservationContener.confirmation #option .aField label {
   font-style: italic;

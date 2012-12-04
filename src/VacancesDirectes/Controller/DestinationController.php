@@ -209,7 +209,7 @@ class DestinationController implements ControllerProviderInterface
         ;
         $listContent = $list->process();
 
-        return $app['twig']->render('Destination/detail.twig', array(
+        return $app->renderView('Destination/detail.twig', array(
             'locale'            => $locale,
             'destination'       => $destination,
             'item'              => $item,
@@ -220,7 +220,7 @@ class DestinationController implements ControllerProviderInterface
             'list'              => $listContent,
             'firstEtab'         => reset($listContent['element']),
             'searchForm'        => $searchEngine->getView(),
-            'imagesTitle'       => $app['translator']->trans('destination.images_region_title'),
+            'imagesTitle'       => $app->trans('destination.images_region_title'),
         ));
     }
 
@@ -259,7 +259,7 @@ class DestinationController implements ControllerProviderInterface
 
         $resalysParameters = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Resalys/parameters.yml', $app['config']->get('config_dir')));
 
-        return $app['twig']->render('Camping/camping.twig', array(
+        return $app->renderView('Camping/camping.twig', array(
             'locale'                  => $locale,
             'etab'                    => $camping,
             'personnages'             => $personnages,

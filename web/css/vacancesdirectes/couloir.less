@@ -237,10 +237,11 @@ h4{font-size:15px;line-height:17px;}
     #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
       h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
       &>div{background-color:@colorBgGrisC;color:@colorGris2;
-        &>div{padding:10px;clear:both;}
+        &>div{padding:15px 20px;clear:both;}
         .whiteBg{background-color:@colorBgBlanc;
           .aField,
-          .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;
+          .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
+            .label{font:inherit;text-transform:inherit;color:inherit}
             .field,
             input[type="radio"]:checked + label{ font-weight: bold; }
           }
@@ -251,10 +252,11 @@ h4{font-size:15px;line-height:17px;}
           .label{margin-right:10px;text-align:right;}
         }
         #newCustomerLayer{
-          .label{width:130px;padding-top:3px;}
+          .label{width:124px;padding-top:3px;}
+          .loginLink{margin-top:15px}
           #newAccount{
-            .aField{width:480px;
-              input{width:320px;}
+            .aField{width:460px;
+              input{width:300px;}
             }
           }
           #address{
@@ -381,7 +383,7 @@ h4{font-size:15px;line-height:17px;}
         .SSContainerDivWrapper{min-width:146px;}
       }
       .aField{
-        input[type="checkbox"]{margin-top:1px;}
+        input[type="checkbox"]{margin-top:1px;margin-left:-1px;}
         label{font-style:italic;font-weight:bold;
           a{color:@colorFushia;}
         }
