@@ -3,16 +3,23 @@
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    <a href=="#_">{{ "destination.retour" | trans }}</a>
+    <a class="bt gris left goto" href="#_">&lt; {{ "destination.retour" | trans }}</a>
+
+    <ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
+        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
+        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Nos campings : Campings France</span></a></li>
+        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
+    </ol>
 
     {# Bloc titre + accroche + picto #}
-    {{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }} {# Titre #}
-    {{ item.introduction }} {# Accroche #}
-    {{ item.description }} {# Description #}
     {{ item.imagePath }}
     {% if item.imagePath %}
-    <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
+    <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}" /> {# Picto région #}
     {% endif %}
+
+    <h1>{{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }}</h1> {# Titre #}
+    <h2>{{ item.introduction }}</h2> {# Accroche #}
+    <p>{{ item.description }}</p> {# Description #}
 
 {% endblock %}
 
@@ -25,53 +32,73 @@
 {% block topWideColumn %}
 
     {# Bloc POIs #}
+    <div class="activites radiusBox greyC left clear">
     {% for poi in sitesAVisiter %}
         {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
-        <img src="{{ poi.image }}" />
-        {{ poi.name }} {# Titre #}
-        {{ poi.presentation }} {# Texte #}
+        <div class="miniEncart clear">
+            <img src="{{ poi.image }}"  class="left boxborder" alt="">
+            <span class="h5-like">{{ poi.name }} {# Titre #}</span>
+            <p> {{ poi.presentation }} {# Texte #}</p>
+        </div>
     {% endfor %}
-    <a href=="#_">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a>
+    <a href=="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a>
+    </div>
 
 
 
     {# Bloc Evenements #}
-    {{ "destination.events_title" | trans }}
-    {{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}
-    {% for event in events %}
-        {# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
-        <img src="{{ event.image }}" />
-        {{ event.name }} {# Titre #}
-        {{ event.subtitle }} {# Texte #}
+    <div class="events radiusBox greyC left clear">
+    <span class="h5-like">{{ "destination.events_title" | trans }}</span>
+    <span class="h6-like">{{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}</span>
+    {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
+        <div class="miniEncart clear">
+            <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
+            <span class="titre">{{ event.name }} {# Titre #} Classique au large, </span>
+            <p>{{ event.subtitle }} {# Texte #} Festival de musique de Saint-Malo,
+            du 25/04/2013</p>
+        </div>
     {% endfor %}
+    </div>
 
 {% endblock %}
 
 {% block bottomLeftColumn %}
 
     {# Bloc "Notre sélection de campings" #}
-    {{ "destination.campings_selection_title" | trans }}
+    <h3>{{ "destination.campings_selection_title" | trans }}</h3>
     {% include 'Listing/_listing.twig' %}
 
 {% endblock %}
 
 {% block bottomRightColumn %}
-
+<div id="greyBoxes">
     {# Bloc "Vacances directes un séjour réussi" #}
-    {{ "encart_vacances_directes.title" | trans }}
-    {{ "encart_vacances_directes.subtitle" | trans }}
-    {{ "encart_vacances_directes.item_1" | trans }}
-    {{ "encart_vacances_directes.item_2" | trans }}
-    {{ "encart_vacances_directes.item_3" | trans }}
-    {{ "encart_vacances_directes.item_4" | trans }}
+    <div id="assetsBloc" class="clear radiusBox greyC">
+        <div class="no stamp">
+            <h2>{{ "encart_vacances_directes.title" | trans }} = <br> {{ "encart_vacances_directes.subtitle" | trans }}</h2>
+        </div>
+        <ul>
+            <li class="asset"><span>{{ "encart_vacances_directes.item_1" | trans }}</span></li>
+            <li class="asset"><span>{{ "encart_vacances_directes.item_2" | trans }}</span></li>
+            <li class="asset"><span>{{ "encart_vacances_directes.item_3" | trans }}</span></li>
+            <li class="asset"><span>{{ "encart_vacances_directes.item_4" | trans }}</span></li>
+        </ul>
+    </div>
 
-    {# Bloc "Informations" #}
-    {{ "encart_informations.title" | trans }}
-    {{ "footer.contact.tel" | trans }}
-    {{ "encart_informations.price" | trans }}
-    {{ "encart_informations.dates_1" | trans }}
-    {{ "encart_informations.dates_2" | trans }}
-
+    <div id="infoBloc" class="clear radiusBox greyF">
+        <h3>{{ "encart_informations.title" | trans }}</h3>
+        <div class="content">
+            <p>
+                <a class="tel" href="tel:{{ "footer.contact.tel" | trans }}">{{ "footer.contact.tel" | trans }}</a>
+            </p>
+            <span class="price">{{ "encart_informations.price" | trans }}</span>
+            <p class="small">
+                {{ "encart_informations.dates_1" | trans }}<br />
+                {{ "encart_informations.dates_2" | trans }}
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block bottomWideColumn %}

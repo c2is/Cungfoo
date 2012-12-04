@@ -1,6 +1,16 @@
 {% extends "base.twig" %}
 
+{% block bodyClass %} fiche{% endblock %}
+
 {% block leftColumn %}
+<a class="bt gris left goto" href="#_">&lt; Retour</a>
+
+<ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
+    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
+    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Nos campings : Campings France</span></a></li>
+    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
+    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Le Petit Mousse</span></a></li>
+</ol>
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
     <p class="keywordsFiche">
@@ -20,6 +30,7 @@
             {% endfor %}
         {% endif %}
     </p>
+    <a class="bt big fushia right goto" href="#frameResalys">Tarifs &amp; disponibilités</a>
     <h2>{{ "fiche.camping" | trans }} {{ etab.city }}</h2>
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
