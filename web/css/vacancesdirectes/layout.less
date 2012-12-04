@@ -55,7 +55,7 @@ header, section, footer {position:relative;}
             }
             .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
             .region{
-              .link{padding-bottom:5px;border-bottom:7px solid @colorBorderGris;}
+              .link{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
               &:last-child .link{padding-bottom:0;border-bottom:0 none;}
             }
             a{text-decoration:none;}
@@ -67,23 +67,13 @@ header, section, footer {position:relative;}
             }
           }
         }
-        #campingsList-nav {background-color:@colorFushia;padding:0 20px;margin:10px -20px 10px 40px;
-          &:after{content:"";}
-          span{margin-right:-6px;}
-          .ln-letters{margin-top:-4px;
-            a{padding:0;border:0 none;width:16px;._verticalCenter(16px);text-align:center;position:relative;
-              &.all{position:absolute;top:-38px;left:-50px;width:288px;height:30px;background-color:transparent;border:0 none;text-indent:-9999px;}
-            }
-          }
-          .ln-letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px @arial,sans-serif;color:@colorGris2;}
-        }
-        ol#campingsList{overflow-x:hidden;height:390px;
+        .letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px @arial,sans-serif;color:@colorGris2;}
+
+        ol#campingsList{overflow-x:hidden;height:445px;margin-top:10px;
           li{position:relative;margin-left:50px;
-            &:before{content:"- ";}
-            .ln-letter{position:absolute;top:-5px;left:-50px;height:20px;width:20px;font:bold 17px @ptnarrow;}
-            &.ln-separator{content:"";position:relative;margin:6px 0 6px -50px;height:1px;width:276px;background-color:@colorBorderGris}
-            .ln-letter:before,
-            &.ln-separator:before{content:"";}
+            &.letter-first{position:relative;margin-bottom:-15px;margin-left:0;height:20px;width:20px;font:bold 17px @ptnarrow;}
+            &.letter-last{position:relative;margin:14px 0 5px;height:1px;width:240px;background-color:@colorBorderGris}
+            &:last-child{visibility:hidden;}
           }
         }
       }
@@ -137,7 +127,7 @@ header, section, footer {position:relative;}
       }
     }
   }
-//  .tab:nth-child(4) .subnav{display:block;}
+//  .tab:nth-child(2) .subnav{display:block;}
 }
 
 /* lang */
@@ -150,7 +140,7 @@ header, section, footer {position:relative;}
 .left{float:left;}
 .right{float:right;}
 .h1-like, .h2-like, .h3-like, .h4-like, .h5-like, .h6-like{display:block;}
-h1, .h1-like{display:block;margin:20px 0 0;color:@colorFushia;font:bold 30px/30px @ptnarrow;text-transform:uppercase;}
+h1, .h1-like{display:block;margin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
 h2, .h2-like{color:@colorGris2;font:bold 20px @arial;line-height:22px;}
 h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
 h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
