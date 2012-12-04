@@ -33,24 +33,39 @@ class BaseEditoType extends AppAwareType
             'label' => 'edito.slug',
             'required' => false,
         ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'edito.name',
-            'required' => false,
-        ));
-        $builder->add('description', 'textrich', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'edito.description',
-            'required' => false,
-        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
             'label' => 'edito.active',
+            'required' => false,
+        ));
+        $builder->add('editoI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\EditoI18n',
+            'languages' => array(
+                0 => 'fr',
+                1 => 'en',
+                2 => 'de',
+                3 => 'nl',
+            ),
+            'label' => 'edito.editoI18ns',
+            'columns' => array(
+                'name' => array(
+                    'required' => false,
+                    'label' => 'edito.name',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'edito.description',
+                    'type' => 'textrich',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
+            ),
             'required' => false,
         ));
     }

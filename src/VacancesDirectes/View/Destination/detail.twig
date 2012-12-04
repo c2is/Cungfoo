@@ -1,17 +1,36 @@
 {% extends "Destination/base.twig" %}
 
+{% block title %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.title.region" | trans ({'%region%': item}) }}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.title.pays" | trans ({'%pays%': item}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.meta.pays" | trans  ({'%pays%': item})}}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    <a href=="#_">{{ "destination.retour" | trans }}</a>
+    <a href="#">{{ "destination.retour" | trans }}</a>
 
     {# Bloc titre + accroche + picto #}
     {{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }} {# Titre #}
     {{ item.introduction }} {# Accroche #}
     {{ item.description }} {# Description #}
-    {{ item.imagePath }}
-    {% if item.imagePath %}
-    <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
+    {% if item['imagePath'] is defined %}
+        <img src="{{ asset(item.imagePath) }}" /> {# Picto région #}
     {% endif %}
 
 {% endblock %}

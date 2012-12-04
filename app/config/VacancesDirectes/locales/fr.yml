@@ -1,3 +1,15 @@
+seo:
+    title:
+        default: "Location mobil home Espagne, France, Italie"
+        pays: "Camping %pays% pas cher | Vacances Directes"
+        region: "Location mobil home %region% pas cher, camping %region%"
+        camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+    meta:
+        default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
+        pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
+        region: "Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping)."
+        camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances Directes."
+
 pays.france: France
 pays.espagne: Espagne
 pays.italie: Italie
@@ -201,3 +213,11 @@ encart_informations.title: Informations & Réservations au
 encart_informations.price: (0,15 €/min)
 encart_informations.dates_1: Du lundi au vendredi de 9h-21h
 encart_informations.dates_2: Samedi de 10h - 18h
+
+semainier.title: Tarifs & disponibilités
+semainier.choose_dates_desc: En juillet et août, les arrivées et départs sont possibles les mercredis et samedis.
+semainier.type_hebergement_title: Choisissez votre période et votre type d'hébergement
+semainier.type_hebergement_desc: Vérifiez les disponibilités mois par mois et cliquez sur la période et l'hébergement de votre choix pour réserver.
+
+resalys.creer_compte: Créer mon compte
+resalys.total: Total

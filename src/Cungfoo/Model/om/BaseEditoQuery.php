@@ -5,12 +5,15 @@ namespace Cungfoo\Model\om;
 use \Criteria;
 use \Exception;
 use \ModelCriteria;
+use \ModelJoin;
 use \PDO;
 use \Propel;
+use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Edito;
+use Cungfoo\Model\EditoI18n;
 use Cungfoo\Model\EditoPeer;
 use Cungfoo\Model\EditoQuery;
 
@@ -21,16 +24,12 @@ use Cungfoo\Model\EditoQuery;
  *
  * @method EditoQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EditoQuery orderBySlug($order = Criteria::ASC) Order by the slug column
- * @method EditoQuery orderByName($order = Criteria::ASC) Order by the name column
- * @method EditoQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method EditoQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EditoQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method EditoQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method EditoQuery groupById() Group by the id column
  * @method EditoQuery groupBySlug() Group by the slug column
- * @method EditoQuery groupByName() Group by the name column
- * @method EditoQuery groupByDescription() Group by the description column
  * @method EditoQuery groupByCreatedAt() Group by the created_at column
  * @method EditoQuery groupByUpdatedAt() Group by the updated_at column
  * @method EditoQuery groupByActive() Group by the active column
@@ -39,20 +38,20 @@ use Cungfoo\Model\EditoQuery;
  * @method EditoQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method EditoQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
+ * @method EditoQuery leftJoinEditoI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EditoI18n relation
+ * @method EditoQuery rightJoinEditoI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EditoI18n relation
+ * @method EditoQuery innerJoinEditoI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the EditoI18n relation
+ *
  * @method Edito findOne(PropelPDO $con = null) Return the first Edito matching the query
  * @method Edito findOneOrCreate(PropelPDO $con = null) Return the first Edito matching the query, or a new Edito object populated from the query conditions when no match is found
  *
  * @method Edito findOneBySlug(string $slug) Return the first Edito filtered by the slug column
- * @method Edito findOneByName(string $name) Return the first Edito filtered by the name column
- * @method Edito findOneByDescription(string $description) Return the first Edito filtered by the description column
  * @method Edito findOneByCreatedAt(string $created_at) Return the first Edito filtered by the created_at column
  * @method Edito findOneByUpdatedAt(string $updated_at) Return the first Edito filtered by the updated_at column
  * @method Edito findOneByActive(boolean $active) Return the first Edito filtered by the active column
  *
  * @method array findById(int $id) Return Edito objects filtered by the id column
  * @method array findBySlug(string $slug) Return Edito objects filtered by the slug column
- * @method array findByName(string $name) Return Edito objects filtered by the name column
- * @method array findByDescription(string $description) Return Edito objects filtered by the description column
  * @method array findByCreatedAt(string $created_at) Return Edito objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Edito objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Edito objects filtered by the active column
@@ -159,7 +158,7 @@ abstract class BaseEditoQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SLUG`, `NAME`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `edito` WHERE `ID` = :p0';
+        $sql = 'SELECT `ID`, `SLUG`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `edito` WHERE `ID` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -305,64 +304,6 @@ abstract class BaseEditoQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EditoQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EditoPeer::NAME, $name, $comparison);
-    }
-
-    /**
-     * Filter the query on the description column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
-     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $description The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EditoQuery The current query, for fluid interface
-     */
-    public function filterByDescription($description = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($description)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $description)) {
-                $description = str_replace('*', '%', $description);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EditoPeer::DESCRIPTION, $description, $comparison);
-    }
-
-    /**
      * Filter the query on the created_at column
      *
      * Example usage:
@@ -476,6 +417,80 @@ abstract class BaseEditoQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related EditoI18n object
+     *
+     * @param   EditoI18n|PropelObjectCollection $editoI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EditoQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEditoI18n($editoI18n, $comparison = null)
+    {
+        if ($editoI18n instanceof EditoI18n) {
+            return $this
+                ->addUsingAlias(EditoPeer::ID, $editoI18n->getId(), $comparison);
+        } elseif ($editoI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useEditoI18nQuery()
+                ->filterByPrimaryKeys($editoI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEditoI18n() only accepts arguments of type EditoI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EditoI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function joinEditoI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EditoI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EditoI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EditoI18n relation EditoI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EditoI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useEditoI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinEditoI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EditoI18n', '\Cungfoo\Model\EditoI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   Edito $edito Object to remove from the list of results
@@ -568,6 +583,63 @@ abstract class BaseEditoQuery extends ModelCriteria
         $this->filterByActive(true);
 
         return parent::find($con);
+    }
+
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EditoQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'EditoI18n';
+
+        return $this
+            ->joinEditoI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EditoQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('EditoI18n');
+        $this->with['EditoI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EditoI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EditoI18n', 'Cungfoo\Model\EditoI18nQuery');
     }
 
 }

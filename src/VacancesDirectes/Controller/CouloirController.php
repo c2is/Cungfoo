@@ -40,6 +40,7 @@ class CouloirController implements ControllerProviderInterface
 
             return $app['twig']->render('Couloir\detail-sejour.twig', array(
                 'query' => $query,
+                "step"  => 1,
             ));
         })
         ->value('proposalKey', null)
@@ -62,10 +63,32 @@ class CouloirController implements ControllerProviderInterface
 
             return $app['twig']->render('Couloir\detail-sejour.twig', array(
                 'query' => $query,
+                "step"  => 2,
             ));
         })
         ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
+
+        $controllers->get('/confirmation', function (Request $request) use ($app) {
+            $query = array(
+                "specificFiles" => 'couloir',
+                "base_id"       => 'vacancesdirectes_preprod_v6_6',
+                "webuser"       => 'web_fr',
+                "tokens"        => 'ignore_token',
+                "display"       => 'cart_saved',
+                "actions"       => $request->query->get('actions'),
+                "session"       => $request->query->get('session'),
+                "tokens"        => $request->query->get('tokens'),
+            );
+
+            $query = array_merge($query, $request->request->all());
+
+            return $app['twig']->render('Couloir\detail-sejour.twig', array(
+                'query' => $query,
+                "step"  => 4,
+            ));
+        })
+        ->bind('couloir_confirmation');
 
         return $controllers;
     }
