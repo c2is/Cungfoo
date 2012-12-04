@@ -12,6 +12,7 @@ activite.image_path: Image
 activite.description: Description
 activite.keywords: Mots clés
 activite.image.path: Image
+activite.active: Actif
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
@@ -20,6 +21,7 @@ category_type_hebergement.crud.view: Détails de la catégorie de types d'héber
 category_type_hebergement.id: Id
 category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
+category_type_hebergement.active: Actif
 
 job.crud.list: Liste jobs
 job.name: Nom
@@ -56,6 +58,7 @@ destination.etablissements: Établissements ayant cette destination
 destination.id: Id
 destination.code: Code
 destination.name: Nom
+destination.active: Actif
 
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories
@@ -64,6 +67,7 @@ categorie.crud.view: Détails de la catégorie %name%
 categorie.id: Id
 categorie.code: Code
 categorie.name: Nom
+categorie.active: Actif
 
 situation_geographique.crud.create: Création d'une situation géographique
 situation_geographique.crud.list: Liste situations géographiques
@@ -75,6 +79,7 @@ situation_geographique.name: Nom
 situation_geographique.description: Description
 situation_geographique.keywords: Mots clés
 situation_geographique.etablissements: Établissements ayant cette situation géographique
+situation_geographique.active: Actif
 
 baignade.crud.create: Création d'une baignade
 baignade.crud.list: Liste baignades
@@ -86,6 +91,7 @@ baignade.name: Nom
 baignade.etablissements: Établissements ayant cette baignade
 baignade.description: Description
 baignade.keywords: Mots clés
+baignade.active: Actif
 
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
@@ -93,12 +99,13 @@ thematique.crud.update: Mettre à jour la thématique %name%
 thematique.crud.view: Détails de la thématique %name%
 thematique.id: Id
 thematique.code: Code
-thematique.name: Nom.
+thematique.name: Nom
 thematique.description: Description
 thematique.keywords: Mots clés
 thematique.etablissements: Établissements ayant cette thématique
 thematique.image_path: Picto
 thematique.image.path: Picto
+thematique.active: Actif
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
@@ -146,6 +153,10 @@ etablissement.arrivees_departs: Arrivées et départs
 etablissement.plan_path: Plan
 etablissement.published: Publié ?
 etablissement.vignette: Vignette
+etablissement.slug: Slug
+etablissement.plan.path: Plan
+etablissement.group.resalys: Données résalys
+etablissement.group.cms: Données CMS
 
 list.actions: Actions
 
@@ -209,6 +220,7 @@ service_complementaire.description: Description
 service_complementaire.keywords: Mots clés
 service_complementaire.image_path: Image
 service_complementaire.image.path: Image
+service_complementaire.active: Actif
 
 security.username: Nom d'utilisateur
 security.password: Mot de passe
@@ -228,6 +240,10 @@ pays.introduction: Introduction
 pays.description: Description
 pays.image_detail_1: Image 1
 pays.image_detail_2: Image 2
+pays.image.detail.1: Image 1
+pays.image.detail.2: Image 2
+pays.active: Actif
+pays.slug: Slug
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions
@@ -249,6 +265,13 @@ region.mea_home: Mise en avant sur la home
 region.introduction: Introduction
 region.image_detail_1: Image 1
 region.image_detail_2: Image 2
+region.image.encart.path: Image de l'encart
+region.image.encart.petite.path: Image de l'encart (petite)
+region.mea.home: Mise en avant sur la home
+region.image.detail.1: Image 1
+region.image.detail.2: Image 2
+region.active: Actif
+region.slug: Slug
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -289,6 +312,9 @@ type_hebergement.image_composition_path_deleted: Supprimer l'image de la composi
 type_hebergement.nombre.chambre: Nombre de chambres
 type_hebergement.type.terrasse: Type de terrasse
 type_hebergement.nombre_place: Nombre de place
+type_hebergement.image.hebergement.path: Image
+type_hebergement.image.composition.path: Image composition
+type_hebergement.active: Actif
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes
@@ -303,6 +329,9 @@ ville.introduction: Introduction
 ville.description: Description
 ville.image_detail_1: Image 1
 ville.image_detail_2: Image 2
+ville.image.detail.1: Image 1
+ville.image.detail.2: Image 2
+ville.active: Actif
 
 point_interet.crud.create: Création d'un POI
 point_interet.crud.list: Liste des POI
@@ -322,6 +351,9 @@ point_interet.geo_coordinate_x: Latitude
 point_interet.geo_coordinate_y: Longitude
 point_interet.distance_camping: Distance du camping
 point_interet.distance.camping: Distance du camping
+point_interet.active: Actif
+point_interet.etablissements: Etablissements
+point_interet.presentation: Présentation
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -346,6 +378,8 @@ event.geo.coordinate.x: Latitude
 event.geo.coordinate.y: Longitude
 event.distance_camping: Distance du camping
 event.distance.camping: Distance du camping
+event.active: Actif
+event.subtitle: Sous-titre
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
@@ -356,6 +390,8 @@ personnage.etablissement: Etablissement
 personnage.age: Age
 personnage.prenom: Prénom
 personnage.image_path: Image
+personnage.image.path: Image
+personnage.active: Actif
 
 avantage.crud.create: Création d'un avantage
 avantage.crud.list: Liste des avantages
@@ -367,6 +403,8 @@ avantage.name: Titre
 avantage.description: Description
 avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
+avantage.image.path: Image
+avantage.active: Actif
 
 edito.crud.create: Création d'un édito
 edito.crud.list: Liste des editos
@@ -376,6 +414,7 @@ edito.id: Id
 edito.slug: Slug
 edito.name: Titre
 edito.description: Description
+edito.active: Actif
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
@@ -386,6 +425,8 @@ multimedia_etablissement.etablissement: Etablissement
 multimedia_etablissement.titre: Titre
 multimedia_etablissement.image_path: Image
 multimedia_etablissement.tags: Tags
+multimedia_etablissement.image.path: Image
+multimedia_etablissement.active: Actif
 
 tag.crud.create: Création d'un tag
 tag.crud.list: Liste des tags
@@ -394,6 +435,7 @@ tag.crud.view: Détails du tag %name%
 tag.id: Id
 tag.name: Nom
 tag.multimedia_etablissements: Média
+tag.slug: Slug
 
 demande_identifiant.crud.list: Liste des demandes d'identifiant
 demande_identifiant.crud.view: Détails de la demande %name%
@@ -431,6 +473,7 @@ top_camping.crud.view: Détails du top camping
 top_camping.id: Id
 top_camping.etablissement: Etablissement
 top_camping.sortable_rank: Ordre
+top_camping.active: Actif
 
 dernieres_minutes.crud.create: Création d'une dernières minutes
 dernieres_minutes.crud.list: Liste des dernières minutes
@@ -465,6 +508,7 @@ mise_en_avant.date_fin_validite: Date de fin de validite
 mise_en_avant.illustration.path: Illustration
 mise_en_avant.date.fin.validite: Date de fin de validite
 mise_en_avant.sortable_rank: Ordre
+mise_en_avant.active: Actif
 
 vos_vacances.crud.create: Création d'un encart vos vacances
 vos_vacances.crud.list: Liste des encarts vos vacances
@@ -476,6 +520,8 @@ vos_vacances.titre: Titre
 vos_vacances.description: Description
 vos_vacances.age: Age
 vos_vacances.prenom: Prénom
+vos_vacances.image.path: Image
+vos_vacances.active: Actif
 
 idee_weekend.crud.create: Création d'une idée weekend
 idee_weekend.crud.list: Liste des idée weekend
@@ -488,6 +534,8 @@ idee_weekend.prix: Prix
 idee_weekend.lien: Lien
 idee_weekend.home: Mise en avant home
 idee_weekend.highlight: En couleur
+idee_weekend.image.path: Image
+idee_weekend.active: Actif
 
 monday: lundi
 tuesday: mardi
