@@ -76,6 +76,14 @@ class BasePaysType extends AppAwareType
             ),
             'label' => 'pays.paysI18ns',
             'columns' => array(
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'pays.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
                 'name' => array(
                     'required' => false,
                     'label' => 'pays.name',

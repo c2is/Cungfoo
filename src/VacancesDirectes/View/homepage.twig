@@ -135,7 +135,7 @@
                         {% if p.code == 'FRA' %}
                             {% for region in p.regionMeaHome %}
                                 {% if loop.index <= 5 %}
-                                    <li>- <a class="region" href="{{ path('destination_region', {'codeResalys': region.code}) }}">{{region.name}}</a></li>
+                                    <li>- <a class="region" href="{{ path('destination_region', {'pays': region.pays.slug, 'region': region.slug}) }}">{{region.name}}</a></li>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
