@@ -32,6 +32,7 @@ $app->mount('/resalys',             new WrapperController());
 $app->mount('/destinations/camping-{pays}', new Controller\DestinationPaysController());
 $app->mount('/destinations/camping-{pays}/{region}', new Controller\DestinationRegionController());
 $app->mount('/villes',              new Controller\DestinationVilleController());
+$app->mount('/editos',              new Controller\EditoController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
