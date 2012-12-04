@@ -82,6 +82,7 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\VosVacancesI18n",
         "\\Cungfoo\\Model\\IdeeWeekend",
         "\\Cungfoo\\Model\\IdeeWeekendI18n",
+        "\\Cungfoo\\Model\\EditoI18n",
     );
 
     protected function configure()

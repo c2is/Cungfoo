@@ -24,13 +24,11 @@ use Cungfoo\Model\EditoI18nQuery;
  *
  * @method EditoI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EditoI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
- * @method EditoI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method EditoI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EditoI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method EditoI18nQuery groupById() Group by the id column
  * @method EditoI18nQuery groupByLocale() Group by the locale column
- * @method EditoI18nQuery groupBySlug() Group by the slug column
  * @method EditoI18nQuery groupByName() Group by the name column
  * @method EditoI18nQuery groupByDescription() Group by the description column
  *
@@ -47,13 +45,11 @@ use Cungfoo\Model\EditoI18nQuery;
  *
  * @method EditoI18n findOneById(int $id) Return the first EditoI18n filtered by the id column
  * @method EditoI18n findOneByLocale(string $locale) Return the first EditoI18n filtered by the locale column
- * @method EditoI18n findOneBySlug(string $slug) Return the first EditoI18n filtered by the slug column
  * @method EditoI18n findOneByName(string $name) Return the first EditoI18n filtered by the name column
  * @method EditoI18n findOneByDescription(string $description) Return the first EditoI18n filtered by the description column
  *
  * @method array findById(int $id) Return EditoI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EditoI18n objects filtered by the locale column
- * @method array findBySlug(string $slug) Return EditoI18n objects filtered by the slug column
  * @method array findByName(string $name) Return EditoI18n objects filtered by the name column
  * @method array findByDescription(string $description) Return EditoI18n objects filtered by the description column
  *
@@ -146,7 +142,7 @@ abstract class BaseEditoI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `LOCALE`, `SLUG`, `NAME`, `DESCRIPTION` FROM `edito_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
+        $sql = 'SELECT `ID`, `LOCALE`, `NAME`, `DESCRIPTION` FROM `edito_i18n` WHERE `ID` = :p0 AND `LOCALE` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -303,35 +299,6 @@ abstract class BaseEditoI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EditoI18nPeer::LOCALE, $locale, $comparison);
-    }
-
-    /**
-     * Filter the query on the slug column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
-     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $slug The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EditoI18nQuery The current query, for fluid interface
-     */
-    public function filterBySlug($slug = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($slug)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $slug)) {
-                $slug = str_replace('*', '%', $slug);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EditoI18nPeer::SLUG, $slug, $comparison);
     }
 
     /**

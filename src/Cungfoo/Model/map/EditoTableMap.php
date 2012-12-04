@@ -44,8 +44,6 @@ class EditoTableMap extends TableMap
         // columns
         $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('SLUG', 'Slug', 'VARCHAR', false, 255, null);
-        $this->addColumn('NAME', 'Name', 'VARCHAR', false, 255, null);
-        $this->addColumn('DESCRIPTION', 'Description', 'LONGVARCHAR', true, null, null);
         $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
@@ -57,6 +55,7 @@ class EditoTableMap extends TableMap
      */
     public function buildRelations()
     {
+        $this->addRelation('EditoI18n', 'Cungfoo\\Model\\EditoI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EditoI18ns');
     } // buildRelations()
 
     /**
@@ -70,6 +69,7 @@ class EditoTableMap extends TableMap
         return array(
             'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
             'active' => array('active_column' => 'active', ),
+            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name, description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
             'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/editos', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', 'crud_type_richtext' => 'description', ),
         );
     } // getBehaviors()

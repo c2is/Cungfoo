@@ -59,12 +59,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     protected $locale;
 
     /**
-     * The value for the slug field.
-     * @var        string
-     */
-    protected $slug;
-
-    /**
      * The value for the name field.
      * @var        string
      */
@@ -137,16 +131,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [slug] column value.
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
      * Get the [name] column value.
      *
      * @return string
@@ -211,27 +195,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
 
         return $this;
     } // setLocale()
-
-    /**
-     * Set the value of [slug] column.
-     *
-     * @param string $v new value
-     * @return EditoI18n The current object (for fluent API support)
-     */
-    public function setSlug($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->slug !== $v) {
-            $this->slug = $v;
-            $this->modifiedColumns[] = EditoI18nPeer::SLUG;
-        }
-
-
-        return $this;
-    } // setSlug()
 
     /**
      * Set the value of [name] column.
@@ -313,9 +276,8 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->name = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->description = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -323,8 +285,8 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
             if ($rehydrate) {
                 $this->ensureConsistency();
             }
-
-            return $startcol + 5; // 5 = EditoI18nPeer::NUM_HYDRATE_COLUMNS.
+            $this->postHydrate($row, $startcol, $rehydrate);
+            return $startcol + 4; // 4 = EditoI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EditoI18n object", $e);
@@ -554,9 +516,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EditoI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`LOCALE`';
         }
-        if ($this->isColumnModified(EditoI18nPeer::SLUG)) {
-            $modifiedColumns[':p' . $index++]  = '`SLUG`';
-        }
         if ($this->isColumnModified(EditoI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`NAME`';
         }
@@ -579,9 +538,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
                         break;
                     case '`LOCALE`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
-                        break;
-                    case '`SLUG`':
-                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                     case '`NAME`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
@@ -735,12 +691,9 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
                 return $this->getLocale();
                 break;
             case 2:
-                return $this->getSlug();
-                break;
-            case 3:
                 return $this->getName();
                 break;
-            case 4:
+            case 3:
                 return $this->getDescription();
                 break;
             default:
@@ -774,9 +727,8 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
-            $keys[2] => $this->getSlug(),
-            $keys[3] => $this->getName(),
-            $keys[4] => $this->getDescription(),
+            $keys[2] => $this->getName(),
+            $keys[3] => $this->getDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEdito) {
@@ -823,12 +775,9 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
                 $this->setLocale($value);
                 break;
             case 2:
-                $this->setSlug($value);
-                break;
-            case 3:
                 $this->setName($value);
                 break;
-            case 4:
+            case 3:
                 $this->setDescription($value);
                 break;
         } // switch()
@@ -857,9 +806,8 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setSlug($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setName($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setDescription($arr[$keys[4]]);
+        if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
     }
 
     /**
@@ -873,7 +821,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
 
         if ($this->isColumnModified(EditoI18nPeer::ID)) $criteria->add(EditoI18nPeer::ID, $this->id);
         if ($this->isColumnModified(EditoI18nPeer::LOCALE)) $criteria->add(EditoI18nPeer::LOCALE, $this->locale);
-        if ($this->isColumnModified(EditoI18nPeer::SLUG)) $criteria->add(EditoI18nPeer::SLUG, $this->slug);
         if ($this->isColumnModified(EditoI18nPeer::NAME)) $criteria->add(EditoI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(EditoI18nPeer::DESCRIPTION)) $criteria->add(EditoI18nPeer::DESCRIPTION, $this->description);
 
@@ -948,7 +895,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     {
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
-        $copyObj->setSlug($this->getSlug());
         $copyObj->setName($this->getName());
         $copyObj->setDescription($this->getDescription());
 
@@ -1066,7 +1012,6 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->locale = null;
-        $this->slug = null;
         $this->name = null;
         $this->description = null;
         $this->alreadyInSave = false;
