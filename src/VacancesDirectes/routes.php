@@ -20,16 +20,17 @@ use VacancesDirectes\Controller;
 
 use Resalys\Controller\WrapperController;
 
-$app->mount('/',                    new Controller\HomepageController());
-$app->mount('/menu',                new Controller\MenuController());
-$app->mount('/camping',             new Controller\CampingController());
-$app->mount('/search_engine',       new Controller\SearchEngineController());
-$app->mount('/catalogue',           new Controller\CatalogueController());
-$app->mount('/dispo',               new Controller\DispoController());
-$app->mount('/dernieres-minutes',   new Controller\DernieresMinutesController());
-$app->mount('/couloir-reservation', new Controller\CouloirController());
-$app->mount('/resalys',             new WrapperController());
-$app->mount('/destinations/camping-{pays}', new Controller\DestinationController());
+$app->mount('/',                                      new Controller\HomepageController());
+$app->mount('/menu',                                  new Controller\MenuController());
+$app->mount('/camping',                               new Controller\CampingController());
+$app->mount('/search_engine',                         new Controller\SearchEngineController());
+$app->mount('/catalogue',                             new Controller\CatalogueController());
+$app->mount('/dispo',                                 new Controller\DispoController());
+$app->mount('/couloir-reservation',                   new Controller\CouloirController());
+$app->mount('/resalys',                               new WrapperController());
+$app->mount('/destinations/camping-{pays}',           new Controller\DestinationController());
+$app->mount('/editos',                                new Controller\EditoController());
+$app->mount('/bons-plans/camping-dernieres-minutes',  new Controller\DernieresMinutesController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 

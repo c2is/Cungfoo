@@ -1,5 +1,25 @@
 {% extends "Destination/base.twig" %}
 
+{% block title %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.title.region" | trans ({'%region%': item}) }}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.title.pays" | trans ({'%pays%': item}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %}
+        {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
+        {{ "seo.meta.pays" | trans  ({'%pays%': item})}}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}

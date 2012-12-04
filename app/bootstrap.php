@@ -8,7 +8,7 @@
  * @package Cungfoo by C2IS
  */
 
-$app = new Silex\Application();
+$app = new Cungfoo\Application();
 
 $app['config'] = $app->share(function() {
     return new \Cungfoo\Lib\Config(dirname(__DIR__));

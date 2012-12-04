@@ -33,7 +33,7 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"            => 'ignore_token',
                 "display"           => 'reservation_content',
                 "actions"           => 'cancelReservation;buildProposalFromKey;chooseProposal',
-                "proposal_key"      => $proposalKey,
+                "proposal_key"      => $proposalKey
             );
 
             $query = array_merge($query, $request->request->all());
@@ -56,7 +56,7 @@ class CouloirController implements ControllerProviderInterface
                 "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
                 "proposal_key"      => $proposalKey,
                 "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
-                "backLink"          => 'javascript:history.go(-1);',
+                "backLink"          => 'javascript:history.go(-1);'
             );
 
             $query = array_merge($query, $request->request->all());
@@ -69,6 +69,7 @@ class CouloirController implements ControllerProviderInterface
         ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
 
+
         $controllers->get('/confirmation', function (Request $request) use ($app) {
             $query = array(
                 "specificFiles" => 'couloir',
@@ -78,7 +79,7 @@ class CouloirController implements ControllerProviderInterface
                 "display"       => 'cart_saved',
                 "actions"       => $request->query->get('actions'),
                 "session"       => $request->query->get('session'),
-                "tokens"        => $request->query->get('tokens'),
+                "tokens"        => $request->query->get('tokens')
             );
 
             $query = array_merge($query, $request->request->all());
