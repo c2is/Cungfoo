@@ -30,6 +30,9 @@ $(function() {
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
+});
+
+head.ready(function(){
 
     if($('#reservationContener.detail').length){
 
@@ -57,17 +60,27 @@ $(function() {
             }
         }
 
+
+
+
         // datepickers
+        var d = new Date();
+        var y = d.getFullYear();
         $(".anOccupant").each(function(index,value){
-            var datepickerId = "#" + $(this).find('.control_date').attr('id');
-            $(datepickerId).datepicker({
+            $(this).find('.control_date').datepicker({
                 changeMonth: true,
-                changeYear: true
+                changeYear: true,
+                defaultDate: new Date(y-18, 1 - 1, 1),
+                maxDate: "-18Y",
+                showOn: "button"
             });
         })
-        $('#reservation_content_date_creation_').datepicker({
+        $('#reservation_content_date_creation').datepicker({
             changeMonth: true,
-            changeYear: true
+            changeYear: true,
+            defaultDate: new Date(y-18, 1 - 1, 1),
+            maxDate: "-18Y",
+            showOn: "button"
         });
 
     }

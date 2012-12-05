@@ -160,6 +160,10 @@ eof
 
             // define javascript footer source code
         $javascriptFooter = sprintf(<<<eof
+
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src='+ templatePath + 'vendor/jquery-1.8.0.min.js">\x3C/script>')</script>
+
     <script>
         head.js(
             {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality

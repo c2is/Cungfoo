@@ -581,6 +581,65 @@ body.clear {
   margin: 8px 0 -8px;
   letter-spacing: normal;
 }
+.tooltip {
+  outline: none;
+  position: relative;
+}
+.tooltip strong {
+  line-height: 30px;
+}
+.tooltip:hover {
+  text-decoration: none;
+}
+.tooltip span {
+  font: bold 12px/35px Arial, Helvetica, sans-serif;
+  background: #8c8a8a;
+  color: #ffffff;
+  text-transform: none;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  display: none;
+  margin: 0;
+  width: auto;
+  line-height: 16px;
+  left: 150px;
+  bottom: -5px;
+  white-space: nowrap;
+}
+.tooltip span:after {
+  right: 100%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-right-color: #8c8a8a;
+  border-width: 5px;
+  top: 50%;
+  margin-top: -5px;
+}
+.tooltip:hover span {
+  display: inline;
+  position: absolute;
+}
+.callout {
+  z-index: 20;
+  position: absolute;
+  top: 30px;
+  border: 0;
+  left: 50%;
+}
+/*CSS3 extras*/
+.tooltip span {
+  -webkit-box-shadow: 0 10px 10px -12px #464545;
+  box-shadow: 0 10px 10px -12px #464545;
+}
 input,
 textarea {
   font: bold 12px Arial, Helvetica, sans-serif;
@@ -1163,6 +1222,16 @@ h4 {
 #reservationContener .control_date #date_sRowID_link img {
   display: none;
 }
+#reservationContener .datepicker button {
+  display: block;
+  width: 27px;
+  height: 27px;
+  border: 0 none;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -216px transparent;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
 #reservationContener label,
 #reservationContener input[type="radio"] {
   vertical-align: middle;
@@ -1205,6 +1274,9 @@ h4 {
 /* Stylish Select 0.4.9 */
 #authentication #newCustomerLayer .SSContainerDivWrapper {
   min-width: 141px;
+}
+#authentication #newCustomerLayer .SSContainerDivWrapper.maxHeight {
+  min-width: 146px;
 }
 #authentication #newCustomerLayer ul.newList a {
   height: 27px;
@@ -1272,6 +1344,9 @@ h4 {
 #reservation .aRoom .SSContainerDivWrapper {
   min-width: 54px;
 }
+#reservation .aRoom .SSContainerDivWrapper.maxHeight {
+  min-width: 59px;
+}
 #reservation .aRoom ul.newList a {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1338,6 +1413,9 @@ h4 {
 #reservation #financialContener .SSContainerDivWrapper {
   min-width: 216px;
 }
+#reservation #financialContener .SSContainerDivWrapper.maxHeight {
+  min-width: 221px;
+}
 #reservation #financialContener ul.newList a {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1403,6 +1481,9 @@ h4 {
 }
 #option .SSContainerDivWrapper {
   min-width: 141px;
+}
+#option .SSContainerDivWrapper.maxHeight {
+  min-width: 146px;
 }
 #option ul.newList a {
   height: 27px;
