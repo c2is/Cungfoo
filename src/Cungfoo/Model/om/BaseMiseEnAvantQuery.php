@@ -166,7 +166,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `IMAGE_FOND_PATH`, `PRIX`, `ILLUSTRATION_PATH`, `DATE_FIN_VALIDITE`, `SORTABLE_RANK`, `ACTIVE` FROM `mise_en_avant` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `image_fond_path`, `prix`, `illustration_path`, `date_fin_validite`, `sortable_rank`, `active` FROM `mise_en_avant` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

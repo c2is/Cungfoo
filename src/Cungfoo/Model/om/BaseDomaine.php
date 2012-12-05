@@ -424,13 +424,13 @@ abstract class BaseDomaine extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(DomainePeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(DomainePeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
         if ($this->isColumnModified(DomainePeer::ORDER)) {
-            $modifiedColumns[':p' . $index++]  = '`ORDER`';
+            $modifiedColumns[':p' . $index++]  = '`order`';
         }
 
         $sql = sprintf(
@@ -443,13 +443,13 @@ abstract class BaseDomaine extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`NAME`':
+                    case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`ORDER`':
+                    case '`order`':
                         $stmt->bindValue($identifier, $this->order, PDO::PARAM_INT);
                         break;
                 }
@@ -520,11 +520,11 @@ abstract class BaseDomaine extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**

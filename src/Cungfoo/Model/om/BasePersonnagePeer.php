@@ -47,26 +47,26 @@ abstract class BasePersonnagePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'personnage.ID';
+    /** the column name for the id field */
+    const ID = 'personnage.id';
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'personnage.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'personnage.etablissement_id';
 
-    /** the column name for the AGE field */
-    const AGE = 'personnage.AGE';
+    /** the column name for the age field */
+    const AGE = 'personnage.age';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'personnage.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'personnage.image_path';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'personnage.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'personnage.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'personnage.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'personnage.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'personnage.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'personnage.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -196,13 +196,13 @@ abstract class BasePersonnagePeer
             $criteria->addSelectColumn(PersonnagePeer::UPDATED_AT);
             $criteria->addSelectColumn(PersonnagePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.AGE');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.age');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

@@ -196,7 +196,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `point_interet` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `created_at`, `updated_at`, `active` FROM `point_interet` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

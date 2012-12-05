@@ -45,17 +45,17 @@ abstract class BasePointInteretI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'point_interet_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'point_interet_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'point_interet_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'point_interet_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'point_interet_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'point_interet_i18n.name';
 
-    /** the column name for the PRESENTATION field */
-    const PRESENTATION = 'point_interet_i18n.PRESENTATION';
+    /** the column name for the presentation field */
+    const PRESENTATION = 'point_interet_i18n.presentation';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -175,10 +175,10 @@ abstract class BasePointInteretI18nPeer
             $criteria->addSelectColumn(PointInteretI18nPeer::NAME);
             $criteria->addSelectColumn(PointInteretI18nPeer::PRESENTATION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.PRESENTATION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.presentation');
         }
     }
 

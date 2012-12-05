@@ -43,12 +43,12 @@ class EtablissementTypeHebergementTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('TYPE_HEBERGEMENT_ID', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'ID', true, null, null);
-        $this->addColumn('MINIMUM_PRICE', 'MinimumPrice', 'VARCHAR', false, 255, null);
-        $this->addColumn('MINIMUM_PRICE_DISCOUNT_LABEL', 'MinimumPriceDiscountLabel', 'VARCHAR', false, 255, null);
-        $this->addColumn('MINIMUM_PRICE_START_DATE', 'MinimumPriceStartDate', 'DATE', false, null, null);
-        $this->addColumn('MINIMUM_PRICE_END_DATE', 'MinimumPriceEndDate', 'DATE', false, null, null);
+        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
+        $this->addForeignPrimaryKey('type_hebergement_id', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'id', true, null, null);
+        $this->addColumn('minimum_price', 'MinimumPrice', 'VARCHAR', false, 255, null);
+        $this->addColumn('minimum_price_discount_label', 'MinimumPriceDiscountLabel', 'VARCHAR', false, 255, null);
+        $this->addColumn('minimum_price_start_date', 'MinimumPriceStartDate', 'DATE', false, null, null);
+        $this->addColumn('minimum_price_end_date', 'MinimumPriceEndDate', 'DATE', false, null, null);
         // validators
     } // initialize()
 

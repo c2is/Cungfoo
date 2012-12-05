@@ -46,23 +46,23 @@ abstract class BaseEtablissementTypeHebergementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_type_hebergement.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_type_hebergement.etablissement_id';
 
-    /** the column name for the TYPE_HEBERGEMENT_ID field */
-    const TYPE_HEBERGEMENT_ID = 'etablissement_type_hebergement.TYPE_HEBERGEMENT_ID';
+    /** the column name for the type_hebergement_id field */
+    const TYPE_HEBERGEMENT_ID = 'etablissement_type_hebergement.type_hebergement_id';
 
-    /** the column name for the MINIMUM_PRICE field */
-    const MINIMUM_PRICE = 'etablissement_type_hebergement.MINIMUM_PRICE';
+    /** the column name for the minimum_price field */
+    const MINIMUM_PRICE = 'etablissement_type_hebergement.minimum_price';
 
-    /** the column name for the MINIMUM_PRICE_DISCOUNT_LABEL field */
-    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.MINIMUM_PRICE_DISCOUNT_LABEL';
+    /** the column name for the minimum_price_discount_label field */
+    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.minimum_price_discount_label';
 
-    /** the column name for the MINIMUM_PRICE_START_DATE field */
-    const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.MINIMUM_PRICE_START_DATE';
+    /** the column name for the minimum_price_start_date field */
+    const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.minimum_price_start_date';
 
-    /** the column name for the MINIMUM_PRICE_END_DATE field */
-    const MINIMUM_PRICE_END_DATE = 'etablissement_type_hebergement.MINIMUM_PRICE_END_DATE';
+    /** the column name for the minimum_price_end_date field */
+    const MINIMUM_PRICE_END_DATE = 'etablissement_type_hebergement.minimum_price_end_date';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -184,12 +184,12 @@ abstract class BaseEtablissementTypeHebergementPeer
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.TYPE_HEBERGEMENT_ID');
-            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE');
-            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_DISCOUNT_LABEL');
-            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_START_DATE');
-            $criteria->addSelectColumn($alias . '.MINIMUM_PRICE_END_DATE');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.type_hebergement_id');
+            $criteria->addSelectColumn($alias . '.minimum_price');
+            $criteria->addSelectColumn($alias . '.minimum_price_discount_label');
+            $criteria->addSelectColumn($alias . '.minimum_price_start_date');
+            $criteria->addSelectColumn($alias . '.minimum_price_end_date');
         }
     }
 

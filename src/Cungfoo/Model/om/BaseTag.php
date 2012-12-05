@@ -207,22 +207,25 @@ abstract class BaseTag extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -244,22 +247,25 @@ abstract class BaseTag extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -671,7 +677,7 @@ abstract class BaseTag extends BaseObject implements Persistent
 
             if ($this->collMultimediaEtablissementTags !== null) {
                 foreach ($this->collMultimediaEtablissementTags as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -688,7 +694,7 @@ abstract class BaseTag extends BaseObject implements Persistent
 
             if ($this->collTagI18ns !== null) {
                 foreach ($this->collTagI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -721,19 +727,19 @@ abstract class BaseTag extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TagPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(TagPeer::SLUG)) {
-            $modifiedColumns[':p' . $index++]  = '`SLUG`';
+            $modifiedColumns[':p' . $index++]  = '`slug`';
         }
         if ($this->isColumnModified(TagPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(TagPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(TagPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -746,19 +752,19 @@ abstract class BaseTag extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SLUG`':
+                    case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -829,11 +835,11 @@ abstract class BaseTag extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1224,13 +1230,15 @@ abstract class BaseTag extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Tag The current object (for fluent API support)
      * @see        addMultimediaEtablissementTags()
      */
     public function clearMultimediaEtablissementTags()
     {
         $this->collMultimediaEtablissementTags = null; // important to set this to null since that means it is uninitialized
         $this->collMultimediaEtablissementTagsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1329,6 +1337,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      *
      * @param PropelCollection $multimediaEtablissementTags A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Tag The current object (for fluent API support)
      */
     public function setMultimediaEtablissementTags(PropelCollection $multimediaEtablissementTags, PropelPDO $con = null)
     {
@@ -1345,6 +1354,8 @@ abstract class BaseTag extends BaseObject implements Persistent
 
         $this->collMultimediaEtablissementTags = $multimediaEtablissementTags;
         $this->collMultimediaEtablissementTagsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1362,22 +1373,22 @@ abstract class BaseTag extends BaseObject implements Persistent
         if (null === $this->collMultimediaEtablissementTags || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collMultimediaEtablissementTags) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getMultimediaEtablissementTags());
-                }
-                $query = MultimediaEtablissementTagQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByTag($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collMultimediaEtablissementTags);
+
+            if($partial && !$criteria) {
+                return count($this->getMultimediaEtablissementTags());
+            }
+            $query = MultimediaEtablissementTagQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTag($this)
+                ->count($con);
         }
+
+        return count($this->collMultimediaEtablissementTags);
     }
 
     /**
@@ -1411,6 +1422,7 @@ abstract class BaseTag extends BaseObject implements Persistent
 
     /**
      * @param	MultimediaEtablissementTag $multimediaEtablissementTag The multimediaEtablissementTag object to remove.
+     * @return Tag The current object (for fluent API support)
      */
     public function removeMultimediaEtablissementTag($multimediaEtablissementTag)
     {
@@ -1423,6 +1435,8 @@ abstract class BaseTag extends BaseObject implements Persistent
             $this->multimediaEtablissementTagsScheduledForDeletion[]= $multimediaEtablissementTag;
             $multimediaEtablissementTag->setTag(null);
         }
+
+        return $this;
     }
 
 
@@ -1456,13 +1470,15 @@ abstract class BaseTag extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Tag The current object (for fluent API support)
      * @see        addTagI18ns()
      */
     public function clearTagI18ns()
     {
         $this->collTagI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collTagI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1561,6 +1577,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      *
      * @param PropelCollection $tagI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Tag The current object (for fluent API support)
      */
     public function setTagI18ns(PropelCollection $tagI18ns, PropelPDO $con = null)
     {
@@ -1577,6 +1594,8 @@ abstract class BaseTag extends BaseObject implements Persistent
 
         $this->collTagI18ns = $tagI18ns;
         $this->collTagI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1594,22 +1613,22 @@ abstract class BaseTag extends BaseObject implements Persistent
         if (null === $this->collTagI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collTagI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getTagI18ns());
-                }
-                $query = TagI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByTag($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collTagI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getTagI18ns());
+            }
+            $query = TagI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTag($this)
+                ->count($con);
         }
+
+        return count($this->collTagI18ns);
     }
 
     /**
@@ -1647,6 +1666,7 @@ abstract class BaseTag extends BaseObject implements Persistent
 
     /**
      * @param	TagI18n $tagI18n The tagI18n object to remove.
+     * @return Tag The current object (for fluent API support)
      */
     public function removeTagI18n($tagI18n)
     {
@@ -1659,6 +1679,8 @@ abstract class BaseTag extends BaseObject implements Persistent
             $this->tagI18nsScheduledForDeletion[]= $tagI18n;
             $tagI18n->setTag(null);
         }
+
+        return $this;
     }
 
     /**
@@ -1667,13 +1689,15 @@ abstract class BaseTag extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Tag The current object (for fluent API support)
      * @see        addMultimediaEtablissements()
      */
     public function clearMultimediaEtablissements()
     {
         $this->collMultimediaEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collMultimediaEtablissementsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1734,6 +1758,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      *
      * @param PropelCollection $multimediaEtablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Tag The current object (for fluent API support)
      */
     public function setMultimediaEtablissements(PropelCollection $multimediaEtablissements, PropelPDO $con = null)
     {
@@ -1749,6 +1774,8 @@ abstract class BaseTag extends BaseObject implements Persistent
         }
 
         $this->collMultimediaEtablissements = $multimediaEtablissements;
+
+        return $this;
     }
 
     /**
@@ -1786,7 +1813,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      * through the multimedia_etablissement_tag cross reference table.
      *
      * @param  MultimediaEtablissement $multimediaEtablissement The MultimediaEtablissementTag object to relate
-     * @return void
+     * @return Tag The current object (for fluent API support)
      */
     public function addMultimediaEtablissement(MultimediaEtablissement $multimediaEtablissement)
     {
@@ -1798,6 +1825,8 @@ abstract class BaseTag extends BaseObject implements Persistent
 
             $this->collMultimediaEtablissements[]= $multimediaEtablissement;
         }
+
+        return $this;
     }
 
     /**
@@ -1815,7 +1844,7 @@ abstract class BaseTag extends BaseObject implements Persistent
      * through the multimedia_etablissement_tag cross reference table.
      *
      * @param MultimediaEtablissement $multimediaEtablissement The MultimediaEtablissementTag object to relate
-     * @return void
+     * @return Tag The current object (for fluent API support)
      */
     public function removeMultimediaEtablissement(MultimediaEtablissement $multimediaEtablissement)
     {
@@ -1827,6 +1856,8 @@ abstract class BaseTag extends BaseObject implements Persistent
             }
             $this->multimediaEtablissementsScheduledForDeletion[]= $multimediaEtablissement;
         }
+
+        return $this;
     }
 
     /**

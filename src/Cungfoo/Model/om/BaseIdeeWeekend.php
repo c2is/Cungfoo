@@ -642,7 +642,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
             if ($this->collIdeeWeekendI18ns !== null) {
                 foreach ($this->collIdeeWeekendI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -675,25 +675,25 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(IdeeWeekendPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::HIGHLIGHT)) {
-            $modifiedColumns[':p' . $index++]  = '`HIGHLIGHT`';
+            $modifiedColumns[':p' . $index++]  = '`highlight`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::PRIX)) {
-            $modifiedColumns[':p' . $index++]  = '`PRIX`';
+            $modifiedColumns[':p' . $index++]  = '`prix`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) {
-            $modifiedColumns[':p' . $index++]  = '`HOME`';
+            $modifiedColumns[':p' . $index++]  = '`home`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::LIEN)) {
-            $modifiedColumns[':p' . $index++]  = '`LIEN`';
+            $modifiedColumns[':p' . $index++]  = '`lien`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
         if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -706,25 +706,25 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`HIGHLIGHT`':
+                    case '`highlight`':
                         $stmt->bindValue($identifier, (int) $this->highlight, PDO::PARAM_INT);
                         break;
-                    case '`PRIX`':
+                    case '`prix`':
                         $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
                         break;
-                    case '`HOME`':
+                    case '`home`':
                         $stmt->bindValue($identifier, (int) $this->home, PDO::PARAM_INT);
                         break;
-                    case '`LIEN`':
+                    case '`lien`':
                         $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -795,11 +795,11 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1190,13 +1190,15 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return IdeeWeekend The current object (for fluent API support)
      * @see        addIdeeWeekendI18ns()
      */
     public function clearIdeeWeekendI18ns()
     {
         $this->collIdeeWeekendI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collIdeeWeekendI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1295,6 +1297,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      *
      * @param PropelCollection $ideeWeekendI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function setIdeeWeekendI18ns(PropelCollection $ideeWeekendI18ns, PropelPDO $con = null)
     {
@@ -1311,6 +1314,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
         $this->collIdeeWeekendI18ns = $ideeWeekendI18ns;
         $this->collIdeeWeekendI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1328,22 +1333,22 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if (null === $this->collIdeeWeekendI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collIdeeWeekendI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getIdeeWeekendI18ns());
-                }
-                $query = IdeeWeekendI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByIdeeWeekend($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collIdeeWeekendI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getIdeeWeekendI18ns());
+            }
+            $query = IdeeWeekendI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByIdeeWeekend($this)
+                ->count($con);
         }
+
+        return count($this->collIdeeWeekendI18ns);
     }
 
     /**
@@ -1381,6 +1386,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
 
     /**
      * @param	IdeeWeekendI18n $ideeWeekendI18n The ideeWeekendI18n object to remove.
+     * @return IdeeWeekend The current object (for fluent API support)
      */
     public function removeIdeeWeekendI18n($ideeWeekendI18n)
     {
@@ -1393,6 +1399,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->ideeWeekendI18nsScheduledForDeletion[]= $ideeWeekendI18n;
             $ideeWeekendI18n->setIdeeWeekend(null);
         }
+
+        return $this;
     }
 
     /**

@@ -45,26 +45,26 @@ abstract class BaseTypeHebergementI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'type_hebergement_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'type_hebergement_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'type_hebergement_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'type_hebergement_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'type_hebergement_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'type_hebergement_i18n.name';
 
-    /** the column name for the SURFACE field */
-    const SURFACE = 'type_hebergement_i18n.SURFACE';
+    /** the column name for the surface field */
+    const SURFACE = 'type_hebergement_i18n.surface';
 
-    /** the column name for the TYPE_TERRASSE field */
-    const TYPE_TERRASSE = 'type_hebergement_i18n.TYPE_TERRASSE';
+    /** the column name for the type_terrasse field */
+    const TYPE_TERRASSE = 'type_hebergement_i18n.type_terrasse';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'type_hebergement_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'type_hebergement_i18n.description';
 
-    /** the column name for the COMPOSITION field */
-    const COMPOSITION = 'type_hebergement_i18n.COMPOSITION';
+    /** the column name for the composition field */
+    const COMPOSITION = 'type_hebergement_i18n.composition';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -187,13 +187,13 @@ abstract class BaseTypeHebergementI18nPeer
             $criteria->addSelectColumn(TypeHebergementI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::COMPOSITION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.SURFACE');
-            $criteria->addSelectColumn($alias . '.TYPE_TERRASSE');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
-            $criteria->addSelectColumn($alias . '.COMPOSITION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.surface');
+            $criteria->addSelectColumn($alias . '.type_terrasse');
+            $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.composition');
         }
     }
 

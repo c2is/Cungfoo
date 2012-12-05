@@ -45,20 +45,20 @@ abstract class BaseSituationGeographiqueI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'situation_geographique_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'situation_geographique_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'situation_geographique_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'situation_geographique_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'situation_geographique_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'situation_geographique_i18n.name';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'situation_geographique_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'situation_geographique_i18n.description';
 
-    /** the column name for the KEYWORDS field */
-    const KEYWORDS = 'situation_geographique_i18n.KEYWORDS';
+    /** the column name for the keywords field */
+    const KEYWORDS = 'situation_geographique_i18n.keywords';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -179,11 +179,11 @@ abstract class BaseSituationGeographiqueI18nPeer
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::KEYWORDS);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
-            $criteria->addSelectColumn($alias . '.KEYWORDS');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.keywords');
         }
     }
 

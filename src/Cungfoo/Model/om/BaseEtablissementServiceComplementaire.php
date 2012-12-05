@@ -431,10 +431,10 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementServiceComplementairePeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementServiceComplementairePeer::SERVICE_COMPLEMENTAIRE_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`SERVICE_COMPLEMENTAIRE_ID`';
+            $modifiedColumns[':p' . $index++]  = '`service_complementaire_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`SERVICE_COMPLEMENTAIRE_ID`':
+                    case '`service_complementaire_id`':
                         $stmt->bindValue($identifier, $this->service_complementaire_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseEtablissementServiceComplementaire extends BaseObject impleme
      * Get the associated ServiceComplementaire object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return ServiceComplementaire The associated ServiceComplementaire object.
      * @throws PropelException
      */
-    public function getServiceComplementaire(PropelPDO $con = null)
+    public function getServiceComplementaire(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aServiceComplementaire === null && ($this->service_complementaire_id !== null)) {
+        if ($this->aServiceComplementaire === null && ($this->service_complementaire_id !== null) && $doQuery) {
             $this->aServiceComplementaire = ServiceComplementaireQuery::create()->findPk($this->service_complementaire_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

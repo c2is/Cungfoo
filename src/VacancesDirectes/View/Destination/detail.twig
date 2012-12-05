@@ -23,13 +23,9 @@
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    <a class="bt gris left goto" href="#_">&lt; {{ "destination.retour" | trans }}</a>
-
-    <ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
-        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
-        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Nos campings : Campings France</span></a></li>
-        <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
-    </ol>
+    {# le lien retour pointera à terme sur les pages de listing
+    <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
+    #}
 
     {# Bloc titre + accroche + picto #}
     {% if item['imagePath'] is defined %}
@@ -39,7 +35,7 @@
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
     <p class="destiDescription">{{ item.description }}</p> {# Description #}
 
-    <a class="bt big fushia right" href="#_">Notre sélection</a>
+    <a class="bt big fushia right goto" href="#results">Notre sélection</a>
 
 {% endblock %}
 
@@ -58,7 +54,7 @@
         <div class="miniEncart clear">
             <img src="{{ poi.image }}"  class="left boxborder" alt="">
             <span class="h5-like">{{ poi.name }} {# Titre #}</span>
-            <p> {{ poi.presentation }} {# Texte #}</p>
+            <p> {{ poi.presentation | truncate(370, true, '...') }} {# Texte #}</p>
         </div>
     {% endfor %}
     <a href=="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a>
@@ -92,32 +88,9 @@
 
 {% block bottomRightColumn %}
 <div id="greyBoxes">
-    {# Bloc "Vacances directes un séjour réussi" #}
-    <div id="assetsBloc" class="clear radiusBox greyC">
-        <div class="no stamp">
-            <h2>{{ "encart_vacances_directes.title" | trans }} = <br> {{ "encart_vacances_directes.subtitle" | trans }}</h2>
-        </div>
-        <ul>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_1" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_2" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_3" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_4" | trans }}</span></li>
-        </ul>
-    </div>
+    {% include 'Bloc/sejour_reussi.twig' %}
 
-    <div id="infoBloc" class="clear radiusBox greyF">
-        <h3>{{ "encart_informations.title" | trans }}</h3>
-        <div class="content">
-            <p>
-                <a class="tel" href="tel:{{ "footer.contact.tel" | trans }}">{{ "footer.contact.tel" | trans }}</a>
-            </p>
-            <span class="price">{{ "encart_informations.price" | trans }}</span>
-            <p class="small">
-                {{ "encart_informations.dates_1" | trans }}<br />
-                {{ "encart_informations.dates_2" | trans }}
-            </p>
-        </div>
-    </div>
+    {% include 'Bloc/informations.twig' %}
 </div>
 {% endblock %}
 

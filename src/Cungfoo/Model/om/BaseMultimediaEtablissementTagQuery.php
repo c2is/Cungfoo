@@ -139,7 +139,7 @@ abstract class BaseMultimediaEtablissementTagQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `MULTIMEDIA_ETABLISSEMENT_ID`, `TAG_ID` FROM `multimedia_etablissement_tag` WHERE `MULTIMEDIA_ETABLISSEMENT_ID` = :p0 AND `TAG_ID` = :p1';
+        $sql = 'SELECT `multimedia_etablissement_id`, `tag_id` FROM `multimedia_etablissement_tag` WHERE `multimedia_etablissement_id` = :p0 AND `tag_id` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

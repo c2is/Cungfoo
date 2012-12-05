@@ -42,35 +42,35 @@ class EtablissementTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('CODE', 'Code', 'INTEGER', true, null, null);
-        $this->addColumn('SLUG', 'Slug', 'VARCHAR', true, 255, null);
-        $this->addColumn('NAME', 'Name', 'VARCHAR', true, 255, null);
-        $this->addColumn('TITLE', 'Title', 'VARCHAR', false, 255, null);
-        $this->addColumn('ADDRESS1', 'Address1', 'VARCHAR', false, 255, null);
-        $this->addColumn('ADDRESS2', 'Address2', 'VARCHAR', false, 255, null);
-        $this->addColumn('ZIP', 'Zip', 'VARCHAR', false, 255, null);
-        $this->addColumn('CITY', 'City', 'VARCHAR', false, 255, null);
-        $this->addColumn('MAIL', 'Mail', 'VARCHAR', false, 255, null);
-        $this->addColumn('COUNTRY_CODE', 'CountryCode', 'VARCHAR', false, 255, null);
-        $this->addColumn('PHONE1', 'Phone1', 'VARCHAR', false, 255, null);
-        $this->addColumn('PHONE2', 'Phone2', 'VARCHAR', false, 255, null);
-        $this->addColumn('FAX', 'Fax', 'VARCHAR', false, 255, null);
-        $this->addColumn('OPENING_DATE', 'OpeningDate', 'TIMESTAMP', false, null, null);
-        $this->addColumn('CLOSING_DATE', 'ClosingDate', 'TIMESTAMP', false, null, null);
-        $this->addForeignKey('VILLE_ID', 'VilleId', 'INTEGER', 'ville', 'ID', false, null, null);
-        $this->addForeignKey('CATEGORIE_ID', 'CategorieId', 'INTEGER', 'categorie', 'ID', false, null, null);
-        $this->addColumn('GEO_COORDINATE_X', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
-        $this->addColumn('GEO_COORDINATE_Y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
-        $this->addColumn('VIDEO_PATH', 'VideoPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('IMAGE_360_PATH', 'Image360Path', 'VARCHAR', false, 255, null);
-        $this->addColumn('CAPACITE', 'Capacite', 'VARCHAR', false, 255, null);
-        $this->addColumn('PLAN_PATH', 'PlanPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('VIGNETTE', 'Vignette', 'VARCHAR', false, 255, null);
-        $this->addColumn('PUBLISHED', 'Published', 'BOOLEAN', false, 1, null);
-        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('code', 'Code', 'INTEGER', true, null, null);
+        $this->addColumn('slug', 'Slug', 'VARCHAR', true, 255, null);
+        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('title', 'Title', 'VARCHAR', false, 255, null);
+        $this->addColumn('address1', 'Address1', 'VARCHAR', false, 255, null);
+        $this->addColumn('address2', 'Address2', 'VARCHAR', false, 255, null);
+        $this->addColumn('zip', 'Zip', 'VARCHAR', false, 255, null);
+        $this->addColumn('city', 'City', 'VARCHAR', false, 255, null);
+        $this->addColumn('mail', 'Mail', 'VARCHAR', false, 255, null);
+        $this->addColumn('country_code', 'CountryCode', 'VARCHAR', false, 255, null);
+        $this->addColumn('phone1', 'Phone1', 'VARCHAR', false, 255, null);
+        $this->addColumn('phone2', 'Phone2', 'VARCHAR', false, 255, null);
+        $this->addColumn('fax', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addColumn('opening_date', 'OpeningDate', 'TIMESTAMP', false, null, null);
+        $this->addColumn('closing_date', 'ClosingDate', 'TIMESTAMP', false, null, null);
+        $this->addForeignKey('ville_id', 'VilleId', 'INTEGER', 'ville', 'id', false, null, null);
+        $this->addForeignKey('categorie_id', 'CategorieId', 'INTEGER', 'categorie', 'id', false, null, null);
+        $this->addColumn('geo_coordinate_x', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
+        $this->addColumn('geo_coordinate_y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
+        $this->addColumn('video_path', 'VideoPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('image_360_path', 'Image360Path', 'VARCHAR', false, 255, null);
+        $this->addColumn('capacite', 'Capacite', 'VARCHAR', false, 255, null);
+        $this->addColumn('plan_path', 'PlanPath', 'VARCHAR', false, 255, null);
+        $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
+        $this->addColumn('published', 'Published', 'BOOLEAN', false, 1, null);
+        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -116,10 +116,31 @@ class EtablissementTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'active' => array('active_column' => 'active', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/etablissement', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => 'plan_path, vignette', 'crud_search' => 'name, title', ),
+            'timestampable' =>  array (
+  'create_column' => 'created_at',
+  'update_column' => 'updated_at',
+  'disable_updated_at' => 'false',
+),
+            'active' =>  array (
+  'active_column' => 'active',
+),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/etablissement',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => 'plan_path, vignette',
+  'crud_search' => 'name, title',
+),
         );
     } // getBehaviors()
 

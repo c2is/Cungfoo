@@ -46,11 +46,11 @@ abstract class BaseEtablissementSituationGeographiquePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_situation_geographique.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_situation_geographique.etablissement_id';
 
-    /** the column name for the SITUATION_GEOGRAPHIQUE_ID field */
-    const SITUATION_GEOGRAPHIQUE_ID = 'etablissement_situation_geographique.SITUATION_GEOGRAPHIQUE_ID';
+    /** the column name for the situation_geographique_id field */
+    const SITUATION_GEOGRAPHIQUE_ID = 'etablissement_situation_geographique.situation_geographique_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseEtablissementSituationGeographiquePeer
             $criteria->addSelectColumn(EtablissementSituationGeographiquePeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementSituationGeographiquePeer::SITUATION_GEOGRAPHIQUE_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.SITUATION_GEOGRAPHIQUE_ID');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.situation_geographique_id');
         }
     }
 

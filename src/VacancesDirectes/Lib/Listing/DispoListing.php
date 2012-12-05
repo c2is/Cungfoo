@@ -50,8 +50,14 @@ class DispoListing extends AbstractListing
         $etab = \Cungfoo\Model\EtablissementQuery::create()
             ->joinWithI18n($this->app['context']->get('language'))
             ->filterByCode($proposal->{'etab_id'})
+            ->filterByActive(true)
             ->findOne()
         ;
+
+        if (!$etab)
+        {
+            return $results;
+        }
 
         $key = sprintf("%s_%s_%s",
             $proposal->{'etab_id'},

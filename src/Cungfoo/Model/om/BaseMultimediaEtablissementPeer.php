@@ -47,23 +47,23 @@ abstract class BaseMultimediaEtablissementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'multimedia_etablissement.ID';
+    /** the column name for the id field */
+    const ID = 'multimedia_etablissement.id';
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'multimedia_etablissement.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'multimedia_etablissement.etablissement_id';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'multimedia_etablissement.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'multimedia_etablissement.image_path';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'multimedia_etablissement.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'multimedia_etablissement.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'multimedia_etablissement.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'multimedia_etablissement.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'multimedia_etablissement.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'multimedia_etablissement.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -192,12 +192,12 @@ abstract class BaseMultimediaEtablissementPeer
             $criteria->addSelectColumn(MultimediaEtablissementPeer::UPDATED_AT);
             $criteria->addSelectColumn(MultimediaEtablissementPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

@@ -45,20 +45,20 @@ abstract class BaseEditoPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'edito.ID';
+    /** the column name for the id field */
+    const ID = 'edito.id';
 
-    /** the column name for the SLUG field */
-    const SLUG = 'edito.SLUG';
+    /** the column name for the slug field */
+    const SLUG = 'edito.slug';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'edito.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'edito.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'edito.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'edito.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'edito.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'edito.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -186,11 +186,11 @@ abstract class BaseEditoPeer
             $criteria->addSelectColumn(EditoPeer::UPDATED_AT);
             $criteria->addSelectColumn(EditoPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.SLUG');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

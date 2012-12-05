@@ -45,32 +45,32 @@ abstract class BaseJobPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 9;
 
-    /** the column name for the ID field */
-    const ID = 'job.ID';
+    /** the column name for the id field */
+    const ID = 'job.id';
 
-    /** the column name for the NAME field */
-    const NAME = 'job.NAME';
+    /** the column name for the name field */
+    const NAME = 'job.name';
 
-    /** the column name for the TYPE field */
-    const TYPE = 'job.TYPE';
+    /** the column name for the type field */
+    const TYPE = 'job.type';
 
-    /** the column name for the PARAMS field */
-    const PARAMS = 'job.PARAMS';
+    /** the column name for the params field */
+    const PARAMS = 'job.params';
 
-    /** the column name for the MESSAGE field */
-    const MESSAGE = 'job.MESSAGE';
+    /** the column name for the message field */
+    const MESSAGE = 'job.message';
 
-    /** the column name for the COMPLETED_AT field */
-    const COMPLETED_AT = 'job.COMPLETED_AT';
+    /** the column name for the completed_at field */
+    const COMPLETED_AT = 'job.completed_at';
 
-    /** the column name for the STATUS field */
-    const STATUS = 'job.STATUS';
+    /** the column name for the status field */
+    const STATUS = 'job.status';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'job.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'job.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'job.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'job.updated_at';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -195,15 +195,15 @@ abstract class BaseJobPeer
             $criteria->addSelectColumn(JobPeer::CREATED_AT);
             $criteria->addSelectColumn(JobPeer::UPDATED_AT);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.TYPE');
-            $criteria->addSelectColumn($alias . '.PARAMS');
-            $criteria->addSelectColumn($alias . '.MESSAGE');
-            $criteria->addSelectColumn($alias . '.COMPLETED_AT');
-            $criteria->addSelectColumn($alias . '.STATUS');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.type');
+            $criteria->addSelectColumn($alias . '.params');
+            $criteria->addSelectColumn($alias . '.message');
+            $criteria->addSelectColumn($alias . '.completed_at');
+            $criteria->addSelectColumn($alias . '.status');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
         }
     }
 

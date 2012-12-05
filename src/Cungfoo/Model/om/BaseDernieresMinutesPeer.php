@@ -46,22 +46,22 @@ abstract class BaseDernieresMinutesPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'dernieres_minutes.ID';
+    /** the column name for the id field */
+    const ID = 'dernieres_minutes.id';
 
-    /** the column name for the DATE_START field */
-    const DATE_START = 'dernieres_minutes.DATE_START';
+    /** the column name for the date_start field */
+    const DATE_START = 'dernieres_minutes.date_start';
 
-    /** the column name for the DAY_START field */
-    const DAY_START = 'dernieres_minutes.DAY_START';
+    /** the column name for the day_start field */
+    const DAY_START = 'dernieres_minutes.day_start';
 
-    /** the column name for the DAY_RANGE field */
-    const DAY_RANGE = 'dernieres_minutes.DAY_RANGE';
+    /** the column name for the day_range field */
+    const DAY_RANGE = 'dernieres_minutes.day_range';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'dernieres_minutes.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'dernieres_minutes.active';
 
-    /** The enumerated values for the DAY_START field */
+    /** The enumerated values for the day_start field */
     const DAY_START_MONDAY = 'monday';
     const DAY_START_TUESDAY = 'tuesday';
     const DAY_START_WEDNESDAY = 'wednesday';
@@ -70,7 +70,7 @@ abstract class BaseDernieresMinutesPeer
     const DAY_START_SATURDAY = 'saturday';
     const DAY_START_SUNDAY = 'sunday';
 
-    /** The enumerated values for the DAY_RANGE field */
+    /** The enumerated values for the day_range field */
     const DAY_RANGE_7 = '7';
     const DAY_RANGE_14 = '14';
     const DAY_RANGE_21 = '21';
@@ -235,11 +235,11 @@ abstract class BaseDernieresMinutesPeer
             $criteria->addSelectColumn(DernieresMinutesPeer::DAY_RANGE);
             $criteria->addSelectColumn(DernieresMinutesPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.DATE_START');
-            $criteria->addSelectColumn($alias . '.DAY_START');
-            $criteria->addSelectColumn($alias . '.DAY_RANGE');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.date_start');
+            $criteria->addSelectColumn($alias . '.day_start');
+            $criteria->addSelectColumn($alias . '.day_range');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

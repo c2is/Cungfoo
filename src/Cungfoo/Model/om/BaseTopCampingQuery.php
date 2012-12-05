@@ -154,7 +154,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `SORTABLE_RANK`, `ACTIVE` FROM `top_camping` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `etablissement_id`, `sortable_rank`, `active` FROM `top_camping` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

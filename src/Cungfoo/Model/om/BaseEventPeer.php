@@ -45,50 +45,50 @@ abstract class BaseEventPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 15;
 
-    /** the column name for the ID field */
-    const ID = 'event.ID';
+    /** the column name for the id field */
+    const ID = 'event.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'event.CODE';
+    /** the column name for the code field */
+    const CODE = 'event.code';
 
-    /** the column name for the CATEGORY field */
-    const CATEGORY = 'event.CATEGORY';
+    /** the column name for the category field */
+    const CATEGORY = 'event.category';
 
-    /** the column name for the ADDRESS field */
-    const ADDRESS = 'event.ADDRESS';
+    /** the column name for the address field */
+    const ADDRESS = 'event.address';
 
-    /** the column name for the ADDRESS2 field */
-    const ADDRESS2 = 'event.ADDRESS2';
+    /** the column name for the address2 field */
+    const ADDRESS2 = 'event.address2';
 
-    /** the column name for the ZIPCODE field */
-    const ZIPCODE = 'event.ZIPCODE';
+    /** the column name for the zipcode field */
+    const ZIPCODE = 'event.zipcode';
 
-    /** the column name for the CITY field */
-    const CITY = 'event.CITY';
+    /** the column name for the city field */
+    const CITY = 'event.city';
 
-    /** the column name for the GEO_COORDINATE_X field */
-    const GEO_COORDINATE_X = 'event.GEO_COORDINATE_X';
+    /** the column name for the geo_coordinate_x field */
+    const GEO_COORDINATE_X = 'event.geo_coordinate_x';
 
-    /** the column name for the GEO_COORDINATE_Y field */
-    const GEO_COORDINATE_Y = 'event.GEO_COORDINATE_Y';
+    /** the column name for the geo_coordinate_y field */
+    const GEO_COORDINATE_Y = 'event.geo_coordinate_y';
 
-    /** the column name for the DISTANCE_CAMPING field */
-    const DISTANCE_CAMPING = 'event.DISTANCE_CAMPING';
+    /** the column name for the distance_camping field */
+    const DISTANCE_CAMPING = 'event.distance_camping';
 
-    /** the column name for the IMAGE field */
-    const IMAGE = 'event.IMAGE';
+    /** the column name for the image field */
+    const IMAGE = 'event.image';
 
-    /** the column name for the PRIORITY field */
-    const PRIORITY = 'event.PRIORITY';
+    /** the column name for the priority field */
+    const PRIORITY = 'event.priority';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'event.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'event.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'event.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'event.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'event.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'event.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -226,21 +226,21 @@ abstract class BaseEventPeer
             $criteria->addSelectColumn(EventPeer::UPDATED_AT);
             $criteria->addSelectColumn(EventPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CATEGORY');
-            $criteria->addSelectColumn($alias . '.ADDRESS');
-            $criteria->addSelectColumn($alias . '.ADDRESS2');
-            $criteria->addSelectColumn($alias . '.ZIPCODE');
-            $criteria->addSelectColumn($alias . '.CITY');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_X');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_Y');
-            $criteria->addSelectColumn($alias . '.DISTANCE_CAMPING');
-            $criteria->addSelectColumn($alias . '.IMAGE');
-            $criteria->addSelectColumn($alias . '.PRIORITY');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.category');
+            $criteria->addSelectColumn($alias . '.address');
+            $criteria->addSelectColumn($alias . '.address2');
+            $criteria->addSelectColumn($alias . '.zipcode');
+            $criteria->addSelectColumn($alias . '.city');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_x');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_y');
+            $criteria->addSelectColumn($alias . '.distance_camping');
+            $criteria->addSelectColumn($alias . '.image');
+            $criteria->addSelectColumn($alias . '.priority');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

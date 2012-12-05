@@ -45,44 +45,44 @@ abstract class BasePointInteretPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 13;
 
-    /** the column name for the ID field */
-    const ID = 'point_interet.ID';
+    /** the column name for the id field */
+    const ID = 'point_interet.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'point_interet.CODE';
+    /** the column name for the code field */
+    const CODE = 'point_interet.code';
 
-    /** the column name for the ADDRESS field */
-    const ADDRESS = 'point_interet.ADDRESS';
+    /** the column name for the address field */
+    const ADDRESS = 'point_interet.address';
 
-    /** the column name for the ADDRESS2 field */
-    const ADDRESS2 = 'point_interet.ADDRESS2';
+    /** the column name for the address2 field */
+    const ADDRESS2 = 'point_interet.address2';
 
-    /** the column name for the ZIPCODE field */
-    const ZIPCODE = 'point_interet.ZIPCODE';
+    /** the column name for the zipcode field */
+    const ZIPCODE = 'point_interet.zipcode';
 
-    /** the column name for the CITY field */
-    const CITY = 'point_interet.CITY';
+    /** the column name for the city field */
+    const CITY = 'point_interet.city';
 
-    /** the column name for the GEO_COORDINATE_X field */
-    const GEO_COORDINATE_X = 'point_interet.GEO_COORDINATE_X';
+    /** the column name for the geo_coordinate_x field */
+    const GEO_COORDINATE_X = 'point_interet.geo_coordinate_x';
 
-    /** the column name for the GEO_COORDINATE_Y field */
-    const GEO_COORDINATE_Y = 'point_interet.GEO_COORDINATE_Y';
+    /** the column name for the geo_coordinate_y field */
+    const GEO_COORDINATE_Y = 'point_interet.geo_coordinate_y';
 
-    /** the column name for the DISTANCE_CAMPING field */
-    const DISTANCE_CAMPING = 'point_interet.DISTANCE_CAMPING';
+    /** the column name for the distance_camping field */
+    const DISTANCE_CAMPING = 'point_interet.distance_camping';
 
-    /** the column name for the IMAGE field */
-    const IMAGE = 'point_interet.IMAGE';
+    /** the column name for the image field */
+    const IMAGE = 'point_interet.image';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'point_interet.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'point_interet.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'point_interet.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'point_interet.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'point_interet.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'point_interet.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -218,19 +218,19 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn(PointInteretPeer::UPDATED_AT);
             $criteria->addSelectColumn(PointInteretPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.ADDRESS');
-            $criteria->addSelectColumn($alias . '.ADDRESS2');
-            $criteria->addSelectColumn($alias . '.ZIPCODE');
-            $criteria->addSelectColumn($alias . '.CITY');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_X');
-            $criteria->addSelectColumn($alias . '.GEO_COORDINATE_Y');
-            $criteria->addSelectColumn($alias . '.DISTANCE_CAMPING');
-            $criteria->addSelectColumn($alias . '.IMAGE');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.address');
+            $criteria->addSelectColumn($alias . '.address2');
+            $criteria->addSelectColumn($alias . '.zipcode');
+            $criteria->addSelectColumn($alias . '.city');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_x');
+            $criteria->addSelectColumn($alias . '.geo_coordinate_y');
+            $criteria->addSelectColumn($alias . '.distance_camping');
+            $criteria->addSelectColumn($alias . '.image');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

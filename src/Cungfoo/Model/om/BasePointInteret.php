@@ -335,22 +335,25 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -372,22 +375,25 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -975,7 +981,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
             if ($this->collEtablissementPointInterets !== null) {
                 foreach ($this->collEtablissementPointInterets as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -992,7 +998,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
             if ($this->collPointInteretI18ns !== null) {
                 foreach ($this->collPointInteretI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -1025,43 +1031,43 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(PointInteretPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(PointInteretPeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE`';
+            $modifiedColumns[':p' . $index++]  = '`code`';
         }
         if ($this->isColumnModified(PointInteretPeer::ADDRESS)) {
-            $modifiedColumns[':p' . $index++]  = '`ADDRESS`';
+            $modifiedColumns[':p' . $index++]  = '`address`';
         }
         if ($this->isColumnModified(PointInteretPeer::ADDRESS2)) {
-            $modifiedColumns[':p' . $index++]  = '`ADDRESS2`';
+            $modifiedColumns[':p' . $index++]  = '`address2`';
         }
         if ($this->isColumnModified(PointInteretPeer::ZIPCODE)) {
-            $modifiedColumns[':p' . $index++]  = '`ZIPCODE`';
+            $modifiedColumns[':p' . $index++]  = '`zipcode`';
         }
         if ($this->isColumnModified(PointInteretPeer::CITY)) {
-            $modifiedColumns[':p' . $index++]  = '`CITY`';
+            $modifiedColumns[':p' . $index++]  = '`city`';
         }
         if ($this->isColumnModified(PointInteretPeer::GEO_COORDINATE_X)) {
-            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_X`';
+            $modifiedColumns[':p' . $index++]  = '`geo_coordinate_x`';
         }
         if ($this->isColumnModified(PointInteretPeer::GEO_COORDINATE_Y)) {
-            $modifiedColumns[':p' . $index++]  = '`GEO_COORDINATE_Y`';
+            $modifiedColumns[':p' . $index++]  = '`geo_coordinate_y`';
         }
         if ($this->isColumnModified(PointInteretPeer::DISTANCE_CAMPING)) {
-            $modifiedColumns[':p' . $index++]  = '`DISTANCE_CAMPING`';
+            $modifiedColumns[':p' . $index++]  = '`distance_camping`';
         }
         if ($this->isColumnModified(PointInteretPeer::IMAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE`';
+            $modifiedColumns[':p' . $index++]  = '`image`';
         }
         if ($this->isColumnModified(PointInteretPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(PointInteretPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(PointInteretPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -1074,43 +1080,43 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':
+                    case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS`':
+                    case '`address`':
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
-                    case '`ADDRESS2`':
+                    case '`address2`':
                         $stmt->bindValue($identifier, $this->address2, PDO::PARAM_STR);
                         break;
-                    case '`ZIPCODE`':
+                    case '`zipcode`':
                         $stmt->bindValue($identifier, $this->zipcode, PDO::PARAM_STR);
                         break;
-                    case '`CITY`':
+                    case '`city`':
                         $stmt->bindValue($identifier, $this->city, PDO::PARAM_STR);
                         break;
-                    case '`GEO_COORDINATE_X`':
+                    case '`geo_coordinate_x`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_x, PDO::PARAM_STR);
                         break;
-                    case '`GEO_COORDINATE_Y`':
+                    case '`geo_coordinate_y`':
                         $stmt->bindValue($identifier, $this->geo_coordinate_y, PDO::PARAM_STR);
                         break;
-                    case '`DISTANCE_CAMPING`':
+                    case '`distance_camping`':
                         $stmt->bindValue($identifier, $this->distance_camping, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE`':
+                    case '`image`':
                         $stmt->bindValue($identifier, $this->image, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -1181,11 +1187,11 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1656,13 +1662,15 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return PointInteret The current object (for fluent API support)
      * @see        addEtablissementPointInterets()
      */
     public function clearEtablissementPointInterets()
     {
         $this->collEtablissementPointInterets = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementPointInteretsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1761,6 +1769,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissementPointInterets A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return PointInteret The current object (for fluent API support)
      */
     public function setEtablissementPointInterets(PropelCollection $etablissementPointInterets, PropelPDO $con = null)
     {
@@ -1777,6 +1786,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
         $this->collEtablissementPointInterets = $etablissementPointInterets;
         $this->collEtablissementPointInteretsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1794,22 +1805,22 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if (null === $this->collEtablissementPointInterets || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEtablissementPointInterets) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getEtablissementPointInterets());
-                }
-                $query = EtablissementPointInteretQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByPointInteret($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collEtablissementPointInterets);
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementPointInterets());
+            }
+            $query = EtablissementPointInteretQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPointInteret($this)
+                ->count($con);
         }
+
+        return count($this->collEtablissementPointInterets);
     }
 
     /**
@@ -1843,6 +1854,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * @param	EtablissementPointInteret $etablissementPointInteret The etablissementPointInteret object to remove.
+     * @return PointInteret The current object (for fluent API support)
      */
     public function removeEtablissementPointInteret($etablissementPointInteret)
     {
@@ -1855,6 +1867,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->etablissementPointInteretsScheduledForDeletion[]= $etablissementPointInteret;
             $etablissementPointInteret->setPointInteret(null);
         }
+
+        return $this;
     }
 
 
@@ -1888,13 +1902,15 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return PointInteret The current object (for fluent API support)
      * @see        addPointInteretI18ns()
      */
     public function clearPointInteretI18ns()
     {
         $this->collPointInteretI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collPointInteretI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1993,6 +2009,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      *
      * @param PropelCollection $pointInteretI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return PointInteret The current object (for fluent API support)
      */
     public function setPointInteretI18ns(PropelCollection $pointInteretI18ns, PropelPDO $con = null)
     {
@@ -2009,6 +2026,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
         $this->collPointInteretI18ns = $pointInteretI18ns;
         $this->collPointInteretI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -2026,22 +2045,22 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if (null === $this->collPointInteretI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collPointInteretI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getPointInteretI18ns());
-                }
-                $query = PointInteretI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByPointInteret($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collPointInteretI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getPointInteretI18ns());
+            }
+            $query = PointInteretI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPointInteret($this)
+                ->count($con);
         }
+
+        return count($this->collPointInteretI18ns);
     }
 
     /**
@@ -2079,6 +2098,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
     /**
      * @param	PointInteretI18n $pointInteretI18n The pointInteretI18n object to remove.
+     * @return PointInteret The current object (for fluent API support)
      */
     public function removePointInteretI18n($pointInteretI18n)
     {
@@ -2091,6 +2111,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->pointInteretI18nsScheduledForDeletion[]= $pointInteretI18n;
             $pointInteretI18n->setPointInteret(null);
         }
+
+        return $this;
     }
 
     /**
@@ -2099,13 +2121,15 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return PointInteret The current object (for fluent API support)
      * @see        addEtablissements()
      */
     public function clearEtablissements()
     {
         $this->collEtablissements = null; // important to set this to null since that means it is uninitialized
         $this->collEtablissementsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -2166,6 +2190,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      *
      * @param PropelCollection $etablissements A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return PointInteret The current object (for fluent API support)
      */
     public function setEtablissements(PropelCollection $etablissements, PropelPDO $con = null)
     {
@@ -2181,6 +2206,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         }
 
         $this->collEtablissements = $etablissements;
+
+        return $this;
     }
 
     /**
@@ -2218,7 +2245,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * through the etablissement_point_interet cross reference table.
      *
      * @param  Etablissement $etablissement The EtablissementPointInteret object to relate
-     * @return void
+     * @return PointInteret The current object (for fluent API support)
      */
     public function addEtablissement(Etablissement $etablissement)
     {
@@ -2230,6 +2257,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
             $this->collEtablissements[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**
@@ -2247,7 +2276,7 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * through the etablissement_point_interet cross reference table.
      *
      * @param Etablissement $etablissement The EtablissementPointInteret object to relate
-     * @return void
+     * @return PointInteret The current object (for fluent API support)
      */
     public function removeEtablissement(Etablissement $etablissement)
     {
@@ -2259,6 +2288,8 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             }
             $this->etablissementsScheduledForDeletion[]= $etablissement;
         }
+
+        return $this;
     }
 
     /**

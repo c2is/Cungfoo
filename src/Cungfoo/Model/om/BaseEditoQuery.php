@@ -158,7 +158,7 @@ abstract class BaseEditoQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SLUG`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `edito` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `slug`, `created_at`, `updated_at`, `active` FROM `edito` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
