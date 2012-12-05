@@ -33,12 +33,65 @@ class VendorCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+/*
+        $file   = sprintf('%s/%s/text_etablissement.csv', $this->getProjectDirectory(), trim($input->getOption('directory')));
+        $handle = fopen($file, "r");
+
+        if ($handle)
+        {
+            $data = array();
+
+            while (($line = fgets($handle)) !== false)
+            {
+                $splitted = explode("\t", trim($line, "\n"));
+                if (count($splitted) != 17)
+                {
+                    list($code, $name, $desc) = $splitted;
+                    $ouvertureReception = '';
+                    $ouvertureCamping = '';
+                    $arriveesDeparts = '';
+                }
+                else
+                {
+                    list($code, $name, $desc, $v3, $v4, $v5, $ouvertureReception, $v7, $v8, $v9, $ouvertureCamping, $v11, $v12, $v13, $arriveesDeparts, $v15, $v16) = $splitted;
+                }
+
+                if ($ouvertureCamping)
+                {
+                    list($start, $end) = explode("-", $ouvertureCamping);
+                }
+
+                $data[$code] = array(
+                    'description'         => $desc,
+                    'ouverture_reception' => $ouvertureReception,
+                    'ouverture_camping'   => $ouvertureCamping,
+                    'arrivees_departs'    => $arriveesDeparts,
+                    'opening_date'        => $start ? \DateTime::createFromFormat('d/m/Y', $start)->format('Y-m-d') : '',
+                    'ending_date'         => $end ? \DateTime::createFromFormat('d/m/Y', $end)->format('Y-m-d') : '',
+                );
+            }
+            $final = array(
+                '\Cungfoo\Model\Etablissement' => array(
+                    'keyField' => 'code',
+                    'values'   =>  $data,
+                )
+            );
+
+            file_put_contents(sprintf('%s/%s/etablissements.yml', $this->getProjectDirectory(), trim($input->getOption('directory'))), Yaml::dump($final, 4));
+        }
+        if (!feof($handle))
+        {
+            $output->writeln(sprintf('File error : %s' , $file));
+        }
+        fclose($handle);
+
+        die();*/
         try
         {
             $count = 0;
             $filesystem = new Filesystem();
 
-            $filesToLoad = glob(sprintf('%s/%s/*', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
+            $filesToLoad = glob(sprintf('%s/%s/*.yml', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
 
             foreach ($filesToLoad as $fileToLoad)
             {
@@ -52,7 +105,7 @@ class VendorCommand extends BaseCommand
 
                     $count += $this->insert($className, $keyField, $values);
                 }
-                catch (\Exception $e)
+                catch (\Exception $exception)
                 {
                     $output->writeln(sprintf('<info>%s</info> <error>%s not loaded : %s</error>.', $this->getName(), $fileToLoad, $exception->getMessage()));
                 }
@@ -65,7 +118,7 @@ class VendorCommand extends BaseCommand
             return false;
         }
 
-        $output->writeln(sprintf('<comment>%s</comment> vendor file%s loaded.', $count, $count > 1 ? 's' : ''));
+        $output->writeln(sprintf('<comment>%s</comment> vendor data loaded.', $count));
 
         return true;
     }
@@ -75,14 +128,12 @@ class VendorCommand extends BaseCommand
         $count  = 0;
         $model  = $className."Query";
         $filter = 'filterBy'.$keyField;
-
-        //die(var_dump($className));
+        $utils  = new \Cungfoo\Lib\Utils();
 
         foreach ($values as $keyValue => $fields)
         {
-            // Faire une seule requête d'update avec un where
             $elmt = $model::create()->$filter($keyValue)->findOne();
-            //die(var_dump($elmt));
+
             if (!$elmt)
             {
                 continue;
@@ -90,7 +141,7 @@ class VendorCommand extends BaseCommand
 
             foreach ($fields as $fieldName => $fieldValue)
             {
-                $setter = 'set'.$fieldName;
+                $setter = 'set'.$utils->camelize($fieldName);
                 $elmt->$setter($fieldValue)->save();
             }
 
