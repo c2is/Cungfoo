@@ -23,7 +23,9 @@
 {% block topLeftColumn %}
 
     {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    <a class="bt gris left goto" href="#_">&lt; {{ "destination.retour" | trans }}</a>
+    {# le lien retour pointera à terme sur les pages de listing
+    <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
+    #}
 
     <ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
         <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
@@ -39,7 +41,7 @@
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
     <p class="destiDescription">{{ item.description }}</p> {# Description #}
 
-    <a class="bt big fushia right" href="#_">Notre sélection</a>
+    <a class="bt big fushia right goto" href="#results">Notre sélection</a>
 
 {% endblock %}
 
