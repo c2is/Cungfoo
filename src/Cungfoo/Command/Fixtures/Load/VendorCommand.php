@@ -33,59 +33,6 @@ class VendorCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-/*
-        $file   = sprintf('%s/%s/text_etablissement.csv', $this->getProjectDirectory(), trim($input->getOption('directory')));
-        $handle = fopen($file, "r");
-
-        if ($handle)
-        {
-            $data = array();
-
-            while (($line = fgets($handle)) !== false)
-            {
-                $splitted = explode("\t", trim($line, "\n"));
-                if (count($splitted) != 17)
-                {
-                    list($code, $name, $desc) = $splitted;
-                    $ouvertureReception = '';
-                    $ouvertureCamping = '';
-                    $arriveesDeparts = '';
-                }
-                else
-                {
-                    list($code, $name, $desc, $v3, $v4, $v5, $ouvertureReception, $v7, $v8, $v9, $ouvertureCamping, $v11, $v12, $v13, $arriveesDeparts, $v15, $v16) = $splitted;
-                }
-
-                if ($ouvertureCamping)
-                {
-                    list($start, $end) = explode("-", $ouvertureCamping);
-                }
-
-                $data[$code] = array(
-                    'description'         => $desc,
-                    'ouverture_reception' => $ouvertureReception,
-                    'ouverture_camping'   => $ouvertureCamping,
-                    'arrivees_departs'    => $arriveesDeparts,
-                    'opening_date'        => $start ? \DateTime::createFromFormat('d/m/Y', $start)->format('Y-m-d') : '',
-                    'ending_date'         => $end ? \DateTime::createFromFormat('d/m/Y', $end)->format('Y-m-d') : '',
-                );
-            }
-            $final = array(
-                '\Cungfoo\Model\Etablissement' => array(
-                    'keyField' => 'code',
-                    'values'   =>  $data,
-                )
-            );
-
-            file_put_contents(sprintf('%s/%s/etablissements.yml', $this->getProjectDirectory(), trim($input->getOption('directory'))), Yaml::dump($final, 4));
-        }
-        if (!feof($handle))
-        {
-            $output->writeln(sprintf('File error : %s' , $file));
-        }
-        fclose($handle);
-
-        die();*/
         try
         {
             $count = 0;
