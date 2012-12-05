@@ -20,6 +20,7 @@ $console->add(new \Cungfoo\Command\Tests\UnitCommand());
 $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
 $console->add(new \Resalys\Command\LoadCommand());
+$console->add(new \Resalys\Command\Client\SetupCommand());
 
 $console->add(new \Cungfoo\Command\Fixtures\DumpCommand());
 $console->add(new \Cungfoo\Command\Fixtures\LoadCommand());
