@@ -38,7 +38,7 @@ class VendorCommand extends BaseCommand
             $count = 0;
             $filesystem = new Filesystem();
 
-            $filesToLoad = glob(sprintf('%s/%s/*', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
+            $filesToLoad = glob(sprintf('%s/%s/*.yml', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR)));
 
             foreach ($filesToLoad as $fileToLoad)
             {
@@ -52,7 +52,7 @@ class VendorCommand extends BaseCommand
 
                     $count += $this->insert($className, $keyField, $values);
                 }
-                catch (\Exception $e)
+                catch (\Exception $exception)
                 {
                     $output->writeln(sprintf('<info>%s</info> <error>%s not loaded : %s</error>.', $this->getName(), $fileToLoad, $exception->getMessage()));
                 }
@@ -65,7 +65,7 @@ class VendorCommand extends BaseCommand
             return false;
         }
 
-        $output->writeln(sprintf('<comment>%s</comment> vendor file%s loaded.', $count, $count > 1 ? 's' : ''));
+        $output->writeln(sprintf('<comment>%s</comment> vendor data loaded.', $count));
 
         return true;
     }
@@ -75,14 +75,12 @@ class VendorCommand extends BaseCommand
         $count  = 0;
         $model  = $className."Query";
         $filter = 'filterBy'.$keyField;
-
-        //die(var_dump($className));
+        $utils  = new \Cungfoo\Lib\Utils();
 
         foreach ($values as $keyValue => $fields)
         {
-            // Faire une seule requête d'update avec un where
             $elmt = $model::create()->$filter($keyValue)->findOne();
-            //die(var_dump($elmt));
+
             if (!$elmt)
             {
                 continue;
@@ -90,7 +88,7 @@ class VendorCommand extends BaseCommand
 
             foreach ($fields as $fieldName => $fieldValue)
             {
-                $setter = 'set'.$fieldName;
+                $setter = 'set'.$utils->camelize($fieldName);
                 $elmt->$setter($fieldValue)->save();
             }
 

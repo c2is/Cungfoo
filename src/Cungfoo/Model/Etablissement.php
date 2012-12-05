@@ -23,6 +23,16 @@ class Etablissement extends BaseEtablissement
         return $this->getName();
     }
 
+    public function getRegion()
+    {
+        return $this->getVille()->getRegion();
+    }
+
+    public function getPays()
+    {
+        return $this->getRegion()->getPays();
+    }
+
     public function getDmsCoordinates()
     {
         $utils = new \Cungfoo\Lib\Utils();

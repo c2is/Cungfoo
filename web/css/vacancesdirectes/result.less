@@ -122,15 +122,18 @@
 /* bouton Afficher plus de resultats */
 #btPlusResults{clear:both;margin:20px auto;height:43px;font-size:23px;}
 
-.formSearchRefined {background: none repeat scroll 0 0 #F0F2F5;margin: 10px auto;padding: 10px;
-  .sectionTitle {border-top: 1px solid #999999;color: #666666;display: block;font: bold 15px @arial,sans-serif;height: 30px;padding: 10px 0 0;width: 100%;}
-  .criteres {color: #009BD9;font: bold 11px @arial,sans-serif;margin: 10px 0 10px 10px;}
-  fieldset {margin: 0 auto 10px;padding: 0 0 10px;width: 200px;
-    label{color: #999999;display: block;font: 11px @arial,sans-serif;margin: 0 0 2px;}
+.formSearchRefined{margin:10px auto;padding:10px;
+  .criteres{color:@colorFushia;font:18px @ptnarrow;margin:5px 0 10px 0;}
+  .sectionTitle{color:@colorGris2;display:block;font:18px @ptnarrow;padding:10px 0 10px 27px;width:100%;cursor:pointer;border-top:7px solid #f1f0f0;background:url(../../images/vacancesdirectes/common/sprites/sprite-filter.png) no-repeat 0 8px;
+    &.first{border:0;}
+    &.open{background-position:2px -38px;}
+  }
+  fieldset{padding:0 0 10px 2px;
+    label{color:@colorGris2;display: block;font-size:13px;margin: 0 0 2px;}
     input[type="checkbox"]{margin-right: 5px;margin-top: 0;vertical-align: middle;}
     p{color: #666666;font: bold 11px @arial,sans-serif;margin: 0 0 5px;}
   }
-  .title{color: #666666;font: bold 15px @arial,sans-serif;text-align: center;}
+  .bt{font-size:21px;margin:10px auto}
 }
 
 #resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;border:10px solid @colorBgGrisC;._border-radius(8px);margin:10px 0;

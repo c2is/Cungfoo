@@ -4,5 +4,5 @@
     <p class="country">{{ etab.country }}</p>
     <p class="reg">{{ etab.ville.region }}</p>
     <p class="city">{{ etab.ville }}</p>
-    <a class="bt sombre" href="{{ path('camping', {'idResalys': etab.code}) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
+    <a class="bt sombre" href="{{ path('destination_camping', {pays: etab.pays.slug, region: etab.region.slug, ville: etab.ville.slug, camping: etab.slug}) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
 </div>

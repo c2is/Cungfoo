@@ -56,6 +56,7 @@ class CouloirController implements ControllerProviderInterface
                 "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
                 "proposal_key"      => $proposalKey,
                 "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
+                "homeLink"          => $app['url_generator']->generate('homepage', array(), true),
                 "backLink"          => 'javascript:history.go(-1);'
             );
 

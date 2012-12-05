@@ -11,9 +11,9 @@
                         <div class="title">Destination {{ destination.label | trans }}</div>
                         <ul>
                             {% for region in destination.regions %}
-                                <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                                <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
                             {% endfor %}
-                            <a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a>
+                            <!--<a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a>-->
                         </ul>
                     </div>
                 {% endfor %}
@@ -28,7 +28,7 @@
                 <div class="region">
                     <ul>
                         {% for region in regionEspagne %}
-                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="region">
                     <ul>
                         {% for region in regionItalie %}
-                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="region">
                     <ul>
                         {% for region in regionPortugal %}
-                            <li><a href="region/{{ region.Id }}">{{ region.Name }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
                     {% for letter, etabs in etabByAlphabeticalOrder %}
                         <li class="letter-first">{{ letter }}</li>
                         {% for etab in etabs %}
-                            <li><a class="letter-{{ letter }}" href="{{ path('camping', {'idResalys': etab.Code}) }}">- {{ etab.Name }}</a></li>
+                            <li><a class="letter-{{ letter }}" href="{{ path('destination_camping', {pays: etab.pays.slug, region: etab.region.slug, ville: etab.ville.slug, camping: etab.slug}) }}">{{ etab.name }}</a></li>
                         {% endfor %}
                         <li class="letter-last"></li>
                     {% endfor %}

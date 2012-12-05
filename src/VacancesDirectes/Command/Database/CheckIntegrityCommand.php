@@ -83,6 +83,21 @@ class CheckIntegrityCommand extends BaseCommand
                 $item->save();
             }
 
+            \Cungfoo\Model\TopCampingQuery::create()
+                ->update(array('Active' => false), $con)
+            ;
+            $items = \Cungfoo\Model\TopCampingQuery::create()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                ->endUse()
+                ->find($con)
+            ;
+            foreach($items as $item)
+            {
+                $item->setActive(true);
+                $item->save();
+            }
+
             $con->commit();
         }
         catch (\Exception $exception)

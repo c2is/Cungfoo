@@ -48,16 +48,17 @@
         {% if topCampings | length %}
         {% for camping in topCampings %}
             {% if loop.index <= 3 %}
+            {% set campingPath = path('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
             <div class="element clear">
                 <div class="left">
-                    <a href="{{ path('camping', {'idResalys': camping.etablissement.code}) }}" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
-                    <iframe src="//www.facebook.com/plugins/like.php?href={{ path('camping', {'idResalys': camping.etablissement.code}) }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>
+                    <a href="{{ campingPath }}" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
+                    <iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>
                 </div>
                 <div class="details left linkParent">
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
                     <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
-                    <a href="{{ path('camping', {'idResalys': camping.etablissement.code}) }}" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
+                    <a href="{{ campingPath }}" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
                 </div>
             </div>
             {% endif %}
@@ -71,7 +72,7 @@
 
     <div id="lastLocations" class="locationForwards clear">
         <div class="stamp grey">
-            <h2>{{ "home.dernieres_minutes" | trans }}</h2>
+            <h2>{{ "home.early_booking" | trans }}</h2>
         </div>
         {% for etab in dernieres_minutes.element %}
             {% for proposal in etab.extra %}
@@ -91,7 +92,7 @@
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.dernieres_minutes.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
     </div>
 </div>
 
