@@ -74,7 +74,7 @@
                         <label for="{{ "camp" ~ etab.model.code }}-{{ loop.index }}"><input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loop.index }}" name="{{ "camp" ~ etab.model.code }}" {% if loop.first %}checked="checked"{% endif %}> {{ proposal.room_types.room_type.room_type_label }} <span class="price">{{ proposal.adult_price|number_format }} €</span></label>
                         {% if discount %}
                         <span class="stain fushia cover">
-                            <span class="promo">-{{ (proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts|number_format }}%</span>
+                            <span class="promo">-{{ ((proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts)|number_format }}%</span>
                             <span class="price">{{ proposal.adult_price|number_format }}€</span>
                             <span class="aulieude">{{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }} €</span>
                         </span>

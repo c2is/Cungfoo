@@ -29,7 +29,7 @@ class SearchEngine
 
         if ('POST' == $this->request->getMethod())
         {
-            $this->form->bind($this->request->get($this->form->getName()));
+            $this->form->bindRequest($this->request);
 
             if ($this->form->isValid())
             {
