@@ -54,7 +54,7 @@
         <div class="miniEncart clear">
             <img src="{{ poi.image }}"  class="left boxborder" alt="">
             <span class="h5-like">{{ poi.name }} {# Titre #}</span>
-            <p> {{ poi.presentation | truncate(100, true, '...') }} {# Texte #}</p>
+            <p> {{ poi.presentation | truncate(370, true, '...') }} {# Texte #}</p>
         </div>
     {% endfor %}
     {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
