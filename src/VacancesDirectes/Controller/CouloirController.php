@@ -33,7 +33,8 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"            => 'ignore_token',
                 "display"           => 'reservation_content',
                 "actions"           => 'cancelReservation;buildProposalFromKey;chooseProposal',
-                "proposal_key"      => $proposalKey
+                "proposal_key"      => $proposalKey,
+                "referer"           => $request->headers->get('referer')
             );
 
             $query = array_merge($query, $request->request->all());
