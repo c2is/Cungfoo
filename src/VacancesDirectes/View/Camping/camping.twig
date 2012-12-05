@@ -361,6 +361,11 @@
     webuser: resalysParameters.web_user[locale],
     display: 'semainier',
     etab_id:etab.code,
-    campaign_code: resalysParameters.campaign_code
+    campaign_code: resalysParameters.campaign_code,
+    referer: referer
 }) }}" width="960px" height="700px"></iframe>
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Bloc/sejour_reussi.twig' %}
 {% endblock %}

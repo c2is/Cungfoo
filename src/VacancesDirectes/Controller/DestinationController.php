@@ -269,6 +269,13 @@ class DestinationController implements ControllerProviderInterface
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,
             'resalysParameters'       => $resalysParameters,
+            'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
+                'pays' => $camping->getPays()->getSlug(),
+                'region' => $camping->getRegion()->getSlug(),
+                'ville' => $camping->getVille()->getSlug(),
+                'camping' => $camping->getSlug()
+            ), true)
+
         ));
     }
 }

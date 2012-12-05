@@ -24,7 +24,7 @@ class CampingController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/infobox/{idResalys}', function ($idResalys) use ($app)
+        $controllers->match('/infobox/{idResalys}', function ($idResalys, $_route) use ($app)
         {
             $locale = $app['context']->get('language');
 
