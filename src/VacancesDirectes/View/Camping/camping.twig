@@ -6,14 +6,14 @@
 {% block bodyClass %} fiche{% endblock %}
 
 {% block leftColumn %}
-<a class="bt gris left goto" href="#_">&lt; Retour</a>
+<!--<a class="bt gris left goto" href="#_">&lt; Retour</a>-->
 
-<ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
+<!--<ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Nos campings : Campings France</span></a></li>
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Le Petit Mousse</span></a></li>
-</ol>
+</ol>-->
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
     <p class="keywordsFiche">
@@ -74,8 +74,8 @@
             {% endfor %}
         </fieldset>
         <fieldset class="right">
-            <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="">{{ "fiche.video" | trans }}</a>
-            <a class="popin360 tabCamp360" href="{{ etab.image360Path }}">360°</a>
+            <!--<a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="">{{ "fiche.video" | trans }}</a>-->
+            <!--<a class="popin360 tabCamp360" href="{{ etab.image360Path }}">360°</a>-->
         </fieldset>
     </form>
 </div>
@@ -107,7 +107,7 @@
         {% endif %}
         <h4>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h4>
         <dl>
-            <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}"></dd>
+            <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
             <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
             <dd class="list">
                <ul>
@@ -364,4 +364,8 @@
     campaign_code: resalysParameters.campaign_code,
     referer: referer
 }) }}" width="960px" height="700px"></iframe>
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Bloc/sejour_reussi.twig' %}
 {% endblock %}
