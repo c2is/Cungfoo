@@ -96,6 +96,17 @@ class WrapperController implements ControllerProviderInterface
         );
     }
 
+    protected function getStylesheetDatepickerTag($url)
+    {
+        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="screen">',
+            $this->request->getScheme(),
+            $this->request->getHttpHost(),
+            $asset
+        );
+    }
+
     protected function getJavscriptTag($url)
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
@@ -154,7 +165,7 @@ eof
             {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
             {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
-            {frontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
+            {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js"},
             {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
         );
     </script>
@@ -171,12 +182,14 @@ eof
             '{_c2is.uri}',
             '{_c2is.stylesheet}',
             '{_c2is.stylesheet_print}',
+            '{_c2is.stylesheet_datepicker}',
             '{_c2is.javascript.header}',
             '{_c2is.javascript.footer}',
         ), array(
             $this->websiteUri,
             $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles)),
             $this->getStylesheetPrintTag('css/vacancesdirectes/print.css'),
+            $this->getStylesheetDatepickerTag('css/vacancesdirectes/vd-theme/jquery-ui-1.9.2.custom.min.css'),
             $javascriptHeader,
             $javascriptFooter,
         ), $iframe);
