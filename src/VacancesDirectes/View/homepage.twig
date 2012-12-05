@@ -72,7 +72,7 @@
 
     <div id="lastLocations" class="locationForwards clear">
         <div class="stamp grey">
-            <h2>{{ "home.dernieres_minutes" | trans }}</h2>
+            <h2>{{ "home.early_booking" | trans }}</h2>
         </div>
         {% for etab in dernieres_minutes.element %}
             {% for proposal in etab.extra %}
@@ -92,7 +92,7 @@
             </div>
             {% endfor %}
         {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.dernieres_minutes.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
+        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
     </div>
 </div>
 

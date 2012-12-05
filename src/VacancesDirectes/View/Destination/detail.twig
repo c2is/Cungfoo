@@ -92,32 +92,9 @@
 
 {% block bottomRightColumn %}
 <div id="greyBoxes">
-    {# Bloc "Vacances directes un séjour réussi" #}
-    <div id="assetsBloc" class="clear radiusBox greyC">
-        <div class="no stamp">
-            <h2>{{ "encart_vacances_directes.title" | trans }} = <br> {{ "encart_vacances_directes.subtitle" | trans }}</h2>
-        </div>
-        <ul>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_1" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_2" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_3" | trans }}</span></li>
-            <li class="asset"><span>{{ "encart_vacances_directes.item_4" | trans }}</span></li>
-        </ul>
-    </div>
+    {% include 'Bloc/sejour_reussi.twig' %}
 
-    <div id="infoBloc" class="clear radiusBox greyF">
-        <h3>{{ "encart_informations.title" | trans }}</h3>
-        <div class="content">
-            <p>
-                <a class="tel" href="tel:{{ "footer.contact.tel" | trans }}">{{ "footer.contact.tel" | trans }}</a>
-            </p>
-            <span class="price">{{ "encart_informations.price" | trans }}</span>
-            <p class="small">
-                {{ "encart_informations.dates_1" | trans }}<br />
-                {{ "encart_informations.dates_2" | trans }}
-            </p>
-        </div>
-    </div>
+    {% include 'Bloc/informations.twig' %}
 </div>
 {% endblock %}
 
