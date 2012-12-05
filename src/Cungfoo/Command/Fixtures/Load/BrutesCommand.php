@@ -108,7 +108,7 @@ class BrutesCommand extends BaseCommand
 
         if (!$camping)
         {
-            $unset[$camping->getSlug()] = true;
+            $unset[$code] = true;
             return;
         }
 
