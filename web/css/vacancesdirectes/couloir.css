@@ -591,7 +591,7 @@ body.clear {
 .tooltip:hover {
   text-decoration: none;
 }
-.tooltip span {
+.tooltip span.bubble {
   font: bold 12px/35px Arial, Helvetica, sans-serif;
   background: #8c8a8a;
   color: #ffffff;
@@ -610,7 +610,7 @@ body.clear {
   bottom: -5px;
   white-space: nowrap;
 }
-.tooltip span:after {
+.tooltip span.bubble:after {
   right: 100%;
   border: solid transparent;
   content: "";
@@ -624,7 +624,7 @@ body.clear {
   top: 50%;
   margin-top: -5px;
 }
-.tooltip:hover span {
+.tooltip:hover span.bubble {
   display: inline;
   position: absolute;
 }
@@ -636,7 +636,7 @@ body.clear {
   left: 50%;
 }
 /*CSS3 extras*/
-.tooltip span {
+.tooltip span.bubble {
   -webkit-box-shadow: 0 10px 10px -12px #464545;
   box-shadow: 0 10px 10px -12px #464545;
 }
