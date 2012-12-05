@@ -1,18 +1,18 @@
 services:
     modele:
-        location: http://newsite.vacancesdirectes.resalys.com/rsl/clickbooking
+        location: ##url##/rsl/clickbooking
     catalogue:
-        location: http://newsite.vacancesdirectes.resalys.com/rsl/wsdl_distrib
+        location: ##url##/rsl/wsdl_distrib
         default_envelope:
             base_id:  vacancesdirectes_preprod_v6_6
     disponibilite:
-        location: http://newsite.vacancesdirectes.resalys.com/rsl/dwsdl?namespace=search_engine
+        location: ##url##/rsl/dwsdl?namespace=search_engine
         default_envelope:
             base_id:  vacancesdirectes_preprod_v6_6
             username: web_fr
             password: DInan22101
     prix:
-        location: http://newsite.vacancesdirectes.resalys.com/rsl/wsdl_flow
+        location: ##url##/rsl/wsdl_flow
         default_envelope:
             base_id:  vacancesdirectes_preprod_v6_6
             username: web_fr
@@ -20,7 +20,7 @@ services:
             flow_name: prix_min
             nb_products: 9999
     auth:
-        location: http://newsite.vacancesdirectes.resalys.com/rsl/dwsdl?namespace=webresCustomer
+        location: ##url##/rsl/dwsdl?namespace=webresCustomer
         default_envelope:
             base_id:  vacancesdirectes_preprod_v6_6
             username: web_ce_achat_fr
