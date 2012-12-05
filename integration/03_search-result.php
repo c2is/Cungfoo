@@ -22,11 +22,11 @@ include('includes/top.php'); ?>
                 <script>
                     function resultInit() {
                         var resultMkrs = [
-                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, ['filtres plus'], ['filtres ou'], ['prix']]
-                             ['Palavas Camping 1', 43.519863, 3.90937, 2, '', markerFushia, ['SRV1','SRV3','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['952', '1141', '1141']]
-                            ,['Palavas Camping 2', 43.558998, 3.719444, 2, '', markerVert, ['SRV2','SRV6','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['852', '1000', '1041']]
-                            ,['Palavas Camping 3', 43.649491, 4.025002, 2, '', markerBleu, ['SRV4','SRV5','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['852', '1000', '1041']]
-                            ,['Palavas Camping 4', 43.667375, 3.621254, 2, '', markerFushia, ['SRV1','SRV3','SRV7','AL1','TH4','TH3','TH2','TH5','SC1','SC2','SC3','SC4','SC5','TH1','AL2'], ['SIT4','SIT3','SIT7','DST1'], ['952', '1141', '1141']]
+                            //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
+                             ['Palavas Camping 1', 43.519863, 3.90937, 2, '/c2is/Cungfoo/web/index_dev.php/camping/infobox/4', markerFushia]
+                            ,['Palavas Camping 2', 43.558998, 3.719444, 2, '/c2is/Cungfoo/web/index_dev.php/camping/infobox/2', markerVert]
+                            ,['Palavas Camping 3', 43.649491, 4.025002, 2, '/c2is/Cungfoo/web/index_dev.php/camping/infobox/3', markerBleu]
+                            ,['Palavas Camping 4', 43.667375, 3.621254, 2, '/c2is/Cungfoo/web/index_dev.php/camping/infobox/1', markerFushia]
                         ];
                         var centerresultMkr = new google.maps.LatLng(45.764544,4.846512),
                                 mapOptions = {
@@ -49,7 +49,7 @@ include('includes/top.php'); ?>
             <span class="infoComp">Comparateur</span>
 
             <div id="results" class="clear">
-                <div id="etab1" class="itemResult clear" data-critplus="SRV1,SRV3,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/4" class="itemResult clear" data-critplus="SRV1,SRV3,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp1">
@@ -158,7 +158,7 @@ include('includes/top.php'); ?>
                 </div>
 
 
-                <div id="etab2" class="itemResult clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/2" class="itemResult clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp1">
@@ -261,7 +261,7 @@ include('includes/top.php'); ?>
                     </div>
                 </div>
 
-                <div id="etab3" class="itemResult clear" data-critplus="SRV4,SRV5,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/3" class="itemResult clear" data-critplus="SRV4,SRV5,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp3">
@@ -365,7 +365,7 @@ include('includes/top.php'); ?>
                 </div>
 
 
-                <div id="etab4" class="itemResult clear" data-critplus="SRV1,SRV2,SRV3,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/1" class="itemResult clear" data-critplus="SRV1,SRV2,SRV3,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp4">

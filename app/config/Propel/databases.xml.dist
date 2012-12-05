@@ -5,9 +5,9 @@
             <datasource id="cungfoo">
                 <adapter>mysql</adapter>
                 <connection>
-                    <dsn>mysql:host=127.0.0.1;charset=utf8;dbname=cungfoo</dsn>
-                    <user>cungfoo</user>
-                    <password>cungfoo++</password>
+                    <dsn>mysql:host=##host##;charset=utf8;dbname=##database##</dsn>
+                    <user>##username##</user>
+                    <password>##password##</password>
                 </connection>
             </datasource>
         </datasources>

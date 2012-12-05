@@ -1345,9 +1345,7 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 title: mkr[0],
                 zIndex: mkr[3],
                 idCamp: mkr[4],
-                filters: mkr[6],
-                filtersOr: mkr[7],
-                prices: mkr[8]
+                filters: mkr[6]
             });
             aMarkers.push(marker);
 
@@ -1704,6 +1702,7 @@ function critSelection() {
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
     var nbItemsDisplayed = 0;
+    var gMarkers = [];
 
     items.each(function() {
         var dataRanged = $(this).attr('data-ranged');
@@ -1713,10 +1712,36 @@ function displayResults() {
         if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
             $(this).fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
+            var idRsl = $(this).attr('data-id');
+            gMarkers.push(idRsl);
         }else{
             $(this).fadeOut().next('.disclaim').fadeOut();
         };
+
+        for ( var i in aMarkers ){
+            var marker = aMarkers[i];
+            marker.setVisible( $.inArray(marker.idCamp, gMarkers) != -1 ? true : false );
+            //consoleLog($.inArray(theme, marker.filters));
+            //consoleLog(marker.filters);
+        }
+
     });
+
+    /*$('#mapFilters').find('a')
+        .click( function(){
+            var theme = this.id;
+            //consoleLog(theme);
+            for ( var i in aMarkers ){
+                var marker = aMarkers[i];
+                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                //consoleLog($.inArray(theme, marker.filters));
+                //consoleLog(marker.filters);
+            }
+            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+            ib.close();
+            return false;
+        })
+        .eq(0).trigger('click');*/
 
     //gestion de la pagination
     listPagination();
