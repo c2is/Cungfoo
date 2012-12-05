@@ -57,7 +57,7 @@
             <p> {{ poi.presentation | truncate(100, true, '...') }} {# Texte #}</p>
         </div>
     {% endfor %}
-    <a href=="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a>
+    {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
     </div>
 
 
@@ -130,6 +130,6 @@
     <img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
     {% endif %}
 
-    <!-- <a href="#_">{{ "destination.retour_bottom" | trans }}</a> -->
+    {# TODO <a href="#_">{{ "destination.retour_bottom" | trans }}</a> #}
 
 {% endblock %}
