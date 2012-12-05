@@ -498,16 +498,18 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
       tr:nth-child(2){font-size:10px;font-weight:bold;text-transform:uppercase;}
       td{color:#464545;padding:8px 9px;border:1px solid #e1e1e1;
         .orderPrice{font:bold 19px/19px Arial;}
-        .orderLink{font:14px/18px @ptnarrow;display:inline-block;margin-top:5px;text-transform:uppercase;}
+        .orderLink{font:bold 14px/18px @ptnarrow;display:inline-block;margin-top:5px;text-transform:uppercase;}
         &.reserver{text-align:center;
           .orderPrice, .orderLink{color:@colorFushia;}
           &:hover{background-color:@colorBgFushia;color:@colorBlanc;
             span, a{color:@colorBlanc;}
           }
         }
-        &.reserver.discount{
+        &.reserver.discount{color:@colorOrange;
           .orderPrice, .orderLink{color:@colorOrange;}
-          &:hover{background-color:@colorBgOrange;}
+          &:hover{background-color:@colorBgOrange;color:@colorBlanc;
+            span, a{color:@colorBlanc;}
+          }
         }
         &.noDispo{background-color:@colorBgGrisC;text-align:center;text-transform:uppercase;font-family:@ptnarrow;font-size:11px;color:@colorGris1;vertical-align:middle;}
       }
