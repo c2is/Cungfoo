@@ -36,8 +36,10 @@
         <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}"> {# Picto région #}
     {% endif %}
     <h1>{{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }}</h1> {# Titre #}
-    <h2>{{ item.introduction }}</h2> {# Accroche #}
-    <p>{{ item.description }}</p> {# Description #}
+    <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
+    <p class="destiDescription">{{ item.description }}</p> {# Description #}
+
+    <a class="bt big fushia right" href="#_">Notre sélection</a>
 
 {% endblock %}
 
@@ -120,11 +122,11 @@
 {% endblock %}
 
 {% block bottomWideColumn %}
-
+<div id="destiMapContener" class="clear">
     {# Bloc GMap #}
-    {{ "listing_destination.campings_map_title" | trans }}
-    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}
-    <div id="destiMap" class="gmap" style="width:616px;height:573px;">
+    <span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
+    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span>
+    <div id="destiMap" class="gmap" style="width:908px;height:330px;">
         <script>
             function destiInit() {
                 var destiMkrs = [
@@ -144,17 +146,17 @@
             }
         </script>
     </div>
-
+</div>
 
     {# Photos #}
-    {{ imagesTitle }}
+    <h3>{{ imagesTitle }}</h3>
     {% if item.imageDetail1 %}}
-    <img src="{{ asset(item.imageDetail1) }}" />
+    <img src="{{ asset(item.imageDetail1) }}" class="boxborder large imgDesti">
     {% endif %}
     {% if item.imageDetail2 %}
-    <img src="{{ asset(item.imageDetail2) }}" />
+    <img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
     {% endif %}
 
-    <a href="#_">{{ "destination.retour_bottom" | trans }}</a>
+    <!-- <a href="#_">{{ "destination.retour_bottom" | trans }}</a> -->
 
 {% endblock %}
