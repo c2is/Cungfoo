@@ -17,7 +17,7 @@
 @colorRubricViolet:#9a4d9e;
 
 @colorBgGrisF:#464545; /* bg gris sombre */
-@colorBgGrisM:#8c8a8a; /* bg gris */
+@colorBgGrisM:#efeeee; /* bg gris */
 @colorBgGrisC:#e6e5e5; /* bg gris clair */
 @colorBgFushia: #ed145b;
 @colorBgBlanc:#ffffff; /* bg blanc */
@@ -499,6 +499,10 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
           .orderPrice{color:@colorFushia;font:bold 19px/19px Arial;}
           .orderLink{color:@colorFushia;font:14px/18px @ptnarrow;}
         }
+        &.noDispo{background-color:@colorBgGrisC;text-align:center;text-transform:uppercase;font-family:@ptnarrow;font-size:11px;color:@colorGris1;vertical-align:middle;}
+      }
+      td.reserver:hover{background-color:@colorBgFushia;color:@colorBlanc;
+        span, a{color:@colorBlanc;}
       }
       .semainier_table-line1{background-color:#8c8a8a;
         td{padding:16px 0 12px;text-transform:uppercase;color:#fff;font-weight:bold;font-size:11px;text-align:center;border-color:#8C8A8A;}
