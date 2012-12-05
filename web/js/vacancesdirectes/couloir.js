@@ -67,7 +67,6 @@ head.ready(function(){
         var d = new Date();
         var y = d.getFullYear();
         $(".anOccupant").each(function(index,value){
-            $(this).find('.control_date').next('span').hide();
             $(this).find('.control_date').datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -76,7 +75,6 @@ head.ready(function(){
                 showOn: "button"
             });
         })
-        $('#reservation_content_date_creation').find('.control_date').next('span').hide();
         $('#reservation_content_date_creation').datepicker({
             changeMonth: true,
             changeYear: true,
