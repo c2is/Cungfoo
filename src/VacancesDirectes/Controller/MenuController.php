@@ -31,11 +31,10 @@ class MenuController implements ControllerProviderInterface
             return $app['twig']->render('Menu/destinations.twig', array(
                 'searchForm'                => $searchForm->createView(),
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
-                'etabByVilleOrder'          => $this->getEtablissementByVilleOrder($app['context']->get('language')),
                 'regionsByDestinations'     => $this->getRegionsByDestinations($app['context']->get('language')),
-                'regionEspagne' => $this->getRegionEspagne($app['context']->get('language')),
-                'regionItalie' => $this->getRegionItalie($app['context']->get('language')),
-                'regionPortugal' => $this->getRegionPortugal($app['context']->get('language')),
+                'regionEspagne'             => $this->getRegionEspagne($app['context']->get('language')),
+                'regionItalie'              => $this->getRegionItalie($app['context']->get('language')),
+                'regionPortugal'            => $this->getRegionPortugal($app['context']->get('language')),
             ));
         })
         ->bind('menu_destinations');
@@ -78,27 +77,7 @@ class MenuController implements ControllerProviderInterface
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
         {
-            $etabByAlphabeticalOrder[strtoupper(substr($etab['Name'], 0, 1))][] = $etab;
-        }
-
-        return $etabByAlphabeticalOrder;
-    }
-
-    /**
-     * @param string $locale
-     * @param null|\PropelPDO $con
-     * @return array
-     */
-    protected function getEtablissementByVilleOrder($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
-    {
-        $etabs = EtablissementPeer::getNameOrderByVille($locale, $con);
-
-        $etabByAlphabeticalOrder = array();
-        foreach ($etabs as $etab)
-        {
-            $etabByAlphabeticalOrder[$etab['Region.Id']]['Name'] = $etab['RegionI18n.Name'];
-            $etabByAlphabeticalOrder[$etab['Region.Id']]['Villes'][$etab['Ville.Id']]['Name'] = $etab['VilleI18n.Name'];
-            $etabByAlphabeticalOrder[$etab['Region.Id']]['Villes'][$etab['Ville.Id']]['Etabs'][] = $etab;
+            $etabByAlphabeticalOrder[strtoupper(substr($etab->getName(), 0, 1))][] = $etab;
         }
 
         return $etabByAlphabeticalOrder;
@@ -151,7 +130,7 @@ class MenuController implements ControllerProviderInterface
 
         $arrayRegion = array('CTBR', 'CBRA', 'CAZA', 'CDOR');
 
-        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
         return $results;
     }
@@ -161,7 +140,7 @@ class MenuController implements ControllerProviderInterface
 
         $arrayRegion = array('IADR', 'IMED');
 
-        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
         return $results;
     }
@@ -171,7 +150,7 @@ class MenuController implements ControllerProviderInterface
 
         $arrayRegion = array('CTRO');
 
-        $results = $this->getRegionsByForeignCountries($locale,null,$arrayRegion);
+        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
         return $results;
     }

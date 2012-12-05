@@ -26,7 +26,7 @@
                 <img src="{{ asset('images/vacancesdirectes/dyn/results/picto.png') }}" alt="">
             </div>
 
-            <a class="bt sombre" href="{{ path('camping', { 'idResalys' : etab.model.code }) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
+            <a class="bt sombre" href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
@@ -92,7 +92,7 @@
                         <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
                         <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
                     </span>
-                    <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.ville.region.pays.slug, region: etab.model.ville.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}">{{ "general.reserver" | trans }}</a>
+                    <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}">{{ "general.reserver" | trans }}</a>
                 </div>
             {% endif %}
         </div>
