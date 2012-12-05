@@ -100,7 +100,7 @@
 
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
-    <!--<div id="greyBoxes" class="clear">
+    {# TODO<div id="greyBoxes" class="clear">
         <div id="weekendIdeasBloc" class="clear radiusBox greyC">
             <div class="stamp fushia">
                 <h2>{{ "general.idees_week_end" | trans }}</h2>
@@ -120,7 +120,7 @@
             {% endfor %}
             <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a>
         </div>
-    </div>-->
+    </div> #}
 {% endblock %}
 
 {% block columnClearboth %}
@@ -168,7 +168,7 @@
     </div>
 </div>
 
-<!--<div class="column clearboth clear">
+{# TODO<div class="column clearboth clear">
     <div id="activitiesBloc" class="radiusBox fushia">
         <h2 id="activitiesBlocTitle">{{ "home.faites_le_plein_d_activites" | trans }}</h2>
 
@@ -184,7 +184,7 @@
             </ul>
         {% endfor %}
     </div>
-</div>-->
+</div> #}
 
 <div class="column clearboth">
     <div id="mapBloc" class="radiusBox greyC clear">
@@ -192,7 +192,7 @@
             <script>
                 function homeInit() {
                     var homeMkrs = [
-                        //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
+                        {# ['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....] #}
                         {% for etab in etablissements %}
                             ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
                         {% endfor %}

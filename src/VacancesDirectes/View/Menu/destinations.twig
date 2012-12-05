@@ -13,7 +13,7 @@
                             {% for region in destination.regions %}
                                 <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
                             {% endfor %}
-                            <!--<a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a>-->
+                            {# TODO <a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a> #}
                         </ul>
                     </div>
                 {% endfor %}
