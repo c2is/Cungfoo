@@ -30,43 +30,10 @@ $(function() {
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
-    // datepickers
-    if($('#datepicker').length){
-        var d = new Date(),
-            thisYear = d.getFullYear(),
-            thisMonth = d.getMonth()+1,
-            thisDay = d.getDate(),
-            fThisMonth = ((''+thisMonth).length<2 ? '0' : '') + thisMonth,
-            fThisDay = ((''+thisDay).length<2 ? '0' : '') + thisDay,
-            birthdayDate = fThisDay + '/' + fThisMonth + '/' + thisYear;
 
-        console.log(birthdayDate);
-
-        $('#reservation_content_date_creation').DatePicker({
-            flat: false,
-            format:'d/m/Y',
-//            date: $('#inputDate').val(),
-            date: '',
-            current: birthdayDate,
-            calendars: 1,
-            starts: 1,
-            view: 'years',
-//            onBeforeShow: function(){
-//                $('#reservation_content_date_creation').DatePickerSetDate($('#reservation_content_date_creation').val(), true);
-//            },
-            onChange: function(formated, dates){
-                console.log(formated)
-                if(!isNaN(formated.split('/').join(''))){
-                    $('#reservation_content_date_creation').val(formated);
-                    $('#reservation_content_date_creation').DatePickerHide();
-                }
-            }
-
-        });
-    }
-
-    // radio buttons
     if($('#reservationContener.detail').length){
+
+        // radio buttons
         var checked;
         if($('#authentication').length){
             $('.authenticationChoice').click(function(e){
@@ -89,6 +56,20 @@ $(function() {
                 }
             }
         }
+
+        // datepickers
+        $(".anOccupant").each(function(index,value){
+            var datepickerId = "#" + $(this).find('.control_date').attr('id');
+            $(datepickerId).datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        })
+        $('#reservation_content_date_creation_').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+
     }
 
 });
