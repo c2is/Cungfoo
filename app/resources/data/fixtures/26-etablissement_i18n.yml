@@ -19,10 +19,10 @@
         Id: 1
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 08/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 08/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Implanté dans un parc de 16 ha à Saint Jean de Monts, le camping Les Amiaux se trouve à 700 m d''une plage de sable fin. En bordure de forêt, il se révèle un cadre idéal pour vos enfants. Soirées discos, karaokés, spectacles, animeront vos soirées.'
     1_nl:
         Id: 1
         Locale: nl
@@ -51,10 +51,10 @@
         Id: 2
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-28/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 28/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Aux Pins Parasols, à Fréjus, vous trouverez confort et détente, à proximité des plus belles plages du littoral. Profitez de l''espace aquatique et de la région varoise. Un seul véhicule autorisé par location dans l''enceinte du camping. Nous signalons la proximité d''une route.'
     2_nl:
         Id: 2
         Locale: nl
@@ -83,10 +83,10 @@
         Id: 3
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-07/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 07/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Le camping ""La Plage Fleurie"" de Vallon Pont d''Arc, vous accueille pour des vacances au calme, qui vous permettront d''allier décontraction et activités sportives à proximité des Gorges de l''Ardèche et de nombreux sites touristiques."'
     3_nl:
         Id: 3
         Locale: nl
@@ -115,10 +115,10 @@
         Id: 4
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Avec son accès direct à la mer, le camping Playa Montroig est une destination idéale pour les personnes en quête de confort. Dans un cadre à la végétation luxuriante, venez profiter de la piscine, des activités, et bien entendu de la plage !'
     4_nl:
         Id: 4
         Locale: nl
@@ -147,10 +147,10 @@
         Id: 5
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez passer des vacances de rêve en bordure de plage ! Le Playa Tropicana vous propose son espace piscine, ses activités sportives, sans oublier les excursions à travers la région.'
     5_nl:
         Id: 5
         Locale: nl
@@ -179,10 +179,10 @@
         Id: 6
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Situé dans un écrin de verdure à 1 km de la plage de Bénodet, le camping ""Yelloh Village Port de Plaisance"" met tout en oeuvre pour que votre séjour soit des plus conviviaux : un très bel espace aquatique avec son bassin couvert qui ravira petits et grands, des services de qualité et des animations variées."'
     6_nl:
         Id: 6
         Locale: nl
@@ -211,10 +211,10 @@
         Id: 7
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'À 35 km au sud de Clermont-Ferrand, le camping Sunelia La Ribeyre est au coeur du parc des Volcans d''Auvergne. De nombreux sentiers de randonnée pédestre partent du camping et vous permettront de découvrir agréablement cette magnifique région. Sur 10 ha, La Ribeyre vous propose des emplacements agréables, des activités sportives complètes.'
     7_nl:
         Id: 7
         Locale: nl
@@ -243,10 +243,10 @@
         Id: 8
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 25/05/2013-08/09/2013
+        ArriveesDeparts: 'Du 25/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Le Roussillonnais situé à Argelès, station balnéaire du Roussillon, offre un accès direct à la mer, ce qui fait oublier aisément l''absence de piscine. Vous profiterez d''une plage de sable fin avec une eau turquoise, ayant pour toile de fond le vert des montagnes pyrénéennes.'
     8_nl:
         Id: 8
         Locale: nl
@@ -275,10 +275,10 @@
         Id: 9
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Les Sables de Cordouan - L''Estanquet sont deux campings partenaires, situés à 200 m l''un de l''autre sur la commune de la Palmyre-Les Mathes. Vous séjournerez au camping Les Sables de Cordouan et n''aurez que 200 m à faire et la route à traverser pour profiter des infrastructures et de l''espace aquatique du camping L''Estanquet.'
     9_nl:
         Id: 9
         Locale: nl
@@ -307,10 +307,10 @@
         Id: 10
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/06/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/06/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Entre verdure et Océan, le camping Azu''Rivage vous attend pour des vacances placées sous le signe de la détente à Azur. Vous séjournerez près de l''étang et de la forêt de Soustons et à moins de 10 km de la plage. La piscine du camping et les activités sportives à proximité vous offriront des vacances extra !'
     10_nl:
         Id: 10
         Locale: nl
@@ -339,10 +339,10 @@
         Id: 11
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'L''accès direct à la mer, au départ de ce camping saint Aygulf Plage, remplace aisément l''absence de piscine. Situé à proximité de l''une des principales stations balnéaires de la Côte d''Azur, ce camping familial apportera à vos vacances, détente et convivialité.'
     11_nl:
         Id: 11
         Locale: nl
@@ -371,10 +371,10 @@
         Id: 12
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Niché dans la baie de Cannes, le Saint Louis est à 800 m de Pégomas, village provençal de caractère. Tout le camping est équipé de manière à rendre votre séjour confortable et reposant : emplacements séparés par des haies et disposés en terrasses sur la colline.'
     12_nl:
         Id: 12
         Locale: nl
@@ -403,10 +403,10 @@
         Id: 13
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Paradis d''eau, de fleurs, de senteurs, abrité entre la Sainte Baume et la Sainte Victoire, ce camping Domaine de la sainte Baume est un grand jardin. Profitez des animations pour petits et grands, ainsi que de son vaste espace aquatique. Détente et farniente sont au rendez-vous à Nans-les-Pins.'
     13_nl:
         Id: 13
         Locale: nl
@@ -435,10 +435,10 @@
         Id: 14
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Venez vivre vos vacances dans un cadre naturel et familial. Animations en journée et en soirée, et l''après-midi laissez vous ""hâler"" sur la vaste plage de l''espace piscine du camping Le Sainte Marie."'
     14_nl:
         Id: 14
         Locale: nl
@@ -467,10 +467,10 @@
         Id: 15
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/06/2013-08/09/2013
+        ArriveesDeparts: 'Du 01/06/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au coeur de la forêt landaise à Mézos, le camping Le Sen Yan est un village tropical abritant une hôtellerie de plein air de grande qualité. Au sein d''une végétation luxuriante (palmiers, bananiers...) vous passerez un séjour paradisiaque entre ses superbes piscines découvertes et sa toute nouvelle piscine naturelle, sans oublier ses tennis, son mini-golf, et ses soirées animées.'
     15_nl:
         Id: 15
         Locale: nl
@@ -499,10 +499,10 @@
         Id: 16
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-14/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Jouissez du cadre exceptionnel du camping La Ferme de la Serraz, situé entre le massif alpin et le lac d''Annecy. Découvrez les nombreuses activités sportives ou profitez tout simplement de la beauté du paysage pour vous détendre et vous reposer.'
     16_nl:
         Id: 16
         Locale: nl
@@ -531,10 +531,10 @@
         Id: 17
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping se situe à 800 m seulement de la grande et belle plage de sable fin de Boyardville. Le camping Signol c''est également un cadre très nature à 150 m du marché, des commerces et des ports de pêche et de plaisance du joli village de Boyardville.'
     17_nl:
         Id: 17
         Locale: nl
@@ -563,10 +563,10 @@
         Id: 18
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-21/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 21/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Directement en bord de plage à argelès sur Mer, Le Soleil s''étend au sein d''un environnement préservé sur un terrain à la végétation dense et variée. Une splendide piscine californienne de 1500 m² est le point fort de ce camping, qui rassemble toutes les infrastructures d''un véritable village de vacances : commerces, restaurant catalan, bar pub et discothèque.'
     18_nl:
         Id: 18
         Locale: nl
@@ -595,10 +595,10 @@
         Id: 19
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au soleil du midi, entre Méditerranée et Pyrénées, détendez-vous au camping Le Soleil de Méditerranée. Découvrez St-Cyprien, un environnement préservé au bord de la grande bleue, et profitez pleinement des plages et des animations estivales.'
     19_nl:
         Id: 19
         Locale: nl
@@ -627,10 +627,10 @@
         Id: 20
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/06/2013-13/09/2013
+        ArriveesDeparts: 'Du 01/06/2013 au 06/07/2013 et du 31/08/2013 au 13/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé entre lac marin et mer méditerranée, le Bahia club propose farniente, détente et aussi animations, activités sportives, soirées... Chacun pourra passer les vacances de ses rêves. Un camping idéal pour toute la famille Au Barcarès !'
     20_nl:
         Id: 20
         Locale: nl
@@ -659,10 +659,10 @@
         Id: 21
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/06/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Installé en pleine forêt, à Wattwiller, le camping Les Sources vous fera découvrir les joies d''un séjour en symbiose avec la nature, agrémenté d''animations. Vous y trouverez deux piscines, dont une couverte, un centre équestre et un restaurant pour goûter les meilleures spécialités locales.'
     21_nl:
         Id: 21
         Locale: nl
@@ -723,10 +723,10 @@
         Id: 23
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/06/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé au coeur d''un magnifique espace, bordé de végétation méditerranéenne, le camping le Tamerici vous accueille à Cecina. Sa magnifique plage de sable et de galets vous permettra d''admirer de nombreuses îles alentours... Amateurs de VTT, de course à pied, laissez-vous séduire.'
     23_nl:
         Id: 23
         Locale: nl
@@ -755,10 +755,10 @@
         Id: 24
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Une situation idéale pour ce camping avec un accès direct à la mer Adriatique. Tout est réuni à Tenuta Primero pour passer des vacances de rêve, un vaste espace aquatique, de nombreux services beauté et remise en forme, des animations, des spectacles sans oublier le magnifique golf club Grado tout proche.'
     24_nl:
         Id: 24
         Locale: nl
@@ -787,10 +787,10 @@
         Id: 25
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au sud de Bidart, Ur Onea est un camping de 5 ha aménagé en terrasses. Vous y trouverez piscine, aires de jeux pour les enfants et ne serez qu''à 600 m d''une plage de sable fin où il fera bon vous détendre.'
     25_nl:
         Id: 25
         Locale: nl
@@ -819,10 +819,10 @@
         Id: 26
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/06/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/06/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Via Romana, idéalement situé en Corse, pour les petits comme pour les grands. Profitez du charme de l''île de Beauté en séjournant à Ghisonaccia. La piscine, le calme et les balades seront réunis pour des vacances inoubliables. Pour votre confort, le parking est situé à quelques mètres de votre emplacement.'
     26_nl:
         Id: 26
         Locale: nl
@@ -851,10 +851,10 @@
         Id: 27
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-29/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé au sud des Landes en bordure de l''océan, à Messanges, à deux pas des Pyrénées et à 1h30 de l''Espagne, le camping Le Vieux Port s''étend sur 30 ha d''une magnifique pinède, à 400 m de la plage.'
     27_nl:
         Id: 27
         Locale: nl
@@ -883,10 +883,10 @@
         Id: 28
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Idéal pour un séjour de détente, le camping club Les Vignes s''étend sur 15 ha, à proximité du village de Lit-et-Mixe. Dès votre arrivée vous tomberez en admiration devant son étonnant parc aquatique comportant lagon, pataugeoires, cascades, jardin exotique et piscine de nage pour les sportifs.'
     28_nl:
         Id: 28
         Locale: nl
@@ -915,10 +915,10 @@
         Id: 29
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le Camping Vilanova Park est situé sur la Costa Dorada, à 45 km au sud de Barcelone. Deux grandes piscines extérieures, une piscine couverte et un jacuzzi vous attendent. Ne manquez pas les nombreuses activités sportives proposées et la plage à moins de 3 km !'
     29_nl:
         Id: 29
         Locale: nl
@@ -947,10 +947,10 @@
         Id: 30
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé dans une pinède, entre mer et marais à 3 km environ des plages et du centre ville, le camping Zagarella  de saint Jean de Monts, vous propose des vacances animées dans un cadre agréable.'
     30_nl:
         Id: 30
         Locale: nl
@@ -979,10 +979,10 @@
         Id: 31
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Le Ruisseau des Pyrénées se trouve au coeur du Pays Basque, aux portes de Biarritz, à 2,5 km des plages de Bidart et tout proche de l''Espagne. Ce beau camping est composé de deux parties, séparées par une route. Retrouvez un immense complexe aquatique de 1100 m² avec toboggan, jacuzzi, espace balnéo (payant) et de nombreuses activités sportives : des vacances inoubliables en perspective !'
     31_nl:
         Id: 31
         Locale: nl
@@ -1011,10 +1011,10 @@
         Id: 32
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Bienvenue au Camping La Masia, un camping au sein d''un paysage naturel marin et montagneux, non loin du village de Blanes. Un espace aquatique idéal pour petits et grands vous fera passer de belles vacances. Les installations et les services du camping feront de votre séjour, un souvenir inoubliable !"'
     32_nl:
         Id: 32
         Locale: nl
@@ -1043,10 +1043,10 @@
         Id: 33
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Qui n''a jamais rêvé de profiter à fond de ses vacances ? Piscine, plage, sports, animations et ... farniente ! C''est le programme proposé par le camping Les Tamaris au Barcarès, pour des vacances placées sous le signe de la détente et du bonheur! Alors, partant ?"'
     33_nl:
         Id: 33
         Locale: nl
@@ -1075,10 +1075,10 @@
         Id: 34
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 19/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 19/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Un accès direct à l''océan, un parc animalier, un bel espace aquatique, des mobil-homes tout confort, de nombreux services et activités ? Retrouvez tout cela au camping Playa Joyel et faites de vos vacances un moment inoubliable à La Noja !'
     34_nl:
         Id: 34
         Locale: nl
@@ -1107,10 +1107,10 @@
         Id: 35
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Grâce à son accès direct à la mer Adriatique et sa situation idéale pour découvrir Venise, le camping Grande Italia vous ravira. Profitez de son tout nouvel espace aquatique et de son confort pour passer des vacances inoubliables et dépaysantes !'
     35_nl:
         Id: 35
         Locale: nl
@@ -1139,10 +1139,10 @@
         Id: 36
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A l''ombre des lauriers et des palmiers, le camping familial du Pearl Village Club possède de nombreux atouts pour des vacances familiales et détente, dans la station d''Argelès/Mer. Son bel espace aquatique conviendra aux petits et aux plus grands, restés enfants !'
     36_nl:
         Id: 36
         Locale: nl
@@ -1171,10 +1171,10 @@
         Id: 37
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: ''
+        OuvertureCamping: ''
+        ArriveesDeparts: ''
+        Description: '"A 200 m de la plage, avec de nombreux services et animations, la situation idéale de ce camping Les Pins Maritimes, fait aisément oublier l''absence de piscine. Face aux Îles de Hyères : Porquerolles, Port-Cros, Île du Levant, ce camping vous apportera évasion et dépaysement."'
     37_nl:
         Id: 37
         Locale: nl
@@ -1235,10 +1235,10 @@
         Id: 39
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Mèze, jolie bourgade du bassin de Thau, s''est édifiée autour du port, toujours très animé. Le camping Beau Rivage vous propose activités et détente. Profitez également du parc aquatique, et reposez vous à l''ombre de ses palmiers.'
     39_nl:
         Id: 39
         Locale: nl
@@ -1939,10 +1939,10 @@
         Id: 61
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé aux portes des Sables d''Olonne, une des plus prestigieuses stations Vendéennes, les dunes, la plage de sable fin et les promenades dans la réserve d''oiseaux vous attendent. Ce camping familial Bois Soleil vous réserve tous les plaisirs des vacances entre mer et forêt.'
     61_nl:
         Id: 61
         Locale: nl
@@ -2003,10 +2003,10 @@
         Id: 63
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi.'
+        Description: '"A 3 km des plages de sable fin de la Tranche sur Mer,  le camping les Almadies vous accueille dans un écrin de verdure de 11ha,  bordé d''un joli canal."'
     63_nl:
         Id: 63
         Locale: nl
@@ -2035,10 +2035,10 @@
         Id: 64
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 20/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 20/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi.'
+        Description: 'A 15mn de l''océan, venez vous ressourcer au Bois de Pleuven. Ce camping, situé à St Yvi entre Quimper et Concarneau, s''étend sur une forêt de 17 ha. '
     64_nl:
         Id: 64
         Locale: nl
@@ -2131,10 +2131,10 @@
         Id: 67
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/17h-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013 le samedi.'
+        Description: 'C''est sur les rives du lac de Laouzas, au cœur du parc du Haut Languedoc, que le camping Rieumontagné de Nages vous attend. Profitez de la plage de lac, d''un espace de loisirs nautiques et des nombreuses randonnées de la région.'
     67_nl:
         Id: 67
         Locale: nl
@@ -2291,10 +2291,10 @@
         Id: 72
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Ah ! Belle Ile en Mer...le rêve ! Rendez vous au camping Bordenéo pour des vacances mémorables, sur une magnifique île bretonne. Profitez de l''espace aquatique du camping, de son calme et de sa situation géographique à couper le souffle.'
     72_nl:
         Id: 72
         Locale: nl
@@ -2323,10 +2323,10 @@
         Id: 73
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013 le samedi.'
+        Description: 'Au bord du lac de la Selves, le camping les Tours propose une gamme complète d''activités : piscine, plage et nautisme sur le lac. Passez des vacances en communion avec la superbe nature de l''Aveyron. Calme, quiétude seront au rendez-vous : ressourcez-vous !'
     73_nl:
         Id: 73
         Locale: nl
@@ -2387,10 +2387,10 @@
         Id: 75
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Au pied du Luberon, le village provençal de la Roque d’Anthéron vous fera voyager au rythme ensoleillé du chant des cygales. Au bord de la Durance, le camping Domaine des Iscles, de 10 ha, vous accueille dans la douceur méditerranéenne.'
     75_nl:
         Id: 75
         Locale: nl
@@ -2483,10 +2483,10 @@
         Id: 78
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans un cadre naturel et boisé, ressourcez-vous au Domaine des Pins. Profitez de l''espace aquatique avec sa piscine couverte et des nombreux services du camping, qui faciliteront vos vacances, et vous permettront de vous retrouver en famille ou entre amis à saint Hilaire de Riez.'
     78_nl:
         Id: 78
         Locale: nl
@@ -2515,10 +2515,10 @@
         Id: 79
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Vendays-Montalivet est une station de vacances dynamique, tout comme le camping Atlantic Club Montalivet. Retrouvez un grand espace aquatique refait à neuf, un espace bien-être et aussi des animations pour les enfants et pour les adultes...sans oublier les services à disposition pour être vraiment en vacances."'
     79_nl:
         Id: 79
         Locale: nl
@@ -2547,10 +2547,10 @@
         Id: 80
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"La situation idéale de ce camping Les Ajoncs d''Or, près de La Baule, de Guérande et du Pouliguen, vous fera passer des vacances familiales et décontractées. Ce camping tout confort, alliant calme et bonne humeur, sera l''allié de vos vacances réussies."'
     80_nl:
         Id: 80
         Locale: nl
@@ -2579,10 +2579,10 @@
         Id: 81
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au coeur d''une pinède de 10ha, à 4 km seulement des plages, petits et grands apprécieront l''espace aquatique très bien équipé (piscine couverte, toboggans,pataugeoire...) du camping Les Biches. Activités sportives, animations, détente vous attendent pour des vacances au soleil, dans un cadre idyllique, à Saint Hilaire de Riez.'
     81_nl:
         Id: 81
         Locale: nl
@@ -2611,10 +2611,10 @@
         Id: 82
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Offrez vous une véritable bouffée d''air frais sur le camping Aqua Viva situé à Carssac-Aillac au cœur de la Dordogne, région riche d''un patrimoine culturel exceptionel. '
     82_nl:
         Id: 82
         Locale: nl
@@ -2707,10 +2707,10 @@
         Id: 85
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'A 10 minutes de Mimizan, célébre satation balnéaire , le camping Aurilandes est situé à Aureilhan dans une zone naturelle exceptionnelle. Les nombreuses activités, le bel espace auatique et la bordure du lac raviront toute la famille '
     85_nl:
         Id: 85
         Locale: nl
@@ -2739,10 +2739,10 @@
         Id: 86
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Le camping la Baie du Kernic vous plonge dans la culture bretonne grâce au village de Plouescat proche de Roscoff et de sa plage accessible à seulement 300m. '
     86_nl:
         Id: 86
         Locale: nl
@@ -2771,10 +2771,10 @@
         Id: 87
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Au plus proche de la magnifique plage de la Baule, le camping Le Bois d''Amour est idéalement situé à proximité des commerces et des marchés locaux.'
     87_nl:
         Id: 87
         Locale: nl
@@ -2803,10 +2803,10 @@
         Id: 88
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Le camping Ca''Savio situé à Cavallino-Treporti est le lieu idéal pour passer des vacances familiales par excellence.de nombreuses activités sportives et un bel espace aquatique raviront petits et grands. '
     88_nl:
         Id: 88
         Locale: nl
@@ -2835,10 +2835,10 @@
         Id: 89
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Le camping les Catalpas vous accueille sur plus de 2 ha, à proximité du célèbre estuaire de la Gironde. Idéal pour des vacances sous le signe de la découverte, St Georges-de-Didonne est situé au cœur d''une région dotée d''un rioche patrimoine.'
     89_nl:
         Id: 89
         Locale: nl
@@ -2995,10 +2995,10 @@
         Id: 94
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans une pinède de 4,3 ha, à l''abri de la dune, à 5 min des plages, découvrez le plaisir de vous réveiller au chant des oiseaux à Saint Jean de Monts. Le camping California, avec son cadre de verdure, vous procurera le cocktail de détente nécessaire à des vacances réussies.'
     94_nl:
         Id: 94
         Locale: nl
@@ -3027,10 +3027,10 @@
         Id: 95
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 27/04/2013-06/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 06/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Venez vivre des vacances magiques aux accents méditerranéens sur le camping la Côte des Rose, entre Narbonne-Plage et Gruissan.'
     95_nl:
         Id: 95
         Locale: nl
@@ -3059,10 +3059,10 @@
         Id: 96
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Sur l''île de Ré, à quelques pas du centre du village de St Clément des Baleines, le camping la Côte sauvage vous séduira par son vaste parc et vous permettra de découvrir des hébergements insolites.'
     96_nl:
         Id: 96
         Locale: nl
@@ -3091,10 +3091,10 @@
         Id: 97
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Au coeur du parc régional du Verdon, sur le plateau de Valensole, le camping le Coteau de la Marine vous propose des vacances sous le signe du bon air provençal. Senteurs, nature, détente, baignades et découvertes feront de vos vacances, un moment inoubliable !'
     97_nl:
         Id: 97
         Locale: nl
@@ -3347,10 +3347,10 @@
         Id: 105
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: ''
+        OuvertureCamping: ''
+        ArriveesDeparts: ''
+        Description: 'Logé sur une colline dominant plusieurs vallées (entre les Eyzies et Sarlat), le camping le Mas vous invite à passer un séjour sous le signe de la détente et de la culture. Dans un agréable cadre de verdure, vous trouverez piscine, terrain de sport, aire de jeux.'
     105_nl:
         Id: 105
         Locale: nl
@@ -3379,10 +3379,10 @@
         Id: 106
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Idéalement situé à  Torreilles, à seulement quelques centaines de mètres de la plage, Le Calypso vous accueille dans une ambiance familiale. Léo l''escargot, la mascotte du camping saura ravir les plus petits, les plus grands pourront profiter des multiples activités sportives, et des soirées à thèmes.'
     106_nl:
         Id: 106
         Locale: nl
@@ -3507,10 +3507,10 @@
         Id: 110
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Le Domaine de 20 ha du camping de la Dune Blanche vous attend à l’ombre des pins maritimes, à Camiers. L’espace aquatique et les environs, notamment Le Touquet Paris Plage et la Côte d’Opale, vous émerveilleront.'
     110_nl:
         Id: 110
         Locale: nl
@@ -3571,10 +3571,10 @@
         Id: 112
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Le camping Ensoya vous accueille dans un cadre naturel, calme et ombragé à seulement 4km de la réserve africaine de Sigean et à 7 km des plages.  '
     112_nl:
         Id: 112
         Locale: nl
@@ -3603,10 +3603,10 @@
         Id: 113
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'A 4 km de la plage, tout près de l''étang de Thau, entre Montpellier et Sète, à Voc La Gardiole, le camping l’Europe vous accueille dans un parc de 5 ha. Son espace aquatique, ses animations et ses activités sportives seront des distractions idéales pour toute la famille !'
     113_nl:
         Id: 113
         Locale: nl
@@ -3699,10 +3699,10 @@
         Id: 116
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 24/04/2013-13/10/2013
+        ArriveesDeparts: 'Du 24/04/2013 au 06/07/2013 et du 31/08/2013 au 13/10/2013, tous les jours. Du 06/07/2013 au 31/08/2013 , le samedi.'
+        Description: 'Situé à Marina di Bibbona, le Free Time est idéalement situé pour profiter des  joies du balnéaire et profiter du patrimoine de la Toscane.Camping idéal pour les familles.'
     116_nl:
         Id: 116
         Locale: nl
@@ -3731,10 +3731,10 @@
         Id: 117
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 17/05/2013-08/09/2013
+        ArriveesDeparts: 'Du 17/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping du Lac à Curbans, entre Gap et Sisteron, est situé entre les Alpes et la Provence, en bordure de la Durance. Découvrez l''endroit idéal pour tous les amoureux de la montagne et de la nature.'
     117_nl:
         Id: 117
         Locale: nl
@@ -3795,10 +3795,10 @@
         Id: 119
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 09/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013 le samedi.'
+        Description: 'Tout près de la frontière allemande à Biesheim, entre Colmar et Freiburg, profitez du cadre idyllique et paisible du camping l''Ile du Rhin. Optez pour une balade sur les berges du Rhin, une escapade en bateau ou une randonnée, ce qui vous fera aisément oublier l''absence de piscine !'
     119_nl:
         Id: 119
         Locale: nl
@@ -3827,10 +3827,10 @@
         Id: 120
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 23/03/2013-22/09/2013
+        ArriveesDeparts: 'Du 23/03/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Entouré d''un pinède  faisant face à l''archipel des îles Medes, le camping Interpals ravira toute la famille.Situé à Platja de Pals et à 200m d''une grande plage de sable fin, sa situation idéale rendra votre séjour trés agréable.'
     120_nl:
         Id: 120
         Locale: nl
@@ -3923,10 +3923,10 @@
         Id: 123
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Avec son accès direct à la célèbre dune du Pyla, le camping La Forêt vous offre une vue imprenable sur l''océan et un repos bien mérité à l''ombre des pins de ce camping de 12 ha.'
     123_nl:
         Id: 123
         Locale: nl
@@ -3987,10 +3987,10 @@
         Id: 125
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Tout sera réuni pour des vacances de rêve : une situation idéale entre Sète et Marseillan, des activités sportives, des animations, mais aussi de la détente et un bel espace aquatique... Retrouvez-vous en famille ou entre amis au camping le Castellas !'
     125_nl:
         Id: 125
         Locale: nl
@@ -4019,10 +4019,10 @@
         Id: 126
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Dans un parc de 4 ha et à 500m de la plage d''Argelès sur Mer, le camping le Neptune vous offre des vacances familiales et vous invite à découvrir les charmes du pays catalan.'
     126_nl:
         Id: 126
         Locale: nl
@@ -4051,10 +4051,10 @@
         Id: 127
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 02/03/2013-11/11/2013
+        ArriveesDeparts: 'Du 02/03/2013 au 06/07/2013 et du 31/08/2013 au 11/11/2013, tous les jours. Du 06/07/2013 au 31/08/2013 le samedi, le mercredi et le dimanche. '
+        Description: 'Un accès direct à la plage pour ce magnifique camping du Domaine d''Anghione, idéalement situé sur l''île de Beauté… Profitez des paysages paradisiaques à 35 km au sud de Bastia. Le parc de 40ha et son bel espace aquatique seront le gage de vacances réussies !'
     127_nl:
         Id: 127
         Locale: nl
@@ -4083,10 +4083,10 @@
         Id: 128
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: ''
+        OuvertureCamping: ''
+        ArriveesDeparts: ''
+        Description: 'Le Cap Agathois est situé à 3 km de la Mer Méditerranée avec ses grandes plages de sable fin ; c''est le camping idéal pour vos vacances en famille. Piscine, mer, plage, soleil, c''est l''environnement privilégié de la station. Tous au Cap d''Agde !'
     128_nl:
         Id: 128
         Locale: nl
@@ -4115,10 +4115,10 @@
         Id: 129
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013 le samedi.'
+        Description: 'En bord de mer à Portel, le camping Le phare est idéalement situé pour découvrir la région, vous fera profiter de ses 8 hectares de verdure et de sa vue imprenable sur la mer. Les villages typiques de pêcheurs et les marchés régionaux vous feront aisément oublier l''absence de piscine.'
     129_nl:
         Id: 129
         Locale: nl
@@ -4147,10 +4147,10 @@
         Id: 130
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
+        Description: 'Le camping les 7 Fonts s’étend sur un domaine de 5,5 ha et se situe à 6km du Cap d''Agde et des plages. Profitez d''une ambiance familiale et typiquement méditerranéenne au bord du canal du Midi.'
     130_nl:
         Id: 130
         Locale: nl
@@ -4211,10 +4211,10 @@
         Id: 132
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013 le samedi.'
+        Description: 'Ah, le fameux Mont-Blanc, montagne si impressionnante et si gigantesque ! Le camping Les Iles donne accès au lac de Passy et offre une vue imprenable sur le massif du Mont-Blanc et la chaîne des Aravis. Toutes les activités estivales de montagne seront à portée de main...'
     132_nl:
         Id: 132
         Locale: nl
@@ -4243,10 +4243,10 @@
         Id: 133
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'Le camping Les Lupins vous accueille sur un domaine de 4 ha exposé plein sud pour profiter de la nature surprenante de la région d''Alsace où se situe le village de Seppois-le Bas. '
     133_nl:
         Id: 133
         Locale: nl
@@ -4307,10 +4307,10 @@
         Id: 135
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 27/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 24/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 24/08/2013, le samedi. '
+        Description: 'L''ambiance conviviale et détendue du camping du Parc de la Fecht vous attend pour passer des vacances en toute sérénité. Vous pourrez également déguster le fromage de Munster, ville située à proximité du camping.'
     135_nl:
         Id: 135
         Locale: nl
@@ -4339,10 +4339,10 @@
         Id: 136
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Vous serez idéalement situé dans ce camping, au cœur d’une nature abondante, pour visiter les châteaux de la Loire. L’espace aquatique et le cadre exceptionnel feront de vos vacances, un moment de détente et d’amusement dans le Parc des Allais, à Trogues.'
     136_nl:
         Id: 136
         Locale: nl
@@ -4371,10 +4371,10 @@
         Id: 137
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h-17h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Quinson, ville classée station verte vous promet la découverte des gorges du Verdon et plus loin la Provence avec ses parfums et son terroir.'
     137_nl:
         Id: 137
         Locale: nl
@@ -4435,10 +4435,10 @@
         Id: 139
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'En Périgord noir, pays du juste milieu où l''Homme est né, terre d''accueil où il fait bon vivre et bien manger, vous apprécierez le camping Le Carbonnier pour des vacances reposantes à saint Martial de Nabirat.'
     139_nl:
         Id: 139
         Locale: nl
@@ -4563,10 +4563,10 @@
         Id: 143
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à 800 m de la plage, le Domaine de la Marina offre des vacances relaxantes dans un cadre convivial et calme à Messanges. Vous aurez accès aux nombreuses activités et animations (excepté l’espace aquatique) du camping le Vieux Port, situé à 400 m.'
     143_nl:
         Id: 143
         Locale: nl
@@ -4595,10 +4595,10 @@
         Id: 144
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h-15h-20h
+        OuvertureCamping: 12/04/2013-26/10/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 26/10/2013, tous les jours sauf le mardi. Du 06/07/2013 au 24/08/2013le mercredi et le samedi.'
+        Description: 'La situation idéale de ce camping Les Etangs Fleuris, à Touquin, vous permettra de découvrir la magie de Disneyland et les charmes de la capitale. Détendez-vous au bord de la piscine dans un cadre verdoyant de 10 ha.'
     144_nl:
         Id: 144
         Locale: nl
@@ -4627,10 +4627,10 @@
         Id: 145
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 08/05/2013-08/09/2013
+        ArriveesDeparts: 'Du 08/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Idéalement situé à 1 km du lac d’Annecy, le camping La Ravoire vous accueille dans un cadre bucolique. Piscine, toboggan aquatique, jeux d’enfants et services vous permettront de passer un séjour agréable.'
     145_nl:
         Id: 145
         Locale: nl
@@ -4659,10 +4659,10 @@
         Id: 146
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Une situation idéale pour ce camping Saint Disdille, à Thonon-les-Bains, proche du Lac Léman, vous aurez l’embarras du choix entre les sports nautiques, les randonnées ou la détente à la plage qui vous feront aisément oublier l’absence de piscine.'
     146_nl:
         Id: 146
         Locale: nl
@@ -4691,10 +4691,10 @@
         Id: 147
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-20/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 20/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: "Ce véritable village camping de Torreilles, au cœur du Languedoc Roussillon, vous attend\_! Un accès direct à la mer, une région pleine de surprises et un espace aquatique à couper le souffle… plongez, vous êtes bien au Mar i Sol\_!"
     147_nl:
         Id: 147
         Locale: nl
@@ -4723,10 +4723,10 @@
         Id: 148
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Ce camping familial Lou Pignada, situé à Ondres, entre Hossegor et Biarritz et à 2 km de l’océan, vous accueille au cœur d’une forêt de pins et de chênes liège. Dans un cadre calme et ombragé, vous pourrez profiter de la piscine.'
     148_nl:
         Id: 148
         Locale: nl
@@ -4755,10 +4755,10 @@
         Id: 149
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: "Un camping pour les grands et les petits, le Palmira beach, situé à Valras, vous accueille en famille ou entre amis pour des vacances placées sous le signe de la détente, de moments conviviaux et d’instants de bonheurs\_!"
     149_nl:
         Id: 149
         Locale: nl
@@ -4787,10 +4787,10 @@
         Id: 150
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 11/05/2013-21/09/2013
+        ArriveesDeparts: 'Du 11/05/2013 au 06/07/2013 et du 31/08/2013 au 21/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à proximité de la cité balnéaire Rosas et à côté de la ville de Castello d''Empuries dont les origines datent du Moyen Age. Le camping Castell Mar vous propose au sein d''une réserve naturelle, un séjour de repos paradisiaque, une tranquillité imperturbable et un accès à la plage du Golfe des Roses (700 m).'
     150_nl:
         Id: 150
         Locale: nl
@@ -4819,10 +4819,10 @@
         Id: 151
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez vivre des vacances relaxantes à 300 m de plage. La situation idéale du camping familial l''étoile de mer et de nombreuses animations font aisément oublier l’absence de piscine.'
     151_nl:
         Id: 151
         Locale: nl
@@ -4851,10 +4851,10 @@
         Id: 152
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 24/04/2013-12/10/2013
+        ArriveesDeparts: 'Du 24/04/2013 au 06/07/2013 et du 31/08/2013 au 12/10/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le Ranch, ce véritable havre de paix, calme et reposant, vous accueille au sein d’un bel écrin de verdure. La situation idéale de ce camping vous permettra de visiter la région et d’accéder facilement aux plages de Cannes.'
     152_nl:
         Id: 152
         Locale: nl
@@ -4883,10 +4883,10 @@
         Id: 153
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 18/05/2013-08/09/2013
+        ArriveesDeparts: 'Du 18/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au coeur du parc régional du Verdon, sur le plateau de Valensole, le camping le Coteau de la Marine vous propose des vacances sous le signe du bon air provençal. Senteurs, nature, détente, baignades et découvertes feront de vos vacances, un moment inoubliable !'
     153_nl:
         Id: 153
         Locale: nl
@@ -4915,10 +4915,10 @@
         Id: 154
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-08/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: "Randonnées, visites, détente, baignades, voici le cocktail idéal de vacances réussies, qui vous attend au camping La Pergola\_! Situé à Marigny, dans une belle région de lacs, le camping propose un bel espace aquatique."
     154_nl:
         Id: 154
         Locale: nl
@@ -4947,10 +4947,10 @@
         Id: 155
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le samedi et le mercredi.'
+        Description: 'A 600m de Volonne, le camping l''Hippocampe est niché dans un écrin de verdure. Son bel espace aquatique avec ses 5 toboggans et les nombreuses activités sportives de la région, vous feront passer des vacances toniques.'
     155_nl:
         Id: 155
         Locale: nl
@@ -5011,10 +5011,10 @@
         Id: 157
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 16/05/2013-22/09/2013
+        ArriveesDeparts: 'Du 16/05/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: "Ce magnifique camping Tahiti Club, tout confort vous propose des vacances en bord de mer Adriatique. Vous serez surpris par les prestations de qualité de ce camping\_: espace bien être, espace aquatique, animations…"
     157_nl:
         Id: 157
         Locale: nl
@@ -5043,10 +5043,10 @@
         Id: 158
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'A quelques kilométres de Benidorm et des parcs d''attractions, le camping Almafra situé à Alfaz del Pi est le lieu idéal pour des vacances qui allient farniente et découverte.'
     158_nl:
         Id: 158
         Locale: nl
@@ -5075,10 +5075,10 @@
         Id: 159
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Situé à Platja d''Aro à 1 kilomètre des plages, le camping Valldaro est un lieu idéal pour des vacances familiales.Le bel espace aquatique ravira petits et grands.'
     159_nl:
         Id: 159
         Locale: nl
@@ -5107,10 +5107,10 @@
         Id: 160
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Entouré par la magnifique forêt de pins de Ravenne et situé non loin de Venise, le camping Adriano situé à Punta Marina est un lieu idéal pour des vacances réussies.'
     160_nl:
         Id: 160
         Locale: nl
@@ -5139,10 +5139,10 @@
         Id: 161
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 11/05/2013-29/09/2013
+        ArriveesDeparts: 'Du 11/05/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Castell Montgri s''intègre totalement dans le paysage naturel environnant. Vous pourrez apprécier le magnifique espace aquatique, les nombreuses animations et activités. Alors, en famille ou entre amis, il y en aura pour tous et pour tous les goûts à l''Estartit!'
     161_nl:
         Id: 161
         Locale: nl
@@ -5171,10 +5171,10 @@
         Id: 162
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-22/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Pour des vacances alliant détente et divertissement, le Cesenatico est le camping idéal.Situé à Cesenatico, au bord de la mer Adriatique et au cœur d''une nature exceptionnelle, ce camping vous offrira des vacances inoubliables.   '
     162_nl:
         Id: 162
         Locale: nl
@@ -5203,10 +5203,10 @@
         Id: 163
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Idéal pour la détente, le camping Marina situé à Punta Marina vous accueille en plein cœur de la pinède centenaire de Ravenne. Vous pourrez vivre d''authentiques vacances les pieds dans l''eau.'
     163_nl:
         Id: 163
         Locale: nl
@@ -5235,10 +5235,10 @@
         Id: 164
         Locale: fr
         Country: ''
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-10h/17h-20h
+        OuvertureCamping: 04/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
+        Description: 'Au bord de la mer Méditerranée les pieds dans l''eau, le camping Gavina vous offrira des vacances inoubliables.Idéalement situé à Creixell de Mar , vous profiterez d''un séjour détente.'
     164_nl:
         Id: 164
         Locale: nl
@@ -5267,10 +5267,10 @@
         Id: 165
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: ''
+        OuvertureCamping: ''
+        ArriveesDeparts: ''
+        Description: 'Le camping Caussanel de Canet-de-salars, aux infrastructures et aux animations de qualité est situé au bord du lac de Pareloup qui vous offre ses 120 km de rives pour flâner ou passer des vacances actives.'
     165_nl:
         Id: 165
         Locale: nl
@@ -5299,10 +5299,10 @@
         Id: 166
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 20/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 20/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez vous ressourcer en profitant du camping Cayola à Vias. Situé à 400 m de la plage, plongez dans la grande bleue et laissez vous charmer par un arrière pays vous offrant une diversité de paysages et une nature sauvage.'
     166_nl:
         Id: 166
         Locale: nl
@@ -5331,10 +5331,10 @@
         Id: 167
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à Brem-sur-Mer, à 1 km d''une forêt de pins et à 1,5 km d''une plage de sable fin, Le Chaponnet est un endroit idéal pour des vacances confortables et reposantes. Ce camping offre un ensemble de services complets : espace aquatique, restaurant, animations...'
     167_nl:
         Id: 167
         Locale: nl
@@ -5363,10 +5363,10 @@
         Id: 168
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Sur la presqu''île de Fouras, à l''abri des îles de Ré et d''Oléron, le camping des Charmilles propose une belle piscine et son toboggan aquatique.Vous pourrez profiter de la plus belle plage de sable fin de la presqu''île en vous rendant à Fouras (3 km).'
     168_nl:
         Id: 168
         Locale: nl
@@ -5395,10 +5395,10 @@
         Id: 169
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-21/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 21/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au bord d''une plage, le camping Cala Gogo de saint Cyprien est une merveille de village de vacances. Rien ne manque entre ses deux courts de tennis, son restaurant gourmet et sa piscine californienne, au bord de laquelle un bar dancing vous garantit des soirées endiablées.'
     169_nl:
         Id: 169
         Locale: nl
@@ -5427,10 +5427,10 @@
         Id: 170
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/05/2013-06/09/2013
+        ArriveesDeparts: 'Du 06/05/2013 au 06/07/2013 et du 31/08/2013 au 06/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans un parc boisé et ombragé, entre le Cap Fréhel et St Malo, à 10 minutes de très belles plages, larges étendues ou petites criques sauvages, vous apprécierez le charme des très vieilles pierres au camping du Château de Galinée.'
     170_nl:
         Id: 170
         Locale: nl
@@ -5459,10 +5459,10 @@
         Id: 171
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Avec son espace aquatique, le camping La Chênaie ravira les petits comme les grands. Venez trouver calme et espace dans ce camping proche de la célèbre station balnéaire de Pornic.'
     171_nl:
         Id: 171
         Locale: nl
@@ -5491,10 +5491,10 @@
         Id: 172
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Bienvenue au camping du Domaine des Chênes Verts, au coeur du Périgord noir, à seulement 7 km de Sarlat, cité médiévale, à 5 minutes de la rivière, au sein de la vallée de la Dordogne, venez goûter à la quiétude d''un moment de détente dans un petit bijou de la nature.'
     172_nl:
         Id: 172
         Locale: nl
@@ -5523,10 +5523,10 @@
         Id: 173
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '25 ha de forêt de pins, en bordure du lac de Léon, à Veille-saint-Girons, deux vastes piscines, dont une couverte et chauffée, de nombreuses activités sportives et culturelles sont proposées pour les petits et les grands au camping Le Col Vert.'
     173_nl:
         Id: 173
         Locale: nl
@@ -5555,10 +5555,10 @@
         Id: 174
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à 20 mètres de la plage, à la pointe de la presqu''île de Quiberon, le camping Le Conguel vous permettra de passer des vacances détente et culturelles. Entre visites bretonnes et farniente au bord de la piscine, passez un séjour inoubliable.'
     174_nl:
         Id: 174
         Locale: nl
@@ -5587,10 +5587,10 @@
         Id: 175
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 19/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 19/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Bienvenue au camping La Coste Rouge, situé à Argelès-sur-mer, sur une terre de lumière que caresse généreusement un soleil souvent présent. Découvrez une ambiance familiale et conviviale pour passer un agréable séjour en camping. A proximité de la mer (900 m) et aux pieds du massif des Albères, rendez-vous à La Coste Rouge !'
     175_nl:
         Id: 175
         Locale: nl
@@ -5619,10 +5619,10 @@
         Id: 176
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 17/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 17/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 300 m de la plage, le camping de la Côte d''Argent s''étend sur 20 ha, à l''abri d''une forêt de pins, à Hourtin. Sur ce site de caractère, protégé par les dunes, vous trouverez notamment un bel ensemble aquatique de 3500 m², comportant trois bassins, des toboggans et une île aux enfants.'
     176_nl:
         Id: 176
         Locale: nl
@@ -5651,10 +5651,10 @@
         Id: 177
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Crin Blanc, situé au coeur de la Camargue, à Albaron sur Arles, vous émerveillera. Vous pourrez profiter de l''espace aquatique et des activités sportives à proximité, avec bien entendu, l''équitation comme activité phare.'
     177_nl:
         Id: 177
         Locale: nl
@@ -5683,10 +5683,10 @@
         Id: 178
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: '8h-11h/17h-19h en basse saison et 15h-19h en haute saison'
+        OuvertureCamping: 18/05/2013-14/09/2013
+        ArriveesDeparts: 'Du 18/05/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Entre mer et montagne, à quelques minutes de la plage et de Porto Vecchio, le camping Cupulatta (""tortue"" en corse), vous accueille dans une ambiance simple et familiale sur une superficie de 2 ha. Vous trouverez calme et détente, et serez enivrés par les senteurs du maquis."'
     178_nl:
         Id: 178
         Locale: nl
@@ -5715,10 +5715,10 @@
         Id: 179
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Les Cyprès, situé à 4 km de St-Gilles-Croix-de-Vie, vous accueille dans un site calme et arboré à 600 m de la plage. Ce camping se trouve près de la rivière du Jaunay, le long de laquelle une piste cyclable vous conduira à St-Gilles-Croix-de-Vie.'
     179_nl:
         Id: 179
         Locale: nl
@@ -5747,10 +5747,10 @@
         Id: 180
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 19/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 19/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'En bordure de plage, à Vias Plage, des vacances les pieds dans l''eau au Petit Mousse ! Vous aurez le plaisir d''admirer le lever du jour et le coucher du soleil sur la grande bleue. Le camping dispose d''un bel espace piscine avec toboggan aquatique.'
     180_nl:
         Id: 180
         Locale: nl
@@ -5779,10 +5779,10 @@
         Id: 181
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-07/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 07/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez respirer l''air vivifiant de la Bretagne au coeur d''un parc boisé de 9 ha situé à 900 m de la plage de Tahiti-Raguénez. Toutes les activités sont réunies pour enchanter petits et grands au camping Les Deux Fontaines à Névez.'
     181_nl:
         Id: 181
         Locale: nl
@@ -5811,10 +5811,10 @@
         Id: 182
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Le ""Village corsaire"" les Deux Plages,où vous prendrez d''assaut la plage distante de 300 m seulement, est situé dans la station de Chatelaillon-Plage, à 10 km de la Rochelle. Le centre de la station est également tout proche... Sympa pour se distraire facilement en sortant du camping !"'
     182_nl:
         Id: 182
         Locale: nl
@@ -5843,10 +5843,10 @@
         Id: 183
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à Penestin, au coeur d''un espace naturel de 20 ha, le camping Domaine d''Inly offre des plages à proximité, un choix varié d''activités et la possibilité de s''adonner aux sports aquatiques sur un étang privé (canoë).'
     183_nl:
         Id: 183
         Locale: nl
@@ -5875,10 +5875,10 @@
         Id: 184
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans un environnement calme et naturel, le camping le Domaine d''Oléron se situe entre St-Pierre et St-Georges, à 3 km des plages de sable et à 2 km de la forêt domaniale et des commerces. L''île d''Oléron vous attend avec ses belles plages de sable fin et sa nature envoûtante.'
     184_nl:
         Id: 184
         Locale: nl
@@ -5907,10 +5907,10 @@
         Id: 185
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé dans un vaste parc de 15 ha, le camping Domaine de Chaussy se trouve au coeur de l''Ardèche méridionale, à 3 km de la rivière Ardèche, célèbre pour ses descentes en canoë et ses nombreux sites de randonnées. Vous apprécierez, sur ce site, le bel espace aquatique ainsi que les diverses activités sportives proposées. Lagorce Vallon-Pont-d''Arc est l''endroit idéal pour profiter de l''ardèche !'
     185_nl:
         Id: 185
         Locale: nl
@@ -5939,10 +5939,10 @@
         Id: 186
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/03/2013-29/09/2013
+        ArriveesDeparts: 'Du 27/03/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le Domaine de Kermario est situé juste à côté des plus célèbres alignements de menhirs de Carnac. Vous séjournerez dans un camping familial, dans un joli cadre champêtre. Les plages de Carnac et le port de la Trinité sont à 4 km.'
     186_nl:
         Id: 186
         Locale: nl
@@ -5971,10 +5971,10 @@
         Id: 187
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Sur la commune de Biscarosse, à 200 m du lac Cazaux Sanguinet, le camping le Domaine de la Rive vous propose un espace aquatique haut en couleur, avec une partie totalement dédiée aux enfants. Vous serez enchantés par ce site, où activités sportives, notamment sur le lac, se conjuguent parfaitement avec le farniente...'
     187_nl:
         Id: 187
         Locale: nl
@@ -6003,10 +6003,10 @@
         Id: 188
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Qu''il sera doux pour vous de séjourner à Guérande, au camping Domaine de Léveno : un très grand parc, des animations, une piscine couverte, une nature préservée, feront de votre séjour, un moment de calme et de détente. Pour les plus intrépides,ne manquez pas le toboggan kamikaze.'
     188_nl:
         Id: 188
         Locale: nl
@@ -6035,10 +6035,10 @@
         Id: 189
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 29/03/2013-12/10/2013
+        ArriveesDeparts: 'Du 29/03/2013 au 06/07/2013 et du 31/08/2013 au 12/10/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Coup de coeur pour le camping Domaine des Naïades, merveilleusement bien situé au sein d''un des plus célèbres golfe du monde : le golfe de St Tropez. Ne manquez pas son ambiance conviviale, sa piscine olympique et sa situation privilégiée. Des vacances bonheur et détente au rendez-vous ! Rassemblement de Harley Davidson dans le golfe (du 10 au 13 mai)'
     189_nl:
         Id: 189
         Locale: nl
@@ -6067,10 +6067,10 @@
         Id: 190
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'En bordure d''Ardèche, entre le plateau du Coiron, ancien massif volcanique, et les gorges de l''Ardèche, le camping Domaine du Cros d''Auzon vous invite à passer des vacances en pleine nature, reposantes et/ou sportives.'
     190_nl:
         Id: 190
         Locale: nl
@@ -6099,10 +6099,10 @@
         Id: 191
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A quelques kilomètres de l''océan, au Château d''Oléron, le camping Airotel Oléron est un parc arboré. Parmi ses nombreuses prestations, une ferme équestre intégrée vous réserve la possibilité de belles randonnées sur la plage. A proximité, vous aurez le choix entre huit plages et pourrez profiter de 800 ha de forêts de pins et de chênes.'
     191_nl:
         Id: 191
         Locale: nl
@@ -6131,10 +6131,10 @@
         Id: 192
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 15/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 15/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'À 700 m d''altitude, le camping Domaine du Verdon se situe juste avant le début des gorges, près de Castellane. Sur 14 ha plats et boisés, vous découvrirez un superbe village de vacances à l''architecture provençale et aurez directement accès au Verdon, sur lequel vous aurez tout loisir de pratiquer canoë, rafting et canyoning.'
     192_nl:
         Id: 192
         Locale: nl
@@ -6163,10 +6163,10 @@
         Id: 193
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Avec son accès direct à la plage, le camping Les Dunes est le cadre idéal pour des vacances ""relax"" sur la Méditerranée, à Torreilles."'
     193_nl:
         Id: 193
         Locale: nl
@@ -6195,10 +6195,10 @@
         Id: 194
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-31/08/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Sur un vaste domaine de 6 ha, venez profiter d''un havre de paix, où convivialité et tranquillité rythment les vacances. Profitez du parc aquatique, des animations et des activités sportives. Entre Lattes et Palavas-les Flots, le camping l''Eden est idéal pour les petits et les grands.'
     194_nl:
         Id: 194
         Locale: nl
@@ -6227,10 +6227,10 @@
         Id: 195
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 30/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 30/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 700 m du bassin d''Arcachon et à 7 km de l''océan, le camping Les Embruns vous accueille dans un parc de 20 ha à Lège Cap Ferret. Profitez des 150 km de pistes cyclables pour rayonner sur le bassin d''Arcachon. Alliez détente, farniente aux nombreuses balades à faire dans la région.'
     195_nl:
         Id: 195
         Locale: nl
@@ -6259,10 +6259,10 @@
         Id: 196
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A Aureilhan, à 10 minutes de l''Océan, au coeur de la forêt landaise, en bordure de lac, le camping Eurolac vous offre des vacances actives. Les sports nautiques seront bien entendu au rendez-vous, et ne manquez pas l''espace aquatique pour vous amuser et vous détendre.'
     196_nl:
         Id: 196
         Locale: nl
@@ -6291,10 +6291,10 @@
         Id: 197
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Le camping Le Fanal d''Isigny-sur-Mer, se situe au coeur du parc naturel des marais du Cotentin et du Bessin, et vous invite à pratiquer des vacances ""vertes"" et ""bleues"" entre campagne normande et lac."'
     197_nl:
         Id: 197
         Locale: nl
@@ -6323,10 +6323,10 @@
         Id: 198
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 15/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 15/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Envie de confort, de nature, de bien être et de convivialité ? Le camping de la Farigoulette vous attend au coeur d''une pinède sur les rives du Lac St Laurent. Profitez de toutes les activités sportives du Verdon, sans oublier les villages exceptionnels aux alentours.'
     198_nl:
         Id: 198
         Locale: nl
@@ -6355,10 +6355,10 @@
         Id: 199
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à proximité des plages de sable fin de Canet-en-Roussillon et en bordure de la réserve naturelle de l''étang de Canet-St-Nazaire, le camping Les Fontaines a le privilège de vous accueillir dans un grand espace de nature et de tranquillité ; la famille y est à l''honneur : vos enfants pourront goûter au plaisir de participer aux activités de la mini-ferme située à proximité du camping.'
     199_nl:
         Id: 199
         Locale: nl
@@ -6387,10 +6387,10 @@
         Id: 200
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 18/05/2013-21/09/2013
+        ArriveesDeparts: 'Du 18/05/2013 au 06/07/2013 et du 31/08/2013 au 21/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Tout est réuni pour que petits, moyens et grands passent un agréable moment. Dans le camping Les Frênes et aux alentours, vous trouverez de nombreuses activités et animations, à faire tout au long de la journée. N''attendez plus, découvrez Antibes et ses magnifiques environs, sans oublier Juan-Les-Pins.'
     200_nl:
         Id: 200
         Locale: nl
@@ -6419,10 +6419,10 @@
         Id: 201
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Bienvenue au camping le Front de Mer, dans cette belle région qu''est la côte Vermeille, situé à 200 m de la plage et du port d''Argelès-sur-Mer. Ambiance familiale, parc aquatique, détente : ici tout est réuni pour des vacances réussies et magiques.'
     201_nl:
         Id: 201
         Locale: nl
@@ -6451,10 +6451,10 @@
         Id: 202
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au coeur de l''Ardèche méridionale, à Ruoms, et de ses gorges, pays riche de sports alliant l''eau et la nature, le camping Aluna Vacances se situe dans un cadre de verdure, au milieu d''une multitude de chênes blancs. Vous pourrez apprécier le bel ensemble aquatique.'
     202_nl:
         Id: 202
         Locale: nl
@@ -6483,10 +6483,10 @@
         Id: 203
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez vous ressourcer en pleine nature, au milieu des senteurs, à Ruoms. De l''espace aquatique, en passant par les activités et les animations, sans oublier de bons moments de détente, pour des vacances en famille ou entre amis, le camping Grand''Terre est fait pour vous.'
     203_nl:
         Id: 203
         Locale: nl
@@ -6515,10 +6515,10 @@
         Id: 204
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 20/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 20/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au coeur des châteaux de la Loire, le camping le Parc de La Grenouillère vous accueille sur un parc de 11 ha à Suèvres. Situé à 10 km du château de Chambord, ce camping est équipé de trois piscines dont une couverte et d''un toboggan aquatique.'
     204_nl:
         Id: 204
         Locale: nl
@@ -6547,10 +6547,10 @@
         Id: 205
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 400 m de l''océan dans un site boisé et en bordure d''un ancien marais salant devenu ornithologique, le camping Les Huttes est une escale de découverte et de repos. Saint Denis d''Oléron est une très jolie petite ville à ne pas manquer !'
     205_nl:
         Id: 205
         Locale: nl
@@ -6579,10 +6579,10 @@
         Id: 206
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Niché dans un écrin de verdure, à 900 m du Lac d''Annecy, le camping L''Idéal vous propose un séjour sportif et ludique. La montagne, ça vous gagne !!'
     206_nl:
         Id: 206
         Locale: nl
@@ -6611,10 +6611,10 @@
         Id: 207
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-28/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 28/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Les Ilates se situe à Loix au nord de l''Ile de Ré : longue bande de terre baignée par la douceur de son climat méridional. Les Ilates vous proposent un séjour entre mer et campagne, nature, calme et détente.'
     207_nl:
         Id: 207
         Locale: nl
@@ -6675,10 +6675,10 @@
         Id: 209
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-30/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 30/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Situé sur la Costa Brava, le camping Internacional de Calonge vous offre un accès direct à la mer (200 m). Ses plages et ses criques pittoresques sont distinguées par le ""pavillon bleu"". Ce camping fort animé propose tous les équipements et services qui sauront rendre vos vacances inoubliables."'
     209_nl:
         Id: 209
         Locale: nl
@@ -6707,10 +6707,10 @@
         Id: 210
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Repos et tranquillité assurés au camping Internacional Palamós. Sa situation idéale, vous permettra de vous imprégner des charmes de l''Espagne : dépaysement assuré ! Faites le plein de soleil au bord de la piscine...'
     210_nl:
         Id: 210
         Locale: nl
@@ -6739,10 +6739,10 @@
         Id: 211
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 18/05/2013-14/09/2013
+        ArriveesDeparts: 'Du 18/05/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Le camping Le Jard vous accueille à La Tranche/Mer, surnommée ""la Petite Californie française"", par son climat particulièrement agréable et par la qualité de son environnement. Le Jard situé à 700 m de la mer vous propose des vacances familiales."'
     211_nl:
         Id: 211
         Locale: nl
@@ -6803,10 +6803,10 @@
         Id: 213
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au camping du Lac Bleu, venez vivre vos vacances au bord du lac, à Châtillon en Diois, dans un site prestigieux de 10 ha, au rythme de l''eau de source des Alpes dans la fraîcheur d''une nature préservée.'
     213_nl:
         Id: 213
         Locale: nl
@@ -6835,10 +6835,10 @@
         Id: 214
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au carrefour du Quercy et de l''Auvergne, le camping du Lac de Miel vous accueille au sein d''une nature préservée. Entre la plage, la baignade et le sport, vous aurez l''embarras du choix. Des moniteurs expérimentés et des surveillants de baignade vous encadreront durant votre séjour. En implantant des mobil-homes Hélios, Vacances directes a pour volonté de donner la possibilité à tout un chacun de profiter pleinement de ses vacances.'
     214_nl:
         Id: 214
         Locale: nl
@@ -6867,10 +6867,10 @@
         Id: 215
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Non loin de Toulouse, ""la Ville Rose"", le camping le Lac de Thoux vous propose des vacances en pleine nature, au bord d''un lac de 70 hectares : balades autour du lac, observation de la faune et de la flore, prenez le temps de vivre..."'
     215_nl:
         Id: 215
         Locale: nl
@@ -6931,10 +6931,10 @@
         Id: 217
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping Lou Broustaricq se situe au bord du lac de Sanguinet (3600 ha), à l''abri d''une majestueuse forêt de pins. Dans ce cadre remarquable, il vous offre de nombreuses activités et un bel ensemble de piscines dans lesquelles vous plongerez avec délice. Sur le lac, pratiquez des sports nautiques et bronzez en toute tranquillité sur de belles plages de sable blanc.'
     217_nl:
         Id: 217
         Locale: nl
@@ -6963,10 +6963,10 @@
         Id: 218
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-29/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 50 km du Pays Basque, le camping Lou Pignada de Messanges, situé entre mer et forêt sera le lieu idéal de vacances toniques, où vous pourrez profiter des diverses animations proposées par le camping et d''un très bel ensemble aquatique.'
     218_nl:
         Id: 218
         Locale: nl
@@ -6995,10 +6995,10 @@
         Id: 219
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 5 min des Sables d''Olonne, en bordure d''une forêt, et à peine à 2 km d''une plage de sable fin, l''équipe du camping de La Loubine vous accueille dans une ambiance chaleureuse et conviviale. Profitez des toboggans aquatiques qui feront le bonheur des grands et des petits...'
     219_nl:
         Id: 219
         Locale: nl
@@ -7027,10 +7027,10 @@
         Id: 220
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au sud des Sables d''Olonne et à 5 min de la plage du Veillon, venez découvrir ce camping situé à Talmont-St-Hilaire et s''étendant sur 5 ha, Loyada vous fera profiter de son espace aquatique de 300 m², équipé de toboggans aquatiques et d''une piscine couverte.'
     220_nl:
         Id: 220
         Locale: nl
@@ -7091,10 +7091,10 @@
         Id: 222
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 20/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 20/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Des vacances au camping Mare e Pineta sous le signe du confort, du bien-être et du contact avec la nature. Nombreux services sont à disposition : animations pour les enfants et les adultes, soirées dansantes et divertissements. Rendez-vous à Lido di Spina !'
     222_nl:
         Id: 222
         Locale: nl
@@ -7123,10 +7123,10 @@
         Id: 223
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'En bordure de l''océan Atlantique, passez des vacances au coeur de la nature et à l''ombre des pins à Saint Georges d''Oléron. En famille ou entre amis, profitez de l''accès direct à la mer du camping Sandaya Soulac Plage, tout confort.'
     223_nl:
         Id: 223
         Locale: nl
@@ -7155,10 +7155,10 @@
         Id: 224
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: ''
+        OuvertureCamping: ''
+        ArriveesDeparts: ''
+        Description: 'Au coeur de la Camargue, au grau-du-Roi, et situé sur la route de la plage de l''Espiguette, la plus grande plage d''Europe (navette), le camping la Marine vous invite à la détente autour de son espace piscine. Activités sportives, aquatiques, découverte de la Camargue et détente-relaxation seront au rendez-vous.'
     224_nl:
         Id: 224
         Locale: nl
@@ -7187,10 +7187,10 @@
         Id: 225
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-21/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 21/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Vous serez comme un poisson dans l''eau au camping Les Marsouins d''Argelès-sur-Mer : une vaste piscine californienne avec 3000 m² de plages vous attend pour des vacances de rêve.'
     225_nl:
         Id: 225
         Locale: nl
@@ -7219,10 +7219,10 @@
         Id: 226
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 20/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 20/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'A 500 m de la mer, détente et farniente seront au rendez-vous pour vos vacances. Sa position stratégique, fait du camping le Marze, un camping idéal pour découvrir l''Italie, Rome, Florence, Pise... Pour plus de confort, le stationnement des véhicules est séparé.'
     226_nl:
         Id: 226
         Locale: nl
@@ -7251,10 +7251,10 @@
         Id: 227
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-15/09/2012
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Pour des vacances familiales et reposantes à Sérignan, n''hésitez plus ! c''est le camping La Maïre qu''il vous faut. La piscine, sa situation privilégiée et la plage à 600 m vous offriront détente et vacances réussies.'
     227_nl:
         Id: 227
         Locale: nl
@@ -7283,10 +7283,10 @@
         Id: 228
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à Patornay, au coeur de la région des lacs, en bordure de la rivière l''Ain, à deux pas du lac de Vouglans, le camping du Moulin vous propose un cadre exceptionnel de 5 ha boisés qui séduira les amoureux de la nature. Pour le bonheur des grands et des petits :  piscine couverte, toboggan aquatique, plage et aires de jeux.'
     228_nl:
         Id: 228
         Locale: nl
@@ -7315,10 +7315,10 @@
         Id: 229
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Bienvenue au Camping Neptuno, où l''ambiance accueillante, familiale, reposante et l''environnement privilégié, caractéristique de la Costa Brava, font de ce camping le lieu idéal pour profiter des vacances à Pals.'
     229_nl:
         Id: 229
         Locale: nl
@@ -7347,10 +7347,10 @@
         Id: 230
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 04/05/2013-14/09/2013
+        ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Bordant la Méditerranée, le camping club l''Oasis, situé au Barcarès, vous dévoilera le charme des belles plages de sable fin des Pyrénées-Orientales. Un séjour inoubliable dans le Pays Catalan, terre de contraste où la mer et la montagne se rencontrent à l''éclat du soleil.'
     230_nl:
         Id: 230
         Locale: nl
@@ -7379,10 +7379,10 @@
         Id: 231
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 13/04/2013-14/09/2013
+        ArriveesDeparts: 'Du 13/04/2013 au 06/07/2013 et du 31/08/2013 au 14/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Situé à Jard/Mer, ravissant port de plaisance, le camping l''Océano d''Or est un véritable lieu de détente pourvu des meilleurs équipements. A seulement 1 km de là, vous aimerez vous détendre sur le sable fin de la plage de Boisvinet et pratiquer les sports nautiques qui vous font envie.'
     231_nl:
         Id: 231
         Locale: nl
@@ -7411,10 +7411,10 @@
         Id: 232
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 15/06/2013-22/09/2013
+        ArriveesDeparts: 'Du 15/06/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Proche du centre de Bidart, le camping Oyam offre un cadre familial pour d''agréables vacances. Les infrastructures sur place vous garantissent un confort reposant et des activités sportives. À 1,2 km à peine, vous aurez accès aux plus belles plages de la Côte Basque.'
     232_nl:
         Id: 232
         Locale: nl
@@ -7443,10 +7443,10 @@
         Id: 233
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-22/09/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le camping les Oyats est un lieu splendide au coeur de la pinède landaise, à Seignosse et à 500 m de la plage. Un véritable retour à la nature pour des vacances mémorables. La piscine des Oyats, les activités sportives (notamment le surf) et culturelles, proposées à proximité du camping, vous feront vivre des moments d''exception !'
     233_nl:
         Id: 233
         Locale: nl
@@ -7475,10 +7475,10 @@
         Id: 234
         Locale: fr
         Country: Espagne
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Au bord de la Méditerranée, l''Ametlla bénéficie d''une situation exceptionnelle. Du camping, vous aurez directement accès à deux calanques à l''eau transparente. Sur place : piscine, salle de jeux, restaurant vous permettront de passer un séjour agréable.'
     234_nl:
         Id: 234
         Locale: nl
@@ -7507,10 +7507,10 @@
         Id: 235
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: '"Le paradis de la glisse au camping Pachacaïd à La Môle... Profitez des chutes, traversez le Mississipi, voguez sur le Rio Grande... tout cela au pied de votre mobil-home !  Vous en rêviez ? Pachacaïd l''a fait ! A Pachacaïd, il y a toujours une activité qui plaira aux petits comme aux grands : sports, spectacles, aquagym, footing collectif, animations variées. Rythmez vos vacances comme vous l''entendez!"'
     235_nl:
         Id: 235
         Locale: nl
@@ -7539,10 +7539,10 @@
         Id: 236
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 11/05/2013-15/09/2013
+        ArriveesDeparts: 'Du 11/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'À mi-chemin entre les grottes de Lascaux et la cité de Rocamadour, le domaine de la Paille Basse est un vieux village typique aménagé en hôtel de plein-air à Souillac. Sur place, vous trouverez tout le confort et les activités d''un camping de grand standing.'
     236_nl:
         Id: 236
         Locale: nl
@@ -7571,10 +7571,10 @@
         Id: 237
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 06/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans un parc boisé de 16 ha à 400 m de la plage, le camping le Palace, situé à Soulac-sur-Mer vous propose un séjour confortable. Piscine semi-couverte, toboggan aquatique feront le bonheur des petits... et des grands !'
     237_nl:
         Id: 237
         Locale: nl
@@ -7603,10 +7603,10 @@
         Id: 238
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-29/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Le plus bel atout du Palavas Camping est d''être situé sur une plage de 450 m sur le cordon littoral qui s''étire entre étangs protégés et Méditerranée. Activités sportives ou récréatives pour tous les âges et pour tous les goûts vous sont proposées au Palavas Camping.'
     238_nl:
         Id: 238
         Locale: nl
@@ -7635,10 +7635,10 @@
         Id: 239
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-22/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Venez découvrir un environnement de qualité (3,5 ha de chênes), véritable havre de paix, le camping Le Parc est situé au coeur de la région la plus ensoleillée de France, à Saint Paul en Forêt. Activités sportives et farniente vous attendent dans les environs.'
     239_nl:
         Id: 239
         Locale: nl
@@ -7667,10 +7667,10 @@
         Id: 240
         Locale: fr
         Country: Italie
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Des vacances sous le signe de la détente au Park Albatros, à San Vincenzo. Ce camping propose activités, sports et animations. Profitez également du magnifique parc aquatique.'
     240_nl:
         Id: 240
         Locale: nl
@@ -7699,10 +7699,10 @@
         Id: 241
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 12/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Profitez de vacances nature à Ruoms, au coeur de l''Ardèche, entourée de rivières. Détendez-vous grâce aux animations et à l''espace aquatique du camping, mais également aux nombreux sports de plein air du Petit Bois.'
     241_nl:
         Id: 241
         Locale: nl
@@ -7731,10 +7731,10 @@
         Id: 242
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 27/04/2013-08/09/2013
+        ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'La Margeride est une terre secrète qui vous enchantera par la beauté de ses paysages préservés tels que les Gorges de la Truyère, le plateau de l''Aubrac ainsi que les grandes Causses. Le camping le Petit Bois est situé à 920 m d''altitude.'
     242_nl:
         Id: 242
         Locale: nl
@@ -7763,10 +7763,10 @@
         Id: 243
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 01/05/2013-31/08/2013
+        ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Dans un cadre naturel, à Villerouge la Crémade, le camping Le Pinada ravira toute la famille. Vous pourrez profiter pleinement de vacances détente. 1000 ha de pinède en libre accès derrière le camping vous assurent un séjour reposant et dépaysant.'
     243_nl:
         Id: 243
         Locale: nl
@@ -7795,10 +7795,10 @@
         Id: 244
         Locale: fr
         Country: France
-        OuvertureReception: null
-        OuvertureCamping: null
-        ArriveesDeparts: null
-        Description: null
+        OuvertureReception: 8h-11h/15h-20h
+        OuvertureCamping: 26/04/2013-15/09/2013
+        ArriveesDeparts: 'Du 26/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
+        Description: 'Sur les falaises de grès du cap d''Erquy, le camping Les Pins s''étend sur un terrain en pente douce dans une agréable pinède. Vous profiterez d''activités toniques dans une ambiance détendue. Un bel espace aquatique ravira petits et grands.'
     244_nl:
         Id: 244
         Locale: nl
