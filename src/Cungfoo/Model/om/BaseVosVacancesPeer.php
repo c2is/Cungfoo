@@ -45,17 +45,17 @@ abstract class BaseVosVacancesPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'vos_vacances.ID';
+    /** the column name for the id field */
+    const ID = 'vos_vacances.id';
 
-    /** the column name for the AGE field */
-    const AGE = 'vos_vacances.AGE';
+    /** the column name for the age field */
+    const AGE = 'vos_vacances.age';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'vos_vacances.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'vos_vacances.image_path';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'vos_vacances.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'vos_vacances.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -182,10 +182,10 @@ abstract class BaseVosVacancesPeer
             $criteria->addSelectColumn(VosVacancesPeer::IMAGE_PATH);
             $criteria->addSelectColumn(VosVacancesPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.AGE');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.age');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

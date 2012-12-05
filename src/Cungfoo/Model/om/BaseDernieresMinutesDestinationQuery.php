@@ -139,7 +139,7 @@ abstract class BaseDernieresMinutesDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `DERNIERES_MINUTES_ID`, `DESTINATION_ID` FROM `dernieres_minutes_destination` WHERE `DERNIERES_MINUTES_ID` = :p0 AND `DESTINATION_ID` = :p1';
+        $sql = 'SELECT `dernieres_minutes_id`, `destination_id` FROM `dernieres_minutes_destination` WHERE `dernieres_minutes_id` = :p0 AND `destination_id` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);

@@ -47,35 +47,35 @@ abstract class BaseTypeHebergementPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 10;
 
-    /** the column name for the ID field */
-    const ID = 'type_hebergement.ID';
+    /** the column name for the id field */
+    const ID = 'type_hebergement.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'type_hebergement.CODE';
+    /** the column name for the code field */
+    const CODE = 'type_hebergement.code';
 
-    /** the column name for the CATEGORY_TYPE_HEBERGEMENT_ID field */
-    const CATEGORY_TYPE_HEBERGEMENT_ID = 'type_hebergement.CATEGORY_TYPE_HEBERGEMENT_ID';
+    /** the column name for the category_type_hebergement_id field */
+    const CATEGORY_TYPE_HEBERGEMENT_ID = 'type_hebergement.category_type_hebergement_id';
 
-    /** the column name for the NOMBRE_CHAMBRE field */
-    const NOMBRE_CHAMBRE = 'type_hebergement.NOMBRE_CHAMBRE';
+    /** the column name for the nombre_chambre field */
+    const NOMBRE_CHAMBRE = 'type_hebergement.nombre_chambre';
 
-    /** the column name for the NOMBRE_PLACE field */
-    const NOMBRE_PLACE = 'type_hebergement.NOMBRE_PLACE';
+    /** the column name for the nombre_place field */
+    const NOMBRE_PLACE = 'type_hebergement.nombre_place';
 
-    /** the column name for the IMAGE_HEBERGEMENT_PATH field */
-    const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.IMAGE_HEBERGEMENT_PATH';
+    /** the column name for the image_hebergement_path field */
+    const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.image_hebergement_path';
 
-    /** the column name for the IMAGE_COMPOSITION_PATH field */
-    const IMAGE_COMPOSITION_PATH = 'type_hebergement.IMAGE_COMPOSITION_PATH';
+    /** the column name for the image_composition_path field */
+    const IMAGE_COMPOSITION_PATH = 'type_hebergement.image_composition_path';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'type_hebergement.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'type_hebergement.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'type_hebergement.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'type_hebergement.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'type_hebergement.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'type_hebergement.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -208,16 +208,16 @@ abstract class BaseTypeHebergementPeer
             $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
             $criteria->addSelectColumn(TypeHebergementPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.CATEGORY_TYPE_HEBERGEMENT_ID');
-            $criteria->addSelectColumn($alias . '.NOMBRE_CHAMBRE');
-            $criteria->addSelectColumn($alias . '.NOMBRE_PLACE');
-            $criteria->addSelectColumn($alias . '.IMAGE_HEBERGEMENT_PATH');
-            $criteria->addSelectColumn($alias . '.IMAGE_COMPOSITION_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.category_type_hebergement_id');
+            $criteria->addSelectColumn($alias . '.nombre_chambre');
+            $criteria->addSelectColumn($alias . '.nombre_place');
+            $criteria->addSelectColumn($alias . '.image_hebergement_path');
+            $criteria->addSelectColumn($alias . '.image_composition_path');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

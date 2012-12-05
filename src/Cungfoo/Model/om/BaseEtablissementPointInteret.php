@@ -469,13 +469,13 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EtablissementPointInteretPeer::ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementPointInteretPeer::POINT_INTERET_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`POINT_INTERET_ID`';
+            $modifiedColumns[':p' . $index++]  = '`point_interet_id`';
         }
         if ($this->isColumnModified(EtablissementPointInteretPeer::DISTANCE)) {
-            $modifiedColumns[':p' . $index++]  = '`DISTANCE`';
+            $modifiedColumns[':p' . $index++]  = '`distance`';
         }
 
         $sql = sprintf(
@@ -488,13 +488,13 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ETABLISSEMENT_ID`':
+                    case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`POINT_INTERET_ID`':
+                    case '`point_interet_id`':
                         $stmt->bindValue($identifier, $this->point_interet_id, PDO::PARAM_INT);
                         break;
-                    case '`DISTANCE`':
+                    case '`distance`':
                         $stmt->bindValue($identifier, $this->distance, PDO::PARAM_STR);
                         break;
                 }
@@ -558,11 +558,11 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -937,12 +937,13 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
      * Get the associated Etablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Etablissement The associated Etablissement object.
      * @throws PropelException
      */
-    public function getEtablissement(PropelPDO $con = null)
+    public function getEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aEtablissement === null && ($this->etablissement_id !== null)) {
+        if ($this->aEtablissement === null && ($this->etablissement_id !== null) && $doQuery) {
             $this->aEtablissement = EtablissementQuery::create()->findPk($this->etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -988,12 +989,13 @@ abstract class BaseEtablissementPointInteret extends BaseObject implements Persi
      * Get the associated PointInteret object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return PointInteret The associated PointInteret object.
      * @throws PropelException
      */
-    public function getPointInteret(PropelPDO $con = null)
+    public function getPointInteret(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aPointInteret === null && ($this->point_interet_id !== null)) {
+        if ($this->aPointInteret === null && ($this->point_interet_id !== null) && $doQuery) {
             $this->aPointInteret = PointInteretQuery::create()->findPk($this->point_interet_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\MiseEnAvant;
 use Cungfoo\Model\MiseEnAvantI18nPeer;
 use Cungfoo\Model\MiseEnAvantPeer;
+use Cungfoo\Model\MiseEnAvantQuery;
 use Cungfoo\Model\map\MiseEnAvantTableMap;
 
 /**
@@ -45,26 +46,26 @@ abstract class BaseMiseEnAvantPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 7;
 
-    /** the column name for the ID field */
-    const ID = 'mise_en_avant.ID';
+    /** the column name for the id field */
+    const ID = 'mise_en_avant.id';
 
-    /** the column name for the IMAGE_FOND_PATH field */
-    const IMAGE_FOND_PATH = 'mise_en_avant.IMAGE_FOND_PATH';
+    /** the column name for the image_fond_path field */
+    const IMAGE_FOND_PATH = 'mise_en_avant.image_fond_path';
 
-    /** the column name for the PRIX field */
-    const PRIX = 'mise_en_avant.PRIX';
+    /** the column name for the prix field */
+    const PRIX = 'mise_en_avant.prix';
 
-    /** the column name for the ILLUSTRATION_PATH field */
-    const ILLUSTRATION_PATH = 'mise_en_avant.ILLUSTRATION_PATH';
+    /** the column name for the illustration_path field */
+    const ILLUSTRATION_PATH = 'mise_en_avant.illustration_path';
 
-    /** the column name for the DATE_FIN_VALIDITE field */
-    const DATE_FIN_VALIDITE = 'mise_en_avant.DATE_FIN_VALIDITE';
+    /** the column name for the date_fin_validite field */
+    const DATE_FIN_VALIDITE = 'mise_en_avant.date_fin_validite';
 
-    /** the column name for the SORTABLE_RANK field */
-    const SORTABLE_RANK = 'mise_en_avant.SORTABLE_RANK';
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'mise_en_avant.sortable_rank';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'mise_en_avant.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'mise_en_avant.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -90,7 +91,7 @@ abstract class BaseMiseEnAvantPeer
     /**
      * rank column
      */
-    const RANK_COL = 'mise_en_avant.SORTABLE_RANK';
+    const RANK_COL = 'mise_en_avant.sortable_rank';
 
     /**
      * holds an array of fieldnames
@@ -201,13 +202,13 @@ abstract class BaseMiseEnAvantPeer
             $criteria->addSelectColumn(MiseEnAvantPeer::SORTABLE_RANK);
             $criteria->addSelectColumn(MiseEnAvantPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.IMAGE_FOND_PATH');
-            $criteria->addSelectColumn($alias . '.PRIX');
-            $criteria->addSelectColumn($alias . '.ILLUSTRATION_PATH');
-            $criteria->addSelectColumn($alias . '.DATE_FIN_VALIDITE');
-            $criteria->addSelectColumn($alias . '.SORTABLE_RANK');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.image_fond_path');
+            $criteria->addSelectColumn($alias . '.prix');
+            $criteria->addSelectColumn($alias . '.illustration_path');
+            $criteria->addSelectColumn($alias . '.date_fin_validite');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -922,18 +923,19 @@ abstract class BaseMiseEnAvantPeer
      * @param      int $last  Last node to be shifted
      * @param      PropelPDO $con Connection to use.
      */
-    public static function shiftRank($delta, $first, $last = null, PropelPDO $con = null)
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
     {
         if ($con === null) {
             $con = Propel::getConnection(MiseEnAvantPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $whereCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
-        $criterion = $whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
-        if (null !== $last) {
-            $criterion->addAnd($whereCriteria->getNewCriterion(MiseEnAvantPeer::RANK_COL, $last, Criteria::LESS_EQUAL));
+        $whereCriteria = MiseEnAvantQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(MiseEnAvantPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
         }
-        $whereCriteria->add($criterion);
+        if (null !== $last) {
+            $whereCriteria->addAnd(MiseEnAvantPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
 
         $valuesCriteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
         $valuesCriteria->add(MiseEnAvantPeer::RANK_COL, array('raw' => MiseEnAvantPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);

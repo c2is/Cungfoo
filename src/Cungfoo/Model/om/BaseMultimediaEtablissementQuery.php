@@ -173,7 +173,7 @@ abstract class BaseMultimediaEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `ETABLISSEMENT_ID`, `IMAGE_PATH`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `multimedia_etablissement` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `etablissement_id`, `image_path`, `created_at`, `updated_at`, `active` FROM `multimedia_etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

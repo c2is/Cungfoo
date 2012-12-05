@@ -46,11 +46,11 @@ abstract class BaseEtablissementServiceComplementairePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_service_complementaire.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_service_complementaire.etablissement_id';
 
-    /** the column name for the SERVICE_COMPLEMENTAIRE_ID field */
-    const SERVICE_COMPLEMENTAIRE_ID = 'etablissement_service_complementaire.SERVICE_COMPLEMENTAIRE_ID';
+    /** the column name for the service_complementaire_id field */
+    const SERVICE_COMPLEMENTAIRE_ID = 'etablissement_service_complementaire.service_complementaire_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseEtablissementServiceComplementairePeer
             $criteria->addSelectColumn(EtablissementServiceComplementairePeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementServiceComplementairePeer::SERVICE_COMPLEMENTAIRE_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.SERVICE_COMPLEMENTAIRE_ID');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.service_complementaire_id');
         }
     }
 

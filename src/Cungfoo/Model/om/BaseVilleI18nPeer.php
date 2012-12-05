@@ -45,23 +45,23 @@ abstract class BaseVilleI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'ville_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'ville_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'ville_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'ville_i18n.locale';
 
-    /** the column name for the SLUG field */
-    const SLUG = 'ville_i18n.SLUG';
+    /** the column name for the slug field */
+    const SLUG = 'ville_i18n.slug';
 
-    /** the column name for the NAME field */
-    const NAME = 'ville_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'ville_i18n.name';
 
-    /** the column name for the INTRODUCTION field */
-    const INTRODUCTION = 'ville_i18n.INTRODUCTION';
+    /** the column name for the introduction field */
+    const INTRODUCTION = 'ville_i18n.introduction';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'ville_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'ville_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -183,12 +183,12 @@ abstract class BaseVilleI18nPeer
             $criteria->addSelectColumn(VilleI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(VilleI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.SLUG');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.INTRODUCTION');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.introduction');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 

@@ -46,11 +46,11 @@ abstract class BaseEtablissementBaignadePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 2;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_baignade.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_baignade.etablissement_id';
 
-    /** the column name for the BAIGNADE_ID field */
-    const BAIGNADE_ID = 'etablissement_baignade.BAIGNADE_ID';
+    /** the column name for the baignade_id field */
+    const BAIGNADE_ID = 'etablissement_baignade.baignade_id';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -168,8 +168,8 @@ abstract class BaseEtablissementBaignadePeer
             $criteria->addSelectColumn(EtablissementBaignadePeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementBaignadePeer::BAIGNADE_ID);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.BAIGNADE_ID');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.baignade_id');
         }
     }
 

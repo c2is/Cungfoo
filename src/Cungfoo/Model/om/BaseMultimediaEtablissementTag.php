@@ -431,10 +431,10 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(MultimediaEtablissementTagPeer::MULTIMEDIA_ETABLISSEMENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`MULTIMEDIA_ETABLISSEMENT_ID`';
+            $modifiedColumns[':p' . $index++]  = '`multimedia_etablissement_id`';
         }
         if ($this->isColumnModified(MultimediaEtablissementTagPeer::TAG_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`TAG_ID`';
+            $modifiedColumns[':p' . $index++]  = '`tag_id`';
         }
 
         $sql = sprintf(
@@ -447,10 +447,10 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`MULTIMEDIA_ETABLISSEMENT_ID`':
+                    case '`multimedia_etablissement_id`':
                         $stmt->bindValue($identifier, $this->multimedia_etablissement_id, PDO::PARAM_INT);
                         break;
-                    case '`TAG_ID`':
+                    case '`tag_id`':
                         $stmt->bindValue($identifier, $this->tag_id, PDO::PARAM_INT);
                         break;
                 }
@@ -514,11 +514,11 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -883,12 +883,13 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
      * Get the associated MultimediaEtablissement object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return MultimediaEtablissement The associated MultimediaEtablissement object.
      * @throws PropelException
      */
-    public function getMultimediaEtablissement(PropelPDO $con = null)
+    public function getMultimediaEtablissement(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aMultimediaEtablissement === null && ($this->multimedia_etablissement_id !== null)) {
+        if ($this->aMultimediaEtablissement === null && ($this->multimedia_etablissement_id !== null) && $doQuery) {
             $this->aMultimediaEtablissement = MultimediaEtablissementQuery::create()->findPk($this->multimedia_etablissement_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -934,12 +935,13 @@ abstract class BaseMultimediaEtablissementTag extends BaseObject implements Pers
      * Get the associated Tag object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Tag The associated Tag object.
      * @throws PropelException
      */
-    public function getTag(PropelPDO $con = null)
+    public function getTag(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aTag === null && ($this->tag_id !== null)) {
+        if ($this->aTag === null && ($this->tag_id !== null) && $doQuery) {
             $this->aTag = TagQuery::create()->findPk($this->tag_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

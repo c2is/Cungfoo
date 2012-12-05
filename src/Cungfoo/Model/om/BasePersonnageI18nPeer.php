@@ -45,14 +45,14 @@ abstract class BasePersonnageI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'personnage_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'personnage_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'personnage_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'personnage_i18n.locale';
 
-    /** the column name for the PRENOM field */
-    const PRENOM = 'personnage_i18n.PRENOM';
+    /** the column name for the prenom field */
+    const PRENOM = 'personnage_i18n.prenom';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -171,9 +171,9 @@ abstract class BasePersonnageI18nPeer
             $criteria->addSelectColumn(PersonnageI18nPeer::LOCALE);
             $criteria->addSelectColumn(PersonnageI18nPeer::PRENOM);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.PRENOM');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.prenom');
         }
     }
 

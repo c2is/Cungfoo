@@ -47,41 +47,41 @@ abstract class BaseRegionPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 12;
 
-    /** the column name for the ID field */
-    const ID = 'region.ID';
+    /** the column name for the id field */
+    const ID = 'region.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'region.CODE';
+    /** the column name for the code field */
+    const CODE = 'region.code';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'region.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'region.image_path';
 
-    /** the column name for the IMAGE_ENCART_PATH field */
-    const IMAGE_ENCART_PATH = 'region.IMAGE_ENCART_PATH';
+    /** the column name for the image_encart_path field */
+    const IMAGE_ENCART_PATH = 'region.image_encart_path';
 
-    /** the column name for the IMAGE_ENCART_PETITE_PATH field */
-    const IMAGE_ENCART_PETITE_PATH = 'region.IMAGE_ENCART_PETITE_PATH';
+    /** the column name for the image_encart_petite_path field */
+    const IMAGE_ENCART_PETITE_PATH = 'region.image_encart_petite_path';
 
-    /** the column name for the PAYS_ID field */
-    const PAYS_ID = 'region.PAYS_ID';
+    /** the column name for the pays_id field */
+    const PAYS_ID = 'region.pays_id';
 
-    /** the column name for the MEA_HOME field */
-    const MEA_HOME = 'region.MEA_HOME';
+    /** the column name for the mea_home field */
+    const MEA_HOME = 'region.mea_home';
 
-    /** the column name for the IMAGE_DETAIL_1 field */
-    const IMAGE_DETAIL_1 = 'region.IMAGE_DETAIL_1';
+    /** the column name for the image_detail_1 field */
+    const IMAGE_DETAIL_1 = 'region.image_detail_1';
 
-    /** the column name for the IMAGE_DETAIL_2 field */
-    const IMAGE_DETAIL_2 = 'region.IMAGE_DETAIL_2';
+    /** the column name for the image_detail_2 field */
+    const IMAGE_DETAIL_2 = 'region.image_detail_2';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'region.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'region.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'region.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'region.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'region.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'region.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -216,18 +216,18 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn(RegionPeer::UPDATED_AT);
             $criteria->addSelectColumn(RegionPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.IMAGE_ENCART_PATH');
-            $criteria->addSelectColumn($alias . '.IMAGE_ENCART_PETITE_PATH');
-            $criteria->addSelectColumn($alias . '.PAYS_ID');
-            $criteria->addSelectColumn($alias . '.MEA_HOME');
-            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_1');
-            $criteria->addSelectColumn($alias . '.IMAGE_DETAIL_2');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.image_encart_path');
+            $criteria->addSelectColumn($alias . '.image_encart_petite_path');
+            $criteria->addSelectColumn($alias . '.pays_id');
+            $criteria->addSelectColumn($alias . '.mea_home');
+            $criteria->addSelectColumn($alias . '.image_detail_1');
+            $criteria->addSelectColumn($alias . '.image_detail_2');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

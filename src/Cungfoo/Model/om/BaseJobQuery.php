@@ -174,7 +174,7 @@ abstract class BaseJobQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `NAME`, `TYPE`, `PARAMS`, `MESSAGE`, `COMPLETED_AT`, `STATUS`, `CREATED_AT`, `UPDATED_AT` FROM `job` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `name`, `type`, `params`, `message`, `completed_at`, `status`, `created_at`, `updated_at` FROM `job` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

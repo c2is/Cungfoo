@@ -44,14 +44,14 @@ abstract class BaseDomainePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ID field */
-    const ID = 'domaine.ID';
+    /** the column name for the id field */
+    const ID = 'domaine.id';
 
-    /** the column name for the NAME field */
-    const NAME = 'domaine.NAME';
+    /** the column name for the name field */
+    const NAME = 'domaine.name';
 
-    /** the column name for the ORDER field */
-    const ORDER = 'domaine.ORDER';
+    /** the column name for the order field */
+    const ORDER = 'domaine.order';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -170,9 +170,9 @@ abstract class BaseDomainePeer
             $criteria->addSelectColumn(DomainePeer::NAME);
             $criteria->addSelectColumn(DomainePeer::ORDER);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.ORDER');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.order');
         }
     }
 

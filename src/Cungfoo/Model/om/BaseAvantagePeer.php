@@ -46,23 +46,23 @@ abstract class BaseAvantagePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'avantage.ID';
+    /** the column name for the id field */
+    const ID = 'avantage.id';
 
-    /** the column name for the PERSONNAGE_ID field */
-    const PERSONNAGE_ID = 'avantage.PERSONNAGE_ID';
+    /** the column name for the personnage_id field */
+    const PERSONNAGE_ID = 'avantage.personnage_id';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'avantage.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'avantage.image_path';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'avantage.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'avantage.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'avantage.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'avantage.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'avantage.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'avantage.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -191,12 +191,12 @@ abstract class BaseAvantagePeer
             $criteria->addSelectColumn(AvantagePeer::UPDATED_AT);
             $criteria->addSelectColumn(AvantagePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.PERSONNAGE_ID');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.personnage_id');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

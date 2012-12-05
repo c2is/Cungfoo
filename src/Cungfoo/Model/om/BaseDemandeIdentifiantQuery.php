@@ -235,7 +235,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `SOCIETE_NOM`, `SOCIETE_ADRESSE_1`, `SOCIETE_ADRESSE_2`, `SOCIETE_ADRESSE_3`, `SOCIETE_ADRESSE_4`, `SOCIETE_TELEPHONE`, `SOCIETE_FAX`, `CONTACT_PRENOM`, `CONTACT_NOM`, `CONTACT_TELEPHONE`, `CONTACT_MAIL`, `PERMANENCE`, `PERMANENCE_MATIN_DE`, `PERMANENCE_MATIN_A`, `PERMANENCE_APRES_MIDI_DE`, `PERMANENCE_APRES_MIDI_A`, `CLIENT_VC`, `CLIENT_VC_CODE`, `CLIENT_VD`, `CLIENT_VD_CODE`, `BROCHURE`, `IDENTIFIANT`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `demande_identifiant` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `societe_nom`, `societe_adresse_1`, `societe_adresse_2`, `societe_adresse_3`, `societe_adresse_4`, `societe_telephone`, `societe_fax`, `contact_prenom`, `contact_nom`, `contact_telephone`, `contact_mail`, `permanence`, `permanence_matin_de`, `permanence_matin_a`, `permanence_apres_midi_de`, `permanence_apres_midi_a`, `client_vc`, `client_vc_code`, `client_vd`, `client_vd_code`, `brochure`, `identifiant`, `created_at`, `updated_at`, `active` FROM `demande_identifiant` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

@@ -45,17 +45,17 @@ abstract class BaseEditoI18nPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 4;
 
-    /** the column name for the ID field */
-    const ID = 'edito_i18n.ID';
+    /** the column name for the id field */
+    const ID = 'edito_i18n.id';
 
-    /** the column name for the LOCALE field */
-    const LOCALE = 'edito_i18n.LOCALE';
+    /** the column name for the locale field */
+    const LOCALE = 'edito_i18n.locale';
 
-    /** the column name for the NAME field */
-    const NAME = 'edito_i18n.NAME';
+    /** the column name for the name field */
+    const NAME = 'edito_i18n.name';
 
-    /** the column name for the DESCRIPTION field */
-    const DESCRIPTION = 'edito_i18n.DESCRIPTION';
+    /** the column name for the description field */
+    const DESCRIPTION = 'edito_i18n.description';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -175,10 +175,10 @@ abstract class BaseEditoI18nPeer
             $criteria->addSelectColumn(EditoI18nPeer::NAME);
             $criteria->addSelectColumn(EditoI18nPeer::DESCRIPTION);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.LOCALE');
-            $criteria->addSelectColumn($alias . '.NAME');
-            $criteria->addSelectColumn($alias . '.DESCRIPTION');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.description');
         }
     }
 

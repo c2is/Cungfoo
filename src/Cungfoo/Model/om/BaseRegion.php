@@ -313,22 +313,25 @@ abstract class BaseRegion extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -350,22 +353,25 @@ abstract class BaseRegion extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -939,7 +945,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             if ($this->collVilles !== null) {
                 foreach ($this->collVilles as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -956,7 +962,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             if ($this->collRegionI18ns !== null) {
                 foreach ($this->collRegionI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -989,40 +995,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(RegionPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(RegionPeer::CODE)) {
-            $modifiedColumns[':p' . $index++]  = '`CODE`';
+            $modifiedColumns[':p' . $index++]  = '`code`';
         }
         if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
         }
         if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_ENCART_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_encart_path`';
         }
         if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_ENCART_PETITE_PATH`';
+            $modifiedColumns[':p' . $index++]  = '`image_encart_petite_path`';
         }
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`PAYS_ID`';
+            $modifiedColumns[':p' . $index++]  = '`pays_id`';
         }
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) {
-            $modifiedColumns[':p' . $index++]  = '`MEA_HOME`';
+            $modifiedColumns[':p' . $index++]  = '`mea_home`';
         }
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_1`';
+            $modifiedColumns[':p' . $index++]  = '`image_detail_1`';
         }
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) {
-            $modifiedColumns[':p' . $index++]  = '`IMAGE_DETAIL_2`';
+            $modifiedColumns[':p' . $index++]  = '`image_detail_2`';
         }
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(RegionPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -1035,40 +1041,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`CODE`':
+                    case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_PATH`':
+                    case '`image_path`':
                         $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_ENCART_PATH`':
+                    case '`image_encart_path`':
                         $stmt->bindValue($identifier, $this->image_encart_path, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_ENCART_PETITE_PATH`':
+                    case '`image_encart_petite_path`':
                         $stmt->bindValue($identifier, $this->image_encart_petite_path, PDO::PARAM_STR);
                         break;
-                    case '`PAYS_ID`':
+                    case '`pays_id`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
                         break;
-                    case '`MEA_HOME`':
+                    case '`mea_home`':
                         $stmt->bindValue($identifier, (int) $this->mea_home, PDO::PARAM_INT);
                         break;
-                    case '`IMAGE_DETAIL_1`':
+                    case '`image_detail_1`':
                         $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
                         break;
-                    case '`IMAGE_DETAIL_2`':
+                    case '`image_detail_2`':
                         $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -1139,11 +1145,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1626,12 +1632,13 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * Get the associated Pays object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return Pays The associated Pays object.
      * @throws PropelException
      */
-    public function getPays(PropelPDO $con = null)
+    public function getPays(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aPays === null && ($this->pays_id !== null)) {
+        if ($this->aPays === null && ($this->pays_id !== null) && $doQuery) {
             $this->aPays = PaysQuery::create()->findPk($this->pays_id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
@@ -1670,13 +1677,15 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Region The current object (for fluent API support)
      * @see        addVilles()
      */
     public function clearVilles()
     {
         $this->collVilles = null; // important to set this to null since that means it is uninitialized
         $this->collVillesPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1775,6 +1784,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      *
      * @param PropelCollection $villes A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
      */
     public function setVilles(PropelCollection $villes, PropelPDO $con = null)
     {
@@ -1791,6 +1801,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         $this->collVilles = $villes;
         $this->collVillesPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1808,22 +1820,22 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (null === $this->collVilles || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collVilles) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getVilles());
-                }
-                $query = VilleQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByRegion($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collVilles);
+
+            if($partial && !$criteria) {
+                return count($this->getVilles());
+            }
+            $query = VilleQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByRegion($this)
+                ->count($con);
         }
+
+        return count($this->collVilles);
     }
 
     /**
@@ -1857,6 +1869,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * @param	Ville $ville The ville object to remove.
+     * @return Region The current object (for fluent API support)
      */
     public function removeVille($ville)
     {
@@ -1869,6 +1882,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->villesScheduledForDeletion[]= $ville;
             $ville->setRegion(null);
         }
+
+        return $this;
     }
 
     /**
@@ -1877,13 +1892,15 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Region The current object (for fluent API support)
      * @see        addRegionI18ns()
      */
     public function clearRegionI18ns()
     {
         $this->collRegionI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collRegionI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1982,6 +1999,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
      *
      * @param PropelCollection $regionI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
      */
     public function setRegionI18ns(PropelCollection $regionI18ns, PropelPDO $con = null)
     {
@@ -1998,6 +2016,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         $this->collRegionI18ns = $regionI18ns;
         $this->collRegionI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -2015,22 +2035,22 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (null === $this->collRegionI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collRegionI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getRegionI18ns());
-                }
-                $query = RegionI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByRegion($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collRegionI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getRegionI18ns());
+            }
+            $query = RegionI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByRegion($this)
+                ->count($con);
         }
+
+        return count($this->collRegionI18ns);
     }
 
     /**
@@ -2068,6 +2088,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     /**
      * @param	RegionI18n $regionI18n The regionI18n object to remove.
+     * @return Region The current object (for fluent API support)
      */
     public function removeRegionI18n($regionI18n)
     {
@@ -2080,6 +2101,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->regionI18nsScheduledForDeletion[]= $regionI18n;
             $regionI18n->setRegion(null);
         }
+
+        return $this;
     }
 
     /**

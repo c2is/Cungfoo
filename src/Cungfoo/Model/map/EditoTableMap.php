@@ -42,11 +42,11 @@ class EditoTableMap extends TableMap
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('ID', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('SLUG', 'Slug', 'VARCHAR', false, 255, null);
-        $this->addColumn('CREATED_AT', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('UPDATED_AT', 'UpdatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('ACTIVE', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
+        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -67,10 +67,31 @@ class EditoTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' => array('create_column' => 'created_at', 'update_column' => 'updated_at', 'disable_updated_at' => 'false', ),
-            'active' => array('active_column' => 'active', ),
-            'i18n' => array('i18n_table' => '%TABLE%_i18n', 'i18n_phpname' => '%PHPNAME%I18n', 'i18n_columns' => 'name, description', 'i18n_pk_name' => '', 'locale_column' => 'locale', 'default_locale' => 'fr', 'locale_alias' => '', ),
-            'crudable' => array('route_prefix' => '/', 'crud_prefix' => '/editos', 'crud_model' => '', 'crud_form' => '', 'crud_type_file' => '', 'crud_type_richtext' => 'description', ),
+            'timestampable' =>  array (
+  'create_column' => 'created_at',
+  'update_column' => 'updated_at',
+  'disable_updated_at' => 'false',
+),
+            'active' =>  array (
+  'active_column' => 'active',
+),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'name, description',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/editos',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => NULL,
+  'crud_type_richtext' => 'description',
+),
         );
     } // getBehaviors()
 

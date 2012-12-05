@@ -43,8 +43,8 @@ class EtablissementServiceComplementaireTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('SERVICE_COMPLEMENTAIRE_ID', 'ServiceComplementaireId', 'INTEGER' , 'service_complementaire', 'ID', true, null, null);
+        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
+        $this->addForeignPrimaryKey('service_complementaire_id', 'ServiceComplementaireId', 'INTEGER' , 'service_complementaire', 'id', true, null, null);
         // validators
     } // initialize()
 

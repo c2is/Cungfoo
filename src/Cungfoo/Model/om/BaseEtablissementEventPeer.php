@@ -46,14 +46,14 @@ abstract class BaseEtablissementEventPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 3;
 
-    /** the column name for the ETABLISSEMENT_ID field */
-    const ETABLISSEMENT_ID = 'etablissement_event.ETABLISSEMENT_ID';
+    /** the column name for the etablissement_id field */
+    const ETABLISSEMENT_ID = 'etablissement_event.etablissement_id';
 
-    /** the column name for the EVENT_ID field */
-    const EVENT_ID = 'etablissement_event.EVENT_ID';
+    /** the column name for the event_id field */
+    const EVENT_ID = 'etablissement_event.event_id';
 
-    /** the column name for the DISTANCE field */
-    const DISTANCE = 'etablissement_event.DISTANCE';
+    /** the column name for the distance field */
+    const DISTANCE = 'etablissement_event.distance';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -172,9 +172,9 @@ abstract class BaseEtablissementEventPeer
             $criteria->addSelectColumn(EtablissementEventPeer::EVENT_ID);
             $criteria->addSelectColumn(EtablissementEventPeer::DISTANCE);
         } else {
-            $criteria->addSelectColumn($alias . '.ETABLISSEMENT_ID');
-            $criteria->addSelectColumn($alias . '.EVENT_ID');
-            $criteria->addSelectColumn($alias . '.DISTANCE');
+            $criteria->addSelectColumn($alias . '.etablissement_id');
+            $criteria->addSelectColumn($alias . '.event_id');
+            $criteria->addSelectColumn($alias . '.distance');
         }
     }
 

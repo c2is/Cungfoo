@@ -170,7 +170,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `destination` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `destination` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

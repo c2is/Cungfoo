@@ -180,22 +180,25 @@ abstract class BaseEdito extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->created_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->created_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -217,22 +220,25 @@ abstract class BaseEdito extends BaseObject implements Persistent
             // while technically this is not a default value of null,
             // this seems to be closest in meaning.
             return null;
-        } else {
-            try {
-                $dt = new DateTime($this->updated_at);
-            } catch (Exception $x) {
-                throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
-            }
+        }
+
+        try {
+            $dt = new DateTime($this->updated_at);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->updated_at, true), $x);
         }
 
         if ($format === null) {
             // Because propel.useDateTimeClass is true, we return a DateTime object.
             return $dt;
-        } elseif (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        } else {
-            return $dt->format($format);
         }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
@@ -621,7 +627,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
             if ($this->collEditoI18ns !== null) {
                 foreach ($this->collEditoI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted()) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
                 }
@@ -654,19 +660,19 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(EditoPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(EditoPeer::SLUG)) {
-            $modifiedColumns[':p' . $index++]  = '`SLUG`';
+            $modifiedColumns[':p' . $index++]  = '`slug`';
         }
         if ($this->isColumnModified(EditoPeer::CREATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`CREATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
         if ($this->isColumnModified(EditoPeer::UPDATED_AT)) {
-            $modifiedColumns[':p' . $index++]  = '`UPDATED_AT`';
+            $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
         if ($this->isColumnModified(EditoPeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`ACTIVE`';
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -679,19 +685,19 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`SLUG`':
+                    case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
-                    case '`CREATED_AT`':
+                    case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
                         break;
-                    case '`UPDATED_AT`':
+                    case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`ACTIVE`':
+                    case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
@@ -762,11 +768,11 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1137,13 +1143,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return void
+     * @return Edito The current object (for fluent API support)
      * @see        addEditoI18ns()
      */
     public function clearEditoI18ns()
     {
         $this->collEditoI18ns = null; // important to set this to null since that means it is uninitialized
         $this->collEditoI18nsPartial = null;
+
+        return $this;
     }
 
     /**
@@ -1242,6 +1250,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      *
      * @param PropelCollection $editoI18ns A Propel collection.
      * @param PropelPDO $con Optional connection object
+     * @return Edito The current object (for fluent API support)
      */
     public function setEditoI18ns(PropelCollection $editoI18ns, PropelPDO $con = null)
     {
@@ -1258,6 +1267,8 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
         $this->collEditoI18ns = $editoI18ns;
         $this->collEditoI18nsPartial = false;
+
+        return $this;
     }
 
     /**
@@ -1275,22 +1286,22 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if (null === $this->collEditoI18ns || null !== $criteria || $partial) {
             if ($this->isNew() && null === $this->collEditoI18ns) {
                 return 0;
-            } else {
-                if($partial && !$criteria) {
-                    return count($this->getEditoI18ns());
-                }
-                $query = EditoI18nQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByEdito($this)
-                    ->count($con);
             }
-        } else {
-            return count($this->collEditoI18ns);
+
+            if($partial && !$criteria) {
+                return count($this->getEditoI18ns());
+            }
+            $query = EditoI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEdito($this)
+                ->count($con);
         }
+
+        return count($this->collEditoI18ns);
     }
 
     /**
@@ -1328,6 +1339,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * @param	EditoI18n $editoI18n The editoI18n object to remove.
+     * @return Edito The current object (for fluent API support)
      */
     public function removeEditoI18n($editoI18n)
     {
@@ -1340,6 +1352,8 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $this->editoI18nsScheduledForDeletion[]= $editoI18n;
             $editoI18n->setEdito(null);
         }
+
+        return $this;
     }
 
     /**

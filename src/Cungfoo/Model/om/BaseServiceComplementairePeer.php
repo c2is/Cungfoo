@@ -45,23 +45,23 @@ abstract class BaseServiceComplementairePeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 6;
 
-    /** the column name for the ID field */
-    const ID = 'service_complementaire.ID';
+    /** the column name for the id field */
+    const ID = 'service_complementaire.id';
 
-    /** the column name for the CODE field */
-    const CODE = 'service_complementaire.CODE';
+    /** the column name for the code field */
+    const CODE = 'service_complementaire.code';
 
-    /** the column name for the IMAGE_PATH field */
-    const IMAGE_PATH = 'service_complementaire.IMAGE_PATH';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'service_complementaire.image_path';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'service_complementaire.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'service_complementaire.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'service_complementaire.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'service_complementaire.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'service_complementaire.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'service_complementaire.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -190,12 +190,12 @@ abstract class BaseServiceComplementairePeer
             $criteria->addSelectColumn(ServiceComplementairePeer::UPDATED_AT);
             $criteria->addSelectColumn(ServiceComplementairePeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.CODE');
-            $criteria->addSelectColumn($alias . '.IMAGE_PATH');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.image_path');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

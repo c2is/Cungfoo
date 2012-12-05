@@ -549,19 +549,19 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(SituationGeographiqueI18nPeer::ID)) {
-            $modifiedColumns[':p' . $index++]  = '`ID`';
+            $modifiedColumns[':p' . $index++]  = '`id`';
         }
         if ($this->isColumnModified(SituationGeographiqueI18nPeer::LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`LOCALE`';
+            $modifiedColumns[':p' . $index++]  = '`locale`';
         }
         if ($this->isColumnModified(SituationGeographiqueI18nPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`NAME`';
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
         if ($this->isColumnModified(SituationGeographiqueI18nPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`DESCRIPTION`';
+            $modifiedColumns[':p' . $index++]  = '`description`';
         }
         if ($this->isColumnModified(SituationGeographiqueI18nPeer::KEYWORDS)) {
-            $modifiedColumns[':p' . $index++]  = '`KEYWORDS`';
+            $modifiedColumns[':p' . $index++]  = '`keywords`';
         }
 
         $sql = sprintf(
@@ -574,19 +574,19 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case '`ID`':
+                    case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`LOCALE`':
+                    case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
-                    case '`NAME`':
+                    case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`DESCRIPTION`':
+                    case '`description`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
-                    case '`KEYWORDS`':
+                    case '`keywords`':
                         $stmt->bindValue($identifier, $this->keywords, PDO::PARAM_STR);
                         break;
                 }
@@ -650,11 +650,11 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
             $this->validationFailures = array();
 
             return true;
-        } else {
-            $this->validationFailures = $res;
-
-            return false;
         }
+
+        $this->validationFailures = $res;
+
+        return false;
     }
 
     /**
@@ -1040,12 +1040,13 @@ abstract class BaseSituationGeographiqueI18n extends BaseObject implements Persi
      * Get the associated SituationGeographique object
      *
      * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
      * @return SituationGeographique The associated SituationGeographique object.
      * @throws PropelException
      */
-    public function getSituationGeographique(PropelPDO $con = null)
+    public function getSituationGeographique(PropelPDO $con = null, $doQuery = true)
     {
-        if ($this->aSituationGeographique === null && ($this->id !== null)) {
+        if ($this->aSituationGeographique === null && ($this->id !== null) && $doQuery) {
             $this->aSituationGeographique = SituationGeographiqueQuery::create()->findPk($this->id, $con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference

@@ -166,7 +166,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `HIGHLIGHT`, `PRIX`, `HOME`, `LIEN`, `IMAGE_PATH`, `ACTIVE` FROM `idee_weekend` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `highlight`, `prix`, `home`, `lien`, `image_path`, `active` FROM `idee_weekend` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

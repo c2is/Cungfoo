@@ -204,7 +204,7 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `ID`, `CODE`, `CATEGORY`, `ADDRESS`, `ADDRESS2`, `ZIPCODE`, `CITY`, `GEO_COORDINATE_X`, `GEO_COORDINATE_Y`, `DISTANCE_CAMPING`, `IMAGE`, `PRIORITY`, `CREATED_AT`, `UPDATED_AT`, `ACTIVE` FROM `event` WHERE `ID` = :p0';
+        $sql = 'SELECT `id`, `code`, `category`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `priority`, `created_at`, `updated_at`, `active` FROM `event` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);

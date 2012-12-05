@@ -43,9 +43,9 @@ class EtablissementEventTableMap extends TableMap
         $this->setUseIdGenerator(false);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('ETABLISSEMENT_ID', 'EtablissementId', 'INTEGER' , 'etablissement', 'ID', true, null, null);
-        $this->addForeignPrimaryKey('EVENT_ID', 'EventId', 'INTEGER' , 'event', 'ID', true, null, null);
-        $this->addColumn('DISTANCE', 'Distance', 'VARCHAR', false, 255, null);
+        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
+        $this->addForeignPrimaryKey('event_id', 'EventId', 'INTEGER' , 'event', 'id', true, null, null);
+        $this->addColumn('distance', 'Distance', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

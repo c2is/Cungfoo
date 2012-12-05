@@ -45,20 +45,20 @@ abstract class BaseTagPeer
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
     const NUM_HYDRATE_COLUMNS = 5;
 
-    /** the column name for the ID field */
-    const ID = 'tag.ID';
+    /** the column name for the id field */
+    const ID = 'tag.id';
 
-    /** the column name for the SLUG field */
-    const SLUG = 'tag.SLUG';
+    /** the column name for the slug field */
+    const SLUG = 'tag.slug';
 
-    /** the column name for the CREATED_AT field */
-    const CREATED_AT = 'tag.CREATED_AT';
+    /** the column name for the created_at field */
+    const CREATED_AT = 'tag.created_at';
 
-    /** the column name for the UPDATED_AT field */
-    const UPDATED_AT = 'tag.UPDATED_AT';
+    /** the column name for the updated_at field */
+    const UPDATED_AT = 'tag.updated_at';
 
-    /** the column name for the ACTIVE field */
-    const ACTIVE = 'tag.ACTIVE';
+    /** the column name for the active field */
+    const ACTIVE = 'tag.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -186,11 +186,11 @@ abstract class BaseTagPeer
             $criteria->addSelectColumn(TagPeer::UPDATED_AT);
             $criteria->addSelectColumn(TagPeer::ACTIVE);
         } else {
-            $criteria->addSelectColumn($alias . '.ID');
-            $criteria->addSelectColumn($alias . '.SLUG');
-            $criteria->addSelectColumn($alias . '.CREATED_AT');
-            $criteria->addSelectColumn($alias . '.UPDATED_AT');
-            $criteria->addSelectColumn($alias . '.ACTIVE');
+            $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.created_at');
+            $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
