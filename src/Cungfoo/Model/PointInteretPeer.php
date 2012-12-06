@@ -55,6 +55,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null)
     {
         $query = PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->useVilleQuery()
@@ -82,6 +83,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getCountForPays(Pays $pays)
     {
         return PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->useVilleQuery()
@@ -98,6 +100,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
     {
         $query = PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->useVilleQuery()
@@ -123,6 +126,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getCountForRegion(Region $region)
     {
         return PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->useVilleQuery()
@@ -137,6 +141,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null)
     {
         $query = PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByVille($ville)
@@ -160,6 +165,7 @@ class PointInteretPeer extends BasePointInteretPeer
     static public function getCountForVille(Ville $ville)
     {
         return PointInteretQuery::create()
+            ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByVille($ville)

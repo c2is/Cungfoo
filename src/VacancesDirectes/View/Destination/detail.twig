@@ -53,8 +53,8 @@
         {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
         <div class="miniEncart clear">
             <img src="{{ poi.image }}"  class="left boxborder" alt="">
-            <span class="h5-like">{{ poi.name }} {# Titre #}</span>
-            <p> {{ poi.presentation | truncate(370, true, '...') }} {# Texte #}</p>
+            <span class="h5-like">{{ poi.name }}</span>
+            <p> {{ poi.presentation | truncate(370, true, '...') }}</p>
         </div>
     {% endfor %}
     {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
@@ -69,9 +69,8 @@
     {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
         <div class="miniEncart clear">
             <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
-            <span class="titre">{{ event.name }} {# Titre #} Classique au large, </span>
-            <p>{{ event.subtitle }} {# Texte #} Festival de musique de Saint-Malo,
-            du 25/04/2013</p>
+            <span class="titre">{{ event.name }}</span>
+            <p>{{ event.subtitle }}</p>
         </div>
     {% endfor %}
     </div>
