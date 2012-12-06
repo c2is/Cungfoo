@@ -80,12 +80,6 @@
     </form>
 </div>
 <div id="tabCamp" class="tabs">
-    <div class="tabCampDesc">
-        <h3>{{ etab.title}}</h3>
-        <p><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
-        <p>{{ etab.description }}</p>
-    </div>
-
     <div class="temoignFiche bloc gris">
         {% if personnages | length %}
         <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
@@ -130,6 +124,11 @@
         </dl>
         {% endif %}
     </div>
+    <div class="tabCampDesc">
+        <h3>{{ etab.title}}</h3>
+        <p><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
+        <p>{{ etab.description }}</p>
+    </div>
     <nav class="paginationTabs clear">
         <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
     </nav>
@@ -163,11 +162,16 @@
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
             <span class="h4-like">{{ hebergement.name | trans }}</span>
-             <span class="nbPlace">{# TODO <img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt=""> #} {{ hebergement.composition | trans | nl2br }}</span>
-            <strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombreChambre }}<br>
+            {# TODO <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">  {{ hebergement.composition | trans | nl2br }}</span>#}
+            {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
-            {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>
-            <p class="clearboth">{{ hebergement.description | trans | nl2br }}</p>
+            {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>#}
+            <p>
+            {% if hebergement.capaciteHebergement %}<strong>{{ "fiche.nombre_personnes" | trans }}</strong> {{ hebergement.capaciteHebergement | trans | nl2br }}{% endif %}
+            {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}
+            </p>
+            <br />
+            <p class="clearboth">{{ hebergement.presentation | trans | nl2br }}</p>
             </div>
         </div>
     {% endfor %}
@@ -180,15 +184,15 @@
 </div>
 <!-- tab Sur place -->
 <div id="tabSurplace" class="tabs">
-    <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
-    <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">
+    {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">{% endif %}
+    {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">{% endif %}
     <div class="colSurPlace clearboth">
         {% if etab.activites | length %}
         <dl>
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activites %}
-                    <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
+                    <li>{% if activite.imagePath != "." %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -203,7 +207,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li><img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}"><span>{{ serviceComplementaire.name }}</span></span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></span></li>
                 {% endfor %}
             </ul></dd>
         </dl>

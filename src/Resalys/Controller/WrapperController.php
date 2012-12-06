@@ -136,7 +136,7 @@ class WrapperController implements ControllerProviderInterface
     {
         $matches = null;
 
-        if (preg_match_all('"{_c2is.label, \'(.*)\'}"', $iframe, $matches, PREG_SET_ORDER))
+        if (preg_match_all('"{_c2is.label, \'(.*?)\'}"', $iframe, $matches, PREG_SET_ORDER))
         {
             foreach ($matches as $match)
             {
