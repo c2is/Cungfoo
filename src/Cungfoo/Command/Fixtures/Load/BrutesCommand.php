@@ -30,6 +30,7 @@ class BrutesCommand extends BaseCommand
             ->setName('fixtures:load:brutes')
             ->setDescription('Load brutes fixtures (check droussel for more informations :-)')
             ->addOption('directory', 'dir', InputOption::VALUE_OPTIONAL, 'Give a input directory.', '/app/resources/data/brutes')
+            ->addOption('csv_directory', 'csv_dir', InputOption::VALUE_OPTIONAL, 'Give a input directory for CSV (; delimiter) files.', '/app/resources/data/csv')
         ;
     }
 
@@ -37,9 +38,13 @@ class BrutesCommand extends BaseCommand
     {
         try
         {
+            // Fichiers délimiteur tab (pas de possibilite de sauts de ligne dans les champs)
             $this->readCSVFile('photos_camping.csv', 'campingsCallback', null, $input, $output);
             $this->readCSVFile('regions.csv', 'regionsCallback', null, $input, $output);
             $this->readCSVFile('hebergements.csv', 'hebergementsCallback', 'hebergementsFileCallback', $input, $output);
+
+            // Fichiers délimiteur ;
+            $this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
         {
@@ -53,9 +58,15 @@ class BrutesCommand extends BaseCommand
         return true;
     }
 
-    protected function readCSVFile($filename, $lineHandler, $fileHandler, $input, $output)
+    protected function readCSVFile($filename, $lineHandler, $fileHandler, $input, $output, $csv = false)
     {
-        $file   = sprintf('%s/%s/%s', $this->getProjectDirectory(), trim($input->getOption('directory')), $filename);
+        $directory = trim($input->getOption('directory'));
+        if($csv)
+        {
+            $directory = trim($input->getOption('csv_directory'));
+        }
+        $file   = sprintf('%s/%s/%s', $this->getProjectDirectory(), $directory, $filename);
+
         $handle = fopen($file, "r");
 
         if ($handle)
@@ -63,9 +74,19 @@ class BrutesCommand extends BaseCommand
             $buffer = array();
             $unset  = array();
 
-            while (($line = fgets($handle)) !== false)
+            if($csv)
             {
-                $this->$lineHandler(explode("\t", trim($line, "\n")), $buffer, $unset);
+                while (($line = fgetcsv($handle, 0, ';')) !== false)
+                {
+                    $this->$lineHandler($line, $buffer, $unset);
+                }
+            }
+            else
+            {
+                while (($line = fgets($handle)) !== false)
+                {
+                    $this->$lineHandler(explode("\t", trim($line, "\n")), $buffer, $unset);
+                }
             }
 
             if (!is_null($fileHandler))
@@ -192,6 +213,31 @@ class BrutesCommand extends BaseCommand
                     ;
                 }
             }
+        }
+    }
+
+    protected function typesHebergementCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($code, $presentation, $capaciteHebergement, $dimensions, $agencement, $equipements, $anneeUtilisation, $remarque1, $remarque2, $remarque3) = $explodedLine;
+
+        $typeHebergement = \Cungfoo\Model\TypeHebergementQuery::create()
+            ->filterByCode($code)
+            ->findOne()
+        ;
+
+        if($typeHebergement) {
+            $typeHebergement
+                ->setPresentation($presentation)
+                ->setCapaciteHebergement($capaciteHebergement)
+                ->setDimensions($dimensions)
+                ->setAgencement($agencement)
+                ->setEquipements($equipements)
+                ->setAnneeUtilisation($anneeUtilisation)
+                ->setRemarque1($remarque1)
+                ->setRemarque2($remarque2)
+                ->setRemarque3($remarque3)
+                ->save()
+            ;
         }
     }
 }
