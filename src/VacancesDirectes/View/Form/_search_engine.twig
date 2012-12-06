@@ -13,7 +13,7 @@
                         {{ form_label(searchForm.dateDebut) }}
                         {{ form_widget(searchForm.dateDebut, {attr: {readonly: 'readonly'}}) }}
                         <div id="datepickerField" class="clear">
-                            <label for="datepickerInput">Date de début de séjour</label>
+                            <label for="datepickerInput">{{ "date_search.date_debut" | trans }}</label>
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="{{ "date_search.date_debut" | trans }}" /><span class="date"></span>
                         </div>
                         <div id="datepickerCalendar"></div>

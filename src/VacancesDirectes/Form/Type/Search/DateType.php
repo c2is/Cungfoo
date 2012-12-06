@@ -23,7 +23,7 @@ class DateType extends AppAwareType
         ));
 
         $builder->add('nbJours', 'choice', array(
-            'choices'     => array(7 => "7 jours", 14 => "14 jours", 21 => "21 jours"),
+            'choices'     => array(4 => "4 jours", 7 => "7 jours", 14 => "14 jours", 21 => "21 jours", 28 => "28 jours"),
             'label'       => 'date_search.nb_jours',
             'empty_value' => "date_search.nb_jours.empty_value",
             'empty_data'  => null,
