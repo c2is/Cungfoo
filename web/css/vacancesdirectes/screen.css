@@ -656,9 +656,6 @@ textarea {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.stylish-select ul.newList li:first-child {
-  display: none;
-}
 .stylish-select ul.newList.optGroup li a {
   padding: 0 8px 0 18px;
 }
@@ -2802,6 +2799,9 @@ body.edito table td {
   padding-bottom: 35px;
   height: 602px;
 }
+.home .locationForwards .stamp {
+  margin-bottom: 5px;
+}
 .home .locationForwards .stamp h2 {
   height: 40px;
   /* Centrer verticalement une ligne de texte */
@@ -2852,9 +2852,6 @@ body.edito table td {
   border-radius: 10px;
   background-color: #e6e5e5;
 }
-.home .locationForwards#topLocations .stamp {
-  margin-bottom: 5px;
-}
 .home .locationForwards#lastLocations h2:before {
   background-position: 0 -40px;
 }
@@ -2889,9 +2886,6 @@ body.edito table td {
 }
 .home .locationForwards#lastLocations .element:hover:nth-child(2) {
   border-top: 7px solid #e6e5e5;
-}
-.home .locationForwards#lastLocations .stamp {
-  margin-bottom: 15px;
 }
 .home aside #searchBloc {
   position: absolute;
