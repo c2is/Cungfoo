@@ -25,7 +25,7 @@ class DateType extends AppAwareType
         ));
 
         $builder->add('nbJours', 'choice', array(
-            'choices'     => array('date_search.nb_jours.empty_value', 4 => "4 jours", 7 => "7 jours", 14 => "14 jours", 21 => "21 jours", 28 => "28 jours"),
+            'choices'     => array(4 => "4 jours", 7 => "7 jours", 14 => "14 jours", 21 => "21 jours", 28 => "28 jours"),
             'label'       => 'date_search.nb_jours',
             'empty_value' => "date_search.nb_jours.empty_value",
             'empty_data'  => null,
@@ -80,7 +80,7 @@ class DateType extends AppAwareType
         ;
 
         $builder->add('ville', 'choice', array(
-            'choices'     => $this->formatForList($villes, 'Code', 'Name', 'date_search.ville.empty_value'),
+            'choices'     => $this->formatForList($villes, 'Code', 'Name'),
             'label'     => 'date_search.ville',
             'empty_value' => "date_search.ville.empty_value",
             'empty_data'  => null,
@@ -95,7 +95,7 @@ class DateType extends AppAwareType
         ;
 
         $builder->add('camping', 'choice', array(
-            'choices'     => $this->formatForList($campings, 'Code', 'Name', 'date_search.camping.empty_value'),
+            'choices'     => $this->formatForList($campings, 'Code', 'Name'),
             'label'     => 'date_search.camping',
             'empty_value' => "date_search.camping.empty_value",
             'empty_data'  => null,
@@ -135,7 +135,7 @@ class DateType extends AppAwareType
     {
         $pays = array();
 
-        $choices = array('date_search.destination.empty_value');
+        $choices = array();
         foreach ($list as $item)
         {
             $choices[$item['PaysName']][$item['Code']] = $item['Name'];
