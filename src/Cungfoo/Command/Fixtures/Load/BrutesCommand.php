@@ -39,9 +39,9 @@ class BrutesCommand extends BaseCommand
         try
         {
             // Fichiers délimiteur tab (pas de possibilite de sauts de ligne dans les champs)
-            $this->readCSVFile('photos_camping.csv', 'campingsCallback', null, $input, $output);
+            /*$this->readCSVFile('photos_camping.csv', 'campingsCallback', null, $input, $output);
             $this->readCSVFile('regions.csv', 'regionsCallback', null, $input, $output);
-            $this->readCSVFile('hebergements.csv', 'hebergementsCallback', 'hebergementsFileCallback', $input, $output);
+            $this->readCSVFile('hebergements.csv', 'hebergementsCallback', 'hebergementsFileCallback', $input, $output);*/
 
             // Fichiers délimiteur ;
             $this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
