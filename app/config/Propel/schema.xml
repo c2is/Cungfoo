@@ -244,6 +244,16 @@
         <column name="image_hebergement_path" type="varchar" />
         <column name="composition" type="longvarchar" />
         <column name="image_composition_path" type="varchar" />
+        <column name="presentation" type="longvarchar" />
+        <column name="capacite_hebergement" type="longvarchar" />
+        <column name="dimensions" type="longvarchar" />
+        <column name="agencement" type="longvarchar" />
+        <column name="equipements" type="longvarchar" />
+        <column name="annee_utilisation" type="longvarchar" />
+        <column name="remarque_1" type="longvarchar" />
+        <column name="remarque_2" type="longvarchar" />
+        <column name="remarque_3" type="longvarchar" />
+        <column name="remarque_4" type="longvarchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -252,7 +262,7 @@
         </foreign-key>
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,surface,type_terrasse,description,composition" />
+            <parameter name="i18n_columns" value="name,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4" />
         </behavior>
 
         <behavior name="crudable">

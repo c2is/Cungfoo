@@ -139,6 +139,76 @@ class BaseTypeHebergementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'presentation' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.presentation',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'capacite_hebergement' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.capacite_hebergement',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'dimensions' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.dimensions',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'agencement' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.agencement',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'equipements' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.equipements',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'annee_utilisation' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.annee_utilisation',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'remarque_1' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.remarque_1',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'remarque_2' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.remarque_2',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'remarque_3' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.remarque_3',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'remarque_4' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.remarque_4',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

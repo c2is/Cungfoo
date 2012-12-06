@@ -49,6 +49,16 @@ class TypeHebergementI18nTableMap extends TableMap
         $this->addColumn('type_terrasse', 'TypeTerrasse', 'VARCHAR', false, 255, null);
         $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('composition', 'Composition', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('presentation', 'Presentation', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('capacite_hebergement', 'CapaciteHebergement', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('dimensions', 'Dimensions', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('agencement', 'Agencement', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('equipements', 'Equipements', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('annee_utilisation', 'AnneeUtilisation', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('remarque_1', 'Remarque1', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('remarque_2', 'Remarque2', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('remarque_3', 'Remarque3', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('remarque_4', 'Remarque4', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

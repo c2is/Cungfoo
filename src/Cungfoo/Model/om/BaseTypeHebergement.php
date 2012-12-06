@@ -2331,7 +2331,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2561,8 +2561,248 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         return $this;
     }
 
-    // crudable behavior
 
+        /**
+         * Get the [presentation] column value.
+         *
+         * @return string
+         */
+        public function getPresentation()
+        {
+        return $this->getCurrentTranslation()->getPresentation();
+    }
+
+
+        /**
+         * Set the value of [presentation] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setPresentation($v)
+        {    $this->getCurrentTranslation()->setPresentation($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [capacite_hebergement] column value.
+         *
+         * @return string
+         */
+        public function getCapaciteHebergement()
+        {
+        return $this->getCurrentTranslation()->getCapaciteHebergement();
+    }
+
+
+        /**
+         * Set the value of [capacite_hebergement] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setCapaciteHebergement($v)
+        {    $this->getCurrentTranslation()->setCapaciteHebergement($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [dimensions] column value.
+         *
+         * @return string
+         */
+        public function getDimensions()
+        {
+        return $this->getCurrentTranslation()->getDimensions();
+    }
+
+
+        /**
+         * Set the value of [dimensions] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setDimensions($v)
+        {    $this->getCurrentTranslation()->setDimensions($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [agencement] column value.
+         *
+         * @return string
+         */
+        public function getAgencement()
+        {
+        return $this->getCurrentTranslation()->getAgencement();
+    }
+
+
+        /**
+         * Set the value of [agencement] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setAgencement($v)
+        {    $this->getCurrentTranslation()->setAgencement($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [equipements] column value.
+         *
+         * @return string
+         */
+        public function getEquipements()
+        {
+        return $this->getCurrentTranslation()->getEquipements();
+    }
+
+
+        /**
+         * Set the value of [equipements] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setEquipements($v)
+        {    $this->getCurrentTranslation()->setEquipements($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [annee_utilisation] column value.
+         *
+         * @return string
+         */
+        public function getAnneeUtilisation()
+        {
+        return $this->getCurrentTranslation()->getAnneeUtilisation();
+    }
+
+
+        /**
+         * Set the value of [annee_utilisation] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setAnneeUtilisation($v)
+        {    $this->getCurrentTranslation()->setAnneeUtilisation($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [remarque_1] column value.
+         *
+         * @return string
+         */
+        public function getRemarque1()
+        {
+        return $this->getCurrentTranslation()->getRemarque1();
+    }
+
+
+        /**
+         * Set the value of [remarque_1] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setRemarque1($v)
+        {    $this->getCurrentTranslation()->setRemarque1($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [remarque_2] column value.
+         *
+         * @return string
+         */
+        public function getRemarque2()
+        {
+        return $this->getCurrentTranslation()->getRemarque2();
+    }
+
+
+        /**
+         * Set the value of [remarque_2] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setRemarque2($v)
+        {    $this->getCurrentTranslation()->setRemarque2($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [remarque_3] column value.
+         *
+         * @return string
+         */
+        public function getRemarque3()
+        {
+        return $this->getCurrentTranslation()->getRemarque3();
+    }
+
+
+        /**
+         * Set the value of [remarque_3] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setRemarque3($v)
+        {    $this->getCurrentTranslation()->setRemarque3($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [remarque_4] column value.
+         *
+         * @return string
+         */
+        public function getRemarque4()
+        {
+        return $this->getCurrentTranslation()->getRemarque4();
+    }
+
+
+        /**
+         * Set the value of [remarque_4] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setRemarque4($v)
+        {    $this->getCurrentTranslation()->setRemarque4($v);
+
+        return $this;
+    }
+
+    // crudable behavior
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2577,19 +2817,19 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
         }
-
+    
         $this->uploadImageHebergementPath($form);
-
+        
         if (!$form['image_composition_path_deleted']->getData())
         {
             $this->resetModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
         }
-
+    
         $this->uploadImageCompositionPath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2597,7 +2837,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return 'uploads/type_hebergements';
     }
-
+    
     /**
      * @return string
      */
@@ -2605,7 +2845,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2619,7 +2859,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->setImageHebergementPath($this->getUploadDir() . '/' . $image);
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

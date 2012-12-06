@@ -572,7 +572,7 @@ abstract class BaseEditoQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(EditoPeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -581,7 +581,7 @@ abstract class BaseEditoQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
