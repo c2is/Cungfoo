@@ -67,7 +67,7 @@ class EventLoader extends AbstractLoader
             $newEvent
                 ->setLocale($language)
                 ->setName($event->{'Title'})
-                ->setName($event->{'Subtitle'})
+                ->setSubtitle($event->{'Subtitle'})
                 ->setStrDate($event->{'StrDate'})
                 ->setCode($code)
                 ->setCategory($event->{'Category'}['Id'])
@@ -102,7 +102,7 @@ class EventLoader extends AbstractLoader
             $newEvent
                 ->setLocale($language)
                 ->setName(($event->{'Title'}) ? $event->{'Title'} : $defaultName)
-                ->setName(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
+                ->setSubtitle(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
                 ->setStrDate($event->{'StrDate'} ? $event->{'StrDate'} : $defaultStrDate)
             ;
         }
