@@ -515,6 +515,7 @@ body.clear {
 #stepNav ul li.tab.current span {
   text-decoration: none;
 }
+/*GENERAL*/
 .radiusBox {
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -690,6 +691,7 @@ h4 {
 .bold {
   font-weight: bold;
 }
+/*LEFT*/
 #reservationContener {
   /* --> payment.css */
 
@@ -804,6 +806,9 @@ h4 {
 #reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input {
   width: 300px;
 }
+#reservationContener.detail #authentication > div #newCustomerLayer #address {
+  width: 580px;
+}
 #reservationContener.detail #authentication > div #newCustomerLayer #address td {
   display: inline-block;
   margin-bottom: 10px;
@@ -822,17 +827,23 @@ h4 {
   width: 141px;
   height: 81px;
 }
+#reservationContener.detail #authentication > div #newCustomerLayer #address .datepicker button {
+  right: 15px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer .loginLink {
+  margin-right: 15px;
+}
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField {
-  width: 480px;
+  width: 450px;
   float: left;
 }
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField .label {
   width: 130px;
 }
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField input {
-  width: 320px;
+  width: 310px;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .loginLink {
+#reservationContener.detail #authentication > div .loginLink {
   float: right;
 }
 #reservationContener.detail #reservation .aRoom h2 {
@@ -1209,8 +1220,9 @@ h4 {
 #reservationContener .control_date {
   position: relative;
 }
-#reservationContener .rsl-date-input #date_sRowID_link,
-#reservationContener .control_date #date_sRowID_link {
+#reservationContener .rsl-date-input a#date_sRowID_link,
+#reservationContener .control_date a#date_sRowID_link {
+  display: none;
   position: absolute;
   top: -6px;
   right: 15px;
@@ -1218,8 +1230,8 @@ h4 {
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
 }
-#reservationContener .rsl-date-input #date_sRowID_link img,
-#reservationContener .control_date #date_sRowID_link img {
+#reservationContener .rsl-date-input a#date_sRowID_link img,
+#reservationContener .control_date a#date_sRowID_link img {
   display: none;
 }
 #reservationContener .datepicker button {
@@ -1229,8 +1241,8 @@ h4 {
   border: 0 none;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -216px transparent;
   position: absolute;
-  top: 0;
-  right: 15px;
+  top: -6px;
+  right: 0;
 }
 #reservationContener label,
 #reservationContener input[type="radio"] {
@@ -1242,6 +1254,48 @@ h4 {
 }
 #reservationContener input[type="radio"] {
   height: auto;
+}
+/*RIGHT*/
+#greyBoxes #needHelpBloc {
+  width: 288px;
+  height: 246px;
+  color: #ffffff;
+  background: url("../../images/vacancesdirectes/common/pict/help-bloc.jpg") no-repeat 0 0;
+}
+#greyBoxes #needHelpBloc .stamp {
+  margin-bottom: 10px;
+}
+#greyBoxes #needHelpBloc h2 {
+  margin-left: 0;
+  position: relative;
+}
+#greyBoxes #needHelpBloc h2:before {
+  content: "";
+  background: none;
+}
+#greyBoxes #needHelpBloc .content {
+  width: 113px;
+  margin-left: 65px;
+  color: #464545;
+  font: bold 15px/17px Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 70px;
+  left: 100px;
+}
+#greyBoxes #needHelpBloc span {
+  font: bold 14px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  width: 160px;
+  position: absolute;
+  top: 178px;
+  left: 130px;
+}
+#greyBoxes #needHelpBloc span a {
+  font: bold 22px/25px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
 }
 .proposal {
   font: normal 14px/17px Arial, Helvetica, sans-serif;
