@@ -18,6 +18,8 @@ class DateType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $locale = $this->getApplication()['context']->get('language');
+
         $builder->add('dateDebut', 'hidden', array(
             'required' => false,
         ));
@@ -36,16 +38,26 @@ class DateType extends AppAwareType
 
         $destinationCurrentChoice = $this->getApplication()['request']->get('SearchDate')['destination'];
 
-        $region = \Cungfoo\Model\RegionQuery::create()
-            ->joinWithI18n($this->getApplication()['context']->get('language'))
-            ->withColumn('RegionI18n.name', 'Name')
-            ->select(array('Code', 'Name'))
+        $destinationChoices = \Cungfoo\Model\RegionQuery::create()
+            ->useI18nQuery($locale, 'region_i18n')
+                ->withColumn('region_i18n.Name', 'Name')
+            ->endUse()
+            ->usePaysQuery()
+                ->withColumn('pays.Code', 'PaysCode')
+                ->useI18nQuery($locale, 'pays_i18n')
+                    ->withColumn('pays_i18n.Name', 'PaysName')
+                ->endUse()
+                ->withColumn('pays.Code', 'PaysCode')
+            ->endUse()
+            ->select(array('Code', 'PaysName', 'Name', 'PaysCode'))
+            ->orderBy('PaysName')
             ->orderBy('Name')
             ->findActive()
+            ->toArray()
         ;
 
         $builder->add('destination', 'choice', array(
-            'choices'     => $this->formatForList($region, 'Code', 'Name'),
+            'choices'     => $this->formatForListDestination($destinationChoices),
             'label'       => 'date_search.destination',
             'empty_value' => "date_search.destination.empty_value",
             'empty_data'  => null,
@@ -59,7 +71,7 @@ class DateType extends AppAwareType
         ;
 
         $villes = \Cungfoo\Model\VilleQuery::create()
-            ->joinWithI18n($this->getApplication()['context']->get('language'))
+            ->joinWithI18n($locale)
             ->withColumn('VilleI18n.name', 'Name')
             ->select(array('Code', 'Name'))
             ->filterByDestination($region, $destinationCurrentChoice)
@@ -117,6 +129,19 @@ class DateType extends AppAwareType
     public function getName()
     {
         return 'SearchDate';
+    }
+
+    protected function formatForListDestination($list)
+    {
+        $pays = array();
+
+        $choices = array();
+        foreach ($list as $item)
+        {
+            $choices[$item['PaysName']][$item['Code']] = $item['Name'];
+        }
+
+        return $choices;
     }
 
     protected function formatForList($list, $key, $value, $empty = null)

@@ -27,7 +27,7 @@ class DispoController implements ControllerProviderInterface
 
         $controllers->match('/{large}/{start_date}/{nb_days}/{nb_adults}/{nb_children}/{small}', function (Application $app, Request $request, $large, $small, $start_date, $nb_days, $nb_adults, $nb_children) {
             $searchEngine = new SearchEngine($app, $request);
-            $searchEngine->process();
+            $searchEngine->process($app['session']->get('search_engine_data'));
             if ($searchEngine->getRedirect())
             {
                 return $app->redirect($searchEngine->getRedirect());

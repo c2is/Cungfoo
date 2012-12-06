@@ -29,11 +29,13 @@ class SearchEngine
         {
             $searchDateData = $dateData;
         }
+
         $this->form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
 
         if ('POST' == $this->request->getMethod())
         {
             $this->form->bindRequest($this->request);
+            $this->app['session']->set('search_engine_data', $this->form->getData());
 
             if ($this->form->isValid())
             {

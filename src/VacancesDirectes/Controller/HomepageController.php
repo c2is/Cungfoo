@@ -37,7 +37,7 @@ class HomepageController implements ControllerProviderInterface
         {
 
             $searchEngine = new SearchEngine($app, $request);
-            $searchEngine->process();
+            $searchEngine->process($app['session']->get('search_engine_data'));
             if ($searchEngine->getRedirect())
             {
                 return $app->redirect($searchEngine->getRedirect());

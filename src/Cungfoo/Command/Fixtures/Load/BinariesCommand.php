@@ -18,6 +18,7 @@ use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface,
     Symfony\Component\Filesystem\Filesystem,
+    Symfony\Component\Finder\Finder,
     Symfony\Component\Yaml\Yaml;
 
 class BinariesCommand extends BaseCommand
@@ -35,23 +36,22 @@ class BinariesCommand extends BaseCommand
     {
         try
         {
-            $filesystem = new Filesystem();
+            $fs = new Filesystem();
 
-            // remove binaries files
-            $directoriesToRemove = glob($this->getSilexApplication()['config']->get('web_dir') . '/uploads/*');
-            foreach ($directoriesToRemove as $directoryToRemove)
+            $fixturesDir = sprintf('%s/%s/uploads', $this->getProjectDirectory(), trim($input->getOption('directory')));
+            $uploadsDir  = $this->getSilexApplication()['config']->get('web_dir') . '/uploads';
+
+            $toDeleteFinder = new Finder();
+            foreach ($toDeleteFinder->directories()->in($fixturesDir) as $toDeleteDir)
             {
-                $filesystem->remove($directoryToRemove);
+                $fs->remove(sprintf('%s/%s', $uploadsDir, $toDeleteDir->getRelativePathname()));
             }
 
-            // load binaries fixtures
-            $fixturesDirectory  = sprintf('%s/%s/uploads', $this->getProjectDirectory(), trim($input->getOption('directory'), DIRECTORY_SEPARATOR));
-            $uploadsDirectory   = $this->getSilexApplication()['config']->get('web_dir') . '/uploads';
-            $command = sprintf('cp -rf %s/* %s', escapeshellarg($fixturesDirectory), escapeshellarg($uploadsDirectory));
+            $command = sprintf('cp -rf %s/* %s', escapeshellarg($fixturesDir), escapeshellarg($uploadsDir));
             exec($command);
 
             $result = array();
-            exec(sprintf('ls -lR %s | grep ^d | wc -l', $uploadsDirectory), $result);
+            exec(sprintf('ls -lR %s | grep ^d | wc -l', $uploadsDir), $result);
             $nbFiles = trim($result[0]);
         }
         catch (\Exception $exception)
