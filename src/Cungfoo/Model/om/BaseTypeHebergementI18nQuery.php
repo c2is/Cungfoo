@@ -29,6 +29,16 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18nQuery orderByTypeTerrasse($order = Criteria::ASC) Order by the type_terrasse column
  * @method TypeHebergementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method TypeHebergementI18nQuery orderByComposition($order = Criteria::ASC) Order by the composition column
+ * @method TypeHebergementI18nQuery orderByPresentation($order = Criteria::ASC) Order by the presentation column
+ * @method TypeHebergementI18nQuery orderByCapaciteHebergement($order = Criteria::ASC) Order by the capacite_hebergement column
+ * @method TypeHebergementI18nQuery orderByDimensions($order = Criteria::ASC) Order by the dimensions column
+ * @method TypeHebergementI18nQuery orderByAgencement($order = Criteria::ASC) Order by the agencement column
+ * @method TypeHebergementI18nQuery orderByEquipements($order = Criteria::ASC) Order by the equipements column
+ * @method TypeHebergementI18nQuery orderByAnneeUtilisation($order = Criteria::ASC) Order by the annee_utilisation column
+ * @method TypeHebergementI18nQuery orderByRemarque1($order = Criteria::ASC) Order by the remarque_1 column
+ * @method TypeHebergementI18nQuery orderByRemarque2($order = Criteria::ASC) Order by the remarque_2 column
+ * @method TypeHebergementI18nQuery orderByRemarque3($order = Criteria::ASC) Order by the remarque_3 column
+ * @method TypeHebergementI18nQuery orderByRemarque4($order = Criteria::ASC) Order by the remarque_4 column
  *
  * @method TypeHebergementI18nQuery groupById() Group by the id column
  * @method TypeHebergementI18nQuery groupByLocale() Group by the locale column
@@ -37,6 +47,16 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18nQuery groupByTypeTerrasse() Group by the type_terrasse column
  * @method TypeHebergementI18nQuery groupByDescription() Group by the description column
  * @method TypeHebergementI18nQuery groupByComposition() Group by the composition column
+ * @method TypeHebergementI18nQuery groupByPresentation() Group by the presentation column
+ * @method TypeHebergementI18nQuery groupByCapaciteHebergement() Group by the capacite_hebergement column
+ * @method TypeHebergementI18nQuery groupByDimensions() Group by the dimensions column
+ * @method TypeHebergementI18nQuery groupByAgencement() Group by the agencement column
+ * @method TypeHebergementI18nQuery groupByEquipements() Group by the equipements column
+ * @method TypeHebergementI18nQuery groupByAnneeUtilisation() Group by the annee_utilisation column
+ * @method TypeHebergementI18nQuery groupByRemarque1() Group by the remarque_1 column
+ * @method TypeHebergementI18nQuery groupByRemarque2() Group by the remarque_2 column
+ * @method TypeHebergementI18nQuery groupByRemarque3() Group by the remarque_3 column
+ * @method TypeHebergementI18nQuery groupByRemarque4() Group by the remarque_4 column
  *
  * @method TypeHebergementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TypeHebergementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,6 +76,16 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18n findOneByTypeTerrasse(string $type_terrasse) Return the first TypeHebergementI18n filtered by the type_terrasse column
  * @method TypeHebergementI18n findOneByDescription(string $description) Return the first TypeHebergementI18n filtered by the description column
  * @method TypeHebergementI18n findOneByComposition(string $composition) Return the first TypeHebergementI18n filtered by the composition column
+ * @method TypeHebergementI18n findOneByPresentation(string $presentation) Return the first TypeHebergementI18n filtered by the presentation column
+ * @method TypeHebergementI18n findOneByCapaciteHebergement(string $capacite_hebergement) Return the first TypeHebergementI18n filtered by the capacite_hebergement column
+ * @method TypeHebergementI18n findOneByDimensions(string $dimensions) Return the first TypeHebergementI18n filtered by the dimensions column
+ * @method TypeHebergementI18n findOneByAgencement(string $agencement) Return the first TypeHebergementI18n filtered by the agencement column
+ * @method TypeHebergementI18n findOneByEquipements(string $equipements) Return the first TypeHebergementI18n filtered by the equipements column
+ * @method TypeHebergementI18n findOneByAnneeUtilisation(string $annee_utilisation) Return the first TypeHebergementI18n filtered by the annee_utilisation column
+ * @method TypeHebergementI18n findOneByRemarque1(string $remarque_1) Return the first TypeHebergementI18n filtered by the remarque_1 column
+ * @method TypeHebergementI18n findOneByRemarque2(string $remarque_2) Return the first TypeHebergementI18n filtered by the remarque_2 column
+ * @method TypeHebergementI18n findOneByRemarque3(string $remarque_3) Return the first TypeHebergementI18n filtered by the remarque_3 column
+ * @method TypeHebergementI18n findOneByRemarque4(string $remarque_4) Return the first TypeHebergementI18n filtered by the remarque_4 column
  *
  * @method array findById(int $id) Return TypeHebergementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return TypeHebergementI18n objects filtered by the locale column
@@ -64,6 +94,16 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method array findByTypeTerrasse(string $type_terrasse) Return TypeHebergementI18n objects filtered by the type_terrasse column
  * @method array findByDescription(string $description) Return TypeHebergementI18n objects filtered by the description column
  * @method array findByComposition(string $composition) Return TypeHebergementI18n objects filtered by the composition column
+ * @method array findByPresentation(string $presentation) Return TypeHebergementI18n objects filtered by the presentation column
+ * @method array findByCapaciteHebergement(string $capacite_hebergement) Return TypeHebergementI18n objects filtered by the capacite_hebergement column
+ * @method array findByDimensions(string $dimensions) Return TypeHebergementI18n objects filtered by the dimensions column
+ * @method array findByAgencement(string $agencement) Return TypeHebergementI18n objects filtered by the agencement column
+ * @method array findByEquipements(string $equipements) Return TypeHebergementI18n objects filtered by the equipements column
+ * @method array findByAnneeUtilisation(string $annee_utilisation) Return TypeHebergementI18n objects filtered by the annee_utilisation column
+ * @method array findByRemarque1(string $remarque_1) Return TypeHebergementI18n objects filtered by the remarque_1 column
+ * @method array findByRemarque2(string $remarque_2) Return TypeHebergementI18n objects filtered by the remarque_2 column
+ * @method array findByRemarque3(string $remarque_3) Return TypeHebergementI18n objects filtered by the remarque_3 column
+ * @method array findByRemarque4(string $remarque_4) Return TypeHebergementI18n objects filtered by the remarque_4 column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +194,7 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `surface`, `type_terrasse`, `description`, `composition` FROM `type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `surface`, `type_terrasse`, `description`, `composition`, `presentation`, `capacite_hebergement`, `dimensions`, `agencement`, `equipements`, `annee_utilisation`, `remarque_1`, `remarque_2`, `remarque_3`, `remarque_4` FROM `type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -456,6 +496,296 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementI18nPeer::COMPOSITION, $composition, $comparison);
+    }
+
+    /**
+     * Filter the query on the presentation column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPresentation('fooValue');   // WHERE presentation = 'fooValue'
+     * $query->filterByPresentation('%fooValue%'); // WHERE presentation LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $presentation The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByPresentation($presentation = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($presentation)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $presentation)) {
+                $presentation = str_replace('*', '%', $presentation);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::PRESENTATION, $presentation, $comparison);
+    }
+
+    /**
+     * Filter the query on the capacite_hebergement column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCapaciteHebergement('fooValue');   // WHERE capacite_hebergement = 'fooValue'
+     * $query->filterByCapaciteHebergement('%fooValue%'); // WHERE capacite_hebergement LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $capaciteHebergement The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByCapaciteHebergement($capaciteHebergement = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($capaciteHebergement)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $capaciteHebergement)) {
+                $capaciteHebergement = str_replace('*', '%', $capaciteHebergement);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT, $capaciteHebergement, $comparison);
+    }
+
+    /**
+     * Filter the query on the dimensions column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDimensions('fooValue');   // WHERE dimensions = 'fooValue'
+     * $query->filterByDimensions('%fooValue%'); // WHERE dimensions LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $dimensions The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByDimensions($dimensions = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($dimensions)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $dimensions)) {
+                $dimensions = str_replace('*', '%', $dimensions);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::DIMENSIONS, $dimensions, $comparison);
+    }
+
+    /**
+     * Filter the query on the agencement column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAgencement('fooValue');   // WHERE agencement = 'fooValue'
+     * $query->filterByAgencement('%fooValue%'); // WHERE agencement LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $agencement The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByAgencement($agencement = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($agencement)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $agencement)) {
+                $agencement = str_replace('*', '%', $agencement);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::AGENCEMENT, $agencement, $comparison);
+    }
+
+    /**
+     * Filter the query on the equipements column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEquipements('fooValue');   // WHERE equipements = 'fooValue'
+     * $query->filterByEquipements('%fooValue%'); // WHERE equipements LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $equipements The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByEquipements($equipements = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($equipements)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $equipements)) {
+                $equipements = str_replace('*', '%', $equipements);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::EQUIPEMENTS, $equipements, $comparison);
+    }
+
+    /**
+     * Filter the query on the annee_utilisation column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAnneeUtilisation('fooValue');   // WHERE annee_utilisation = 'fooValue'
+     * $query->filterByAnneeUtilisation('%fooValue%'); // WHERE annee_utilisation LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $anneeUtilisation The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByAnneeUtilisation($anneeUtilisation = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($anneeUtilisation)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $anneeUtilisation)) {
+                $anneeUtilisation = str_replace('*', '%', $anneeUtilisation);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::ANNEE_UTILISATION, $anneeUtilisation, $comparison);
+    }
+
+    /**
+     * Filter the query on the remarque_1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRemarque1('fooValue');   // WHERE remarque_1 = 'fooValue'
+     * $query->filterByRemarque1('%fooValue%'); // WHERE remarque_1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $remarque1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByRemarque1($remarque1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($remarque1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $remarque1)) {
+                $remarque1 = str_replace('*', '%', $remarque1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::REMARQUE_1, $remarque1, $comparison);
+    }
+
+    /**
+     * Filter the query on the remarque_2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRemarque2('fooValue');   // WHERE remarque_2 = 'fooValue'
+     * $query->filterByRemarque2('%fooValue%'); // WHERE remarque_2 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $remarque2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByRemarque2($remarque2 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($remarque2)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $remarque2)) {
+                $remarque2 = str_replace('*', '%', $remarque2);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::REMARQUE_2, $remarque2, $comparison);
+    }
+
+    /**
+     * Filter the query on the remarque_3 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRemarque3('fooValue');   // WHERE remarque_3 = 'fooValue'
+     * $query->filterByRemarque3('%fooValue%'); // WHERE remarque_3 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $remarque3 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByRemarque3($remarque3 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($remarque3)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $remarque3)) {
+                $remarque3 = str_replace('*', '%', $remarque3);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::REMARQUE_3, $remarque3, $comparison);
+    }
+
+    /**
+     * Filter the query on the remarque_4 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRemarque4('fooValue');   // WHERE remarque_4 = 'fooValue'
+     * $query->filterByRemarque4('%fooValue%'); // WHERE remarque_4 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $remarque4 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByRemarque4($remarque4 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($remarque4)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $remarque4)) {
+                $remarque4 = str_replace('*', '%', $remarque4);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::REMARQUE_4, $remarque4, $comparison);
     }
 
     /**

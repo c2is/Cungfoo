@@ -37,13 +37,13 @@ abstract class BaseTypeHebergementI18nPeer
     const TM_CLASS = 'TypeHebergementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 17;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 17;
 
     /** the column name for the id field */
     const ID = 'type_hebergement_i18n.id';
@@ -66,6 +66,36 @@ abstract class BaseTypeHebergementI18nPeer
     /** the column name for the composition field */
     const COMPOSITION = 'type_hebergement_i18n.composition';
 
+    /** the column name for the presentation field */
+    const PRESENTATION = 'type_hebergement_i18n.presentation';
+
+    /** the column name for the capacite_hebergement field */
+    const CAPACITE_HEBERGEMENT = 'type_hebergement_i18n.capacite_hebergement';
+
+    /** the column name for the dimensions field */
+    const DIMENSIONS = 'type_hebergement_i18n.dimensions';
+
+    /** the column name for the agencement field */
+    const AGENCEMENT = 'type_hebergement_i18n.agencement';
+
+    /** the column name for the equipements field */
+    const EQUIPEMENTS = 'type_hebergement_i18n.equipements';
+
+    /** the column name for the annee_utilisation field */
+    const ANNEE_UTILISATION = 'type_hebergement_i18n.annee_utilisation';
+
+    /** the column name for the remarque_1 field */
+    const REMARQUE_1 = 'type_hebergement_i18n.remarque_1';
+
+    /** the column name for the remarque_2 field */
+    const REMARQUE_2 = 'type_hebergement_i18n.remarque_2';
+
+    /** the column name for the remarque_3 field */
+    const REMARQUE_3 = 'type_hebergement_i18n.remarque_3';
+
+    /** the column name for the remarque_4 field */
+    const REMARQUE_4 = 'type_hebergement_i18n.remarque_4';
+
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -85,12 +115,12 @@ abstract class BaseTypeHebergementI18nPeer
      * e.g. TypeHebergementI18nPeer::$fieldNames[TypeHebergementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Surface', 'TypeTerrasse', 'Description', 'Composition', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'surface', 'typeTerrasse', 'description', 'composition', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID, TypeHebergementI18nPeer::LOCALE, TypeHebergementI18nPeer::NAME, TypeHebergementI18nPeer::SURFACE, TypeHebergementI18nPeer::TYPE_TERRASSE, TypeHebergementI18nPeer::DESCRIPTION, TypeHebergementI18nPeer::COMPOSITION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SURFACE', 'TYPE_TERRASSE', 'DESCRIPTION', 'COMPOSITION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'surface', 'type_terrasse', 'description', 'composition', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Surface', 'TypeTerrasse', 'Description', 'Composition', 'Presentation', 'CapaciteHebergement', 'Dimensions', 'Agencement', 'Equipements', 'AnneeUtilisation', 'Remarque1', 'Remarque2', 'Remarque3', 'Remarque4', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'surface', 'typeTerrasse', 'description', 'composition', 'presentation', 'capaciteHebergement', 'dimensions', 'agencement', 'equipements', 'anneeUtilisation', 'remarque1', 'remarque2', 'remarque3', 'remarque4', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID, TypeHebergementI18nPeer::LOCALE, TypeHebergementI18nPeer::NAME, TypeHebergementI18nPeer::SURFACE, TypeHebergementI18nPeer::TYPE_TERRASSE, TypeHebergementI18nPeer::DESCRIPTION, TypeHebergementI18nPeer::COMPOSITION, TypeHebergementI18nPeer::PRESENTATION, TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT, TypeHebergementI18nPeer::DIMENSIONS, TypeHebergementI18nPeer::AGENCEMENT, TypeHebergementI18nPeer::EQUIPEMENTS, TypeHebergementI18nPeer::ANNEE_UTILISATION, TypeHebergementI18nPeer::REMARQUE_1, TypeHebergementI18nPeer::REMARQUE_2, TypeHebergementI18nPeer::REMARQUE_3, TypeHebergementI18nPeer::REMARQUE_4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SURFACE', 'TYPE_TERRASSE', 'DESCRIPTION', 'COMPOSITION', 'PRESENTATION', 'CAPACITE_HEBERGEMENT', 'DIMENSIONS', 'AGENCEMENT', 'EQUIPEMENTS', 'ANNEE_UTILISATION', 'REMARQUE_1', 'REMARQUE_2', 'REMARQUE_3', 'REMARQUE_4', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'surface', 'type_terrasse', 'description', 'composition', 'presentation', 'capacite_hebergement', 'dimensions', 'agencement', 'equipements', 'annee_utilisation', 'remarque_1', 'remarque_2', 'remarque_3', 'remarque_4', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -100,12 +130,12 @@ abstract class BaseTypeHebergementI18nPeer
      * e.g. TypeHebergementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Surface' => 3, 'TypeTerrasse' => 4, 'Description' => 5, 'Composition' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'typeTerrasse' => 4, 'description' => 5, 'composition' => 6, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID => 0, TypeHebergementI18nPeer::LOCALE => 1, TypeHebergementI18nPeer::NAME => 2, TypeHebergementI18nPeer::SURFACE => 3, TypeHebergementI18nPeer::TYPE_TERRASSE => 4, TypeHebergementI18nPeer::DESCRIPTION => 5, TypeHebergementI18nPeer::COMPOSITION => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SURFACE' => 3, 'TYPE_TERRASSE' => 4, 'DESCRIPTION' => 5, 'COMPOSITION' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'type_terrasse' => 4, 'description' => 5, 'composition' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Surface' => 3, 'TypeTerrasse' => 4, 'Description' => 5, 'Composition' => 6, 'Presentation' => 7, 'CapaciteHebergement' => 8, 'Dimensions' => 9, 'Agencement' => 10, 'Equipements' => 11, 'AnneeUtilisation' => 12, 'Remarque1' => 13, 'Remarque2' => 14, 'Remarque3' => 15, 'Remarque4' => 16, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'typeTerrasse' => 4, 'description' => 5, 'composition' => 6, 'presentation' => 7, 'capaciteHebergement' => 8, 'dimensions' => 9, 'agencement' => 10, 'equipements' => 11, 'anneeUtilisation' => 12, 'remarque1' => 13, 'remarque2' => 14, 'remarque3' => 15, 'remarque4' => 16, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementI18nPeer::ID => 0, TypeHebergementI18nPeer::LOCALE => 1, TypeHebergementI18nPeer::NAME => 2, TypeHebergementI18nPeer::SURFACE => 3, TypeHebergementI18nPeer::TYPE_TERRASSE => 4, TypeHebergementI18nPeer::DESCRIPTION => 5, TypeHebergementI18nPeer::COMPOSITION => 6, TypeHebergementI18nPeer::PRESENTATION => 7, TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT => 8, TypeHebergementI18nPeer::DIMENSIONS => 9, TypeHebergementI18nPeer::AGENCEMENT => 10, TypeHebergementI18nPeer::EQUIPEMENTS => 11, TypeHebergementI18nPeer::ANNEE_UTILISATION => 12, TypeHebergementI18nPeer::REMARQUE_1 => 13, TypeHebergementI18nPeer::REMARQUE_2 => 14, TypeHebergementI18nPeer::REMARQUE_3 => 15, TypeHebergementI18nPeer::REMARQUE_4 => 16, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SURFACE' => 3, 'TYPE_TERRASSE' => 4, 'DESCRIPTION' => 5, 'COMPOSITION' => 6, 'PRESENTATION' => 7, 'CAPACITE_HEBERGEMENT' => 8, 'DIMENSIONS' => 9, 'AGENCEMENT' => 10, 'EQUIPEMENTS' => 11, 'ANNEE_UTILISATION' => 12, 'REMARQUE_1' => 13, 'REMARQUE_2' => 14, 'REMARQUE_3' => 15, 'REMARQUE_4' => 16, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'surface' => 3, 'type_terrasse' => 4, 'description' => 5, 'composition' => 6, 'presentation' => 7, 'capacite_hebergement' => 8, 'dimensions' => 9, 'agencement' => 10, 'equipements' => 11, 'annee_utilisation' => 12, 'remarque_1' => 13, 'remarque_2' => 14, 'remarque_3' => 15, 'remarque_4' => 16, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -186,6 +216,16 @@ abstract class BaseTypeHebergementI18nPeer
             $criteria->addSelectColumn(TypeHebergementI18nPeer::TYPE_TERRASSE);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(TypeHebergementI18nPeer::COMPOSITION);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::PRESENTATION);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::DIMENSIONS);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::AGENCEMENT);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::EQUIPEMENTS);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::ANNEE_UTILISATION);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::REMARQUE_1);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::REMARQUE_2);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::REMARQUE_3);
+            $criteria->addSelectColumn(TypeHebergementI18nPeer::REMARQUE_4);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -194,6 +234,16 @@ abstract class BaseTypeHebergementI18nPeer
             $criteria->addSelectColumn($alias . '.type_terrasse');
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.composition');
+            $criteria->addSelectColumn($alias . '.presentation');
+            $criteria->addSelectColumn($alias . '.capacite_hebergement');
+            $criteria->addSelectColumn($alias . '.dimensions');
+            $criteria->addSelectColumn($alias . '.agencement');
+            $criteria->addSelectColumn($alias . '.equipements');
+            $criteria->addSelectColumn($alias . '.annee_utilisation');
+            $criteria->addSelectColumn($alias . '.remarque_1');
+            $criteria->addSelectColumn($alias . '.remarque_2');
+            $criteria->addSelectColumn($alias . '.remarque_3');
+            $criteria->addSelectColumn($alias . '.remarque_4');
         }
     }
 

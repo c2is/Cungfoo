@@ -89,6 +89,66 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     protected $composition;
 
     /**
+     * The value for the presentation field.
+     * @var        string
+     */
+    protected $presentation;
+
+    /**
+     * The value for the capacite_hebergement field.
+     * @var        string
+     */
+    protected $capacite_hebergement;
+
+    /**
+     * The value for the dimensions field.
+     * @var        string
+     */
+    protected $dimensions;
+
+    /**
+     * The value for the agencement field.
+     * @var        string
+     */
+    protected $agencement;
+
+    /**
+     * The value for the equipements field.
+     * @var        string
+     */
+    protected $equipements;
+
+    /**
+     * The value for the annee_utilisation field.
+     * @var        string
+     */
+    protected $annee_utilisation;
+
+    /**
+     * The value for the remarque_1 field.
+     * @var        string
+     */
+    protected $remarque_1;
+
+    /**
+     * The value for the remarque_2 field.
+     * @var        string
+     */
+    protected $remarque_2;
+
+    /**
+     * The value for the remarque_3 field.
+     * @var        string
+     */
+    protected $remarque_3;
+
+    /**
+     * The value for the remarque_4 field.
+     * @var        string
+     */
+    protected $remarque_4;
+
+    /**
      * @var        TypeHebergement
      */
     protected $aTypeHebergement;
@@ -196,6 +256,106 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     public function getComposition()
     {
         return $this->composition;
+    }
+
+    /**
+     * Get the [presentation] column value.
+     *
+     * @return string
+     */
+    public function getPresentation()
+    {
+        return $this->presentation;
+    }
+
+    /**
+     * Get the [capacite_hebergement] column value.
+     *
+     * @return string
+     */
+    public function getCapaciteHebergement()
+    {
+        return $this->capacite_hebergement;
+    }
+
+    /**
+     * Get the [dimensions] column value.
+     *
+     * @return string
+     */
+    public function getDimensions()
+    {
+        return $this->dimensions;
+    }
+
+    /**
+     * Get the [agencement] column value.
+     *
+     * @return string
+     */
+    public function getAgencement()
+    {
+        return $this->agencement;
+    }
+
+    /**
+     * Get the [equipements] column value.
+     *
+     * @return string
+     */
+    public function getEquipements()
+    {
+        return $this->equipements;
+    }
+
+    /**
+     * Get the [annee_utilisation] column value.
+     *
+     * @return string
+     */
+    public function getAnneeUtilisation()
+    {
+        return $this->annee_utilisation;
+    }
+
+    /**
+     * Get the [remarque_1] column value.
+     *
+     * @return string
+     */
+    public function getRemarque1()
+    {
+        return $this->remarque_1;
+    }
+
+    /**
+     * Get the [remarque_2] column value.
+     *
+     * @return string
+     */
+    public function getRemarque2()
+    {
+        return $this->remarque_2;
+    }
+
+    /**
+     * Get the [remarque_3] column value.
+     *
+     * @return string
+     */
+    public function getRemarque3()
+    {
+        return $this->remarque_3;
+    }
+
+    /**
+     * Get the [remarque_4] column value.
+     *
+     * @return string
+     */
+    public function getRemarque4()
+    {
+        return $this->remarque_4;
     }
 
     /**
@@ -350,6 +510,216 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     } // setComposition()
 
     /**
+     * Set the value of [presentation] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setPresentation($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->presentation !== $v) {
+            $this->presentation = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::PRESENTATION;
+        }
+
+
+        return $this;
+    } // setPresentation()
+
+    /**
+     * Set the value of [capacite_hebergement] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setCapaciteHebergement($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->capacite_hebergement !== $v) {
+            $this->capacite_hebergement = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT;
+        }
+
+
+        return $this;
+    } // setCapaciteHebergement()
+
+    /**
+     * Set the value of [dimensions] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setDimensions($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->dimensions !== $v) {
+            $this->dimensions = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::DIMENSIONS;
+        }
+
+
+        return $this;
+    } // setDimensions()
+
+    /**
+     * Set the value of [agencement] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setAgencement($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->agencement !== $v) {
+            $this->agencement = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::AGENCEMENT;
+        }
+
+
+        return $this;
+    } // setAgencement()
+
+    /**
+     * Set the value of [equipements] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setEquipements($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->equipements !== $v) {
+            $this->equipements = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::EQUIPEMENTS;
+        }
+
+
+        return $this;
+    } // setEquipements()
+
+    /**
+     * Set the value of [annee_utilisation] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setAnneeUtilisation($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->annee_utilisation !== $v) {
+            $this->annee_utilisation = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::ANNEE_UTILISATION;
+        }
+
+
+        return $this;
+    } // setAnneeUtilisation()
+
+    /**
+     * Set the value of [remarque_1] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setRemarque1($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->remarque_1 !== $v) {
+            $this->remarque_1 = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::REMARQUE_1;
+        }
+
+
+        return $this;
+    } // setRemarque1()
+
+    /**
+     * Set the value of [remarque_2] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setRemarque2($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->remarque_2 !== $v) {
+            $this->remarque_2 = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::REMARQUE_2;
+        }
+
+
+        return $this;
+    } // setRemarque2()
+
+    /**
+     * Set the value of [remarque_3] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setRemarque3($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->remarque_3 !== $v) {
+            $this->remarque_3 = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::REMARQUE_3;
+        }
+
+
+        return $this;
+    } // setRemarque3()
+
+    /**
+     * Set the value of [remarque_4] column.
+     *
+     * @param string $v new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setRemarque4($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->remarque_4 !== $v) {
+            $this->remarque_4 = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::REMARQUE_4;
+        }
+
+
+        return $this;
+    } // setRemarque4()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -392,6 +762,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $this->type_terrasse = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->composition = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->presentation = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->capacite_hebergement = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->dimensions = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->agencement = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->equipements = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->annee_utilisation = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->remarque_1 = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->remarque_2 = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+            $this->remarque_3 = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
+            $this->remarque_4 = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -400,7 +780,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 17; // 17 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergementI18n object", $e);
@@ -645,6 +1025,36 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::COMPOSITION)) {
             $modifiedColumns[':p' . $index++]  = '`composition`';
         }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::PRESENTATION)) {
+            $modifiedColumns[':p' . $index++]  = '`presentation`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT)) {
+            $modifiedColumns[':p' . $index++]  = '`capacite_hebergement`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::DIMENSIONS)) {
+            $modifiedColumns[':p' . $index++]  = '`dimensions`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::AGENCEMENT)) {
+            $modifiedColumns[':p' . $index++]  = '`agencement`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::EQUIPEMENTS)) {
+            $modifiedColumns[':p' . $index++]  = '`equipements`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ANNEE_UTILISATION)) {
+            $modifiedColumns[':p' . $index++]  = '`annee_utilisation`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_1)) {
+            $modifiedColumns[':p' . $index++]  = '`remarque_1`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_2)) {
+            $modifiedColumns[':p' . $index++]  = '`remarque_2`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_3)) {
+            $modifiedColumns[':p' . $index++]  = '`remarque_3`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) {
+            $modifiedColumns[':p' . $index++]  = '`remarque_4`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `type_hebergement_i18n` (%s) VALUES (%s)',
@@ -676,6 +1086,36 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                         break;
                     case '`composition`':
                         $stmt->bindValue($identifier, $this->composition, PDO::PARAM_STR);
+                        break;
+                    case '`presentation`':
+                        $stmt->bindValue($identifier, $this->presentation, PDO::PARAM_STR);
+                        break;
+                    case '`capacite_hebergement`':
+                        $stmt->bindValue($identifier, $this->capacite_hebergement, PDO::PARAM_STR);
+                        break;
+                    case '`dimensions`':
+                        $stmt->bindValue($identifier, $this->dimensions, PDO::PARAM_STR);
+                        break;
+                    case '`agencement`':
+                        $stmt->bindValue($identifier, $this->agencement, PDO::PARAM_STR);
+                        break;
+                    case '`equipements`':
+                        $stmt->bindValue($identifier, $this->equipements, PDO::PARAM_STR);
+                        break;
+                    case '`annee_utilisation`':
+                        $stmt->bindValue($identifier, $this->annee_utilisation, PDO::PARAM_STR);
+                        break;
+                    case '`remarque_1`':
+                        $stmt->bindValue($identifier, $this->remarque_1, PDO::PARAM_STR);
+                        break;
+                    case '`remarque_2`':
+                        $stmt->bindValue($identifier, $this->remarque_2, PDO::PARAM_STR);
+                        break;
+                    case '`remarque_3`':
+                        $stmt->bindValue($identifier, $this->remarque_3, PDO::PARAM_STR);
+                        break;
+                    case '`remarque_4`':
+                        $stmt->bindValue($identifier, $this->remarque_4, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -837,6 +1277,36 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             case 6:
                 return $this->getComposition();
                 break;
+            case 7:
+                return $this->getPresentation();
+                break;
+            case 8:
+                return $this->getCapaciteHebergement();
+                break;
+            case 9:
+                return $this->getDimensions();
+                break;
+            case 10:
+                return $this->getAgencement();
+                break;
+            case 11:
+                return $this->getEquipements();
+                break;
+            case 12:
+                return $this->getAnneeUtilisation();
+                break;
+            case 13:
+                return $this->getRemarque1();
+                break;
+            case 14:
+                return $this->getRemarque2();
+                break;
+            case 15:
+                return $this->getRemarque3();
+                break;
+            case 16:
+                return $this->getRemarque4();
+                break;
             default:
                 return null;
                 break;
@@ -873,6 +1343,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $keys[4] => $this->getTypeTerrasse(),
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getComposition(),
+            $keys[7] => $this->getPresentation(),
+            $keys[8] => $this->getCapaciteHebergement(),
+            $keys[9] => $this->getDimensions(),
+            $keys[10] => $this->getAgencement(),
+            $keys[11] => $this->getEquipements(),
+            $keys[12] => $this->getAnneeUtilisation(),
+            $keys[13] => $this->getRemarque1(),
+            $keys[14] => $this->getRemarque2(),
+            $keys[15] => $this->getRemarque3(),
+            $keys[16] => $this->getRemarque4(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aTypeHebergement) {
@@ -933,6 +1413,36 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             case 6:
                 $this->setComposition($value);
                 break;
+            case 7:
+                $this->setPresentation($value);
+                break;
+            case 8:
+                $this->setCapaciteHebergement($value);
+                break;
+            case 9:
+                $this->setDimensions($value);
+                break;
+            case 10:
+                $this->setAgencement($value);
+                break;
+            case 11:
+                $this->setEquipements($value);
+                break;
+            case 12:
+                $this->setAnneeUtilisation($value);
+                break;
+            case 13:
+                $this->setRemarque1($value);
+                break;
+            case 14:
+                $this->setRemarque2($value);
+                break;
+            case 15:
+                $this->setRemarque3($value);
+                break;
+            case 16:
+                $this->setRemarque4($value);
+                break;
         } // switch()
     }
 
@@ -964,6 +1474,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setTypeTerrasse($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setComposition($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setPresentation($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setCapaciteHebergement($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setDimensions($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setAgencement($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setEquipements($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setAnneeUtilisation($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setRemarque1($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setRemarque2($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setRemarque3($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setRemarque4($arr[$keys[16]]);
     }
 
     /**
@@ -982,6 +1502,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::TYPE_TERRASSE)) $criteria->add(TypeHebergementI18nPeer::TYPE_TERRASSE, $this->type_terrasse);
         if ($this->isColumnModified(TypeHebergementI18nPeer::DESCRIPTION)) $criteria->add(TypeHebergementI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(TypeHebergementI18nPeer::COMPOSITION)) $criteria->add(TypeHebergementI18nPeer::COMPOSITION, $this->composition);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::PRESENTATION)) $criteria->add(TypeHebergementI18nPeer::PRESENTATION, $this->presentation);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT)) $criteria->add(TypeHebergementI18nPeer::CAPACITE_HEBERGEMENT, $this->capacite_hebergement);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::DIMENSIONS)) $criteria->add(TypeHebergementI18nPeer::DIMENSIONS, $this->dimensions);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::AGENCEMENT)) $criteria->add(TypeHebergementI18nPeer::AGENCEMENT, $this->agencement);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::EQUIPEMENTS)) $criteria->add(TypeHebergementI18nPeer::EQUIPEMENTS, $this->equipements);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ANNEE_UTILISATION)) $criteria->add(TypeHebergementI18nPeer::ANNEE_UTILISATION, $this->annee_utilisation);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_1)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_1, $this->remarque_1);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_2)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_2, $this->remarque_2);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_3)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_3, $this->remarque_3);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_4, $this->remarque_4);
 
         return $criteria;
     }
@@ -1059,6 +1589,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $copyObj->setTypeTerrasse($this->getTypeTerrasse());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setComposition($this->getComposition());
+        $copyObj->setPresentation($this->getPresentation());
+        $copyObj->setCapaciteHebergement($this->getCapaciteHebergement());
+        $copyObj->setDimensions($this->getDimensions());
+        $copyObj->setAgencement($this->getAgencement());
+        $copyObj->setEquipements($this->getEquipements());
+        $copyObj->setAnneeUtilisation($this->getAnneeUtilisation());
+        $copyObj->setRemarque1($this->getRemarque1());
+        $copyObj->setRemarque2($this->getRemarque2());
+        $copyObj->setRemarque3($this->getRemarque3());
+        $copyObj->setRemarque4($this->getRemarque4());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1180,6 +1720,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $this->type_terrasse = null;
         $this->description = null;
         $this->composition = null;
+        $this->presentation = null;
+        $this->capacite_hebergement = null;
+        $this->dimensions = null;
+        $this->agencement = null;
+        $this->equipements = null;
+        $this->annee_utilisation = null;
+        $this->remarque_1 = null;
+        $this->remarque_2 = null;
+        $this->remarque_3 = null;
+        $this->remarque_4 = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
