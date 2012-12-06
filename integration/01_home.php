@@ -24,7 +24,7 @@
 						</div>
                         <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
-                    <div class="element promo clear radiusBox greyC">
+                    <div class="element promo clear">
                         <div class="left">
                             <a href="#_" class="linkBlock"><img class="boxborder" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" /></a>
                             <div class="fb-like" data-layout="button_count" data-href="#" data-send="false" data-width="119" data-show-faces="false">J'aime</div>

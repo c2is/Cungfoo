@@ -14,21 +14,21 @@
                     <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
                     <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
                     <div class="sliderBackground"></div>
-                    <div class="sliderStain first">
+                    <a href="{{ mea.lien }}" class="sliderStain first">
                         <div class="content">
                             <p class="headline" title="{{ mea.titre }}">{{ mea.titre }}</p>
                             <p class="catchline">{{ mea.accroche }}</p>
                             <button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>
                         </div>
-                    </div>
+                    </a>
                     {% if mea.prix != "" %}
-                    <div class="sliderStain second">
+                    <a href="{{ mea.lien }}" class="sliderStain second">
                         <div class="content">
                             <p>{{ "general.a_partir_de" | trans }}</p>
                             <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
                             <p class="duration">{{ "general.la_nuit" | trans }}</p>
                         </div>
-                    </div>
+                    </a>
                     {% endif %}
                 </li>
             {% endfor %}

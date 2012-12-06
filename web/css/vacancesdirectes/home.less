@@ -15,9 +15,9 @@
   #header{margin-bottom:261px;}
   #sliderWrapper{overflow:hidden;padding-top:30px;width:100%;position:absolute;top:0;left:0;height:500px;
     #sliderPrev,
-    #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(100px,15px);font:@arial 13px/15px @arial;color:@colorOrange;text-align:center;padding:0 5px;cursor:pointer;
+    #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(110px,15px);font:@arial 13px/15px @arial;color:@colorOrange;text-align:center;padding:0 5px;cursor:pointer;
       .content{width:115px;
-        .headline{font:bold 20px/22px @ptnarrow;text-transform:uppercase;margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .headline{font:bold 20px/22px @ptnarrow;text-transform:uppercase;margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;max-height:44px;}
         .price{font:bold 20px/22px @arial;}
         .duration{margin-top:-5px;}
       }
@@ -38,18 +38,19 @@
         .sliderPostmark{position:absolute;top:-20px;right:336px;z-index:1;}
         .sliderBackground{position:absolute;bottom:0;left:0;height:70px;width:976px;background-color:@colorBlanc;z-index:2}
         .sliderStain{position:absolute;text-align:center;
-          &.first{left:70px;top:-55px;width:272px;._verticalCenter(272px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;z-index:3;
-            .content{width:170px;color:@colorOrange;
-              .headline{font:bold 38px/38px @ptnarrow;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+          &.first{left:70px;top:-75px;width:298px;._verticalCenter(286px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;z-index:3;
+            .content{width:190px;color:@colorOrange;
+              .headline{font:bold 38px/38px @ptnarrow;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;max-height:76px;}
               .catchline{font:14px/15px @arial;margin-bottom:10px;}
             }
           }
-          &.second{left:220px;top:55px;width:188px;._verticalCenter(188px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;z-index:4;
+          &.second{left:240px;top:55px;width:188px;._verticalCenter(188px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;z-index:4;
             .content{width:90px;color:@colorBlanc;
               p{font:bold 13px/15px @arial;}
               .price{font:bold 37px/37px @arial;}
               .duration{margin-top:-10px}
             }
+//            .bt{position:absolute;bottom:75px;left:-40px;}
           }
         }
       }
@@ -79,7 +80,7 @@
 
 
   .locationForwards{position:relative;padding-bottom:35px;height:602px;
-    .stamp{margin-bottom:25px;
+    .stamp{
       h2{._verticalCenter(40px);}
     }
     &>.bt{position:absolute;bottom:15px;right:0;}
@@ -90,18 +91,27 @@
       h2:before{background-position:0 0;}
       .element{padding:20px 0;
         .details{width:151px;}
+        &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
       }
       .stamp{margin-bottom:5px;}
     }
     &#lastLocations{
       h2:before{background-position:0 -40px;}
-      .element{margin-bottom: 10px;padding: 0 0 10px;border-bottom: 7px solid @colorBgGrisC;
-        &.last{border:0 none;}
+      .element{padding: 10px 0 10px 5px;border-bottom: 7px solid @colorBgGrisC;
+        &:nth-child(2){border-top: 7px solid @colorBgBlanc;}
+        &:nth-last-of-type(1){border-bottom: 7px solid @colorBgBlanc;}
         .details{width:300px;margin:0;
           .title, .region, .period{width:245px;}
           .condition{font-size:15px;}
         }
+        &:hover{background-color:@colorBgGrisC;
+          .details{
+            .counter{background-position:-48px -391px;right:-15px;}
+          }
+          &:nth-child(2){border-top: 7px solid @colorBgGrisC;}
+        }
       }
+      .stamp{margin-bottom:15px;}
     }
   }
 
