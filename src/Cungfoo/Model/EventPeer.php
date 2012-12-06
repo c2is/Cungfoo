@@ -76,6 +76,7 @@ class EventPeer extends BaseEventPeer
     static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query = EventQuery::create()
+            ->setDistinct()
             ->useEtablissementEventQuery()
             ->useEtablissementQuery()
             ->useVilleQuery()
@@ -114,6 +115,7 @@ class EventPeer extends BaseEventPeer
     static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query = EventQuery::create()
+            ->setDistinct()
             ->useEtablissementEventQuery()
                 ->useEtablissementQuery()
                     ->useVilleQuery()
@@ -150,6 +152,7 @@ class EventPeer extends BaseEventPeer
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query = EventQuery::create()
+            ->setDistinct()
             ->useEtablissementEventQuery()
                 ->useEtablissementQuery()
                     ->filterByVille($ville)
