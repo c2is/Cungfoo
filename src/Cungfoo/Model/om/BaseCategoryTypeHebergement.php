@@ -1717,7 +1717,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -1852,7 +1852,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
