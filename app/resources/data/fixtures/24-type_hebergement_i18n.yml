@@ -7,6 +7,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     1_en:
         Id: 1
         Locale: en
@@ -15,6 +25,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     1_fr:
         Id: 1
         Locale: fr
@@ -23,6 +43,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     1_nl:
         Id: 1
         Locale: nl
@@ -31,6 +61,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     2_de:
         Id: 2
         Locale: de
@@ -39,6 +79,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     2_en:
         Id: 2
         Locale: en
@@ -47,6 +97,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     2_fr:
         Id: 2
         Locale: fr
@@ -55,6 +115,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     2_nl:
         Id: 2
         Locale: nl
@@ -63,6 +133,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     3_de:
         Id: 3
         Locale: de
@@ -71,6 +151,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     3_en:
         Id: 3
         Locale: en
@@ -79,6 +169,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     3_fr:
         Id: 3
         Locale: fr
@@ -87,6 +187,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     3_nl:
         Id: 3
         Locale: nl
@@ -95,6 +205,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     4_de:
         Id: 4
         Locale: de
@@ -103,6 +223,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     4_en:
         Id: 4
         Locale: en
@@ -111,6 +241,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     4_fr:
         Id: 4
         Locale: fr
@@ -119,6 +259,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     4_nl:
         Id: 4
         Locale: nl
@@ -127,6 +277,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     5_de:
         Id: 5
         Locale: de
@@ -135,6 +295,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     5_en:
         Id: 5
         Locale: en
@@ -143,6 +313,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     5_fr:
         Id: 5
         Locale: fr
@@ -151,6 +331,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     5_nl:
         Id: 5
         Locale: nl
@@ -159,6 +349,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     6_de:
         Id: 6
         Locale: de
@@ -167,6 +367,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     6_en:
         Id: 6
         Locale: en
@@ -175,6 +385,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     6_fr:
         Id: 6
         Locale: fr
@@ -183,6 +403,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     6_nl:
         Id: 6
         Locale: nl
@@ -191,6 +421,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     7_de:
         Id: 7
         Locale: de
@@ -199,6 +439,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     7_en:
         Id: 7
         Locale: en
@@ -207,6 +457,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     7_fr:
         Id: 7
         Locale: fr
@@ -215,6 +475,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     7_nl:
         Id: 7
         Locale: nl
@@ -223,6 +493,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     8_de:
         Id: 8
         Locale: de
@@ -231,6 +511,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     8_en:
         Id: 8
         Locale: en
@@ -239,6 +529,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     8_fr:
         Id: 8
         Locale: fr
@@ -247,6 +547,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     8_nl:
         Id: 8
         Locale: nl
@@ -255,6 +565,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     9_de:
         Id: 9
         Locale: de
@@ -263,6 +583,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     9_en:
         Id: 9
         Locale: en
@@ -271,6 +601,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     9_fr:
         Id: 9
         Locale: fr
@@ -279,6 +619,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Vous souhaitez allier convivialité et détente ? Vacances directes vous présente le mobil-home Amical 4 places. Il vous permettra de vous ressourcer dans une ambiance intime et confortable... Amicalement vôtre !'
+        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris\nToléré : 3 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 18 m²\nLongueur 6 m x Largeur 3 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits superposés de 80x190 cm avec sommiers à lattes. Sur certains campings, les lits sont côte à côte\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette. Pas de micro-ondes\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '7-12 ans (sauf 0-7 ans : les Oyats, Petit Bois (Cantal), Palavas Camping, Saint-Louis)'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
+        Remarque2: 'Pas de place pour un lit bébé'
+        Remarque3: 'Sur Palavas Camping, retrouvez le mobil-home Amical de 27 m² avec paillotte - 4 adultes maxi.'
+        Remarque4: null
     9_nl:
         Id: 9
         Locale: nl
@@ -287,6 +637,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     10_de:
         Id: 10
         Locale: de
@@ -295,6 +655,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     10_en:
         Id: 10
         Locale: en
@@ -303,6 +673,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     10_fr:
         Id: 10
         Locale: fr
@@ -311,6 +691,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     10_nl:
         Id: 10
         Locale: nl
@@ -319,6 +709,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     11_de:
         Id: 11
         Locale: de
@@ -327,6 +727,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     11_en:
         Id: 11
         Locale: en
@@ -335,6 +745,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     11_fr:
         Id: 11
         Locale: fr
@@ -343,6 +763,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     11_nl:
         Id: 11
         Locale: nl
@@ -351,6 +781,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     12_de:
         Id: 12
         Locale: de
@@ -359,6 +799,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     12_en:
         Id: 12
         Locale: en
@@ -367,6 +817,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     12_fr:
         Id: 12
         Locale: fr
@@ -375,6 +835,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Spacieuce et confortable, la tente Canada est un hébergement qui allie originalité et simplicité. Profitez de vos vacances en plein cœur de la nature.'
+        CapaciteHebergement: "5 personnes\n\n"
+        Dimensions: 'Surface : 20 m²'
+        Agencement: "Chambre parents :  lit de 140x190 cm 1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)                         Séjour : coin cuisine, gaz, réfrigérateur                            Terrasse  "
+        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
+        Remarque3: ''
+        Remarque4: null
     12_nl:
         Id: 12
         Locale: nl
@@ -383,6 +853,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     13_de:
         Id: 13
         Locale: de
@@ -391,6 +871,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     13_en:
         Id: 13
         Locale: en
@@ -399,6 +889,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     13_fr:
         Id: 13
         Locale: fr
@@ -407,6 +907,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Parfaitement intégré au coeur de paysages magnifiques, il est l’endroit parfait pour renouer avec la nature à deux ou en famille.\n\n\n"
+        CapaciteHebergement: '6 personnes Recommandé : 2 adultes+ 4 enfants Toléré : 6 adultes'
+        Dimensions: 'Surface : 28m²'
+        Agencement: 'Chambre parents : 1 lit de 120 cm Chambre enfants : 2x lits de 70 cm Pièce commune : coin cuisine, salle d''eau avec toilette, pièce principale avec canapé convetible.'
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     13_nl:
         Id: 13
         Locale: nl
@@ -415,6 +925,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     14_de:
         Id: 14
         Locale: de
@@ -423,6 +943,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     14_en:
         Id: 14
         Locale: en
@@ -431,6 +961,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     14_fr:
         Id: 14
         Locale: fr
@@ -439,6 +979,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Pour des vacances atypiques, profitez de ce chalet tout confort en bois, à l''ombre des arbres. Avec ses deux chambres et sa terrasse, c''est un hébergement idéal pour des vacances mémorables.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 28 m²\nLongueur 5,95 m x Largeur 4,80 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes et 1 lit superposé (déconseillé aux enfants de - 6 ans) de 80x200 cm au camping Le Petit Mousse\nPièce commune : coin cuisine avec évier, chauffe-eau, plaques électriques, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette transformable en lit 1 personne au camping Le Mas. Pas de micro-ondes.\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: 'Plus de 12 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     14_nl:
         Id: 14
         Locale: nl
@@ -447,6 +997,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     15_de:
         Id: 15
         Locale: de
@@ -455,6 +1015,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     15_en:
         Id: 15
         Locale: en
@@ -463,6 +1033,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     15_fr:
         Id: 15
         Locale: fr
@@ -471,6 +1051,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     15_nl:
         Id: 15
         Locale: nl
@@ -479,6 +1069,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     16_de:
         Id: 16
         Locale: de
@@ -487,6 +1087,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     16_en:
         Id: 16
         Locale: en
@@ -495,6 +1105,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     16_fr:
         Id: 16
         Locale: fr
@@ -503,6 +1123,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'La Conviviale est l''hébergement idéal pour des vacances en famille. Cette caravane 5 places avec auvent et sanitaires vous fera redécouvrir toutes les joies et tous les plaisirs de l''hôtellerie de plein air. A vous la liberté et le bonheur simple... '
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : Conviviale 13 m² + auvent 12 m²\nLongueur 5,40 m x Largeur 4,80 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes et penderie\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 80 x 180 cm.\nSanitaires : salle de bains avec lavabo, douche, WC\nSous l’auvent : cuisine avec\nréfrigérateur, réchaud 2 feux\navec bouteille de gaz, meuble de\nrangement 120 x 150 cm, évier avec\narrivée d’eau, salon de jardin"
+        Equipements: "Electricité : 220 V + prises\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: 'Plus de 12 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: 'Hébergement avec sanitaires, sans chauffage'
+        Remarque3: ''
+        Remarque4: null
     16_nl:
         Id: 16
         Locale: nl
@@ -511,6 +1141,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     17_de:
         Id: 17
         Locale: de
@@ -519,6 +1159,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     17_en:
         Id: 17
         Locale: en
@@ -527,6 +1177,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     17_fr:
         Id: 17
         Locale: fr
@@ -535,6 +1195,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Ce mobil-home bien pensé vous offrira des vacances conviviales et reposantes.'
+        CapaciteHebergement: '4 personnes'
+        Dimensions: 'Surface : 25 m²'
+        Agencement: "Chambre parents : 1 lit de 140x190 cm\nChambre enfants : 2 lits de 80 x 180 cm\nPièce commune : coin cuisine avec évier, chauffe-eau, plaques de cuisson, micro-ondes, réfrigérateur, coin repas\nSanitaires : salle de bains avec lavabo, douche et WC \n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     17_nl:
         Id: 17
         Locale: nl
@@ -543,6 +1213,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     18_de:
         Id: 18
         Locale: de
@@ -551,6 +1231,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     18_en:
         Id: 18
         Locale: en
@@ -559,6 +1249,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     18_fr:
         Id: 18
         Locale: fr
@@ -567,6 +1267,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Soif d''évasion, de dépaysement et d''authenticité, Vacances directes met à votre disposition le mobil-home Cordial 6 places qui réjouira petits et grands et assurera la pleine réussite de vos vacances !'
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 23 m²\nLongueur 7,60 m x Largeur 3 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 70x180 cm avec sommiers à lattes + 1 lit superposé de 60x180 cm (ne convient pas aux enfants de - 6 ans), sauf à La Marine\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas, banquette transformable en lit de 115x180 cm (sauf en Italie), 1 table et 2 tabourets\nSanitaires : salle de bains avec lavabo et douche, WC séparé (sauf en Italie)\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans (sauf 7-12 ans : le California, le Col Vert, les Marsouins, le Cala Gogo, les Fontaines, le Pinada, la Marine, Camping du Lac, Saint-Louis et plus de 12 ans : Le Mas)'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     18_nl:
         Id: 18
         Locale: nl
@@ -575,6 +1285,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     19_de:
         Id: 19
         Locale: de
@@ -583,6 +1303,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     19_en:
         Id: 19
         Locale: en
@@ -591,6 +1321,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     19_fr:
         Id: 19
         Locale: fr
@@ -599,6 +1339,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Découvrez le Domanial 5 places. Ce mobil-home bien agencé vous attend pour des vacances sous le signe du sourire.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 31 m²\nLongueur 7,80 m x Largeur 4 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes (sauf Domaine de Léveno, lit de 160x190 cm)\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm (sauf Les Deux Fontaines\net Loyada, 90x190 cm), 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
+        Remarque2: 'Bains de soleil non fournis'
+        Remarque3: ''
+        Remarque4: null
     19_nl:
         Id: 19
         Locale: nl
@@ -607,6 +1357,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     20_de:
         Id: 20
         Locale: de
@@ -615,6 +1375,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     20_en:
         Id: 20
         Locale: en
@@ -623,6 +1393,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     20_fr:
         Id: 20
         Locale: fr
@@ -631,6 +1411,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Parce que chacun vit ses vacances à son rythme, Vacances directes vous propose le mobil-home Domanial où espace de vie rime avec confort ! '
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 31 m²\nLongueur 7,80 m x Largeur 4 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 70x190 cm\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans (sauf 7-12 ans : le Conguel, Domaine de Kermario, la Loubine, les Deux Plages, les Vignes, le Mas, le Petit Mousse, le Bahia Club, les Fontaines)'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
+        Remarque2: 'Bains de soleil non fournis'
+        Remarque3: ''
+        Remarque4: null
     20_nl:
         Id: 20
         Locale: nl
@@ -639,6 +1429,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     21_de:
         Id: 21
         Locale: de
@@ -647,6 +1447,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     21_en:
         Id: 21
         Locale: en
@@ -655,6 +1465,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     21_fr:
         Id: 21
         Locale: fr
@@ -663,6 +1483,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Parce que chacun a des envies et des exigences propres, Vacances directes vous propose un mobil-home d''exception ! Spacieux et bien équipé, le mobil-home Domanial Luxe vous offrira des vacances tout confort.'
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 35 m²\nLongueur 9,72 m x Largeur 4 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, volets roulants\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes, volets roulants\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec 1 table avec rallonge et 4 chaises, coin séjour avec canapé convertible en couchage 160x200cm et table basse\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: '7-12 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     21_nl:
         Id: 21
         Locale: nl
@@ -671,6 +1501,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     22_de:
         Id: 22
         Locale: de
@@ -679,6 +1519,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     22_en:
         Id: 22
         Locale: en
@@ -687,6 +1537,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     22_fr:
         Id: 22
         Locale: fr
@@ -695,6 +1555,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Passez quelques jours ou plus au Palavas Camping,\nà Palavas-les-Flots. \net profitez des joies du plein-air"
+        CapaciteHebergement: 'Jusqu''à 6 personnes maximum'
+        Dimensions: ''
+        Agencement: ''
+        Equipements: 'Accès à l''électricité'
+        AnneeUtilisation: ''
+        Remarque1: 'Un seul véhicule est autorisé par emplacement '
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     22_nl:
         Id: 22
         Locale: nl
@@ -703,6 +1573,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     23_de:
         Id: 23
         Locale: de
@@ -711,6 +1591,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     23_en:
         Id: 23
         Locale: en
@@ -719,6 +1609,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     23_fr:
         Id: 23
         Locale: fr
@@ -727,6 +1627,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Passez quelques jours ou plus\nsur le Domaine de Kermario,\nà Carnac ou\nau Palavas Camping,\nà Palavas-les-Flots. \net profitez des joies du plein-air"
+        CapaciteHebergement: 'Jusqu''à 6 personnes maximum'
+        Dimensions: ''
+        Agencement: ''
+        Equipements: 'Accès à l''électricité'
+        AnneeUtilisation: ''
+        Remarque1: 'Un seul véhicule est autorisé par emplacement '
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     23_nl:
         Id: 23
         Locale: nl
@@ -735,6 +1645,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     24_de:
         Id: 24
         Locale: de
@@ -743,6 +1663,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     24_en:
         Id: 24
         Locale: en
@@ -751,6 +1681,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     24_fr:
         Id: 24
         Locale: fr
@@ -759,6 +1699,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Pour ceux qui apprécient la simplicité, l’Estivale sera l’hébergement idéal des vacances en plein air. Vacances directes met à votre disposition cette caravane 5 places sans sanitaires avec auvent pour profiter pleinement des activités du camping et de ses environs.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : Estivale 10 m² + auvent 11 m²\nLongueur 4,60 m x Largeur 4,65 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 70 x 180 cm\nSous l’auvent : cuisine avec réfrigérateur, réchaud 2 feux avec bouteille de gaz, meuble de rangement 120 x 150 cm, salon de jardin"
+        Equipements: "Electricité : 220 V + prises\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: 'Plus de 12 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
+        Remarque3: ''
+        Remarque4: null
     24_nl:
         Id: 24
         Locale: nl
@@ -767,6 +1717,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     25_de:
         Id: 25
         Locale: de
@@ -775,6 +1735,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     25_en:
         Id: 25
         Locale: en
@@ -783,6 +1753,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     25_fr:
         Id: 25
         Locale: fr
@@ -791,6 +1771,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Soif d''évasion, de dépaysement et d''authenticité, le mobil-home Familial 5 places assurera le plein confort grâce à la climatisation!'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 5 adultes maxi. \n\n"
+        Dimensions: "Surface : 26 m²\n\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans)\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     25_nl:
         Id: 25
         Locale: nl
@@ -799,6 +1789,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     26_de:
         Id: 26
         Locale: de
@@ -807,6 +1807,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     26_en:
         Id: 26
         Locale: en
@@ -815,6 +1825,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     26_fr:
         Id: 26
         Locale: fr
@@ -823,6 +1843,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Particulièrement prisé des familles, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l''esprit libre ! '
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 29 m²\nLongueur 7,20 m x Largeur 4 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 70x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 60x190 cm\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Conguel, Domaine d'Inly, les Amiaux, le\nCalifornia, la Loubine, le Bois Soleil,l’Océano d’Or, Domaine d’Oléron,\nSignol, les Deux Plages, Domaine\ndes Charmilles, le Mas, Domaine des\nChênes Verts, la Ribeyre, Caussanel,\nle Moulin, les Sources, Parc de la\nGrenouillère, la Coste Rouge,\nle Roussillonnais, le Cala Gogo,les Fontaines, le Bahia Club, le Petit Mousse, Camping du Lac)"
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     26_nl:
         Id: 26
         Locale: nl
@@ -831,6 +1861,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     27_de:
         Id: 27
         Locale: de
@@ -839,6 +1879,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     27_en:
         Id: 27
         Locale: en
@@ -847,6 +1897,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     27_fr:
         Id: 27
         Locale: fr
@@ -855,6 +1915,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     27_nl:
         Id: 27
         Locale: nl
@@ -863,6 +1933,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     28_de:
         Id: 28
         Locale: de
@@ -871,6 +1951,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     28_en:
         Id: 28
         Locale: en
@@ -879,6 +1969,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     28_fr:
         Id: 28
         Locale: fr
@@ -887,6 +1987,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Particulièrement prisé des familles, ce mobil-home 6 places avec vue sur le lac, donnera un côté reposant à vos vacances ! '
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 6 adultes maxi. \n\n"
+        Dimensions: "Surface : 28 m²\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes Pièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     28_nl:
         Id: 28
         Locale: nl
@@ -895,6 +2005,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     29_de:
         Id: 29
         Locale: de
@@ -903,6 +2023,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     29_en:
         Id: 29
         Locale: en
@@ -911,6 +2041,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     29_fr:
         Id: 29
         Locale: fr
@@ -919,6 +2059,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Découvrez le modèle Hélios 6 places. Ce mobil-home bien agencé est adapté aux personnes à mobilité réduite.'
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. Adulte à partir de 14 ans. \n\n"
+        Dimensions: "Surface : 21 m²\nLongueur 7,92 m ( dont 2,10 m de terrasse couverte)x Largeur 3,90 m\n"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 90x190 cm avec sommiers à lattes ( + 1 lit rabbatable en hauteur) Pièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     29_nl:
         Id: 29
         Locale: nl
@@ -927,6 +2077,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     30_de:
         Id: 30
         Locale: de
@@ -935,6 +2095,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     30_en:
         Id: 30
         Locale: en
@@ -943,6 +2113,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     30_fr:
         Id: 30
         Locale: fr
@@ -951,6 +2131,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Profitez du Logial et de son atout incontestable : sa terrasse couverte au bout du mobil-home : repos, détente et farniente seront au rendez-vous. Ses deux chambres côte à côte permettront à toute la famille de passer de bonnes vacances ! '
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : 32 m²\nLongueur 8,52 m x Largeur 4 m\n"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nE Chambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes\n+ 1 lit d’appoint de 70x165 cm (sauf\nPalavas Camping)\nE Pièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur, coin repas avec banquette."
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        AnneeUtilisation: "7-12 ans (sauf 0-7 ans : eden,\nPalavas Camping)"
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: 'Pas de place pour un lit bébé'
+        Remarque3: ''
+        Remarque4: null
     30_nl:
         Id: 30
         Locale: nl
@@ -959,6 +2149,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     31_de:
         Id: 31
         Locale: de
@@ -967,6 +2167,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     31_en:
         Id: 31
         Locale: en
@@ -975,6 +2185,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     31_fr:
         Id: 31
         Locale: fr
@@ -983,6 +2203,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Profitez du confort de ces maisonnettes pour des vacances réussies (climatisation)'
+        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants.\nToléré : 6 adultes maxi. \n\n"
+        Dimensions: "Surface : 31 m²\n\n"
+        Agencement: "Composé d'un séjour avec un canapé convertible et d'une cabine avec 2 lits superposés de 70, d'un coin cuisine, d'une chambre avec un lit de 140 et d'une salle d'eau avec toilette accessible par la chambre.\n"
+        Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     31_nl:
         Id: 31
         Locale: nl
@@ -991,6 +2221,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     32_de:
         Id: 32
         Locale: de
@@ -999,6 +2239,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     32_en:
         Id: 32
         Locale: en
@@ -1007,6 +2257,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     32_fr:
         Id: 32
         Locale: fr
@@ -1015,6 +2275,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Profitez du confort de maisonnettess équipées et meublées avec terrasse.'
+        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants\nToléré : 4 adultes maxi. \n\n"
+        Dimensions: "Surface : 31 m²\n\n"
+        Agencement: "Coin cuisine,une salle d'eau avec toilette, une chambre avec un grand lit double 160 et d'un canapé convertible dans le séjour.\n"
+        Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     32_nl:
         Id: 32
         Locale: nl
@@ -1023,6 +2293,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     33_de:
         Id: 33
         Locale: de
@@ -1031,6 +2311,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     33_en:
         Id: 33
         Locale: en
@@ -1039,6 +2329,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     33_fr:
         Id: 33
         Locale: fr
@@ -1047,6 +2347,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     33_nl:
         Id: 33
         Locale: nl
@@ -1055,6 +2365,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     34_de:
         Id: 34
         Locale: de
@@ -1063,6 +2383,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     34_en:
         Id: 34
         Locale: en
@@ -1071,6 +2401,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     34_fr:
         Id: 34
         Locale: fr
@@ -1079,6 +2419,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     34_nl:
         Id: 34
         Locale: nl
@@ -1087,6 +2437,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     35_de:
         Id: 35
         Locale: de
@@ -1095,6 +2455,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     35_en:
         Id: 35
         Locale: en
@@ -1103,6 +2473,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     35_fr:
         Id: 35
         Locale: fr
@@ -1111,6 +2491,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Découvrez cet habitat climatisé, ingénieux entre tente et mobil-home, pour des vacances originales et ressourçantes.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants.\nToléré : 5 adultes maxi. \n\n"
+        Dimensions: "Surface : 25 m²\n\n"
+        Agencement: "1 chambre avec lit double en 120, 1 chambre avec 2 lits simples superposés et 1 lit simple 80, chevet et penderie dans les 2 chambres. \n\nKitchenette équipée d'une plaque de cuisson, évier, égouttoir, réfrigérateur, 1 placard haut et bas, salle d'eau avec douche, lavabo, WC.\n\n\n\n"
+        Equipements: 'Eclairage, branchements électriques, chauffage. Eau courant chaude/froide. Climatisation, auvent extérieur, terrasse et salon de jardin.'
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     35_nl:
         Id: 35
         Locale: nl
@@ -1119,6 +2509,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     36_de:
         Id: 36
         Locale: de
@@ -1127,6 +2527,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     36_en:
         Id: 36
         Locale: en
@@ -1135,6 +2545,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     36_fr:
         Id: 36
         Locale: fr
@@ -1143,6 +2563,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Vous apprécierez ce mobil-home résidential avec sa terrasse couverte, et son équipement confortable pour des vacnaces réussies !'
+        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris\nToléré : 4 adultes maxi.\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface hors terrasse : 21 m²\nLongueur 7,92 m (dont 2,10 m de\nterrasse couverte) x Largeur 3,90 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes,\n1 lit superposé ou d’appoint (sauf\nDomaine de Kermario,\nLou Broustaricq, Playa Joyel)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur,\ncoin repas avec banquette\ntransformable en lit de 140x190 cm,\n1 table et 2 tabourets\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: 'Pas de place pour un lit bébé'
+        Remarque3: ''
+        Remarque4: null
     36_nl:
         Id: 36
         Locale: nl
@@ -1151,6 +2581,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     37_de:
         Id: 37
         Locale: de
@@ -1159,6 +2599,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     37_en:
         Id: 37
         Locale: en
@@ -1167,6 +2617,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     37_fr:
         Id: 37
         Locale: fr
@@ -1175,6 +2635,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Vous apprécierez le\nconfort et la tranquillité\ndu Résidential avec sa\nterrasse couverte."
+        CapaciteHebergement: "\n5 personnes\nRecommandé : 2 adultes + 3 enfants\nbébé compris\nToléré : 4 adultes maxi. + 1 enfant,\nbébé compris sauf exception\n(résidential 4 places)\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface hors terrasse : 21 m²\nLongueur 7,92 m (dont 2,10 m de\nterrasse couverte) x Largeur 3,90 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes,\n1 lit superposé ou d’appoint (sauf\nDomaine de Kermario,\nLou Broustaricq, Playa Joyel)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur,\ncoin repas avec banquette\ntransformable en lit de 140x190 cm,\n1 table et 2 tabourets\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans :\nDomaine de Kermario,\nLou Broustaricq, le Col Vert,\nDomaines des Chênes Verts,\nles Fontaines)"
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     37_nl:
         Id: 37
         Locale: nl
@@ -1183,6 +2653,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     38_de:
         Id: 38
         Locale: de
@@ -1191,6 +2671,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     38_en:
         Id: 38
         Locale: en
@@ -1199,6 +2689,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     38_fr:
         Id: 38
         Locale: fr
@@ -1207,6 +2707,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     38_nl:
         Id: 38
         Locale: nl
@@ -1215,6 +2725,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     39_de:
         Id: 39
         Locale: de
@@ -1223,6 +2743,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     39_en:
         Id: 39
         Locale: en
@@ -1231,6 +2761,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     39_fr:
         Id: 39
         Locale: fr
@@ -1239,6 +2779,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.\n"
+        CapaciteHebergement: "6personnes  Recommandé : 4 adultes + 2 enfants, bébé compris\nToléré : 6 adultes maxi \nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : environ 31,5 m²\nLongueur 7,92 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\n 2 chambres enfants : 2 lits de\n80x190 cm avec sommiers à lattes\npar chambre (1 chambre avec 2 lits\nsuperposés en Italie)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, combiné\nréfrigérateur-congélateur,coin repas avec banquette\ntransformable en lit de 115x180 cm,\n1 table et 4 chaises\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé (sauf\nen Italie)"
+        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de\njardin, grand parasol non utilisable\nà la plage\nElectricité : 10 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\nParc de la Grenouillère, Camping\ndu Lac)"
+        Remarque1: "En fonction du camping, l’agencement peut être différent.\nTous les hébergements ne sont pas équipés de terrasse"
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     39_nl:
         Id: 39
         Locale: nl
@@ -1247,6 +2797,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     40_de:
         Id: 40
         Locale: de
@@ -1255,6 +2815,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     40_en:
         Id: 40
         Locale: en
@@ -1263,6 +2833,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     40_fr:
         Id: 40
         Locale: fr
@@ -1271,6 +2851,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.\n"
+        CapaciteHebergement: "7 personnes  Recommandé : 4 adultes + 3 enfants, bébé compris\nToléré : 6 adultes maxi. + 1 enfant,bébé compris sauf exceptions\n(Spacial 6 places)\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : environ 31,5 m²\nLongueur 7,92 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\n 2 chambres enfants : 2 lits de\n80x190 cm avec sommiers à lattes\npar chambre (1 chambre avec 2 lits\nsuperposés en Italie)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, combiné\nréfrigérateur-congélateur,coin repas avec banquette\ntransformable en lit de 115x180 cm,\n1 table et 4 chaises\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé (sauf\nen Italie)"
+        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de\njardin, grand parasol non utilisable\nà la plage\nElectricité : 10 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\nParc de la Grenouillère, Camping\ndu Lac)"
+        Remarque1: "En fonction du camping, l’agencement peut être différent.\nTous les hébergements ne sont pas équipés de terrasse"
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     40_nl:
         Id: 40
         Locale: nl
@@ -1279,6 +2869,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     41_de:
         Id: 41
         Locale: de
@@ -1287,6 +2887,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     41_en:
         Id: 41
         Locale: en
@@ -1295,6 +2905,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     41_fr:
         Id: 41
         Locale: fr
@@ -1303,6 +2923,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     41_nl:
         Id: 41
         Locale: nl
@@ -1311,6 +2941,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     42_de:
         Id: 42
         Locale: de
@@ -1319,6 +2959,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     42_en:
         Id: 42
         Locale: en
@@ -1327,6 +2977,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     42_fr:
         Id: 42
         Locale: fr
@@ -1335,6 +2995,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     42_nl:
         Id: 42
         Locale: nl
@@ -1343,6 +3013,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     43_de:
         Id: 43
         Locale: de
@@ -1351,6 +3031,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     43_en:
         Id: 43
         Locale: en
@@ -1359,6 +3049,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     43_fr:
         Id: 43
         Locale: fr
@@ -1367,6 +3067,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Avec ses trois chambres séparées, ce mobil-home avec vue sur le lac, vous permet d’accueillir jusqu''à 6 personnes et de profiter d''un bel espace de vie !'
+        CapaciteHebergement: "6personnes  Recommandé : 4 adultes + 2 enfants, bébé compris\nToléré : 6 adultes maxi \nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : environ 31,5 m²\nLongueur 7,92 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\n 2 chambres enfants : 2 lits de\n80x190 cm avec sommiers à lattes\npar chambre (1 chambre avec 2 lits\nsuperposés en Italie)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, combiné\nréfrigérateur-congélateur,coin repas avec banquette\ntransformable en lit de 115x180 cm,\n1 table et 4 chaises\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé (sauf\nen Italie)"
+        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de\njardin, grand parasol non utilisable\nà la plage\nElectricité : 10 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     43_nl:
         Id: 43
         Locale: nl
@@ -1375,6 +3085,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     44_de:
         Id: 44
         Locale: de
@@ -1383,6 +3103,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     44_en:
         Id: 44
         Locale: en
@@ -1391,6 +3121,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     44_fr:
         Id: 44
         Locale: fr
@@ -1399,6 +3139,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Retrouvez ce studio cocoon pour 2 personnes, \ntout confort sur le Domaine\nd’Anghione en Corse"
+        CapaciteHebergement: '2 personnes'
+        Dimensions: 'Surface : 20 m²'
+        Agencement: "Séjour avec un canapé convertible\nde 140 cm et coin cuisine.\nUne salle d’eau avec toilettes.                     Studio climatisé"
+        Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     44_nl:
         Id: 44
         Locale: nl
@@ -1407,6 +3157,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     45_de:
         Id: 45
         Locale: de
@@ -1415,6 +3175,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     45_en:
         Id: 45
         Locale: en
@@ -1423,6 +3193,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     45_fr:
         Id: 45
         Locale: fr
@@ -1431,6 +3211,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Retrouvez ces bungalows\ntout confort sur le Domaine\nd’Anghione en Corse"
+        CapaciteHebergement: '2-4 personnes'
+        Dimensions: 'Surface : 20 m²'
+        Agencement: "Séjour avec un canapé convertible\nde 140 cm et coin cuisine.\nUne cabine avec 2 lits superposés\nde 70 cm. Une salle d’eau avec\ntoilettes.                                                                Studio climatisé"
+        Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     45_nl:
         Id: 45
         Locale: nl
@@ -1439,6 +3229,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     46_de:
         Id: 46
         Locale: de
@@ -1447,6 +3247,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     46_en:
         Id: 46
         Locale: en
@@ -1455,6 +3265,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     46_fr:
         Id: 46
         Locale: fr
@@ -1463,6 +3283,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Rustique et confortable par excellence, plongez dans l''univers tout en bois du gîte Ty Bihan, pouvant accueillir jusqu''à 6 personnes. C''est le gage de vacances dépaysantes et réussies !'
+        CapaciteHebergement: '6 personnes'
+        Dimensions: 'Surface : 64 m²'
+        Agencement: "Chambre parents :  1 lit de 140x190 cm (à l'étage.)\nChambre enfants : 2 lits de 90x190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     46_nl:
         Id: 46
         Locale: nl
@@ -1471,6 +3301,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     47_de:
         Id: 47
         Locale: de
@@ -1479,6 +3319,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     47_en:
         Id: 47
         Locale: en
@@ -1487,6 +3337,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     47_fr:
         Id: 47
         Locale: fr
@@ -1495,6 +3355,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Les 90 m² de ce gîte, pouvant recevoir jusqu''à 7 personnes, vous charmeront. Vous y trouverez même une salle de bain privative, dans l''une des chambres. A ne pas manquer !'
+        CapaciteHebergement: '7 personnes'
+        Dimensions: 'Surface : 90 m²'
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants : 3 lits de 90 x 190 cm avec salle d'eau privative (à l'étage)                            La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     47_nl:
         Id: 47
         Locale: nl
@@ -1503,6 +3373,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     48_de:
         Id: 48
         Locale: de
@@ -1511,6 +3391,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     48_en:
         Id: 48
         Locale: en
@@ -1519,6 +3409,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     48_fr:
         Id: 48
         Locale: fr
@@ -1527,6 +3427,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Sa véritable cheminée à l''ancienne et son charme fou vous émerveilleront. Ce gîte est idéalement conçu pour des vacances conviviales, en famille ou entre amis.'
+        CapaciteHebergement: " 7 personnes\nRecommandé : 4 adultes + 3 enfants, bébé compris\nToléré : 6 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: 'Surface : 80 m²'
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants :  2 lits de 90 x 190 cm (à l'étage) \nChambre palier :  2 lits de 90 x 190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places, cheminée (bois fourni) \nLes sanitaires sont composés d'une salle d'eau et WC séparé au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     48_nl:
         Id: 48
         Locale: nl
@@ -1535,6 +3445,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     49_de:
         Id: 49
         Locale: de
@@ -1543,6 +3463,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     49_en:
         Id: 49
         Locale: en
@@ -1551,6 +3481,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     49_fr:
         Id: 49
         Locale: fr
@@ -1559,6 +3499,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Ce gîte, idéalement conçu pour accueillir jusqu''à 5 personnes, vous propose des vacances inoubliables, avec sa terrasse donnant directement sur un point d''eau, une situation à ne pas manquer.'
+        CapaciteHebergement: "5 personnes\n"
+        Dimensions: 'Surface : 60 m²'
+        Agencement: "Chambre : 1 lit de 140 x 190 cm et 2 lits de 90 x 190 cm (à l'étage)                                                        La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. \n"
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     49_nl:
         Id: 49
         Locale: nl
@@ -1567,6 +3517,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     50_de:
         Id: 50
         Locale: de
@@ -1575,6 +3535,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     50_en:
         Id: 50
         Locale: en
@@ -1583,6 +3553,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     50_fr:
         Id: 50
         Locale: fr
@@ -1591,6 +3571,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Grand frère du Ty Daou 1, ce gîte peut recevoir jusqu''à 6 personnes. Ne manquez pas sa véritable cheminée à l''ancienne et son intérieur très bien équipé.'
+        CapaciteHebergement: '6 personnes'
+        Dimensions: 'Surface : 64 m²'
+        Agencement: "Chambre parents : 1 lit de 140x190 cm à l'étage. \nChambre palier : 3 lits de 90x190 cm à l'étage. La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible, cheminée (bois fourni) \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le chalet est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     50_nl:
         Id: 50
         Locale: nl
@@ -1599,6 +3589,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     51_de:
         Id: 51
         Locale: de
@@ -1607,6 +3607,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     51_en:
         Id: 51
         Locale: en
@@ -1615,6 +3625,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     51_fr:
         Id: 51
         Locale: fr
@@ -1623,6 +3643,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Jusqu''à 7 personnes peuvent passer un séjour dans ce magnifique gîte rénové. Le très grand salon est son réel point fort, sans oublier ses trois chambres.'
+        CapaciteHebergement: '7 personnes'
+        Dimensions: 'Surface : 80 m²'
+        Agencement: " 2 chambres parents : 1 lit de 140x190 cm à l'étage. \nChambre enfants :  1 lit de 90x190 cm               La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont 1 convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, 1 WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     51_nl:
         Id: 51
         Locale: nl
@@ -1631,6 +3661,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     52_de:
         Id: 52
         Locale: de
@@ -1639,6 +3679,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     52_en:
         Id: 52
         Locale: en
@@ -1647,6 +3697,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     52_fr:
         Id: 52
         Locale: fr
@@ -1655,6 +3715,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Avec la vue sur le lac et cet hébergement tout confort, vivez les vacances à votre rythme, en toute quiétude !'
+        CapaciteHebergement: '5 personnes'
+        Dimensions: "Surface :\n19 m² + 10,5 m² de terrasse couverte Longueur (terrasse comprise)\n7 m x Largeur 4,25 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm et placard\n1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)\nTerrasse : coin cuisine, gaz,\nmicro-ondes, réfrigérateur"
+        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
+        Remarque3: ''
+        Remarque4: null
     52_nl:
         Id: 52
         Locale: nl
@@ -1663,6 +3733,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     53_de:
         Id: 53
         Locale: de
@@ -1671,6 +3751,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     53_en:
         Id: 53
         Locale: en
@@ -1679,6 +3769,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     53_fr:
         Id: 53
         Locale: fr
@@ -1687,6 +3787,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: "Retour aux sources,\nbien-être et décontraction\nseront au rendez-vous des\nvacances en Ecolodge !"
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 3 adultes maxi. + 2 enfants, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface :\n19 m² + 10,5 m² de terrasse couverte Longueur (terrasse comprise)\n7 m x Largeur 4,25 m"
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm et placard\n1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)\nTerrasse : coin cuisine, gaz,\nmicro-ondes, réfrigérateur"
+        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
+        Remarque3: ''
+        Remarque4: null
     53_nl:
         Id: 53
         Locale: nl
@@ -1695,6 +3805,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     54_de:
         Id: 54
         Locale: de
@@ -1703,6 +3823,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     54_en:
         Id: 54
         Locale: en
@@ -1711,6 +3841,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     54_fr:
         Id: 54
         Locale: fr
@@ -1719,6 +3859,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Séjourner en tente Muscade c''est vivre confortablement au coeur de la nature, en toute liberté…'
+        CapaciteHebergement: '5 personnes'
+        Dimensions: 'Surface : 16 m²'
+        Agencement: "Chambre parents : 1 lit de\n140x190 cm\n1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)\nSéjour : coin cuisine, gaz,\nmicro-ondes, réfrigérateur                 Terrasse de 6 m² "
+        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
+        Remarque3: ''
+        Remarque4: null
     54_nl:
         Id: 54
         Locale: nl
@@ -1727,6 +3877,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     55_de:
         Id: 55
         Locale: de
@@ -1735,6 +3895,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     55_en:
         Id: 55
         Locale: en
@@ -1743,6 +3913,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     55_fr:
         Id: 55
         Locale: fr
@@ -1751,6 +3931,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Dernier né des gîtes du Domaine de Kermario, retrouvez le Ty Gouzik, qui accueille jusqu''à 7 personnes ! Confort, détente, charme et repos seront au rendez-vous !'
+        CapaciteHebergement: '7 personnes'
+        Dimensions: 'Surface : 83 m²'
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants :  2 lits de 90 x 190 cm et 2 lits superposés de 90 x190 cm (à l'étage)          La pièce commune comprend un coin cuisine avec lave-vaisselle, plaques de cuisson, four, micro-ondes, réfrigérateur, séjour avec canapé convertible \nLes sanitaires sont composés d'une salle d'eau à l'étage, WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     55_nl:
         Id: 55
         Locale: nl
@@ -1759,6 +3949,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     56_de:
         Id: 56
         Locale: de
@@ -1767,6 +3967,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     56_en:
         Id: 56
         Locale: en
@@ -1775,6 +3985,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     56_fr:
         Id: 56
         Locale: fr
@@ -1783,6 +4003,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Le plus grand des gîtes du Domaine de Kermario vous attend ! Avec sa cour privative fermée, sa capacité de 9 personnes et ses trois chambres, passez des vacances détente...'
+        CapaciteHebergement: '9 personnes'
+        Dimensions: 'Surface : 130 m²'
+        Agencement: " 2 chambres parents : 1 lit de 140x190 cm à l'étage. \nChambre enfants : 3 lit de 90x190 cm à l'étage La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places \nLes sanitaires sont composés d'une salle de bain à l'étage et d'un WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin.  "
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     56_nl:
         Id: 56
         Locale: nl
@@ -1791,6 +4021,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     57_de:
         Id: 57
         Locale: de
@@ -1799,6 +4039,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     57_en:
         Id: 57
         Locale: en
@@ -1807,6 +4057,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     57_fr:
         Id: 57
         Locale: fr
@@ -1815,6 +4075,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Très confortable et douillet, ce gîte peut accueillir jusqu''à 4 personnes. Le côté atypique de ce gîte est sans conteste sa mezzanine, qui permet d''accéder au niveau supérieur.'
+        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris                                              Toléré : 2 adultes maxi. + 2 enfants, bébé compris Adulte : à partir de 14 ans\n"
+        Dimensions: 'Surface : 28 m²'
+        Agencement: "La chambre parents : 1 lit de 140x190 cm\nLe couchage en mezzanine : 2 lits superposés de 90 x 190 cm (accès par échelle de meunier déconseillé aux enfants de - 6 ans)                     La pièce commune comprend un coin cuisine avec micro-ondes, réfrigérateur-congélateur, séjour avec banquette \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : 2 terrasses et un salon de jardin. \n"
+        Equipements: ''
+        AnneeUtilisation: ''
+        Remarque1: ''
+        Remarque2: ''
+        Remarque3: ''
+        Remarque4: null
     57_nl:
         Id: 57
         Locale: nl
@@ -1823,6 +4093,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     58_de:
         Id: 58
         Locale: de
@@ -1831,6 +4111,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     58_en:
         Id: 58
         Locale: en
@@ -1839,6 +4129,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     58_fr:
         Id: 58
         Locale: fr
@@ -1847,6 +4147,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Vous apprecierez la Vacanciale, par sa simplicité, son confort et sa terrasse couverte très pratique pour allier plein air et convivialité.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m \n"
+        Agencement: " Chambre parents : 1 lit de\n140x190 cm avec sommier\nà lattes, penderie\n Chambre enfants : 2 lits\nsuperposés de 70x180 cm avec\nsommiers à lattes et lit gigogne\n(le lit superposé ne convient pas\naux enfants de plus de 30 kg)"
+        Equipements: "Terrasse : cuisine avec\nréfrigérateur, réchaud 2 feux avec\nbouteille de gaz, micro-ondes\n(sauf Playa Tropicana), meuble de\nrangement 120x50 cm, salon de\njardin\nElectricité : 220 V + prises\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
+        Remarque3: ''
+        Remarque4: null
     58_nl:
         Id: 58
         Locale: nl
@@ -1855,6 +4165,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     59_de:
         Id: 59
         Locale: de
@@ -1863,6 +4183,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     59_en:
         Id: 59
         Locale: en
@@ -1871,6 +4201,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     59_fr:
         Id: 59
         Locale: fr
@@ -1879,6 +4219,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Vous apprecierez la Vacanciale située proche de la plage, équipée d''une terrasse couverte , alliant confort et simplicité.'
+        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        Dimensions: "Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m \n"
+        Agencement: " Chambre parents : 1 lit de\n140x190 cm avec sommier\nà lattes, penderie\n Chambre enfants : 2 lits\nsuperposés de 70x180 cm avec\nsommiers à lattes et lit gigogne\n(le lit superposé ne convient pas\naux enfants de plus de 30 kg)"
+        Equipements: "Terrasse : cuisine avec\nréfrigérateur, réchaud 2 feux avec\nbouteille de gaz, micro-ondes\n(sauf Playa Tropicana), meuble de\nrangement 120x50 cm, salon de\njardin\nElectricité : 220 V + prises\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)\n"
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: 'En fonction du camping, l’agencement peut être différent.'
+        Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
+        Remarque3: ''
+        Remarque4: null
     59_nl:
         Id: 59
         Locale: nl
@@ -1887,6 +4237,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     60_de:
         Id: 60
         Locale: de
@@ -1895,6 +4255,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     60_en:
         Id: 60
         Locale: en
@@ -1903,6 +4273,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
     60_fr:
         Id: 60
         Locale: fr
@@ -1911,6 +4291,16 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: 'Pour des vacances atypiques, profitez de cette tente traditionnelle mongole où le voyage et le dépaysement seront au rendez-vous'
+        CapaciteHebergement: "4 personnes\n\n"
+        Dimensions: "Surface : 27 m²\n\n"
+        Agencement: 'Composée d''une seule pièce meublée de 4 lits individuels, 1 armoire et 4 tabourets. Un coin cuisine est mis à disposition dans une tente à proximité.'
+        Equipements: ''
+        AnneeUtilisation: '0-7 ans'
+        Remarque1: ''
+        Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires, sans éléctricité et sans chauffage'
+        Remarque3: ''
+        Remarque4: null
     60_nl:
         Id: 60
         Locale: nl
@@ -1919,3 +4309,13 @@
         TypeTerrasse: null
         Description: null
         Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
