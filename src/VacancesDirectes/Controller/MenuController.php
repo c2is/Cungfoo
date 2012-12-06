@@ -89,19 +89,19 @@ class MenuController implements ControllerProviderInterface
         $destinations = array(
             '4' => array(
                 'label'     => 'destination.mediterranee',
-                'regions'   => array('LOCH', 'CBRA', 'NORM'),
+                'regions'   => array('LARO', 'CORS', 'PCA'),
             ),
             '3' => array(
                 'label'     => 'destination.atlantique',
-                'regions'   => array('ARDE'),
+                'regions'   => array('BRET', 'CHMA', 'PBAS'),
             ),
             '1' => array(
                 'label'     => 'destination.montagne',
-                'regions'   => array('NORM', 'CBRA'),
+                'regions'   => array('ALP', 'ALJU', 'ARPY'),
             ),
             '2' => array(
                 'label'     => 'destination.campagne',
-                'regions'   => array('VEND', 'BRET'),
+                'regions'   => array('PLOI', 'PEDO', 'AUVE'),
             ),
         );
 
