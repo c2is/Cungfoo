@@ -46,7 +46,6 @@ class IdeeWeekendTableMap extends TableMap
         $this->addColumn('highlight', 'Highlight', 'BOOLEAN', false, 1, null);
         $this->addColumn('prix', 'Prix', 'VARCHAR', false, 255, null);
         $this->addColumn('home', 'Home', 'BOOLEAN', false, 1, null);
-        $this->addColumn('lien', 'Lien', 'VARCHAR', false, 255, null);
         $this->addColumn('image_path', 'ImagePath', 'VARCHAR', false, 255, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
@@ -75,7 +74,7 @@ class IdeeWeekendTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'titre',
+  'i18n_columns' => 'titre, lien',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

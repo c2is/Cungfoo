@@ -37,13 +37,13 @@ abstract class BaseIdeeWeekendPeer
     const TM_CLASS = 'IdeeWeekendTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'idee_weekend.id';
@@ -56,9 +56,6 @@ abstract class BaseIdeeWeekendPeer
 
     /** the column name for the home field */
     const HOME = 'idee_weekend.home';
-
-    /** the column name for the lien field */
-    const LIEN = 'idee_weekend.lien';
 
     /** the column name for the image_path field */
     const IMAGE_PATH = 'idee_weekend.image_path';
@@ -92,12 +89,12 @@ abstract class BaseIdeeWeekendPeer
      * e.g. IdeeWeekendPeer::$fieldNames[IdeeWeekendPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Highlight', 'Prix', 'Home', 'Lien', 'ImagePath', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'imagePath', 'active', ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID, IdeeWeekendPeer::HIGHLIGHT, IdeeWeekendPeer::PRIX, IdeeWeekendPeer::HOME, IdeeWeekendPeer::LIEN, IdeeWeekendPeer::IMAGE_PATH, IdeeWeekendPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'HIGHLIGHT', 'PRIX', 'HOME', 'LIEN', 'IMAGE_PATH', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'highlight', 'prix', 'home', 'lien', 'image_path', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Highlight', 'Prix', 'Home', 'ImagePath', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'highlight', 'prix', 'home', 'imagePath', 'active', ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID, IdeeWeekendPeer::HIGHLIGHT, IdeeWeekendPeer::PRIX, IdeeWeekendPeer::HOME, IdeeWeekendPeer::IMAGE_PATH, IdeeWeekendPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'HIGHLIGHT', 'PRIX', 'HOME', 'IMAGE_PATH', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'highlight', 'prix', 'home', 'image_path', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -107,12 +104,12 @@ abstract class BaseIdeeWeekendPeer
      * e.g. IdeeWeekendPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Highlight' => 1, 'Prix' => 2, 'Home' => 3, 'Lien' => 4, 'ImagePath' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'imagePath' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID => 0, IdeeWeekendPeer::HIGHLIGHT => 1, IdeeWeekendPeer::PRIX => 2, IdeeWeekendPeer::HOME => 3, IdeeWeekendPeer::LIEN => 4, IdeeWeekendPeer::IMAGE_PATH => 5, IdeeWeekendPeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'HIGHLIGHT' => 1, 'PRIX' => 2, 'HOME' => 3, 'LIEN' => 4, 'IMAGE_PATH' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'lien' => 4, 'image_path' => 5, 'active' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Highlight' => 1, 'Prix' => 2, 'Home' => 3, 'ImagePath' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'imagePath' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendPeer::ID => 0, IdeeWeekendPeer::HIGHLIGHT => 1, IdeeWeekendPeer::PRIX => 2, IdeeWeekendPeer::HOME => 3, IdeeWeekendPeer::IMAGE_PATH => 4, IdeeWeekendPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'HIGHLIGHT' => 1, 'PRIX' => 2, 'HOME' => 3, 'IMAGE_PATH' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'highlight' => 1, 'prix' => 2, 'home' => 3, 'image_path' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -190,7 +187,6 @@ abstract class BaseIdeeWeekendPeer
             $criteria->addSelectColumn(IdeeWeekendPeer::HIGHLIGHT);
             $criteria->addSelectColumn(IdeeWeekendPeer::PRIX);
             $criteria->addSelectColumn(IdeeWeekendPeer::HOME);
-            $criteria->addSelectColumn(IdeeWeekendPeer::LIEN);
             $criteria->addSelectColumn(IdeeWeekendPeer::IMAGE_PATH);
             $criteria->addSelectColumn(IdeeWeekendPeer::ACTIVE);
         } else {
@@ -198,7 +194,6 @@ abstract class BaseIdeeWeekendPeer
             $criteria->addSelectColumn($alias . '.highlight');
             $criteria->addSelectColumn($alias . '.prix');
             $criteria->addSelectColumn($alias . '.home');
-            $criteria->addSelectColumn($alias . '.lien');
             $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.active');
         }

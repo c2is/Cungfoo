@@ -45,6 +45,7 @@ class IdeeWeekendI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'idee_weekend', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('titre', 'Titre', 'VARCHAR', false, 255, null);
+        $this->addColumn('lien', 'Lien', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

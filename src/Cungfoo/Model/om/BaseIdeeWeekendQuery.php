@@ -26,7 +26,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery orderByHighlight($order = Criteria::ASC) Order by the highlight column
  * @method IdeeWeekendQuery orderByPrix($order = Criteria::ASC) Order by the prix column
  * @method IdeeWeekendQuery orderByHome($order = Criteria::ASC) Order by the home column
- * @method IdeeWeekendQuery orderByLien($order = Criteria::ASC) Order by the lien column
  * @method IdeeWeekendQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method IdeeWeekendQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
@@ -34,7 +33,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekendQuery groupByHighlight() Group by the highlight column
  * @method IdeeWeekendQuery groupByPrix() Group by the prix column
  * @method IdeeWeekendQuery groupByHome() Group by the home column
- * @method IdeeWeekendQuery groupByLien() Group by the lien column
  * @method IdeeWeekendQuery groupByImagePath() Group by the image_path column
  * @method IdeeWeekendQuery groupByActive() Group by the active column
  *
@@ -52,7 +50,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method IdeeWeekend findOneByHighlight(boolean $highlight) Return the first IdeeWeekend filtered by the highlight column
  * @method IdeeWeekend findOneByPrix(string $prix) Return the first IdeeWeekend filtered by the prix column
  * @method IdeeWeekend findOneByHome(boolean $home) Return the first IdeeWeekend filtered by the home column
- * @method IdeeWeekend findOneByLien(string $lien) Return the first IdeeWeekend filtered by the lien column
  * @method IdeeWeekend findOneByImagePath(string $image_path) Return the first IdeeWeekend filtered by the image_path column
  * @method IdeeWeekend findOneByActive(boolean $active) Return the first IdeeWeekend filtered by the active column
  *
@@ -60,7 +57,6 @@ use Cungfoo\Model\IdeeWeekendQuery;
  * @method array findByHighlight(boolean $highlight) Return IdeeWeekend objects filtered by the highlight column
  * @method array findByPrix(string $prix) Return IdeeWeekend objects filtered by the prix column
  * @method array findByHome(boolean $home) Return IdeeWeekend objects filtered by the home column
- * @method array findByLien(string $lien) Return IdeeWeekend objects filtered by the lien column
  * @method array findByImagePath(string $image_path) Return IdeeWeekend objects filtered by the image_path column
  * @method array findByActive(boolean $active) Return IdeeWeekend objects filtered by the active column
  *
@@ -166,7 +162,7 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `highlight`, `prix`, `home`, `lien`, `image_path`, `active` FROM `idee_weekend` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `highlight`, `prix`, `home`, `image_path`, `active` FROM `idee_weekend` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -363,35 +359,6 @@ abstract class BaseIdeeWeekendQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(IdeeWeekendPeer::HOME, $home, $comparison);
-    }
-
-    /**
-     * Filter the query on the lien column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByLien('fooValue');   // WHERE lien = 'fooValue'
-     * $query->filterByLien('%fooValue%'); // WHERE lien LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $lien The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return IdeeWeekendQuery The current query, for fluid interface
-     */
-    public function filterByLien($lien = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($lien)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $lien)) {
-                $lien = str_replace('*', '%', $lien);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(IdeeWeekendPeer::LIEN, $lien, $comparison);
     }
 
     /**
