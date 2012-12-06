@@ -121,6 +121,7 @@ fiche.toutes_capacite: Toutes capacités
 fiche.capacite: Capacité :
 fiche.places: places
 fiche.nombre_chambres: Nombre de chambres :
+fiche.nombre_personnes: Nombre de personnes :
 fiche.surface: Surface :
 fiche.type_terrasse: Type de terrasse :
 fiche.activites: Activités
