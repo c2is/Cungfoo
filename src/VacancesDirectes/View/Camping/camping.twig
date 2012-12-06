@@ -181,15 +181,15 @@
 </div>
 <!-- tab Sur place -->
 <div id="tabSurplace" class="tabs">
-    <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
-    <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">
+    {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">{% endif %}
+    {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">{% endif %}
     <div class="colSurPlace clearboth">
         {% if etab.activites | length %}
         <dl>
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activites %}
-                    <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
+                    <li>{% if activite.imagePath != "." %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -204,7 +204,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li><img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}"><span>{{ serviceComplementaire.name }}</span></span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></span></li>
                 {% endfor %}
             </ul></dd>
         </dl>

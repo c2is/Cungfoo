@@ -15,10 +15,7 @@
         </div>
         <!-- item.center -->
         <div class="itemResultCenter">
-            <p>- Accès direct à la plage</p>
-            <p>- Cadre boisé</p>
-            <p>- Parc aquatique</p>
-            <p>- Nombreuses animations</p>
+            <p>{{ etab.model.description | trans | truncate(100,true,'...') }}</p>
 
             {# TODO
             <div class="pictos">
@@ -32,12 +29,18 @@
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
+            <img width="75" height="77" alt="" src="{{ asset(etab.ville.region.imagePath) }}">
+            <span class="titDest">
+                <a href="{{ path('destination_pays', {'pays': etab.model.pays.slug}) }}" title="{{ etab.model.pays }}">{{ etab.model.pays }}</a><br>
+                <a href="{{ path('destination_region', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug}) }}" title="{{ etab.model.region }}">{{ etab.model.region }}</a><br>
+                <a href="{{ path('destination_ville', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug, 'ville': etab.model.ville.slug}) }}" class="ville" title="{{ etab.model.ville }}">{{ etab.model.ville }}</a>
+            </span>
             <span class="bt trans">{{ "general.en_savoir_plus" | trans }}<br>{{ "general.sur_la_destination" | trans }}</span>
 
             <div class="itemResultPopDest" style="display:none;"><div>
                 <h3>{{ etab.model.ville }}</h3>
-                <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder">
+                {# TODO <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
+                <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder"> #}
 
                 <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}
