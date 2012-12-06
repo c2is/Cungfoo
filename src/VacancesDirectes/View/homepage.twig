@@ -21,6 +21,7 @@
                             <button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>
                         </div>
                     </div>
+                    {% if mea.prix != "" %}
                     <div class="sliderStain second">
                         <div class="content">
                             <p>{{ "general.a_partir_de" | trans }}</p>
@@ -28,6 +29,7 @@
                             <p class="duration">{{ "general.la_nuit" | trans }}</p>
                         </div>
                     </div>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
@@ -100,7 +102,7 @@
 
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
-    {# TODO<div id="greyBoxes" class="clear">
+    <div id="greyBoxes" class="clear">
         <div id="weekendIdeasBloc" class="clear radiusBox greyC">
             <div class="stamp fushia">
                 <h2>{{ "general.idees_week_end" | trans }}</h2>
@@ -108,19 +110,19 @@
             {% for idee in ideesweekend %}
                 <div class="element {% if idee.prix == "" %} noprice {% endif %} clear">
                     <div class="left">
-                        <a href="{{ idee.lien }}" class="linkBlock"><img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" /></a>
+                        <a href="{{ idee.lien | trans }}" class="linkBlock"><img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" /></a>
                     </div>
                     <div class="details left linkParent">
                         <span class="title">{{ idee.titre }}</span>
                     </div>
                     {% if(idee.prix != "") %}
-                        <a href="{{ idee.lien }}" class="stain cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
+                        <a href="{{ idee.lien | trans }}" class="stain cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
                     {% endif %}
                 </div>
             {% endfor %}
-            <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a>
+            {# TODO <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a> #}
         </div>
-    </div> #}
+    </div>
 {% endblock %}
 
 {% block columnClearboth %}
