@@ -158,6 +158,7 @@ class DestinationController implements ControllerProviderInterface
 
     protected function process(Application $app, Request $request, $pays, $region = null, $ville = null, $destination = self::DESTINATION_PAYS)
     {
+        $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
         switch ($destination) {
             case self::DESTINATION_PAYS:
                 $item = $pays;
@@ -165,10 +166,13 @@ class DestinationController implements ControllerProviderInterface
 
             case self::DESTINATION_REGION:
                 $item = $region;
+                $dateData->destination = $region->getCode();
                 break;
 
             case self::DESTINATION_VILLE:
                 $item = $ville;
+                $dateData->destination = $region->getCode();
+                $dateData->ville = $ville->getCode();
                 break;
 
             default:
@@ -180,7 +184,7 @@ class DestinationController implements ControllerProviderInterface
 
         // Formulaire de recherche
         $searchEngine = new SearchEngine($app, $request);
-        $searchEngine->process();
+        $searchEngine->process($dateData);
 
         if ($searchEngine->getRedirect())
         {

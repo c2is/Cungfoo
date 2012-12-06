@@ -22,9 +22,13 @@ class SearchEngine
         $this->request = $request;
     }
 
-    public function process()
+    public function process($dateData = null)
     {
         $searchDateData = new DateData();
+        if($dateData !== null)
+        {
+            $searchDateData = $dateData;
+        }
         $this->form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
 
         if ('POST' == $this->request->getMethod())
