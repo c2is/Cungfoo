@@ -25,10 +25,12 @@ use Cungfoo\Model\IdeeWeekendI18nQuery;
  * @method IdeeWeekendI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method IdeeWeekendI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method IdeeWeekendI18nQuery orderByTitre($order = Criteria::ASC) Order by the titre column
+ * @method IdeeWeekendI18nQuery orderByLien($order = Criteria::ASC) Order by the lien column
  *
  * @method IdeeWeekendI18nQuery groupById() Group by the id column
  * @method IdeeWeekendI18nQuery groupByLocale() Group by the locale column
  * @method IdeeWeekendI18nQuery groupByTitre() Group by the titre column
+ * @method IdeeWeekendI18nQuery groupByLien() Group by the lien column
  *
  * @method IdeeWeekendI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method IdeeWeekendI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -44,10 +46,12 @@ use Cungfoo\Model\IdeeWeekendI18nQuery;
  * @method IdeeWeekendI18n findOneById(int $id) Return the first IdeeWeekendI18n filtered by the id column
  * @method IdeeWeekendI18n findOneByLocale(string $locale) Return the first IdeeWeekendI18n filtered by the locale column
  * @method IdeeWeekendI18n findOneByTitre(string $titre) Return the first IdeeWeekendI18n filtered by the titre column
+ * @method IdeeWeekendI18n findOneByLien(string $lien) Return the first IdeeWeekendI18n filtered by the lien column
  *
  * @method array findById(int $id) Return IdeeWeekendI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return IdeeWeekendI18n objects filtered by the locale column
  * @method array findByTitre(string $titre) Return IdeeWeekendI18n objects filtered by the titre column
+ * @method array findByLien(string $lien) Return IdeeWeekendI18n objects filtered by the lien column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +142,7 @@ abstract class BaseIdeeWeekendI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `titre` FROM `idee_weekend_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `titre`, `lien` FROM `idee_weekend_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -324,6 +328,35 @@ abstract class BaseIdeeWeekendI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(IdeeWeekendI18nPeer::TITRE, $titre, $comparison);
+    }
+
+    /**
+     * Filter the query on the lien column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByLien('fooValue');   // WHERE lien = 'fooValue'
+     * $query->filterByLien('%fooValue%'); // WHERE lien LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $lien The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return IdeeWeekendI18nQuery The current query, for fluid interface
+     */
+    public function filterByLien($lien = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($lien)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $lien)) {
+                $lien = str_replace('*', '%', $lien);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(IdeeWeekendI18nPeer::LIEN, $lien, $comparison);
     }
 
     /**

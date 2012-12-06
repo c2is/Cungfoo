@@ -16,10 +16,17 @@
     1_fr:
         Id: 1
         Locale: fr
-        Titre: 'L''espagne'
-        Accroche: 'Au mois de juillet pour 6 personnes'
-        Lien: '#'
+        Titre: 'Early booking'
+        Accroche: "Réservez tôt et profitez des promos\_!"
+        Lien: top-campings
         TitreLien: Réserver
+    1_nl:
+        Id: 1
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
     2_de:
         Id: 2
         Locale: de
@@ -37,10 +44,17 @@
     2_fr:
         Id: 2
         Locale: fr
-        Titre: 'Le portugal'
-        Accroche: 'Au mois de juin pour 6 personnes'
+        Titre: "Plus de destinations\_!"
+        Accroche: "Découvrez plus de 50 nouveaux campings\_!"
         Lien: '#'
         TitreLien: Réserver
+    2_nl:
+        Id: 2
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
     3_de:
         Id: 3
         Locale: de
@@ -58,7 +72,14 @@
     3_fr:
         Id: 3
         Locale: fr
-        Titre: 'La france'
-        Accroche: 'Au mois de juillet pour 6 personnes'
+        Titre: 'Vos vacances d’été'
+        Accroche: 'Choisissez dès maintenant votre camping !'
         Lien: '#'
         TitreLien: Réserver
+    3_nl:
+        Id: 3
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null

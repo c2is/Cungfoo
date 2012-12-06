@@ -45,12 +45,6 @@ class BaseIdeeWeekendType extends AppAwareType
             'label' => 'idee_weekend.home',
             'required' => false,
         ));
-        $builder->add('lien', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'idee_weekend.lien',
-            'required' => false,
-        ));
         $builder->add('image_path', 'cungfoo_file', array(
             'constraints' => array(
             ),
@@ -83,6 +77,13 @@ class BaseIdeeWeekendType extends AppAwareType
                 'titre' => array(
                     'required' => false,
                     'label' => 'idee_weekend.titre',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'lien' => array(
+                    'required' => false,
+                    'label' => 'idee_weekend.lien',
                     'type' => 'text',
                     'constraints' => array(
                     ),

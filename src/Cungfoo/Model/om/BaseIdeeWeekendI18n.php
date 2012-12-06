@@ -65,6 +65,12 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
     protected $titre;
 
     /**
+     * The value for the lien field.
+     * @var        string
+     */
+    protected $lien;
+
+    /**
      * @var        IdeeWeekend
      */
     protected $aIdeeWeekend;
@@ -135,6 +141,16 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [lien] column value.
+     *
+     * @return string
+     */
+    public function getLien()
+    {
+        return $this->lien;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -202,6 +218,27 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
     } // setTitre()
 
     /**
+     * Set the value of [lien] column.
+     *
+     * @param string $v new value
+     * @return IdeeWeekendI18n The current object (for fluent API support)
+     */
+    public function setLien($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->lien !== $v) {
+            $this->lien = $v;
+            $this->modifiedColumns[] = IdeeWeekendI18nPeer::LIEN;
+        }
+
+
+        return $this;
+    } // setLien()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -240,6 +277,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->titre = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->lien = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +286,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = IdeeWeekendI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating IdeeWeekendI18n object", $e);
@@ -481,6 +519,9 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendI18nPeer::TITRE)) {
             $modifiedColumns[':p' . $index++]  = '`titre`';
         }
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::LIEN)) {
+            $modifiedColumns[':p' . $index++]  = '`lien`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `idee_weekend_i18n` (%s) VALUES (%s)',
@@ -500,6 +541,9 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
                         break;
                     case '`titre`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
+                        break;
+                    case '`lien`':
+                        $stmt->bindValue($identifier, $this->lien, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,6 +693,9 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
             case 2:
                 return $this->getTitre();
                 break;
+            case 3:
+                return $this->getLien();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +728,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getTitre(),
+            $keys[3] => $this->getLien(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aIdeeWeekend) {
@@ -729,6 +777,9 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
             case 2:
                 $this->setTitre($value);
                 break;
+            case 3:
+                $this->setLien($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +807,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setTitre($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setLien($arr[$keys[3]]);
     }
 
     /**
@@ -770,6 +822,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendI18nPeer::ID)) $criteria->add(IdeeWeekendI18nPeer::ID, $this->id);
         if ($this->isColumnModified(IdeeWeekendI18nPeer::LOCALE)) $criteria->add(IdeeWeekendI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(IdeeWeekendI18nPeer::TITRE)) $criteria->add(IdeeWeekendI18nPeer::TITRE, $this->titre);
+        if ($this->isColumnModified(IdeeWeekendI18nPeer::LIEN)) $criteria->add(IdeeWeekendI18nPeer::LIEN, $this->lien);
 
         return $criteria;
     }
@@ -843,6 +896,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setTitre($this->getTitre());
+        $copyObj->setLien($this->getLien());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -960,6 +1014,7 @@ abstract class BaseIdeeWeekendI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->titre = null;
+        $this->lien = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
