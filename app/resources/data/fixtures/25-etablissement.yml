@@ -5,7 +5,7 @@
         Name: Amiaux
         Title: null
         Address1: '223 Route de N.D. de Monts'
-        Address2: ''
+        Address2: null
         Zip: '85169'
         City: 'ST JEAN DE MONTS'
         Mail: test@resalys.com
@@ -23,16 +23,16 @@
         Image360Path: null
         Capacite: '543'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
+        Published: false
         Active: false
     2:
         Code: 100
         Slug: pins-parasols
-        Name: 'Pins Parasols '
+        Name: 'Pins Parasols'
         Title: null
         Address1: '3360 Rue des Combattants d''Afrique du Nord'
-        Address2: ''
+        Address2: null
         Zip: '83600'
         City: FRÉJUS
         Mail: test@resalys.com
@@ -50,16 +50,16 @@
         Image360Path: null
         Capacite: '189'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075ba364bd.jpeg
+        Published: false
         Active: true
     3:
         Code: 101
         Slug: plage-fleurie
-        Name: 'Plage Fleurie '
+        Name: 'Plage Fleurie'
         Title: null
         Address1: 'Les Mazes'
-        Address2: ''
+        Address2: null
         Zip: '07150'
         City: 'VALLON-PONT-D''ARC'
         Mail: test@resalys.com
@@ -77,8 +77,8 @@
         Image360Path: null
         Capacite: '299'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075d348a48.jpeg
+        Published: false
         Active: false
     4:
         Code: 102
@@ -86,7 +86,7 @@
         Name: 'Playa Montroig'
         Title: null
         Address1: 'Apartado de Correos 3'
-        Address2: ''
+        Address2: null
         Zip: '43300'
         City: 'MONT ROIG DEL CAMP'
         Mail: test@resalys.com
@@ -104,16 +104,16 @@
         Image360Path: null
         Capacite: '1177'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075df4d461.jpeg
+        Published: false
         Active: false
     5:
         Code: 103
         Slug: playa-tropicana
-        Name: 'Playa Tropicana '
+        Name: 'Playa Tropicana'
         Title: null
         Address1: 'camino de l''attall s/n'
-        Address2: ''
+        Address2: null
         Zip: '12579'
         City: 'ALCOSSEBRE CASTELLON'
         Mail: test@resalys.com
@@ -131,8 +131,8 @@
         Image360Path: null
         Capacite: '340'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075ea6e237.jpeg
+        Published: false
         Active: false
     6:
         Code: 104
@@ -158,8 +158,8 @@
         Image360Path: null
         Capacite: '340'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c075fa2f012.jpeg
+        Published: false
         Active: true
     7:
         Code: 106
@@ -167,7 +167,7 @@
         Name: Ribeyre
         Title: null
         Address1: 'Route de Jassat'
-        Address2: ''
+        Address2: null
         Zip: '63790'
         City: MUROL
         Mail: test@resalys.com
@@ -185,8 +185,8 @@
         Image360Path: null
         Capacite: '460'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07604c4ccc.jpeg
+        Published: false
         Active: true
     8:
         Code: 108
@@ -212,16 +212,16 @@
         Image360Path: null
         Capacite: '706'
         PlanPath: null
-        Vignette: uploads/etablissements/50bc68b978869.png
+        Vignette: uploads/etablissements/50c0760e8f143.jpeg
         Published: false
         Active: false
     9:
         Code: 109
         Slug: sables-de-cordouan
-        Name: 'Sables de Cordouan '
+        Name: 'Sables de Cordouan'
         Title: null
         Address1: '2344 Route de la Fouasse'
-        Address2: ''
+        Address2: null
         Zip: '17570'
         City: 'LES MATHES'
         Mail: test@resalys.com
@@ -239,8 +239,8 @@
         Image360Path: null
         Capacite: '150'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076178a370.jpeg
+        Published: false
         Active: false
     10:
         Code: 11
@@ -248,7 +248,7 @@
         Name: 'Azu''Rivage'
         Title: null
         Address1: '720 Route des Campings'
-        Address2: ''
+        Address2: null
         Zip: '40140'
         City: AZUR
         Mail: test@resalys.com
@@ -266,8 +266,8 @@
         Image360Path: null
         Capacite: '275'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07622dd6a5.jpeg
+        Published: false
         Active: false
     11:
         Code: 110
@@ -275,7 +275,7 @@
         Name: 'Saint Aygulf Plage'
         Title: null
         Address1: '270 Boulevard Salvarelli'
-        Address2: ''
+        Address2: null
         Zip: '83370'
         City: 'ST AYGULF'
         Mail: test@resalys.com
@@ -293,8 +293,8 @@
         Image360Path: null
         Capacite: '1100'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0762d20c4b.jpeg
+        Published: false
         Active: true
     12:
         Code: 111
@@ -302,14 +302,14 @@
         Name: 'Saint Louis'
         Title: null
         Address1: '2160 Avenue de la République'
-        Address2: ''
+        Address2: null
         Zip: '06550'
         City: 'LA ROQUETTE SUR SIAGNE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
         Phone2: '06 31 90 29 44'
-        Fax: ''
+        Fax: null
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 42
@@ -320,8 +320,8 @@
         Image360Path: null
         Capacite: '200'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0763716a2e.jpeg
+        Published: false
         Active: true
     13:
         Code: 112
@@ -329,7 +329,7 @@
         Name: 'Domaine de la Sainte Baume'
         Title: null
         Address1: 'Quartier Delvieux Sud'
-        Address2: ''
+        Address2: null
         Zip: '83860'
         City: NANS-LES-PINS
         Mail: test@resalys.com
@@ -347,22 +347,22 @@
         Image360Path: null
         Capacite: '250'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076445e9b3.jpeg
+        Published: false
         Active: true
     14:
         Code: 113
         Slug: sainte-marie
-        Name: 'Sainte-Marie '
+        Name: Sainte-Marie
         Title: null
         Address1: 'Rue des Clauses'
-        Address2: ''
+        Address2: null
         Zip: '66470'
         City: 'STE MARIE-LA-MER'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 08 09 37 54 '
+        Phone2: '06 08 09 37 54'
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
@@ -374,16 +374,16 @@
         Image360Path: null
         Capacite: '300'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0764f49c1f.jpeg
+        Published: false
         Active: false
     15:
         Code: 114
         Slug: sen-yan
-        Name: 'Sen Yan '
+        Name: 'Sen Yan'
         Title: null
         Address1: 'La Gare'
-        Address2: ''
+        Address2: null
         Zip: '40170'
         City: Mézos
         Mail: test@resalys.com
@@ -401,16 +401,16 @@
         Image360Path: null
         Capacite: '375'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0765b566f2.jpeg
+        Published: false
         Active: false
     16:
         Code: 116
         Slug: ferme-de-la-serraz
-        Name: 'Ferme de la Serraz '
+        Name: 'Ferme de la Serraz'
         Title: null
         Address1: 'Rue de la Poste'
-        Address2: ''
+        Address2: null
         Zip: '74210'
         City: DOUSSARD
         Mail: test@resalys.com
@@ -428,15 +428,15 @@
         Image360Path: null
         Capacite: '184'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0766602664.jpeg
+        Published: false
         Active: true
     17:
         Code: 117
         Slug: signol
-        Name: 'Signol '
+        Name: Signol
         Title: null
-        Address1: 'avenue des Albatros '
+        Address1: 'avenue des Albatros'
         Address2: Boyardville
         Zip: '17190'
         City: 'ST-GEORGES-D''OLÉRON'
@@ -455,16 +455,16 @@
         Image360Path: null
         Capacite: '300'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0766f8358e.jpeg
+        Published: false
         Active: true
     18:
         Code: 118
         Slug: soleil
-        Name: 'Soleil '
+        Name: Soleil
         Title: null
         Address1: 'Route du Littoral'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -482,8 +482,8 @@
         Image360Path: null
         Capacite: '844'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07679cef85.jpeg
+        Published: false
         Active: false
     19:
         Code: 119
@@ -491,7 +491,7 @@
         Name: 'Soleil de la Méditerranée'
         Title: null
         Address1: '2 rue Ste Beuve'
-        Address2: ''
+        Address2: null
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: test@resalys.com
@@ -509,8 +509,8 @@
         Image360Path: null
         Capacite: '522'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076841720b.jpeg
+        Published: false
         Active: false
     20:
         Code: 12
@@ -518,7 +518,7 @@
         Name: 'Bahia Club'
         Title: null
         Address1: 'Chemin de l''Hourtou'
-        Address2: ''
+        Address2: null
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -536,16 +536,16 @@
         Image360Path: null
         Capacite: '210'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0768e5ee70.jpeg
+        Published: false
         Active: true
     21:
         Code: 120
         Slug: sources
-        Name: 'Sources '
+        Name: Sources
         Title: null
         Address1: 'Route des Crêtes'
-        Address2: ''
+        Address2: null
         Zip: '68700'
         City: WATTWILLER
         Mail: test@resalys.com
@@ -563,8 +563,8 @@
         Image360Path: null
         Capacite: '267'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0769b5c096.jpeg
+        Published: false
         Active: true
     22:
         Code: 121
@@ -596,10 +596,10 @@
     23:
         Code: 122
         Slug: tamerici
-        Name: 'Tamerici '
+        Name: Tamerici
         Title: null
         Address1: 'Via della Cecinella 5'
-        Address2: ''
+        Address2: null
         Zip: '57023'
         City: 'CECINA MARE'
         Mail: test@resalys.com
@@ -617,16 +617,16 @@
         Image360Path: null
         Capacite: '301'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076aa87a87.jpeg
+        Published: false
         Active: false
     24:
         Code: 123
         Slug: tenuta-primero
-        Name: 'Tenuta Primero '
+        Name: 'Tenuta Primero'
         Title: null
         Address1: 'Via Monfalcone 14'
-        Address2: ''
+        Address2: null
         Zip: '34073'
         City: GRADO
         Mail: test@resalys.com
@@ -644,16 +644,16 @@
         Image360Path: null
         Capacite: '800'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076b862805.jpeg
+        Published: false
         Active: false
     25:
         Code: 125
         Slug: ur-onea
-        Name: 'Ur Onea '
+        Name: 'Ur Onea'
         Title: null
         Address1: 'Rue de la Chapelle'
-        Address2: ''
+        Address2: null
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -671,16 +671,16 @@
         Image360Path: null
         Capacite: '269'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076c4c14d2.jpeg
+        Published: false
         Active: false
     26:
         Code: 126
         Slug: via-romana
-        Name: 'Via Romana '
+        Name: 'Via Romana'
         Title: null
         Address1: 'Casamozza di Fium''Orbu'
-        Address2: ''
+        Address2: null
         Zip: '20243'
         City: 'PRUNELLI DI FIUMORBU'
         Mail: test@resalys.com
@@ -698,16 +698,16 @@
         Image360Path: null
         Capacite: '54'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076d71697d.jpeg
+        Published: false
         Active: true
     27:
         Code: 127
         Slug: vieux-port
-        Name: 'Vieux Port '
+        Name: 'Vieux Port'
         Title: null
         Address1: 'Route Plage Sud'
-        Address2: ''
+        Address2: null
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
@@ -725,13 +725,13 @@
         Image360Path: null
         Capacite: '1546'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076f4477fa.jpeg
+        Published: false
         Active: true
     28:
         Code: 128
         Slug: vignes
-        Name: 'Vignes '
+        Name: Vignes
         Title: null
         Address1: '1545 Route du Cap de l''Homy'
         Address2: 'Route de la Plage'
@@ -752,16 +752,16 @@
         Image360Path: null
         Capacite: '450'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c076fd9b7ba.jpeg
+        Published: false
         Active: true
     29:
         Code: 129
         Slug: vilanova-park
-        Name: 'Vilanova Park '
+        Name: 'Vilanova Park'
         Title: null
         Address1: 'AP 64.Ctra Arboc Km 2.5'
-        Address2: ''
+        Address2: null
         Zip: '08800'
         City: 'VILANOVA I LA GELTRÚ'
         Mail: test@resalys.com
@@ -779,8 +779,8 @@
         Image360Path: null
         Capacite: '1385'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07709abbeb.jpeg
+        Published: false
         Active: false
     30:
         Code: 130
@@ -788,7 +788,7 @@
         Name: Zagarella
         Title: null
         Address1: 'Rue des Sables'
-        Address2: ''
+        Address2: null
         Zip: '85160'
         City: 'ST JEAN-DE-MONTS'
         Mail: test@resalys.com
@@ -806,8 +806,8 @@
         Image360Path: null
         Capacite: '278'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077161f869.jpeg
+        Published: false
         Active: false
     31:
         Code: 131
@@ -815,7 +815,7 @@
         Name: 'Ruisseau des Pyrénées'
         Title: null
         Address1: 'Rue Burruntz'
-        Address2: ''
+        Address2: null
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -833,8 +833,8 @@
         Image360Path: null
         Capacite: '480'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077240f919.jpeg
+        Published: false
         Active: false
     32:
         Code: 133
@@ -842,7 +842,7 @@
         Name: Masia
         Title: null
         Address1: 'C/Colon,44'
-        Address2: ''
+        Address2: null
         Zip: '17300'
         City: BLANES
         Mail: test@resalys.com
@@ -860,8 +860,8 @@
         Image360Path: null
         Capacite: '757'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0773707b45.jpeg
+        Published: false
         Active: false
     33:
         Code: 134
@@ -869,7 +869,7 @@
         Name: Tamaris
         Title: null
         Address1: 'Rte de St Laurent'
-        Address2: ''
+        Address2: null
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -887,8 +887,8 @@
         Image360Path: null
         Capacite: '434'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0774c3e555.jpeg
+        Published: false
         Active: true
     34:
         Code: 135
@@ -896,7 +896,7 @@
         Name: 'Playa Joyel'
         Title: null
         Address1: 'Playa De Ris'
-        Address2: ''
+        Address2: null
         Zip: '39180'
         City: NOJA
         Mail: test@resalys.com
@@ -914,8 +914,8 @@
         Image360Path: null
         Capacite: '1050'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0776146ebb.jpeg
+        Published: false
         Active: false
     35:
         Code: 136
@@ -923,9 +923,9 @@
         Name: 'Grande Italia'
         Title: null
         Address1: 'Zona Demaniale 10/I'
-        Address2: ''
+        Address2: null
         Zip: 'i 30015'
-        City: 'SOTTOMARINA DI CHIOGGIA '
+        City: 'SOTTOMARINA DI CHIOGGIA'
         Mail: test@resalys.com
         CountryCode: IT
         Phone1: 06.01.01.01.01
@@ -941,8 +941,8 @@
         Image360Path: null
         Capacite: '135'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0776c29dd7.jpeg
+        Published: false
         Active: false
     36:
         Code: 137
@@ -950,7 +950,7 @@
         Name: 'Pearl Village Club'
         Title: null
         Address1: 'Route de Taxo à la Mer'
-        Address2: ''
+        Address2: null
         Zip: '66700'
         City: 'ARGELES SUR MER'
         Mail: test@resalys.com
@@ -968,8 +968,8 @@
         Image360Path: null
         Capacite: '167'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077784ddea.jpeg
+        Published: false
         Active: false
     37:
         Code: 138
@@ -977,7 +977,7 @@
         Name: 'Pins Maritimes'
         Title: null
         Address1: '1633 boulevard de la Marine'
-        Address2: ''
+        Address2: null
         Zip: '83400'
         City: HYÈRES
         Mail: test@resalys.com
@@ -995,8 +995,8 @@
         Image360Path: null
         Capacite: '700'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0778527a48.jpeg
+        Published: false
         Active: true
     38:
         Code: 139
@@ -1028,7 +1028,7 @@
     39:
         Code: 14
         Slug: beau-rivage
-        Name: 'Beau Rivage '
+        Name: 'Beau Rivage'
         Title: null
         Address1: 'Avenue de Montpellier'
         Address2: 'RD 613'
@@ -1049,8 +1049,8 @@
         Image360Path: null
         Capacite: '234'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07798a7231.jpeg
+        Published: false
         Active: true
     40:
         Code: 140
@@ -1625,7 +1625,7 @@
         Name: 'Bois Soleil'
         Title: null
         Address1: '94 Chemin des Barres'
-        Address2: ''
+        Address2: null
         Zip: '85340'
         City: 'OLONNE SUR MER'
         Mail: test@resalys.com
@@ -1643,8 +1643,8 @@
         Image360Path: null
         Capacite: '199'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077ad1cde5.jpeg
+        Published: false
         Active: true
     62:
         Code: 160
@@ -1919,10 +1919,10 @@
     72:
         Code: 17
         Slug: bordeneo
-        Name: 'Bordenéo '
+        Name: Bordenéo
         Title: null
         Address1: 'Belle Ile en Mer'
-        Address2: ''
+        Address2: null
         Zip: '56360'
         City: 'LE PALAIS'
         Mail: test@resalys.com
@@ -1940,8 +1940,8 @@
         Image360Path: null
         Capacite: '202'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077bc5d876.jpeg
+        Published: false
         Active: true
     73:
         Code: 170
@@ -2084,7 +2084,7 @@
         Name: 'Domaine des Pins'
         Title: null
         Address1: '151 Avenue de la Faye'
-        Address2: ''
+        Address2: null
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
         Mail: test@resalys.com
@@ -2102,8 +2102,8 @@
         Image360Path: null
         Capacite: '140'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077d39f6a9.jpeg
+        Published: false
         Active: true
     79:
         Code: 176
@@ -2111,7 +2111,7 @@
         Name: 'Atlantic Club Montalivet'
         Title: null
         Address1: '47 Avenue de l''Europe'
-        Address2: ''
+        Address2: null
         Zip: '33930'
         City: 'VENDAYS MONTALIVET'
         Mail: test@resalys.com
@@ -2129,8 +2129,8 @@
         Image360Path: null
         Capacite: '770'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077e07619d.jpeg
+        Published: false
         Active: true
     80:
         Code: 177
@@ -2138,7 +2138,7 @@
         Name: 'Ajoncs d''Or'
         Title: null
         Address1: 'Chemin du Rocher'
-        Address2: ''
+        Address2: null
         Zip: '44500'
         City: 'LA BAULE'
         Mail: test@resalys.com
@@ -2156,8 +2156,8 @@
         Image360Path: null
         Capacite: '222'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077ecaf24e.jpeg
+        Published: false
         Active: true
     81:
         Code: 178
@@ -2183,8 +2183,8 @@
         Image360Path: null
         Capacite: '434'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c077fa54ebf.jpeg
+        Published: false
         Active: true
     82:
         Code: 179
@@ -2534,8 +2534,8 @@
         Image360Path: null
         Capacite: '225'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0791bea1bb.jpeg
+        Published: false
         Active: false
     95:
         Code: 190
@@ -2597,13 +2597,13 @@
         Name: 'Coteau de la Marine'
         Title: null
         Address1: 'Coteau de la Marine'
-        Address2: ''
+        Address2: null
         Zip: '04500'
         City: 'MONTAGNAC MONTPEZAT'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
@@ -2613,10 +2613,10 @@
         GeoCoordinateY: '6.0961'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07959d2aee.jpeg
+        Published: false
         Active: true
     98:
         Code: 193
@@ -2813,9 +2813,9 @@
         Name: Mas
         Title: null
         Address1: Sireuil
-        Address2: ''
+        Address2: null
         Zip: '24620'
-        City: 'LES EYZIES DE TAYAC '
+        City: 'LES EYZIES DE TAYAC'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
@@ -2831,8 +2831,8 @@
         Image360Path: null
         Capacite: '137'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07a0aa125e.jpeg
+        Published: false
         Active: true
     106:
         Code: 20
@@ -2858,7 +2858,7 @@
         Image360Path: null
         Capacite: '308'
         PlanPath: null
-        Vignette: uploads/etablissements/50bc681ddda54.png
+        Vignette: uploads/etablissements/50c07a15e105c.jpeg
         Published: false
         Active: true
     107:
@@ -2867,13 +2867,13 @@
         Name: 'Domaine des Iscles'
         Title: null
         Address1: 'Route du Plan d’Eau'
-        Address2: ''
+        Address2: null
         Zip: '13640'
         City: 'LA ROQUE D ANTHERON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
@@ -2883,10 +2883,10 @@
         GeoCoordinateY: '5.316109'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07a25e504c.jpeg
+        Published: false
         Active: true
     108:
         Code: 201
@@ -2948,13 +2948,13 @@
         Name: 'Dune Blanche'
         Title: null
         Address1: 'Route d’Etaples'
-        Address2: ''
+        Address2: null
         Zip: '62176'
         City: CAMIERS
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -2966,8 +2966,8 @@
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07a57d7e78.jpeg
+        Published: false
         Active: true
     111:
         Code: 204
@@ -3029,14 +3029,14 @@
         Name: Europe
         Title: null
         Address1: '31 route de Frontignan'
-        Address2: ''
+        Address2: null
         Zip: '34110'
         City: 'VIC LA GARDIOLE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
-        Fax: ''
+        Phone2: null
+        Fax: null
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: null
@@ -3045,10 +3045,10 @@
         GeoCoordinateY: '3.797599'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07a87bdb97.jpeg
+        Published: false
         Active: false
     114:
         Code: 207
@@ -3134,10 +3134,10 @@
     117:
         Code: 21
         Slug: camping-du-lac
-        Name: 'Camping du Lac '
+        Name: 'Camping du Lac'
         Title: null
         Address1: 'Le Fangeas Soulier'
-        Address2: ''
+        Address2: null
         Zip: '05110'
         City: CURBANS
         Mail: test@resalys.com
@@ -3155,8 +3155,8 @@
         Image360Path: null
         Capacite: '180'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07adc646ca.jpeg
+        Published: false
         Active: true
     118:
         Code: 210
@@ -3191,13 +3191,13 @@
         Name: 'Ile du Rhin'
         Title: null
         Address1: 'Zone touristique Ile du Rhin'
-        Address2: ''
+        Address2: null
         Zip: '68600'
         City: BIESHEIM
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
@@ -3207,10 +3207,10 @@
         GeoCoordinateY: '7.545766'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07afbdbe73.jpeg
+        Published: false
         Active: false
     120:
         Code: 212
@@ -3353,13 +3353,13 @@
         Name: Castellas
         Title: null
         Address1: 'RN 112'
-        Address2: ''
+        Address2: null
         Zip: '34200'
         City: SETE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
@@ -3369,10 +3369,10 @@
         GeoCoordinateY: '3.696624'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07b54eec04.jpeg
+        Published: false
         Active: false
     126:
         Code: 218
@@ -3380,14 +3380,14 @@
         Name: Neptune
         Title: null
         Address1: 'Avenue de la Retirada plage Nord'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: 'ARGELES SUR MER CEDEX'
         Mail: test@resalys.com
         CountryCode: FR
-        Phone1: ''
-        Phone2: ''
-        Fax: ''
+        Phone1: null
+        Phone2: null
+        Fax: null
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
@@ -3396,10 +3396,10 @@
         GeoCoordinateY: '3.022911'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07b6326e05.jpeg
+        Published: false
         Active: false
     127:
         Code: 219
@@ -3407,14 +3407,14 @@
         Name: 'Domaine d’Anghione'
         Title: null
         Address1: 'Route de la plage'
-        Address2: ''
+        Address2: null
         Zip: '20213'
         City: 'CASTELLARE DI CASINCA'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
-        Fax: ''
+        Phone2: null
+        Fax: null
         OpeningDate: '2013-03-02 00:00:00'
         ClosingDate: '2013-11-11 00:00:00'
         VilleId: 116
@@ -3423,18 +3423,18 @@
         GeoCoordinateY: '9.473267'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07b7d004ec.jpeg
+        Published: false
         Active: false
     128:
         Code: 22
         Slug: cap-agathois
-        Name: 'Cap Agathois '
+        Name: 'Cap Agathois'
         Title: null
         Address1: 'Route de Sète'
-        Address2: ''
+        Address2: null
         Zip: '34300'
         City: AGDE
         Mail: test@resalys.com
@@ -3452,8 +3452,8 @@
         Image360Path: null
         Capacite: '258'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07b8b3c71d.jpeg
+        Published: false
         Active: true
     129:
         Code: 220
@@ -3521,7 +3521,7 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
@@ -3533,8 +3533,8 @@
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07baf6c131.jpeg
+        Published: false
         Active: false
     132:
         Code: 223
@@ -3542,13 +3542,13 @@
         Name: Iles
         Title: null
         Address1: '245 route des Lacs'
-        Address2: ''
+        Address2: null
         Zip: '74190'
         City: PASSY
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
@@ -3558,10 +3558,10 @@
         GeoCoordinateY: '6.684919'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
+        Published: false
         Active: false
     133:
         Code: 224
@@ -3650,13 +3650,13 @@
         Name: 'Parc des Allais'
         Title: null
         Address1: 'Les Allais'
-        Address2: ''
+        Address2: null
         Zip: '37220'
         City: TROGUES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -3666,10 +3666,10 @@
         GeoCoordinateY: '0.497549'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
+        Published: false
         Active: false
     137:
         Code: 228
@@ -3704,14 +3704,14 @@
         Name: Rieumontagné
         Title: null
         Address1: 'Lac du Laouzas'
-        Address2: ''
+        Address2: null
         Zip: '81320'
         City: NAGES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
-        Fax: ''
+        Phone2: null
+        Fax: null
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: null
@@ -3720,18 +3720,18 @@
         GeoCoordinateY: '2.779604'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
+        Published: false
         Active: false
     139:
         Code: 23
         Slug: carbonnier
         Name: Carbonnier
         Title: null
-        Address1: ''
-        Address2: ''
+        Address1: null
+        Address2: null
         Zip: '24250'
         City: 'ST MARTIAL DE NABIRAT'
         Mail: test@resalys.com
@@ -3749,8 +3749,8 @@
         Image360Path: null
         Capacite: '192'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07c3a59d9a.jpeg
+        Published: false
         Active: true
     140:
         Code: 230
@@ -3785,13 +3785,13 @@
         Name: Tours
         Title: null
         Address1: 'Les Tours'
-        Address2: ''
+        Address2: null
         Zip: '12460'
         City: 'ST AMANS DES COTS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
@@ -3801,10 +3801,10 @@
         GeoCoordinateY: '2.658302'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07cac98a8a.jpeg
+        Published: false
         Active: false
     142:
         Code: 232
@@ -3839,13 +3839,13 @@
         Name: 'Domaine de la Marina'
         Title: null
         Address1: 'Route plage sud'
-        Address2: ''
+        Address2: null
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -3855,24 +3855,24 @@
         GeoCoordinateY: '-1.37825'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07cce6cae0.jpeg
+        Published: false
         Active: true
     144:
         Code: 234
         Slug: etangs-fleuris
         Name: 'Etangs Fleuris'
         Title: null
-        Address1: 'Route de la Couture '
-        Address2: ''
+        Address1: 'Route de la Couture'
+        Address2: null
         Zip: '77131'
         City: TOUQUIN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-10-26 00:00:00'
@@ -3882,10 +3882,10 @@
         GeoCoordinateY: '3.011745'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
+        Published: false
         Active: false
     145:
         Code: 235
@@ -3893,13 +3893,13 @@
         Name: Ravoire
         Title: null
         Address1: 'Route de le ravoire'
-        Address2: ''
+        Address2: null
         Zip: '74210'
         City: DOUSSARD
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-08 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
@@ -3909,10 +3909,10 @@
         GeoCoordinateY: '6.220515'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07ce853e04.jpeg
+        Published: false
         Active: true
     146:
         Code: 236
@@ -3920,13 +3920,13 @@
         Name: 'Saint Disdille'
         Title: null
         Address1: '117 Avenue Saint Disdille'
-        Address2: ''
+        Address2: null
         Zip: '74200'
         City: 'THONON LES BAINS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -3936,10 +3936,10 @@
         GeoCoordinateY: '6.477635'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07cf564de0.jpeg
+        Published: false
         Active: false
     147:
         Code: 237
@@ -3947,13 +3947,13 @@
         Name: 'Mar i Sol'
         Title: null
         Address1: 'Boulevard de le plage'
-        Address2: ''
+        Address2: null
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-20 00:00:00'
@@ -3965,8 +3965,8 @@
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d042f4b4.jpeg
+        Published: false
         Active: true
     148:
         Code: 238
@@ -3974,13 +3974,13 @@
         Name: 'Lou Pignada Ondres'
         Title: null
         Address1: '741 Avenue de la Plage'
-        Address2: ''
+        Address2: null
         Zip: '40440'
         City: ONDRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -3990,10 +3990,10 @@
         GeoCoordinateY: '-1.448208'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d136d49a.jpeg
+        Published: false
         Active: false
     149:
         Code: 239
@@ -4001,14 +4001,14 @@
         Name: 'Palmira Beach'
         Title: null
         Address1: 'Avenue du Port'
-        Address2: ''
+        Address2: null
         Zip: '34350'
         City: VENDRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
-        Fax: ''
+        Phone2: null
+        Fax: null
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 146
@@ -4017,10 +4017,10 @@
         GeoCoordinateY: '3.225202'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
+        Published: false
         Active: true
     150:
         Code: 24
@@ -4046,8 +4046,8 @@
         Image360Path: null
         Capacite: '305'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d30289f7.jpeg
+        Published: false
         Active: false
     151:
         Code: 240
@@ -4055,13 +4055,13 @@
         Name: 'Etoile de Mer'
         Title: null
         Address1: 'La Pagesse'
-        Address2: ''
+        Address2: null
         Zip: '34410'
         City: SERIGNAN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -4071,10 +4071,10 @@
         GeoCoordinateY: '3.279651'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d430c3b5.jpeg
+        Published: false
         Active: true
     152:
         Code: 241
@@ -4088,7 +4088,7 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-24 00:00:00'
         ClosingDate: '2013-10-12 00:00:00'
@@ -4098,24 +4098,24 @@
         GeoCoordinateY: '7.01902'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
+        Published: false
         Active: true
     153:
         Code: 242
         Slug: cadenieres
         Name: Cadenières
         Title: null
-        Address1: '1427 '
+        Address1: '1427'
         Address2: 'RD 560'
         Zip: '83690'
         City: VILLECROZE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
@@ -4125,10 +4125,10 @@
         GeoCoordinateY: '6.2754519'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d58a0174.jpeg
+        Published: false
         Active: false
     154:
         Code: 243
@@ -4136,13 +4136,13 @@
         Name: Pergola
         Title: null
         Address1: '1 rue des vernois'
-        Address2: ''
+        Address2: null
         Zip: '39130'
         City: MARIGNY
-        Mail: ''
+        Mail: null
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
@@ -4154,8 +4154,8 @@
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d67ba280.jpeg
+        Published: false
         Active: false
     155:
         Code: 244
@@ -4163,14 +4163,14 @@
         Name: Hippocampe
         Title: null
         Address1: 'Quartier La Croix'
-        Address2: ''
+        Address2: null
         Zip: '04290'
         City: VOLONNE
         Mail: test@resalys.com
         CountryCode: FR
-        Phone1: ''
-        Phone2: ''
-        Fax: ''
+        Phone1: null
+        Phone2: null
+        Fax: null
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: null
@@ -4179,10 +4179,10 @@
         GeoCoordinateY: '6.013711'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d71e10ea.jpeg
+        Published: false
         Active: false
     156:
         Code: 245
@@ -4217,13 +4217,13 @@
         Name: Tahiti
         Title: null
         Address1: 'Viale Libia 133'
-        Address2: ''
+        Address2: null
         Zip: '44020'
         City: 'LIDO DELLE NAZIONI'
         Mail: test@resalys.com
         CountryCode: IT
         Phone1: 06.01.01.01.01
-        Phone2: ''
+        Phone2: null
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-16 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
@@ -4233,10 +4233,10 @@
         GeoCoordinateY: '12.2454011'
         VideoPath: null
         Image360Path: null
-        Capacite: ''
+        Capacite: null
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07d7f143a9.jpeg
+        Published: false
         Active: false
     158:
         Code: 247
@@ -4322,10 +4322,10 @@
     161:
         Code: 25
         Slug: castell-montgri
-        Name: 'Castell Montgri '
+        Name: 'Castell Montgri'
         Title: null
         Address1: 'Ctra. Torroella-Estartit Km 4,700'
-        Address2: ''
+        Address2: null
         Zip: '17258'
         City: 'L''ESTARTIT'
         Mail: test@resalys.com
@@ -4343,8 +4343,8 @@
         Image360Path: null
         Capacite: '1260'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
+        Published: false
         Active: false
     162:
         Code: 250
@@ -4430,10 +4430,10 @@
     165:
         Code: 26
         Slug: caussanel
-        Name: 'Caussanel '
+        Name: Caussanel
         Title: null
-        Address1: ' Lac de Pareloup'
-        Address2: ''
+        Address1: 'Lac de Pareloup'
+        Address2: null
         Zip: '12290'
         City: 'CANET DE SALARS'
         Mail: test@resalys.com
@@ -4450,17 +4450,17 @@
         VideoPath: null
         Image360Path: null
         Capacite: '108'
-        PlanPath: null
-        Vignette: null
-        Published: null
+        PlanPath: uploads/etablissements/50c07e1d90ff8.jpeg
+        Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
+        Published: false
         Active: false
     166:
         Code: 27
         Slug: cayola
-        Name: 'Cayola '
+        Name: Cayola
         Title: null
         Address1: 'Côte Ouest'
-        Address2: ''
+        Address2: null
         Zip: '34450'
         City: VIAS
         Mail: test@resalys.com
@@ -4478,8 +4478,8 @@
         Image360Path: null
         Capacite: '176'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e2b73189.jpeg
+        Published: false
         Active: true
     167:
         Code: 28
@@ -4487,7 +4487,7 @@
         Name: Chaponnet
         Title: null
         Address1: '16 Rue du Chaponnet'
-        Address2: ''
+        Address2: null
         Zip: '85470'
         City: 'BREM SUR MER'
         Mail: test@resalys.com
@@ -4505,8 +4505,8 @@
         Image360Path: null
         Capacite: '330'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e37365d9.jpeg
+        Published: false
         Active: false
     168:
         Code: 29
@@ -4514,7 +4514,7 @@
         Name: 'Domaine des Charmilles'
         Title: null
         Address1: '1541 Route de l''Océan'
-        Address2: ''
+        Address2: null
         Zip: '17450'
         City: 'ST LAURENT DE LA PRÉE'
         Mail: test@resalys.com
@@ -4532,8 +4532,8 @@
         Image360Path: null
         Capacite: '297'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e438ad4e.jpeg
+        Published: false
         Active: true
     169:
         Code: 3
@@ -4541,7 +4541,7 @@
         Name: 'Cala Gogo'
         Title: null
         Address1: 'Avenue Armand Lanoux'
-        Address2: ''
+        Address2: null
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: test@resalys.com
@@ -4559,16 +4559,16 @@
         Image360Path: null
         Capacite: '649'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e4f778ac.jpeg
+        Published: false
         Active: true
     170:
         Code: 30
         Slug: chateau-de-galinee
-        Name: 'Château de Galinée '
+        Name: 'Château de Galinée'
         Title: null
         Address1: 'Galinée Le Guildo'
-        Address2: ''
+        Address2: null
         Zip: '22380'
         City: 'ST CAST LE GUILDO'
         Mail: test@resalys.com
@@ -4586,16 +4586,16 @@
         Image360Path: null
         Capacite: '273'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e6045eb5.jpeg
+        Published: false
         Active: true
     171:
         Code: 31
         Slug: chenaie
-        Name: 'Chênaie '
+        Name: Chênaie
         Title: null
         Address1: '36 Rue du Pâtisseau'
-        Address2: ''
+        Address2: null
         Zip: '44210'
         City: PORNIC
         Mail: test@resalys.com
@@ -4613,13 +4613,13 @@
         Image360Path: null
         Capacite: '305'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e6f495fa.jpeg
+        Published: false
         Active: true
     172:
         Code: 32
         Slug: domaine-des-chenes-verts
-        Name: 'Domaine des Chênes Verts '
+        Name: 'Domaine des Chênes Verts'
         Title: null
         Address1: 'Route de Sarlat'
         Address2: Souillac
@@ -4640,16 +4640,16 @@
         Image360Path: null
         Capacite: '143'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e7dc139a.jpeg
+        Published: false
         Active: true
     173:
         Code: 33
         Slug: col-vert
-        Name: 'Col Vert '
+        Name: 'Col Vert'
         Title: null
         Address1: '1548 Route de l''Etang'
-        Address2: ''
+        Address2: null
         Zip: '40560'
         City: VIELLE-ST-GIRONS
         Mail: test@resalys.com
@@ -4667,16 +4667,16 @@
         Image360Path: null
         Capacite: '812'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e8f9feca.jpeg
+        Published: false
         Active: false
     174:
         Code: 34
         Slug: conguel
-        Name: 'Conguel '
+        Name: Conguel
         Title: null
         Address1: 'Boulevard de la Teignouse'
-        Address2: ''
+        Address2: null
         Zip: '56170'
         City: QUIBERON
         Mail: test@resalys.com
@@ -4694,16 +4694,16 @@
         Image360Path: null
         Capacite: '250'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07e9d9e32e.jpeg
+        Published: false
         Active: true
     175:
         Code: 35
         Slug: coste-rouge
-        Name: 'Coste Rouge '
+        Name: 'Coste Rouge'
         Title: null
         Address1: 'Route de Collioure'
-        Address2: ''
+        Address2: null
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -4721,16 +4721,16 @@
         Image360Path: null
         Capacite: '145'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
+        Published: false
         Active: false
     176:
         Code: 36
         Slug: cote-d-argent
-        Name: 'Côte d''Argent '
+        Name: 'Côte d''Argent'
         Title: null
         Address1: '134 Route Contaut'
-        Address2: ''
+        Address2: null
         Zip: '33990'
         City: HOURTIN
         Mail: test@resalys.com
@@ -4748,16 +4748,16 @@
         Image360Path: null
         Capacite: '870'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
+        Published: false
         Active: false
     177:
         Code: 37
         Slug: crin-blanc
-        Name: 'Crin Blanc '
+        Name: 'Crin Blanc'
         Title: null
         Address1: 'Hameau de Saliers'
-        Address2: ''
+        Address2: null
         Zip: '13123'
         City: 'L''ALBARON'
         Mail: test@resalys.com
@@ -4775,16 +4775,16 @@
         Image360Path: null
         Capacite: '170'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07ecc6c0b3.jpeg
+        Published: false
         Active: true
     178:
         Code: 38
         Slug: cupulatta
-        Name: 'Cupulatta '
+        Name: Cupulatta
         Title: null
         Address1: 'Hameau de Cupulatta'
-        Address2: ''
+        Address2: null
         Zip: '20137'
         City: 'PORTO VECCHIO'
         Mail: test@resalys.com
@@ -4802,13 +4802,13 @@
         Image360Path: null
         Capacite: '115'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07edb7b8ec.jpeg
+        Published: false
         Active: true
     179:
         Code: 39
         Slug: cypres
-        Name: 'Cyprès '
+        Name: Cyprès
         Title: null
         Address1: '41, Rue du Pont Jaunay'
         Address2: BP644
@@ -4829,8 +4829,8 @@
         Image360Path: null
         Capacite: '280'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
+        Published: false
         Active: false
     180:
         Code: 4
@@ -4856,13 +4856,13 @@
         Image360Path: null
         Capacite: '364'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
+        Published: false
         Active: true
     181:
         Code: 40
         Slug: deux-fontaines
-        Name: 'Deux Fontaines '
+        Name: 'Deux Fontaines'
         Title: null
         Address1: Raguenes
         Address2: 'Feunteun Vihan'
@@ -4883,16 +4883,16 @@
         Image360Path: null
         Capacite: '293'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f05362d9.jpeg
+        Published: false
         Active: true
     182:
         Code: 41
         Slug: deux-plages
-        Name: 'Deux Plages '
+        Name: 'Deux Plages'
         Title: null
         Address1: 'Avenue d''Angoulins'
-        Address2: ''
+        Address2: null
         Zip: '17340'
         City: 'CHATELAILLON PLAGE'
         Mail: test@resalys.com
@@ -4910,13 +4910,13 @@
         Image360Path: null
         Capacite: '265'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f12115df.jpeg
+        Published: false
         Active: false
     183:
         Code: 42
         Slug: domaine-d-inly
-        Name: 'Domaine d''Inly '
+        Name: 'Domaine d''Inly'
         Title: null
         Address1: 'Route de Couarne'
         Address2: 'BP 24'
@@ -4937,16 +4937,16 @@
         Image360Path: null
         Capacite: '500'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f2104699.jpeg
+        Published: false
         Active: true
     184:
         Code: 43
         Slug: domaine-d-oleron
-        Name: 'Domaine d''Oléron '
+        Name: 'Domaine d''Oléron'
         Title: null
         Address1: 'Route de la Jousselinière'
-        Address2: ''
+        Address2: null
         Zip: '17190'
         City: 'ST GEORGES D''OLÉRON'
         Mail: test@resalys.com
@@ -4964,16 +4964,16 @@
         Image360Path: null
         Capacite: '170'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
+        Published: false
         Active: false
     185:
         Code: 44
         Slug: domaine-de-chaussy
-        Name: 'Domaine de Chaussy '
+        Name: 'Domaine de Chaussy'
         Title: null
         Address1: 'Quartier Le Petit Chaussy'
-        Address2: ''
+        Address2: null
         Zip: '07150'
         City: LAGORCE
         Mail: test@resalys.com
@@ -4991,8 +4991,8 @@
         Image360Path: null
         Capacite: '300'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
+        Published: false
         Active: false
     186:
         Code: 45
@@ -5000,7 +5000,7 @@
         Name: 'Domaine de Kermario'
         Title: null
         Address1: '1 Chemin de Kerluir'
-        Address2: ''
+        Address2: null
         Zip: '56340'
         City: CARNAC
         Mail: test@resalys.com
@@ -5018,8 +5018,8 @@
         Image360Path: null
         Capacite: '123'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f47a18f3.jpeg
+        Published: false
         Active: true
     187:
         Code: 46
@@ -5027,7 +5027,7 @@
         Name: 'Domaine de la Rive'
         Title: null
         Address1: 'Route de Bordeaux'
-        Address2: ''
+        Address2: null
         Zip: '40600'
         City: BISCARROSSE
         Mail: test@resalys.com
@@ -5045,16 +5045,16 @@
         Image360Path: null
         Capacite: '800'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f5af3540.jpeg
+        Published: false
         Active: false
     188:
         Code: 47
         Slug: domaine-de-leveno
-        Name: 'Domaine de Léveno '
+        Name: 'Domaine de Léveno'
         Title: null
         Address1: 'Route de l''Etang de Sandun'
-        Address2: ''
+        Address2: null
         Zip: '44350'
         City: GUÉRANDE
         Mail: test@resalys.com
@@ -5072,8 +5072,8 @@
         Image360Path: null
         Capacite: '600'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f685eb16.jpeg
+        Published: false
         Active: true
     189:
         Code: 48
@@ -5099,13 +5099,13 @@
         Image360Path: null
         Capacite: '470'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f79a5def.jpeg
+        Published: false
         Active: true
     190:
         Code: 49
         Slug: domaine-du-cros-d-auzon
-        Name: 'Domaine du Cros d''Auzon '
+        Name: 'Domaine du Cros d''Auzon'
         Title: null
         Address1: 'Quartier de la Gare'
         Address2: 'St Maurice d''Ardèche'
@@ -5126,8 +5126,8 @@
         Image360Path: null
         Capacite: '170'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f87dae28.jpeg
+        Published: false
         Active: false
     191:
         Code: 5
@@ -5141,7 +5141,7 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 70 47 89 48 '
+        Phone2: '06 70 47 89 48'
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -5153,16 +5153,16 @@
         Image360Path: null
         Capacite: '133'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07f9494938.jpeg
+        Published: false
         Active: true
     192:
         Code: 50
         Slug: domaine-du-verdon
-        Name: 'Domaine du Verdon '
+        Name: 'Domaine du Verdon'
         Title: null
         Address1: 'La Salaou'
-        Address2: ''
+        Address2: null
         Zip: '04120'
         City: CASTELLANE
         Mail: test@resalys.com
@@ -5180,16 +5180,16 @@
         Image360Path: null
         Capacite: '500'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fa7aba44.jpeg
+        Published: false
         Active: true
     193:
         Code: 51
         Slug: dunes
-        Name: 'Dunes '
+        Name: Dunes
         Title: null
         Address1: 'Voie de Barcelone'
-        Address2: ''
+        Address2: null
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
@@ -5207,13 +5207,13 @@
         Image360Path: null
         Capacite: '615'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fb512fb5.jpeg
+        Published: false
         Active: true
     194:
         Code: 52
         Slug: eden
-        Name: 'Eden '
+        Name: Eden
         Title: null
         Address1: 'Allée de Tournefort'
         Address2: 'Route de Palavas'
@@ -5234,13 +5234,13 @@
         Image360Path: null
         Capacite: '302'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fc17bf54.jpeg
+        Published: false
         Active: true
     195:
         Code: 53
         Slug: embruns
-        Name: 'Embruns '
+        Name: Embruns
         Title: null
         Address1: 'Avenue Edouard Branly'
         Address2: Claouey
@@ -5261,16 +5261,16 @@
         Image360Path: null
         Capacite: '800'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fcd601a0.jpeg
+        Published: false
         Active: false
     196:
         Code: 54
         Slug: eurolac
-        Name: 'Eurolac '
+        Name: Eurolac
         Title: null
         Address1: 'Promenade de l''Etang'
-        Address2: ''
+        Address2: null
         Zip: '40200'
         City: AUREILHAN
         Mail: test@resalys.com
@@ -5288,16 +5288,16 @@
         Image360Path: null
         Capacite: '560'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
+        Published: false
         Active: false
     197:
         Code: 55
         Slug: fanal
-        Name: 'Fanal '
+        Name: Fanal
         Title: null
         Address1: 'Rue du Fanal'
-        Address2: ''
+        Address2: null
         Zip: '14230'
         City: ISIGNY-SUR-MER
         Mail: test@resalys.com
@@ -5315,16 +5315,16 @@
         Image360Path: null
         Capacite: '240'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07fe6b006b.jpeg
+        Published: false
         Active: false
     198:
         Code: 56
         Slug: farigoulette
-        Name: 'Farigoulette '
+        Name: Farigoulette
         Title: null
         Address1: 'Lac de St Laurent'
-        Address2: ''
+        Address2: null
         Zip: '04500'
         City: 'ST LAURENT DU VERDON'
         Mail: test@resalys.com
@@ -5342,16 +5342,16 @@
         Image360Path: null
         Capacite: '219'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07ff28b033.jpeg
+        Published: false
         Active: true
     199:
         Code: 57
         Slug: fontaines
-        Name: 'Fontaines '
+        Name: Fontaines
         Title: null
         Address1: 'Route de St Nazaire'
-        Address2: ''
+        Address2: null
         Zip: '66140'
         City: CANET-EN-ROUSSILLON
         Mail: test@resalys.com
@@ -5369,13 +5369,13 @@
         Image360Path: null
         Capacite: '160'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c07ffe41534.jpeg
+        Published: false
         Active: true
     200:
         Code: 58
         Slug: frenes
-        Name: 'Frênes '
+        Name: Frênes
         Title: null
         Address1: 'Avenue du Pylone'
         Address2: 'La Brague'
@@ -5396,8 +5396,8 @@
         Image360Path: null
         Capacite: '110'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0800b0c8c9.jpeg
+        Published: false
         Active: true
     201:
         Code: 59
@@ -5405,7 +5405,7 @@
         Name: 'Front de Mer'
         Title: null
         Address1: 'Avenue du Grau'
-        Address2: ''
+        Address2: null
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -5423,22 +5423,22 @@
         Image360Path: null
         Capacite: '588'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0803cdc7df.jpeg
+        Published: false
         Active: false
     202:
         Code: 6
         Slug: aluna-vacances
-        Name: 'Aluna Vacances '
+        Name: 'Aluna Vacances'
         Title: null
         Address1: 'Route de Lagorce'
-        Address2: ''
+        Address2: null
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 70 53 71 93 '
+        Phone2: '06 70 53 71 93'
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
@@ -5450,16 +5450,16 @@
         Image360Path: null
         Capacite: '402'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0804b0108a.jpeg
+        Published: false
         Active: true
     203:
         Code: 60
         Slug: grand-terre
-        Name: 'Grand''Terre '
+        Name: 'Grand''Terre'
         Title: null
         Address1: 'La Grande Terre'
-        Address2: ''
+        Address2: null
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
@@ -5477,13 +5477,13 @@
         Image360Path: null
         Capacite: '296'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08054a6bdd.jpeg
+        Published: false
         Active: true
     204:
         Code: 61
         Slug: parc-de-la-grenouillere
-        Name: 'Parc de la Grenouillère '
+        Name: 'Parc de la Grenouillère'
         Title: null
         Address1: 'La Grenouillère'
         Address2: 'RN 152'
@@ -5504,16 +5504,16 @@
         Image360Path: null
         Capacite: '280'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0805f736fc.jpeg
+        Published: false
         Active: false
     205:
         Code: 63
         Slug: huttes
-        Name: 'Huttes '
+        Name: Huttes
         Title: null
         Address1: '15 rue des Seulières'
-        Address2: ''
+        Address2: null
         Zip: '17650'
         City: 'ST DENIS D''OLÉRON'
         Mail: test@resalys.com
@@ -5531,16 +5531,16 @@
         Image360Path: null
         Capacite: '205'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0806a2ba52.jpeg
+        Published: false
         Active: false
     206:
         Code: 64
         Slug: ideal
-        Name: 'Idéal '
+        Name: Idéal
         Title: null
         Address1: '715 Route de Chaparon'
-        Address2: ''
+        Address2: null
         Zip: '74210'
         City: LATHUILE
         Mail: test@resalys.com
@@ -5558,8 +5558,8 @@
         Image360Path: null
         Capacite: '300'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08073e5b11.jpeg
+        Published: false
         Active: true
     207:
         Code: 65
@@ -5567,7 +5567,7 @@
         Name: Ilates
         Title: null
         Address1: 'Route du Grouin'
-        Address2: ''
+        Address2: null
         Zip: '17111'
         City: LOIX
         Mail: test@resalys.com
@@ -5585,8 +5585,8 @@
         Image360Path: null
         Capacite: '240'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
+        Published: false
         Active: true
     208:
         Code: 66
@@ -5618,16 +5618,16 @@
     209:
         Code: 67
         Slug: internacional-de-calonge
-        Name: 'Internacional de Calonge '
+        Name: 'Internacional de Calonge'
         Title: null
         Address1: 'Ctra Palamos A St Feliu Km 7.6'
-        Address2: ''
+        Address2: null
         Zip: '17251'
         City: CALONGE
         Mail: test@resalys.com
         CountryCode: ES
         Phone1: 06.01.01.01.01
-        Phone2: '06 72 05 07 05 '
+        Phone2: '06 72 05 07 05'
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-30 00:00:00'
@@ -5639,16 +5639,16 @@
         Image360Path: null
         Capacite: '712'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080930c53a.jpeg
+        Published: false
         Active: false
     210:
         Code: 68
         Slug: internacional-palamos
-        Name: 'Internacional Palamos '
+        Name: 'Internacional Palamos'
         Title: null
         Address1: 'Cami Cap de Planes'
-        Address2: ''
+        Address2: null
         Zip: '17230'
         City: PALAMOS
         Mail: test@resalys.com
@@ -5666,16 +5666,16 @@
         Image360Path: null
         Capacite: '453'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0809db4f40.jpeg
+        Published: false
         Active: false
     211:
         Code: 69
         Slug: jard
-        Name: 'Jard '
+        Name: Jard
         Title: null
         Address1: '123 Bld Maréchal de Lattre de Tassigny'
-        Address2: ''
+        Address2: null
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
         Mail: test@resalys.com
@@ -5693,8 +5693,8 @@
         Image360Path: null
         Capacite: '350'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
+        Published: false
         Active: false
     212:
         Code: 7
@@ -5726,10 +5726,10 @@
     213:
         Code: 70
         Slug: lac-bleu
-        Name: 'Lac Bleu '
+        Name: 'Lac Bleu'
         Title: null
         Address1: 'Quartier La Touche'
-        Address2: ''
+        Address2: null
         Zip: '26410'
         City: 'CHATILLON EN DIOIS'
         Mail: test@resalys.com
@@ -5747,16 +5747,16 @@
         Image360Path: null
         Capacite: '130'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080b41c317.jpeg
+        Published: false
         Active: false
     214:
         Code: 71
         Slug: domaine-du-lac-de-miel
-        Name: 'Domaine du Lac de Miel '
+        Name: 'Domaine du Lac de Miel'
         Title: null
-        Address1: ''
-        Address2: ''
+        Address1: null
+        Address2: null
         Zip: '19190'
         City: BEYNAT
         Mail: test@resalys.com
@@ -5774,8 +5774,8 @@
         Image360Path: null
         Capacite: '180'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080c38220e.jpeg
+        Published: false
         Active: false
     215:
         Code: 72
@@ -5783,7 +5783,7 @@
         Name: 'Lac de Thoux St Cricq'
         Title: null
         Address1: 'lieu dit lannes'
-        Address2: ''
+        Address2: null
         Zip: '32430'
         City: THOUX
         Mail: test@resalys.com
@@ -5801,8 +5801,8 @@
         Image360Path: null
         Capacite: '129'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080cdc4833.jpeg
+        Published: false
         Active: false
     216:
         Code: 73
@@ -5834,10 +5834,10 @@
     217:
         Code: 74
         Slug: lou-broustaricq
-        Name: 'Lou Broustaricq '
+        Name: 'Lou Broustaricq'
         Title: null
         Address1: '2315 Route de Langeot'
-        Address2: ''
+        Address2: null
         Zip: '40460'
         City: SANGUINET
         Mail: test@resalys.com
@@ -5855,16 +5855,16 @@
         Image360Path: null
         Capacite: '576'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080da39517.jpeg
+        Published: false
         Active: true
     218:
         Code: 75
         Slug: lou-pignada
-        Name: 'Lou Pignada '
+        Name: 'Lou Pignada'
         Title: null
         Address1: 'Route d''Azur'
-        Address2: ''
+        Address2: null
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
@@ -5882,16 +5882,16 @@
         Image360Path: null
         Capacite: '430'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080e516e16.jpeg
+        Published: false
         Active: true
     219:
         Code: 76
         Slug: loubine
-        Name: 'Loubine '
+        Name: Loubine
         Title: null
         Address1: '1 Route de la Mer'
-        Address2: ''
+        Address2: null
         Zip: '85340'
         City: OLONNE-SUR-MER
         Mail: test@resalys.com
@@ -5909,13 +5909,13 @@
         Image360Path: null
         Capacite: '401'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080f064c82.jpeg
+        Published: false
         Active: true
     220:
         Code: 77
         Slug: loyada
-        Name: 'Loyada '
+        Name: Loyada
         Title: null
         Address1: '111 Rue de la Source'
         Address2: 'Avenue de l''Atlantique'
@@ -5936,8 +5936,8 @@
         Image360Path: null
         Capacite: '226'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c080fc5f050.jpeg
+        Published: false
         Active: true
     221:
         Code: 78
@@ -5969,10 +5969,10 @@
     222:
         Code: 79
         Slug: mare-e-pineta
-        Name: 'Mare e Pineta '
+        Name: 'Mare e Pineta'
         Title: null
         Address1: 'Viale delle Acacie, 67'
-        Address2: ''
+        Address2: null
         Zip: '44029'
         City: 'LIDO DI SPINA'
         Mail: test@resalys.com
@@ -5990,8 +5990,8 @@
         Image360Path: null
         Capacite: '1326'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08107bd9f4.jpeg
+        Published: false
         Active: false
     223:
         Code: 8
@@ -5999,7 +5999,7 @@
         Name: 'Sandaya Soulac Plage'
         Title: null
         Address1: 'L''Amélie'
-        Address2: ''
+        Address2: null
         Zip: '33780'
         City: SOULAC-SUR-MER
         Mail: test@resalys.com
@@ -6017,16 +6017,16 @@
         Image360Path: null
         Capacite: '526'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0811744e94.jpeg
+        Published: false
         Active: true
     224:
         Code: 80
         Slug: marine
-        Name: 'Marine '
+        Name: Marine
         Title: null
         Address1: '2196 Route de l''Espiguette'
-        Address2: ''
+        Address2: null
         Zip: '30240'
         City: 'LE GRAU-DU-ROI'
         Mail: test@resalys.com
@@ -6044,8 +6044,8 @@
         Image360Path: null
         Capacite: '293'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0812258939.jpeg
+        Published: false
         Active: false
     225:
         Code: 81
@@ -6053,7 +6053,7 @@
         Name: Marsouins
         Title: null
         Address1: 'Avenue de la Retirada 1939'
-        Address2: ''
+        Address2: null
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -6071,16 +6071,16 @@
         Image360Path: null
         Capacite: '587'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0812e76f6f.jpeg
+        Published: false
         Active: false
     226:
         Code: 82
         Slug: marze
-        Name: 'Marze '
+        Name: Marze
         Title: null
         Address1: 'Str. Prov. N 158 Km 30.200'
-        Address2: ''
+        Address2: null
         Zip: '58046'
         City: 'MARINA DI GROSSETTO'
         Mail: test@resalys.com
@@ -6098,16 +6098,16 @@
         Image360Path: null
         Capacite: '600'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08139ec548.jpeg
+        Published: false
         Active: false
     227:
         Code: 83
         Slug: maire
-        Name: 'Maïre '
+        Name: Maïre
         Title: null
-        Address1: ''
-        Address2: ''
+        Address1: null
+        Address2: null
         Zip: '34410'
         City: SÉRIGNAN
         Mail: test@resalys.com
@@ -6125,8 +6125,8 @@
         Image360Path: null
         Capacite: '206'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08145cad60.jpeg
+        Published: false
         Active: true
     228:
         Code: 84
@@ -6134,7 +6134,7 @@
         Name: Moulin
         Title: null
         Address1: '3 chemin du camping'
-        Address2: ''
+        Address2: null
         Zip: '39130'
         City: PATORNAY
         Mail: test@resalys.com
@@ -6152,16 +6152,16 @@
         Image360Path: null
         Capacite: '227'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08152150d5.jpeg
+        Published: false
         Active: false
     229:
         Code: 85
         Slug: camping-neptuno
-        Name: 'Camping Neptuno '
+        Name: 'Camping Neptuno'
         Title: null
         Address1: 'Rodors 23'
-        Address2: ''
+        Address2: null
         Zip: '17256'
         City: PALS
         Mail: test@resalys.com
@@ -6179,8 +6179,8 @@
         Image360Path: null
         Capacite: '260'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0815e99152.jpeg
+        Published: false
         Active: false
     230:
         Code: 86
@@ -6188,7 +6188,7 @@
         Name: Oasis
         Title: null
         Address1: 'Route de St Laurent'
-        Address2: ''
+        Address2: null
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -6206,8 +6206,8 @@
         Image360Path: null
         Capacite: '496'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081696fe36.jpeg
+        Published: false
         Active: true
     231:
         Code: 87
@@ -6215,7 +6215,7 @@
         Name: 'Océano d''Or'
         Title: null
         Address1: '84 Rue Georges Clémenceau'
-        Address2: ''
+        Address2: null
         Zip: '85520'
         City: JARD-SUR-MER
         Mail: test@resalys.com
@@ -6233,16 +6233,16 @@
         Image360Path: null
         Capacite: '430'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08174ca21c.jpeg
+        Published: false
         Active: false
     232:
         Code: 88
         Slug: oyam
-        Name: 'Oyam '
+        Name: Oyam
         Title: null
         Address1: 'Rue Oyamburua'
-        Address2: ''
+        Address2: null
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -6260,16 +6260,16 @@
         Image360Path: null
         Capacite: '350'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081a1e7f51.jpeg
+        Published: false
         Active: false
     233:
         Code: 89
         Slug: oyats
-        Name: 'Oyats '
+        Name: Oyats
         Title: null
         Address1: 'Route de la Plage des Casernes'
-        Address2: ''
+        Address2: null
         Zip: '40510'
         City: SEIGNOSSE
         Mail: test@resalys.com
@@ -6287,8 +6287,8 @@
         Image360Path: null
         Capacite: '500'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081ae8728f.jpeg
+        Published: false
         Active: true
     234:
         Code: 9
@@ -6296,7 +6296,7 @@
         Name: Ametlla
         Title: null
         Address1: 'Apartat de Correus N°240'
-        Address2: ''
+        Address2: null
         Zip: '43860'
         City: 'AMETLLA DE MAR - TARRAGONE'
         Mail: test@resalys.com
@@ -6314,8 +6314,8 @@
         Image360Path: null
         Capacite: '373'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081be7664e.jpeg
+        Published: false
         Active: false
     235:
         Code: 90
@@ -6323,7 +6323,7 @@
         Name: Pachacaïd
         Title: null
         Address1: 'Route de Canadel'
-        Address2: ''
+        Address2: null
         Zip: '83310'
         City: 'LA MÔLE'
         Mail: test@resalys.com
@@ -6341,8 +6341,8 @@
         Image360Path: null
         Capacite: '400'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081cc81dad.jpeg
+        Published: false
         Active: true
     236:
         Code: 91
@@ -6350,7 +6350,7 @@
         Name: 'Domaine de la Paille Basse'
         Title: null
         Address1: 'la paille basse'
-        Address2: ''
+        Address2: null
         Zip: '46200'
         City: SOUILLAC
         Mail: test@resalys.com
@@ -6368,16 +6368,16 @@
         Image360Path: null
         Capacite: '262'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081d8f233f.jpeg
+        Published: false
         Active: false
     237:
         Code: 92
         Slug: palace
-        Name: 'Palace '
+        Name: Palace
         Title: null
         Address1: '65 Boulevard Marsan de Montbrun'
-        Address2: ''
+        Address2: null
         Zip: '33780'
         City: 'SOULAC SUR MER'
         Mail: test@resalys.com
@@ -6395,8 +6395,8 @@
         Image360Path: null
         Capacite: '583'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081e4322b0.jpeg
+        Published: false
         Active: true
     238:
         Code: 93
@@ -6404,7 +6404,7 @@
         Name: 'Palavas Camping'
         Title: null
         Address1: 'Route de Maguelone'
-        Address2: ''
+        Address2: null
         Zip: '34250'
         City: 'PALAVAS LES FLOTS'
         Mail: test@resalys.com
@@ -6422,16 +6422,16 @@
         Image360Path: null
         Capacite: '435'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081f0e48d7.jpeg
+        Published: false
         Active: true
     239:
         Code: 94
         Slug: parc
-        Name: 'Parc '
+        Name: Parc
         Title: null
         Address1: '408 Quartier Trestaure'
-        Address2: ''
+        Address2: null
         Zip: '83440'
         City: 'ST PAUL EN FORÊT'
         Mail: test@resalys.com
@@ -6449,16 +6449,16 @@
         Image360Path: null
         Capacite: '110'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c081fee708d.jpeg
+        Published: false
         Active: true
     240:
         Code: 95
         Slug: park-albatros
-        Name: 'Park Albatros '
+        Name: 'Park Albatros'
         Title: null
         Address1: 'Loc. Pineta di T. Nuova'
-        Address2: ''
+        Address2: null
         Zip: '57027'
         City: 'SAN VINCENZO'
         Mail: test@resalys.com
@@ -6476,8 +6476,8 @@
         Image360Path: null
         Capacite: '885'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0820baa3b3.jpeg
+        Published: false
         Active: false
     241:
         Code: 96
@@ -6485,7 +6485,7 @@
         Name: 'Petit Bois (Ardèche)'
         Title: null
         Address1: '87 rue du Petit Bois'
-        Address2: ''
+        Address2: null
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
@@ -6503,8 +6503,8 @@
         Image360Path: null
         Capacite: '110'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c082194a720.jpeg
+        Published: false
         Active: true
     242:
         Code: 97
@@ -6512,7 +6512,7 @@
         Name: 'Petit Bois (Cantal)'
         Title: null
         Address1: 'Le bourg'
-        Address2: ''
+        Address2: null
         Zip: '15320'
         City: 'RUYNES EN MARGERIDE'
         Mail: test@resalys.com
@@ -6530,23 +6530,23 @@
         Image360Path: null
         Capacite: '90'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0822661cf3.jpeg
+        Published: false
         Active: true
     243:
         Code: 98
         Slug: pinada
-        Name: 'Pinada '
+        Name: Pinada
         Title: null
         Address1: 'hameau villerouge la crémade'
-        Address2: ''
+        Address2: null
         Zip: '11200'
         City: FABREZAN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 93 49'
-        Fax: ''
+        Fax: null
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 18
@@ -6557,16 +6557,16 @@
         Image360Path: null
         Capacite: '110'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c0823353b89.jpeg
+        Published: false
         Active: true
     244:
         Code: 99
         Slug: pins
-        Name: 'Pins '
+        Name: Pins
         Title: null
         Address1: 'Lieu dit Le Guen'
-        Address2: ''
+        Address2: null
         Zip: '22430'
         City: ERQUY
         Mail: test@resalys.com
@@ -6584,8 +6584,8 @@
         Image360Path: null
         Capacite: '488'
         PlanPath: null
-        Vignette: null
-        Published: null
+        Vignette: uploads/etablissements/50c08242e8322.jpeg
+        Published: false
         Active: true
     245:
         Code: 997

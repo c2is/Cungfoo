@@ -1171,9 +1171,9 @@
         Id: 37
         Locale: fr
         Country: France
-        OuvertureReception: ''
-        OuvertureCamping: ''
-        ArriveesDeparts: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: '"A 200 m de la plage, avec de nombreux services et animations, la situation idéale de ce camping Les Pins Maritimes, fait aisément oublier l''absence de piscine. Face aux Îles de Hyères : Porquerolles, Port-Cros, Île du Levant, ce camping vous apportera évasion et dépaysement."'
     37_nl:
         Id: 37
@@ -3347,9 +3347,9 @@
         Id: 105
         Locale: fr
         Country: France
-        OuvertureReception: ''
-        OuvertureCamping: ''
-        ArriveesDeparts: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: 'Logé sur une colline dominant plusieurs vallées (entre les Eyzies et Sarlat), le camping le Mas vous invite à passer un séjour sous le signe de la détente et de la culture. Dans un agréable cadre de verdure, vous trouverez piscine, terrain de sport, aire de jeux.'
     105_nl:
         Id: 105
@@ -4053,7 +4053,7 @@
         Country: France
         OuvertureReception: 8h-10h/17h-20h
         OuvertureCamping: 02/03/2013-11/11/2013
-        ArriveesDeparts: 'Du 02/03/2013 au 06/07/2013 et du 31/08/2013 au 11/11/2013, tous les jours. Du 06/07/2013 au 31/08/2013 le samedi, le mercredi et le dimanche. '
+        ArriveesDeparts: 'Du 02/03/2013 au 06/07/2013 et du 31/08/2013 au 11/11/2013, tous les jours. Du 06/07/2013 au 31/08/2013 le samedi, le mercredi et le dimanche.'
         Description: 'Un accès direct à la plage pour ce magnifique camping du Domaine d''Anghione, idéalement situé sur l''île de Beauté… Profitez des paysages paradisiaques à 35 km au sud de Bastia. Le parc de 40ha et son bel espace aquatique seront le gage de vacances réussies !'
     127_nl:
         Id: 127
@@ -4083,9 +4083,9 @@
         Id: 128
         Locale: fr
         Country: France
-        OuvertureReception: ''
-        OuvertureCamping: ''
-        ArriveesDeparts: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: 'Le Cap Agathois est situé à 3 km de la Mer Méditerranée avec ses grandes plages de sable fin ; c''est le camping idéal pour vos vacances en famille. Piscine, mer, plage, soleil, c''est l''environnement privilégié de la station. Tous au Cap d''Agde !'
     128_nl:
         Id: 128
@@ -5267,9 +5267,9 @@
         Id: 165
         Locale: fr
         Country: France
-        OuvertureReception: ''
-        OuvertureCamping: ''
-        ArriveesDeparts: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: 'Le camping Caussanel de Canet-de-salars, aux infrastructures et aux animations de qualité est situé au bord du lac de Pareloup qui vous offre ses 120 km de rives pour flâner ou passer des vacances actives.'
     165_nl:
         Id: 165
@@ -7155,9 +7155,9 @@
         Id: 224
         Locale: fr
         Country: France
-        OuvertureReception: ''
-        OuvertureCamping: ''
-        ArriveesDeparts: ''
+        OuvertureReception: null
+        OuvertureCamping: null
+        ArriveesDeparts: null
         Description: 'Au coeur de la Camargue, au grau-du-Roi, et situé sur la route de la plage de l''Espiguette, la plus grande plage d''Europe (navette), le camping la Marine vous invite à la détente autour de son espace piscine. Activités sportives, aquatiques, découverte de la Camargue et détente-relaxation seront au rendez-vous.'
     224_nl:
         Id: 224
