@@ -164,10 +164,12 @@
             <div style="overflow:hidden;">
             <span class="h4-like">{{ hebergement.name | trans }}</span>
              <span class="nbPlace">{# TODO <img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt=""> #} {{ hebergement.composition | trans | nl2br }}</span>
-            <strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombreChambre }}<br>
+            {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
-            {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>
-            <p class="clearboth">{{ hebergement.description | trans | nl2br }}</p>
+            {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>#}
+            <strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.capaciteHebergement | trans | nl2br }}<br>
+            {{ "fiche.surface" | trans }} {{ hebergement.dimensions | trans }}</strong>
+            <p class="clearboth">{{ hebergement.presentation | trans | nl2br }}</p>
             </div>
         </div>
     {% endfor %}
