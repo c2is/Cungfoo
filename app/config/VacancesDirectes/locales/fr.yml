@@ -49,7 +49,7 @@ etablissement.destinations: Liste des destinations
 etablissement.service_complementaires: Liste des services complementaires
 etablissement.type_hebergements: Liste des types d'hébergements
 
-date_search.date_debut:   Date début séjour
+date_search.date_debut:   Date de début du séjour
 date_search.destination:  Destination
 date_search.destination.empty_value: Destination ?
 date_search.nb_jours:  Nombre de jours
