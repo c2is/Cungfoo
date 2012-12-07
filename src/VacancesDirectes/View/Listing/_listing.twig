@@ -29,7 +29,7 @@
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
-            <img width="75" height="77" alt="" src="{{ asset(etab.ville.region.imagePath) }}">
+            <img width="75" height="77" alt="" src="{{ asset(etab.model.ville.region.imagePath) }}">
             <span class="titDest">
                 <a href="{{ path('destination_pays', {'pays': etab.model.pays.slug}) }}" title="{{ etab.model.pays }}">{{ etab.model.pays }}</a><br>
                 <a href="{{ path('destination_region', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug}) }}" title="{{ etab.model.region }}">{{ etab.model.region }}</a><br>
