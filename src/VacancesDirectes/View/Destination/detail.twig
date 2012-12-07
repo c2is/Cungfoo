@@ -69,8 +69,9 @@
     {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
         <div class="miniEncart clear">
             <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
-            <span class="titre">{{ event.name }}</span>
-            <p>{{ event.subtitle }}</p>
+            <span class="titre">{{ event.name | trans }}</span>
+            <p>{{ event.strDate | trans }}</p>
+            <p>{{ event.subtitle | trans }}</p>
         </div>
     {% endfor %}
     </div>
