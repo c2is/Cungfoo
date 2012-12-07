@@ -9,8 +9,7 @@
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
-                        <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="" />
-                        <input type="hidden" id="SearchDate_dateFin"  name="SearchDate[dateFin]" readonly="readonly" value="" />
+                        <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="15/06/2013" />
                         <div id="datepickerField" class="clear">
                             <label for="datepickerInput">Date de début de séjour</label>
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Date de début de séjour" /><span class="date"></span>

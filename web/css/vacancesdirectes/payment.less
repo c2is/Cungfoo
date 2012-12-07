@@ -2545,6 +2545,7 @@ h4{font-size:15px;line-height:17px;}
 
 // box fushia in sidebar
 .proposal{font:normal 14px/17px @arial;padding-bottom:60px;text-align:center;color:@colorBlanc;
+  &.arrowLeft:after{top:144px;}
   .proposalDates{font:bold 18px/21px @arial;}
   .proposalPicture{margin:10px 0 8px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));}
   .total{
@@ -2553,6 +2554,18 @@ h4{font-size:15px;line-height:17px;}
     }
   }
   table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;}
+}
+#greyBoxes{
+  #needHelpBloc{width:288px;height:246px;color:@colorBlanc;background-image:url("../../images/vacancesdirectes/common/pict/help-bloc.jpg");background-repeat:no-repeat;
+    .stamp{margin-bottom:10px;}
+    h2{margin-left:0;position:relative;
+      &:before{content:"";background:none;}
+    }
+    .content{width:113px;margin-left:65px;color:@colorGris2;font:bold 15px/17px @arial;position:absolute;top:70px;left:100px}
+    span{font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-align:center;width:160px;position:absolute;top:178px;left:130px;
+      a{font:bold 22px/25px @ptnarrow;color:@colorBlanc;text-decoration:none;display:block;}
+    }
+  }
 }
 
 /* Stylish Select 0.4.9 */

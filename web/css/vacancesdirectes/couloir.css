@@ -934,9 +934,9 @@ h4 {
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #address td,
 #reservationContener.editAccount #authentication > div #newCustomerLayer #address td {
-  display: inline-block;
-  margin-bottom: 10px;
-  float: left;
+  display: table-cell;
+  padding: 5px 10px 5px 0;
+  vertical-align: middle;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #address td:last-child > *,
 #reservationContener.editAccount #authentication > div #newCustomerLayer #address td:last-child > * {
@@ -954,11 +954,17 @@ h4 {
 #reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
 #reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea {
   width: 141px;
-  height: 81px;
+  height: 62px;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #address .datepicker button,
 #reservationContener.editAccount #authentication > div #newCustomerLayer #address .datepicker button {
   right: 15px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address .label,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address .label {
+  width: 124px;
+  line-height: 17px;
+  padding: 0 10px 0 0;
 }
 #reservationContener.detail #authentication > div #newCustomerLayer #others td,
 #reservationContener.editAccount #authentication > div #newCustomerLayer #others td {

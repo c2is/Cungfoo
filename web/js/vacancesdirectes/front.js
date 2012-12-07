@@ -12,6 +12,8 @@ var
     endHighSeasonDay = false,                               // dernier jour de la haute saison (lors du parcours de toutes les dates du datepicker)
     arrivalDay = false,                                     // date d'arrivée sélectionnée
     departureDay = false,                                   // date de départ sélectionnée
+//switch select of search engine
+    selectNum = 0,
 //resultCrit
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
@@ -847,47 +849,19 @@ $(function() {
 
         var preselectedFDate,
             preselectedDate;
-//        if ( $("#SearchDate_dateDebut").val() != '' && $("#SearchDate_dateFin").val() != '' ) {
-//            $.each($('input[type=hidden]'), function(i, item) {
-//                //console.log(item.value);
-//
-//                var fDate = item.value.split("/").reverse().join('/');
-//                //console.log(fDate);
-//                preselectedFDate = fDate;
-//                preselectedDate = item.value;
-//            });
-//            //console.log(preselectedDates);
-//            $('#datepickerInput').val('Du ' + preselectedDate);
-//            $('#datepickerCalendar').DatePickerSetDate(preselectedFDate);
-//        }
+        if ( $("#SearchDate_dateDebut").val() != '' ) {
+            var fDate = $("#SearchDate_dateDebut").val().split("/").reverse().join('/');
+            //console.log(preselectedDates);
+            $('#datepickerInput').val($("#SearchDate_dateDebut").val());
+            $('#datepickerCalendar').DatePickerSetDate(fDate);
+        }
+
 
         //console.log("################################## switchLinear()  ##################################");
         $('#searchBlocDate .searchBox').attr('id',linear);
 
         firstRendering = true;
 
-        //console.log("################################## initializeForbiddenDates()  ##################################");
-        //console.log(firstRendering);
-        /*
-        var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-
-        allSaturdays.removeClass('datepickerUnselectable');
-        if (firstRendering){
-            allSaturdays.each(function(index, value){
-                var td = $(this);
-                //            //console.log(endHighSeasonDay);
-
-                if (linear == "reservation"){
-                    var len = allSaturdays.length;
-                    if (index >= len - numMinWeeks) {
-                        td.addClass('datepickerUnselectable');
-                    }
-
-                }
-                //            //console.log(value);
-            });
-        }
-        */
     }
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
@@ -958,13 +932,21 @@ function countItem() {
     });
 }
 
-var selectNum = 0;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
+    var $button = $('.switchSelect');
+    var $selects = $button.parent().siblings(".newListSelected");
+    if ($('#SearchDate_isCamping').attr('value')){
+        selectNum = 1;
+        $('.switchSelect').css({backgroundPosition: "0 -270px"});
+        $selects.eq(0).hide();
+        $selects.eq(1).show();
+    }
+    else {
+        $selects.eq(1).hide();
+    }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        var $button = $(this);
-        var $selects = $button.parent().siblings(".newListSelected");
         //console.log($selects);
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
@@ -982,7 +964,6 @@ function switchSelect(){
         $('#SearchDate_isCamping').val(selectNum);
         return false;
     });
-    $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
 }
 
 var toggleState = 0;
