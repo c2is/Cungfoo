@@ -2,17 +2,17 @@
     1_de:
         Id: 1
         Locale: de
-        Titre: 'L''espagne DE'
-        Accroche: 'Au mois de juillet pour 6 personnes DE'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver DE'
+        TitreLien: null
     1_en:
         Id: 1
         Locale: en
-        Titre: 'L''espagne EN'
-        Accroche: 'Au mois de juillet pour 6 personnes EN'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver EN'
+        TitreLien: null
     1_fr:
         Id: 1
         Locale: fr
@@ -30,17 +30,17 @@
     2_de:
         Id: 2
         Locale: de
-        Titre: 'Le portugal DE'
-        Accroche: 'Au mois de juin pour 6 personnes DE'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver DE'
+        TitreLien: null
     2_en:
         Id: 2
         Locale: en
-        Titre: 'Le portugal EN'
-        Accroche: 'Au mois de juin pour 6 personnes EN'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver EN'
+        TitreLien: null
     2_fr:
         Id: 2
         Locale: fr
@@ -58,17 +58,17 @@
     3_de:
         Id: 3
         Locale: de
-        Titre: 'La france DE'
-        Accroche: 'Au mois de juillet pour 6 personnes DE'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver DE'
+        TitreLien: null
     3_en:
         Id: 3
         Locale: en
-        Titre: 'La france EN'
-        Accroche: 'Au mois de juillet pour 6 personnes EN'
+        Titre: null
+        Accroche: null
         Lien: null
-        TitreLien: 'Réserver EN'
+        TitreLien: null
     3_fr:
         Id: 3
         Locale: fr
