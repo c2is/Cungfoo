@@ -13,6 +13,11 @@ $(function() {
         resize_myframe();
     }
 
+    // selects
+//    if($('#semainierContener').length){
+//        $('#semainierContener').find('select').sSelect({ddMaxHeight: '300px'});
+//    }
+
     $('.proposalDescriptionDetailsLink').hover( function(){
         var yTop = $(this).offset();
         consoleLog(yTop.top);

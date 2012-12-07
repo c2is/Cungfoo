@@ -26,6 +26,7 @@ class InitCommand extends Command
             array('command' => 'propel:generate'),
             array('command' => 'propel:load:schema'),
             array('command' => 'fixture:load'),
+            array('command' => 'vacancesdirectes:database:check-integrity'),
             array('command' => 'logs:clear'),
             array('command' => 'cache:clear'),
         );

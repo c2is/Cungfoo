@@ -63,7 +63,7 @@
   transform:@transform;
 }
 /* Centrer verticalement dans un conteneur de hauteur fixe */
-._verticalCenter(@height, @lineHeight:auto) {
+._verticalCenter(@height, @lineHeight:inherit) {
   height: @height;                                                            /* Centrer verticalement une ligne de texte */
   line-height: @height;
   &>* {vertical-align:middle;display:inline-block;line-height:@lineHeight;}   /* Centrer verticalement plusieurs lignes de texte */

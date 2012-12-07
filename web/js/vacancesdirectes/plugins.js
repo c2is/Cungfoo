@@ -96,6 +96,7 @@ function addLinkBlock(){
  *
  * Dual licensed under the MIT and GPL licenses.
  */
+
 (function($){
     //add class to html tag
     $('html').addClass('stylish-select');

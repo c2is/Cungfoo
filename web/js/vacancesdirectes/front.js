@@ -329,13 +329,26 @@ $(function() {
         //console.log(direction);
 
         var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
-        var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
         var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
-        var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
 
-        $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
-        $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
-//        $("#sliderPrev, #sliderNext").find('.content').hide().fadeIn(300);
+        if ($("#slider").children('li').last().find('.sliderStain.second').length){
+            var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+            $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
+        }
+        else {
+            $('#sliderPrev').empty().wrapInner('<div class="content" />').children('.content').prepend(prevSlideTitle);
+        }
+        if ($("#slider").children('li').eq(1).find('.sliderStain.second').length){
+            var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
+            $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+        }
+        else {
+            $('#sliderNext').empty().wrapInner('<div class="content" />').children('.content').prepend(nextSlideTitle);
+        }
+
+
+
+
         $("#sliderPrev").delay(300).animate({left:20},300);
         $("#sliderNext").delay(300).animate({right:20},300);
     }
@@ -957,10 +970,12 @@ function switchSelect(){
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);
         if(selectNum) {
+            $button.css({backgroundPosition: "0 -270px"});
             $selects.eq(0).hide();
             $selects.eq(1).show();
         }
         else {
+            $button.css({backgroundPosition: "0 -54px"});
             $selects.eq(1).hide();
             $selects.eq(0).show();
         }
