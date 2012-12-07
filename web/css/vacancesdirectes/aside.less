@@ -58,14 +58,14 @@ aside{
           &.active:after,
           &:hover:after{top:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
           span {width:60px;height:34px;display:block;background:url("../../images/vacancesdirectes/common/sprites/sprite-60.png") no-repeat 0 0 transparent;margin:-3px 11px 0;position:relative;text-indent:-9999px;}
-          &#tabSearchBlocDate span{background-position:0px -240px;}
-          &#tabSearchBlocTrajet span{background-position:0px -280px;}
-          &#tabSearchBlocBudget span{background-position:0px -320px;}
+          &#tabSearchBlocDate span{background-position:0px 0px;}
+          &#tabSearchBlocTrajet span{background-position:0px -40px;}
+          &#tabSearchBlocBudget span{background-position:0px -80px;}
           &.active,
           &:hover{height:40px;margin-top:0;._border-radius(10px 10px 0 0);
-            &#tabSearchBlocDate span{background-position:-60px -240px;}
-            &#tabSearchBlocTrajet span{background-position:-60px -280px;}
-            &#tabSearchBlocBudget span{background-position:-60px -320px;}
+            &#tabSearchBlocDate span{background-position:-60px 0px;}
+            &#tabSearchBlocTrajet span{background-position:-60px -40px;}
+            &#tabSearchBlocBudget span{background-position:-60px -80px;}
             span{margin-top:0;}
           }
           &.active{cursor:default;}
@@ -213,13 +213,13 @@ aside{
       .asset{font:14px/16px @arial;text-transform:uppercase;._verticalCenter(80px,16px);clear:both;margin-left:70px;width:178px;/*cursor:pointer;*/
         &>a{text-decoration:none;}
         &:before{float:left;content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-60.png") no-repeat 0 -360px transparent;width:60px;height:80px;display:block;position:relative;margin-left:-70px;}
-        &:nth-child(1):before{background-position:0 -360px}
+        &:nth-child(1):before{background-position:0 -120px}
         //&:nth-child(1):hover:before{background-position:-60px -360px}
-        &:nth-child(2):before{background-position:0 -440px}
+        &:nth-child(2):before{background-position:0 -200px}
         //&:nth-child(2):hover:before{background-position:-60px -440px}
-        &:nth-child(3):before{background-position:0 -520px}
+        &:nth-child(3):before{background-position:0 -280px}
         //&:nth-child(3):hover:before{background-position:-60px -520px}
-        &:nth-child(4):before{background-position:0 -600px}
+        &:nth-child(4):before{background-position:0 -360px}
         //&:nth-child(4):hover:before{background-position:-60px -600px}
       }
 

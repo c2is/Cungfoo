@@ -3191,7 +3191,7 @@ body.edito table td {
   border-bottom: 1px solid #8c8a8a;
   display: block;
   position: relative;
-  padding-left: 55px;
+  padding-left: 60px;
   font-size: 11px;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -5563,13 +5563,13 @@ aside #searchBloc #switchForm li a span {
   text-indent: -9999px;
 }
 aside #searchBloc #switchForm li a#tabSearchBlocDate span {
-  background-position: 0px -240px;
+  background-position: 0px 0px;
 }
 aside #searchBloc #switchForm li a#tabSearchBlocTrajet span {
-  background-position: 0px -280px;
+  background-position: 0px -40px;
 }
 aside #searchBloc #switchForm li a#tabSearchBlocBudget span {
-  background-position: 0px -320px;
+  background-position: 0px -80px;
 }
 aside #searchBloc #switchForm li a.active,
 aside #searchBloc #switchForm li a:hover {
@@ -5580,15 +5580,15 @@ aside #searchBloc #switchForm li a:hover {
 }
 aside #searchBloc #switchForm li a.active#tabSearchBlocDate span,
 aside #searchBloc #switchForm li a:hover#tabSearchBlocDate span {
-  background-position: -60px -240px;
+  background-position: -60px 0px;
 }
 aside #searchBloc #switchForm li a.active#tabSearchBlocTrajet span,
 aside #searchBloc #switchForm li a:hover#tabSearchBlocTrajet span {
-  background-position: -60px -280px;
+  background-position: -60px -40px;
 }
 aside #searchBloc #switchForm li a.active#tabSearchBlocBudget span,
 aside #searchBloc #switchForm li a:hover#tabSearchBlocBudget span {
-  background-position: -60px -320px;
+  background-position: -60px -80px;
 }
 aside #searchBloc #switchForm li a.active span,
 aside #searchBloc #switchForm li a:hover span {
@@ -5938,16 +5938,16 @@ aside #greyBoxes #assetsBloc .asset:before {
   margin-left: -70px;
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(1):before {
-  background-position: 0 -360px;
+  background-position: 0 -120px;
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(2):before {
-  background-position: 0 -440px;
+  background-position: 0 -200px;
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(3):before {
-  background-position: 0 -520px;
+  background-position: 0 -280px;
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(4):before {
-  background-position: 0 -600px;
+  background-position: 0 -360px;
 }
 /* footer */
 /* footer */
