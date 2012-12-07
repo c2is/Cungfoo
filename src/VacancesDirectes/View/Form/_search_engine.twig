@@ -4,7 +4,7 @@
         <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
         <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
     </ul>
-    <form id="searchBlocDate" method="post">
+    <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}">
         <fieldset>
             {{ form_errors(searchForm) }}
             <ol>
