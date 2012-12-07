@@ -936,7 +936,7 @@ function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
     var $button = $('.switchSelect');
     var $selects = $button.parent().siblings(".newListSelected");
-    if ($('#SearchDate_isCamping').attr('value')){
+    if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
         $selects.eq(0).hide();
