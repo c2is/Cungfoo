@@ -109,7 +109,7 @@
             {% for idee in ideesweekend %}
                 <div class="element {% if idee.prix == "" %} noprice {% endif %} clear {# TODO linkParent #}">
                     <div class="left">
-                        {# TODO <a href="{{ idee.lien | trans }}" class="linkBlock"> #}<img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />{# TODO </a> #}
+                        <img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />
                     </div>
                     <div class="details left">
                         <span class="title">{{ idee.titre }}</span>
