@@ -1,0 +1,7 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="wrap" class="fixed-width clear">
+	<iframe id="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="700px"></iframe>
+</div>
+{% endblock content %}

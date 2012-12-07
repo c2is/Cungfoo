@@ -19,6 +19,8 @@ class DateType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $locale = $this->getApplication()['context']->get('language');
+        $data   = $this->getApplication()['session']->get('search_engine_data');
+        $currentDestination = is_object($data) && property_exists($data, 'destination') ? $data->destination : null;
 
         $builder->add('dateDebut', 'hidden', array(
             'required' => false,
@@ -35,8 +37,6 @@ class DateType extends AppAwareType
         $builder->add('isCamping', 'hidden', array(
             'required' => false,
         ));
-
-        $destinationCurrentChoice = $this->getApplication()['request']->get('SearchDate')['destination'];
 
         $destinationChoices = \Cungfoo\Model\RegionQuery::create()
             ->useI18nQuery($locale, 'region_i18n')
@@ -62,11 +62,11 @@ class DateType extends AppAwareType
             'empty_value' => "date_search.destination.empty_value",
             'empty_data'  => null,
             'required'    => false,
-            'data' => $destinationCurrentChoice
+            'data' => $currentDestination
         ));
 
         $region = \Cungfoo\Model\RegionQuery::create()
-            ->filterByCode($destinationCurrentChoice)
+            ->filterByCode($currentDestination)
             ->findOne()
         ;
 
@@ -74,7 +74,9 @@ class DateType extends AppAwareType
             ->joinWithI18n($locale)
             ->withColumn('VilleI18n.name', 'Name')
             ->select(array('Code', 'Name'))
-            ->filterByDestination($region, $destinationCurrentChoice)
+            ->_if($currentDestination)
+            ->filterByDestination($region, $currentDestination)
+            ->_endif()
             ->orderBy('Name')
             ->findActive()
         ;
@@ -89,7 +91,9 @@ class DateType extends AppAwareType
 
         $campings = \Cungfoo\Model\EtablissementQuery::create()
             ->select(array('Code', 'Name'))
-            ->filterByDestination($region, $destinationCurrentChoice)
+            ->_if($currentDestination)
+            ->filterByDestination($region, $currentDestination)
+            ->_endif()
             ->orderByName()
             ->findActive()
         ;

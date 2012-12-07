@@ -6,7 +6,7 @@
 {% block bodyClass %} fiche{% endblock %}
 
 {% block leftColumn %}
-{# TODO <a class="bt gris left goto" href="#_">&lt; Retour</a> #}
+<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a> <br />
 
 {# TODO <ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
