@@ -1,6 +1,6 @@
 <div id="results" class="clear">
     {% for etab in list.element %}
-    <div data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+    <div id="camping-{{ etab.model.slug }}" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
         <!-- item.title -->
         <div class="itemResultTitle">
             <input type="checkbox" name="compar" value="idCamp1">
@@ -29,7 +29,7 @@
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
-            <img width="75" height="77" alt="" src="{{ asset(etab.ville.region.imagePath) }}">
+            <img width="75" height="77" alt="" src="{{ asset(etab.model.ville.region.imagePath) }}">
             <span class="titDest">
                 <a href="{{ path('destination_pays', {'pays': etab.model.pays.slug}) }}" title="{{ etab.model.pays }}">{{ etab.model.pays }}</a><br>
                 <a href="{{ path('destination_region', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug}) }}" title="{{ etab.model.region }}">{{ etab.model.region }}</a><br>

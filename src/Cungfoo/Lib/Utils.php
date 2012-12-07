@@ -30,13 +30,19 @@ class Utils
         $propelConf = include($filename);
         $connection = reset($propelConf['datasources'])['connection'];
 
-        preg_match('/dbname=(.*)$/s', $connection['dsn'], $matches);
+        list(,$connectionInfo) = explode(':', $connection['dsn']);
 
-        return array(
-            'database' => $matches[1],
-            'user' => $connection['user'],
-            'password' => $connection['password'],
-        );
+        $connectionResults = array();
+        foreach (explode(';', $connectionInfo) as $info)
+        {
+            list($key, $value) = explode("=", $info);
+            $connectionResults[$key] = $value;
+        }
+
+        $connectionResults['user']     = $connection['user'];
+        $connectionResults['password'] = $connection['password'];
+
+        return $connectionResults;
     }
 
     public function decimalToDms($latitude, $longitude)
