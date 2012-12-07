@@ -934,18 +934,19 @@ function countItem() {
 
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
+    var $button = $('.switchSelect');
+    var $selects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').attr('value')){
         selectNum = 1;
-        var $button = $('.switchSelect');
-        var $selects = $button.parent().siblings(".newListSelected");
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
         $selects.eq(0).hide();
         $selects.eq(1).show();
     }
+    else {
+        $selects.eq(1).hide();
+    }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        var $button = $(this);
-        var $selects = $button.parent().siblings(".newListSelected");
         //console.log($selects);
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
@@ -963,7 +964,6 @@ function switchSelect(){
         $('#SearchDate_isCamping').val(selectNum);
         return false;
     });
-    $('#SearchDate_selectContainer2 .newListSelected').eq(1).hide();
 }
 
 var toggleState = 0;
