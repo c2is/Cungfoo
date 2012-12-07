@@ -86,7 +86,7 @@ class CouloirController implements ControllerProviderInterface
 
             $query = array_merge($query, $request->request->all());
 
-            return $app['twig']->render('Couloir\detail-sejour.twig', array(
+            return $app['twig']->render('Couloir\confirmation.twig', array(
                 'query' => $query,
                 "step"  => 4,
             ));
