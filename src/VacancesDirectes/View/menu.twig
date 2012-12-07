@@ -1,9 +1,9 @@
 {% set menu = app.config.get('vd_menu') %}
 
 <nav id="nav"><ul class="topnav fixed-width clear">
-    <li class="tab current"><a id="home" href="{{ path( 'homepage' ) }}"><img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}"></a></li>
+    <li class="tab{% if app.request.get('_route') == "homepage" %} current{% endif %}"><a id="home" href="{{ path( 'homepage' ) }}"><img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}"></a></li>
         {% for item in menu.items %}
-            <li class="tab"><a>{{ item.title|trans }}</a>
+            <li class="tab{% if "destination" in app.request.get('_route') %} current{% endif %}"><a>{{ item.title|trans }}</a>
                 {{ render ( path ( item.route ) ) }}
             </li>
         {% endfor %}

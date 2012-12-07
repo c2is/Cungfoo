@@ -163,7 +163,7 @@
         <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
         <div id="forwardBlocSubtitle">
             {{ vosVacances.prenom }}
-            <span>{{ vosVacances.age }} {{ "ans" | trans }}</span>
+            {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
         </div>
         <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
     </div>
