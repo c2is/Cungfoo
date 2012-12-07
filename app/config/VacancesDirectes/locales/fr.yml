@@ -6,6 +6,7 @@ seo:
         camping: "Camping %nom%, camping %ville% pas cher avec piscine"
         dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
         dispo: "Résultat de recherche location camping, mobil home"
+        couloir: "Espace de réservation"
     meta:
         default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -13,6 +14,7 @@ seo:
         camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances Directes."
         dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières disponibilités en camping proposées par Vacances Directes et réserver en ligne."
         dispo: "Listing - Campings"
+        couloir: "Espace de réservation"
 
 pays.france: France
 pays.espagne: Espagne
