@@ -196,7 +196,7 @@ class DestinationController implements ControllerProviderInterface
 
         $sitesAVisiter      = PointInteretPeer::$getForMethod($item, PointInteretPeer::RANDOM_SORT, 5);
         $nbSitesAVisiter    = PointInteretPeer::$getCountForMethod($item);
-        $events             = EventPeer::$getForMethod($item, EventPeer::SORT_BY_PRIORITY, 5);
+        $events             = EventPeer::$getForMethod($item, EventPeer::SORT_BY_PRIORITY, 9);
         $campings           = EtablissementPeer::$getForMethod($item, EtablissementPeer::RANDOM_SORT);
 
         $nbCampinsg = count($campings);
