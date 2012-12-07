@@ -12,6 +12,8 @@ var
     endHighSeasonDay = false,                               // dernier jour de la haute saison (lors du parcours de toutes les dates du datepicker)
     arrivalDay = false,                                     // date d'arrivée sélectionnée
     departureDay = false,                                   // date de départ sélectionnée
+//switch select of search engine
+    selectNum = 0,
 //resultCrit
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
@@ -958,9 +960,16 @@ function countItem() {
     });
 }
 
-var selectNum = 0;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
+    if ($('#SearchDate_isCamping').attr('value')){
+        selectNum = 1;
+        var $button = $('.switchSelect');
+        var $selects = $button.parent().siblings(".newListSelected");
+        $('.switchSelect').css({backgroundPosition: "0 -270px"});
+        $selects.eq(0).hide();
+        $selects.eq(1).show();
+    }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
         var $button = $(this);

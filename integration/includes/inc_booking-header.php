@@ -13,7 +13,7 @@
     <meta name="author" content="">
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../web/css/vacancesdirectes/payment.css">
+    <link rel="stylesheet" href="../web/css/vacancesdirectes/couloir.css">
     <!--<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>-->
 
     <script src="../web/vendor/head.extended.js"></script>
