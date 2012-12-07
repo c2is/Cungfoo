@@ -2,21 +2,21 @@
     1:
         ImageFondPath: null
         Prix: '227'
-        IllustrationPath: uploads/mise_en_avants/50c061eea31aa.jpeg
+        IllustrationPath: uploads/mise_en_avants/50c1ed5ca90ae.jpeg
         DateFinValidite: '2013-11-15 00:00:00'
         SortableRank: 1
         Active: true
     2:
         ImageFondPath: null
         Prix: '21'
-        IllustrationPath: null
+        IllustrationPath: uploads/mise_en_avants/50c1ed777f3de.jpeg
         DateFinValidite: '2013-01-08 00:00:00'
         SortableRank: 2
         Active: true
     3:
         ImageFondPath: null
         Prix: null
-        IllustrationPath: null
+        IllustrationPath: uploads/mise_en_avants/50c1ed888c20a.jpeg
         DateFinValidite: '2013-11-29 00:00:00'
         SortableRank: 3
         Active: true

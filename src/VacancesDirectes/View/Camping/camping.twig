@@ -184,7 +184,7 @@
 </div>
 <!-- tab Sur place -->
 <div id="tabSurplace" class="tabs">
-    {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">{% endif %}
+    {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">{% endif %}
     {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">{% endif %}
     <div class="colSurPlace clearboth">
         {% if etab.activites | length %}

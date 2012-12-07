@@ -1,5 +1,5 @@
 \Cungfoo\Model\VosVacances:
     1:
-        Age: '10'
-        ImagePath: uploads/vos_vacancess/50ae495f96427.jpeg
+        Age: null
+        ImagePath: uploads/vos_vacancess/50c1f080dc9a7.jpeg
         Active: true

@@ -47,7 +47,7 @@
         Slug: perigord-dordogne
         Name: Périgord/Dordogne
         Introduction: null
-        Description: null
+        Description: 'Ancienne province historique de la Dordogne, le Périgord se décline en plusieurs couleurs. L''influence de la région Dordogne-Périgord s''étend aux deux départements frontaliers de la Dordogne : Corrèze et Lot, que la rivière de la Dordogne traverse avec grâce.'
     2_nl:
         Id: 2
         Locale: nl
@@ -103,7 +103,7 @@
         Slug: gironde
         Name: Gironde
         Introduction: null
-        Description: null
+        Description: 'Partir en vacances en Gironde, c''est découvrir une terre à la nature préservée, qui étonne par sa diversité et séduit par sa beauté.'
     4_nl:
         Id: 4
         Locale: nl
@@ -131,7 +131,7 @@
         Slug: alsace-jura
         Name: Alsace/Jura
         Introduction: null
-        Description: null
+        Description: 'Aux frontières de l''Allemagne et de la Suisse, au cœur des montagnes des Vosges et de la plaine du Rhin, direction l''Est de la France pour partir en vacances en Alsace.'
     5_nl:
         Id: 5
         Locale: nl
@@ -159,7 +159,7 @@
         Slug: landes
         Name: Landes
         Introduction: null
-        Description: null
+        Description: 'En Aquitaine, entre Pays basque et Gironde, de Biscarrosse à Tarnos, le département des Landes couvre 106km de plages de sable fin sur la côte Atlantique… passez des vacances en famille dans les Landes, c''est une région idéale !'
     6_nl:
         Id: 6
         Locale: nl
@@ -215,7 +215,7 @@
         Slug: normandie
         Name: Normandie
         Introduction: null
-        Description: null
+        Description: 'Touché par la magie du Mont-Saint-Michel, charmé par ses paysages incomparables, impressionné par l''une des plus grandes pages de l''histoire mondiale, qui s''est écrite sur les plages normandes le 6 juin 1944, chacun veut voir ou "revoir sa Normandie". Il existe une multitude de sites à visiter en Normandie.'
     8_nl:
         Id: 8
         Locale: nl
@@ -243,7 +243,7 @@
         Slug: bretagne
         Name: Bretagne
         Introduction: null
-        Description: null
+        Description: 'Terre de légendes et de traditions, la Bretagne oscille entre l''Armor et l''Argoat, la mer et la terre bretonnes, et offre des paysages surprenants aux climats très variés.'
     9_nl:
         Id: 9
         Locale: nl
@@ -271,7 +271,7 @@
         Slug: charente-maritime
         Name: Charente-Maritime
         Introduction: null
-        Description: null
+        Description: 'Dans le Sud-Ouest de la France, entre la Charente-Maritime et la Dordogne, passez des vacances au camping en Charente, au vert.'
     10_nl:
         Id: 10
         Locale: nl
@@ -327,7 +327,7 @@
         Slug: pays-de-loire
         Name: 'Pays de Loire'
         Introduction: null
-        Description: null
+        Description: 'Entrelacs d''entités historiques fort différentes, la région Pays de la Loire sème, sur la route des vacances, 450km de littoral comme autant d''invitations au tourisme vert, au cyclotourisme (à travers l''itinéraire "La Loire à vélo") et à la navigation. Une myriade de châteaux ponctue la vallée de la Loire, inscrite au Patrimoine mondial de l''Unesco.'
     12_nl:
         Id: 12
         Locale: nl
@@ -355,7 +355,7 @@
         Slug: vendee
         Name: Vendée
         Introduction: null
-        Description: null
+        Description: 'De passage en Pays de la Loire, au bord de l''océan Atlantique, passez des vacances en famille en Vendée. Des châteaux de sable sur les plages de Saint-Jean-de-Monts aux promenades sur la jetée et la grande plage des Sables-d''Olonne, la Vendée accueille, en saison, des milliers de visiteurs amateurs de voile, pêche, surf et détente en bord de mer.'
     13_nl:
         Id: 13
         Locale: nl
@@ -383,7 +383,7 @@
         Slug: languedoc-roussillon
         Name: 'Languedoc-Roussillon '
         Introduction: null
-        Description: null
+        Description: 'Mer et montagne, grandes villes dynamiques et causses désertiques, histoire millénaire et architecture futuriste : la région Languedoc-Roussillon est une terre de contrastes et de sensations.'
     14_nl:
         Id: 14
         Locale: nl
@@ -439,7 +439,7 @@
         Slug: auvergne
         Name: Auvergne
         Introduction: null
-        Description: null
+        Description: '109 sources (dont celle de Volvic), près de cent volcans (volcan du Puy de Dôme), plus de 20 000km de cours d''eau… L''Auvergne constitue l''un des plus grands espaces préservés d''Europe.'
     16_nl:
         Id: 16
         Locale: nl
@@ -495,7 +495,7 @@
         Slug: ardeche
         Name: Ardèche
         Introduction: null
-        Description: null
+        Description: 'A travers ses paysages, l’Ardèche révèle plus de 35 000 ans d’histoire, et se place aujourd’hui au rang de la Préhistoire mondiale.'
     18_nl:
         Id: 18
         Locale: nl
@@ -579,7 +579,7 @@
         Slug: corse
         Name: Corse
         Introduction: null
-        Description: null
+        Description: 'A 200km de la côte d''Azur, la Corse, véritable continent miniature, trône au milieu de la mer Méditerranée.'
     21_nl:
         Id: 21
         Locale: nl
@@ -719,7 +719,7 @@
         Slug: alpes
         Name: Alpes
         Introduction: null
-        Description: null
+        Description: 'Bienvenue dans le domaine du massif montagneux le plus vaste et le plus élevé d''Europe, culminant en France à 4 810m avec le Mont-Blanc. Dans la région des Alpes, les départements de Haute-Savoie, Savoie ou Hautes-Alpes vous réservent de superbes vacances à la montagne et en famille.'
     26_nl:
         Id: 26
         Locale: nl
@@ -747,7 +747,7 @@
         Slug: provence-cote-d-azur
         Name: 'Provence-Côte d''Azur '
         Introduction: null
-        Description: null
+        Description: 'Dans l''arrière-pays méditerranéen, à l''ouest du département du Var, partez en vacances en Provence. Aux portes du parc régional du Verdon, entre Aix-en-Provence, Marseille et Avignon, le Pays de la Provence saura séduire tous les amoureux de la nature et les amateurs de villages pittoresques.'
     27_nl:
         Id: 27
         Locale: nl
