@@ -849,47 +849,19 @@ $(function() {
 
         var preselectedFDate,
             preselectedDate;
-//        if ( $("#SearchDate_dateDebut").val() != '' && $("#SearchDate_dateFin").val() != '' ) {
-//            $.each($('input[type=hidden]'), function(i, item) {
-//                //console.log(item.value);
-//
-//                var fDate = item.value.split("/").reverse().join('/');
-//                //console.log(fDate);
-//                preselectedFDate = fDate;
-//                preselectedDate = item.value;
-//            });
-//            //console.log(preselectedDates);
-//            $('#datepickerInput').val('Du ' + preselectedDate);
-//            $('#datepickerCalendar').DatePickerSetDate(preselectedFDate);
-//        }
+        if ( $("#SearchDate_dateDebut").val() != '' ) {
+            var fDate = $("#SearchDate_dateDebut").val().split("/").reverse().join('/');
+            //console.log(preselectedDates);
+            $('#datepickerInput').val($("#SearchDate_dateDebut").val());
+            $('#datepickerCalendar').DatePickerSetDate(fDate);
+        }
+
 
         //console.log("################################## switchLinear()  ##################################");
         $('#searchBlocDate .searchBox').attr('id',linear);
 
         firstRendering = true;
 
-        //console.log("################################## initializeForbiddenDates()  ##################################");
-        //console.log(firstRendering);
-        /*
-        var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-
-        allSaturdays.removeClass('datepickerUnselectable');
-        if (firstRendering){
-            allSaturdays.each(function(index, value){
-                var td = $(this);
-                //            //console.log(endHighSeasonDay);
-
-                if (linear == "reservation"){
-                    var len = allSaturdays.length;
-                    if (index >= len - numMinWeeks) {
-                        td.addClass('datepickerUnselectable');
-                    }
-
-                }
-                //            //console.log(value);
-            });
-        }
-        */
     }
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
