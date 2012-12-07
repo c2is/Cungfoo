@@ -324,9 +324,7 @@ body.edito{
 
 
 ._stylish-select(@selectWidth,@selectHeight,@marginRight,@spriteNumber){
-  .SSContainerDivWrapper {min-width:@selectWidth;
-    &>ul{width:auto;}
-  }
+  .SSContainerDivWrapper {min-width:@selectWidth;}
   ul.newList a {._verticalCenter(@selectHeight);}
   .newListSelected {width:@selectWidth;._verticalCenter(@selectHeight);margin-right:@marginRight;
     .selectedTxt {width:@selectWidth - @selectHeight - 7px;._verticalCenter(@selectHeight);padding:0 @selectHeight 0 7px;}

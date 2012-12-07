@@ -2555,10 +2555,6 @@ body.edito table td {
 #SearchDate_selectContainer2 .SSContainerDivWrapper {
   min-width: 188px;
 }
-#SearchDate_selectContainer0 .SSContainerDivWrapper > ul,
-#SearchDate_selectContainer2 .SSContainerDivWrapper > ul {
-  width: auto;
-}
 #SearchDate_selectContainer0 ul.newList a,
 #SearchDate_selectContainer2 ul.newList a {
   height: 27px;
@@ -2634,9 +2630,6 @@ body.edito table td {
 }
 #SearchDate_selectContainer1 .SSContainerDivWrapper {
   min-width: 248px;
-}
-#SearchDate_selectContainer1 .SSContainerDivWrapper > ul {
-  width: auto;
 }
 #SearchDate_selectContainer1 ul.newList a {
   height: 27px;
@@ -6024,9 +6017,6 @@ aside #searchBloc #searchBlocDate .selectContainer {
 }
 aside #searchBloc #searchBlocDate select {
   display: none;
-}
-aside #searchBloc #searchBlocDate #SearchDate_selectContainer2 .newListSelected .SSContainerDivWrapper {
-  min-width: 268px;
 }
 aside #searchBloc #searchBlocDate #SearchDate_switch {
   float: right;

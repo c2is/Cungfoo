@@ -60,7 +60,29 @@ head.ready(function(){
             }
         }
 
+        // selects
+        $('.selectedTxt').click(function(){
 
+            if ( !$(this).parent().hasClass('newListSelFocus') ){
+                var selectWidth = $(this).parent().width();
+                $(this).next('.SSContainerDivWrapper').show();
+                var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
+                console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+                console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+                console.log( selectUlWidth > selectWidth );
+                if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth > selectWidth ){
+                    console.log(selectUlWidth);
+                    $(this).next('.SSContainerDivWrapper').css({
+                        minWidth: selectUlWidth + 33
+                    });
+                    $(this).next('.SSContainerDivWrapper').addClass('minWidth')
+                }
+                else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
+                    return false;
+                }
+            }
+
+        });
 
 
         // datepickers

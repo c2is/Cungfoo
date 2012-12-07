@@ -1621,9 +1621,6 @@ h4 {
 #authentication #newCustomerLayer .SSContainerDivWrapper {
   min-width: 141px;
 }
-#authentication #newCustomerLayer .SSContainerDivWrapper.maxHeight {
-  min-width: 146px;
-}
 #authentication #newCustomerLayer ul.newList a {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1689,9 +1686,6 @@ h4 {
 }
 #reservation .aRoom .SSContainerDivWrapper {
   min-width: 54px;
-}
-#reservation .aRoom .SSContainerDivWrapper.maxHeight {
-  min-width: 59px;
 }
 #reservation .aRoom ul.newList a {
   height: 27px;
@@ -1759,9 +1753,6 @@ h4 {
 #reservation #financialContener .SSContainerDivWrapper {
   min-width: 216px;
 }
-#reservation #financialContener .SSContainerDivWrapper.maxHeight {
-  min-width: 221px;
-}
 #reservation #financialContener ul.newList a {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1827,9 +1818,6 @@ h4 {
 }
 #option .SSContainerDivWrapper {
   min-width: 141px;
-}
-#option .SSContainerDivWrapper.maxHeight {
-  min-width: 146px;
 }
 #option ul.newList a {
   height: 27px;
