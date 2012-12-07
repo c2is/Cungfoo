@@ -107,15 +107,15 @@
                 <h2>{{ "general.idees_week_end" | trans }}</h2>
             </div>
             {% for idee in ideesweekend %}
-                <div class="element {% if idee.prix == "" %} noprice {% endif %} clear">
+                <div class="element {% if idee.prix == "" %} noprice {% endif %} clear {# TODO linkParent #}">
                     <div class="left">
-                        <a href="{{ idee.lien | trans }}" class="linkBlock"><img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" /></a>
+                        {# TODO <a href="{{ idee.lien | trans }}" class="linkBlock"> #}<img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />{# TODO </a> #}
                     </div>
-                    <div class="details left linkParent">
+                    <div class="details left">
                         <span class="title">{{ idee.titre }}</span>
                     </div>
                     {% if(idee.prix != "") %}
-                        <a href="{{ idee.lien | trans }}" class="stain cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
+                        {# TODO <a href="{{ idee.lien | trans }}" class="stain cover {# TODO linkBlock #}"> #}<span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span>{# TODO </a> #}
                     {% endif %}
                 </div>
             {% endfor %}
