@@ -199,19 +199,21 @@ class DestinationController implements ControllerProviderInterface
         $events             = EventPeer::$getForMethod($item, EventPeer::SORT_BY_PRIORITY, 9);
         $campings           = EtablissementPeer::$getForMethod($item, EtablissementPeer::RANDOM_SORT);
 
-        $nbCampinsg = count($campings);
-        $listData = array();
-        for($i = 0; $i < 5 && $i < $nbCampinsg; $i++)
-        {
-            $listData[] = $campings[$i];
-        }
+        $nbCampings = count($campings);
 
         $list = new CatalogueListing($app);
         $list
-            ->setData($listData)
+            ->setData($campings)
             ->setType(CatalogueListing::CATALOGUE)
         ;
         $listContent = $list->process();
+
+        // On parcourt tous les campings pour trouver le premier qui a bien des coordonnees saisies afin d'afficher la GMap centree sur cet element
+        $firstEtab = null;
+        for($i = 0; $i < $nbCampings && (!$firstEtab || (!$firstEtab->getGeoCoordinateX() && !$firstEtab->getGeoCoordinateY())); $i++)
+        {
+            $firstEtab = $campings[$i];
+        }
 
         return $app->renderView('Destination/detail.twig', array(
             'locale'            => $locale,
@@ -222,7 +224,7 @@ class DestinationController implements ControllerProviderInterface
             'events'            => $events,
             'campings'          => $campings,
             'list'              => $listContent,
-            'firstEtab'         => reset($listContent['element']),
+            'firstEtab'         => $firstEtab,
             'searchForm'        => $searchEngine->getView(),
             'imagesTitle'       => $app->trans('destination.images_region_title'),
         ));

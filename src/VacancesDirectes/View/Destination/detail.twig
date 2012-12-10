@@ -35,7 +35,7 @@
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
     <p class="destiDescription">{{ item.description }}</p> {# Description #}
 
-    <a class="bt big fushia right goto" href="#results">Notre sélection</a>
+    {#<a class="bt big fushia right goto" href="#results">Notre sélection</a>#}
 
 {% endblock %}
 
@@ -43,6 +43,23 @@
 
     {% include 'Form/_search_engine.twig' %}
 
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    {# Bloc "Notre sélection de campings" #}
+    <h3>{{ "destination.campings_selection_title" | trans }}</h3>
+    {% include 'Listing/_listing.twig' %}
+    <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+
+    {% include 'Bloc/informations.twig' %}
+</div>
 {% endblock %}
 
 {% block topWideColumn %}
@@ -60,8 +77,6 @@
     {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
     </div>
 
-
-
     {# Bloc Evenements #}
     <div class="events radiusBox greyC left clear">
     <span class="h5-like">{{ "destination.events_title" | trans }}</span>
@@ -78,23 +93,8 @@
 
 {% endblock %}
 
-{% block bottomLeftColumn %}
-
-    {# Bloc "Notre sélection de campings" #}
-    <h3>{{ "destination.campings_selection_title" | trans }}</h3>
-    {% include 'Listing/_listing.twig' %}
-
-{% endblock %}
-
-{% block bottomRightColumn %}
-<div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
-
-    {% include 'Bloc/informations.twig' %}
-</div>
-{% endblock %}
-
 {% block bottomWideColumn %}
+{% if firstEtab %}
 <div id="destiMapContener" class="clear">
     {# Bloc GMap #}
     <span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
@@ -108,7 +108,7 @@
                         ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
                     {% endfor %}
                 ];
-                var centerDestiMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
+                var centerDestiMkr = new google.maps.LatLng({{firstEtab.geoCoordinateX}},{{firstEtab.geoCoordinateY}}),
                         mapOptions = {
                             zoom: 6,
                             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -120,6 +120,7 @@
         </script>
     </div>
 </div>
+{% endif %}
 
     {# Photos #}
     <h3>{{ imagesTitle }}</h3>
