@@ -83,6 +83,26 @@ class CheckIntegrityCommand extends BaseCommand
                 $item->save();
             }
 
+            $items = \Cungfoo\Model\EtablissementQuery::create()
+                ->filterByName("%(Hôtel)", \Criteria::LIKE)
+                ->find($con)
+            ;
+            foreach($items as $item)
+            {
+                $item->setActive(false);
+                $item->save();
+            }
+
+            $items = \Cungfoo\Model\EtablissementQuery::create()
+                ->filterByName("%(Résidence)", \Criteria::LIKE)
+                ->find($con)
+            ;
+            foreach($items as $item)
+            {
+                $item->setActive(false);
+                $item->save();
+            }
+
             \Cungfoo\Model\TopCampingQuery::create()
                 ->update(array('Active' => false), $con)
             ;

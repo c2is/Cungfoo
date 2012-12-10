@@ -33,6 +33,8 @@ destination.retour_bottom: Retour à la liste
 listing_destination.campings_map_title: Campings Vacances Directes
 listing_destination.campings_map_prefixe_subtitle: en
 
+listing.plus_resultats: Plus de résultats
+
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
 menu.locations: Les locations
@@ -40,7 +42,7 @@ menu.bons_plans: Les bons plans
 menu.vacances: Vos vacances
 menu.weekends: Vos week-ends
 
-menu_destination.accroche: 3 pays, 26 régions touristiques, vos vacances avec Vacances Directes.
+menu_destination.accroche: 3 pays, 23 régions touristiques, vos vacances avec Vacances Directes.
 
 menu.plus_de_regions: Plus de régions
 menu.libelle: Libellé
@@ -144,7 +146,7 @@ home.topcamping: Top campings
 home.topcamping.link: Tous les top campings (%number%)
 home.vacances_directes_cest: Vacances directes c'est
 home.4_pays: 3 pays
-home.26_regions: 26 régions
+home.26_regions: 23 régions
 home.touristiques: touristiques
 home.destination: Destination
 home.destination_france: Destination France

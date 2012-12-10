@@ -20,7 +20,6 @@ var
     minPrice,                                               // le prix minimum de la liste
     maxPrice,                                               // le prix maximum de la liste
     containerCrit = $('#formSearchRefined'),                // conteneur des criteres
-    nbVisible = 10,                                         // nombre d'items visible avant pagination
     nbToShow = 5,                                           // nombre d'items a afficher si pagination existe
 //googlemap
     map,
@@ -33,6 +32,9 @@ var
     ib,
     aMarkers = [];
 
+if(nbVisible == undefined) {
+    var nbVisible = 10;                                      // nombre d'items visible avant pagination
+}
 
 /*--  DOMREADY  --*/
 $(function() {

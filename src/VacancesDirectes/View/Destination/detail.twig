@@ -35,46 +35,13 @@
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
     <p class="destiDescription">{{ item.description }}</p> {# Description #}
 
-    <a class="bt big fushia right goto" href="#results">Notre sélection</a>
+    {#<a class="bt big fushia right goto" href="#results">Notre sélection</a>#}
 
 {% endblock %}
 
 {% block topRightColumn %}
 
     {% include 'Form/_search_engine.twig' %}
-
-{% endblock %}
-
-{% block topWideColumn %}
-
-    {# Bloc POIs #}
-    <div class="activites radiusBox greyC left clear">
-    {% for poi in sitesAVisiter %}
-        {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
-        <div class="miniEncart clear">
-            <img src="{{ poi.image }}"  class="left boxborder" alt="">
-            <span class="h5-like">{{ poi.name }}</span>
-            <p> {{ poi.presentation | truncate(300, true, '...') }}</p>
-        </div>
-    {% endfor %}
-    {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
-    </div>
-
-
-
-    {# Bloc Evenements #}
-    <div class="events radiusBox greyC left clear">
-    <span class="h5-like">{{ "destination.events_title" | trans }}</span>
-    <span class="h6-like">{{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}</span>
-    {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
-        <div class="miniEncart clear">
-            <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
-            <span class="titre">{{ event.name | trans }}</span>
-            <p>{{ event.strDate | trans }}</p>
-            <p>{{ event.subtitle | trans }}</p>
-        </div>
-    {% endfor %}
-    </div>
 
 {% endblock %}
 
@@ -94,7 +61,39 @@
 </div>
 {% endblock %}
 
+{% block topWideColumn %}
+
+    {# Bloc POIs #}
+    <div class="activites radiusBox greyC left clear">
+    {% for poi in sitesAVisiter %}
+        {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
+        <div class="miniEncart clear">
+            <img src="{{ poi.image }}"  class="left boxborder" alt="">
+            <span class="h5-like">{{ poi.name }}</span>
+            <p> {{ poi.presentation | truncate(300, true, '...') }}</p>
+        </div>
+    {% endfor %}
+    {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
+    </div>
+
+    {# Bloc Evenements #}
+    <div class="events radiusBox greyC left clear">
+    <span class="h5-like">{{ "destination.events_title" | trans }}</span>
+    <span class="h6-like">{{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}</span>
+    {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
+        <div class="miniEncart clear">
+            <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
+            <span class="titre">{{ event.name | trans }}</span>
+            <p>{{ event.strDate | trans }}</p>
+            <p>{{ event.subtitle | trans }}</p>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
 {% block bottomWideColumn %}
+{% if firstEtab %}
 <div id="destiMapContener" class="clear">
     {# Bloc GMap #}
     <span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
@@ -108,7 +107,7 @@
                         ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
                     {% endfor %}
                 ];
-                var centerDestiMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
+                var centerDestiMkr = new google.maps.LatLng({{firstEtab.geoCoordinateX}},{{firstEtab.geoCoordinateY}}),
                         mapOptions = {
                             zoom: 6,
                             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -120,6 +119,7 @@
         </script>
     </div>
 </div>
+{% endif %}
 
     {# Photos #}
     <h3>{{ imagesTitle }}</h3>
