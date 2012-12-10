@@ -94,10 +94,12 @@
 
 // Stylish Select
 .stylish-select{
-  .SSContainerDivWrapper {margin:0;padding:0;min-width:@selectWidth;position:absolute;top:22px;left:0;z-index:100;}
+  .SSContainerDivWrapper {margin:0;padding:0;position:absolute;top:22px;left:0;z-index:100;
+//    min-width:@selectWidth;
+  }
   ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
   ul.newList * {margin:0;padding:0;}
-  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;._verticalCenter(@selectHeight);white-space:nowrap;cursor:pointer;}
+  ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0;._verticalCenter(@selectHeight);white-space:nowrap;cursor:pointer;}
   .newListSelected {width:@selectWidth;color:@colorGris2;height:@selectHeight;float:left;margin-right:10px;background-color:@colorBgGrisC;position:relative;._verticalCenter(@selectHeight);
     .selectedTxt:after{content:"";width:27px;height:23px;display:block;background:url("../../images/vacancesdirectes/common/ui/arrow-select.png") no-repeat 0 0;position:absolute;top:0;right:0;}
   }

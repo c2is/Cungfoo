@@ -145,7 +145,8 @@ $(function() {
     $(".popinInline").colorbox({inline:true, width:"75%"});
 
 // select
-    $('#searchForm').find('select').not($('select[multiple]')).sSelect({ddMaxHeight: '300px'});
+    $('#searchForm').find('select').sSelect({ddMaxHeight: '300px'});
+
 
 //navigation
 //    var mylist = $('#campingsList')
@@ -896,9 +897,36 @@ $(function() {
 
 /*-- HEADREADY --*/
 head.ready(function(){
+
     if ($('#searchContainer').length) {
         $('#searchText').height($('#searchForm').height());
     }
+
+    $('.selectedTxt').click(function(){
+
+        if ( !$(this).parent().hasClass('newListSelFocus') ){
+            var selectWidth = $(this).parent().width();
+            $(this).next('.SSContainerDivWrapper').show();
+            var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
+//            console.log(selectWidth);
+//            console.log(selectUlWidth);
+//            console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+//            console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+//            console.log( selectUlWidth >= selectWidth );
+            if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
+
+                $(this).next('.SSContainerDivWrapper').css({
+                    minWidth: selectUlWidth + 33
+                });
+                $(this).next('.SSContainerDivWrapper').addClass('minWidth')
+            }
+            else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
+                return false;
+            }
+        }
+
+    });
+
 });
 
 /*--  FUNCTIONS  --*/
@@ -936,7 +964,7 @@ function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
     var $button = $('.switchSelect');
     var $selects = $button.parent().siblings(".newListSelected");
-    if ($('#SearchDate_isCamping').attr('value')){
+    if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
         $selects.eq(0).hide();
