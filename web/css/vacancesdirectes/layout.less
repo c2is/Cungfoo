@@ -47,6 +47,7 @@ header, section, footer {position:relative;}
       .type{margin:10px 20px;}
       .objective{margin:10px;}
       &#destinations{
+        a:hover{color:@colorFushia;}
         .ratio-33{width:300px;margin-left:16px;
           &:first-child{width:308px;margin-left:0;}
           .radiusBox,
@@ -156,7 +157,7 @@ h6, .h6-like{color:@colorFushia;}
   &.fushia{background-color:@colorFushia;color:@colorBlanc;}
   &.orange{background-color:@colorOrange;color:@colorBlanc;}
   &.trans{background:transparent;padding:0;}
-  &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;}
+  &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;margin-top:10px;}
   &.cfushia{color:@colorFushia;}
   &.big{padding:5px 10px;}
   &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
@@ -342,7 +343,7 @@ ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px
 .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
 ul.newList li a:focus {-moz-outline-style: none;}
 .selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
-ul.newList li:first-child{display:none;}
+//ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
 .hiLite {background:#ED145B!important;color:#fff!important;}

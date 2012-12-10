@@ -3,7 +3,7 @@
 {% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <ul>
+    <ul class="errors">
         {% for error in errors %}
             <li>{{ error.messageTemplate|trans }}</li>
         {% endfor %}

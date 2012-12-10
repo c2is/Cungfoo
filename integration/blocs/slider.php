@@ -1,5 +1,5 @@
 <div id="sliderWrapper">
-    <a id="sliderPrev" class="radiusBox yellow"></a>
+    <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
     <div id="sliderContainer">
         <div id="sliderBackground"></div>
         <!--
@@ -106,55 +106,61 @@
 
 
             <li class="slide active" data-slide="2">
-                <a title="Plus de destinations&nbsp;!" href="#" class="sliderPhoto" style="transform: rotate(12deg) scale(1, 1); display: block;"><img alt="Plus de destinations&nbsp;!" src="/c2is/Cungfoo/web/" class="large boxborder"></a>
-                <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: block;">
+                <a title="Plus de destinations&nbsp;!" href="#" class="sliderPhoto" style="transform: rotate(12deg) scale(1, 1); display: block;">
+                    <img alt="Plus de destinations&nbsp;!" src="/c2is/Cungfoo/web/" class="large boxborder">
+                    <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: block;">
+                </a>
                 <div class="sliderBackground" style="display: block;"></div>
-                <div class="sliderStain first" style="display: block;">
+                <a href="#" class="sliderStain first" style="display: block;">
                     <div class="content">
                         <p title="Plus de destinations&nbsp;!" class="headline">Plus de destinations&nbsp;!</p>
                         <p class="catchline">Découvrez plus de 50 nouveaux campings&nbsp;!</p>
                         <button type="submit" class="bt orange big ib">Réserver</button>
                     </div>
-                </div>
-                <div class="sliderStain second" style="display: block;">
+                </a>
+                <a href="#" class="sliderStain second" style="display: block;">
                     <div class="content">
                         <p>à partir de</p>
                         <p class="price">21<span class="fine"> </span>€</p>
                         <p class="duration">la nuit</p>
                     </div>
-                </div>
+                </a>
             </li><li class="slide" data-slide="3">
-            <a title="Vos vacances d’été" href="#" class="sliderPhoto" style="transform: rotate(18deg) scale(1, 1); display: none;"><img alt="Vos vacances d’été" src="/c2is/Cungfoo/web/" class="large boxborder"></a>
-            <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: none;">
+            <a title="Vos vacances d’été" href="#" class="sliderPhoto" style="transform: rotate(18deg) scale(1, 1); display: none;">
+                <img alt="Vos vacances d’été" src="/c2is/Cungfoo/web/" class="large boxborder">
+                <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: block;">
+            </a>
             <div class="sliderBackground" style="display: block;"></div>
-            <div class="sliderStain first" style="display: block;">
+            <a href="#" class="sliderStain first" style="display: block;">
                 <div class="content">
                     <p title="Vos vacances d’été" class="headline">Vos vacances d’été</p>
                     <p class="catchline">Choisissez dès maintenant votre camping !</p>
                     <button type="submit" class="bt orange big ib">Réserver</button>
                 </div>
-            </div>
+            </a>
         </li><li class="slide" data-slide="1">
-            <a title="Early booking" href="top-campings" class="sliderPhoto" style="transform: rotate(18deg) scale(1, 1); display: none;"><img alt="Early booking" src="/c2is/Cungfoo/web/uploads/mise_en_avants/50c061eea31aa.jpeg" class="large boxborder"></a>
-            <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: none;">
+            <a title="Early booking" href="top-campings" class="sliderPhoto" style="transform: rotate(18deg) scale(1, 1); display: none;">
+                <img alt="Early booking" src="/c2is/Cungfoo/web/uploads/mise_en_avants/50c061eea31aa.jpeg" class="large boxborder">
+                <img alt="" src="/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/postmark.png" class="sliderPostmark" style="display: block;">
+            </a>
             <div class="sliderBackground" style="display: block;"></div>
-            <div class="sliderStain first" style="display: block;">
+            <a href="#" class="sliderStain first" style="display: block;">
                 <div class="content">
                     <p title="Early booking" class="headline">Early booking</p>
                     <p class="catchline">Réservez tôt et profitez des promos&nbsp;!</p>
                     <button type="submit" class="bt orange big ib">Réserver</button>
                 </div>
-            </div>
-            <div class="sliderStain second" style="display: block;">
+            </a>
+            <a href="#" class="sliderStain second" style="display: block;">
                 <div class="content">
                     <p>à partir de</p>
                     <p class="price">227<span class="fine"> </span>€</p>
                     <p class="duration">la nuit</p>
                 </div>
-            </div>
+            </a>
         </li></ul>
     </div>
-    <a id="sliderNext" class="radiusBox yellow"></a>
+    <a id="sliderNext" class="radiusBox yellow arrowRight"></a>
 
     <div class="pagination clear" id="sliderPager"></div>
 </div>

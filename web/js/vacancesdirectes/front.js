@@ -262,6 +262,39 @@ $(function() {
             rotate: '12deg'
         }, {queue: false, duration: 500});
 
+        /*
+        $('#sliderPrev').hover(
+            function () {
+                $(this).addClass("hover").animate({
+                    left: "-=5px"
+                },200);
+            },
+            function () {
+                $(this).removeClass("hover").animate({
+                    left: "+=5px"
+                },200);
+            }
+        );
+        $('#sliderNext').hover(
+            function () {
+                $(this).addClass("hover").animate({
+                    right: "-=5px"
+                },200);
+            },
+            function () {
+                $(this).removeClass("hover").animate({
+                    right: "+=5px"
+                },200);
+            }
+        );
+
+        $('.slide').mouseover(function(){
+            $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
+        }).mouseout(function(){
+            $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
+        });
+         */
+
     }
 
     function beforeSlide(e){
