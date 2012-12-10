@@ -150,6 +150,7 @@ class getAllEtabsLoader extends AbstractLoader
                     {
                         $themeSetter = $this->config['EtabLoader']['themes'][$themeName]['setter'];
                         $objectEtab->$themeSetter($objectTheme);
+                        $objectEtab->save($con);
                         break;
                     }
                     else
@@ -167,6 +168,7 @@ class getAllEtabsLoader extends AbstractLoader
                         {
                             $themeSetter = $this->config['EtabLoader']['themes'][$themeName]['setter'];
                             $objectEtab->$themeSetter($objectTheme);
+                            $objectEtab->save($con);
                             break;
                         }
                     }

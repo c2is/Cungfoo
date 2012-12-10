@@ -6,13 +6,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '1_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '1_37_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 1
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     1_40____:
         EtablissementId: 1
         TypeHebergementId: 40
@@ -27,13 +27,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '2_26_301.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '2_26_255.85_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 2
         TypeHebergementId: 26
-        MinimumPrice: '301.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '255.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     2_39____:
         EtablissementId: 2
         TypeHebergementId: 39
@@ -160,20 +160,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '9_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '9_37_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 9
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
-    '10_26_308.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
+    '10_26_261.80_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 10
         TypeHebergementId: 26
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     10_40____:
         EtablissementId: 10
         TypeHebergementId: 40
@@ -188,13 +188,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '11_26_308.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '11_26_261.80_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 11
         TypeHebergementId: 26
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     11_39____:
         EtablissementId: 11
         TypeHebergementId: 39
@@ -223,13 +223,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '13_37_308.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '13_37_261.80_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 13
         TypeHebergementId: 37
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     13_40____:
         EtablissementId: 13
         TypeHebergementId: 40
@@ -300,13 +300,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '16_26_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '16_26_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 16
         TypeHebergementId: 26
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     16_40____:
         EtablissementId: 16
         TypeHebergementId: 40
@@ -412,13 +412,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '20_9_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '20_9_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 20
         TypeHebergementId: 9
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     20_20____:
         EtablissementId: 20
         TypeHebergementId: 20
@@ -545,13 +545,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '25_58_231.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '25_58_196.35_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 25
         TypeHebergementId: 58
-        MinimumPrice: '231.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '196.35'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     26_26____:
         EtablissementId: 26
         TypeHebergementId: 26
@@ -573,13 +573,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '26_58_238.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '26_58_202.30_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 26
         TypeHebergementId: 58
-        MinimumPrice: '238.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '202.30'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     27_18____:
         EtablissementId: 27
         TypeHebergementId: 18
@@ -594,13 +594,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '27_58_266.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '27_58_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 27
         TypeHebergementId: 58
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     28_20____:
         EtablissementId: 28
         TypeHebergementId: 20
@@ -615,13 +615,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    28_30____:
+    '28_30_255.85_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 28
         TypeHebergementId: 30
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '255.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     '28_37_301.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
         EtablissementId: 28
         TypeHebergementId: 37
@@ -657,13 +657,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '29_37_357.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '29_37_303.45_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 29
         TypeHebergementId: 37
-        MinimumPrice: '357.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '303.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     30_26____:
         EtablissementId: 30
         TypeHebergementId: 26
@@ -671,13 +671,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '30_37_259.00__2013-06-08 00:00:00_2013-06-15 00:00:00':
+    '30_37_220.15_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 30
         TypeHebergementId: 37
-        MinimumPrice: '259.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-06-08 00:00:00'
-        MinimumPriceEndDate: '2013-06-15 00:00:00'
+        MinimumPrice: '220.15'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     30_40____:
         EtablissementId: 30
         TypeHebergementId: 40
@@ -713,13 +713,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '32_26_350.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '32_26_297.50_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 32
         TypeHebergementId: 26
-        MinimumPrice: '350.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '297.50'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     32_27____:
         EtablissementId: 32
         TypeHebergementId: 27
@@ -762,13 +762,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '37_26_308.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '37_26_261.80_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 37
         TypeHebergementId: 26
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     37_40____:
         EtablissementId: 37
         TypeHebergementId: 40
@@ -783,13 +783,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '39_26_301.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '39_26_255.85_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 39
         TypeHebergementId: 26
-        MinimumPrice: '301.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '255.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     39_40____:
         EtablissementId: 39
         TypeHebergementId: 40
@@ -839,13 +839,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '61_37_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '61_37_208.25_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 61
         TypeHebergementId: 37
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     61_40____:
         EtablissementId: 61
         TypeHebergementId: 40
@@ -867,20 +867,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '72_37_266.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '72_37_226.10_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 72
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
-    '78_26_280.00__2013-06-22 00:00:00_2013-06-29 00:00:00':
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
+    '78_26_238.00_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 78
         TypeHebergementId: 26
-        MinimumPrice: '280.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-06-22 00:00:00'
-        MinimumPriceEndDate: '2013-06-29 00:00:00'
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     78_40____:
         EtablissementId: 78
         TypeHebergementId: 40
@@ -895,13 +895,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '79_26_308.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '79_26_308.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 79
         TypeHebergementId: 26
         MinimumPrice: '308.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     79_40____:
         EtablissementId: 79
         TypeHebergementId: 40
@@ -923,13 +923,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '80_37_231.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '80_37_231.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 80
         TypeHebergementId: 37
         MinimumPrice: '231.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     80_40____:
         EtablissementId: 80
         TypeHebergementId: 40
@@ -944,13 +944,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '81_26_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '81_26_243.95_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 81
         TypeHebergementId: 26
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     81_40____:
         EtablissementId: 81
         TypeHebergementId: 40
@@ -965,13 +965,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '82_26_238.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '82_26_238.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 82
         TypeHebergementId: 26
         MinimumPrice: '238.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     82_39____:
         EtablissementId: 82
         TypeHebergementId: 39
@@ -1000,13 +1000,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '85_18_266.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '85_18_266.00__2013-04-27 00:00:00_2013-05-04 00:00:00':
         EtablissementId: 85
         TypeHebergementId: 18
         MinimumPrice: '266.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-27 00:00:00'
+        MinimumPriceEndDate: '2013-05-04 00:00:00'
     85_26____:
         EtablissementId: 85
         TypeHebergementId: 26
@@ -1035,13 +1035,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '86_26_203.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '86_26_203.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 86
         TypeHebergementId: 26
         MinimumPrice: '203.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     86_39____:
         EtablissementId: 86
         TypeHebergementId: 39
@@ -1063,13 +1063,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '87_26_238.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '87_26_202.30_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 87
         TypeHebergementId: 26
-        MinimumPrice: '238.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '202.30'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     87_39____:
         EtablissementId: 87
         TypeHebergementId: 39
@@ -1091,20 +1091,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    89_39____:
+    '89_39_147.00__2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 89
         TypeHebergementId: 39
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
-    '94_9_210.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+        MinimumPrice: '147.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
+    '94_9_178.50_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 94
         TypeHebergementId: 9
-        MinimumPrice: '210.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '178.50'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     94_18____:
         EtablissementId: 94
         TypeHebergementId: 18
@@ -1231,13 +1231,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '105_24_189.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '105_24_160.65_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 105
         TypeHebergementId: 24
-        MinimumPrice: '189.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '160.65'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     105_26____:
         EtablissementId: 105
         TypeHebergementId: 26
@@ -1273,13 +1273,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '106_9_280.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '106_9_238.00_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 106
         TypeHebergementId: 9
-        MinimumPrice: '280.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     106_26____:
         EtablissementId: 106
         TypeHebergementId: 26
@@ -1308,13 +1308,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '107_26_238.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '107_26_238.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 107
         TypeHebergementId: 26
         MinimumPrice: '238.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     107_39____:
         EtablissementId: 107
         TypeHebergementId: 39
@@ -1371,13 +1371,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '117_18_231.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '117_18_196.35_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 117
         TypeHebergementId: 18
-        MinimumPrice: '231.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '196.35'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     117_26____:
         EtablissementId: 117
         TypeHebergementId: 26
@@ -1441,13 +1441,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '124_26_196.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '124_26_196.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 124
         TypeHebergementId: 26
         MinimumPrice: '196.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     124_39____:
         EtablissementId: 124
         TypeHebergementId: 39
@@ -1476,13 +1476,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '125_26_280.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '125_26_280.00__2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 125
         TypeHebergementId: 26
         MinimumPrice: '280.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     125_39____:
         EtablissementId: 125
         TypeHebergementId: 39
@@ -1539,13 +1539,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '128_26_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '128_26_243.95_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 128
         TypeHebergementId: 26
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     128_40____:
         EtablissementId: 128
         TypeHebergementId: 40
@@ -1623,13 +1623,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '131_39_252.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '131_39_252.00__2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 131
         TypeHebergementId: 39
         MinimumPrice: '252.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     132_26____:
         EtablissementId: 132
         TypeHebergementId: 26
@@ -1749,13 +1749,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '139_9_231.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '139_9_196.35_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 139
         TypeHebergementId: 9
-        MinimumPrice: '231.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '196.35'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     139_26____:
         EtablissementId: 139
         TypeHebergementId: 26
@@ -1826,13 +1826,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '144_26_245.00__2013-06-15 00:00:00_2013-06-22 00:00:00':
+    '144_26_245.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 144
         TypeHebergementId: 26
         MinimumPrice: '245.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-06-15 00:00:00'
-        MinimumPriceEndDate: '2013-06-22 00:00:00'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     144_40____:
         EtablissementId: 144
         TypeHebergementId: 40
@@ -1882,13 +1882,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '150_37_336.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '150_37_285.60_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 150
         TypeHebergementId: 37
-        MinimumPrice: '336.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '285.60'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     150_53____:
         EtablissementId: 150
         TypeHebergementId: 53
@@ -1896,13 +1896,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    155_26____:
+    '155_26_322.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 155
         TypeHebergementId: 26
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '322.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     155_40____:
         EtablissementId: 155
         TypeHebergementId: 40
@@ -1931,13 +1931,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '161_37_392.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '161_37_333.20_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 161
         TypeHebergementId: 37
-        MinimumPrice: '392.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '333.20'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     165_26____:
         EtablissementId: 165
         TypeHebergementId: 26
@@ -1945,20 +1945,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '165_30_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '165_30_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 165
         TypeHebergementId: 30
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
-    '166_26_301.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
+    '166_26_255.85_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 166
         TypeHebergementId: 26
-        MinimumPrice: '301.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '255.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     166_40____:
         EtablissementId: 166
         TypeHebergementId: 40
@@ -1980,13 +1980,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '167_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '167_37_232.05_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 167
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     167_40____:
         EtablissementId: 167
         TypeHebergementId: 40
@@ -2008,13 +2008,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '168_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '168_37_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 168
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     168_40____:
         EtablissementId: 168
         TypeHebergementId: 40
@@ -2029,13 +2029,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '169_18_357.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '169_18_303.45_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 169
         TypeHebergementId: 18
-        MinimumPrice: '357.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '303.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     169_26____:
         EtablissementId: 169
         TypeHebergementId: 26
@@ -2050,13 +2050,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '170_37_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '170_37_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 170
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     170_40____:
         EtablissementId: 170
         TypeHebergementId: 40
@@ -2099,13 +2099,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '172_37_224.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '172_37_190.40_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 172
         TypeHebergementId: 37
-        MinimumPrice: '224.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '190.40'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     173_18____:
         EtablissementId: 173
         TypeHebergementId: 18
@@ -2127,13 +2127,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '173_58_224.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '173_58_190.40_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 173
         TypeHebergementId: 58
-        MinimumPrice: '224.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '190.40'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     174_20____:
         EtablissementId: 174
         TypeHebergementId: 20
@@ -2148,13 +2148,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '174_30_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '174_30_226.10_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 174
         TypeHebergementId: 30
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     174_37____:
         EtablissementId: 174
         TypeHebergementId: 37
@@ -2176,13 +2176,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '175_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '175_37_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 175
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     176_26____:
         EtablissementId: 176
         TypeHebergementId: 26
@@ -2204,13 +2204,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '177_26_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '177_26_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 177
         TypeHebergementId: 26
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     177_40____:
         EtablissementId: 177
         TypeHebergementId: 40
@@ -2225,13 +2225,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '178_26_336.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '178_26_336.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 178
         TypeHebergementId: 26
         MinimumPrice: '336.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     178_40____:
         EtablissementId: 178
         TypeHebergementId: 40
@@ -2330,13 +2330,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '180_58_245.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '180_58_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 180
         TypeHebergementId: 58
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     180_59____:
         EtablissementId: 180
         TypeHebergementId: 59
@@ -2358,13 +2358,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '181_37_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '181_37_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 181
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     181_40____:
         EtablissementId: 181
         TypeHebergementId: 40
@@ -2379,13 +2379,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '182_20_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '182_20_226.10_Early booking 15%_2013-09-07 00:00:00_2013-09-14 00:00:00':
         EtablissementId: 182
         TypeHebergementId: 20
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-09-07 00:00:00'
+        MinimumPriceEndDate: '2013-09-14 00:00:00'
     182_26____:
         EtablissementId: 182
         TypeHebergementId: 26
@@ -2393,13 +2393,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '183_26_280.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '183_26_238.00_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 183
         TypeHebergementId: 26
-        MinimumPrice: '280.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     183_40____:
         EtablissementId: 183
         TypeHebergementId: 40
@@ -2519,13 +2519,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '186_37_217.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '186_37_184.45_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 186
         TypeHebergementId: 37
-        MinimumPrice: '217.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPrice: '184.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     186_38____:
         EtablissementId: 186
         TypeHebergementId: 38
@@ -2610,13 +2610,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    188_19____:
+    '188_19_226.10_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 188
         TypeHebergementId: 19
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     '188_26_266.00__2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 188
         TypeHebergementId: 26
@@ -2659,13 +2659,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '190_37_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '190_37_243.95_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 190
         TypeHebergementId: 37
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     190_40____:
         EtablissementId: 190
         TypeHebergementId: 40
@@ -2680,13 +2680,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '191_37_259.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '191_37_220.15_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 191
         TypeHebergementId: 37
-        MinimumPrice: '259.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '220.15'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     191_40____:
         EtablissementId: 191
         TypeHebergementId: 40
@@ -2722,13 +2722,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '192_58_231.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '192_58_196.35_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 192
         TypeHebergementId: 58
-        MinimumPrice: '231.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '196.35'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     193_26____:
         EtablissementId: 193
         TypeHebergementId: 26
@@ -2785,13 +2785,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '194_58_203.00__2013-06-22 00:00:00_2013-06-29 00:00:00':
+    '194_58_172.55_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 194
         TypeHebergementId: 58
-        MinimumPrice: '203.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-06-22 00:00:00'
-        MinimumPriceEndDate: '2013-06-29 00:00:00'
+        MinimumPrice: '172.55'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     195_26____:
         EtablissementId: 195
         TypeHebergementId: 26
@@ -2799,13 +2799,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '195_37_259.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '195_37_220.15_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 195
         TypeHebergementId: 37
-        MinimumPrice: '259.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '220.15'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     195_40____:
         EtablissementId: 195
         TypeHebergementId: 40
@@ -2827,13 +2827,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '196_37_266.00__2013-01-19 00:00:00_2013-01-26 00:00:00':
+    '196_37_226.10_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 196
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-01-19 00:00:00'
-        MinimumPriceEndDate: '2013-01-26 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     196_40____:
         EtablissementId: 196
         TypeHebergementId: 40
@@ -2848,13 +2848,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '197_26_245.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '197_26_208.25_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 197
         TypeHebergementId: 26
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     197_40____:
         EtablissementId: 197
         TypeHebergementId: 40
@@ -2876,13 +2876,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '198_37_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '198_37_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 198
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     198_40____:
         EtablissementId: 198
         TypeHebergementId: 40
@@ -2897,13 +2897,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    199_18____:
+    '199_18_220.15_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 199
         TypeHebergementId: 18
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '220.15'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     199_20____:
         EtablissementId: 199
         TypeHebergementId: 20
@@ -2925,13 +2925,13 @@
         MinimumPriceDiscountLabel: ''
         MinimumPriceStartDate: '2013-09-21 00:00:00'
         MinimumPriceEndDate: '2013-09-28 00:00:00'
-    '200_26_301.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '200_26_255.85_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 200
         TypeHebergementId: 26
-        MinimumPrice: '301.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '255.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     200_40____:
         EtablissementId: 200
         TypeHebergementId: 40
@@ -2953,13 +2953,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '201_37_308.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '201_37_261.80_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 201
         TypeHebergementId: 37
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     201_39____:
         EtablissementId: 201
         TypeHebergementId: 39
@@ -2967,13 +2967,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '202_26_322.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '202_26_273.70_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 202
         TypeHebergementId: 26
-        MinimumPrice: '322.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '273.70'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     202_40____:
         EtablissementId: 202
         TypeHebergementId: 40
@@ -2995,13 +2995,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '203_37_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '203_37_243.95_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 203
         TypeHebergementId: 37
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     203_40____:
         EtablissementId: 203
         TypeHebergementId: 40
@@ -3016,13 +3016,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '204_26_252.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '204_26_214.20_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 204
         TypeHebergementId: 26
-        MinimumPrice: '252.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '214.20'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     204_40____:
         EtablissementId: 204
         TypeHebergementId: 40
@@ -3037,13 +3037,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '205_16_168.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '205_16_142.80_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 205
         TypeHebergementId: 16
-        MinimumPrice: '168.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '142.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     205_26____:
         EtablissementId: 205
         TypeHebergementId: 26
@@ -3072,13 +3072,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '206_26_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '206_26_243.95_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 206
         TypeHebergementId: 26
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     206_40____:
         EtablissementId: 206
         TypeHebergementId: 40
@@ -3142,13 +3142,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '211_37_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '211_37_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 211
         TypeHebergementId: 37
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     211_40____:
         EtablissementId: 211
         TypeHebergementId: 40
@@ -3184,13 +3184,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '213_37_217.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '213_37_184.45_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 213
         TypeHebergementId: 37
-        MinimumPrice: '217.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '184.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     213_40____:
         EtablissementId: 213
         TypeHebergementId: 40
@@ -3205,13 +3205,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    214_26____:
+    '214_26_202.30_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 214
         TypeHebergementId: 26
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '202.30'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     '214_29_238.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
         EtablissementId: 214
         TypeHebergementId: 29
@@ -3240,13 +3240,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '215_37_217.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '215_37_184.45_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 215
         TypeHebergementId: 37
-        MinimumPrice: '217.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '184.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     215_40____:
         EtablissementId: 215
         TypeHebergementId: 40
@@ -3310,13 +3310,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '217_58_210.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '217_58_178.50_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 217
         TypeHebergementId: 58
-        MinimumPrice: '210.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '178.50'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     218_9____:
         EtablissementId: 218
         TypeHebergementId: 9
@@ -3352,13 +3352,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '218_58_245.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '218_58_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 218
         TypeHebergementId: 58
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     219_20____:
         EtablissementId: 219
         TypeHebergementId: 20
@@ -3373,13 +3373,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '219_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '219_37_232.05_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 219
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     219_40____:
         EtablissementId: 219
         TypeHebergementId: 40
@@ -3394,13 +3394,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    220_19____:
+    '220_19_202.30_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 220
         TypeHebergementId: 19
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '202.30'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     220_21____:
         EtablissementId: 220
         TypeHebergementId: 21
@@ -3429,13 +3429,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '222_18_308.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '222_18_261.80_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 222
         TypeHebergementId: 18
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     222_40____:
         EtablissementId: 222
         TypeHebergementId: 40
@@ -3478,13 +3478,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '224_9_273.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '224_9_232.05_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 224
         TypeHebergementId: 9
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     224_18____:
         EtablissementId: 224
         TypeHebergementId: 18
@@ -3541,13 +3541,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    225_18____:
+    '225_18_308.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 225
         TypeHebergementId: 18
-        MinimumPrice: null
-        MinimumPriceDiscountLabel: null
-        MinimumPriceStartDate: null
-        MinimumPriceEndDate: null
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     225_26____:
         EtablissementId: 225
         TypeHebergementId: 26
@@ -3562,13 +3562,13 @@
         MinimumPriceDiscountLabel: ''
         MinimumPriceStartDate: '2013-09-21 00:00:00'
         MinimumPriceEndDate: '2013-09-28 00:00:00'
-    '226_18_308.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '226_18_261.80_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 226
         TypeHebergementId: 18
-        MinimumPrice: '308.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '261.80'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     226_40____:
         EtablissementId: 226
         TypeHebergementId: 40
@@ -3583,13 +3583,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '227_26_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '227_26_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 227
         TypeHebergementId: 26
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     227_40____:
         EtablissementId: 227
         TypeHebergementId: 40
@@ -3618,13 +3618,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '229_26_329.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '229_26_279.65_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 229
         TypeHebergementId: 26
-        MinimumPrice: '329.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '279.65'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     229_40____:
         EtablissementId: 229
         TypeHebergementId: 40
@@ -3646,13 +3646,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '230_37_273.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '230_37_232.05_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 230
         TypeHebergementId: 37
-        MinimumPrice: '273.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '232.05'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     230_40____:
         EtablissementId: 230
         TypeHebergementId: 40
@@ -3667,13 +3667,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '231_9_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '231_9_208.25_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 231
         TypeHebergementId: 9
-        MinimumPrice: '245.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '208.25'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     231_26____:
         EtablissementId: 231
         TypeHebergementId: 26
@@ -3709,20 +3709,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '232_58_231.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '232_58_196.35_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 232
         TypeHebergementId: 58
-        MinimumPrice: '231.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
-    '233_9_259.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+        MinimumPrice: '196.35'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
+    '233_9_220.15_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 233
         TypeHebergementId: 9
-        MinimumPrice: '259.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '220.15'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     233_26____:
         EtablissementId: 233
         TypeHebergementId: 26
@@ -3751,13 +3751,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '236_26_287.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '236_26_243.95_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 236
         TypeHebergementId: 26
-        MinimumPrice: '287.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '243.95'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     236_40____:
         EtablissementId: 236
         TypeHebergementId: 40
@@ -3779,13 +3779,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '237_37_280.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '237_37_238.00_Early booking 15%_2013-04-06 00:00:00_2013-04-13 00:00:00':
         EtablissementId: 237
         TypeHebergementId: 37
-        MinimumPrice: '280.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-04-06 00:00:00'
+        MinimumPriceEndDate: '2013-04-13 00:00:00'
     237_40____:
         EtablissementId: 237
         TypeHebergementId: 40
@@ -3877,13 +3877,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '238_58_245.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '238_58_245.00__2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 238
         TypeHebergementId: 58
         MinimumPrice: '245.00'
         MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     239_26____:
         EtablissementId: 239
         TypeHebergementId: 26
@@ -3912,20 +3912,20 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '239_58_217.00__2013-12-28 00:00:00_2014-01-04 00:00:00':
+    '239_58_184.45_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 239
         TypeHebergementId: 58
-        MinimumPrice: '217.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-12-28 00:00:00'
-        MinimumPriceEndDate: '2014-01-04 00:00:00'
-    '240_18_329.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+        MinimumPrice: '184.45'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
+    '240_18_279.65_Early booking 15%_2013-08-31 00:00:00_2013-09-07 00:00:00':
         EtablissementId: 240
         TypeHebergementId: 18
-        MinimumPrice: '329.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '279.65'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-08-31 00:00:00'
+        MinimumPriceEndDate: '2013-09-07 00:00:00'
     240_40____:
         EtablissementId: 240
         TypeHebergementId: 40
@@ -3947,13 +3947,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '241_37_280.00__2013-03-02 00:00:00_2013-03-09 00:00:00':
+    '241_37_238.00_Early booking 15%_2013-03-09 00:00:00_2013-03-16 00:00:00':
         EtablissementId: 241
         TypeHebergementId: 37
-        MinimumPrice: '280.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-03-02 00:00:00'
-        MinimumPriceEndDate: '2013-03-09 00:00:00'
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-03-09 00:00:00'
+        MinimumPriceEndDate: '2013-03-16 00:00:00'
     241_40____:
         EtablissementId: 241
         TypeHebergementId: 40
@@ -3968,13 +3968,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '242_9_161.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '242_9_136.85_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 242
         TypeHebergementId: 9
-        MinimumPrice: '161.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '136.85'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     242_40____:
         EtablissementId: 242
         TypeHebergementId: 40
@@ -4017,13 +4017,13 @@
         MinimumPriceDiscountLabel: null
         MinimumPriceStartDate: null
         MinimumPriceEndDate: null
-    '244_37_266.00__2013-09-21 00:00:00_2013-09-28 00:00:00':
+    '244_37_226.10_Early booking 15%_2013-06-01 00:00:00_2013-06-08 00:00:00':
         EtablissementId: 244
         TypeHebergementId: 37
-        MinimumPrice: '266.00'
-        MinimumPriceDiscountLabel: ''
-        MinimumPriceStartDate: '2013-09-21 00:00:00'
-        MinimumPriceEndDate: '2013-09-28 00:00:00'
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 15%'
+        MinimumPriceStartDate: '2013-06-01 00:00:00'
+        MinimumPriceEndDate: '2013-06-08 00:00:00'
     244_40____:
         EtablissementId: 244
         TypeHebergementId: 40

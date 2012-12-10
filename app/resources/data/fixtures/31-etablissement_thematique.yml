@@ -14,8 +14,20 @@
     50_2:
         EtablissementId: 50
         ThematiqueId: 2
+    157_2:
+        EtablissementId: 157
+        ThematiqueId: 2
+    159_2:
+        EtablissementId: 159
+        ThematiqueId: 2
     161_2:
         EtablissementId: 161
+        ThematiqueId: 2
+    162_2:
+        EtablissementId: 162
+        ThematiqueId: 2
+    163_2:
+        EtablissementId: 163
         ThematiqueId: 2
     166_2:
         EtablissementId: 166

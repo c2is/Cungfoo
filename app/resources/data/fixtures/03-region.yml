@@ -1,7 +1,7 @@
 \Cungfoo\Model\Region:
     1:
         Code: LOCH
-        ImagePath: uploads/regions/loir-et-cher.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -11,7 +11,7 @@
         Active: true
     2:
         Code: PEDO
-        ImagePath: uploads/regions/perigord-dordogne.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -21,7 +21,7 @@
         Active: true
     3:
         Code: CBRA
-        ImagePath: uploads/regions/costa-brava.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 3
@@ -31,7 +31,7 @@
         Active: true
     4:
         Code: GIRO
-        ImagePath: uploads/regions/gironde.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -41,7 +41,7 @@
         Active: true
     5:
         Code: ALJU
-        ImagePath: uploads/regions/alsace.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -51,7 +51,7 @@
         Active: true
     6:
         Code: LAND
-        ImagePath: uploads/regions/landes.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -61,7 +61,7 @@
         Active: true
     7:
         Code: CDOR
-        ImagePath: uploads/regions/costa-dorada.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 3
@@ -71,7 +71,7 @@
         Active: true
     8:
         Code: NORM
-        ImagePath: uploads/regions/basse-normandie.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -81,7 +81,7 @@
         Active: true
     9:
         Code: BRET
-        ImagePath: uploads/regions/bretagne.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -91,7 +91,7 @@
         Active: true
     10:
         Code: CHMA
-        ImagePath: uploads/regions/charente-maritime.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -101,7 +101,7 @@
         Active: true
     11:
         Code: PBAS
-        ImagePath: uploads/regions/pays-basque.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -111,7 +111,7 @@
         Active: true
     12:
         Code: PLOI
-        ImagePath: uploads/regions/pays-de-la-loire.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -121,7 +121,7 @@
         Active: true
     13:
         Code: VEND
-        ImagePath: uploads/regions/vendee.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -131,7 +131,7 @@
         Active: true
     14:
         Code: LARO
-        ImagePath: uploads/regions/languedoc-roussillon.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -141,7 +141,7 @@
         Active: true
     15:
         Code: GERS
-        ImagePath: uploads/regions/gers.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -151,7 +151,7 @@
         Active: true
     16:
         Code: AUVE
-        ImagePath: uploads/regions/auvergne.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -161,7 +161,7 @@
         Active: true
     17:
         Code: AVEY
-        ImagePath: uploads/regions/auveyron.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -171,7 +171,7 @@
         Active: true
     18:
         Code: ARDE
-        ImagePath: uploads/regions/ardeche.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -181,7 +181,7 @@
         Active: true
     19:
         Code: ARPY
-        ImagePath: uploads/regions/ariege-pyrennes.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -190,18 +190,8 @@
         ImageDetail2: null
         Active: true
     20:
-        Code: CTRO
-        ImagePath: uploads/regions/centro.jpg
-        ImageEncartPath: null
-        ImageEncartPetitePath: null
-        PaysId: 4
-        MeaHome: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    21:
         Code: CORS
-        ImagePath: uploads/regions/corse.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -209,9 +199,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    22:
+    21:
         Code: DRHP
-        ImagePath: uploads/regions/drome-haute-provence.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -219,9 +209,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    23:
+    22:
         Code: IADR
-        ImagePath: uploads/regions/italie-adriatique.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 2
@@ -229,9 +219,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    24:
+    23:
         Code: CAZA
-        ImagePath: uploads/regions/costa-del-azahar.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 3
@@ -239,7 +229,7 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    25:
+    24:
         Code: IMED
         ImagePath: .
         ImageEncartPath: null
@@ -249,7 +239,7 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    26:
+    25:
         Code: ALP
         ImagePath: .
         ImageEncartPath: null
@@ -259,9 +249,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    27:
+    26:
         Code: PCA
-        ImagePath: uploads/regions/provence-alpes-cote-d-azur.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -269,7 +259,7 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    28:
+    27:
         Code: VERD
         ImagePath: .
         ImageEncartPath: null
@@ -279,9 +269,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    29:
+    28:
         Code: CTBR
-        ImagePath: uploads/regions/cantabria.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 3
@@ -289,9 +279,19 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    30:
+    29:
         Code: HERA
-        ImagePath: uploads/regions/herault.jpg
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    30:
+        Code: AUDE
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -300,8 +300,18 @@
         ImageDetail2: null
         Active: true
     31:
-        Code: AUDE
-        ImagePath: uploads/regions/aude.jpg
+        Code: TOSC
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 2
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    32:
+        Code: PASD
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -309,19 +319,9 @@
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    32:
-        Code: TOSC
-        ImagePath: uploads/regions/toscane.jpg
-        ImageEncartPath: null
-        ImageEncartPetitePath: null
-        PaysId: null
-        MeaHome: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: false
     33:
-        Code: PASD
-        ImagePath: uploads/regions/pas-de-calais.jpg
+        Code: ILE
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -330,31 +330,51 @@
         ImageDetail2: null
         Active: true
     34:
-        Code: ILE
-        ImagePath: uploads/regions/iles-de-france.jpg
-        ImageEncartPath: null
-        ImageEncartPetitePath: null
-        PaysId: null
-        MeaHome: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: false
-    35:
         Code: PYRO
-        ImagePath: uploads/regions/pyrenees-oriental.jpg
-        ImageEncartPath: null
-        ImageEncartPetitePath: null
-        PaysId: null
-        MeaHome: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: false
-    36:
-        Code: AQUI
-        ImagePath: uploads/regions/aquitaine.jpg
+        ImagePath: .
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    35:
+        Code: AQUI
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    36:
+        Code: LIM
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    37:
+        Code: TAR
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 1
+        MeaHome: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    38:
+        Code: BLAC
+        ImagePath: .
+        ImageEncartPath: null
+        ImageEncartPetitePath: null
+        PaysId: 3
         MeaHome: null
         ImageDetail1: null
         ImageDetail2: null

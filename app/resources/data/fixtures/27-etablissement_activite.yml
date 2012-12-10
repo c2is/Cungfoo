@@ -236,6 +236,9 @@
     88_2:
         EtablissementId: 88
         ActiviteId: 2
+    89_2:
+        EtablissementId: 89
+        ActiviteId: 2
     92_2:
         EtablissementId: 92
         ActiviteId: 2
@@ -290,6 +293,12 @@
     112_2:
         EtablissementId: 112
         ActiviteId: 2
+    113_2:
+        EtablissementId: 113
+        ActiviteId: 2
+    119_2:
+        EtablissementId: 119
+        ActiviteId: 2
     120_2:
         EtablissementId: 120
         ActiviteId: 2
@@ -313,6 +322,12 @@
         ActiviteId: 2
     136_2:
         EtablissementId: 136
+        ActiviteId: 2
+    137_2:
+        EtablissementId: 137
+        ActiviteId: 2
+    138_2:
+        EtablissementId: 138
         ActiviteId: 2
     139_2:
         EtablissementId: 139
@@ -341,8 +356,29 @@
     154_2:
         EtablissementId: 154
         ActiviteId: 2
+    155_2:
+        EtablissementId: 155
+        ActiviteId: 2
+    157_2:
+        EtablissementId: 157
+        ActiviteId: 2
+    158_2:
+        EtablissementId: 158
+        ActiviteId: 2
+    159_2:
+        EtablissementId: 159
+        ActiviteId: 2
+    160_2:
+        EtablissementId: 160
+        ActiviteId: 2
     161_2:
         EtablissementId: 161
+        ActiviteId: 2
+    162_2:
+        EtablissementId: 162
+        ActiviteId: 2
+    163_2:
+        EtablissementId: 163
         ActiviteId: 2
     165_2:
         EtablissementId: 165
@@ -692,6 +728,9 @@
     110_4:
         EtablissementId: 110
         ActiviteId: 4
+    113_4:
+        EtablissementId: 113
+        ActiviteId: 4
     125_4:
         EtablissementId: 125
         ActiviteId: 4
@@ -700,6 +739,9 @@
         ActiviteId: 4
     136_4:
         EtablissementId: 136
+        ActiviteId: 4
+    137_4:
+        EtablissementId: 137
         ActiviteId: 4
     147_4:
         EtablissementId: 147
@@ -839,8 +881,14 @@
     106_5:
         EtablissementId: 106
         ActiviteId: 5
+    113_5:
+        EtablissementId: 113
+        ActiviteId: 5
     117_5:
         EtablissementId: 117
+        ActiviteId: 5
+    119_5:
+        EtablissementId: 119
         ActiviteId: 5
     120_5:
         EtablissementId: 120
@@ -868,6 +916,12 @@
         ActiviteId: 5
     154_5:
         EtablissementId: 154
+        ActiviteId: 5
+    157_5:
+        EtablissementId: 157
+        ActiviteId: 5
+    159_5:
+        EtablissementId: 159
         ActiviteId: 5
     165_5:
         EtablissementId: 165
@@ -1082,6 +1136,9 @@
     147_6:
         EtablissementId: 147
         ActiviteId: 6
+    157_6:
+        EtablissementId: 157
+        ActiviteId: 6
     167_6:
         EtablissementId: 167
         ActiviteId: 6
@@ -1189,6 +1246,9 @@
         ActiviteId: 7
     82_7:
         EtablissementId: 82
+        ActiviteId: 7
+    84_7:
+        EtablissementId: 84
         ActiviteId: 7
     86_7:
         EtablissementId: 86
@@ -1319,6 +1379,9 @@
     88_8:
         EtablissementId: 88
         ActiviteId: 8
+    89_8:
+        EtablissementId: 89
+        ActiviteId: 8
     94_8:
         EtablissementId: 94
         ActiviteId: 8
@@ -1333,6 +1396,15 @@
         ActiviteId: 8
     129_8:
         EtablissementId: 129
+        ActiviteId: 8
+    133_8:
+        EtablissementId: 133
+        ActiviteId: 8
+    137_8:
+        EtablissementId: 137
+        ActiviteId: 8
+    138_8:
+        EtablissementId: 138
         ActiviteId: 8
     139_8:
         EtablissementId: 139
@@ -1360,6 +1432,12 @@
         ActiviteId: 8
     154_8:
         EtablissementId: 154
+        ActiviteId: 8
+    158_8:
+        EtablissementId: 158
+        ActiviteId: 8
+    159_8:
+        EtablissementId: 159
         ActiviteId: 8
     161_8:
         EtablissementId: 161
@@ -1589,6 +1667,9 @@
     81_9:
         EtablissementId: 81
         ActiviteId: 9
+    84_9:
+        EtablissementId: 84
+        ActiviteId: 9
     86_9:
         EtablissementId: 86
         ActiviteId: 9
@@ -1619,11 +1700,17 @@
     111_9:
         EtablissementId: 111
         ActiviteId: 9
+    113_9:
+        EtablissementId: 113
+        ActiviteId: 9
     117_9:
         EtablissementId: 117
         ActiviteId: 9
     118_9:
         EtablissementId: 118
+        ActiviteId: 9
+    119_9:
+        EtablissementId: 119
         ActiviteId: 9
     120_9:
         EtablissementId: 120
@@ -1652,11 +1739,20 @@
     131_9:
         EtablissementId: 131
         ActiviteId: 9
+    133_9:
+        EtablissementId: 133
+        ActiviteId: 9
     135_9:
         EtablissementId: 135
         ActiviteId: 9
     136_9:
         EtablissementId: 136
+        ActiviteId: 9
+    137_9:
+        EtablissementId: 137
+        ActiviteId: 9
+    138_9:
+        EtablissementId: 138
         ActiviteId: 9
     139_9:
         EtablissementId: 139
@@ -1685,8 +1781,23 @@
     154_9:
         EtablissementId: 154
         ActiviteId: 9
+    157_9:
+        EtablissementId: 157
+        ActiviteId: 9
+    158_9:
+        EtablissementId: 158
+        ActiviteId: 9
+    159_9:
+        EtablissementId: 159
+        ActiviteId: 9
     161_9:
         EtablissementId: 161
+        ActiviteId: 9
+    162_9:
+        EtablissementId: 162
+        ActiviteId: 9
+    164_9:
+        EtablissementId: 164
         ActiviteId: 9
     165_9:
         EtablissementId: 165
@@ -1886,6 +1997,9 @@
     82_10:
         EtablissementId: 82
         ActiviteId: 10
+    84_10:
+        EtablissementId: 84
+        ActiviteId: 10
     85_10:
         EtablissementId: 85
         ActiviteId: 10
@@ -1919,8 +2033,14 @@
     122_10:
         EtablissementId: 122
         ActiviteId: 10
+    133_10:
+        EtablissementId: 133
+        ActiviteId: 10
     134_10:
         EtablissementId: 134
+        ActiviteId: 10
+    157_10:
+        EtablissementId: 157
         ActiviteId: 10
     181_10:
         EtablissementId: 181
@@ -2030,6 +2150,9 @@
     81_11:
         EtablissementId: 81
         ActiviteId: 11
+    84_11:
+        EtablissementId: 84
+        ActiviteId: 11
     85_11:
         EtablissementId: 85
         ActiviteId: 11
@@ -2057,8 +2180,14 @@
     110_11:
         EtablissementId: 110
         ActiviteId: 11
+    113_11:
+        EtablissementId: 113
+        ActiviteId: 11
     117_11:
         EtablissementId: 117
+        ActiviteId: 11
+    119_11:
+        EtablissementId: 119
         ActiviteId: 11
     121_11:
         EtablissementId: 121
@@ -2084,6 +2213,12 @@
     135_11:
         EtablissementId: 135
         ActiviteId: 11
+    137_11:
+        EtablissementId: 137
+        ActiviteId: 11
+    138_11:
+        EtablissementId: 138
+        ActiviteId: 11
     143_11:
         EtablissementId: 143
         ActiviteId: 11
@@ -2104,6 +2239,12 @@
         ActiviteId: 11
     154_11:
         EtablissementId: 154
+        ActiviteId: 11
+    155_11:
+        EtablissementId: 155
+        ActiviteId: 11
+    157_11:
+        EtablissementId: 157
         ActiviteId: 11
     161_11:
         EtablissementId: 161
@@ -2347,6 +2488,9 @@
         ActiviteId: 12
     140_12:
         EtablissementId: 140
+        ActiviteId: 12
+    155_12:
+        EtablissementId: 155
         ActiviteId: 12
     165_12:
         EtablissementId: 165
