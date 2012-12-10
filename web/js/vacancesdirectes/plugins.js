@@ -588,6 +588,79 @@ function addLinkBlock(){
 
 })(jQuery);
 
+/* stylish multiple select - LGU */
+(function($){
+    $.fn.extend({
+        resetMultSelect: function(){
+            $this = $(this);
+            $this.next().remove();
+            $this.unbind('.sMultSelect').sMultSelect();
+        }
+    });
+
+    $.fn.sMultSelect = function(options){
+        return this.each(function(){
+            var defaults = {
+                msgNull:    'No result'
+            };
+
+            var opts = $.extend(defaults, options),
+                $mul = $(this);
+
+            $(this).data('ssOpts',options);
+
+            // creation du nouvel objet sous forme de liste <ul>
+            var origId = $mul.attr('id'),
+                $newMul = $('<ul id="'+origId+'Ul" class="sMultSelectUl"></ul>'),
+                $newMulLi;
+            // insertion de ce nouvel objet
+            $mul.after($newMul);
+
+            // function de creation de elements <li> correspondant aux <option>
+            function addMulItem(item, container) {
+                var text = $(item).text(),
+                    val = $(item).val(),
+                    cSelected = "";
+
+                // si une <option> a l'attribut [selected]
+                if ($(item).attr('selected')) {
+                    cSelected = "selected";
+                }
+                // insertion des <li> dans la liste <ul>
+                container.append(
+                    $('<li data-val="'+val+'" class="'+cSelected+'">'+text+'</li>')
+                );
+            }
+            // lancement de la function de creation des <li>
+            if ($mul.is(':empty')){
+                $newMul.html('<li style="font-style:italic;padding:2px 5px;">'+opts.msgNull+'</li>');
+            }else{
+                $mul.children('option').each(function(){
+                    addMulItem(this, $newMul);
+                });
+            }
+
+
+            // declaration de la var correspondant aux nouveaux elements <li>
+            $newMulLi = $newMul.find('li');
+            // action au clic sur un element <li>
+            $newMulLi.click( function(){
+                var link = $(this),
+                    val = $(this).attr('data-val'),
+                    nSel = $mul.find('[value="'+val+'"]');
+                // si l'<option> a l'attribut [selected]
+                if (nSel.is(':selected')){
+                    link.removeClass('selected');
+                    nSel.removeAttr('selected');
+                } else {
+                    link.addClass('selected');
+                    nSel.attr('selected', 'selected');
+                }
+            });
+        });
+    };
+})(jQuery);
+
 /*
  * Tiny Scrollbar
  * http://www.baijs.nl/tinyscrollbar/
@@ -802,81 +875,6 @@ function addLinkBlock(){
     }
 
 }(jQuery));
-
-
-/* stylish multiple select - LGU */
-(function($){
-    $.fn.extend({
-        resetMultSelect: function(){
-            $this = $(this);
-            $this.next().remove();
-            $this.unbind('.sMultSelect').sMultSelect();
-        }
-    });
-
-    $.fn.sMultSelect = function(options){
-        return this.each(function(){
-            var defaults = {
-                msgNull:    'No result'
-            };
-
-            var opts = $.extend(defaults, options),
-                $mul = $(this);
-
-            $(this).data('ssOpts',options);
-
-            // creation du nouvel objet sous forme de liste <ul>
-            var origId = $mul.attr('id'),
-                $newMul = $('<ul id="'+origId+'Ul" class="sMultSelectUl"></ul>'),
-                $newMulLi;
-            // insertion de ce nouvel objet
-            $mul.after($newMul);
-
-            // function de creation de elements <li> correspondant aux <option>
-            function addMulItem(item, container) {
-                var text = $(item).text(),
-                    val = $(item).val(),
-                    cSelected = "";
-
-                // si une <option> a l'attribut [selected]
-                if ($(item).attr('selected')) {
-                    cSelected = "selected";
-                }
-                // insertion des <li> dans la liste <ul>
-                container.append(
-                    $('<li data-val="'+val+'" class="'+cSelected+'">'+text+'</li>')
-                );
-            }
-            // lancement de la function de creation des <li>
-            if ($mul.is(':empty')){
-                $newMul.html('<li style="font-style:italic;padding:2px 5px;">'+opts.msgNull+'</li>');
-            }else{
-                $mul.children('option').each(function(){
-                    addMulItem(this, $newMul);
-                });
-            }
-
-
-            // declaration de la var correspondant aux nouveaux elements <li>
-            $newMulLi = $newMul.find('li');
-            // action au clic sur un element <li>
-            $newMulLi.click( function(){
-                var link = $(this),
-                    val = $(this).attr('data-val'),
-                    nSel = $mul.find('[value="'+val+'"]');
-                // si l'<option> a l'attribut [selected]
-                if (nSel.is(':selected')){
-                    link.removeClass('selected');
-                    nSel.removeAttr('selected');
-                } else {
-                    link.addClass('selected');
-                    nSel.attr('selected', 'selected');
-                }
-            });
-        });
-    };
-})(jQuery);
-
 
 /**
  *

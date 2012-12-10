@@ -6,6 +6,12 @@
     </ul>
     <form id="searchBlocDate" action="#_">
         <fieldset>
+            <div class="errors">
+                <ul>
+                    <li>La destination est requise.</li>
+                    <li>La date de début de séjour est requise.</li>
+                </ul>
+            </div>
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
