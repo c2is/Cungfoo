@@ -20,7 +20,6 @@ var
     minPrice,                                               // le prix minimum de la liste
     maxPrice,                                               // le prix maximum de la liste
     containerCrit = $('#formSearchRefined'),                // conteneur des criteres
-    nbVisible = 10,                                         // nombre d'items visible avant pagination
     nbToShow = 5,                                           // nombre d'items a afficher si pagination existe
 //googlemap
     map,
@@ -33,6 +32,9 @@ var
     ib,
     aMarkers = [];
 
+if(nbVisible == undefined) {
+    var nbVisible = 10;                                      // nombre d'items visible avant pagination
+}
 
 /*--  DOMREADY  --*/
 $(function() {
@@ -259,6 +261,39 @@ $(function() {
         $('.sliderPhoto').eq(0).animate({
             rotate: '12deg'
         }, {queue: false, duration: 500});
+
+        /*
+        $('#sliderPrev').hover(
+            function () {
+                $(this).addClass("hover").animate({
+                    left: "-=5px"
+                },200);
+            },
+            function () {
+                $(this).removeClass("hover").animate({
+                    left: "+=5px"
+                },200);
+            }
+        );
+        $('#sliderNext').hover(
+            function () {
+                $(this).addClass("hover").animate({
+                    right: "-=5px"
+                },200);
+            },
+            function () {
+                $(this).removeClass("hover").animate({
+                    right: "+=5px"
+                },200);
+            }
+        );
+
+        $('.slide').mouseover(function(){
+            $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
+        }).mouseout(function(){
+            $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
+        });
+         */
 
     }
 

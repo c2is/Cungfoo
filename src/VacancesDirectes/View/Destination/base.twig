@@ -11,10 +11,6 @@
             {% block topRightColumn %}
             {% endblock %}
         </aside>
-        <div class="column clearboth clear">
-	        {% block topWideColumn %}
-	        {% endblock %}
-        </div>
         <div class="column left">
             {% block bottomLeftColumn %}
             {% endblock %}
@@ -24,8 +20,15 @@
             {% endblock %}
         </aside>
         <div class="column clearboth clear">
+	        {% block topWideColumn %}
+	        {% endblock %}
+        </div>
+        <div class="column clearboth clear">
 	        {% block bottomWideColumn %}
 	        {% endblock %}
         </div>
     </div>
+    <script type="text/javascript">
+        var nbVisible = 5;
+    </script>
 {% endblock %}

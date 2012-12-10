@@ -10,8 +10,10 @@
         <ul id="slider" class="fixed-width clear">
             {% for mea in mea %}
                 <li class="slide">
-                    <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}"><img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" /></a>
-                    <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
+                    <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
+                        <img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" />
+                        <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
+                    </a>
                     <div class="sliderBackground"></div>
                     <a href="{{ mea.lien }}" class="sliderStain first">
                         <div class="content">
@@ -50,12 +52,12 @@
         {% for camping in topCampings %}
             {% if loop.index <= 3 %}
             {% set campingPath = path('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
-            <div class="element clear">
+            <div class="element clear linkParent">
                 <div class="left">
-                    <a href="{{ campingPath }}" class="linkBlock"><img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" /></a>
+                    <img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" />
                     <iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>
                 </div>
-                <div class="details left linkParent">
+                <div class="details left">
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
                     <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
@@ -77,8 +79,8 @@
         </div>
         {% for etab in dernieres_minutes.element %}
             {% for proposal in etab.extra %}
-            <div class="element clear">
-                <div class="details left linkParent">
+            <div class="element clear linkParent">
+                <div class="details left">
                     <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
                     <span class="region">{{ etab.model.ville.region }}</span>
                     <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
