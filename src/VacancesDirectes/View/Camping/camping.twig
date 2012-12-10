@@ -277,7 +277,7 @@
                 <p>{{ poi.address }}<br>
                     {{ poi.address2 }}<br>
                 <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
-                    {{ "fiche.distance_camping" | trans }} {{ poi.distanceCamping/100 }} {{ "fiche.km" | trans }}<br>
+                    {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
             </div>
         {% endfor %}
     </div>
@@ -293,7 +293,7 @@
                 <p>{{ event.address }}<br>
                     {{ event.address2 }}<br>
                 <span>{{ event.zipcode }} {{ event.city }}</span><br>
-                    {{ "fiche.distance_camping" | trans }} {{ event.distanceCamping/100 }} {{ "fiche.km" | trans }}<br>
+                    {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
             </div>
         {% endfor %}
     </div>

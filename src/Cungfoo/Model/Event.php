@@ -22,4 +22,16 @@ class Event extends BaseEvent
     {
         return $this->getName();
     }
+
+    public function getDistanceForEtablissement(Etablissement $etab)
+    {
+        $distance = EtablissementEventQuery::create()
+            ->select('distance')
+            ->filterByEtablissementId($etab->getId())
+            ->filterByEventId($this->getId())
+            ->findOne()
+        ;
+
+        return $distance ? $distance : '0';
+    }
 }
