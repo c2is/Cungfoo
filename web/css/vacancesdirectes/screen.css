@@ -1547,6 +1547,9 @@ footer {
 #nav .tab .subnav .objective {
   margin: 10px;
 }
+#nav .tab .subnav#destinations a:hover {
+  color: #ed145b;
+}
 #nav .tab .subnav#destinations .ratio-33 {
   width: 300px;
   margin-left: 16px;
@@ -1921,6 +1924,7 @@ h6,
   padding: 0;
   text-decoration: underline !important;
   border-radius: 0;
+  margin-top: 10px;
 }
 .bt.cfushia {
   color: #ed145b;
@@ -2752,9 +2756,6 @@ ul.newList li a:focus {
   margin-right: 0;
   background-color: #ffffff;
 }
-ul.newList li:first-child {
-  display: none;
-}
 ul.newList.optGroup li a {
   padding: 0 8px 0 18px;
 }
@@ -2954,8 +2955,8 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home #sliderWrapper #sliderContainer .slide .sliderPostmark {
   position: absolute;
-  top: -20px;
-  right: 336px;
+  top: -30px;
+  right: -10px;
   z-index: 1;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderBackground {
@@ -3168,7 +3169,7 @@ ul.newList.optGroup li.optGroup-like a {
   box-shadow: 0 10px 10px -12px #464545;
 }
 .home aside #greyBoxes {
-  margin-top: 154px;
+  margin-top: 129px;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -3789,6 +3790,9 @@ ul.newList.optGroup li.optGroup-like a {
 .temoignFicheIt .age {
   font: bold 15px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 27px;
+}
+.tabCampDesc {
+  margin-bottom: 15px;
 }
 /*tabs pagination*/
 .paginationTabs .bt {
@@ -6097,8 +6101,7 @@ aside #greyBoxes #weekendIdeasBloc h2:before {
   background: none;
 }
 aside #greyBoxes #weekendIdeasBloc .element {
-  margin-bottom: 10px;
-  padding: 0;
+  padding: 10px 0 0;
   border-bottom: 7px solid #ffffff;
 }
 aside #greyBoxes #weekendIdeasBloc .element.last {
