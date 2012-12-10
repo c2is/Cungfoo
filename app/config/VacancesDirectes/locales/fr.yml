@@ -33,6 +33,8 @@ destination.retour_bottom: Retour à la liste
 listing_destination.campings_map_title: Campings Vacances Directes
 listing_destination.campings_map_prefixe_subtitle: en
 
+listing.plus_resultats: Plus de résultats
+
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
 menu.locations: Les locations
