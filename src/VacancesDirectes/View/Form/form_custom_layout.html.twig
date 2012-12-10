@@ -3,11 +3,13 @@
 {% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <ul class="errors">
-        {% for error in errors %}
-            <li>{{ error.messageTemplate|trans }}</li>
-        {% endfor %}
-    </ul>
+    <div class="errors">
+        <ul>
+            {% for error in errors %}
+                <li>{{ error.messageTemplate|trans }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 {% endspaceless %}
 {% endblock form_errors %}
